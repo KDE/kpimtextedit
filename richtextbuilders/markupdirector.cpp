@@ -308,7 +308,14 @@ void MarkupDirector::processBlockContents(const QTextBlock &block)
 
         qreal bottomMargin = blockFormat.bottomMargin();
         qreal topMargin = blockFormat.topMargin();
-        d->builder->beginParagraph(blockAlignment, topMargin, bottomMargin);
+        
+        if ((bottomMargin != QTextBlockFormat().bottomMargin())
+             && (topMargin != QTextBlockFormat().topMargin()))
+        {
+            d->builder->beginParagraph(blockAlignment);
+        } else {
+            d->builder->beginParagraph(blockAlignment, topMargin, bottomMargin);
+        }
 
         QTextBlock::iterator it;
         for (it = block.begin(); !it.atEnd(); ++it )

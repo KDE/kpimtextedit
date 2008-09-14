@@ -106,6 +106,8 @@ public:
     @param The bottom margin of the new paragraph.
      */
     virtual void beginParagraph(Qt::Alignment, qreal, qreal) { }
+
+    virtual void beginParagraph(Qt::Alignment) { }
     
     /** Close the paragraph in the markup. */
     virtual void endParagraph() { }

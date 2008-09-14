@@ -122,6 +122,25 @@ Creates a new HTMLBuilder.
         m_text.append(styleString);
     }
     
+    virtual void beginParagraph(Qt::Alignment al)
+    {
+        if (al & Qt::AlignRight){
+            m_text.append("<p align=\"right\" >");
+        }
+        else if (al & Qt::AlignHCenter){
+            m_text.append("<p align=\"center\" >");
+        }
+        else if (al & Qt::AlignJustify){
+            m_text.append("<p align=\"justify\" >");
+        }
+        else if (al & Qt::AlignLeft){
+            m_text.append("<p>");
+        }
+        else{
+            m_text.append("<p>");
+        }
+    }
+    
     virtual void endParagraph() { m_text.append("\n</p>\n"); }
     virtual void addNewline() { m_text.append("<br />\n"); }
 
