@@ -39,6 +39,18 @@ to allow a clean fall-through. The exception is appendLiteralText, which appends
 
 See PlainTextMarkupBuilder and HTMLBuilder for example imlpementations.
 
+@note For maintenance, if an extra tag is needed which is not provided by the virtual methods, the ExtraElement can be used.
+
+eg,
+
+@code
+
+builder->beginExtraElement(AbstractMarkupBuilder::DivTag);
+// ...
+builder->endExtraElement(AbstractMarkupBuilder::DivTag);
+
+@endcode
+
 @todo Move this to kdelibs when tested.
 
 @author Stephen Kelly <steveire@gmail.com>
@@ -47,6 +59,11 @@ See PlainTextMarkupBuilder and HTMLBuilder for example imlpementations.
 class AbstractMarkupBuilder
 {
 public:
+
+    /** For future compatibility.
+    This enum can be used to insert extra tags not supported by the virtual methods. */
+    enum ExtraElement { UserElement = 100 };
+    
     /** Destructor */
     virtual ~AbstractMarkupBuilder() {}
 
@@ -166,10 +183,11 @@ public:
     virtual void endTableHeaderCell() { }
     virtual void endTableCell() { }
 
+    /** Begin an extra identified element. Override this to support more elements in the future. */
+    virtual void beginExtraElement(int) { }
 
-
-
-            
+    /** End extra tag. */
+    virtual void endExtraElement(int) { }
 
     /**
     Append the plain text @p text to the markup.
