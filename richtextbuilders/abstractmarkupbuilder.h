@@ -184,10 +184,10 @@ public:
     virtual void endTableCell() { }
 
     /** Begin an extra identified element. Override this to support more elements in the future. */
-    virtual void beginExtraElement(int) { }
+    virtual void beginExtraElement(int, QVariantList) { }
 
     /** End extra tag. */
-    virtual void endExtraElement(int, QVariantList) { }
+    virtual void endExtraElement(int) { }
 
     /**
     Append the plain text @p text to the markup.
