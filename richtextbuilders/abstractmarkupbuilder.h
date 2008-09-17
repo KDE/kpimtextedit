@@ -187,7 +187,7 @@ public:
     virtual void beginExtraElement(int) { }
 
     /** End extra tag. */
-    virtual void endExtraElement(int) { }
+    virtual void endExtraElement(int, QVariantList) { }
 
     /**
     Append the plain text @p text to the markup.
