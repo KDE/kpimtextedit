@@ -26,7 +26,7 @@ void TestHtmlOutput::testSingleFormat()
     md->constructContent ( doc );
     QString result = hb->getResult();
 
-    QRegExp regex ( QString ( "^<p style=\"margin-top:0;margin-bottom:0;\">\\s*This <strong>text</strong> is bold.\\s*</p>\\s*$" ) );
+    QRegExp regex ( QString ( "^<p\\s*>\\s*This <strong>text</strong> is bold.\\s*</p>\\s*$" ) );
 
     QVERIFY ( regex.exactMatch ( result ) );
 

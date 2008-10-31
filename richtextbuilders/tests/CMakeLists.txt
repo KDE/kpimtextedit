@@ -1,3 +1,4 @@
+ENABLE_TESTING()
 FIND_PACKAGE(KDE4 REQUIRED)
 INCLUDE_DIRECTORIES( ${KDE4_INCLUDES} ${CMAKE_CURRENT_BINARY_DIR} )
 
@@ -5,6 +6,7 @@ set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
 
 SET(krichtexteditorSources
   ../markupdirector.cpp
+  ../htmlbuilder.cpp
   )
 
 
