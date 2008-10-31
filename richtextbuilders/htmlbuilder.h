@@ -83,7 +83,7 @@ class HTMLBuilder : public AbstractMarkupBuilder
 public:
 
     /**
-Creates a new HTMLBuilder.
+    Creates a new HTMLBuilder.
     */
     HTMLBuilder();
     virtual ~HTMLBuilder();
@@ -96,21 +96,23 @@ Creates a new HTMLBuilder.
     virtual void endUnderline();
     virtual void beginStrikeout();
     virtual void endStrikeout();
-    virtual void beginForeground(const QBrush &brush);
+    virtual void beginForeground ( const QBrush &brush );
     virtual void endForeground();
-    virtual void beginBackground(const QBrush &brush);
+    virtual void beginBackground ( const QBrush &brush );
     virtual void endBackground();
-    virtual void beginLinkedAnchor(const QString &href) { m_text.append(QString("<a href=\"%1\">").arg(href)); }
+    virtual void beginLinkedAnchor ( const QString &href ) {
+        m_text.append ( QString ( "<a href=\"%1\">" ).arg ( href ) );
+    }
     virtual void endAnchor();
 
     // Maybe this stuff should just be added to a list, and then when I add literal text,
     // add some kind of style attribute in one span instead of many.
-    virtual void beginFontFamily(const QString &family);
+    virtual void beginFontFamily ( const QString &family );
     virtual void endFontFamily();
-    virtual void beginFontPointSize(int size);
+    virtual void beginFontPointSize ( int size );
     virtual void endFontPointSize();
 
-    virtual void beginParagraph(Qt::Alignment al, qreal topMargin, qreal bottomMargin, qreal leftMargin, qreal rightMargin);
+    virtual void beginParagraph ( Qt::Alignment al, qreal topMargin, qreal bottomMargin, qreal leftMargin, qreal rightMargin );
 
     virtual void beginHeader1();
     virtual void beginHeader2();
@@ -129,11 +131,11 @@ Creates a new HTMLBuilder.
     virtual void endParagraph();
     virtual void addNewline();
 
-    virtual void insertHorizontalRule(int width = -1);
+    virtual void insertHorizontalRule ( int width = -1 );
 
-    virtual void insertImage(const QString &src, qreal width, qreal height);
+    virtual void insertImage ( const QString &src, qreal width, qreal height );
 
-    virtual void beginList(QTextListFormat::Style type);
+    virtual void beginList ( QTextListFormat::Style type );
 
     virtual void endList();
 
@@ -149,12 +151,12 @@ Creates a new HTMLBuilder.
     virtual void endSubscript();
 
 
-    virtual void beginTable(qreal cellpadding, qreal cellspacing, const QString &width);
+    virtual void beginTable ( qreal cellpadding, qreal cellspacing, const QString &width );
 
     virtual void beginTableRow();
-    virtual void beginTableHeaderCell(QString width, int colspan, int rowspan);
+    virtual void beginTableHeaderCell ( QString width, int colspan, int rowspan );
 
-    virtual void beginTableCell(QString width, int colspan, int rowspan);
+    virtual void beginTableCell ( QString width, int colspan, int rowspan );
 
     virtual void endTable();
     virtual void endTableRow();
@@ -177,7 +179,7 @@ Creates a new HTMLBuilder.
     @endverbatim
 
     */
-    virtual void appendLiteralText(const QString &text);
+    virtual void appendLiteralText ( const QString &text );
 
 
     virtual QString& getResult();

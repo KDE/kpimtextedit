@@ -32,7 +32,7 @@ class BBCodeBuilder : public AbstractMarkupBuilder
 public:
 
     /**
-Creates a new BBCodeBuilder.
+    Creates a new BBCodeBuilder.
     */
     BBCodeBuilder();
 
@@ -44,27 +44,27 @@ Creates a new BBCodeBuilder.
     virtual void endUnderline();
     virtual void beginStrikeout();
     virtual void endStrikeout();
-    virtual void beginForeground(const QBrush &brush);
+    virtual void beginForeground ( const QBrush &brush );
     virtual void endForeground();
 
     // Background colour not supported by BBCode.
 
-    virtual void beginAnchor(const QString &href);
+    virtual void beginAnchor ( const QString &href );
     virtual void endAnchor();
 
     // Font family not supported by BBCode.
 
-    virtual void beginFontPointSize(int size);
+    virtual void beginFontPointSize ( int size );
     virtual void endFontPointSize();
 
-    virtual void beginParagraph(Qt::Alignment a, qreal top, qreal bottom, qreal left, qreal right);
+    virtual void beginParagraph ( Qt::Alignment a, qreal top, qreal bottom, qreal left, qreal right );
 
     virtual void endParagraph();
     virtual void addNewline();
 
-    virtual void insertImage(const QString &src, qreal width, qreal height);
+    virtual void insertImage ( const QString &src, qreal width, qreal height );
 
-    virtual void beginList(QTextListFormat::Style type);
+    virtual void beginList ( QTextListFormat::Style type );
 
     virtual void endList();
 
@@ -80,14 +80,14 @@ Creates a new BBCodeBuilder.
     virtual void endSubscript();
 
 
-    virtual void beginTable(qreal, qreal, const QString &);
+    virtual void beginTable ( qreal, qreal, const QString & );
 
     virtual void beginTableRow();
 
 
-    virtual void appendLiteralText(const QString &text);
+    virtual void appendLiteralText ( const QString &text );
 
-    const QString escape(const QString &s);
+    const QString escape ( const QString &s );
 
     virtual QString& getResult();
 

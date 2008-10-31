@@ -46,7 +46,7 @@ private slots:
     void openFile();
     void saveFile();
     void saveFileAs();
-    void saveFileAs(const QString &outputFileName);
+    void saveFileAs ( const QString &outputFileName );
     void cursorPositionChanged();
     void updateDockedWidgets();
 

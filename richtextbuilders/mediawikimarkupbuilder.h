@@ -33,7 +33,7 @@ class MediaWikiMarkupBuilder : public AbstractMarkupBuilder
 public:
 
     /**
-Creates a new MediaWikiMarkupBuilder
+    Creates a new MediaWikiMarkupBuilder
     */
     MediaWikiMarkupBuilder();
     virtual ~MediaWikiMarkupBuilder();
@@ -50,7 +50,7 @@ Creates a new MediaWikiMarkupBuilder
     virtual void endParagraph();
     virtual void addNewline();
 
-    virtual void beginAnchor(const QString &href, const QString &name);
+    virtual void beginAnchor ( const QString &href, const QString &name );
     virtual void endAnchor();
 
     virtual void beginHeader1();
@@ -67,7 +67,7 @@ Creates a new MediaWikiMarkupBuilder
     virtual void endHeader5();
     virtual void endHeader6();
 
-    virtual void beginList(QTextListFormat::Style type);
+    virtual void beginList ( QTextListFormat::Style type );
 
 
 
@@ -78,9 +78,9 @@ Creates a new MediaWikiMarkupBuilder
     virtual void endListItem();
 
 
-    virtual void appendLiteralText(const QString &text);
+    virtual void appendLiteralText ( const QString &text );
 
-    const QString escape(const QString &s);
+    const QString escape ( const QString &s );
 
     virtual QString& getResult();
 

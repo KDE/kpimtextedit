@@ -45,20 +45,19 @@
  */
 class MarkupDirector::Private
 {
-    public:
-        Private(MarkupDirector *md): q(md)
-        {
-        }
+public:
+    Private ( MarkupDirector *md ) : q ( md ) {
+    }
 
-        MarkupDirector *q;
-        AbstractMarkupBuilder *builder;
+    MarkupDirector *q;
+    AbstractMarkupBuilder *builder;
 };
 
 //@endcond
 
 
-MarkupDirector::MarkupDirector(AbstractMarkupBuilder* builder):
-    d(new Private(this))
+MarkupDirector::MarkupDirector ( AbstractMarkupBuilder* builder ) :
+        d ( new Private ( this ) )
 {
     d->builder = builder;
 }
@@ -68,51 +67,45 @@ MarkupDirector::~MarkupDirector()
     delete d;
 }
 
-void MarkupDirector::processDocumentContents(QTextFrame::iterator start, QTextFrame::iterator end)
+void MarkupDirector::processDocumentContents ( QTextFrame::iterator start, QTextFrame::iterator end )
 {
 
-    for (QTextFrame::iterator it = start; ((!it.atEnd()) && (it != end)); ++it)
-    {
+    for ( QTextFrame::iterator it = start; ( ( !it.atEnd() ) && ( it != end ) ); ++it ) {
         QTextFrame *frame = it.currentFrame();
-        if (frame)
-        {
-            QTextTable *table = dynamic_cast<QTextTable*>(frame);
-            if (table)
-            {
-                processTable(table);
+        if ( frame ) {
+            QTextTable *table = dynamic_cast<QTextTable*> ( frame );
+            if ( table ) {
+                processTable ( table );
             } else {
-                processFrame(frame);
+                processFrame ( frame );
             }
         } else {
-            processBlock(it.currentBlock());
+            processBlock ( it.currentBlock() );
         }
     }
 }
 
-void MarkupDirector::processFrame(QTextFrame* frame)
+void MarkupDirector::processFrame ( QTextFrame* frame )
 {
-    processDocumentContents(frame->begin(), frame->end());
+    processDocumentContents ( frame->begin(), frame->end() );
 }
 
-void MarkupDirector::processBlock(const QTextBlock &block)
+void MarkupDirector::processBlock ( const QTextBlock &block )
 {
-    if(block.isValid())
-    {
+    if ( block.isValid() ) {
         QTextList *list = block.textList();
-        if (list)
-        {
+        if ( list ) {
             // Just skip over if not the first item in a list.
-            if ((list->item(0) == block) && (!block.previous().textList()))
-            {
-                processList(block);
+            if ( ( list->item ( 0 ) == block ) && ( !block.previous().textList() ) ) {
+                processList ( block );
             }
         } else {
-            processBlockContents(block);
+            processBlockContents ( block );
         }
     }
 }
 
-void MarkupDirector::processTable(QTextTable *table)
+void MarkupDirector::processTable ( QTextTable *table )
 {
     QTextTableFormat format = table->format();
     QVector<QTextLength> colLengths = format.columnWidthConstraints();
@@ -120,27 +113,25 @@ void MarkupDirector::processTable(QTextTable *table)
     QTextLength tableWidth = format.width();
     QString sWidth;
 
-    if (tableWidth.type() == QTextLength::PercentageLength)
-    {
+    if ( tableWidth.type() == QTextLength::PercentageLength ) {
         sWidth = "%1%";
-        sWidth = sWidth.arg(tableWidth.rawValue());
-    } else if (tableWidth.type() == QTextLength::FixedLength)
-    {
+        sWidth = sWidth.arg ( tableWidth.rawValue() );
+    } else if ( tableWidth.type() == QTextLength::FixedLength ) {
         sWidth = "%1";
-        sWidth = sWidth.arg(tableWidth.rawValue());
+        sWidth = sWidth.arg ( tableWidth.rawValue() );
     }
 
-    d->builder->beginTable(format.cellPadding(), format.cellSpacing(), sWidth);
+    d->builder->beginTable ( format.cellPadding(), format.cellSpacing(), sWidth );
 
     int headerRowCount = format.headerRowCount();
 
     QList<QTextTableCell> alreadyProcessedCells;
 
-    for (int row = 0; row < table->rows(); ++row) {
+    for ( int row = 0; row < table->rows(); ++row ) {
         // Put a thead element around here somewhere?
         // if (row < headerRowCount)
         // {
-            // d->builder->beginTableHeader();
+        // d->builder->beginTableHeader();
         // }
 
         d->builder->beginTableRow();
@@ -149,52 +140,46 @@ void MarkupDirector::processTable(QTextTable *table)
         //http://www.webdesignfromscratch.com/html-tables.cfm
 
 
-        for (int column = 0; column < table->columns(); ++column) {
+        for ( int column = 0; column < table->columns(); ++column ) {
 
             // TODO: Cells should support alignment.
 
 
-            QTextTableCell tableCell = table->cellAt(row, column);
+            QTextTableCell tableCell = table->cellAt ( row, column );
 
             int columnSpan = tableCell.columnSpan();
             int rowSpan = tableCell.rowSpan();
-            if ((rowSpan > 1) || (columnSpan >1))
-            {
-                if (alreadyProcessedCells.contains(tableCell))
-                {
+            if ( ( rowSpan > 1 ) || ( columnSpan > 1 ) ) {
+                if ( alreadyProcessedCells.contains ( tableCell ) ) {
                     // Already processed this cell. Move on.
                     continue;
                 } else {
-                    alreadyProcessedCells.append(tableCell);
+                    alreadyProcessedCells.append ( tableCell );
                 }
             }
 
-            QTextLength cellWidth = colLengths.at(column);
+            QTextLength cellWidth = colLengths.at ( column );
 
             QString sCellWidth;
 
-            if (cellWidth.type() == QTextLength::PercentageLength)
-            {
+            if ( cellWidth.type() == QTextLength::PercentageLength ) {
                 sCellWidth = "%1%";
-                sCellWidth = sCellWidth.arg(cellWidth.rawValue());
-            } else if (cellWidth.type() == QTextLength::FixedLength)
-            {
+                sCellWidth = sCellWidth.arg ( cellWidth.rawValue() );
+            } else if ( cellWidth.type() == QTextLength::FixedLength ) {
                 sCellWidth = "%1";
-                sCellWidth = sCellWidth.arg(cellWidth.rawValue());
+                sCellWidth = sCellWidth.arg ( cellWidth.rawValue() );
             }
 
             // TODO: Use THEAD instead
-            if (row < headerRowCount)
-            {
-                d->builder->beginTableHeaderCell( sCellWidth, columnSpan, rowSpan );
+            if ( row < headerRowCount ) {
+                d->builder->beginTableHeaderCell ( sCellWidth, columnSpan, rowSpan );
             } else {
-                d->builder->beginTableCell( sCellWidth, columnSpan, rowSpan );
+                d->builder->beginTableCell ( sCellWidth, columnSpan, rowSpan );
             }
 
-            processTableCell(tableCell);
+            processTableCell ( tableCell );
 
-            if (row < headerRowCount)
-            {
+            if ( row < headerRowCount ) {
                 d->builder->endTableHeaderCell();
             } else {
                 d->builder->endTableCell();
@@ -205,66 +190,55 @@ void MarkupDirector::processTable(QTextTable *table)
     d->builder->endTable();
 }
 
-void MarkupDirector::processTableCell(const QTextTableCell &cell)
+void MarkupDirector::processTableCell ( const QTextTableCell &cell )
 {
-    processDocumentContents(cell.begin(), cell.end());
+    processDocumentContents ( cell.begin(), cell.end() );
 }
 
-void MarkupDirector::processList(const QTextBlock &ablock)
+void MarkupDirector::processList ( const QTextBlock &ablock )
 {
-    QTextBlock block(ablock);
+    QTextBlock block ( ablock );
 
     QTextList *list = block.textList();
-    if (!list)
-    {
+    if ( !list ) {
         return;
     }
 
     QList<QTextList*> lists;
 
-    while (block.isValid() && block.textList())
-    {
-        if (list->item(0) == block)
-        {
+    while ( block.isValid() && block.textList() ) {
+        if ( list->item ( 0 ) == block ) {
             // Item zero in a list is the first block in the list of blocks that make up a list.
             QTextListFormat::Style style = list->format().style();
-            d->builder->beginList(style);
+            d->builder->beginList ( style );
 
-            lists.append(list);
+            lists.append ( list );
         }
 
         d->builder->beginListItem();
-        processBlockContents(block);
+        processBlockContents ( block );
         d->builder->endListItem();
 
         block = block.next();
 
-        if (block.isValid())
-        {
+        if ( block.isValid() ) {
             QTextList *newList = block.textList();
 
-            if (!newList)
-            {
-                while (!lists.isEmpty())
-                {
+            if ( !newList ) {
+                while ( !lists.isEmpty() ) {
                     lists.removeLast();
                     d->builder->endList();
                 }
-            } else if (newList == list)
-            {
+            } else if ( newList == list ) {
                 //Next block is on the same list; Handled on next iteration.
                 continue;
-            }
-            else if (newList != list)
-            {
-                if (newList->item(0) == block){
+            } else if ( newList != list ) {
+                if ( newList->item ( 0 ) == block ) {
                     list = newList;
                     continue;
                 } else {
-                    while (!lists.isEmpty())
-                    {
-                        if (block.textList() != lists.last())
-                        {
+                    while ( !lists.isEmpty() ) {
+                        if ( block.textList() != lists.last() ) {
                             lists.removeLast();
                             d->builder->endList();
                         } else {
@@ -276,8 +250,7 @@ void MarkupDirector::processList(const QTextBlock &ablock)
             }
         } else {
             // Next block is not valid. Maybe at EOF. Close all open lists.
-            while (!lists.isEmpty())
-            {
+            while ( !lists.isEmpty() ) {
                 lists.removeLast();
                 d->builder->endList();
             }
@@ -285,40 +258,37 @@ void MarkupDirector::processList(const QTextBlock &ablock)
     }
 }
 
-void MarkupDirector::processBlockContents(const QTextBlock &block)
+void MarkupDirector::processBlockContents ( const QTextBlock &block )
 {
     QTextBlockFormat blockFormat = block.blockFormat();
     Qt::Alignment blockAlignment = blockFormat.alignment();
 
     // TODO: decide when to use <h1> etc.
 
-    if (blockFormat.hasProperty(QTextFormat::BlockTrailingHorizontalRulerWidth)) {
+    if ( blockFormat.hasProperty ( QTextFormat::BlockTrailingHorizontalRulerWidth ) ) {
         d->builder->insertHorizontalRule();
         return;
     }
 
-    if(block.length() == 1 )
-    {
+    if ( block.length() == 1 ) {
         // If the length is one, it is only the newline and the block is empty.
         // TODO: Find a better way of determining this.
         d->builder->addNewline();
 
     } else {
 
-        d->builder->beginParagraph( blockAlignment,
-                                    blockFormat.topMargin(),
-                                    blockFormat.bottomMargin(),
-                                    blockFormat.leftMargin(),
-                                    blockFormat.rightMargin()
-        );
+        d->builder->beginParagraph ( blockAlignment,
+                                     blockFormat.topMargin(),
+                                     blockFormat.bottomMargin(),
+                                     blockFormat.leftMargin(),
+                                     blockFormat.rightMargin()
+                                   );
 
         QTextBlock::iterator it;
-        for (it = block.begin(); !it.atEnd(); ++it )
-        {
+        for ( it = block.begin(); !it.atEnd(); ++it ) {
             QTextFragment currentFragment = it.fragment();
-            if (currentFragment.isValid())
-            {
-                processFragment(currentFragment);
+            if ( currentFragment.isValid() ) {
+                processFragment ( currentFragment );
             }
         }
 
@@ -326,13 +296,13 @@ void MarkupDirector::processBlockContents(const QTextBlock &block)
     }
 }
 
-void MarkupDirector::processFragment(const QTextFragment &fragment)
+void MarkupDirector::processFragment ( const QTextFragment &fragment )
 {
     QTextCharFormat fragmentFormat = fragment.charFormat();
 
-    if (fragmentFormat.isImageFormat()) {
+    if ( fragmentFormat.isImageFormat() ) {
         QTextImageFormat imageFormat = fragmentFormat.toImageFormat();
-        d->builder->insertImage(imageFormat.name(), imageFormat.width(), imageFormat.height());
+        d->builder->insertImage ( imageFormat.name(), imageFormat.width(), imageFormat.height() );
     } else {
         int fontWeight = fragmentFormat.fontWeight();
         bool fontItalic = fragmentFormat.fontItalic();
@@ -347,128 +317,108 @@ void MarkupDirector::processFragment(const QTextFragment &fragment)
         QString anchorHref = fragmentFormat.anchorHref();
 
         QTextCharFormat::VerticalAlignment vAlign = fragmentFormat.verticalAlignment();
-        bool superscript = (vAlign == QTextCharFormat::AlignSuperScript);
-        bool subscript = (vAlign == QTextCharFormat::AlignSubScript);
+        bool superscript = ( vAlign == QTextCharFormat::AlignSuperScript );
+        bool subscript = ( vAlign == QTextCharFormat::AlignSubScript );
 
-        if (superscript)
-        {
+        if ( superscript ) {
             d->builder->beginSuperscript();
         }
 
-        if (subscript)
-        {
+        if ( subscript ) {
             d->builder->beginSubscript();
         }
 
-        if (!anchorHref.isEmpty())
-        {
-            d->builder->beginLinkedAnchor(anchorHref);
+        if ( !anchorHref.isEmpty() ) {
+            d->builder->beginLinkedAnchor ( anchorHref );
         }
 
-        if (fontWeight == QFont::Bold)
-        {
+        if ( fontWeight == QFont::Bold ) {
             d->builder->beginStrong();
         }
 
-        if (fontItalic)
-        {
+        if ( fontItalic ) {
             d->builder->beginEmph();
         }
 
-        if (fontUnderline)
-        {
+        if ( fontUnderline ) {
             d->builder->beginUnderline();
         }
 
-        if (fontStrikeout)
-        {
+        if ( fontStrikeout ) {
             d->builder->beginStrikeout();
         }
 
-        if (fontForeground != Qt::NoBrush)
-        {
-            d->builder->beginForeground(fontForeground);
+        if ( fontForeground != Qt::NoBrush ) {
+            d->builder->beginForeground ( fontForeground );
         }
 
-        if (fontBackground != Qt::NoBrush)
-        {
+        if ( fontBackground != Qt::NoBrush ) {
             // QTextCharFormat::background() returns a Qt::NoBrush brush if it hasn't been set
             // explicitly by the user.
-            d->builder->beginBackground(fontBackground);
+            d->builder->beginBackground ( fontBackground );
         }
 
-        if (!fontFamily.isEmpty()){
+        if ( !fontFamily.isEmpty() ) {
             // This is empty if it has not been set explicitly by the user.
-            d->builder->beginFontFamily(fontFamily);
+            d->builder->beginFontFamily ( fontFamily );
         }
 
-        if (QTextCharFormat().font().pointSize() != fontPointSize)
-        {
-            d->builder->beginFontPointSize(fontPointSize);
+        if ( QTextCharFormat().font().pointSize() != fontPointSize ) {
+            d->builder->beginFontPointSize ( fontPointSize );
         }
 
-        d->builder->appendLiteralText(fragment.text());
+        d->builder->appendLiteralText ( fragment.text() );
 
-        if (QTextCharFormat().font().pointSize() != fontPointSize)
-        {
+        if ( QTextCharFormat().font().pointSize() != fontPointSize ) {
             d->builder->endFontPointSize();
         }
 
-        if (!fontFamily.isEmpty()){
+        if ( !fontFamily.isEmpty() ) {
             d->builder->endFontFamily();
         }
 
-        if (fontBackground != Qt::NoBrush)
-        {
+        if ( fontBackground != Qt::NoBrush ) {
             d->builder->endBackground();
         }
 
-        if (fontForeground != Qt::NoBrush)
-        {
+        if ( fontForeground != Qt::NoBrush ) {
             d->builder->endForeground();
         }
 
-        if (fontStrikeout)
-        {
+        if ( fontStrikeout ) {
             d->builder->endStrikeout();
         }
 
-        if (fontUnderline)
-        {
+        if ( fontUnderline ) {
             d->builder->endUnderline();
         }
 
-        if (fontItalic)
-        {
+        if ( fontItalic ) {
             d->builder->endEmph();
         }
 
-        if (fontWeight == QFont::Bold)
-        {
+        if ( fontWeight == QFont::Bold ) {
             d->builder->endStrong();
         }
 
-        if (!anchorHref.isEmpty())
-        {
+        if ( !anchorHref.isEmpty() ) {
             d->builder->endAnchor();
         }
 
 
-        if (subscript)
-        {
+        if ( subscript ) {
             d->builder->endSubscript();
         }
 
-        if (superscript)
-        {
+        if ( superscript ) {
             d->builder->endSuperscript();
         }
 
     }
 }
 
-void MarkupDirector::constructContent(QTextDocument* doc)
+void MarkupDirector::constructContent ( QTextDocument* doc )
 {
     QTextFrame *rootFrame = doc->rootFrame();
-    processFrame(rootFrame);
+    processFrame ( rootFrame );
 }

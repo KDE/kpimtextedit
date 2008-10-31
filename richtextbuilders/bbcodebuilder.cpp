@@ -24,117 +24,193 @@
 #include "bbcodebuilder.h"
 #include <kdebug.h>
 
-BBCodeBuilder::BBCodeBuilder() {
+BBCodeBuilder::BBCodeBuilder()
+{
 
     currentAlignment = Qt::AlignLeft; //Default value
 }
 
-void BBCodeBuilder::beginStrong() { m_text.append("[B]"); }
-void BBCodeBuilder::endStrong() { m_text.append("[/B]"); }
-void BBCodeBuilder::beginEmph() { m_text.append("[I]"); }
-void BBCodeBuilder::endEmph() { m_text.append("[/I]"); }
-void BBCodeBuilder::beginUnderline() { m_text.append("[U]"); }
-void BBCodeBuilder::endUnderline() { m_text.append("[/U]"); }
-void BBCodeBuilder::beginStrikeout() { m_text.append("[S]"); }
-void BBCodeBuilder::endStrikeout() { m_text.append("[/S]"); }
-void BBCodeBuilder::beginForeground(const QBrush &brush) { m_text.append(QString("[COLOR=%1]").arg(brush.color().name())); }
-void BBCodeBuilder::endForeground() { m_text.append("[/COLOR]"); }
+void BBCodeBuilder::beginStrong()
+{
+    m_text.append ( "[B]" );
+}
+void BBCodeBuilder::endStrong()
+{
+    m_text.append ( "[/B]" );
+}
+void BBCodeBuilder::beginEmph()
+{
+    m_text.append ( "[I]" );
+}
+void BBCodeBuilder::endEmph()
+{
+    m_text.append ( "[/I]" );
+}
+void BBCodeBuilder::beginUnderline()
+{
+    m_text.append ( "[U]" );
+}
+void BBCodeBuilder::endUnderline()
+{
+    m_text.append ( "[/U]" );
+}
+void BBCodeBuilder::beginStrikeout()
+{
+    m_text.append ( "[S]" );
+}
+void BBCodeBuilder::endStrikeout()
+{
+    m_text.append ( "[/S]" );
+}
+void BBCodeBuilder::beginForeground ( const QBrush &brush )
+{
+    m_text.append ( QString ( "[COLOR=%1]" ).arg ( brush.color().name() ) );
+}
+void BBCodeBuilder::endForeground()
+{
+    m_text.append ( "[/COLOR]" );
+}
 
 // Background colour not supported by BBCode.
 
-void BBCodeBuilder::beginAnchor(const QString &href) { m_text.append(QString("[URL=%1]").arg(href)); }
-void BBCodeBuilder::endAnchor() { m_text.append("[/URL]"); }
+void BBCodeBuilder::beginAnchor ( const QString &href )
+{
+    m_text.append ( QString ( "[URL=%1]" ).arg ( href ) );
+}
+void BBCodeBuilder::endAnchor()
+{
+    m_text.append ( "[/URL]" );
+}
 
 // Font family not supported by BBCode.
 
-void BBCodeBuilder::beginFontPointSize(int size) { m_text.append(QString("[SIZE=%1]").arg(QString::number(size))); }
-void BBCodeBuilder::endFontPointSize() { m_text.append("[/SIZE]"); }
+void BBCodeBuilder::beginFontPointSize ( int size )
+{
+    m_text.append ( QString ( "[SIZE=%1]" ).arg ( QString::number ( size ) ) );
+}
+void BBCodeBuilder::endFontPointSize()
+{
+    m_text.append ( "[/SIZE]" );
+}
 
-void BBCodeBuilder::beginParagraph(Qt::Alignment a, qreal top, qreal bottom, qreal left, qreal right) {
-    Q_UNUSED(top);
-    Q_UNUSED(bottom);
-    Q_UNUSED(left);
-    Q_UNUSED(right);
-    if (a & Qt::AlignRight){
-        m_text.append("\n[Right]");
-    }
-    else if (a & Qt::AlignHCenter){
-        m_text.append("\n[CENTER]");
+void BBCodeBuilder::beginParagraph ( Qt::Alignment a, qreal top, qreal bottom, qreal left, qreal right )
+{
+    Q_UNUSED ( top );
+    Q_UNUSED ( bottom );
+    Q_UNUSED ( left );
+    Q_UNUSED ( right );
+    if ( a & Qt::AlignRight ) {
+        m_text.append ( "\n[Right]" );
+    } else if ( a & Qt::AlignHCenter ) {
+        m_text.append ( "\n[CENTER]" );
     }
     // LEFT is also supported in BBCode, but ignored.
     currentAlignment = a;
 }
-void BBCodeBuilder::endParagraph() {
-    if (currentAlignment & Qt::AlignRight){
-        m_text.append("\n[/Right]\n");
-    }
-    else if (currentAlignment & Qt::AlignHCenter){
-        m_text.append("\n[/CENTER]\n");
-    }
-    else{
-        m_text.append("\n");
+void BBCodeBuilder::endParagraph()
+{
+    if ( currentAlignment & Qt::AlignRight ) {
+        m_text.append ( "\n[/Right]\n" );
+    } else if ( currentAlignment & Qt::AlignHCenter ) {
+        m_text.append ( "\n[/CENTER]\n" );
+    } else {
+        m_text.append ( "\n" );
     }
     currentAlignment = Qt::AlignLeft;
 
 }
-void BBCodeBuilder::addNewline() { m_text.append("\n"); }
-
-void BBCodeBuilder::insertImage(const QString &src, qreal width, qreal height) {
-    Q_UNUSED(width);
-    Q_UNUSED(height);
-    m_text.append(QString("[IMG]%1[/IMG]").arg(src));
+void BBCodeBuilder::addNewline()
+{
+    m_text.append ( "\n" );
 }
 
-void BBCodeBuilder::beginList(QTextListFormat::Style type) {
-    switch(type){
+void BBCodeBuilder::insertImage ( const QString &src, qreal width, qreal height )
+{
+    Q_UNUSED ( width );
+    Q_UNUSED ( height );
+    m_text.append ( QString ( "[IMG]%1[/IMG]" ).arg ( src ) );
+}
+
+void BBCodeBuilder::beginList ( QTextListFormat::Style type )
+{
+    switch ( type ) {
     case QTextListFormat::ListDisc:
     case QTextListFormat::ListCircle:
     case QTextListFormat::ListSquare:
-        m_text.append("[LIST]\n"); // Unordered lists are all disc type in BBCode.
+        m_text.append ( "[LIST]\n" ); // Unordered lists are all disc type in BBCode.
         break;
     case QTextListFormat::ListDecimal:
-        m_text.append("[LIST=1]\n");
+        m_text.append ( "[LIST=1]\n" );
         break;
     case QTextListFormat::ListLowerAlpha:
-        m_text.append("[LIST=a]\n");
+        m_text.append ( "[LIST=a]\n" );
         break;
     case QTextListFormat::ListUpperAlpha:
-        m_text.append("[LIST=A]\n");
+        m_text.append ( "[LIST=A]\n" );
         break;
     default:
         break;
     }
 }
 
-void BBCodeBuilder::endList() { m_text.append("[/LIST]\n"); }
-
-
-void BBCodeBuilder::beginListItem() { m_text.append("[*] "); }
-
-void BBCodeBuilder::beginSuperscript() { m_text.append("[SUP]"); }
-
-void BBCodeBuilder::endSuperscript() { m_text.append("[/SUP]"); }
-
-void BBCodeBuilder::beginSubscript() { m_text.append("[SUB]"); }
-
-void BBCodeBuilder::endSubscript() { m_text.append("[/SUB]"); }
-
-
-void BBCodeBuilder::beginTable(qreal, qreal, const QString &) { m_text.append("[TABLE]\n"); }
-
-void BBCodeBuilder::beginTableRow() { m_text.append("[/TABLE]"); }
-
-
-void BBCodeBuilder::appendLiteralText(const QString &text) { m_text.append(escape(text)); }
-
-const QString BBCodeBuilder::escape(const QString &s)
+void BBCodeBuilder::endList()
 {
-    if (s.contains("["))
-    {
-        return QString("[NOPARSE]" + s + "[/NOPARSE]" );
+    m_text.append ( "[/LIST]\n" );
+}
+
+
+void BBCodeBuilder::beginListItem()
+{
+    m_text.append ( "[*] " );
+}
+
+void BBCodeBuilder::beginSuperscript()
+{
+    m_text.append ( "[SUP]" );
+}
+
+void BBCodeBuilder::endSuperscript()
+{
+    m_text.append ( "[/SUP]" );
+}
+
+void BBCodeBuilder::beginSubscript()
+{
+    m_text.append ( "[SUB]" );
+}
+
+void BBCodeBuilder::endSubscript()
+{
+    m_text.append ( "[/SUB]" );
+}
+
+
+void BBCodeBuilder::beginTable ( qreal, qreal, const QString & )
+{
+    m_text.append ( "[TABLE]\n" );
+}
+
+void BBCodeBuilder::beginTableRow()
+{
+    m_text.append ( "[/TABLE]" );
+}
+
+
+void BBCodeBuilder::appendLiteralText ( const QString &text )
+{
+    m_text.append ( escape ( text ) );
+}
+
+const QString BBCodeBuilder::escape ( const QString &s )
+{
+    if ( s.contains ( "[" ) ) {
+        return QString ( "[NOPARSE]" + s + "[/NOPARSE]" );
     }
     return s;
 }
 
-virtual QString& BBCodeBuilder::getResult() { return m_text; }
+virtual QString& BBCodeBuilder::getResult()
+{
+    return m_text;
+}
 

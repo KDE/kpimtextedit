@@ -86,7 +86,7 @@ becomes:
 */
 class PlainTextMarkupBuilder : public AbstractMarkupBuilder
 {
-    public:
+public:
     /** Construct a new PlainTextMarkupBuilder. */
     PlainTextMarkupBuilder();
 
@@ -99,16 +99,16 @@ class PlainTextMarkupBuilder : public AbstractMarkupBuilder
     virtual void beginStrikeout();
     virtual void endStrikeout();
 
-    virtual void beginLinkedAnchor(const QString &href);
+    virtual void beginLinkedAnchor ( const QString &href );
 
     virtual void endAnchor();
 
     virtual void endParagraph();
     virtual void addNewline();
-    virtual void insertImage(const QString &src, qreal width, qreal height);
+    virtual void insertImage ( const QString &src, qreal width, qreal height );
 
 
-    virtual void beginList(QTextListFormat::Style style);
+    virtual void beginList ( QTextListFormat::Style style );
 
     virtual void endList();
 
@@ -122,7 +122,7 @@ class PlainTextMarkupBuilder : public AbstractMarkupBuilder
     @param The number to convert
     @return The letter string representation of the number.
     */
-    QString getLetterString(int itemNumber);
+    QString getLetterString ( int itemNumber );
 
     virtual void endListItem();
 
@@ -135,7 +135,7 @@ class PlainTextMarkupBuilder : public AbstractMarkupBuilder
 
     virtual void endSubscript();
 
-    virtual void appendLiteralText(const QString &text );
+    virtual void appendLiteralText ( const QString &text );
 
     /**
     Returns the finalised plain text markup, including references at the end.

@@ -27,48 +27,119 @@
 MediaWikiMarkupBuilder::MediaWikiMarkupBuilder() {}
 MediaWikiMarkupBuilder::~MediaWikiMarkupBuilder() {}
 
-void MediaWikiMarkupBuilder::beginStrong() { m_text.append("'''"); }
-void MediaWikiMarkupBuilder::endStrong() { m_text.append("'''"); }
-void MediaWikiMarkupBuilder::beginEmph() { m_text.append("''"); }
-void MediaWikiMarkupBuilder::endEmph() { m_text.append("''"); }
-void MediaWikiMarkupBuilder::beginUnderline() { m_text.append("<u>"); }
-void MediaWikiMarkupBuilder::endUnderline() { m_text.append("</u>"); }
-void MediaWikiMarkupBuilder::beginStrikeout() { m_text.append("<s>"); }
-void MediaWikiMarkupBuilder::endStrikeout() { m_text.append("</s>"); }
-
-void MediaWikiMarkupBuilder::endParagraph() { m_text.append("\n"); }
-void MediaWikiMarkupBuilder::addNewline() { m_text.append("\n"); }
-
-void MediaWikiMarkupBuilder::beginAnchor(const QString &href, const QString &name) {
-    Q_UNUSED(name);
-    m_text.append(QString("[%1 ").arg(href));
+void MediaWikiMarkupBuilder::beginStrong()
+{
+    m_text.append ( "'''" );
 }
-void MediaWikiMarkupBuilder::endAnchor() { m_text.append("]"); }
+void MediaWikiMarkupBuilder::endStrong()
+{
+    m_text.append ( "'''" );
+}
+void MediaWikiMarkupBuilder::beginEmph()
+{
+    m_text.append ( "''" );
+}
+void MediaWikiMarkupBuilder::endEmph()
+{
+    m_text.append ( "''" );
+}
+void MediaWikiMarkupBuilder::beginUnderline()
+{
+    m_text.append ( "<u>" );
+}
+void MediaWikiMarkupBuilder::endUnderline()
+{
+    m_text.append ( "</u>" );
+}
+void MediaWikiMarkupBuilder::beginStrikeout()
+{
+    m_text.append ( "<s>" );
+}
+void MediaWikiMarkupBuilder::endStrikeout()
+{
+    m_text.append ( "</s>" );
+}
 
-void MediaWikiMarkupBuilder::beginHeader1() { m_text.append("= "); }
-void MediaWikiMarkupBuilder::beginHeader2() { m_text.append("== "); }
-void MediaWikiMarkupBuilder::beginHeader3() { m_text.append("=== "); }
-void MediaWikiMarkupBuilder::beginHeader4() { m_text.append("==== "); }
-void MediaWikiMarkupBuilder::beginHeader5() { m_text.append("===== "); }
-void MediaWikiMarkupBuilder::beginHeader6() { m_text.append("====== "); }
+void MediaWikiMarkupBuilder::endParagraph()
+{
+    m_text.append ( "\n" );
+}
+void MediaWikiMarkupBuilder::addNewline()
+{
+    m_text.append ( "\n" );
+}
 
-void MediaWikiMarkupBuilder::endHeader1() { m_text.append(" =\n"); }
-void MediaWikiMarkupBuilder::endHeader2() { m_text.append(" ==\n"); }
-void MediaWikiMarkupBuilder::endHeader3() { m_text.append(" ===\n"); }
-void MediaWikiMarkupBuilder::endHeader4() { m_text.append(" ====\n"); }
-void MediaWikiMarkupBuilder::endHeader5() { m_text.append(" =====\n"); }
-void MediaWikiMarkupBuilder::endHeader6() { m_text.append(" ======\n"); }
+void MediaWikiMarkupBuilder::beginAnchor ( const QString &href, const QString &name )
+{
+    Q_UNUSED ( name );
+    m_text.append ( QString ( "[%1 " ).arg ( href ) );
+}
+void MediaWikiMarkupBuilder::endAnchor()
+{
+    m_text.append ( "]" );
+}
 
-void MediaWikiMarkupBuilder::beginList(QTextListFormat::Style type) {
-    currentListItemStyles.append(type);
-    switch(type){
+void MediaWikiMarkupBuilder::beginHeader1()
+{
+    m_text.append ( "= " );
+}
+void MediaWikiMarkupBuilder::beginHeader2()
+{
+    m_text.append ( "== " );
+}
+void MediaWikiMarkupBuilder::beginHeader3()
+{
+    m_text.append ( "=== " );
+}
+void MediaWikiMarkupBuilder::beginHeader4()
+{
+    m_text.append ( "==== " );
+}
+void MediaWikiMarkupBuilder::beginHeader5()
+{
+    m_text.append ( "===== " );
+}
+void MediaWikiMarkupBuilder::beginHeader6()
+{
+    m_text.append ( "====== " );
+}
+
+void MediaWikiMarkupBuilder::endHeader1()
+{
+    m_text.append ( " =\n" );
+}
+void MediaWikiMarkupBuilder::endHeader2()
+{
+    m_text.append ( " ==\n" );
+}
+void MediaWikiMarkupBuilder::endHeader3()
+{
+    m_text.append ( " ===\n" );
+}
+void MediaWikiMarkupBuilder::endHeader4()
+{
+    m_text.append ( " ====\n" );
+}
+void MediaWikiMarkupBuilder::endHeader5()
+{
+    m_text.append ( " =====\n" );
+}
+void MediaWikiMarkupBuilder::endHeader6()
+{
+    m_text.append ( " ======\n" );
+}
+
+void MediaWikiMarkupBuilder::beginList ( QTextListFormat::Style type )
+{
+    currentListItemStyles.append ( type );
+    switch ( type ) {
     case QTextListFormat::ListDisc:
     case QTextListFormat::ListCircle:
     case QTextListFormat::ListSquare:
     case QTextListFormat::ListDecimal:
     case QTextListFormat::ListLowerAlpha:
     case QTextListFormat::ListUpperAlpha:
-        m_text.append("\n");
+        m_text.append ( "\n" );
         break;
     default:
         break;
@@ -77,44 +148,53 @@ void MediaWikiMarkupBuilder::beginList(QTextListFormat::Style type) {
 
 
 
-void MediaWikiMarkupBuilder::endList() {
-    m_text.append("\n");
+void MediaWikiMarkupBuilder::endList()
+{
+    m_text.append ( "\n" );
     currentListItemStyles.removeLast();
 }
 
 
-void MediaWikiMarkupBuilder::beginListItem() {
+void MediaWikiMarkupBuilder::beginListItem()
+{
 
-    switch( currentListItemStyles.last() )
-    {
+    switch ( currentListItemStyles.last() ) {
     case QTextListFormat::ListDisc:
     case QTextListFormat::ListCircle:
     case QTextListFormat::ListSquare:
-        m_text.append("* "); // Unordered lists are all disc type in MediaWikiMarkup.
+        m_text.append ( "* " ); // Unordered lists are all disc type in MediaWikiMarkup.
         break;
     case QTextListFormat::ListDecimal:
     case QTextListFormat::ListLowerAlpha:
     case QTextListFormat::ListUpperAlpha:
-        m_text.append("# ");
+        m_text.append ( "# " );
         break;
     default:
         break;
     }
 }
-void MediaWikiMarkupBuilder::endListItem() { m_text.append("\n"); }
-
-
-void MediaWikiMarkupBuilder::appendLiteralText(const QString &text) { m_text.append(escape(text)); }
-
-const QString MediaWikiMarkupBuilder::escape(const QString &s)
+void MediaWikiMarkupBuilder::endListItem()
 {
-    if ( s.contains( "<" ) ) // TODO: This could contain more. "''" and "[" for example
-    {
-        return QString( "<nowiki>" + s + "</nowiki>" );
+    m_text.append ( "\n" );
+}
+
+
+void MediaWikiMarkupBuilder::appendLiteralText ( const QString &text )
+{
+    m_text.append ( escape ( text ) );
+}
+
+const QString MediaWikiMarkupBuilder::escape ( const QString &s )
+{
+    if ( s.contains ( "<" ) ) {   // TODO: This could contain more. "''" and "[" for example
+        return QString ( "<nowiki>" + s + "</nowiki>" );
     }
     return s;
 }
 
-QString& MediaWikiMarkupBuilder::getResult() { return m_text; }
+QString& MediaWikiMarkupBuilder::getResult()
+{
+    return m_text;
+}
 
 

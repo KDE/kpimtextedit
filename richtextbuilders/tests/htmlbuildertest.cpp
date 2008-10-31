@@ -19,18 +19,18 @@ private slots:
 void TestHtmlOutput::testSingleFormat()
 {
     QTextDocument *doc = new QTextDocument();
-    doc->setHtml("This <b>text</b> is bold.");
+    doc->setHtml ( "This <b>text</b> is bold." );
 
     HTMLBuilder *hb = new HTMLBuilder();
-    MarkupDirector *md = new MarkupDirector(hb);
-    md->constructContent(doc);
+    MarkupDirector *md = new MarkupDirector ( hb );
+    md->constructContent ( doc );
     QString result = hb->getResult();
 
-    QRegExp regex(QString("^<p style=\"margin-top:0;margin-bottom:0;\">\\s*This <strong>text</strong> is bold.\\s*</p>\\s*$"));
+    QRegExp regex ( QString ( "^<p style=\"margin-top:0;margin-bottom:0;\">\\s*This <strong>text</strong> is bold.\\s*</p>\\s*$" ) );
 
-    QVERIFY(regex.exactMatch(result));
-    
+    QVERIFY ( regex.exactMatch ( result ) );
+
 }
 
-QTEST_KDEMAIN(TestHtmlOutput, GUI)
+QTEST_KDEMAIN ( TestHtmlOutput, GUI )
 #include "htmlbuildertest.moc"
