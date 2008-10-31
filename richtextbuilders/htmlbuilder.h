@@ -33,10 +33,13 @@ The output contains only the body content, not the head element or other metadat
 
 eg:
 
+@code
     This is some <strong>formatted content</strong> in a paragraph.
-    
-instead of: 
+@endcode
 
+instead of:
+
+@code
     <head>
     <title>Some text</title>
     <head>
@@ -44,23 +47,29 @@ instead of:
         This is some <strong>formatted content</strong> in a paragraph.
     </body>
     </html>
+@endcode
 
 Such tags should be created separately. For example:
 
-        AbstractMarkupBuilder *b = new HTMLBuilder();        
+@code
+        AbstractMarkupBuilder *b = new HTMLBuilder();
         MarkupDirector *md = new MarkupDirector(b);
-        md->constructContent();        
+        md->constructContent();
         QString cleanHtml("<head>\n<title>%1</title>\n</head>\n<body>%2</body>\n</html>")
                     .arg(document.metaInformation(QTextDocument::DocumentTitle))
-                    .arg(b->getOutput());   
+                    .arg(b->getOutput());
         QFile.write(cleanHtml);
+@endcode
 
 Font formatting information on elements is represented by individual span elements.
 eg:
+@code
     <span style"color:blue;"><span style="background-color:red;">Blue text on red background</span></span>
-instead of 
+@endcode
+instead of
+@code
     <span style="color:blue;background-color:red;">Blue text on red background</span>
-    
+@endcode
  It my be possible to change this if neccessary.
 
 @todo Move this to kdelibs when tested and prooven.
@@ -76,172 +85,102 @@ public:
     /**
 Creates a new HTMLBuilder.
     */
-    HTMLBuilder() {}
+    HTMLBuilder();
+    virtual ~HTMLBuilder();
 
-    virtual void beginStrong() { m_text.append("<strong>"); }
-    virtual void endStrong() { m_text.append("</strong>"); }
-    virtual void beginEmph() { m_text.append("<em>"); }
-    virtual void endEmph() { m_text.append("</em>"); }
-    virtual void beginUnderline() { m_text.append("<u>"); }
-    virtual void endUnderline() { m_text.append("</u>"); }
-    virtual void beginStrikeout() { m_text.append("<s>"); } 
-    virtual void endStrikeout() { m_text.append("</s>"); }
-    virtual void beginForeground(const QBrush &brush) { m_text.append(QString("<span style=\"color:%1;\">").arg(brush.color().name())); }
-    virtual void endForeground() { m_text.append("</span>"); }
-    virtual void beginBackground(const QBrush &brush) { m_text.append(QString("<span style=\"background-color:%1;\">").arg(brush.color().name())); }
-    virtual void endBackground() { m_text.append("</span>"); }
-    virtual void beginAnchor(const QString &href) { m_text.append(QString("<a href=\"%1\">").arg(href)); }
-    virtual void endAnchor() { m_text.append("</a>"); }
+    virtual void beginStrong();
+    virtual void endStrong();
+    virtual void beginEmph();
+    virtual void endEmph();
+    virtual void beginUnderline();
+    virtual void endUnderline();
+    virtual void beginStrikeout();
+    virtual void endStrikeout();
+    virtual void beginForeground(const QBrush &brush);
+    virtual void endForeground();
+    virtual void beginBackground(const QBrush &brush);
+    virtual void endBackground();
+    virtual void beginLinkedAnchor(const QString &href) { m_text.append(QString("<a href=\"%1\">").arg(href)); }
+    virtual void endAnchor();
 
     // Maybe this stuff should just be added to a list, and then when I add literal text,
     // add some kind of style attribute in one span instead of many.
-    virtual void beginFontFamily(const QString &family) { m_text.append(QString("<span style=\"font-family:%1;\">").arg(family)); }
-    virtual void endFontFamily() { m_text.append("</span>"); }
-    virtual void beginFontPointSize(int size) { m_text.append(QString("<span style=\"font-size:%1pt;\">").arg(QString::number(size))); }
-    virtual void endFontPointSize() { m_text.append("</span>"); }
+    virtual void beginFontFamily(const QString &family);
+    virtual void endFontFamily();
+    virtual void beginFontPointSize(int size);
+    virtual void endFontPointSize();
 
-    virtual void beginParagraph(Qt::Alignment al, qreal topMargin, qreal bottomMargin)
-    {
-        QString styleString("style=\"margin-top:%1;margin-bottom:%2;\">\n");
-        styleString = styleString.arg(topMargin).arg(bottomMargin);
-        if (al & Qt::AlignRight){
-            m_text.append("<p align=\"right\" ");
-        }
-        else if (al & Qt::AlignHCenter){
-            m_text.append("<p align=\"center\" ");
-        }
-        else if (al & Qt::AlignJustify){
-            m_text.append("<p align=\"justify\" ");
-        }
-        else if (al & Qt::AlignLeft){
-            m_text.append("<p ");
-        }
-        else{
-            m_text.append("<p ");
-        }
-        m_text.append(styleString);
-    }
-    
-    virtual void beginParagraph(Qt::Alignment al)
-    {
-        if (al & Qt::AlignRight){
-            m_text.append("<p align=\"right\" >");
-        }
-        else if (al & Qt::AlignHCenter){
-            m_text.append("<p align=\"center\" >");
-        }
-        else if (al & Qt::AlignJustify){
-            m_text.append("<p align=\"justify\" >");
-        }
-        else if (al & Qt::AlignLeft){
-            m_text.append("<p>");
-        }
-        else{
-            m_text.append("<p>");
-        }
-    }
-    
-    virtual void endParagraph() { m_text.append("\n</p>\n"); }
-    virtual void addNewline() { m_text.append("<br />\n"); }
+    virtual void beginParagraph(Qt::Alignment al, qreal topMargin, qreal bottomMargin, qreal leftMargin, qreal rightMargin);
 
-    virtual void insertHorizontalRule() { m_text.append("<hr />\n"); }
+    virtual void beginHeader1();
+    virtual void beginHeader2();
+    virtual void beginHeader3();
+    virtual void beginHeader4();
+    virtual void beginHeader5();
+    virtual void beginHeader6();
 
-    virtual void insertImage(const QString &src, qreal width, qreal height) {
-        
-        m_text.append(QString("<img src=\"%1\" width=\"%2\" height=\"%3\" />").arg(src).arg(width).arg(height));
-    }
+    virtual void endHeader1();
+    virtual void endHeader2();
+    virtual void endHeader3();
+    virtual void endHeader4();
+    virtual void endHeader5();
+    virtual void endHeader6();
 
-    virtual void beginList(QTextListFormat::Style type) {
-        currentListItemStyles.append(type);
-        switch(type){
-        case QTextListFormat::ListDisc:
-            m_text.append("\n<ul type=\"disc\">\n");
-            break;
-        case QTextListFormat::ListCircle:
-            m_text.append("\n<ul type=\"circle\">\n");
-            break;
-        case QTextListFormat::ListSquare:
-            m_text.append("\n<ul type=\"square\">\n");
-            break;
-        case QTextListFormat::ListDecimal:
-            m_text.append("\n<ol type=\"1\">\n");
-            break;
-        case QTextListFormat::ListLowerAlpha:
-            m_text.append("\n<ol type=\"a\">\n");
-            break;
-        case QTextListFormat::ListUpperAlpha:
-            m_text.append("\n<ol type=\"A\">\n");
-            break;
-        default:
-            break;
-        }
-    }
-    virtual void endList() {
-        switch(currentListItemStyles.last()){
-        case QTextListFormat::ListDisc:
-        case QTextListFormat::ListCircle:
-        case QTextListFormat::ListSquare:
-            m_text.append("\n</ul>\n");
-            break;
-        case QTextListFormat::ListDecimal:
-        case QTextListFormat::ListLowerAlpha:
-        case QTextListFormat::ListUpperAlpha:
-            m_text.append("\n</ol>\n");
-            break;
-        default:
-            break;
-        }
-        currentListItemStyles.removeLast();
-    }
-    virtual void beginListItem() { m_text.append("<li>"); }
-    virtual void endListItem() { m_text.append("</li>\n"); }
+    virtual void endParagraph();
+    virtual void addNewline();
 
-    virtual void beginSuperscript() { m_text.append("<sup>"); }
+    virtual void insertHorizontalRule(int width = -1);
 
-    virtual void endSuperscript() { m_text.append("</sup>"); }
-    
-    virtual void beginSubscript() { m_text.append("<sub>"); }
-    
-    virtual void endSubscript() { m_text.append("</sub>"); }
+    virtual void insertImage(const QString &src, qreal width, qreal height);
 
-    
-    virtual void beginTable(qreal cellpadding, qreal cellspacing, const QString &width) {
-        m_text.append(QString("<table cellpadding=\"%1\" cellspacing=\"%2\" width=\"%3\" border=\"1\">")
-                .arg(cellpadding)
-                .arg(cellspacing)
-                .arg(width));
-    }
-    
-    virtual void beginTableRow() { m_text.append("<tr>"); }
-    virtual void beginTableHeaderCell(QString width, int colspan, int rowspan) {
-        m_text.append(QString("<th width=\"%1\" colspan=\"%2\" rowspan=\"%3\">").arg(width).arg(colspan).arg(rowspan));
-    }
-    
-    virtual void beginTableCell(QString width, int colspan, int rowspan) {
-        m_text.append(QString("<td width=\"%1\" colspan=\"%2\" rowspan=\"%3\">").arg(width).arg(colspan).arg(rowspan));
-    }
-    
-    virtual void endTable() { m_text.append("</table>"); }
-    virtual void endTableRow() { m_text.append("</tr>"); }
-    virtual void endTableHeaderCell() { m_text.append("</th>"); }
-    virtual void endTableCell() { m_text.append("</td>"); }
+    virtual void beginList(QTextListFormat::Style type);
+
+    virtual void endList();
+
+    virtual void beginListItem();
+    virtual void endListItem();
+
+    virtual void beginSuperscript();
+
+    virtual void endSuperscript();
+
+    virtual void beginSubscript();
+
+    virtual void endSubscript();
+
+
+    virtual void beginTable(qreal cellpadding, qreal cellspacing, const QString &width);
+
+    virtual void beginTableRow();
+    virtual void beginTableHeaderCell(QString width, int colspan, int rowspan);
+
+    virtual void beginTableCell(QString width, int colspan, int rowspan);
+
+    virtual void endTable();
+    virtual void endTableRow();
+    virtual void endTableHeaderCell();
+    virtual void endTableCell();
 
     /**
     Reimplemented from AbstractMarkupBuilder.
-    
-    This implementation escapes the text before appending so that 
-    
-        A sample <b>bold</b> word.
-        
-    becomes 
-    
-         A sample &lt;b&gt;bold&lt;/b&gt; word.       
-    
-    */
-    virtual void appendLiteralText(const QString &text) { m_text.append(Qt::escape(text)); }
 
-    
-    virtual QString& getResult() { return m_text; }
+    This implementation escapes the text before appending so that
+
+    @verbatim
+        A sample <b>bold</b> word.
+    @endverbatim
+
+    becomes
+
+    @verbatim
+         A sample &lt;b&gt;bold&lt;/b&gt; word.
+    @endverbatim
+
+    */
+    virtual void appendLiteralText(const QString &text);
+
+
+    virtual QString& getResult();
 
 private:
     QList<QTextListFormat::Style> currentListItemStyles;

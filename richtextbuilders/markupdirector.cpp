@@ -117,12 +117,9 @@ void MarkupDirector::processTable(QTextTable *table)
     QTextTableFormat format = table->format();
     QVector<QTextLength> colLengths = format.columnWidthConstraints();
 
-
     QTextLength tableWidth = format.width();
     QString sWidth;
 
-    kDebug() <<tableWidth.type() ;
-    
     if (tableWidth.type() == QTextLength::PercentageLength)
     {
         sWidth = "%1%";
@@ -132,13 +129,13 @@ void MarkupDirector::processTable(QTextTable *table)
         sWidth = "%1";
         sWidth = sWidth.arg(tableWidth.rawValue());
     }
-    
+
     d->builder->beginTable(format.cellPadding(), format.cellSpacing(), sWidth);
 
     int headerRowCount = format.headerRowCount();
 
     QList<QTextTableCell> alreadyProcessedCells;
-    
+
     for (int row = 0; row < table->rows(); ++row) {
         // Put a thead element around here somewhere?
         // if (row < headerRowCount)
@@ -185,7 +182,8 @@ void MarkupDirector::processTable(QTextTable *table)
                 sCellWidth = "%1";
                 sCellWidth = sCellWidth.arg(cellWidth.rawValue());
             }
-            
+
+            // TODO: Use THEAD instead
             if (row < headerRowCount)
             {
                 d->builder->beginTableHeaderCell( sCellWidth, columnSpan, rowSpan );
@@ -234,7 +232,7 @@ void MarkupDirector::processList(const QTextBlock &ablock)
 
             lists.append(list);
         }
-        
+
         d->builder->beginListItem();
         processBlockContents(block);
         d->builder->endListItem();
@@ -244,7 +242,7 @@ void MarkupDirector::processList(const QTextBlock &ablock)
         if (block.isValid())
         {
             QTextList *newList = block.textList();
-            
+
             if (!newList)
             {
                 while (!lists.isEmpty())
@@ -257,7 +255,7 @@ void MarkupDirector::processList(const QTextBlock &ablock)
                 //Next block is on the same list; Handled on next iteration.
                 continue;
             }
-            else if (newList != list) 
+            else if (newList != list)
             {
                 if (newList->item(0) == block){
                     list = newList;
@@ -292,12 +290,13 @@ void MarkupDirector::processBlockContents(const QTextBlock &block)
     QTextBlockFormat blockFormat = block.blockFormat();
     Qt::Alignment blockAlignment = blockFormat.alignment();
 
-    
+    // TODO: decide when to use <h1> etc.
+
     if (blockFormat.hasProperty(QTextFormat::BlockTrailingHorizontalRulerWidth)) {
         d->builder->insertHorizontalRule();
         return;
     }
-    
+
     if(block.length() == 1 )
     {
         // If the length is one, it is only the newline and the block is empty.
@@ -306,16 +305,12 @@ void MarkupDirector::processBlockContents(const QTextBlock &block)
 
     } else {
 
-        qreal bottomMargin = blockFormat.bottomMargin();
-        qreal topMargin = blockFormat.topMargin();
-        
-        if ((bottomMargin != QTextBlockFormat().bottomMargin())
-             && (topMargin != QTextBlockFormat().topMargin()))
-        {
-            d->builder->beginParagraph(blockAlignment);
-        } else {
-            d->builder->beginParagraph(blockAlignment, topMargin, bottomMargin);
-        }
+        d->builder->beginParagraph( blockAlignment,
+                                    blockFormat.topMargin(),
+                                    blockFormat.bottomMargin(),
+                                    blockFormat.leftMargin(),
+                                    blockFormat.rightMargin()
+        );
 
         QTextBlock::iterator it;
         for (it = block.begin(); !it.atEnd(); ++it )
@@ -343,10 +338,10 @@ void MarkupDirector::processFragment(const QTextFragment &fragment)
         bool fontItalic = fragmentFormat.fontItalic();
         bool fontUnderline = fragmentFormat.fontUnderline();
         bool fontStrikeout = fragmentFormat.fontStrikeOut();
-        
+
         QBrush fontForeground = fragmentFormat.foreground();
         QBrush fontBackground = fragmentFormat.background();
-        
+
         QString fontFamily = fragmentFormat.fontFamily();
         int fontPointSize = fragmentFormat.font().pointSize();
         QString anchorHref = fragmentFormat.anchorHref();
@@ -367,7 +362,7 @@ void MarkupDirector::processFragment(const QTextFragment &fragment)
 
         if (!anchorHref.isEmpty())
         {
-            d->builder->beginAnchor(anchorHref);
+            d->builder->beginLinkedAnchor(anchorHref);
         }
 
         if (fontWeight == QFont::Bold)
@@ -389,19 +384,19 @@ void MarkupDirector::processFragment(const QTextFragment &fragment)
         {
             d->builder->beginStrikeout();
         }
-        
+
         if (fontForeground != Qt::NoBrush)
         {
             d->builder->beginForeground(fontForeground);
         }
-        
+
         if (fontBackground != Qt::NoBrush)
         {
             // QTextCharFormat::background() returns a Qt::NoBrush brush if it hasn't been set
-            // explicitly by the user. 
+            // explicitly by the user.
             d->builder->beginBackground(fontBackground);
         }
-        
+
         if (!fontFamily.isEmpty()){
             // This is empty if it has not been set explicitly by the user.
             d->builder->beginFontFamily(fontFamily);
@@ -411,18 +406,18 @@ void MarkupDirector::processFragment(const QTextFragment &fragment)
         {
             d->builder->beginFontPointSize(fontPointSize);
         }
-        
+
         d->builder->appendLiteralText(fragment.text());
 
         if (QTextCharFormat().font().pointSize() != fontPointSize)
         {
             d->builder->endFontPointSize();
         }
-        
+
         if (!fontFamily.isEmpty()){
             d->builder->endFontFamily();
         }
-        
+
         if (fontBackground != Qt::NoBrush)
         {
             d->builder->endBackground();
@@ -432,7 +427,7 @@ void MarkupDirector::processFragment(const QTextFragment &fragment)
         {
             d->builder->endForeground();
         }
-        
+
         if (fontStrikeout)
         {
             d->builder->endStrikeout();
@@ -452,13 +447,13 @@ void MarkupDirector::processFragment(const QTextFragment &fragment)
         {
             d->builder->endStrong();
         }
-            
+
         if (!anchorHref.isEmpty())
         {
             d->builder->endAnchor();
         }
 
-        
+
         if (subscript)
         {
             d->builder->endSubscript();
@@ -468,7 +463,7 @@ void MarkupDirector::processFragment(const QTextFragment &fragment)
         {
             d->builder->endSuperscript();
         }
-        
+
     }
 }
 

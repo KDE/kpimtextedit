@@ -6,6 +6,9 @@ SET(krichtexteditorSources
   main.cpp
   krichtexteditor.cpp
   markupdirector.cpp
+  htmlbuilder.cpp
+  plaintextmarkupbuilder.cpp
+  mediawikimarkupbuilder.cpp
   )
 
 KDE4_ADD_EXECUTABLE(krichtexteditor ${krichtexteditorSources} )

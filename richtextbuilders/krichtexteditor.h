@@ -55,6 +55,8 @@ private:
     KTextEdit *kte;
     KTextEdit *krte;
     KTextEdit *kpte;
+    KTextEdit *kbbte;
+    KTextEdit *kmwte;
     QString fileName;
 };
 

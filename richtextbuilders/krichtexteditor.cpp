@@ -24,6 +24,9 @@
 #include "abstractmarkupbuilder.h"
 #include "plaintextmarkupbuilder.h"
 #include "htmlbuilder.h"
+#include "bbcodebuilder.h"
+#include "mediawikimarkupbuilder.h"
+
 
 #include "markupdirector.h"
 
@@ -73,28 +76,42 @@ KRichTextEditor::KRichTextEditor() : KXmlGuiWindow()
             SLOT(cursorPositionChanged()));
 
     QDockWidget *dockText = new QDockWidget(QString("HTML"), this);
+    dockText->setObjectName( "HTML" );
     dockText->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
     kte = new KTextEdit(dockText);
     dockText->setWidget(kte);
     addDockWidget(Qt::RightDockWidgetArea, dockText);
-//     connect(textArea, SIGNAL(cursorPositionChanged()), SLOT(updateDockedWidget()));
 
     QDockWidget *dockHtml = new QDockWidget(QString("Re-Rendered"), this);
+    dockHtml->setObjectName( "Re-Rendered" );
     dockHtml->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
     krte = new KTextEdit(dockHtml);
     dockHtml->setWidget(krte);
     addDockWidget(Qt::RightDockWidgetArea, dockHtml);
-//     connect(textArea, SIGNAL(textChanged()), SLOT(updateDockedWidget()));
 
     QDockWidget *dockPlain = new QDockWidget(QString("Plain"), this);
+    dockPlain->setObjectName( "Plain" );
     dockPlain->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
     kpte = new KTextEdit(dockPlain);
     dockPlain->setWidget(kpte);
     addDockWidget(Qt::RightDockWidgetArea, dockPlain);
-//     connect(textArea, SIGNAL(textChanged()), SLOT(updateDockedWidget()));
 
-    
-    
+    QDockWidget *dockBB = new QDockWidget(QString("BBCode"), this);
+    dockBB->setObjectName( "BBCode" );
+    dockBB->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
+    kbbte = new KTextEdit(dockBB);
+    dockBB->setWidget(kbbte);
+    addDockWidget(Qt::RightDockWidgetArea, dockBB);
+
+    QDockWidget *dockMW = new QDockWidget(QString("MediaWiki"), this);
+    dockMW->setObjectName( "MediaWiki" );
+    dockMW->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
+    kmwte = new KTextEdit(dockMW);
+    dockMW->setWidget(kmwte);
+    addDockWidget(Qt::RightDockWidgetArea, dockMW);
+
+
+
 }
 
 void KRichTextEditor::updateDockedWidgets()
@@ -115,6 +132,23 @@ void KRichTextEditor::updateDockedWidgets()
     pmd->constructContent(textArea->document());
 
     kpte->setPlainText(pb->getResult());
+
+    BBCodeBuilder *bbb = new BBCodeBuilder();
+
+    MarkupDirector *bbmd = new MarkupDirector(bbb);
+    bbmd->constructContent(textArea->document());
+
+    kbbte->setPlainText(bbb->getResult());
+
+    MediaWikiMarkupBuilder *mwb = new MediaWikiMarkupBuilder();
+
+    MarkupDirector *mwmd = new MarkupDirector(mwb);
+    mwmd->constructContent(textArea->document());
+
+    kmwte->setPlainText(mwb->getResult());
+
+
+
 
 }
 

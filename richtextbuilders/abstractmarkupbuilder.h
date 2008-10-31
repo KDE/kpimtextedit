@@ -28,6 +28,7 @@
 #include <QString>
 #include <QBrush>
 #include <QTextList>
+#include <QTextDocument>
 
 /**
 @brief The AbstractMarkupBuilder class serves as a base class for creating marked up plain text output.
@@ -37,7 +38,7 @@ The AbstractMarkupBuilder is used by the MarkupDirector to create marked up outp
 Subclasses can reimplement whichever methods they choose. None of the methods are pure virtual and all default to an empty function
 to allow a clean fall-through. The exception is appendLiteralText, which appends its argument to the text being built.
 
-See PlainTextMarkupBuilder and HTMLBuilder for example imlpementations.
+See PlainTextMarkupBuilder and HTMLBuilder for example implementations.
 
 @note For maintenance, if an extra tag is needed which is not provided by the virtual methods, the ExtraElement can be used.
 
@@ -63,101 +64,145 @@ public:
     /** For future compatibility.
     This enum can be used to insert extra tags not supported by the virtual methods. */
     enum ExtraElement { UserElement = 100 };
-    
+
     /** Destructor */
     virtual ~AbstractMarkupBuilder() {}
 
     /** Begin a bold element in the markup */
     virtual void beginStrong() { }
+
     /** Close the bold element in the markup */
     virtual void endStrong() { }
+
     /** Begin an emphasised element in the markup */
     virtual void beginEmph() { }
+
     /** Close the emphasised element in the markup */
     virtual void endEmph() { }
+
     /** Begin an underlined element in the markup */
     virtual void beginUnderline() { }
+
     /** Close the underlined element in the markup */
     virtual void endUnderline() { }
+
     /** Begin a striked out element in the markup */
     virtual void beginStrikeout() { }
+
     /** Close the striked out element in the markup */
     virtual void endStrikeout() { }
+
     /** Begin a decorarated foreground element in the markup (A text color) */
-    virtual void beginForeground(const QBrush &) { }
+    virtual void beginForeground(const QBrush &brush) { Q_UNUSED(brush); }
+
     /** Close the decorarated foreground element in the markup */
     virtual void endForeground() { }
+
     /** Begin a decorarated background element in the markup (A text background color) */
-    virtual void beginBackground(const QBrush &) { }
+    virtual void beginBackground(const QBrush &brush) { Q_UNUSED(brush); }
+
     /** Close the decorarated background element in the markup */
     virtual void endBackground() { }
-    /** Begin a url anchor element in the markup     
-    @param The href of the link.    
+
+    /** Begin a url anchor element in the markup
+    @param href The href of the anchor.
+    @param name The name of the anchor.
     */
-    virtual void beginAnchor(const QString &) { }
+    virtual void beginNamedLinkedAnchor(const QString &href, const QString &name) {
+        Q_UNUSED(href);
+        Q_UNUSED(name);
+    }
+
+    /** Begin a url anchor element in the markup
+    @param name The name of the anchor.
+    */
+    virtual void beginNamedAnchor(const QString &name) {
+        Q_UNUSED(name);
+    }
+
+    /** Begin a url anchor element in the markup
+    @param href The href of the anchor.
+    */
+    virtual void beginLinkedAnchor(const QString &href) {
+        Q_UNUSED(href);
+    }
     /** Close the anchor element */
     virtual void endAnchor() { }
 
-    /** Begin a new font familiy element in the markup     
-    @param The name of the font familiy to begin.
+    /** Begin a new font familiy element in the markup
+    @param family The name of the font family to begin.
     */
-    virtual void beginFontFamily(const QString &) { }
+    virtual void beginFontFamily(const QString &family) {
+        Q_UNUSED(family);
+    }
     /** End font family element */
     virtual void endFontFamily() { }
-    
+
     /** Begin a new font point size element in the markup
-    @param the point size to begin.
+    @param int The point size to begin.
     */
-    virtual void beginFontPointSize( int ) { }
+    virtual void beginFontPointSize( int size) {
+        Q_UNUSED(size);
+    }
     /** End font point size element */
     virtual void endFontPointSize() { }
 
-//    /** Begin a new paragraph in the markup
-//    @param The alignment of the new paragraph.
-//     */
-//     virtual void beginParagraph(Qt::Alignment) { }
-
     /** Begin a new paragraph in the markup
-    @param The alignment of the new paragraph.
-    @param The top margin of the new paragraph.
-    @param The bottom margin of the new paragraph.
-     */
-    virtual void beginParagraph(Qt::Alignment, qreal, qreal) { }
+    @param a The alignment of the new paragraph.
+    @param top The top margin of the new paragraph.
+    @param bottom The bottom margin of the new paragraph.
+    @param left The left margin of the new paragraph.
+    @param right The right margin of the new paragraph.
+    */
+    virtual void beginParagraph(Qt::Alignment a, qreal top, qreal bottom, qreal left, qreal right) {
+        Q_UNUSED(a);
+        Q_UNUSED(top);
+        Q_UNUSED(bottom);
+        Q_UNUSED(left);
+        Q_UNUSED(right);
+    }
 
-    virtual void beginParagraph(Qt::Alignment) { }
-    
+
     /** Close the paragraph in the markup. */
     virtual void endParagraph() { }
     /** Add a newline to the markup. */
     virtual void addNewline() { }
 
     /** Insert a horizontal rule into the markup.
-    @warning This is never called by the MarkupDirector as there is no way to know if a QTextDocument contains a horizontal rule.
-    Just a placeholder until a workaround is written.
     */
-    virtual void insertHorizontalRule() { }
-    
+    virtual void insertHorizontalRule(int width = -1) {
+        Q_UNUSED(width);
+    }
+
     /**
     Insert a new image element into the markup.
-    @param The url of the image
-    @param The width of the image
-    @param The height of the image.
+    @param url The url of the image
+    @param width The width of the image
+    @param height The height of the image.
     */
-    virtual void insertImage(const QString &, qreal, qreal) { }
+    virtual void insertImage(const QString &url, qreal width, qreal height) {
+        Q_UNUSED(url);
+        Q_UNUSED(width);
+        Q_UNUSED(height);
+    }
 
     /**
     Begin a new list element in the markup.
     A list element contains list items, and may contain other lists.
-    @param The style of list to create.
+    @param style The style of list to create.
     */
-    virtual void beginList(QTextListFormat::Style) { }
-    
+    virtual void beginList(QTextListFormat::Style style) {
+        Q_UNUSED(style);
+    }
+
     /**
     Close the list.
     */
     virtual void endList() { }
+
     /** Begin a new list item in the markup */
     virtual void beginListItem() { }
+
     /** End the list item */
     virtual void endListItem() { }
 
@@ -166,38 +211,79 @@ public:
 
     /** End superscript element */
     virtual void endSuperscript() { }
-    
+
     /** Begin a subscript element */
     virtual void beginSubscript() { }
-    
+
     /** End subscript element */
     virtual void endSubscript() { }
 
-    virtual void beginTable(qreal, qreal, const QString &) { }
+
+    virtual void beginTable(qreal, qreal, const QString &) {
+
+    }
+
     virtual void beginTableRow() { }
-    virtual void beginTableHeaderCell(QString, int, int) { }
-    virtual void beginTableCell(QString, int, int) { }
+
+    virtual void beginTableHeaderCell(QString, int, int) {
+
+    }
+
+    virtual void beginTableCell(QString, int, int) {
+
+    }
 
     virtual void endTable() { }
+
     virtual void endTableRow() { }
+
     virtual void endTableHeaderCell() { }
+
     virtual void endTableCell() { }
 
-    /** Begin an extra identified element. Override this to support more elements in the future. */
-    virtual void beginExtraElement(int, QVariantList) { }
+    virtual void beginHeader1() { }
+    virtual void beginHeader2() { }
+    virtual void beginHeader3() { }
+    virtual void beginHeader4() { }
+    virtual void beginHeader5() { }
+    virtual void beginHeader6() { }
 
-    /** End extra tag. */
-    virtual void endExtraElement(int) { }
+    virtual void endHeader1() { }
+    virtual void endHeader2() { }
+    virtual void endHeader3() { }
+    virtual void endHeader4() { }
+    virtual void endHeader5() { }
+    virtual void endHeader6() { }
+
+
+    /** Begin an extra identified element. Override this to support more elements
+    in the future in a BC way.
+
+    @param type The type of element to create
+    @param args Arguments for the element.
+    */
+    virtual void beginExtraElement(int type, QVariantList args) {
+        Q_UNUSED(type);
+        Q_UNUSED(args);
+    }
+
+    /** End extra tag.
+
+    @param type The type of the tag to end.
+    */
+    virtual void endExtraElement(int type) {
+        Q_UNUSED(type);
+    }
 
     /**
     Append the plain text @p text to the markup.
-    
+
     @param The text to append.
     */
-    virtual void appendLiteralText(const QString &text ) = 0; 
+    virtual void appendLiteralText(const QString &text ) = 0;
 
     /** Return the fully marked up result of the building process. This may contain metadata etc, such as a head element in html.
-    
+
     @return The fully marked up text.
     */
     virtual QString& getResult() = 0;
