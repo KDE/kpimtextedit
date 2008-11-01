@@ -146,15 +146,15 @@ void HTMLBuilder::beginParagraph ( Qt::Alignment al, qreal topMargin, qreal bott
     } else if ( al & Qt::AlignJustify ) {
         m_text.append ( "<p align=\"justify\" " );
     } else if ( al & Qt::AlignLeft ) {
-        m_text.append ( "<p " );
+        m_text.append ( "<p" );
     } else {
-        m_text.append ( "<p " );
+        m_text.append ( "<p" );
     }
 
     if ( !styleString.isEmpty() ) {
-        m_text.append ( "\"" + styleString + "\"" );
+        m_text.append ( " \"" + styleString + "\"" );
     }
-    m_text.append ( " >" );
+    m_text.append ( ">" );
 //     }
 }
 
