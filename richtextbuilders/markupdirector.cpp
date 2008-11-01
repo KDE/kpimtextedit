@@ -24,6 +24,7 @@
 
 #include "markupdirector.h"
 #include "abstractmarkupbuilder.h"
+#include <QFlags>
 #include <QTextDocument>
 #include <QTextDocumentFragment>
 #include <QString>
@@ -49,9 +50,58 @@ public:
     Private ( MarkupDirector *md ) : q ( md ) {
     }
 
+    void closeFragmentElements();
+
     MarkupDirector *q;
     AbstractMarkupBuilder *builder;
+
+    enum OpenElementValues {
+        None = 0x0,
+        Strong = 0x01,
+        Emph = 0x02,
+        Underline = 0x04,
+        StrikeOut = 0x08,
+        SuperScript = 0x10,
+        SubScript = 0x20,
+        Anchor = 0x40,
+        SpanForeground = 0x80,
+        SpanBackground = 0x100,
+        SpanFontFamily = 0x200,
+        SpanFontPointSize = 0x400
+    };
+//     Q_DECLARE_FLAGS(OpenElements, OpenElementValues)
+
+    QString openAnchorHref;
+    QString openAnchorName;
+
+    QBrush openForeground;
+    QBrush openBackground;
+    int openFontPointSize;
+    QString openFontFamily;
+
+    /**
+    Holds the elements open while processing a fragment.
+    */
+    quint32 openElements;
+
+    // Using the Qt flags system fails. Using an int instead.
+//     OpenElements openElements;
 };
+// Q_DECLARE_OPERATORS_FOR_FLAGS(MarkupDirector::Private::OpenElements)
+
+void MarkupDirector::Private::closeFragmentElements()
+{
+    if ( openElements & Strong ) {
+        builder->endStrong();
+        openElements = openElements & ~Strong;
+    }
+
+    if ( openElements & Emph ) {
+        builder->endEmph();
+        openElements = openElements & ~Emph;
+    }
+
+}
 
 //@endcond
 
@@ -285,12 +335,17 @@ void MarkupDirector::processBlockContents ( const QTextBlock &block )
                                    );
 
         QTextBlock::iterator it;
+        // Reset the opened and closed tags to none open at the beginnning of the paragraph.
+        d->openElements = 0;
+//         d->openedElements = 0;
+//         d->closedElements = 0;
         for ( it = block.begin(); !it.atEnd(); ++it ) {
             QTextFragment currentFragment = it.fragment();
             if ( currentFragment.isValid() ) {
                 processFragment ( currentFragment );
             }
         }
+        d->closeFragmentElements();
 
         d->builder->endParagraph();
     }
@@ -320,100 +375,200 @@ void MarkupDirector::processFragment ( const QTextFragment &fragment )
         bool superscript = ( vAlign == QTextCharFormat::AlignSuperScript );
         bool subscript = ( vAlign == QTextCharFormat::AlignSubScript );
 
-        if ( superscript ) {
+
+        // ### Warning: If adding new tags, make sure to add them to
+        // the MarkupDirector::Private::closeFragmentElements method too.
+
+
+// Closing tags.
+
+//         if ( QTextCharFormat().font().pointSize() != fontPointSize ) {
+//             d->builder->endFontPointSize();
+//         }
+//
+
+
+        if ( ( d->openElements & d->SpanFontPointSize )
+                && ( d->openFontPointSize != fontPointSize )
+//                 && ( d->openFontPointSize == -1 )
+            )
+        {
+            d->builder->endFontPointSize();
+            d->openElements = d->openElements & ~d->SpanFontPointSize;
+            d->openFontPointSize = QTextCharFormat().font().pointSize();
+        }
+
+
+        if ( ( d->openElements & d->SpanFontFamily )
+                && ( d->openFontFamily != fontFamily )
+            )
+        {
+            d->builder->endFontFamily();
+            d->openElements = d->openElements & ~d->SpanFontFamily;
+            d->openFontFamily.clear();
+        }
+
+        if ( ( d->openElements & d->SpanBackground )
+                && ( d->openBackground != fontBackground )
+            )
+        {
+            d->builder->endBackground();
+            d->openElements = d->openElements & ~d->SpanBackground;
+            d->openBackground = Qt::NoBrush;
+        }
+
+        if ( ( d->openElements & d->SpanForeground )
+                && ( d->openForeground != fontForeground )
+            )
+        {
+            d->builder->endForeground();
+            d->openElements = d->openElements & ~d->SpanForeground;
+            d->openForeground = Qt::NoBrush;
+        }
+
+//
+
+//         kDebug() << "processing: " << fragment.text() << "bold=" << (fontWeight == QFont::Bold)<< "boldOpen="
+//             << ( d->openElements & d->Strong ) << "boldOpened="
+//             << ( d->openedElements & d->Strong ) << "em=" << fontItalic << "emOpen="
+//             << ( d->openElements & d->Emph );
+
+//
+        if ( !fontStrikeout && ( d->openElements & d->StrikeOut ) ) {
+            d->builder->endStrikeout();
+            d->openElements = d->openElements & ~d->StrikeOut;
+        }
+
+        if ( !fontUnderline && ( d->openElements & d->Underline ) ) {
+            d->builder->endUnderline();
+            d->openElements = d->openElements & ~d->Underline;
+        }
+
+        if ( !fontItalic && ( d->openElements & d->Emph ) ) {
+            d->builder->endEmph();
+            d->openElements = d->openElements & ~d->Emph;
+        }
+
+        if ( fontWeight != QFont::Bold && ( d->openElements & d->Strong ) ) {
+            d->builder->endStrong();
+            d->openElements = d->openElements & ~d->Strong;
+        }
+
+        if ( ( d->openElements & d->Anchor )
+                && ( d->openAnchorHref != anchorHref ) // Could be adjacent different anchors.
+            )
+        {
+            d->builder->endAnchor();
+            d->openElements = d->openElements & ~d->Anchor;
+            d->openAnchorHref.clear();
+        }
+
+        if ( !subscript && ( d->openElements & d->SubScript ) ) {
+            d->builder->endSubscript();
+            d->openElements = d->openElements & ~d->SubScript;
+        }
+
+        if ( !superscript && ( d->openElements & d->SuperScript ) ) {
+            d->builder->endSuperscript();
+            d->openElements = d->openElements & ~d->SuperScript;
+        }
+
+
+        // Opening tags
+
+        if ( superscript && !(d->openElements & d->SuperScript) ) {
             d->builder->beginSuperscript();
+            d->openElements |= d->SuperScript;
         }
 
-        if ( subscript ) {
+        if ( subscript && !(d->openElements & d->SubScript) ) {
             d->builder->beginSubscript();
+            d->openElements |= d->SubScript;
         }
 
-        if ( !anchorHref.isEmpty() ) {
+        if ( !anchorHref.isEmpty()
+                && !(d->openElements & d->Anchor)
+                && (d->openAnchorHref != anchorHref)
+                ) {
             d->builder->beginLinkedAnchor ( anchorHref );
+            d->openElements |= d->Anchor;
+//             d->openAnchorName = anchorName;
+            d->openAnchorHref = anchorHref;
         }
 
-        if ( fontWeight == QFont::Bold ) {
+        // Only open a new bold tag if one is not already open.
+        // eg, <b>some <i>mixed</i> format</b> should be as is, rather than
+        // <b>some </b><b><i>mixed</i></b><b> format</b>
+        if ( fontWeight == QFont::Bold && !(d->openElements & d->Strong) ) {
             d->builder->beginStrong();
+            d->openElements |= d->Strong;
         }
 
-        if ( fontItalic ) {
+        if ( fontItalic && !(d->openElements & d->Emph) ) {
             d->builder->beginEmph();
+            d->openElements |= d->Emph;
         }
 
-        if ( fontUnderline ) {
+        if ( fontUnderline
+                && !(d->openElements & d->Underline)
+                && !(d->openElements & d->Anchor ) // Can't change the underline or foreground colour of a link.
+                ) {
             d->builder->beginUnderline();
+            d->openElements |= d->Underline;
         }
 
-        if ( fontStrikeout ) {
+        if ( fontStrikeout && !(d->openElements & d->StrikeOut) ) {
             d->builder->beginStrikeout();
+            d->openElements |= d->StrikeOut;
         }
 
-        if ( fontForeground != Qt::NoBrush ) {
+        if ( fontForeground != Qt::NoBrush
+            && !( d->openElements & d->SpanForeground ) // Can only open one foreground element at a time.
+            && ( fontForeground != d->openForeground )
+            && !( d->openElements & d->Anchor ) // Can't change the underline or foreground colour of a link.
+            )
+        {
             d->builder->beginForeground ( fontForeground );
+            d->openElements |= d->SpanForeground;
+            d->openForeground = fontForeground;
         }
 
-        if ( fontBackground != Qt::NoBrush ) {
-            // QTextCharFormat::background() returns a Qt::NoBrush brush if it hasn't been set
-            // explicitly by the user.
+        if ( fontBackground != Qt::NoBrush
+            && !( d->openElements & d->SpanBackground )
+            && ( fontBackground != d->openBackground )
+            )
+        {
             d->builder->beginBackground ( fontBackground );
+            d->openElements |= d->SpanBackground;
+            d->openBackground = fontBackground;
         }
 
-        if ( !fontFamily.isEmpty() ) {
-            // This is empty if it has not been set explicitly by the user.
+
+        if ( !fontFamily.isEmpty()
+            && !( d->openElements & d->SpanFontFamily )
+            && ( fontFamily != d->openFontFamily )
+            )
+        {
             d->builder->beginFontFamily ( fontFamily );
+            d->openElements |= d->SpanFontFamily;
+            d->openFontFamily = fontFamily;
         }
 
-        if ( QTextCharFormat().font().pointSize() != fontPointSize ) {
+        if ( ( QTextCharFormat().font().pointSize() != fontPointSize ) // Different from the default.
+            && !( d->openElements & d->SpanFontPointSize )
+            && ( fontPointSize != d->openFontPointSize )
+            )
+        {
             d->builder->beginFontPointSize ( fontPointSize );
+            d->openElements |= d->SpanFontPointSize;
+            d->openFontPointSize = fontPointSize;
         }
+
+//         if ( QTextCharFormat().font().pointSize() != fontPointSize ) {
+//             d->builder->beginFontPointSize ( fontPointSize );
+//         }
 
         d->builder->appendLiteralText ( fragment.text() );
-
-        if ( QTextCharFormat().font().pointSize() != fontPointSize ) {
-            d->builder->endFontPointSize();
-        }
-
-        if ( !fontFamily.isEmpty() ) {
-            d->builder->endFontFamily();
-        }
-
-        if ( fontBackground != Qt::NoBrush ) {
-            d->builder->endBackground();
-        }
-
-        if ( fontForeground != Qt::NoBrush ) {
-            d->builder->endForeground();
-        }
-
-        if ( fontStrikeout ) {
-            d->builder->endStrikeout();
-        }
-
-        if ( fontUnderline ) {
-            d->builder->endUnderline();
-        }
-
-        if ( fontItalic ) {
-            d->builder->endEmph();
-        }
-
-        if ( fontWeight == QFont::Bold ) {
-            d->builder->endStrong();
-        }
-
-        if ( !anchorHref.isEmpty() ) {
-            d->builder->endAnchor();
-        }
-
-
-        if ( subscript ) {
-            d->builder->endSubscript();
-        }
-
-        if ( superscript ) {
-            d->builder->endSuperscript();
-        }
-
     }
 }
 

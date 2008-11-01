@@ -10,7 +10,7 @@ SET(krichtexteditorSources
   plaintextmarkupbuilder.cpp
   mediawikimarkupbuilder.cpp
   bbcodebuilder.cpp
-  )
+)
 
 KDE4_ADD_EXECUTABLE(krichtexteditor ${krichtexteditorSources} )
 TARGET_LINK_LIBRARIES(krichtexteditor ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} )
