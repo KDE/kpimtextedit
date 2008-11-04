@@ -145,7 +145,7 @@ protected:
     /**
     Processes a QTextFragment.
 
-    @param The fragment to process.
+    @param fragment The fragment to process.
     */
     void processFragment ( const QTextFragment &fragment );
 

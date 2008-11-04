@@ -20,10 +20,11 @@
 */
 
 
+#include "markupdirector.h"
+#include "markupdirector_p.h"
+
 #include <kdebug.h>
 
-#include "markupdirector.h"
-#include "abstractmarkupbuilder.h"
 #include <QFlags>
 #include <QTextDocument>
 #include <QTextDocumentFragment>
@@ -38,8 +39,7 @@
 #include <QColor>
 #include <QBrush>
 
-#include "markupdirector_p.h"
-
+#include "abstractmarkupbuilder.h"
 
 MarkupDirector::MarkupDirector( AbstractMarkupBuilder* builder ) :
     d( new Private( this ) )

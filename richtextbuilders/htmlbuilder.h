@@ -70,7 +70,7 @@ instead of
 @code
     <span style="color:blue;background-color:red;">Blue text on red background</span>
 @endcode
- It my be possible to change this if neccessary.
+ It my be possible to change this if necessary.
 
 @todo Move this to kdelibs when tested and prooven.
 

@@ -86,10 +86,10 @@ public:
     /** Close the underlined element in the markup */
     virtual void endUnderline() { }
 
-    /** Begin a striked out element in the markup */
+    /** Begin a struck out element in the markup */
     virtual void beginStrikeout() { }
 
-    /** Close the striked out element in the markup */
+    /** Close the struck out element in the markup */
     virtual void endStrikeout() { }
 
     /** Begin a decorarated foreground element in the markup (A text color) */
@@ -209,9 +209,17 @@ public:
     /** End subscript element */
     virtual void endSubscript() { }
 
+    /**
+      Begin a table element.
 
-    virtual void beginTable ( qreal, qreal, const QString & ) {
-
+      @param cellpadding The padding attribute for the table.
+      @param cellspacing The spacing attribute for the table.
+      @param width The width of the table. May be either an integer, or a percentage value.
+    */
+    virtual void beginTable ( qreal cellpadding, qreal cellspacing, const QString &width ) {
+      Q_UNUSED(cellpadding);
+      Q_UNUSED(cellspacing);
+      Q_UNUSED(width);
     }
 
     virtual void beginTableRow() { }

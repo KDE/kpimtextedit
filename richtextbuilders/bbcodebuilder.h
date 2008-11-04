@@ -19,7 +19,8 @@
     02110-1301, USA.
 */
 
-
+#ifndef BBCODEBUILDER_H
+#define BBCODEBUILDER_H
 
 #include "abstractmarkupbuilder.h"
 #include <kdebug.h>
@@ -54,6 +55,11 @@ public:
 
     // Font family not supported by BBCode.
 
+    /**
+    Begin an element of font size @p size. Note that this size is in pixels, and must be converted before
+    it is suitable for use in BBCode.
+    @param size The size of font to begin.
+    */
     virtual void beginFontPointSize ( int size );
     virtual void endFontPointSize();
 
@@ -99,4 +105,6 @@ private:
     Qt::Alignment currentAlignment;
 
 };
+
+#endif
 
