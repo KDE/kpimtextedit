@@ -19,14 +19,14 @@
     02110-1301, USA.
 */
 
-#include "abstractmarkupbuilder.h"
+#include "kabstractmarkupbuilder.h"
 #include <kdebug.h>
 
 
 /**
     @brief Creates MediaWiki markup from a QTextDocument
 */
-class MediaWikiMarkupBuilder : public AbstractMarkupBuilder
+class MediaWikiMarkupBuilder : public KAbstractMarkupBuilder
 {
 public:
 

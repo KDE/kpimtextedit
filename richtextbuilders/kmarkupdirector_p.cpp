@@ -21,9 +21,9 @@
 
 #include <kdebug.h>
 
-#include "markupdirector_p.h"
+#include "kmarkupdirector_p.h"
 
-void MarkupDirector::Private::processClosingElements( QTextBlock::iterator it )
+void KMarkupDirector::Private::processClosingElements( QTextBlock::iterator it )
 {
   QSet<int> elementsToClose = getElementsToClose( it );
 
@@ -90,7 +90,7 @@ void MarkupDirector::Private::processClosingElements( QTextBlock::iterator it )
   }
 }
 
-QSet< int > MarkupDirector::Private::getElementsToClose( QTextBlock::iterator it )
+QSet< int > KMarkupDirector::Private::getElementsToClose( QTextBlock::iterator it )
 {
   QSet<int> closedElements;
 
@@ -197,7 +197,7 @@ QSet< int > MarkupDirector::Private::getElementsToClose( QTextBlock::iterator it
 }
 
 
-QList< int > MarkupDirector::Private::sortOpeningOrder( QSet< int > openingOrder, QTextBlock::iterator it )
+QList< int > KMarkupDirector::Private::sortOpeningOrder( QSet< int > openingOrder, QTextBlock::iterator it )
 {
   QList< int > sortedOpenedElements;
 
@@ -227,7 +227,7 @@ QList< int > MarkupDirector::Private::sortOpeningOrder( QSet< int > openingOrder
   return sortedOpenedElements;
 }
 
-QList< int > MarkupDirector::Private::getElementsToOpen( QTextBlock::iterator it )
+QList< int > KMarkupDirector::Private::getElementsToOpen( QTextBlock::iterator it )
 {
   QTextFragment fragment = it.fragment();
   if ( !fragment.isValid() ) {
@@ -334,7 +334,7 @@ QList< int > MarkupDirector::Private::getElementsToOpen( QTextBlock::iterator it
 
 }
 
-void MarkupDirector::Private::processOpeningElements( QTextBlock::iterator it )
+void KMarkupDirector::Private::processOpeningElements( QTextBlock::iterator it )
 {
   QTextFragment fragment = it.fragment();
 

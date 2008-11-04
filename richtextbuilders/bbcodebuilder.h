@@ -22,13 +22,13 @@
 #ifndef BBCODEBUILDER_H
 #define BBCODEBUILDER_H
 
-#include "abstractmarkupbuilder.h"
+#include "kabstractmarkupbuilder.h"
 #include <kdebug.h>
 
 /**
 Creates BBCode from a QTextDocument
 */
-class BBCodeBuilder : public AbstractMarkupBuilder
+class BBCodeBuilder : public KAbstractMarkupBuilder
 {
 public:
 

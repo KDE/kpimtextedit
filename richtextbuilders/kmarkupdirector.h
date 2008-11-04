@@ -20,11 +20,11 @@
 */
 
 
-#ifndef MARKUPDIRECTOR_H
-#define MARKUPDIRECTOR_H
+#ifndef KMARKUPDIRECTOR_H
+#define KMARKUPDIRECTOR_H
 
 
-#include "abstractmarkupbuilder.h"
+#include "kabstractmarkupbuilder.h"
 #include <QTextDocument>
 class QTextFrame;
 class QTextTable;
@@ -35,7 +35,7 @@ class QTextCharFormat;
 /**
 @brief The Markupdirector class controls and instructs a builder object to create markup output.
 
-The MarkupDirector is used with a subclass of AbstractMarkupBuilder to create a marked up document output.
+The KMarkupDirector is used with a subclass of AbstractMarkupBuilder to create a marked up document output.
 
 Usage can be quite simple.
 
@@ -44,7 +44,7 @@ Usage can be quite simple.
     QTextDocument *doc = editor->document(); // editor is a QTextEdit
 
     AbstractMarkupBuilder *builder = new HTMLBuilder();
-    MarkupDirector *md = new MarkupDirector(builder);
+    KMarkupDirector *md = new MarkupDirector(builder);
     md->constructContent(doc);
     browser.setHtml(builder->getResult()); // browser is a QTextBrowser.
 
@@ -54,7 +54,7 @@ Or with a different builder:
 
 @code
     AbstractMarkupBuilder *builder = new PlainTextMarkupBuilder();
-    MarkupDirector *md = new MarkupDirector(builder);
+    KMarkupDirector *md = new MarkupDirector(builder);
     md->constructContent(doc);
     browser.setPlainText(builder->getResult());
 @endcode
@@ -65,16 +65,16 @@ Or with a different builder:
 @since 4.2
 
 */
-class MarkupDirector
+class KMarkupDirector
 {
 public:
     /**
-    Construct a new MarkupDirector
+    Construct a new KMarkupDirector
     */
-    MarkupDirector ( AbstractMarkupBuilder* builder );
+    KMarkupDirector ( KAbstractMarkupBuilder* builder );
 
     /** Destructor */
-    virtual ~MarkupDirector();
+    virtual ~KMarkupDirector();
 
     /**
     Constructs the output by directing the builder to create the markup.

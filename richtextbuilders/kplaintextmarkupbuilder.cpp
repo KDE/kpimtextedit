@@ -19,47 +19,47 @@
     02110-1301, USA.
 */
 
-#include "plaintextmarkupbuilder.h"
+#include "kplaintextmarkupbuilder.h"
 
-PlainTextMarkupBuilder::PlainTextMarkupBuilder()
+KPlainTextMarkupBuilder::KPlainTextMarkupBuilder()
 {
     m_urls = QStringList();
 }
 
-void PlainTextMarkupBuilder::beginStrong()
+void KPlainTextMarkupBuilder::beginStrong()
 {
     m_text.append ( "*" );
 }
-void PlainTextMarkupBuilder::endStrong()
+void KPlainTextMarkupBuilder::endStrong()
 {
     m_text.append ( "*" );
 }
-void PlainTextMarkupBuilder::beginEmph()
+void KPlainTextMarkupBuilder::beginEmph()
 {
     m_text.append ( "/" );
 }
-void PlainTextMarkupBuilder::endEmph()
+void KPlainTextMarkupBuilder::endEmph()
 {
     m_text.append ( "/" );
 }
-void PlainTextMarkupBuilder::beginUnderline()
+void KPlainTextMarkupBuilder::beginUnderline()
 {
     m_text.append ( "_" );
 }
-void PlainTextMarkupBuilder::endUnderline()
+void KPlainTextMarkupBuilder::endUnderline()
 {
     m_text.append ( "_" );
 }
-void PlainTextMarkupBuilder::beginStrikeout()
+void KPlainTextMarkupBuilder::beginStrikeout()
 {
     m_text.append ( "-" );
 }
-void PlainTextMarkupBuilder::endStrikeout()
+void KPlainTextMarkupBuilder::endStrikeout()
 {
     m_text.append ( "-" );
 }
 
-void PlainTextMarkupBuilder::beginAnchor ( const QString &href, const QString &name )
+void KPlainTextMarkupBuilder::beginAnchor ( const QString &href, const QString &name )
 {
     if ( !m_urls.contains ( href ) ) {
 
@@ -68,20 +68,20 @@ void PlainTextMarkupBuilder::beginAnchor ( const QString &href, const QString &n
     activeLink = href;
 }
 
-void PlainTextMarkupBuilder::endAnchor()
+void KPlainTextMarkupBuilder::endAnchor()
 {
     m_text.append ( QString ( "[%1]" ).arg ( m_urls.indexOf ( activeLink ) + 1 ) );
 }
 
-void PlainTextMarkupBuilder::endParagraph()
+void KPlainTextMarkupBuilder::endParagraph()
 {
     m_text.append ( "\n" );
 }
-void PlainTextMarkupBuilder::addNewline()
+void KPlainTextMarkupBuilder::addNewline()
 {
     m_text.append ( "\n" );
 }
-void PlainTextMarkupBuilder::insertImage ( const QString &src, qreal width, qreal height )
+void KPlainTextMarkupBuilder::insertImage ( const QString &src, qreal width, qreal height )
 {
     Q_UNUSED ( width )
     Q_UNUSED ( height )
@@ -93,20 +93,20 @@ void PlainTextMarkupBuilder::insertImage ( const QString &src, qreal width, qrea
 }
 
 
-void PlainTextMarkupBuilder::beginList ( QTextListFormat::Style style )
+void KPlainTextMarkupBuilder::beginList ( QTextListFormat::Style style )
 {
     currentListItemStyles.append ( style );
     currentListItemNumbers.append ( 0 );
 }
 
-void PlainTextMarkupBuilder::endList()
+void KPlainTextMarkupBuilder::endList()
 {
     if ( !currentListItemNumbers.isEmpty() ) {
         currentListItemStyles.removeLast();
         currentListItemNumbers.removeLast();
     }
 }
-void PlainTextMarkupBuilder::beginListItem()
+void KPlainTextMarkupBuilder::beginListItem()
 {
     for ( int i = 0; i < currentListItemNumbers.size(); i++ ) {
         m_text.append ( "    " );
@@ -139,7 +139,7 @@ void PlainTextMarkupBuilder::beginListItem()
     }
 }
 
-QString PlainTextMarkupBuilder::getLetterString ( int itemNumber )
+QString KPlainTextMarkupBuilder::getLetterString ( int itemNumber )
 {
     QString letterString;
     while ( true ) {
@@ -160,45 +160,45 @@ QString PlainTextMarkupBuilder::getLetterString ( int itemNumber )
 }
 
 
-void PlainTextMarkupBuilder::endListItem()
+void KPlainTextMarkupBuilder::endListItem()
 {
     currentListItemNumbers.last() = currentListItemNumbers.last() + 1;
 }
 
 
-void PlainTextMarkupBuilder::beginSuperscript()
+void KPlainTextMarkupBuilder::beginSuperscript()
 {
     m_text.append ( "^{" );
 }
 
-void PlainTextMarkupBuilder::endSuperscript()
+void KPlainTextMarkupBuilder::endSuperscript()
 {
     m_text.append ( "}" );
 }
 
-void PlainTextMarkupBuilder::beginSubscript()
+void KPlainTextMarkupBuilder::beginSubscript()
 {
     m_text.append ( "_{" );
 }
 
-void PlainTextMarkupBuilder::endSubscript()
+void KPlainTextMarkupBuilder::endSubscript()
 {
     m_text.append ( "}" );
 }
 
-void PlainTextMarkupBuilder::appendLiteralText ( const QString &text )
+void KPlainTextMarkupBuilder::appendLiteralText ( const QString &text )
 {
     m_text.append ( text );
 }
 
-QString& PlainTextMarkupBuilder::getResult()
+QString& KPlainTextMarkupBuilder::getResult()
 {
     QString &ret = m_text;
     ret.append ( getReferences() );
     return ret;
 }
 
-QString PlainTextMarkupBuilder::getReferences()
+QString KPlainTextMarkupBuilder::getReferences()
 {
     QString refs;
     if ( !m_urls.isEmpty() ) {

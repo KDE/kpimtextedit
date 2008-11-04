@@ -21,8 +21,8 @@
 
 // Any class for which you cannot create instances is an abstract class.
 
-#ifndef ABSTRACTMARKUPBUILDER_H
-#define ABSTRACTMARKUPBUILDER_H
+#ifndef KABSTRACTMARKUPBUILDER_H
+#define KABSTRACTMARKUPBUILDER_H
 
 
 #include <QString>
@@ -31,9 +31,9 @@
 #include <QTextDocument>
 
 /**
-@brief The AbstractMarkupBuilder class serves as a base class for creating marked up plain text output.
+@brief The KAbstractMarkupBuilder class serves as a base class for creating marked up plain text output.
 
-The AbstractMarkupBuilder is used by the MarkupDirector to create marked up output such as html or markdown.
+The KAbstractMarkupBuilder is used by the MarkupDirector to create marked up output such as html or markdown.
 
 Subclasses can reimplement whichever methods they choose. None of the methods are pure virtual and all default to an empty function
 to allow a clean fall-through. The exception is appendLiteralText, which appends its argument to the text being built.
@@ -46,9 +46,9 @@ eg,
 
 @code
 
-builder->beginExtraElement(AbstractMarkupBuilder::DivTag);
+builder->beginExtraElement(KAbstractMarkupBuilder::DivTag);
 // ...
-builder->endExtraElement(AbstractMarkupBuilder::DivTag);
+builder->endExtraElement(KAbstractMarkupBuilder::DivTag);
 
 @endcode
 
@@ -57,7 +57,7 @@ builder->endExtraElement(AbstractMarkupBuilder::DivTag);
 @author Stephen Kelly <steveire@gmail.com>
 @since 4.2
 */
-class AbstractMarkupBuilder
+class KAbstractMarkupBuilder
 {
 public:
 
@@ -66,7 +66,7 @@ public:
     enum ExtraElement { UserElement = 100 };
 
     /** Destructor */
-    virtual ~AbstractMarkupBuilder() {}
+    virtual ~KAbstractMarkupBuilder() {}
 
     /** Begin a bold element in the markup */
     virtual void beginStrong() { }

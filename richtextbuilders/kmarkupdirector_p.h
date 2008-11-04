@@ -19,7 +19,7 @@
     02110-1301, USA.
 */
 
-#include "markupdirector.h"
+#include "kmarkupdirector.h"
 
 #include <QSet>
 
@@ -27,12 +27,12 @@
 
 /**
  * @internal
- * Maintainability class for MarkupDirector
+ * Maintainability class for KMarkupDirector
  */
-class MarkupDirector::Private
+class KMarkupDirector::Private
 {
   public:
-    Private( MarkupDirector *md )
+    Private( KMarkupDirector *md )
         : q( md )
     {
     }
@@ -45,8 +45,8 @@ class MarkupDirector::Private
     QList< int > getElementsToOpen( QTextBlock::iterator it );
     QList< int > sortOpeningOrder( QSet< int > openingOrder, QTextBlock::iterator it );
 
-    MarkupDirector *q;
-    AbstractMarkupBuilder *builder;
+    KMarkupDirector *q;
+    KAbstractMarkupBuilder *builder;
 
     enum OpenElementValues {
       None = 0x0,
@@ -95,7 +95,7 @@ class MarkupDirector::Private
     // Using the Qt flags system fails. Using an int instead.
 //     OpenElements openElements;
 };
-// Q_DECLARE_OPERATORS_FOR_FLAGS(MarkupDirector::Private::OpenElements)
+// Q_DECLARE_OPERATORS_FOR_FLAGS(KMarkupDirector::Private::OpenElements)
 
 
 //@endcond

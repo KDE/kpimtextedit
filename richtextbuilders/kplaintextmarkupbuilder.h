@@ -19,18 +19,18 @@
     02110-1301, USA.
 */
 
-#ifndef PLAINTEXTMARKUPBUILDER_H
-#define PLAINTEXTMARKUPBUILDER_H
+#ifndef KPLAINTEXTMARKUPBUILDER_H
+#define KPLAINTEXTMARKUPBUILDER_H
 
 #define LETTERSINALPHABET 26
 #define DIGITSOFFSET 10
 
 #include <kdebug.h>
 
-#include "abstractmarkupbuilder.h"
+#include "kabstractmarkupbuilder.h"
 
 /**
-@brief The PlainTextMarkupBuilder creates a simple marked up plain text document.
+@brief The KPlainTextMarkupBuilder creates a simple marked up plain text document.
 
 This class creates a simple plain text markup.
 
@@ -84,11 +84,11 @@ becomes:
 @since 4.2
 
 */
-class PlainTextMarkupBuilder : public AbstractMarkupBuilder
+class KPlainTextMarkupBuilder : public KAbstractMarkupBuilder
 {
 public:
-    /** Construct a new PlainTextMarkupBuilder. */
-    PlainTextMarkupBuilder();
+    /** Construct a new KPlainTextMarkupBuilder. */
+    KPlainTextMarkupBuilder();
 
     virtual void beginStrong();
     virtual void endStrong();

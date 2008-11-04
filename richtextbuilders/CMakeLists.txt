@@ -5,10 +5,10 @@ INCLUDE_DIRECTORIES( ${KDE4_INCLUDES} ${CMAKE_CURRENT_BINARY_DIR} )
 SET(krichtexteditorSources
   main.cpp
   krichtexteditor.cpp
-  markupdirector.cpp
-  markupdirector_p.cpp
-  htmlbuilder.cpp
-  plaintextmarkupbuilder.cpp
+  kmarkupdirector.cpp
+  kmarkupdirector_p.cpp
+  khtmlbuilder.cpp
+  kplaintextmarkupbuilder.cpp
   mediawikimarkupbuilder.cpp
   bbcodebuilder.cpp
 )

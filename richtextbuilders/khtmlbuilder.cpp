@@ -19,106 +19,106 @@
     02110-1301, USA.
 */
 
-#include "htmlbuilder.h"
+#include "khtmlbuilder.h"
 
 #include <QTextDocument>
 
-HTMLBuilder::HTMLBuilder()
+KHTMLBuilder::KHTMLBuilder()
 {
 
 }
 
-HTMLBuilder::~HTMLBuilder()
+KHTMLBuilder::~KHTMLBuilder()
 {
 
 }
 
-void HTMLBuilder::beginStrong()
+void KHTMLBuilder::beginStrong()
 {
     m_text.append ( "<strong>" );
 }
 
-void HTMLBuilder::endStrong()
+void KHTMLBuilder::endStrong()
 {
     m_text.append ( "</strong>" );
 }
 
-void HTMLBuilder::beginEmph()
+void KHTMLBuilder::beginEmph()
 {
     m_text.append ( "<em>" );
 }
 
-void HTMLBuilder::endEmph()
+void KHTMLBuilder::endEmph()
 {
     m_text.append ( "</em>" );
 }
 
-void HTMLBuilder::beginUnderline()
+void KHTMLBuilder::beginUnderline()
 {
     m_text.append ( "<u>" );
 }
 
-void HTMLBuilder::endUnderline()
+void KHTMLBuilder::endUnderline()
 {
     m_text.append ( "</u>" );
 }
 
-void HTMLBuilder::beginStrikeout()
+void KHTMLBuilder::beginStrikeout()
 {
     m_text.append ( "<s>" );
 }
 
-void HTMLBuilder::endStrikeout()
+void KHTMLBuilder::endStrikeout()
 {
     m_text.append ( "</s>" );
 }
 
-void HTMLBuilder::beginForeground ( const QBrush &brush )
+void KHTMLBuilder::beginForeground ( const QBrush &brush )
 {
     m_text.append ( QString ( "<span style=\"color:%1;\">" ).arg ( brush.color().name() ) );
 }
 
-void HTMLBuilder::endForeground()
+void KHTMLBuilder::endForeground()
 {
     m_text.append ( "</span>" );
 }
 
-void HTMLBuilder::beginBackground ( const QBrush &brush )
+void KHTMLBuilder::beginBackground ( const QBrush &brush )
 {
     m_text.append ( QString ( "<span style=\"background-color:%1;\">" ).arg ( brush.color().name() ) );
 }
 
-void HTMLBuilder::endBackground()
+void KHTMLBuilder::endBackground()
 {
     m_text.append ( "</span>" );
 }
 
-void HTMLBuilder::endAnchor()
+void KHTMLBuilder::endAnchor()
 {
     m_text.append ( "</a>" );
 }
 
-void HTMLBuilder::beginFontFamily ( const QString &family )
+void KHTMLBuilder::beginFontFamily ( const QString &family )
 {
     m_text.append ( QString ( "<span style=\"font-family:%1;\">" ).arg ( family ) );
 }
 
-void HTMLBuilder::endFontFamily()
+void KHTMLBuilder::endFontFamily()
 {
     m_text.append ( "</span>" );
 }
 
-void HTMLBuilder::beginFontPointSize ( int size )
+void KHTMLBuilder::beginFontPointSize ( int size )
 {
     m_text.append ( QString ( "<span style=\"font-size:%1pt;\">" ).arg ( QString::number ( size ) ) );
 }
 
-void HTMLBuilder::endFontPointSize()
+void KHTMLBuilder::endFontPointSize()
 {
     m_text.append ( "</span>" );
 }
 
-void HTMLBuilder::beginParagraph ( Qt::Alignment al, qreal topMargin, qreal bottomMargin, qreal leftMargin, qreal rightMargin )
+void KHTMLBuilder::beginParagraph ( Qt::Alignment al, qreal topMargin, qreal bottomMargin, qreal leftMargin, qreal rightMargin )
 {
     // Don't put paragraph tags inside li tags. Qt bug reported.
 //     if (currentListItemStyles.size() != 0)
@@ -158,72 +158,72 @@ void HTMLBuilder::beginParagraph ( Qt::Alignment al, qreal topMargin, qreal bott
 //     }
 }
 
-void HTMLBuilder::beginHeader1()
+void KHTMLBuilder::beginHeader1()
 {
     m_text.append ( "<h1>" );
 }
 
-void HTMLBuilder::beginHeader2()
+void KHTMLBuilder::beginHeader2()
 {
     m_text.append ( "<h2>" );
 }
 
-void HTMLBuilder::beginHeader3()
+void KHTMLBuilder::beginHeader3()
 {
     m_text.append ( "<h3>" );
 }
 
-void HTMLBuilder::beginHeader4()
+void KHTMLBuilder::beginHeader4()
 {
     m_text.append ( "<h4>" );
 }
 
-void HTMLBuilder::beginHeader5()
+void KHTMLBuilder::beginHeader5()
 {
     m_text.append ( "<h5>" );
 }
 
-void HTMLBuilder::beginHeader6()
+void KHTMLBuilder::beginHeader6()
 {
     m_text.append ( "<h6>" );
 }
 
-void HTMLBuilder::endHeader1()
+void KHTMLBuilder::endHeader1()
 {
     m_text.append ( "</h1>" );
 }
 
-void HTMLBuilder::endHeader2()
+void KHTMLBuilder::endHeader2()
 {
     m_text.append ( "</h2>" );
 }
 
-void HTMLBuilder::endHeader3()
+void KHTMLBuilder::endHeader3()
 {
     m_text.append ( "</h3>" );
 }
 
-void HTMLBuilder::endHeader4()
+void KHTMLBuilder::endHeader4()
 {
     m_text.append ( "</h4>" );
 }
 
-void HTMLBuilder::endHeader5()
+void KHTMLBuilder::endHeader5()
 {
     m_text.append ( "</h5>" );
 }
 
-void HTMLBuilder::endHeader6()
+void KHTMLBuilder::endHeader6()
 {
     m_text.append ( "</h6>" );
 }
 
-void HTMLBuilder::endParagraph()
+void KHTMLBuilder::endParagraph()
 {
     m_text.append ( "</p>\n" );
 }
 
-void HTMLBuilder::addNewline()
+void KHTMLBuilder::addNewline()
 {
     m_text.append ( "<br />\n" );
 
@@ -231,7 +231,7 @@ void HTMLBuilder::addNewline()
 //     m_text.append ( "<p style=\"-qt-paragraph-type:empty;\"></p><br />\n" );
 }
 
-void HTMLBuilder::insertHorizontalRule ( int width )
+void KHTMLBuilder::insertHorizontalRule ( int width )
 {
     if ( width != -1 ) {
         m_text.append ( QString ( "<hr width=\"%1\" />\n" ).arg ( width ) );
@@ -239,7 +239,7 @@ void HTMLBuilder::insertHorizontalRule ( int width )
     m_text.append ( "<hr />\n" );
 }
 
-void HTMLBuilder::insertImage ( const QString &src, qreal width, qreal height )
+void KHTMLBuilder::insertImage ( const QString &src, qreal width, qreal height )
 {
   m_text.append( QString( "<img src=\"%1\" " ).arg ( src ) );
   if ( width != 0 ) m_text.append( QString( "width=\"%2\" " ).arg ( width ) );
@@ -247,7 +247,7 @@ void HTMLBuilder::insertImage ( const QString &src, qreal width, qreal height )
   m_text.append( "/>" );
 }
 
-void HTMLBuilder::beginList ( QTextListFormat::Style type )
+void KHTMLBuilder::beginList ( QTextListFormat::Style type )
 {
     currentListItemStyles.append ( type );
     switch ( type ) {
@@ -273,7 +273,7 @@ void HTMLBuilder::beginList ( QTextListFormat::Style type )
         break;
     }
 }
-void HTMLBuilder::endList()
+void KHTMLBuilder::endList()
 {
     switch ( currentListItemStyles.last() ) {
     case QTextListFormat::ListDisc:
@@ -291,38 +291,38 @@ void HTMLBuilder::endList()
     }
     currentListItemStyles.removeLast();
 }
-void HTMLBuilder::beginListItem()
+void KHTMLBuilder::beginListItem()
 {
     m_text.append ( "<li>" );
 }
 
-void HTMLBuilder::endListItem()
+void KHTMLBuilder::endListItem()
 {
     m_text.append ( "</li>\n" );
 }
 
-void HTMLBuilder::beginSuperscript()
+void KHTMLBuilder::beginSuperscript()
 {
     m_text.append ( "<sup>" );
 }
 
-void HTMLBuilder::endSuperscript()
+void KHTMLBuilder::endSuperscript()
 {
     m_text.append ( "</sup>" );
 }
 
-void HTMLBuilder::beginSubscript()
+void KHTMLBuilder::beginSubscript()
 {
     m_text.append ( "<sub>" );
 }
 
-void HTMLBuilder::endSubscript()
+void KHTMLBuilder::endSubscript()
 {
     m_text.append ( "</sub>" );
 }
 
 
-void HTMLBuilder::beginTable ( qreal cellpadding, qreal cellspacing, const QString &width )
+void KHTMLBuilder::beginTable ( qreal cellpadding, qreal cellspacing, const QString &width )
 {
     m_text.append ( QString ( "<table cellpadding=\"%1\" cellspacing=\"%2\" width=\"%3\" border=\"1\">" )
                     .arg ( cellpadding )
@@ -330,43 +330,43 @@ void HTMLBuilder::beginTable ( qreal cellpadding, qreal cellspacing, const QStri
                     .arg ( width ) );
 }
 
-void HTMLBuilder::beginTableRow()
+void KHTMLBuilder::beginTableRow()
 {
     m_text.append ( "<tr>" );
 }
 
-void HTMLBuilder::beginTableHeaderCell ( QString width, int colspan, int rowspan )
+void KHTMLBuilder::beginTableHeaderCell ( QString width, int colspan, int rowspan )
 {
     m_text.append ( QString ( "<th width=\"%1\" colspan=\"%2\" rowspan=\"%3\">" ).arg ( width ).arg ( colspan ).arg ( rowspan ) );
 }
 
-void HTMLBuilder::beginTableCell ( QString width, int colspan, int rowspan )
+void KHTMLBuilder::beginTableCell ( QString width, int colspan, int rowspan )
 {
     m_text.append ( QString ( "<td width=\"%1\" colspan=\"%2\" rowspan=\"%3\">" ).arg ( width ).arg ( colspan ).arg ( rowspan ) );
 }
 
-void HTMLBuilder::endTable()
+void KHTMLBuilder::endTable()
 {
     m_text.append ( "</table>" );
 }
 
-void HTMLBuilder::endTableRow()
+void KHTMLBuilder::endTableRow()
 {
     m_text.append ( "</tr>" );
 }
 
-void HTMLBuilder::endTableHeaderCell()
+void KHTMLBuilder::endTableHeaderCell()
 {
     m_text.append ( "</th>" );
 }
 
-void HTMLBuilder::endTableCell()
+void KHTMLBuilder::endTableCell()
 {
     m_text.append ( "</td>" );
 }
 
 
-void HTMLBuilder::appendLiteralText ( const QString &text )
+void KHTMLBuilder::appendLiteralText ( const QString &text )
 {
     QString s ( "ert" );
     Qt::mightBeRichText ( s );
@@ -374,7 +374,7 @@ void HTMLBuilder::appendLiteralText ( const QString &text )
 }
 
 
-QString& HTMLBuilder::getResult()
+QString& KHTMLBuilder::getResult()
 {
     return m_text;
 }

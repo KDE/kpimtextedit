@@ -21,14 +21,14 @@
 
 #include "krichtexteditor.h"
 
-#include "abstractmarkupbuilder.h"
-#include "plaintextmarkupbuilder.h"
-#include "htmlbuilder.h"
+#include "kabstractmarkupbuilder.h"
+#include "kplaintextmarkupbuilder.h"
+#include "khtmlbuilder.h"
 #include "bbcodebuilder.h"
 #include "mediawikimarkupbuilder.h"
 
 
-#include "markupdirector.h"
+#include "kmarkupdirector.h"
 
 #include <QTextDocument>
 #include <QDockWidget>
@@ -116,9 +116,9 @@ KRichTextEditor::KRichTextEditor() : KXmlGuiWindow()
 
 void KRichTextEditor::updateDockedWidgets()
 {
-    HTMLBuilder *hb = new HTMLBuilder();
+    KHTMLBuilder *hb = new KHTMLBuilder();
 
-    MarkupDirector *hmd = new MarkupDirector ( hb );
+    KMarkupDirector *hmd = new KMarkupDirector ( hb );
     hmd->constructContent ( textArea->document() );
 
     QString t = hb->getResult();
@@ -128,23 +128,23 @@ void KRichTextEditor::updateDockedWidgets()
     kte->setPlainText ( t );
     krte->setHtml ( t );
 
-    PlainTextMarkupBuilder *pb = new PlainTextMarkupBuilder();
+    KPlainTextMarkupBuilder *pb = new KPlainTextMarkupBuilder();
 
-    MarkupDirector *pmd = new MarkupDirector ( pb );
+    KMarkupDirector *pmd = new KMarkupDirector ( pb );
     pmd->constructContent ( textArea->document() );
 
     kpte->setPlainText ( pb->getResult() );
 
     BBCodeBuilder *bbb = new BBCodeBuilder();
 
-    MarkupDirector *bbmd = new MarkupDirector ( bbb );
+    KMarkupDirector *bbmd = new KMarkupDirector ( bbb );
     bbmd->constructContent ( textArea->document() );
 
     kbbte->setPlainText ( bbb->getResult() );
 
     MediaWikiMarkupBuilder *mwb = new MediaWikiMarkupBuilder();
 
-    MarkupDirector *mwmd = new MarkupDirector ( mwb );
+    KMarkupDirector *mwmd = new KMarkupDirector ( mwb );
     mwmd->constructContent ( textArea->document() );
 
     kmwte->setPlainText ( mwb->getResult() );

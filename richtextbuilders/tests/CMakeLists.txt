@@ -5,9 +5,9 @@ INCLUDE_DIRECTORIES( ${KDE4_INCLUDES} ${CMAKE_CURRENT_BINARY_DIR} )
 set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
 
 SET(krichtexteditorSources
-  ../markupdirector.cpp
-  ../markupdirector_p.cpp
-  ../htmlbuilder.cpp
+  ../kmarkupdirector.cpp
+  ../kmarkupdirector_p.cpp
+  ../khtmlbuilder.cpp
   )
 
 

@@ -19,13 +19,13 @@
     02110-1301, USA.
 */
 
-#ifndef HTMLBUILDER_H
-#define HTMLBUILDER_H
+#ifndef KHTMLBUILDER_H
+#define KHTMLBUILDER_H
 
-#include "abstractmarkupbuilder.h"
+#include "kabstractmarkupbuilder.h"
 
 /**
-@brief The HTMLBuilder creates a clean html markup output.
+@brief The KHTMLBuilder creates a clean html markup output.
 
 This class creates html output which is as minimal as possible and restricted to the rich text features supported in Qt. (http://doc.trolltech.com/4.4/richtext-html-subset.htm)
 
@@ -34,25 +34,25 @@ The output contains only the body content, not the head element or other metadat
 eg:
 
 @code
+  <p>
     This is some <strong>formatted content</strong> in a paragraph.
+  </p>
 @endcode
 
-instead of:
+instead of the content produced by qt:
 
 @code
-    <head>
-    <title>Some text</title>
-    <head>
-    <body>
-        This is some <strong>formatted content</strong> in a paragraph.
-    </body>
-    </html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+<p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This is some <span style=" font-weight:600;">formatted content</span> in a paragraph. </p></body></html>
 @endcode
 
 Such tags should be created separately. For example:
 
 @code
-        AbstractMarkupBuilder *b = new HTMLBuilder();
+        AbstractMarkupBuilder *b = new KHTMLBuilder();
         MarkupDirector *md = new MarkupDirector(b);
         md->constructContent();
         QString cleanHtml("<head>\n<title>%1</title>\n</head>\n<body>%2</body>\n</html>")
@@ -78,15 +78,15 @@ instead of
 @since 4.2
 
 */
-class HTMLBuilder : public AbstractMarkupBuilder
+class KHTMLBuilder : public KAbstractMarkupBuilder
 {
 public:
 
     /**
-    Creates a new HTMLBuilder.
+    Creates a new KHTMLBuilder.
     */
-    HTMLBuilder();
-    virtual ~HTMLBuilder();
+    KHTMLBuilder();
+    virtual ~KHTMLBuilder();
 
     virtual void beginStrong();
     virtual void endStrong();
