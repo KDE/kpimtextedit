@@ -73,7 +73,7 @@ void BBCodeBuilder::endForeground()
 
 // Background colour not supported by BBCode.
 
-void BBCodeBuilder::beginAnchor ( const QString &href )
+void BBCodeBuilder::beginAnchor ( const QString &href, const QString &name  )
 {
     m_text.append ( QString ( "[URL=%1]" ).arg ( href ) );
 }

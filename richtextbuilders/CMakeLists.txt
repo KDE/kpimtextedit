@@ -6,6 +6,7 @@ SET(krichtexteditorSources
   main.cpp
   krichtexteditor.cpp
   markupdirector.cpp
+  markupdirector_p.cpp
   htmlbuilder.cpp
   plaintextmarkupbuilder.cpp
   mediawikimarkupbuilder.cpp

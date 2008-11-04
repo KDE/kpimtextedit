@@ -6,6 +6,7 @@ set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
 
 SET(krichtexteditorSources
   ../markupdirector.cpp
+  ../markupdirector_p.cpp
   ../htmlbuilder.cpp
   )
 

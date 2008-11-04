@@ -19,8 +19,6 @@
     02110-1301, USA.
 */
 
-
-
 #include "mediawikimarkupbuilder.h"
 #include <kdebug.h>
 

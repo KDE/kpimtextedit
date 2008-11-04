@@ -49,7 +49,7 @@ public:
 
     // Background colour not supported by BBCode.
 
-    virtual void beginAnchor ( const QString &href );
+    virtual void beginAnchor ( const QString &href= QString(), const QString &name= QString()  );
     virtual void endAnchor();
 
     // Font family not supported by BBCode.

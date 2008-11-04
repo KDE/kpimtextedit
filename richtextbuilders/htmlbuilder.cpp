@@ -220,12 +220,15 @@ void HTMLBuilder::endHeader6()
 
 void HTMLBuilder::endParagraph()
 {
-    m_text.append ( "\n</p>\n" );
+    m_text.append ( "</p>\n" );
 }
 
 void HTMLBuilder::addNewline()
 {
     m_text.append ( "<br />\n" );
+
+  // Work around qt import bug. Doesn't import <br /> correctly.
+//     m_text.append ( "<p style=\"-qt-paragraph-type:empty;\"></p><br />\n" );
 }
 
 void HTMLBuilder::insertHorizontalRule ( int width )
@@ -238,7 +241,10 @@ void HTMLBuilder::insertHorizontalRule ( int width )
 
 void HTMLBuilder::insertImage ( const QString &src, qreal width, qreal height )
 {
-    m_text.append ( QString ( "<img src=\"%1\" width=\"%2\" height=\"%3\" />" ).arg ( src ).arg ( width ).arg ( height ) );
+  m_text.append( QString( "<img src=\"%1\" " ).arg ( src ) );
+  if ( width != 0 ) m_text.append( QString( "width=\"%2\" " ).arg ( width ) );
+  if ( height != 0 ) m_text.append( QString( "height=\"%2\" " ).arg ( height ) );
+  m_text.append( "/>" );
 }
 
 void HTMLBuilder::beginList ( QTextListFormat::Style type )

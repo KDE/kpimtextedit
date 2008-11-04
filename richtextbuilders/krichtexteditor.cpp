@@ -47,6 +47,8 @@
 #include <ksavefile.h>
 #include <kstatusbar.h>
 
+#include <kdebug.h>
+
 
 KRichTextEditor::KRichTextEditor() : KXmlGuiWindow()
 {
@@ -86,6 +88,7 @@ KRichTextEditor::KRichTextEditor() : KXmlGuiWindow()
     dockHtml->setObjectName ( "Re-Rendered" );
     dockHtml->setAllowedAreas ( Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea );
     krte = new KTextEdit ( dockHtml );
+    kDebug() << krte->document()->defaultStyleSheet (); // #######################
     dockHtml->setWidget ( krte );
     addDockWidget ( Qt::RightDockWidgetArea, dockHtml );
 
@@ -109,9 +112,6 @@ KRichTextEditor::KRichTextEditor() : KXmlGuiWindow()
     kmwte = new KTextEdit ( dockMW );
     dockMW->setWidget ( kmwte );
     addDockWidget ( Qt::RightDockWidgetArea, dockMW );
-
-
-
 }
 
 void KRichTextEditor::updateDockedWidgets()
@@ -122,6 +122,8 @@ void KRichTextEditor::updateDockedWidgets()
     hmd->constructContent ( textArea->document() );
 
     QString t = hb->getResult();
+
+    kDebug() << t;
 
     kte->setPlainText ( t );
     krte->setHtml ( t );
@@ -146,10 +148,6 @@ void KRichTextEditor::updateDockedWidgets()
     mwmd->constructContent ( textArea->document() );
 
     kmwte->setPlainText ( mwb->getResult() );
-
-
-
-
 }
 
 KRichTextEditor::~KRichTextEditor()

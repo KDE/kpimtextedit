@@ -99,7 +99,7 @@ public:
     virtual void beginStrikeout();
     virtual void endStrikeout();
 
-    virtual void beginLinkedAnchor ( const QString &href );
+    virtual void beginAnchor ( const QString &href= QString(), const QString &name= QString() );
 
     virtual void endAnchor();
 

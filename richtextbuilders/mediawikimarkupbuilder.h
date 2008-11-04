@@ -19,8 +19,6 @@
     02110-1301, USA.
 */
 
-
-
 #include "abstractmarkupbuilder.h"
 #include <kdebug.h>
 
@@ -50,7 +48,7 @@ public:
     virtual void endParagraph();
     virtual void addNewline();
 
-    virtual void beginAnchor ( const QString &href, const QString &name );
+    virtual void beginAnchor ( const QString &href= QString(), const QString &name= QString() );
     virtual void endAnchor();
 
     virtual void beginHeader1();

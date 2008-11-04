@@ -59,7 +59,7 @@ void PlainTextMarkupBuilder::endStrikeout()
     m_text.append ( "-" );
 }
 
-void PlainTextMarkupBuilder::beginLinkedAnchor ( const QString &href )
+void PlainTextMarkupBuilder::beginAnchor ( const QString &href, const QString &name )
 {
     if ( !m_urls.contains ( href ) ) {
 

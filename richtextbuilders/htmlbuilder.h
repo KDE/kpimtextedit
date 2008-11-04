@@ -100,7 +100,7 @@ public:
     virtual void endForeground();
     virtual void beginBackground ( const QBrush &brush );
     virtual void endBackground();
-    virtual void beginLinkedAnchor ( const QString &href ) {
+    virtual void beginAnchor ( const QString &href= QString(), const QString &name= QString() ) {
         m_text.append ( QString ( "<a href=\"%1\">" ).arg ( href ) );
     }
     virtual void endAnchor();

@@ -112,24 +112,11 @@ public:
     @param href The href of the anchor.
     @param name The name of the anchor.
     */
-    virtual void beginNamedLinkedAnchor ( const QString &href, const QString &name ) {
+    virtual void beginAnchor ( const QString &href = QString(), const QString &name = QString() ) {
         Q_UNUSED ( href );
         Q_UNUSED ( name );
     }
 
-    /** Begin a url anchor element in the markup
-    @param name The name of the anchor.
-    */
-    virtual void beginNamedAnchor ( const QString &name ) {
-        Q_UNUSED ( name );
-    }
-
-    /** Begin a url anchor element in the markup
-    @param href The href of the anchor.
-    */
-    virtual void beginLinkedAnchor ( const QString &href ) {
-        Q_UNUSED ( href );
-    }
     /** Close the anchor element */
     virtual void endAnchor() { }
 
