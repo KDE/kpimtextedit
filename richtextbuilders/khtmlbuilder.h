@@ -24,6 +24,8 @@
 
 #include "kabstractmarkupbuilder.h"
 
+class KHTMLBuilderPrivate;
+
 /**
 @brief The KHTMLBuilder creates a clean html markup output.
 
@@ -53,7 +55,7 @@ Such tags should be created separately. For example:
 
 @code
         AbstractMarkupBuilder *b = new KHTMLBuilder();
-        MarkupDirector *md = new MarkupDirector(b);
+        KMarkupDirector *md = new KMarkupDirector(b);
         md->constructContent();
         QString cleanHtml("<head>\n<title>%1</title>\n</head>\n<body>%2</body>\n</html>")
                     .arg(document.metaInformation(QTextDocument::DocumentTitle))
@@ -96,46 +98,55 @@ public:
     virtual void endUnderline();
     virtual void beginStrikeout();
     virtual void endStrikeout();
-    virtual void beginForeground ( const QBrush &brush );
+    virtual void beginForeground(const QBrush &brush);
     virtual void endForeground();
-    virtual void beginBackground ( const QBrush &brush );
+    virtual void beginBackground(const QBrush &brush);
     virtual void endBackground();
-    virtual void beginAnchor ( const QString &href= QString(), const QString &name= QString() ) {
-        m_text.append ( QString ( "<a href=\"%1\">" ).arg ( href ) );
-    }
+    virtual void beginAnchor(const QString &href = QString(), const QString &name = QString());
     virtual void endAnchor();
 
     // Maybe this stuff should just be added to a list, and then when I add literal text,
     // add some kind of style attribute in one span instead of many.
-    virtual void beginFontFamily ( const QString &family );
+    virtual void beginFontFamily(const QString &family);
     virtual void endFontFamily();
-    virtual void beginFontPointSize ( int size );
+
+    /**
+      Begin a new font point size
+      @param size The new size to begin.
+    */
+    virtual void beginFontPointSize(int size);
     virtual void endFontPointSize();
 
-    virtual void beginParagraph ( Qt::Alignment al, qreal topMargin, qreal bottomMargin, qreal leftMargin, qreal rightMargin );
+    /**
+    Begin a new paragraph
+    @param al The new paragraph alignment
+    @param topMargin The new paragraph topMargin
+    @param bottomMargin The new paragraph bottomMargin
+    @param leftMargin The new paragraph leftMargin
+    @param rightMargin The new paragraph rightMargin
+    */
+    virtual void beginParagraph(Qt::Alignment al = Qt::AlignLeft, qreal topMargin = 0.0, qreal bottomMargin = 0.0, qreal leftMargin = 0.0, qreal rightMargin = 0.0);
 
-    virtual void beginHeader1();
-    virtual void beginHeader2();
-    virtual void beginHeader3();
-    virtual void beginHeader4();
-    virtual void beginHeader5();
-    virtual void beginHeader6();
+    /**
+    Begin a new header element.
+    @param level The new level to begin.
+    */
+    virtual void beginHeader(int level);
 
-    virtual void endHeader1();
-    virtual void endHeader2();
-    virtual void endHeader3();
-    virtual void endHeader4();
-    virtual void endHeader5();
-    virtual void endHeader6();
+    /**
+    End a header element.
+    @param level The new level to end.
+    */
+    virtual void endHeader(int level);
 
     virtual void endParagraph();
     virtual void addNewline();
 
-    virtual void insertHorizontalRule ( int width = -1 );
+    virtual void insertHorizontalRule(int width = -1);
 
-    virtual void insertImage ( const QString &src, qreal width, qreal height );
+    virtual void insertImage(const QString &src, qreal width, qreal height);
 
-    virtual void beginList ( QTextListFormat::Style type );
+    virtual void beginList(QTextListFormat::Style type);
 
     virtual void endList();
 
@@ -151,12 +162,12 @@ public:
     virtual void endSubscript();
 
 
-    virtual void beginTable ( qreal cellpadding, qreal cellspacing, const QString &width );
+    virtual void beginTable(qreal cellpadding, qreal cellspacing, const QString &width);
 
     virtual void beginTableRow();
-    virtual void beginTableHeaderCell ( QString width, int colspan, int rowspan );
+    virtual void beginTableHeaderCell(const QString &width, int colspan, int rowspan);
 
-    virtual void beginTableCell ( QString width, int colspan, int rowspan );
+    virtual void beginTableCell(const QString &width, int colspan, int rowspan);
 
     virtual void endTable();
     virtual void endTableRow();
@@ -179,15 +190,14 @@ public:
     @endverbatim
 
     */
-    virtual void appendLiteralText ( const QString &text );
+    virtual void appendLiteralText(const QString &text);
 
 
     virtual QString& getResult();
 
 private:
-    QList<QTextListFormat::Style> currentListItemStyles;
-
-    QString m_text;
+    KHTMLBuilderPrivate *d_ptr;
+    Q_DECLARE_PRIVATE(KHTMLBuilder)
 
 };
 

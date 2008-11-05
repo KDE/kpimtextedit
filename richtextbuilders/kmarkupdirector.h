@@ -71,7 +71,7 @@ public:
     /**
     Construct a new KMarkupDirector
     */
-    KMarkupDirector ( KAbstractMarkupBuilder* builder );
+    KMarkupDirector(KAbstractMarkupBuilder* builder);
 
     /** Destructor */
     virtual ~KMarkupDirector();
@@ -79,30 +79,30 @@ public:
     /**
     Constructs the output by directing the builder to create the markup.
     */
-    virtual void constructContent ( QTextDocument* doc );
+    virtual void constructContent(QTextDocument* doc);
 
 protected:
 
     /**
     Processes the frame by iterating over its child frames and blocks and processing them as needed.
     */
-    void processFrame ( QTextFrame *frame );
+    void processFrame(QTextFrame *frame);
 
     /**
     Processes the table by iterating over its rows and columns, processing their contents.
     */
-    void processTable ( QTextTable *table );
+    void processTable(QTextTable *table);
 
     /**
     Processes the table cell by iterating over its contents. May contain another table, nested list etc.
      */
-    void processTableCell ( const QTextTableCell &cell );
+    void processTableCell(const QTextTableCell &cell);
 
     /**
         Processes a list by iterating over it. Nested lists are processed by a recursive call.
         @param block The first block in a list.
     */
-    void processList ( const QTextBlock &block );
+    void processList(const QTextBlock &block);
 
     /**
     Processes the contents of a QTextBlock. The block is traversed and each QTextFragment is processed individually.
@@ -125,12 +125,12 @@ protected:
 
     @param block The block to process.
     */
-    void processBlockContents ( const QTextBlock &block );
+    void processBlockContents(const QTextBlock &block);
 
     /**
     Processes the document between the iterators @p start and @p end inclusive.
     */
-    void processDocumentContents ( QTextFrame::iterator start, QTextFrame::iterator end );
+    void processDocumentContents(QTextFrame::iterator start, QTextFrame::iterator end);
 
     /**
         Process a block.
@@ -140,14 +140,14 @@ protected:
         @param block The block to process.
     */
 
-    void processBlock ( const QTextBlock &block );
+    void processBlock(const QTextBlock &block);
 
     /**
     Processes a QTextFragment.
 
     @param fragment The fragment to process.
     */
-    void processFragment ( const QTextFragment &fragment );
+    void processFragment(const QTextFragment &fragment);
 
 private:
     class Private;

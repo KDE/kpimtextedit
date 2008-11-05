@@ -31,42 +31,39 @@
  */
 class KMarkupDirector::Private
 {
-  public:
-    Private( KMarkupDirector *md )
-        : q( md )
-    {
+public:
+    Private(KMarkupDirector *md)
+            : q(md) {
     }
 
-//     void closeFragmentElements( int ElementsToClose );
-
-    void processClosingElements( QTextBlock::iterator it );
-    void processOpeningElements( QTextBlock::iterator it );
-    QSet< int > getElementsToClose( QTextBlock::iterator it );
-    QList< int > getElementsToOpen( QTextBlock::iterator it );
-    QList< int > sortOpeningOrder( QSet< int > openingOrder, QTextBlock::iterator it );
+    void processClosingElements(QTextBlock::iterator it);
+    void processOpeningElements(QTextBlock::iterator it);
+    QSet< int > getElementsToClose(QTextBlock::iterator it);
+    QList< int > getElementsToOpen(QTextBlock::iterator it);
+    QList< int > sortOpeningOrder(QSet< int > openingOrder, QTextBlock::iterator it);
 
     KMarkupDirector *q;
     KAbstractMarkupBuilder *builder;
 
     enum OpenElementValues {
-      None = 0x0,
-      SuperScript = 0x01,
-      SubScript = 0x02,
-      Anchor = 0x04,
-      SpanForeground = 0x08,
-      SpanBackground = 0x10,
-      SpanFontFamily = 0x20,
-      SpanFontPointSize = 0x40,
-      Strong = 0x80,
-      Emph = 0x100,
-      Underline = 0x200,
-      StrikeOut = 0x400
+        None = 0x0,
+        SuperScript = 0x01,
+        SubScript = 0x02,
+        Anchor = 0x04,
+        SpanForeground = 0x08,
+        SpanBackground = 0x10,
+        SpanFontFamily = 0x20,
+        SpanFontPointSize = 0x40,
+        Strong = 0x80,
+        Emph = 0x100,
+        Underline = 0x200,
+        StrikeOut = 0x400
     };
 //     Q_DECLARE_FLAGS(OpenElements, OpenElementValues)
 
     QString openAnchorHref;
     QString anchorHrefToOpen;
-//     QString openAnchorName;
+    QString openAnchorName;
 
     QBrush openForeground;
     QBrush foregroundToOpen;
@@ -77,23 +74,12 @@ class KMarkupDirector::Private
     QString openFontFamily;
     QString fontFamilyToOpen;
 
-//     /**
-//     Holds the elements open while processing a fragment.
-//     */
-//     quint32 openElements;
-
-
-//     QPair< QList< int > > changedElements;
-
     // An ordered list containing the order elements were opened in.
     QList< int > openElements;
+
+    // Elements that have yet to be opened. Used while determine the order to open them.
     QSet< int > elementsToOpen;
 
-//     QTextFragment currentFragment;
-//     QTextFragment previousFragment;
-
-    // Using the Qt flags system fails. Using an int instead.
-//     OpenElements openElements;
 };
 // Q_DECLARE_OPERATORS_FOR_FLAGS(KMarkupDirector::Private::OpenElements)
 

@@ -21,135 +21,56 @@
 
 #include "kplaintextmarkupbuilder.h"
 
-KPlainTextMarkupBuilder::KPlainTextMarkupBuilder()
-{
-    m_urls = QStringList();
-}
+#include <KLocale>
 
-void KPlainTextMarkupBuilder::beginStrong()
+class KPlainTextMarkupBuilderPrivate
 {
-    m_text.append ( "*" );
-}
-void KPlainTextMarkupBuilder::endStrong()
-{
-    m_text.append ( "*" );
-}
-void KPlainTextMarkupBuilder::beginEmph()
-{
-    m_text.append ( "/" );
-}
-void KPlainTextMarkupBuilder::endEmph()
-{
-    m_text.append ( "/" );
-}
-void KPlainTextMarkupBuilder::beginUnderline()
-{
-    m_text.append ( "_" );
-}
-void KPlainTextMarkupBuilder::endUnderline()
-{
-    m_text.append ( "_" );
-}
-void KPlainTextMarkupBuilder::beginStrikeout()
-{
-    m_text.append ( "-" );
-}
-void KPlainTextMarkupBuilder::endStrikeout()
-{
-    m_text.append ( "-" );
-}
+public:
+    KPlainTextMarkupBuilderPrivate(KPlainTextMarkupBuilder *b) : q_ptr(b) {
 
-void KPlainTextMarkupBuilder::beginAnchor ( const QString &href, const QString &name )
-{
-    if ( !m_urls.contains ( href ) ) {
-
-        m_urls.append ( href );
-    }
-    activeLink = href;
-}
-
-void KPlainTextMarkupBuilder::endAnchor()
-{
-    m_text.append ( QString ( "[%1]" ).arg ( m_urls.indexOf ( activeLink ) + 1 ) );
-}
-
-void KPlainTextMarkupBuilder::endParagraph()
-{
-    m_text.append ( "\n" );
-}
-void KPlainTextMarkupBuilder::addNewline()
-{
-    m_text.append ( "\n" );
-}
-void KPlainTextMarkupBuilder::insertImage ( const QString &src, qreal width, qreal height )
-{
-    Q_UNUSED ( width )
-    Q_UNUSED ( height )
-
-    if ( !m_urls.contains ( src ) ) {
-        m_urls.append ( src );
-    }
-    m_text.append ( QString ( "[%1]" ).arg ( m_urls.indexOf ( src ) + 1 ) );
-}
-
-
-void KPlainTextMarkupBuilder::beginList ( QTextListFormat::Style style )
-{
-    currentListItemStyles.append ( style );
-    currentListItemNumbers.append ( 0 );
-}
-
-void KPlainTextMarkupBuilder::endList()
-{
-    if ( !currentListItemNumbers.isEmpty() ) {
-        currentListItemStyles.removeLast();
-        currentListItemNumbers.removeLast();
-    }
-}
-void KPlainTextMarkupBuilder::beginListItem()
-{
-    for ( int i = 0; i < currentListItemNumbers.size(); i++ ) {
-        m_text.append ( "    " );
     }
 
-    int itemNumber = currentListItemNumbers.last();
-    QString letterString;
+    /**
+    Get a letter string to represent a number.
 
-    switch ( currentListItemStyles.last() ) {
-    case QTextListFormat::ListDisc:
-        m_text.append ( " *  " );
-        break;
-    case QTextListFormat::ListCircle:
-        m_text.append ( " o  " );
-        break;
-    case QTextListFormat::ListSquare:
-        m_text.append ( " -  " );
-        break;
-    case QTextListFormat::ListDecimal:
-        m_text.append ( QString ( " %1. " ).arg ( itemNumber + 1 ) );
-        break;
-    case QTextListFormat::ListLowerAlpha:
-        m_text.append ( QString ( " %1. " ).arg ( getLetterString ( itemNumber ) ) );
-        break;
-    case QTextListFormat::ListUpperAlpha:
-        m_text.append ( QString ( " %1. " ).arg ( getLetterString ( itemNumber ).toUpper() ) );
-        break;
-    default:
-        break;
-    }
-}
+    The numbers 1-26 are represented by a-z, and 27-52 by aa-az, 53-79 by ba-bz etc.
 
-QString KPlainTextMarkupBuilder::getLetterString ( int itemNumber )
+    @param The number to convert
+    @return The letter string representation of the number.
+    */
+    QString getLetterString(int itemNumber);
+
+    /**
+    Gets a block of references in the body of the text.
+    This is an ordered list of links and images in the text.
+    */
+    QString getReferences();
+
+    QStringList m_urls;
+    QList<QTextListFormat::Style> currentListItemStyles;
+    QList<int> currentListItemNumbers;
+
+    QString activeLink;
+
+    QString m_text;
+
+    KPlainTextMarkupBuilder *q_ptr;
+
+    Q_DECLARE_PUBLIC(KPlainTextMarkupBuilder)
+
+};
+
+QString KPlainTextMarkupBuilderPrivate::getLetterString(int itemNumber)
 {
     QString letterString;
-    while ( true ) {
+    while (true) {
         // Create the letter string by prepending one char at a time.
         // The itemNumber is converted to a number in the base 36 (number of letters in the
         // alphabet plus 10) after being increased by 10 (to pass out the digits 0 to 9).
-        letterString.prepend ( QString ( "%1" ).arg ( ( itemNumber % LETTERSINALPHABET ) + DIGITSOFFSET,
-                               0, // no padding while building this string.
-                               LETTERSINALPHABET + DIGITSOFFSET ) );
-        if ( ( itemNumber >= LETTERSINALPHABET ) ) {
+        letterString.prepend(QString("%1").arg((itemNumber % LETTERSINALPHABET) + DIGITSOFFSET,
+                                               0, // no padding while building this string.
+                                               LETTERSINALPHABET + DIGITSOFFSET));
+        if ((itemNumber >= LETTERSINALPHABET)) {
             itemNumber = itemNumber / LETTERSINALPHABET;
             itemNumber--;
         } else {
@@ -159,55 +80,199 @@ QString KPlainTextMarkupBuilder::getLetterString ( int itemNumber )
     return letterString;
 }
 
+QString KPlainTextMarkupBuilderPrivate::getReferences()
+{
+    QString refs;
+    if (!m_urls.isEmpty()) {
+        refs.append(i18nc("Beginning of the references section, which lists all external references",
+                          "\n---- References ----\n"));
+
+        int index = 1;
+        while (!m_urls.isEmpty()) {
+            refs.append(QString("[%1] %2\n").arg(index++).arg(m_urls.takeFirst()));
+        }
+    }
+    return refs;
+}
+
+KPlainTextMarkupBuilder::KPlainTextMarkupBuilder() : d_ptr(new KPlainTextMarkupBuilderPrivate(this))
+{
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_urls = QStringList();
+}
+
+void KPlainTextMarkupBuilder::beginStrong()
+{
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append("*");
+}
+void KPlainTextMarkupBuilder::endStrong()
+{
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append("*");
+}
+void KPlainTextMarkupBuilder::beginEmph()
+{
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append("/");
+}
+void KPlainTextMarkupBuilder::endEmph()
+{
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append("/");
+}
+void KPlainTextMarkupBuilder::beginUnderline()
+{
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append("_");
+}
+void KPlainTextMarkupBuilder::endUnderline()
+{
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append("_");
+}
+void KPlainTextMarkupBuilder::beginStrikeout()
+{
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append("-");
+}
+void KPlainTextMarkupBuilder::endStrikeout()
+{
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append("-");
+}
+
+void KPlainTextMarkupBuilder::beginAnchor(const QString &href, const QString &name)
+{
+    Q_D(KPlainTextMarkupBuilder);
+    Q_UNUSED(name);
+    if (!d->m_urls.contains(href)) {
+
+        d->m_urls.append(href);
+    }
+    d->activeLink = href;
+}
+
+void KPlainTextMarkupBuilder::endAnchor()
+{
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append(QString("[%1]").arg(d->m_urls.indexOf(d->activeLink) + 1));
+}
+
+void KPlainTextMarkupBuilder::endParagraph()
+{
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append("\n");
+}
+void KPlainTextMarkupBuilder::addNewline()
+{
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append("\n");
+}
+void KPlainTextMarkupBuilder::insertImage(const QString &src, qreal width, qreal height)
+{
+    Q_D(KPlainTextMarkupBuilder);
+    Q_UNUSED(width)
+    Q_UNUSED(height)
+
+    if (!d->m_urls.contains(src)) {
+        d->m_urls.append(src);
+    }
+    d->m_text.append(QString("[%1]").arg(d->m_urls.indexOf(src) + 1));
+}
+
+
+void KPlainTextMarkupBuilder::beginList(QTextListFormat::Style style)
+{
+    Q_D(KPlainTextMarkupBuilder);
+    d->currentListItemStyles.append(style);
+    d->currentListItemNumbers.append(0);
+}
+
+void KPlainTextMarkupBuilder::endList()
+{
+    Q_D(KPlainTextMarkupBuilder);
+    if (!d->currentListItemNumbers.isEmpty()) {
+        d->currentListItemStyles.removeLast();
+        d->currentListItemNumbers.removeLast();
+    }
+}
+void KPlainTextMarkupBuilder::beginListItem()
+{
+    Q_D(KPlainTextMarkupBuilder);
+    for (int i = 0; i < d->currentListItemNumbers.size(); i++) {
+        d->m_text.append("    ");
+    }
+
+    int itemNumber = d->currentListItemNumbers.last();
+    QString letterString;
+
+    switch (d->currentListItemStyles.last()) {
+    case QTextListFormat::ListDisc:
+        d->m_text.append(" *  ");
+        break;
+    case QTextListFormat::ListCircle:
+        d->m_text.append(" o  ");
+        break;
+    case QTextListFormat::ListSquare:
+        d->m_text.append(" -  ");
+        break;
+    case QTextListFormat::ListDecimal:
+        d->m_text.append(QString(" %1. ").arg(itemNumber + 1));
+        break;
+    case QTextListFormat::ListLowerAlpha:
+        d->m_text.append(QString(" %1. ").arg(d->getLetterString(itemNumber)));
+        break;
+    case QTextListFormat::ListUpperAlpha:
+        d->m_text.append(QString(" %1. ").arg(d->getLetterString(itemNumber).toUpper()));
+        break;
+    default:
+        break;
+    }
+}
 
 void KPlainTextMarkupBuilder::endListItem()
 {
-    currentListItemNumbers.last() = currentListItemNumbers.last() + 1;
+    Q_D(KPlainTextMarkupBuilder);
+    d->currentListItemNumbers.last() = d->currentListItemNumbers.last() + 1;
 }
 
 
 void KPlainTextMarkupBuilder::beginSuperscript()
 {
-    m_text.append ( "^{" );
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append("^{");
 }
 
 void KPlainTextMarkupBuilder::endSuperscript()
 {
-    m_text.append ( "}" );
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append("}");
 }
 
 void KPlainTextMarkupBuilder::beginSubscript()
 {
-    m_text.append ( "_{" );
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append("_{");
 }
 
 void KPlainTextMarkupBuilder::endSubscript()
 {
-    m_text.append ( "}" );
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append("}");
 }
 
-void KPlainTextMarkupBuilder::appendLiteralText ( const QString &text )
+void KPlainTextMarkupBuilder::appendLiteralText(const QString &text)
 {
-    m_text.append ( text );
+    Q_D(KPlainTextMarkupBuilder);
+    d->m_text.append(text);
 }
 
 QString& KPlainTextMarkupBuilder::getResult()
 {
-    QString &ret = m_text;
-    ret.append ( getReferences() );
+    Q_D(KPlainTextMarkupBuilder);
+    QString &ret = d->m_text;
+    ret.append(d->getReferences());
     return ret;
 }
 
-QString KPlainTextMarkupBuilder::getReferences()
-{
-    QString refs;
-    if ( !m_urls.isEmpty() ) {
-        refs.append ( "\n---- References ----\n" ); //TODO: i18n
-
-        int index = 1;
-        while ( !m_urls.isEmpty() ) {
-            refs.append ( QString ( "[%1] %2\n" ).arg ( index++ ).arg ( m_urls.takeFirst() ) );
-        }
-    }
-    return refs;
-}

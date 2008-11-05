@@ -25,12 +25,12 @@
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 
-int main ( int argc, char **argv )
+int main(int argc, char **argv)
 {
-    const QByteArray& ba = QByteArray ( "krichtexteditor" );
-    const KLocalizedString name = ki18n ( "KDE Rich Text Editor" );
-    KAboutData aboutData ( ba, ba, name, ba, name );
-    KCmdLineArgs::init ( argc, argv, &aboutData );
+    const QByteArray& ba = QByteArray("krichtexteditor");
+    const KLocalizedString name = ki18n("KDE Rich Text Editor");
+    KAboutData aboutData(ba, ba, name, ba, name);
+    KCmdLineArgs::init(argc, argv, &aboutData);
     KApplication app;
     KRichTextEditor* mw = new KRichTextEditor();
     mw->show();

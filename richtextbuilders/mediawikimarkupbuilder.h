@@ -48,24 +48,13 @@ public:
     virtual void endParagraph();
     virtual void addNewline();
 
-    virtual void beginAnchor ( const QString &href= QString(), const QString &name= QString() );
+    virtual void beginAnchor(const QString &href = QString(), const QString &name = QString());
     virtual void endAnchor();
 
-    virtual void beginHeader1();
-    virtual void beginHeader2();
-    virtual void beginHeader3();
-    virtual void beginHeader4();
-    virtual void beginHeader5();
-    virtual void beginHeader6();
+    virtual void beginHeader(int level);
+    virtual void endHeader(int level);
 
-    virtual void endHeader1();
-    virtual void endHeader2();
-    virtual void endHeader3();
-    virtual void endHeader4();
-    virtual void endHeader5();
-    virtual void endHeader6();
-
-    virtual void beginList ( QTextListFormat::Style type );
+    virtual void beginList(QTextListFormat::Style type);
 
 
 
@@ -76,9 +65,9 @@ public:
     virtual void endListItem();
 
 
-    virtual void appendLiteralText ( const QString &text );
+    virtual void appendLiteralText(const QString &text);
 
-    const QString escape ( const QString &s );
+    const QString escape(const QString &s);
 
     virtual QString& getResult();
 

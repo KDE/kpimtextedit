@@ -45,12 +45,12 @@ public:
     virtual void endUnderline();
     virtual void beginStrikeout();
     virtual void endStrikeout();
-    virtual void beginForeground ( const QBrush &brush );
+    virtual void beginForeground(const QBrush &brush);
     virtual void endForeground();
 
     // Background colour not supported by BBCode.
 
-    virtual void beginAnchor ( const QString &href= QString(), const QString &name= QString()  );
+    virtual void beginAnchor(const QString &href = QString(), const QString &name = QString());
     virtual void endAnchor();
 
     // Font family not supported by BBCode.
@@ -60,17 +60,17 @@ public:
     it is suitable for use in BBCode.
     @param size The size of font to begin.
     */
-    virtual void beginFontPointSize ( int size );
+    virtual void beginFontPointSize(int size);
     virtual void endFontPointSize();
 
-    virtual void beginParagraph ( Qt::Alignment a, qreal top, qreal bottom, qreal left, qreal right );
+    virtual void beginParagraph(Qt::Alignment a = Qt::AlignLeft, qreal top = 0.0, qreal bottom = 0.0, qreal left = 0.0, qreal right = 0.0);
 
     virtual void endParagraph();
     virtual void addNewline();
 
-    virtual void insertImage ( const QString &src, qreal width, qreal height );
+    virtual void insertImage(const QString &src, qreal width, qreal height);
 
-    virtual void beginList ( QTextListFormat::Style type );
+    virtual void beginList(QTextListFormat::Style type);
 
     virtual void endList();
 
@@ -86,14 +86,14 @@ public:
     virtual void endSubscript();
 
 
-    virtual void beginTable ( qreal, qreal, const QString & );
+    virtual void beginTable(qreal, qreal, const QString &);
 
     virtual void beginTableRow();
 
 
-    virtual void appendLiteralText ( const QString &text );
+    virtual void appendLiteralText(const QString &text);
 
-    const QString escape ( const QString &s );
+    const QString escape(const QString &s);
 
     virtual QString& getResult();
 

@@ -29,6 +29,8 @@
 
 #include "kabstractmarkupbuilder.h"
 
+class KPlainTextMarkupBuilderPrivate;
+
 /**
 @brief The KPlainTextMarkupBuilder creates a simple marked up plain text document.
 
@@ -99,30 +101,20 @@ public:
     virtual void beginStrikeout();
     virtual void endStrikeout();
 
-    virtual void beginAnchor ( const QString &href= QString(), const QString &name= QString() );
+    virtual void beginAnchor(const QString &href = QString(), const QString &name = QString());
 
     virtual void endAnchor();
 
     virtual void endParagraph();
     virtual void addNewline();
-    virtual void insertImage ( const QString &src, qreal width, qreal height );
+    virtual void insertImage(const QString &src, qreal width, qreal height);
 
 
-    virtual void beginList ( QTextListFormat::Style style );
+    virtual void beginList(QTextListFormat::Style style);
 
     virtual void endList();
 
     virtual void beginListItem();
-
-    /**
-    Get a letter string to represent a number.
-
-    The numbers 1-26 are represented by a-z, and 27-52 by aa-az, 53-79 by ba-bz etc.
-
-    @param The number to convert
-    @return The letter string representation of the number.
-    */
-    QString getLetterString ( int itemNumber );
 
     virtual void endListItem();
 
@@ -135,32 +127,17 @@ public:
 
     virtual void endSubscript();
 
-    virtual void appendLiteralText ( const QString &text );
+    virtual void appendLiteralText(const QString &text);
 
     /**
     Returns the finalised plain text markup, including references at the end.
     */
     virtual QString& getResult();
 
-
-
-protected:
-    /**
-    Gets a block of references in the body of the text.
-    This is an ordered list of links and images in the text.
-    */
-    QString getReferences();
-
 private:
-    QStringList m_urls;
+    KPlainTextMarkupBuilderPrivate *d_ptr;
+    Q_DECLARE_PRIVATE(KPlainTextMarkupBuilder)
 
-    // TODO: Make this a QList<QPair<QTextListFormat::Style, int>> instead
-    QList<QTextListFormat::Style> currentListItemStyles;
-    QList<int> currentListItemNumbers;
-
-    QString activeLink;
-
-    QString m_text;
 
 };
 
