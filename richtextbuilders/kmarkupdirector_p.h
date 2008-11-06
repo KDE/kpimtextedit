@@ -19,6 +19,9 @@
     02110-1301, USA.
 */
 
+#ifndef KMARKUPDIRECTOR_P_H
+#define KMARKUPDIRECTOR_P_H
+
 #include "kmarkupdirector.h"
 
 #include <QSet>
@@ -83,5 +86,5 @@ public:
 };
 // Q_DECLARE_OPERATORS_FOR_FLAGS(KMarkupDirector::Private::OpenElements)
 
-
+#endif
 //@endcond

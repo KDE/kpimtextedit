@@ -19,6 +19,10 @@
     02110-1301, USA.
 */
 
+#ifndef MEDIAWIKIMARKUPBUILDER_H
+#define MEDIAWIKIMARKUPBUILDER_H
+
+
 #include "kabstractmarkupbuilder.h"
 #include <kdebug.h>
 
@@ -77,3 +81,4 @@ private:
     QString m_text;
 };
 
+#endif
