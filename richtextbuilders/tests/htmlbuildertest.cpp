@@ -24,6 +24,7 @@
 #include <qtest_kde.h>
 #include <qtestevent.h>
 #include <QRegExp>
+#include <QTextCursor>
 #include <QTextDocument>
 #include <QTextEdit>
 
@@ -60,6 +61,8 @@ private slots:
     void testNewlines();
     void testEmptyParagraphs();
     void testNewlinesThroughQTextEdit();
+    void testImportWithHorizontalTraversal();
+    void testImportWithVerticalTraversal();
 
 };
 
@@ -504,7 +507,7 @@ void TestHtmlOutput::testHorizontalRule()
 void TestHtmlOutput::testNewlines()
 {
     QTextDocument *doc = new QTextDocument();
-    doc->setHtml("<p style=\"margin-top:0;margin-bottom:0;\">Foo</p>\n<br /><br />\n<p style=\"margin-top:0;margin-bottom:0;\">Bar</p>");
+    doc->setHtml("<p>Foo</p>\n<br /><br />\n<p>Bar</p>");
 
     KHTMLBuilder *hb = new KHTMLBuilder();
     KMarkupDirector *md = new KMarkupDirector(hb);
@@ -519,7 +522,7 @@ void TestHtmlOutput::testNewlines()
 void TestHtmlOutput::testEmptyParagraphs()
 {
     QTextDocument *doc = new QTextDocument();
-    doc->setHtml("<p style=\"margin-top:0;margin-bottom:0;\">Foo</p>\n<p><br /></p>\n<p><br /></p>\n<p style=\"margin-top:0;margin-bottom:0;\">Bar</p>");
+    doc->setHtml("<p>Foo</p>\n<br /><br />\n<p>Bar</p>");
 
     KHTMLBuilder *hb = new KHTMLBuilder();
     KMarkupDirector *md = new KMarkupDirector(hb);
@@ -552,6 +555,42 @@ void TestHtmlOutput::testNewlinesThroughQTextEdit()
 
     QVERIFY(regex.exactMatch(result));
 }
+
+void TestHtmlOutput::testImportWithVerticalTraversal()
+{
+    QTextEdit *te = new QTextEdit();
+
+    te->setHtml("<p>Foo</p><br /><br /><br /><p>Bar</p>");
+
+    QTextCursor cursor = te->textCursor();
+    cursor.movePosition(QTextCursor::Start);
+    QVERIFY(cursor.block().text() == QString( "Foo" ));
+    cursor.movePosition(QTextCursor::Down, QTextCursor::MoveAnchor, 4);
+
+    // Cursor is at the beginning of the block.
+    QVERIFY(cursor.block().position() == cursor.position());
+    QVERIFY(cursor.block().text() == QString( "Bar" ));
+}
+
+void TestHtmlOutput::testImportWithHorizontalTraversal()
+{
+    QTextEdit *te = new QTextEdit();
+
+    te->setHtml("<p>Foo</p><br /><p>Bar</p>");
+
+    // br elements should be represented just like empty paragraphs.
+
+    QTextCursor cursor = te->textCursor();
+    cursor.movePosition(QTextCursor::Start);
+    QVERIFY(cursor.block().text() == QString( "Foo" ));
+    cursor.movePosition(QTextCursor::EndOfBlock);
+    cursor.movePosition(QTextCursor::Right, QTextCursor::MoveAnchor, 2);
+
+    // Cursor is at the beginning of the block.
+    QVERIFY(cursor.block().position() == cursor.position());
+    QVERIFY(cursor.block().text() == QString( "Bar" ));
+}
+
 
 QTEST_KDEMAIN(TestHtmlOutput, GUI)
 #include "htmlbuildertest.moc"
