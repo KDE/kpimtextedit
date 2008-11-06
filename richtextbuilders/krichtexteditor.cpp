@@ -57,7 +57,7 @@ KRichTextEditor::KRichTextEditor() : KXmlGuiWindow()
     textArea = new KRichTextWidget(this);
 
 
-    QPushButton *b = new QPushButton("Update!", this);
+    QPushButton *b = new QPushButton(i18n("Update!"), this);
     connect(b, SIGNAL(pressed()), SLOT(updateDockedWidgets()));
 
     QVBoxLayout *l = new QVBoxLayout();
