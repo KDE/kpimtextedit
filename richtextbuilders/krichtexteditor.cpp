@@ -46,7 +46,7 @@
 #include <kio/netaccess.h>
 #include <ksavefile.h>
 #include <kstatusbar.h>
-
+#include <klocale.h>
 #include <kdebug.h>
 
 
