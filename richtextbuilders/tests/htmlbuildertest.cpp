@@ -63,6 +63,8 @@ private slots:
     void testNewlinesThroughQTextEdit();
     void testImportWithHorizontalTraversal();
     void testImportWithVerticalTraversal();
+    void testBrInsideParagraph();
+    void testBrInsideParagraphThroughTextEdit();
 
 };
 
@@ -589,6 +591,49 @@ void TestHtmlOutput::testImportWithHorizontalTraversal()
     // Cursor is at the beginning of the block.
     QVERIFY(cursor.block().position() == cursor.position());
     QVERIFY(cursor.block().text() == QString( "Bar" ));
+}
+
+void TestHtmlOutput:: testBrInsideParagraphThroughTextEdit()
+{
+    QSKIP("This is worked around during export", SkipSingle);
+    QTextEdit *te = new QTextEdit();
+
+    te->setHtml("<p>Foo<br />Bar</p>");
+
+    // br elements inside paragraphs should be a single linebreak.
+
+    QTextCursor cursor = te->textCursor();
+    cursor.movePosition(QTextCursor::Start);
+
+//     kDebug() << cursor.block().text();
+
+    QVERIFY(cursor.block().text() == QString( "Foo" ));
+    cursor.movePosition(QTextCursor::EndOfBlock);
+    cursor.movePosition(QTextCursor::Right);
+
+
+    // Cursor is at the beginning of the block.
+    QVERIFY(cursor.block().position() == cursor.position());
+    QVERIFY(cursor.block().text() == QString( "Bar" ));
+
+}
+
+void TestHtmlOutput:: testBrInsideParagraph()
+{
+
+    QTextDocument *doc = new QTextDocument();
+    doc->setHtml("<p>Foo<br /><br /><br />Bar</p>");
+
+    KHTMLBuilder *hb = new KHTMLBuilder();
+    KMarkupDirector *md = new KMarkupDirector(hb);
+    md->constructContent(doc);
+    QString result = hb->getResult();
+
+    // Two paragraphs separated by two line breaks
+
+    QRegExp regex = QRegExp("^<p>Foo</p>\\n<br />\\n<br />\\n<p>Bar</p>\\n$");
+
+    QVERIFY(regex.exactMatch(result));
 }
 
 

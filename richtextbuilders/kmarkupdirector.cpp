@@ -54,7 +54,6 @@ KMarkupDirector::~KMarkupDirector()
 
 void KMarkupDirector::processDocumentContents(QTextFrame::iterator start, QTextFrame::iterator end)
 {
-
     for (QTextFrame::iterator it = start; ((!it.atEnd()) && (it != end)); ++it) {
         QTextFrame *frame = it.currentFrame();
         if (frame) {
@@ -332,7 +331,32 @@ void KMarkupDirector::processBlockContents(const QTextBlock &block)
                 // See testDoubleStartDifferentFinish, testDoubleStartDifferentFinishReverseOrder
 
                 d->processOpeningElements(it);
-                d->builder->appendLiteralText(fragment.text());
+
+                // If a sequence such as '<br /><br />' is imported into a document with setHtml, LineSeparator
+                // characters are inserted. Here I make sure to put them back.
+                QStringList sl = fragment.text().split(QChar( QChar::LineSeparator ) );
+                QStringListIterator i(sl);
+                bool paraClosed = false;
+                while (i.hasNext())
+                {
+                  d->builder->appendLiteralText(i.next());
+                  if (i.hasNext())
+                  {
+                    if (i.peekNext().isEmpty())
+                    {
+                      if (!paraClosed)
+                      {
+                        d->builder->endParagraph();
+                        paraClosed = true;
+                      }
+                      d->builder->addNewline();
+                    } else if (paraClosed) {
+                      d->builder->beginParagraph(blockAlignment);
+                      paraClosed = false;
+                    }
+                  }
+                }
+
                 ++it;
                 d->processClosingElements(it);
             }
