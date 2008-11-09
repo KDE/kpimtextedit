@@ -8,6 +8,7 @@ SET(krichtexteditorSources
   ../kmarkupdirector.cpp
   ../kmarkupdirector_p.cpp
   ../khtmlbuilder.cpp
+  ../kplaintextmarkupbuilder.cpp
   )
 
 
@@ -20,4 +21,6 @@ ENDMACRO(KDEUI_UNIT_TESTS)
 
 KDEUI_UNIT_TESTS(
   htmlbuildertest
+  plainmarkupbuildertest
 )
+
