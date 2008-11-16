@@ -24,10 +24,10 @@
 
 #include "kabstractmarkupbuilder.h"
 
-class KHTMLBuilderPrivate;
+class KTextHTMLBuilderPrivate;
 
 /**
-@brief The KHTMLBuilder creates a clean html markup output.
+@brief The KTextHTMLBuilder creates a clean html markup output.
 
 This class creates html output which is as minimal as possible and restricted to the rich text features supported in Qt. (http://doc.trolltech.com/4.4/richtext-html-subset.htm)
 
@@ -54,7 +54,7 @@ p, li { white-space: pre-wrap; }
 Such tags should be created separately. For example:
 
 @code
-        AbstractMarkupBuilder *b = new KHTMLBuilder();
+        AbstractMarkupBuilder *b = new KTextHTMLBuilder();
         KMarkupDirector *md = new KMarkupDirector(b);
         md->constructContent();
         QString cleanHtml("<head>\n<title>%1</title>\n</head>\n<body>%2</body>\n</html>")
@@ -80,15 +80,15 @@ instead of
 @since 4.2
 
 */
-class KHTMLBuilder : public KAbstractMarkupBuilder
+class KTextHTMLBuilder : public KAbstractMarkupBuilder
 {
 public:
 
     /**
-    Creates a new KHTMLBuilder.
+    Creates a new KTextHTMLBuilder.
     */
-    KHTMLBuilder();
-    virtual ~KHTMLBuilder();
+    KTextHTMLBuilder();
+    virtual ~KTextHTMLBuilder();
 
     virtual void beginStrong();
     virtual void endStrong();
@@ -196,8 +196,8 @@ public:
     virtual QString& getResult();
 
 private:
-    KHTMLBuilderPrivate *d_ptr;
-    Q_DECLARE_PRIVATE(KHTMLBuilder)
+    KTextHTMLBuilderPrivate *d_ptr;
+    Q_DECLARE_PRIVATE(KTextHTMLBuilder)
 
 };
 

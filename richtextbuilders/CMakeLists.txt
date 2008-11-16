@@ -7,7 +7,7 @@ SET(krichtexteditorSources
   krichtexteditor.cpp
   kmarkupdirector.cpp
   kmarkupdirector_p.cpp
-  khtmlbuilder.cpp
+  ktexthtmlbuilder.cpp
   kplaintextmarkupbuilder.cpp
   mediawikimarkupbuilder.cpp
   bbcodebuilder.cpp

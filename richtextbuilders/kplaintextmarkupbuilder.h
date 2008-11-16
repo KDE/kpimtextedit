@@ -58,8 +58,8 @@ eg:
     B. Two
         o Three
         o Four
-            * Five
-            * Six
+            \* Five
+            \* Six
     C. Seven
 @endcode
 
@@ -107,6 +107,9 @@ public:
 
     virtual void endParagraph();
     virtual void addNewline();
+
+    virtual void insertHorizontalRule(int width = -1);
+
     virtual void insertImage(const QString &src, qreal width, qreal height);
 
 

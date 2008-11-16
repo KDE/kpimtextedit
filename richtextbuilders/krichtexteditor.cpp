@@ -23,7 +23,7 @@
 
 #include "kabstractmarkupbuilder.h"
 #include "kplaintextmarkupbuilder.h"
-#include "khtmlbuilder.h"
+#include "ktexthtmlbuilder.h"
 #include "bbcodebuilder.h"
 #include "mediawikimarkupbuilder.h"
 
@@ -116,7 +116,7 @@ KRichTextEditor::KRichTextEditor() : KXmlGuiWindow()
 
 void KRichTextEditor::updateDockedWidgets()
 {
-    KHTMLBuilder *hb = new KHTMLBuilder();
+    KTextHTMLBuilder *hb = new KTextHTMLBuilder();
 
     KMarkupDirector *hmd = new KMarkupDirector(hb);
     hmd->constructContent(textArea->document());

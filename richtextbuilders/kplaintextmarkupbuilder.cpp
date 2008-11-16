@@ -164,11 +164,21 @@ void KPlainTextMarkupBuilder::endParagraph()
     Q_D(KPlainTextMarkupBuilder);
     d->m_text.append("\n");
 }
+
 void KPlainTextMarkupBuilder::addNewline()
 {
     Q_D(KPlainTextMarkupBuilder);
     d->m_text.append("\n");
 }
+
+void KPlainTextMarkupBuilder::insertHorizontalRule(int width)
+{
+    Q_UNUSED(width)
+    Q_D(KPlainTextMarkupBuilder);
+
+    d->m_text.append("--------------------\n");
+}
+
 void KPlainTextMarkupBuilder::insertImage(const QString &src, qreal width, qreal height)
 {
     Q_D(KPlainTextMarkupBuilder);
