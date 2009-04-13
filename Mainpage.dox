@@ -1,0 +1,27 @@
+/*!
+ * @mainpage KPIMTextedit - A textedit with PIM-specific features.
+ *
+ * @section purpose Purpose
+ *
+ * KPIMTextedit provides a textedit with PIM-specific features and can convert the
+ * textedit content to various markup formats.
+ *
+ * @section desc Description
+ *
+ * KPIMTextedit is a library for ...
+ *
+ * @authors
+ *  The major authors of this library are:\n
+ *  Stephen Kelly \<steveire@gmail.com\>,\n
+ *  Thomas McGuire \<mcguire@kde.org\>,\n
+ *  Laurent Montel \<montel@kde.org\>
+ *
+ * @maintainers Thomas McGuire \<mcguire@kde.org\>,\n
+ *              Stephen Kelly \<steveire@gmail.com\>
+ *
+ * @licenses
+ * @lgpl
+ *
+ */
+
+// DOXYGEN_PROJECTNAME=KPIMTextedit Library
