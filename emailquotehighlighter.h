@@ -26,8 +26,6 @@
 
 #include <memory>
 
-// TODO: fix include
-
 namespace KPIMTextEdit
 {
   class TextEdit;
@@ -45,9 +43,10 @@ namespace KPIMTextEdit
     {
     public:
 
-      // FIXME: Default colors don't obey color scheme
-      // The normalColor parameter will be ignored, only provided for KNode
-      // compatibility.
+      /**
+       * Constructor. See setQuoteColor() for the parameters.
+       * FIXME: Default colors don't obey color scheme
+       */
       explicit EMailQuoteHighlighter( TextEdit *textEdit,
                                       const QColor &normalColor = Qt::black,
                                       const QColor &quoteDepth1 = QColor( 0x00, 0x80, 0x00 ),
@@ -57,8 +56,16 @@ namespace KPIMTextEdit
 
       ~EMailQuoteHighlighter();
 
-      // The normalColor parameter will be ignored, only provided for KNode
-      // compatibility.
+      /**
+       * Sets the colors used for highlighting quoted text and spelling mistakes.
+       *
+       * @param quoteDepth1 color for text quoted 1 level deep
+       * @param quoteDepth2 color for text quoted 2 level deep
+       * @param quoteDepth3 color for text quoted 3 level deep
+       * @param misspelledColor color in which misspelled words will be underlined
+       * @param normalColor will be ignored, only provided for KNode
+       *                    compatibility.
+       */
       void setQuoteColor( const QColor &normalColor,
                           const QColor &quoteDepth1,
                           const QColor &quoteDepth2,
@@ -72,24 +79,29 @@ namespace KPIMTextEdit
        */
       void toggleSpellHighlighting( bool on );
 
-      // Reimplemented to highlight quote blocks.
+      /**
+       * Reimplemented to highlight quote blocks.
+       */
       virtual void highlightBlock ( const QString & text );
 
     protected:
 
-      // Reimplemented, the base version sets the text color to black, which
-      // is not what we want. We do nothing, the format is already reset by
-      // Qt.
+      /**
+       * Reimplemented, the base version sets the text color to black, which
+       * is not what we want. We do nothing, the format is already reset by
+       * Qt.
+       */
       virtual void unsetMisspelled( int start,  int count );
 
-      // Reimplemented to set the color of the misspelled word to a color
-      // defined by setQuoteColor().
+      /**
+       * Reimplemented to set the color of the misspelled word to a color
+       * defined by setQuoteColor().
+       */
       virtual void setMisspelled( int start, int count );
 
     private:
       class EMailQuoteHighlighterPrivate;
       std::auto_ptr<EMailQuoteHighlighterPrivate> d;
-
     };
 }
 

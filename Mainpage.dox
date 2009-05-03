@@ -4,11 +4,15 @@
  * @section purpose Purpose
  *
  * KPIMTextedit provides a textedit with PIM-specific features and can convert the
- * textedit content to various markup formats.
+ * text edit content to various markup formats.
  *
  * @section desc Description
  *
- * KPIMTextedit is a library for ...
+ * KPIMTextedit is a library that provides an enchanced text edit class, see TextEdit.
+ * This text is highlighted with a EMailQuoteHighlighter.
+ *
+ * It also provides so-called rich text builders, that can convert the formatted text
+ * in the text edit to all kinds of markup, like HTML or BBCODE.
  *
  * @authors
  *  The major authors of this library are:\n

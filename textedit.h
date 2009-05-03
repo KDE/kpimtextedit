@@ -41,7 +41,7 @@ class EMailQuoteHighlighter;
 
 /**
  * Holds information about an embedded HTML image.
- * A list with all images can be retrieved with KMComposerEditor::embeddedImages().
+ * A list with all images can be retrieved with TextEdit::embeddedImages().
  */
 struct EmbeddedImage
 {
@@ -52,15 +52,9 @@ struct EmbeddedImage
 
 // TODO:
 
-// APIDOX - Also mainpage.dox!
-// messages.sh
 // Proofreading
-// coding style
-// FIXMEs (!!)
-// GUI test app
+// isHtmlUsed() function
 // clean up mime insert/paste mess
-// clean up quoting mess
-// bugzilla entry
 
 // Unittests:
 // inssert signature at various places
@@ -72,8 +66,18 @@ struct EmbeddedImage
 // toCleanPlainText()
 // enter key: normal + in quote
 
+/**
+ * Special textedit that provides additional features which are useful for PIM applications
+ * like mail clients.
+ * Additional features this class provides:
+ *   - Highlighting quoted text
+ *   - Handling of inline images
+ *   - Handling of signatures
+ *   - Auto-Hiding the cursor
+ *   - Handling of pastes and drops
+ */
 class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
-                                    protected KTextEditSpellInterface // TODO: KDE5: get rid of the spell interface
+                                     protected KTextEditSpellInterface // TODO: KDE5: get rid of the spell interface
 {
   Q_OBJECT
 
@@ -91,21 +95,27 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
 
     /**
      * Constructs a TextEdit object
+     * @param text the inital plain text of the text edit, interpreted as HTML
+     * @param parent the parent widget
      */
     explicit TextEdit( const QString& text, QWidget *parent = 0 );
 
     /**
      * Constructs a TextEdit object.
+     * @param parent the parent widget
      */
     explicit TextEdit( QWidget *parent = 0 );
+
+    /**
+     * Destructor
+     */
+    ~TextEdit();
 
     /**
      * Reimplemented from KMEditor, to support more actions.
      *
      * The additional action XML names are:
      * - add_image
-     *
-     * @reimp
      */
     virtual void createActions( KActionCollection *actionCollection );
 
@@ -125,6 +135,19 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      * @return a list of embedded HTML images of the editor.
      */
     QList< QSharedPointer<EmbeddedImage> > embeddedImages() const;
+
+    /**
+     * Cleans the whitespace of the edit's text.
+     * Adjacent tabs and spaces will be converted to a single space.
+     * Trailing whitespace will be removed.
+     * More than 2 newlines in a row will be changed to 2 newlines.
+     * Text in quotes or text inside of the given signature will not be
+     * cleaned.
+     * For undo/redo, this is treated as one operation.
+     *
+     * @param sig text inside this signature will not be cleaned
+     */
+    void cleanWhitespace( const KPIMIdentities::Signature &sig );
 
     /**
      * Inserts the signature @p sig into the textedit.
@@ -178,19 +201,62 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
                            const KPIMIdentities::Signature &newSig );
 
     /**
+     * Returns a list of all occurences of the given signature.
+     * The list contains pairs which consists of the starting position and the end
+     * of the signature.
+     * 
+     * @param sig this signature will be searched for
+     * @return a list of pairs of start and end positions of the signature
+     */
+    QList< QPair<int,int> > signaturePositions( const KPIMIdentities::Signature &sig ) const;
+
+    /**
      * Returns the text of the editor as plain text, with linebreaks inserted
      * where word-wrapping occurred.
      */
     QString toWrappedPlainText() const;
 
     /**
-     * Same as toPlainText() from QTextEdit, only that it removes embedded images.
+     * Same as toPlainText() from QTextEdit, only that it removes embedded images and
+     * converts non-breaking space characters to normal spaces.
      */
     QString toCleanPlainText() const;
 
-    ~TextEdit();
+    /**
+     * This method is called after the highlighter is created.
+     * If you use custom colors for highlighting, override this method and set the colors
+     * to the highlighter in it.
+     *
+     * The default implementation does nothing, therefore the default colors of the
+     * EMailQuoteHighlighter class will be used.
+     *
+     * @param highlighter the highlighter that was just created. You need to set the colors
+     *                    of this highlighter.
+     */
+    virtual void setHighlighterColors( EMailQuoteHighlighter *highlighter );
 
-    virtual void changeHighlighterColors( EMailQuoteHighlighter * );
+    /**
+     * Convenience method for qouteLength( line ) > 0
+     */
+    bool isLineQuoted( const QString &line ) const;
+
+    /**
+     * This is called whenever the editor needs to find out the length of the quote,
+     * i.e. the length of the quote prefix before the real text starts.
+     * The default implementation counts the number of spaces, '>' and '|' chars in
+     * front of the line.
+     * 
+     * @param line the line of which the length of the quote prefix should be returned
+     * @return 0 if the line is not quoted, the length of the quote prefix otherwise
+     * FIXME: Not yet used in all places, e.g. keypressEvent() or the quote highlighter
+     */
+    virtual int quoteLength( const QString &line ) const;
+
+    /**
+     * Returns the prefix that is added to a line that is quoted.
+     * By default, this is "> ".
+     */
+    virtual const QString defaultQuoteSign() const;
 
   protected:
 
@@ -202,35 +268,41 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
       return false;
     }
     virtual void insertFromMimeData( const QMimeData *source );
+
+    /**
+     * Reimplemented from KRichTextWidget to hide the mouse cursor when there
+     * was no mouse movement for some time, using KCursor
+     */
     virtual bool eventFilter( QObject*o, QEvent* e );
+
+    /**
+     * Reimplemented to add qoute signs when the user presses enter
+     * on a quoted line.
+     */
     virtual void keyPressEvent ( QKeyEvent * e );
 
-    // For the explaination for these three methods, see the comment at the
+    // For the explaination for these four methods, see the comment at the
     // spellCheckingEnabled variable of the private class.
 
     /**
      * Reimplemented from KTextEditSpellInterface
-     * @reimp
      */
     virtual bool isSpellCheckingEnabled() const;
 
     /**
      * Reimplemented from KTextEditSpellInterface
-     * @reimp
      */
     virtual void setSpellCheckingEnabled( bool enable );
 
     /**
      * Reimplemented from KTextEditSpellInterface, to avoid spellchecking
      * quoted text.
-     * @reimp
      */
     virtual bool shouldBlockBeSpellChecked( const QString& block ) const;
 
     /**
      * Reimplemented to create our own highlighter which does quote and
      * spellcheck highlighting
-     * @reimp
      */
     virtual void createHighlighter();
 

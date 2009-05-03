@@ -96,9 +96,9 @@ void EMailQuoteHighlighter::highlightBlock( const QString & text )
         setFormat( 0, text.length(), d->col2 );
     else if ( simplified.startsWith( QLatin1String(">") ) )
         setFormat( 0, text.length(), d->col3 );
-    /*else if ( !d->parent->quotePrefixName().simplified().isEmpty() &&
-              text.startsWith( d->parent->quotePrefixName() ) )
-        setFormat( 0, text.length(), d->col1 );*/  //FIXME !!!!!
+    else if ( d->parent->isLineQuoted( text ) ) {
+        setFormat( 0, text.length(), d->col1 ); // FIXME: custom qoute prefix can't handle multiple levels
+    }
     else
     {
         if ( d->spellCheckingEnabled )

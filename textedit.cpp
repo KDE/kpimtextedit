@@ -67,19 +67,40 @@ class TextEditPrivate
      */
     QList<QTextImageFormat> embeddedImageFormats() const;
 
-    QList< QPair<int,int> > signaturePositions( const KPIMIdentities::Signature &sig ) const;
-
+    /**
+     * Removes embedded image markers, converts non-breaking spaces to normal spaces
+     * and other fixes for strings that came from toPlainText()/toHtml().
+     */
     void fixupTextEditString( QString &text ) const;
 
-    // Returns the text of the signature. If the signature is HTML, the HTML
-    // tags will be stripped.
+    /**
+     * Returns the text of the signature. If the signature is HTML, the HTML
+     * tags will be stripped.
+     */
     QString plainSignatureText( const KPIMIdentities::Signature &signature ) const;
 
+    /**
+     * Replaces each text which matches the regular expression with another text.
+     * Text inside quotes or the given signature will be ignored.
+     */
+    void cleanWhitespaceHelper( const QRegExp &regExp, const QString &newText,
+                                const KPIMIdentities::Signature &sig );
+
+    /**
+     * Does the constructor work
+     */
     void init();
 
+    /**
+     * Opens a file dialog to let the user choose an image and then pastes that
+     * image to the editor
+     */
     void _k_slotAddImage();
 
+    /// The action that triggers _k_slotAddImage()
     KAction *actionAddImage;
+
+    /// The parent class
     TextEdit *q;
 
     /**
@@ -89,16 +110,17 @@ class TextEditPrivate
      */
     QStringList mImageNames;
 
-
-    // Although KTextEdit keeps track of the spell checking state, we override
-    // it here, because we have a highlighter which does quote highlighting.
-    // And since disabling spellchecking in KTextEdit simply would turn off our
-    // quote highlighter, we never actually deactivate spell checking in the
-    // base class, but only tell our own email highlighter to not highlight
-    // spelling mistakes.
-    // For this, we use the KTextEditSpellInterface, which is basically a hack
-    // that makes it possible to have our own enabled/disabled state in a binary
-    // compatible way.
+    /**
+     * Although KTextEdit keeps track of the spell checking state, we override
+     * it here, because we have a highlighter which does quote highlighting.
+     * And since disabling spellchecking in KTextEdit simply would turn off our
+     * quote highlighter, we never actually deactivate spell checking in the
+     * base class, but only tell our own email highlighter to not highlight
+     * spelling mistakes.
+     * For this, we use the KTextEditSpellInterface, which is basically a hack
+     * that makes it possible to have our own enabled/disabled state in a binary
+     * compatible way.
+     */
     bool spellCheckingEnabled;
 };
 
@@ -119,18 +141,18 @@ void TextEditPrivate::fixupTextEditString( QString &text ) const
   text.replace( QChar::Nbsp, QChar::fromAscii( ' ' ) );
 }
 
-QList< QPair<int,int> > TextEditPrivate::signaturePositions( const KPIMIdentities::Signature &sig ) const
+QList< QPair<int,int> > TextEdit::signaturePositions( const KPIMIdentities::Signature &sig ) const
 {
   QList< QPair<int,int> > signaturePositions;
   if ( !sig.rawText().isEmpty() ) {
 
-    QString sigText = plainSignatureText( sig );
+    QString sigText = d->plainSignatureText( sig );
 
     int currentSearchPosition = 0;
     forever {
 
       // Find the next occurrence of the signature text
-      QString text = q->document()->toPlainText();
+      QString text = document()->toPlainText();
       int currentMatch = text.indexOf( sigText, currentSearchPosition );
       currentSearchPosition = currentMatch + sigText.length();
       if ( currentMatch == -1 )
@@ -179,14 +201,14 @@ TextEdit::~TextEdit()
 
 bool TextEdit::eventFilter( QObject*o, QEvent* e )
 {
-  if (o == this)
+  if ( o == this )
     KCursor::autoHideEventFilter( o, e );
   return KRichTextWidget::eventFilter( o, e );
 }
 
 void TextEditPrivate::init()
 {
-  q->setSpellInterface(q);
+  q->setSpellInterface( q );
   // We tell the KRichTextWidget to enable spell checking, because only then it will
   // call createHighlighter() which will create our own highlighter which also
   // does quote highlighting.
@@ -226,7 +248,7 @@ void TextEdit::keyPressEvent ( QKeyEvent * e )
     cursor.movePosition( QTextCursor::EndOfBlock, QTextCursor::KeepAnchor );
     QString lineText = cursor.selectedText();
     if ( ( ( oldPos -blockPos )  > 0 ) &&
-             ( ( oldPos-blockPos ) < int( lineText.length() ) ) ) {
+         ( ( oldPos-blockPos ) < int( lineText.length() ) ) ) {
       bool isQuotedLine = false;
       int bot = 0; // bot = begin of text after quote indicators
       while ( bot < lineText.length() ) {
@@ -261,17 +283,17 @@ void TextEdit::keyPressEvent ( QKeyEvent * e )
         while ( ( leadingWhiteSpaceCount < newLine.length() )
                   && newLine[leadingWhiteSpaceCount].isSpace() ) {
           ++leadingWhiteSpaceCount;
-                  }
-                  newLine = newLine.replace( 0, leadingWhiteSpaceCount,
-                                             lineText.left( bot ) );
-                  cursor.insertText( newLine );
+        }
+        newLine = newLine.replace( 0, leadingWhiteSpaceCount,
+                                   lineText.left( bot ) );
+        cursor.insertText( newLine );
         //cursor.setPosition( cursor.position() + 2);
-                  cursor.movePosition( QTextCursor::StartOfBlock );
-                  setTextCursor( cursor );
-           }
-             }
-             else
-               KRichTextWidget::keyPressEvent( e );
+        cursor.movePosition( QTextCursor::StartOfBlock );
+        setTextCursor( cursor );
+      }
+    }
+    else
+      KRichTextWidget::keyPressEvent( e );
   }
   else
   {
@@ -296,12 +318,40 @@ void TextEdit::setSpellCheckingEnabled( bool enable )
   emit checkSpellingChanged( enable );
 }
 
-bool TextEdit::shouldBlockBeSpellChecked(const QString& block) const
+bool TextEdit::shouldBlockBeSpellChecked( const QString& block ) const
 {
-  // FIXME: more generic, overwrite in kmeditor with the whole quote mess
-  return true;
-  /*return quotePrefixName().simplified().isEmpty() ||
-      !block.startsWith( quotePrefixName() );*/
+  return !isLineQuoted( block );
+}
+
+bool KPIMTextEdit::TextEdit::isLineQuoted( const QString& line ) const
+{
+  return quoteLength( line ) > 0;
+}
+
+int KPIMTextEdit::TextEdit::quoteLength( const QString& line ) const
+{
+  bool quoteFound = false;
+  int startOfText = -1;
+  for ( int i = 0; i < line.length(); i++ ) {
+    if ( line[i] == QLatin1Char( '>' ) || line[i] == QLatin1Char( '|' ) )
+      quoteFound = true;
+    else if ( line[i] != QLatin1Char( ' ' ) ) {
+      startOfText = i;
+      break;
+    }
+  }
+  if ( quoteFound ) {
+    if ( startOfText == -1 )
+      startOfText = line.length() - 1;
+    return startOfText + 1;
+  }
+  else
+    return 0;
+}
+
+const QString KPIMTextEdit::TextEdit::defaultQuoteSign() const
+{
+  return QLatin1String( "> " );
 }
 
 void TextEdit::createHighlighter()
@@ -309,7 +359,7 @@ void TextEdit::createHighlighter()
   EMailQuoteHighlighter *emailHighLighter =
       new EMailQuoteHighlighter( this );
 
-  //FIXME changeHighlighterColors( emailHighLighter );
+  setHighlighterColors( emailHighLighter );
 
   //TODO change config
   KRichTextWidget::setHighlighter( emailHighLighter );
@@ -319,12 +369,10 @@ void TextEdit::createHighlighter()
   setSpellCheckingEnabled( isSpellCheckingEnabled() );
 }
 
-void TextEdit::changeHighlighterColors( EMailQuoteHighlighter * )
+void TextEdit::setHighlighterColors( EMailQuoteHighlighter *highlighter )
 {
-  // FIXME (?)
-  // Should probably only be overwritten in the derived classes
+  Q_UNUSED( highlighter );
 }
-
 
 void TextEdit::insertSignature( const KPIMIdentities::Signature &sig,
                                 Placement placement, bool addSeparator )
@@ -337,7 +385,7 @@ void TextEdit::insertSignature( const KPIMIdentities::Signature &sig,
 
   insertSignature( signature, placement,
                    ( sig.isInlinedHtml() &&
-                       sig.type() == KPIMIdentities::Signature::Inlined ) );
+                     sig.type() == KPIMIdentities::Signature::Inlined ) );
 }
 
 void TextEdit::insertSignature( const QString &signature, Placement placement,
@@ -433,29 +481,28 @@ void TextEdit::replaceSignature( const KPIMIdentities::Signature &oldSig,
       cursor.movePosition( QTextCursor::PreviousCharacter,
                            QTextCursor::MoveAnchor, 4 );
       additionalMove = 4;
-         }
-         cursor.movePosition( QTextCursor::NextCharacter, QTextCursor::KeepAnchor,
-                              oldSigText.length() + additionalMove );
+    }
+    cursor.movePosition( QTextCursor::NextCharacter, QTextCursor::KeepAnchor,
+                         oldSigText.length() + additionalMove );
 
 
     // Skip quoted signatures
-         // FIXME!!!
-         /*if ( cursor.block().text().startsWith( quotePrefixName() ) ) {
-           currentSearchPosition += d->plainSignatureText( oldSig ).length();
-           continue;
-         }*/
+    if ( isLineQuoted( cursor.block().text() ) ) {
+      currentSearchPosition += d->plainSignatureText( oldSig ).length();
+      continue;
+    }
 
     // Remove the old and instert the new signature
-         cursor.removeSelectedText();
-         if ( newSig.isInlinedHtml() &&
-              newSig.type() == KPIMIdentities::Signature::Inlined ) {
-           cursor.insertHtml( newSig.rawText() );
-           enableRichTextMode();
-              }
-              else
-                cursor.insertText( newSig.rawText() );
+    cursor.removeSelectedText();
+    if ( newSig.isInlinedHtml() &&
+         newSig.type() == KPIMIdentities::Signature::Inlined ) {
+      cursor.insertHtml( newSig.rawText() );
+      enableRichTextMode();
+    }
+    else
+      cursor.insertText( newSig.rawText() );
 
-              currentSearchPosition += d->plainSignatureText( newSig ).length();
+    currentSearchPosition += d->plainSignatureText( newSig ).length();
   }
 
   cursor.endEditBlock();
@@ -490,11 +537,11 @@ void TextEdit::createActions( KActionCollection *actionCollection )
 {
   KRichTextWidget::createActions( actionCollection );
 
-  d->actionAddImage = new KAction( KIcon( QLatin1String( "insert-image" ) ), i18n( "Add Image" ), this );
+  d->actionAddImage = new KAction( KIcon( QLatin1String( "insert-image" ) ),
+                                   i18n( "Add Image" ), this );
   actionCollection->addAction( QLatin1String( "add_image" ), d->actionAddImage );
   connect( d->actionAddImage, SIGNAL(triggered(bool) ), SLOT( _k_slotAddImage() ) );
 }
-
 
 void TextEdit::addImage( const KUrl &url )
 {
@@ -598,6 +645,78 @@ void TextEditPrivate::_k_slotAddImage()
 }
 
 
+
+void TextEditPrivate::cleanWhitespaceHelper( const QRegExp &regExp,
+                                             const QString &newText,
+                                             const KPIMIdentities::Signature &sig )
+{
+  int currentSearchPosition = 0;
+
+  forever {
+
+    // Find the text
+    QString text = q->document()->toPlainText();
+    int currentMatch = regExp.indexIn( text, currentSearchPosition );
+    currentSearchPosition = currentMatch;
+    if ( currentMatch == -1 )
+      break;
+
+    // Select the text
+    QTextCursor cursor( q->document() );
+    cursor.setPosition( currentMatch );
+    cursor.movePosition( QTextCursor::NextCharacter, QTextCursor::KeepAnchor,
+                         regExp.matchedLength() );
+
+    // Skip quoted text
+    if ( q->isLineQuoted( cursor.block().text() ) ) {
+      currentSearchPosition += regExp.matchedLength();
+      continue;
+    }
+
+    // Skip text inside signatures
+    bool insideSignature = false;
+    QList< QPair<int,int> > sigPositions = q->signaturePositions( sig );
+    QPair<int,int> position;
+    foreach( position, sigPositions ) { //krazy:exclude=foreach
+      if ( cursor.position() >= position.first &&
+           cursor.position() <= position.second )
+        insideSignature = true;
+    }
+    if ( insideSignature ) {
+      currentSearchPosition += regExp.matchedLength();
+      continue;
+    }
+
+    // Replace the text
+    cursor.removeSelectedText();
+    cursor.insertText( newText );
+    currentSearchPosition += newText.length();
+  }
+}
+
+void TextEdit::cleanWhitespace( const KPIMIdentities::Signature &sig )
+{
+  QTextCursor cursor( document() );
+  cursor.beginEditBlock();
+
+  // Squeeze tabs and spaces
+  d->cleanWhitespaceHelper( QRegExp( QLatin1String( "[\t ]+" ) ),
+                            QString( QLatin1Char( ' ' ) ), sig );
+
+  // Remove trailing whitespace
+  d->cleanWhitespaceHelper( QRegExp( QLatin1String( "[\t ][\n]" ) ),
+                            QString( QLatin1Char( '\n' ) ), sig );
+
+  // Single space lines
+  d->cleanWhitespaceHelper( QRegExp( QLatin1String( "[\n]{3,}" ) ),
+                            QLatin1String( "\n\n" ), sig );
+
+  if ( !textCursor().hasSelection() ) {
+    textCursor().clearSelection();
+  }
+
+  cursor.endEditBlock();
+}
 
 
 
