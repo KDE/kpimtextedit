@@ -107,6 +107,16 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     explicit TextEdit( QWidget *parent = 0 );
 
     /**
+     * Calling this allows createActions() to create the add image actions.
+     * Call this method before callilng createActions(), otherwise the action
+     * will not be added.
+     * Also, if image actions is enabled, the user can paste PNG images.
+     *
+     * Don't call this if you don't want to support adding images.
+     */
+    void enableImageActions();
+
+    /**
      * Destructor
      */
     ~TextEdit();
@@ -116,6 +126,8 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      *
      * The additional action XML names are:
      * - add_image
+     * 
+     * The add_image actions is only added if enableImageActions() is called before.
      */
     virtual void createActions( KActionCollection *actionCollection );
 

@@ -48,7 +48,8 @@ class TextEditPrivate
   public:
 
     TextEditPrivate( TextEdit *parent )
-      : q( parent )
+      : q( parent ),
+        imageSupportEnabled( false )
     {
     }
 
@@ -102,6 +103,9 @@ class TextEditPrivate
 
     /// The parent class
     TextEdit *q;
+
+    /// Whether or not adding or pasting images is supported
+    bool imageSupportEnabled;
 
     /**
      * The names of embedded images.
@@ -537,10 +541,12 @@ void TextEdit::createActions( KActionCollection *actionCollection )
 {
   KRichTextWidget::createActions( actionCollection );
 
-  d->actionAddImage = new KAction( KIcon( QLatin1String( "insert-image" ) ),
-                                   i18n( "Add Image" ), this );
-  actionCollection->addAction( QLatin1String( "add_image" ), d->actionAddImage );
-  connect( d->actionAddImage, SIGNAL(triggered(bool) ), SLOT( _k_slotAddImage() ) );
+  if ( d->imageSupportEnabled ) {
+    d->actionAddImage = new KAction( KIcon( QLatin1String( "insert-image" ) ),
+                                    i18n( "Add Image" ), this );
+    actionCollection->addAction( QLatin1String( "add_image" ), d->actionAddImage );
+    connect( d->actionAddImage, SIGNAL(triggered(bool) ), SLOT( _k_slotAddImage() ) );
+  }
 }
 
 void TextEdit::addImage( const KUrl &url )
@@ -718,6 +724,10 @@ void TextEdit::cleanWhitespace( const KPIMIdentities::Signature &sig )
   cursor.endEditBlock();
 }
 
+void KPIMTextEdit::TextEdit::enableImageActions()
+{
+  d->imageSupportEnabled = true;
+}
 
 
 #include "textedit.moc"
