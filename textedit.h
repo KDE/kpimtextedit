@@ -54,9 +54,8 @@ typedef QList< QSharedPointer<EmbeddedImage> > ImageList;
 
 // TODO:
 
-// Proofreading
+// Proofreading / API review
 // isHtmlUsed() function
-// clean up mime insert/paste mess
 
 // Unittests:
 // inssert signature at various places
