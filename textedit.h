@@ -75,6 +75,8 @@ struct EmbeddedImage
  *   - Handling of signatures
  *   - Auto-Hiding the cursor
  *   - Handling of pastes and drops
+ *
+ * @since 4.3
  */
 class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
                                      protected KTextEditSpellInterface // TODO: KDE5: get rid of the spell interface

@@ -38,6 +38,8 @@ namespace KPIMTextEdit
    * The quote highlighting color is configurable.
    *
    * Spell highlighting is disabled by default but can be toggled.
+   *
+   * @since 4.3
    */
   class KPIMTEXTEDIT_EXPORT EMailQuoteHighlighter : public Sonnet::Highlighter
     {
