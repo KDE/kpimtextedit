@@ -295,13 +295,14 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
 
   protected:
 
-    virtual void dropEvent( QDropEvent *e ) {
-      //FIXME !!
-    }
-    virtual bool canInsertFromMimeData( const QMimeData *source ) const {
-      // FIXME
-      return false;
-    }
+    /**
+     * Reimplemented for inline image support
+     */
+    virtual bool canInsertFromMimeData( const QMimeData *source ) const;
+
+    /**
+     * Reimplemented for inline image support
+     */
     virtual void insertFromMimeData( const QMimeData *source );
 
     /**
@@ -340,16 +341,6 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      * spellcheck highlighting
      */
     virtual void createHighlighter();
-
-  public Q_SLOTS:
-
-    /**
-     * Pastes the content of the clipboard into the editor, if the
-     * mime type of the clipboard's contents in supported.
-     */
-    virtual void paste() {
-      // FIXME !!
-    }
 
   private:
 

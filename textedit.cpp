@@ -227,19 +227,6 @@ void TextEditPrivate::init()
   q->installEventFilter( q );
 }
 
-void TextEdit::insertFromMimeData( const QMimeData * source )
-{
-  // Attempt to paste HTML contents into the text edit in plain text mode,
-  // prevent this and prevent plain text instead.
-  if ( textMode() == KRichTextEdit::Plain && source->hasHtml() ) {
-    if ( source->hasText() ) {
-      insertPlainText( source->text() );
-    }
-  }
-  else
-    KRichTextWidget::insertFromMimeData( source );
-}
-
 void TextEdit::keyPressEvent ( QKeyEvent * e )
 {
   if ( e->key() ==  Qt::Key_Return ) {
@@ -743,5 +730,39 @@ QByteArray KPIMTextEdit::TextEdit::imageNamesToContentIds( const QByteArray &htm
   return result;
 }
 
+void TextEdit::insertFromMimeData( const QMimeData *source )
+{
+  // Add an image if that is on the clipboard
+  if ( textMode() == KRichTextEdit::Rich && source->hasFormat( QLatin1String( "image/png" ) ) && d->imageSupportEnabled ) {
+    QImage image = qvariant_cast<QImage>( source->imageData() );
+    QFileInfo fi( source->text() );
+    QString imageName = fi.baseName().isEmpty() ? i18nc( "Start of the filename for an image", "image" ) : fi.baseName();
+    d->addImageHelper( imageName, image );
+    return;
+  }
+
+  // Attempt to paste HTML contents into the text edit in plain text mode,
+  // prevent this and prevent plain text instead.
+  if ( textMode() == KRichTextEdit::Plain && source->hasHtml() ) {
+    if ( source->hasText() ) {
+      insertPlainText( source->text() );
+      return;
+    }
+  }
+
+  KRichTextWidget::insertFromMimeData( source );
+}
+
+bool KPIMTextEdit::TextEdit::canInsertFromMimeData( const QMimeData *source ) const
+{
+  if ( source->hasHtml() && textMode() == KRichTextEdit::Rich )
+    return true;
+  if ( source->hasText() )
+    return true;
+  if ( textMode() == KRichTextEdit::Rich && source->hasFormat( QLatin1String( "image/png" ) ) && d->imageSupportEnabled )
+    return true;
+
+  return KRichTextWidget::canInsertFromMimeData( source );
+}
 
 #include "textedit.moc"
