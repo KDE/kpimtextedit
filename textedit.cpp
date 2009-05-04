@@ -729,5 +729,19 @@ void KPIMTextEdit::TextEdit::enableImageActions()
   d->imageSupportEnabled = true;
 }
 
+QByteArray KPIMTextEdit::TextEdit::imageNamesToContentIds( const QByteArray &htmlBody, const KPIMTextEdit::ImageList &imageList )
+{
+  QByteArray result = htmlBody;
+  if ( imageList.size() > 0 ) {
+    foreach( const QSharedPointer<EmbeddedImage> &image, imageList ) {
+      const QString newImageName = QLatin1String( "cid:" ) + image->contentID;
+      QByteArray quote( "\"" );
+      result.replace( QByteArray( quote + image->imageName.toLocal8Bit() + quote ),
+                      QByteArray( quote + newImageName.toLocal8Bit() + quote ) );
+    }
+  }
+  return result;
+}
+
 
 #include "textedit.moc"

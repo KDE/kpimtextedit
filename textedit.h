@@ -50,6 +50,8 @@ struct EmbeddedImage
   QString imageName;  ///< Name of the image as it is available as a resource in the editor
 };
 
+typedef QList< QSharedPointer<EmbeddedImage> > ImageList;
+
 // TODO:
 
 // Proofreading
@@ -148,7 +150,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      *
      * @return a list of embedded HTML images of the editor.
      */
-    QList< QSharedPointer<EmbeddedImage> > embeddedImages() const;
+    ImageList embeddedImages() const;
 
     /**
      * Cleans the whitespace of the edit's text.
@@ -271,6 +273,25 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      * By default, this is "> ".
      */
     virtual const QString defaultQuoteSign() const;
+
+    /**
+     * For all given embedded images, this function replace the image name in the <img> tag of the
+     * HTML body with cid:content-id,
+     * so that the HTML references the image body parts, see RFC 2557.
+     *
+     * This is useful when building a MIME message with inline images.
+     *
+     * Note that this function works on encoded content already.
+     *
+     * @param htmlBody the HTML code in which the <img> tag will be modified.
+     *                 The HTML code here could come from toHtml(), for example.
+     *
+     * @param imageList the list of images of which the <img> tag will be modified.
+     *                  You can get such a list from the embeddedImages() function.
+     *
+     * @return a modified HTML code, where the <img> tags got replaced
+     */
+    static QByteArray imageNamesToContentIds( const QByteArray &htmlBody, const ImageList &imageList );
 
   protected:
 
