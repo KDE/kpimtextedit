@@ -733,7 +733,7 @@ QByteArray KPIMTextEdit::TextEdit::imageNamesToContentIds( const QByteArray &htm
 void TextEdit::insertFromMimeData( const QMimeData *source )
 {
   // Add an image if that is on the clipboard
-  if ( textMode() == KRichTextEdit::Rich && source->hasFormat( QLatin1String( "image/png" ) ) && d->imageSupportEnabled ) {
+  if ( textMode() == KRichTextEdit::Rich && source->hasImage() && d->imageSupportEnabled ) {
     QImage image = qvariant_cast<QImage>( source->imageData() );
     QFileInfo fi( source->text() );
     QString imageName = fi.baseName().isEmpty() ? i18nc( "Start of the filename for an image", "image" ) : fi.baseName();
@@ -759,7 +759,7 @@ bool KPIMTextEdit::TextEdit::canInsertFromMimeData( const QMimeData *source ) co
     return true;
   if ( source->hasText() )
     return true;
-  if ( textMode() == KRichTextEdit::Rich && source->hasFormat( QLatin1String( "image/png" ) ) && d->imageSupportEnabled )
+  if ( textMode() == KRichTextEdit::Rich && source->hasImage() && d->imageSupportEnabled )
     return true;
 
   return KRichTextWidget::canInsertFromMimeData( source );
