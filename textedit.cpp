@@ -548,7 +548,7 @@ bool TextEdit::isFormattingUsed() const
   // isCharFormatFormatted(). Those do not check all the exising formatting possibilities on
   // earth, but everything that KRichTextEdit supports at the moment.
   //
-  // Also, we have to compare the formats against those of a default text exit. For example,
+  // Also, we have to compare the formats against those of a default text edit. For example,
   // we can't compare the foreground color against black, because the user might have another
   // color scheme. Therefore we compare the foreground color against a default text edit.
 
