@@ -73,9 +73,8 @@ typedef QList< QSharedPointer<EmbeddedImage> > ImageList;
  * Additional features this class provides:
  *   - Highlighting quoted text
  *   - Handling of inline images
- *   - Handling of signatures
  *   - Auto-Hiding the cursor
- *   - Handling of pastes and drops
+ *   - Handling of pastes and drops of images
  *
  * @since 4.3
  */
@@ -85,16 +84,6 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
   Q_OBJECT
 
   public:
-
-    /**
-     * Describes the placement of a text which is to be inserted into this
-     * textedit.
-     */
-    enum Placement {
-      Start,                   ///< The text is placed at the start of the textedit
-      End,                     ///< The text is placed at the end of the textedit
-      AtCursor                 ///< The text is placed at the current cursor position
-    };
 
     /**
      * Constructs a TextEdit object
@@ -150,80 +139,6 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      * @return a list of embedded HTML images of the editor.
      */
     ImageList embeddedImages() const;
-
-    /**
-     * Cleans the whitespace of the edit's text.
-     * Adjacent tabs and spaces will be converted to a single space.
-     * Trailing whitespace will be removed.
-     * More than 2 newlines in a row will be changed to 2 newlines.
-     * Text in quotes or text inside of the given signature will not be
-     * cleaned.
-     * For undo/redo, this is treated as one operation.
-     *
-     * @param sig text inside this signature will not be cleaned
-     */
-    void cleanWhitespace( const KPIMIdentities::Signature &sig );
-
-    /**
-     * Inserts the signature @p sig into the textedit.
-     * The cursor position is preserved.
-     * A leading or trailing newline is also added automatically, depending on
-     * the placement.
-     * For undo/redo, this is treated as one operation.
-     *
-     * Rich text mode will be enabled if the signature is in inlined HTML format.
-     *
-     * @param placement defines where in the textedit the signature should be
-     *                  inserted.
-     * @param addSeparator if true, the separator '-- \n' will be added in front
-     *                     of the signature
-     */
-    void insertSignature( const KPIMIdentities::Signature &sig,
-                          Placement placement = End, bool addSeparator = true );
-
-    /**
-     * Inserts the signature @p sig into the textedit.
-     * The cursor position is preserved.
-     * A leading or trailing newline is also added automatically, depending on
-     * the placement.
-     * For undo/redo, this is treated as one operation.
-     * A separator is not added.
-     *
-     * Use the other insertSignature() function if possible, as it has support
-     * for separators and does HTML detection automatically.
-     *
-     * Rich text mode will be enabled if @p isHtml is true.
-     *
-     * @param placement defines where in the textedit the signature should be
-     *                  inserted.
-     * @param isHtml defines whether the signature should be inserted as text or html
-     */
-    void insertSignature( const QString &signature, Placement placement = End,
-                          bool isHtml = false );
-
-    /**
-     * Replaces all occurrences of the old signature with the new signature.
-     * Text in quotes will be ignored.
-     * For undo/redo, this is treated as one operation.
-     * If the old signature is empty, nothing is done.
-     * If the new signature is empty, the old signature including the
-     * separator is removed.
-     *
-     * @param oldSig the old signature, which will be replaced
-     * @param newSig the new signature
-     */
-    void replaceSignature( const KPIMIdentities::Signature &oldSig,
-                           const KPIMIdentities::Signature &newSig );
-
-    /**
-     * Returns a list of all occurences of the given signature.
-     * The list contains pairs which consists of the starting position and the end
-     * of the signature.
-     * 
-     * @param sig this signature will be searched for
-     * @return a list of pairs of start and end positions of the signature
-     */
-    QList< QPair<int,int> > signaturePositions( const KPIMIdentities::Signature &sig ) const;
 
     /**
      * Returns the text of the editor as plain text, with linebreaks inserted

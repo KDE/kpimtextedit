@@ -14,7 +14,6 @@ kde4_add_library(kpimtextedit SHARED ${kpimtextedit_lib_srcs})
 target_link_libraries(kpimtextedit
   ${KDE4_KDEUI_LIBS}
   ${KDE4_KIO_LIBS}
-  kpimidentities
   kmime
 )
 
