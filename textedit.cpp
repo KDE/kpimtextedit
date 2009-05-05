@@ -561,12 +561,12 @@ bool TextEdit::isFormattingUsed() const
   while ( block.isValid() ) {
 
     if ( isBlockFormatFormatted( block.blockFormat(), defaultBlockFormat ) ) {
-      return false;
+      return true;
     }
 
     if ( isSpecial( block.charFormat() ) || isSpecial( block.blockFormat() ) ||
          block.textList() ) {
-      return false;
+      return true;
     }
 
     QTextBlock::iterator it = block.begin();
@@ -574,10 +574,10 @@ bool TextEdit::isFormattingUsed() const
       QTextFragment fragment = it.fragment();
       QTextCharFormat charFormat = fragment.charFormat();
       if ( isSpecial( charFormat ) ) {
-        return false;
+        return true;
       }
       if ( isCharFormatFormatted( fragment.charFormat(), defaultFont, defaultCharFormat ) ) {
-        return false;
+        return true;
       }
 
       it++;
