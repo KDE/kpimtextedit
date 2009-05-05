@@ -207,6 +207,16 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      */
     static QByteArray imageNamesToContentIds( const QByteArray &htmlBody, const ImageList &imageList );
 
+    /**
+     * Checks if rich text formatting is used anywhere.
+     * This is not the same as checking whether textMode() returns "Rich", since
+     * that only tells that rich text mode is enabled, but not if any special formatting
+     * is actually used.
+     *
+     * @return true if formatting is used anywhere
+     */
+    bool isFormattingUsed() const;
+
   protected:
 
     /**
