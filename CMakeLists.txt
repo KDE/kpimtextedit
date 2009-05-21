@@ -17,6 +17,8 @@ target_link_libraries(kpimtextedit
   kmime
 )
 
+add_subdirectory(tests)
+
 set_target_properties(kpimtextedit PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
 
 install(TARGETS kpimtextedit EXPORT kdepimlibsLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS})

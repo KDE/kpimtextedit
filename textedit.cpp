@@ -585,6 +585,9 @@ bool TextEdit::isFormattingUsed() const
     block = block.next();
   }
 
+  if ( toHtml().contains( QLatin1String( "<hr />" ) ) )
+    return true;
+
   return false;
 }
 
