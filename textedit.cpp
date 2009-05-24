@@ -327,7 +327,7 @@ QString TextEdit::toWrappedPlainText() const
     block = block.next();
   }
 
-  // Remove the last superflous newline added above
+  // Remove the last superfluous newline added above
   if ( temp.endsWith( QLatin1Char( '\n' ) ) )
     temp.chop( 1 );
 
