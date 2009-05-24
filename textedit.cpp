@@ -281,7 +281,7 @@ int KPIMTextEdit::TextEdit::quoteLength( const QString& line ) const
   if ( quoteFound ) {
     if ( startOfText == -1 )
       startOfText = line.length() - 1;
-    return startOfText + 1;
+    return startOfText;
   }
   else
     return 0;
@@ -325,6 +325,10 @@ QString TextEdit::toWrappedPlainText() const
     }
     block = block.next();
   }
+
+  // Remove the last superflous newline added above
+  if ( temp.endsWith( QLatin1Char( '\n' ) ) )
+    temp.chop( 1 );
 
   d->fixupTextEditString( temp );
   return temp;
@@ -376,7 +380,12 @@ void TextEditPrivate::addImageHelper( const QString &imageName, const QImage &im
       // use the same name
       break;
     }
-    imageNameToAdd = imageName + QString::number( imageNumber++ );
+    int firstDot = imageName.indexOf( QLatin1Char( '.' ) );
+    if ( firstDot == -1 )
+      imageNameToAdd = imageName + QString::number( imageNumber++ );
+    else
+      imageNameToAdd = imageName.left( firstDot ) + QString::number( imageNumber++ ) +
+                       imageName.mid( firstDot );
   }
 
   if ( !mImageNames.contains( imageNameToAdd ) ) {

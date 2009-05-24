@@ -27,7 +27,13 @@ class TextEditTester : public QObject
   Q_OBJECT
 
   private slots:
-    void test_FormattingUsed();
+    void testFormattingUsed();
+    void testQuoting();
+    void testCleanText();
+    void testEnter();
+    void testEnter_data();
+    void testImages();
+    void testImageHtmlCode();
 };
 
 #endif

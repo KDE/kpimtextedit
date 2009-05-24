@@ -21,15 +21,19 @@
 
 #include "../textedit.h"
 
+#include "kmime/kmime_codecs.h"
+
 #include <KIconLoader>
 #include <KStandardDirs>
+
 #include <QTextCursor>
+#include <qtestevent.h>
 
 using namespace KPIMTextEdit;
 
 QTEST_KDEMAIN( TextEditTester, GUI )
 
-void TextEditTester::test_FormattingUsed()
+void TextEditTester::testFormattingUsed()
 {
   // This method tries to test everything that krichtextedit makes available, so
   // we can sure that in KMail, when the user uses some formatting, the mail is actually
@@ -179,4 +183,142 @@ void TextEditTester::test_FormattingUsed()
   QVERIFY( !textEdit.isFormattingUsed() );
 }
 
+void TextEditTester::testQuoting()
+{
+  TextEdit edit;
+  QVERIFY( edit.isLineQuoted( QLatin1String( "> Hello" ) ) );
+  QVERIFY( edit.isLineQuoted( QLatin1String( ">Hello" ) ) );
+  QVERIFY( !edit.isLineQuoted( QLatin1String( "Hello" ) ) );
+  QCOMPARE( edit.quoteLength( QLatin1String( "Hello" ) ), 0 );
+  QCOMPARE( edit.quoteLength( QLatin1String( ">Hello" ) ), 1 );
+  QCOMPARE( edit.quoteLength( QLatin1String( "> Hello" ) ), 2 );
+  QCOMPARE( edit.quoteLength( QLatin1String( ">>>Hello" ) ), 3 );
+  QCOMPARE( edit.quoteLength( QLatin1String( "> > > Hello" ) ), 6 );
+  QCOMPARE( edit.quoteLength( QLatin1String( "|Hello" ) ), 1 );
+  QCOMPARE( edit.quoteLength( QLatin1String( "| |Hello" ) ), 3 );
+}
 
+void TextEditTester::testCleanText()
+{
+  TextEdit edit;
+  QLatin1String html( "<html><head></head><body>Heelllo&nbsp;World<br>Bye!</body></html>" );
+  QLatin1String plain( "Heelllo World\nBye!" );
+  edit.setTextOrHtml( html );
+  edit.addImage( KIconLoader::global()->iconPath( QLatin1String( "folder-new" ), KIconLoader::Small, false ) );
+  QVERIFY( edit.textMode() == TextEdit::Rich );
+  QCOMPARE( edit.toCleanPlainText(), plain );
+
+  edit.show(); // < otherwise toWrappedPlainText can't work, it needs a layout
+  QCOMPARE( edit.toWrappedPlainText(), plain );
+}
+
+void TextEditTester::testEnter_data()
+{
+  QTest::addColumn<QString>("initalText");
+  QTest::addColumn<QString>("expectedText");
+  QTest::addColumn<int>("cursorPos");
+
+  QTest::newRow( "" ) << QString::fromAscii( "> Hello World" )
+                      << QString::fromAscii( "> Hello \n> World" )
+                      << 8;
+  QTest::newRow( "" ) << QString::fromAscii( "Hello World" )
+                      << QString::fromAscii( "Hello \nWorld" )
+                      << 6;
+  QTest::newRow( "" ) << QString::fromAscii( "> Hello World" )
+                      << QString::fromAscii( "> Hello World\n" )
+                      << 13;
+  QTest::newRow( "" ) << QString::fromAscii( ">Hello World" )
+                      << QString::fromAscii( ">Hello \n>World" )
+                      << 7;
+  QTest::newRow( "" ) << QString::fromAscii( "> > Hello World" )
+                      << QString::fromAscii( "> > Hello \n> > World" )
+                      << 10;
+  QTest::newRow( "" ) << QString::fromAscii( "| | Hello World" )
+                      << QString::fromAscii( "| | Hello \n| | World" )
+                      << 10;
+}
+
+void TextEditTester::testEnter()
+{
+  QFETCH( QString, initalText );
+  QFETCH( QString, expectedText );
+  QFETCH( int, cursorPos );
+
+  TextEdit edit;
+  edit.setPlainText( initalText );
+  QTextCursor textCursor( edit.document() );
+  textCursor.setPosition( cursorPos );
+  edit.setTextCursor( textCursor );
+
+  QTest::keyClick( &edit, Qt::Key_Return );
+  QCOMPARE( edit.toPlainText(), expectedText );
+}
+
+void TextEditTester::testImages()
+{
+  TextEdit edit;
+  QString image1Path = KIconLoader::global()->iconPath( QLatin1String( "folder-new" ), KIconLoader::Small, false );
+  QString image2Path = KIconLoader::global()->iconPath( QLatin1String( "arrow-up" ), KIconLoader::Small, false );
+
+  // Add one image, check that embeddedImages() returns the right stuff
+  edit.addImage( image1Path );
+  KPIMTextEdit::ImageList images = edit.embeddedImages();
+  QCOMPARE( images.size(), 1 );
+  EmbeddedImage *image = images.first().data();
+  QCOMPARE( image->imageName, QString::fromAscii( "folder-new.png" ) );
+
+  // Also check that it loads the correct image
+  QImage diskImage( image1Path );
+  QBuffer buffer;
+  buffer.open( QIODevice::WriteOnly );
+  diskImage.save( &buffer, "PNG" );
+  QByteArray encodedImage = KMime::Codec::codecForName( "base64" )->encode( buffer.buffer() );
+  QCOMPARE( image->image, encodedImage );
+
+  // No image should be there after clearing
+  edit.clear();
+  QVERIFY( edit.embeddedImages().isEmpty() );
+
+  // Check that manually removing the image also empties the image list
+  edit.addImage( image1Path );
+  QCOMPARE( edit.embeddedImages().size(), 1 );
+  QTextCursor cursor = edit.textCursor();
+  cursor.setPosition( 0, QTextCursor::MoveAnchor );
+  cursor.movePosition( QTextCursor::Right, QTextCursor::KeepAnchor, 1 );
+  cursor.removeSelectedText();
+  QVERIFY( edit.embeddedImages().isEmpty() );
+
+  // Check that adding the identical image two times only adds the image once
+  edit.addImage( image1Path );
+  edit.addImage( image1Path );
+  QCOMPARE( edit.embeddedImages().size(), 1 );
+
+  // Another different image added, and we should have two images
+  edit.clear();
+  edit.addImage( image1Path );
+  edit.addImage( image2Path );
+  images = edit.embeddedImages();
+  QCOMPARE( images.size(), 2 );
+  KPIMTextEdit::EmbeddedImage *image1 = images.first().data();
+  KPIMTextEdit::EmbeddedImage *image2 = images.last().data();
+  QCOMPARE( image1->imageName, QString::fromAscii( "folder-new2.png" ) ); // ### FIXME: should be folder-new.png, but QTextEdit provides no way to remove cached resources!
+  QCOMPARE( image2->imageName, QString::fromAscii( "arrow-up.png" ) );
+  QVERIFY( image1->contentID != image2->contentID );
+}
+
+void TextEditTester::testImageHtmlCode()
+{
+  TextEdit edit;
+  QString image1Path = KIconLoader::global()->iconPath( QLatin1String( "folder-new" ), KIconLoader::Small, false );
+  QString image2Path = KIconLoader::global()->iconPath( QLatin1String( "arrow-up" ), KIconLoader::Small, false );
+  edit.addImage( image1Path );
+  edit.addImage( image2Path );
+  KPIMTextEdit::ImageList images = edit.embeddedImages();
+  QCOMPARE( images.size(), 2 );
+  KPIMTextEdit::EmbeddedImage *image1 = images.first().data();
+  KPIMTextEdit::EmbeddedImage *image2 = images.last().data();
+  QString startHtml = QLatin1String( "<img src=\"arrow-up.png\"><img src=\"folder-new.png\">Bla<b>Blub</b>" );
+  QString endHtml = QString( QLatin1String( "<img src=\"cid:%1\"><img src=\"cid:%2\">Bla<b>Blub</b>" ) )
+                        .arg( image2->contentID ).arg( image1->contentID );
+  QCOMPARE( TextEdit::imageNamesToContentIds( startHtml.toAscii(), images ), endHtml.toAscii() );
+}
