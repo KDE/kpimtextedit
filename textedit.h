@@ -52,20 +52,6 @@ struct EmbeddedImage
 
 typedef QList< QSharedPointer<EmbeddedImage> > ImageList;
 
-// TODO:
-
-// Proofreading / API review
-
-// Unittests:
-// inssert signature at various places
-// replace signature at various places + not inside qutoes
-// ^ same for HTML signature
-// ^ same for multiline sigs
-// test inserting images -> embeddedImages() returns the correct thing? images there?
-// toWrappedPlainText()
-// toCleanPlainText()
-// enter key: normal + in quote
-
 /**
  * Special textedit that provides additional features which are useful for PIM applications
  * like mail clients.
