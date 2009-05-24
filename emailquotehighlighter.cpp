@@ -85,7 +85,7 @@ void EMailQuoteHighlighter::highlightBlock( const QString & text )
 {
     QString simplified = text;
     simplified = simplified.replace( QRegExp( QLatin1String( "\\s" ) ), QString() )
-                           .replace( QLatin1Char( '|' ), QLatin1String(">") );
+                           .replace( QLatin1Char( '|' ), QLatin1Char( '>' ) );
     while ( simplified.startsWith( QLatin1String(">>>>") ) )
         simplified = simplified.mid( 3 );
     if ( simplified.startsWith( QLatin1String(">>>") ) ||

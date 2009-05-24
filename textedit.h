@@ -86,7 +86,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
 
     /**
      * Constructs a TextEdit object
-     * @param text the inital plain text of the text edit, interpreted as HTML
+     * @param text the initial plain text of the text edit, interpreted as HTML
      * @param parent the parent widget
      */
     explicit TextEdit( const QString& text, QWidget *parent = 0 );
