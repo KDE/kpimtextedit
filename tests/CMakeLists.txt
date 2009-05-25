@@ -6,4 +6,5 @@ target_link_libraries(textedittest
                       ${QT_QTCORE_LIBRARY}
                       ${KDE4_KDECORE_LIBS}
                       ${KDE4_KDEUI_LIBS}
+                      kmime
                       kpimtextedit)
