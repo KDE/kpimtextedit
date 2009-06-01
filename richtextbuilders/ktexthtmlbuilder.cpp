@@ -47,7 +47,7 @@ KTextHTMLBuilder::KTextHTMLBuilder() : d_ptr(new KTextHTMLBuilderPrivate(this))
 
 KTextHTMLBuilder::~KTextHTMLBuilder()
 {
-
+   delete d_ptr;
 }
 
 void KTextHTMLBuilder::beginStrong()
