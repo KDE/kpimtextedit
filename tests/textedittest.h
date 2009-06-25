@@ -34,6 +34,8 @@ class TextEditTester : public QObject
     void testEnter_data();
     void testImages();
     void testImageHtmlCode();
+    void testDeleteLine();
+    void testDeleteLine_data();
 };
 
 #endif

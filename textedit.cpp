@@ -49,7 +49,9 @@ class TextEditPrivate
   public:
 
     TextEditPrivate( TextEdit *parent )
-      : q( parent ),
+      : actionAddImage( 0 ),
+        actionDeleteLine( 0 ),
+        q( parent ),
         imageSupportEnabled( false )
     {
     }
@@ -86,8 +88,13 @@ class TextEditPrivate
      */
     void _k_slotAddImage();
 
+    void _k_slotDeleteLine();
+
     /// The action that triggers _k_slotAddImage()
     KAction *actionAddImage;
+
+    /// The action that triggers _k_slotDeleteLine()
+    KAction *actionDeleteLine;
 
     /// The parent class
     TextEdit *q;
@@ -352,6 +359,11 @@ void TextEdit::createActions( KActionCollection *actionCollection )
     actionCollection->addAction( QLatin1String( "add_image" ), d->actionAddImage );
     connect( d->actionAddImage, SIGNAL(triggered(bool) ), SLOT( _k_slotAddImage() ) );
   }
+
+  d->actionDeleteLine = new KAction( i18n( "Delete Line" ), this );
+  d->actionDeleteLine->setShortcut( QKeySequence( Qt::CTRL + Qt::Key_K ) );
+  actionCollection->addAction( QLatin1String( "delete_line" ), d->actionDeleteLine );
+  connect( d->actionDeleteLine, SIGNAL(triggered(bool)), SLOT(_k_slotDeleteLine()) );
 }
 
 void TextEdit::addImage( const KUrl &url )
@@ -603,5 +615,52 @@ bool TextEdit::isFormattingUsed() const
 
   return false;
 }
+
+void TextEditPrivate::_k_slotDeleteLine()
+{
+  q->deleteCurrentLine();
+}
+
+void TextEdit::deleteCurrentLine()
+{
+  QTextCursor cursor = textCursor();
+  QTextBlock block = cursor.block();
+  const QTextLayout* layout = block.layout();
+
+  // The current text block can have several lines due to word wrapping.
+  // Search the line the cursor is in, and then delete it.
+  for ( int lineNumber = 0; lineNumber < layout->lineCount(); lineNumber++ ) {
+    QTextLine line = layout->lineAt( lineNumber );
+    const bool lastLineInBlock = ( line.textStart() + line.textLength() == block.length() - 1 );
+    const bool oneLineBlock = ( layout->lineCount() == 1 );
+    const int startOfLine = block.position() + line.textStart();
+    int endOfLine = block.position() + line.textStart() + line.textLength();
+    if ( !lastLineInBlock )
+      endOfLine -= 1;
+
+    // Found the line where the cursor is in
+    if ( cursor.position() >= startOfLine && cursor.position() <= endOfLine ) {
+      int deleteStart = startOfLine;
+      int deleteLength = line.textLength();
+      if ( oneLineBlock )
+        deleteLength++; // The trailing newline
+
+      // When deleting the last line in the document,
+      // remove the newline of the line before the last line instead
+      if ( deleteStart + deleteLength >= document()->characterCount() &&
+           deleteStart > 0 )
+        deleteStart--;
+
+      cursor.beginEditBlock();
+      cursor.setPosition( deleteStart );
+      cursor.movePosition( QTextCursor::NextCharacter, QTextCursor::KeepAnchor, deleteLength );
+      cursor.removeSelectedText();
+      cursor.endEditBlock();
+      return;
+    }
+  }
+
+}
+
 
 #include "textedit.moc"

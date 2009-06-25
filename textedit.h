@@ -103,6 +103,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      *
      * The additional action XML names are:
      * - add_image
+     * - delete_line
      * 
      * The add_image actions is only added if enableImageActions() is called before.
      */
@@ -115,6 +116,12 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      * @param url The URL of the file which contains the image
      */
     void addImage( const KUrl &url );
+
+    /**
+     * Deletes the line at the current cursor position.
+     * @since 4.4
+     */
+    void deleteCurrentLine();
 
     /**
      * Get a list with all embedded HTML images.
@@ -256,6 +263,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     std::auto_ptr<TextEditPrivate> const d;
     friend class TextEditPrivate;
     Q_PRIVATE_SLOT( d, void _k_slotAddImage() )
+    Q_PRIVATE_SLOT( d, void _k_slotDeleteLine() )
 };
 
 } // namespace

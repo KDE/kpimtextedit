@@ -322,3 +322,59 @@ void TextEditTester::testImageHtmlCode()
                         .arg( image2->contentID ).arg( image1->contentID );
   QCOMPARE( TextEdit::imageNamesToContentIds( startHtml.toAscii(), images ), endHtml.toAscii() );
 }
+
+void TextEditTester::testDeleteLine_data()
+{
+  QTest::addColumn<QString>("initalText");
+  QTest::addColumn<QString>("expectedText");
+  QTest::addColumn<int>("cursorPos");
+
+  QTest::newRow( "" ) << QString::fromAscii( "line1\nline2\nline3" )
+                      << QString::fromAscii( "line1\nline3" )
+                      << 6;
+  QTest::newRow( "" ) << QString::fromAscii( "line1\nline2\nline3" )
+                      << QString::fromAscii( "line2\nline3" )
+                      << 5;
+  QTest::newRow( "" ) << QString::fromAscii( "line1\nline2\nline3" )
+                      << QString::fromAscii( "line1\nline3" )
+                      << 11;
+  QTest::newRow( "" ) << QString::fromAscii( "line1\nline2\nline3" )
+                      << QString::fromAscii( "line2\nline3" )
+                      << 0;
+  QTest::newRow( "" ) << QString::fromAscii( "line1\nline2\nline3" )
+                      << QString::fromAscii( "line1\nline2" )
+                      << 17;
+  QTest::newRow( "" ) << QString::fromAscii( "line1" )
+                      << QString::fromAscii( "" )
+                      << 0;
+  QTest::newRow( "" ) << QString::fromAscii( "line1" )
+                      << QString::fromAscii( "" )
+                      << 5;
+
+  // Now, test deletion with word wrapping. The line with the Ms is so long that it will get wrapped
+  QTest::newRow( "" ) << QString::fromAscii( "line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3" )
+                      << QString::fromAscii( "line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3" )
+                      << 6;
+  QTest::newRow( "" ) << QString::fromAscii( "line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3" )
+                      << QString::fromAscii( "line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3" )
+                      << 13;
+}
+
+void TextEditTester::testDeleteLine()
+{
+  QFETCH( QString, initalText );
+  QFETCH( QString, expectedText );
+  QFETCH( int, cursorPos );
+
+  TextEdit edit;
+  edit.setPlainText( initalText );
+  QTextCursor cursor = edit.textCursor();
+  cursor.setPosition( cursorPos );
+  edit.setTextCursor( cursor );
+
+  edit.show(); // we need a layout for this to work
+
+  edit.deleteCurrentLine();
+  QCOMPARE( edit.toPlainText(), expectedText );
+}
+
