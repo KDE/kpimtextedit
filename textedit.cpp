@@ -427,7 +427,7 @@ QList< QSharedPointer<EmbeddedImage> > TextEdit::embeddedImages() const
       retImages.append( embeddedImage );
       embeddedImage->image = KMime::Codec::codecForName( "base64" )->encode( buffer.buffer() );
       embeddedImage->imageName = imageFormat.name();
-      embeddedImage->contentID = QString( QLatin1String( "%1" ) ).arg( qrand() );
+      embeddedImage->contentID = QString( QLatin1String( "%1@KDE" ) ).arg( qrand() );
       seenImageNames.append( imageFormat.name() );
     }
   }
