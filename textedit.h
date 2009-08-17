@@ -40,7 +40,7 @@ class TextEditPrivate;
 class EMailQuoteHighlighter;
 
 /**
- * Holds information about an embedded HTML image.
+ * Holds information about an embedded HTML image that will be useful for mail clients.
  * A list with all images can be retrieved with TextEdit::embeddedImages().
  */
 struct EmbeddedImage
@@ -50,6 +50,20 @@ struct EmbeddedImage
   QString imageName;  ///< Name of the image as it is available as a resource in the editor
 };
 
+/**
+ * Holds information about an embedded HTML image that will be generally useful.
+ * A list with all images can be retrieved with TextEdit::imagesWithName().
+ *
+ * @since 4.4
+ */
+struct ImageWithName
+{
+  QImage image; ///< The image
+  QString name; ///< The name of the image as it is available as a resource in the editor
+};
+
+typedef QSharedPointer<ImageWithName> ImageWithNamePtr;
+typedef QList< ImageWithNamePtr > ImageWithNameList;
 typedef QList< QSharedPointer<EmbeddedImage> > ImageList;
 
 /**
@@ -85,7 +99,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
 
     /**
      * Calling this allows createActions() to create the add image actions.
-     * Call this method before callilng createActions(), otherwise the action
+     * Call this method before calling createActions(), otherwise the action
      * will not be added.
      * Also, if image actions is enabled, the user can paste PNG images.
      *
@@ -118,6 +132,18 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     void addImage( const KUrl &url );
 
     /**
+     * Loads an image into the textedit. The difference to addImage() is that this function expects
+     * that the image tag is already present in the HTML source.
+     *
+     * So what this message does is that it scans the HTML source for the image tag that matches the
+     * @p matchName, and then inserts the @p image as a resource, giving that resource the name
+     * @P resourceName.
+     *
+     * @since 4.4
+     */
+    void loadImage( const QImage &image, const QString &matchName, const QString &resourceName );
+
+    /**
      * Deletes the line at the current cursor position.
      * @since 4.4
      */
@@ -131,6 +157,14 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      * @return a list of embedded HTML images of the editor.
      */
     ImageList embeddedImages() const;
+
+    /**
+     * Same as embeddedImages(), only that this returns a list of general purpose information,
+     * whereas the embeddedImages() function returns a list with mail-specific information.
+     *
+     * @since 4.4
+     */
+    ImageWithNameList imagesWithName() const;
 
     /**
      * Returns the text of the editor as plain text, with linebreaks inserted

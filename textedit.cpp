@@ -380,6 +380,30 @@ void TextEdit::addImage( const KUrl &url )
   d->addImageHelper( imageName, image );
 }
 
+void TextEdit::loadImage ( const QImage& image, const QString& matchName, const QString& resourceName )
+{
+  QTextBlock currentBlock = document()->begin();
+  QTextBlock::iterator it;
+  while ( currentBlock.isValid() ) {
+    for (it = currentBlock.begin(); !(it.atEnd()); ++it) {
+      QTextFragment fragment = it.fragment();
+      if ( fragment.isValid() ) {
+        QTextImageFormat imageFormat = fragment.charFormat().toImageFormat();
+        if ( imageFormat.isValid() && imageFormat.name() == matchName ) {
+          int pos = fragment.position();
+          QTextCursor cursor( document() );
+          cursor.setPosition( pos );
+          cursor.setPosition( pos + 1, QTextCursor::KeepAnchor );
+          cursor.removeSelectedText();
+          document()->addResource( QTextDocument::ImageResource, QUrl( resourceName ), QVariant( image ) );
+          cursor.insertImage( resourceName );
+        }
+      }
+    }
+    currentBlock = currentBlock.next();
+  }
+}
+
 void TextEditPrivate::addImageHelper( const QString &imageName, const QImage &image )
 {
   QString imageNameToAdd = imageName;
@@ -409,27 +433,41 @@ void TextEditPrivate::addImageHelper( const QString &imageName, const QImage &im
   q->enableRichTextMode();
 }
 
-QList< QSharedPointer<EmbeddedImage> > TextEdit::embeddedImages() const
+ImageWithNameList TextEdit::imagesWithName() const
 {
-  QList< QSharedPointer<EmbeddedImage> > retImages;
+  ImageWithNameList retImages;
   QStringList seenImageNames;
   QList<QTextImageFormat> imageFormats = d->embeddedImageFormats();
   foreach( const QTextImageFormat &imageFormat, imageFormats ) {
     if ( !seenImageNames.contains( imageFormat.name() ) ) {
       QVariant data = document()->resource( QTextDocument::ImageResource, QUrl( imageFormat.name() ) );
       QImage image = qvariant_cast<QImage>( data );
-      QBuffer buffer;
-      buffer.open( QIODevice::WriteOnly );
-      image.save( &buffer, "PNG" );
-
-      qsrand( QDateTime::currentDateTime().toTime_t() + qHash( imageFormat.name() ) );
-      QSharedPointer<EmbeddedImage> embeddedImage( new EmbeddedImage() );
-      retImages.append( embeddedImage );
-      embeddedImage->image = KMime::Codec::codecForName( "base64" )->encode( buffer.buffer() );
-      embeddedImage->imageName = imageFormat.name();
-      embeddedImage->contentID = QString( QLatin1String( "%1@KDE" ) ).arg( qrand() );
+      QString name = imageFormat.name();
+      ImageWithNamePtr newImage( new ImageWithName );
+      newImage->image = image;
+      newImage->name = name;
+      retImages.append( newImage );
       seenImageNames.append( imageFormat.name() );
     }
+  }
+  return retImages;
+}
+
+QList< QSharedPointer<EmbeddedImage> > TextEdit::embeddedImages() const
+{
+  ImageWithNameList normalImages = imagesWithName();
+  QList< QSharedPointer<EmbeddedImage> > retImages;
+  foreach( const ImageWithNamePtr &normalImage, normalImages ) {
+    QBuffer buffer;
+    buffer.open( QIODevice::WriteOnly );
+    normalImage->image.save( &buffer, "PNG" );
+
+    qsrand( QDateTime::currentDateTime().toTime_t() + qHash( normalImage->name ) );
+    QSharedPointer<EmbeddedImage> embeddedImage( new EmbeddedImage() );
+    retImages.append( embeddedImage );
+    embeddedImage->image = KMime::Codec::codecForName( "base64" )->encode( buffer.buffer() );
+    embeddedImage->imageName = normalImage->name;
+    embeddedImage->contentID = QString( QLatin1String( "%1@KDE" ) ).arg( qrand() );
   }
   return retImages;
 }
