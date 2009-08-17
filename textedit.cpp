@@ -382,6 +382,7 @@ void TextEdit::addImage( const KUrl &url )
 
 void TextEdit::loadImage ( const QImage& image, const QString& matchName, const QString& resourceName )
 {
+  QSet<int> cursorPositionsToSkip;
   QTextBlock currentBlock = document()->begin();
   QTextBlock::iterator it;
   while ( currentBlock.isValid() ) {
@@ -391,12 +392,19 @@ void TextEdit::loadImage ( const QImage& image, const QString& matchName, const 
         QTextImageFormat imageFormat = fragment.charFormat().toImageFormat();
         if ( imageFormat.isValid() && imageFormat.name() == matchName ) {
           int pos = fragment.position();
-          QTextCursor cursor( document() );
-          cursor.setPosition( pos );
-          cursor.setPosition( pos + 1, QTextCursor::KeepAnchor );
-          cursor.removeSelectedText();
-          document()->addResource( QTextDocument::ImageResource, QUrl( resourceName ), QVariant( image ) );
-          cursor.insertImage( resourceName );
+          if ( !cursorPositionsToSkip.contains( pos ) ) {
+            QTextCursor cursor( document() );
+            cursor.setPosition( pos );
+            cursor.setPosition( pos + 1, QTextCursor::KeepAnchor );
+            cursor.removeSelectedText();
+            document()->addResource( QTextDocument::ImageResource, QUrl( resourceName ), QVariant( image ) );
+            cursor.insertImage( resourceName );
+
+            // The textfragment iterator is now invalid, restart from the beginning
+            // Take care not to replace the same fragment again, or we would be in an infinite loop.
+            cursorPositionsToSkip.insert( pos );
+            it = currentBlock.begin();
+          }
         }
       }
     }
