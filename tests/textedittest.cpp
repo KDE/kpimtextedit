@@ -263,46 +263,64 @@ void TextEditTester::testImages()
   // Add one image, check that embeddedImages() returns the right stuff
   edit.addImage( image1Path );
   KPIMTextEdit::ImageList images = edit.embeddedImages();
+  KPIMTextEdit::ImageWithNameList imagesWithNames = edit.imagesWithName();
   QCOMPARE( images.size(), 1 );
+  QCOMPARE( imagesWithNames.size(), 1 );
   EmbeddedImage *image = images.first().data();
+  ImageWithName *imageWithName = imagesWithNames.first().data();
   QCOMPARE( image->imageName, QString::fromAscii( "folder-new.png" ) );
+  QCOMPARE( imageWithName->name, QString::fromAscii( "folder-new.png" ) );
 
   // Also check that it loads the correct image
   QImage diskImage( image1Path );
   QBuffer buffer;
   buffer.open( QIODevice::WriteOnly );
   diskImage.save( &buffer, "PNG" );
+  QBuffer imageWithNameBuffer;
+  imageWithNameBuffer.open( QIODevice::WriteOnly );
+  imageWithName->image.save( &imageWithNameBuffer, "PNG" );
   QByteArray encodedImage = KMime::Codec::codecForName( "base64" )->encode( buffer.buffer() );
   QCOMPARE( image->image, encodedImage );
+  QCOMPARE( buffer.buffer(), imageWithNameBuffer.buffer() );
 
   // No image should be there after clearing
   edit.clear();
   QVERIFY( edit.embeddedImages().isEmpty() );
+  QVERIFY( edit.imagesWithName().isEmpty() );
 
   // Check that manually removing the image also empties the image list
   edit.addImage( image1Path );
   QCOMPARE( edit.embeddedImages().size(), 1 );
+  QCOMPARE( edit.imagesWithName().size(), 1 );
   QTextCursor cursor = edit.textCursor();
   cursor.setPosition( 0, QTextCursor::MoveAnchor );
   cursor.movePosition( QTextCursor::Right, QTextCursor::KeepAnchor, 1 );
   cursor.removeSelectedText();
   QVERIFY( edit.embeddedImages().isEmpty() );
+  QVERIFY( edit.imagesWithName().isEmpty() );
 
   // Check that adding the identical image two times only adds the image once
   edit.addImage( image1Path );
   edit.addImage( image1Path );
   QCOMPARE( edit.embeddedImages().size(), 1 );
+  QCOMPARE( edit.imagesWithName().size(), 1 );
 
   // Another different image added, and we should have two images
   edit.clear();
   edit.addImage( image1Path );
   edit.addImage( image2Path );
   images = edit.embeddedImages();
+  imagesWithNames = edit.imagesWithName();
   QCOMPARE( images.size(), 2 );
+  QCOMPARE( imagesWithNames.size(), 2 );
   KPIMTextEdit::EmbeddedImage *image1 = images.first().data();
   KPIMTextEdit::EmbeddedImage *image2 = images.last().data();
+  KPIMTextEdit::ImageWithName *imageWithName1 = imagesWithNames.first().data();
+  KPIMTextEdit::ImageWithName *imageWithName2 = imagesWithNames.last().data();
   QCOMPARE( image1->imageName, QString::fromAscii( "folder-new2.png" ) ); // ### FIXME: should be folder-new.png, but QTextEdit provides no way to remove cached resources!
+  QCOMPARE( imageWithName1->name, QString::fromAscii( "folder-new2.png" ) );
   QCOMPARE( image2->imageName, QString::fromAscii( "arrow-up.png" ) );
+  QCOMPARE( imageWithName2->name, QString::fromAscii( "arrow-up.png" ) );
   QVERIFY( image1->contentID != image2->contentID );
 }
 
@@ -377,4 +395,33 @@ void TextEditTester::testDeleteLine()
   edit.deleteCurrentLine();
   QCOMPARE( edit.toPlainText(), expectedText );
 }
+
+void TextEditTester::testLoadImage()
+{
+  TextEdit edit;
+  QString image1Path = KIconLoader::global()->iconPath( QLatin1String( "folder-new" ), KIconLoader::Small, false );
+  QString image2Path = KIconLoader::global()->iconPath( QLatin1String( "arrow-up" ), KIconLoader::Small, false );
+  QImage image1, image2;
+  QVERIFY( image1.load( image1Path ) );
+  QVERIFY( image2.load( image1Path ) );
+
+  edit.setHtml( QLatin1String( "Bla<img src=\"folder-new.png\">Bla" ) );
+
+  // First try to load an image with a name that doesn't match, it should fail
+  edit.loadImage( image1, QString::fromLatin1( "doesntmatch" ), QString::fromLatin1( "folder-new" ) );
+  QVERIFY( !edit.document()->resource( QTextDocument::ImageResource, QUrl( QLatin1String( "folder-new" ) ) ).isValid() );
+
+  // Now, load the image for real
+  edit.loadImage( image1, QString::fromLatin1( "folder-new.png" ), QString::fromLatin1( "folder-new" ) );
+  QVERIFY( edit.document()->resource( QTextDocument::ImageResource, QUrl( QLatin1String( "folder-new" ) ) ).isValid() );
+
+  // New test with a new textedit (so that we don't use the cached resources
+  // This example has two images in the same text block, make sure that doesn't crash (bug 204214)
+  TextEdit edit2;
+  edit2.setHtml( QLatin1String( "<img src=\"folder-new.png\"><img src=\"folder-new.png\">" ) );
+  edit2.loadImage( image1, QString::fromLatin1( "folder-new.png" ), QString::fromLatin1( "folder-new" ) );
+  QVERIFY( edit.document()->resource( QTextDocument::ImageResource, QUrl( QLatin1String( "folder-new" ) ) ).isValid() );
+  QCOMPARE( edit.embeddedImages().size(), 1 );
+}
+
 
