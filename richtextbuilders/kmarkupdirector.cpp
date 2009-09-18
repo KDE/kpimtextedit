@@ -274,7 +274,7 @@ void KMarkupDirector::processBlockContents(const QTextBlock &block)
         if (!fragmentFormat.isImageFormat() && fragment.text().at(0).category() == QChar::Separator_Line) {
 
             // Consecutive newlines in a qtextdocument are in a single fragment if inserted with setHtml.
-            foreach(QChar c, fragment.text()) {
+            foreach(const QChar &c, fragment.text()) {
 //         kDebug() << c;
                 if (c.category() == QChar::Separator_Line) {
                     d->builder->addNewline();
