@@ -60,6 +60,47 @@ EMailQuoteHighlighter::~EMailQuoteHighlighter()
 {
 }
 
+QString EMailQuoteHighlighter::highlightText( const QString &text,
+                       const QColor &quoteDepth1,
+                       const QColor &quoteDepth2,
+                       const QColor &quoteDepth3 )
+{
+    QStringList splitted = text.split( QLatin1Char('\n') );
+    QString result;
+    QStringList::iterator it = splitted.begin();
+    while ( it != splitted.end() ) {
+        result.append( highlightParagraph(( *it ) + QLatin1Char('\n'),
+                       quoteDepth1, quoteDepth2, quoteDepth3 ) );
+        ++it;
+    }
+    return result;
+}
+
+QString EMailQuoteHighlighter::highlightParagraph( const QString& text,
+                            const QColor &quoteDepth1,
+                            const QColor &quoteDepth2,
+                            const QColor &quoteDepth3 )
+{
+    QString simplified = text;
+    simplified = simplified.replace( QRegExp( QLatin1String( "\\s" ) ), QString() )
+                           .replace( QLatin1Char( '|' ), QLatin1Char( '>' ) )
+                           .replace( QLatin1String( "&gt;"), QLatin1String( ">" ));
+
+    while ( simplified.startsWith( QLatin1String(">>>>") ) )
+        simplified = simplified.mid( 3 );
+
+    QString result( QLatin1String("<font color=\"%1\">%2</font>") );
+    if ( simplified.startsWith( QLatin1String( ">>>" ) ) ) {
+        return result.arg( quoteDepth3.name(), text);
+    } else if ( simplified.startsWith( QLatin1String( ">>" ) ) ) {
+        return result.arg( quoteDepth2.name(), text);
+    } else if ( simplified.startsWith( QLatin1String( ">" ) ) ) {
+        return result.arg( quoteDepth1.name(), text);
+    }
+
+    return text;
+}
+
 void EMailQuoteHighlighter::setQuoteColor( const QColor &normalColor,
                                            const QColor &quoteDepth1,
                                            const QColor &quoteDepth2,
@@ -89,7 +130,7 @@ void EMailQuoteHighlighter::highlightBlock( const QString & text )
 
     while ( simplified.startsWith( QLatin1String(">>>>") ) )
         simplified = simplified.mid( 3 );
-    if ( simplified.startsWith( QLatin1String(">>>") ) ) 
+    if ( simplified.startsWith( QLatin1String(">>>") ) )
         setFormat( 0, text.length(), d->col3 );
     else if ( simplified.startsWith( QLatin1String(">>") ) )
         setFormat( 0, text.length(), d->col2 );

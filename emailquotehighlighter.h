@@ -86,6 +86,25 @@ namespace KPIMTextEdit
        */
       virtual void highlightBlock ( const QString & text );
 
+      /**
+       * Use this static method to get a text consisting of multiple lines
+       * highligted.
+       * @since 4.4
+       */
+      static QString highlightText( const QString& text,
+                                    const QColor &quoteDepth1 = QColor( 0x00, 0x80, 0x00 ),
+                                    const QColor &quoteDepth2 = QColor( 0x00, 0x80, 0x00 ),
+                                    const QColor &quoteDepth3 = QColor( 0x00, 0x80, 0x00 ) );
+
+      /**
+       * Use this static method to get proper highlighting for a single line.
+       * @since 4.4
+       */
+      static QString highlightParagraph( const QString& text,
+                                    const QColor &quoteDepth1 = QColor( 0x00, 0x80, 0x00 ),
+                                    const QColor &quoteDepth2 = QColor( 0x00, 0x80, 0x00 ),
+                                    const QColor &quoteDepth3 = QColor( 0x00, 0x80, 0x00 ) );
+
     protected:
 
       /**
