@@ -86,16 +86,15 @@ void EMailQuoteHighlighter::highlightBlock( const QString & text )
     QString simplified = text;
     simplified = simplified.replace( QRegExp( QLatin1String( "\\s" ) ), QString() )
                            .replace( QLatin1Char( '|' ), QLatin1Char( '>' ) );
+
     while ( simplified.startsWith( QLatin1String(">>>>") ) )
         simplified = simplified.mid( 3 );
-    if ( simplified.startsWith( QLatin1String(">>>") ) ||
-         simplified.startsWith( QLatin1String("> > >") ) )
-        setFormat( 0, text.length(), d->col1 );
-    else if ( simplified.startsWith( QLatin1String(">>") ) ||
-              simplified.startsWith( QLatin1String("> >") ) )
+    if ( simplified.startsWith( QLatin1String(">>>") ) ) 
+        setFormat( 0, text.length(), d->col3 );
+    else if ( simplified.startsWith( QLatin1String(">>") ) )
         setFormat( 0, text.length(), d->col2 );
     else if ( simplified.startsWith( QLatin1String(">") ) )
-        setFormat( 0, text.length(), d->col3 );
+        setFormat( 0, text.length(), d->col1 );
     else if ( d->parent->isLineQuoted( text ) ) {
         setFormat( 0, text.length(), d->col1 ); // FIXME: custom quote prefix can't handle multiple levels
     }
