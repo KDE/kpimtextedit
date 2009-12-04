@@ -82,7 +82,7 @@ QString EMailQuoteHighlighter::highlightParagraph( const QString& text,
                             const QColor &quoteDepth3 )
 {
     QString simplified = text;
-    simplified = simplified.replace( QRegExp( QLatin1String( "\\s" ) ), QString() )
+    simplified = simplified.remove( QRegExp( QLatin1String( "\\s" ) ) )
                            .replace( QLatin1Char( '|' ), QLatin1Char( '>' ) )
                            .replace( QLatin1String( "&gt;"), QLatin1String( ">" ));
 
@@ -125,7 +125,7 @@ void EMailQuoteHighlighter::toggleSpellHighlighting( bool on )
 void EMailQuoteHighlighter::highlightBlock( const QString & text )
 {
     QString simplified = text;
-    simplified = simplified.replace( QRegExp( QLatin1String( "\\s" ) ), QString() )
+    simplified = simplified.remove( QRegExp( QLatin1String( "\\s" ) ) )
                            .replace( QLatin1Char( '|' ), QLatin1Char( '>' ) );
 
     while ( simplified.startsWith( QLatin1String(">>>>") ) )
