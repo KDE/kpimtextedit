@@ -448,8 +448,8 @@ ImageWithNameList TextEdit::imagesWithName() const
   QList<QTextImageFormat> imageFormats = d->embeddedImageFormats();
   foreach( const QTextImageFormat &imageFormat, imageFormats ) {
     if ( !seenImageNames.contains( imageFormat.name() ) ) {
-      QVariant data = document()->resource( QTextDocument::ImageResource, QUrl( imageFormat.name() ) );
-      QImage image = qvariant_cast<QImage>( data );
+      QVariant resourceData = document()->resource( QTextDocument::ImageResource, QUrl( imageFormat.name() ) );
+      QImage image = qvariant_cast<QImage>( resourceData );
       QString name = imageFormat.name();
       ImageWithNamePtr newImage( new ImageWithName );
       newImage->image = image;
