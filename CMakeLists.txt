@@ -7,6 +7,7 @@ add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
 set(kpimtextedit_lib_srcs
   emailquotehighlighter.cpp
   textedit.cpp
+  textutils.cpp
 )
 
 kde4_add_library(kpimtextedit SHARED ${kpimtextedit_lib_srcs})
@@ -25,6 +26,7 @@ install(TARGETS kpimtextedit EXPORT kdepimlibsLibraryTargets ${INSTALL_TARGETS_D
 install(FILES
   kpimtextedit_export.h
   textedit.h
+  textutils.h
   emailquotehighlighter.h
   DESTINATION ${INCLUDE_INSTALL_DIR}/kpimtextedit COMPONENT Devel
 )
