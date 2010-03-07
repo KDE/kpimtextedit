@@ -65,10 +65,10 @@ QString EMailQuoteHighlighter::highlightText( const QString &text,
                        const QColor &quoteDepth2,
                        const QColor &quoteDepth3 )
 {
-    QStringList splitted = text.split( QLatin1Char('\n') );
+    const QStringList splitted = text.split( QLatin1Char('\n') );
     QString result;
-    QStringList::iterator it = splitted.begin();
-    while ( it != splitted.end() ) {
+    QStringList::const_iterator it = splitted.constBegin();
+    while ( it != splitted.constEnd() ) {
         result.append( highlightParagraph(( *it ) + QLatin1Char('\n'),
                        quoteDepth1, quoteDepth2, quoteDepth3 ) );
         ++it;
