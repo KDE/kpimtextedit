@@ -582,7 +582,7 @@ bool TextEdit::isFormattingUsed() const
   if ( textMode() == Plain )
     return false;
 
-  return TextUtils::isFormattingUsed( document() );
+  return TextUtils::containsFormatting( document() );
 }
 
 void TextEditPrivate::_k_slotDeleteLine()

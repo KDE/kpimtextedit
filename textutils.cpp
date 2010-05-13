@@ -22,9 +22,9 @@
 
 #include "textutils.h"
 
-#include <QTextDocument>
-#include <QTextCharFormat>
-#include <QTextBlock>
+#include <QtGui/QTextBlock>
+#include <QtGui/QTextCharFormat>
+#include <QtGui/QTextDocument>
 
 using namespace KPIMTextEdit;
 
@@ -61,12 +61,15 @@ static bool isSpecial( const QTextFormat &charFormat )
          charFormat.isListFormat() || charFormat.isTableFormat();
 }
 
-bool TextUtils::isFormattingUsed( QTextDocument *document )
+bool TextUtils::containsFormatting( const QTextDocument *document )
 {
+  if ( !document )
+    return false;
+
   QTextDocument defaultTextDocument;
-  QTextCharFormat defaultCharFormat = defaultTextDocument.begin().charFormat();
-  QTextBlockFormat defaultBlockFormat = defaultTextDocument.begin().blockFormat();
-  QFont defaultFont = defaultTextDocument.defaultFont();
+  const QTextCharFormat defaultCharFormat = defaultTextDocument.begin().charFormat();
+  const QTextBlockFormat defaultBlockFormat = defaultTextDocument.begin().blockFormat();
+  const QFont defaultFont = defaultTextDocument.defaultFont();
 
   QTextBlock block = document->firstBlock();
   while ( block.isValid() ) {
@@ -82,8 +85,8 @@ bool TextUtils::isFormattingUsed( QTextDocument *document )
 
     QTextBlock::iterator it = block.begin();
     while ( !it.atEnd() ) {
-      QTextFragment fragment = it.fragment();
-      QTextCharFormat charFormat = fragment.charFormat();
+      const QTextFragment fragment = it.fragment();
+      const QTextCharFormat charFormat = fragment.charFormat();
       if ( isSpecial( charFormat ) ) {
         return true;
       }
@@ -93,6 +96,7 @@ bool TextUtils::isFormattingUsed( QTextDocument *document )
 
       it++;
     }
+
     block = block.next();
   }
 
