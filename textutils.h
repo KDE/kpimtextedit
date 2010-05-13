@@ -34,12 +34,14 @@ namespace KPIMTextEdit {
 
   @since 4.5
 */
+//AK_REVIEW: make TextUtils a namespace
 class KPIMTEXTEDIT_EXPORT TextUtils
 {
 public:
   /**
     Returns whether the QTextDocument @p document contains rich text formatting.
   */
+  //AK_REVIEW: rename to has/containsFormatting
   static bool isFormattingUsed( QTextDocument *document );
 
 };
