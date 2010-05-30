@@ -35,6 +35,7 @@ static bool isCharFormatFormatted( const QTextCharFormat &format, const QFont &d
        format.font() != defaultFont ||
        format.isAnchor() ||
        format.verticalAlignment() != defaultBlockFormat.verticalAlignment() ||
+       format.layoutDirection() != defaultBlockFormat.layoutDirection() ||
        format.underlineStyle() != defaultBlockFormat.underlineStyle() ||
        format.foreground().color() != defaultBlockFormat.foreground().color() ||
        format.background().color() != defaultBlockFormat.background().color() )
@@ -47,6 +48,7 @@ static bool isBlockFormatFormatted( const QTextBlockFormat &format,
                                     const QTextBlockFormat &defaultFormat )
 {
   if ( format.alignment() != defaultFormat.alignment() ||
+       format.layoutDirection() != defaultFormat.layoutDirection() ||
        format.indent() != defaultFormat.indent() ||
        format.textIndent() != defaultFormat.textIndent() )
     return true;

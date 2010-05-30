@@ -88,6 +88,18 @@ void TextEditTester::testFormattingUsed()
   QVERIFY( !textEdit.isFormattingUsed() );
 
   //
+  // Test layout direction
+  //
+  textEdit.selectAll();
+  QTextCharFormat direction;
+  direction.setLayoutDirection( Qt::RightToLeft );
+  textEdit.mergeCurrentCharFormat( direction );
+  QVERIFY( textEdit.isFormattingUsed() );
+  direction.setLayoutDirection( Qt::LeftToRight );
+  textEdit.mergeCurrentCharFormat( direction );
+  QVERIFY( !textEdit.isFormattingUsed() );
+
+  //
   // Test lists
   //
   textEdit.setListStyle( QTextListFormat::ListCircle );
