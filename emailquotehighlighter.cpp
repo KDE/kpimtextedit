@@ -38,7 +38,7 @@ EMailQuoteHighlighter::EMailQuoteHighlighter( TextEdit *textEdit,
                                               const QColor &quoteDepth2,
                                               const QColor &quoteDepth3,
                                               const QColor &misspelledColor )
-    : Highlighter( textEdit ),
+    : Highlighter( textEdit, textEdit->configFile() ),
       d( new EMailQuoteHighlighterPrivate() )
 {
     Q_UNUSED( normalColor );

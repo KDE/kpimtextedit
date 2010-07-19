@@ -2,7 +2,7 @@
     Copyright (c) 2009 Thomas McGuire <mcguire@kde.org>
 
     Based on KMail and libkdepim code by:
-    Copyright 2007 Laurent Montel <montel@kde.org>
+    Copyright 2007 - 2010 Laurent Montel <montel@kde.org>
 
     This library is free software; you can redistribute it and/or modify it
     under the terms of the GNU Library General Public License as published by
@@ -97,6 +97,17 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      */
     explicit TextEdit( QWidget *parent = 0 );
 
+
+    /**
+     * Constructs a TextEdit object
+     * @param parent the parent widget
+     * @param configFile the config file
+     * @since 4.6
+     *
+     * TODO KDE-5 merge with other constructor
+     */
+    explicit TextEdit( QWidget * parent, const QString & configFile );
+
     /**
      * Calling this allows createActions() to create the add image actions.
      * Call this method before calling createActions(), otherwise the action
@@ -118,7 +129,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      * The additional action XML names are:
      * - add_image
      * - delete_line
-     * 
+     *
      * The add_image actions is only added if enableImageActions() is called before.
      */
     virtual void createActions( KActionCollection *actionCollection );
@@ -201,7 +212,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      * i.e. the length of the quote prefix before the real text starts.
      * The default implementation counts the number of spaces, '>' and '|' chars in
      * front of the line.
-     * 
+     *
      * @param line the line of which the length of the quote prefix should be returned
      * @return 0 if the line is not quoted, the length of the quote prefix otherwise
      * FIXME: Not yet used in all places, e.g. keypressEvent() or the quote highlighter
@@ -243,6 +254,10 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      */
     bool isFormattingUsed() const;
 
+    /*  Return config file
+     *  @since 4.5
+     */
+    QString configFile() const;
   protected:
 
     /**
