@@ -43,6 +43,7 @@
 #include <QtGui/QTextLayout>
 
 #include "textutils.h"
+#include <QPlainTextEdit>
 
 namespace KPIMTextEdit {
 
@@ -340,24 +341,9 @@ void TextEdit::setHighlighterColors( EMailQuoteHighlighter *highlighter )
 
 QString TextEdit::toWrappedPlainText() const
 {
-  QString temp;
-  QTextDocument* doc = document();
-  QTextBlock block = doc->begin();
-  while ( block.isValid() ) {
-    QTextLayout* layout = block.layout();
-    for ( int i = 0; i < layout->lineCount(); i++ ) {
-      QTextLine line = layout->lineAt( i );
-      temp += block.text().mid( line.textStart(), line.textLength() ) + QLatin1Char( '\n' );
-    }
-    block = block.next();
-  }
-
-  // Remove the last superfluous newline added above
-  if ( temp.endsWith( QLatin1Char( '\n' ) ) )
-    temp.chop( 1 );
-
-  d->fixupTextEditString( temp );
-  return temp;
+  QString wrapped = KPIMTextEdit::TextUtils::flowText( toPlainText(), QString(), lineWrapColumnOrWidth() );
+  d->fixupTextEditString( wrapped );
+  return wrapped;
 }
 
 QString TextEdit::toCleanPlainText() const

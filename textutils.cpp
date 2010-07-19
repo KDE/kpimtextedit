@@ -107,3 +107,47 @@ bool TextUtils::containsFormatting( const QTextDocument *document )
 
   return false;
 }
+
+QString TextUtils::flowText( const QString &text, const QString& indent, int maxLength )
+{
+  QString wrappedText( text );
+  maxLength--;
+  if ( wrappedText.isEmpty() ) {
+    return indent + QLatin1String( "\n" );
+  }
+  
+  QString result;
+  while ( !wrappedText.isEmpty() )
+  {
+    // Find the next point in the wrappedText where we have to do a line break. Start searching
+    // at maxLength position and then walk backwards looking for a space
+    int breakPosition;
+    if ( wrappedText.length() > maxLength )
+    {
+      breakPosition = maxLength;
+      while( ( breakPosition >= 0 ) && ( wrappedText[breakPosition] != QLatin1Char( ' ' ) ) )
+        breakPosition--;
+      if ( breakPosition <= 0 ) {
+        // Couldn't break before maxLength.
+        breakPosition = maxLength;
+      }
+    }
+    else {
+      breakPosition = wrappedText.length();
+    }
+    
+    QString line = wrappedText.left( breakPosition );
+    if ( breakPosition < wrappedText.length() )
+      wrappedText = wrappedText.mid( breakPosition );
+    else
+      wrappedText.clear();
+    
+    // Strip leading whitespace of new lines, since that looks strange
+      if ( !result.isEmpty() && line.startsWith( QLatin1Char( ' ' ) ) )
+        line = line.mid( 1 );
+      
+      result += indent + line + QLatin1Char( '\n' );
+  }
+  
+  return result;
+}
