@@ -123,6 +123,8 @@ class TextEditPrivate
      * compatible way.
      */
     bool spellCheckingEnabled;
+
+    QString configFile;
 };
 
 } // namespace
@@ -156,6 +158,14 @@ TextEdit::TextEdit( QWidget *parent )
   d->init();
 }
 
+TextEdit::TextEdit( QWidget *parent, const QString& configFile )
+  : KRichTextWidget( parent ),
+    d( new TextEditPrivate( this ) )
+{
+  d->init();
+  d->configFile = configFile;
+}
+
 TextEdit::~TextEdit()
 {
 }
@@ -183,6 +193,12 @@ void TextEditPrivate::init()
   KCursor::setAutoHideCursor( q, true, true );
   q->installEventFilter( q );
 }
+
+QString TextEdit::configFile() const
+{
+   return d->configFile;
+}
+
 
 void TextEdit::keyPressEvent ( QKeyEvent * e )
 {
