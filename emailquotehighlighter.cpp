@@ -141,7 +141,7 @@ void EMailQuoteHighlighter::highlightBlock( const QString & text )
     }
     else
     {
-        if ( d->spellCheckingEnabled )
+        if ( d->spellCheckingEnabled && checkerEnabledByDefault() )
             Highlighter::highlightBlock( text );
     }
     setCurrentBlockState( 0 );
