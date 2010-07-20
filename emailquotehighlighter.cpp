@@ -21,6 +21,7 @@
 #include "emailquotehighlighter.h"
 
 #include "textedit.h"
+#include <kdeversion.h>
 
 namespace KPIMTextEdit {
 
@@ -141,7 +142,11 @@ void EMailQuoteHighlighter::highlightBlock( const QString & text )
     }
     else
     {
-        if ( d->spellCheckingEnabled && checkerEnabledByDefault() )
+        if ( d->spellCheckingEnabled 
+#if KDE_IS_VERSION(4,5,0)			
+			&& checkerEnabledByDefault() 
+#endif			
+			)
             Highlighter::highlightBlock( text );
     }
     setCurrentBlockState( 0 );
