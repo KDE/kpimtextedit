@@ -52,7 +52,7 @@ namespace TextUtils
    *    Result: "> Hello World,\n"
    *            "> this is a test."
    */
-  KPIMTEXTEDIT_EXPORT QString flowText( const QString &text, const QString& indent, int maxLength );
+  KPIMTEXTEDIT_EXPORT QString flowText( QString &text, const QString& indent, int maxLength );
 };
 
 }
