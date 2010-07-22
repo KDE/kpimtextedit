@@ -25,6 +25,7 @@
 #include <QtGui/QTextBlock>
 #include <QtGui/QTextCharFormat>
 #include <QtGui/QTextDocument>
+#include <KDE/KDebug>
 
 using namespace KPIMTextEdit;
 
@@ -114,7 +115,8 @@ QString TextUtils::flowText( QString &wrappedText, const QString& indent, int ma
   if ( wrappedText.isEmpty() ) {
     return indent + QLatin1String( "\n" );
   }
-  
+
+  maxLength -= indent.length(); // take into account indent
   QString result;
   while ( !wrappedText.isEmpty() )
   {
@@ -144,7 +146,7 @@ QString TextUtils::flowText( QString &wrappedText, const QString& indent, int ma
     // Strip leading whitespace of new lines, since that looks strange
       if ( !result.isEmpty() && line.startsWith( QLatin1Char( ' ' ) ) )
         line = line.mid( 1 );
-      
+
       result += indent + line + QLatin1Char( '\n' );
   }
 
