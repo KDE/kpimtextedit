@@ -143,9 +143,9 @@ void EMailQuoteHighlighter::highlightBlock( const QString & text )
     else
     {
         if ( d->spellCheckingEnabled 
-#if KDE_IS_VERSION(4,5,0)			
-			&& checkerEnabledByDefault() 
-#endif			
+#if KDE_IS_VERSION(4,4,93)
+			&& checkerEnabledByDefault()
+#endif
 			)
             Highlighter::highlightBlock( text );
     }
