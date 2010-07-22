@@ -341,10 +341,15 @@ void TextEdit::setHighlighterColors( EMailQuoteHighlighter *highlighter )
 
 QString TextEdit::toWrappedPlainText() const
 {
-  QString toWrap = toPlainText();
-  QString wrapped = KPIMTextEdit::TextUtils::flowText( toWrap, QString(), lineWrapColumnOrWidth() );
-  d->fixupTextEditString( wrapped );
-  return wrapped;
+  if( lineWrapColumnOrWidth() > 0 ) {
+    QString toWrap = toPlainText();
+    QString wrapped = KPIMTextEdit::TextUtils::flowText( toWrap, QString(), lineWrapColumnOrWidth() );
+    d->fixupTextEditString( wrapped );
+    return wrapped;
+  } else { // if we're not word-wrapping, don't waste cycles trying
+    return toPlainText();
+  }
+  
 }
 
 QString TextEdit::toCleanPlainText() const
