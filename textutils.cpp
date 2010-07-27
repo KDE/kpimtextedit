@@ -111,7 +111,6 @@ bool TextUtils::containsFormatting( const QTextDocument *document )
 
 QString TextUtils::flowText( QString &wrappedText, const QString& indent, int maxLength )
 {
-  maxLength--;
   if ( wrappedText.isEmpty() ) {
     return indent + QLatin1String( "\n" );
   }
