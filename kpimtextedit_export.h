@@ -23,7 +23,10 @@
 #include <kdemacros.h>
 
 #ifndef KPIMTEXTEDIT_EXPORT
-# if defined(MAKE_KPIMTEXTEDIT_LIB)
+# if defined(KDEPIM_STATIC_LIBS)
+   /* No export/import for static libraries */
+#  define KPIMTEXTEDIT_EXPORT
+# elif defined(MAKE_KPIMTEXTEDIT_LIB)
    /* We are building this library */
 #  define KPIMTEXTEDIT_EXPORT KDE_EXPORT
 # else

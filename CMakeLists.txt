@@ -10,7 +10,7 @@ set(kpimtextedit_lib_srcs
   textutils.cpp
 )
 
-kde4_add_library(kpimtextedit SHARED ${kpimtextedit_lib_srcs})
+kde4_add_library(kpimtextedit ${LIBRARY_TYPE} ${kpimtextedit_lib_srcs})
 
 target_link_libraries(kpimtextedit
   ${KDE4_KDEUI_LIBS}
