@@ -120,6 +120,13 @@ QString TextUtils::flowText( QString &wrappedText, const QString& indent, int ma
   QString result;
   while ( !wrappedText.isEmpty() )
   {
+    // first check for the next newline. if it's before maxLength, break there, and continue
+    int newLine = wrappedText.indexOf( QLatin1Char( '\n' ) );
+    if( newLine > 0 && newLine < maxLength ) {
+      result += indent + wrappedText.left( newLine + 1  );
+      wrappedText = wrappedText.mid( newLine + 1 );
+      continue;
+    }
     // Find the next point in the wrappedText where we have to do a line break. Start searching
     // at maxLength position and then walk backwards looking for a space
     int breakPosition;
