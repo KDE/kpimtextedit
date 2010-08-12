@@ -173,8 +173,10 @@ TextEdit::~TextEdit()
 
 bool TextEdit::eventFilter( QObject*o, QEvent* e )
 {
+#ifndef QT_NO_CURSOR
   if ( o == this )
     KCursor::autoHideEventFilter( o, e );
+#endif
   return KRichTextWidget::eventFilter( o, e );
 }
 
@@ -191,7 +193,9 @@ void TextEditPrivate::init()
   spellCheckingEnabled = false;
   q->setCheckSpellingEnabledInternal( true );
 
+#ifndef QT_NO_CURSOR
   KCursor::setAutoHideCursor( q, true, true );
+#endif
   q->installEventFilter( q );
 }
 
