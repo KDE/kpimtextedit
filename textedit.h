@@ -258,6 +258,13 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      *  @since 4.5
      */
     QString configFile() const;
+
+    /*  Return true if richtext mode support image
+     *  @since 4.6
+     */
+    bool isEnableImageActions() const;
+
+
   protected:
 
     /**

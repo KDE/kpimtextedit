@@ -356,11 +356,11 @@ QString TextEdit::toWrappedPlainText() const
     }
     block = block.next();
   }
-  
+
   // Remove the last superfluous newline added above
   if ( temp.endsWith( QLatin1Char( '\n' ) ) )
     temp.chop( 1 );
-  
+
   d->fixupTextEditString( temp );
   return temp;
 }
@@ -547,6 +547,11 @@ void TextEditPrivate::_k_slotAddImage()
 void KPIMTextEdit::TextEdit::enableImageActions()
 {
   d->imageSupportEnabled = true;
+}
+
+bool KPIMTextEdit::TextEdit::isEnableImageActions() const
+{
+  return d->imageSupportEnabled;
 }
 
 QByteArray KPIMTextEdit::TextEdit::imageNamesToContentIds( const QByteArray &htmlBody, const KPIMTextEdit::ImageList &imageList )
