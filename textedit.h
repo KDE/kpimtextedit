@@ -33,7 +33,7 @@
 #include <memory>
 
 class KUrl;
-
+class QFileInfo;
 namespace KPIMTextEdit {
 
 class TextEditPrivate;
@@ -263,7 +263,10 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      *  @since 4.6
      */
     bool isEnableImageActions() const;
-
+  /*
+   * @since 4.6
+   */
+  void insertImage( const QImage &image, const QFileInfo&info );
 
   protected:
 

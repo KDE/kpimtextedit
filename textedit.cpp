@@ -568,14 +568,19 @@ QByteArray KPIMTextEdit::TextEdit::imageNamesToContentIds( const QByteArray &htm
   return result;
 }
 
+void TextEdit::insertImage( const QImage &image, const QFileInfo&fileInfo )
+{
+  QString imageName = fileInfo.baseName().isEmpty() ? i18nc( "Start of the filename for an image", "image" ) : fileInfo.baseName();
+  d->addImageHelper( imageName, image );
+}
+
 void TextEdit::insertFromMimeData( const QMimeData *source )
 {
   // Add an image if that is on the clipboard
   if ( textMode() == KRichTextEdit::Rich && source->hasImage() && d->imageSupportEnabled ) {
     QImage image = qvariant_cast<QImage>( source->imageData() );
     QFileInfo fi( source->text() );
-    QString imageName = fi.baseName().isEmpty() ? i18nc( "Start of the filename for an image", "image" ) : fi.baseName();
-    d->addImageHelper( imageName, image );
+    insertImage( image, fi );
     return;
   }
 
