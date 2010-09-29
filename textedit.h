@@ -31,7 +31,7 @@
 #include <QtCore/QSharedPointer>
 
 #include <memory>
-
+#include <QFileInfo>
 class KUrl;
 
 namespace KPIMTextEdit {
@@ -258,6 +258,11 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      *  @since 4.5
      */
     QString configFile() const;
+    /*
+     * @since 4.6
+     */
+    void insertImage( const QImage &image, const QFileInfo&info );
+    
   protected:
 
     /**
