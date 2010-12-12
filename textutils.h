@@ -53,7 +53,7 @@ namespace TextUtils
    *            "> this is a test."
    */
   KPIMTEXTEDIT_EXPORT QString flowText( QString &text, const QString& indent, int maxLength );
-};
+}
 
 }
 
