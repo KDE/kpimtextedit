@@ -115,6 +115,9 @@ QString TextUtils::flowText( QString &wrappedText, const QString& indent, int ma
     return indent + QLatin1String( "\n" );
   }
 
+  if ( maxLength < indent.length() )
+    maxLength = indent.length() + 1;
+
   maxLength -= indent.length(); // take into account indent
   QString result;
   while ( !wrappedText.isEmpty() )
