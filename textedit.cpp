@@ -399,7 +399,7 @@ void TextEdit::addImage( const KUrl &url )
   }
   QFileInfo fi( url.path() );
   QString imageName = fi.baseName().isEmpty() ? QLatin1String( "image.png" )
-                                              : fi.baseName() + QLatin1String( ".png" );
+                                              : QString(fi.baseName() + QLatin1String( ".png" ));
   d->addImageHelper( imageName, image );
 }
 
