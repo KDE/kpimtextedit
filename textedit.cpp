@@ -380,7 +380,7 @@ void TextEdit::createActions( KActionCollection *actionCollection )
     d->actionAddImage = new KAction( KIcon( QLatin1String( "insert-image" ) ),
                                     i18n( "Add Image" ), this );
     actionCollection->addAction( QLatin1String( "add_image" ), d->actionAddImage );
-    connect( d->actionAddImage, SIGNAL(triggered(bool) ), SLOT( _k_slotAddImage() ) );
+    connect( d->actionAddImage, SIGNAL(triggered(bool)), SLOT(_k_slotAddImage()) );
   }
 
   d->actionDeleteLine = new KAction( i18n( "Delete Line" ), this );
