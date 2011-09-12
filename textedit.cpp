@@ -618,7 +618,8 @@ bool TextEdit::isFormattingUsed() const
 
 void TextEditPrivate::_k_slotDeleteLine()
 {
-  q->deleteCurrentLine();
+  if ( q->hasFocus() )
+    q->deleteCurrentLine();
 }
 
 void TextEdit::deleteCurrentLine()
