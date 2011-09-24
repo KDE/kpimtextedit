@@ -1,23 +1,23 @@
 /*
-    Copyright (c) 2009 Thomas McGuire <mcguire@kde.org>
+  Copyright (c) 2009 Thomas McGuire <mcguire@kde.org>
 
-    Based on KMail and libkdepim code by:
-    Copyright 2007 Laurent Montel <montel@kde.org>
+  Based on KMail and libkdepim code by:
+  Copyright 2007 Laurent Montel <montel@kde.org>
 
-    This library is free software; you can redistribute it and/or modify it
-    under the terms of the GNU Library General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or (at your
-    option) any later version.
+  This library is free software; you can redistribute it and/or modify it
+  under the terms of the GNU Library General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or (at your
+  option) any later version.
 
-    This library is distributed in the hope that it will be useful, but WITHOUT
-    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Library General Public
-    License for more details.
+  This library is distributed in the hope that it will be useful, but WITHOUT
+  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Library General Public
+  License for more details.
 
-    You should have received a copy of the GNU Library General Public License
-    along with this library; see the file COPYING.LIB.  If not, write to the
-    Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-    02110-1301, USA.
+  You should have received a copy of the GNU Library General Public License
+  along with this library; see the file COPYING.LIB.  If not, write to the
+  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+  02110-1301, USA.
 */
 #include "textedit.h"
 
@@ -145,7 +145,7 @@ void TextEditPrivate::fixupTextEditString( QString &text ) const
   text.replace( QChar::Nbsp, QChar::fromAscii( ' ' ) );
 }
 
-TextEdit::TextEdit( const QString& text, QWidget *parent )
+TextEdit::TextEdit( const QString &text, QWidget *parent )
   : KRichTextWidget( text, parent ),
     d( new TextEditPrivate( this ) )
 {
@@ -159,7 +159,7 @@ TextEdit::TextEdit( QWidget *parent )
   d->init();
 }
 
-TextEdit::TextEdit( QWidget *parent, const QString& configFile )
+TextEdit::TextEdit( QWidget *parent, const QString &configFile )
   : KRichTextWidget( parent ),
     d( new TextEditPrivate( this ) )
 {
@@ -171,11 +171,12 @@ TextEdit::~TextEdit()
 {
 }
 
-bool TextEdit::eventFilter( QObject*o, QEvent* e )
+bool TextEdit::eventFilter( QObject *o, QEvent *e )
 {
 #ifndef QT_NO_CURSOR
-  if ( o == this )
+  if ( o == this ) {
     KCursor::autoHideEventFilter( o, e );
+  }
 #endif
   return KRichTextWidget::eventFilter( o, e );
 }
@@ -201,9 +202,8 @@ void TextEditPrivate::init()
 
 QString TextEdit::configFile() const
 {
-   return d->configFile;
+  return d->configFile;
 }
-
 
 void TextEdit::keyPressEvent ( QKeyEvent * e )
 {
@@ -216,8 +216,8 @@ void TextEdit::keyPressEvent ( QKeyEvent * e )
     cursor.movePosition( QTextCursor::StartOfBlock );
     cursor.movePosition( QTextCursor::EndOfBlock, QTextCursor::KeepAnchor );
     QString lineText = cursor.selectedText();
-    if ( ( ( oldPos -blockPos )  > 0 ) &&
-         ( ( oldPos-blockPos ) < int( lineText.length() ) ) ) {
+    if ( ( ( oldPos - blockPos )  > 0 ) &&
+         ( ( oldPos - blockPos ) < int( lineText.length() ) ) ) {
       bool isQuotedLine = false;
       int bot = 0; // bot = begin of text after quote indicators
       while ( bot < lineText.length() ) {
@@ -225,11 +225,9 @@ void TextEdit::keyPressEvent ( QKeyEvent * e )
             ( lineText[bot] == QChar::fromAscii( '|' ) ) ) {
           isQuotedLine = true;
           ++bot;
-        }
-        else if ( lineText[bot].isSpace() ) {
+        } else if ( lineText[bot].isSpace() ) {
           ++bot;
-        }
-        else {
+        } else {
           break;
         }
       }
@@ -237,9 +235,9 @@ void TextEdit::keyPressEvent ( QKeyEvent * e )
       // duplicate quote indicators of the previous line before the new
       // line if the line actually contained text (apart from the quote
       // indicators) and the cursor is behind the quote indicators
-      if ( isQuotedLine
-           && ( bot != lineText.length() )
-           && ( ( oldPos-blockPos ) >= int( bot ) ) ) {
+      if ( isQuotedLine &&
+           ( bot != lineText.length() ) &&
+           ( ( oldPos - blockPos ) >= int( bot ) ) ) {
         // The cursor position might have changed unpredictably if there was selected
         // text which got replaced by a new line, so we query it again:
         cursor.movePosition( QTextCursor::StartOfBlock );
@@ -249,27 +247,23 @@ void TextEdit::keyPressEvent ( QKeyEvent * e )
         // remove leading white space from the new line and instead
         // add the quote indicators of the previous line
         int leadingWhiteSpaceCount = 0;
-        while ( ( leadingWhiteSpaceCount < newLine.length() )
-                  && newLine[leadingWhiteSpaceCount].isSpace() ) {
+        while ( ( leadingWhiteSpaceCount < newLine.length() ) &&
+                newLine[leadingWhiteSpaceCount].isSpace() ) {
           ++leadingWhiteSpaceCount;
         }
-        newLine = newLine.replace( 0, leadingWhiteSpaceCount,
-                                   lineText.left( bot ) );
+        newLine = newLine.replace( 0, leadingWhiteSpaceCount, lineText.left( bot ) );
         cursor.insertText( newLine );
-        //cursor.setPosition( cursor.position() + 2);
+        //cursor.setPosition( cursor.position() + 2 );
         cursor.movePosition( QTextCursor::StartOfBlock );
         setTextCursor( cursor );
       }
-    }
-    else
+    } else {
       KRichTextWidget::keyPressEvent( e );
-  }
-  else
-  {
+    }
+  } else {
     KRichTextWidget::keyPressEvent( e );
   }
 }
-
 
 bool TextEdit::isSpellCheckingEnabled() const
 {
@@ -278,44 +272,45 @@ bool TextEdit::isSpellCheckingEnabled() const
 
 void TextEdit::setSpellCheckingEnabled( bool enable )
 {
-  EMailQuoteHighlighter *hlighter =
-      dynamic_cast<EMailQuoteHighlighter*>( highlighter() );
-  if ( hlighter )
+  EMailQuoteHighlighter *hlighter = dynamic_cast<EMailQuoteHighlighter*>( highlighter() );
+  if ( hlighter ) {
     hlighter->toggleSpellHighlighting( enable );
+  }
 
   d->spellCheckingEnabled = enable;
   emit checkSpellingChanged( enable );
 }
 
-bool TextEdit::shouldBlockBeSpellChecked( const QString& block ) const
+bool TextEdit::shouldBlockBeSpellChecked( const QString &block ) const
 {
   return !isLineQuoted( block );
 }
 
-bool KPIMTextEdit::TextEdit::isLineQuoted( const QString& line ) const
+bool KPIMTextEdit::TextEdit::isLineQuoted( const QString &line ) const
 {
   return quoteLength( line ) > 0;
 }
 
-int KPIMTextEdit::TextEdit::quoteLength( const QString& line ) const
+int KPIMTextEdit::TextEdit::quoteLength( const QString &line ) const
 {
   bool quoteFound = false;
   int startOfText = -1;
   for ( int i = 0; i < line.length(); i++ ) {
-    if ( line[i] == QLatin1Char( '>' ) || line[i] == QLatin1Char( '|' ) )
+    if ( line[i] == QLatin1Char( '>' ) || line[i] == QLatin1Char( '|' ) ) {
       quoteFound = true;
-    else if ( line[i] != QLatin1Char( ' ' ) ) {
+    } else if ( line[i] != QLatin1Char( ' ' ) ) {
       startOfText = i;
       break;
     }
   }
   if ( quoteFound ) {
-    if ( startOfText == -1 )
+    if ( startOfText == -1 ) {
       startOfText = line.length() - 1;
+    }
     return startOfText;
-  }
-  else
+  } else {
     return 0;
+  }
 }
 
 const QString KPIMTextEdit::TextEdit::defaultQuoteSign() const
@@ -325,16 +320,16 @@ const QString KPIMTextEdit::TextEdit::defaultQuoteSign() const
 
 void TextEdit::createHighlighter()
 {
-  EMailQuoteHighlighter *emailHighLighter =
-      new EMailQuoteHighlighter( this );
+  EMailQuoteHighlighter *emailHighLighter = new EMailQuoteHighlighter( this );
 
   setHighlighterColors( emailHighLighter );
 
   //TODO change config
   KRichTextWidget::setHighlighter( emailHighLighter );
 
-  if ( !spellCheckingLanguage().isEmpty() )
+  if ( !spellCheckingLanguage().isEmpty() ) {
     setSpellCheckingLanguage( spellCheckingLanguage() );
+  }
   setSpellCheckingEnabled( isSpellCheckingEnabled() );
 }
 
@@ -346,10 +341,10 @@ void TextEdit::setHighlighterColors( EMailQuoteHighlighter *highlighter )
 QString TextEdit::toWrappedPlainText() const
 {
   QString temp;
-  QTextDocument* doc = document();
+  QTextDocument *doc = document();
   QTextBlock block = doc->begin();
   while ( block.isValid() ) {
-    QTextLayout* layout = block.layout();
+    QTextLayout *layout = block.layout();
     for ( int i = 0; i < layout->lineCount(); i++ ) {
       QTextLine line = layout->lineAt( i );
       temp += block.text().mid( line.textStart(), line.textLength() ) + QLatin1Char( '\n' );
@@ -358,8 +353,9 @@ QString TextEdit::toWrappedPlainText() const
   }
 
   // Remove the last superfluous newline added above
-  if ( temp.endsWith( QLatin1Char( '\n' ) ) )
+  if ( temp.endsWith( QLatin1Char( '\n' ) ) ) {
     temp.chop( 1 );
+  }
 
   d->fixupTextEditString( temp );
   return temp;
@@ -394,22 +390,25 @@ void TextEdit::addImage( const KUrl &url )
   QImage image;
   if ( !image.load( url.path() ) ) {
     KMessageBox::error( this,
-                        i18nc( "@info", "Unable to load image <filename>%1</filename>.", url.path() ) );
+                        i18nc( "@info",
+                               "Unable to load image <filename>%1</filename>.",
+                               url.path() ) );
     return;
   }
   QFileInfo fi( url.path() );
   QString imageName = fi.baseName().isEmpty() ? QLatin1String( "image.png" )
-                                              : QString(fi.baseName() + QLatin1String( ".png" ));
+                                              : QString( fi.baseName() + QLatin1String( ".png" ) );
   d->addImageHelper( imageName, image );
 }
 
-void TextEdit::loadImage ( const QImage& image, const QString& matchName, const QString& resourceName )
+void TextEdit::loadImage ( const QImage &image, const QString &matchName,
+                           const QString &resourceName )
 {
   QSet<int> cursorPositionsToSkip;
   QTextBlock currentBlock = document()->begin();
   QTextBlock::iterator it;
   while ( currentBlock.isValid() ) {
-    for (it = currentBlock.begin(); !(it.atEnd()); ++it) {
+    for ( it = currentBlock.begin(); !it.atEnd(); ++it ) {
       QTextFragment fragment = it.fragment();
       if ( fragment.isValid() ) {
         QTextImageFormat imageFormat = fragment.charFormat().toImageFormat();
@@ -420,11 +419,13 @@ void TextEdit::loadImage ( const QImage& image, const QString& matchName, const 
             cursor.setPosition( pos );
             cursor.setPosition( pos + 1, QTextCursor::KeepAnchor );
             cursor.removeSelectedText();
-            document()->addResource( QTextDocument::ImageResource, QUrl( resourceName ), QVariant( image ) );
+            document()->addResource( QTextDocument::ImageResource,
+                                     QUrl( resourceName ), QVariant( image ) );
             cursor.insertImage( resourceName );
 
             // The textfragment iterator is now invalid, restart from the beginning
-            // Take care not to replace the same fragment again, or we would be in an infinite loop.
+            // Take care not to replace the same fragment again, or we would be in
+            // an infinite loop.
             cursorPositionsToSkip.insert( pos );
             it = currentBlock.begin();
           }
@@ -449,11 +450,12 @@ void TextEditPrivate::addImageHelper( const QString &imageName, const QImage &im
       break;
     }
     int firstDot = imageName.indexOf( QLatin1Char( '.' ) );
-    if ( firstDot == -1 )
+    if ( firstDot == -1 ) {
       imageNameToAdd = imageName + QString::number( imageNumber++ );
-    else
+    } else {
       imageNameToAdd = imageName.left( firstDot ) + QString::number( imageNumber++ ) +
                        imageName.mid( firstDot );
+    }
   }
 
   if ( !mImageNames.contains( imageNameToAdd ) ) {
@@ -469,9 +471,10 @@ ImageWithNameList TextEdit::imagesWithName() const
   ImageWithNameList retImages;
   QStringList seenImageNames;
   QList<QTextImageFormat> imageFormats = d->embeddedImageFormats();
-  foreach( const QTextImageFormat &imageFormat, imageFormats ) {
+  foreach ( const QTextImageFormat &imageFormat, imageFormats ) {
     if ( !seenImageNames.contains( imageFormat.name() ) ) {
-      QVariant resourceData = document()->resource( QTextDocument::ImageResource, QUrl( imageFormat.name() ) );
+      QVariant resourceData = document()->resource( QTextDocument::ImageResource,
+                                                    QUrl( imageFormat.name() ) );
       QImage image = qvariant_cast<QImage>( resourceData );
       QString name = imageFormat.name();
       ImageWithNamePtr newImage( new ImageWithName );
@@ -488,7 +491,7 @@ QList< QSharedPointer<EmbeddedImage> > TextEdit::embeddedImages() const
 {
   ImageWithNameList normalImages = imagesWithName();
   QList< QSharedPointer<EmbeddedImage> > retImages;
-  foreach( const ImageWithNamePtr &normalImage, normalImages ) {
+  foreach ( const ImageWithNamePtr &normalImage, normalImages ) {
     QBuffer buffer;
     buffer.open( QIODevice::WriteOnly );
     normalImage->image.save( &buffer, "PNG" );
@@ -529,8 +532,8 @@ void TextEditPrivate::_k_slotAddImage()
 {
   QPointer<KFileDialog> fdlg = new KFileDialog( QString(), QString(), q );
   fdlg->setOperationMode( KFileDialog::Other );
-  fdlg->setCaption( i18n("Add Image") );
-  fdlg->okButton()->setGuiItem( KGuiItem( i18n("&Add"), QLatin1String( "document-open" ) ) );
+  fdlg->setCaption( i18n( "Add Image" ) );
+  fdlg->okButton()->setGuiItem( KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
   fdlg->setMode( KFile::Files );
   if ( fdlg->exec() != KDialog::Accepted ) {
     delete fdlg;
@@ -538,7 +541,7 @@ void TextEditPrivate::_k_slotAddImage()
   }
 
   const KUrl::List files = fdlg->selectedUrls();
-  foreach ( const KUrl& url, files ) {
+  foreach ( const KUrl &url, files ) {
     q->addImage( url );
   }
   delete fdlg;
@@ -554,11 +557,12 @@ bool KPIMTextEdit::TextEdit::isEnableImageActions() const
   return d->imageSupportEnabled;
 }
 
-QByteArray KPIMTextEdit::TextEdit::imageNamesToContentIds( const QByteArray &htmlBody, const KPIMTextEdit::ImageList &imageList )
+QByteArray KPIMTextEdit::TextEdit::imageNamesToContentIds(
+  const QByteArray &htmlBody, const KPIMTextEdit::ImageList &imageList )
 {
   QByteArray result = htmlBody;
   if ( imageList.size() > 0 ) {
-    foreach( const QSharedPointer<EmbeddedImage> &image, imageList ) {
+    foreach ( const QSharedPointer<EmbeddedImage> &image, imageList ) {
       const QString newImageName = QLatin1String( "cid:" ) + image->contentID;
       QByteArray quote( "\"" );
       result.replace( QByteArray( quote + image->imageName.toLocal8Bit() + quote ),
@@ -568,9 +572,11 @@ QByteArray KPIMTextEdit::TextEdit::imageNamesToContentIds( const QByteArray &htm
   return result;
 }
 
-void TextEdit::insertImage( const QImage &image, const QFileInfo&fileInfo )
+void TextEdit::insertImage( const QImage &image, const QFileInfo &fileInfo )
 {
-  QString imageName = fileInfo.baseName().isEmpty() ? i18nc( "Start of the filename for an image", "image" ) : fileInfo.baseName();
+  QString imageName = fileInfo.baseName().isEmpty() ?
+                        i18nc( "Start of the filename for an image", "image" ) :
+                        fileInfo.baseName();
   d->addImageHelper( imageName, image );
 }
 
@@ -598,35 +604,42 @@ void TextEdit::insertFromMimeData( const QMimeData *source )
 
 bool KPIMTextEdit::TextEdit::canInsertFromMimeData( const QMimeData *source ) const
 {
-  if ( source->hasHtml() && textMode() == KRichTextEdit::Rich )
+  if ( source->hasHtml() && textMode() == KRichTextEdit::Rich ) {
     return true;
-  if ( source->hasText() )
+  }
+
+  if ( source->hasText() ) {
     return true;
-  if ( textMode() == KRichTextEdit::Rich && source->hasImage() && d->imageSupportEnabled )
+  }
+
+  if ( textMode() == KRichTextEdit::Rich && source->hasImage() && d->imageSupportEnabled ) {
     return true;
+  }
 
   return KRichTextWidget::canInsertFromMimeData( source );
 }
 
 bool TextEdit::isFormattingUsed() const
 {
-  if ( textMode() == Plain )
+  if ( textMode() == Plain ) {
     return false;
+  }
 
   return TextUtils::containsFormatting( document() );
 }
 
 void TextEditPrivate::_k_slotDeleteLine()
 {
-  if ( q->hasFocus() )
+  if ( q->hasFocus() ) {
     q->deleteCurrentLine();
+  }
 }
 
 void TextEdit::deleteCurrentLine()
 {
   QTextCursor cursor = textCursor();
   QTextBlock block = cursor.block();
-  const QTextLayout* layout = block.layout();
+  const QTextLayout *layout = block.layout();
 
   // The current text block can have several lines due to word wrapping.
   // Search the line the cursor is in, and then delete it.
@@ -636,21 +649,24 @@ void TextEdit::deleteCurrentLine()
     const bool oneLineBlock = ( layout->lineCount() == 1 );
     const int startOfLine = block.position() + line.textStart();
     int endOfLine = block.position() + line.textStart() + line.textLength();
-    if ( !lastLineInBlock )
+    if ( !lastLineInBlock ) {
       endOfLine -= 1;
+    }
 
     // Found the line where the cursor is in
     if ( cursor.position() >= startOfLine && cursor.position() <= endOfLine ) {
       int deleteStart = startOfLine;
       int deleteLength = line.textLength();
-      if ( oneLineBlock )
+      if ( oneLineBlock ) {
         deleteLength++; // The trailing newline
+      }
 
       // When deleting the last line in the document,
       // remove the newline of the line before the last line instead
       if ( deleteStart + deleteLength >= document()->characterCount() &&
-           deleteStart > 0 )
+           deleteStart > 0 ) {
         deleteStart--;
+      }
 
       cursor.beginEditBlock();
       cursor.setPosition( deleteStart );
@@ -662,6 +678,5 @@ void TextEdit::deleteCurrentLine()
   }
 
 }
-
 
 #include "textedit.moc"

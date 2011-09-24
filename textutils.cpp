@@ -39,8 +39,9 @@ static bool isCharFormatFormatted( const QTextCharFormat &format, const QFont &d
        format.layoutDirection() != defaultBlockFormat.layoutDirection() ||
        format.underlineStyle() != defaultBlockFormat.underlineStyle() ||
        format.foreground().color() != defaultBlockFormat.foreground().color() ||
-       format.background().color() != defaultBlockFormat.background().color() )
+       format.background().color() != defaultBlockFormat.background().color() ) {
     return true;
+  }
 
   return false;
 }
@@ -51,8 +52,9 @@ static bool isBlockFormatFormatted( const QTextBlockFormat &format,
   if ( format.alignment() != defaultFormat.alignment() ||
        format.layoutDirection() != defaultFormat.layoutDirection() ||
        format.indent() != defaultFormat.indent() ||
-       format.textIndent() != defaultFormat.textIndent() )
+       format.textIndent() != defaultFormat.textIndent() ) {
     return true;
+  }
 
   return false;
 }
@@ -66,8 +68,9 @@ static bool isSpecial( const QTextFormat &charFormat )
 
 bool TextUtils::containsFormatting( const QTextDocument *document )
 {
-  if ( !document )
+  if ( !document ) {
     return false;
+  }
 
   QTextDocument defaultTextDocument;
   const QTextCharFormat defaultCharFormat = defaultTextDocument.begin().charFormat();
@@ -103,20 +106,22 @@ bool TextUtils::containsFormatting( const QTextDocument *document )
     block = block.next();
   }
 
-  if ( document->toHtml().contains( QLatin1String( "<hr />" ) ) )
+  if ( document->toHtml().contains( QLatin1String( "<hr />" ) ) ) {
     return true;
+  }
 
   return false;
 }
 
-QString TextUtils::flowText( QString &wrappedText, const QString& indent, int maxLength )
+QString TextUtils::flowText( QString &wrappedText, const QString &indent, int maxLength )
 {
   if ( wrappedText.isEmpty() ) {
     return indent;
   }
 
   if ( maxLength <= indent.length() ) {
-    kWarning() << "indent was set to a string that is longer or the same length as maxLength, setting maxLength to indent.length() + 1";
+    kWarning() << "indent was set to a string that is longer or the same length "
+               << "as maxLength, setting maxLength to indent.length() + 1";
     maxLength = indent.length() + 1;
   }
 
@@ -131,34 +136,36 @@ QString TextUtils::flowText( QString &wrappedText, const QString& indent, int ma
       wrappedText = wrappedText.mid( newLine + 1 );
       continue;
     }
-    // Find the next point in the wrappedText where we have to do a line break. Start searching
-    // at maxLength position and then walk backwards looking for a space
+    // Find the next point in the wrappedText where we have to do a line break.
+    // Start searching at maxLength position and then walk backwards looking
+    // for a space.
     int breakPosition;
-    if ( wrappedText.length() > maxLength )
-    {
+    if ( wrappedText.length() > maxLength ) {
       breakPosition = maxLength;
-      while( ( breakPosition >= 0 ) && ( wrappedText[breakPosition] != QLatin1Char( ' ' ) ) )
+      while ( ( breakPosition >= 0 ) && ( wrappedText[breakPosition] != QLatin1Char( ' ' ) ) ) {
         breakPosition--;
+      }
       if ( breakPosition <= 0 ) {
         // Couldn't break before maxLength.
         breakPosition = maxLength;
       }
-    }
-    else {
+    } else {
       breakPosition = wrappedText.length();
     }
-    
-    QString line = wrappedText.left( breakPosition );
-    if ( breakPosition < wrappedText.length() )
-      wrappedText = wrappedText.mid( breakPosition );
-    else
-      wrappedText.clear();
-    
-    // Strip leading whitespace of new lines, since that looks strange
-      if ( !result.isEmpty() && line.startsWith( QLatin1Char( ' ' ) ) )
-        line = line.mid( 1 );
 
-      result += indent + line + QLatin1Char( '\n' );
+    QString line = wrappedText.left( breakPosition );
+    if ( breakPosition < wrappedText.length() ) {
+      wrappedText = wrappedText.mid( breakPosition );
+    } else {
+      wrappedText.clear();
+    }
+
+    // Strip leading whitespace of new lines, since that looks strange
+    if ( !result.isEmpty() && line.startsWith( QLatin1Char( ' ' ) ) ) {
+      line = line.mid( 1 );
+    }
+
+    result += indent + line + QLatin1Char( '\n' );
   }
 
   return result.left( result.length() - 1 );

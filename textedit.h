@@ -1,23 +1,23 @@
 /*
-    Copyright (c) 2009 Thomas McGuire <mcguire@kde.org>
+  Copyright (c) 2009 Thomas McGuire <mcguire@kde.org>
 
-    Based on KMail and libkdepim code by:
-    Copyright 2007 - 2010 Laurent Montel <montel@kde.org>
+  Based on KMail and libkdepim code by:
+  Copyright 2007 - 2010 Laurent Montel <montel@kde.org>
 
-    This library is free software; you can redistribute it and/or modify it
-    under the terms of the GNU Library General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or (at your
-    option) any later version.
+  This library is free software; you can redistribute it and/or modify it
+  under the terms of the GNU Library General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or (at your
+  option) any later version.
 
-    This library is distributed in the hope that it will be useful, but WITHOUT
-    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Library General Public
-    License for more details.
+  This library is distributed in the hope that it will be useful, but WITHOUT
+  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Library General Public
+  License for more details.
 
-    You should have received a copy of the GNU Library General Public License
-    along with this library; see the file COPYING.LIB.  If not, write to the
-    Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-    02110-1301, USA.
+  You should have received a copy of the GNU Library General Public License
+  along with this library; see the file COPYING.LIB.  If not, write to the
+  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+  02110-1301, USA.
 */
 #ifndef KPIMTEXTEDIT_TEXTEDIT_H
 #define KPIMTEXTEDIT_TEXTEDIT_H
@@ -79,7 +79,8 @@ typedef QList< QSharedPointer<EmbeddedImage> > ImageList;
  * @since 4.3
  */
 class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
-                                     protected KTextEditSpellInterface // TODO: KDE5: get rid of the spell interface
+                                     // TODO: KDE5: get rid of the spell interface
+                                     protected KTextEditSpellInterface
 {
   Q_OBJECT
 
@@ -90,14 +91,13 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      * @param text the initial plain text of the text edit, interpreted as HTML
      * @param parent the parent widget
      */
-    explicit TextEdit( const QString& text, QWidget *parent = 0 );
+    explicit TextEdit( const QString &text, QWidget *parent = 0 );
 
     /**
      * Constructs a TextEdit object.
      * @param parent the parent widget
      */
     explicit TextEdit( QWidget *parent = 0 );
-
 
     /**
      * Constructs a TextEdit object
@@ -107,7 +107,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      *
      * TODO KDE-5 merge with other constructor
      */
-    explicit TextEdit( QWidget * parent, const QString & configFile );
+    explicit TextEdit( QWidget *parent, const QString &configFile );
 
     /**
      * Calling this allows createActions() to create the add image actions.
@@ -144,12 +144,12 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     void addImage( const KUrl &url );
 
     /**
-     * Loads an image into the textedit. The difference to addImage() is that this function expects
-     * that the image tag is already present in the HTML source.
+     * Loads an image into the textedit. The difference to addImage() is that this
+     * function expects that the image tag is already present in the HTML source.
      *
-     * So what this message does is that it scans the HTML source for the image tag that matches the
-     * @p matchName, and then inserts the @p image as a resource, giving that resource the name
-     * @P resourceName.
+     * So what this message does is that it scans the HTML source for the image
+     * tag that matches the @p matchName, and then inserts the @p image as a
+     * resource, giving that resource the name @p resourceName.
      *
      * @since 4.4
      */
@@ -185,8 +185,8 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     QString toWrappedPlainText() const;
 
     /**
-     * Same as toPlainText() from QTextEdit, only that it removes embedded images and
-     * converts non-breaking space characters to normal spaces.
+     * Same as toPlainText() from QTextEdit, only that it removes embedded images
+     * and converts non-breaking space characters to normal spaces.
      */
     QString toCleanPlainText() const;
 
@@ -227,9 +227,9 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     virtual const QString defaultQuoteSign() const;
 
     /**
-     * For all given embedded images, this function replace the image name in the <img> tag of the
-     * HTML body with cid:content-id,
-     * so that the HTML references the image body parts, see RFC 2557.
+     * For all given embedded images, this function replace the image name
+     * in the <img> tag of the HTML body with cid:content-id, so that the
+     * HTML references the image body parts, see RFC 2557.
      *
      * This is useful when building a MIME message with inline images.
      *
@@ -243,31 +243,34 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      *
      * @return a modified HTML code, where the <img> tags got replaced
      */
-    static QByteArray imageNamesToContentIds( const QByteArray &htmlBody, const ImageList &imageList );
+    static QByteArray imageNamesToContentIds( const QByteArray &htmlBody,
+                                              const ImageList &imageList );
 
     /**
      * Checks if rich text formatting is used anywhere.
-     * This is not the same as checking whether textMode() returns "Rich", since
-     * that only tells that rich text mode is enabled, but not if any special formatting
-     * is actually used.
+     * This is not the same as checking whether textMode() returns "Rich",
+     * since that only tells that rich text mode is enabled, but not if any
+     * special formatting is actually used.
      *
      * @return true if formatting is used anywhere
      */
     bool isFormattingUsed() const;
 
-    /*  Return config file
+    /**
+     *  Return config file.
      *  @since 4.5
      */
     QString configFile() const;
 
-    /*  Return true if richtext mode support image
+    /**  Return true if richtext mode support image
      *  @since 4.6
      */
     bool isEnableImageActions() const;
-  /*
-   * @since 4.6
-   */
-  void insertImage( const QImage &image, const QFileInfo&info );
+
+    /**
+     * @since 4.6
+     */
+    void insertImage( const QImage &image, const QFileInfo &info );
 
   protected:
 
@@ -285,13 +288,13 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      * Reimplemented from KRichTextWidget to hide the mouse cursor when there
      * was no mouse movement for some time, using KCursor
      */
-    virtual bool eventFilter( QObject*o, QEvent* e );
+    virtual bool eventFilter( QObject *o, QEvent *e );
 
     /**
      * Reimplemented to add qoute signs when the user presses enter
      * on a quoted line.
      */
-    virtual void keyPressEvent ( QKeyEvent * e );
+    virtual void keyPressEvent ( QKeyEvent *e );
 
     // For the explaination for these four methods, see the comment at the
     // spellCheckingEnabled variable of the private class.
@@ -310,7 +313,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      * Reimplemented from KTextEditSpellInterface, to avoid spellchecking
      * quoted text.
      */
-    virtual bool shouldBlockBeSpellChecked( const QString& block ) const;
+    virtual bool shouldBlockBeSpellChecked( const QString &block ) const;
 
     /**
      * Reimplemented to create our own highlighter which does quote and
@@ -319,7 +322,6 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     virtual void createHighlighter();
 
   private:
-
     std::auto_ptr<TextEditPrivate> const d;
     friend class TextEditPrivate;
     Q_PRIVATE_SLOT( d, void _k_slotAddImage() )
