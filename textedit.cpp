@@ -345,7 +345,8 @@ QString TextEdit::toWrappedPlainText() const
   QTextBlock block = doc->begin();
   while ( block.isValid() ) {
     QTextLayout *layout = block.layout();
-    for ( int i = 0; i < layout->lineCount(); i++ ) {
+    const int numberOfLine( layout->lineCount() );
+    for ( int i = 0; i < numberOfLine; i++ ) {
       QTextLine line = layout->lineAt( i );
       temp += block.text().mid( line.textStart(), line.textLength() ) + QLatin1Char( '\n' );
     }
@@ -561,7 +562,7 @@ QByteArray KPIMTextEdit::TextEdit::imageNamesToContentIds(
   const QByteArray &htmlBody, const KPIMTextEdit::ImageList &imageList )
 {
   QByteArray result = htmlBody;
-  if ( imageList.size() > 0 ) {
+  if ( !imageList.isEmpty() ) {
     foreach ( const QSharedPointer<EmbeddedImage> &image, imageList ) {
       const QString newImageName = QLatin1String( "cid:" ) + image->contentID;
       QByteArray quote( "\"" );
