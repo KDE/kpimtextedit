@@ -520,7 +520,11 @@ QList<QTextImageFormat> TextEditPrivate::embeddedImageFormats() const
       if ( fragment.isValid() ) {
         QTextImageFormat imageFormat = fragment.charFormat().toImageFormat();
         if ( imageFormat.isValid() ) {
-          retList.append( imageFormat );
+          //TODO: Replace with a way to see if an image is an embedded image or a remote
+          QUrl url(imageFormat.name());
+          if( !url.isValid() || !url.scheme().startsWith( QLatin1String( "http" ) ) ) {
+            retList.append( imageFormat );
+          }
         }
       }
     }
