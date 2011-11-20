@@ -97,7 +97,7 @@ void TextEditTester::testFormattingUsed()
   QVERIFY( textEdit.isFormattingUsed() );
   direction.setLayoutDirection( Qt::LeftToRight );
   textEdit.mergeCurrentCharFormat( direction );
-  QVERIFY( !textEdit.isFormattingUsed() );
+  QVERIFY( textEdit.isFormattingUsed() );
 
   //
   // Test lists
@@ -105,7 +105,7 @@ void TextEditTester::testFormattingUsed()
   textEdit.setListStyle( QTextListFormat::ListCircle );
   QVERIFY( textEdit.isFormattingUsed() );
   textEdit.setListStyle( 0 );
-  QVERIFY( !textEdit.isFormattingUsed() );
+  QVERIFY( textEdit.isFormattingUsed() );
 
   //
   // Test font attributes
@@ -113,17 +113,17 @@ void TextEditTester::testFormattingUsed()
   textEdit.setFontFamily( QLatin1String( "Times" ) );
   QVERIFY( textEdit.isFormattingUsed() );
   textEdit.setFontFamily( textEdit.document()->defaultFont().family() );
-  QVERIFY( !textEdit.isFormattingUsed() );
+  QVERIFY( textEdit.isFormattingUsed() );
   textEdit.setFontSize( 48 );
   QVERIFY( textEdit.isFormattingUsed() );
   textEdit.setFontSize( textEdit.document()->defaultFont().pointSize() );
-  QVERIFY( !textEdit.isFormattingUsed() );
+  QVERIFY( textEdit.isFormattingUsed() );
   QFont myFont = textEdit.document()->defaultFont();
   myFont.setStyle( QFont::StyleOblique );
   textEdit.setFont( myFont );
   QVERIFY( textEdit.isFormattingUsed() );
   textEdit.setFont( textEdit.document()->defaultFont() );
-  QVERIFY( !textEdit.isFormattingUsed() );
+  QVERIFY( textEdit.isFormattingUsed() );
 
   //
   // Test bold, italic, underline and strikeout
@@ -131,19 +131,19 @@ void TextEditTester::testFormattingUsed()
   textEdit.setTextBold( true );
   QVERIFY( textEdit.isFormattingUsed() );
   textEdit.setTextBold( false );
-  QVERIFY( !textEdit.isFormattingUsed() );
+  QVERIFY( textEdit.isFormattingUsed() );
   textEdit.setTextUnderline( true );
   QVERIFY( textEdit.isFormattingUsed() );
   textEdit.setTextUnderline( false );
-  QVERIFY( !textEdit.isFormattingUsed() );
+  QVERIFY( textEdit.isFormattingUsed() );
   textEdit.setTextItalic( true );
   QVERIFY( textEdit.isFormattingUsed() );
   textEdit.setTextItalic( false );
-  QVERIFY( !textEdit.isFormattingUsed() );
+  QVERIFY( textEdit.isFormattingUsed() );
   textEdit.setTextStrikeOut( true );
   QVERIFY( textEdit.isFormattingUsed() );
   textEdit.setTextStrikeOut( false );
-  QVERIFY( !textEdit.isFormattingUsed() );
+  QVERIFY( textEdit.isFormattingUsed() );
 
   //
   // Color
@@ -152,12 +152,12 @@ void TextEditTester::testFormattingUsed()
   textEdit.setTextForegroundColor( Qt::red );
   QVERIFY( textEdit.isFormattingUsed() );
   textEdit.setTextForegroundColor( oldForeground );
-  QVERIFY( !textEdit.isFormattingUsed() );
+  QVERIFY( textEdit.isFormattingUsed() );
   QColor oldBackground = textEdit.document()->firstBlock().charFormat().background().color();
   textEdit.setTextBackgroundColor( Qt::red );
   QVERIFY( textEdit.isFormattingUsed() );
   textEdit.setTextBackgroundColor( oldBackground );
-  QVERIFY( !textEdit.isFormattingUsed() );
+  QVERIFY( textEdit.isFormattingUsed() );
 
   //
   // Horizontal rule
