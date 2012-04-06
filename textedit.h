@@ -118,7 +118,13 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      * Don't call this if you don't want to support adding images.
      */
     void enableImageActions();
-
+    /**
+     * Calling this allows createActions() to create the add emoticons actions.
+     * Call this method before calling createActions(), otherwise the action
+     * will not be added.
+     * Don't call this if you don't want to support emoticons actions.
+     */
+    void enableEmoticonActions();
     /**
      * Destructor
      */
@@ -267,6 +273,11 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      */
     bool isEnableImageActions() const;
 
+    /** Return true if emoticons actions supported
+     *  @since 4.9
+     */
+    bool isEnableEmoticonActions() const;
+
     /**
      * @since 4.6
      */
@@ -326,6 +337,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     friend class TextEditPrivate;
     Q_PRIVATE_SLOT( d, void _k_slotAddImage() )
     Q_PRIVATE_SLOT( d, void _k_slotDeleteLine() )
+    Q_PRIVATE_SLOT( d, void _k_slotAddEmoticon(const QString &) )
 };
 
 } // namespace

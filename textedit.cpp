@@ -22,6 +22,7 @@
 #include "textedit.h"
 
 #include "emailquotehighlighter.h"
+#include "emoticontexteditaction.h"
 
 #include <kmime/kmime_codecs.h>
 
@@ -55,7 +56,8 @@ class TextEditPrivate
       : actionAddImage( 0 ),
         actionDeleteLine( 0 ),
         q( parent ),
-        imageSupportEnabled( false )
+        imageSupportEnabled( false ),
+        emoticonSupportEnabled( false )
     {
     }
 
@@ -93,18 +95,21 @@ class TextEditPrivate
 
     void _k_slotDeleteLine();
 
+    void _k_slotAddEmoticon(const QString&);
     /// The action that triggers _k_slotAddImage()
     KAction *actionAddImage;
 
     /// The action that triggers _k_slotDeleteLine()
     KAction *actionDeleteLine;
 
+    EmoticonTextEditAction *actionAddEmoticon;
     /// The parent class
     TextEdit *q;
 
     /// Whether or not adding or pasting images is supported
     bool imageSupportEnabled;
 
+    bool emoticonSupportEnabled;
     /**
      * The names of embedded images.
      * Used to easily obtain the names of the images.
@@ -379,6 +384,11 @@ void TextEdit::createActions( KActionCollection *actionCollection )
     actionCollection->addAction( QLatin1String( "add_image" ), d->actionAddImage );
     connect( d->actionAddImage, SIGNAL(triggered(bool)), SLOT(_k_slotAddImage()) );
   }
+  if ( d->emoticonSupportEnabled ) {
+    d->actionAddEmoticon = new EmoticonTextEditAction( this );
+    actionCollection->addAction( QLatin1String( "add_emoticon" ), d->actionAddEmoticon );
+    connect( d->actionAddEmoticon, SIGNAL(emoticonActivated(QString)), SLOT(_k_slotAddEmoticon(QString)) );
+  }
 
   d->actionDeleteLine = new KAction( i18n( "Delete Line" ), this );
   d->actionDeleteLine->setShortcut( QKeySequence( Qt::CTRL + Qt::Key_K ) );
@@ -415,7 +425,7 @@ void TextEdit::loadImage ( const QImage &image, const QString &matchName,
         QTextImageFormat imageFormat = fragment.charFormat().toImageFormat();
         if ( imageFormat.isValid() && imageFormat.name() == matchName ) {
           int pos = fragment.position();
-          if ( !cursorPositionsToSkip.contains( pos ) ) {
+          if ( !cursorPositionsToSkip.contains( pos )  ) {
             QTextCursor cursor( document() );
             cursor.setPosition( pos );
             cursor.setPosition( pos + 1, QTextCursor::KeepAnchor );
@@ -533,6 +543,12 @@ QList<QTextImageFormat> TextEditPrivate::embeddedImageFormats() const
   return retList;
 }
 
+void TextEditPrivate::_k_slotAddEmoticon( const QString& text)
+{
+  QTextCursor cursor = q->textCursor();
+  cursor.insertText( text );
+}
+
 void TextEditPrivate::_k_slotAddImage()
 {
   QPointer<KFileDialog> fdlg = new KFileDialog( QString(), QString(), q );
@@ -561,6 +577,17 @@ bool KPIMTextEdit::TextEdit::isEnableImageActions() const
 {
   return d->imageSupportEnabled;
 }
+
+void KPIMTextEdit::TextEdit::enableEmoticonActions()
+{
+  d->emoticonSupportEnabled = true;
+}
+
+bool KPIMTextEdit::TextEdit::isEnableEmoticonActions() const
+{
+  return d->emoticonSupportEnabled;
+}
+
 
 QByteArray KPIMTextEdit::TextEdit::imageNamesToContentIds(
   const QByteArray &htmlBody, const KPIMTextEdit::ImageList &imageList )
