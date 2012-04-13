@@ -45,6 +45,7 @@ EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText, const QS
     p = p.scaled(QSize(32,32), Qt::KeepAspectRatio);
 
   setIcon(p);
+  setToolTip(mText);
 }
 
 QString EmoticonTextEditItem::text() const
