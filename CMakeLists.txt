@@ -17,7 +17,7 @@ kde4_add_library(kpimtextedit ${LIBRARY_TYPE} ${kpimtextedit_lib_srcs})
 target_link_libraries(kpimtextedit
   ${KDE4_KDEUI_LIBS}
   ${KDE4_KIO_LIBS}
-  ${KDE4_KUTILS_LIBS}
+  ${KDE4_KEMOTICONS_LIBS}
   kmime
 )
 
