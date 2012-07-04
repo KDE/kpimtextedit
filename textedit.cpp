@@ -300,7 +300,8 @@ int KPIMTextEdit::TextEdit::quoteLength( const QString &line ) const
 {
   bool quoteFound = false;
   int startOfText = -1;
-  for ( int i = 0; i < line.length(); i++ ) {
+  const int lineLength(line.length());
+  for ( int i = 0; i < lineLength; ++i ) {
     if ( line[i] == QLatin1Char( '>' ) || line[i] == QLatin1Char( '|' ) ) {
       quoteFound = true;
     } else if ( line[i] != QLatin1Char( ' ' ) ) {
@@ -351,7 +352,7 @@ QString TextEdit::toWrappedPlainText() const
   while ( block.isValid() ) {
     QTextLayout *layout = block.layout();
     const int numberOfLine( layout->lineCount() );
-    for ( int i = 0; i < numberOfLine; i++ ) {
+    for ( int i = 0; i < numberOfLine; ++i ) {
       QTextLine line = layout->lineAt( i );
       temp += block.text().mid( line.textStart(), line.textLength() ) + QLatin1Char( '\n' );
     }
