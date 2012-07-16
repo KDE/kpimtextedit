@@ -557,14 +557,11 @@ void TextEditPrivate::_k_slotAddImage()
   fdlg->setCaption( i18n( "Add Image" ) );
   fdlg->okButton()->setGuiItem( KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
   fdlg->setMode( KFile::Files );
-  if ( fdlg->exec() != KDialog::Accepted ) {
-    delete fdlg;
-    return;
-  }
-
-  const KUrl::List files = fdlg->selectedUrls();
-  foreach ( const KUrl &url, files ) {
-    q->addImage( url );
+  if ( fdlg->exec() == KDialog::Accepted && fdlg ) {
+    const KUrl::List files = fdlg->selectedUrls();
+    foreach ( const KUrl &url, files ) {
+      q->addImage( url );
+    }
   }
   delete fdlg;
 }
