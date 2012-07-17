@@ -125,6 +125,8 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      * Don't call this if you don't want to support emoticons actions.
      */
     void enableEmoticonActions();
+
+    void enableInsertHtmlActions();
     /**
      * Destructor
      */
@@ -283,6 +285,11 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      */
     void insertImage( const QImage &image, const QFileInfo &info );
 
+    /**
+     * @since 4.10
+     */
+    bool isEnableInsertHtmlActions() const;
+
   protected:
 
     /**
@@ -338,6 +345,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     Q_PRIVATE_SLOT( d, void _k_slotAddImage() )
     Q_PRIVATE_SLOT( d, void _k_slotDeleteLine() )
     Q_PRIVATE_SLOT( d, void _k_slotAddEmoticon(const QString &) )
+    Q_PRIVATE_SLOT( d, void _k_slotInsertHtml() )
 };
 
 } // namespace

@@ -23,6 +23,7 @@
 
 #include "emailquotehighlighter.h"
 #include "emoticontexteditaction.h"
+#include "inserthtmldialog.h"
 
 #include <kmime/kmime_codecs.h>
 
@@ -55,9 +56,11 @@ class TextEditPrivate
     TextEditPrivate( TextEdit *parent )
       : actionAddImage( 0 ),
         actionDeleteLine( 0 ),
+        actionInsertHtml( 0 ),
         q( parent ),
         imageSupportEnabled( false ),
-        emoticonSupportEnabled( false )
+        emoticonSupportEnabled( false ),
+        insertHtmlSupportEnabled( false )
     {
     }
 
@@ -96,6 +99,9 @@ class TextEditPrivate
     void _k_slotDeleteLine();
 
     void _k_slotAddEmoticon(const QString&);
+
+    void _k_slotInsertHtml();
+
     /// The action that triggers _k_slotAddImage()
     KAction *actionAddImage;
 
@@ -103,6 +109,7 @@ class TextEditPrivate
     KAction *actionDeleteLine;
 
     EmoticonTextEditAction *actionAddEmoticon;
+    KAction *actionInsertHtml;
     /// The parent class
     TextEdit *q;
 
@@ -110,6 +117,9 @@ class TextEditPrivate
     bool imageSupportEnabled;
 
     bool emoticonSupportEnabled;
+
+    bool insertHtmlSupportEnabled;
+
     /**
      * The names of embedded images.
      * Used to easily obtain the names of the images.
@@ -391,6 +401,13 @@ void TextEdit::createActions( KActionCollection *actionCollection )
     connect( d->actionAddEmoticon, SIGNAL(emoticonActivated(QString)), SLOT(_k_slotAddEmoticon(QString)) );
   }
 
+  if ( d->insertHtmlSupportEnabled ) {
+    d->actionInsertHtml = new KAction( i18n( "Insert HTML" ), this );
+    actionCollection->addAction( QLatin1String( "insert_html" ), d->actionInsertHtml );
+    connect( d->actionInsertHtml, SIGNAL(triggered(bool)), SLOT(_k_slotInsertHtml()) );
+  }
+
+
   d->actionDeleteLine = new KAction( i18n( "Delete Line" ), this );
   d->actionDeleteLine->setShortcut( QKeySequence( Qt::CTRL + Qt::Key_K ) );
   actionCollection->addAction( QLatin1String( "delete_line" ), d->actionDeleteLine );
@@ -550,6 +567,22 @@ void TextEditPrivate::_k_slotAddEmoticon( const QString& text)
   cursor.insertText( text );
 }
 
+void TextEditPrivate::_k_slotInsertHtml()
+{
+  if(q->textMode() == KRichTextEdit::Rich ) {
+    InsertHtmlDialog *dialog = new InsertHtmlDialog(q);
+    if(dialog->exec()) {
+      const QString str = dialog->html();
+      if(!str.isEmpty()) {
+        QTextCursor cursor = q->textCursor();
+        cursor.insertHtml( str );
+      }
+    }
+    delete dialog;
+  }
+}
+
+
 void TextEditPrivate::_k_slotAddImage()
 {
   QPointer<KFileDialog> fdlg = new KFileDialog( QString(), QString(), q );
@@ -584,6 +617,16 @@ void KPIMTextEdit::TextEdit::enableEmoticonActions()
 bool KPIMTextEdit::TextEdit::isEnableEmoticonActions() const
 {
   return d->emoticonSupportEnabled;
+}
+
+void KPIMTextEdit::TextEdit::enableInsertHtmlActions()
+{
+  d->insertHtmlSupportEnabled = true;
+}
+
+bool KPIMTextEdit::TextEdit::isEnableInsertHtmlActions() const
+{
+  return d->insertHtmlSupportEnabled;
 }
 
 
