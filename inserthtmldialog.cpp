@@ -35,10 +35,12 @@ public:
     QWidget *page = new QWidget(q );
     q->setMainWidget( page );
     QVBoxLayout *lay = new QVBoxLayout(page);
+    QLabel *label = new QLabel(i18n("Insert HTML tags and texts:"));
+    lay->addWidget(label);
     editor = new KTextEdit;
     editor->setAcceptRichText(false);
     lay->addWidget(editor);
-    QLabel *label = new QLabel(i18n("Example: <i> Hello word </i>"));
+    label = new QLabel(i18n("Example: <i> Hello word </i>"));
     label->setTextFormat(Qt::PlainText);
     lay->addWidget(label);
   }
