@@ -41,6 +41,9 @@ public:
     editor->setAcceptRichText(false);
     lay->addWidget(editor);
     label = new QLabel(i18n("Example: <i> Hello word </i>"));
+    QFont font = label->font();
+    font.setBold(true);
+    label->setFont(font);
     label->setTextFormat(Qt::PlainText);
     lay->addWidget(label);
   }
