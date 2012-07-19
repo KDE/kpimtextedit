@@ -35,6 +35,7 @@
 #include <KDE/KMessageBox>
 #include <KDE/KPushButton>
 #include <KDE/KUrl>
+#include <KDE/KImageIO>
 
 #include <QtCore/QBuffer>
 #include <QtCore/QDateTime>
@@ -585,7 +586,8 @@ void TextEditPrivate::_k_slotInsertHtml()
 
 void TextEditPrivate::_k_slotAddImage()
 {
-  QPointer<KFileDialog> fdlg = new KFileDialog( QString(), QString(), q );
+  QStringList mimetypes = KImageIO::mimeTypes( KImageIO::Reading );
+  QPointer<KFileDialog> fdlg = new KFileDialog( QString(), mimetypes.join(QLatin1String(" ")), q );
   fdlg->setOperationMode( KFileDialog::Other );
   fdlg->setCaption( i18n( "Add Image" ) );
   fdlg->okButton()->setGuiItem( KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
