@@ -669,6 +669,7 @@ void TextEdit::insertFromMimeData( const QMimeData *source )
   // prevent this and prevent plain text instead.
   if ( textMode() == KRichTextEdit::Plain && source->hasHtml() ) {
     if ( source->hasText() ) {
+	    qDebug()<<" void TextEdit::insertFromMimeData***********";
       insertPlainText( source->text() );
       return;
     }

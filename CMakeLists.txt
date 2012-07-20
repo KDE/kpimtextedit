@@ -11,6 +11,7 @@ set(kpimtextedit_lib_srcs
   emoticontexteditaction.cpp
   emoticontexteditselector.cpp
   inserthtmldialog.cpp
+  inserttabledialog.cpp
 )
 
 kde4_add_library(kpimtextedit ${LIBRARY_TYPE} ${kpimtextedit_lib_srcs})
