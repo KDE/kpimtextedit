@@ -127,6 +127,8 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     void enableEmoticonActions();
 
     void enableInsertHtmlActions();
+
+    void enableInsertTableActions();
     /**
      * Destructor
      */
@@ -290,6 +292,11 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      */
     bool isEnableInsertHtmlActions() const;
 
+    /**
+     * @since 4.10
+     */
+    bool isEnableInsertTableActions() const;
+
   protected:
 
     /**
@@ -346,6 +353,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     Q_PRIVATE_SLOT( d, void _k_slotDeleteLine() )
     Q_PRIVATE_SLOT( d, void _k_slotAddEmoticon(const QString &) )
     Q_PRIVATE_SLOT( d, void _k_slotInsertHtml() )
+    Q_PRIVATE_SLOT( d, void _k_slotInsertTable() )
 };
 
 } // namespace

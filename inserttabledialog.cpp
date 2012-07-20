@@ -19,8 +19,7 @@
 
 #include <KLocale>
 #include <QSpinBox>
-#include <QVBoxLayout>
-#include <QLabel>
+#include <QFormLayout>
 
 
 using namespace KPIMTextEdit;
@@ -36,21 +35,25 @@ public:
     q->setButtonText(KDialog::Ok,i18n("Insert"));
     QWidget *page = new QWidget(q );
     q->setMainWidget( page );
-    QVBoxLayout *lay = new QVBoxLayout(page);
-    QLabel *lab = new QLabel(i18n("Rows:"));
     rows = new QSpinBox;
     rows->setMinimum(1);
-    lay->addWidget(lab);
-    lay->addWidget(rows);
-
-    lab = new QLabel(i18n("Columns:"));
-    lay->addWidget(lab);
     columns = new QSpinBox;
     columns->setMinimum(1);
-    lay->addWidget(columns);
+
+    border = new QSpinBox;
+    border->setMinimum(0);
+    border->setValue(1);
+    border->setSuffix(i18n("px"));
+
+    QFormLayout *formLayout = new QFormLayout;
+    formLayout->addRow(i18n("Rows:"), rows);
+    formLayout->addRow(i18n("Columns:"), columns);
+    formLayout->addRow(i18n("Border:"), border);
+    page->setLayout(formLayout);
   }
   QSpinBox *columns;
   QSpinBox *rows;
+  QSpinBox *border;
   InsertTableDialog *q;
 };
 
@@ -72,4 +75,9 @@ int InsertTableDialog::columns() const
 int InsertTableDialog::rows() const
 {
   return d->rows->value();
+}
+
+int InsertTableDialog::border() const
+{
+  return d->border->value();
 }

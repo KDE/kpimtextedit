@@ -24,6 +24,7 @@
 #include "emailquotehighlighter.h"
 #include "emoticontexteditaction.h"
 #include "inserthtmldialog.h"
+#include "inserttabledialog.h"
 
 #include <kmime/kmime_codecs.h>
 
@@ -58,10 +59,12 @@ class TextEditPrivate
       : actionAddImage( 0 ),
         actionDeleteLine( 0 ),
         actionInsertHtml( 0 ),
+        actionInsertTable( 0 ),
         q( parent ),
         imageSupportEnabled( false ),
         emoticonSupportEnabled( false ),
-        insertHtmlSupportEnabled( false )
+        insertHtmlSupportEnabled( false ),
+        insertTableSupportEnabled( false )
     {
     }
 
@@ -103,6 +106,8 @@ class TextEditPrivate
 
     void _k_slotInsertHtml();
 
+    void _k_slotInsertTable();
+
     /// The action that triggers _k_slotAddImage()
     KAction *actionAddImage;
 
@@ -110,7 +115,11 @@ class TextEditPrivate
     KAction *actionDeleteLine;
 
     EmoticonTextEditAction *actionAddEmoticon;
+
     KAction *actionInsertHtml;
+
+    KAction *actionInsertTable;
+
     /// The parent class
     TextEdit *q;
 
@@ -121,6 +130,7 @@ class TextEditPrivate
 
     bool insertHtmlSupportEnabled;
 
+    bool insertTableSupportEnabled;
     /**
      * The names of embedded images.
      * Used to easily obtain the names of the images.
@@ -408,6 +418,12 @@ void TextEdit::createActions( KActionCollection *actionCollection )
     connect( d->actionInsertHtml, SIGNAL(triggered(bool)), SLOT(_k_slotInsertHtml()) );
   }
 
+  if ( d->insertTableSupportEnabled ) {
+    d->actionInsertTable = new KAction( i18n( "Insert Table" ), this );
+    actionCollection->addAction( QLatin1String( "insert_table" ), d->actionInsertTable );
+    connect( d->actionInsertTable, SIGNAL(triggered(bool)), SLOT(_k_slotInsertTable()) );
+  }
+
 
   d->actionDeleteLine = new KAction( i18n( "Delete Line" ), this );
   d->actionDeleteLine->setShortcut( QKeySequence( Qt::CTRL + Qt::Key_K ) );
@@ -601,6 +617,20 @@ void TextEditPrivate::_k_slotAddImage()
   delete fdlg;
 }
 
+void TextEditPrivate::_k_slotInsertTable()
+{
+  if(q->textMode() == KRichTextEdit::Rich ) {
+    InsertTableDialog *dialog = new InsertTableDialog(q);
+    if(dialog->exec()) {
+      QTextCursor cursor = q->textCursor();
+      QTextTableFormat tableFormat;
+      tableFormat.setBorder(dialog->border());
+      cursor.insertTable( dialog->rows(),dialog->columns(), tableFormat );
+    }
+    delete dialog;
+  }
+}
+
 void KPIMTextEdit::TextEdit::enableImageActions()
 {
   d->imageSupportEnabled = true;
@@ -629,6 +659,16 @@ void KPIMTextEdit::TextEdit::enableInsertHtmlActions()
 bool KPIMTextEdit::TextEdit::isEnableInsertHtmlActions() const
 {
   return d->insertHtmlSupportEnabled;
+}
+
+bool KPIMTextEdit::TextEdit::isEnableInsertTableActions() const
+{
+  return d->insertTableSupportEnabled;
+}
+
+void KPIMTextEdit::TextEdit::enableInsertTableActions()
+{
+  d->insertTableSupportEnabled = true;
 }
 
 
@@ -751,7 +791,7 @@ void TextEdit::deleteCurrentLine()
       return;
     }
   }
-
 }
+
 
 #include "textedit.moc"

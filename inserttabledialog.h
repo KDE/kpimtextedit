@@ -28,6 +28,7 @@ public:
   ~InsertTableDialog();
   int columns() const;
   int rows() const;
+  int border() const;
 
 private:
   class InsertTableDialogPrivate;
