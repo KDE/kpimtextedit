@@ -24,7 +24,6 @@
 #include "emailquotehighlighter.h"
 #include "emoticontexteditaction.h"
 #include "inserthtmldialog.h"
-#include "inserttabledialog.h"
 #include "tableactionmenu.h"
 
 #include <kmime/kmime_codecs.h>
@@ -60,7 +59,7 @@ class TextEditPrivate
       : actionAddImage( 0 ),
         actionDeleteLine( 0 ),
         actionInsertHtml( 0 ),
-        actionInsertTable( 0 ),
+        actionTable( 0 ),
         q( parent ),
         imageSupportEnabled( false ),
         emoticonSupportEnabled( false ),
@@ -107,7 +106,6 @@ class TextEditPrivate
 
     void _k_slotInsertHtml();
 
-    void _k_slotInsertTable();
 
 
     /// The action that triggers _k_slotAddImage()
@@ -120,7 +118,7 @@ class TextEditPrivate
 
     KAction *actionInsertHtml;
 
-    KAction *actionInsertTable;
+    TableActionMenu *actionTable;
 
     /// The parent class
     TextEdit *q;
@@ -421,9 +419,11 @@ void TextEdit::createActions( KActionCollection *actionCollection )
   }
 
   if ( d->insertTableSupportEnabled ) {
-    d->actionInsertTable = new KAction( i18n( "Insert Table" ), this );
-    actionCollection->addAction( QLatin1String( "insert_table" ), d->actionInsertTable );
-    connect( d->actionInsertTable, SIGNAL(triggered(bool)), SLOT(_k_slotInsertTable()) );
+    d->actionTable = new TableActionMenu(actionCollection,this);
+    d->actionTable->setIcon(KIcon(QLatin1String("table")));
+    d->actionTable->setText(i18n("Table"));
+    d->actionTable->setDelayed(false);
+    actionCollection->addAction( QLatin1String( "insert_table" ), d->actionTable );
   }
 
 
@@ -617,20 +617,6 @@ void TextEditPrivate::_k_slotAddImage()
     }
   }
   delete fdlg;
-}
-
-void TextEditPrivate::_k_slotInsertTable()
-{
-  if(q->textMode() == KRichTextEdit::Rich ) {
-    InsertTableDialog *dialog = new InsertTableDialog(q);
-    if(dialog->exec()) {
-      QTextCursor cursor = q->textCursor();
-      QTextTableFormat tableFormat;
-      tableFormat.setBorder(dialog->border());
-      cursor.insertTable( dialog->rows(),dialog->columns(), tableFormat );
-    }
-    delete dialog;
-  }
 }
 
 void KPIMTextEdit::TextEdit::enableImageActions()

@@ -13,6 +13,7 @@ set(kpimtextedit_lib_srcs
   inserthtmldialog.cpp
   inserttabledialog.cpp
   tableactionmenu.cpp
+  tableformatdialog.cpp
 )
 
 kde4_add_library(kpimtextedit ${LIBRARY_TYPE} ${kpimtextedit_lib_srcs})

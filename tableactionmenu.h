@@ -19,27 +19,36 @@
 #define TABLEACTIONMENU_H
 
 #include <KActionMenu>
+#include <memory>
 
 class KActionCollection;
 
 namespace KPIMTextEdit {
 class TextEdit;
-
+class TableActionMenuPrivate;
 class TableActionMenu : public KActionMenu
 {
+  Q_OBJECT
 public:
-  explicit TableActionMenu(KActionCollection *ac, TextEdit *textEdit, QObject * parent);
+  explicit TableActionMenu(KActionCollection *ac, TextEdit *textEdit);
   ~TableActionMenu();
 
 private:
-  class TableActionMenuPrivate;
   TableActionMenuPrivate *d;
+  friend class TableActionMenuPrivate;
+
   Q_PRIVATE_SLOT( d, void _k_slotInsertRowBelow() )
   Q_PRIVATE_SLOT( d, void _k_slotInsertRowAbove() )
   Q_PRIVATE_SLOT( d, void _k_slotInsertColumnBefore() )
   Q_PRIVATE_SLOT( d, void _k_slotInsertColumnAfter() )
   Q_PRIVATE_SLOT( d, void _k_slotInsertTable() )
-
+  Q_PRIVATE_SLOT( d, void _k_slotRemoveRowBelow() )
+  Q_PRIVATE_SLOT( d, void _k_slotRemoveRowAbove() )
+  Q_PRIVATE_SLOT( d, void _k_slotRemoveColumnBefore() )
+  Q_PRIVATE_SLOT( d, void _k_slotRemoveColumnAfter() )
+  Q_PRIVATE_SLOT( d, void _k_slotMergeCell() )
+  Q_PRIVATE_SLOT( d, void _k_slotTableFormat() )
+  Q_PRIVATE_SLOT( d, void _k_slotSplitCell() )
 };
 }
 
