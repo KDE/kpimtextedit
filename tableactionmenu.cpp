@@ -16,16 +16,34 @@
 */
 
 #include "tableactionmenu.h"
+#include <KActionCollection>
+#include <KLocale>
 
 using namespace KPIMTextEdit;
 
-TableActionMenu::TableActionMenu(TextEdit *textEdit, QObject * parent)
-  : KActionMenu(parent)
+class TableActionMenu::TableActionMenuPrivate
 {
+public:
+  TableActionMenuPrivate(KActionCollection *ac, TextEdit *edit,TableActionMenu *qq)
+    : actionCollection( ac ),
+      textEdit(edit),
+      q(qq)
+  {
+
+  }
+  KActionCollection *actionCollection;
+  TextEdit *textEdit;
+  TableActionMenu *q;
+};
+
+TableActionMenu::TableActionMenu(KActionCollection *ac, TextEdit *textEdit, QObject * parent)
+  : KActionMenu(parent), d(new TableActionMenuPrivate(ac, textEdit,this))
+{
+    KActionMenu *insert = new KActionMenu(i18n("Insert"),this);
 
 }
 
 TableActionMenu::~TableActionMenu()
 {
-
+  delete d;
 }

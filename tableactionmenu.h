@@ -20,6 +20,7 @@
 
 #include <KActionMenu>
 
+class KActionCollection;
 
 namespace KPIMTextEdit {
 class TextEdit;
@@ -27,8 +28,13 @@ class TextEdit;
 class TableActionMenu : public KActionMenu
 {
 public:
-    explicit TableActionMenu(TextEdit *textEdit, QObject * parent);
-    ~TableActionMenu();
+  explicit TableActionMenu(KActionCollection *ac, TextEdit *textEdit, QObject * parent);
+  ~TableActionMenu();
+
+private:
+  class TableActionMenuPrivate;
+  TableActionMenuPrivate *d;
+
 };
 }
 
