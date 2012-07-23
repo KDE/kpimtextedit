@@ -55,13 +55,19 @@ public:
 void TableActionMenu::TableActionMenuPrivate::_k_slotInsertRowBelow()
 {
   if(textEdit->textMode() == KRichTextEdit::Rich ) {
+    QTextTable *table = textEdit->textCursor().currentTable();
+    if(table) {
 
+    }
   }
 }
 
 void TableActionMenu::TableActionMenuPrivate::_k_slotInsertRowAbove()
 {
   if(textEdit->textMode() == KRichTextEdit::Rich ) {
+    QTextTable *table = textEdit->textCursor().currentTable();
+    if(table) {
+    }
 
   }
 }
@@ -69,9 +75,25 @@ void TableActionMenu::TableActionMenuPrivate::_k_slotInsertRowAbove()
 void TableActionMenu::TableActionMenuPrivate::_k_slotInsertColumnBefore()
 {
   if(textEdit->textMode() == KRichTextEdit::Rich ) {
+    QTextTable *table = textEdit->textCursor().currentTable();
+    if(table) {
+
+    }
 
   }
 }
+
+void TableActionMenu::TableActionMenuPrivate::_k_slotInsertColumnAfter()
+{
+  if(textEdit->textMode() == KRichTextEdit::Rich ) {
+    QTextTable *table = textEdit->textCursor().currentTable();
+    if(table) {
+
+    }
+
+  }
+}
+
 
 void TableActionMenu::TableActionMenuPrivate::_k_slotInsertTable()
 {
