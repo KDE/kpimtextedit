@@ -354,6 +354,8 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     Q_PRIVATE_SLOT( d, void _k_slotAddEmoticon(const QString &) )
     Q_PRIVATE_SLOT( d, void _k_slotInsertHtml() )
     Q_PRIVATE_SLOT( d, void _k_slotInsertTable() )
+    Q_PRIVATE_SLOT( d, void _k_slotInsertRowBelow() )
+    Q_PRIVATE_SLOT( d, void _k_slotInsertRowAbove() )
 };
 
 } // namespace
