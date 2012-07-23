@@ -82,7 +82,9 @@ void TableActionMenuPrivate::_k_slotRemoveRowBelow()
     QTextTable *table = textEdit->textCursor().currentTable();
     if(table) {
       QTextTableCell cell = table->cellAt(textEdit->textCursor());
-      //TODO:
+      if(cell.row()<table->rows()-1) {
+        table->removeRows(cell.row(),1);
+      }
     }
   }
 }
@@ -93,7 +95,9 @@ void TableActionMenuPrivate::_k_slotRemoveRowAbove()
     QTextTable *table = textEdit->textCursor().currentTable();
     if(table) {
       QTextTableCell cell = table->cellAt(textEdit->textCursor());
-      //TODO:
+      if(cell.row()>=1) {
+        table->removeRows(cell.row()-1,1);
+      }
     }
   }
 }
@@ -224,7 +228,10 @@ void TableActionMenuPrivate::_k_slotSplitCell()
   if(textEdit->textMode() == KRichTextEdit::Rich ) {
     QTextTable *table = textEdit->textCursor().currentTable();
     if(table) {
-      //TODO:
+      QTextTableCell cell = table->cellAt(textEdit->textCursor());
+      if(cell.columnSpan()>1) {
+        table->splitCell(cell.row(),cell.column(), 0, 1 );
+      }
     }
   }
 }
