@@ -25,6 +25,7 @@
 #include "emoticontexteditaction.h"
 #include "inserthtmldialog.h"
 #include "inserttabledialog.h"
+#include "tableactionmenu.h"
 
 #include <kmime/kmime_codecs.h>
 
@@ -60,8 +61,6 @@ class TextEditPrivate
         actionDeleteLine( 0 ),
         actionInsertHtml( 0 ),
         actionInsertTable( 0 ),
-        actionInsertRowAbove( 0 ),
-        actionInsertRowBelow( 0 ),
         q( parent ),
         imageSupportEnabled( false ),
         emoticonSupportEnabled( false ),
@@ -110,9 +109,6 @@ class TextEditPrivate
 
     void _k_slotInsertTable();
 
-    void _k_slotInsertRowBelow();
-    void _k_slotInsertRowAbove();
-
 
     /// The action that triggers _k_slotAddImage()
     KAction *actionAddImage;
@@ -125,9 +121,6 @@ class TextEditPrivate
     KAction *actionInsertHtml;
 
     KAction *actionInsertTable;
-
-    KAction *actionInsertRowAbove;
-    KAction *actionInsertRowBelow;
 
     /// The parent class
     TextEdit *q;
@@ -431,14 +424,6 @@ void TextEdit::createActions( KActionCollection *actionCollection )
     d->actionInsertTable = new KAction( i18n( "Insert Table" ), this );
     actionCollection->addAction( QLatin1String( "insert_table" ), d->actionInsertTable );
     connect( d->actionInsertTable, SIGNAL(triggered(bool)), SLOT(_k_slotInsertTable()) );
-
-    d->actionInsertRowBelow = new KAction( i18n( "Insert Row Below" ), this );
-    actionCollection->addAction( QLatin1String( "insert_row_below" ), d->actionInsertRowBelow );
-    connect( d->actionInsertRowBelow, SIGNAL(triggered(bool)), SLOT(_k_slotInsertRowBelow()) );
-
-    d->actionInsertRowAbove = new KAction( i18n( "Insert Row Above" ), this );
-    actionCollection->addAction( QLatin1String( "insert_row_above" ), d->actionInsertRowAbove );
-    connect( d->actionInsertRowAbove, SIGNAL(triggered(bool)), SLOT(_k_slotInsertRowAbove()) );
   }
 
 
@@ -647,21 +632,6 @@ void TextEditPrivate::_k_slotInsertTable()
     delete dialog;
   }
 }
-
-void TextEditPrivate::_k_slotInsertRowBelow()
-{
-  if(q->textMode() == KRichTextEdit::Rich ) {
-
-  }
-}
-
-void TextEditPrivate::_k_slotInsertRowAbove()
-{
-  if(q->textMode() == KRichTextEdit::Rich ) {
-
-  }
-}
-
 
 void KPIMTextEdit::TextEdit::enableImageActions()
 {
