@@ -34,6 +34,13 @@ public:
   void setRows(int);
   void setBorder(int);
 
+  int padding() const;
+  void setPadding(int);
+
+  int spacing() const;
+  void setSpacing(int);
+
+
 private:
   class TableFormatDialogPrivate;
   TableFormatDialogPrivate *d;

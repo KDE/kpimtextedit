@@ -42,6 +42,8 @@ InsertTableWidget::InsertTableWidget(QWidget *parent)
   formLayout->addRow(i18n("Rows:"), mRows);
   formLayout->addRow(i18n("Columns:"), mColumns);
   formLayout->addRow(i18n("Border:"), mBorder);
+
+
   setLayout(formLayout);
 }
 

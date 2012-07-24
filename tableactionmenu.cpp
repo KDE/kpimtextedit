@@ -50,6 +50,7 @@ public:
   void _k_slotMergeCell();
   void _k_slotTableFormat();
   void _k_slotSplitCell();
+  void _k_updateActions();
 
   KAction *actionInsertTable;
 
@@ -192,6 +193,7 @@ void TableActionMenuPrivate::_k_slotInsertTable()
       QTextTableFormat tableFormat;
       tableFormat.setBorder(dialog->border());
       cursor.insertTable( dialog->rows(),dialog->columns(), tableFormat );
+      textEdit->enableRichTextMode();
     }
     delete dialog;
   }
@@ -203,7 +205,7 @@ void TableActionMenuPrivate::_k_slotMergeCell()
     QTextTable *table = textEdit->textCursor().currentTable();
     if(table) {
       QTextTableCell cell = table->cellAt(textEdit->textCursor());
-      table->mergeCells(cell.row(),cell.column(), 0, 1 );
+      table->mergeCells(cell.row(),cell.column(), 1, 2 );
     }
   }
 }
@@ -220,11 +222,15 @@ void TableActionMenuPrivate::_k_slotTableFormat()
       dialog->setRows(numberOfRow);
       QTextTableFormat tableFormat = table->format();
       dialog->setBorder(tableFormat.border());
+      dialog->setSpacing(tableFormat.cellSpacing());
+      dialog->setPadding(tableFormat.cellPadding());
       if(dialog->exec()) {
         if((dialog->columns() != numberOfColumn) || (dialog->rows() != numberOfRow) ) {
            table->resize(dialog->rows(),dialog->columns());
         }
         tableFormat.setBorder(dialog->border());
+        tableFormat.setCellPadding(dialog->padding());
+        tableFormat.setCellSpacing(dialog->spacing());
         table->setFormat(tableFormat);
       }
       delete dialog;
@@ -239,9 +245,34 @@ void TableActionMenuPrivate::_k_slotSplitCell()
     if(table) {
       QTextTableCell cell = table->cellAt(textEdit->textCursor());
       if(cell.columnSpan()>1) {
-        table->splitCell(cell.row(),cell.column(), 0, 1 );
+        table->splitCell(cell.row(),cell.column(), 1, 1 );
       }
     }
+  }
+}
+
+void TableActionMenuPrivate::_k_updateActions()
+{
+  if(textEdit->textMode() == KRichTextEdit::Rich) {
+    QTextTable *table = textEdit->textCursor().currentTable();
+    const bool isTable = (table != 0);
+    actionInsertRowBelow->setEnabled(isTable);
+    actionInsertRowAbove->setEnabled(isTable);
+
+    actionInsertColumnBefore->setEnabled(isTable);
+    actionInsertColumnAfter->setEnabled(isTable);
+
+
+    actionRemoveRowBelow->setEnabled(isTable);
+    actionRemoveRowAbove->setEnabled(isTable);
+
+    actionRemoveColumnBefore->setEnabled(isTable);
+    actionRemoveColumnAfter->setEnabled(isTable);
+
+    actionMergeCell->setEnabled(isTable);
+    actionSplitCell->setEnabled(isTable);
+
+    actionTableFormat->setEnabled(isTable);
   }
 }
 
@@ -322,6 +353,10 @@ TableActionMenu::TableActionMenu(KActionCollection *ac, TextEdit *textEdit)
     ac->addAction( QLatin1String( "table_format" ), d->actionTableFormat );
     connect( d->actionTableFormat, SIGNAL(triggered(bool)), SLOT(_k_slotTableFormat()) );
     addAction(d->actionTableFormat);
+
+    connect(textEdit, SIGNAL(cursorPositionChanged()), this, SLOT(_k_updateActions()));
+
+
 
 }
 

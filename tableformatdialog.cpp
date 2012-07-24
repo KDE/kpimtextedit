@@ -19,6 +19,9 @@
 #include "inserttabledialog.h"
 #include <KLocale>
 #include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QSpinBox>
+#include <QLabel>
 
 using namespace KPIMTextEdit;
 
@@ -35,7 +38,31 @@ public:
     QVBoxLayout *lay = new QVBoxLayout(page);
     tableWidget = new InsertTableWidget;
     lay->addWidget(tableWidget);
+
+    QHBoxLayout *hbox = new QHBoxLayout;
+    QLabel *lab = new QLabel(i18n("Spacing:"));
+    hbox->addWidget(lab);
+    spacing = new QSpinBox;
+    spacing->setMinimum(0);
+    hbox->addWidget(spacing);
+    lab = new QLabel(i18n("pixels between cells"));
+    hbox->addWidget(lab);
+    lay->addLayout(hbox);
+
+    hbox = new QHBoxLayout;
+    lab = new QLabel(i18n("Padding:"));
+    hbox->addWidget(lab);
+    padding = new QSpinBox;
+    padding->setMinimum(0);
+    hbox->addWidget(padding);
+    lab = new QLabel(i18n("pixels between cell bordel and content"));
+    hbox->addWidget(lab);
+    lay->addLayout(hbox);
+
+
   }
+  QSpinBox *spacing;
+  QSpinBox *padding;
   KPIMTextEdit::InsertTableWidget *tableWidget;
   TableFormatDialog *q;
 };
@@ -79,4 +106,24 @@ void TableFormatDialog::setRows(int row)
 void TableFormatDialog::setBorder(int border)
 {
   d->tableWidget->setBorder(border);
+}
+
+int TableFormatDialog::padding() const
+{
+  return d->padding->value();
+}
+
+void TableFormatDialog::setPadding(int value)
+{
+  d->padding->setValue(value);
+}
+
+int TableFormatDialog::spacing() const
+{
+  return d->spacing->value();
+}
+
+void TableFormatDialog::setSpacing(int value)
+{
+  d->spacing->setValue(value);
 }
