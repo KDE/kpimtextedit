@@ -16,6 +16,7 @@
 */
 
 #include "tableformatdialog.h"
+#include "inserttabledialog.h"
 #include <KLocale>
 #include <QVBoxLayout>
 
@@ -31,21 +32,11 @@ public:
     q->setButtons( Ok|Cancel );
     QWidget *page = new QWidget(q );
     q->setMainWidget( page );
-#if 0
     QVBoxLayout *lay = new QVBoxLayout(page);
-    QLabel *label = new QLabel(i18n("Insert HTML tags and texts:"));
-    lay->addWidget(label);
-    editor = new KTextEdit;
-    editor->setAcceptRichText(false);
-    lay->addWidget(editor);
-    label = new QLabel(i18n("Example: <i> Hello word </i>"));
-    QFont font = label->font();
-    font.setBold(true);
-    label->setFont(font);
-    label->setTextFormat(Qt::PlainText);
-    lay->addWidget(label);
-#endif
+    tableWidget = new InsertTableWidget;
+    lay->addWidget(tableWidget);
   }
+  KPIMTextEdit::InsertTableWidget *tableWidget;
   TableFormatDialog *q;
 };
 
@@ -59,3 +50,33 @@ TableFormatDialog::~TableFormatDialog()
   delete d;
 }
 
+int TableFormatDialog::columns() const
+{
+  return d->tableWidget->columns();
+}
+
+int TableFormatDialog::rows() const
+{
+  return d->tableWidget->rows();
+}
+
+int TableFormatDialog::border() const
+{
+  return d->tableWidget->border();
+}
+
+
+void TableFormatDialog::setColumns(int col)
+{
+  d->tableWidget->setColumns(col);
+}
+
+void TableFormatDialog::setRows(int row)
+{
+  d->tableWidget->setRows(row);
+}
+
+void TableFormatDialog::setBorder(int border)
+{
+  d->tableWidget->setBorder(border);
+}

@@ -50,6 +50,22 @@ InsertTableWidget::~InsertTableWidget()
 }
 
 
+void InsertTableWidget::setColumns(int col)
+{
+  mColumns->setValue(col);
+}
+
+void InsertTableWidget::setRows(int rows)
+{
+  mRows->setValue(rows);
+}
+
+void InsertTableWidget::setBorder(int border)
+{
+  mBorder->setValue(border);
+}
+
+
 int InsertTableWidget::columns() const
 {
   return mColumns->value();

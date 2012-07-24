@@ -26,11 +26,16 @@ namespace KPIMTextEdit {
 class InsertTableWidget : public QWidget
 {
 public:
-  explicit InsertTableWidget(QWidget *parent);
+  explicit InsertTableWidget(QWidget *parent = 0);
   ~InsertTableWidget();
   int columns() const;
   int rows() const;
   int border() const;
+
+  void setColumns(int col);
+  void setRows(int rows);
+  void setBorder(int border);
+
 private:
   QSpinBox *mColumns;
   QSpinBox *mRows;

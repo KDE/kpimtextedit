@@ -214,11 +214,20 @@ void TableActionMenuPrivate::_k_slotTableFormat()
     QTextTable *table = textEdit->textCursor().currentTable();
     if(table) {
       TableFormatDialog *dialog = new TableFormatDialog(textEdit);
+      const int numberOfColumn(table->columns());
+      const int numberOfRow(table->rows());
+      dialog->setColumns(numberOfColumn);
+      dialog->setRows(numberOfRow);
+      QTextTableFormat tableFormat = table->format();
+      dialog->setBorder(tableFormat.border());
       if(dialog->exec()) {
-
+        if((dialog->columns() != numberOfColumn) || (dialog->rows() != numberOfRow) ) {
+           table->resize(dialog->rows(),dialog->columns());
+        }
+        tableFormat.setBorder(dialog->border());
+        table->setFormat(tableFormat);
       }
       delete dialog;
-      //TODO:
     }
   }
 }
