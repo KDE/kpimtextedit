@@ -24,6 +24,48 @@
 
 using namespace KPIMTextEdit;
 
+
+InsertTableWidget::InsertTableWidget(QWidget *parent)
+  :QWidget(parent)
+{
+  mRows = new QSpinBox;
+  mRows->setMinimum(1);
+  mColumns = new QSpinBox;
+  mColumns->setMinimum(1);
+
+  mBorder = new QSpinBox;
+  mBorder->setMinimum(0);
+  mBorder->setValue(1);
+  mBorder->setSuffix(i18n("px"));
+
+  QFormLayout *formLayout = new QFormLayout;
+  formLayout->addRow(i18n("Rows:"), mRows);
+  formLayout->addRow(i18n("Columns:"), mColumns);
+  formLayout->addRow(i18n("Border:"), mBorder);
+  setLayout(formLayout);
+}
+
+InsertTableWidget::~InsertTableWidget()
+{
+}
+
+
+int InsertTableWidget::columns() const
+{
+  return mColumns->value();
+}
+
+int InsertTableWidget::rows() const
+{
+  return mRows->value();
+}
+
+int InsertTableWidget::border() const
+{
+  return mBorder->value();
+}
+
+
 class InsertTableDialog::InsertTableDialogPrivate
 {
 public:
@@ -33,27 +75,10 @@ public:
     q->setCaption( i18n("Insert Table") );
     q->setButtons( Ok|Cancel );
     q->setButtonText(KDialog::Ok,i18n("Insert"));
-    QWidget *page = new QWidget(q );
-    q->setMainWidget( page );
-    rows = new QSpinBox;
-    rows->setMinimum(1);
-    columns = new QSpinBox;
-    columns->setMinimum(1);
-
-    border = new QSpinBox;
-    border->setMinimum(0);
-    border->setValue(1);
-    border->setSuffix(i18n("px"));
-
-    QFormLayout *formLayout = new QFormLayout;
-    formLayout->addRow(i18n("Rows:"), rows);
-    formLayout->addRow(i18n("Columns:"), columns);
-    formLayout->addRow(i18n("Border:"), border);
-    page->setLayout(formLayout);
+    insertTableWidget = new InsertTableWidget(q);
+    q->setMainWidget( insertTableWidget );
   }
-  QSpinBox *columns;
-  QSpinBox *rows;
-  QSpinBox *border;
+  InsertTableWidget *insertTableWidget;
   InsertTableDialog *q;
 };
 
@@ -69,15 +94,16 @@ InsertTableDialog::~InsertTableDialog()
 
 int InsertTableDialog::columns() const
 {
-  return d->columns->value();
+  return d->insertTableWidget->columns();
 }
 
 int InsertTableDialog::rows() const
 {
-  return d->rows->value();
+  return d->insertTableWidget->rows();
 }
 
 int InsertTableDialog::border() const
 {
-  return d->border->value();
+  return d->insertTableWidget->border();
 }
+

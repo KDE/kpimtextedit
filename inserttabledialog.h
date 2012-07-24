@@ -19,8 +19,24 @@
 #define INSERTTABLEDIALOG_H
 
 #include <KDialog>
+#include <QSpinBox>
 
 namespace KPIMTextEdit {
+
+class InsertTableWidget : public QWidget
+{
+public:
+  explicit InsertTableWidget(QWidget *parent);
+  ~InsertTableWidget();
+  int columns() const;
+  int rows() const;
+  int border() const;
+private:
+  QSpinBox *mColumns;
+  QSpinBox *mRows;
+  QSpinBox *mBorder;
+};
+
 class InsertTableDialog : public KDialog
 {
 public:
