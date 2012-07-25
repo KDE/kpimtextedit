@@ -19,6 +19,7 @@
 
 #include <KLocale>
 #include <KComboBox>
+#include <KDebug>
 #include <QSpinBox>
 #include <QFormLayout>
 
@@ -47,9 +48,12 @@ InsertTableWidget::InsertTableWidget(QWidget *parent)
 
   QHBoxLayout *lay = new QHBoxLayout;
   mTypeOfLength = new KComboBox;
-  mTypeOfLength->addItem(i18n("pixels"),QTextLength::VariableLength);
+  connect(mTypeOfLength,SIGNAL(activated(int)),SLOT(slotTypeOfLengthChanged(int)));
   mTypeOfLength->addItem(i18n("% of windows"),QTextLength::PercentageLength);
+  mTypeOfLength->addItem(i18n("pixels"),QTextLength::FixedLength);
   mLength = new QSpinBox;
+  mLength->setMinimum(1);
+  mLength->setMaximum(9999);
   lay->addWidget(mLength);
   lay->addWidget(mTypeOfLength);
 
@@ -59,6 +63,22 @@ InsertTableWidget::InsertTableWidget(QWidget *parent)
 
 InsertTableWidget::~InsertTableWidget()
 {
+}
+
+void InsertTableWidget::slotTypeOfLengthChanged(int index)
+{
+    switch(index) {
+    case 0:
+        mLength->setMaximum(100);
+        mLength->setValue(qMin(mLength->value(),100));
+        break;
+    case 1:
+        mLength->setMaximum(9999);
+        break;
+    default:
+        kDebug()<<" index not defined "<<index;
+        break;
+    }
 }
 
 QTextLength::Type InsertTableWidget::typeOfLength() const

@@ -27,6 +27,7 @@ namespace KPIMTextEdit {
 
 class InsertTableWidget : public QWidget
 {
+  Q_OBJECT
 public:
   explicit InsertTableWidget(QWidget *parent = 0);
   ~InsertTableWidget();
@@ -40,7 +41,8 @@ public:
 
   QTextLength::Type typeOfLength() const;
   int length() const;
-
+private Q_SLOTS:
+  void slotTypeOfLengthChanged(int);
 private:
   QSpinBox *mColumns;
   QSpinBox *mRows;
