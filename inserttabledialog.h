@@ -20,6 +20,8 @@
 
 #include <KDialog>
 #include <QSpinBox>
+#include <QTextLength>
+class KComboBox;
 
 namespace KPIMTextEdit {
 
@@ -36,10 +38,15 @@ public:
   void setRows(int rows);
   void setBorder(int border);
 
+  QTextLength::Type typeOfLength() const;
+  int length() const;
+
 private:
   QSpinBox *mColumns;
   QSpinBox *mRows;
   QSpinBox *mBorder;
+  QSpinBox *mLength;
+  KComboBox *mTypeOfLength;
 };
 
 class InsertTableDialog : public KDialog
@@ -50,6 +57,10 @@ public:
   int columns() const;
   int rows() const;
   int border() const;
+
+  QTextLength::Type typeOfLength() const;
+  int length() const;
+
 
 private:
   class InsertTableDialogPrivate;

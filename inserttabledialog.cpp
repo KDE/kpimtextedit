@@ -18,6 +18,7 @@
 #include "inserttabledialog.h"
 
 #include <KLocale>
+#include <KComboBox>
 #include <QSpinBox>
 #include <QFormLayout>
 
@@ -44,6 +45,15 @@ InsertTableWidget::InsertTableWidget(QWidget *parent)
   formLayout->addRow(i18n("Border:"), mBorder);
 
 
+  QHBoxLayout *lay = new QHBoxLayout;
+  mTypeOfLength = new KComboBox;
+  mTypeOfLength->addItem(i18n("pixels"),QTextLength::VariableLength);
+  mTypeOfLength->addItem(i18n("% of windows"),QTextLength::PercentageLength);
+  mLength = new QSpinBox;
+  lay->addWidget(mLength);
+  lay->addWidget(mTypeOfLength);
+
+  formLayout->addRow(i18n("Width:"),lay);
   setLayout(formLayout);
 }
 
@@ -51,6 +61,15 @@ InsertTableWidget::~InsertTableWidget()
 {
 }
 
+QTextLength::Type InsertTableWidget::typeOfLength() const
+{
+  return (QTextLength::Type)mTypeOfLength->itemData(mTypeOfLength->currentIndex()).toInt();
+}
+
+int InsertTableWidget::length() const
+{
+  return mLength->value();
+}
 
 void InsertTableWidget::setColumns(int col)
 {
@@ -125,3 +144,12 @@ int InsertTableDialog::border() const
   return d->insertTableWidget->border();
 }
 
+QTextLength::Type InsertTableDialog::typeOfLength() const
+{
+  return d->insertTableWidget->typeOfLength();
+}
+
+int InsertTableDialog::length() const
+{
+  return d->insertTableWidget->length();
+}
