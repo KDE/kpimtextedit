@@ -150,3 +150,14 @@ Qt::Alignment TableFormatDialog::alignment() const
 {
   return (Qt::Alignment)d->alignment->itemData(d->alignment->currentIndex ()).toInt();
 }
+
+
+QTextLength::Type TableFormatDialog::typeOfLength() const
+{
+  return d->tableWidget->typeOfLength();
+}
+
+int TableFormatDialog::length() const
+{
+  return d->tableWidget->length();
+}

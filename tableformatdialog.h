@@ -18,6 +18,7 @@
 #ifndef TABLEFORMATDIALOG_H
 #define TABLEFORMATDIALOG_H
 #include <KDialog>
+#include <QTextLength>
 
 namespace KPIMTextEdit {
 
@@ -43,6 +44,10 @@ public:
 
   void setAlignment(Qt::Alignment alignment);
   Qt::Alignment alignment() const;
+
+  QTextLength::Type typeOfLength() const;
+  int length() const;
+
 
 private:
   class TableFormatDialogPrivate;

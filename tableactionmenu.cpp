@@ -235,13 +235,27 @@ void TableActionMenuPrivate::_k_slotTableFormat()
       dialog->setSpacing(tableFormat.cellSpacing());
       dialog->setPadding(tableFormat.cellPadding());
       if(dialog->exec()) {
-        if((dialog->columns() != numberOfColumn) || (dialog->rows() != numberOfRow) ) {
-           table->resize(dialog->rows(),dialog->columns());
+        const int numberOfColumns = dialog->columns();
+        if((numberOfColumn != numberOfColumn) || (dialog->rows() != numberOfRow) ) {
+           table->resize(dialog->rows(),numberOfColumn);
         }
         tableFormat.setBorder(dialog->border());
         tableFormat.setCellPadding(dialog->padding());
         tableFormat.setCellSpacing(dialog->spacing());
         tableFormat.setAlignment(dialog->alignment());
+
+
+        QVector<QTextLength> contrains;
+        const QTextLength::Type type = dialog->typeOfLength();
+        const int length = dialog->length();
+
+        for(int i = 0; i <numberOfColumns;++i) {
+            QTextLength textlength(type,length/numberOfColumns);
+            contrains.append(textlength);
+        }
+        tableFormat.setColumnWidthConstraints(contrains);
+
+
         table->setFormat(tableFormat);
       }
       delete dialog;
