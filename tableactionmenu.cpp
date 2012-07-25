@@ -231,6 +231,7 @@ void TableActionMenuPrivate::_k_slotTableFormat()
         tableFormat.setBorder(dialog->border());
         tableFormat.setCellPadding(dialog->padding());
         tableFormat.setCellSpacing(dialog->spacing());
+        tableFormat.setAlignment(dialog->alignment());
         table->setFormat(tableFormat);
       }
       delete dialog;

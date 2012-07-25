@@ -41,6 +41,9 @@ public:
   void setSpacing(int);
 
 
+  void setAlignment(Qt::Alignment alignment);
+  Qt::Alignment alignment() const;
+
 private:
   class TableFormatDialogPrivate;
   TableFormatDialogPrivate *d;

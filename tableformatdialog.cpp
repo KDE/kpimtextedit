@@ -18,6 +18,7 @@
 #include "tableformatdialog.h"
 #include "inserttabledialog.h"
 #include <KLocale>
+#include <KComboBox>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QSpinBox>
@@ -59,8 +60,20 @@ public:
     hbox->addWidget(lab);
     lay->addLayout(hbox);
 
+    alignment = new KComboBox;
+    alignment->addItem(i18n("Left"), Qt::AlignLeft);
+    alignment->addItem(i18n("Right"), Qt::AlignRight);
+    alignment->addItem(i18n("Center"), Qt::AlignHCenter);
+    alignment->addItem(i18n("Justify"), Qt::AlignJustify);
+
+    hbox = new QHBoxLayout;
+    lab = new QLabel(i18n("Table Alignment:"));
+    hbox->addWidget(lab);
+    hbox->addWidget(alignment);
+    lay->addLayout(hbox);
 
   }
+  KComboBox *alignment;
   QSpinBox *spacing;
   QSpinBox *padding;
   KPIMTextEdit::InsertTableWidget *tableWidget;
@@ -126,4 +139,14 @@ int TableFormatDialog::spacing() const
 void TableFormatDialog::setSpacing(int value)
 {
   d->spacing->setValue(value);
+}
+
+void TableFormatDialog::setAlignment(Qt::Alignment alignment)
+{
+  d->alignment->setCurrentIndex(d->alignment->findData(QVariant(alignment)));
+}
+
+Qt::Alignment TableFormatDialog::alignment() const
+{
+  return (Qt::Alignment)d->alignment->itemData(d->alignment->currentIndex ()).toInt();
 }
