@@ -192,7 +192,14 @@ void TableActionMenuPrivate::_k_slotInsertTable()
       QTextCursor cursor = textEdit->textCursor();
       QTextTableFormat tableFormat;
       tableFormat.setBorder(dialog->border());
-      cursor.insertTable( dialog->rows(),dialog->columns(), tableFormat );
+      const int numberOfColumns(dialog->columns());
+      QVector<QTextLength> contrains;
+      for(int i = 0; i <numberOfColumns;++i) {
+          QTextLength textlength(QTextLength::PercentageLength,100/numberOfColumns);
+          contrains.append(textlength);
+      }
+      tableFormat.setColumnWidthConstraints(contrains);
+      cursor.insertTable( dialog->rows(),numberOfColumns, tableFormat );
       textEdit->enableRichTextMode();
     }
     delete dialog;

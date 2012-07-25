@@ -2,7 +2,7 @@
   Copyright (c) 2009 Thomas McGuire <mcguire@kde.org>
 
   Based on KMail and libkdepim code by:
-  Copyright 2007 Laurent Montel <montel@kde.org>
+  Copyright 2007 - 2012 Laurent Montel <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
