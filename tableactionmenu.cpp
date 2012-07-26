@@ -294,9 +294,22 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
     actionRemoveColumnBefore->setEnabled(isTable);
     actionRemoveColumnAfter->setEnabled(isTable);
 
-    actionMergeCell->setEnabled(isTable);
-    actionSplitCell->setEnabled(isTable);
-
+    if(table) {
+      QTextTableCell cell = table->cellAt(textEdit->textCursor());
+      if(cell.column()>table->columns()-2) {
+        actionMergeCell->setEnabled(false);
+      } else {
+        actionMergeCell->setEnabled(true);
+      }
+      if(cell.columnSpan()>1) {
+        actionSplitCell->setEnabled(true);
+      } else {
+        actionSplitCell->setEnabled(false);
+      }
+    } else {
+      actionSplitCell->setEnabled(false);
+      actionMergeCell->setEnabled(false);
+    }
     actionTableFormat->setEnabled(isTable);
   }
 }
