@@ -49,7 +49,7 @@ private:
   Q_PRIVATE_SLOT( d, void _k_slotMergeCell() )
   Q_PRIVATE_SLOT( d, void _k_slotTableFormat() )
   Q_PRIVATE_SLOT( d, void _k_slotSplitCell() )
-  Q_PRIVATE_SLOT( d, void _k_updateActions() )
+  Q_PRIVATE_SLOT( d, void _k_updateActions(bool forceUpdate = false) )
 };
 }
 

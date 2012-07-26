@@ -50,7 +50,7 @@ public:
   void _k_slotMergeCell();
   void _k_slotTableFormat();
   void _k_slotSplitCell();
-  void _k_updateActions();
+  void _k_updateActions(bool forceUpdate = false);
 
   KAction *actionInsertTable;
 
@@ -276,9 +276,9 @@ void TableActionMenuPrivate::_k_slotSplitCell()
   }
 }
 
-void TableActionMenuPrivate::_k_updateActions()
+void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
 {
-  if(textEdit->textMode() == KRichTextEdit::Rich) {
+  if((textEdit->textMode() == KRichTextEdit::Rich) || forceUpdate) {
     QTextTable *table = textEdit->textCursor().currentTable();
     const bool isTable = (table != 0);
     actionInsertRowBelow->setEnabled(isTable);
@@ -380,7 +380,7 @@ TableActionMenu::TableActionMenu(KActionCollection *ac, TextEdit *textEdit)
     addAction(d->actionTableFormat);
 
     connect(textEdit, SIGNAL(cursorPositionChanged()), this, SLOT(_k_updateActions()));
-
+    d->_k_updateActions(true);
 
 
 }
