@@ -54,6 +54,7 @@ InsertTableWidget::InsertTableWidget(QWidget *parent)
   mLength = new QSpinBox;
   mLength->setMinimum(1);
   mLength->setMaximum(100);
+  mLength->setValue(100);
   lay->addWidget(mLength);
   lay->addWidget(mTypeOfLength);
 
