@@ -20,16 +20,21 @@
 
 #include <KDialog>
 namespace KPIMTextEdit {
+class InsertHtmlDialogPrivate;
 
 class InsertHtmlDialog : public KDialog
 {
+  Q_OBJECT
 public:
   explicit InsertHtmlDialog(QWidget *parent = 0);
   ~InsertHtmlDialog();
   QString html() const;
+
 private:
-  class InsertHtmlDialogPrivate;
+  friend class InsertHtmlDialogPrivate;
   InsertHtmlDialogPrivate *d;
+  Q_PRIVATE_SLOT( d, void _k_slotTextChanged() )
+
 };
 
 }
