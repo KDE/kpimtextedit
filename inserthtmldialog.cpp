@@ -46,6 +46,8 @@ public:
     label->setFont(font);
     label->setTextFormat(Qt::PlainText);
     lay->addWidget(label);
+    q->connect(editor,SIGNAL(textChanged()),q,SLOT(_k_slotTextChanged()));
+    q->enableButtonOk(false);
   }
 
   void _k_slotTextChanged();
@@ -62,8 +64,6 @@ void InsertHtmlDialogPrivate::_k_slotTextChanged()
 InsertHtmlDialog::InsertHtmlDialog(QWidget *parent)
   : KDialog(parent), d(new InsertHtmlDialogPrivate(this))
 {
-  connect(d->editor,SIGNAL(textChanged()),this,SLOT(_k_slotTextChanged()));
-  enableButtonOk(false);
 }
 
 InsertHtmlDialog::~InsertHtmlDialog()
