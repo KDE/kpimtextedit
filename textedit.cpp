@@ -25,6 +25,7 @@
 #include "emoticontexteditaction.h"
 #include "inserthtmldialog.h"
 #include "tableactionmenu.h"
+#include "insertimagedialog.h"
 
 #include <kmime/kmime_codecs.h>
 
@@ -604,19 +605,15 @@ void TextEditPrivate::_k_slotInsertHtml()
 
 void TextEditPrivate::_k_slotAddImage()
 {
-  QStringList mimetypes = KImageIO::mimeTypes( KImageIO::Reading );
-  QPointer<KFileDialog> fdlg = new KFileDialog( QString(), mimetypes.join(QLatin1String(" ")), q );
-  fdlg->setOperationMode( KFileDialog::Other );
-  fdlg->setCaption( i18n( "Add Image" ) );
-  fdlg->okButton()->setGuiItem( KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
-  fdlg->setMode( KFile::Files );
-  if ( fdlg->exec() == KDialog::Accepted && fdlg ) {
-    const KUrl::List files = fdlg->selectedUrls();
-    foreach ( const KUrl &url, files ) {
-      q->addImage( url );
+  QPointer<InsertImageDialog> dlg = new InsertImageDialog(q);
+  if ( dlg->exec() == KDialog::Accepted && dlg ) {
+    const KUrl url = dlg->imageUrl();
+    if(dlg->keepOriginalSize()) {
+        //TODO
     }
+    q->addImage( url );
   }
-  delete fdlg;
+  delete dlg;
 }
 
 void KPIMTextEdit::TextEdit::enableImageActions()

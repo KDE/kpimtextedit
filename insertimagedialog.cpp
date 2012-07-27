@@ -51,6 +51,7 @@ public:
     imageUrlRequester->fileDialog()->setCaption( i18n( "Add Image" ) );
     imageUrlRequester->fileDialog()->okButton()->setGuiItem( KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
     imageUrlRequester->fileDialog()->setMode( KFile::File );
+
     hbox->addWidget(lab);
     hbox->addWidget(imageUrlRequester);
     lay->addLayout(hbox);
@@ -93,8 +94,8 @@ public:
 
 void InsertImageDialogPrivate::_k_slotKeepOriginalSizeClicked(bool checked)
 {
-    height->setEnabled(checked);
-    width->setEnabled(checked);
+  height->setEnabled(!checked);
+  width->setEnabled(!checked);
 }
 
 
@@ -131,13 +132,17 @@ void InsertImageDialog::setImageHeight(int value)
 
 KUrl InsertImageDialog::imageUrl() const
 {
-  //TODO
-  return KUrl();
+  return d->imageUrlRequester->url();
 }
 
 void InsertImageDialog::setImageUrl(const KUrl&url)
 {
-//TODO
+  d->imageUrlRequester->setUrl(url);
+}
+
+bool InsertImageDialog::keepOriginalSize() const
+{
+  return d->keepOriginalSize->isChecked();
 }
 
 }

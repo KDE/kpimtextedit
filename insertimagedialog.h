@@ -39,6 +39,8 @@ public:
   KUrl imageUrl() const;
   void setImageUrl(const KUrl&url);
 
+  bool keepOriginalSize() const;
+
 private:
   friend class InsertImageDialogPrivate;
   InsertImageDialogPrivate *d;
