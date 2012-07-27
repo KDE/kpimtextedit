@@ -18,6 +18,7 @@
 #ifndef INSERTIMAGEDIALOG_H
 #define INSERTIMAGEDIALOG_H
 #include <KDialog>
+#include <KUrl>
 
 namespace KPIMTextEdit {
 
@@ -27,6 +28,16 @@ class InsertImageDialog : public KDialog
 public:
   explicit InsertImageDialog(QWidget *parent = 0);
   ~InsertImageDialog();
+
+  int imageWidth() const;
+  int imageHeight() const;
+
+  void setImageWidth(int);
+  void setImageHeight(int);
+
+  KUrl imageUrl() const;
+  void setImageUrl(const KUrl&url);
+
 private:
   friend class InsertImageDialogPrivate;
   InsertImageDialogPrivate *d;
