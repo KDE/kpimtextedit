@@ -27,6 +27,7 @@ class TableFormatDialog : public KDialog
 public:
   explicit TableFormatDialog(QWidget *parent);
   ~TableFormatDialog();
+
   int columns() const;
   int rows() const;
   int border() const;

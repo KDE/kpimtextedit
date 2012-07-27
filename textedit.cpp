@@ -77,7 +77,7 @@ class TextEditPrivate
      *                  be appended to it
      * @param image the actual image to add
      */
-    void addImageHelper( const QString &imageName, const QImage &image );
+    void addImageHelper(const QString &imageName, const QImage &image, int width = -1, int height = -1);
 
     /**
      * Helper function to get the list of all QTextImageFormats in the document.
@@ -434,7 +434,7 @@ void TextEdit::createActions( KActionCollection *actionCollection )
   connect( d->actionDeleteLine, SIGNAL(triggered(bool)), SLOT(_k_slotDeleteLine()) );
 }
 
-void TextEdit::addImage( const KUrl &url )
+void TextEdit::addImage( const KUrl &url, int width, int height )
 {
   QImage image;
   if ( !image.load( url.path() ) ) {
@@ -447,7 +447,7 @@ void TextEdit::addImage( const KUrl &url )
   QFileInfo fi( url.path() );
   QString imageName = fi.baseName().isEmpty() ? QLatin1String( "image.png" )
                                               : QString( fi.baseName() + QLatin1String( ".png" ) );
-  d->addImageHelper( imageName, image );
+  d->addImageHelper( imageName, image, width, height );
 }
 
 void TextEdit::loadImage ( const QImage &image, const QString &matchName,
@@ -485,7 +485,7 @@ void TextEdit::loadImage ( const QImage &image, const QString &matchName,
   }
 }
 
-void TextEditPrivate::addImageHelper( const QString &imageName, const QImage &image )
+void TextEditPrivate::addImageHelper( const QString &imageName, const QImage &image,int width, int height )
 {
   QString imageNameToAdd = imageName;
   QTextDocument *document = q->document();
@@ -511,7 +511,15 @@ void TextEditPrivate::addImageHelper( const QString &imageName, const QImage &im
     document->addResource( QTextDocument::ImageResource, QUrl( imageNameToAdd ), image );
     mImageNames << imageNameToAdd;
   }
-  q->textCursor().insertImage( imageNameToAdd );
+  if(width != -1 && height != -1) {
+      QTextImageFormat format;
+      format.setName(imageNameToAdd);
+      format.setWidth(width);
+      format.setHeight(height);
+      q->textCursor().insertImage( format );
+  } else {
+      q->textCursor().insertImage( imageNameToAdd );
+  }
   q->enableRichTextMode();
 }
 
@@ -608,10 +616,13 @@ void TextEditPrivate::_k_slotAddImage()
   QPointer<InsertImageDialog> dlg = new InsertImageDialog(q);
   if ( dlg->exec() == KDialog::Accepted && dlg ) {
     const KUrl url = dlg->imageUrl();
-    if(dlg->keepOriginalSize()) {
-        //TODO
+    int imageWidth = -1;
+    int imageHeight = -1;
+    if(!dlg->keepOriginalSize()) {
+        imageWidth = dlg->imageWidth();
+        imageHeight = dlg->imageHeight();
     }
-    q->addImage( url );
+    q->addImage( url, imageWidth, imageHeight );
   }
   delete dlg;
 }

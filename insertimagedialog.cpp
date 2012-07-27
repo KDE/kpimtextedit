@@ -25,7 +25,8 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QSpinBox>
-#include <QRadioButton>
+#include <QCheckBox>
+#include <KLineEdit>
 
 namespace KPIMTextEdit {
 
@@ -51,12 +52,13 @@ public:
     imageUrlRequester->fileDialog()->setCaption( i18n( "Add Image" ) );
     imageUrlRequester->fileDialog()->okButton()->setGuiItem( KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
     imageUrlRequester->fileDialog()->setMode( KFile::File );
+    q->connect(imageUrlRequester->lineEdit(),SIGNAL(textChanged(QString)),q,SLOT(_k_slotUrlChanged(QString)));
 
     hbox->addWidget(lab);
     hbox->addWidget(imageUrlRequester);
     lay->addLayout(hbox);
 
-    keepOriginalSize = new QRadioButton(i18n("Keep Original Size"));
+    keepOriginalSize = new QCheckBox(i18n("Keep Original Size"));
     q->connect(keepOriginalSize,SIGNAL(clicked(bool)),q,SLOT(_k_slotKeepOriginalSizeClicked(bool)));
     keepOriginalSize->setChecked(true);
     lay->addWidget(keepOriginalSize);
@@ -66,6 +68,8 @@ public:
     width = new QSpinBox;
     width->setMinimum(1);
     width->setMaximum(99999);
+    width->setEnabled(false);
+    width->setSuffix(i18n(" px"));
     hbox->addWidget(lab);
     hbox->addWidget(width);
     lay->addLayout(hbox);
@@ -76,16 +80,19 @@ public:
     height = new QSpinBox;
     height->setMinimum(1);
     height->setMaximum(99999);
+    height->setEnabled(false);
+    height->setSuffix(i18n(" px"));
     hbox->addWidget(lab);
     hbox->addWidget(height);
     lay->addLayout(hbox);
 
-    _k_slotKeepOriginalSizeClicked(false);
+    q->enableButtonOk(false);
   }
 
   void _k_slotKeepOriginalSizeClicked(bool);
+  void _k_slotUrlChanged(const QString&);
 
-  QRadioButton *keepOriginalSize;
+  QCheckBox *keepOriginalSize;
   QSpinBox *width;
   QSpinBox *height;
   KUrlRequester *imageUrlRequester;
@@ -98,6 +105,10 @@ void InsertImageDialogPrivate::_k_slotKeepOriginalSizeClicked(bool checked)
   width->setEnabled(!checked);
 }
 
+void InsertImageDialogPrivate::_k_slotUrlChanged(const QString& text)
+{
+  q->enableButtonOk(!text.isEmpty());
+}
 
 InsertImageDialog::InsertImageDialog(QWidget *parent)
   :KDialog(parent),d(new InsertImageDialogPrivate(this))
