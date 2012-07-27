@@ -32,13 +32,16 @@ InsertTableWidget::InsertTableWidget(QWidget *parent)
 {
   mRows = new QSpinBox;
   mRows->setMinimum(1);
+  mRows->setValue(2);
+
   mColumns = new QSpinBox;
   mColumns->setMinimum(1);
+  mColumns->setValue(2);
 
   mBorder = new QSpinBox;
   mBorder->setMinimum(0);
   mBorder->setValue(1);
-  mBorder->setSuffix(i18n("px"));
+  mBorder->setSuffix(i18n(" px"));
 
   QFormLayout *formLayout = new QFormLayout;
   formLayout->addRow(i18n("Rows:"), mRows);
