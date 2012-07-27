@@ -25,7 +25,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QSpinBox>
-#include <QCheckBox>
+#include <QRadioButton>
 
 namespace KPIMTextEdit {
 
@@ -51,18 +51,52 @@ public:
     imageUrlRequester->fileDialog()->setCaption( i18n( "Add Image" ) );
     imageUrlRequester->fileDialog()->okButton()->setGuiItem( KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
     imageUrlRequester->fileDialog()->setMode( KFile::File );
-
     hbox->addWidget(lab);
     hbox->addWidget(imageUrlRequester);
     lay->addLayout(hbox);
+
+    keepOriginalSize = new QRadioButton(i18n("Keep Original Size"));
+    q->connect(keepOriginalSize,SIGNAL(clicked(bool)),q,SLOT(_k_slotKeepOriginalSizeClicked(bool)));
+    keepOriginalSize->setChecked(true);
+    lay->addWidget(keepOriginalSize);
+
+    hbox = new QHBoxLayout;
+    lab = new QLabel(i18n("Width:"));
+    width = new QSpinBox;
+    width->setMinimum(1);
+    width->setMaximum(99999);
+    hbox->addWidget(lab);
+    hbox->addWidget(width);
+    lay->addLayout(hbox);
+
+
+    hbox = new QHBoxLayout;
+    lab = new QLabel(i18n("Height:"));
+    height = new QSpinBox;
+    height->setMinimum(1);
+    height->setMaximum(99999);
+    hbox->addWidget(lab);
+    hbox->addWidget(height);
+    lay->addLayout(hbox);
+
+    _k_slotKeepOriginalSizeClicked(false);
   }
 
-  QCheckBox *keepOriginalSize;
+  void _k_slotKeepOriginalSizeClicked(bool);
+
+  QRadioButton *keepOriginalSize;
   QSpinBox *width;
   QSpinBox *height;
   KUrlRequester *imageUrlRequester;
   InsertImageDialog *q;
 };
+
+void InsertImageDialogPrivate::_k_slotKeepOriginalSizeClicked(bool checked)
+{
+    height->setEnabled(checked);
+    width->setEnabled(checked);
+}
+
 
 InsertImageDialog::InsertImageDialog(QWidget *parent)
   :KDialog(parent),d(new InsertImageDialogPrivate(this))
@@ -77,24 +111,22 @@ InsertImageDialog::~InsertImageDialog()
 
 int InsertImageDialog::imageWidth() const
 {
-  //TODO
-  return 0;
+  return d->width->value();
 }
 
 int InsertImageDialog::imageHeight() const
 {
-//TODO
-  return 0;
+  return d->height->value();
 }
 
-void InsertImageDialog::setImageWidth(int)
+void InsertImageDialog::setImageWidth(int value)
 {
-
+  d->width->setValue(value);
 }
 
-void InsertImageDialog::setImageHeight(int)
+void InsertImageDialog::setImageHeight(int value)
 {
-
+  d->height->setValue(value);
 }
 
 KUrl InsertImageDialog::imageUrl() const
@@ -109,3 +141,5 @@ void InsertImageDialog::setImageUrl(const KUrl&url)
 }
 
 }
+
+#include "insertimagedialog.moc"

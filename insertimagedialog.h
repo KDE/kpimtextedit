@@ -25,6 +25,7 @@ namespace KPIMTextEdit {
 class InsertImageDialogPrivate;
 class InsertImageDialog : public KDialog
 {
+  Q_OBJECT
 public:
   explicit InsertImageDialog(QWidget *parent = 0);
   ~InsertImageDialog();
@@ -32,8 +33,8 @@ public:
   int imageWidth() const;
   int imageHeight() const;
 
-  void setImageWidth(int);
-  void setImageHeight(int);
+  void setImageWidth(int value);
+  void setImageHeight(int value);
 
   KUrl imageUrl() const;
   void setImageUrl(const KUrl&url);
@@ -41,7 +42,7 @@ public:
 private:
   friend class InsertImageDialogPrivate;
   InsertImageDialogPrivate *d;
-
+  Q_PRIVATE_SLOT( d, void _k_slotKeepOriginalSizeClicked(bool) )
 };
 }
 
