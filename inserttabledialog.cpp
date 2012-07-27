@@ -174,3 +174,5 @@ int InsertTableDialog::length() const
 {
   return d->insertTableWidget->length();
 }
+
+#include "inserttabledialog.moc"
