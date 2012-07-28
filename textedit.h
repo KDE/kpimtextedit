@@ -151,7 +151,11 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      *
      * @param url The URL of the file which contains the image
      */
-    void addImage(const KUrl &url , int width, int height);
+    void addImage(const KUrl &url);
+
+    void addImage(const KUrl &url, int width, int height);
+
+    void addImageHelper(const KUrl &url, int width = -1, int height = -1);
 
     /**
      * Loads an image into the textedit. The difference to addImage() is that this
