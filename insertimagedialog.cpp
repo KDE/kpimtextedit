@@ -63,6 +63,13 @@ public:
     keepOriginalSize->setChecked(true);
     lay->addWidget(keepOriginalSize);
 
+    contrainsSize = new QCheckBox(i18n("Contrains Size"));
+    contrainsSize->setChecked(true);
+    contrainsSize->setEnabled(false);
+    lay->addWidget(contrainsSize);
+
+
+
     hbox = new QHBoxLayout;
     lab = new QLabel(i18n("Width:"));
     width = new QSpinBox;
@@ -93,6 +100,7 @@ public:
   void _k_slotUrlChanged(const QString&);
 
   QCheckBox *keepOriginalSize;
+  QCheckBox *contrainsSize;
   QSpinBox *width;
   QSpinBox *height;
   KUrlRequester *imageUrlRequester;
@@ -103,6 +111,7 @@ void InsertImageDialogPrivate::_k_slotKeepOriginalSizeClicked(bool checked)
 {
   height->setEnabled(!checked);
   width->setEnabled(!checked);
+  contrainsSize->setEnabled(!checked);
 }
 
 void InsertImageDialogPrivate::_k_slotUrlChanged(const QString& text)
