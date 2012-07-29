@@ -155,7 +155,6 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
 
     void addImage(const KUrl &url, int width, int height);
 
-    void addImageHelper(const KUrl &url, int width = -1, int height = -1);
 
     /**
      * Loads an image into the textedit. The difference to addImage() is that this
@@ -351,6 +350,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     virtual void createHighlighter();
 
   private:
+    void addImageHelper(const KUrl &url, int width = -1, int height = -1);
     std::auto_ptr<TextEditPrivate> const d;
     friend class TextEditPrivate;
     Q_PRIVATE_SLOT( d, void _k_slotAddImage() )
