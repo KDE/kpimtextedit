@@ -108,6 +108,11 @@ void InsertImageDialogPrivate::_k_slotKeepOriginalSizeClicked(bool checked)
 void InsertImageDialogPrivate::_k_slotUrlChanged(const QString& text)
 {
   q->enableButtonOk(!text.isEmpty());
+  QImage image(text);
+  if(!image.isNull()) {
+    height->setValue(image.height());
+    width->setValue(image.width());
+  }
 }
 
 InsertImageDialog::InsertImageDialog(QWidget *parent)
