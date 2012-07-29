@@ -77,6 +77,7 @@ public:
     width->setMaximum(99999);
     width->setEnabled(false);
     width->setSuffix(i18n(" px"));
+    q->connect(width,SIGNAL(valueChanged(int)),q,SLOT(_k_slotImageWidthChanged(int)));
     hbox->addWidget(lab);
     hbox->addWidget(width);
     lay->addLayout(hbox);
@@ -89,6 +90,7 @@ public:
     height->setMaximum(99999);
     height->setEnabled(false);
     height->setSuffix(i18n(" px"));
+    q->connect(height,SIGNAL(valueChanged(int)),q,SLOT(_k_slotImageHeightChanged(int)));
     hbox->addWidget(lab);
     hbox->addWidget(height);
     lay->addLayout(hbox);
@@ -98,7 +100,11 @@ public:
 
   void _k_slotKeepOriginalSizeClicked(bool);
   void _k_slotUrlChanged(const QString&);
+  void _k_slotImageWidthChanged(int);
+  void _k_slotImageHeightChanged(int);
 
+
+  int imageRatio;
   QCheckBox *keepOriginalSize;
   QCheckBox *contrainsSize;
   QSpinBox *width;
@@ -123,6 +129,21 @@ void InsertImageDialogPrivate::_k_slotUrlChanged(const QString& text)
     width->setValue(image.width());
   }
 }
+
+void InsertImageDialogPrivate::_k_slotImageWidthChanged(int)
+{
+  if(contrainsSize->isChecked()) {
+
+  }
+}
+
+void InsertImageDialogPrivate::_k_slotImageHeightChanged(int)
+{
+  if(contrainsSize->isChecked()) {
+
+  }
+}
+
 
 InsertImageDialog::InsertImageDialog(QWidget *parent)
   :KDialog(parent),d(new InsertImageDialogPrivate(this))
