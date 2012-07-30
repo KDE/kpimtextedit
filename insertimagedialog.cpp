@@ -63,10 +63,10 @@ public:
     keepOriginalSize->setChecked(true);
     lay->addWidget(keepOriginalSize);
 
-    contrainsSize = new QCheckBox(i18n("Contrains Size"));
-    contrainsSize->setChecked(true);
-    contrainsSize->setEnabled(false);
-    lay->addWidget(contrainsSize);
+    keepImageRatio = new QCheckBox(i18n("Keep Image Ratio"));
+    keepImageRatio->setChecked(true);
+    keepImageRatio->setEnabled(false);
+    lay->addWidget(keepImageRatio);
 
 
 
@@ -106,7 +106,7 @@ public:
 
   qreal imageRatio;
   QCheckBox *keepOriginalSize;
-  QCheckBox *contrainsSize;
+  QCheckBox *keepImageRatio;
   QSpinBox *width;
   QSpinBox *height;
   KUrlRequester *imageUrlRequester;
@@ -117,7 +117,7 @@ void InsertImageDialogPrivate::_k_slotKeepOriginalSizeClicked(bool checked)
 {
   height->setEnabled(!checked);
   width->setEnabled(!checked);
-  contrainsSize->setEnabled(!checked);
+  keepImageRatio->setEnabled(!checked);
 }
 
 void InsertImageDialogPrivate::_k_slotUrlChanged(const QString& text)
@@ -137,7 +137,7 @@ void InsertImageDialogPrivate::_k_slotUrlChanged(const QString& text)
 
 void InsertImageDialogPrivate::_k_slotImageWidthChanged(int value)
 {
-  if(contrainsSize->isChecked() && !keepOriginalSize->isChecked()) {
+  if(keepImageRatio->isChecked() && !keepOriginalSize->isChecked()) {
     if(imageRatio != -1) {
       height->blockSignals(true);
       height->setValue(value * imageRatio);
@@ -148,7 +148,7 @@ void InsertImageDialogPrivate::_k_slotImageWidthChanged(int value)
 
 void InsertImageDialogPrivate::_k_slotImageHeightChanged(int value)
 {
-  if(contrainsSize->isChecked()&& !keepOriginalSize->isChecked()) {
+  if(keepImageRatio->isChecked()&& !keepOriginalSize->isChecked()) {
     if(imageRatio != -1) {
      width->blockSignals(true);
      width->setValue(value / imageRatio);
