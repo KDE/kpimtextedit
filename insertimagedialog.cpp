@@ -104,7 +104,7 @@ public:
   void _k_slotImageHeightChanged(int);
 
 
-  int imageRatio;
+  qreal imageRatio;
   QCheckBox *keepOriginalSize;
   QCheckBox *contrainsSize;
   QSpinBox *width;
@@ -127,20 +127,33 @@ void InsertImageDialogPrivate::_k_slotUrlChanged(const QString& text)
   if(!image.isNull()) {
     height->setValue(image.height());
     width->setValue(image.width());
+
+    imageRatio = (double)((double)image.height()/(double)image.width());
+  } else {
+    imageRatio = -1;
+  }
+
+}
+
+void InsertImageDialogPrivate::_k_slotImageWidthChanged(int value)
+{
+  if(contrainsSize->isChecked() && !keepOriginalSize->isChecked()) {
+    if(imageRatio != -1) {
+      height->blockSignals(true);
+      height->setValue(value * imageRatio);
+      height->blockSignals(false);
+    }
   }
 }
 
-void InsertImageDialogPrivate::_k_slotImageWidthChanged(int)
+void InsertImageDialogPrivate::_k_slotImageHeightChanged(int value)
 {
-  if(contrainsSize->isChecked()) {
-
-  }
-}
-
-void InsertImageDialogPrivate::_k_slotImageHeightChanged(int)
-{
-  if(contrainsSize->isChecked()) {
-
+  if(contrainsSize->isChecked()&& !keepOriginalSize->isChecked()) {
+    if(imageRatio != -1) {
+     width->blockSignals(true);
+     width->setValue(value / imageRatio);
+     width->blockSignals(false);
+    }
   }
 }
 
