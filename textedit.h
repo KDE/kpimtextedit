@@ -153,8 +153,17 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      */
     void addImage(const KUrl &url);
 
+    /**
+     * Adds an image. The image is loaded from file and then pasted to the current
+     * cursor position with the given @p width and @p height.
+     *
+     * @param url The URL of the file which contains the image
+     * @param width The width the inserted image will have.
+     * @param height The height the inserted image will have.
+     *
+     * @since 4.10
+     */
     void addImage(const KUrl &url, int width, int height);
-
 
     /**
      * Loads an image into the textedit. The difference to addImage() is that this
