@@ -46,7 +46,7 @@ public:
     QLabel *lab = new QLabel(i18n("Image Location:"));
     imageUrlRequester = new KUrlRequester;
 
-    QStringList mimetypes = KImageIO::mimeTypes( KImageIO::Reading );
+    const QStringList mimetypes = KImageIO::mimeTypes( KImageIO::Reading );
     imageUrlRequester->fileDialog()->setFilter(mimetypes.join(QLatin1String(" ")));
     imageUrlRequester->fileDialog()->setOperationMode( KFileDialog::Other );
     imageUrlRequester->fileDialog()->setCaption( i18n( "Add Image" ) );
@@ -56,6 +56,7 @@ public:
 
     hbox->addWidget(lab);
     hbox->addWidget(imageUrlRequester);
+    lab->setBuddy(imageUrlRequester);
     lay->addLayout(hbox);
 
     keepOriginalSize = new QCheckBox(i18n("Keep Original Size"));
@@ -77,6 +78,7 @@ public:
     width->setMaximum(99999);
     width->setEnabled(false);
     width->setSuffix(i18n(" px"));
+    lab->setBuddy(width);
     q->connect(width,SIGNAL(valueChanged(int)),q,SLOT(_k_slotImageWidthChanged(int)));
     hbox->addWidget(lab);
     hbox->addWidget(width);
@@ -90,6 +92,7 @@ public:
     height->setMaximum(99999);
     height->setEnabled(false);
     height->setSuffix(i18n(" px"));
+    lab->setBuddy(height);
     q->connect(height,SIGNAL(valueChanged(int)),q,SLOT(_k_slotImageHeightChanged(int)));
     hbox->addWidget(lab);
     hbox->addWidget(height);
@@ -132,7 +135,7 @@ void InsertImageDialogPrivate::_k_slotUrlChanged(const QString& text)
   } else {
     imageRatio = -1;
   }
-
+  q->enableButtonOk(!text.isEmpty() && !image.isNull());
 }
 
 void InsertImageDialogPrivate::_k_slotImageWidthChanged(int value)

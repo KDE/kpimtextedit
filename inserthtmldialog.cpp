@@ -39,6 +39,7 @@ public:
     lay->addWidget(label);
     editor = new KTextEdit;
     editor->setAcceptRichText(false);
+    editor->setFocus();
     lay->addWidget(editor);
     label = new QLabel(i18n("Example: <i> Hello word </i>"));
     QFont font = label->font();
