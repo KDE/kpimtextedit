@@ -52,6 +52,7 @@ InsertTableWidget::InsertTableWidget(QWidget *parent)
   QHBoxLayout *lay = new QHBoxLayout;
   mTypeOfLength = new KComboBox;
   connect(mTypeOfLength,SIGNAL(activated(int)),SLOT(slotTypeOfLengthChanged(int)));
+  // xgettext: no-c-format
   mTypeOfLength->addItem(i18n("% of windows"),QTextLength::PercentageLength);
   mTypeOfLength->addItem(i18n("pixels"),QTextLength::FixedLength);
   mLength = new QSpinBox;
