@@ -56,7 +56,7 @@ public:
     padding = new QSpinBox;
     padding->setMinimum(0);
     hbox->addWidget(padding);
-    lab = new QLabel(i18n("pixels between cell bordel and content"));
+    lab = new QLabel(i18n("pixels between cell border and content"));
     hbox->addWidget(lab);
     lay->addLayout(hbox);
 
