@@ -121,6 +121,8 @@ void InsertImageDialogPrivate::_k_slotKeepOriginalSizeClicked(bool checked)
   height->setEnabled(!checked);
   width->setEnabled(!checked);
   keepImageRatio->setEnabled(!checked);
+  //Update default size
+  _k_slotUrlChanged(imageUrlRequester->text());
 }
 
 void InsertImageDialogPrivate::_k_slotUrlChanged(const QString& text)
