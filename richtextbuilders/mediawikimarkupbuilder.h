@@ -26,7 +26,6 @@
 #include "kabstractmarkupbuilder.h"
 #include <kdebug.h>
 
-
 /**
     @brief Creates MediaWiki markup from a QTextDocument
 */
@@ -60,14 +59,10 @@ public:
 
     virtual void beginList(QTextListFormat::Style type);
 
-
-
     virtual void endList();
-
 
     virtual void beginListItem();
     virtual void endListItem();
-
 
     virtual void appendLiteralText(const QString &text);
 

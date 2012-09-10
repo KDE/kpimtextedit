@@ -139,7 +139,7 @@ public:
 
 private:
     KPlainTextMarkupBuilderPrivate *d_ptr;
-    Q_DECLARE_PRIVATE(KPlainTextMarkupBuilder)
+    Q_DECLARE_PRIVATE( KPlainTextMarkupBuilder )
 
 
 };

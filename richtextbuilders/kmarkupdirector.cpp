@@ -19,7 +19,6 @@
     02110-1301, USA.
 */
 
-
 #include "kmarkupdirector.h"
 #include "kmarkupdirector_p.h"
 
@@ -42,7 +41,7 @@
 #include "kabstractmarkupbuilder.h"
 
 KMarkupDirector::KMarkupDirector(KAbstractMarkupBuilder* builder) :
-        d(new Private(this))
+        d( new Private( this ) )
 {
     d->builder = builder;
 }
@@ -54,38 +53,38 @@ KMarkupDirector::~KMarkupDirector()
 
 void KMarkupDirector::processDocumentContents(QTextFrame::iterator start, QTextFrame::iterator end)
 {
-    for (QTextFrame::iterator it = start; ((!it.atEnd()) && (it != end)); ++it) {
+    for ( QTextFrame::iterator it = start; ( ( !it.atEnd() ) && ( it != end ) ); ++it ) {
         QTextFrame *frame = it.currentFrame();
-        if (frame) {
-            QTextTable *table = dynamic_cast<QTextTable*>(frame);
-            if (table) {
-                processTable(table);
+        if ( frame ) {
+            QTextTable *table = dynamic_cast<QTextTable*>( frame );
+            if ( table ) {
+                processTable( table );
             } else {
-                processFrame(frame);
+                processFrame( frame );
             }
         } else {
-            processBlock(it.currentBlock());
+            processBlock( it.currentBlock() );
         }
     }
 }
 
 void KMarkupDirector::processFrame(QTextFrame* frame)
 {
-    processDocumentContents(frame->begin(), frame->end());
+    processDocumentContents( frame->begin(), frame->end() );
 }
 
 void KMarkupDirector::processBlock(const QTextBlock &block)
 {
-    if (block.isValid()) {
+    if ( block.isValid() ) {
         QTextList *list = block.textList();
-        if (list) {
+        if ( list ) {
             // An entire list is processed when first found.
             // Just skip over if not the first item in a list.
-            if ((list->item(0) == block) && (!block.previous().textList())) {
-                processList(block);
+            if ( ( list->item( 0 ) == block ) && ( !block.previous().textList() ) ) {
+                processList( block );
             }
         } else {
-            processBlockContents(block);
+            processBlockContents( block );
         }
     }
 }
@@ -98,25 +97,24 @@ void KMarkupDirector::processTable(QTextTable *table)
     QTextLength tableWidth = format.width();
     QString sWidth;
 
-    if (tableWidth.type() == QTextLength::PercentageLength) {
+    if ( tableWidth.type() == QTextLength::PercentageLength ) {
         sWidth = "%1%";
-        sWidth = sWidth.arg(tableWidth.rawValue());
-    } else if (tableWidth.type() == QTextLength::FixedLength) {
+        sWidth = sWidth.arg( tableWidth.rawValue() );
+    } else if ( tableWidth.type() == QTextLength::FixedLength ) {
         sWidth = "%1";
-        sWidth = sWidth.arg(tableWidth.rawValue());
+        sWidth = sWidth.arg( tableWidth.rawValue() );
     }
 
-    d->builder->beginTable(format.cellPadding(), format.cellSpacing(), sWidth);
+    d->builder->beginTable( format.cellPadding(), format.cellSpacing(), sWidth );
 
     int headerRowCount = format.headerRowCount();
 
     QList<QTextTableCell> alreadyProcessedCells;
 
-    for (int row = 0; row < table->rows(); ++row) {
+    for ( int row = 0; row < table->rows(); ++row ) {
         // Put a thead element around here somewhere?
-        // if (row < headerRowCount)
-        // {
-        // d->builder->beginTableHeader();
+        // if (row < headerRowCount) {
+        //   d->builder->beginTableHeader();
         // }
 
         d->builder->beginTableRow();
@@ -125,43 +123,43 @@ void KMarkupDirector::processTable(QTextTable *table)
         //http://www.webdesignfromscratch.com/html-tables.cfm
 
 
-        for (int column = 0; column < table->columns(); ++column) {
+        for ( int column = 0; column < table->columns(); ++column ) {
 
-            QTextTableCell tableCell = table->cellAt(row, column);
+            QTextTableCell tableCell = table->cellAt( row, column );
 
             int columnSpan = tableCell.columnSpan();
             int rowSpan = tableCell.rowSpan();
-            if ((rowSpan > 1) || (columnSpan > 1)) {
-                if (alreadyProcessedCells.contains(tableCell)) {
+            if ( ( rowSpan > 1 ) || ( columnSpan > 1 ) ) {
+                if ( alreadyProcessedCells.contains( tableCell ) ) {
                     // Already processed this cell. Move on.
                     continue;
                 } else {
-                    alreadyProcessedCells.append(tableCell);
+                    alreadyProcessedCells.append( tableCell );
                 }
             }
 
-            QTextLength cellWidth = colLengths.at(column);
+            QTextLength cellWidth = colLengths.at( column );
 
             QString sCellWidth;
 
-            if (cellWidth.type() == QTextLength::PercentageLength) {
+            if ( cellWidth.type() == QTextLength::PercentageLength ) {
                 sCellWidth = "%1%";
-                sCellWidth = sCellWidth.arg(cellWidth.rawValue());
-            } else if (cellWidth.type() == QTextLength::FixedLength) {
+                sCellWidth = sCellWidth.arg( cellWidth.rawValue() );
+            } else if ( cellWidth.type() == QTextLength::FixedLength ) {
                 sCellWidth = "%1";
-                sCellWidth = sCellWidth.arg(cellWidth.rawValue());
+                sCellWidth = sCellWidth.arg( cellWidth.rawValue() );
             }
 
             // TODO: Use THEAD instead
-            if (row < headerRowCount) {
-                d->builder->beginTableHeaderCell(sCellWidth, columnSpan, rowSpan);
+            if ( row < headerRowCount ) {
+                d->builder->beginTableHeaderCell( sCellWidth, columnSpan, rowSpan );
             } else {
-                d->builder->beginTableCell(sCellWidth, columnSpan, rowSpan);
+                d->builder->beginTableCell( sCellWidth, columnSpan, rowSpan );
             }
 
-            processTableCell(tableCell);
+            processTableCell( tableCell );
 
-            if (row < headerRowCount) {
+            if ( row < headerRowCount ) {
                 d->builder->endTableHeaderCell();
             } else {
                 d->builder->endTableCell();
@@ -174,53 +172,53 @@ void KMarkupDirector::processTable(QTextTable *table)
 
 void KMarkupDirector::processTableCell(const QTextTableCell &cell)
 {
-    processDocumentContents(cell.begin(), cell.end());
+    processDocumentContents( cell.begin(), cell.end() );
 }
 
 void KMarkupDirector::processList(const QTextBlock &ablock)
 {
-    QTextBlock block(ablock);
+    QTextBlock block( ablock );
 
     QTextList *list = block.textList();
-    if (!list) {
+    if ( !list ) {
         return;
     }
 
     QList<QTextList*> lists;
 
-    while (block.isValid() && block.textList()) {
-        if (list->item(0) == block) {
+    while ( block.isValid() && block.textList() ) {
+        if ( list->item( 0 ) == block ) {
             // Item zero in a list is the first block in the list of blocks that make up a list.
             QTextListFormat::Style style = list->format().style();
-            d->builder->beginList(style);
+            d->builder->beginList( style );
 
-            lists.append(list);
+            lists.append( list );
         }
 
         d->builder->beginListItem();
-        processBlockContents(block);
+        processBlockContents( block );
         d->builder->endListItem();
 
         block = block.next();
 
-        if (block.isValid()) {
+        if ( block.isValid() ) {
             QTextList *newList = block.textList();
 
-            if (!newList) {
-                while (!lists.isEmpty()) {
+            if ( !newList ) {
+                while ( !lists.isEmpty() ) {
                     lists.removeLast();
                     d->builder->endList();
                 }
-            } else if (newList == list) {
+            } else if ( newList == list ) {
                 //Next block is on the same list; Handled on next iteration.
                 continue;
-            } else if (newList != list) {
-                if (newList->item(0) == block) {
+            } else if ( newList != list ) {
+                if ( newList->item( 0 ) == block ) {
                     list = newList;
                     continue;
                 } else {
-                    while (!lists.isEmpty()) {
-                        if (block.textList() != lists.last()) {
+                    while ( !lists.isEmpty() ) {
+                        if ( block.textList() != lists.last() ) {
                             lists.removeLast();
                             d->builder->endList();
                         } else {
@@ -233,7 +231,7 @@ void KMarkupDirector::processList(const QTextBlock &ablock)
         } else {
             // Next block is not valid. Maybe at EOF. Close all open lists.
             // TODO: Figure out how to handle lists in adjacent table cells.
-            while (!lists.isEmpty()) {
+            while ( !lists.isEmpty() ) {
                 lists.removeLast();
                 d->builder->endList();
             }
@@ -248,7 +246,7 @@ void KMarkupDirector::processBlockContents(const QTextBlock &block)
 
     // TODO: decide when to use <h1> etc.
 
-    if (blockFormat.hasProperty(QTextFormat::BlockTrailingHorizontalRulerWidth)) {
+    if ( blockFormat.hasProperty( QTextFormat::BlockTrailingHorizontalRulerWidth ) ) {
         d->builder->insertHorizontalRule();
         return;
     }
@@ -258,7 +256,7 @@ void KMarkupDirector::processBlockContents(const QTextBlock &block)
 
     // The beginning is the end. This is an empty block. Insert a newline and move on.
     // This is what gets generated by a QTextEdit...
-    if (it.atEnd()) {
+    if ( it.atEnd() ) {
 //     kDebug() << "The beginning is the end";
         d->builder->addNewline();
         return;
@@ -268,15 +266,16 @@ void KMarkupDirector::processBlockContents(const QTextBlock &block)
 
     // .. but if a sequence such as '<br /><br />' is imported into a document with setHtml, Separator_Line
     // characters are inserted here within one block. See testNewlines and testNewlinesThroughQTextEdit.
-    if (fragment.isValid()) {
+    if ( fragment.isValid() ) {
         QTextCharFormat fragmentFormat = fragment.charFormat();
 
-        if (!fragmentFormat.isImageFormat() && fragment.text().at(0).category() == QChar::Separator_Line) {
+        if ( !fragmentFormat.isImageFormat() &&
+             fragment.text().at( 0 ).category() == QChar::Separator_Line ) {
 
             // Consecutive newlines in a qtextdocument are in a single fragment if inserted with setHtml.
-            foreach(const QChar &c, fragment.text()) {
+            foreach ( const QChar &c, fragment.text() ) {
 //         kDebug() << c;
-                if (c.category() == QChar::Separator_Line) {
+                if ( c.category() == QChar::Separator_Line ) {
                     d->builder->addNewline();
                 }
             }
@@ -285,26 +284,25 @@ void KMarkupDirector::processBlockContents(const QTextBlock &block)
     }
 
     // Don't have p tags inside li tags.
-    if (!block.textList())
-    {
+    if ( !block.textList() ) {
       // Don't instruct builders to use margins. The rich text widget doesn't have an action for them yet,
       // So users can't edit them. See bug http://bugs.kde.org/show_bug.cgi?id=160600
-      d->builder->beginParagraph(blockAlignment //,
+      d->builder->beginParagraph( blockAlignment //,
   //                                blockFormat.topMargin(),
   //                                blockFormat.bottomMargin(),
   //                                blockFormat.leftMargin(),
   //                                blockFormat.rightMargin()
-                                );
+                                 );
     }
-    while (!it.atEnd()) {
+    while ( !it.atEnd() ) {
         fragment = it.fragment();
-        if (fragment.isValid()) {
+        if ( fragment.isValid() ) {
             QTextCharFormat fragmentFormat = fragment.charFormat();
 
-            if (fragmentFormat.isImageFormat()) {
+            if ( fragmentFormat.isImageFormat() ) {
                 // TODO: Close any open format elements?
                 QTextImageFormat imageFormat = fragmentFormat.toImageFormat();
-                d->builder->insertImage(imageFormat.name(), imageFormat.width(), imageFormat.height());
+                d->builder->insertImage( imageFormat.name(), imageFormat.width(), imageFormat.height() );
                 ++it;
                 continue;
             } else {
@@ -330,49 +328,43 @@ void KMarkupDirector::processBlockContents(const QTextBlock &block)
                 // didn't appeal.
                 // See testDoubleStartDifferentFinish, testDoubleStartDifferentFinishReverseOrder
 
-                d->processOpeningElements(it);
+                d->processOpeningElements( it );
 
                 // If a sequence such as '<br /><br />' is imported into a document with setHtml, LineSeparator
                 // characters are inserted. Here I make sure to put them back.
-                QStringList sl = fragment.text().split(QChar( QChar::LineSeparator ) );
-                QStringListIterator i(sl);
+                QStringList sl = fragment.text().split( QChar( QChar::LineSeparator ) );
+                QStringListIterator i( sl );
                 bool paraClosed = false;
-                while (i.hasNext())
-                {
-                  d->builder->appendLiteralText(i.next());
-                  if (i.hasNext())
-                  {
-                    if (i.peekNext().isEmpty())
-                    {
-                      if (!paraClosed)
-                      {
+                while ( i.hasNext() ) {
+                  d->builder->appendLiteralText( i.next() );
+                  if ( i.hasNext() ) {
+                    if ( i.peekNext().isEmpty() ) {
+                      if ( !paraClosed ) {
                         d->builder->endParagraph();
                         paraClosed = true;
                       }
                       d->builder->addNewline();
-                    } else if (paraClosed) {
-                      d->builder->beginParagraph(blockAlignment);
+                    } else if ( paraClosed ) {
+                      d->builder->beginParagraph( blockAlignment );
                       paraClosed = false;
                     }
                   }
                 }
 
                 ++it;
-                d->processClosingElements(it);
+                d->processClosingElements( it );
             }
         }
     }
 
     // Don't have p tags inside li tags.
-    if (!block.textList())
-    {
+    if ( !block.textList() ) {
       d->builder->endParagraph();
     }
-
 }
 
 void KMarkupDirector::constructContent(QTextDocument* doc)
 {
     QTextFrame *rootFrame = doc->rootFrame();
-    processFrame(rootFrame);
+    processFrame( rootFrame );
 }

@@ -36,7 +36,7 @@ class KMarkupDirector::Private
 {
 public:
     Private(KMarkupDirector *md)
-            : q(md) {
+            : q( md ) {
     }
 
     void processClosingElements(QTextBlock::iterator it);

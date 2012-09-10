@@ -59,12 +59,8 @@ Q_SIGNALS:
 private:
   class EmoticonTextEditSelectorPrivate;
   EmoticonTextEditSelectorPrivate *d;
-
 };
 
 }
 
-
-
 #endif /* EMOTICONTEXTEDITSELECTOR_H */
-

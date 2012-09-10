@@ -226,9 +226,9 @@ void TextEditTester::testCleanText()
 
 void TextEditTester::testEnter_data()
 {
-  QTest::addColumn<QString>("initalText");
-  QTest::addColumn<QString>("expectedText");
-  QTest::addColumn<int>("cursorPos");
+  QTest::addColumn<QString>( "initalText" );
+  QTest::addColumn<QString>( "expectedText" );
+  QTest::addColumn<int>( "cursorPos" );
 
   QTest::newRow( "" ) << QString::fromAscii( "> Hello World" )
                       << QString::fromAscii( "> Hello \n> World" )
@@ -355,9 +355,9 @@ void TextEditTester::testImageHtmlCode()
 
 void TextEditTester::testDeleteLine_data()
 {
-  QTest::addColumn<QString>("initalText");
-  QTest::addColumn<QString>("expectedText");
-  QTest::addColumn<int>("cursorPos");
+  QTest::addColumn<QString>( "initalText" );
+  QTest::addColumn<QString>( "expectedText" );
+  QTest::addColumn<int>( "cursorPos" );
 
   QTest::newRow( "" ) << QString::fromAscii( "line1\nline2\nline3" )
                       << QString::fromAscii( "line1\nline3" )

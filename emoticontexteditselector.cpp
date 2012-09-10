@@ -33,19 +33,20 @@ K_GLOBAL_STATIC( KEmoticons, sEmoticons )
   using namespace KPIMTextEdit;
 
 EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText, const QString &pixmapPath, QListWidget *parent)
-  : QListWidgetItem(parent)
+  : QListWidgetItem( parent )
 {
   mText = emoticonText;
   mPixmapPath = pixmapPath;
-  QPixmap p(mPixmapPath);
+  QPixmap p( mPixmapPath );
   // Some of the custom icons are rather large
   // so lets limit them to a maximum size for this display panel
   //
-  if (p.width() > 32 || p.height() > 32)
-    p = p.scaled(QSize(32,32), Qt::KeepAspectRatio);
+  if ( p.width() > 32 || p.height() > 32 ) {
+    p = p.scaled( QSize( 32, 32 ), Qt::KeepAspectRatio );
+  }
 
-  setIcon(p);
-  setToolTip(mText);
+  setIcon( p );
+  setToolTip( mText );
 }
 
 QString EmoticonTextEditItem::text() const
@@ -62,36 +63,32 @@ class EmoticonTextEditSelector::EmoticonTextEditSelectorPrivate
 {
 public:
   EmoticonTextEditSelectorPrivate() {
-
   }
   QListWidget *listEmoticon;
 };
 
-
 EmoticonTextEditSelector::EmoticonTextEditSelector( QWidget * parent )
   :QWidget( parent ), d( new EmoticonTextEditSelectorPrivate() )
 {
-  QHBoxLayout *lay = new QHBoxLayout(this);
+  QHBoxLayout *lay = new QHBoxLayout( this );
   lay->setSpacing( 0 );
   lay->setContentsMargins( 0, 0, 0, 0 );
-  d->listEmoticon = new QListWidget(this);
+  d->listEmoticon = new QListWidget( this );
   lay->addWidget( d->listEmoticon );
-  d->listEmoticon->setViewMode(QListView::IconMode);
-  d->listEmoticon->setSelectionMode(QAbstractItemView::SingleSelection);
-  d->listEmoticon->setMouseTracking(true);
-  d->listEmoticon->setDragEnabled(false);
-  connect(d->listEmoticon, SIGNAL(itemEntered(QListWidgetItem*)),
-          this, SLOT(slotMouseOverItem(QListWidgetItem*)));
-  connect(d->listEmoticon, SIGNAL(itemClicked(QListWidgetItem*)),
-          this, SLOT(slotEmoticonClicked(QListWidgetItem*)));
-
+  d->listEmoticon->setViewMode( QListView::IconMode );
+  d->listEmoticon->setSelectionMode( QAbstractItemView::SingleSelection );
+  d->listEmoticon->setMouseTracking( true );
+  d->listEmoticon->setDragEnabled( false );
+  connect( d->listEmoticon, SIGNAL(itemEntered(QListWidgetItem*)),
+           this, SLOT(slotMouseOverItem(QListWidgetItem*)) );
+  connect( d->listEmoticon, SIGNAL(itemClicked(QListWidgetItem*)),
+           this, SLOT(slotEmoticonClicked(QListWidgetItem*)) );
 }
 
 EmoticonTextEditSelector::~EmoticonTextEditSelector()
 {
   delete d;
 }
-
 
 void EmoticonTextEditSelector::slotCreateEmoticonList()
 {
@@ -103,35 +100,35 @@ void EmoticonTextEditSelector::slotCreateEmoticonList()
   const QHash<QString, QStringList> list = sEmoticons->theme( cachedEmoticonsThemeName ).emoticonsMap();
 
   QHash<QString, QStringList>::const_iterator end = list.constEnd();
-  for (QHash<QString, QStringList>::const_iterator it = list.constBegin(); it != end; ++it ) {
-    new EmoticonTextEditItem(it.value().first(), it.key(), d->listEmoticon);
+  for ( QHash<QString, QStringList>::const_iterator it = list.constBegin(); it != end; ++it ) {
+    new EmoticonTextEditItem( it.value().first(), it.key(), d->listEmoticon );
   }
 
-  d->listEmoticon->setIconSize(QSize(32,32));
+  d->listEmoticon->setIconSize( QSize( 32, 32 ) );
 }
 
 
 void EmoticonTextEditSelector::slotMouseOverItem(QListWidgetItem* item)
 {
-  item->setSelected(true);
-  if (!d->listEmoticon->hasFocus())
+  item->setSelected( true );
+  if ( !d->listEmoticon->hasFocus() ) {
     d->listEmoticon->setFocus();
+  }
 }
 
 
 void EmoticonTextEditSelector::slotEmoticonClicked(QListWidgetItem*item)
 {
-  if (!item)
+  if ( !item ) {
     return;
-  EmoticonTextEditItem *itemEmoticon = static_cast<EmoticonTextEditItem*>(item);
+  }
+  EmoticonTextEditItem *itemEmoticon = static_cast<EmoticonTextEditItem*>( item );
 
   emit itemSelected ( itemEmoticon->text() );
   if ( isVisible() && parentWidget() &&
-       parentWidget()->inherits("QMenu") )
-  {
+       parentWidget()->inherits( "QMenu" ) ) {
     parentWidget()->close();
   }
-
 }
 
 #include "emoticontexteditselector.moc"

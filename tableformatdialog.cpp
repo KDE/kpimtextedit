@@ -33,47 +33,47 @@ class TableFormatDialog::TableFormatDialogPrivate
 {
 public:
   TableFormatDialogPrivate(TableFormatDialog *qq)
-    :q(qq)
+    :q( qq )
   {
-    q->setCaption( i18n("Table Format") );
+    q->setCaption( i18n( "Table Format" ) );
     q->setButtons( Ok|Cancel );
-    QWidget *page = new QWidget(q );
+    QWidget *page = new QWidget( q );
     q->setMainWidget( page );
-    QVBoxLayout *lay = new QVBoxLayout(page);
+    QVBoxLayout *lay = new QVBoxLayout( page );
     tableWidget = new InsertTableWidget;
-    lay->addWidget(tableWidget);
+    lay->addWidget( tableWidget );
 
     QHBoxLayout *hbox = new QHBoxLayout;
-    QLabel *lab = new QLabel(i18n("Spacing:"));
-    hbox->addWidget(lab);
+    QLabel *lab = new QLabel( i18n( "Spacing:" ) );
+    hbox->addWidget( lab );
     spacing = new QSpinBox;
-    spacing->setMinimum(0);
-    hbox->addWidget(spacing);
-    lab = new QLabel(i18n("pixels between cells"));
-    hbox->addWidget(lab);
-    lay->addLayout(hbox);
+    spacing->setMinimum( 0 );
+    hbox->addWidget( spacing );
+    lab = new QLabel( i18n( "pixels between cells" ) );
+    hbox->addWidget( lab );
+    lay->addLayout( hbox );
 
     hbox = new QHBoxLayout;
-    lab = new QLabel(i18n("Padding:"));
-    hbox->addWidget(lab);
+    lab = new QLabel( i18n( "Padding:" ) );
+    hbox->addWidget( lab );
     padding = new QSpinBox;
-    padding->setMinimum(0);
-    hbox->addWidget(padding);
-    lab = new QLabel(i18n("pixels between cell border and content"));
-    hbox->addWidget(lab);
-    lay->addLayout(hbox);
+    padding->setMinimum( 0 );
+    hbox->addWidget( padding );
+    lab = new QLabel( i18n( "pixels between cell border and content" ) );
+    hbox->addWidget( lab );
+    lay->addLayout( hbox );
 
     alignment = new KComboBox;
-    alignment->addItem(i18n("Left"), Qt::AlignLeft);
-    alignment->addItem(i18n("Right"), Qt::AlignRight);
-    alignment->addItem(i18n("Center"), Qt::AlignHCenter);
-    alignment->addItem(i18n("Justify"), Qt::AlignJustify);
+    alignment->addItem( i18n( "Left" ), Qt::AlignLeft );
+    alignment->addItem( i18n( "Right" ), Qt::AlignRight );
+    alignment->addItem( i18n( "Center" ), Qt::AlignHCenter );
+    alignment->addItem( i18n( "Justify" ), Qt::AlignJustify );
 
     hbox = new QHBoxLayout;
-    lab = new QLabel(i18n("Table Alignment:"));
-    hbox->addWidget(lab);
-    hbox->addWidget(alignment);
-    lay->addLayout(hbox);
+    lab = new QLabel( i18n( "Table Alignment:" ) );
+    hbox->addWidget( lab );
+    hbox->addWidget( alignment );
+    lay->addLayout( hbox );
 
   }
   KComboBox *alignment;
@@ -84,7 +84,7 @@ public:
 };
 
 TableFormatDialog::TableFormatDialog(QWidget *parent)
-  : KDialog(parent), d(new TableFormatDialogPrivate(this))
+  : KDialog( parent ), d( new TableFormatDialogPrivate( this ) )
 {
 }
 
@@ -108,20 +108,19 @@ int TableFormatDialog::border() const
   return d->tableWidget->border();
 }
 
-
 void TableFormatDialog::setColumns(int col)
 {
-  d->tableWidget->setColumns(col);
+  d->tableWidget->setColumns( col );
 }
 
 void TableFormatDialog::setRows(int row)
 {
-  d->tableWidget->setRows(row);
+  d->tableWidget->setRows( row );
 }
 
 void TableFormatDialog::setBorder(int border)
 {
-  d->tableWidget->setBorder(border);
+  d->tableWidget->setBorder( border );
 }
 
 int TableFormatDialog::padding() const
@@ -131,7 +130,7 @@ int TableFormatDialog::padding() const
 
 void TableFormatDialog::setPadding(int value)
 {
-  d->padding->setValue(value);
+  d->padding->setValue( value );
 }
 
 int TableFormatDialog::spacing() const
@@ -141,17 +140,17 @@ int TableFormatDialog::spacing() const
 
 void TableFormatDialog::setSpacing(int value)
 {
-  d->spacing->setValue(value);
+  d->spacing->setValue( value );
 }
 
 void TableFormatDialog::setAlignment(Qt::Alignment alignment)
 {
-  d->alignment->setCurrentIndex(d->alignment->findData(QVariant(alignment)));
+  d->alignment->setCurrentIndex( d->alignment->findData( QVariant( alignment ) ) );
 }
 
 Qt::Alignment TableFormatDialog::alignment() const
 {
-  return (Qt::Alignment)d->alignment->itemData(d->alignment->currentIndex ()).toInt();
+  return ( Qt::Alignment )d->alignment->itemData( d->alignment->currentIndex () ).toInt();
 }
 
 

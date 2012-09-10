@@ -31,42 +31,42 @@ using namespace KPIMTextEdit;
 
 
 InsertTableWidget::InsertTableWidget(QWidget *parent)
-  :QWidget(parent)
+  :QWidget( parent )
 {
   mRows = new QSpinBox;
-  mRows->setMinimum(1);
-  mRows->setValue(2);
+  mRows->setMinimum( 1 );
+  mRows->setValue( 2 );
 
   mColumns = new QSpinBox;
-  mColumns->setMinimum(1);
-  mColumns->setValue(2);
+  mColumns->setMinimum( 1 );
+  mColumns->setValue( 2 );
 
   mBorder = new QSpinBox;
-  mBorder->setMinimum(0);
-  mBorder->setValue(1);
-  mBorder->setSuffix(i18n(" px"));
+  mBorder->setMinimum( 0 );
+  mBorder->setValue( 1 );
+  mBorder->setSuffix( i18n( " px" ) );
 
   QFormLayout *formLayout = new QFormLayout;
-  formLayout->addRow(i18n("Rows:"), mRows);
-  formLayout->addRow(i18n("Columns:"), mColumns);
-  formLayout->addRow(i18n("Border:"), mBorder);
+  formLayout->addRow( i18n( "Rows:" ), mRows );
+  formLayout->addRow( i18n( "Columns:" ), mColumns );
+  formLayout->addRow( i18n( "Border:" ), mBorder );
 
 
   QHBoxLayout *lay = new QHBoxLayout;
   mTypeOfLength = new KComboBox;
-  connect(mTypeOfLength,SIGNAL(activated(int)),SLOT(slotTypeOfLengthChanged(int)));
+  connect( mTypeOfLength, SIGNAL(activated(int)),SLOT(slotTypeOfLengthChanged(int)) );
   // xgettext: no-c-format
-  mTypeOfLength->addItem(i18n("% of windows"),QTextLength::PercentageLength);
-  mTypeOfLength->addItem(i18n("pixels"),QTextLength::FixedLength);
+  mTypeOfLength->addItem( i18n( "% of windows" ), QTextLength::PercentageLength );
+  mTypeOfLength->addItem( i18n( "pixels" ), QTextLength::FixedLength );
   mLength = new QSpinBox;
-  mLength->setMinimum(1);
-  mLength->setMaximum(100);
-  mLength->setValue(100);
-  lay->addWidget(mLength);
-  lay->addWidget(mTypeOfLength);
+  mLength->setMinimum( 1 );
+  mLength->setMaximum( 100 );
+  mLength->setValue( 100 );
+  lay->addWidget( mLength );
+  lay->addWidget( mTypeOfLength );
 
-  formLayout->addRow(i18n("Width:"),lay);
-  setLayout(formLayout);
+  formLayout->addRow( i18n( "Width:" ), lay );
+  setLayout( formLayout );
 }
 
 InsertTableWidget::~InsertTableWidget()
@@ -75,23 +75,23 @@ InsertTableWidget::~InsertTableWidget()
 
 void InsertTableWidget::slotTypeOfLengthChanged(int index)
 {
-    switch(index) {
+    switch ( index ) {
     case 0:
-        mLength->setMaximum(100);
-        mLength->setValue(qMin(mLength->value(),100));
+        mLength->setMaximum( 100 );
+        mLength->setValue( qMin( mLength->value(), 100 ) );
         break;
     case 1:
-        mLength->setMaximum(9999);
+        mLength->setMaximum( 9999 );
         break;
     default:
-        kDebug()<<" index not defined "<<index;
+        kDebug() << " index not defined " << index;
         break;
     }
 }
 
 QTextLength::Type InsertTableWidget::typeOfLength() const
 {
-  return (QTextLength::Type)mTypeOfLength->itemData(mTypeOfLength->currentIndex()).toInt();
+  return (QTextLength::Type)mTypeOfLength->itemData( mTypeOfLength->currentIndex() ).toInt();
 }
 
 int InsertTableWidget::length() const
@@ -101,17 +101,17 @@ int InsertTableWidget::length() const
 
 void InsertTableWidget::setColumns(int col)
 {
-  mColumns->setValue(col);
+  mColumns->setValue( col );
 }
 
 void InsertTableWidget::setRows(int rows)
 {
-  mRows->setValue(rows);
+  mRows->setValue( rows );
 }
 
 void InsertTableWidget::setBorder(int border)
 {
-  mBorder->setValue(border);
+  mBorder->setValue( border );
 }
 
 
@@ -135,12 +135,12 @@ class InsertTableDialog::InsertTableDialogPrivate
 {
 public:
   InsertTableDialogPrivate(InsertTableDialog *qq)
-    :q(qq)
+    :q( qq )
   {
-    q->setCaption( i18n("Insert Table") );
+    q->setCaption( i18n( "Insert Table" ) );
     q->setButtons( Ok|Cancel );
-    q->setButtonText(KDialog::Ok,i18n("Insert"));
-    insertTableWidget = new InsertTableWidget(q);
+    q->setButtonText( KDialog::Ok, i18n( "Insert" ) );
+    insertTableWidget = new InsertTableWidget( q );
     q->setMainWidget( insertTableWidget );
   }
   InsertTableWidget *insertTableWidget;
@@ -148,7 +148,7 @@ public:
 };
 
 InsertTableDialog::InsertTableDialog(QWidget *parent)
-  : KDialog(parent), d(new InsertTableDialogPrivate(this))
+  : KDialog( parent ), d( new InsertTableDialogPrivate( this ) )
 {
 }
 

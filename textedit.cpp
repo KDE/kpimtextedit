@@ -248,8 +248,8 @@ void TextEdit::keyPressEvent ( QKeyEvent * e )
       bool isQuotedLine = false;
       int bot = 0; // bot = begin of text after quote indicators
       while ( bot < lineText.length() ) {
-        if( ( lineText[bot] == QChar::fromAscii( '>' ) ) ||
-            ( lineText[bot] == QChar::fromAscii( '|' ) ) ) {
+        if ( ( lineText[bot] == QChar::fromAscii( '>' ) ) ||
+             ( lineText[bot] == QChar::fromAscii( '|' ) ) ) {
           isQuotedLine = true;
           ++bot;
         } else if ( lineText[bot].isSpace() ) {
@@ -420,10 +420,10 @@ void TextEdit::createActions( KActionCollection *actionCollection )
   }
 
   if ( d->insertTableSupportEnabled ) {
-    d->actionTable = new TableActionMenu(actionCollection,this);
-    d->actionTable->setIcon(KIcon(QLatin1String("table")));
-    d->actionTable->setText(i18n("Table"));
-    d->actionTable->setDelayed(false);
+    d->actionTable = new TableActionMenu( actionCollection, this );
+    d->actionTable->setIcon( KIcon( QLatin1String( "table" ) ) );
+    d->actionTable->setText( i18n( "Table" ) );
+    d->actionTable->setDelayed( false );
     actionCollection->addAction( QLatin1String( "insert_table" ), d->actionTable );
   }
 
@@ -436,12 +436,12 @@ void TextEdit::createActions( KActionCollection *actionCollection )
 
 void TextEdit::addImage(const KUrl &url, int width, int height)
 {
-  addImageHelper(url, width, height);
+  addImageHelper( url, width, height );
 }
 
 void TextEdit::addImage( const KUrl &url)
 {
-  addImageHelper(url);
+  addImageHelper( url );
 }
 
 void TextEdit::addImageHelper(const KUrl &url, int width, int height)
@@ -473,7 +473,7 @@ void TextEdit::loadImage ( const QImage &image, const QString &matchName,
         QTextImageFormat imageFormat = fragment.charFormat().toImageFormat();
         if ( imageFormat.isValid() && imageFormat.name() == matchName ) {
           int pos = fragment.position();
-          if ( !cursorPositionsToSkip.contains( pos )  ) {
+          if ( !cursorPositionsToSkip.contains( pos ) ) {
             QTextCursor cursor( document() );
             cursor.setPosition( pos );
             cursor.setPosition( pos + 1, QTextCursor::KeepAnchor );
@@ -521,11 +521,11 @@ void TextEditPrivate::addImageHelper( const QString &imageName, const QImage &im
     document->addResource( QTextDocument::ImageResource, QUrl( imageNameToAdd ), image );
     mImageNames << imageNameToAdd;
   }
-  if(width != -1 && height != -1) {
+  if ( width != -1 && height != -1 ) {
       QTextImageFormat format;
-      format.setName(imageNameToAdd);
-      format.setWidth(width);
-      format.setHeight(height);
+      format.setName( imageNameToAdd );
+      format.setWidth( width );
+      format.setHeight( height );
       q->textCursor().insertImage( format );
   } else {
       q->textCursor().insertImage( imageNameToAdd );
@@ -587,8 +587,8 @@ QList<QTextImageFormat> TextEditPrivate::embeddedImageFormats() const
         QTextImageFormat imageFormat = fragment.charFormat().toImageFormat();
         if ( imageFormat.isValid() ) {
           //TODO: Replace with a way to see if an image is an embedded image or a remote
-          QUrl url(imageFormat.name());
-          if( !url.isValid() || !url.scheme().startsWith( QLatin1String( "http" ) ) ) {
+          QUrl url( imageFormat.name() );
+          if ( !url.isValid() || !url.scheme().startsWith( QLatin1String( "http" ) ) ) {
             retList.append( imageFormat );
           }
         }
@@ -607,11 +607,11 @@ void TextEditPrivate::_k_slotAddEmoticon( const QString& text)
 
 void TextEditPrivate::_k_slotInsertHtml()
 {
-  if(q->textMode() == KRichTextEdit::Rich ) {
-    InsertHtmlDialog *dialog = new InsertHtmlDialog(q);
-    if(dialog->exec()) {
+  if ( q->textMode() == KRichTextEdit::Rich ) {
+    InsertHtmlDialog *dialog = new InsertHtmlDialog( q );
+    if ( dialog->exec() ) {
       const QString str = dialog->html();
-      if(!str.isEmpty()) {
+      if ( !str.isEmpty() ) {
         QTextCursor cursor = q->textCursor();
         cursor.insertHtml( str );
       }
@@ -620,15 +620,14 @@ void TextEditPrivate::_k_slotInsertHtml()
   }
 }
 
-
 void TextEditPrivate::_k_slotAddImage()
 {
-  QPointer<InsertImageDialog> dlg = new InsertImageDialog(q);
+  QPointer<InsertImageDialog> dlg = new InsertImageDialog( q );
   if ( dlg->exec() == KDialog::Accepted && dlg ) {
     const KUrl url = dlg->imageUrl();
     int imageWidth = -1;
     int imageHeight = -1;
-    if(!dlg->keepOriginalSize()) {
+    if ( !dlg->keepOriginalSize() ) {
         imageWidth = dlg->imageWidth();
         imageHeight = dlg->imageHeight();
     }

@@ -24,7 +24,6 @@
 #ifndef KABSTRACTMARKUPBUILDER_H
 #define KABSTRACTMARKUPBUILDER_H
 
-
 #include <QString>
 #include <QBrush>
 #include <QTextList>
@@ -94,7 +93,7 @@ public:
 
     /** Begin a decorarated foreground element in the markup (A text color) */
     virtual void beginForeground(const QBrush &brush) {
-        Q_UNUSED(brush);
+        Q_UNUSED( brush );
     }
 
     /** Close the decorarated foreground element in the markup */
@@ -102,7 +101,7 @@ public:
 
     /** Begin a decorarated background element in the markup (A text background color) */
     virtual void beginBackground(const QBrush &brush) {
-        Q_UNUSED(brush);
+        Q_UNUSED( brush );
     }
 
     /** Close the decorarated background element in the markup */
@@ -113,8 +112,8 @@ public:
     @param name The name of the anchor.
     */
     virtual void beginAnchor(const QString &href = QString(), const QString &name = QString()) {
-        Q_UNUSED(href);
-        Q_UNUSED(name);
+        Q_UNUSED( href );
+        Q_UNUSED( name );
     }
 
     /** Close the anchor element */
@@ -124,7 +123,7 @@ public:
     @param family The name of the font family to begin.
     */
     virtual void beginFontFamily(const QString &family) {
-        Q_UNUSED(family);
+        Q_UNUSED( family );
     }
     /** End font family element */
     virtual void endFontFamily() { }
@@ -133,7 +132,7 @@ public:
     @param int The point size to begin.
     */
     virtual void beginFontPointSize(int size) {
-        Q_UNUSED(size);
+        Q_UNUSED( size );
     }
     /** End font point size element */
     virtual void endFontPointSize() { }
@@ -146,13 +145,12 @@ public:
     @param right The right margin of the new paragraph.
     */
     virtual void beginParagraph(Qt::Alignment a = Qt::AlignLeft, qreal top = 0.0, qreal bottom = 0.0, qreal left = 0.0, qreal right = 0.0) {
-        Q_UNUSED(a);
-        Q_UNUSED(top);
-        Q_UNUSED(bottom);
-        Q_UNUSED(left);
-        Q_UNUSED(right);
+        Q_UNUSED( a );
+        Q_UNUSED( top );
+        Q_UNUSED( bottom );
+        Q_UNUSED( left );
+        Q_UNUSED( right );
     }
-
 
     /** Close the paragraph in the markup. */
     virtual void endParagraph() { }
@@ -163,7 +161,7 @@ public:
     @param width The width of the rule. Default is full width.
     */
     virtual void insertHorizontalRule(int width = -1) {
-        Q_UNUSED(width);
+        Q_UNUSED( width );
     }
 
     /**
@@ -173,9 +171,9 @@ public:
     @param height The height of the image.
     */
     virtual void insertImage(const QString &url, qreal width, qreal height) {
-        Q_UNUSED(url);
-        Q_UNUSED(width);
-        Q_UNUSED(height);
+        Q_UNUSED( url );
+        Q_UNUSED( width );
+        Q_UNUSED( height );
     }
 
     /**
@@ -184,7 +182,7 @@ public:
     @param style The style of list to create.
     */
     virtual void beginList(QTextListFormat::Style style) {
-        Q_UNUSED(style);
+        Q_UNUSED( style );
     }
 
     /**
@@ -218,9 +216,9 @@ public:
       @param width The width of the table. May be either an integer, or a percentage value.
     */
     virtual void beginTable(qreal cellpadding, qreal cellspacing, const QString &width) {
-        Q_UNUSED(cellpadding);
-        Q_UNUSED(cellspacing);
-        Q_UNUSED(width);
+        Q_UNUSED( cellpadding );
+        Q_UNUSED( cellspacing );
+        Q_UNUSED( width );
     }
 
     /**
@@ -235,9 +233,9 @@ public:
     @param rowSpan The row span of the cell.
     */
     virtual void beginTableHeaderCell(const QString &width, int colSpan, int rowSpan) {
-        Q_UNUSED(width);
-        Q_UNUSED(colSpan);
-        Q_UNUSED(rowSpan);
+        Q_UNUSED( width );
+        Q_UNUSED( colSpan );
+        Q_UNUSED( rowSpan );
     }
 
     /**
@@ -247,9 +245,9 @@ public:
     @param rowSpan The row span of the cell.
     */
     virtual void beginTableCell(const QString &width, int colSpan, int rowSpan) {
-        Q_UNUSED(width);
-        Q_UNUSED(colSpan);
-        Q_UNUSED(rowSpan);
+        Q_UNUSED( width );
+        Q_UNUSED( colSpan );
+        Q_UNUSED( rowSpan );
     }
 
     /** End a table element */
@@ -269,7 +267,7 @@ public:
     @param level An integer between 1 and 6
     */
     virtual void beginHeader(int level) {
-        Q_UNUSED(level);
+        Q_UNUSED( level );
     }
 
     /**
@@ -277,7 +275,7 @@ public:
     @param level An integer between 1 and 6
     */
     virtual void endHeader(int level) {
-        Q_UNUSED(level);
+        Q_UNUSED( level );
     }
 
 
@@ -288,8 +286,8 @@ public:
     @param args Arguments for the element.
     */
     virtual void beginExtraElement(int type, QVariantList args) {
-        Q_UNUSED(type);
-        Q_UNUSED(args);
+        Q_UNUSED( type );
+        Q_UNUSED( args );
     }
 
     /** End extra tag.
@@ -297,7 +295,7 @@ public:
     @param type The type of the tag to end.
     */
     virtual void endExtraElement(int type) {
-        Q_UNUSED(type);
+        Q_UNUSED( type );
     }
 
     /**

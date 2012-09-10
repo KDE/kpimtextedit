@@ -197,7 +197,7 @@ public:
 
 private:
     KTextHTMLBuilderPrivate *d_ptr;
-    Q_DECLARE_PRIVATE(KTextHTMLBuilder)
+    Q_DECLARE_PRIVATE( KTextHTMLBuilder )
 
 };
 

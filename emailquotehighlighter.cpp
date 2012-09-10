@@ -87,8 +87,9 @@ QString EMailQuoteHighlighter::highlightParagraph( const QString &text,
                replace( QLatin1Char( '|' ), QLatin1Char( '>' ) ).
                replace( QLatin1String( "&gt;" ), QLatin1String( ">" ) );
 
-  while ( simplified.startsWith( QLatin1String( ">>>>" ) ) )
+  while ( simplified.startsWith( QLatin1String( ">>>>" ) ) ) {
     simplified = simplified.mid( 3 );
+  }
 
   QString result( QLatin1String( "<font color=\"%1\">%2</font>" ) );
   if ( simplified.startsWith( QLatin1String( ">>>" ) ) ) {
