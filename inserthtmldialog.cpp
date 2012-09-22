@@ -52,6 +52,7 @@ public:
     lay->addWidget( label );
     q->connect( editor, SIGNAL(textChanged()),q,SLOT(_k_slotTextChanged()) );
     q->enableButtonOk( false );
+    q->resize(640,480);
   }
 
   void _k_slotTextChanged();
