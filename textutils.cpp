@@ -22,9 +22,9 @@
 
 #include "textutils.h"
 
-#include <QtGui/QTextBlock>
-#include <QtGui/QTextCharFormat>
-#include <QtGui/QTextDocument>
+#include <QTextBlock>
+#include <QTextCharFormat>
+#include <QTextDocument>
 #include <KDE/KDebug>
 
 using namespace KPIMTextEdit;

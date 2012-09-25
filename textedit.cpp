@@ -44,8 +44,8 @@
 #include <QtCore/QMimeData>
 #include <QtCore/QFileInfo>
 #include <QtCore/QPointer>
-#include <QtGui/QKeyEvent>
-#include <QtGui/QTextLayout>
+#include <QKeyEvent>
+#include <QTextLayout>
 
 #include "textutils.h"
 #include <QPlainTextEdit>
