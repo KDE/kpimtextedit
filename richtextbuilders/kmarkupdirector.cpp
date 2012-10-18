@@ -248,7 +248,7 @@ void KMarkupDirector::processBlockContents(const QTextBlock &block)
 
     if ( blockFormat.hasProperty( QTextFormat::BlockTrailingHorizontalRulerWidth ) ) {
         d->builder->insertHorizontalRule();
-        return;
+        //return;
     }
 
     QTextBlock::iterator it;
