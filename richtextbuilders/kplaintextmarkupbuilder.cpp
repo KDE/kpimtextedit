@@ -100,6 +100,11 @@ KPlainTextMarkupBuilder::KPlainTextMarkupBuilder() : d_ptr( new KPlainTextMarkup
     d->m_urls = QStringList();
 }
 
+KPlainTextMarkupBuilder::~KPlainTextMarkupBuilder()
+{
+    delete d_ptr;
+}
+
 void KPlainTextMarkupBuilder::beginStrong()
 {
     Q_D( KPlainTextMarkupBuilder );

@@ -91,6 +91,7 @@ class KPlainTextMarkupBuilder : public KAbstractMarkupBuilder
 public:
     /** Construct a new KPlainTextMarkupBuilder. */
     KPlainTextMarkupBuilder();
+    virtual ~KPlainTextMarkupBuilder();
 
     virtual void beginStrong();
     virtual void endStrong();
