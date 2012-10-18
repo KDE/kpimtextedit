@@ -248,6 +248,7 @@ void KPlainTextMarkupBuilder::endListItem()
 {
     Q_D( KPlainTextMarkupBuilder );
     d->currentListItemNumbers.last() = d->currentListItemNumbers.last() + 1;
+    d->m_text.append( "\n" );
 }
 
 
