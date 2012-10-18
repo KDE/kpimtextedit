@@ -213,7 +213,7 @@ void KPlainTextMarkupBuilder::endList()
 void KPlainTextMarkupBuilder::beginListItem()
 {
     Q_D( KPlainTextMarkupBuilder );
-    for ( int i = 0; i < d->currentListItemNumbers.size(); i++ ) {
+    for ( int i = 0,count = d->currentListItemNumbers.size(); i < count; i++ ) {
         d->m_text.append( "    " );
     }
 
@@ -231,14 +231,21 @@ void KPlainTextMarkupBuilder::beginListItem()
         d->m_text.append( " -  " );
         break;
     case QTextListFormat::ListDecimal:
-        d->m_text.append( QString( " %1. " ).arg( itemNumber + 1 ) );
+        d->m_text.append( QString::fromLatin1( " %1. " ).arg( itemNumber + 1 ) );
         break;
     case QTextListFormat::ListLowerAlpha:
-        d->m_text.append( QString( " %1. " ).arg( d->getLetterString( itemNumber ) ) );
+        d->m_text.append( QString::fromLatin1( " %1. " ).arg( d->getLetterString( itemNumber ) ) );
         break;
     case QTextListFormat::ListUpperAlpha:
-        d->m_text.append( QString( " %1. " ).arg( d->getLetterString( itemNumber ).toUpper() ) );
+        d->m_text.append( QString::fromLatin1( " %1. " ).arg( d->getLetterString( itemNumber ).toUpper() ) );
         break;
+    case QTextListFormat::ListLowerRoman:
+        //d->m_text.append( QString( " %1. " ).arg( d->getLetterString( itemNumber ) ) );
+        break;
+    case QTextListFormat::ListUpperRoman:
+        //d->m_text.append( QString( " %1. " ).arg( d->getLetterString( itemNumber ).toUpper() ) );
+        break;
+	
     default:
         break;
     }
