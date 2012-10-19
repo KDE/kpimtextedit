@@ -15,12 +15,6 @@ set(kpimtextedit_lib_srcs
   tableactionmenu.cpp
   tableformatdialog.cpp
   insertimagedialog.cpp
-  richtextbuilders/bbcodebuilder.cpp
-  richtextbuilders/kmarkupdirector.cpp
-  richtextbuilders/kmarkupdirector_p.cpp
-  richtextbuilders/kplaintextmarkupbuilder.cpp
-  richtextbuilders/ktexthtmlbuilder.cpp
-  richtextbuilders/mediawikimarkupbuilder.cpp
 )
 
 kde4_add_library(kpimtextedit ${LIBRARY_TYPE} ${kpimtextedit_lib_srcs})
@@ -33,8 +27,6 @@ target_link_libraries(kpimtextedit
 )
 
 add_subdirectory(tests)
-add_subdirectory(richtextbuilders/tests)
-add_subdirectory(richtextbuilders/testapp)
 
 set_target_properties(kpimtextedit PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
 
@@ -44,11 +36,6 @@ install(FILES
   textedit.h
   textutils.h
   emailquotehighlighter.h
-  richtextbuilders/bbcodebuilder.h
-  richtextbuilders/kmarkupdirector.h
-  richtextbuilders/kplaintextmarkupbuilder.h
-  richtextbuilders/ktexthtmlbuilder.h
-  richtextbuilders/mediawikimarkupbuilder.h
   DESTINATION ${INCLUDE_INSTALL_DIR}/kpimtextedit COMPONENT Devel
 )
 
