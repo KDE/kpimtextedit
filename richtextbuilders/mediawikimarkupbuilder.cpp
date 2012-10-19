@@ -62,11 +62,11 @@ void MediaWikiMarkupBuilder::endStrikeout()
 
 void MediaWikiMarkupBuilder::endParagraph()
 {
-    m_text.append( QLatin1String("\n") );
+    m_text.append( QLatin1Char('\n') );
 }
 void MediaWikiMarkupBuilder::addNewline()
 {
-    m_text.append( QLatin1String("\n") );
+    m_text.append( QLatin1Char('\n') );
 }
 
 void MediaWikiMarkupBuilder::beginAnchor(const QString &href, const QString &name)
@@ -141,7 +141,7 @@ void MediaWikiMarkupBuilder::beginList(QTextListFormat::Style type)
     case QTextListFormat::ListDecimal:
     case QTextListFormat::ListLowerAlpha:
     case QTextListFormat::ListUpperAlpha:
-        m_text.append( QLatin1String("\n") );
+        m_text.append( QLatin1Char('\n') );
         break;
     default:
         break;
@@ -150,7 +150,7 @@ void MediaWikiMarkupBuilder::beginList(QTextListFormat::Style type)
 
 void MediaWikiMarkupBuilder::endList()
 {
-    m_text.append( QLatin1String("\n") );
+    m_text.append( QLatin1Char('\n') );
     currentListItemStyles.removeLast();
 }
 
@@ -176,7 +176,7 @@ void MediaWikiMarkupBuilder::beginListItem()
 
 void MediaWikiMarkupBuilder::endListItem()
 {
-    m_text.append( QLatin1String("\n") );
+    m_text.append( QLatin1Char('\n') );
 }
 
 void MediaWikiMarkupBuilder::appendLiteralText(const QString &text)
