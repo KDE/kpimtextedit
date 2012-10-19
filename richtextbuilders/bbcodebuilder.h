@@ -38,6 +38,7 @@ public:
     Creates a new BBCodeBuilder.
     */
     BBCodeBuilder();
+    virtual ~BBCodeBuilder();
 
     virtual void beginStrong();
     virtual void endStrong();

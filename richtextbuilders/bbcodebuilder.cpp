@@ -33,6 +33,10 @@ BBCodeBuilder::BBCodeBuilder()
     currentAlignment = Qt::AlignLeft; //Default value
 }
 
+BBCodeBuilder::~BBCodeBuilder()
+{
+}
+
 void BBCodeBuilder::beginStrong()
 {
     m_text.append( QLatin1String("[B]") );

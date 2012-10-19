@@ -34,7 +34,7 @@ target_link_libraries(kpimtextedit
 
 add_subdirectory(tests)
 add_subdirectory(richtextbuilders/tests)
-#add_subdirectory(richtextbuilders/testapp)
+add_subdirectory(richtextbuilders/testapp)
 
 set_target_properties(kpimtextedit PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
 
