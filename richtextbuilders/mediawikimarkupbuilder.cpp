@@ -165,6 +165,8 @@ void MediaWikiMarkupBuilder::beginListItem()
     case QTextListFormat::ListDecimal:
     case QTextListFormat::ListLowerAlpha:
     case QTextListFormat::ListUpperAlpha:
+    case QTextListFormat::ListLowerRoman:
+    case QTextListFormat::ListUpperRoman:
         m_text.append( QLatin1String("# ") );
         break;
     default:
