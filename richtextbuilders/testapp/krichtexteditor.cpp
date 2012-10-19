@@ -1,7 +1,7 @@
 /**
  * KDE Rich Text Editor
  *
- * Copyright 2008  Stephen Kelly <steveire@gmail.com>
+ * Copyright 2008  Stephen Kelly <steveire@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -10,13 +10,13 @@
  *
  * This library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
- * 02110-1301  USA
+ * 02110-1301  USA
  */
 
 #include "krichtexteditor.h"
@@ -48,6 +48,8 @@
 #include <klocale.h>
 #include <kdebug.h>
 
+using namespace KPIMTextEdit;
+
 KRichTextEditor::KRichTextEditor() : KXmlGuiWindow()
 {
     setupActions();
@@ -74,37 +76,37 @@ KRichTextEditor::KRichTextEditor() : KXmlGuiWindow()
     connect( textArea, SIGNAL(cursorPositionChanged()),
              SLOT(cursorPositionChanged()) );
 
-    QDockWidget *dockText = new QDockWidget( QString( "HTML" ), this );
-    dockText->setObjectName( "HTML" );
+    QDockWidget *dockText = new QDockWidget( QString::fromLatin1( "HTML" ), this );
+    dockText->setObjectName( QString::fromLatin1("HTML") );
     dockText->setAllowedAreas( Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea );
     kte = new KTextEdit( dockText );
     dockText->setWidget( kte );
     addDockWidget( Qt::RightDockWidgetArea, dockText );
 
-    QDockWidget *dockHtml = new QDockWidget( QString( "Re-Rendered" ), this );
-    dockHtml->setObjectName( "Re-Rendered" );
+    QDockWidget *dockHtml = new QDockWidget( QString::fromLatin1( "Re-Rendered" ), this );
+    dockHtml->setObjectName( QString::fromLatin1("Re-Rendered") );
     dockHtml->setAllowedAreas( Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea );
     krte = new KTextEdit( dockHtml );
-    krte->document()->setDefaultStyleSheet( "p {margin-top:0px;margin-bottom:0px;}ul{margin-top:12px;margin-bottom:12px;} " );  // #######################
+    krte->document()->setDefaultStyleSheet( QString::fromLatin1("p {margin-top:0px;margin-bottom:0px;}ul{margin-top:12px;margin-bottom:12px;} ") );  // #######################
     dockHtml->setWidget( krte );
     addDockWidget( Qt::RightDockWidgetArea, dockHtml );
 
-    QDockWidget *dockPlain = new QDockWidget( QString( "Plain" ), this );
-    dockPlain->setObjectName( "Plain" );
+    QDockWidget *dockPlain = new QDockWidget( QString::fromLatin1( "Plain" ), this );
+    dockPlain->setObjectName( QString::fromLatin1("Plain") );
     dockPlain->setAllowedAreas( Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea );
     kpte = new KTextEdit( dockPlain );
     dockPlain->setWidget( kpte );
     addDockWidget( Qt::RightDockWidgetArea, dockPlain );
 
-    QDockWidget *dockBB = new QDockWidget( QString( "BBCode" ), this );
-    dockBB->setObjectName( "BBCode" );
+    QDockWidget *dockBB = new QDockWidget( QString::fromLatin1( "BBCode" ), this );
+    dockBB->setObjectName( QString::fromLatin1("BBCode") );
     dockBB->setAllowedAreas( Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea );
     kbbte = new KTextEdit( dockBB );
     dockBB->setWidget( kbbte );
     addDockWidget( Qt::RightDockWidgetArea, dockBB );
 
-    QDockWidget *dockMW = new QDockWidget( QString( "MediaWiki" ), this );
-    dockMW->setObjectName( "MediaWiki" );
+    QDockWidget *dockMW = new QDockWidget( QString::fromLatin1( "MediaWiki" ), this );
+    dockMW->setObjectName( QString::fromLatin1("MediaWiki") );
     dockMW->setAllowedAreas( Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea );
     kmwte = new KTextEdit( dockMW );
     dockMW->setWidget( kmwte );
@@ -175,7 +177,7 @@ void KRichTextEditor::cursorPositionChanged()
     if ( textArea->textCursor().charFormat().isAnchor() ) {
         QString text = textArea->currentLinkText();
         QString url = textArea->currentLinkUrl();
-        statusBar()->changeItem( text + " -> " + url, 0 );
+        statusBar()->changeItem( text + QString::fromLatin1(" -> ") + url, 0 );
     } else {
         statusBar()->changeItem( QString(), 0 );
     }

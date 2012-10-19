@@ -24,6 +24,9 @@
 #include "bbcodebuilder.h"
 #include <kdebug.h>
 
+
+using namespace KPIMTextEdit;
+
 BBCodeBuilder::BBCodeBuilder()
 {
 

@@ -25,10 +25,12 @@
 #include "kabstractmarkupbuilder.h"
 #include <kdebug.h>
 
+#include "kpimtextedit_export.h"
+namespace KPIMTextEdit {
 /**
 Creates BBCode from a QTextDocument
 */
-class BBCodeBuilder : public KAbstractMarkupBuilder
+class KPIMTEXTEDIT_EXPORT BBCodeBuilder : public KAbstractMarkupBuilder
 {
 public:
 
@@ -105,6 +107,6 @@ private:
     Qt::Alignment currentAlignment;
 
 };
-
+}
 #endif
 
