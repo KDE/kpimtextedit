@@ -366,10 +366,16 @@ void TextEdit::setHighlighterColors( EMailQuoteHighlighter *highlighter )
   Q_UNUSED( highlighter );
 }
 
+
 QString TextEdit::toWrappedPlainText() const
 {
+    QTextDocument *doc = document();
+    return toWrappedPlainText(doc);
+}
+
+QString TextEdit::toWrappedPlainText(QTextDocument* doc) const
+{
   QString temp;
-  QTextDocument *doc = document();
   QTextBlock block = doc->begin();
   while ( block.isValid() ) {
     QTextLayout *layout = block.layout();
@@ -390,11 +396,16 @@ QString TextEdit::toWrappedPlainText() const
   return temp;
 }
 
-QString TextEdit::toCleanPlainText() const
+QString TextEdit::toCleanPlainText(const QString& plainText) const
 {
-  QString temp = toPlainText();
+  QString temp = plainText;
   d->fixupTextEditString( temp );
   return temp;
+}
+
+QString TextEdit::toCleanPlainText() const
+{
+  return toCleanPlainText(toPlainText());
 }
 
 void TextEdit::createActions( KActionCollection *actionCollection )
