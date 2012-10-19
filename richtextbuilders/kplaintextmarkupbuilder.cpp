@@ -20,7 +20,6 @@
 */
 
 #include "kplaintextmarkupbuilder.h"
-
 #include <KLocale>
 
 using namespace KPIMTextEdit;
@@ -287,10 +286,10 @@ void KPlainTextMarkupBuilder::beginListItem()
         d->m_text.append( QString::fromLatin1( " %1. " ).arg( d->getLetterString( itemNumber ).toUpper() ) );
         break;
     case QTextListFormat::ListLowerRoman:
-        d->m_text.append( QString::fromLatin1( " %1. " ).arg( d->getRomanString( itemNumber ) ) );
+        d->m_text.append( QString::fromLatin1( " %1. " ).arg( d->getRomanString( itemNumber +1 ) ) );
         break;
     case QTextListFormat::ListUpperRoman:
-        d->m_text.append( QString::fromLatin1( " %1. " ).arg( d->getRomanString( itemNumber ).toUpper() ) );
+        d->m_text.append( QString::fromLatin1( " %1. " ).arg( d->getRomanString( itemNumber +1 ).toUpper() ) );
         break;
 	
     default:
