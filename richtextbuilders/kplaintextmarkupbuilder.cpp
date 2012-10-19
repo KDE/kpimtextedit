@@ -41,6 +41,8 @@ public:
     */
     QString getLetterString(int itemNumber);
 
+    QString getRomanString(int itemNumber);
+
     /**
     Gets a block of references in the body of the text.
     This is an ordered list of links and images in the text.
@@ -79,6 +81,50 @@ QString KPlainTextMarkupBuilderPrivate::getLetterString(int itemNumber)
         }
     }
     return letterString;
+}
+
+QString KPlainTextMarkupBuilderPrivate::getRomanString(int item)
+{
+    QString result;
+    //Code based to gui/text/qtextlist.cpp
+    if (item < 5000) {
+        QByteArray romanNumeral;
+
+        // works for up to 4999 items
+        static const char romanSymbolsLower[] = "iiivixxxlxcccdcmmmm";
+        QByteArray romanSymbols; // wrap to have "mid"
+        romanSymbols = QByteArray::fromRawData(romanSymbolsLower, sizeof(romanSymbolsLower));
+        int c[] = { 1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000 };
+        int n = item;
+        for (int i = 12; i >= 0; n %= c[i], i--) {
+            int q = n / c[i];
+            if (q > 0) {
+                int startDigit = i + (i+3)/4;
+                int numDigits;
+                if (i % 4) {
+                    // c[i] == 4|5|9|40|50|90|400|500|900
+                    if ((i-2) % 4) {
+                        // c[i] == 4|9|40|90|400|900 => with subtraction (IV, IX, XL, XC, ...)
+                        numDigits = 2;
+                    }
+                    else {
+                        // c[i] == 5|50|500 (V, L, D)
+                        numDigits = 1;
+                    }
+                }
+                else {
+                    // c[i] == 1|10|100|1000 (I, II, III, X, XX, ...)
+                    numDigits = q;
+                }
+
+                romanNumeral.append(romanSymbols.mid(startDigit, numDigits));
+            }
+        }
+        result = QString::fromLatin1(romanNumeral);
+    } else {
+        result = QLatin1String("?");
+    }
+    return result;
 }
 
 QString KPlainTextMarkupBuilderPrivate::getReferences()
@@ -241,10 +287,10 @@ void KPlainTextMarkupBuilder::beginListItem()
         d->m_text.append( QString::fromLatin1( " %1. " ).arg( d->getLetterString( itemNumber ).toUpper() ) );
         break;
     case QTextListFormat::ListLowerRoman:
-        //d->m_text.append( QString( " %1. " ).arg( d->getLetterString( itemNumber ) ) );
+        d->m_text.append( QString::fromLatin1( " %1. " ).arg( d->getRomanString( itemNumber ) ) );
         break;
     case QTextListFormat::ListUpperRoman:
-        //d->m_text.append( QString( " %1. " ).arg( d->getLetterString( itemNumber ).toUpper() ) );
+        d->m_text.append( QString::fromLatin1( " %1. " ).arg( d->getRomanString( itemNumber ).toUpper() ) );
         break;
 	
     default:
