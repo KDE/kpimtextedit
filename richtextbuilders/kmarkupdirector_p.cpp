@@ -20,6 +20,7 @@
 */
 
 #include "kmarkupdirector_p.h"
+using namespace KPIMTextEdit;
 
 void KMarkupDirector::Private::processClosingElements(QTextBlock::iterator it)
 {

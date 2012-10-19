@@ -24,7 +24,9 @@
 #include <QTextDocument>
 #include <QList>
 
-class KTextHTMLBuilderPrivate
+using namespace KPIMTextEdit;
+
+class KPIMTextEdit::KTextHTMLBuilderPrivate
 {
 public:
     KTextHTMLBuilderPrivate(KTextHTMLBuilder *b) : q_ptr( b ) {
@@ -38,7 +40,7 @@ public:
     Q_DECLARE_PUBLIC( KTextHTMLBuilder )
 };
 
-KTextHTMLBuilder::KTextHTMLBuilder() : d_ptr( new KTextHTMLBuilderPrivate( this ) )
+KTextHTMLBuilder::KTextHTMLBuilder() : d_ptr( new KPIMTextEdit::KTextHTMLBuilderPrivate( this ) )
 {
 }
 
@@ -50,73 +52,73 @@ KTextHTMLBuilder::~KTextHTMLBuilder()
 void KTextHTMLBuilder::beginStrong()
 {
     Q_D( KTextHTMLBuilder );;
-    d->m_text.append( "<strong>" );
+    d->m_text.append( QLatin1String("<strong>") );
 }
 
 void KTextHTMLBuilder::endStrong()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</strong>" );
+    d->m_text.append( QLatin1String("</strong>") );
 }
 
 void KTextHTMLBuilder::beginEmph()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "<em>" );
+    d->m_text.append( QLatin1String("<em>") );
 }
 
 void KTextHTMLBuilder::endEmph()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</em>" );
+    d->m_text.append( QLatin1String("</em>") );
 }
 
 void KTextHTMLBuilder::beginUnderline()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "<u>" );
+    d->m_text.append( QLatin1String("<u>") );
 }
 
 void KTextHTMLBuilder::endUnderline()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</u>" );
+    d->m_text.append( QLatin1String("</u>") );
 }
 
 void KTextHTMLBuilder::beginStrikeout()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "<s>" );
+    d->m_text.append( QLatin1String("<s>") );
 }
 
 void KTextHTMLBuilder::endStrikeout()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</s>" );
+    d->m_text.append( QLatin1String("</s>") );
 }
 
 void KTextHTMLBuilder::beginForeground(const QBrush &brush)
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( QString( "<span style=\"color:%1;\">" ).arg( brush.color().name() ) );
+    d->m_text.append( QString::fromLatin1( "<span style=\"color:%1;\">" ).arg( brush.color().name() ) );
 }
 
 void KTextHTMLBuilder::endForeground()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</span>" );
+    d->m_text.append( QLatin1String("</span>") );
 }
 
 void KTextHTMLBuilder::beginBackground(const QBrush &brush)
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( QString( "<span style=\"background-color:%1;\">" ).arg( brush.color().name() ) );
+    d->m_text.append( QString::fromLatin1( "<span style=\"background-color:%1;\">" ).arg( brush.color().name() ) );
 }
 
 void KTextHTMLBuilder::endBackground()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</span>" );
+    d->m_text.append( QLatin1String("</span>") );
 }
 
 void KTextHTMLBuilder::beginAnchor(const QString &href, const QString &name)
@@ -124,13 +126,13 @@ void KTextHTMLBuilder::beginAnchor(const QString &href, const QString &name)
     Q_D( KTextHTMLBuilder );
     if ( !href.isEmpty() ) {
         if ( !name.isEmpty() ) {
-            d->m_text.append( QString( "<a href=\"%1\" name=\"%2\">" ).arg( href ).arg( name ) );
+            d->m_text.append( QString::fromLatin1( "<a href=\"%1\" name=\"%2\">" ).arg( href ).arg( name ) );
         } else {
-            d->m_text.append( QString( "<a href=\"%1\">" ).arg( href ) );
+            d->m_text.append( QString::fromLatin1( "<a href=\"%1\">" ).arg( href ) );
         }
     } else {
         if ( !name.isEmpty() ) {
-            d->m_text.append( QString( "<a name=\"%1\">" ).arg( name ) );
+            d->m_text.append( QString::fromLatin1( "<a name=\"%1\">" ).arg( name ) );
         }
     }
 }
@@ -138,31 +140,31 @@ void KTextHTMLBuilder::beginAnchor(const QString &href, const QString &name)
 void KTextHTMLBuilder::endAnchor()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</a>" );
+    d->m_text.append( QLatin1String("</a>") );
 }
 
 void KTextHTMLBuilder::beginFontFamily(const QString &family)
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( QString( "<span style=\"font-family:%1;\">" ).arg( family ) );
+    d->m_text.append( QString::fromLatin1( "<span style=\"font-family:%1;\">" ).arg( family ) );
 }
 
 void KTextHTMLBuilder::endFontFamily()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</span>" );
+    d->m_text.append( QLatin1String("</span>") );
 }
 
 void KTextHTMLBuilder::beginFontPointSize(int size)
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( QString( "<span style=\"font-size:%1pt;\">" ).arg( QString::number( size ) ) );
+    d->m_text.append( QString::fromLatin1( "<span style=\"font-size:%1pt;\">" ).arg( QString::number( size ) ) );
 }
 
 void KTextHTMLBuilder::endFontPointSize()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</span>" );
+    d->m_text.append( QLatin1String("</span>") );
 }
 
 void KTextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin, qreal bottomMargin, qreal leftMargin, qreal rightMargin)
@@ -173,36 +175,36 @@ void KTextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin, qreal b
 //     {
     QString styleString;
     if ( topMargin != 0 ) {
-        styleString.append( QString( "margin-top:%1;" ).arg( topMargin ) );
+        styleString.append( QString::fromLatin1( "margin-top:%1;" ).arg( topMargin ) );
     }
     if ( bottomMargin != 0 ) {
-        styleString.append( QString( "margin-bottom:%1;" ).arg( bottomMargin ) );
+        styleString.append( QString::fromLatin1( "margin-bottom:%1;" ).arg( bottomMargin ) );
     }
     if ( leftMargin != 0 ) {
-        styleString.append( QString( "margin-left:%1;" ).arg( leftMargin ) );
+        styleString.append( QString::fromLatin1( "margin-left:%1;" ).arg( leftMargin ) );
     }
     if ( rightMargin != 0 ) {
-        styleString.append( QString( "margin-right:%1;" ).arg( rightMargin ) );
+        styleString.append( QString::fromLatin1( "margin-right:%1;" ).arg( rightMargin ) );
     }
 
     // Using == doesn't work here.
     // Using bitwise comparison because an alignment can contain a vertical and a horizontal part.
     if ( al & Qt::AlignRight ) {
-        d->m_text.append( "<p align=\"right\" " );
+        d->m_text.append( QLatin1String("<p align=\"right\" ") );
     } else if ( al & Qt::AlignHCenter ) {
-        d->m_text.append( "<p align=\"center\" " );
+        d->m_text.append( QLatin1String("<p align=\"center\" ") );
     } else if ( al & Qt::AlignJustify ) {
-        d->m_text.append( "<p align=\"justify\" " );
+        d->m_text.append( QLatin1String("<p align=\"justify\" ") );
     } else if ( al & Qt::AlignLeft ) {
-        d->m_text.append( "<p" );
+        d->m_text.append( QLatin1String("<p") );
     } else {
-        d->m_text.append( "<p" );
+        d->m_text.append( QLatin1String("<p") );
     }
 
     if ( !styleString.isEmpty() ) {
-        d->m_text.append( " \"" + styleString + "\"" );
+        d->m_text.append( QLatin1String(" \"") + styleString + QLatin1String("\"") );
     }
-    d->m_text.append( ">" );
+    d->m_text.append( QLatin1String(">") );
 //     }
 }
 
@@ -211,22 +213,22 @@ void KTextHTMLBuilder::beginHeader(int level)
     Q_D( KTextHTMLBuilder );
     switch ( level ) {
     case 1:
-        d->m_text.append( "<h1>" );
+        d->m_text.append( QLatin1String("<h1>") );
         break;
     case 2:
-        d->m_text.append( "<h2>" );
+        d->m_text.append( QLatin1String("<h2>") );
         break;
     case 3:
-        d->m_text.append( "<h3>" );
+        d->m_text.append( QLatin1String("<h3>") );
         break;
     case 4:
-        d->m_text.append( "<h4>" );
+        d->m_text.append( QLatin1String("<h4>") );
         break;
     case 5:
-        d->m_text.append( "<h5>" );
+        d->m_text.append( QLatin1String("<h5>") );
         break;
     case 6:
-        d->m_text.append( "<h6>" );
+        d->m_text.append( QLatin1String("<h6>") );
         break;
     default:
         break;
@@ -238,22 +240,22 @@ void KTextHTMLBuilder::endHeader(int level)
     Q_D( KTextHTMLBuilder );
     switch ( level ) {
     case 1:
-        d->m_text.append( "</h1>" );
+        d->m_text.append( QLatin1String("</h1>") );
         break;
     case 2:
-        d->m_text.append( "</h2>" );
+        d->m_text.append( QLatin1String("</h2>" ));
         break;
     case 3:
-        d->m_text.append( "</h3>" );
+        d->m_text.append( QLatin1String("</h3>") );
         break;
     case 4:
-        d->m_text.append( "</h4>" );
+        d->m_text.append( QLatin1String("</h4>") );
         break;
     case 5:
-        d->m_text.append( "</h5>" );
+        d->m_text.append( QLatin1String("</h5>") );
         break;
     case 6:
-        d->m_text.append( "</h6>" );
+        d->m_text.append( QLatin1String("</h6>") );
         break;
     default:
         break;
@@ -263,35 +265,35 @@ void KTextHTMLBuilder::endHeader(int level)
 void KTextHTMLBuilder::endParagraph()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</p>\n" );
+    d->m_text.append( QLatin1String("</p>\n") );
 }
 
 void KTextHTMLBuilder::addNewline()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "<br />\n" );
+    d->m_text.append( QLatin1String("<br />\n") );
 }
 
 void KTextHTMLBuilder::insertHorizontalRule(int width)
 {
     Q_D( KTextHTMLBuilder );
     if ( width != -1 ) {
-        d->m_text.append( QString( "<hr width=\"%1\" />\n" ).arg( width ) );
+        d->m_text.append( QString::fromLatin1( "<hr width=\"%1\" />\n" ).arg( width ) );
     }
-    d->m_text.append( "<hr />\n" );
+    d->m_text.append( QLatin1String("<hr />\n") );
 }
 
 void KTextHTMLBuilder::insertImage(const QString &src, qreal width, qreal height)
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( QString( "<img src=\"%1\" " ).arg( src ) );
+    d->m_text.append( QString::fromLatin1( "<img src=\"%1\" " ).arg( src ) );
     if ( width != 0 ) {
-      d->m_text.append( QString( "width=\"%2\" " ).arg( width ) );
+      d->m_text.append( QString::fromLatin1( "width=\"%2\" " ).arg( width ) );
     }
     if ( height != 0 ) {
-      d->m_text.append( QString( "height=\"%2\" " ).arg( height ) );
+      d->m_text.append( QString::fromLatin1( "height=\"%2\" " ).arg( height ) );
     }
-    d->m_text.append( "/>" );
+    d->m_text.append( QLatin1String("/>") );
 }
 
 void KTextHTMLBuilder::beginList(QTextListFormat::Style type)
@@ -300,22 +302,22 @@ void KTextHTMLBuilder::beginList(QTextListFormat::Style type)
     d->currentListItemStyles.append( type );
     switch ( type ) {
     case QTextListFormat::ListDisc:
-        d->m_text.append( "<ul type=\"disc\">\n" );
+        d->m_text.append( QLatin1String("<ul type=\"disc\">\n") );
         break;
     case QTextListFormat::ListCircle:
-        d->m_text.append( "\n<ul type=\"circle\">\n" );
+        d->m_text.append( QLatin1String("\n<ul type=\"circle\">\n") );
         break;
     case QTextListFormat::ListSquare:
-        d->m_text.append( "\n<ul type=\"square\">\n" );
+        d->m_text.append( QLatin1String("\n<ul type=\"square\">\n") );
         break;
     case QTextListFormat::ListDecimal:
-        d->m_text.append( "\n<ol type=\"1\">\n" );
+        d->m_text.append( QLatin1String("\n<ol type=\"1\">\n") );
         break;
     case QTextListFormat::ListLowerAlpha:
-        d->m_text.append( "\n<ol type=\"a\">\n" );
+        d->m_text.append( QLatin1String("\n<ol type=\"a\">\n") );
         break;
     case QTextListFormat::ListUpperAlpha:
-        d->m_text.append( "\n<ol type=\"A\">\n" );
+        d->m_text.append( QLatin1String("\n<ol type=\"A\">\n") );
         break;
     default:
         break;
@@ -328,12 +330,12 @@ void KTextHTMLBuilder::endList()
     case QTextListFormat::ListDisc:
     case QTextListFormat::ListCircle:
     case QTextListFormat::ListSquare:
-        d->m_text.append( "</ul>\n" );
+        d->m_text.append( QLatin1String("</ul>\n") );
         break;
     case QTextListFormat::ListDecimal:
     case QTextListFormat::ListLowerAlpha:
     case QTextListFormat::ListUpperAlpha:
-        d->m_text.append( "</ol>\n" );
+        d->m_text.append( QLatin1String("</ol>\n") );
         break;
     default:
         break;
@@ -343,43 +345,43 @@ void KTextHTMLBuilder::endList()
 void KTextHTMLBuilder::beginListItem()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "<li>" );
+    d->m_text.append( QLatin1String("<li>") );
 }
 
 void KTextHTMLBuilder::endListItem()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</li>\n" );
+    d->m_text.append( QLatin1String("</li>\n") );
 }
 
 void KTextHTMLBuilder::beginSuperscript()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "<sup>" );
+    d->m_text.append( QLatin1String("<sup>") );
 }
 
 void KTextHTMLBuilder::endSuperscript()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</sup>" );
+    d->m_text.append( QLatin1String("</sup>") );
 }
 
 void KTextHTMLBuilder::beginSubscript()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "<sub>" );
+    d->m_text.append( QLatin1String("<sub>") );
 }
 
 void KTextHTMLBuilder::endSubscript()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</sub>" );
+    d->m_text.append( QLatin1String("</sub>") );
 }
 
 void KTextHTMLBuilder::beginTable(qreal cellpadding, qreal cellspacing, const QString &width)
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( QString( "<table cellpadding=\"%1\" cellspacing=\"%2\" width=\"%3\" border=\"1\">" )
+    d->m_text.append( QString::fromLatin1( "<table cellpadding=\"%1\" cellspacing=\"%2\" width=\"%3\" border=\"1\">" )
                       .arg( cellpadding )
                       .arg( cellspacing )
                       .arg( width ) );
@@ -388,43 +390,43 @@ void KTextHTMLBuilder::beginTable(qreal cellpadding, qreal cellspacing, const QS
 void KTextHTMLBuilder::beginTableRow()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "<tr>" );
+    d->m_text.append( QLatin1String("<tr>") );
 }
 
 void KTextHTMLBuilder::beginTableHeaderCell(const QString &width, int colspan, int rowspan)
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( QString( "<th width=\"%1\" colspan=\"%2\" rowspan=\"%3\">" ).arg( width ).arg( colspan ).arg( rowspan ) );
+    d->m_text.append( QString::fromLatin1( "<th width=\"%1\" colspan=\"%2\" rowspan=\"%3\">" ).arg( width ).arg( colspan ).arg( rowspan ) );
 }
 
 void KTextHTMLBuilder::beginTableCell(const QString &width, int colspan, int rowspan)
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( QString( "<td width=\"%1\" colspan=\"%2\" rowspan=\"%3\">" ).arg( width ).arg( colspan ).arg( rowspan ) );
+    d->m_text.append( QString::fromLatin1( "<td width=\"%1\" colspan=\"%2\" rowspan=\"%3\">" ).arg( width ).arg( colspan ).arg( rowspan ) );
 }
 
 void KTextHTMLBuilder::endTable()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</table>" );
+    d->m_text.append( QLatin1String("</table>") );
 }
 
 void KTextHTMLBuilder::endTableRow()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</tr>" );
+    d->m_text.append( QLatin1String("</tr>") );
 }
 
 void KTextHTMLBuilder::endTableHeaderCell()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</th>" );
+    d->m_text.append( QLatin1String("</th>") );
 }
 
 void KTextHTMLBuilder::endTableCell()
 {
     Q_D( KTextHTMLBuilder );
-    d->m_text.append( "</td>" );
+    d->m_text.append( QLatin1String("</td>") );
 }
 
 

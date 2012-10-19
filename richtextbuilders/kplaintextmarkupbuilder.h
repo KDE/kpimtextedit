@@ -25,6 +25,8 @@
 #define LETTERSINALPHABET 26
 #define DIGITSOFFSET 10
 
+#include "kpimtextedit_export.h"
+
 #include <kdebug.h>
 
 #include "kabstractmarkupbuilder.h"
@@ -86,7 +88,9 @@ becomes:
 @since 4.2
 
 */
-class KPlainTextMarkupBuilder : public KAbstractMarkupBuilder
+
+namespace KPIMTextEdit {
+class KPIMTEXTEDIT_EXPORT KPlainTextMarkupBuilder : public KAbstractMarkupBuilder
 {
 public:
     /** Construct a new KPlainTextMarkupBuilder. */
@@ -141,8 +145,7 @@ public:
 private:
     KPlainTextMarkupBuilderPrivate *d_ptr;
     Q_DECLARE_PRIVATE( KPlainTextMarkupBuilder )
-
-
 };
+}
 
 #endif

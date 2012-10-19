@@ -23,6 +23,8 @@
 
 #include <KLocale>
 
+using namespace KPIMTextEdit;
+
 class KPlainTextMarkupBuilderPrivate
 {
 public:
@@ -66,7 +68,7 @@ QString KPlainTextMarkupBuilderPrivate::getLetterString(int itemNumber)
         // Create the letter string by prepending one char at a time.
         // The itemNumber is converted to a number in the base 36 (number of letters in the
         // alphabet plus 10) after being increased by 10 (to pass out the digits 0 to 9).
-        letterString.prepend( QString( "%1" ).arg( ( itemNumber % LETTERSINALPHABET ) + DIGITSOFFSET,
+        letterString.prepend( QString::fromLatin1( "%1" ).arg( ( itemNumber % LETTERSINALPHABET ) + DIGITSOFFSET,
                                                0, // no padding while building this string.
                                                LETTERSINALPHABET + DIGITSOFFSET ) );
         if ( ( itemNumber >= LETTERSINALPHABET ) ) {
@@ -88,7 +90,7 @@ QString KPlainTextMarkupBuilderPrivate::getReferences()
 
         int index = 1;
         while ( !m_urls.isEmpty() ) {
-            refs.append( QString( "[%1] %2\n" ).arg( index++ ).arg( m_urls.takeFirst() ) );
+            refs.append( QString::fromLatin1( "[%1] %2\n" ).arg( index++ ).arg( m_urls.takeFirst() ) );
         }
     }
     return refs;
@@ -108,42 +110,42 @@ KPlainTextMarkupBuilder::~KPlainTextMarkupBuilder()
 void KPlainTextMarkupBuilder::beginStrong()
 {
     Q_D( KPlainTextMarkupBuilder );
-    d->m_text.append( "*" );
+    d->m_text.append( QLatin1String("*") );
 }
 void KPlainTextMarkupBuilder::endStrong()
 {
     Q_D( KPlainTextMarkupBuilder );
-    d->m_text.append( "*" );
+    d->m_text.append( QLatin1String("*") );
 }
 void KPlainTextMarkupBuilder::beginEmph()
 {
     Q_D( KPlainTextMarkupBuilder );
-    d->m_text.append( "/" );
+    d->m_text.append( QLatin1String("/") );
 }
 void KPlainTextMarkupBuilder::endEmph()
 {
     Q_D( KPlainTextMarkupBuilder );
-    d->m_text.append( "/" );
+    d->m_text.append( QLatin1String("/") );
 }
 void KPlainTextMarkupBuilder::beginUnderline()
 {
     Q_D( KPlainTextMarkupBuilder );
-    d->m_text.append( "_" );
+    d->m_text.append( QLatin1String("_") );
 }
 void KPlainTextMarkupBuilder::endUnderline()
 {
     Q_D( KPlainTextMarkupBuilder );
-    d->m_text.append( "_" );
+    d->m_text.append( QLatin1String("_") );
 }
 void KPlainTextMarkupBuilder::beginStrikeout()
 {
     Q_D( KPlainTextMarkupBuilder );
-    d->m_text.append( "-" );
+    d->m_text.append( QLatin1String("-") );
 }
 void KPlainTextMarkupBuilder::endStrikeout()
 {
     Q_D( KPlainTextMarkupBuilder );
-    d->m_text.append( "-" );
+    d->m_text.append( QLatin1String("-") );
 }
 
 void KPlainTextMarkupBuilder::beginAnchor(const QString &href, const QString &name)
@@ -159,19 +161,19 @@ void KPlainTextMarkupBuilder::beginAnchor(const QString &href, const QString &na
 void KPlainTextMarkupBuilder::endAnchor()
 {
     Q_D( KPlainTextMarkupBuilder );
-    d->m_text.append( QString( "[%1]" ).arg( d->m_urls.indexOf( d->activeLink ) + 1 ) );
+    d->m_text.append( QString::fromLatin1( "[%1]" ).arg( d->m_urls.indexOf( d->activeLink ) + 1 ) );
 }
 
 void KPlainTextMarkupBuilder::endParagraph()
 {
     Q_D( KPlainTextMarkupBuilder );
-    d->m_text.append( "\n" );
+    d->m_text.append( QLatin1Char('\n') );
 }
 
 void KPlainTextMarkupBuilder::addNewline()
 {
     Q_D( KPlainTextMarkupBuilder );
-    d->m_text.append( "\n" );
+    d->m_text.append( QLatin1Char('\n') );
 }
 
 void KPlainTextMarkupBuilder::insertHorizontalRule(int width)
@@ -179,7 +181,7 @@ void KPlainTextMarkupBuilder::insertHorizontalRule(int width)
     Q_UNUSED( width )
     Q_D( KPlainTextMarkupBuilder );
 
-    d->m_text.append( "--------------------\n" );
+    d->m_text.append( QLatin1String("--------------------\n") );
 }
 
 void KPlainTextMarkupBuilder::insertImage(const QString &src, qreal width, qreal height)
@@ -191,7 +193,7 @@ void KPlainTextMarkupBuilder::insertImage(const QString &src, qreal width, qreal
     if ( !d->m_urls.contains( src ) ) {
         d->m_urls.append( src );
     }
-    d->m_text.append( QString( "[%1]" ).arg( d->m_urls.indexOf( src ) + 1 ) );
+    d->m_text.append( QString::fromLatin1( "[%1]" ).arg( d->m_urls.indexOf( src ) + 1 ) );
 }
 
 
@@ -214,21 +216,20 @@ void KPlainTextMarkupBuilder::beginListItem()
 {
     Q_D( KPlainTextMarkupBuilder );
     for ( int i = 0,count = d->currentListItemNumbers.size(); i < count; i++ ) {
-        d->m_text.append( "    " );
+        d->m_text.append( QLatin1String("    ") );
     }
 
     int itemNumber = d->currentListItemNumbers.last();
-    QString letterString;
 
     switch ( d->currentListItemStyles.last() ) {
     case QTextListFormat::ListDisc:
-        d->m_text.append( " *  " );
+        d->m_text.append( QLatin1String(" *  ") );
         break;
     case QTextListFormat::ListCircle:
-        d->m_text.append( " o  " );
+        d->m_text.append( QLatin1String(" o  ") );
         break;
     case QTextListFormat::ListSquare:
-        d->m_text.append( " -  " );
+        d->m_text.append( QLatin1String(" -  ") );
         break;
     case QTextListFormat::ListDecimal:
         d->m_text.append( QString::fromLatin1( " %1. " ).arg( itemNumber + 1 ) );
@@ -255,32 +256,32 @@ void KPlainTextMarkupBuilder::endListItem()
 {
     Q_D( KPlainTextMarkupBuilder );
     d->currentListItemNumbers.last() = d->currentListItemNumbers.last() + 1;
-    d->m_text.append( "\n" );
+    d->m_text.append( QLatin1Char('\n') );
 }
 
 
 void KPlainTextMarkupBuilder::beginSuperscript()
 {
     Q_D( KPlainTextMarkupBuilder );
-    d->m_text.append( "^{" );
+    d->m_text.append( QLatin1String("^{") );
 }
 
 void KPlainTextMarkupBuilder::endSuperscript()
 {
     Q_D( KPlainTextMarkupBuilder );
-    d->m_text.append( "}" );
+    d->m_text.append( QLatin1String("}") );
 }
 
 void KPlainTextMarkupBuilder::beginSubscript()
 {
     Q_D( KPlainTextMarkupBuilder );
-    d->m_text.append( "_{" );
+    d->m_text.append( QLatin1String("_{") );
 }
 
 void KPlainTextMarkupBuilder::endSubscript()
 {
     Q_D( KPlainTextMarkupBuilder );
-    d->m_text.append( "}" );
+    d->m_text.append( QLatin1String("}") );
 }
 
 void KPlainTextMarkupBuilder::appendLiteralText(const QString &text)

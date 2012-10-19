@@ -24,6 +24,8 @@
 
 #include "kabstractmarkupbuilder.h"
 
+#include "kpimtextedit_export.h"
+namespace KPIMTextEdit {
 class KTextHTMLBuilderPrivate;
 
 /**
@@ -80,7 +82,8 @@ instead of
 @since 4.2
 
 */
-class KTextHTMLBuilder : public KAbstractMarkupBuilder
+
+class KPIMTEXTEDIT_EXPORT KTextHTMLBuilder : public KAbstractMarkupBuilder
 {
 public:
 
@@ -197,8 +200,8 @@ public:
 
 private:
     KTextHTMLBuilderPrivate *d_ptr;
-    Q_DECLARE_PRIVATE( KTextHTMLBuilder )
+    Q_DECLARE_PRIVATE( KPIMTextEdit::KTextHTMLBuilder )
 
 };
-
+}
 #endif

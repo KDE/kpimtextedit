@@ -25,11 +25,13 @@
 
 #include "kabstractmarkupbuilder.h"
 #include <kdebug.h>
+#include "kpimtextedit_export.h"
+namespace KPIMTextEdit {
 
 /**
     @brief Creates MediaWiki markup from a QTextDocument
 */
-class MediaWikiMarkupBuilder : public KAbstractMarkupBuilder
+class KPIMTEXTEDIT_EXPORT MediaWikiMarkupBuilder : public KAbstractMarkupBuilder
 {
 public:
 
@@ -75,5 +77,5 @@ private:
 
     QString m_text;
 };
-
+}
 #endif

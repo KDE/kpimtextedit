@@ -25,6 +25,8 @@
 
 
 #include "kabstractmarkupbuilder.h"
+#include "kpimtextedit_export.h"
+
 #include <QTextDocument>
 class QTextFrame;
 class QTextTable;
@@ -65,7 +67,8 @@ Or with a different builder:
 @since 4.2
 
 */
-class KMarkupDirector
+namespace KPIMTextEdit {
+class KPIMTEXTEDIT_EXPORT KMarkupDirector
 {
 public:
     /**
@@ -154,5 +157,6 @@ private:
     friend class Private;
     Private *const d;
 };
+}
 
 #endif

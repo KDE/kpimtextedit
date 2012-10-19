@@ -32,10 +32,10 @@
  * @internal
  * Maintainability class for KMarkupDirector
  */
-class KMarkupDirector::Private
+class KPIMTextEdit::KMarkupDirector::Private
 {
 public:
-    Private(KMarkupDirector *md)
+    Private(KPIMTextEdit::KMarkupDirector *md)
             : q( md ) {
     }
 

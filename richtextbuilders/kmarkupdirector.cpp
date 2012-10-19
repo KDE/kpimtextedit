@@ -40,6 +40,9 @@
 
 #include "kabstractmarkupbuilder.h"
 
+
+using namespace KPIMTextEdit;
+
 KMarkupDirector::KMarkupDirector(KAbstractMarkupBuilder* builder) :
         d( new Private( this ) )
 {
@@ -98,11 +101,9 @@ void KMarkupDirector::processTable(QTextTable *table)
     QString sWidth;
 
     if ( tableWidth.type() == QTextLength::PercentageLength ) {
-        sWidth = "%1%";
-        sWidth = sWidth.arg( tableWidth.rawValue() );
+        sWidth = QString::fromLatin1("%1%").arg( tableWidth.rawValue() );
     } else if ( tableWidth.type() == QTextLength::FixedLength ) {
-        sWidth = "%1";
-        sWidth = sWidth.arg( tableWidth.rawValue() );
+        sWidth = QString::fromLatin1("%1").arg( tableWidth.rawValue() );
     }
 
     d->builder->beginTable( format.cellPadding(), format.cellSpacing(), sWidth );
@@ -143,11 +144,9 @@ void KMarkupDirector::processTable(QTextTable *table)
             QString sCellWidth;
 
             if ( cellWidth.type() == QTextLength::PercentageLength ) {
-                sCellWidth = "%1%";
-                sCellWidth = sCellWidth.arg( cellWidth.rawValue() );
+                sCellWidth = QString::fromLatin1("%1%").arg( cellWidth.rawValue() );
             } else if ( cellWidth.type() == QTextLength::FixedLength ) {
-                sCellWidth = "%1";
-                sCellWidth = sCellWidth.arg( cellWidth.rawValue() );
+                sCellWidth = QString::fromLatin1("%1").arg( cellWidth.rawValue() );
             }
 
             // TODO: Use THEAD instead
