@@ -30,7 +30,7 @@
 
 #include <kdebug.h>
 #include "../kmarkupdirector.h"
-#include "../khtmlbuilder.h"
+//#include "../khtmlbuilder.h"
 
 class TestHtmlOutput: public QObject
 {

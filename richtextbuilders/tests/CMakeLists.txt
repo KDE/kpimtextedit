@@ -1,26 +1,24 @@
-ENABLE_TESTING()
-FIND_PACKAGE(KDE4 REQUIRED)
-INCLUDE_DIRECTORIES( ${KDE4_INCLUDES} ${CMAKE_CURRENT_BINARY_DIR} )
+include_directories(${CMAKE_SOURCE_DIR}/kpimtextedit)
+#set(htmlbuildertest_SRCS htmlbuildertest.cpp)
+#kde4_add_unit_test(htmlbuildertest TESTNAME htmlbuildertest ${htmlbuildertest_SRCS})
 
-set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
+#target_link_libraries(htmlbuildertest
+#                      ${QT_QTTEST_LIBRARY}
+#                      ${QT_QTCORE_LIBRARY}
+#                      ${QT_QTGUI_LIBRARY}
+#                      ${KDE4_KDECORE_LIBS}
+#                      ${KDE4_KDEUI_LIBS}
+#                      kpimtextedit)
 
-SET(krichtexteditorSources
-  ../kmarkupdirector.cpp
-  ../kmarkupdirector_p.cpp
-  ../khtmlbuilder.cpp
-  ../kplaintextmarkupbuilder.cpp
-  )
+set(plainmarkupbuildertest_SRCS plainmarkupbuildertest.cpp)
+kde4_add_unit_test(plainmarkupbuildertest TESTNAME plainmarkupbuildertest ${plainmarkupbuildertest_SRCS})
 
+target_link_libraries(plainmarkupbuildertest
+                      ${QT_QTTEST_LIBRARY}
+                      ${QT_QTCORE_LIBRARY}
+                      ${QT_QTGUI_LIBRARY}
+                      ${KDE4_KDECORE_LIBS}
+                      ${KDE4_KDEUI_LIBS}
+                      kpimtextedit)
 
-MACRO(KDEUI_UNIT_TESTS)
-       FOREACH(_testname ${ARGN})
-               kde4_add_unit_test(${_testname} ${_testname}.cpp ${krichtexteditorSources} )
-               target_link_libraries(${_testname} ${KDE4_KDEUI_LIBS} ${QT_QTTEST_LIBRARY} ${QT_QTXML_LIBRARY} ${KDEWIN_LIBRARIES} )
-       ENDFOREACH(_testname)
-ENDMACRO(KDEUI_UNIT_TESTS)
-
-KDEUI_UNIT_TESTS(
-  htmlbuildertest
-  plainmarkupbuildertest
-)
 
