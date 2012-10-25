@@ -208,4 +208,4 @@ bool InsertImageDialog::keepOriginalSize() const
 
 }
 
-#include "insertimagedialog.moc"
+#include "moc_insertimagedialog.cpp"

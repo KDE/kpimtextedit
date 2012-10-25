@@ -396,4 +396,4 @@ TableActionMenu::~TableActionMenu()
 }
 }
 
-#include "tableactionmenu.moc"
+#include "moc_tableactionmenu.cpp"

@@ -82,4 +82,4 @@ QString InsertHtmlDialog::html() const
 }
 }
 
-#include "inserthtmldialog.moc"
+#include "moc_inserthtmldialog.cpp"

@@ -63,4 +63,3 @@ EmoticonTextEditAction::~EmoticonTextEditAction()
   delete d;
 }
 
-#include "emoticontexteditaction.moc"

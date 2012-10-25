@@ -810,4 +810,4 @@ void TextEdit::deleteCurrentLine()
 }
 
 
-#include "textedit.moc"
+#include "moc_textedit.cpp"
