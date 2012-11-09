@@ -434,7 +434,14 @@ void TextEdit::loadImage ( const QImage &image, const QString &matchName,
             cursor.removeSelectedText();
             document()->addResource( QTextDocument::ImageResource,
                                      QUrl( resourceName ), QVariant( image ) );
-            cursor.insertImage( resourceName );
+            QTextImageFormat format;
+            format.setName( resourceName );
+            if ( (imageFormat.width()!=0) && (imageFormat.height()!=0) ) {
+              format.setWidth( imageFormat.width() );
+              format.setHeight( imageFormat.height() );
+            }
+            cursor.insertImage( format );
+
 
             // The textfragment iterator is now invalid, restart from the beginning
             // Take care not to replace the same fragment again, or we would be in
