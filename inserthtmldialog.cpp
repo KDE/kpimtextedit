@@ -41,6 +41,7 @@ public:
     QLabel *label = new QLabel( i18n( "Insert HTML tags and texts:" ) );
     lay->addWidget( label );
     editor = new KTextEdit;
+    new HTMLSourceHighlighter( editor->document() );
     editor->setAcceptRichText( false );
     editor->setFocus();
     lay->addWidget( editor );
@@ -80,6 +81,39 @@ QString InsertHtmlDialog::html() const
 {
   return d->editor->toPlainText();
 }
+
+static QRegExp htmlTagRegExp( QLatin1String("<"
+                        "(/)?"    //Captures the / if this is an end tag.
+                        "(\\w+)"    //Captures TagName
+                        "(?:"                //Groups tag contents
+                        "(?:\\s+"            //Groups attributes
+                        "(?:\\w+)"  //Attribute name
+                                "(?:"                //groups =value portion.
+                                    "\\s*=\\s*"            // =
+                                    "(?:"        //Groups attribute "value" portion.
+                                    "\\\"(?:[^\\\"]*)\\\""    // attVal='double quoted'
+                                        "|'(?:[^']*)'"        // attVal='single quoted'
+                                        "|(?:[^'"">\\s]+)"    // attVal=urlnospaces
+                                    ")"
+                                ")?"        //end optional att value portion.
+                           ")+\\s*"        //One or more attribute pairs
+                            "|\\s*"            //Some white space.
+                        ")"
+                     "(/)?>" //Captures the "/" if this is a complete tag.
+                    ));
+
+
+void HTMLSourceHighlighter::highlightBlock ( const QString & text ) {
+  int pos = 0;
+  if( ( pos = htmlTagRegExp.indexIn( text ) ) != -1 )
+  {
+    QFont font = document()->defaultFont();
+    font.setBold( true );
+    setFormat( pos, htmlTagRegExp.matchedLength(), font );
+  }
+}
+
+
 }
 
 #include "moc_inserthtmldialog.cpp"

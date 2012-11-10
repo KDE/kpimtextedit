@@ -22,8 +22,19 @@
 #define INSERTHTMLDIALOG_H
 
 #include <KDialog>
+#include <QSyntaxHighlighter>
+
 namespace KPIMTextEdit {
 class InsertHtmlDialogPrivate;
+
+class HTMLSourceHighlighter : public QSyntaxHighlighter
+{
+public:
+  HTMLSourceHighlighter( QTextDocument * textdocument )
+    : QSyntaxHighlighter( textdocument ) {}
+protected:
+  virtual void highlightBlock ( const QString & text );
+};
 
 class InsertHtmlDialog : public KDialog
 {
