@@ -44,7 +44,7 @@ protected:
 
 private:
     friend class HtmlHighlighterPrivate;
-    HtmlHighlighterPrivate *d;
+    HtmlHighlighterPrivate * const d;
 
 };
 }
