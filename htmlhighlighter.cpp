@@ -301,4 +301,4 @@ void HtmlHighlighter::highlightBlock(const QString &text)
 }
 
 }
-#include "htmlhighlighter.moc"
+#include "moc_htmlhighlighter.cpp"
