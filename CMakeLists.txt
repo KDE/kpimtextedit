@@ -15,6 +15,7 @@ set(kpimtextedit_lib_srcs
   tableactionmenu.cpp
   tableformatdialog.cpp
   insertimagedialog.cpp
+  htmlhighlighter.cpp
 )
 
 kde4_add_library(kpimtextedit ${LIBRARY_TYPE} ${kpimtextedit_lib_srcs})
@@ -36,6 +37,7 @@ install(FILES
   textedit.h
   textutils.h
   emailquotehighlighter.h
+  htmlhighlighter.h
   DESTINATION ${INCLUDE_INSTALL_DIR}/kpimtextedit COMPONENT Devel
 )
 

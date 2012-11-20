@@ -1,6 +1,8 @@
 /*
   Copyright (c) 2012 Montel Laurent <montel@kde.org>
 
+  based on code from qt-labs-graphics-dojo/htmleditor/highlighter.*
+
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
   the Free Software Foundation; either version 2 of the License, or (at your
@@ -18,30 +20,33 @@
 
 */
 
-#ifndef INSERTHTMLDIALOG_H
-#define INSERTHTMLDIALOG_H
+#ifndef HTMLHIGHLIGHTER_H
+#define HTMLHIGHLIGHTER_H
 
-#include <KDialog>
+#include "kpimtextedit_export.h"
 #include <QSyntaxHighlighter>
 
+/*
+ * @since 4.10
+ */
 namespace KPIMTextEdit {
-class InsertHtmlDialogPrivate;
+class HtmlHighlighterPrivate;
 
-class InsertHtmlDialog : public KDialog
+class KPIMTEXTEDIT_EXPORT HtmlHighlighter : public QSyntaxHighlighter
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  explicit InsertHtmlDialog(QWidget *parent = 0);
-  ~InsertHtmlDialog();
-  QString html() const;
+    explicit HtmlHighlighter(QTextDocument *document);
+    ~HtmlHighlighter();
+
+protected:
+    void highlightBlock(const QString &text);
 
 private:
-  friend class InsertHtmlDialogPrivate;
-  InsertHtmlDialogPrivate *d;
-  Q_PRIVATE_SLOT( d, void _k_slotTextChanged() )
+    friend class HtmlHighlighterPrivate;
+    HtmlHighlighterPrivate *d;
 
 };
-
 }
 
-#endif // INSERTHTMLDIALOG_H
+#endif // HTMLHIGHLIGHTER_H
