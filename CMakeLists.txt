@@ -38,6 +38,7 @@ install(FILES
   textutils.h
   emailquotehighlighter.h
   htmlhighlighter.h
+  emoticontexteditaction.h
   DESTINATION ${INCLUDE_INSTALL_DIR}/kpimtextedit COMPONENT Devel
 )
 

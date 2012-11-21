@@ -21,11 +21,12 @@
 #ifndef EMOTICONTEXTEDITACTION_H
 #define EMOTICONTEXTEDITACTION_H
 
+#include "kpimtextedit_export.h"
 #include <KActionMenu>
 
 namespace KPIMTextEdit {
 
-class EmoticonTextEditAction : public KActionMenu
+class KPIMTEXTEDIT_EXPORT EmoticonTextEditAction : public KActionMenu
 {
   Q_OBJECT
 public:
