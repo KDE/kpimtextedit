@@ -107,7 +107,9 @@ class TextEditPrivate
 
     void _k_slotInsertHtml();
 
+    void _k_slotFormatReset();
 
+    void _k_slotTextModeChanged(KRichTextEdit::Mode);
 
     /// The action that triggers _k_slotAddImage()
     KAction *actionAddImage;
@@ -120,6 +122,8 @@ class TextEditPrivate
     KAction *actionInsertHtml;
 
     TableActionMenu *actionTable;
+
+    KAction *actionFormatReset;
 
     /// The parent class
     TextEdit *q;
@@ -153,6 +157,7 @@ class TextEditPrivate
     bool spellCheckingEnabled;
 
     QString configFile;
+    QFont saveFont;
 };
 
 } // namespace
@@ -210,6 +215,7 @@ bool TextEdit::eventFilter( QObject *o, QEvent *e )
 
 void TextEditPrivate::init()
 {
+  q->connect(q,SIGNAL(textModeChanged(KRichTextEdit::Mode)),q,SLOT(_k_slotTextModeChanged(KRichTextEdit::Mode)));
   q->setSpellInterface( q );
   // We tell the KRichTextWidget to enable spell checking, because only then it will
   // call createHighlighter() which will create our own highlighter which also
@@ -443,6 +449,13 @@ void TextEdit::createActions( KActionCollection *actionCollection )
   d->actionDeleteLine->setShortcut( QKeySequence( Qt::CTRL + Qt::Key_K ) );
   actionCollection->addAction( QLatin1String( "delete_line" ), d->actionDeleteLine );
   connect( d->actionDeleteLine, SIGNAL(triggered(bool)), SLOT(_k_slotDeleteLine()) );
+
+  d->actionFormatReset = new KAction( KIcon( QLatin1String("draw-eraser") ), i18n("Reset Font Settings"), this );
+  d->actionFormatReset->setIconText( i18n("Reset Font") );
+  actionCollection->addAction( QLatin1String("format_reset"), d->actionFormatReset );
+  connect( d->actionFormatReset, SIGNAL(triggered(bool)), SLOT(_k_slotFormatReset()) );
+
+
 }
 
 void TextEdit::addImage(const KUrl &url, int width, int height)
@@ -652,6 +665,22 @@ void TextEditPrivate::_k_slotAddImage()
     q->addImage( url, imageWidth, imageHeight );
   }
   delete dlg;
+}
+
+void TextEditPrivate::_k_slotTextModeChanged(KRichTextEdit::Mode mode)
+{
+  if(mode == KRichTextEdit::Rich) {
+    saveFont = q->currentFont();
+  }
+}
+
+
+void TextEditPrivate::_k_slotFormatReset()
+{
+    q->setTextBackgroundColor( q->palette().highlightedText().color() );
+    q->setTextForegroundColor( q->palette().text().color() );
+    q->setFont( saveFont );
+
 }
 
 void KPIMTextEdit::TextEdit::enableImageActions()
