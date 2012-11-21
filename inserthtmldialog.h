@@ -21,13 +21,13 @@
 #ifndef INSERTHTMLDIALOG_H
 #define INSERTHTMLDIALOG_H
 
+#include "kpimtextedit_export.h"
 #include <KDialog>
-#include <QSyntaxHighlighter>
 
 namespace KPIMTextEdit {
 class InsertHtmlDialogPrivate;
 
-class InsertHtmlDialog : public KDialog
+class KPIMTEXTEDIT_EXPORT InsertHtmlDialog : public KDialog
 {
   Q_OBJECT
 public:
