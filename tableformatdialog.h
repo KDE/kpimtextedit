@@ -20,12 +20,14 @@
 
 #ifndef TABLEFORMATDIALOG_H
 #define TABLEFORMATDIALOG_H
+#include "kpimtextedit_export.h"
+
 #include <KDialog>
 #include <QTextLength>
 
 namespace KPIMTextEdit {
 
-class TableFormatDialog : public KDialog
+class KPIMTEXTEDIT_EXPORT TableFormatDialog : public KDialog
 {
 public:
   explicit TableFormatDialog(QWidget *parent);

@@ -40,6 +40,8 @@ install(FILES
   htmlhighlighter.h
   emoticontexteditaction.h
   inserthtmldialog.h
+  inserttabledialog.h
+  tableformatdialog.h
   DESTINATION ${INCLUDE_INSTALL_DIR}/kpimtextedit COMPONENT Devel
 )
 

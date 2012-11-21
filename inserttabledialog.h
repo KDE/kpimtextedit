@@ -21,14 +21,15 @@
 #ifndef INSERTTABLEDIALOG_H
 #define INSERTTABLEDIALOG_H
 
+#include "kpimtextedit_export.h"
 #include <KDialog>
-#include <QSpinBox>
 #include <QTextLength>
-class KComboBox;
 
+class KComboBox;
+class QSpinBox;
 namespace KPIMTextEdit {
 
-class InsertTableWidget : public QWidget
+class KPIMTEXTEDIT_EXPORT InsertTableWidget : public QWidget
 {
   Q_OBJECT
 public:
@@ -54,7 +55,7 @@ private:
   KComboBox *mTypeOfLength;
 };
 
-class InsertTableDialog : public KDialog
+class KPIMTEXTEDIT_EXPORT InsertTableDialog : public KDialog
 {
 public:
   explicit InsertTableDialog(QWidget *parent);
