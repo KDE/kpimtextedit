@@ -42,6 +42,7 @@ install(FILES
   inserthtmldialog.h
   inserttabledialog.h
   tableformatdialog.h
+  insertimagedialog.h
   DESTINATION ${INCLUDE_INSTALL_DIR}/kpimtextedit COMPONENT Devel
 )
 

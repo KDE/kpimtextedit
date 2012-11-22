@@ -20,13 +20,14 @@
 
 #ifndef INSERTIMAGEDIALOG_H
 #define INSERTIMAGEDIALOG_H
+#include "kpimtextedit_export.h"
 #include <KDialog>
 #include <KUrl>
 
 namespace KPIMTextEdit {
 
 class InsertImageDialogPrivate;
-class InsertImageDialog : public KDialog
+class KPIMTEXTEDIT_EXPORT InsertImageDialog : public KDialog
 {
   Q_OBJECT
 public:
