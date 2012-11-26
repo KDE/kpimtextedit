@@ -234,9 +234,9 @@ void TableActionMenuPrivate::_k_slotTableFormat()
       dialog->setSpacing( tableFormat.cellSpacing() );
       dialog->setPadding( tableFormat.cellPadding() );
       if ( dialog->exec() ) {
-        const int numberOfColumns = dialog->columns();
-        if ( ( numberOfColumn != numberOfColumn ) || ( dialog->rows() != numberOfRow ) ) {
-           table->resize( dialog->rows(), numberOfColumn );
+        const int newNumberOfColumns(dialog->columns());
+        if ( ( newNumberOfColumns != numberOfColumn ) || ( dialog->rows() != numberOfRow ) ) {
+           table->resize( dialog->rows(), newNumberOfColumns );
         }
         tableFormat.setBorder( dialog->border() );
         tableFormat.setCellPadding( dialog->padding() );
@@ -247,8 +247,8 @@ void TableActionMenuPrivate::_k_slotTableFormat()
         const QTextLength::Type type = dialog->typeOfLength();
         const int length = dialog->length();
 
-        for ( int i = 0; i < numberOfColumns; ++i ) {
-            QTextLength textlength( type, length / numberOfColumns );
+        for ( int i = 0; i < newNumberOfColumns; ++i ) {
+            QTextLength textlength( type, length / newNumberOfColumns );
             contrains.append( textlength );
         }
         tableFormat.setColumnWidthConstraints( contrains );
