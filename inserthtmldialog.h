@@ -37,7 +37,7 @@ public:
 
 private:
   friend class InsertHtmlDialogPrivate;
-  InsertHtmlDialogPrivate *d;
+  InsertHtmlDialogPrivate * const d;
   Q_PRIVATE_SLOT( d, void _k_slotTextChanged() )
 
 };

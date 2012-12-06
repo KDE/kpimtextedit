@@ -37,7 +37,7 @@ public:
   ~TableActionMenu();
 
 private:
-  TableActionMenuPrivate *d;
+  TableActionMenuPrivate * const d;
   friend class TableActionMenuPrivate;
 
   Q_PRIVATE_SLOT( d, void _k_slotInsertRowBelow() )

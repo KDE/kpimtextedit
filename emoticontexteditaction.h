@@ -36,7 +36,7 @@ Q_SIGNALS:
   void emoticonActivated(const QString&);
 private:
   class EmoticonTextEditActionPrivate;
-  EmoticonTextEditActionPrivate *d;
+  EmoticonTextEditActionPrivate * const d;
 };
 
 }

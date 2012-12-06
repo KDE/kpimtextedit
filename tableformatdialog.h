@@ -57,7 +57,7 @@ public:
 
 private:
   class TableFormatDialogPrivate;
-  TableFormatDialogPrivate *d;
+  TableFormatDialogPrivate * const d;
 };
 }
 #endif // TABLEFORMATDIALOG_H
