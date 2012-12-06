@@ -19,6 +19,7 @@
 */
 
 #include "insertimagedialog.h"
+#include "insertimagewidget.h"
 #include <KLocale>
 #include <KUrlRequester>
 #include <KImageIO>
@@ -37,129 +38,20 @@ class InsertImageDialogPrivate
 {
 public:
   InsertImageDialogPrivate(InsertImageDialog *qq)
-    :imageRatio(-1), q( qq )
+    :q( qq )
   {
     q->setCaption( i18n( "Insert Image" ) );
     q->setButtons( KDialog::Ok|KDialog::Cancel );
     q->setButtonText( KDialog::Ok, i18n( "Insert" ) );
-    QWidget *page = new QWidget( q );
-    q->setMainWidget( page );
-    QVBoxLayout *lay = new QVBoxLayout( page );
-    QHBoxLayout *hbox = new QHBoxLayout;
-    QLabel *lab = new QLabel( i18n( "Image Location:" ) );
-    imageUrlRequester = new KUrlRequester;
-
-    const QStringList mimetypes = KImageIO::mimeTypes( KImageIO::Reading );
-    imageUrlRequester->fileDialog()->setFilter( mimetypes.join( QLatin1String( " " ) ) );
-    imageUrlRequester->fileDialog()->setOperationMode( KFileDialog::Other );
-    imageUrlRequester->fileDialog()->setCaption( i18n( "Add Image" ) );
-    imageUrlRequester->fileDialog()->okButton()->setGuiItem( KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
-    imageUrlRequester->fileDialog()->setMode( KFile::File );
-    q->connect( imageUrlRequester->lineEdit(), SIGNAL(textChanged(QString)), q, SLOT(_k_slotUrlChanged(QString)) );
-
-    hbox->addWidget( lab );
-    hbox->addWidget( imageUrlRequester );
-    lab->setBuddy( imageUrlRequester );
-    lay->addLayout( hbox );
-
-    keepOriginalSize = new QCheckBox( i18n( "Keep Original Size" ) );
-    q->connect( keepOriginalSize, SIGNAL(clicked(bool)), q, SLOT(_k_slotKeepOriginalSizeClicked(bool)) );
-    keepOriginalSize->setChecked( true );
-    lay->addWidget( keepOriginalSize );
-
-    keepImageRatio = new QCheckBox( i18n( "Keep Image Ratio" ) );
-    keepImageRatio->setChecked( true );
-    keepImageRatio->setEnabled( false );
-    lay->addWidget( keepImageRatio );
-
-    hbox = new QHBoxLayout;
-    lab = new QLabel( i18n( "Width:" ) );
-    width = new QSpinBox;
-    width->setMinimum( 1 );
-    width->setMaximum( 99999 );
-    width->setEnabled( false );
-    width->setSuffix( i18n( " px" ) );
-    lab->setBuddy( width );
-    q->connect( width, SIGNAL(valueChanged(int)), q, SLOT(_k_slotImageWidthChanged(int)) );
-    hbox->addWidget( lab );
-    hbox->addWidget( width );
-    lay->addLayout( hbox );
-
-    hbox = new QHBoxLayout;
-    lab = new QLabel( i18n( "Height:" ) );
-    height = new QSpinBox;
-    height->setMinimum( 1 );
-    height->setMaximum( 99999 );
-    height->setEnabled( false );
-    height->setSuffix( i18n( " px" ) );
-    lab->setBuddy( height );
-    q->connect( height, SIGNAL(valueChanged(int)), q, SLOT(_k_slotImageHeightChanged(int)) );
-    hbox->addWidget( lab );
-    hbox->addWidget( height );
-    lay->addLayout( hbox );
-
+    imageWidget = new InsertImageWidget(q);
+    q->connect(imageWidget,SIGNAL(enableButtonOk(bool)),q,SLOT(enableButtonOk(bool)));
+    q->setMainWidget( imageWidget );
     q->enableButtonOk( false );
   }
 
-  void _k_slotKeepOriginalSizeClicked(bool);
-  void _k_slotUrlChanged(const QString&);
-  void _k_slotImageWidthChanged(int);
-  void _k_slotImageHeightChanged(int);
-
-  qreal imageRatio;
-  QCheckBox *keepOriginalSize;
-  QCheckBox *keepImageRatio;
-  QSpinBox *width;
-  QSpinBox *height;
-  KUrlRequester *imageUrlRequester;
+  InsertImageWidget *imageWidget;
   InsertImageDialog *q;
 };
-
-void InsertImageDialogPrivate::_k_slotKeepOriginalSizeClicked(bool checked)
-{
-  height->setEnabled( !checked );
-  width->setEnabled( !checked );
-  keepImageRatio->setEnabled( !checked );
-  //Update default size
-  _k_slotUrlChanged( imageUrlRequester->text() );
-}
-
-void InsertImageDialogPrivate::_k_slotUrlChanged(const QString& text)
-{
-  q->enableButtonOk( !text.isEmpty() );
-  QImage image( text );
-  if ( !image.isNull() ) {
-    height->setValue( image.height() );
-    width->setValue( image.width() );
-
-    imageRatio = (double)( (double)image.height() / (double)image.width() );
-  } else {
-    imageRatio = -1;
-  }
-  q->enableButtonOk( !text.isEmpty() && !image.isNull() );
-}
-
-void InsertImageDialogPrivate::_k_slotImageWidthChanged(int value)
-{
-  if ( keepImageRatio->isChecked() && !keepOriginalSize->isChecked() ) {
-    if ( imageRatio != -1 ) {
-      height->blockSignals( true );
-      height->setValue( value * imageRatio );
-      height->blockSignals( false );
-    }
-  }
-}
-
-void InsertImageDialogPrivate::_k_slotImageHeightChanged(int value)
-{
-  if ( keepImageRatio->isChecked()&& !keepOriginalSize->isChecked() ) {
-    if ( imageRatio != -1 ) {
-     width->blockSignals( true );
-     width->setValue( value / imageRatio );
-     width->blockSignals( false );
-    }
-  }
-}
 
 InsertImageDialog::InsertImageDialog(QWidget *parent)
   :KDialog( parent ), d( new InsertImageDialogPrivate( this ) )
@@ -173,37 +65,37 @@ InsertImageDialog::~InsertImageDialog()
 
 int InsertImageDialog::imageWidth() const
 {
-  return d->width->value();
+  return d->imageWidget->imageWidth();
 }
 
 int InsertImageDialog::imageHeight() const
 {
-  return d->height->value();
+  return d->imageWidget->imageHeight();
 }
 
 void InsertImageDialog::setImageWidth(int value)
 {
-  d->width->setValue( value );
+  d->imageWidget->setImageWidth( value );
 }
 
 void InsertImageDialog::setImageHeight(int value)
 {
-  d->height->setValue( value );
+  d->imageWidget->setImageHeight( value );
 }
 
 KUrl InsertImageDialog::imageUrl() const
 {
-  return d->imageUrlRequester->url();
+  return d->imageWidget->imageUrl();
 }
 
 void InsertImageDialog::setImageUrl(const KUrl&url)
 {
-  d->imageUrlRequester->setUrl( url );
+  d->imageWidget->setImageUrl( url );
 }
 
 bool InsertImageDialog::keepOriginalSize() const
 {
-  return d->keepOriginalSize->isChecked();
+  return d->imageWidget->keepOriginalSize();
 }
 
 }
