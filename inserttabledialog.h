@@ -45,8 +45,11 @@ public:
 
   QTextLength::Type typeOfLength() const;
   int length() const;
+  void setLength(int);
+
 private Q_SLOTS:
   void slotTypeOfLengthChanged(int);
+
 private:
   QSpinBox *mColumns;
   QSpinBox *mRows;
@@ -64,8 +67,14 @@ public:
   int rows() const;
   int border() const;
 
+  void setColumns(int col);
+  void setRows(int rows);
+  void setBorder(int border);
+
+
   QTextLength::Type typeOfLength() const;
   int length() const;
+  void setLength(int);
 
 
 private:

@@ -99,6 +99,11 @@ int InsertTableWidget::length() const
   return mLength->value();
 }
 
+void InsertTableWidget::setLength(int val)
+{
+    mLength->setValue(val);
+}
+
 void InsertTableWidget::setColumns(int col)
 {
   mColumns->setValue( col );
@@ -182,3 +187,22 @@ int InsertTableDialog::length() const
   return d->insertTableWidget->length();
 }
 
+void InsertTableDialog::setColumns(int col)
+{
+    d->insertTableWidget->setColumns(col);
+}
+
+void InsertTableDialog::setRows(int rows)
+{
+    d->insertTableWidget->setRows(rows);
+}
+
+void InsertTableDialog::setBorder(int border)
+{
+    d->insertTableWidget->setBorder(border);
+}
+
+void InsertTableDialog::setLength(int val)
+{
+    d->insertTableWidget->setLength(val);
+}
