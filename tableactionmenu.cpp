@@ -236,6 +236,13 @@ void TableActionMenuPrivate::_k_slotTableFormat()
       dialog->setBorder( tableFormat.border() );
       dialog->setSpacing( tableFormat.cellSpacing() );
       dialog->setPadding( tableFormat.cellPadding() );
+
+      QVector<QTextLength> contrains = tableFormat.columnWidthConstraints();
+      if(!contrains.isEmpty()) {
+        dialog->setTypeOfLength(contrains.at(0).type());
+        dialog->setLength(contrains.at(0).rawValue()*numberOfColumn);
+      }
+
       if ( dialog->exec() ) {
         const int newNumberOfColumns(dialog->columns());
         if ( ( newNumberOfColumns != numberOfColumn ) || ( dialog->rows() != numberOfRow ) ) {
