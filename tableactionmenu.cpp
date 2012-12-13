@@ -28,6 +28,7 @@
 
 #include <QTextTable>
 #include <QPointer>
+#include <QDebug>
 
 namespace KPIMTextEdit {
 
@@ -204,6 +205,7 @@ void TableActionMenuPrivate::_k_slotInsertTable()
           contrains.append( textlength );
       }
       tableFormat.setColumnWidthConstraints( contrains );
+      tableFormat.setAlignment(Qt::AlignLeft);
       cursor.insertTable( dialog->rows(), numberOfColumns, tableFormat );
       textEdit->enableRichTextMode();
     }
@@ -236,6 +238,7 @@ void TableActionMenuPrivate::_k_slotTableFormat()
       dialog->setBorder( tableFormat.border() );
       dialog->setSpacing( tableFormat.cellSpacing() );
       dialog->setPadding( tableFormat.cellPadding() );
+      dialog->setAlignment(tableFormat.alignment());
 
       QVector<QTextLength> contrains = tableFormat.columnWidthConstraints();
       if(!contrains.isEmpty()) {
