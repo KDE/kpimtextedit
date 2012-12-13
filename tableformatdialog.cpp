@@ -163,3 +163,8 @@ int TableFormatDialog::length() const
 {
   return d->tableWidget->length();
 }
+
+void TableFormatDialog::setLength(int val)
+{
+  d->tableWidget->setLength(val);
+}
