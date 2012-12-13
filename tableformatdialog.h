@@ -52,6 +52,7 @@ public:
   Qt::Alignment alignment() const;
 
   QTextLength::Type typeOfLength() const;
+  void setTypeOfLength(QTextLength::Type type);
 
   int length() const;
   void setLength(int);

@@ -44,6 +44,8 @@ public:
   void setBorder(int border);
 
   QTextLength::Type typeOfLength() const;
+  void setTypeOfLength(QTextLength::Type type);
+
   int length() const;
   void setLength(int);
 
@@ -73,6 +75,7 @@ public:
 
 
   QTextLength::Type typeOfLength() const;
+  void setTypeOfLength(QTextLength::Type type);
   int length() const;
   void setLength(int);
 

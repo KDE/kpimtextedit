@@ -168,3 +168,8 @@ void TableFormatDialog::setLength(int val)
 {
   d->tableWidget->setLength(val);
 }
+
+void TableFormatDialog::setTypeOfLength(QTextLength::Type type)
+{
+    d->tableWidget->setTypeOfLength(type);
+}

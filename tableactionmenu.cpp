@@ -22,9 +22,12 @@
 #include "textedit.h"
 #include "inserttabledialog.h"
 #include "tableformatdialog.h"
+
 #include <KActionCollection>
 #include <KLocale>
+
 #include <QTextTable>
+#include <QPointer>
 
 namespace KPIMTextEdit {
 
@@ -186,7 +189,7 @@ void TableActionMenuPrivate::_k_slotInsertColumnAfter()
 void TableActionMenuPrivate::_k_slotInsertTable()
 {
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
-    InsertTableDialog *dialog = new InsertTableDialog( textEdit );
+    QPointer<InsertTableDialog> dialog = new InsertTableDialog( textEdit );
     if ( dialog->exec() ) {
       QTextCursor cursor = textEdit->textCursor();
       QTextTableFormat tableFormat;
@@ -224,7 +227,7 @@ void TableActionMenuPrivate::_k_slotTableFormat()
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
     QTextTable *table = textEdit->textCursor().currentTable();
     if ( table ) {
-      TableFormatDialog *dialog = new TableFormatDialog( textEdit );
+      QPointer<TableFormatDialog> dialog = new TableFormatDialog( textEdit );
       const int numberOfColumn( table->columns() );
       const int numberOfRow( table->rows() );
       dialog->setColumns( numberOfColumn );

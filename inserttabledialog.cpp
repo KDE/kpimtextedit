@@ -94,6 +94,12 @@ QTextLength::Type InsertTableWidget::typeOfLength() const
   return (QTextLength::Type)mTypeOfLength->itemData( mTypeOfLength->currentIndex() ).toInt();
 }
 
+void InsertTableWidget::setTypeOfLength(QTextLength::Type type)
+{
+  mTypeOfLength->setCurrentIndex(mTypeOfLength->findData(QVariant(type)));
+}
+
+
 int InsertTableWidget::length() const
 {
   return mLength->value();
@@ -189,20 +195,25 @@ int InsertTableDialog::length() const
 
 void InsertTableDialog::setColumns(int col)
 {
-    d->insertTableWidget->setColumns(col);
+  d->insertTableWidget->setColumns(col);
 }
 
 void InsertTableDialog::setRows(int rows)
 {
-    d->insertTableWidget->setRows(rows);
+  d->insertTableWidget->setRows(rows);
 }
 
 void InsertTableDialog::setBorder(int border)
 {
-    d->insertTableWidget->setBorder(border);
+  d->insertTableWidget->setBorder(border);
 }
 
 void InsertTableDialog::setLength(int val)
 {
-    d->insertTableWidget->setLength(val);
+  d->insertTableWidget->setLength(val);
+}
+
+void InsertTableDialog::setTypeOfLength(QTextLength::Type type)
+{
+  d->insertTableWidget->setTypeOfLength(type);
 }
