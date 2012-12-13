@@ -230,23 +230,23 @@ void TextEditTester::testEnter_data()
   QTest::addColumn<QString>( "expectedText" );
   QTest::addColumn<int>( "cursorPos" );
 
-  QTest::newRow( "" ) << QString::fromAscii( "> Hello World" )
-                      << QString::fromAscii( "> Hello \n> World" )
+  QTest::newRow( "" ) << QString::fromLatin1( "> Hello World" )
+                      << QString::fromLatin1( "> Hello \n> World" )
                       << 8;
-  QTest::newRow( "" ) << QString::fromAscii( "Hello World" )
-                      << QString::fromAscii( "Hello \nWorld" )
+  QTest::newRow( "" ) << QString::fromLatin1( "Hello World" )
+                      << QString::fromLatin1( "Hello \nWorld" )
                       << 6;
-  QTest::newRow( "" ) << QString::fromAscii( "> Hello World" )
-                      << QString::fromAscii( "> Hello World\n" )
+  QTest::newRow( "" ) << QString::fromLatin1( "> Hello World" )
+                      << QString::fromLatin1( "> Hello World\n" )
                       << 13;
-  QTest::newRow( "" ) << QString::fromAscii( ">Hello World" )
-                      << QString::fromAscii( ">Hello \n>World" )
+  QTest::newRow( "" ) << QString::fromLatin1( ">Hello World" )
+                      << QString::fromLatin1( ">Hello \n>World" )
                       << 7;
-  QTest::newRow( "" ) << QString::fromAscii( "> > Hello World" )
-                      << QString::fromAscii( "> > Hello \n> > World" )
+  QTest::newRow( "" ) << QString::fromLatin1( "> > Hello World" )
+                      << QString::fromLatin1( "> > Hello \n> > World" )
                       << 10;
-  QTest::newRow( "" ) << QString::fromAscii( "| | Hello World" )
-                      << QString::fromAscii( "| | Hello \n| | World" )
+  QTest::newRow( "" ) << QString::fromLatin1( "| | Hello World" )
+                      << QString::fromLatin1( "| | Hello \n| | World" )
                       << 10;
 }
 
@@ -280,8 +280,8 @@ void TextEditTester::testImages()
   QCOMPARE( imagesWithNames.size(), 1 );
   EmbeddedImage *image = images.first().data();
   ImageWithName *imageWithName = imagesWithNames.first().data();
-  QCOMPARE( image->imageName, QString::fromAscii( "folder-new.png" ) );
-  QCOMPARE( imageWithName->name, QString::fromAscii( "folder-new.png" ) );
+  QCOMPARE( image->imageName, QString::fromLatin1( "folder-new.png" ) );
+  QCOMPARE( imageWithName->name, QString::fromLatin1( "folder-new.png" ) );
 
   // Also check that it loads the correct image
   QImage diskImage( image1Path );
@@ -329,10 +329,10 @@ void TextEditTester::testImages()
   KPIMTextEdit::EmbeddedImage *image2 = images.last().data();
   KPIMTextEdit::ImageWithName *imageWithName1 = imagesWithNames.first().data();
   KPIMTextEdit::ImageWithName *imageWithName2 = imagesWithNames.last().data();
-  QCOMPARE( image1->imageName, QString::fromAscii( "folder-new2.png" ) ); // ### FIXME: should be folder-new.png, but QTextEdit provides no way to remove cached resources!
-  QCOMPARE( imageWithName1->name, QString::fromAscii( "folder-new2.png" ) );
-  QCOMPARE( image2->imageName, QString::fromAscii( "arrow-up.png" ) );
-  QCOMPARE( imageWithName2->name, QString::fromAscii( "arrow-up.png" ) );
+  QCOMPARE( image1->imageName, QString::fromLatin1( "folder-new2.png" ) ); // ### FIXME: should be folder-new.png, but QTextEdit provides no way to remove cached resources!
+  QCOMPARE( imageWithName1->name, QString::fromLatin1( "folder-new2.png" ) );
+  QCOMPARE( image2->imageName, QString::fromLatin1( "arrow-up.png" ) );
+  QCOMPARE( imageWithName2->name, QString::fromLatin1( "arrow-up.png" ) );
   QVERIFY( image1->contentID != image2->contentID );
 }
 
@@ -350,7 +350,7 @@ void TextEditTester::testImageHtmlCode()
   QString startHtml = QLatin1String( "<img src=\"arrow-up.png\"><img src=\"folder-new.png\">Bla<b>Blub</b>" );
   QString endHtml = QString( QLatin1String( "<img src=\"cid:%1\"><img src=\"cid:%2\">Bla<b>Blub</b>" ) )
                         .arg( image2->contentID ).arg( image1->contentID );
-  QCOMPARE( TextEdit::imageNamesToContentIds( startHtml.toAscii(), images ), endHtml.toAscii() );
+  QCOMPARE( TextEdit::imageNamesToContentIds( startHtml.toLatin1(), images ), endHtml.toAscii() );
 }
 
 void TextEditTester::testDeleteLine_data()
@@ -359,34 +359,34 @@ void TextEditTester::testDeleteLine_data()
   QTest::addColumn<QString>( "expectedText" );
   QTest::addColumn<int>( "cursorPos" );
 
-  QTest::newRow( "" ) << QString::fromAscii( "line1\nline2\nline3" )
-                      << QString::fromAscii( "line1\nline3" )
+  QTest::newRow( "" ) << QString::fromLatin1( "line1\nline2\nline3" )
+                      << QString::fromLatin1( "line1\nline3" )
                       << 6;
-  QTest::newRow( "" ) << QString::fromAscii( "line1\nline2\nline3" )
-                      << QString::fromAscii( "line2\nline3" )
+  QTest::newRow( "" ) << QString::fromLatin1( "line1\nline2\nline3" )
+                      << QString::fromLatin1( "line2\nline3" )
                       << 5;
-  QTest::newRow( "" ) << QString::fromAscii( "line1\nline2\nline3" )
-                      << QString::fromAscii( "line1\nline3" )
+  QTest::newRow( "" ) << QString::fromLatin1( "line1\nline2\nline3" )
+                      << QString::fromLatin1( "line1\nline3" )
                       << 11;
-  QTest::newRow( "" ) << QString::fromAscii( "line1\nline2\nline3" )
-                      << QString::fromAscii( "line2\nline3" )
+  QTest::newRow( "" ) << QString::fromLatin1( "line1\nline2\nline3" )
+                      << QString::fromLatin1( "line2\nline3" )
                       << 0;
-  QTest::newRow( "" ) << QString::fromAscii( "line1\nline2\nline3" )
-                      << QString::fromAscii( "line1\nline2" )
+  QTest::newRow( "" ) << QString::fromLatin1( "line1\nline2\nline3" )
+                      << QString::fromLatin1( "line1\nline2" )
                       << 17;
-  QTest::newRow( "" ) << QString::fromAscii( "line1" )
-                      << QString::fromAscii( "" )
+  QTest::newRow( "" ) << QString::fromLatin1( "line1" )
+                      << QString::fromLatin1( "" )
                       << 0;
-  QTest::newRow( "" ) << QString::fromAscii( "line1" )
-                      << QString::fromAscii( "" )
+  QTest::newRow( "" ) << QString::fromLatin1( "line1" )
+                      << QString::fromLatin1( "" )
                       << 5;
 
   // Now, test deletion with word wrapping. The line with the Ms is so long that it will get wrapped
-  QTest::newRow( "" ) << QString::fromAscii( "line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3" )
-                      << QString::fromAscii( "line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3" )
+  QTest::newRow( "" ) << QString::fromLatin1( "line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3" )
+                      << QString::fromLatin1( "line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3" )
                       << 6;
-  QTest::newRow( "" ) << QString::fromAscii( "line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3" )
-                      << QString::fromAscii( "line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3" )
+  QTest::newRow( "" ) << QString::fromLatin1( "line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3" )
+                      << QString::fromLatin1( "line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3" )
                       << 13;
 }
 

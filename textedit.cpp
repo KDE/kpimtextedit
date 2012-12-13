@@ -174,7 +174,7 @@ void TextEditPrivate::fixupTextEditString( QString &text ) const
   text.remove( 0xFFFC );
 
   // In plaintext mode, each space is non-breaking.
-  text.replace( QChar::Nbsp, QChar::fromAscii( ' ' ) );
+  text.replace( QChar::Nbsp, QChar::fromLatin1( ' ' ) );
 }
 
 TextEdit::TextEdit( const QString &text, QWidget *parent )
@@ -254,8 +254,8 @@ void TextEdit::keyPressEvent ( QKeyEvent * e )
       bool isQuotedLine = false;
       int bot = 0; // bot = begin of text after quote indicators
       while ( bot < lineText.length() ) {
-        if ( ( lineText[bot] == QChar::fromAscii( '>' ) ) ||
-             ( lineText[bot] == QChar::fromAscii( '|' ) ) ) {
+        if ( ( lineText[bot] == QChar::fromLatin1( '>' ) ) ||
+             ( lineText[bot] == QChar::fromLatin1( '|' ) ) ) {
           isQuotedLine = true;
           ++bot;
         } else if ( lineText[bot].isSpace() ) {
