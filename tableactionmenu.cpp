@@ -87,7 +87,7 @@ void TableActionMenuPrivate::_k_slotRemoveRowBelow()
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
     QTextTable *table = textEdit->textCursor().currentTable();
     if ( table ) {
-      QTextTableCell cell = table->cellAt( textEdit->textCursor() );
+      const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
       if ( cell.row()<table->rows() - 1 ) {
         table->removeRows( cell.row(), 1 );
       }
@@ -100,7 +100,7 @@ void TableActionMenuPrivate::_k_slotRemoveRowAbove()
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
     QTextTable *table = textEdit->textCursor().currentTable();
     if ( table ) {
-      QTextTableCell cell = table->cellAt( textEdit->textCursor() );
+      const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
       if ( cell.row() >= 1 ) {
         table->removeRows( cell.row() - 1, 1 );
       }
@@ -113,7 +113,7 @@ void TableActionMenuPrivate::_k_slotRemoveColumnBefore()
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
     QTextTable *table = textEdit->textCursor().currentTable();
     if ( table ) {
-      QTextTableCell cell = table->cellAt( textEdit->textCursor() );
+      const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
       if ( cell.column() > 0 ) {
         table->removeColumns( cell.column() - 1, 1 );
       }
@@ -126,7 +126,7 @@ void TableActionMenuPrivate::_k_slotRemoveColumnAfter()
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
     QTextTable *table = textEdit->textCursor().currentTable();
     if ( table ) {
-      QTextTableCell cell = table->cellAt( textEdit->textCursor() );
+      const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
       if ( cell.column()<table->columns() - 1 ) {
         table->removeColumns( cell.column(), 1 );
       }
@@ -139,7 +139,7 @@ void TableActionMenuPrivate::_k_slotInsertRowBelow()
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
     QTextTable *table = textEdit->textCursor().currentTable();
     if ( table ) {
-      QTextTableCell cell = table->cellAt( textEdit->textCursor() );
+      const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
       if ( cell.row()<table->rows() ) {
         table->insertRows( cell.row() + 1, 1 );
       } else {
@@ -154,7 +154,7 @@ void TableActionMenuPrivate::_k_slotInsertRowAbove()
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
     QTextTable *table = textEdit->textCursor().currentTable();
     if ( table ) {
-      QTextTableCell cell = table->cellAt( textEdit->textCursor() );
+      const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
       table->insertRows( cell.row(), 1 );
     }
   }
@@ -165,7 +165,7 @@ void TableActionMenuPrivate::_k_slotInsertColumnBefore()
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
     QTextTable *table = textEdit->textCursor().currentTable();
     if ( table ) {
-      QTextTableCell cell = table->cellAt( textEdit->textCursor() );
+      const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
       table->insertColumns( cell.column(), 1 );
     }
   }
@@ -176,7 +176,7 @@ void TableActionMenuPrivate::_k_slotInsertColumnAfter()
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
     QTextTable *table = textEdit->textCursor().currentTable();
     if ( table ) {
-      QTextTableCell cell = table->cellAt( textEdit->textCursor() );
+      const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
       if ( cell.column()<table->columns() ) {
         table->insertColumns( cell.column() + 1, 1 );
       } else {
@@ -304,7 +304,7 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
     actionRemoveColumnAfter->setEnabled( isTable );
 
     if ( table ) {
-      QTextTableCell cell = table->cellAt( textEdit->textCursor() );
+      const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
       if ( cell.column()>table->columns() - 2 ) {
         actionMergeCell->setEnabled( false );
       } else {
