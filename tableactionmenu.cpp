@@ -278,9 +278,9 @@ void TableActionMenuPrivate::_k_slotSplitCell()
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
     QTextTable *table = textEdit->textCursor().currentTable();
     if ( table ) {
-      QTextTableCell cell = table->cellAt( textEdit->textCursor() );
+      const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
       if ( cell.columnSpan() > 1 ) {
-        table->splitCell( cell.row(), cell.column(), 1, 1 );
+        table->splitCell( cell.row(), cell.column(), 1, cell.columnSpan()-1 );
       }
     }
   }
