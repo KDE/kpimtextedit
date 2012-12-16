@@ -208,7 +208,6 @@ void TableActionMenuPrivate::_k_slotInsertTable()
       tableFormat.setAlignment(Qt::AlignLeft);
       QTextTable *table = cursor.insertTable( dialog->rows(), numberOfColumns);
       table->setFormat(tableFormat);
-      textEdit->enableRichTextMode();
     }
     delete dialog;
   }
