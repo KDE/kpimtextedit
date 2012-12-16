@@ -218,8 +218,8 @@ void TableActionMenuPrivate::_k_slotMergeCell()
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
     QTextTable *table = textEdit->textCursor().currentTable();
     if ( table ) {
-      QTextTableCell cell = table->cellAt( textEdit->textCursor() );
-      table->mergeCells( cell.row(), cell.column(), 1, 2 );
+      const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
+      table->mergeCells( cell.row(), cell.column(), 1, cell.columnSpan() +1 );
     }
   }
 }
