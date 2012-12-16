@@ -63,7 +63,7 @@ static bool isBlockFormatFormatted( const QTextBlockFormat &format,
 static bool isSpecial( const QTextFormat &charFormat )
 {
   return charFormat.isFrameFormat() || charFormat.isImageFormat() ||
-         charFormat.isListFormat() || charFormat.isTableFormat();
+         charFormat.isListFormat() || charFormat.isTableFormat() || charFormat.isTableCellFormat();
 }
 
 bool TextUtils::containsFormatting( const QTextDocument *document )
