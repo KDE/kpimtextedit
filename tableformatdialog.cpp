@@ -20,8 +20,11 @@
 
 #include "tableformatdialog.h"
 #include "inserttabledialog.h"
+
 #include <KLocale>
 #include <KComboBox>
+#include <KSeparator>
+
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QSpinBox>
@@ -43,6 +46,9 @@ public:
     tableWidget = new InsertTableWidget;
     lay->addWidget( tableWidget );
 
+    KSeparator *sep = new KSeparator;
+    lay->addWidget( sep );
+
     QHBoxLayout *hbox = new QHBoxLayout;
     QLabel *lab = new QLabel( i18n( "Spacing:" ) );
     hbox->addWidget( lab );
@@ -63,6 +69,9 @@ public:
     hbox->addWidget( lab );
     lay->addLayout( hbox );
 
+    sep = new KSeparator;
+    lay->addWidget( sep );
+
     alignment = new KComboBox;
     alignment->addItem( i18n( "Left" ), Qt::AlignLeft );
     alignment->addItem( i18n( "Right" ), Qt::AlignRight );
@@ -73,6 +82,7 @@ public:
     lab = new QLabel( i18n( "Table Alignment:" ) );
     hbox->addWidget( lab );
     hbox->addWidget( alignment );
+
     lay->addLayout( hbox );
 
   }
