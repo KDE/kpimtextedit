@@ -24,6 +24,7 @@
 #include <KLocale>
 #include <KComboBox>
 #include <KSeparator>
+#include <KColorButton>
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -85,7 +86,21 @@ public:
 
     lay->addLayout( hbox );
 
+    sep = new KSeparator;
+    lay->addWidget( sep );
+
+    hbox = new QHBoxLayout;
+    lab = new QLabel( i18n( "Background Color:" ) );
+    hbox->addWidget( lab );
+    backgroundColor = new KColorButton;
+    hbox->addWidget( backgroundColor );
+    lay->addLayout(hbox);
+
+    sep = new KSeparator;
+    lay->addWidget( sep );
+
   }
+  KColorButton *backgroundColor;
   KComboBox *alignment;
   QSpinBox *spacing;
   QSpinBox *padding;
@@ -183,3 +198,14 @@ void TableFormatDialog::setTypeOfLength(QTextLength::Type type)
 {
     d->tableWidget->setTypeOfLength(type);
 }
+
+QColor TableFormatDialog::tableBackgroundColor() const
+{
+    return d->backgroundColor->color();
+}
+
+void TableFormatDialog::setTableBackgroundColor(const QColor& col)
+{
+    d->backgroundColor->setColor(col);
+}
+

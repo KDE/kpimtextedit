@@ -251,7 +251,9 @@ void TableActionMenuPrivate::_k_slotTableFormat()
       dialog->setSpacing( tableFormat.cellSpacing() );
       dialog->setPadding( tableFormat.cellPadding() );
       dialog->setAlignment(tableFormat.alignment());
-
+      if(tableFormat.hasProperty(QTextFormat::BackgroundBrush)) {
+        dialog->setTableBackgroundColor(tableFormat.background().color());
+      }
       QVector<QTextLength> contrains = tableFormat.columnWidthConstraints();
       if(!contrains.isEmpty()) {
         dialog->setTypeOfLength(contrains.at(0).type());
@@ -261,7 +263,7 @@ void TableActionMenuPrivate::_k_slotTableFormat()
       if ( dialog->exec() ) {
         const int newNumberOfColumns(dialog->columns());
         if ( ( newNumberOfColumns != numberOfColumn ) || ( dialog->rows() != numberOfRow ) ) {
-           table->resize( dialog->rows(), newNumberOfColumns );
+          table->resize( dialog->rows(), newNumberOfColumns );
         }
         tableFormat.setBorder( dialog->border() );
         tableFormat.setCellPadding( dialog->padding() );
@@ -273,11 +275,14 @@ void TableActionMenuPrivate::_k_slotTableFormat()
         const int length = dialog->length();
 
         for ( int i = 0; i < newNumberOfColumns; ++i ) {
-            QTextLength textlength( type, length / newNumberOfColumns );
-            contrains.append( textlength );
+          QTextLength textlength( type, length / newNumberOfColumns );
+          contrains.append( textlength );
         }
         tableFormat.setColumnWidthConstraints( contrains );
-
+        const QColor tableBackgroundColor = dialog->tableBackgroundColor();
+        if(tableBackgroundColor.isValid()) {
+          tableFormat.setBackground(tableBackgroundColor);
+        }
         table->setFormat( tableFormat );
       }
       delete dialog;

@@ -57,6 +57,8 @@ public:
   int length() const;
   void setLength(int);
 
+  QColor tableBackgroundColor() const;
+  void setTableBackgroundColor(const QColor& col);
 
 private:
   class TableFormatDialogPrivate;
