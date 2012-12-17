@@ -22,7 +22,9 @@
 #define TABLECELLFORMATDIALOG_H
 #include "kpimtextedit_export.h"
 
+
 #include <KDialog>
+#include <QTextCharFormat>
 
 namespace KPIMTextEdit {
 
@@ -31,6 +33,30 @@ class KPIMTEXTEDIT_EXPORT TableCellFormatDialog : public KDialog
 public:
     explicit TableCellFormatDialog(QWidget *parent);
     ~TableCellFormatDialog();
+
+    /**
+     * @brief tableCellBackgroundColor
+     * @return background color of cell.
+     */
+    QColor tableCellBackgroundColor() const;
+    /**
+     * @brief setTableCellBackgroundColor
+     * @param color, set the background color of cell
+     */
+    void setTableCellBackgroundColor(const QColor& color);
+
+    /**
+     * @brief verticalAlignement
+     * @return vertical alignement for current cell
+     */
+    QTextCharFormat::VerticalAlignment verticalAlignement() const;
+    /**
+     * @brief setVerticalAlignement
+     * @param vertical vertical alignement for current cell
+     */
+    void setVerticalAlignement(QTextCharFormat::VerticalAlignment vertical);
+
+
 private:
     class TableCellFormatDialogPrivate;
     TableCellFormatDialogPrivate * const d;

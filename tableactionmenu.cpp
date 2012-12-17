@@ -22,6 +22,7 @@
 #include "textedit.h"
 #include "inserttabledialog.h"
 #include "tableformatdialog.h"
+#include "tablecellformatdialog.h"
 
 #include <KActionCollection>
 #include <KLocale>
@@ -56,6 +57,7 @@ public:
   void _k_slotMergeCell();
   void _k_slotMergeSelectedCells();
   void _k_slotTableFormat();
+  void _k_slotTableCellFormat();
   void _k_slotSplitCell();
   void _k_updateActions(bool forceUpdate = false);
 
@@ -78,6 +80,7 @@ public:
   KAction *actionSplitCell;
 
   KAction *actionTableFormat;
+  KAction *actionTableCellFormat;
 
   KActionCollection *actionCollection;
   TextEdit *textEdit;
@@ -290,6 +293,31 @@ void TableActionMenuPrivate::_k_slotTableFormat()
   }
 }
 
+void TableActionMenuPrivate::_k_slotTableCellFormat()
+{
+  if ( textEdit->textMode() == KRichTextEdit::Rich ) {
+    QTextTable *table = textEdit->textCursor().currentTable();
+    if ( table ) {
+      QTextTableCell cell = table->cellAt( textEdit->textCursor() );
+      QPointer<TableCellFormatDialog> dialog = new TableCellFormatDialog( textEdit );
+      QTextTableCellFormat format = cell.format().toTableCellFormat();
+      if(format.hasProperty(QTextFormat::BackgroundBrush)) {
+          dialog->setTableCellBackgroundColor(format.background().color());
+      }
+      dialog->setVerticalAlignement(format.verticalAlignment());
+      if(dialog->exec()) {
+          const QColor tableCellColor = dialog->tableCellBackgroundColor();
+          if(tableCellColor.isValid()) {
+              format.setBackground(tableCellColor);
+          }
+          format.setVerticalAlignment(dialog->verticalAlignement());
+          cell.setFormat(format);
+      }
+      delete dialog;
+    }
+  }
+}
+
 void TableActionMenuPrivate::_k_slotSplitCell()
 {
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
@@ -333,6 +361,7 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
       } else {
         actionSplitCell->setEnabled( false );
       }
+      actionTableCellFormat->setEnabled( true );
       actionMergeSelectedCells->setEnabled( true );
     } else {
       actionSplitCell->setEnabled( false );
@@ -340,6 +369,7 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
       actionMergeSelectedCells->setEnabled( false );
     }
     actionTableFormat->setEnabled( isTable );
+    actionTableCellFormat->setEnabled( isTable );
   }
 }
 
@@ -423,6 +453,12 @@ TableActionMenu::TableActionMenu(KActionCollection *ac, TextEdit *textEdit)
     ac->addAction( QLatin1String( "table_format" ), d->actionTableFormat );
     connect( d->actionTableFormat, SIGNAL(triggered(bool)), SLOT(_k_slotTableFormat()) );
     addAction( d->actionTableFormat );
+
+    d->actionTableCellFormat = new KAction( i18n( "Table Cell Format..." ), this );
+    ac->addAction( QLatin1String( "table_cell_format" ), d->actionTableCellFormat );
+    connect( d->actionTableCellFormat, SIGNAL(triggered(bool)), SLOT(_k_slotTableCellFormat()) );
+    addAction( d->actionTableCellFormat );
+
 
     connect( textEdit, SIGNAL(cursorPositionChanged()), this, SLOT(_k_updateActions()) );
     d->_k_updateActions( true );

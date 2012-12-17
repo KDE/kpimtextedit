@@ -93,6 +93,7 @@ public:
     lab = new QLabel( i18n( "Background Color:" ) );
     hbox->addWidget( lab );
     backgroundColor = new KColorButton;
+    backgroundColor->setDefaultColor(Qt::white);
     hbox->addWidget( backgroundColor );
     lay->addLayout(hbox);
 
