@@ -113,7 +113,9 @@ QTextLength::Type InsertTableWidget::typeOfLength() const
 
 void InsertTableWidget::setTypeOfLength(QTextLength::Type type)
 {
-  d->mTypeOfLength->setCurrentIndex(d->mTypeOfLength->findData(QVariant(type)));
+  const int index = d->mTypeOfLength->findData(QVariant(type));
+  d->mTypeOfLength->setCurrentIndex(index);
+  slotTypeOfLengthChanged(index);
 }
 
 
