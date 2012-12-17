@@ -54,6 +54,7 @@ public:
   void _k_slotRemoveColumnBefore();
   void _k_slotRemoveColumnAfter();
   void _k_slotMergeCell();
+  void _k_slotMergeSelectedCells();
   void _k_slotTableFormat();
   void _k_slotSplitCell();
   void _k_updateActions(bool forceUpdate = false);
@@ -73,6 +74,7 @@ public:
   KAction *actionRemoveColumnAfter;
 
   KAction *actionMergeCell;
+  KAction *actionMergeSelectedCells;
   KAction *actionSplitCell;
 
   KAction *actionTableFormat;
@@ -224,6 +226,16 @@ void TableActionMenuPrivate::_k_slotMergeCell()
   }
 }
 
+void TableActionMenuPrivate::_k_slotMergeSelectedCells()
+{
+  if ( textEdit->textMode() == KRichTextEdit::Rich ) {
+    QTextTable *table = textEdit->textCursor().currentTable();
+    if ( table ) {
+      table->mergeCells( textEdit->textCursor() );
+    }
+  }
+}
+
 void TableActionMenuPrivate::_k_slotTableFormat()
 {
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
@@ -279,8 +291,9 @@ void TableActionMenuPrivate::_k_slotSplitCell()
     QTextTable *table = textEdit->textCursor().currentTable();
     if ( table ) {
       const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
-      if ( cell.columnSpan() > 1 ) {
-        table->splitCell( cell.row(), cell.column(), 1, cell.columnSpan()-1 );
+      if ( cell.columnSpan() > 1 || cell.rowSpan() > 1 ) {
+        table->splitCell( cell.row(), cell.column(), qMax(1,cell.rowSpan()-1), qMax(1,cell.columnSpan()-1) );
+        _k_updateActions();
       }
     }
   }
@@ -310,14 +323,16 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
       } else {
         actionMergeCell->setEnabled( true );
       }
-      if ( cell.columnSpan() > 1 ) {
+      if ( cell.columnSpan() > 1 ||  cell.rowSpan() > 1 ) {
         actionSplitCell->setEnabled( true );
       } else {
         actionSplitCell->setEnabled( false );
       }
+      actionMergeSelectedCells->setEnabled( true );
     } else {
       actionSplitCell->setEnabled( false );
       actionMergeCell->setEnabled( false );
+      actionMergeSelectedCells->setEnabled( false );
     }
     actionTableFormat->setEnabled( isTable );
   }
@@ -386,6 +401,11 @@ TableActionMenu::TableActionMenu(KActionCollection *ac, TextEdit *textEdit)
     ac->addAction( QLatin1String( "join_cell_to_the_right" ), d->actionMergeCell );
     connect( d->actionMergeCell, SIGNAL(triggered(bool)), SLOT(_k_slotMergeCell()) );
     addAction( d->actionMergeCell );
+
+    d->actionMergeSelectedCells = new KAction( i18n( "Join Selected Cells" ), this );
+    ac->addAction( QLatin1String( "join_cell_selected_cells" ), d->actionMergeSelectedCells );
+    connect( d->actionMergeSelectedCells, SIGNAL(triggered(bool)), SLOT(_k_slotMergeSelectedCells()) );
+    addAction( d->actionMergeSelectedCells );
     addSeparator();
 
     d->actionSplitCell = new KAction( i18n( "Split cells" ), this );
