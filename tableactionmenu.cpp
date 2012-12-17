@@ -381,6 +381,7 @@ TableActionMenu::TableActionMenu(KActionCollection *ac, TextEdit *textEdit)
     removeMenu->addAction( d->actionRemoveColumnAfter );
     ac->addAction( QLatin1String( "remove_column_after" ), d->actionRemoveColumnAfter );
     connect( d->actionRemoveColumnAfter, SIGNAL(triggered(bool)), SLOT(_k_slotRemoveColumnAfter()) );
+    addSeparator();
 
     d->actionMergeCell = new KAction( i18n( "Join With Cell to the Right" ), this );
     ac->addAction( QLatin1String( "join_cell_to_the_right" ), d->actionMergeCell );
