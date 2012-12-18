@@ -308,7 +308,7 @@ void TableActionMenuPrivate::_k_slotTableCellFormat()
       if(format.hasProperty(QTextFormat::BackgroundBrush)) {
           dialog->setTableCellBackgroundColor(format.background().color());
       }
-      dialog->setVerticalAlignement(format.verticalAlignment());
+      dialog->setVerticalAlignment(format.verticalAlignment());
       if(dialog->exec()) {
           if(dialog->useBackgroundColor()) {
               const QColor tableCellColor = dialog->tableCellBackgroundColor();
@@ -318,7 +318,7 @@ void TableActionMenuPrivate::_k_slotTableCellFormat()
           } else {
               format.clearBackground();
           }
-          format.setVerticalAlignment(dialog->verticalAlignement());
+          format.setVerticalAlignment(dialog->verticalAlignment());
           cell.setFormat(format);
       }
       delete dialog;

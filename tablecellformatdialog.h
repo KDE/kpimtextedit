@@ -46,15 +46,15 @@ public:
     void setTableCellBackgroundColor(const QColor& color);
 
     /**
-     * @brief verticalAlignement
-     * @return vertical alignement for current cell
+     * @brief verticalAlignment
+     * @return vertical alignment for current cell
      */
-    QTextCharFormat::VerticalAlignment verticalAlignement() const;
+    QTextCharFormat::VerticalAlignment verticalAlignment() const;
     /**
-     * @brief setVerticalAlignement
+     * @brief setVerticalAlignment
      * @param vertical vertical alignement for current cell
      */
-    void setVerticalAlignement(QTextCharFormat::VerticalAlignment vertical);
+    void setVerticalAlignment(QTextCharFormat::VerticalAlignment vertical);
 
     /**
      * @brief useBackgroundColor

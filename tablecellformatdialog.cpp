@@ -45,15 +45,15 @@ public:
 
 
         QHBoxLayout *hbox = new QHBoxLayout;
-        QLabel *lab = new QLabel( i18n("Vertical Alignement:") );
+        QLabel *lab = new QLabel( i18n("Vertical Alignment:") );
         hbox->addWidget(lab);
-        verticalAlignement = new KComboBox;
-        verticalAlignement->addItem( i18n( "Top" ), QTextCharFormat::AlignTop );
-        verticalAlignement->addItem( i18n( "Middle" ), QTextCharFormat::AlignMiddle );
-        verticalAlignement->addItem( i18n( "Bottom" ), QTextCharFormat::AlignBottom );
+        verticalAlignment = new KComboBox;
+        verticalAlignment->addItem( i18n( "Top" ), QTextCharFormat::AlignTop );
+        verticalAlignment->addItem( i18n( "Middle" ), QTextCharFormat::AlignMiddle );
+        verticalAlignment->addItem( i18n( "Bottom" ), QTextCharFormat::AlignBottom );
 
 
-        hbox->addWidget(verticalAlignement);
+        hbox->addWidget(verticalAlignment);
         lay->addLayout(hbox);
 
         KSeparator *sep = new KSeparator;
@@ -75,7 +75,7 @@ public:
     QCheckBox *useBackgroundColor;
 
     KColorButton *backgroundColor;
-    KComboBox *verticalAlignement;
+    KComboBox *verticalAlignment;
     TableCellFormatDialog *q;
 };
 
@@ -101,14 +101,14 @@ void TableCellFormatDialog::setTableCellBackgroundColor(const QColor& col)
     d->useBackgroundColor->setChecked(true);
 }
 
-QTextCharFormat::VerticalAlignment TableCellFormatDialog::verticalAlignement() const
+QTextCharFormat::VerticalAlignment TableCellFormatDialog::verticalAlignment() const
 {
-    return ( QTextCharFormat::VerticalAlignment )d->verticalAlignement->itemData( d->verticalAlignement->currentIndex () ).toInt();
+    return ( QTextCharFormat::VerticalAlignment )d->verticalAlignment->itemData( d->verticalAlignment->currentIndex () ).toInt();
 }
 
-void TableCellFormatDialog::setVerticalAlignement(QTextCharFormat::VerticalAlignment vertical)
+void TableCellFormatDialog::setVerticalAlignment(QTextCharFormat::VerticalAlignment vertical)
 {
-    d->verticalAlignement->setCurrentIndex( d->verticalAlignement->findData( QVariant( vertical ) ) );
+    d->verticalAlignment->setCurrentIndex( d->verticalAlignment->findData( QVariant( vertical ) ) );
 }
 
 bool TableCellFormatDialog::useBackgroundColor() const
