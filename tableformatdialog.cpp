@@ -30,6 +30,7 @@
 #include <QHBoxLayout>
 #include <QSpinBox>
 #include <QLabel>
+#include <QCheckBox>
 
 using namespace KPIMTextEdit;
 
@@ -90,8 +91,9 @@ public:
     lay->addWidget( sep );
 
     hbox = new QHBoxLayout;
-    lab = new QLabel( i18n( "Background Color:" ) );
-    hbox->addWidget( lab );
+    useBackgroundColor = new QCheckBox( i18n( "Background Color:" ) );
+
+    hbox->addWidget( useBackgroundColor );
     backgroundColor = new KColorButton;
     backgroundColor->setDefaultColor(Qt::white);
     hbox->addWidget( backgroundColor );
@@ -99,8 +101,11 @@ public:
 
     sep = new KSeparator;
     lay->addWidget( sep );
+    backgroundColor->setEnabled(false);
+    q->connect(useBackgroundColor,SIGNAL(toggled(bool)),backgroundColor,SLOT(setEnabled(bool)));
 
   }
+  QCheckBox *useBackgroundColor;
   KColorButton *backgroundColor;
   KComboBox *alignment;
   QSpinBox *spacing;
@@ -208,5 +213,11 @@ QColor TableFormatDialog::tableBackgroundColor() const
 void TableFormatDialog::setTableBackgroundColor(const QColor& col)
 {
     d->backgroundColor->setColor(col);
+    d->useBackgroundColor->setChecked(true);
+}
+
+bool TableFormatDialog::useBackgroundColor() const
+{
+    return d->useBackgroundColor->isChecked();
 }
 

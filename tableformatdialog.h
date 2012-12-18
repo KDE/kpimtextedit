@@ -60,6 +60,8 @@ public:
   QColor tableBackgroundColor() const;
   void setTableBackgroundColor(const QColor& col);
 
+  bool useBackgroundColor() const;
+
 private:
   class TableFormatDialogPrivate;
   TableFormatDialogPrivate * const d;

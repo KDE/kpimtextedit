@@ -283,8 +283,12 @@ void TableActionMenuPrivate::_k_slotTableFormat()
         }
         tableFormat.setColumnWidthConstraints( contrains );
         const QColor tableBackgroundColor = dialog->tableBackgroundColor();
-        if(tableBackgroundColor.isValid()) {
-          tableFormat.setBackground(tableBackgroundColor);
+        if(dialog->useBackgroundColor()) {
+            if(tableBackgroundColor.isValid()) {
+              tableFormat.setBackground(tableBackgroundColor);
+            }
+        } else {
+            tableFormat.clearBackground();
         }
         table->setFormat( tableFormat );
       }
