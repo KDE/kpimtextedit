@@ -206,7 +206,7 @@ void TableActionMenuPrivate::_k_slotInsertTable()
       const int length = dialog->length();
 
       for ( int i = 0; i < numberOfColumns; ++i ) {
-          QTextLength textlength( type, length / numberOfColumns );
+          const QTextLength textlength( type, length / numberOfColumns );
           contrains.append( textlength );
       }
       tableFormat.setColumnWidthConstraints( contrains );
