@@ -56,6 +56,11 @@ public:
      */
     void setVerticalAlignement(QTextCharFormat::VerticalAlignment vertical);
 
+    /**
+     * @brief useBackgroundColor
+     * @return true if we define background color. Otherwise false and allows to clear it.
+     */
+    bool useBackgroundColor() const;
 
 private:
     class TableCellFormatDialogPrivate;

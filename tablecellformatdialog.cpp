@@ -27,49 +27,53 @@
 
 #include <QVBoxLayout>
 #include <QLabel>
+#include <QCheckBox>
 
 using namespace KPIMTextEdit;
 
 class TableCellFormatDialog::TableCellFormatDialogPrivate
 {
 public:
-  TableCellFormatDialogPrivate(TableCellFormatDialog *qq)
-    :q( qq )
-  {
-      q->setCaption( i18n( "Cell Format" ) );
-      q->setButtons( Ok|Cancel );
-      QWidget *page = new QWidget( q );
-      q->setMainWidget( page );
-      QVBoxLayout *lay = new QVBoxLayout( page );
+    TableCellFormatDialogPrivate(TableCellFormatDialog *qq)
+        :q( qq )
+    {
+        q->setCaption( i18n( "Cell Format" ) );
+        q->setButtons( Ok|Cancel );
+        QWidget *page = new QWidget( q );
+        q->setMainWidget( page );
+        QVBoxLayout *lay = new QVBoxLayout( page );
 
 
-      QHBoxLayout *hbox = new QHBoxLayout;
-      QLabel *lab = new QLabel( i18n("Vertical Alignement:") );
-      hbox->addWidget(lab);
-      verticalAlignement = new KComboBox;
-      verticalAlignement->addItem( i18n( "Top" ), QTextCharFormat::AlignTop );
-      verticalAlignement->addItem( i18n( "Middle" ), QTextCharFormat::AlignMiddle );
-      verticalAlignement->addItem( i18n( "Bottom" ), QTextCharFormat::AlignBottom );
+        QHBoxLayout *hbox = new QHBoxLayout;
+        QLabel *lab = new QLabel( i18n("Vertical Alignement:") );
+        hbox->addWidget(lab);
+        verticalAlignement = new KComboBox;
+        verticalAlignement->addItem( i18n( "Top" ), QTextCharFormat::AlignTop );
+        verticalAlignement->addItem( i18n( "Middle" ), QTextCharFormat::AlignMiddle );
+        verticalAlignement->addItem( i18n( "Bottom" ), QTextCharFormat::AlignBottom );
 
 
-      hbox->addWidget(verticalAlignement);
-      lay->addLayout(hbox);
+        hbox->addWidget(verticalAlignement);
+        lay->addLayout(hbox);
 
-      KSeparator *sep = new KSeparator;
-      lay->addWidget( sep );
+        KSeparator *sep = new KSeparator;
+        lay->addWidget( sep );
 
-      hbox = new QHBoxLayout;
-      lab = new QLabel( i18n( "Background Color:" ) );
-      hbox->addWidget( lab );
-      backgroundColor = new KColorButton;
-      backgroundColor->setDefaultColor(Qt::white);
-      hbox->addWidget( backgroundColor );
-      lay->addLayout(hbox);
+        hbox = new QHBoxLayout;
+        useBackgroundColor = new QCheckBox( i18n( "Background Color:" ) );
+        hbox->addWidget( useBackgroundColor );
+        backgroundColor = new KColorButton;
+        backgroundColor->setDefaultColor(Qt::white);
+        hbox->addWidget( backgroundColor );
+        lay->addLayout(hbox);
 
-      sep = new KSeparator;
-      lay->addWidget( sep );
-
+        sep = new KSeparator;
+        lay->addWidget( sep );
+        backgroundColor->setEnabled(false);
+        q->connect(useBackgroundColor,SIGNAL(toggled(bool)),backgroundColor,SLOT(setEnabled(bool)));
     }
+    QCheckBox *useBackgroundColor;
+
     KColorButton *backgroundColor;
     KComboBox *verticalAlignement;
     TableCellFormatDialog *q;
@@ -94,6 +98,7 @@ QColor TableCellFormatDialog::tableCellBackgroundColor() const
 void TableCellFormatDialog::setTableCellBackgroundColor(const QColor& col)
 {
     d->backgroundColor->setColor(col);
+    d->useBackgroundColor->setChecked(true);
 }
 
 QTextCharFormat::VerticalAlignment TableCellFormatDialog::verticalAlignement() const
@@ -104,4 +109,9 @@ QTextCharFormat::VerticalAlignment TableCellFormatDialog::verticalAlignement() c
 void TableCellFormatDialog::setVerticalAlignement(QTextCharFormat::VerticalAlignment vertical)
 {
     d->verticalAlignement->setCurrentIndex( d->verticalAlignement->findData( QVariant( vertical ) ) );
+}
+
+bool TableCellFormatDialog::useBackgroundColor() const
+{
+    return d->useBackgroundColor->isChecked();
 }

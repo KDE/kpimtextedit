@@ -310,9 +310,13 @@ void TableActionMenuPrivate::_k_slotTableCellFormat()
       }
       dialog->setVerticalAlignement(format.verticalAlignment());
       if(dialog->exec()) {
-          const QColor tableCellColor = dialog->tableCellBackgroundColor();
-          if(tableCellColor.isValid()) {
-              format.setBackground(tableCellColor);
+          if(dialog->useBackgroundColor()) {
+              const QColor tableCellColor = dialog->tableCellBackgroundColor();
+              if(tableCellColor.isValid()) {
+                  format.setBackground(tableCellColor);
+              }
+          } else {
+              format.clearBackground();
           }
           format.setVerticalAlignment(dialog->verticalAlignement());
           cell.setFormat(format);
