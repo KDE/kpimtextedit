@@ -205,8 +205,8 @@ void TableActionMenuPrivate::_k_slotInsertTable()
       const QTextLength::Type type = dialog->typeOfLength();
       const int length = dialog->length();
 
+      const QTextLength textlength( type, length / numberOfColumns );
       for ( int i = 0; i < numberOfColumns; ++i ) {
-          const QTextLength textlength( type, length / numberOfColumns );
           contrains.append( textlength );
       }
       tableFormat.setColumnWidthConstraints( contrains );
@@ -277,8 +277,8 @@ void TableActionMenuPrivate::_k_slotTableFormat()
         const QTextLength::Type type = dialog->typeOfLength();
         const int length = dialog->length();
 
+        const QTextLength textlength( type, length / newNumberOfColumns );
         for ( int i = 0; i < newNumberOfColumns; ++i ) {
-          QTextLength textlength( type, length / newNumberOfColumns );
           contrains.append( textlength );
         }
         tableFormat.setColumnWidthConstraints( contrains );
