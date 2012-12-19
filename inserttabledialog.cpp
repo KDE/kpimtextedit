@@ -23,6 +23,8 @@
 #include <KLocale>
 #include <KComboBox>
 #include <KDebug>
+#include <KSeparator>
+
 #include <QSpinBox>
 #include <QFormLayout>
 
@@ -170,8 +172,15 @@ public:
     q->setCaption( i18n( "Insert Table" ) );
     q->setButtons( Ok|Cancel );
     q->setButtonText( KDialog::Ok, i18n( "Insert" ) );
-    insertTableWidget = new InsertTableWidget( q );
-    q->setMainWidget( insertTableWidget );
+    QWidget *page = new QWidget;
+    QVBoxLayout *lay = new QVBoxLayout;
+    page->setLayout(lay);
+    insertTableWidget = new InsertTableWidget;
+    lay->addWidget(insertTableWidget);
+    KSeparator *sep = new KSeparator;
+    lay->addWidget( sep );
+
+    q->setMainWidget( page );
   }
   InsertTableWidget *insertTableWidget;
   InsertTableDialog *q;
