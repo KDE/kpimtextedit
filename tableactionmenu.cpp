@@ -359,6 +359,13 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
 
     if ( table ) {
       const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
+
+      int firstRow = -1;
+      int numRows = -1;
+      int firstColumn = -1;
+      int numColumns = -1;
+      textEdit->textCursor().selectedTableCells ( &firstRow, &numRows, &firstColumn, &numColumns );
+      const bool hasSelectedTableCell = (firstRow != -1) && (numRows != -1) && (firstColumn != -1) && (numColumns != -1);
       if ( cell.column()>table->columns() - 2 ) {
         actionMergeCell->setEnabled( false );
       } else {
@@ -370,7 +377,7 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
         actionSplitCell->setEnabled( false );
       }
       actionTableCellFormat->setEnabled( true );
-      actionMergeSelectedCells->setEnabled( true );
+      actionMergeSelectedCells->setEnabled( hasSelectedTableCell );
     } else {
       actionSplitCell->setEnabled( false );
       actionMergeCell->setEnabled( false );
