@@ -49,6 +49,7 @@ private:
   Q_PRIVATE_SLOT( d, void _k_slotRemoveRowAbove() )
   Q_PRIVATE_SLOT( d, void _k_slotRemoveColumnBefore() )
   Q_PRIVATE_SLOT( d, void _k_slotRemoveColumnAfter() )
+  Q_PRIVATE_SLOT( d, void _k_slotRemoveCellContents() )
   Q_PRIVATE_SLOT( d, void _k_slotMergeCell() )
   Q_PRIVATE_SLOT( d, void _k_slotMergeSelectedCells() )
   Q_PRIVATE_SLOT( d, void _k_slotTableCellFormat() )

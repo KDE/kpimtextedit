@@ -54,6 +54,8 @@ public:
   void _k_slotRemoveRowAbove();
   void _k_slotRemoveColumnBefore();
   void _k_slotRemoveColumnAfter();
+  void _k_slotRemoveCellContents();
+
   void _k_slotMergeCell();
   void _k_slotMergeSelectedCells();
   void _k_slotTableFormat();
@@ -82,10 +84,30 @@ public:
   KAction *actionTableFormat;
   KAction *actionTableCellFormat;
 
+  KAction *actionRemoveCellContents;
+
   KActionCollection *actionCollection;
   TextEdit *textEdit;
   TableActionMenu *q;
 };
+
+void TableActionMenuPrivate::_k_slotRemoveCellContents()
+{
+  if ( textEdit->textMode() == KRichTextEdit::Rich ) {
+    QTextTable *table = textEdit->textCursor().currentTable();
+    const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
+    if(cell.isValid()) {
+        const QTextCursor firstCursor = cell.firstCursorPosition();
+        const QTextCursor endCursor = cell.lastCursorPosition();
+        QTextCursor cursor = textEdit->textCursor();
+        cursor.beginEditBlock();
+        cursor.setPosition( firstCursor.position() );
+        cursor.movePosition( QTextCursor::NextCharacter, QTextCursor::KeepAnchor, endCursor.position() - firstCursor.position() );
+        cursor.removeSelectedText();
+        cursor.endEditBlock();
+    }
+  }
+}
 
 void TableActionMenuPrivate::_k_slotRemoveRowBelow()
 {
@@ -385,6 +407,7 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
     }
     actionTableFormat->setEnabled( isTable );
     actionTableCellFormat->setEnabled( isTable );
+    actionRemoveCellContents->setEnabled( isTable );
   }
 }
 
@@ -446,6 +469,14 @@ TableActionMenu::TableActionMenu(KActionCollection *ac, TextEdit *textEdit)
     removeMenu->addAction( d->actionRemoveColumnAfter );
     ac->addAction( QLatin1String( "remove_column_after" ), d->actionRemoveColumnAfter );
     connect( d->actionRemoveColumnAfter, SIGNAL(triggered(bool)), SLOT(_k_slotRemoveColumnAfter()) );
+
+    removeMenu->addSeparator();
+    d->actionRemoveCellContents = new KAction( i18n( "Cell Contents" ), this );
+    removeMenu->addAction( d->actionRemoveCellContents );
+    ac->addAction( QLatin1String( "remove_cell_contents" ), d->actionRemoveCellContents );
+    connect( d->actionRemoveCellContents, SIGNAL(triggered(bool)), SLOT(_k_slotRemoveCellContents()) );
+
+
     addSeparator();
 
     d->actionMergeCell = new KAction( i18n( "Join With Cell to the Right" ), this );
