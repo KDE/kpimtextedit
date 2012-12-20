@@ -639,7 +639,7 @@ void TextEditPrivate::_k_slotAddEmoticon( const QString& text)
 void TextEditPrivate::_k_slotInsertHtml()
 {
   if ( q->textMode() == KRichTextEdit::Rich ) {
-    InsertHtmlDialog *dialog = new InsertHtmlDialog( q );
+    QPointer<InsertHtmlDialog> dialog = new InsertHtmlDialog( q );
     if ( dialog->exec() ) {
       const QString str = dialog->html();
       if ( !str.isEmpty() ) {
