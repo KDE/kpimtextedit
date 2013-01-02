@@ -111,6 +111,8 @@ class KPIMTEXTEDIT_EXPORT EMailQuoteHighlighter : public Sonnet::Highlighter
      * Reimplemented, the base version sets the text color to black, which
      * is not what we want. We do nothing, the format is already reset by
      * Qt.
+     * @param start the beginning of text
+     * @param count the amount of characters to set
      */
     virtual void unsetMisspelled( int start, int count );
 

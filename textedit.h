@@ -137,6 +137,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     /**
      * Reimplemented from KMEditor, to support more actions.
      *
+     * @param actionCollection the collection to put the new actions into
      * The additional action XML names are:
      * - add_image
      * - delete_line
@@ -169,6 +170,9 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      * Loads an image into the textedit. The difference to addImage() is that this
      * function expects that the image tag is already present in the HTML source.
      *
+     * @param image the image to load
+     * @param matchName the name of tags to match image
+     * @param resourceName the resource name of image
      * So what this message does is that it scans the HTML source for the image
      * tag that matches the @p matchName, and then inserts the @p image as a
      * resource, giving that resource the name @p resourceName.
@@ -305,6 +309,8 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     bool isEnableEmoticonActions() const;
 
     /**
+     * @param image the image to insert
+     * @param info the info to supply with image
      * @since 4.6
      */
     void insertImage( const QImage &image, const QFileInfo &info );

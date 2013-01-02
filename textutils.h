@@ -45,6 +45,9 @@ namespace TextUtils
    *  Changes the given text so that each line of it fits into the given maximal length.
    *  At each line, the "indent" string is prepended, which is usually the quote prefix.
    *  The text parameter will be empty afterwards.
+   *  @param text the text to indent
+   *  @param indent the indentation prefix string
+   *  @param maxLength the maximal length the string of text will fit into
    *  Example:
    *    text = "Hello World, this is a test."
    *    indent = "> "
