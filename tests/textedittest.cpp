@@ -436,4 +436,13 @@ void TextEditTester::testLoadImage()
   QCOMPARE( edit.embeddedImages().size(), 1 );
 }
 
+void TextEditTester::testWrappedPlainText()
+{
+  TextEdit edit;
+  QLatin1String text( "http://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\n  https://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\ntest ftp://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\nftps://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\n  ldap://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test" );
+  edit.setPlainText( text );
 
+  edit.show(); // < otherwise toWrappedPlainText can't work, it needs a layout
+
+  QCOMPARE( edit.toWrappedPlainText(), text );
+}

@@ -382,13 +382,23 @@ QString TextEdit::toWrappedPlainText() const
 QString TextEdit::toWrappedPlainText(QTextDocument* doc) const
 {
   QString temp;
+  QRegExp rx( QLatin1String( "(http|ftp|ldap)s?\\S+-$" ) );
   QTextBlock block = doc->begin();
   while ( block.isValid() ) {
     QTextLayout *layout = block.layout();
     const int numberOfLine( layout->lineCount() );
+    bool urlStart = false;
     for ( int i = 0; i < numberOfLine; ++i ) {
       QTextLine line = layout->lineAt( i );
-      temp += block.text().mid( line.textStart(), line.textLength() ) + QLatin1Char( '\n' );
+      QString lineText = block.text().mid( line.textStart(), line.textLength() );
+
+      if ( lineText.contains(rx) || ( urlStart && !lineText.contains( QLatin1Char(' ') ) && lineText.endsWith( QLatin1Char('-') ) ) ) {
+        // don't insert line break in URL
+        temp += lineText;
+        urlStart = true;
+      } else {
+        temp += lineText + QLatin1Char( '\n' );
+      }
     }
     block = block.next();
   }

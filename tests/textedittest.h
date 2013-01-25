@@ -37,6 +37,7 @@ class TextEditTester : public QObject
     void testDeleteLine();
     void testDeleteLine_data();
     void testLoadImage();
+    void testWrappedPlainText();
 };
 
 #endif
