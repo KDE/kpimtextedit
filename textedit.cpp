@@ -59,13 +59,16 @@ class TextEditPrivate
     TextEditPrivate( TextEdit *parent )
       : actionAddImage( 0 ),
         actionDeleteLine( 0 ),
+        actionAddEmoticon( 0 ),
         actionInsertHtml( 0 ),
         actionTable( 0 ),
+        actionFormatReset( 0 ),
         q( parent ),
         imageSupportEnabled( false ),
         emoticonSupportEnabled( false ),
         insertHtmlSupportEnabled( false ),
-        insertTableSupportEnabled( false )
+        insertTableSupportEnabled( false ),
+        spellCheckingEnabled( false )
     {
     }
 
