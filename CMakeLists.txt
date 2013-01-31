@@ -18,6 +18,7 @@ set(kpimtextedit_lib_srcs
   htmlhighlighter.cpp
   insertimagewidget.cpp
   tablecellformatdialog.cpp
+  selectspecialchar.cpp
 )
 
 kde4_add_library(kpimtextedit ${LIBRARY_TYPE} ${kpimtextedit_lib_srcs})
@@ -47,6 +48,7 @@ install(FILES
   insertimagedialog.h
   insertimagewidget.h
   tablecellformatdialog.h
+  selectspecialchar.h
   DESTINATION ${INCLUDE_INSTALL_DIR}/kpimtextedit COMPONENT Devel
 )
 
