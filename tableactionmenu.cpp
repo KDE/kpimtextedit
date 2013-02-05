@@ -488,12 +488,13 @@ TableActionMenu::TableActionMenu(KActionCollection *ac, TextEdit *textEdit)
     ac->addAction( QLatin1String( "join_cell_selected_cells" ), d->actionMergeSelectedCells );
     connect( d->actionMergeSelectedCells, SIGNAL(triggered(bool)), SLOT(_k_slotMergeSelectedCells()) );
     addAction( d->actionMergeSelectedCells );
-    addSeparator();
 
     d->actionSplitCell = new KAction( KIcon(QLatin1String("edit-table-cell-split")), i18n( "Split cells" ), this );
     ac->addAction( QLatin1String( "split_cells" ), d->actionSplitCell );
     connect( d->actionSplitCell, SIGNAL(triggered(bool)), SLOT(_k_slotSplitCell()) );
     addAction( d->actionSplitCell );
+
+    addSeparator();
 
     d->actionTableFormat = new KAction( i18n( "Table Format..." ), this );
     ac->addAction( QLatin1String( "table_format" ), d->actionTableFormat );
