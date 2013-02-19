@@ -17,47 +17,50 @@
   02110-1301, USA.
 
 */
-#ifndef INSERTIMAGEWIDGET_H
-#define INSERTIMAGEWIDGET_H
+#ifndef KPIMTEXTEDIT_INSERTIMAGEWIDGET_H
+#define KPIMTEXTEDIT_INSERTIMAGEWIDGET_H
+
 #include "kpimtextedit_export.h"
 
-#include <KUrl>
+#include <KDE/KUrl>
 
 #include <QWidget>
 
-
 namespace KPIMTextEdit {
+
 class InsertImageWidgetPrivate;
+
 class KPIMTEXTEDIT_EXPORT InsertImageWidget : public QWidget
 {
-    Q_OBJECT
-public:
-    explicit InsertImageWidget(QWidget * parent);
+  Q_OBJECT
+  public:
+    explicit InsertImageWidget( QWidget *parent );
     ~InsertImageWidget();
 
-    void setImageWidth(int value);
+    void setImageWidth( int value );
     int imageWidth() const;
 
-    void setImageHeight(int value);
+    void setImageHeight( int value );
     int imageHeight() const;
 
     KUrl imageUrl() const;
-    void setImageUrl(const KUrl&url);
+    void setImageUrl( const KUrl &url );
 
     bool keepOriginalSize() const;
 
+  Q_SIGNALS:
+    void enableButtonOk( bool enabled );
 
-Q_SIGNALS:
-    void enableButtonOk(bool enabled);
-
-private:
+  private:
     friend class InsertImageWidgetPrivate;
     InsertImageWidgetPrivate *const d;
-    Q_PRIVATE_SLOT( d, void _k_slotKeepOriginalSizeClicked(bool) )
-    Q_PRIVATE_SLOT( d, void _k_slotUrlChanged(const QString&))
-    Q_PRIVATE_SLOT( d, void _k_slotImageWidthChanged(int))
-    Q_PRIVATE_SLOT( d, void _k_slotImageHeightChanged(int))
+    Q_PRIVATE_SLOT( d, void _k_slotKeepOriginalSizeClicked( bool ) )
+    Q_PRIVATE_SLOT( d, void _k_slotUrlChanged( const QString & ) )
+    Q_PRIVATE_SLOT( d, void _k_slotImageWidthChanged( int ) )
+    Q_PRIVATE_SLOT( d, void _k_slotImageHeightChanged( int ) )
 
 };
+
 }
-#endif // INSERTIMAGEWIDGET_H
+
+#endif // KPIMTEXTEDIT_INSERTIMAGEWIDGET_H

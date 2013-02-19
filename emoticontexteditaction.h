@@ -18,28 +18,30 @@
   02110-1301, USA.
 */
 
-#ifndef EMOTICONTEXTEDITACTION_H
-#define EMOTICONTEXTEDITACTION_H
+#ifndef KPIMTEXTEDIT_EMOTICONTEXTEDITACTION_H
+#define KPIMTEXTEDIT_EMOTICONTEXTEDITACTION_H
 
 #include "kpimtextedit_export.h"
-#include <KActionMenu>
+
+#include <KDE/KActionMenu>
 
 namespace KPIMTextEdit {
 
 class KPIMTEXTEDIT_EXPORT EmoticonTextEditAction : public KActionMenu
 {
   Q_OBJECT
-public:
-  explicit EmoticonTextEditAction( QObject * parent );
-  ~EmoticonTextEditAction();
-Q_SIGNALS:
-  void emoticonActivated(const QString&);
-private:
-  class EmoticonTextEditActionPrivate;
-  EmoticonTextEditActionPrivate * const d;
+  public:
+    explicit EmoticonTextEditAction( QObject *parent );
+    ~EmoticonTextEditAction();
+
+  Q_SIGNALS:
+    void emoticonActivated( const QString & );
+
+  private:
+    class EmoticonTextEditActionPrivate;
+    EmoticonTextEditActionPrivate * const d;
 };
 
 }
 
-#endif /* EMOTICONTEXTEDITACTION_H */
-
+#endif /* KPIMTEXTEDIT_EMOTICONTEXTEDITACTION_H */

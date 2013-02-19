@@ -28,15 +28,14 @@
 #include <QSpinBox>
 #include <QFormLayout>
 
-
 using namespace KPIMTextEdit;
 
 class InsertTableWidget::InsertTableWidgetPrivate
 {
-public:
-  InsertTableWidgetPrivate(InsertTableWidget *qq)
-    :q( qq )
-  {
+  public:
+    InsertTableWidgetPrivate( InsertTableWidget *qq )
+      :q( qq )
+    {
       mRows = new QSpinBox;
       mRows->setMinimum( 1 );
       mRows->setValue( 2 );
@@ -55,7 +54,6 @@ public:
       formLayout->addRow( i18n( "Columns:" ), mColumns );
       formLayout->addRow( i18n( "Border:" ), mBorder );
 
-
       QHBoxLayout *lay = new QHBoxLayout;
       mTypeOfLength = new KComboBox;
       q->connect( mTypeOfLength, SIGNAL(activated(int)),q,SLOT(slotTypeOfLengthChanged(int)) );
@@ -71,81 +69,81 @@ public:
 
       formLayout->addRow( i18n( "Width:" ), lay );
       q->setLayout( formLayout );
-  }
+    }
 
-  QSpinBox *mColumns;
-  QSpinBox *mRows;
-  QSpinBox *mBorder;
-  QSpinBox *mLength;
-  KComboBox *mTypeOfLength;
+    QSpinBox *mColumns;
+    QSpinBox *mRows;
+    QSpinBox *mBorder;
+    QSpinBox *mLength;
+    KComboBox *mTypeOfLength;
 
-  InsertTableWidget *q;
+    InsertTableWidget *q;
 };
 
-InsertTableWidget::InsertTableWidget(QWidget *parent)
-    : QWidget( parent ), d(new InsertTableWidgetPrivate(this))
+InsertTableWidget::InsertTableWidget( QWidget *parent )
+  : QWidget( parent ), d( new InsertTableWidgetPrivate( this ) )
 {
 }
 
 InsertTableWidget::~InsertTableWidget()
 {
-    delete d;
+  delete d;
 }
 
-void InsertTableWidget::slotTypeOfLengthChanged(int index)
+void InsertTableWidget::slotTypeOfLengthChanged( int index )
 {
-    switch ( index ) {
-    case 0:
-        d->mLength->setMaximum( 100 );
-        d->mLength->setValue( qMin( d->mLength->value(), 100 ) );
-        break;
-    case 1:
-        d->mLength->setMaximum( 9999 );
-        break;
-    default:
-        kDebug() << " index not defined " << index;
-        break;
-    }
+  switch ( index ) {
+  case 0:
+    d->mLength->setMaximum( 100 );
+    d->mLength->setValue( qMin( d->mLength->value(), 100 ) );
+    break;
+  case 1:
+    d->mLength->setMaximum( 9999 );
+    break;
+  default:
+    kDebug() << " index not defined " << index;
+    break;
+  }
 }
 
 QTextLength::Type InsertTableWidget::typeOfLength() const
 {
-  return (QTextLength::Type)d->mTypeOfLength->itemData( d->mTypeOfLength->currentIndex() ).toInt();
+  return
+    ( QTextLength::Type )d->mTypeOfLength->itemData(
+      d->mTypeOfLength->currentIndex() ).toInt();
 }
 
-void InsertTableWidget::setTypeOfLength(QTextLength::Type type)
+void InsertTableWidget::setTypeOfLength( QTextLength::Type type )
 {
-  const int index = d->mTypeOfLength->findData(QVariant(type));
-  d->mTypeOfLength->setCurrentIndex(index);
-  slotTypeOfLengthChanged(index);
+  const int index = d->mTypeOfLength->findData( QVariant( type ) );
+  d->mTypeOfLength->setCurrentIndex( index );
+  slotTypeOfLengthChanged( index );
 }
-
 
 int InsertTableWidget::length() const
 {
   return d->mLength->value();
 }
 
-void InsertTableWidget::setLength(int val)
+void InsertTableWidget::setLength( int val )
 {
-    d->mLength->setValue(val);
+  d->mLength->setValue(val);
 }
 
-void InsertTableWidget::setColumns(int col)
+void InsertTableWidget::setColumns( int col )
 {
   d->mColumns->setValue( col );
 }
 
-void InsertTableWidget::setRows(int rows)
+void InsertTableWidget::setRows( int rows )
 {
   d->mRows->setValue( rows );
 }
 
-void InsertTableWidget::setBorder(int border)
+void InsertTableWidget::setBorder( int border )
 {
   d->mBorder->setValue( border );
 }
-
 
 int InsertTableWidget::columns() const
 {
@@ -162,31 +160,31 @@ int InsertTableWidget::border() const
   return d->mBorder->value();
 }
 
-
 class InsertTableDialog::InsertTableDialogPrivate
 {
-public:
-  InsertTableDialogPrivate(InsertTableDialog *qq)
-    :q( qq )
-  {
-    q->setCaption( i18n( "Insert Table" ) );
-    q->setButtons( Ok|Cancel );
-    q->setButtonText( KDialog::Ok, i18n( "Insert" ) );
-    QWidget *page = new QWidget;
-    QVBoxLayout *lay = new QVBoxLayout;
-    page->setLayout(lay);
-    insertTableWidget = new InsertTableWidget;
-    lay->addWidget(insertTableWidget);
-    KSeparator *sep = new KSeparator;
-    lay->addWidget( sep );
+  public:
+    InsertTableDialogPrivate( InsertTableDialog *qq )
+      : q( qq )
+    {
+      q->setCaption( i18n( "Insert Table" ) );
+      q->setButtons( Ok|Cancel );
+      q->setButtonText( KDialog::Ok, i18n( "Insert" ) );
+      QWidget *page = new QWidget;
+      QVBoxLayout *lay = new QVBoxLayout;
+      page->setLayout(lay);
+      insertTableWidget = new InsertTableWidget;
+      lay->addWidget(insertTableWidget);
+      KSeparator *sep = new KSeparator;
+      lay->addWidget( sep );
 
-    q->setMainWidget( page );
-  }
-  InsertTableWidget *insertTableWidget;
-  InsertTableDialog *q;
+      q->setMainWidget( page );
+    }
+
+    InsertTableWidget *insertTableWidget;
+    InsertTableDialog *q;
 };
 
-InsertTableDialog::InsertTableDialog(QWidget *parent)
+InsertTableDialog::InsertTableDialog( QWidget *parent )
   : KDialog( parent ), d( new InsertTableDialogPrivate( this ) )
 {
 }
@@ -221,27 +219,27 @@ int InsertTableDialog::length() const
   return d->insertTableWidget->length();
 }
 
-void InsertTableDialog::setColumns(int col)
+void InsertTableDialog::setColumns( int col )
 {
-  d->insertTableWidget->setColumns(col);
+  d->insertTableWidget->setColumns( col );
 }
 
-void InsertTableDialog::setRows(int rows)
+void InsertTableDialog::setRows( int rows )
 {
-  d->insertTableWidget->setRows(rows);
+  d->insertTableWidget->setRows( rows );
 }
 
-void InsertTableDialog::setBorder(int border)
+void InsertTableDialog::setBorder( int border )
 {
-  d->insertTableWidget->setBorder(border);
+  d->insertTableWidget->setBorder( border );
 }
 
-void InsertTableDialog::setLength(int val)
+void InsertTableDialog::setLength( int val )
 {
-  d->insertTableWidget->setLength(val);
+  d->insertTableWidget->setLength( val );
 }
 
-void InsertTableDialog::setTypeOfLength(QTextLength::Type type)
+void InsertTableDialog::setTypeOfLength( QTextLength::Type type )
 {
-  d->insertTableWidget->setTypeOfLength(type);
+  d->insertTableWidget->setTypeOfLength( type );
 }

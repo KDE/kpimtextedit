@@ -18,11 +18,13 @@
 
 */
 
-#ifndef INSERTTABLEDIALOG_H
-#define INSERTTABLEDIALOG_H
+#ifndef KPIMTEXTEDIT_INSERTTABLEDIALOG_H
+#define KPIMTEXTEDIT_INSERTTABLEDIALOG_H
 
 #include "kpimtextedit_export.h"
-#include <KDialog>
+
+#include <KDE/KDialog>
+
 #include <QTextLength>
 
 namespace KPIMTextEdit {
@@ -30,55 +32,54 @@ namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT InsertTableWidget : public QWidget
 {
   Q_OBJECT
-public:
-  explicit InsertTableWidget(QWidget *parent = 0);
-  ~InsertTableWidget();
-  int columns() const;
-  int rows() const;
-  int border() const;
+  public:
+    explicit InsertTableWidget( QWidget *parent = 0 );
+    ~InsertTableWidget();
+    int columns() const;
+    int rows() const;
+    int border() const;
 
-  void setColumns(int col);
-  void setRows(int rows);
-  void setBorder(int border);
+    void setColumns( int col );
+    void setRows( int rows );
+    void setBorder( int border );
 
-  QTextLength::Type typeOfLength() const;
-  void setTypeOfLength(QTextLength::Type type);
+    QTextLength::Type typeOfLength() const;
+    void setTypeOfLength( QTextLength::Type type );
 
-  int length() const;
-  void setLength(int);
+    int length() const;
+    void setLength( int );
 
-private Q_SLOTS:
-  void slotTypeOfLengthChanged(int);
+  private Q_SLOTS:
+    void slotTypeOfLengthChanged( int );
 
-private:
-  class InsertTableWidgetPrivate;
-  InsertTableWidgetPrivate * const d;
+  private:
+    class InsertTableWidgetPrivate;
+    InsertTableWidgetPrivate * const d;
 };
 
 class KPIMTEXTEDIT_EXPORT InsertTableDialog : public KDialog
 {
-public:
-  explicit InsertTableDialog(QWidget *parent);
-  ~InsertTableDialog();
-  int columns() const;
-  int rows() const;
-  int border() const;
+  public:
+    explicit InsertTableDialog( QWidget *parent );
+    ~InsertTableDialog();
+    int columns() const;
+    int rows() const;
+    int border() const;
 
-  void setColumns(int col);
-  void setRows(int rows);
-  void setBorder(int border);
+    void setColumns( int col );
+    void setRows( int rows );
+    void setBorder( int border );
 
+    QTextLength::Type typeOfLength() const;
+    void setTypeOfLength( QTextLength::Type type );
+    int length() const;
+    void setLength( int );
 
-  QTextLength::Type typeOfLength() const;
-  void setTypeOfLength(QTextLength::Type type);
-  int length() const;
-  void setLength(int);
-
-
-private:
-  class InsertTableDialogPrivate;
-  InsertTableDialogPrivate * const d;
+  private:
+    class InsertTableDialogPrivate;
+    InsertTableDialogPrivate * const d;
 };
+
 }
 
-#endif // INSERTTABLEDIALOG_H
+#endif // KPIMTEXTEDIT_INSERTTABLEDIALOG_H

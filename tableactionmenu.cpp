@@ -35,13 +35,11 @@ namespace KPIMTextEdit {
 
 class TableActionMenuPrivate
 {
-public:
-  TableActionMenuPrivate(KActionCollection *ac, TextEdit *edit,TableActionMenu *qq)
-    : actionCollection( ac ),
-      textEdit( edit ),
-      q( qq )
-  {
-  }
+  public:
+    TableActionMenuPrivate( KActionCollection *ac, TextEdit *edit, TableActionMenu *qq )
+      : actionCollection( ac ), textEdit( edit ), q( qq )
+    {
+    }
 
   void _k_slotInsertRowBelow();
   void _k_slotInsertRowAbove();
@@ -61,7 +59,7 @@ public:
   void _k_slotTableFormat();
   void _k_slotTableCellFormat();
   void _k_slotSplitCell();
-  void _k_updateActions(bool forceUpdate = false);
+  void _k_updateActions( bool forceUpdate = false );
 
   KAction *actionInsertTable;
 
@@ -96,15 +94,16 @@ void TableActionMenuPrivate::_k_slotRemoveCellContents()
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
     QTextTable *table = textEdit->textCursor().currentTable();
     const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
-    if(cell.isValid()) {
-        const QTextCursor firstCursor = cell.firstCursorPosition();
-        const QTextCursor endCursor = cell.lastCursorPosition();
-        QTextCursor cursor = textEdit->textCursor();
-        cursor.beginEditBlock();
-        cursor.setPosition( firstCursor.position() );
-        cursor.movePosition( QTextCursor::NextCharacter, QTextCursor::KeepAnchor, endCursor.position() - firstCursor.position() );
-        cursor.removeSelectedText();
-        cursor.endEditBlock();
+    if ( cell.isValid() ) {
+      const QTextCursor firstCursor = cell.firstCursorPosition();
+      const QTextCursor endCursor = cell.lastCursorPosition();
+      QTextCursor cursor = textEdit->textCursor();
+      cursor.beginEditBlock();
+      cursor.setPosition( firstCursor.position() );
+      cursor.movePosition( QTextCursor::NextCharacter, QTextCursor::KeepAnchor,
+                           endCursor.position() - firstCursor.position() );
+      cursor.removeSelectedText();
+      cursor.endEditBlock();
     }
   }
 }
@@ -213,7 +212,6 @@ void TableActionMenuPrivate::_k_slotInsertColumnAfter()
   }
 }
 
-
 void TableActionMenuPrivate::_k_slotInsertTable()
 {
   if ( textEdit->textMode() == KRichTextEdit::Rich ) {
@@ -233,8 +231,8 @@ void TableActionMenuPrivate::_k_slotInsertTable()
       }
       tableFormat.setColumnWidthConstraints( contrains );
       tableFormat.setAlignment(Qt::AlignLeft);
-      QTextTable *table = cursor.insertTable( dialog->rows(), numberOfColumns);
-      table->setFormat(tableFormat);
+      QTextTable *table = cursor.insertTable( dialog->rows(), numberOfColumns );
+      table->setFormat( tableFormat );
     }
     delete dialog;
   }
@@ -246,7 +244,7 @@ void TableActionMenuPrivate::_k_slotMergeCell()
     QTextTable *table = textEdit->textCursor().currentTable();
     if ( table ) {
       const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
-      table->mergeCells( cell.row(), cell.column(), 1, cell.columnSpan() +1 );
+      table->mergeCells( cell.row(), cell.column(), 1, cell.columnSpan() + 1 );
     }
   }
 }
@@ -275,19 +273,20 @@ void TableActionMenuPrivate::_k_slotTableFormat()
       dialog->setBorder( tableFormat.border() );
       dialog->setSpacing( tableFormat.cellSpacing() );
       dialog->setPadding( tableFormat.cellPadding() );
-      dialog->setAlignment(tableFormat.alignment());
-      if(tableFormat.hasProperty(QTextFormat::BackgroundBrush)) {
-        dialog->setTableBackgroundColor(tableFormat.background().color());
+      dialog->setAlignment( tableFormat.alignment() );
+      if ( tableFormat.hasProperty( QTextFormat::BackgroundBrush ) ) {
+        dialog->setTableBackgroundColor( tableFormat.background().color() );
       }
       QVector<QTextLength> contrains = tableFormat.columnWidthConstraints();
-      if(!contrains.isEmpty()) {
-        dialog->setTypeOfLength(contrains.at(0).type());
-        dialog->setLength(contrains.at(0).rawValue()*numberOfColumn);
+      if ( !contrains.isEmpty() ) {
+        dialog->setTypeOfLength( contrains.at( 0 ).type() );
+        dialog->setLength( contrains.at( 0 ).rawValue() * numberOfColumn );
       }
 
       if ( dialog->exec() ) {
-        const int newNumberOfColumns(dialog->columns());
-        if ( ( newNumberOfColumns != numberOfColumn ) || ( dialog->rows() != numberOfRow ) ) {
+        const int newNumberOfColumns( dialog->columns() );
+        if ( ( newNumberOfColumns != numberOfColumn ) ||
+             ( dialog->rows() != numberOfRow ) ) {
           table->resize( dialog->rows(), newNumberOfColumns );
         }
         tableFormat.setBorder( dialog->border() );
@@ -305,12 +304,12 @@ void TableActionMenuPrivate::_k_slotTableFormat()
         }
         tableFormat.setColumnWidthConstraints( contrains );
         const QColor tableBackgroundColor = dialog->tableBackgroundColor();
-        if(dialog->useBackgroundColor()) {
-            if(tableBackgroundColor.isValid()) {
-              tableFormat.setBackground(tableBackgroundColor);
-            }
+        if ( dialog->useBackgroundColor() ) {
+          if ( tableBackgroundColor.isValid() ) {
+            tableFormat.setBackground( tableBackgroundColor );
+          }
         } else {
-            tableFormat.clearBackground();
+          tableFormat.clearBackground();
         }
         table->setFormat( tableFormat );
       }
@@ -327,21 +326,21 @@ void TableActionMenuPrivate::_k_slotTableCellFormat()
       QTextTableCell cell = table->cellAt( textEdit->textCursor() );
       QPointer<TableCellFormatDialog> dialog = new TableCellFormatDialog( textEdit );
       QTextTableCellFormat format = cell.format().toTableCellFormat();
-      if(format.hasProperty(QTextFormat::BackgroundBrush)) {
-          dialog->setTableCellBackgroundColor(format.background().color());
+      if ( format.hasProperty( QTextFormat::BackgroundBrush ) ) {
+          dialog->setTableCellBackgroundColor( format.background().color() );
       }
-      dialog->setVerticalAlignment(format.verticalAlignment());
-      if(dialog->exec()) {
-          if(dialog->useBackgroundColor()) {
-              const QColor tableCellColor = dialog->tableCellBackgroundColor();
-              if(tableCellColor.isValid()) {
-                  format.setBackground(tableCellColor);
-              }
-          } else {
-              format.clearBackground();
+      dialog->setVerticalAlignment( format.verticalAlignment() );
+      if ( dialog->exec() ) {
+        if ( dialog->useBackgroundColor() ) {
+          const QColor tableCellColor = dialog->tableCellBackgroundColor();
+          if ( tableCellColor.isValid() ) {
+            format.setBackground( tableCellColor );
           }
-          format.setVerticalAlignment(dialog->verticalAlignment());
-          cell.setFormat(format);
+        } else {
+          format.clearBackground();
+        }
+        format.setVerticalAlignment( dialog->verticalAlignment() );
+        cell.setFormat( format );
       }
       delete dialog;
     }
@@ -355,14 +354,16 @@ void TableActionMenuPrivate::_k_slotSplitCell()
     if ( table ) {
       const QTextTableCell cell = table->cellAt( textEdit->textCursor() );
       if ( cell.columnSpan() > 1 || cell.rowSpan() > 1 ) {
-        table->splitCell( cell.row(), cell.column(), qMax(1,cell.rowSpan()-1), qMax(1,cell.columnSpan()-1) );
+        table->splitCell( cell.row(), cell.column(),
+                          qMax( 1, cell.rowSpan() - 1 ),
+                          qMax( 1, cell.columnSpan() - 1 ) );
         _k_updateActions();
       }
     }
   }
 }
 
-void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
+void TableActionMenuPrivate::_k_updateActions( bool forceUpdate )
 {
   if ( ( textEdit->textMode() == KRichTextEdit::Rich ) || forceUpdate ) {
     QTextTable *table = textEdit->textCursor().currentTable();
@@ -387,7 +388,9 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
       int firstColumn = -1;
       int numColumns = -1;
       textEdit->textCursor().selectedTableCells ( &firstRow, &numRows, &firstColumn, &numColumns );
-      const bool hasSelectedTableCell = (firstRow != -1) && (numRows != -1) && (firstColumn != -1) && (numColumns != -1);
+      const bool hasSelectedTableCell =
+        ( firstRow != -1 ) && ( numRows != -1 ) &&
+        ( firstColumn != -1 ) && ( numColumns != -1 );
       if ( cell.column()>table->columns() - 2 ) {
         actionMergeCell->setEnabled( false );
       } else {
@@ -411,111 +414,137 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
   }
 }
 
-TableActionMenu::TableActionMenu(KActionCollection *ac, TextEdit *textEdit)
+TableActionMenu::TableActionMenu( KActionCollection *ac, TextEdit *textEdit )
   : KActionMenu( textEdit ), d( new TableActionMenuPrivate( ac, textEdit, this ) )
 {
-    KActionMenu *insertMenu = new KActionMenu( i18n( "Insert" ), this );
-    addAction( insertMenu );
+  KActionMenu *insertMenu = new KActionMenu( i18n( "Insert" ), this );
+  addAction( insertMenu );
 
-    d->actionInsertTable = new KAction( KIcon(QLatin1String("table")), i18n( "Table..." ), this );
-    insertMenu->addAction( d->actionInsertTable );
-    ac->addAction( QLatin1String( "insert_new_table" ), d->actionInsertTable );
-    connect( d->actionInsertTable, SIGNAL(triggered(bool)), SLOT(_k_slotInsertTable()) );
+  d->actionInsertTable = new KAction( KIcon( QLatin1String( "table" ) ), i18n( "Table..." ), this );
+  insertMenu->addAction( d->actionInsertTable );
+  ac->addAction( QLatin1String( "insert_new_table" ), d->actionInsertTable );
+  connect( d->actionInsertTable, SIGNAL(triggered(bool)),
+           SLOT(_k_slotInsertTable()) );
 
-    insertMenu->addSeparator();
-    d->actionInsertRowBelow = new KAction( KIcon(QLatin1String("edit-table-insert-row-below")), i18n( "Row Below" ), this );
-    insertMenu->addAction( d->actionInsertRowBelow );
-    ac->addAction( QLatin1String( "insert_row_below" ), d->actionInsertRowBelow );
-    connect( d->actionInsertRowBelow, SIGNAL(triggered(bool)), SLOT(_k_slotInsertRowBelow()) );
+  insertMenu->addSeparator();
+  d->actionInsertRowBelow =
+    new KAction( KIcon( QLatin1String( "edit-table-insert-row-below" ) ),
+                 i18n( "Row Below" ), this );
+  insertMenu->addAction( d->actionInsertRowBelow );
+  ac->addAction( QLatin1String( "insert_row_below" ), d->actionInsertRowBelow );
+  connect( d->actionInsertRowBelow, SIGNAL(triggered(bool)),
+           SLOT(_k_slotInsertRowBelow()) );
 
-    d->actionInsertRowAbove = new KAction( KIcon(QLatin1String("edit-table-insert-row-above")), i18n( "Row Above" ), this );
-    insertMenu->addAction( d->actionInsertRowAbove );
-    ac->addAction( QLatin1String( "insert_row_above" ), d->actionInsertRowAbove );
-    connect( d->actionInsertRowAbove, SIGNAL(triggered(bool)), SLOT(_k_slotInsertRowAbove()) );
+  d->actionInsertRowAbove =
+    new KAction( KIcon( QLatin1String( "edit-table-insert-row-above" ) ),
+                 i18n( "Row Above" ), this );
+  insertMenu->addAction( d->actionInsertRowAbove );
+  ac->addAction( QLatin1String( "insert_row_above" ), d->actionInsertRowAbove );
+  connect( d->actionInsertRowAbove, SIGNAL(triggered(bool)),
+           SLOT(_k_slotInsertRowAbove()) );
 
-    insertMenu->addSeparator();
-    d->actionInsertColumnBefore = new KAction( KIcon(QLatin1String("edit-table-insert-column-left")), i18n( "Column Before" ), this );
-    insertMenu->addAction( d->actionInsertColumnBefore );
-    ac->addAction( QLatin1String( "insert_column_before" ), d->actionInsertColumnBefore );
+  insertMenu->addSeparator();
+  d->actionInsertColumnBefore =
+    new KAction( KIcon( QLatin1String( "edit-table-insert-column-left" ) ),
+                 i18n( "Column Before" ), this );
+  insertMenu->addAction( d->actionInsertColumnBefore );
+  ac->addAction( QLatin1String( "insert_column_before" ), d->actionInsertColumnBefore );
 
-    connect( d->actionInsertColumnBefore, SIGNAL(triggered(bool)), SLOT(_k_slotInsertColumnBefore()) );
+  connect( d->actionInsertColumnBefore, SIGNAL(triggered(bool)),
+           SLOT(_k_slotInsertColumnBefore()) );
 
-    d->actionInsertColumnAfter = new KAction( KIcon(QLatin1String("edit-table-insert-column-right")), i18n( "Column After" ), this );
-    insertMenu->addAction( d->actionInsertColumnAfter );
-    ac->addAction( QLatin1String( "insert_column_after" ), d->actionInsertColumnAfter );
-    connect( d->actionInsertColumnAfter, SIGNAL(triggered(bool)), SLOT(_k_slotInsertColumnAfter()) );
+  d->actionInsertColumnAfter =
+    new KAction( KIcon( QLatin1String( "edit-table-insert-column-right" ) ),
+                 i18n( "Column After" ), this );
+  insertMenu->addAction( d->actionInsertColumnAfter );
+  ac->addAction( QLatin1String( "insert_column_after" ), d->actionInsertColumnAfter );
+  connect( d->actionInsertColumnAfter, SIGNAL(triggered(bool)),
+           SLOT(_k_slotInsertColumnAfter()) );
 
-    KActionMenu *removeMenu = new KActionMenu( i18n( "Delete" ), this );
-    addAction( removeMenu );
+  KActionMenu *removeMenu = new KActionMenu( i18n( "Delete" ), this );
+  addAction( removeMenu );
 
-    d->actionRemoveRowBelow = new KAction( i18n( "Row Below" ), this );
-    removeMenu->addAction( d->actionRemoveRowBelow );
-    ac->addAction( QLatin1String( "remove_row_below" ), d->actionRemoveRowBelow );
-    connect( d->actionRemoveRowBelow, SIGNAL(triggered(bool)), SLOT(_k_slotRemoveRowBelow()) );
+  d->actionRemoveRowBelow = new KAction( i18n( "Row Below" ), this );
+  removeMenu->addAction( d->actionRemoveRowBelow );
+  ac->addAction( QLatin1String( "remove_row_below" ), d->actionRemoveRowBelow );
+  connect( d->actionRemoveRowBelow, SIGNAL(triggered(bool)),
+           SLOT(_k_slotRemoveRowBelow()) );
 
-    d->actionRemoveRowAbove = new KAction( i18n( "Row Above" ), this );
-    removeMenu->addAction( d->actionRemoveRowAbove );
-    ac->addAction( QLatin1String( "remove_row_above" ), d->actionRemoveRowAbove );
-    connect( d->actionRemoveRowAbove, SIGNAL(triggered(bool)), SLOT(_k_slotRemoveRowAbove()) );
+  d->actionRemoveRowAbove = new KAction( i18n( "Row Above" ), this );
+  removeMenu->addAction( d->actionRemoveRowAbove );
+  ac->addAction( QLatin1String( "remove_row_above" ), d->actionRemoveRowAbove );
+  connect( d->actionRemoveRowAbove, SIGNAL(triggered(bool)),
+           SLOT(_k_slotRemoveRowAbove()) );
 
-    removeMenu->addSeparator();
-    d->actionRemoveColumnBefore = new KAction( i18n( "Column Before" ), this );
-    removeMenu->addAction( d->actionRemoveColumnBefore );
-    ac->addAction( QLatin1String( "remove_column_before" ), d->actionRemoveColumnBefore );
+  removeMenu->addSeparator();
+  d->actionRemoveColumnBefore = new KAction( i18n( "Column Before" ), this );
+  removeMenu->addAction( d->actionRemoveColumnBefore );
+  ac->addAction( QLatin1String( "remove_column_before" ), d->actionRemoveColumnBefore );
 
-    connect( d->actionRemoveColumnBefore, SIGNAL(triggered(bool)), SLOT(_k_slotRemoveColumnBefore()) );
+  connect( d->actionRemoveColumnBefore, SIGNAL(triggered(bool)),
+           SLOT(_k_slotRemoveColumnBefore()) );
 
-    d->actionRemoveColumnAfter = new KAction( i18n( "Column After" ), this );
-    removeMenu->addAction( d->actionRemoveColumnAfter );
-    ac->addAction( QLatin1String( "remove_column_after" ), d->actionRemoveColumnAfter );
-    connect( d->actionRemoveColumnAfter, SIGNAL(triggered(bool)), SLOT(_k_slotRemoveColumnAfter()) );
+  d->actionRemoveColumnAfter = new KAction( i18n( "Column After" ), this );
+  removeMenu->addAction( d->actionRemoveColumnAfter );
+  ac->addAction( QLatin1String( "remove_column_after" ), d->actionRemoveColumnAfter );
+  connect( d->actionRemoveColumnAfter, SIGNAL(triggered(bool)),
+           SLOT(_k_slotRemoveColumnAfter()) );
 
-    removeMenu->addSeparator();
-    d->actionRemoveCellContents = new KAction( i18n( "Cell Contents" ), this );
-    removeMenu->addAction( d->actionRemoveCellContents );
-    ac->addAction( QLatin1String( "remove_cell_contents" ), d->actionRemoveCellContents );
-    connect( d->actionRemoveCellContents, SIGNAL(triggered(bool)), SLOT(_k_slotRemoveCellContents()) );
+  removeMenu->addSeparator();
+  d->actionRemoveCellContents = new KAction( i18n( "Cell Contents" ), this );
+  removeMenu->addAction( d->actionRemoveCellContents );
+  ac->addAction( QLatin1String( "remove_cell_contents" ), d->actionRemoveCellContents );
+  connect( d->actionRemoveCellContents, SIGNAL(triggered(bool)),
+           SLOT(_k_slotRemoveCellContents()) );
 
+  addSeparator();
 
-    addSeparator();
+  d->actionMergeCell =
+    new KAction( KIcon( QLatin1String( "edit-table-cell-merge" ) ),
+                 i18n( "Join With Cell to the Right" ), this );
+  ac->addAction( QLatin1String( "join_cell_to_the_right" ), d->actionMergeCell );
+  connect( d->actionMergeCell, SIGNAL(triggered(bool)),
+           SLOT(_k_slotMergeCell()) );
+  addAction( d->actionMergeCell );
 
-    d->actionMergeCell = new KAction( KIcon(QLatin1String("edit-table-cell-merge")), i18n( "Join With Cell to the Right" ), this );
-    ac->addAction( QLatin1String( "join_cell_to_the_right" ), d->actionMergeCell );
-    connect( d->actionMergeCell, SIGNAL(triggered(bool)), SLOT(_k_slotMergeCell()) );
-    addAction( d->actionMergeCell );
+  d->actionMergeSelectedCells = new KAction( i18n( "Join Selected Cells" ), this );
+  ac->addAction( QLatin1String( "join_cell_selected_cells" ), d->actionMergeSelectedCells );
+  connect( d->actionMergeSelectedCells, SIGNAL(triggered(bool)),
+           SLOT(_k_slotMergeSelectedCells()) );
+  addAction( d->actionMergeSelectedCells );
 
-    d->actionMergeSelectedCells = new KAction( i18n( "Join Selected Cells" ), this );
-    ac->addAction( QLatin1String( "join_cell_selected_cells" ), d->actionMergeSelectedCells );
-    connect( d->actionMergeSelectedCells, SIGNAL(triggered(bool)), SLOT(_k_slotMergeSelectedCells()) );
-    addAction( d->actionMergeSelectedCells );
+  d->actionSplitCell =
+    new KAction( KIcon( QLatin1String( "edit-table-cell-split" ) ),
+                 i18n( "Split cells" ), this );
+  ac->addAction( QLatin1String( "split_cells" ), d->actionSplitCell );
+  connect( d->actionSplitCell, SIGNAL(triggered(bool)),
+           SLOT(_k_slotSplitCell()) );
+  addAction( d->actionSplitCell );
 
-    d->actionSplitCell = new KAction( KIcon(QLatin1String("edit-table-cell-split")), i18n( "Split cells" ), this );
-    ac->addAction( QLatin1String( "split_cells" ), d->actionSplitCell );
-    connect( d->actionSplitCell, SIGNAL(triggered(bool)), SLOT(_k_slotSplitCell()) );
-    addAction( d->actionSplitCell );
+  addSeparator();
 
-    addSeparator();
+  d->actionTableFormat = new KAction( i18n( "Table Format..." ), this );
+  ac->addAction( QLatin1String( "table_format" ), d->actionTableFormat );
+  connect( d->actionTableFormat, SIGNAL(triggered(bool)),
+           SLOT(_k_slotTableFormat()) );
+  addAction( d->actionTableFormat );
 
-    d->actionTableFormat = new KAction( i18n( "Table Format..." ), this );
-    ac->addAction( QLatin1String( "table_format" ), d->actionTableFormat );
-    connect( d->actionTableFormat, SIGNAL(triggered(bool)), SLOT(_k_slotTableFormat()) );
-    addAction( d->actionTableFormat );
+  d->actionTableCellFormat = new KAction( i18n( "Table Cell Format..." ), this );
+  ac->addAction( QLatin1String( "table_cell_format" ), d->actionTableCellFormat );
+  connect( d->actionTableCellFormat, SIGNAL(triggered(bool)),
+           SLOT(_k_slotTableCellFormat()) );
+  addAction( d->actionTableCellFormat );
 
-    d->actionTableCellFormat = new KAction( i18n( "Table Cell Format..." ), this );
-    ac->addAction( QLatin1String( "table_cell_format" ), d->actionTableCellFormat );
-    connect( d->actionTableCellFormat, SIGNAL(triggered(bool)), SLOT(_k_slotTableCellFormat()) );
-    addAction( d->actionTableCellFormat );
-
-
-    connect( textEdit, SIGNAL(cursorPositionChanged()), this, SLOT(_k_updateActions()) );
-    d->_k_updateActions( true );
-
+  connect( textEdit, SIGNAL(cursorPositionChanged()),
+           this, SLOT(_k_updateActions()) );
+  d->_k_updateActions( true );
 }
 
 TableActionMenu::~TableActionMenu()
 {
   delete d;
 }
+
 }
 
 #include "moc_tableactionmenu.cpp"

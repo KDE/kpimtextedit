@@ -18,30 +18,32 @@
 
 */
 
-#ifndef INSERTHTMLDIALOG_H
-#define INSERTHTMLDIALOG_H
+#ifndef KPIMTEXTEDIT_INSERTHTMLDIALOG_H
+#define KPIMTEXTEDIT_INSERTHTMLDIALOG_H
 
 #include "kpimtextedit_export.h"
-#include <KDialog>
+
+#include <KDE/KDialog>
 
 namespace KPIMTextEdit {
+
 class InsertHtmlDialogPrivate;
 
 class KPIMTEXTEDIT_EXPORT InsertHtmlDialog : public KDialog
 {
   Q_OBJECT
-public:
-  explicit InsertHtmlDialog(QWidget *parent = 0);
-  ~InsertHtmlDialog();
-  QString html() const;
+  public:
+    explicit InsertHtmlDialog( QWidget *parent = 0 );
+    ~InsertHtmlDialog();
+    QString html() const;
 
-private:
-  friend class InsertHtmlDialogPrivate;
-  InsertHtmlDialogPrivate * const d;
-  Q_PRIVATE_SLOT( d, void _k_slotTextChanged() )
+  private:
+    friend class InsertHtmlDialogPrivate;
+    InsertHtmlDialogPrivate * const d;
+    Q_PRIVATE_SLOT( d, void _k_slotTextChanged() )
 
 };
 
 }
 
-#endif // INSERTHTMLDIALOG_H
+#endif // KPIMTEXTEDIT_INSERTHTMLDIALOG_H

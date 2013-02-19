@@ -18,37 +18,41 @@
 
 */
 
-#ifndef INSERTIMAGEDIALOG_H
-#define INSERTIMAGEDIALOG_H
+#ifndef KPIMTEXTEDIT_INSERTIMAGEDIALOG_H
+#define KPIMTEXTEDIT_INSERTIMAGEDIALOG_H
+
 #include "kpimtextedit_export.h"
-#include <KDialog>
-#include <KUrl>
+
+#include <KDE/KDialog>
+#include <KDE/KUrl>
 
 namespace KPIMTextEdit {
 
 class InsertImageDialogPrivate;
+
 class KPIMTEXTEDIT_EXPORT InsertImageDialog : public KDialog
 {
   Q_OBJECT
-public:
-  explicit InsertImageDialog(QWidget *parent = 0);
-  ~InsertImageDialog();
+  public:
+    explicit InsertImageDialog( QWidget *parent = 0 );
+    ~InsertImageDialog();
 
-  int imageWidth() const;
-  int imageHeight() const;
+    int imageWidth() const;
+    int imageHeight() const;
 
-  void setImageWidth(int value);
-  void setImageHeight(int value);
+    void setImageWidth( int value );
+    void setImageHeight( int value );
 
-  KUrl imageUrl() const;
-  void setImageUrl(const KUrl&url);
+    KUrl imageUrl() const;
+    void setImageUrl( const KUrl &url );
 
-  bool keepOriginalSize() const;
+    bool keepOriginalSize() const;
 
-private:
-  friend class InsertImageDialogPrivate;
-  InsertImageDialogPrivate * const d;
+  private:
+    friend class InsertImageDialogPrivate;
+    InsertImageDialogPrivate * const d;
 };
+
 }
 
-#endif // INSERTIMAGEDIALOG_H
+#endif // KPIMTEXTEDIT_INSERTIMAGEDIALOG_H

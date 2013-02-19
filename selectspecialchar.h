@@ -17,44 +17,47 @@
   02110-1301, USA.
 */
 
-#ifndef SelectSpecialChar_H
-#define SelectSpecialChar_H
+#ifndef KPIMTEXTEDIT_SELECTSPECIAL_CHAR_H
+#define KPIMTEXTEDIT_SELECTSPECIAL_CHAR_H
+
 #include "kpimtextedit_export.h"
 
-#include <KDialog>
+#include <KDE/KDialog>
 
 class KCharSelect;
 
 namespace KPIMTextEdit {
 
 class SelectSpecialCharPrivate;
+
 class KPIMTEXTEDIT_EXPORT SelectSpecialChar : public KDialog
 {
-    Q_OBJECT
-public:
-    explicit SelectSpecialChar(QWidget *parent);
+  Q_OBJECT
+  public:
+    explicit SelectSpecialChar( QWidget *parent );
     ~SelectSpecialChar();
 
-    void setCurrentChar(const QChar &c);
+    void setCurrentChar( const QChar &c );
     QChar currentChar() const;
 
-    void setOkButtonText(const QString& text);
+    void setOkButtonText( const QString &text );
 
-    void showSelectButton(bool show);
+    void showSelectButton( bool show );
 
     /*
-   * When we double click we call accept
-   */
+     * When we double click we call accept
+     */
     void autoInsertChar();
 
-Q_SIGNALS:
-    void charSelected(const QChar&);
+  Q_SIGNALS:
+    void charSelected( const QChar & );
 
-private:
+  private:
     SelectSpecialCharPrivate * const d;
     friend class SelectSpecialCharPrivate;
     Q_PRIVATE_SLOT( d, void _k_slotInsertChar() )
 };
+
 }
 
-#endif // SelectSpecialChar_H
+#endif // KPIMTEXTEDIT_SELECTSPECIAL_CHAR_H

@@ -20,41 +20,43 @@
 
 #include "insertimagedialog.h"
 #include "insertimagewidget.h"
+
+#include <KFileDialog>
+#include <KImageIO>
+#include <KLineEdit>
 #include <KLocale>
 #include <KUrlRequester>
-#include <KImageIO>
-#include <KFileDialog>
 
-#include <QVBoxLayout>
+#include <QCheckBox>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QSpinBox>
-#include <QCheckBox>
-#include <KLineEdit>
+#include <QVBoxLayout>
 
 namespace KPIMTextEdit {
 
 class InsertImageDialogPrivate
 {
-public:
-  InsertImageDialogPrivate(InsertImageDialog *qq)
-    :q( qq )
-  {
-    q->setCaption( i18n( "Insert Image" ) );
-    q->setButtons( KDialog::Ok|KDialog::Cancel );
-    q->setButtonText( KDialog::Ok, i18n( "Insert" ) );
-    imageWidget = new InsertImageWidget(q);
-    q->connect(imageWidget,SIGNAL(enableButtonOk(bool)),q,SLOT(enableButtonOk(bool)));
-    q->setMainWidget( imageWidget );
-    q->enableButtonOk( false );
-  }
+  public:
+    InsertImageDialogPrivate( InsertImageDialog *qq )
+      :q( qq )
+    {
+      q->setCaption( i18n( "Insert Image" ) );
+      q->setButtons( KDialog::Ok|KDialog::Cancel );
+      q->setButtonText( KDialog::Ok, i18n( "Insert" ) );
+      imageWidget = new InsertImageWidget(q);
+      q->connect( imageWidget, SIGNAL(enableButtonOk(bool)),
+                  q, SLOT(enableButtonOk(bool)) );
+      q->setMainWidget( imageWidget );
+      q->enableButtonOk( false );
+    }
 
-  InsertImageWidget *imageWidget;
-  InsertImageDialog *q;
+    InsertImageWidget *imageWidget;
+    InsertImageDialog *q;
 };
 
-InsertImageDialog::InsertImageDialog(QWidget *parent)
-  :KDialog( parent ), d( new InsertImageDialogPrivate( this ) )
+InsertImageDialog::InsertImageDialog( QWidget *parent )
+  : KDialog( parent ), d( new InsertImageDialogPrivate( this ) )
 {
 }
 
@@ -73,12 +75,12 @@ int InsertImageDialog::imageHeight() const
   return d->imageWidget->imageHeight();
 }
 
-void InsertImageDialog::setImageWidth(int value)
+void InsertImageDialog::setImageWidth( int value )
 {
   d->imageWidget->setImageWidth( value );
 }
 
-void InsertImageDialog::setImageHeight(int value)
+void InsertImageDialog::setImageHeight( int value )
 {
   d->imageWidget->setImageHeight( value );
 }
@@ -88,7 +90,7 @@ KUrl InsertImageDialog::imageUrl() const
   return d->imageWidget->imageUrl();
 }
 
-void InsertImageDialog::setImageUrl(const KUrl&url)
+void InsertImageDialog::setImageUrl( const KUrl &url )
 {
   d->imageWidget->setImageUrl( url );
 }

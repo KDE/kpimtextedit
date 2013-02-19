@@ -34,8 +34,8 @@ namespace KPIMTextEdit {
 
   @since 4.5
 */
-namespace TextUtils
-{
+namespace TextUtils {
+
   /**
    * Returns whether the QTextDocument @p document contains rich text formatting.
    */
@@ -56,6 +56,7 @@ namespace TextUtils
    *            "> this is a test."
    */
   KPIMTEXTEDIT_EXPORT QString flowText( QString &text, const QString &indent, int maxLength );
+
 }
 
 }

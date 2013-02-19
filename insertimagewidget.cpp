@@ -18,99 +18,102 @@
 
 */
 #include "insertimagewidget.h"
+
+#include <KFileDialog>
+#include <KImageIO>
 #include <KLocale>
 #include <KUrlRequester>
-#include <KImageIO>
-#include <KFileDialog>
 
-#include <QVBoxLayout>
+#include <KLineEdit>
+#include <QCheckBox>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QSpinBox>
-#include <QCheckBox>
-#include <KLineEdit>
+#include <QVBoxLayout>
 
-
-
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 
 class InsertImageWidgetPrivate
 {
-public:
-  InsertImageWidgetPrivate(InsertImageWidget *qq)
-    :imageRatio(-1), q( qq )
-  {
-    QVBoxLayout *lay = new QVBoxLayout( q );
-    QHBoxLayout *hbox = new QHBoxLayout;
-    QLabel *lab = new QLabel( i18n( "Image Location:" ) );
-    imageUrlRequester = new KUrlRequester;
+  public:
+    InsertImageWidgetPrivate( InsertImageWidget *qq )
+      : imageRatio( -1 ), q( qq )
+    {
+      QVBoxLayout *lay = new QVBoxLayout( q );
+      QHBoxLayout *hbox = new QHBoxLayout;
+      QLabel *lab = new QLabel( i18n( "Image Location:" ) );
+      imageUrlRequester = new KUrlRequester;
 
-    const QStringList mimetypes = KImageIO::mimeTypes( KImageIO::Reading );
-    imageUrlRequester->fileDialog()->setFilter( mimetypes.join( QLatin1String( " " ) ) );
-    imageUrlRequester->fileDialog()->setOperationMode( KFileDialog::Other );
-    imageUrlRequester->fileDialog()->setCaption( i18n( "Add Image" ) );
-    imageUrlRequester->fileDialog()->okButton()->setGuiItem( KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
-    imageUrlRequester->fileDialog()->setMode( KFile::File );
-    q->connect( imageUrlRequester->lineEdit(), SIGNAL(textChanged(QString)), q, SLOT(_k_slotUrlChanged(QString)) );
+      const QStringList mimetypes = KImageIO::mimeTypes( KImageIO::Reading );
+      imageUrlRequester->fileDialog()->setFilter( mimetypes.join( QLatin1String( " " ) ) );
+      imageUrlRequester->fileDialog()->setOperationMode( KFileDialog::Other );
+      imageUrlRequester->fileDialog()->setCaption( i18n( "Add Image" ) );
+      imageUrlRequester->fileDialog()->okButton()->setGuiItem(
+        KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
+      imageUrlRequester->fileDialog()->setMode( KFile::File );
+      q->connect( imageUrlRequester->lineEdit(), SIGNAL(textChanged(QString)),
+                  q, SLOT(_k_slotUrlChanged(QString)) );
 
-    hbox->addWidget( lab );
-    hbox->addWidget( imageUrlRequester );
-    lab->setBuddy( imageUrlRequester );
-    lay->addLayout( hbox );
+      hbox->addWidget( lab );
+      hbox->addWidget( imageUrlRequester );
+      lab->setBuddy( imageUrlRequester );
+      lay->addLayout( hbox );
 
-    keepOriginalSize = new QCheckBox( i18n( "Keep Original Size" ) );
-    q->connect( keepOriginalSize, SIGNAL(clicked(bool)), q, SLOT(_k_slotKeepOriginalSizeClicked(bool)) );
-    keepOriginalSize->setChecked( true );
-    lay->addWidget( keepOriginalSize );
+      keepOriginalSize = new QCheckBox( i18n( "Keep Original Size" ) );
+      q->connect( keepOriginalSize, SIGNAL(clicked(bool)),
+                  q, SLOT(_k_slotKeepOriginalSizeClicked(bool)) );
+      keepOriginalSize->setChecked( true );
+      lay->addWidget( keepOriginalSize );
 
-    keepImageRatio = new QCheckBox( i18n( "Keep Image Ratio" ) );
-    keepImageRatio->setChecked( true );
-    keepImageRatio->setEnabled( false );
-    lay->addWidget( keepImageRatio );
+      keepImageRatio = new QCheckBox( i18n( "Keep Image Ratio" ) );
+      keepImageRatio->setChecked( true );
+      keepImageRatio->setEnabled( false );
+      lay->addWidget( keepImageRatio );
 
-    hbox = new QHBoxLayout;
-    lab = new QLabel( i18n( "Width:" ) );
-    width = new QSpinBox;
-    width->setMinimum( 1 );
-    width->setMaximum( 99999 );
-    width->setEnabled( false );
-    width->setSuffix( i18n( " px" ) );
-    lab->setBuddy( width );
-    q->connect( width, SIGNAL(valueChanged(int)), q, SLOT(_k_slotImageWidthChanged(int)) );
-    hbox->addWidget( lab );
-    hbox->addWidget( width );
-    lay->addLayout( hbox );
+      hbox = new QHBoxLayout;
+      lab = new QLabel( i18n( "Width:" ) );
+      width = new QSpinBox;
+      width->setMinimum( 1 );
+      width->setMaximum( 99999 );
+      width->setEnabled( false );
+      width->setSuffix( i18n( " px" ) );
+      lab->setBuddy( width );
+      q->connect( width, SIGNAL(valueChanged(int)),
+                  q, SLOT(_k_slotImageWidthChanged(int)) );
+      hbox->addWidget( lab );
+      hbox->addWidget( width );
+      lay->addLayout( hbox );
 
-    hbox = new QHBoxLayout;
-    lab = new QLabel( i18n( "Height:" ) );
-    height = new QSpinBox;
-    height->setMinimum( 1 );
-    height->setMaximum( 99999 );
-    height->setEnabled( false );
-    height->setSuffix( i18n( " px" ) );
-    lab->setBuddy( height );
-    q->connect( height, SIGNAL(valueChanged(int)), q, SLOT(_k_slotImageHeightChanged(int)) );
-    hbox->addWidget( lab );
-    hbox->addWidget( height );
-    lay->addLayout( hbox );
-  }
+      hbox = new QHBoxLayout;
+      lab = new QLabel( i18n( "Height:" ) );
+      height = new QSpinBox;
+      height->setMinimum( 1 );
+      height->setMaximum( 99999 );
+      height->setEnabled( false );
+      height->setSuffix( i18n( " px" ) );
+      lab->setBuddy( height );
+      q->connect( height, SIGNAL(valueChanged(int)),
+                  q, SLOT(_k_slotImageHeightChanged(int)) );
+      hbox->addWidget( lab );
+      hbox->addWidget( height );
+      lay->addLayout( hbox );
+    }
 
-  void _k_slotKeepOriginalSizeClicked(bool);
-  void _k_slotUrlChanged(const QString&);
-  void _k_slotImageWidthChanged(int);
-  void _k_slotImageHeightChanged(int);
+    void _k_slotKeepOriginalSizeClicked( bool );
+    void _k_slotUrlChanged( const QString & );
+    void _k_slotImageWidthChanged( int );
+    void _k_slotImageHeightChanged( int );
 
-  qreal imageRatio;
-  QCheckBox *keepOriginalSize;
-  QCheckBox *keepImageRatio;
-  QSpinBox *width;
-  QSpinBox *height;
-  KUrlRequester *imageUrlRequester;
-  InsertImageWidget *q;
+    qreal imageRatio;
+    QCheckBox *keepOriginalSize;
+    QCheckBox *keepImageRatio;
+    QSpinBox *width;
+    QSpinBox *height;
+    KUrlRequester *imageUrlRequester;
+    InsertImageWidget *q;
 };
 
-void InsertImageWidgetPrivate::_k_slotKeepOriginalSizeClicked(bool checked)
+void InsertImageWidgetPrivate::_k_slotKeepOriginalSizeClicked( bool checked )
 {
   height->setEnabled( !checked );
   width->setEnabled( !checked );
@@ -119,7 +122,7 @@ void InsertImageWidgetPrivate::_k_slotKeepOriginalSizeClicked(bool checked)
   _k_slotUrlChanged( imageUrlRequester->text() );
 }
 
-void InsertImageWidgetPrivate::_k_slotUrlChanged(const QString& text)
+void InsertImageWidgetPrivate::_k_slotUrlChanged( const QString &text )
 {
   q->enableButtonOk( !text.isEmpty() );
   QImage image( text );
@@ -131,10 +134,10 @@ void InsertImageWidgetPrivate::_k_slotUrlChanged(const QString& text)
   } else {
     imageRatio = -1;
   }
-  q->enableButtonOk(!text.isEmpty() && !image.isNull());
+  q->enableButtonOk( !text.isEmpty() && !image.isNull() );
 }
 
-void InsertImageWidgetPrivate::_k_slotImageWidthChanged(int value)
+void InsertImageWidgetPrivate::_k_slotImageWidthChanged( int value )
 {
   if ( keepImageRatio->isChecked() && !keepOriginalSize->isChecked() ) {
     if ( imageRatio != -1 ) {
@@ -145,9 +148,9 @@ void InsertImageWidgetPrivate::_k_slotImageWidthChanged(int value)
   }
 }
 
-void InsertImageWidgetPrivate::_k_slotImageHeightChanged(int value)
+void InsertImageWidgetPrivate::_k_slotImageHeightChanged( int value )
 {
-  if ( keepImageRatio->isChecked()&& !keepOriginalSize->isChecked() ) {
+  if ( keepImageRatio->isChecked() && !keepOriginalSize->isChecked() ) {
     if ( imageRatio != -1 ) {
      width->blockSignals( true );
      width->setValue( value / imageRatio );
@@ -156,14 +159,14 @@ void InsertImageWidgetPrivate::_k_slotImageHeightChanged(int value)
   }
 }
 
-InsertImageWidget::InsertImageWidget(QWidget *parent)
-    : QWidget(parent), d(new InsertImageWidgetPrivate(this))
+InsertImageWidget::InsertImageWidget( QWidget *parent )
+  : QWidget( parent ), d( new InsertImageWidgetPrivate( this ) )
 {
 }
 
 InsertImageWidget::~InsertImageWidget()
 {
-    delete d;
+  delete d;
 }
 
 int InsertImageWidget::imageWidth() const
@@ -176,12 +179,12 @@ int InsertImageWidget::imageHeight() const
   return d->height->value();
 }
 
-void InsertImageWidget::setImageWidth(int value)
+void InsertImageWidget::setImageWidth( int value )
 {
   d->width->setValue( value );
 }
 
-void InsertImageWidget::setImageHeight(int value)
+void InsertImageWidget::setImageHeight( int value )
 {
   d->height->setValue( value );
 }
@@ -191,7 +194,7 @@ KUrl InsertImageWidget::imageUrl() const
   return d->imageUrlRequester->url();
 }
 
-void InsertImageWidget::setImageUrl(const KUrl&url)
+void InsertImageWidget::setImageUrl( const KUrl &url )
 {
   d->imageUrlRequester->setUrl( url );
 }
@@ -200,7 +203,6 @@ bool InsertImageWidget::keepOriginalSize() const
 {
   return d->keepOriginalSize->isChecked();
 }
-
 
 }
 

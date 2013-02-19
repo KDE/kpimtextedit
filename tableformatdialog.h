@@ -18,53 +18,55 @@
 
 */
 
-#ifndef TABLEFORMATDIALOG_H
-#define TABLEFORMATDIALOG_H
+#ifndef KPIMTEXTEDIT_TABLEFORMATDIALOG_H
+#define KPIMTEXTEDIT_TABLEFORMATDIALOG_H
+
 #include "kpimtextedit_export.h"
 
-#include <KDialog>
+#include <KDE/KDialog>
+
 #include <QTextLength>
 
 namespace KPIMTextEdit {
 
 class KPIMTEXTEDIT_EXPORT TableFormatDialog : public KDialog
 {
-public:
-  explicit TableFormatDialog(QWidget *parent);
-  ~TableFormatDialog();
+  public:
+    explicit TableFormatDialog( QWidget *parent );
+    ~TableFormatDialog();
 
-  int columns() const;
-  int rows() const;
-  int border() const;
+    int columns() const;
+    int rows() const;
+    int border() const;
 
-  void setColumns(int);
-  void setRows(int);
-  void setBorder(int);
+    void setColumns( int );
+    void setRows( int );
+    void setBorder( int );
 
-  int padding() const;
-  void setPadding(int);
+    int padding() const;
+    void setPadding( int );
 
-  int spacing() const;
-  void setSpacing(int);
+    int spacing() const;
+    void setSpacing( int );
 
+    void setAlignment( Qt::Alignment alignment );
+    Qt::Alignment alignment() const;
 
-  void setAlignment(Qt::Alignment alignment);
-  Qt::Alignment alignment() const;
+    QTextLength::Type typeOfLength() const;
+    void setTypeOfLength( QTextLength::Type type );
 
-  QTextLength::Type typeOfLength() const;
-  void setTypeOfLength(QTextLength::Type type);
+    int length() const;
+    void setLength( int );
 
-  int length() const;
-  void setLength(int);
+    QColor tableBackgroundColor() const;
+    void setTableBackgroundColor( const QColor &col );
 
-  QColor tableBackgroundColor() const;
-  void setTableBackgroundColor(const QColor& col);
+    bool useBackgroundColor() const;
 
-  bool useBackgroundColor() const;
-
-private:
-  class TableFormatDialogPrivate;
-  TableFormatDialogPrivate * const d;
+  private:
+    class TableFormatDialogPrivate;
+    TableFormatDialogPrivate * const d;
 };
+
 }
-#endif // TABLEFORMATDIALOG_H
+#endif // KPIMTEXTEDIT_TABLEFORMATDIALOG_H

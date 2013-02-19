@@ -24,22 +24,26 @@
 
 namespace KPIMTextEdit {
 
-class SelectSpecialCharPrivate {
-public:
-    SelectSpecialCharPrivate(SelectSpecialChar *qq)
-        : q( qq )
+class SelectSpecialCharPrivate
+{
+  public:
+    SelectSpecialCharPrivate( SelectSpecialChar *qq )
+      : q( qq )
     {
-        q->setCaption( i18n("Select Special Characters") );
-        q->setButtons( KDialog::Ok|KDialog::Cancel|KDialog::User1 );
-        q->setButtonText(KDialog::User1,i18n("Select"));
-        QWidget *page = new QWidget( q );
-        q->setMainWidget( page );
-        QHBoxLayout *lay = new QHBoxLayout(page);
-        mCharSelect = new KCharSelect(q, 0, KCharSelect::CharacterTable|KCharSelect::BlockCombos);
-        q->connect(mCharSelect,SIGNAL(charSelected(QChar)),q,SIGNAL(charSelected(QChar)));
-        lay->addWidget(mCharSelect);
-        q->connect(q,SIGNAL(user1Clicked()),q,SLOT(_k_slotInsertChar()));
-        q->connect(q,SIGNAL(okClicked()),q,SLOT(_k_slotInsertChar()));
+      q->setCaption( i18n( "Select Special Characters" ) );
+      q->setButtons( KDialog::Ok|KDialog::Cancel|KDialog::User1 );
+      q->setButtonText( KDialog::User1, i18n( "Select" ) );
+      QWidget *page = new QWidget( q );
+      q->setMainWidget( page );
+      QHBoxLayout *lay = new QHBoxLayout( page );
+      mCharSelect = new KCharSelect( q, 0, KCharSelect::CharacterTable|KCharSelect::BlockCombos );
+      q->connect( mCharSelect, SIGNAL(charSelected(QChar)),
+                  q, SIGNAL(charSelected(QChar)) );
+      lay->addWidget( mCharSelect );
+      q->connect( q, SIGNAL(user1Clicked()),
+                  q, SLOT(_k_slotInsertChar()) );
+      q->connect( q, SIGNAL(okClicked()),
+                  q, SLOT(_k_slotInsertChar()) );
     }
 
     void _k_slotInsertChar();
@@ -50,46 +54,48 @@ public:
 
 void SelectSpecialCharPrivate::_k_slotInsertChar()
 {
-    Q_EMIT q->charSelected(mCharSelect->currentChar());
+  Q_EMIT q->charSelected( mCharSelect->currentChar() );
 }
 
-SelectSpecialChar::SelectSpecialChar(QWidget *parent)
-    :KDialog(parent), d(new SelectSpecialCharPrivate(this))
+SelectSpecialChar::SelectSpecialChar( QWidget *parent )
+  : KDialog( parent ), d( new SelectSpecialCharPrivate( this ) )
 {
 }
 
 SelectSpecialChar::~SelectSpecialChar()
 {
-    delete d;
+  delete d;
 }
 
-void SelectSpecialChar::showSelectButton(bool show)
+void SelectSpecialChar::showSelectButton( bool show )
 {
-    if(show)
-        setButtons( Ok|Cancel|User1 );
-    else
-        setButtons( Ok|Cancel );
+  if ( show ) {
+    setButtons( Ok|Cancel|User1 );
+  } else {
+    setButtons( Ok|Cancel );
+  }
 }
 
-void SelectSpecialChar::setCurrentChar(const QChar &c)
+void SelectSpecialChar::setCurrentChar( const QChar &c )
 {
-    d->mCharSelect->setCurrentChar(c);
+  d->mCharSelect->setCurrentChar(c);
 }
 
 QChar SelectSpecialChar::currentChar() const
 {
-    return d->mCharSelect->currentChar();
+  return d->mCharSelect->currentChar();
 }
 
 void SelectSpecialChar::autoInsertChar()
 {
-    connect(d->mCharSelect,SIGNAL(charSelected(QChar)),SLOT(accept()));
+  connect( d->mCharSelect, SIGNAL(charSelected(QChar)), SLOT(accept()) );
 }
 
-void SelectSpecialChar::setOkButtonText(const QString& text)
+void SelectSpecialChar::setOkButtonText( const QString &text )
 {
-    setButtonText(KDialog::User1,text);
+  setButtonText( KDialog::User1, text );
 }
 
 }
+
 #include "selectspecialchar.moc"

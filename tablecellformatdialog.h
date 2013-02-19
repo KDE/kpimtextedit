@@ -18,20 +18,21 @@
 
 */
 
-#ifndef TABLECELLFORMATDIALOG_H
-#define TABLECELLFORMATDIALOG_H
+#ifndef KPIMTEXTEDIT_TABLECELLFORMATDIALOG_H
+#define KPIMTEXTEDIT_TABLECELLFORMATDIALOG_H
+
 #include "kpimtextedit_export.h"
 
+#include <KDE/KDialog>
 
-#include <KDialog>
 #include <QTextCharFormat>
 
 namespace KPIMTextEdit {
 
 class KPIMTEXTEDIT_EXPORT TableCellFormatDialog : public KDialog
 {
-public:
-    explicit TableCellFormatDialog(QWidget *parent);
+  public:
+    explicit TableCellFormatDialog( QWidget *parent );
     ~TableCellFormatDialog();
 
     /**
@@ -39,22 +40,24 @@ public:
      * @return background color of cell.
      */
     QColor tableCellBackgroundColor() const;
+
     /**
      * @brief setTableCellBackgroundColor
      * @param color, set the background color of cell
      */
-    void setTableCellBackgroundColor(const QColor& color);
+    void setTableCellBackgroundColor( const QColor &color );
 
     /**
      * @brief verticalAlignment
-     * @return vertical alignment for current cell
+     * @return vertical alignment for current cell.
      */
     QTextCharFormat::VerticalAlignment verticalAlignment() const;
+
     /**
      * @brief setVerticalAlignment
-     * @param vertical vertical alignement for current cell
+     * @param vertical vertical alignment for current cell.
      */
-    void setVerticalAlignment(QTextCharFormat::VerticalAlignment vertical);
+    void setVerticalAlignment( QTextCharFormat::VerticalAlignment vertical );
 
     /**
      * @brief useBackgroundColor
@@ -62,11 +65,11 @@ public:
      */
     bool useBackgroundColor() const;
 
-private:
+  private:
     class TableCellFormatDialogPrivate;
     TableCellFormatDialogPrivate * const d;
 };
 
 }
 
-#endif // TABLECELLFORMATDIALOG_H
+#endif // KPIMTEXTEDIT_TABLECELLFORMATDIALOG_H

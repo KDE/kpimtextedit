@@ -80,7 +80,8 @@ class TextEditPrivate
      *                  be appended to it
      * @param image the actual image to add
      */
-    void addImageHelper(const QString &imageName, const QImage &image, int width = -1, int height = -1);
+    void addImageHelper( const QString &imageName, const QImage &image,
+                         int width = -1, int height = -1 );
 
     /**
      * Helper function to get the list of all QTextImageFormats in the document.
@@ -106,13 +107,13 @@ class TextEditPrivate
 
     void _k_slotDeleteLine();
 
-    void _k_slotAddEmoticon(const QString&);
+    void _k_slotAddEmoticon( const QString & );
 
     void _k_slotInsertHtml();
 
     void _k_slotFormatReset();
 
-    void _k_slotTextModeChanged(KRichTextEdit::Mode);
+    void _k_slotTextModeChanged( KRichTextEdit::Mode );
 
     /// The action that triggers _k_slotAddImage()
     KAction *actionAddImage;
@@ -218,7 +219,8 @@ bool TextEdit::eventFilter( QObject *o, QEvent *e )
 
 void TextEditPrivate::init()
 {
-  q->connect(q,SIGNAL(textModeChanged(KRichTextEdit::Mode)),q,SLOT(_k_slotTextModeChanged(KRichTextEdit::Mode)));
+  q->connect( q, SIGNAL(textModeChanged(KRichTextEdit::Mode)),
+              q, SLOT(_k_slotTextModeChanged(KRichTextEdit::Mode)) );
   q->setSpellInterface( q );
   // We tell the KRichTextWidget to enable spell checking, because only then it will
   // call createHighlighter() which will create our own highlighter which also
@@ -331,7 +333,7 @@ int KPIMTextEdit::TextEdit::quoteLength( const QString &line ) const
 {
   bool quoteFound = false;
   int startOfText = -1;
-  const int lineLength(line.length());
+  const int lineLength( line.length() );
   for ( int i = 0; i < lineLength; ++i ) {
     if ( line[i] == QLatin1Char( '>' ) || line[i] == QLatin1Char( '|' ) ) {
       quoteFound = true;
@@ -375,14 +377,13 @@ void TextEdit::setHighlighterColors( EMailQuoteHighlighter *highlighter )
   Q_UNUSED( highlighter );
 }
 
-
 QString TextEdit::toWrappedPlainText() const
 {
     QTextDocument *doc = document();
-    return toWrappedPlainText(doc);
+    return toWrappedPlainText( doc );
 }
 
-QString TextEdit::toWrappedPlainText(QTextDocument* doc) const
+QString TextEdit::toWrappedPlainText( QTextDocument *doc ) const
 {
   QString temp;
   QRegExp rx( QLatin1String( "(http|ftp|ldap)s?\\S+-$" ) );
@@ -395,7 +396,9 @@ QString TextEdit::toWrappedPlainText(QTextDocument* doc) const
       QTextLine line = layout->lineAt( i );
       QString lineText = block.text().mid( line.textStart(), line.textLength() );
 
-      if ( lineText.contains(rx) || ( urlStart && !lineText.contains( QLatin1Char(' ') ) && lineText.endsWith( QLatin1Char('-') ) ) ) {
+      if ( lineText.contains( rx ) ||
+           ( urlStart && !lineText.contains( QLatin1Char( ' ' ) ) &&
+             lineText.endsWith( QLatin1Char( '-' ) ) ) ) {
         // don't insert line break in URL
         temp += lineText;
         urlStart = true;
@@ -415,7 +418,7 @@ QString TextEdit::toWrappedPlainText(QTextDocument* doc) const
   return temp;
 }
 
-QString TextEdit::toCleanPlainText(const QString& plainText) const
+QString TextEdit::toCleanPlainText( const QString &plainText ) const
 {
   QString temp = plainText;
   d->fixupTextEditString( temp );
@@ -424,7 +427,7 @@ QString TextEdit::toCleanPlainText(const QString& plainText) const
 
 QString TextEdit::toCleanPlainText() const
 {
-  return toCleanPlainText(toPlainText());
+  return toCleanPlainText( toPlainText() );
 }
 
 void TextEdit::createActions( KActionCollection *actionCollection )
@@ -433,14 +436,15 @@ void TextEdit::createActions( KActionCollection *actionCollection )
 
   if ( d->imageSupportEnabled ) {
     d->actionAddImage = new KAction( KIcon( QLatin1String( "insert-image" ) ),
-                                    i18n( "Add Image" ), this );
+                                     i18n( "Add Image" ), this );
     actionCollection->addAction( QLatin1String( "add_image" ), d->actionAddImage );
     connect( d->actionAddImage, SIGNAL(triggered(bool)), SLOT(_k_slotAddImage()) );
   }
   if ( d->emoticonSupportEnabled ) {
     d->actionAddEmoticon = new EmoticonTextEditAction( this );
     actionCollection->addAction( QLatin1String( "add_emoticon" ), d->actionAddEmoticon );
-    connect( d->actionAddEmoticon, SIGNAL(emoticonActivated(QString)), SLOT(_k_slotAddEmoticon(QString)) );
+    connect( d->actionAddEmoticon, SIGNAL(emoticonActivated(QString)),
+             SLOT(_k_slotAddEmoticon(QString)) );
   }
 
   if ( d->insertHtmlSupportEnabled ) {
@@ -457,43 +461,44 @@ void TextEdit::createActions( KActionCollection *actionCollection )
     actionCollection->addAction( QLatin1String( "insert_table" ), d->actionTable );
   }
 
-
   d->actionDeleteLine = new KAction( i18n( "Delete Line" ), this );
   d->actionDeleteLine->setShortcut( QKeySequence( Qt::CTRL + Qt::Key_K ) );
   actionCollection->addAction( QLatin1String( "delete_line" ), d->actionDeleteLine );
   connect( d->actionDeleteLine, SIGNAL(triggered(bool)), SLOT(_k_slotDeleteLine()) );
 
-  d->actionFormatReset = new KAction( KIcon( QLatin1String("draw-eraser") ), i18n("Reset Font Settings"), this );
-  d->actionFormatReset->setIconText( i18n("Reset Font") );
-  actionCollection->addAction( QLatin1String("format_reset"), d->actionFormatReset );
+  d->actionFormatReset =
+    new KAction( KIcon( QLatin1String( "draw-eraser" ) ), i18n( "Reset Font Settings" ), this );
+  d->actionFormatReset->setIconText( i18n( "Reset Font" ) );
+  actionCollection->addAction( QLatin1String( "format_reset" ), d->actionFormatReset );
   connect( d->actionFormatReset, SIGNAL(triggered(bool)), SLOT(_k_slotFormatReset()) );
-
-
 }
 
-void TextEdit::addImage(const KUrl &url, int width, int height)
+void TextEdit::addImage( const KUrl &url, int width, int height )
 {
   addImageHelper( url, width, height );
 }
 
-void TextEdit::addImage( const KUrl &url)
+void TextEdit::addImage( const KUrl &url )
 {
   addImageHelper( url );
 }
 
-void TextEdit::addImageHelper(const KUrl &url, int width, int height)
+void TextEdit::addImageHelper( const KUrl &url, int width, int height )
 {
   QImage image;
   if ( !image.load( url.path() ) ) {
-    KMessageBox::error( this,
-                        i18nc( "@info",
-                               "Unable to load image <filename>%1</filename>.",
-                               url.path() ) );
+    KMessageBox::error(
+      this,
+      i18nc( "@info",
+             "Unable to load image <filename>%1</filename>.",
+             url.path() ) );
     return;
   }
   QFileInfo fi( url.path() );
-  QString imageName = fi.baseName().isEmpty() ? QLatin1String( "image.png" )
-                                              : QString( fi.baseName() + QLatin1String( ".png" ) );
+  QString imageName =
+    fi.baseName().isEmpty() ?
+      QLatin1String( "image.png" ) :
+      QString( fi.baseName() + QLatin1String( ".png" ) );
   d->addImageHelper( imageName, image, width, height );
 }
 
@@ -519,12 +524,11 @@ void TextEdit::loadImage ( const QImage &image, const QString &matchName,
                                      QUrl( resourceName ), QVariant( image ) );
             QTextImageFormat format;
             format.setName( resourceName );
-            if ( (imageFormat.width()!=0) && (imageFormat.height()!=0) ) {
+            if ( ( imageFormat.width() != 0 ) && ( imageFormat.height() != 0 ) ) {
               format.setWidth( imageFormat.width() );
               format.setHeight( imageFormat.height() );
             }
             cursor.insertImage( format );
-
 
             // The textfragment iterator is now invalid, restart from the beginning
             // Take care not to replace the same fragment again, or we would be in
@@ -539,7 +543,8 @@ void TextEdit::loadImage ( const QImage &image, const QString &matchName,
   }
 }
 
-void TextEditPrivate::addImageHelper( const QString &imageName, const QImage &image,int width, int height )
+void TextEditPrivate::addImageHelper( const QString &imageName, const QImage &image,
+                                      int width, int height )
 {
   QString imageNameToAdd = imageName;
   QTextDocument *document = q->document();
@@ -643,7 +648,7 @@ QList<QTextImageFormat> TextEditPrivate::embeddedImageFormats() const
   return retList;
 }
 
-void TextEditPrivate::_k_slotAddEmoticon( const QString& text)
+void TextEditPrivate::_k_slotAddEmoticon( const QString &text )
 {
   QTextCursor cursor = q->textCursor();
   cursor.insertText( text );
@@ -680,19 +685,18 @@ void TextEditPrivate::_k_slotAddImage()
   delete dlg;
 }
 
-void TextEditPrivate::_k_slotTextModeChanged(KRichTextEdit::Mode mode)
+void TextEditPrivate::_k_slotTextModeChanged( KRichTextEdit::Mode mode )
 {
-  if(mode == KRichTextEdit::Rich) {
+  if ( mode == KRichTextEdit::Rich ) {
     saveFont = q->currentFont();
   }
 }
 
-
 void TextEditPrivate::_k_slotFormatReset()
 {
-    q->setTextBackgroundColor( q->palette().highlightedText().color() );
-    q->setTextForegroundColor( q->palette().text().color() );
-    q->setFont( saveFont );
+  q->setTextBackgroundColor( q->palette().highlightedText().color() );
+  q->setTextForegroundColor( q->palette().text().color() );
+  q->setFont( saveFont );
 
 }
 
@@ -735,7 +739,6 @@ void KPIMTextEdit::TextEdit::enableInsertTableActions()
 {
   d->insertTableSupportEnabled = true;
 }
-
 
 QByteArray KPIMTextEdit::TextEdit::imageNamesToContentIds(
   const QByteArray &htmlBody, const KPIMTextEdit::ImageList &imageList )
@@ -857,6 +860,5 @@ void TextEdit::deleteCurrentLine()
     }
   }
 }
-
 
 #include "moc_textedit.cpp"

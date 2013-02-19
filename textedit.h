@@ -35,6 +35,7 @@
 
 class KUrl;
 class QFileInfo;
+
 namespace KPIMTextEdit {
 
 class TextEditPrivate;
@@ -152,7 +153,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      *
      * @param url The URL of the file which contains the image
      */
-    void addImage(const KUrl &url);
+    void addImage( const KUrl &url );
 
     /**
      * Adds an image. The image is loaded from file and then pasted to the current
@@ -164,7 +165,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
      *
      * @since 4.10
      */
-    void addImage(const KUrl &url, int width, int height);
+    void addImage( const KUrl &url, int width, int height );
 
     /**
      * Loads an image into the textedit. The difference to addImage() is that this
@@ -213,29 +214,30 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     /**
      * @since 5.0
      */
-    QString toWrappedPlainText(QTextDocument *document) const;
+    QString toWrappedPlainText( QTextDocument *document ) const;
+
     /**
      * @since 4.10
      */
     //TODO 5.0 merge it
-    QString toCleanPlainText(const QString& plainText) const;
+    QString toCleanPlainText( const QString &plainText ) const;
 
     /**
-     * Same as toPlainText() from QTextEdit, only that it removes embedded images
-     * and converts non-breaking space characters to normal spaces.
+     * Same as toPlainText() from QTextEdit, only that it removes embedded
+     * images and converts non-breaking space characters to normal spaces.
      */
     QString toCleanPlainText() const;
 
     /**
      * This method is called after the highlighter is created.
-     * If you use custom colors for highlighting, override this method and set the colors
-     * to the highlighter in it.
+     * If you use custom colors for highlighting, override this method and
+     * set the colors to the highlighter in it.
      *
-     * The default implementation does nothing, therefore the default colors of the
-     * EMailQuoteHighlighter class will be used.
+     * The default implementation does nothing, therefore the default colors of
+     * the EMailQuoteHighlighter class will be used.
      *
-     * @param highlighter the highlighter that was just created. You need to set the colors
-     *                    of this highlighter.
+     * @param highlighter the highlighter that was just created. You need to
+     *   set the colors of this highlighter.
      */
     virtual void setHighlighterColors( EMailQuoteHighlighter *highlighter );
 
@@ -375,15 +377,15 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     virtual void createHighlighter();
 
   private:
-    void addImageHelper(const KUrl &url, int width = -1, int height = -1);
+    void addImageHelper( const KUrl &url, int width = -1, int height = -1 );
     std::auto_ptr<TextEditPrivate> const d;
     friend class TextEditPrivate;
     Q_PRIVATE_SLOT( d, void _k_slotAddImage() )
     Q_PRIVATE_SLOT( d, void _k_slotDeleteLine() )
-    Q_PRIVATE_SLOT( d, void _k_slotAddEmoticon(const QString &) )
+    Q_PRIVATE_SLOT( d, void _k_slotAddEmoticon( const QString & ) )
     Q_PRIVATE_SLOT( d, void _k_slotInsertHtml() )
     Q_PRIVATE_SLOT( d, void _k_slotFormatReset() )
-    Q_PRIVATE_SLOT( d, void _k_slotTextModeChanged(KRichTextEdit::Mode) )
+    Q_PRIVATE_SLOT( d, void _k_slotTextModeChanged( KRichTextEdit::Mode ) )
 };
 
 } // namespace

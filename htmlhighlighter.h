@@ -20,33 +20,36 @@
 
 */
 
-#ifndef HTMLHIGHLIGHTER_H
-#define HTMLHIGHLIGHTER_H
+#ifndef KPIMTEXTEDIT_HTMLHIGHLIGHTER_H
+#define KPIMTEXTEDIT_HTMLHIGHLIGHTER_H
 
 #include "kpimtextedit_export.h"
+
 #include <QSyntaxHighlighter>
 
 /*
  * @since 4.10
  */
 namespace KPIMTextEdit {
+
 class HtmlHighlighterPrivate;
 
 class KPIMTEXTEDIT_EXPORT HtmlHighlighter : public QSyntaxHighlighter
 {
-    Q_OBJECT
-public:
-    explicit HtmlHighlighter(QTextDocument *document);
+  Q_OBJECT
+  public:
+    explicit HtmlHighlighter( QTextDocument *document );
     ~HtmlHighlighter();
 
-protected:
-    void highlightBlock(const QString &text);
+  protected:
+    void highlightBlock( const QString &text );
 
-private:
+  private:
     friend class HtmlHighlighterPrivate;
     HtmlHighlighterPrivate * const d;
 
 };
+
 }
 
-#endif // HTMLHIGHLIGHTER_H
+#endif // KPIMTEXTEDIT_HTMLHIGHLIGHTER_H

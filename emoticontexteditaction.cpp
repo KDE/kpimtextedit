@@ -19,34 +19,37 @@
 */
 #include "emoticontexteditaction.h"
 #include "emoticontexteditselector.h"
-#include <KLocale>
 
+#include <KLocale>
 #include <KMenu>
 
 #include <QWidgetAction>
 
 using namespace KPIMTextEdit;
+
 class EmoticonTextEditAction::EmoticonTextEditActionPrivate
 {
-public:
-  EmoticonTextEditActionPrivate() {
-    emoticonMenu = new KMenu();
-    selector = new EmoticonTextEditSelector( emoticonMenu );
-    QWidgetAction *action = new QWidgetAction( emoticonMenu );
-    action->setDefaultWidget( selector );
-    emoticonMenu->addAction( action );
-    connect( emoticonMenu, SIGNAL(aboutToShow()), selector, SLOT(slotCreateEmoticonList()) );
+  public:
+    EmoticonTextEditActionPrivate()
+    {
+      emoticonMenu = new KMenu();
+      selector = new EmoticonTextEditSelector( emoticonMenu );
+      QWidgetAction *action = new QWidgetAction( emoticonMenu );
+      action->setDefaultWidget( selector );
+      emoticonMenu->addAction( action );
+      connect( emoticonMenu, SIGNAL(aboutToShow()), selector, SLOT(slotCreateEmoticonList()) );
+    }
 
-  }
-  ~EmoticonTextEditActionPrivate() {
-    delete emoticonMenu;
-  }
+    ~EmoticonTextEditActionPrivate()
+    {
+      delete emoticonMenu;
+    }
 
-  KMenu *emoticonMenu;
-  EmoticonTextEditSelector *selector;
+    KMenu *emoticonMenu;
+    EmoticonTextEditSelector *selector;
 };
 
-EmoticonTextEditAction::EmoticonTextEditAction( QObject * parent )
+EmoticonTextEditAction::EmoticonTextEditAction( QObject *parent )
   : KActionMenu( i18n( "Add Smiley" ), parent ), d( new EmoticonTextEditActionPrivate() )
 {
   setMenu( d->emoticonMenu );
@@ -55,11 +58,9 @@ EmoticonTextEditAction::EmoticonTextEditAction( QObject * parent )
   setDelayed( false );
   connect( d->selector, SIGNAL(itemSelected(QString)),
            this, SIGNAL(emoticonActivated(QString)) );
-
 }
 
 EmoticonTextEditAction::~EmoticonTextEditAction()
 {
   delete d;
 }
-

@@ -18,49 +18,51 @@
   02110-1301, USA.
 */
 
-#ifndef EMOTICONTEXTEDITSELECTOR_H
-#define EMOTICONTEXTEDITSELECTOR_H
+#ifndef KPIMTEXTEDIT_EMOTICONTEXTEDITSELECTOR_H
+#define KPIMTEXTEDIT_EMOTICONTEXTEDITSELECTOR_H
 
-#include <QWidget>
 #include <QListWidgetItem>
+#include <QWidget>
 
 namespace KPIMTextEdit {
 
 class EmoticonTextEditItem : public QListWidgetItem
 {
-public:
-  explicit EmoticonTextEditItem(const QString &emoticonText, const QString &pixmapPath, QListWidget *parent);
+  public:
+    explicit EmoticonTextEditItem( const QString &emoticonText,
+                                   const QString &pixmapPath,
+                                   QListWidget *parent );
 
-  QString text() const;
-  QString pixmapPath() const;
+    QString text() const;
+    QString pixmapPath() const;
 
-private:
-  QString mText;
-  QString mPixmapPath;
+  private:
+    QString mText;
+    QString mPixmapPath;
 };
 
 class EmoticonTextEditSelector : public QWidget
 {
   Q_OBJECT
-public:
-  explicit EmoticonTextEditSelector( QWidget * parent = 0 );
-  ~EmoticonTextEditSelector();
+  public:
+    explicit EmoticonTextEditSelector( QWidget *parent = 0 );
+    ~EmoticonTextEditSelector();
 
-public Q_SLOTS:
-  void slotCreateEmoticonList();
+  public Q_SLOTS:
+    void slotCreateEmoticonList();
 
-private Q_SLOTS:
-  void slotMouseOverItem(QListWidgetItem*);
-  void slotEmoticonClicked(QListWidgetItem*);
+  private Q_SLOTS:
+    void slotMouseOverItem( QListWidgetItem * );
+    void slotEmoticonClicked( QListWidgetItem * );
 
-Q_SIGNALS:
-  void itemSelected ( const QString& );
+  Q_SIGNALS:
+    void itemSelected ( const QString & );
 
-private:
-  class EmoticonTextEditSelectorPrivate;
-  EmoticonTextEditSelectorPrivate *d;
+  private:
+    class EmoticonTextEditSelectorPrivate;
+    EmoticonTextEditSelectorPrivate *d;
 };
 
 }
 
-#endif /* EMOTICONTEXTEDITSELECTOR_H */
+#endif /* KPIMTEXTEDIT_EMOTICONTEXTEDITSELECTOR_H */
