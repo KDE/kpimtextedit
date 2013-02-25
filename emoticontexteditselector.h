@@ -60,7 +60,7 @@ class EmoticonTextEditSelector : public QWidget
 
   private:
     class EmoticonTextEditSelectorPrivate;
-    EmoticonTextEditSelectorPrivate *d;
+    EmoticonTextEditSelectorPrivate * const d;
 };
 
 }
