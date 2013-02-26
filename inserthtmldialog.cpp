@@ -21,7 +21,7 @@
 #include "inserthtmldialog.h"
 #include "htmlhighlighter.h"
 
-#include <KLocale>
+#include <KLocalizedString>
 #include <KTextEdit>
 
 #include <QVBoxLayout>

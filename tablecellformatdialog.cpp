@@ -22,7 +22,7 @@
 
 #include <KColorButton>
 #include <KComboBox>
-#include <KLocale>
+#include <KLocalizedString>
 #include <KSeparator>
 
 #include <QCheckBox>

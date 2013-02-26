@@ -21,7 +21,7 @@
 
 #include <KFileDialog>
 #include <KImageIO>
-#include <KLocale>
+#include <KLocalizedString>
 #include <KUrlRequester>
 
 #include <KLineEdit>

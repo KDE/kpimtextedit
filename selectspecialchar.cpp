@@ -19,7 +19,7 @@
 
 #include "selectspecialchar.h"
 #include <KCharSelect>
-#include <KLocale>
+#include <KLocalizedString>
 #include <QHBoxLayout>
 
 namespace KPIMTextEdit {

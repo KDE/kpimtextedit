@@ -24,7 +24,7 @@
 #include <KFileDialog>
 #include <KImageIO>
 #include <KLineEdit>
-#include <KLocale>
+#include <KLocalizedString>
 #include <KUrlRequester>
 
 #include <QCheckBox>

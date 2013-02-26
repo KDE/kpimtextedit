@@ -21,7 +21,7 @@
 #include "tableformatdialog.h"
 #include "inserttabledialog.h"
 
-#include <KLocale>
+#include <KLocalizedString>
 #include <KComboBox>
 #include <KSeparator>
 #include <KColorButton>

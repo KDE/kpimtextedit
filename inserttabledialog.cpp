@@ -20,7 +20,7 @@
 
 #include "inserttabledialog.h"
 
-#include <KLocale>
+#include <KLocalizedString>
 #include <KComboBox>
 #include <KDebug>
 #include <KSeparator>
