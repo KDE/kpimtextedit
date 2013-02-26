@@ -48,9 +48,10 @@ class InsertImageWidgetPrivate
       const QStringList mimetypes = KImageIO::mimeTypes( KImageIO::Reading );
       imageUrlRequester->fileDialog()->setFilter( mimetypes.join( QLatin1String( " " ) ) );
       imageUrlRequester->fileDialog()->setOperationMode( KFileDialog::Other );
-      imageUrlRequester->fileDialog()->setCaption( i18n( "Add Image" ) );
-      imageUrlRequester->fileDialog()->okButton()->setGuiItem(
-        KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
+      // Qt5: Port
+//       imageUrlRequester->fileDialog()->setCaption( i18n( "Add Image" ) );
+//       imageUrlRequester->fileDialog()->okButton()->setGuiItem(
+//         KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
       imageUrlRequester->fileDialog()->setMode( KFile::File );
       q->connect( imageUrlRequester->lineEdit(), SIGNAL(textChanged(QString)),
                   q, SLOT(_k_slotUrlChanged(QString)) );

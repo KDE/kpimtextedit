@@ -55,7 +55,8 @@ EmoticonTextEditAction::EmoticonTextEditAction( QObject *parent )
 {
   setMenu( d->emoticonMenu );
   setIcon( KIcon( QLatin1String( "face-smile" ) ) );
-  setShortcutConfigurable( false );
+  // Qt5: Port
+//  setShortcutConfigurable( false );
   setDelayed( false );
   connect( d->selector, SIGNAL(itemSelected(QString)),
            this, SIGNAL(emoticonActivated(QString)) );
