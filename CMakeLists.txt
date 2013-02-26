@@ -27,6 +27,7 @@ target_link_libraries(kpimtextedit
   ${KDE4_KDEUI_LIBS}
   ${KDE4_KIO_LIBS}
   ${KDE4_KEMOTICONS_LIBS}
+  ${KDE4_KDE4SUPPORT_LIBS}
   kmime
 )
 
