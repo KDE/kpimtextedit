@@ -38,6 +38,7 @@
 #include <KDE/KPushButton>
 #include <KDE/KUrl>
 #include <KDE/KImageIO>
+#include <KDE/KIcon>
 
 #include <QtCore/QBuffer>
 #include <QtCore/QDateTime>

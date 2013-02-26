@@ -22,6 +22,7 @@
 
 #include <KLocalizedString>
 #include <KMenu>
+#include <KIcon>
 
 #include <QWidgetAction>
 
