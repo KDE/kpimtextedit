@@ -23,6 +23,7 @@
 #include <KImageIO>
 #include <KLocalizedString>
 #include <KUrlRequester>
+#include <KSeparator>
 
 #include <KLineEdit>
 #include <QCheckBox>
@@ -97,6 +98,18 @@ class InsertImageWidgetPrivate
       hbox->addWidget( lab );
       hbox->addWidget( height );
       lay->addLayout( hbox );
+
+      KSeparator *sep = new KSeparator;
+      lay->addWidget( sep );
+
+      hbox = new QHBoxLayout;
+      lab = new QLabel( i18n("Image Preview:"));
+      hbox->addWidget(lab);
+      preview = new QLabel;
+      preview->setFrameStyle(QFrame::Box);
+      preview->setFixedSize(50,50);
+      hbox->addWidget(preview);
+      lay->addLayout( hbox );
     }
 
     void _k_slotKeepOriginalSizeClicked( bool );
@@ -110,6 +123,7 @@ class InsertImageWidgetPrivate
     QSpinBox *width;
     QSpinBox *height;
     KUrlRequester *imageUrlRequester;
+    QLabel *preview;
     InsertImageWidget *q;
 };
 
@@ -131,7 +145,9 @@ void InsertImageWidgetPrivate::_k_slotUrlChanged( const QString &text )
     width->setValue( image.width() );
 
     imageRatio = (double)( (double)image.height() / (double)image.width() );
+    preview->setPixmap(QPixmap::fromImage(image));
   } else {
+    preview->clear();
     imageRatio = -1;
   }
   q->enableButtonOk( !text.isEmpty() && !image.isNull() );
