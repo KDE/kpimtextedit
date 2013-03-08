@@ -99,9 +99,18 @@ void EmoticonTextEditSelector::slotCreateEmoticonList()
   }
   const QHash<QString, QStringList> list = sEmoticons->theme( cachedEmoticonsThemeName ).emoticonsMap();
 
+  //Keep in sync with linklocator.cpp
+  QStringList exclude;
+  exclude << QLatin1String("(c)") << QLatin1String("(C)") << QLatin1String("&gt;:-(") << QLatin1String("&gt;:(") << QLatin1String("(B)") << QLatin1String("(b)") << QLatin1String("(P)") << QLatin1String("(p)");
+  exclude << QLatin1String("(O)") << QLatin1String("(o)") << QLatin1String("(D)") << QLatin1String("(d)") << QLatin1String("(E)") << QLatin1String("(e)") << QLatin1String("(K)") << QLatin1String("(k)");
+  exclude << QLatin1String("(I)") << QLatin1String("(i)") << QLatin1String("(L)") << QLatin1String("(l)") << QLatin1String("(8)") << QLatin1String("(T)") << QLatin1String("(t)") << QLatin1String("(G)");
+  exclude << QLatin1String("(g)") << QLatin1String("(F)") << QLatin1String("(f)") << QLatin1String("(H)");
+  exclude << QLatin1String("8)") << QLatin1String("(N)") << QLatin1String("(n)") << QLatin1String("(Y)") << QLatin1String("(y)") << QLatin1String("(U)") << QLatin1String("(u)") << QLatin1String("(W)") << QLatin1String("(w)");
+
   QHash<QString, QStringList>::const_iterator end = list.constEnd();
   for ( QHash<QString, QStringList>::const_iterator it = list.constBegin(); it != end; ++it ) {
-    new EmoticonTextEditItem( it.value().first(), it.key(), d->listEmoticon );
+      if (!exclude.contains(it.value().first()))
+          new EmoticonTextEditItem( it.value().first(), it.key(), d->listEmoticon );
   }
 
   d->listEmoticon->setIconSize( QSize( 32, 32 ) );
