@@ -144,7 +144,7 @@ class TextEditPrivate
     /**
      * The names of embedded images.
      * Used to easily obtain the names of the images.
-     * New images are compared to the the list and not added as resource if already present.
+     * New images are compared to the list and not added as resource if already present.
      */
     QStringList mImageNames;
 
