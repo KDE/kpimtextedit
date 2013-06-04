@@ -143,10 +143,8 @@ void EMailQuoteHighlighter::highlightBlock( const QString &text )
   } else if ( d->parent->isLineQuoted( text ) ) {
     setFormat( 0, text.length(), d->col1 ); // FIXME: custom quote prefix
                                             // can't handle multiple levels
-  } else {
-    if ( d->spellCheckingEnabled && checkerEnabledByDefault() ) {
-      Highlighter::highlightBlock( text );
-    }
+  } else if ( d->spellCheckingEnabled ) {
+    Highlighter::highlightBlock( text );
   }
   setCurrentBlockState( 0 );
 }
