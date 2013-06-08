@@ -456,7 +456,7 @@ void TextEdit::createActions( KActionCollection *actionCollection )
 
   if ( d->insertTableSupportEnabled ) {
     d->actionTable = new TableActionMenu( actionCollection, this );
-    d->actionTable->setIcon( KIcon( QLatin1String( "table" ) ) );
+    d->actionTable->setIcon( KIcon( QLatin1String( "insert-table" ) ) );
     d->actionTable->setText( i18n( "Table" ) );
     d->actionTable->setDelayed( false );
     actionCollection->addAction( QLatin1String( "insert_table" ), d->actionTable );

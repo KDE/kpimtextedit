@@ -422,7 +422,7 @@ TableActionMenu::TableActionMenu( KActionCollection *ac, TextEdit *textEdit )
   KActionMenu *insertMenu = new KActionMenu( i18n( "Insert" ), this );
   addAction( insertMenu );
 
-  d->actionInsertTable = new KAction( KIcon( QLatin1String( "table" ) ), i18n( "Table..." ), this );
+  d->actionInsertTable = new KAction( KIcon( QLatin1String( "insert-table" ) ), i18n( "Table..." ), this );
   insertMenu->addAction( d->actionInsertTable );
   ac->addAction( QLatin1String( "insert_new_table" ), d->actionInsertTable );
   connect( d->actionInsertTable, SIGNAL(triggered(bool)),
