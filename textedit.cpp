@@ -144,7 +144,7 @@ class TextEditPrivate
     /**
      * The names of embedded images.
      * Used to easily obtain the names of the images.
-     * New images are compared to the the list and not added as resource if already present.
+     * New images are compared to the list and not added as resource if already present.
      */
     QStringList mImageNames;
 
@@ -456,7 +456,7 @@ void TextEdit::createActions( KActionCollection *actionCollection )
 
   if ( d->insertTableSupportEnabled ) {
     d->actionTable = new TableActionMenu( actionCollection, this );
-    d->actionTable->setIcon( KIcon( QLatin1String( "table" ) ) );
+    d->actionTable->setIcon( KIcon( QLatin1String( "insert-table" ) ) );
     d->actionTable->setText( i18n( "Table" ) );
     d->actionTable->setDelayed( false );
     actionCollection->addAction( QLatin1String( "insert_table" ), d->actionTable );
