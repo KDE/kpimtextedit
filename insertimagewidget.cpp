@@ -221,4 +221,4 @@ bool InsertImageWidget::keepOriginalSize() const
 
 }
 
-#include "insertimagewidget.moc"
+#include "moc_insertimagewidget.cpp"
