@@ -24,6 +24,7 @@
 #define KPIMTEXTEDIT_TEXTUTILS_H
 
 #include "kpimtextedit_export.h"
+#include <qglobal.h>
 
 class QTextDocument;
 
