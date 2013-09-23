@@ -26,7 +26,7 @@ include_directories(
   ${CMAKE_BINARY_DIR}/kmime
 )
 
-kde4_add_library(kpimtextedit ${LIBRARY_TYPE} ${kpimtextedit_lib_srcs})
+add_library(kpimtextedit ${LIBRARY_TYPE} ${kpimtextedit_lib_srcs})
 generate_export_header(kpimtextedit)
 
 target_link_libraries(kpimtextedit
