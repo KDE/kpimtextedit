@@ -21,7 +21,13 @@ set(kpimtextedit_lib_srcs
   selectspecialchar.cpp
 )
 
+include_directories(
+  ${CMAKE_BINARY_DIR}/kpimidentities
+  ${CMAKE_BINARY_DIR}/kmime
+)
+
 kde4_add_library(kpimtextedit ${LIBRARY_TYPE} ${kpimtextedit_lib_srcs})
+generate_export_header(kpimtextedit)
 
 target_link_libraries(kpimtextedit
   ${KDE4_KDEUI_LIBS}
@@ -40,7 +46,7 @@ set_target_properties(kpimtextedit PROPERTIES
 install(TARGETS kpimtextedit EXPORT kdepimlibsLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
-  kpimtextedit_export.h
+  ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_export.h
   textedit.h
   textutils.h
   emailquotehighlighter.h
