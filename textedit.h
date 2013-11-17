@@ -27,6 +27,7 @@
 #include <kpimidentities/signature.h>
 
 #include <KDE/KRichTextWidget>
+#include <KActionCollection>
 
 #include <QtCore/QSharedPointer>
 
