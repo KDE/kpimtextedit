@@ -35,6 +35,7 @@
 
 class KUrl;
 class QFileInfo;
+class KActionCollection;
 
 namespace KPIMTextEdit {
 
