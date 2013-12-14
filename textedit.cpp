@@ -222,7 +222,7 @@ void TextEditPrivate::init()
 {
   q->connect( q, SIGNAL(textModeChanged(KRichTextEdit::Mode)),
               q, SLOT(_k_slotTextModeChanged(KRichTextEdit::Mode)) );
-  q->setSpellInterface( q );
+
   // We tell the KRichTextWidget to enable spell checking, because only then it will
   // call createHighlighter() which will create our own highlighter which also
   // does quote highlighting.
@@ -231,7 +231,7 @@ void TextEditPrivate::init()
   // if our spellchecking is disabled.
   // See also KEMailQuotingHighlighter::highlightBlock().
   spellCheckingEnabled = false;
-  q->setCheckSpellingEnabledInternal( true );
+  q->setCheckSpellingEnabled( true );
 
 #ifndef QT_NO_CURSOR
   KCursor::setAutoHideCursor( q, true, true );
@@ -304,20 +304,20 @@ void TextEdit::keyPressEvent ( QKeyEvent * e )
   }
 }
 
-bool TextEdit::isSpellCheckingEnabled() const
+bool TextEdit::checkSpellingEnabled() const
 {
-  return d->spellCheckingEnabled;
+    return d->spellCheckingEnabled;
 }
 
-void TextEdit::setSpellCheckingEnabled( bool enable )
+void TextEdit::setCheckSpellingEnabled(bool check)
 {
   EMailQuoteHighlighter *hlighter = dynamic_cast<EMailQuoteHighlighter*>( highlighter() );
   if ( hlighter ) {
-    hlighter->toggleSpellHighlighting( enable );
+    hlighter->toggleSpellHighlighting( check );
   }
 
-  d->spellCheckingEnabled = enable;
-  emit checkSpellingChanged( enable );
+  d->spellCheckingEnabled = check;
+  emit checkSpellingChanged( check );
 }
 
 bool TextEdit::shouldBlockBeSpellChecked( const QString &block ) const
@@ -370,7 +370,6 @@ void TextEdit::createHighlighter()
   if ( !spellCheckingLanguage().isEmpty() ) {
     setSpellCheckingLanguage( spellCheckingLanguage() );
   }
-  setSpellCheckingEnabled( isSpellCheckingEnabled() );
 }
 
 void TextEdit::setHighlighterColors( EMailQuoteHighlighter *highlighter )

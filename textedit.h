@@ -80,9 +80,7 @@ typedef QList< QSharedPointer<EmbeddedImage> > ImageList;
  *
  * @since 4.3
  */
-class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
-                                     // TODO: KDE5: get rid of the spell interface
-                                     protected KTextEditSpellInterface
+class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget
 {
   Q_OBJECT
 
@@ -356,17 +354,17 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget,
     // spellCheckingEnabled variable of the private class.
 
     /**
-     * Reimplemented from KTextEditSpellInterface
+     * Reimplemented from KTextEdit
      */
-    virtual bool isSpellCheckingEnabled() const;
+    virtual bool checkSpellingEnabled() const;
 
     /**
-     * Reimplemented from KTextEditSpellInterface
+     * Reimplemented from KTextEdit
      */
-    virtual void setSpellCheckingEnabled( bool enable );
+    virtual void setCheckSpellingEnabled( bool check );
 
     /**
-     * Reimplemented from KTextEditSpellInterface, to avoid spellchecking
+     * Reimplemented from KTextEdit, to avoid spellchecking
      * quoted text.
      */
     virtual bool shouldBlockBeSpellChecked( const QString &block ) const;
