@@ -433,7 +433,7 @@ QString TextEdit::toCleanPlainText() const
 
 void TextEdit::createActions( KActionCollection *actionCollection )
 {
-  KRichTextWidget::createActions( actionCollection );
+  actionCollection->addActions(KRichTextWidget::createActions());
 
   if ( d->imageSupportEnabled ) {
     d->actionAddImage = new KAction( KIcon( QLatin1String( "insert-image" ) ),
