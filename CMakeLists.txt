@@ -1,5 +1,7 @@
 project(kpimtextedit)
 
+find_package(KF5 NO_MODULE REQUIRED COMPONENTS CoreAddons KDE4Support Emoticons)
+
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=5329)
 
 add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
@@ -24,10 +26,9 @@ set(kpimtextedit_lib_srcs
 kde4_add_library(kpimtextedit ${LIBRARY_TYPE} ${kpimtextedit_lib_srcs})
 
 target_link_libraries(kpimtextedit
-  ${KDE4_KDEUI_LIBS}
-  ${KDE4_KIO_LIBS}
-  ${KDE4_KEMOTICONS_LIBS}
-  ${KDE4_KDE4SUPPORT_LIBS}
+  KF5::KIOCore
+  KF5::Emoticons
+  KF5::KDE4Support
   kmime
 )
 
