@@ -24,13 +24,15 @@
 
 #include "kpimtextedit_export.h"
 
-#include <kpimidentities/signature.h>
+#include <kpimidentities/signature.h> // TODO KF5: remove this
 
 #include <KDE/KRichTextWidget>
+#include <KActionCollection>
 
 #include <QtCore/QSharedPointer>
 
 #include <memory>
+// TODO KF5: remove this
 #define FIX_KMAIL_INSERT_IMAGE 1
 
 class KUrl;

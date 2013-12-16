@@ -98,4 +98,4 @@ void SelectSpecialChar::setOkButtonText( const QString &text )
 
 }
 
-#include "selectspecialchar.moc"
+#include "moc_selectspecialchar.cpp"

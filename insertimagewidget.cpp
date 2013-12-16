@@ -139,7 +139,6 @@ void InsertImageWidgetPrivate::_k_slotKeepOriginalSizeClicked( bool checked )
 
 void InsertImageWidgetPrivate::_k_slotUrlChanged( const QString &text )
 {
-  q->enableButtonOk( !text.isEmpty() );
   QImage image( text );
   if ( !image.isNull() ) {
     height->setValue( image.height() );
@@ -151,7 +150,7 @@ void InsertImageWidgetPrivate::_k_slotUrlChanged( const QString &text )
     preview->clear();
     imageRatio = -1;
   }
-  q->enableButtonOk( !text.isEmpty() && !image.isNull() );
+  q->enableButtonOk( !text.isEmpty() );
 }
 
 void InsertImageWidgetPrivate::_k_slotImageWidthChanged( int value )
@@ -223,4 +222,4 @@ bool InsertImageWidget::keepOriginalSize() const
 
 }
 
-#include "insertimagewidget.moc"
+#include "moc_insertimagewidget.cpp"

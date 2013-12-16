@@ -145,6 +145,7 @@ void EMailQuoteHighlighter::highlightBlock( const QString &text )
                                             // can't handle multiple levels
   } else if ( d->spellCheckingEnabled ) {
     Highlighter::highlightBlock( text );
+    return; //setCurrentBlockState already done in Highlighter::highlightBlock
   }
   setCurrentBlockState( 0 );
 }

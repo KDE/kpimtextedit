@@ -1,5 +1,10 @@
 add_definitions("-DQT_GUI_LIB -DQT_WIDGETS_LIB") # to be able to use keyboard events like QTest::keyClick()
 
+include_directories(
+  ${CMAKE_SOURCE_DIR}/kpimtextedit
+  ${CMAKE_BINARY_DIR}/kpimtextedit
+)
+
 set(textedittest_SRCS textedittest.cpp)
 kde4_add_unit_test(textedittest TESTNAME textedittest ${textedittest_SRCS})
 

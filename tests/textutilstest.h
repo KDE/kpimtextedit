@@ -26,7 +26,7 @@ class TextUtilsTest : public QObject
 {
   Q_OBJECT
 
-  private slots:
+  private Q_SLOTS:
     void test_flowText_data();
     void test_flowText();
 };
