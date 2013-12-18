@@ -48,7 +48,6 @@
 #include <QTextLayout>
 
 #include "textutils.h"
-#include <QPlainTextEdit>
 
 namespace KPIMTextEdit {
 

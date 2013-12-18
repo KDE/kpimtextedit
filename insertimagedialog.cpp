@@ -21,17 +21,9 @@
 #include "insertimagedialog.h"
 #include "insertimagewidget.h"
 
-#include <KFileDialog>
-#include <KImageIO>
-#include <KLineEdit>
 #include <KLocalizedString>
-#include <KUrlRequester>
 
 #include <QCheckBox>
-#include <QHBoxLayout>
-#include <QLabel>
-#include <QSpinBox>
-#include <QVBoxLayout>
 
 namespace KPIMTextEdit {
 

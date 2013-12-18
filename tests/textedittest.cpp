@@ -24,7 +24,6 @@
 #include "kmime/kmime_codecs.h"
 
 #include <KIconLoader>
-#include <KStandardDirs>
 
 #include <QTextCursor>
 #include <qtestevent.h>
