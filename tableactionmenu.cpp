@@ -31,7 +31,6 @@
 
 #include <QTextTable>
 #include <QPointer>
-#include <QDebug>
 
 namespace KPIMTextEdit {
 

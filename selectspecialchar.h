@@ -24,7 +24,6 @@
 
 #include <KDE/KDialog>
 
-class KCharSelect;
 
 namespace KPIMTextEdit {
 
