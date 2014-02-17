@@ -767,7 +767,7 @@ void TextEdit::insertFromMimeData( const QMimeData *source )
   // Add an image if that is on the clipboard
   if ( textMode() == KRichTextEdit::Rich && source->hasImage() && d->imageSupportEnabled ) {
     QImage image = qvariant_cast<QImage>( source->imageData() );
-    QFileInfo fi( source->text() );
+    QFileInfo fi;
     insertImage( image, fi );
     return;
   }
