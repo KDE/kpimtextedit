@@ -1,65 +1,70 @@
-project(kpimtextedit)
+cmake_minimum_required(VERSION 2.8.12)
 
-find_package(KF5 NO_MODULE REQUIRED COMPONENTS CoreAddons KDE4Support Emoticons)
+project(KPimTextEdit)
 
-add_definitions(-DKDE_DEFAULT_DEBUG_AREA=5329)
+# ECM setup
+find_package(ECM 0.0.11 CONFIG REQUIRED)
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
-add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
+include(GenerateExportHeader)
+include(ECMGenerateHeaders)
+include(ECMGeneratePriFile)
+include(ECMPackageConfigHelpers)
+include(ECMSetupVersion)
+include(FeatureSummary)
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDEFrameworkCompilerSettings)
 
-set(kpimtextedit_lib_srcs
-  emailquotehighlighter.cpp
-  textedit.cpp
-  textutils.cpp
-  emoticontexteditaction.cpp
-  emoticontexteditselector.cpp
-  inserthtmldialog.cpp
-  inserttabledialog.cpp
-  tableactionmenu.cpp
-  tableformatdialog.cpp
-  insertimagedialog.cpp
-  htmlhighlighter.cpp
-  insertimagewidget.cpp
-  tablecellformatdialog.cpp
-  selectspecialchar.cpp
+
+set(KF5_VERSION "4.97.0")
+
+ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KPIMTEXTEDIT
+                        VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h"
+                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfigVersion.cmake"
+                        SOVERSION 5
 )
 
-include_directories(
-  ${CMAKE_BINARY_DIR}/kpimidentities
-  ${CMAKE_BINARY_DIR}/kmime
+########### Find packages ###########
+find_package(KF5 ${KF5_VERSION} CONFIG REQUIRED COMPONENTS CoreAddons KDE4Support Emoticons)
+
+# FIXME: Remove when kdepimlibs is split
+if(${CMAKE_SOURCE_DIR} STREQUAL ${KPimTextEdit_SOURCE_DIR})
+  find_package(KF5KMime ${KF5_VERSION} CONFIG REQUIRED)
+endif()
+
+########### Targets ###########
+add_subdirectory(src)
+#add_subdirectory(autotests)
+
+########### CMake Config Files ###########
+set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/KF5PimTextEdit")
+
+ecm_configure_package_config_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/KF5PimTextEditConfig.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfig.cmake"
+  INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
-
-add_library(kpimtextedit ${LIBRARY_TYPE} ${kpimtextedit_lib_srcs})
-generate_export_header(kpimtextedit)
-
-target_link_libraries(kpimtextedit
-  KF5::KIOCore
-  KF5::Emoticons
-  KF5::KDE4Support
-  kmime
-)
-
-add_subdirectory(tests)
-
-set_target_properties(kpimtextedit PROPERTIES
-  VERSION ${GENERIC_LIB_VERSION}
-  SOVERSION ${GENERIC_LIB_SOVERSION}
-)
-
-install(TARGETS kpimtextedit EXPORT kdepimlibsLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
-  ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_export.h
-  textedit.h
-  textutils.h
-  emailquotehighlighter.h
-  htmlhighlighter.h
-  emoticontexteditaction.h
-  inserthtmldialog.h
-  inserttabledialog.h
-  tableformatdialog.h
-  insertimagedialog.h
-  insertimagewidget.h
-  tablecellformatdialog.h
-  selectspecialchar.h
-  DESTINATION ${INCLUDE_INSTALL_DIR}/kpimtextedit COMPONENT Devel
+  "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfig.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfigVersion.cmake"
+  DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+  COMPONENT Devel
 )
+
+install(EXPORT KF5PimTextEditTargets
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    FILE KF5PimTextEditTargets.cmake
+    NAMESPACE KF5::
+)
+
+install(FILES
+   ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h
+   DESTINATION ${INCLUDE_INSTALL_DIR}
+   COMPONENT Devel
+)
+
+if ("${CMAKE_BINARY_DIR}" STREQUAL "${KPimTextEdit_BINARY_DIR}")
+  feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+endif()
