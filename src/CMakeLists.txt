@@ -19,7 +19,7 @@ add_library(KF5PimTextEdit ${kpimtextedit_SRCS})
 
 generate_export_header(KF5PimTextEdit BASE_NAME kpimtextedit)
 
-add_library(KF5::KF5PimTextEdit ALIAS KF5PimTextEdit)
+add_library(KF5::PimTextEdit ALIAS KF5PimTextEdit)
 
 target_include_directories(KF5PimTextEdit INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/kpimtextedit>")
 target_include_directories(KF5PimTextEdit PUBLIC "$<BUILD_INTERFACE:${KPimTextEdit_SOURCE_DIR}/src;${KPimTextEdit_BINARY_DIR}/src>")
