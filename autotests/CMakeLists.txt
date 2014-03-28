@@ -1,29 +1,22 @@
-add_definitions("-DQT_GUI_LIB -DQT_WIDGETS_LIB") # to be able to use keyboard events like QTest::keyClick()
+include(ECMMarkAsTest)
 
-include_directories(
-  ${CMAKE_SOURCE_DIR}/kpimtextedit
-  ${CMAKE_BINARY_DIR}/kpimtextedit
-)
+set(QT_REQUIRED_VERSION "5.2.0")
+find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Widgets)
+
+########### next target ###############
 
 set(textedittest_SRCS textedittest.cpp)
-kde4_add_unit_test(textedittest TESTNAME textedittest ${textedittest_SRCS})
 
-target_link_libraries(textedittest
-                      ${QT_QTTEST_LIBRARY}
-                      ${QT_QTCORE_LIBRARY}
-                      ${QT_QTGUI_LIBRARY}
-                      ${KDE4_KDECORE_LIBS}
-                      ${KDE4_KDEUI_LIBS}
-                      kmime
-                      kpimtextedit)
+add_executable(textedittest ${textedittest_SRCS})
+add_test(textedittest textedittest)
+ecm_mark_as_test(textedittest)
+target_link_libraries(textedittest KF5PimTextEdit Qt5::Test Qt5::Widgets)
+
+########### next target ###############
 
 set(textutilstest_SRCS textutilstest.cpp)
-kde4_add_unit_test(textutilstest TESTNAME textutilstest ${textutilstest_SRCS})
 
-target_link_libraries(textutilstest
-                      ${QT_QTTEST_LIBRARY}
-                      ${QT_QTCORE_LIBRARY}
-                      ${QT_QTGUI_LIBRARY}
-                      ${KDE4_KDECORE_LIBS}
-                      ${KDE4_KDEUI_LIBS}
-                      kpimtextedit)
+add_executable(textutilstest ${textedittest_SRCS})
+add_test(textutilstest textutilstest)
+ecm_mark_as_test(textutilstest)
+target_link_libraries(textutilstest KF5PimTextEdit Qt5::Test Qt5::Widgets)

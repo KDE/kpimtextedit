@@ -18,7 +18,7 @@
 */
 #include "textutilstest.h"
 
-#include "../textutils.h"
+#include "textutils.h"
 
 #include "qtest_kde.h"
 

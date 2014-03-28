@@ -19,7 +19,7 @@
 #include "qtest_kde.h"
 #include "textedittest.h"
 
-#include "../textedit.h"
+#include "textedit.h"
 
 #include "kmime/kmime_codecs.h"
 
