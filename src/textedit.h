@@ -24,8 +24,6 @@
 
 #include "kpimtextedit_export.h"
 
-#include <kpimidentities/signature.h> // TODO KF5: remove this
-
 #include <KDE/KRichTextWidget>
 #include <KActionCollection>
 
