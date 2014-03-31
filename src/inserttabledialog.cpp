@@ -101,7 +101,7 @@ void InsertTableWidget::slotTypeOfLengthChanged( int index )
     d->mLength->setMaximum( 9999 );
     break;
   default:
-    kDebug() << " index not defined " << index;
+    qDebug() << " index not defined " << index;
     break;
   }
 }

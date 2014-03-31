@@ -120,7 +120,7 @@ QString TextUtils::flowText( QString &wrappedText, const QString &indent, int ma
   }
 
   if ( maxLength <= indent.length() ) {
-    kWarning() << "indent was set to a string that is longer or the same length "
+    qWarning() << "indent was set to a string that is longer or the same length "
                << "as maxLength, setting maxLength to indent.length() + 1";
     maxLength = indent.length() + 1;
   }
