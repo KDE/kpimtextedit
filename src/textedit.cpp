@@ -433,7 +433,7 @@ QList<QAction*> TextEdit::createActions()
   QList<QAction *> listAction = KRichTextWidget::createActions();
 
   if ( d->imageSupportEnabled ) {
-    d->actionAddImage = new KAction( KIcon( QLatin1String( "insert-image" ) ),
+    d->actionAddImage = new KAction( QIcon::fromTheme( QLatin1String( "insert-image" ) ),
                                      i18n( "Add Image" ), this );
     d->actionAddImage->setObjectName(QLatin1String( "add_image" ));
     connect( d->actionAddImage, SIGNAL(triggered(bool)), SLOT(_k_slotAddImage()) );
@@ -454,7 +454,7 @@ QList<QAction*> TextEdit::createActions()
 #if 0 //Port it
   if ( d->insertTableSupportEnabled ) {
     d->actionTable = new TableActionMenu( actionCollection, this );
-    d->actionTable->setIcon( KIcon( QLatin1String( "insert-table" ) ) );
+    d->actionTable->setIcon( QIcon::fromTheme( QLatin1String( "insert-table" ) ) );
     d->actionTable->setText( i18n( "Table" ) );
     d->actionTable->setDelayed( false );
     d->actionTable->setObjectName(QLatin1String( "insert_table" ));
@@ -466,7 +466,7 @@ QList<QAction*> TextEdit::createActions()
   connect( d->actionDeleteLine, SIGNAL(triggered(bool)), SLOT(_k_slotDeleteLine()) );
 
   d->actionFormatReset =
-    new KAction( KIcon( QLatin1String( "draw-eraser" ) ), i18n( "Reset Font Settings" ), this );
+    new KAction( QIcon::fromTheme( QLatin1String( "draw-eraser" ) ), i18n( "Reset Font Settings" ), this );
   d->actionFormatReset->setIconText( i18n( "Reset Font" ) );
   d->actionFormatReset->setObjectName(QLatin1String( "format_reset" ));
   connect( d->actionFormatReset, SIGNAL(triggered(bool)), SLOT(_k_slotFormatReset()) );

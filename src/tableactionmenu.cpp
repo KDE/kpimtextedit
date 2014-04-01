@@ -26,7 +26,7 @@
 
 #include <KActionCollection>
 #include <KAction>
-#include <KIcon>
+#include <QIcon>
 #include <KLocalizedString>
 
 #include <QTextTable>
@@ -421,7 +421,7 @@ TableActionMenu::TableActionMenu( KActionCollection *ac, TextEdit *textEdit )
   KActionMenu *insertMenu = new KActionMenu( i18n( "Insert" ), this );
   addAction( insertMenu );
 
-  d->actionInsertTable = new KAction( KIcon( QLatin1String( "insert-table" ) ), i18n( "Table..." ), this );
+  d->actionInsertTable = new KAction( QIcon::fromTheme( QLatin1String( "insert-table" ) ), i18n( "Table..." ), this );
   insertMenu->addAction( d->actionInsertTable );
   ac->addAction( QLatin1String( "insert_new_table" ), d->actionInsertTable );
   connect( d->actionInsertTable, SIGNAL(triggered(bool)),
@@ -429,7 +429,7 @@ TableActionMenu::TableActionMenu( KActionCollection *ac, TextEdit *textEdit )
 
   insertMenu->addSeparator();
   d->actionInsertRowBelow =
-    new KAction( KIcon( QLatin1String( "edit-table-insert-row-below" ) ),
+    new KAction( QIcon::fromTheme( QLatin1String( "edit-table-insert-row-below" ) ),
                  i18n( "Row Below" ), this );
   insertMenu->addAction( d->actionInsertRowBelow );
   ac->addAction( QLatin1String( "insert_row_below" ), d->actionInsertRowBelow );
@@ -437,7 +437,7 @@ TableActionMenu::TableActionMenu( KActionCollection *ac, TextEdit *textEdit )
            SLOT(_k_slotInsertRowBelow()) );
 
   d->actionInsertRowAbove =
-    new KAction( KIcon( QLatin1String( "edit-table-insert-row-above" ) ),
+    new KAction( QIcon::fromTheme( QLatin1String( "edit-table-insert-row-above" ) ),
                  i18n( "Row Above" ), this );
   insertMenu->addAction( d->actionInsertRowAbove );
   ac->addAction( QLatin1String( "insert_row_above" ), d->actionInsertRowAbove );
@@ -446,7 +446,7 @@ TableActionMenu::TableActionMenu( KActionCollection *ac, TextEdit *textEdit )
 
   insertMenu->addSeparator();
   d->actionInsertColumnBefore =
-    new KAction( KIcon( QLatin1String( "edit-table-insert-column-left" ) ),
+    new KAction( QIcon::fromTheme( QLatin1String( "edit-table-insert-column-left" ) ),
                  i18n( "Column Before" ), this );
   insertMenu->addAction( d->actionInsertColumnBefore );
   ac->addAction( QLatin1String( "insert_column_before" ), d->actionInsertColumnBefore );
@@ -455,7 +455,7 @@ TableActionMenu::TableActionMenu( KActionCollection *ac, TextEdit *textEdit )
            SLOT(_k_slotInsertColumnBefore()) );
 
   d->actionInsertColumnAfter =
-    new KAction( KIcon( QLatin1String( "edit-table-insert-column-right" ) ),
+    new KAction( QIcon::fromTheme( QLatin1String( "edit-table-insert-column-right" ) ),
                  i18n( "Column After" ), this );
   insertMenu->addAction( d->actionInsertColumnAfter );
   ac->addAction( QLatin1String( "insert_column_after" ), d->actionInsertColumnAfter );
@@ -501,7 +501,7 @@ TableActionMenu::TableActionMenu( KActionCollection *ac, TextEdit *textEdit )
   addSeparator();
 
   d->actionMergeCell =
-    new KAction( KIcon( QLatin1String( "edit-table-cell-merge" ) ),
+    new KAction( QIcon::fromTheme( QLatin1String( "edit-table-cell-merge" ) ),
                  i18n( "Join With Cell to the Right" ), this );
   ac->addAction( QLatin1String( "join_cell_to_the_right" ), d->actionMergeCell );
   connect( d->actionMergeCell, SIGNAL(triggered(bool)),
@@ -515,7 +515,7 @@ TableActionMenu::TableActionMenu( KActionCollection *ac, TextEdit *textEdit )
   addAction( d->actionMergeSelectedCells );
 
   d->actionSplitCell =
-    new KAction( KIcon( QLatin1String( "edit-table-cell-split" ) ),
+    new KAction( QIcon::fromTheme( QLatin1String( "edit-table-cell-split" ) ),
                  i18n( "Split cells" ), this );
   ac->addAction( QLatin1String( "split_cells" ), d->actionSplitCell );
   connect( d->actionSplitCell, SIGNAL(triggered(bool)),

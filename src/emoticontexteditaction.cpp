@@ -22,7 +22,7 @@
 
 #include <KLocalizedString>
 #include <KMenu>
-#include <KIcon>
+#include <QIcon>
 
 #include <QWidgetAction>
 
@@ -54,7 +54,7 @@ EmoticonTextEditAction::EmoticonTextEditAction( QObject *parent )
   : KActionMenu( i18n( "Add Smiley" ), parent ), d( new EmoticonTextEditActionPrivate() )
 {
   setMenu( d->emoticonMenu );
-  setIcon( KIcon( QLatin1String( "face-smile" ) ) );
+  setIcon( QIcon::fromTheme( QLatin1String( "face-smile" ) ) );
   // Qt5: Port
 //  setShortcutConfigurable( false );
   setDelayed( false );
