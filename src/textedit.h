@@ -144,7 +144,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget
      *
      * The add_image actions is only added if enableImageActions() is called before.
      */
-    virtual void createActions( KActionCollection *actionCollection );
+    virtual QList<QAction *> createActions();
 
     /**
      * Adds an image. The image is loaded from file and then pasted to the current

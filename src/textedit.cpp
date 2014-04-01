@@ -428,47 +428,49 @@ QString TextEdit::toCleanPlainText() const
   return toCleanPlainText( toPlainText() );
 }
 
-void TextEdit::createActions( KActionCollection *actionCollection )
+QList<QAction*> TextEdit::createActions()
 {
-  actionCollection->addActions(KRichTextWidget::createActions());
+  QList<QAction *> listAction = KRichTextWidget::createActions();
 
   if ( d->imageSupportEnabled ) {
     d->actionAddImage = new KAction( KIcon( QLatin1String( "insert-image" ) ),
                                      i18n( "Add Image" ), this );
-    actionCollection->addAction( QLatin1String( "add_image" ), d->actionAddImage );
+    d->actionAddImage->setObjectName(QLatin1String( "add_image" ));
     connect( d->actionAddImage, SIGNAL(triggered(bool)), SLOT(_k_slotAddImage()) );
   }
   if ( d->emoticonSupportEnabled ) {
     d->actionAddEmoticon = new EmoticonTextEditAction( this );
-    actionCollection->addAction( QLatin1String( "add_emoticon" ), d->actionAddEmoticon );
+    d->actionAddEmoticon->setObjectName(QLatin1String( "add_emoticon" ));
     connect( d->actionAddEmoticon, SIGNAL(emoticonActivated(QString)),
              SLOT(_k_slotAddEmoticon(QString)) );
   }
 
   if ( d->insertHtmlSupportEnabled ) {
     d->actionInsertHtml = new KAction( i18n( "Insert HTML" ), this );
-    actionCollection->addAction( QLatin1String( "insert_html" ), d->actionInsertHtml );
+    d->actionInsertHtml->setObjectName(QLatin1String( "insert_html" ));
     connect( d->actionInsertHtml, SIGNAL(triggered(bool)), SLOT(_k_slotInsertHtml()) );
   }
 
+#if 0 //Port it
   if ( d->insertTableSupportEnabled ) {
     d->actionTable = new TableActionMenu( actionCollection, this );
     d->actionTable->setIcon( KIcon( QLatin1String( "insert-table" ) ) );
     d->actionTable->setText( i18n( "Table" ) );
     d->actionTable->setDelayed( false );
-    actionCollection->addAction( QLatin1String( "insert_table" ), d->actionTable );
+    d->actionTable->setObjectName(QLatin1String( "insert_table" ));
   }
-
+#endif
   d->actionDeleteLine = new KAction( i18n( "Delete Line" ), this );
   d->actionDeleteLine->setShortcut( QKeySequence( Qt::CTRL + Qt::Key_K ) );
-  actionCollection->addAction( QLatin1String( "delete_line" ), d->actionDeleteLine );
+  d->actionDeleteLine->setObjectName(QLatin1String( "delete_line" ));
   connect( d->actionDeleteLine, SIGNAL(triggered(bool)), SLOT(_k_slotDeleteLine()) );
 
   d->actionFormatReset =
     new KAction( KIcon( QLatin1String( "draw-eraser" ) ), i18n( "Reset Font Settings" ), this );
   d->actionFormatReset->setIconText( i18n( "Reset Font" ) );
-  actionCollection->addAction( QLatin1String( "format_reset" ), d->actionFormatReset );
+  d->actionFormatReset->setObjectName(QLatin1String( "format_reset" ));
   connect( d->actionFormatReset, SIGNAL(triggered(bool)), SLOT(_k_slotFormatReset()) );
+  return listAction;
 }
 
 void TextEdit::addImage( const KUrl &url, int width, int height )
