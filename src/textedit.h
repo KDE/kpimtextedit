@@ -30,8 +30,6 @@
 #include <QtCore/QSharedPointer>
 
 #include <memory>
-// TODO KF5: remove this
-#define FIX_KMAIL_INSERT_IMAGE 1
 
 class KUrl;
 class QFileInfo;
@@ -148,14 +146,6 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget
 
     /**
      * Adds an image. The image is loaded from file and then pasted to the current
-     * cursor position.
-     *
-     * @param url The URL of the file which contains the image
-     */
-    void addImage( const KUrl &url );
-
-    /**
-     * Adds an image. The image is loaded from file and then pasted to the current
      * cursor position with the given @p width and @p height.
      *
      * @param url The URL of the file which contains the image
@@ -164,7 +154,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget
      *
      * @since 4.10
      */
-    void addImage( const KUrl &url, int width, int height );
+    void addImage( const KUrl &url, int width = -1, int height = -1 );
 
     /**
      * Loads an image into the textedit. The difference to addImage() is that this

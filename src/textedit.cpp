@@ -478,11 +478,6 @@ void TextEdit::addImage( const KUrl &url, int width, int height )
   addImageHelper( url, width, height );
 }
 
-void TextEdit::addImage( const KUrl &url )
-{
-  addImageHelper( url );
-}
-
 void TextEdit::addImageHelper( const KUrl &url, int width, int height )
 {
   QImage image;
