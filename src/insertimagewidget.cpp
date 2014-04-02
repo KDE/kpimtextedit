@@ -24,8 +24,9 @@
 #include <KLocalizedString>
 #include <KUrlRequester>
 #include <KSeparator>
-
 #include <KLineEdit>
+
+#include <QLineEdit>
 #include <QFileDialog>
 #include <QCheckBox>
 #include <QHBoxLayout>
