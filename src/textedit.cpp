@@ -418,14 +418,9 @@ QString TextEdit::toWrappedPlainText( QTextDocument *doc ) const
 
 QString TextEdit::toCleanPlainText( const QString &plainText ) const
 {
-  QString temp = plainText;
+  QString temp = plainText.isEmpty() ? toPlainText() : plainText;
   d->fixupTextEditString( temp );
   return temp;
-}
-
-QString TextEdit::toCleanPlainText() const
-{
-  return toCleanPlainText( toPlainText() );
 }
 
 QList<QAction*> TextEdit::createActions()

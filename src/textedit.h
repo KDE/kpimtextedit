@@ -206,16 +206,11 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget
     QString toWrappedPlainText( QTextDocument *document ) const;
 
     /**
-     * @since 4.10
-     */
-    //TODO 5.0 merge it
-    QString toCleanPlainText( const QString &plainText ) const;
-
-    /**
      * Same as toPlainText() from QTextEdit, only that it removes embedded
      * images and converts non-breaking space characters to normal spaces.
+     * @since 4.10
      */
-    QString toCleanPlainText() const;
+    QString toCleanPlainText( const QString &plainText = QString() ) const;
 
     /**
      * This method is called after the highlighter is created.
