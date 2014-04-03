@@ -24,7 +24,7 @@
 #include "kpimtextedit_export.h"
 
 #include <KDE/KDialog>
-#include <KDE/KUrl>
+#include <QUrl>
 
 namespace KPIMTextEdit {
 
@@ -43,8 +43,8 @@ class KPIMTEXTEDIT_EXPORT InsertImageDialog : public KDialog
     void setImageWidth( int value );
     void setImageHeight( int value );
 
-    KUrl imageUrl() const;
-    void setImageUrl( const KUrl &url );
+    QUrl imageUrl() const;
+    void setImageUrl( const QUrl &url );
 
     bool keepOriginalSize() const;
 

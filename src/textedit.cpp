@@ -29,14 +29,13 @@
 
 #include <kmime/kmime_codecs.h>
 
-#include <KDE/KAction>
+#include <QAction>
 #include <KDE/KActionCollection>
 #include <KDE/KCursor>
 #include <KDE/KFileDialog>
 #include <KDE/KLocalizedString>
 #include <KDE/KMessageBox>
 #include <KDE/KPushButton>
-#include <KDE/KUrl>
 #include <KDE/KIcon>
 
 #include <QtCore/QBuffer>
@@ -46,6 +45,7 @@
 #include <QtCore/QPointer>
 #include <QKeyEvent>
 #include <QTextLayout>
+#include <QUrl>
 
 #include "textutils.h"
 
@@ -115,18 +115,18 @@ class TextEditPrivate
     void _k_slotTextModeChanged( KRichTextEdit::Mode );
 
     /// The action that triggers _k_slotAddImage()
-    KAction *actionAddImage;
+    QAction *actionAddImage;
 
     /// The action that triggers _k_slotDeleteLine()
-    KAction *actionDeleteLine;
+    QAction *actionDeleteLine;
 
     EmoticonTextEditAction *actionAddEmoticon;
 
-    KAction *actionInsertHtml;
+    QAction *actionInsertHtml;
 
     TableActionMenu *actionTable;
 
-    KAction *actionFormatReset;
+    QAction *actionFormatReset;
 
     /// The parent class
     TextEdit *q;
@@ -428,7 +428,7 @@ QList<QAction*> TextEdit::createActions()
   QList<QAction *> listAction = KRichTextWidget::createActions();
 
   if ( d->imageSupportEnabled ) {
-    d->actionAddImage = new KAction( QIcon::fromTheme( QLatin1String( "insert-image" ) ),
+    d->actionAddImage = new QAction( QIcon::fromTheme( QLatin1String( "insert-image" ) ),
                                      i18n( "Add Image" ), this );
     d->actionAddImage->setObjectName(QLatin1String( "add_image" ));
     connect( d->actionAddImage, SIGNAL(triggered(bool)), SLOT(_k_slotAddImage()) );
@@ -441,11 +441,12 @@ QList<QAction*> TextEdit::createActions()
   }
 
   if ( d->insertHtmlSupportEnabled ) {
-    d->actionInsertHtml = new KAction( i18n( "Insert HTML" ), this );
+    d->actionInsertHtml = new QAction( i18n( "Insert HTML" ), this );
     d->actionInsertHtml->setObjectName(QLatin1String( "insert_html" ));
     connect( d->actionInsertHtml, SIGNAL(triggered(bool)), SLOT(_k_slotInsertHtml()) );
   }
 
+//QT5
 #if 0 //Port it
   if ( d->insertTableSupportEnabled ) {
     d->actionTable = new TableActionMenu( actionCollection, this );
@@ -455,25 +456,25 @@ QList<QAction*> TextEdit::createActions()
     d->actionTable->setObjectName(QLatin1String( "insert_table" ));
   }
 #endif
-  d->actionDeleteLine = new KAction( i18n( "Delete Line" ), this );
+  d->actionDeleteLine = new QAction( i18n( "Delete Line" ), this );
   d->actionDeleteLine->setShortcut( QKeySequence( Qt::CTRL + Qt::Key_K ) );
   d->actionDeleteLine->setObjectName(QLatin1String( "delete_line" ));
   connect( d->actionDeleteLine, SIGNAL(triggered(bool)), SLOT(_k_slotDeleteLine()) );
 
   d->actionFormatReset =
-    new KAction( QIcon::fromTheme( QLatin1String( "draw-eraser" ) ), i18n( "Reset Font Settings" ), this );
+    new QAction( QIcon::fromTheme( QLatin1String( "draw-eraser" ) ), i18n( "Reset Font Settings" ), this );
   d->actionFormatReset->setIconText( i18n( "Reset Font" ) );
   d->actionFormatReset->setObjectName(QLatin1String( "format_reset" ));
   connect( d->actionFormatReset, SIGNAL(triggered(bool)), SLOT(_k_slotFormatReset()) );
   return listAction;
 }
 
-void TextEdit::addImage( const KUrl &url, int width, int height )
+void TextEdit::addImage( const QUrl &url, int width, int height )
 {
   addImageHelper( url, width, height );
 }
 
-void TextEdit::addImageHelper( const KUrl &url, int width, int height )
+void TextEdit::addImageHelper( const QUrl &url, int width, int height )
 {
   QImage image;
   if ( !image.load( url.path() ) ) {
@@ -663,7 +664,7 @@ void TextEditPrivate::_k_slotAddImage()
 {
   QPointer<InsertImageDialog> dlg = new InsertImageDialog( q );
   if ( dlg->exec() == KDialog::Accepted && dlg ) {
-    const KUrl url = dlg->imageUrl();
+    const QUrl url = dlg->imageUrl();
     int imageWidth = -1;
     int imageHeight = -1;
     if ( !dlg->keepOriginalSize() ) {

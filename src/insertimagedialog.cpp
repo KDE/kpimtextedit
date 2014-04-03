@@ -77,12 +77,12 @@ void InsertImageDialog::setImageHeight( int value )
   d->imageWidget->setImageHeight( value );
 }
 
-KUrl InsertImageDialog::imageUrl() const
+QUrl InsertImageDialog::imageUrl() const
 {
   return d->imageWidget->imageUrl();
 }
 
-void InsertImageDialog::setImageUrl( const KUrl &url )
+void InsertImageDialog::setImageUrl( const QUrl &url )
 {
   d->imageWidget->setImageUrl( url );
 }

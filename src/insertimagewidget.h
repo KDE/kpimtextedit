@@ -22,7 +22,7 @@
 
 #include "kpimtextedit_export.h"
 
-#include <KDE/KUrl>
+#include <QUrl>
 
 #include <QWidget>
 
@@ -43,8 +43,8 @@ class KPIMTEXTEDIT_EXPORT InsertImageWidget : public QWidget
     void setImageHeight( int value );
     int imageHeight() const;
 
-    KUrl imageUrl() const;
-    void setImageUrl( const KUrl &url );
+    QUrl imageUrl() const;
+    void setImageUrl( const QUrl &url );
 
     bool keepOriginalSize() const;
 

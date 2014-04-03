@@ -206,12 +206,12 @@ void InsertImageWidget::setImageHeight( int value )
   d->height->setValue( value );
 }
 
-KUrl InsertImageWidget::imageUrl() const
+QUrl InsertImageWidget::imageUrl() const
 {
   return d->imageUrlRequester->url();
 }
 
-void InsertImageWidget::setImageUrl( const KUrl &url )
+void InsertImageWidget::setImageUrl( const QUrl &url )
 {
   d->imageUrlRequester->setUrl( url );
 }

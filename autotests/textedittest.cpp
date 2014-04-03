@@ -186,7 +186,7 @@ void TextEditTester::testFormattingUsed()
   // Image
   //
   QString imagePath = KIconLoader::global()->iconPath( QLatin1String( "folder-new" ), KIconLoader::Small, false );
-  textEdit.addImage( imagePath );
+  textEdit.addImage( QUrl(imagePath) );
   QVERIFY( textEdit.isFormattingUsed() );
   cursor = textEdit.textCursor();
   cursor.movePosition( QTextCursor::Left, QTextCursor::KeepAnchor, 1 );
@@ -215,7 +215,7 @@ void TextEditTester::testCleanText()
   QLatin1String html( "<html><head></head><body>Heelllo&nbsp;World<br>Bye!</body></html>" );
   QLatin1String plain( "Heelllo World\nBye!" );
   edit.setTextOrHtml( html );
-  edit.addImage( KIconLoader::global()->iconPath( QLatin1String( "folder-new" ), KIconLoader::Small, false ) );
+  edit.addImage( QUrl(KIconLoader::global()->iconPath( QLatin1String( "folder-new" ), KIconLoader::Small, false )) );
   QVERIFY( edit.textMode() == TextEdit::Rich );
   QCOMPARE( edit.toCleanPlainText(), plain );
 
@@ -272,7 +272,7 @@ void TextEditTester::testImages()
   QString image2Path = KIconLoader::global()->iconPath( QLatin1String( "arrow-up" ), KIconLoader::Small, false );
 
   // Add one image, check that embeddedImages() returns the right stuff
-  edit.addImage( image1Path );
+  edit.addImage( QUrl(image1Path) );
   KPIMTextEdit::ImageList images = edit.embeddedImages();
   KPIMTextEdit::ImageWithNameList imagesWithNames = edit.imagesWithName();
   QCOMPARE( images.size(), 1 );
@@ -300,7 +300,7 @@ void TextEditTester::testImages()
   QVERIFY( edit.imagesWithName().isEmpty() );
 
   // Check that manually removing the image also empties the image list
-  edit.addImage( image1Path );
+  edit.addImage( QUrl(image1Path) );
   QCOMPARE( edit.embeddedImages().size(), 1 );
   QCOMPARE( edit.imagesWithName().size(), 1 );
   QTextCursor cursor = edit.textCursor();
@@ -311,15 +311,15 @@ void TextEditTester::testImages()
   QVERIFY( edit.imagesWithName().isEmpty() );
 
   // Check that adding the identical image two times only adds the image once
-  edit.addImage( image1Path );
-  edit.addImage( image1Path );
+  edit.addImage( QUrl(image1Path) );
+  edit.addImage( QUrl(image1Path) );
   QCOMPARE( edit.embeddedImages().size(), 1 );
   QCOMPARE( edit.imagesWithName().size(), 1 );
 
   // Another different image added, and we should have two images
   edit.clear();
-  edit.addImage( image1Path );
-  edit.addImage( image2Path );
+  edit.addImage( QUrl(image1Path) );
+  edit.addImage( QUrl(image2Path) );
   images = edit.embeddedImages();
   imagesWithNames = edit.imagesWithName();
   QCOMPARE( images.size(), 2 );
@@ -340,8 +340,8 @@ void TextEditTester::testImageHtmlCode()
   TextEdit edit;
   QString image1Path = KIconLoader::global()->iconPath( QLatin1String( "folder-new" ), KIconLoader::Small, false );
   QString image2Path = KIconLoader::global()->iconPath( QLatin1String( "arrow-up" ), KIconLoader::Small, false );
-  edit.addImage( image1Path );
-  edit.addImage( image2Path );
+  edit.addImage( QUrl(image1Path) );
+  edit.addImage( QUrl(image2Path) );
   KPIMTextEdit::ImageList images = edit.embeddedImages();
   QCOMPARE( images.size(), 2 );
   KPIMTextEdit::EmbeddedImage *image1 = images.first().data();
