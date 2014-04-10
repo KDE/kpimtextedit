@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2012-2013 Montel Laurent <montel@kde.org>
+  Copyright (c) 2012-2013-2014 Montel Laurent <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -17,8 +17,8 @@
   02110-1301, USA.
 */
 
-#ifndef KPIMTEXTEDIT_SELECTSPECIAL_CHAR_H
-#define KPIMTEXTEDIT_SELECTSPECIAL_CHAR_H
+#ifndef KPIMTEXTEDIT_SELECTSPECIAL_CHARDIALOG_H
+#define KPIMTEXTEDIT_SELECTSPECIAL_CHARDIALOG_H
 
 #include "kpimtextedit_export.h"
 
@@ -27,14 +27,14 @@
 
 namespace KPIMTextEdit {
 
-class SelectSpecialCharPrivate;
+class SelectSpecialCharDialogPrivate;
 
-class KPIMTEXTEDIT_EXPORT SelectSpecialChar : public KDialog
+class KPIMTEXTEDIT_EXPORT SelectSpecialCharDialog : public KDialog
 {
   Q_OBJECT
   public:
-    explicit SelectSpecialChar( QWidget *parent );
-    ~SelectSpecialChar();
+    explicit SelectSpecialCharDialog( QWidget *parent );
+    ~SelectSpecialCharDialog();
 
     void setCurrentChar( const QChar &c );
     QChar currentChar() const;
@@ -52,8 +52,8 @@ class KPIMTEXTEDIT_EXPORT SelectSpecialChar : public KDialog
     void charSelected( const QChar & );
 
   private:
-    SelectSpecialCharPrivate * const d;
-    friend class SelectSpecialCharPrivate;
+    SelectSpecialCharDialogPrivate * const d;
+    friend class SelectSpecialCharDialogPrivate;
     Q_PRIVATE_SLOT( d, void _k_slotInsertChar() )
 };
 

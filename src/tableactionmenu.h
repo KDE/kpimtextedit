@@ -23,8 +23,6 @@
 
 #include <KActionMenu>
 
-class KActionCollection;
-
 namespace KPIMTextEdit {
 
 class TextEdit;
@@ -34,10 +32,11 @@ class TableActionMenu : public KActionMenu
 {
   Q_OBJECT
   public:
-    explicit TableActionMenu( KActionCollection *ac, TextEdit *textEdit );
+    explicit TableActionMenu( TextEdit *textEdit );
     ~TableActionMenu();
 
-  private:
+    QList<QAction *> listAction() const;
+private:
     TableActionMenuPrivate * const d;
     friend class TableActionMenuPrivate;
 

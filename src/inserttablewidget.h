@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2012 Montel Laurent <montel@kde.org>
+  Copyright (c) 2014 Montel Laurent <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -18,9 +18,8 @@
 
 */
 
-#ifndef KPIMTEXTEDIT_INSERTTABLEDIALOG_H
-#define KPIMTEXTEDIT_INSERTTABLEDIALOG_H
-
+#ifndef INSERTTABLEWIDGET_H
+#define INSERTTABLEWIDGET_H
 #include "kpimtextedit_export.h"
 
 #include <KDE/KDialog>
@@ -29,11 +28,12 @@
 
 namespace KPIMTextEdit {
 
-class KPIMTEXTEDIT_EXPORT InsertTableDialog : public KDialog
+class KPIMTEXTEDIT_EXPORT InsertTableWidget : public QWidget
 {
+  Q_OBJECT
   public:
-    explicit InsertTableDialog( QWidget *parent );
-    ~InsertTableDialog();
+    explicit InsertTableWidget( QWidget *parent = 0 );
+    ~InsertTableWidget();
     int columns() const;
     int rows() const;
     int border() const;
@@ -44,14 +44,17 @@ class KPIMTEXTEDIT_EXPORT InsertTableDialog : public KDialog
 
     QTextLength::Type typeOfLength() const;
     void setTypeOfLength( QTextLength::Type type );
+
     int length() const;
     void setLength( int );
 
-  private:
-    class InsertTableDialogPrivate;
-    InsertTableDialogPrivate * const d;
-};
+  private Q_SLOTS:
+    void slotTypeOfLengthChanged( int );
 
+  private:
+    class InsertTableWidgetPrivate;
+    InsertTableWidgetPrivate * const d;
+};
 }
 
-#endif // KPIMTEXTEDIT_INSERTTABLEDIALOG_H
+#endif // INSERTTABLEWIDGET_H

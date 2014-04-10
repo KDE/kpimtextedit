@@ -432,40 +432,44 @@ QList<QAction*> TextEdit::createActions()
                                      i18n( "Add Image" ), this );
     d->actionAddImage->setObjectName(QLatin1String( "add_image" ));
     connect( d->actionAddImage, SIGNAL(triggered(bool)), SLOT(_k_slotAddImage()) );
+    listAction << d->actionAddImage;
   }
   if ( d->emoticonSupportEnabled ) {
     d->actionAddEmoticon = new EmoticonTextEditAction( this );
     d->actionAddEmoticon->setObjectName(QLatin1String( "add_emoticon" ));
     connect( d->actionAddEmoticon, SIGNAL(emoticonActivated(QString)),
              SLOT(_k_slotAddEmoticon(QString)) );
+    listAction << d->actionAddEmoticon;
   }
 
   if ( d->insertHtmlSupportEnabled ) {
     d->actionInsertHtml = new QAction( i18n( "Insert HTML" ), this );
     d->actionInsertHtml->setObjectName(QLatin1String( "insert_html" ));
     connect( d->actionInsertHtml, SIGNAL(triggered(bool)), SLOT(_k_slotInsertHtml()) );
+    listAction << d->actionInsertHtml;
   }
 
-//QT5
-#if 0 //Port it
   if ( d->insertTableSupportEnabled ) {
-    d->actionTable = new TableActionMenu( actionCollection, this );
+    d->actionTable = new TableActionMenu( this );
     d->actionTable->setIcon( QIcon::fromTheme( QLatin1String( "insert-table" ) ) );
     d->actionTable->setText( i18n( "Table" ) );
     d->actionTable->setDelayed( false );
     d->actionTable->setObjectName(QLatin1String( "insert_table" ));
+    listAction << d->actionTable->listAction();
+    listAction << d->actionTable;
   }
-#endif
   d->actionDeleteLine = new QAction( i18n( "Delete Line" ), this );
   d->actionDeleteLine->setShortcut( QKeySequence( Qt::CTRL + Qt::Key_K ) );
   d->actionDeleteLine->setObjectName(QLatin1String( "delete_line" ));
   connect( d->actionDeleteLine, SIGNAL(triggered(bool)), SLOT(_k_slotDeleteLine()) );
+  listAction << d->actionDeleteLine;
 
   d->actionFormatReset =
     new QAction( QIcon::fromTheme( QLatin1String( "draw-eraser" ) ), i18n( "Reset Font Settings" ), this );
   d->actionFormatReset->setIconText( i18n( "Reset Font" ) );
   d->actionFormatReset->setObjectName(QLatin1String( "format_reset" ));
   connect( d->actionFormatReset, SIGNAL(triggered(bool)), SLOT(_k_slotFormatReset()) );
+  listAction << d->actionFormatReset;
   return listAction;
 }
 

@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2012-2013 Montel Laurent <montel@kde.org>
+  Copyright (c) 2012-2013-2014 Montel Laurent <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -17,17 +17,17 @@
   02110-1301, USA.
 */
 
-#include "selectspecialchar.h"
+#include "selectspecialchardialog.h"
 #include <KCharSelect>
 #include <KLocalizedString>
 #include <QHBoxLayout>
 
 namespace KPIMTextEdit {
 
-class SelectSpecialCharPrivate
+class SelectSpecialCharDialogPrivate
 {
   public:
-    SelectSpecialCharPrivate( SelectSpecialChar *qq )
+    SelectSpecialCharDialogPrivate( SelectSpecialCharDialog *qq )
       : q( qq )
     {
       q->setCaption( i18n( "Select Special Characters" ) );
@@ -49,25 +49,25 @@ class SelectSpecialCharPrivate
     void _k_slotInsertChar();
 
     KCharSelect *mCharSelect;
-    SelectSpecialChar *q;
+    SelectSpecialCharDialog *q;
 };
 
-void SelectSpecialCharPrivate::_k_slotInsertChar()
+void SelectSpecialCharDialogPrivate::_k_slotInsertChar()
 {
   Q_EMIT q->charSelected( mCharSelect->currentChar() );
 }
 
-SelectSpecialChar::SelectSpecialChar( QWidget *parent )
-  : KDialog( parent ), d( new SelectSpecialCharPrivate( this ) )
+SelectSpecialCharDialog::SelectSpecialCharDialog( QWidget *parent )
+  : KDialog( parent ), d( new SelectSpecialCharDialogPrivate( this ) )
 {
 }
 
-SelectSpecialChar::~SelectSpecialChar()
+SelectSpecialCharDialog::~SelectSpecialCharDialog()
 {
   delete d;
 }
 
-void SelectSpecialChar::showSelectButton( bool show )
+void SelectSpecialCharDialog::showSelectButton( bool show )
 {
   if ( show ) {
     setButtons( Ok|Cancel|User1 );
@@ -76,26 +76,26 @@ void SelectSpecialChar::showSelectButton( bool show )
   }
 }
 
-void SelectSpecialChar::setCurrentChar( const QChar &c )
+void SelectSpecialCharDialog::setCurrentChar( const QChar &c )
 {
   d->mCharSelect->setCurrentChar(c);
 }
 
-QChar SelectSpecialChar::currentChar() const
+QChar SelectSpecialCharDialog::currentChar() const
 {
   return d->mCharSelect->currentChar();
 }
 
-void SelectSpecialChar::autoInsertChar()
+void SelectSpecialCharDialog::autoInsertChar()
 {
   connect( d->mCharSelect, SIGNAL(charSelected(QChar)), SLOT(accept()) );
 }
 
-void SelectSpecialChar::setOkButtonText( const QString &text )
+void SelectSpecialCharDialog::setOkButtonText( const QString &text )
 {
   setButtonText( KDialog::User1, text );
 }
 
 }
 
-#include "moc_selectspecialchar.cpp"
+#include "moc_selectspecialchardialog.cpp"

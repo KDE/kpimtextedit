@@ -7,12 +7,13 @@ set(kpimtextedit_SRCS
   insertimagedialog.cpp
   insertimagewidget.cpp
   inserttabledialog.cpp
-  selectspecialchar.cpp
+  selectspecialchardialog.cpp
   tableactionmenu.cpp
   tablecellformatdialog.cpp
   tableformatdialog.cpp
   textedit.cpp
   textutils.cpp
+  inserttablewidget.cpp
 )
 
 add_library(KF5PimTextEdit ${kpimtextedit_SRCS})
@@ -50,8 +51,8 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
   InsertImageDialog
   InsertImageWidget
   InsertTableDialog
-  # InsertTableWidget FIXME: This class comes from inserttabledialog.h, split it
-  SelectSpecialChar
+  InsertTableWidget 
+  SelectSpecialCharDialog
   TableCellFormatDialog
   TableFormatDialog
   TextEdit

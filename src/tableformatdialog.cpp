@@ -19,7 +19,7 @@
 */
 
 #include "tableformatdialog.h"
-#include "inserttabledialog.h"
+#include "inserttablewidget.h"
 
 #include <KLocalizedString>
 #include <KComboBox>
