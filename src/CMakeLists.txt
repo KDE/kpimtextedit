@@ -77,5 +77,5 @@ install(FILES
   COMPONENT Devel
 )
 
-ecm_generate_pri_file(BASE_NAME KPIMTextEdit LIB_NAME KF5PIMTextEdit DEPS "Emoticons KDE4Support KIO KMime" FILENAME_VAR PRI_FILENAME)
+ecm_generate_pri_file(BASE_NAME KPIMTextEdit LIB_NAME KF5PIMTextEdit DEPS "Emoticons KDELibs4Support KIO KMime" FILENAME_VAR PRI_FILENAME)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
