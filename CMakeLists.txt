@@ -28,7 +28,7 @@ ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KPIMTEXTEDIT
 ########### Find packages ###########
 find_package(KF5CoreAddons ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5Emoticons ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5KDE4Support ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5KDELibs4Support ${KF5_VERSION} CONFIG REQUIRED)
 
 # FIXME: Remove when kdepimlibs is split
 if(${CMAKE_SOURCE_DIR} STREQUAL ${KPimTextEdit_SOURCE_DIR})
