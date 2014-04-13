@@ -21,7 +21,7 @@
 #include "inserttablewidget.h"
 #include <KLocalizedString>
 #include <KComboBox>
-#include <KDebug>
+#include <QDebug>
 #include <KSeparator>
 
 #include <QSpinBox>

@@ -25,7 +25,7 @@
 #include <QTextBlock>
 #include <QTextCharFormat>
 #include <QTextDocument>
-#include <KDE/KDebug>
+#include <QDebug>
 
 using namespace KPIMTextEdit;
 
