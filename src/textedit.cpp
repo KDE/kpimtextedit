@@ -35,8 +35,6 @@
 #include <KDE/KFileDialog>
 #include <KDE/KLocalizedString>
 #include <KDE/KMessageBox>
-#include <KDE/KPushButton>
-#include <KDE/KIcon>
 
 #include <QtCore/QBuffer>
 #include <QtCore/QDateTime>
