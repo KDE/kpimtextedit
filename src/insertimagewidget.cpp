@@ -53,7 +53,7 @@ class InsertImageWidgetPrivate
       imageUrlRequester->setWindowTitle( i18n( "Add Image" ) );
 //       imageUrlRequester->fileDialog()->okButton()->setGuiItem(
 //         KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
-      //imageUrlRequester->fileDialog()->setFileMode( QFileDialog::AnyFile );
+      imageUrlRequester->fileDialog()->setFileMode( QFileDialog::AnyFile );
       q->connect( imageUrlRequester->lineEdit(), SIGNAL(textChanged(QString)),
                   q, SLOT(_k_slotUrlChanged(QString)) );
 
