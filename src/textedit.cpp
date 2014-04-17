@@ -32,7 +32,6 @@
 #include <QAction>
 #include <KDE/KActionCollection>
 #include <KDE/KCursor>
-#include <KDE/KFileDialog>
 #include <KDE/KLocalizedString>
 #include <KDE/KMessageBox>
 
