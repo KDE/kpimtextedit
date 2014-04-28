@@ -30,7 +30,7 @@ target_link_libraries(KF5PimTextEdit
   KF5::Emoticons
   KF5::KIOCore
   KF5::KDELibs4Support
-  KF5::KMime
+  KF5::Mime
 )
 
 set_target_properties(KF5PimTextEdit PROPERTIES

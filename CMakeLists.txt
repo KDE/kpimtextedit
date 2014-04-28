@@ -32,7 +32,7 @@ find_package(KF5KDELibs4Support ${KF5_VERSION} CONFIG REQUIRED)
 
 # FIXME: Remove when kdepimlibs is split
 if(${CMAKE_SOURCE_DIR} STREQUAL ${KPimTextEdit_SOURCE_DIR})
-  find_package(KF5KMime ${KF5_VERSION} CONFIG REQUIRED)
+  find_package(KF5Mime ${KF5_VERSION} CONFIG REQUIRED)
 endif()
 
 ########### Targets ###########
