@@ -22,7 +22,7 @@ generate_export_header(KF5PimTextEdit BASE_NAME kpimtextedit)
 
 add_library(KF5::PimTextEdit ALIAS KF5PimTextEdit)
 
-target_include_directories(KF5PimTextEdit INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/kpimtextedit>")
+target_include_directories(KF5PimTextEdit INTERFACE "$<INSTALL_INTERFACE:${KF5_INCLUDE_INSTALL_DIR}/KPIMTextEdit>")
 target_include_directories(KF5PimTextEdit PUBLIC "$<BUILD_INTERFACE:${KPimTextEdit_SOURCE_DIR}/src;${KPimTextEdit_BINARY_DIR}/src>")
 
 
@@ -65,15 +65,10 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
 ########### install files ###############
 
 install(FILES
-    ${KPimTextEdit_CamelCase_HEADERS}
-    DESTINATION ${INCLUDE_INSTALL_DIR}/KPIMTextEdit
-    COMPONENT Devel
-)
-
-install(FILES
+  ${KPimTextEdit_CamelCase_HEADERS}
   ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_export.h
   ${kpimtextedit_HEADERS}
-  DESTINATION ${INCLUDE_INSTALL_DIR}/kpimtextedit
+  DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KPIMTextEdit
   COMPONENT Devel
 )
 

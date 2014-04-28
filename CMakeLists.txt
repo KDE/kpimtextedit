@@ -63,7 +63,7 @@ install(EXPORT KF5PimTextEditTargets
 
 install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h
-   DESTINATION ${INCLUDE_INSTALL_DIR}
+   DESTINATION ${KF5_INCLUDE_INSTALL_DIR}
    COMPONENT Devel
 )
 
