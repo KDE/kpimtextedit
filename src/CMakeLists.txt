@@ -59,7 +59,6 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
   TextUtils
 
   REQUIRED_HEADERS kpimtextedit_HEADERS
-  PREFIX KPimTextEdit
 )
 
 ########### install files ###############
