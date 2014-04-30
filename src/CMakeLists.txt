@@ -39,7 +39,7 @@ set_target_properties(KF5PimTextEdit PROPERTIES
     EXPORT_NAME PimTextEdit
 )
 
-install(TARGETS KF5PimTextEdit EXPORT KF5PimTextEditTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF5PimTextEdit EXPORT KF5PimTextEditTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### Generate Headers ###############
 ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
