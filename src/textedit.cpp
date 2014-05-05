@@ -27,7 +27,7 @@
 #include "tableactionmenu.h"
 #include "insertimagedialog.h"
 
-#include <kmime_codecs.h>
+#include <kmime/kmime_codecs.h>
 
 #include <QAction>
 #include <KDE/KActionCollection>

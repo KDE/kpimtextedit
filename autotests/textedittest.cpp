@@ -21,7 +21,7 @@
 
 #include "textedit.h"
 
-#include "kmime_codecs.h"
+#include <kmime/kmime_codecs.h>
 
 #include <KIconLoader>
 
