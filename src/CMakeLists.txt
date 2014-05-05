@@ -65,10 +65,15 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
 ########### install files ###############
 
 install(FILES
-  ${KPimTextEdit_CamelCase_HEADERS}
   ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_export.h
   ${kpimtextedit_HEADERS}
   DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KPIMTextEdit/kpimtextedit
+  COMPONENT Devel
+)
+
+install(FILES
+  ${KPimTextEdit_CamelCase_HEADERS}
+  DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KPIMTextEdit/KPIMTextEdit/
   COMPONENT Devel
 )
 
