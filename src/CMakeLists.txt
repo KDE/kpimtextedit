@@ -58,6 +58,7 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
   TextEdit
   TextUtils
 
+  PREFIX KPIMTextEdit
   REQUIRED_HEADERS kpimtextedit_HEADERS
 )
 
@@ -67,9 +68,9 @@ install(FILES
   ${KPimTextEdit_CamelCase_HEADERS}
   ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_export.h
   ${kpimtextedit_HEADERS}
-  DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KPIMTextEdit
+  DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KPIMTextEdit/kpimtextedit
   COMPONENT Devel
 )
 
-ecm_generate_pri_file(BASE_NAME KPIMTextEdit LIB_NAME KF5PIMTextEdit DEPS "Emoticons KDELibs4Support KIO Mime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KF5_INCLUDE_INSTALL_DIR}/KPIMTextEdit)
+ecm_generate_pri_file(BASE_NAME KPIMTextEdit LIB_NAME KF5PIMTextEdit DEPS "Emoticons KDELibs4Support KIO Mime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KF5_INCLUDE_INSTALL_DIR}/KPIMTextEdit/)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
