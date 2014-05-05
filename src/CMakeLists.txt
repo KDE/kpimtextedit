@@ -27,9 +27,12 @@ target_include_directories(KF5PimTextEdit PUBLIC "$<BUILD_INTERFACE:${KPimTextEd
 
 
 target_link_libraries(KF5PimTextEdit
+PUBLIC
+  KF5::KDELibs4Support
+PRIVATE
+  KF5::KIOCore
   KF5::Emoticons
   KF5::KIOCore
-  KF5::KDELibs4Support
   KF5::Mime
 )
 
@@ -77,5 +80,5 @@ install(FILES
   COMPONENT Devel
 )
 
-ecm_generate_pri_file(BASE_NAME KPIMTextEdit LIB_NAME KF5PIMTextEdit DEPS "Emoticons KDELibs4Support KIO Mime" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KF5_INCLUDE_INSTALL_DIR}/KPIMTextEdit/)
+ecm_generate_pri_file(BASE_NAME KPIMTextEdit LIB_NAME KF5PIMTextEdit DEPS "KDELibs4Support KIOCore" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KF5_INCLUDE_INSTALL_DIR}/KPIMTextEdit/)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
