@@ -35,6 +35,8 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${KPimTextEdit_SOURCE_DIR})
   find_package(KF5Mime ${KF5_VERSION} CONFIG REQUIRED)
 endif()
 
+add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
+
 ########### Targets ###########
 add_subdirectory(src)
 add_subdirectory(autotests)
