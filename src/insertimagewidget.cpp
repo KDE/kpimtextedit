@@ -26,6 +26,7 @@
 #include <KSeparator>
 #include <KLineEdit>
 
+#include <QImageReader>
 #include <QLineEdit>
 #include <QFileDialog>
 #include <QCheckBox>
@@ -47,11 +48,10 @@ class InsertImageWidgetPrivate
       QLabel *lab = new QLabel( i18n( "Image Location:" ) );
       imageUrlRequester = new KUrlRequester;
 
-      const QStringList mimetypes = KImageIO::mimeTypes( KImageIO::Reading );
-      imageUrlRequester->fileDialog()->selectMimeTypeFilter( mimetypes.join( QLatin1String( " " ) ) );
-      // Qt5: Port
+      const QList<QByteArray> mimetypes = QImageReader::supportedMimeTypes();
+      //QT5 imageUrlRequester->fileDialog()->selectMimeTypeFilter( mimetypes.join( QLatin1String( " " ) ) );
       imageUrlRequester->setWindowTitle( i18n( "Add Image" ) );
-//       imageUrlRequester->fileDialog()->okButton()->setGuiItem(
+//QT5       imageUrlRequester->fileDialog()->okButton()->setGuiItem(
 //         KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
       imageUrlRequester->fileDialog()->setFileMode( QFileDialog::AnyFile );
       q->connect( imageUrlRequester->lineEdit(), SIGNAL(textChanged(QString)),
