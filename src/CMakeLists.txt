@@ -27,8 +27,6 @@ target_include_directories(KF5PimTextEdit PUBLIC "$<BUILD_INTERFACE:${KPimTextEd
 
 
 target_link_libraries(KF5PimTextEdit
-PUBLIC
-  KF5::KDELibs4Support
 PRIVATE
   KF5::KIOCore
   KF5::Emoticons
