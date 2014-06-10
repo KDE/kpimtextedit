@@ -23,13 +23,13 @@
 
 #include "kpimtextedit_export.h"
 
-#include <KDE/KDialog>
+#include <QDialog>
 
 #include <QTextCharFormat>
 
 namespace KPIMTextEdit {
 
-class KPIMTEXTEDIT_EXPORT TableCellFormatDialog : public KDialog
+class KPIMTEXTEDIT_EXPORT TableCellFormatDialog : public QDialog
 {
 public:
     explicit TableCellFormatDialog( QWidget *parent );

@@ -31,6 +31,7 @@
 #include <QSpinBox>
 #include <QLabel>
 #include <QCheckBox>
+#include <QDialogButtonBox>
 
 using namespace KPIMTextEdit;
 
@@ -40,10 +41,11 @@ public:
     TableFormatDialogPrivate( TableFormatDialog *qq )
         :q( qq )
     {
-        q->setCaption( i18n( "Table Format" ) );
-        q->setButtons( Ok|Cancel );
+        q->setWindowTitle( i18n( "Table Format" ) );
+        QVBoxLayout *mainLayout = new QVBoxLayout;
+        q->setLayout(mainLayout);
+
         QWidget *page = new QWidget( q );
-        q->setMainWidget( page );
         QVBoxLayout *lay = new QVBoxLayout( page );
         tableWidget = new InsertTableWidget;
         lay->addWidget( tableWidget );
@@ -104,7 +106,10 @@ public:
         backgroundColor->setEnabled(false);
         q->connect( useBackgroundColor, SIGNAL(toggled(bool)),
                     backgroundColor, SLOT(setEnabled(bool)) );
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
 
+        mainLayout->addWidget(page);
+        mainLayout->addWidget(buttonBox);
     }
 
     QCheckBox *useBackgroundColor;
@@ -117,7 +122,7 @@ public:
 };
 
 TableFormatDialog::TableFormatDialog( QWidget *parent )
-    : KDialog( parent ), d( new TableFormatDialogPrivate( this ) )
+    : QDialog( parent ), d( new TableFormatDialogPrivate( this ) )
 {
 }
 

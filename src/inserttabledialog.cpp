@@ -27,7 +27,9 @@
 #include <KSeparator>
 
 #include <QSpinBox>
+#include <QPushButton>
 #include <QFormLayout>
+#include <QDialogButtonBox>
 
 using namespace KPIMTextEdit;
 
@@ -38,18 +40,20 @@ public:
     InsertTableDialogPrivate( InsertTableDialog *qq )
         : q( qq )
     {
-        q->setCaption( i18n( "Insert Table" ) );
-        q->setButtons( Ok|Cancel );
-        q->setButtonText( KDialog::Ok, i18n( "Insert" ) );
-        QWidget *page = new QWidget;
-        QVBoxLayout *lay = new QVBoxLayout;
-        page->setLayout(lay);
-        insertTableWidget = new InsertTableWidget;
-        lay->addWidget(insertTableWidget);
-        KSeparator *sep = new KSeparator;
-        lay->addWidget( sep );
+        q->setWindowTitle( i18n( "Insert Table" ) );
+        QVBoxLayout *mainLayout = new QVBoxLayout;
+        q->setLayout(mainLayout);
 
-        q->setMainWidget( page );
+        insertTableWidget = new InsertTableWidget;
+        mainLayout->addWidget(insertTableWidget);
+
+        KSeparator *sep = new KSeparator;
+        mainLayout->addWidget(sep);
+
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+        buttonBox->button(QDialogButtonBox::Ok)->setText( i18n( "Insert" ) );
+
+        mainLayout->addWidget(buttonBox);
     }
 
     InsertTableWidget *insertTableWidget;
@@ -57,7 +61,7 @@ public:
 };
 
 InsertTableDialog::InsertTableDialog( QWidget *parent )
-    : KDialog( parent ), d( new InsertTableDialogPrivate( this ) )
+    : QDialog( parent ), d( new InsertTableDialogPrivate( this ) )
 {
 }
 

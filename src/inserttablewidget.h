@@ -22,7 +22,7 @@
 #define INSERTTABLEWIDGET_H
 #include "kpimtextedit_export.h"
 
-#include <KDE/KDialog>
+#include <QWidget>
 
 #include <QTextLength>
 

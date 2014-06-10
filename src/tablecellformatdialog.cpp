@@ -28,6 +28,7 @@
 #include <QCheckBox>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QDialogButtonBox>
 
 using namespace KPIMTextEdit;
 
@@ -37,11 +38,9 @@ public:
     TableCellFormatDialogPrivate( TableCellFormatDialog *qq )
         : q( qq )
     {
-        q->setCaption( i18n( "Cell Format" ) );
-        q->setButtons( Ok|Cancel );
-        QWidget *page = new QWidget( q );
-        q->setMainWidget( page );
-        QVBoxLayout *lay = new QVBoxLayout( page );
+        q->setWindowTitle( i18n( "Cell Format" ) );
+        QVBoxLayout *mainLayout = new QVBoxLayout;
+        q->setLayout(mainLayout);
 
         QHBoxLayout *hbox = new QHBoxLayout;
         QLabel *lab = new QLabel( i18n( "Vertical Alignment:" ) );
@@ -52,10 +51,10 @@ public:
         verticalAlignment->addItem( i18n( "Bottom" ), QTextCharFormat::AlignBottom );
 
         hbox->addWidget( verticalAlignment );
-        lay->addLayout( hbox );
+        mainLayout->addLayout( hbox );
 
         KSeparator *sep = new KSeparator;
-        lay->addWidget( sep );
+        mainLayout->addWidget( sep );
 
         hbox = new QHBoxLayout;
         useBackgroundColor = new QCheckBox( i18n( "Background Color:" ) );
@@ -63,13 +62,17 @@ public:
         backgroundColor = new KColorButton;
         backgroundColor->setDefaultColor( Qt::white );
         hbox->addWidget( backgroundColor );
-        lay->addLayout(hbox);
+        mainLayout->addLayout(hbox);
 
         sep = new KSeparator;
-        lay->addWidget( sep );
+        mainLayout->addWidget( sep );
         backgroundColor->setEnabled( false );
         q->connect( useBackgroundColor, SIGNAL(toggled(bool)),
                     backgroundColor, SLOT(setEnabled(bool)) );
+
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+
+        mainLayout->addWidget(buttonBox);
     }
     QCheckBox *useBackgroundColor;
 
@@ -79,7 +82,7 @@ public:
 };
 
 TableCellFormatDialog::TableCellFormatDialog( QWidget *parent )
-    : KDialog( parent ), d( new TableCellFormatDialogPrivate( this ) )
+    : QDialog( parent ), d( new TableCellFormatDialogPrivate( this ) )
 {
 }
 
