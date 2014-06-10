@@ -24,6 +24,9 @@
 #include <KLocalizedString>
 
 #include <QCheckBox>
+#include <QDialogButtonBox>
+#include <QVBoxLayout>
+#include <QPushButton>
 
 namespace KPIMTextEdit {
 
@@ -33,22 +36,33 @@ public:
     InsertImageDialogPrivate( InsertImageDialog *qq )
         :q( qq )
     {
-        q->setCaption( i18n( "Insert Image" ) );
-        q->setButtons( KDialog::Ok|KDialog::Cancel );
-        q->setButtonText( KDialog::Ok, i18n( "Insert" ) );
+        QVBoxLayout *vbox = new QVBoxLayout;
+        q->setLayout(vbox);
+        q->setWindowTitle( i18n( "Insert Image" ) );
+
         imageWidget = new InsertImageWidget(q);
+        vbox->addWidget(imageWidget);
         q->connect( imageWidget, SIGNAL(enableButtonOk(bool)),
-                    q, SLOT(enableButtonOk(bool)) );
-        q->setMainWidget( imageWidget );
-        q->enableButtonOk( false );
+                    q, SLOT(_k_slotEnabledButtonChanged(bool)) );
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+        okButton = buttonBox->button(QDialogButtonBox::Ok);
+        okButton->setText( i18n( "Insert" ) );
+        vbox->addWidget(buttonBox);
+        okButton->setEnabled( false );
+    }
+
+    void _k_slotEnabledButtonChanged(bool enabled)
+    {
+        okButton->setEnabled(enabled);
     }
 
     InsertImageWidget *imageWidget;
+    QPushButton *okButton;
     InsertImageDialog *q;
 };
 
 InsertImageDialog::InsertImageDialog( QWidget *parent )
-    : KDialog( parent ), d( new InsertImageDialogPrivate( this ) )
+    : QDialog( parent ), d( new InsertImageDialogPrivate( this ) )
 {
 }
 
@@ -93,4 +107,4 @@ bool InsertImageDialog::keepOriginalSize() const
 }
 
 }
-
+#include "moc_insertimagedialog.cpp"

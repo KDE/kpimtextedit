@@ -664,7 +664,7 @@ void TextEditPrivate::_k_slotInsertHtml()
 void TextEditPrivate::_k_slotAddImage()
 {
     QPointer<InsertImageDialog> dlg = new InsertImageDialog( q );
-    if ( dlg->exec() == KDialog::Accepted && dlg ) {
+    if ( dlg->exec() == QDialog::Accepted && dlg ) {
         const QUrl url = dlg->imageUrl();
         int imageWidth = -1;
         int imageHeight = -1;

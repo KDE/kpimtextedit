@@ -23,13 +23,13 @@
 
 #include "kpimtextedit_export.h"
 
-#include <KDE/KDialog>
+#include <QDialog>
 
 namespace KPIMTextEdit {
 
 class InsertHtmlDialogPrivate;
 
-class KPIMTEXTEDIT_EXPORT InsertHtmlDialog : public KDialog
+class KPIMTEXTEDIT_EXPORT InsertHtmlDialog : public QDialog
 {
     Q_OBJECT
 public:

@@ -23,14 +23,14 @@
 
 #include "kpimtextedit_export.h"
 
-#include <KDE/KDialog>
+#include <QDialog>
 #include <QUrl>
 
 namespace KPIMTextEdit {
 
 class InsertImageDialogPrivate;
 
-class KPIMTEXTEDIT_EXPORT InsertImageDialog : public KDialog
+class KPIMTEXTEDIT_EXPORT InsertImageDialog : public QDialog
 {
     Q_OBJECT
 public:
@@ -51,6 +51,7 @@ public:
 private:
     friend class InsertImageDialogPrivate;
     InsertImageDialogPrivate * const d;
+    Q_PRIVATE_SLOT( d, void _k_slotEnabledButtonChanged(bool) )
 };
 
 }
