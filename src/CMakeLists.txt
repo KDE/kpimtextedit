@@ -32,6 +32,7 @@ PRIVATE
   KF5::Emoticons
   KF5::KIOCore
   KF5::Mime
+  KF5::SonnetUi
 )
 
 set_target_properties(KF5PimTextEdit PROPERTIES
