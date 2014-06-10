@@ -30,20 +30,20 @@ using namespace KPIMTextEdit;
 
 class EmoticonTextEditAction::EmoticonTextEditActionPrivate
 {
-  public:
+public:
     EmoticonTextEditActionPrivate()
     {
-      emoticonMenu = new QMenu();
-      selector = new EmoticonTextEditSelector( emoticonMenu );
-      QWidgetAction *action = new QWidgetAction( emoticonMenu );
-      action->setDefaultWidget( selector );
-      emoticonMenu->addAction( action );
-      connect( emoticonMenu, SIGNAL(aboutToShow()), selector, SLOT(slotCreateEmoticonList()) );
+        emoticonMenu = new QMenu();
+        selector = new EmoticonTextEditSelector( emoticonMenu );
+        QWidgetAction *action = new QWidgetAction( emoticonMenu );
+        action->setDefaultWidget( selector );
+        emoticonMenu->addAction( action );
+        connect( emoticonMenu, SIGNAL(aboutToShow()), selector, SLOT(slotCreateEmoticonList()) );
     }
 
     ~EmoticonTextEditActionPrivate()
     {
-      delete emoticonMenu;
+        delete emoticonMenu;
     }
 
     QMenu *emoticonMenu;
@@ -51,16 +51,16 @@ class EmoticonTextEditAction::EmoticonTextEditActionPrivate
 };
 
 EmoticonTextEditAction::EmoticonTextEditAction( QObject *parent )
-  : KActionMenu( i18n( "Add Smiley" ), parent ), d( new EmoticonTextEditActionPrivate() )
+    : KActionMenu( i18n( "Add Smiley" ), parent ), d( new EmoticonTextEditActionPrivate() )
 {
-  setMenu( d->emoticonMenu );
-  setIcon( QIcon::fromTheme( QLatin1String( "face-smile" ) ) );
-  setDelayed( false );
-  connect( d->selector, SIGNAL(itemSelected(QString)),
-           this, SIGNAL(emoticonActivated(QString)) );
+    setMenu( d->emoticonMenu );
+    setIcon( QIcon::fromTheme( QLatin1String( "face-smile" ) ) );
+    setDelayed( false );
+    connect( d->selector, SIGNAL(itemSelected(QString)),
+             this, SIGNAL(emoticonActivated(QString)) );
 }
 
 EmoticonTextEditAction::~EmoticonTextEditAction()
 {
-  delete d;
+    delete d;
 }

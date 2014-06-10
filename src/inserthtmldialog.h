@@ -31,13 +31,13 @@ class InsertHtmlDialogPrivate;
 
 class KPIMTEXTEDIT_EXPORT InsertHtmlDialog : public KDialog
 {
-  Q_OBJECT
-  public:
+    Q_OBJECT
+public:
     explicit InsertHtmlDialog( QWidget *parent = 0 );
     ~InsertHtmlDialog();
     QString html() const;
 
-  private:
+private:
     friend class InsertHtmlDialogPrivate;
     InsertHtmlDialogPrivate * const d;
     Q_PRIVATE_SLOT( d, void _k_slotTextChanged() )

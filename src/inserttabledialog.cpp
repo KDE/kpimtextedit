@@ -34,22 +34,22 @@ using namespace KPIMTextEdit;
 
 class InsertTableDialog::InsertTableDialogPrivate
 {
-  public:
+public:
     InsertTableDialogPrivate( InsertTableDialog *qq )
-      : q( qq )
+        : q( qq )
     {
-      q->setCaption( i18n( "Insert Table" ) );
-      q->setButtons( Ok|Cancel );
-      q->setButtonText( KDialog::Ok, i18n( "Insert" ) );
-      QWidget *page = new QWidget;
-      QVBoxLayout *lay = new QVBoxLayout;
-      page->setLayout(lay);
-      insertTableWidget = new InsertTableWidget;
-      lay->addWidget(insertTableWidget);
-      KSeparator *sep = new KSeparator;
-      lay->addWidget( sep );
+        q->setCaption( i18n( "Insert Table" ) );
+        q->setButtons( Ok|Cancel );
+        q->setButtonText( KDialog::Ok, i18n( "Insert" ) );
+        QWidget *page = new QWidget;
+        QVBoxLayout *lay = new QVBoxLayout;
+        page->setLayout(lay);
+        insertTableWidget = new InsertTableWidget;
+        lay->addWidget(insertTableWidget);
+        KSeparator *sep = new KSeparator;
+        lay->addWidget( sep );
 
-      q->setMainWidget( page );
+        q->setMainWidget( page );
     }
 
     InsertTableWidget *insertTableWidget;
@@ -57,61 +57,61 @@ class InsertTableDialog::InsertTableDialogPrivate
 };
 
 InsertTableDialog::InsertTableDialog( QWidget *parent )
-  : KDialog( parent ), d( new InsertTableDialogPrivate( this ) )
+    : KDialog( parent ), d( new InsertTableDialogPrivate( this ) )
 {
 }
 
 InsertTableDialog::~InsertTableDialog()
 {
-  delete d;
+    delete d;
 }
 
 int InsertTableDialog::columns() const
 {
-  return d->insertTableWidget->columns();
+    return d->insertTableWidget->columns();
 }
 
 int InsertTableDialog::rows() const
 {
-  return d->insertTableWidget->rows();
+    return d->insertTableWidget->rows();
 }
 
 int InsertTableDialog::border() const
 {
-  return d->insertTableWidget->border();
+    return d->insertTableWidget->border();
 }
 
 QTextLength::Type InsertTableDialog::typeOfLength() const
 {
-  return d->insertTableWidget->typeOfLength();
+    return d->insertTableWidget->typeOfLength();
 }
 
 int InsertTableDialog::length() const
 {
-  return d->insertTableWidget->length();
+    return d->insertTableWidget->length();
 }
 
 void InsertTableDialog::setColumns( int col )
 {
-  d->insertTableWidget->setColumns( col );
+    d->insertTableWidget->setColumns( col );
 }
 
 void InsertTableDialog::setRows( int rows )
 {
-  d->insertTableWidget->setRows( rows );
+    d->insertTableWidget->setRows( rows );
 }
 
 void InsertTableDialog::setBorder( int border )
 {
-  d->insertTableWidget->setBorder( border );
+    d->insertTableWidget->setBorder( border );
 }
 
 void InsertTableDialog::setLength( int val )
 {
-  d->insertTableWidget->setLength( val );
+    d->insertTableWidget->setLength( val );
 }
 
 void InsertTableDialog::setTypeOfLength( QTextLength::Type type )
 {
-  d->insertTableWidget->setTypeOfLength( type );
+    d->insertTableWidget->setTypeOfLength( type );
 }

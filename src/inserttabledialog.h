@@ -31,7 +31,7 @@ namespace KPIMTextEdit {
 
 class KPIMTEXTEDIT_EXPORT InsertTableDialog : public KDialog
 {
-  public:
+public:
     explicit InsertTableDialog( QWidget *parent );
     ~InsertTableDialog();
     int columns() const;
@@ -47,7 +47,7 @@ class KPIMTEXTEDIT_EXPORT InsertTableDialog : public KDialog
     int length() const;
     void setLength( int );
 
-  private:
+private:
     class InsertTableDialogPrivate;
     InsertTableDialogPrivate * const d;
 };

@@ -28,7 +28,7 @@ namespace KPIMTextEdit {
 
 class EmoticonTextEditItem : public QListWidgetItem
 {
-  public:
+public:
     explicit EmoticonTextEditItem( const QString &emoticonText,
                                    const QString &pixmapPath,
                                    QListWidget *parent );
@@ -36,29 +36,29 @@ class EmoticonTextEditItem : public QListWidgetItem
     QString text() const;
     QString pixmapPath() const;
 
-  private:
+private:
     QString mText;
     QString mPixmapPath;
 };
 
 class EmoticonTextEditSelector : public QWidget
 {
-  Q_OBJECT
-  public:
+    Q_OBJECT
+public:
     explicit EmoticonTextEditSelector( QWidget *parent = 0 );
     ~EmoticonTextEditSelector();
 
-  public Q_SLOTS:
+public Q_SLOTS:
     void slotCreateEmoticonList();
 
-  private Q_SLOTS:
+private Q_SLOTS:
     void slotMouseOverItem( QListWidgetItem * );
     void slotEmoticonClicked( QListWidgetItem * );
 
-  Q_SIGNALS:
+Q_SIGNALS:
     void itemSelected ( const QString & );
 
-  private:
+private:
     class EmoticonTextEditSelectorPrivate;
     EmoticonTextEditSelectorPrivate * const d;
 };

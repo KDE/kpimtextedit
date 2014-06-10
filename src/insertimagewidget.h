@@ -32,8 +32,8 @@ class InsertImageWidgetPrivate;
 
 class KPIMTEXTEDIT_EXPORT InsertImageWidget : public QWidget
 {
-  Q_OBJECT
-  public:
+    Q_OBJECT
+public:
     explicit InsertImageWidget( QWidget *parent );
     ~InsertImageWidget();
 
@@ -48,10 +48,10 @@ class KPIMTEXTEDIT_EXPORT InsertImageWidget : public QWidget
 
     bool keepOriginalSize() const;
 
-  Q_SIGNALS:
+Q_SIGNALS:
     void enableButtonOk( bool enabled );
 
-  private:
+private:
     friend class InsertImageWidgetPrivate;
     InsertImageWidgetPrivate *const d;
     Q_PRIVATE_SLOT( d, void _k_slotKeepOriginalSizeClicked( bool ) )

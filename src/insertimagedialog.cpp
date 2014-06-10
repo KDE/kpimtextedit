@@ -29,18 +29,18 @@ namespace KPIMTextEdit {
 
 class InsertImageDialogPrivate
 {
-  public:
+public:
     InsertImageDialogPrivate( InsertImageDialog *qq )
-      :q( qq )
+        :q( qq )
     {
-      q->setCaption( i18n( "Insert Image" ) );
-      q->setButtons( KDialog::Ok|KDialog::Cancel );
-      q->setButtonText( KDialog::Ok, i18n( "Insert" ) );
-      imageWidget = new InsertImageWidget(q);
-      q->connect( imageWidget, SIGNAL(enableButtonOk(bool)),
-                  q, SLOT(enableButtonOk(bool)) );
-      q->setMainWidget( imageWidget );
-      q->enableButtonOk( false );
+        q->setCaption( i18n( "Insert Image" ) );
+        q->setButtons( KDialog::Ok|KDialog::Cancel );
+        q->setButtonText( KDialog::Ok, i18n( "Insert" ) );
+        imageWidget = new InsertImageWidget(q);
+        q->connect( imageWidget, SIGNAL(enableButtonOk(bool)),
+                    q, SLOT(enableButtonOk(bool)) );
+        q->setMainWidget( imageWidget );
+        q->enableButtonOk( false );
     }
 
     InsertImageWidget *imageWidget;
@@ -48,48 +48,48 @@ class InsertImageDialogPrivate
 };
 
 InsertImageDialog::InsertImageDialog( QWidget *parent )
-  : KDialog( parent ), d( new InsertImageDialogPrivate( this ) )
+    : KDialog( parent ), d( new InsertImageDialogPrivate( this ) )
 {
 }
 
 InsertImageDialog::~InsertImageDialog()
 {
-  delete d;
+    delete d;
 }
 
 int InsertImageDialog::imageWidth() const
 {
-  return d->imageWidget->imageWidth();
+    return d->imageWidget->imageWidth();
 }
 
 int InsertImageDialog::imageHeight() const
 {
-  return d->imageWidget->imageHeight();
+    return d->imageWidget->imageHeight();
 }
 
 void InsertImageDialog::setImageWidth( int value )
 {
-  d->imageWidget->setImageWidth( value );
+    d->imageWidget->setImageWidth( value );
 }
 
 void InsertImageDialog::setImageHeight( int value )
 {
-  d->imageWidget->setImageHeight( value );
+    d->imageWidget->setImageHeight( value );
 }
 
 QUrl InsertImageDialog::imageUrl() const
 {
-  return d->imageWidget->imageUrl();
+    return d->imageWidget->imageUrl();
 }
 
 void InsertImageDialog::setImageUrl( const QUrl &url )
 {
-  d->imageWidget->setImageUrl( url );
+    d->imageWidget->setImageUrl( url );
 }
 
 bool InsertImageDialog::keepOriginalSize() const
 {
-  return d->imageWidget->keepOriginalSize();
+    return d->imageWidget->keepOriginalSize();
 }
 
 }

@@ -37,12 +37,12 @@ namespace KPIMTextEdit {
 */
 namespace TextUtils {
 
-  /**
+/**
    * Returns whether the QTextDocument @p document contains rich text formatting.
    */
-  KPIMTEXTEDIT_EXPORT bool containsFormatting( const QTextDocument *document );
+KPIMTEXTEDIT_EXPORT bool containsFormatting( const QTextDocument *document );
 
-  /**
+/**
    *  Changes the given text so that each line of it fits into the given maximal length.
    *  At each line, the "indent" string is prepended, which is usually the quote prefix.
    *  The text parameter will be empty afterwards.
@@ -56,7 +56,7 @@ namespace TextUtils {
    *    Result: "> Hello World,\n"
    *            "> this is a test."
    */
-  KPIMTEXTEDIT_EXPORT QString flowText( QString &text, const QString &indent, int maxLength );
+KPIMTEXTEDIT_EXPORT QString flowText( QString &text, const QString &indent, int maxLength );
 
 }
 

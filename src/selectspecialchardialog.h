@@ -31,8 +31,8 @@ class SelectSpecialCharDialogPrivate;
 
 class KPIMTEXTEDIT_EXPORT SelectSpecialCharDialog : public KDialog
 {
-  Q_OBJECT
-  public:
+    Q_OBJECT
+public:
     explicit SelectSpecialCharDialog( QWidget *parent );
     ~SelectSpecialCharDialog();
 
@@ -48,10 +48,10 @@ class KPIMTEXTEDIT_EXPORT SelectSpecialCharDialog : public KDialog
      */
     void autoInsertChar();
 
-  Q_SIGNALS:
+Q_SIGNALS:
     void charSelected( const QChar & );
 
-  private:
+private:
     SelectSpecialCharDialogPrivate * const d;
     friend class SelectSpecialCharDialogPrivate;
     Q_PRIVATE_SLOT( d, void _k_slotInsertChar() )

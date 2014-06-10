@@ -30,8 +30,8 @@ class TableActionMenuPrivate;
 
 class TableActionMenu : public KActionMenu
 {
-  Q_OBJECT
-  public:
+    Q_OBJECT
+public:
     explicit TableActionMenu( TextEdit *textEdit );
     ~TableActionMenu();
 

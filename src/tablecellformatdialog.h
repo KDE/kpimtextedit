@@ -31,7 +31,7 @@ namespace KPIMTextEdit {
 
 class KPIMTEXTEDIT_EXPORT TableCellFormatDialog : public KDialog
 {
-  public:
+public:
     explicit TableCellFormatDialog( QWidget *parent );
     ~TableCellFormatDialog();
 
@@ -65,7 +65,7 @@ class KPIMTEXTEDIT_EXPORT TableCellFormatDialog : public KDialog
      */
     bool useBackgroundColor() const;
 
-  private:
+private:
     class TableCellFormatDialogPrivate;
     TableCellFormatDialogPrivate * const d;
 };

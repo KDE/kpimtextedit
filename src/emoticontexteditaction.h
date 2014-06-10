@@ -29,15 +29,15 @@ namespace KPIMTextEdit {
 
 class KPIMTEXTEDIT_EXPORT EmoticonTextEditAction : public KActionMenu
 {
-  Q_OBJECT
-  public:
+    Q_OBJECT
+public:
     explicit EmoticonTextEditAction( QObject *parent );
     ~EmoticonTextEditAction();
 
-  Q_SIGNALS:
+Q_SIGNALS:
     void emoticonActivated( const QString & );
 
-  private:
+private:
     class EmoticonTextEditActionPrivate;
     EmoticonTextEditActionPrivate * const d;
 };

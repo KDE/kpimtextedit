@@ -36,15 +36,15 @@ class HtmlHighlighterPrivate;
 
 class KPIMTEXTEDIT_EXPORT HtmlHighlighter : public QSyntaxHighlighter
 {
-  Q_OBJECT
-  public:
+    Q_OBJECT
+public:
     explicit HtmlHighlighter( QTextDocument *document );
     ~HtmlHighlighter();
 
-  protected:
+protected:
     void highlightBlock( const QString &text );
 
-  private:
+private:
     friend class HtmlHighlighterPrivate;
     HtmlHighlighterPrivate * const d;
 

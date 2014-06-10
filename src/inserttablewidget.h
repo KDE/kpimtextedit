@@ -30,8 +30,8 @@ namespace KPIMTextEdit {
 
 class KPIMTEXTEDIT_EXPORT InsertTableWidget : public QWidget
 {
-  Q_OBJECT
-  public:
+    Q_OBJECT
+public:
     explicit InsertTableWidget( QWidget *parent = 0 );
     ~InsertTableWidget();
     int columns() const;
@@ -48,10 +48,10 @@ class KPIMTEXTEDIT_EXPORT InsertTableWidget : public QWidget
     int length() const;
     void setLength( int );
 
-  private Q_SLOTS:
+private Q_SLOTS:
     void slotTypeOfLengthChanged( int );
 
-  private:
+private:
     class InsertTableWidgetPrivate;
     InsertTableWidgetPrivate * const d;
 };

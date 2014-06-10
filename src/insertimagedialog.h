@@ -32,8 +32,8 @@ class InsertImageDialogPrivate;
 
 class KPIMTEXTEDIT_EXPORT InsertImageDialog : public KDialog
 {
-  Q_OBJECT
-  public:
+    Q_OBJECT
+public:
     explicit InsertImageDialog( QWidget *parent = 0 );
     ~InsertImageDialog();
 
@@ -48,7 +48,7 @@ class KPIMTEXTEDIT_EXPORT InsertImageDialog : public KDialog
 
     bool keepOriginalSize() const;
 
-  private:
+private:
     friend class InsertImageDialogPrivate;
     InsertImageDialogPrivate * const d;
 };

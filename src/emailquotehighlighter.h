@@ -43,7 +43,7 @@ class TextEdit;
  */
 class KPIMTEXTEDIT_EXPORT EMailQuoteHighlighter : public Sonnet::Highlighter
 {
-  public:
+public:
 
     /**
      * Constructor. See setQuoteColor() for the parameters.
@@ -105,7 +105,7 @@ class KPIMTEXTEDIT_EXPORT EMailQuoteHighlighter : public Sonnet::Highlighter
                                        const QColor &quoteDepth2 = QColor( 0x00, 0x80, 0x00 ),
                                        const QColor &quoteDepth3 = QColor( 0x00, 0x80, 0x00 ) );
 
-  protected:
+protected:
 
     /**
      * Reimplemented, the base version sets the text color to black, which
@@ -122,7 +122,7 @@ class KPIMTEXTEDIT_EXPORT EMailQuoteHighlighter : public Sonnet::Highlighter
      */
     virtual void setMisspelled( int start, int count );
 
-  private:
+private:
     class EMailQuoteHighlighterPrivate;
     std::auto_ptr<EMailQuoteHighlighterPrivate> d;
 };

@@ -46,9 +46,9 @@ class EMailQuoteHighlighter;
  */
 struct EmbeddedImage
 {
-  QByteArray image;   ///< The image, encoded as PNG with base64 encoding
-  QString contentID;  ///< The content id of the embedded image
-  QString imageName;  ///< Name of the image as it is available as a resource in the editor
+    QByteArray image;   ///< The image, encoded as PNG with base64 encoding
+    QString contentID;  ///< The content id of the embedded image
+    QString imageName;  ///< Name of the image as it is available as a resource in the editor
 };
 
 /**
@@ -59,8 +59,8 @@ struct EmbeddedImage
  */
 struct ImageWithName
 {
-  QImage image; ///< The image
-  QString name; ///< The name of the image as it is available as a resource in the editor
+    QImage image; ///< The image
+    QString name; ///< The name of the image as it is available as a resource in the editor
 };
 
 typedef QSharedPointer<ImageWithName> ImageWithNamePtr;
@@ -80,9 +80,9 @@ typedef QList< QSharedPointer<EmbeddedImage> > ImageList;
  */
 class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
+public:
 
     /**
      * Constructs a TextEdit object
@@ -311,7 +311,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget
      */
     bool isEnableInsertTableActions() const;
 
-  protected:
+protected:
 
     /**
      * Reimplemented for inline image support
@@ -360,7 +360,7 @@ class KPIMTEXTEDIT_EXPORT TextEdit : public KRichTextWidget
      */
     virtual void createHighlighter();
 
-  private:
+private:
     void addImageHelper( const QUrl &url, int width = -1, int height = -1 );
     std::auto_ptr<TextEditPrivate> const d;
     friend class TextEditPrivate;
