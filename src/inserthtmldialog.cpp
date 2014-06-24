@@ -55,6 +55,7 @@ public:
         lay->addWidget( label );
         QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
         okButton = buttonBox->button(QDialogButtonBox::Ok);
+        okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
         okButton->setText( i18n( "Insert" ) );
 
         lay->addWidget(buttonBox);

@@ -71,6 +71,7 @@ public:
                     backgroundColor, SLOT(setEnabled(bool)) );
 
         QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+        buttonBox->button(QDialogButtonBox::Ok)->setShortcut(Qt::CTRL | Qt::Key_Return);
 
         mainLayout->addWidget(buttonBox);
     }

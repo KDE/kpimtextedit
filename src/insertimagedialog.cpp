@@ -47,6 +47,7 @@ public:
         QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
         okButton = buttonBox->button(QDialogButtonBox::Ok);
         okButton->setText( i18n( "Insert" ) );
+        okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
         vbox->addWidget(buttonBox);
         okButton->setEnabled( false );
     }
