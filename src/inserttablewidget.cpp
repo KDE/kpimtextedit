@@ -22,7 +22,6 @@
 #include <KLocalizedString>
 #include <KComboBox>
 #include <QDebug>
-#include <KSeparator>
 
 #include <QSpinBox>
 #include <QFormLayout>

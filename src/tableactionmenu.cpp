@@ -24,7 +24,6 @@
 #include "tableformatdialog.h"
 #include "tablecellformatdialog.h"
 
-#include <KActionCollection>
 #include <QAction>
 #include <QIcon>
 #include <KLocalizedString>

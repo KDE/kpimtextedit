@@ -22,14 +22,11 @@
 #include "inserttablewidget.h"
 
 #include <KLocalizedString>
-#include <KComboBox>
-#include <QDebug>
 #include <KSeparator>
 
-#include <QSpinBox>
 #include <QPushButton>
-#include <QFormLayout>
 #include <QDialogButtonBox>
+#include <QVBoxLayout>
 
 using namespace KPIMTextEdit;
 

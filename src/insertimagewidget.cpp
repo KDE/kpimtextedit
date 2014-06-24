@@ -19,15 +19,12 @@
 */
 #include "insertimagewidget.h"
 
-#include <KFileDialog>
-#include <KImageIO>
 #include <KLocalizedString>
 #include <KUrlRequester>
 #include <KSeparator>
 #include <KLineEdit>
 
 #include <QImageReader>
-#include <QLineEdit>
 #include <QFileDialog>
 #include <QCheckBox>
 #include <QHBoxLayout>
