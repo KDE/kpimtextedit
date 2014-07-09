@@ -24,7 +24,7 @@
 
 #include "kpimtextedit_export.h"
 
-#include <KDE/KRichTextWidget>
+#include <KRichTextWidget>
 #include <KActionCollection>
 
 #include <QtCore/QSharedPointer>
