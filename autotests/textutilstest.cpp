@@ -20,11 +20,11 @@
 
 #include "textutils.h"
 
-#include "qtest_kde.h"
+#include "qtest.h"
 
 using namespace KPIMTextEdit;
 
-QTEST_KDEMAIN( TextUtilsTest, GUI )
+QTEST_MAIN( TextUtilsTest )
 #define lineLength 40
 
 void TextUtilsTest::test_flowText() {

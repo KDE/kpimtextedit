@@ -16,7 +16,7 @@
     Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
     02110-1301, USA.
 */
-#include "qtest_kde.h"
+#include "qtest.h"
 #include "textedittest.h"
 
 #include "textedit.h"
@@ -27,10 +27,11 @@
 
 #include <QTextCursor>
 #include <qtestevent.h>
+#include <QBuffer>
 
 using namespace KPIMTextEdit;
 
-QTEST_KDEMAIN( TextEditTester, GUI )
+QTEST_MAIN( TextEditTester )
 
 void TextEditTester::testFormattingUsed()
 {
