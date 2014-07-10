@@ -30,10 +30,10 @@
 #include <kmime/kmime_codecs.h>
 
 #include <QAction>
-#include <KDE/KActionCollection>
-#include <KDE/KCursor>
-#include <KDE/KLocalizedString>
-#include <KDE/KMessageBox>
+#include <KActionCollection>
+#include <KCursor>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 #include <QtCore/QBuffer>
 #include <QtCore/QDateTime>

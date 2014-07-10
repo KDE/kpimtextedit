@@ -30,6 +30,11 @@ ecm_setup_version(${KDEPIMLIBS_VERSION} VARIABLE_PREFIX KPIMTEXTEDIT
 find_package(KF5CoreAddons ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5Emoticons ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5Sonnet ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5TextWidgets ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5XmlGui ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5WidgetsAddons ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5KIO ${KF5_VERSION} CONFIG REQUIRED)
+#REMOVE IT WHEN all kdelib4support removed
 find_package(KF5KDELibs4Support ${KF5_VERSION} CONFIG REQUIRED)
 
 # FIXME: Remove when kdepimlibs is split

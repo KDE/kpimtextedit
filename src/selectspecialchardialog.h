@@ -22,14 +22,14 @@
 
 #include "kpimtextedit_export.h"
 
-#include <KDE/KDialog>
+#include <QDialog>
 
 
 namespace KPIMTextEdit {
 
 class SelectSpecialCharDialogPrivate;
 
-class KPIMTEXTEDIT_EXPORT SelectSpecialCharDialog : public KDialog
+class KPIMTEXTEDIT_EXPORT SelectSpecialCharDialog : public QDialog
 {
     Q_OBJECT
 public:

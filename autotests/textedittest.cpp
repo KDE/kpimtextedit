@@ -350,7 +350,7 @@ void TextEditTester::testImageHtmlCode()
   QString startHtml = QLatin1String( "<img src=\"arrow-up.png\"><img src=\"folder-new.png\">Bla<b>Blub</b>" );
   QString endHtml = QString( QLatin1String( "<img src=\"cid:%1\"><img src=\"cid:%2\">Bla<b>Blub</b>" ) )
                         .arg( image2->contentID ).arg( image1->contentID );
-  QCOMPARE( TextEdit::imageNamesToContentIds( startHtml.toLatin1(), images ), endHtml.toAscii() );
+  QCOMPARE( TextEdit::imageNamesToContentIds( startHtml.toLatin1(), images ), endHtml.toLatin1() );
 }
 
 void TextEditTester::testDeleteLine_data()

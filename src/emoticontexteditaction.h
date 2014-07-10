@@ -23,7 +23,7 @@
 
 #include "kpimtextedit_export.h"
 
-#include <KDE/KActionMenu>
+#include <KActionMenu>
 
 namespace KPIMTextEdit {
 
