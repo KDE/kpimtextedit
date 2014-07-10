@@ -58,6 +58,9 @@ public:
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
         okButton->setText( i18n( "Insert" ) );
 
+        q->connect(buttonBox, SIGNAL(accepted()), q, SLOT(accept()));
+        q->connect(buttonBox, SIGNAL(rejected()), q, SLOT(reject()));
+
         lay->addWidget(buttonBox);
         q->connect( editor, SIGNAL(textChanged()),
                     q, SLOT(_k_slotTextChanged()) );

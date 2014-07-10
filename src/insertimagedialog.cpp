@@ -49,6 +49,9 @@ public:
         okButton->setText( i18n( "Insert" ) );
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
         vbox->addWidget(buttonBox);
+
+        q->connect(buttonBox, SIGNAL(accepted()), q, SLOT(accept()));
+        q->connect(buttonBox, SIGNAL(rejected()), q, SLOT(reject()));
         okButton->setEnabled( false );
     }
 

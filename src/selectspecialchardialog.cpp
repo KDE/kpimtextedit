@@ -34,7 +34,7 @@ public:
     {
         q->setWindowTitle( i18n( "Select Special Characters" ) );
 
-        QHBoxLayout *lay = new QHBoxLayout( q );
+        QVBoxLayout *lay = new QVBoxLayout( q );
 
         mCharSelect = new KCharSelect( q, 0, KCharSelect::CharacterTable|KCharSelect::BlockCombos );
         q->connect( mCharSelect, SIGNAL(charSelected(QChar)),
@@ -46,8 +46,11 @@ public:
         okButton->setText( i18n( "Insert" ) );
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
         lay->addWidget( mButtonBox );
+        q->connect(mButtonBox, SIGNAL(accepted()), q, SLOT(accept()));
+        q->connect(mButtonBox, SIGNAL(rejected()), q, SLOT(reject()));
 
-        q->connect( okButton, SIGNAL(okClicked()),
+
+        q->connect( okButton, SIGNAL(clicked()),
                     q, SLOT(_k_slotInsertChar()) );
     }
 
@@ -108,7 +111,7 @@ void SelectSpecialCharDialog::autoInsertChar()
 
 void SelectSpecialCharDialog::setOkButtonText( const QString &text )
 {
-    d->mSelectButton->setText( text );
+    d->mButtonBox->button(QDialogButtonBox::Ok)->setText( text );
 }
 
 }

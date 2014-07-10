@@ -107,6 +107,8 @@ public:
         q->connect( useBackgroundColor, SIGNAL(toggled(bool)),
                     backgroundColor, SLOT(setEnabled(bool)) );
         QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+        connect(buttonBox, SIGNAL(accepted()), q, SLOT(accept()));
+        connect(buttonBox, SIGNAL(rejected()), q, SLOT(reject()));
 
         mainLayout->addWidget(page);
         mainLayout->addWidget(buttonBox);

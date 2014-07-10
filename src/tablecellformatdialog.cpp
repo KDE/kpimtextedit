@@ -72,6 +72,8 @@ public:
 
         QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
         buttonBox->button(QDialogButtonBox::Ok)->setShortcut(Qt::CTRL | Qt::Key_Return);
+        q->connect(buttonBox, SIGNAL(accepted()), q, SLOT(accept()));
+        q->connect(buttonBox, SIGNAL(rejected()), q, SLOT(reject()));
 
         mainLayout->addWidget(buttonBox);
     }

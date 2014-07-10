@@ -51,6 +51,9 @@ public:
         QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
         okButton->setText( i18n( "Insert" ) );
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
+        q->connect(buttonBox, SIGNAL(accepted()), q, SLOT(accept()));
+        q->connect(buttonBox, SIGNAL(rejected()), q, SLOT(reject()));
+
 
         mainLayout->addWidget(buttonBox);
     }
