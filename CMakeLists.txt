@@ -43,6 +43,7 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${KPimTextEdit_SOURCE_DIR})
 endif()
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
+add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
 
 ########### Targets ###########
 add_subdirectory(src)
