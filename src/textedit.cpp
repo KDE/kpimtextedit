@@ -481,7 +481,7 @@ void TextEdit::addImageHelper( const QUrl &url, int width, int height )
     if ( !image.load( url.path() ) ) {
         KMessageBox::error(
                     this,
-                    i18nc( "@info",
+                    xi18nc( "@info",
                            "Unable to load image <filename>%1</filename>.",
                            url.path() ) );
         return;
