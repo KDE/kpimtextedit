@@ -50,7 +50,7 @@ public:
         imageUrlRequester->setWindowTitle( i18n( "Add Image" ) );
         //QT5       imageUrlRequester->fileDialog()->okButton()->setGuiItem(
         //         KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
-        imageUrlRequester->fileDialog()->setFileMode( QFileDialog::AnyFile );
+        imageUrlRequester->setMode( KFile::File );
         q->connect( imageUrlRequester->lineEdit(), SIGNAL(textChanged(QString)),
                     q, SLOT(_k_slotUrlChanged(QString)) );
 
