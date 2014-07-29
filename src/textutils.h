@@ -28,19 +28,21 @@
 
 class QTextDocument;
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 /**
   Utility class for methods working with rich text.
 
   @since 4.5
 */
-namespace TextUtils {
+namespace TextUtils
+{
 
 /**
    * Returns whether the QTextDocument @p document contains rich text formatting.
    */
-KPIMTEXTEDIT_EXPORT bool containsFormatting( const QTextDocument *document );
+KPIMTEXTEDIT_EXPORT bool containsFormatting(const QTextDocument *document);
 
 /**
    *  Changes the given text so that each line of it fits into the given maximal length.
@@ -56,7 +58,7 @@ KPIMTEXTEDIT_EXPORT bool containsFormatting( const QTextDocument *document );
    *    Result: "> Hello World,\n"
    *            "> this is a test."
    */
-KPIMTEXTEDIT_EXPORT QString flowText( QString &text, const QString &indent, int maxLength );
+KPIMTEXTEDIT_EXPORT QString flowText(QString &text, const QString &indent, int maxLength);
 
 }
 

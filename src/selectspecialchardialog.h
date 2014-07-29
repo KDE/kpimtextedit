@@ -24,8 +24,8 @@
 
 #include <QDialog>
 
-
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class SelectSpecialCharDialogPrivate;
 
@@ -33,15 +33,15 @@ class KPIMTEXTEDIT_EXPORT SelectSpecialCharDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit SelectSpecialCharDialog( QWidget *parent );
+    explicit SelectSpecialCharDialog(QWidget *parent);
     ~SelectSpecialCharDialog();
 
-    void setCurrentChar( const QChar &c );
+    void setCurrentChar(const QChar &c);
     QChar currentChar() const;
 
-    void setOkButtonText( const QString &text );
+    void setOkButtonText(const QString &text);
 
-    void showSelectButton( bool show );
+    void showSelectButton(bool show);
 
     /*
      * When we double click we call accept
@@ -49,12 +49,12 @@ public:
     void autoInsertChar();
 
 Q_SIGNALS:
-    void charSelected( const QChar & );
+    void charSelected(const QChar &);
 
 private:
-    SelectSpecialCharDialogPrivate * const d;
+    SelectSpecialCharDialogPrivate *const d;
     friend class SelectSpecialCharDialogPrivate;
-    Q_PRIVATE_SLOT( d, void _k_slotInsertChar() )
+    Q_PRIVATE_SLOT(d, void _k_slotInsertChar())
 };
 
 }

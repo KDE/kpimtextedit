@@ -38,75 +38,75 @@ using namespace KPIMTextEdit;
 class TableFormatDialog::TableFormatDialogPrivate
 {
 public:
-    TableFormatDialogPrivate( TableFormatDialog *qq )
-        :q( qq )
+    TableFormatDialogPrivate(TableFormatDialog *qq)
+        : q(qq)
     {
-        q->setWindowTitle( i18n( "Table Format" ) );
+        q->setWindowTitle(i18n("Table Format"));
         QVBoxLayout *mainLayout = new QVBoxLayout;
         q->setLayout(mainLayout);
 
-        QWidget *page = new QWidget( q );
-        QVBoxLayout *lay = new QVBoxLayout( page );
+        QWidget *page = new QWidget(q);
+        QVBoxLayout *lay = new QVBoxLayout(page);
         tableWidget = new InsertTableWidget;
-        lay->addWidget( tableWidget );
+        lay->addWidget(tableWidget);
 
         KSeparator *sep = new KSeparator;
-        lay->addWidget( sep );
+        lay->addWidget(sep);
 
         QHBoxLayout *hbox = new QHBoxLayout;
-        QLabel *lab = new QLabel( i18n( "Spacing:" ) );
-        hbox->addWidget( lab );
+        QLabel *lab = new QLabel(i18n("Spacing:"));
+        hbox->addWidget(lab);
         spacing = new QSpinBox;
-        spacing->setMinimum( 0 );
-        hbox->addWidget( spacing );
-        lab = new QLabel( i18n( "pixels between cells" ) );
-        hbox->addWidget( lab );
-        lay->addLayout( hbox );
+        spacing->setMinimum(0);
+        hbox->addWidget(spacing);
+        lab = new QLabel(i18n("pixels between cells"));
+        hbox->addWidget(lab);
+        lay->addLayout(hbox);
 
         hbox = new QHBoxLayout;
-        lab = new QLabel( i18n( "Padding:" ) );
-        hbox->addWidget( lab );
+        lab = new QLabel(i18n("Padding:"));
+        hbox->addWidget(lab);
         padding = new QSpinBox;
-        padding->setMinimum( 0 );
-        hbox->addWidget( padding );
-        lab = new QLabel( i18n( "pixels between cell border and content" ) );
-        hbox->addWidget( lab );
-        lay->addLayout( hbox );
-
-        sep = new KSeparator;
-        lay->addWidget( sep );
-
-        alignment = new KComboBox;
-        alignment->addItem( i18n( "Left" ), Qt::AlignLeft );
-        alignment->addItem( i18n( "Right" ), Qt::AlignRight );
-        alignment->addItem( i18n( "Center" ), Qt::AlignHCenter );
-        alignment->addItem( i18n( "Justify" ), Qt::AlignJustify );
-
-        hbox = new QHBoxLayout;
-        lab = new QLabel( i18n( "Table Alignment:" ) );
-        hbox->addWidget( lab );
-        hbox->addWidget( alignment );
-
-        lay->addLayout( hbox );
-
-        sep = new KSeparator;
-        lay->addWidget( sep );
-
-        hbox = new QHBoxLayout;
-        useBackgroundColor = new QCheckBox( i18n( "Background Color:" ) );
-
-        hbox->addWidget( useBackgroundColor );
-        backgroundColor = new KColorButton;
-        backgroundColor->setDefaultColor(Qt::white);
-        hbox->addWidget( backgroundColor );
+        padding->setMinimum(0);
+        hbox->addWidget(padding);
+        lab = new QLabel(i18n("pixels between cell border and content"));
+        hbox->addWidget(lab);
         lay->addLayout(hbox);
 
         sep = new KSeparator;
-        lay->addWidget( sep );
+        lay->addWidget(sep);
+
+        alignment = new KComboBox;
+        alignment->addItem(i18n("Left"), Qt::AlignLeft);
+        alignment->addItem(i18n("Right"), Qt::AlignRight);
+        alignment->addItem(i18n("Center"), Qt::AlignHCenter);
+        alignment->addItem(i18n("Justify"), Qt::AlignJustify);
+
+        hbox = new QHBoxLayout;
+        lab = new QLabel(i18n("Table Alignment:"));
+        hbox->addWidget(lab);
+        hbox->addWidget(alignment);
+
+        lay->addLayout(hbox);
+
+        sep = new KSeparator;
+        lay->addWidget(sep);
+
+        hbox = new QHBoxLayout;
+        useBackgroundColor = new QCheckBox(i18n("Background Color:"));
+
+        hbox->addWidget(useBackgroundColor);
+        backgroundColor = new KColorButton;
+        backgroundColor->setDefaultColor(Qt::white);
+        hbox->addWidget(backgroundColor);
+        lay->addLayout(hbox);
+
+        sep = new KSeparator;
+        lay->addWidget(sep);
         backgroundColor->setEnabled(false);
-        q->connect( useBackgroundColor, SIGNAL(toggled(bool)),
-                    backgroundColor, SLOT(setEnabled(bool)) );
-        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+        q->connect(useBackgroundColor, SIGNAL(toggled(bool)),
+                   backgroundColor, SLOT(setEnabled(bool)));
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
         connect(buttonBox, SIGNAL(accepted()), q, SLOT(accept()));
         connect(buttonBox, SIGNAL(rejected()), q, SLOT(reject()));
 
@@ -123,8 +123,8 @@ public:
     TableFormatDialog *q;
 };
 
-TableFormatDialog::TableFormatDialog( QWidget *parent )
-    : QDialog( parent ), d( new TableFormatDialogPrivate( this ) )
+TableFormatDialog::TableFormatDialog(QWidget *parent)
+    : QDialog(parent), d(new TableFormatDialogPrivate(this))
 {
 }
 
@@ -148,19 +148,19 @@ int TableFormatDialog::border() const
     return d->tableWidget->border();
 }
 
-void TableFormatDialog::setColumns( int col )
+void TableFormatDialog::setColumns(int col)
 {
-    d->tableWidget->setColumns( col );
+    d->tableWidget->setColumns(col);
 }
 
-void TableFormatDialog::setRows( int row )
+void TableFormatDialog::setRows(int row)
 {
-    d->tableWidget->setRows( row );
+    d->tableWidget->setRows(row);
 }
 
-void TableFormatDialog::setBorder( int border )
+void TableFormatDialog::setBorder(int border)
 {
-    d->tableWidget->setBorder( border );
+    d->tableWidget->setBorder(border);
 }
 
 int TableFormatDialog::padding() const
@@ -168,9 +168,9 @@ int TableFormatDialog::padding() const
     return d->padding->value();
 }
 
-void TableFormatDialog::setPadding( int value )
+void TableFormatDialog::setPadding(int value)
 {
-    d->padding->setValue( value );
+    d->padding->setValue(value);
 }
 
 int TableFormatDialog::spacing() const
@@ -178,19 +178,19 @@ int TableFormatDialog::spacing() const
     return d->spacing->value();
 }
 
-void TableFormatDialog::setSpacing( int value )
+void TableFormatDialog::setSpacing(int value)
 {
-    d->spacing->setValue( value );
+    d->spacing->setValue(value);
 }
 
-void TableFormatDialog::setAlignment( Qt::Alignment alignment )
+void TableFormatDialog::setAlignment(Qt::Alignment alignment)
 {
-    d->alignment->setCurrentIndex( d->alignment->findData( QVariant( alignment ) ) );
+    d->alignment->setCurrentIndex(d->alignment->findData(QVariant(alignment)));
 }
 
 Qt::Alignment TableFormatDialog::alignment() const
 {
-    return ( Qt::Alignment )d->alignment->itemData( d->alignment->currentIndex () ).toInt();
+    return (Qt::Alignment)d->alignment->itemData(d->alignment->currentIndex()).toInt();
 }
 
 QTextLength::Type TableFormatDialog::typeOfLength() const
@@ -203,14 +203,14 @@ int TableFormatDialog::length() const
     return d->tableWidget->length();
 }
 
-void TableFormatDialog::setLength( int val )
+void TableFormatDialog::setLength(int val)
 {
-    d->tableWidget->setLength( val );
+    d->tableWidget->setLength(val);
 }
 
-void TableFormatDialog::setTypeOfLength( QTextLength::Type type )
+void TableFormatDialog::setTypeOfLength(QTextLength::Type type)
 {
-    d->tableWidget->setTypeOfLength( type );
+    d->tableWidget->setTypeOfLength(type);
 }
 
 QColor TableFormatDialog::tableBackgroundColor() const
@@ -218,10 +218,10 @@ QColor TableFormatDialog::tableBackgroundColor() const
     return d->backgroundColor->color();
 }
 
-void TableFormatDialog::setTableBackgroundColor( const QColor &col )
+void TableFormatDialog::setTableBackgroundColor(const QColor &col)
 {
-    d->backgroundColor->setColor( col );
-    d->useBackgroundColor->setChecked( true );
+    d->backgroundColor->setColor(col);
+    d->useBackgroundColor->setChecked(true);
 }
 
 bool TableFormatDialog::useBackgroundColor() const

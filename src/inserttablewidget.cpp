@@ -31,42 +31,42 @@ using namespace KPIMTextEdit;
 class InsertTableWidget::InsertTableWidgetPrivate
 {
 public:
-    InsertTableWidgetPrivate( InsertTableWidget *qq )
-        :q( qq )
+    InsertTableWidgetPrivate(InsertTableWidget *qq)
+        : q(qq)
     {
         mRows = new QSpinBox;
-        mRows->setMinimum( 1 );
-        mRows->setValue( 2 );
+        mRows->setMinimum(1);
+        mRows->setValue(2);
 
         mColumns = new QSpinBox;
-        mColumns->setMinimum( 1 );
-        mColumns->setValue( 2 );
+        mColumns->setMinimum(1);
+        mColumns->setValue(2);
 
         mBorder = new QSpinBox;
-        mBorder->setMinimum( 0 );
-        mBorder->setValue( 1 );
-        mBorder->setSuffix( i18n( " px" ) );
+        mBorder->setMinimum(0);
+        mBorder->setValue(1);
+        mBorder->setSuffix(i18n(" px"));
 
         QFormLayout *formLayout = new QFormLayout;
-        formLayout->addRow( i18n( "Rows:" ), mRows );
-        formLayout->addRow( i18n( "Columns:" ), mColumns );
-        formLayout->addRow( i18n( "Border:" ), mBorder );
+        formLayout->addRow(i18n("Rows:"), mRows);
+        formLayout->addRow(i18n("Columns:"), mColumns);
+        formLayout->addRow(i18n("Border:"), mBorder);
 
         QHBoxLayout *lay = new QHBoxLayout;
         mTypeOfLength = new KComboBox;
-        q->connect( mTypeOfLength, SIGNAL(activated(int)),q,SLOT(slotTypeOfLengthChanged(int)) );
+        q->connect(mTypeOfLength, SIGNAL(activated(int)), q, SLOT(slotTypeOfLengthChanged(int)));
         // xgettext: no-c-format
-        mTypeOfLength->addItem( i18n( "% of windows" ), QTextLength::PercentageLength );
-        mTypeOfLength->addItem( i18n( "pixels" ), QTextLength::FixedLength );
+        mTypeOfLength->addItem(i18n("% of windows"), QTextLength::PercentageLength);
+        mTypeOfLength->addItem(i18n("pixels"), QTextLength::FixedLength);
         mLength = new QSpinBox;
-        mLength->setMinimum( 1 );
-        mLength->setMaximum( 100 );
-        mLength->setValue( 100 );
-        lay->addWidget( mLength );
-        lay->addWidget( mTypeOfLength );
+        mLength->setMinimum(1);
+        mLength->setMaximum(100);
+        mLength->setValue(100);
+        lay->addWidget(mLength);
+        lay->addWidget(mTypeOfLength);
 
-        formLayout->addRow( i18n( "Width:" ), lay );
-        q->setLayout( formLayout );
+        formLayout->addRow(i18n("Width:"), lay);
+        q->setLayout(formLayout);
     }
 
     QSpinBox *mColumns;
@@ -78,8 +78,8 @@ public:
     InsertTableWidget *q;
 };
 
-InsertTableWidget::InsertTableWidget( QWidget *parent )
-    : QWidget( parent ), d( new InsertTableWidgetPrivate( this ) )
+InsertTableWidget::InsertTableWidget(QWidget *parent)
+    : QWidget(parent), d(new InsertTableWidgetPrivate(this))
 {
 }
 
@@ -88,15 +88,15 @@ InsertTableWidget::~InsertTableWidget()
     delete d;
 }
 
-void InsertTableWidget::slotTypeOfLengthChanged( int index )
+void InsertTableWidget::slotTypeOfLengthChanged(int index)
 {
-    switch ( index ) {
+    switch (index) {
     case 0:
-        d->mLength->setMaximum( 100 );
-        d->mLength->setValue( qMin( d->mLength->value(), 100 ) );
+        d->mLength->setMaximum(100);
+        d->mLength->setValue(qMin(d->mLength->value(), 100));
         break;
     case 1:
-        d->mLength->setMaximum( 9999 );
+        d->mLength->setMaximum(9999);
         break;
     default:
         qDebug() << " index not defined " << index;
@@ -107,15 +107,15 @@ void InsertTableWidget::slotTypeOfLengthChanged( int index )
 QTextLength::Type InsertTableWidget::typeOfLength() const
 {
     return
-            ( QTextLength::Type )d->mTypeOfLength->itemData(
-                d->mTypeOfLength->currentIndex() ).toInt();
+        (QTextLength::Type)d->mTypeOfLength->itemData(
+            d->mTypeOfLength->currentIndex()).toInt();
 }
 
-void InsertTableWidget::setTypeOfLength( QTextLength::Type type )
+void InsertTableWidget::setTypeOfLength(QTextLength::Type type)
 {
-    const int index = d->mTypeOfLength->findData( QVariant( type ) );
-    d->mTypeOfLength->setCurrentIndex( index );
-    slotTypeOfLengthChanged( index );
+    const int index = d->mTypeOfLength->findData(QVariant(type));
+    d->mTypeOfLength->setCurrentIndex(index);
+    slotTypeOfLengthChanged(index);
 }
 
 int InsertTableWidget::length() const
@@ -123,24 +123,24 @@ int InsertTableWidget::length() const
     return d->mLength->value();
 }
 
-void InsertTableWidget::setLength( int val )
+void InsertTableWidget::setLength(int val)
 {
     d->mLength->setValue(val);
 }
 
-void InsertTableWidget::setColumns( int col )
+void InsertTableWidget::setColumns(int col)
 {
-    d->mColumns->setValue( col );
+    d->mColumns->setValue(col);
 }
 
-void InsertTableWidget::setRows( int rows )
+void InsertTableWidget::setRows(int rows)
 {
-    d->mRows->setValue( rows );
+    d->mRows->setValue(rows);
 }
 
-void InsertTableWidget::setBorder( int border )
+void InsertTableWidget::setBorder(int border)
 {
-    d->mBorder->setValue( border );
+    d->mBorder->setValue(border);
 }
 
 int InsertTableWidget::columns() const

@@ -25,21 +25,22 @@
 
 #include <KActionMenu>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class KPIMTEXTEDIT_EXPORT EmoticonTextEditAction : public KActionMenu
 {
     Q_OBJECT
 public:
-    explicit EmoticonTextEditAction( QObject *parent );
+    explicit EmoticonTextEditAction(QObject *parent);
     ~EmoticonTextEditAction();
 
 Q_SIGNALS:
-    void emoticonActivated( const QString & );
+    void emoticonActivated(const QString &);
 
 private:
     class EmoticonTextEditActionPrivate;
-    EmoticonTextEditActionPrivate * const d;
+    EmoticonTextEditActionPrivate *const d;
 };
 
 }

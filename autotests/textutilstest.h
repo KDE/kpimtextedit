@@ -19,14 +19,13 @@
 #ifndef TEXTUTILSTEST_H
 #define TEXTUTILSTEST_H
 
-
 #include <qobject.h>
 
 class TextUtilsTest : public QObject
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  private Q_SLOTS:
+private Q_SLOTS:
     void test_flowText_data();
     void test_flowText();
 };

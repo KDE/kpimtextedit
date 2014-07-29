@@ -30,14 +30,13 @@
 
 using namespace KPIMTextEdit;
 
-
 class InsertTableDialog::InsertTableDialogPrivate
 {
 public:
-    InsertTableDialogPrivate( InsertTableDialog *qq )
-        : q( qq )
+    InsertTableDialogPrivate(InsertTableDialog *qq)
+        : q(qq)
     {
-        q->setWindowTitle( i18n( "Insert Table" ) );
+        q->setWindowTitle(i18n("Insert Table"));
         QVBoxLayout *mainLayout = new QVBoxLayout;
         q->setLayout(mainLayout);
 
@@ -47,13 +46,12 @@ public:
         KSeparator *sep = new KSeparator;
         mainLayout->addWidget(sep);
 
-        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
         QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
-        okButton->setText( i18n( "Insert" ) );
+        okButton->setText(i18n("Insert"));
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
         q->connect(buttonBox, SIGNAL(accepted()), q, SLOT(accept()));
         q->connect(buttonBox, SIGNAL(rejected()), q, SLOT(reject()));
-
 
         mainLayout->addWidget(buttonBox);
     }
@@ -62,8 +60,8 @@ public:
     InsertTableDialog *q;
 };
 
-InsertTableDialog::InsertTableDialog( QWidget *parent )
-    : QDialog( parent ), d( new InsertTableDialogPrivate( this ) )
+InsertTableDialog::InsertTableDialog(QWidget *parent)
+    : QDialog(parent), d(new InsertTableDialogPrivate(this))
 {
 }
 
@@ -97,27 +95,27 @@ int InsertTableDialog::length() const
     return d->insertTableWidget->length();
 }
 
-void InsertTableDialog::setColumns( int col )
+void InsertTableDialog::setColumns(int col)
 {
-    d->insertTableWidget->setColumns( col );
+    d->insertTableWidget->setColumns(col);
 }
 
-void InsertTableDialog::setRows( int rows )
+void InsertTableDialog::setRows(int rows)
 {
-    d->insertTableWidget->setRows( rows );
+    d->insertTableWidget->setRows(rows);
 }
 
-void InsertTableDialog::setBorder( int border )
+void InsertTableDialog::setBorder(int border)
 {
-    d->insertTableWidget->setBorder( border );
+    d->insertTableWidget->setBorder(border);
 }
 
-void InsertTableDialog::setLength( int val )
+void InsertTableDialog::setLength(int val)
 {
-    d->insertTableWidget->setLength( val );
+    d->insertTableWidget->setLength(val);
 }
 
-void InsertTableDialog::setTypeOfLength( QTextLength::Type type )
+void InsertTableDialog::setTypeOfLength(QTextLength::Type type)
 {
-    d->insertTableWidget->setTypeOfLength( type );
+    d->insertTableWidget->setTypeOfLength(type);
 }

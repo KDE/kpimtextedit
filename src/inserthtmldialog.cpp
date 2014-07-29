@@ -29,43 +29,44 @@
 #include <QVBoxLayout>
 #include <QLabel>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class InsertHtmlDialogPrivate
 {
 public:
-    InsertHtmlDialogPrivate( InsertHtmlDialog *qq )
-        : q( qq )
+    InsertHtmlDialogPrivate(InsertHtmlDialog *qq)
+        : q(qq)
     {
-        q->setWindowTitle( i18n( "Insert HTML" ) );
+        q->setWindowTitle(i18n("Insert HTML"));
         QVBoxLayout *lay = new QVBoxLayout;
         q->setLayout(lay);
-        QLabel *label = new QLabel( i18n( "Insert HTML tags and texts:" ) );
-        lay->addWidget( label );
+        QLabel *label = new QLabel(i18n("Insert HTML tags and texts:"));
+        lay->addWidget(label);
         editor = new KTextEdit;
-        new HtmlHighlighter( editor->document() );
-        editor->setAcceptRichText( false );
+        new HtmlHighlighter(editor->document());
+        editor->setAcceptRichText(false);
         editor->setFocus();
-        lay->addWidget( editor );
-        label = new QLabel( i18n( "Example: <i> Hello word </i>" ) );
+        lay->addWidget(editor);
+        label = new QLabel(i18n("Example: <i> Hello word </i>"));
         QFont font = label->font();
-        font.setBold( true );
-        label->setFont( font );
-        label->setTextFormat( Qt::PlainText );
-        lay->addWidget( label );
-        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+        font.setBold(true);
+        label->setFont(font);
+        label->setTextFormat(Qt::PlainText);
+        lay->addWidget(label);
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
         okButton = buttonBox->button(QDialogButtonBox::Ok);
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
-        okButton->setText( i18n( "Insert" ) );
+        okButton->setText(i18n("Insert"));
 
         q->connect(buttonBox, SIGNAL(accepted()), q, SLOT(accept()));
         q->connect(buttonBox, SIGNAL(rejected()), q, SLOT(reject()));
 
         lay->addWidget(buttonBox);
-        q->connect( editor, SIGNAL(textChanged()),
-                    q, SLOT(_k_slotTextChanged()) );
+        q->connect(editor, SIGNAL(textChanged()),
+                   q, SLOT(_k_slotTextChanged()));
         okButton->setEnabled(false);
-        q->resize( 640, 480 );
+        q->resize(640, 480);
     }
 
     void _k_slotTextChanged();
@@ -76,11 +77,11 @@ public:
 
 void InsertHtmlDialogPrivate::_k_slotTextChanged()
 {
-    okButton->setEnabled( !editor->toPlainText().isEmpty() );
+    okButton->setEnabled(!editor->toPlainText().isEmpty());
 }
 
-InsertHtmlDialog::InsertHtmlDialog( QWidget *parent )
-    : QDialog( parent ), d( new InsertHtmlDialogPrivate( this ) )
+InsertHtmlDialog::InsertHtmlDialog(QWidget *parent)
+    : QDialog(parent), d(new InsertHtmlDialogPrivate(this))
 {
 }
 

@@ -35,7 +35,8 @@ class QUrl;
 class QFileInfo;
 class KActionCollection;
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class TextEditPrivate;
 class EMailQuoteHighlighter;
@@ -44,8 +45,7 @@ class EMailQuoteHighlighter;
  * Holds information about an embedded HTML image that will be useful for mail clients.
  * A list with all images can be retrieved with TextEdit::embeddedImages().
  */
-struct EmbeddedImage
-{
+struct EmbeddedImage {
     QByteArray image;   ///< The image, encoded as PNG with base64 encoding
     QString contentID;  ///< The content id of the embedded image
     QString imageName;  ///< Name of the image as it is available as a resource in the editor
@@ -57,8 +57,7 @@ struct EmbeddedImage
  *
  * @since 4.4
  */
-struct ImageWithName
-{
+struct ImageWithName {
     QImage image; ///< The image
     QString name; ///< The name of the image as it is available as a resource in the editor
 };
@@ -89,13 +88,13 @@ public:
      * @param text the initial plain text of the text edit, interpreted as HTML
      * @param parent the parent widget
      */
-    explicit TextEdit( const QString &text, QWidget *parent = 0 );
+    explicit TextEdit(const QString &text, QWidget *parent = 0);
 
     /**
      * Constructs a TextEdit object.
      * @param parent the parent widget
      */
-    explicit TextEdit( QWidget *parent = 0 );
+    explicit TextEdit(QWidget *parent = 0);
 
     /**
      * Constructs a TextEdit object
@@ -105,7 +104,7 @@ public:
      *
      * TODO KDE-5 merge with other constructor
      */
-    explicit TextEdit( QWidget *parent, const QString &configFile );
+    explicit TextEdit(QWidget *parent, const QString &configFile);
 
     /**
      * Calling this allows createActions() to create the add image actions.
@@ -154,7 +153,7 @@ public:
      *
      * @since 4.10
      */
-    void addImage( const QUrl &url, int width = -1, int height = -1 );
+    void addImage(const QUrl &url, int width = -1, int height = -1);
 
     /**
      * Loads an image into the textedit. The difference to addImage() is that this
@@ -169,7 +168,7 @@ public:
      *
      * @since 4.4
      */
-    void loadImage( const QImage &image, const QString &matchName, const QString &resourceName );
+    void loadImage(const QImage &image, const QString &matchName, const QString &resourceName);
 
     /**
      * Deletes the line at the current cursor position.
@@ -203,14 +202,14 @@ public:
     /**
      * @since 5.0
      */
-    QString toWrappedPlainText( QTextDocument *document ) const;
+    QString toWrappedPlainText(QTextDocument *document) const;
 
     /**
      * Same as toPlainText() from QTextEdit, only that it removes embedded
      * images and converts non-breaking space characters to normal spaces.
      * @since 4.10
      */
-    QString toCleanPlainText( const QString &plainText = QString() ) const;
+    QString toCleanPlainText(const QString &plainText = QString()) const;
 
     /**
      * This method is called after the highlighter is created.
@@ -223,12 +222,12 @@ public:
      * @param highlighter the highlighter that was just created. You need to
      *   set the colors of this highlighter.
      */
-    virtual void setHighlighterColors( EMailQuoteHighlighter *highlighter );
+    virtual void setHighlighterColors(EMailQuoteHighlighter *highlighter);
 
     /**
      * Convenience method for qouteLength( line ) > 0
      */
-    bool isLineQuoted( const QString &line ) const;
+    bool isLineQuoted(const QString &line) const;
 
     /**
      * This is called whenever the editor needs to find out the length of the quote,
@@ -240,7 +239,7 @@ public:
      * @return 0 if the line is not quoted, the length of the quote prefix otherwise
      * FIXME: Not yet used in all places, e.g. keypressEvent() or the quote highlighter
      */
-    virtual int quoteLength( const QString &line ) const;
+    virtual int quoteLength(const QString &line) const;
 
     /**
      * Returns the prefix that is added to a line that is quoted.
@@ -265,8 +264,8 @@ public:
      *
      * @return a modified HTML code, where the <img> tags got replaced
      */
-    static QByteArray imageNamesToContentIds( const QByteArray &htmlBody,
-                                              const ImageList &imageList );
+    static QByteArray imageNamesToContentIds(const QByteArray &htmlBody,
+            const ImageList &imageList);
 
     /**
      * Checks if rich text formatting is used anywhere.
@@ -299,7 +298,7 @@ public:
      * @param info the info to supply with image
      * @since 4.6
      */
-    void insertImage( const QImage &image, const QFileInfo &info );
+    void insertImage(const QImage &image, const QFileInfo &info);
 
     /**
      * @since 4.10
@@ -316,24 +315,24 @@ protected:
     /**
      * Reimplemented for inline image support
      */
-    virtual bool canInsertFromMimeData( const QMimeData *source ) const;
+    virtual bool canInsertFromMimeData(const QMimeData *source) const;
 
     /**
      * Reimplemented for inline image support
      */
-    virtual void insertFromMimeData( const QMimeData *source );
+    virtual void insertFromMimeData(const QMimeData *source);
 
     /**
      * Reimplemented from KRichTextWidget to hide the mouse cursor when there
      * was no mouse movement for some time, using KCursor
      */
-    virtual bool eventFilter( QObject *o, QEvent *e );
+    virtual bool eventFilter(QObject *o, QEvent *e);
 
     /**
      * Reimplemented to add qoute signs when the user presses enter
      * on a quoted line.
      */
-    virtual void keyPressEvent ( QKeyEvent *e );
+    virtual void keyPressEvent(QKeyEvent *e);
 
     // For the explaination for these four methods, see the comment at the
     // spellCheckingEnabled variable of the private class.
@@ -346,13 +345,13 @@ protected:
     /**
      * Reimplemented from KTextEdit
      */
-    virtual void setCheckSpellingEnabled( bool check );
+    virtual void setCheckSpellingEnabled(bool check);
 
     /**
      * Reimplemented from KTextEdit, to avoid spellchecking
      * quoted text.
      */
-    virtual bool shouldBlockBeSpellChecked( const QString &block ) const;
+    virtual bool shouldBlockBeSpellChecked(const QString &block) const;
 
     /**
      * Reimplemented to create our own highlighter which does quote and
@@ -361,15 +360,15 @@ protected:
     virtual void createHighlighter();
 
 private:
-    void addImageHelper( const QUrl &url, int width = -1, int height = -1 );
+    void addImageHelper(const QUrl &url, int width = -1, int height = -1);
     std::auto_ptr<TextEditPrivate> const d;
     friend class TextEditPrivate;
-    Q_PRIVATE_SLOT( d, void _k_slotAddImage() )
-    Q_PRIVATE_SLOT( d, void _k_slotDeleteLine() )
-    Q_PRIVATE_SLOT( d, void _k_slotAddEmoticon( const QString & ) )
-    Q_PRIVATE_SLOT( d, void _k_slotInsertHtml() )
-    Q_PRIVATE_SLOT( d, void _k_slotFormatReset() )
-    Q_PRIVATE_SLOT( d, void _k_slotTextModeChanged( KRichTextEdit::Mode ) )
+    Q_PRIVATE_SLOT(d, void _k_slotAddImage())
+    Q_PRIVATE_SLOT(d, void _k_slotDeleteLine())
+    Q_PRIVATE_SLOT(d, void _k_slotAddEmoticon(const QString &))
+    Q_PRIVATE_SLOT(d, void _k_slotInsertHtml())
+    Q_PRIVATE_SLOT(d, void _k_slotFormatReset())
+    Q_PRIVATE_SLOT(d, void _k_slotTextModeChanged(KRichTextEdit::Mode))
 };
 
 } // namespace

@@ -28,27 +28,27 @@
 #include <QHBoxLayout>
 
 // Use a static for this as calls to the KEmoticons constructor are expensive.
-Q_GLOBAL_STATIC( KEmoticons, sEmoticons )
+Q_GLOBAL_STATIC(KEmoticons, sEmoticons)
 
 using namespace KPIMTextEdit;
 
-EmoticonTextEditItem::EmoticonTextEditItem( const QString &emoticonText,
-                                            const QString &pixmapPath,
-                                            QListWidget *parent )
-    : QListWidgetItem( parent )
+EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText,
+        const QString &pixmapPath,
+        QListWidget *parent)
+    : QListWidgetItem(parent)
 {
     mText = emoticonText;
     mPixmapPath = pixmapPath;
-    QPixmap p( mPixmapPath );
+    QPixmap p(mPixmapPath);
     // Some of the custom icons are rather large
     // so lets limit them to a maximum size for this display panel
     //
-    if ( p.width() > 32 || p.height() > 32 ) {
-        p = p.scaled( QSize( 32, 32 ), Qt::KeepAspectRatio );
+    if (p.width() > 32 || p.height() > 32) {
+        p = p.scaled(QSize(32, 32), Qt::KeepAspectRatio);
     }
 
-    setIcon( p );
-    setToolTip( mText );
+    setIcon(p);
+    setToolTip(mText);
 }
 
 QString EmoticonTextEditItem::text() const
@@ -70,22 +70,22 @@ public:
     QListWidget *listEmoticon;
 };
 
-EmoticonTextEditSelector::EmoticonTextEditSelector( QWidget *parent )
-    : QWidget( parent ), d( new EmoticonTextEditSelectorPrivate() )
+EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
+    : QWidget(parent), d(new EmoticonTextEditSelectorPrivate())
 {
-    QHBoxLayout *lay = new QHBoxLayout( this );
-    lay->setSpacing( 0 );
-    lay->setContentsMargins( 0, 0, 0, 0 );
-    d->listEmoticon = new QListWidget( this );
-    lay->addWidget( d->listEmoticon );
-    d->listEmoticon->setViewMode( QListView::IconMode );
-    d->listEmoticon->setSelectionMode( QAbstractItemView::SingleSelection );
-    d->listEmoticon->setMouseTracking( true );
-    d->listEmoticon->setDragEnabled( false );
-    connect( d->listEmoticon, SIGNAL(itemEntered(QListWidgetItem*)),
-             this, SLOT(slotMouseOverItem(QListWidgetItem*)) );
-    connect( d->listEmoticon, SIGNAL(itemClicked(QListWidgetItem*)),
-             this, SLOT(slotEmoticonClicked(QListWidgetItem*)) );
+    QHBoxLayout *lay = new QHBoxLayout(this);
+    lay->setSpacing(0);
+    lay->setContentsMargins(0, 0, 0, 0);
+    d->listEmoticon = new QListWidget(this);
+    lay->addWidget(d->listEmoticon);
+    d->listEmoticon->setViewMode(QListView::IconMode);
+    d->listEmoticon->setSelectionMode(QAbstractItemView::SingleSelection);
+    d->listEmoticon->setMouseTracking(true);
+    d->listEmoticon->setDragEnabled(false);
+    connect(d->listEmoticon, SIGNAL(itemEntered(QListWidgetItem *)),
+            this, SLOT(slotMouseOverItem(QListWidgetItem *)));
+    connect(d->listEmoticon, SIGNAL(itemClicked(QListWidgetItem *)),
+            this, SLOT(slotEmoticonClicked(QListWidgetItem *)));
 }
 
 EmoticonTextEditSelector::~EmoticonTextEditSelector()
@@ -97,11 +97,11 @@ void EmoticonTextEditSelector::slotCreateEmoticonList()
 {
     d->listEmoticon->clear();
     static QString cachedEmoticonsThemeName;
-    if ( cachedEmoticonsThemeName.isEmpty() ) {
+    if (cachedEmoticonsThemeName.isEmpty()) {
         cachedEmoticonsThemeName = KEmoticons::currentThemeName();
     }
     const QHash<QString, QStringList> list =
-            sEmoticons->theme( cachedEmoticonsThemeName ).emoticonsMap();
+        sEmoticons->theme(cachedEmoticonsThemeName).emoticonsMap();
 
     //Keep in sync with linklocator.cpp
     QStringList exclude;
@@ -112,32 +112,33 @@ void EmoticonTextEditSelector::slotCreateEmoticonList()
     exclude << QLatin1String("8)") << QLatin1String("(N)") << QLatin1String("(n)") << QLatin1String("(Y)") << QLatin1String("(y)") << QLatin1String("(U)") << QLatin1String("(u)") << QLatin1String("(W)") << QLatin1String("(w)");
 
     QHash<QString, QStringList>::const_iterator end = list.constEnd();
-    for ( QHash<QString, QStringList>::const_iterator it = list.constBegin(); it != end; ++it ) {
-        if (!exclude.contains(it.value().first()))
-            new EmoticonTextEditItem( it.value().first(), it.key(), d->listEmoticon );
+    for (QHash<QString, QStringList>::const_iterator it = list.constBegin(); it != end; ++it) {
+        if (!exclude.contains(it.value().first())) {
+            new EmoticonTextEditItem(it.value().first(), it.key(), d->listEmoticon);
+        }
     }
 
-    d->listEmoticon->setIconSize( QSize( 32, 32 ) );
+    d->listEmoticon->setIconSize(QSize(32, 32));
 }
 
-void EmoticonTextEditSelector::slotMouseOverItem( QListWidgetItem *item )
+void EmoticonTextEditSelector::slotMouseOverItem(QListWidgetItem *item)
 {
-    item->setSelected( true );
-    if ( !d->listEmoticon->hasFocus() ) {
+    item->setSelected(true);
+    if (!d->listEmoticon->hasFocus()) {
         d->listEmoticon->setFocus();
     }
 }
 
-void EmoticonTextEditSelector::slotEmoticonClicked( QListWidgetItem *item )
+void EmoticonTextEditSelector::slotEmoticonClicked(QListWidgetItem *item)
 {
-    if ( !item ) {
+    if (!item) {
         return;
     }
-    EmoticonTextEditItem *itemEmoticon = static_cast<EmoticonTextEditItem*>( item );
+    EmoticonTextEditItem *itemEmoticon = static_cast<EmoticonTextEditItem *>(item);
 
-    emit itemSelected ( itemEmoticon->text() );
-    if ( isVisible() && parentWidget() &&
-         parentWidget()->inherits( "QMenu" ) ) {
+    emit itemSelected(itemEmoticon->text());
+    if (isVisible() && parentWidget() &&
+            parentWidget()->inherits("QMenu")) {
         parentWidget()->close();
     }
 }

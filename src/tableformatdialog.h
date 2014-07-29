@@ -27,45 +27,46 @@
 
 #include <QTextLength>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class KPIMTEXTEDIT_EXPORT TableFormatDialog : public QDialog
 {
 public:
-    explicit TableFormatDialog( QWidget *parent );
+    explicit TableFormatDialog(QWidget *parent);
     ~TableFormatDialog();
 
     int columns() const;
     int rows() const;
     int border() const;
 
-    void setColumns( int );
-    void setRows( int );
-    void setBorder( int );
+    void setColumns(int);
+    void setRows(int);
+    void setBorder(int);
 
     int padding() const;
-    void setPadding( int );
+    void setPadding(int);
 
     int spacing() const;
-    void setSpacing( int );
+    void setSpacing(int);
 
-    void setAlignment( Qt::Alignment alignment );
+    void setAlignment(Qt::Alignment alignment);
     Qt::Alignment alignment() const;
 
     QTextLength::Type typeOfLength() const;
-    void setTypeOfLength( QTextLength::Type type );
+    void setTypeOfLength(QTextLength::Type type);
 
     int length() const;
-    void setLength( int );
+    void setLength(int);
 
     QColor tableBackgroundColor() const;
-    void setTableBackgroundColor( const QColor &col );
+    void setTableBackgroundColor(const QColor &col);
 
     bool useBackgroundColor() const;
 
 private:
     class TableFormatDialogPrivate;
-    TableFormatDialogPrivate * const d;
+    TableFormatDialogPrivate *const d;
 };
 
 }

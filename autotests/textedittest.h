@@ -24,9 +24,9 @@
 
 class TextEditTester : public QObject
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  private Q_SLOTS:
+private Q_SLOTS:
     void testFormattingUsed();
     void testQuoting();
     void testCleanText();

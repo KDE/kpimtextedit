@@ -24,14 +24,15 @@
 #include <QListWidgetItem>
 #include <QWidget>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class EmoticonTextEditItem : public QListWidgetItem
 {
 public:
-    explicit EmoticonTextEditItem( const QString &emoticonText,
-                                   const QString &pixmapPath,
-                                   QListWidget *parent );
+    explicit EmoticonTextEditItem(const QString &emoticonText,
+                                  const QString &pixmapPath,
+                                  QListWidget *parent);
 
     QString text() const;
     QString pixmapPath() const;
@@ -45,22 +46,22 @@ class EmoticonTextEditSelector : public QWidget
 {
     Q_OBJECT
 public:
-    explicit EmoticonTextEditSelector( QWidget *parent = 0 );
+    explicit EmoticonTextEditSelector(QWidget *parent = 0);
     ~EmoticonTextEditSelector();
 
 public Q_SLOTS:
     void slotCreateEmoticonList();
 
 private Q_SLOTS:
-    void slotMouseOverItem( QListWidgetItem * );
-    void slotEmoticonClicked( QListWidgetItem * );
+    void slotMouseOverItem(QListWidgetItem *);
+    void slotEmoticonClicked(QListWidgetItem *);
 
 Q_SIGNALS:
-    void itemSelected ( const QString & );
+    void itemSelected(const QString &);
 
 private:
     class EmoticonTextEditSelectorPrivate;
-    EmoticonTextEditSelectorPrivate * const d;
+    EmoticonTextEditSelectorPrivate *const d;
 };
 
 }

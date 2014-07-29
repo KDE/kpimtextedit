@@ -26,7 +26,8 @@
 
 #include <QWidget>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class InsertImageWidgetPrivate;
 
@@ -34,30 +35,30 @@ class KPIMTEXTEDIT_EXPORT InsertImageWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit InsertImageWidget( QWidget *parent );
+    explicit InsertImageWidget(QWidget *parent);
     ~InsertImageWidget();
 
-    void setImageWidth( int value );
+    void setImageWidth(int value);
     int imageWidth() const;
 
-    void setImageHeight( int value );
+    void setImageHeight(int value);
     int imageHeight() const;
 
     QUrl imageUrl() const;
-    void setImageUrl( const QUrl &url );
+    void setImageUrl(const QUrl &url);
 
     bool keepOriginalSize() const;
 
 Q_SIGNALS:
-    void enableButtonOk( bool enabled );
+    void enableButtonOk(bool enabled);
 
 private:
     friend class InsertImageWidgetPrivate;
     InsertImageWidgetPrivate *const d;
-    Q_PRIVATE_SLOT( d, void _k_slotKeepOriginalSizeClicked( bool ) )
-    Q_PRIVATE_SLOT( d, void _k_slotUrlChanged( const QString & ) )
-    Q_PRIVATE_SLOT( d, void _k_slotImageWidthChanged( int ) )
-    Q_PRIVATE_SLOT( d, void _k_slotImageHeightChanged( int ) )
+    Q_PRIVATE_SLOT(d, void _k_slotKeepOriginalSizeClicked(bool))
+    Q_PRIVATE_SLOT(d, void _k_slotUrlChanged(const QString &))
+    Q_PRIVATE_SLOT(d, void _k_slotImageWidthChanged(int))
+    Q_PRIVATE_SLOT(d, void _k_slotImageHeightChanged(int))
 
 };
 

@@ -27,12 +27,13 @@
 
 #include <QTextCharFormat>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class KPIMTEXTEDIT_EXPORT TableCellFormatDialog : public QDialog
 {
 public:
-    explicit TableCellFormatDialog( QWidget *parent );
+    explicit TableCellFormatDialog(QWidget *parent);
     ~TableCellFormatDialog();
 
     /**
@@ -45,7 +46,7 @@ public:
      * @brief setTableCellBackgroundColor
      * @param color, set the background color of cell
      */
-    void setTableCellBackgroundColor( const QColor &color );
+    void setTableCellBackgroundColor(const QColor &color);
 
     /**
      * @brief verticalAlignment
@@ -57,7 +58,7 @@ public:
      * @brief setVerticalAlignment
      * @param vertical vertical alignment for current cell.
      */
-    void setVerticalAlignment( QTextCharFormat::VerticalAlignment vertical );
+    void setVerticalAlignment(QTextCharFormat::VerticalAlignment vertical);
 
     /**
      * @brief useBackgroundColor
@@ -67,7 +68,7 @@ public:
 
 private:
     class TableCellFormatDialogPrivate;
-    TableCellFormatDialogPrivate * const d;
+    TableCellFormatDialogPrivate *const d;
 };
 
 }

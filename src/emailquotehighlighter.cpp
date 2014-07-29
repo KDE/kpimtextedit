@@ -22,7 +22,8 @@
 
 #include "textedit.h"
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class EMailQuoteHighlighter::EMailQuoteHighlighterPrivate
 {
@@ -32,22 +33,22 @@ public:
     TextEdit *parent;
 };
 
-EMailQuoteHighlighter::EMailQuoteHighlighter( TextEdit *textEdit,
-                                              const QColor &normalColor,
-                                              const QColor &quoteDepth1,
-                                              const QColor &quoteDepth2,
-                                              const QColor &quoteDepth3,
-                                              const QColor &misspelledColor )
-    : Highlighter( textEdit, textEdit->configFile() ),
-      d( new EMailQuoteHighlighterPrivate() )
+EMailQuoteHighlighter::EMailQuoteHighlighter(TextEdit *textEdit,
+        const QColor &normalColor,
+        const QColor &quoteDepth1,
+        const QColor &quoteDepth2,
+        const QColor &quoteDepth3,
+        const QColor &misspelledColor)
+    : Highlighter(textEdit, textEdit->configFile()),
+      d(new EMailQuoteHighlighterPrivate())
 {
-    Q_UNUSED( normalColor );
+    Q_UNUSED(normalColor);
     // Don't automatically disable the spell checker, for example because there
     // are too many misspelled words. That would also disable quote highlighting.
     // FIXME: disable this spell checking!
-    setAutomatic( false );
+    setAutomatic(false);
 
-    setActive( true );
+    setActive(true);
     d->col1 = quoteDepth1;
     d->col2 = quoteDepth2;
     d->col3 = quoteDepth3;
@@ -60,106 +61,106 @@ EMailQuoteHighlighter::~EMailQuoteHighlighter()
 {
 }
 
-QString EMailQuoteHighlighter::highlightText( const QString &text,
-                                              const QColor &quoteDepth1,
-                                              const QColor &quoteDepth2,
-                                              const QColor &quoteDepth3 )
+QString EMailQuoteHighlighter::highlightText(const QString &text,
+        const QColor &quoteDepth1,
+        const QColor &quoteDepth2,
+        const QColor &quoteDepth3)
 {
-    const QStringList splitList = text.split( QLatin1Char( '\n' ) );
+    const QStringList splitList = text.split(QLatin1Char('\n'));
     QString result;
     QStringList::const_iterator it = splitList.constBegin();
     QStringList::const_iterator end = splitList.constEnd();
-    while ( it != end ) {
-        result.append( highlightParagraph( ( *it ) + QLatin1Char( '\n' ),
-                                           quoteDepth1, quoteDepth2, quoteDepth3 ) );
+    while (it != end) {
+        result.append(highlightParagraph((*it) + QLatin1Char('\n'),
+                                         quoteDepth1, quoteDepth2, quoteDepth3));
         ++it;
     }
     return result;
 }
 
-QString EMailQuoteHighlighter::highlightParagraph( const QString &text,
-                                                   const QColor &quoteDepth1,
-                                                   const QColor &quoteDepth2,
-                                                   const QColor &quoteDepth3 )
+QString EMailQuoteHighlighter::highlightParagraph(const QString &text,
+        const QColor &quoteDepth1,
+        const QColor &quoteDepth2,
+        const QColor &quoteDepth3)
 {
     QString simplified = text;
-    simplified = simplified.remove( QRegExp( QLatin1String( "\\s" ) ) ).
-            replace( QLatin1Char( '|' ), QLatin1Char( '>' ) ).
-            replace( QLatin1String( "&gt;" ), QLatin1String( ">" ) );
+    simplified = simplified.remove(QRegExp(QLatin1String("\\s"))).
+                 replace(QLatin1Char('|'), QLatin1Char('>')).
+                 replace(QLatin1String("&gt;"), QLatin1String(">"));
 
-    while ( simplified.startsWith( QLatin1String( ">>>>" ) ) ) {
-        simplified = simplified.mid( 3 );
+    while (simplified.startsWith(QLatin1String(">>>>"))) {
+        simplified = simplified.mid(3);
     }
 
-    QString result( QLatin1String( "<font color=\"%1\">%2</font>" ) );
-    if ( simplified.startsWith( QLatin1String( ">>>" ) ) ) {
-        return result.arg( quoteDepth3.name(), text );
-    } else if ( simplified.startsWith( QLatin1String( ">>" ) ) ) {
-        return result.arg( quoteDepth2.name(), text );
-    } else if ( simplified.startsWith( QLatin1String( ">" ) ) ) {
-        return result.arg( quoteDepth1.name(), text );
+    QString result(QLatin1String("<font color=\"%1\">%2</font>"));
+    if (simplified.startsWith(QLatin1String(">>>"))) {
+        return result.arg(quoteDepth3.name(), text);
+    } else if (simplified.startsWith(QLatin1String(">>"))) {
+        return result.arg(quoteDepth2.name(), text);
+    } else if (simplified.startsWith(QLatin1String(">"))) {
+        return result.arg(quoteDepth1.name(), text);
     }
 
     return text;
 }
 
-void EMailQuoteHighlighter::setQuoteColor( const QColor &normalColor,
-                                           const QColor &quoteDepth1,
-                                           const QColor &quoteDepth2,
-                                           const QColor &quoteDepth3,
-                                           const QColor &misspelledColor )
+void EMailQuoteHighlighter::setQuoteColor(const QColor &normalColor,
+        const QColor &quoteDepth1,
+        const QColor &quoteDepth2,
+        const QColor &quoteDepth3,
+        const QColor &misspelledColor)
 {
-    Q_UNUSED( normalColor );
+    Q_UNUSED(normalColor);
     d->col1 = quoteDepth1;
     d->col2 = quoteDepth2;
     d->col3 = quoteDepth3;
     d->misspelledColor = misspelledColor;
 }
 
-void EMailQuoteHighlighter::toggleSpellHighlighting( bool on )
+void EMailQuoteHighlighter::toggleSpellHighlighting(bool on)
 {
-    if ( on != d->spellCheckingEnabled ) {
+    if (on != d->spellCheckingEnabled) {
         d->spellCheckingEnabled = on;
         rehighlight();
     }
 }
 
-void EMailQuoteHighlighter::highlightBlock( const QString &text )
+void EMailQuoteHighlighter::highlightBlock(const QString &text)
 {
     QString simplified = text;
-    simplified = simplified.remove( QRegExp( QLatin1String( "\\s" ) ) ).
-            replace( QLatin1Char( '|' ), QLatin1Char( '>' ) );
+    simplified = simplified.remove(QRegExp(QLatin1String("\\s"))).
+                 replace(QLatin1Char('|'), QLatin1Char('>'));
 
-    while ( simplified.startsWith( QLatin1String( ">>>>" ) ) ) {
-        simplified = simplified.mid( 3 );
+    while (simplified.startsWith(QLatin1String(">>>>"))) {
+        simplified = simplified.mid(3);
     }
 
-    if ( simplified.startsWith( QLatin1String( ">>>" ) ) ) {
-        setFormat( 0, text.length(), d->col3 );
-    } else if ( simplified.startsWith( QLatin1String( ">>" ) ) ) {
-        setFormat( 0, text.length(), d->col2 );
-    } else if ( simplified.startsWith( QLatin1String( ">" ) ) ) {
-        setFormat( 0, text.length(), d->col1 );
-    } else if ( d->parent->isLineQuoted( text ) ) {
-        setFormat( 0, text.length(), d->col1 ); // FIXME: custom quote prefix
+    if (simplified.startsWith(QLatin1String(">>>"))) {
+        setFormat(0, text.length(), d->col3);
+    } else if (simplified.startsWith(QLatin1String(">>"))) {
+        setFormat(0, text.length(), d->col2);
+    } else if (simplified.startsWith(QLatin1String(">"))) {
+        setFormat(0, text.length(), d->col1);
+    } else if (d->parent->isLineQuoted(text)) {
+        setFormat(0, text.length(), d->col1);   // FIXME: custom quote prefix
         // can't handle multiple levels
-    } else if ( d->spellCheckingEnabled ) {
-        Highlighter::highlightBlock( text );
+    } else if (d->spellCheckingEnabled) {
+        Highlighter::highlightBlock(text);
         return; //setCurrentBlockState already done in Highlighter::highlightBlock
     }
-    setCurrentBlockState( 0 );
+    setCurrentBlockState(0);
 }
 
-void EMailQuoteHighlighter::unsetMisspelled( int start, int count )
+void EMailQuoteHighlighter::unsetMisspelled(int start, int count)
 {
-    Q_UNUSED( start );
-    Q_UNUSED( count );
+    Q_UNUSED(start);
+    Q_UNUSED(count);
 }
 
-void EMailQuoteHighlighter::setMisspelled( int start, int count )
+void EMailQuoteHighlighter::setMisspelled(int start, int count)
 {
-    setMisspelledColor( d->misspelledColor );
-    Sonnet::Highlighter::setMisspelled( start, count );
+    setMisspelledColor(d->misspelledColor);
+    Sonnet::Highlighter::setMisspelled(start, count);
 }
 
 }

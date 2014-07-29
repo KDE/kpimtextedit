@@ -28,31 +28,32 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class InsertImageDialogPrivate
 {
 public:
-    InsertImageDialogPrivate( InsertImageDialog *qq )
-        :q( qq )
+    InsertImageDialogPrivate(InsertImageDialog *qq)
+        : q(qq)
     {
         QVBoxLayout *vbox = new QVBoxLayout;
         q->setLayout(vbox);
-        q->setWindowTitle( i18n( "Insert Image" ) );
+        q->setWindowTitle(i18n("Insert Image"));
 
         imageWidget = new InsertImageWidget(q);
         vbox->addWidget(imageWidget);
-        q->connect( imageWidget, SIGNAL(enableButtonOk(bool)),
-                    q, SLOT(_k_slotEnabledButtonChanged(bool)) );
-        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+        q->connect(imageWidget, SIGNAL(enableButtonOk(bool)),
+                   q, SLOT(_k_slotEnabledButtonChanged(bool)));
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
         okButton = buttonBox->button(QDialogButtonBox::Ok);
-        okButton->setText( i18n( "Insert" ) );
+        okButton->setText(i18n("Insert"));
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
         vbox->addWidget(buttonBox);
 
         q->connect(buttonBox, SIGNAL(accepted()), q, SLOT(accept()));
         q->connect(buttonBox, SIGNAL(rejected()), q, SLOT(reject()));
-        okButton->setEnabled( false );
+        okButton->setEnabled(false);
     }
 
     void _k_slotEnabledButtonChanged(bool enabled)
@@ -65,8 +66,8 @@ public:
     InsertImageDialog *q;
 };
 
-InsertImageDialog::InsertImageDialog( QWidget *parent )
-    : QDialog( parent ), d( new InsertImageDialogPrivate( this ) )
+InsertImageDialog::InsertImageDialog(QWidget *parent)
+    : QDialog(parent), d(new InsertImageDialogPrivate(this))
 {
 }
 
@@ -85,14 +86,14 @@ int InsertImageDialog::imageHeight() const
     return d->imageWidget->imageHeight();
 }
 
-void InsertImageDialog::setImageWidth( int value )
+void InsertImageDialog::setImageWidth(int value)
 {
-    d->imageWidget->setImageWidth( value );
+    d->imageWidget->setImageWidth(value);
 }
 
-void InsertImageDialog::setImageHeight( int value )
+void InsertImageDialog::setImageHeight(int value)
 {
-    d->imageWidget->setImageHeight( value );
+    d->imageWidget->setImageHeight(value);
 }
 
 QUrl InsertImageDialog::imageUrl() const
@@ -100,9 +101,9 @@ QUrl InsertImageDialog::imageUrl() const
     return d->imageWidget->imageUrl();
 }
 
-void InsertImageDialog::setImageUrl( const QUrl &url )
+void InsertImageDialog::setImageUrl(const QUrl &url)
 {
-    d->imageWidget->setImageUrl( url );
+    d->imageWidget->setImageUrl(url);
 }
 
 bool InsertImageDialog::keepOriginalSize() const

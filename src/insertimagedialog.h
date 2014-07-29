@@ -26,7 +26,8 @@
 #include <QDialog>
 #include <QUrl>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class InsertImageDialogPrivate;
 
@@ -34,24 +35,24 @@ class KPIMTEXTEDIT_EXPORT InsertImageDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit InsertImageDialog( QWidget *parent = 0 );
+    explicit InsertImageDialog(QWidget *parent = 0);
     ~InsertImageDialog();
 
     int imageWidth() const;
     int imageHeight() const;
 
-    void setImageWidth( int value );
-    void setImageHeight( int value );
+    void setImageWidth(int value);
+    void setImageHeight(int value);
 
     QUrl imageUrl() const;
-    void setImageUrl( const QUrl &url );
+    void setImageUrl(const QUrl &url);
 
     bool keepOriginalSize() const;
 
 private:
     friend class InsertImageDialogPrivate;
-    InsertImageDialogPrivate * const d;
-    Q_PRIVATE_SLOT( d, void _k_slotEnabledButtonChanged(bool) )
+    InsertImageDialogPrivate *const d;
+    Q_PRIVATE_SLOT(d, void _k_slotEnabledButtonChanged(bool))
 };
 
 }

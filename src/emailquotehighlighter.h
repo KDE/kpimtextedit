@@ -26,7 +26,8 @@
 
 #include <memory>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class TextEdit;
 
@@ -49,12 +50,12 @@ public:
      * Constructor. See setQuoteColor() for the parameters.
      * FIXME: Default colors don't obey color scheme
      */
-    explicit EMailQuoteHighlighter( TextEdit *textEdit,
-                                    const QColor &normalColor = Qt::black,
-                                    const QColor &quoteDepth1 = QColor( 0x00, 0x80, 0x00 ),
-                                    const QColor &quoteDepth2 = QColor( 0x00, 0x80, 0x00 ),
-                                    const QColor &quoteDepth3 = QColor( 0x00, 0x80, 0x00 ),
-                                    const QColor &misspelledColor = Qt::red );
+    explicit EMailQuoteHighlighter(TextEdit *textEdit,
+                                   const QColor &normalColor = Qt::black,
+                                   const QColor &quoteDepth1 = QColor(0x00, 0x80, 0x00),
+                                   const QColor &quoteDepth2 = QColor(0x00, 0x80, 0x00),
+                                   const QColor &quoteDepth3 = QColor(0x00, 0x80, 0x00),
+                                   const QColor &misspelledColor = Qt::red);
 
     ~EMailQuoteHighlighter();
 
@@ -68,42 +69,42 @@ public:
      * @param normalColor will be ignored, only provided for KNode
      *                    compatibility.
      */
-    void setQuoteColor( const QColor &normalColor,
-                        const QColor &quoteDepth1,
-                        const QColor &quoteDepth2,
-                        const QColor &quoteDepth3,
-                        const QColor &misspelledColor = Qt::red );
+    void setQuoteColor(const QColor &normalColor,
+                       const QColor &quoteDepth1,
+                       const QColor &quoteDepth2,
+                       const QColor &quoteDepth3,
+                       const QColor &misspelledColor = Qt::red);
 
     /**
      * Turns spellcheck highlighting on or off.
      *
      * @param on if true, spelling mistakes will be highlighted
      */
-    void toggleSpellHighlighting( bool on );
+    void toggleSpellHighlighting(bool on);
 
     /**
      * Reimplemented to highlight quote blocks.
      */
-    virtual void highlightBlock ( const QString & text );
+    virtual void highlightBlock(const QString &text);
 
     /**
      * Use this static method to get a text consisting of multiple lines
      * highligted.
      * @since 4.4
      */
-    static QString highlightText( const QString &text,
-                                  const QColor &quoteDepth1 = QColor( 0x00, 0x80, 0x00 ),
-                                  const QColor &quoteDepth2 = QColor( 0x00, 0x80, 0x00 ),
-                                  const QColor &quoteDepth3 = QColor( 0x00, 0x80, 0x00 ) );
+    static QString highlightText(const QString &text,
+                                 const QColor &quoteDepth1 = QColor(0x00, 0x80, 0x00),
+                                 const QColor &quoteDepth2 = QColor(0x00, 0x80, 0x00),
+                                 const QColor &quoteDepth3 = QColor(0x00, 0x80, 0x00));
 
     /**
      * Use this static method to get proper highlighting for a single line.
      * @since 4.4
      */
-    static QString highlightParagraph( const QString &text,
-                                       const QColor &quoteDepth1 = QColor( 0x00, 0x80, 0x00 ),
-                                       const QColor &quoteDepth2 = QColor( 0x00, 0x80, 0x00 ),
-                                       const QColor &quoteDepth3 = QColor( 0x00, 0x80, 0x00 ) );
+    static QString highlightParagraph(const QString &text,
+                                      const QColor &quoteDepth1 = QColor(0x00, 0x80, 0x00),
+                                      const QColor &quoteDepth2 = QColor(0x00, 0x80, 0x00),
+                                      const QColor &quoteDepth3 = QColor(0x00, 0x80, 0x00));
 
 protected:
 
@@ -114,13 +115,13 @@ protected:
      * @param start the beginning of text
      * @param count the amount of characters to set
      */
-    virtual void unsetMisspelled( int start, int count );
+    virtual void unsetMisspelled(int start, int count);
 
     /**
      * Reimplemented to set the color of the misspelled word to a color
      * defined by setQuoteColor().
      */
-    virtual void setMisspelled( int start, int count );
+    virtual void setMisspelled(int start, int count);
 
 private:
     class EMailQuoteHighlighterPrivate;

@@ -24,42 +24,42 @@
 #include <QDialogButtonBox>
 #include <QPushButton>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class SelectSpecialCharDialogPrivate
 {
 public:
-    SelectSpecialCharDialogPrivate( SelectSpecialCharDialog *qq )
-        : mSelectButton(0), q( qq )
+    SelectSpecialCharDialogPrivate(SelectSpecialCharDialog *qq)
+        : mSelectButton(0), q(qq)
     {
-        q->setWindowTitle( i18n( "Select Special Characters" ) );
+        q->setWindowTitle(i18n("Select Special Characters"));
 
-        QVBoxLayout *lay = new QVBoxLayout( q );
+        QVBoxLayout *lay = new QVBoxLayout(q);
 
-        mCharSelect = new KCharSelect( q, 0, KCharSelect::CharacterTable|KCharSelect::BlockCombos );
-        q->connect( mCharSelect, SIGNAL(charSelected(QChar)),
-                    q, SIGNAL(charSelected(QChar)) );
-        lay->addWidget( mCharSelect );
+        mCharSelect = new KCharSelect(q, 0, KCharSelect::CharacterTable | KCharSelect::BlockCombos);
+        q->connect(mCharSelect, SIGNAL(charSelected(QChar)),
+                   q, SIGNAL(charSelected(QChar)));
+        lay->addWidget(mCharSelect);
 
-        mButtonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+        mButtonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
         QPushButton *okButton = mButtonBox->button(QDialogButtonBox::Ok);
-        okButton->setText( i18n( "Insert" ) );
+        okButton->setText(i18n("Insert"));
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
-        lay->addWidget( mButtonBox );
+        lay->addWidget(mButtonBox);
         q->connect(mButtonBox, SIGNAL(accepted()), q, SLOT(accept()));
         q->connect(mButtonBox, SIGNAL(rejected()), q, SLOT(reject()));
 
-
-        q->connect( okButton, SIGNAL(clicked()),
-                    q, SLOT(_k_slotInsertChar()) );
+        q->connect(okButton, SIGNAL(clicked()),
+                   q, SLOT(_k_slotInsertChar()));
     }
 
     void addSelectButton()
     {
-        mSelectButton = new QPushButton(i18n( "Select" ));
+        mSelectButton = new QPushButton(i18n("Select"));
         mButtonBox->addButton(mSelectButton, QDialogButtonBox::ActionRole);
-        q->connect( mSelectButton, SIGNAL(clicked()),
-                    q, SLOT(_k_slotInsertChar()) );
+        q->connect(mSelectButton, SIGNAL(clicked()),
+                   q, SLOT(_k_slotInsertChar()));
     }
 
     void _k_slotInsertChar();
@@ -72,11 +72,11 @@ public:
 
 void SelectSpecialCharDialogPrivate::_k_slotInsertChar()
 {
-    Q_EMIT q->charSelected( mCharSelect->currentChar() );
+    Q_EMIT q->charSelected(mCharSelect->currentChar());
 }
 
-SelectSpecialCharDialog::SelectSpecialCharDialog( QWidget *parent )
-    : QDialog( parent ), d( new SelectSpecialCharDialogPrivate( this ) )
+SelectSpecialCharDialog::SelectSpecialCharDialog(QWidget *parent)
+    : QDialog(parent), d(new SelectSpecialCharDialogPrivate(this))
 {
 }
 
@@ -85,16 +85,16 @@ SelectSpecialCharDialog::~SelectSpecialCharDialog()
     delete d;
 }
 
-void SelectSpecialCharDialog::showSelectButton( bool show )
+void SelectSpecialCharDialog::showSelectButton(bool show)
 {
-    if ( show ) {
+    if (show) {
         d->addSelectButton();
     } else {
         d->mButtonBox->removeButton(d->mSelectButton);
     }
 }
 
-void SelectSpecialCharDialog::setCurrentChar( const QChar &c )
+void SelectSpecialCharDialog::setCurrentChar(const QChar &c)
 {
     d->mCharSelect->setCurrentChar(c);
 }
@@ -106,12 +106,12 @@ QChar SelectSpecialCharDialog::currentChar() const
 
 void SelectSpecialCharDialog::autoInsertChar()
 {
-    connect( d->mCharSelect, SIGNAL(charSelected(QChar)), SLOT(accept()) );
+    connect(d->mCharSelect, SIGNAL(charSelected(QChar)), SLOT(accept()));
 }
 
-void SelectSpecialCharDialog::setOkButtonText( const QString &text )
+void SelectSpecialCharDialog::setOkButtonText(const QString &text)
 {
-    d->mButtonBox->button(QDialogButtonBox::Ok)->setText( text );
+    d->mButtonBox->button(QDialogButtonBox::Ok)->setText(text);
 }
 
 }

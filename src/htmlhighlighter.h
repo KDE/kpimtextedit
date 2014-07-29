@@ -30,7 +30,8 @@
 /*
  * @since 4.10
  */
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class HtmlHighlighterPrivate;
 
@@ -38,15 +39,15 @@ class KPIMTEXTEDIT_EXPORT HtmlHighlighter : public QSyntaxHighlighter
 {
     Q_OBJECT
 public:
-    explicit HtmlHighlighter( QTextDocument *document );
+    explicit HtmlHighlighter(QTextDocument *document);
     ~HtmlHighlighter();
 
 protected:
-    void highlightBlock( const QString &text );
+    void highlightBlock(const QString &text);
 
 private:
     friend class HtmlHighlighterPrivate;
-    HtmlHighlighterPrivate * const d;
+    HtmlHighlighterPrivate *const d;
 
 };
 

@@ -25,7 +25,8 @@
 
 #include <QDialog>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class InsertHtmlDialogPrivate;
 
@@ -33,14 +34,14 @@ class KPIMTEXTEDIT_EXPORT InsertHtmlDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit InsertHtmlDialog( QWidget *parent = 0 );
+    explicit InsertHtmlDialog(QWidget *parent = 0);
     ~InsertHtmlDialog();
     QString html() const;
 
 private:
     friend class InsertHtmlDialogPrivate;
-    InsertHtmlDialogPrivate * const d;
-    Q_PRIVATE_SLOT( d, void _k_slotTextChanged() )
+    InsertHtmlDialogPrivate *const d;
+    Q_PRIVATE_SLOT(d, void _k_slotTextChanged())
 
 };
 

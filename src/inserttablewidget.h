@@ -26,34 +26,35 @@
 
 #include <QTextLength>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class KPIMTEXTEDIT_EXPORT InsertTableWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit InsertTableWidget( QWidget *parent = 0 );
+    explicit InsertTableWidget(QWidget *parent = 0);
     ~InsertTableWidget();
     int columns() const;
     int rows() const;
     int border() const;
 
-    void setColumns( int col );
-    void setRows( int rows );
-    void setBorder( int border );
+    void setColumns(int col);
+    void setRows(int rows);
+    void setBorder(int border);
 
     QTextLength::Type typeOfLength() const;
-    void setTypeOfLength( QTextLength::Type type );
+    void setTypeOfLength(QTextLength::Type type);
 
     int length() const;
-    void setLength( int );
+    void setLength(int);
 
 private Q_SLOTS:
-    void slotTypeOfLengthChanged( int );
+    void slotTypeOfLengthChanged(int);
 
 private:
     class InsertTableWidgetPrivate;
-    InsertTableWidgetPrivate * const d;
+    InsertTableWidgetPrivate *const d;
 };
 }
 

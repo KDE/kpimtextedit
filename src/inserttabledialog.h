@@ -27,29 +27,30 @@
 
 #include <QTextLength>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 
 class KPIMTEXTEDIT_EXPORT InsertTableDialog : public QDialog
 {
 public:
-    explicit InsertTableDialog( QWidget *parent );
+    explicit InsertTableDialog(QWidget *parent);
     ~InsertTableDialog();
     int columns() const;
     int rows() const;
     int border() const;
 
-    void setColumns( int col );
-    void setRows( int rows );
-    void setBorder( int border );
+    void setColumns(int col);
+    void setRows(int rows);
+    void setBorder(int border);
 
     QTextLength::Type typeOfLength() const;
-    void setTypeOfLength( QTextLength::Type type );
+    void setTypeOfLength(QTextLength::Type type);
     int length() const;
-    void setLength( int );
+    void setLength(int);
 
 private:
     class InsertTableDialogPrivate;
-    InsertTableDialogPrivate * const d;
+    InsertTableDialogPrivate *const d;
 };
 
 }
