@@ -25,7 +25,6 @@
 #include <KLineEdit>
 
 #include <QImageReader>
-#include <QFileDialog>
 #include <QCheckBox>
 #include <QHBoxLayout>
 #include <QLabel>

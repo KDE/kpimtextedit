@@ -30,7 +30,6 @@
 #include <kmime/kmime_codecs.h>
 
 #include <QAction>
-#include <KActionCollection>
 #include <KCursor>
 #include <KLocalizedString>
 #include <KMessageBox>

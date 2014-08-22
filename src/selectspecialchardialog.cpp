@@ -20,9 +20,9 @@
 #include "selectspecialchardialog.h"
 #include <KCharSelect>
 #include <KLocalizedString>
-#include <QHBoxLayout>
 #include <QDialogButtonBox>
 #include <QPushButton>
+#include <QVBoxLayout>
 
 namespace KPIMTextEdit
 {
