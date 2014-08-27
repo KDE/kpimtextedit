@@ -18,7 +18,7 @@ include(KDEFrameworkCompilerSettings)
 
 
 set(KF5_VERSION "5.1.0")
-set(KDEPIMLIBS_VERSION "4.70.0")
+set(KDEPIMLIBS_VERSION "4.71.0")
 
 ecm_setup_version(${KDEPIMLIBS_VERSION} VARIABLE_PREFIX KPIMTEXTEDIT
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h"
