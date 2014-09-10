@@ -25,7 +25,6 @@
 #include "kpimtextedit_export.h"
 
 #include <KRichTextWidget>
-#include <KActionCollection>
 
 #include <QtCore/QSharedPointer>
 
@@ -33,7 +32,6 @@
 
 class QUrl;
 class QFileInfo;
-class KActionCollection;
 
 namespace KPIMTextEdit
 {

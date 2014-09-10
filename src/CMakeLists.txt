@@ -32,7 +32,6 @@ PRIVATE
   KF5::Mime
   KF5::SonnetUi
   KF5::TextWidgets
-  KF5::XmlGui
   KF5::WidgetsAddons
   KF5::KIOWidgets
 )
