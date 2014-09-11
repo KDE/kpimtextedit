@@ -27,11 +27,12 @@ target_include_directories(KF5PimTextEdit PUBLIC "$<BUILD_INTERFACE:${KPimTextEd
 
 
 target_link_libraries(KF5PimTextEdit
+PUBLIC
+  KF5::TextWidgets
 PRIVATE
   KF5::Emoticons
   KF5::Mime
   KF5::SonnetUi
-  KF5::TextWidgets
   KF5::WidgetsAddons
   KF5::KIOWidgets
 )
