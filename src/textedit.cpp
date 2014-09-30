@@ -215,8 +215,7 @@ bool TextEdit::eventFilter(QObject *o, QEvent *e)
 
 void TextEditPrivate::init()
 {
-    q->connect(q, SIGNAL(textModeChanged(KRichTextEdit::Mode)),
-               q, SLOT(_k_slotTextModeChanged(KRichTextEdit::Mode)));
+    q->connect(q, SIGNAL(textModeChanged(KRichTextEdit::Mode)), q, SLOT(_k_slotTextModeChanged(KRichTextEdit::Mode)));
 
     // We tell the KRichTextWidget to enable spell checking, because only then it will
     // call createHighlighter() which will create our own highlighter which also
