@@ -67,8 +67,7 @@ public:
         sep = new KSeparator;
         mainLayout->addWidget(sep);
         backgroundColor->setEnabled(false);
-        q->connect(useBackgroundColor, SIGNAL(toggled(bool)),
-                   backgroundColor, SLOT(setEnabled(bool)));
+        q->connect(useBackgroundColor, &QCheckBox::toggled, backgroundColor, &KColorButton::setEnabled);
 
         QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
         buttonBox->button(QDialogButtonBox::Ok)->setShortcut(Qt::CTRL | Qt::Key_Return);

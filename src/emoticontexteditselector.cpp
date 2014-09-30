@@ -82,10 +82,8 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     d->listEmoticon->setSelectionMode(QAbstractItemView::SingleSelection);
     d->listEmoticon->setMouseTracking(true);
     d->listEmoticon->setDragEnabled(false);
-    connect(d->listEmoticon, SIGNAL(itemEntered(QListWidgetItem*)),
-            this, SLOT(slotMouseOverItem(QListWidgetItem*)));
-    connect(d->listEmoticon, SIGNAL(itemClicked(QListWidgetItem*)),
-            this, SLOT(slotEmoticonClicked(QListWidgetItem*)));
+    connect(d->listEmoticon, &QListWidget::itemEntered, this, &EmoticonTextEditSelector::slotMouseOverItem);
+    connect(d->listEmoticon, &QListWidget::itemClicked, this, &EmoticonTextEditSelector::slotEmoticonClicked);
 }
 
 EmoticonTextEditSelector::~EmoticonTextEditSelector()
