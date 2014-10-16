@@ -31,7 +31,7 @@ class SelectSpecialCharPrivate
       : q( qq )
     {
       q->setCaption( i18n( "Select Special Characters" ) );
-      q->setButtons( KDialog::Ok|KDialog::Cancel|KDialog::User1 );
+      q->setButtons( KDialog::Close|KDialog::User1 );
       q->setButtonText( KDialog::User1, i18n( "Select" ) );
       QWidget *page = new QWidget( q );
       q->setMainWidget( page );
@@ -70,7 +70,7 @@ SelectSpecialChar::~SelectSpecialChar()
 void SelectSpecialChar::showSelectButton( bool show )
 {
   if ( show ) {
-    setButtons( Ok|Cancel|User1 );
+    setButtons( Close|User1 );
   } else {
     setButtons( Ok|Cancel );
   }
