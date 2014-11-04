@@ -139,7 +139,7 @@ public:
      *
      * The add_image actions is only added if enableImageActions() is called before.
      */
-    virtual QList<QAction *> createActions();
+    QList<QAction *> createActions() Q_DECL_OVERRIDE;
 
     /**
      * Adds an image. The image is loaded from file and then pasted to the current
@@ -318,19 +318,19 @@ protected:
     /**
      * Reimplemented for inline image support
      */
-    virtual void insertFromMimeData(const QMimeData *source);
+    void insertFromMimeData(const QMimeData *source) Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented from KRichTextWidget to hide the mouse cursor when there
      * was no mouse movement for some time, using KCursor
      */
-    virtual bool eventFilter(QObject *o, QEvent *e);
+    bool eventFilter(QObject *o, QEvent *e) Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented to add qoute signs when the user presses enter
      * on a quoted line.
      */
-    virtual void keyPressEvent(QKeyEvent *e);
+    void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
 
     // For the explaination for these four methods, see the comment at the
     // spellCheckingEnabled variable of the private class.
@@ -338,28 +338,28 @@ protected:
     /**
      * Reimplemented from KTextEdit
      */
-    virtual bool checkSpellingEnabled() const;
+    bool checkSpellingEnabled() const Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented from KTextEdit
      */
-    virtual void setCheckSpellingEnabled(bool check);
+    void setCheckSpellingEnabled(bool check) Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented from KTextEdit, to avoid spellchecking
      * quoted text.
      */
-    virtual bool shouldBlockBeSpellChecked(const QString &block) const;
+    bool shouldBlockBeSpellChecked(const QString &block) const Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented to create our own highlighter which does quote and
      * spellcheck highlighting
      */
-    virtual void createHighlighter();
+    void createHighlighter() Q_DECL_OVERRIDE;
 
 private:
     void addImageHelper(const QUrl &url, int width = -1, int height = -1);
-    std::auto_ptr<TextEditPrivate> const d;
+    std::unique_ptr<TextEditPrivate> const d;
     friend class TextEditPrivate;
     Q_PRIVATE_SLOT(d, void _k_slotAddImage())
     Q_PRIVATE_SLOT(d, void _k_slotDeleteLine())

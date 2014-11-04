@@ -85,7 +85,7 @@ public:
     /**
      * Reimplemented to highlight quote blocks.
      */
-    virtual void highlightBlock(const QString &text);
+    void highlightBlock(const QString &text) Q_DECL_OVERRIDE;
 
     /**
      * Use this static method to get a text consisting of multiple lines
@@ -115,17 +115,17 @@ protected:
      * @param start the beginning of text
      * @param count the amount of characters to set
      */
-    virtual void unsetMisspelled(int start, int count);
+    void unsetMisspelled(int start, int count) Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented to set the color of the misspelled word to a color
      * defined by setQuoteColor().
      */
-    virtual void setMisspelled(int start, int count);
+    void setMisspelled(int start, int count) Q_DECL_OVERRIDE;
 
 private:
     class EMailQuoteHighlighterPrivate;
-    std::auto_ptr<EMailQuoteHighlighterPrivate> d;
+    std::unique_ptr<EMailQuoteHighlighterPrivate> d;
 };
 
 }
