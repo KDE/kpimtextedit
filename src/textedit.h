@@ -307,6 +307,18 @@ public:
      * @since 4.10
      */
     bool isEnableInsertTableActions() const;
+    // For the explaination for these four methods, see the comment at the
+    // spellCheckingEnabled variable of the private class.
+
+    /**
+     * Reimplemented from KTextEdit
+     */
+    bool checkSpellingEnabled() const Q_DECL_OVERRIDE;
+
+    /**
+     * Reimplemented from KTextEdit
+     */
+    void setCheckSpellingEnabled(bool check) Q_DECL_OVERRIDE;
 
 protected:
 
@@ -332,18 +344,6 @@ protected:
      */
     void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
 
-    // For the explaination for these four methods, see the comment at the
-    // spellCheckingEnabled variable of the private class.
-
-    /**
-     * Reimplemented from KTextEdit
-     */
-    bool checkSpellingEnabled() const Q_DECL_OVERRIDE;
-
-    /**
-     * Reimplemented from KTextEdit
-     */
-    void setCheckSpellingEnabled(bool check) Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented from KTextEdit, to avoid spellchecking
