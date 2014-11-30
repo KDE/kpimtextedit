@@ -1,2 +1,2 @@
 #! /bin/sh
-$XGETTEXT `find . src -name "*.cpp" -o -name "*.h"` -o $podir/libkpimtextedit.pot
+$XGETTEXT `find . -name "*.cpp" -o -name "*.h"` -o $podir/libkpimtextedit.pot
