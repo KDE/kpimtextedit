@@ -86,13 +86,13 @@ public:
      * @param text the initial plain text of the text edit, interpreted as HTML
      * @param parent the parent widget
      */
-    explicit TextEdit(const QString &text, QWidget *parent = 0);
+    explicit TextEdit(const QString &text, QWidget *parent = Q_NULLPTR);
 
     /**
      * Constructs a TextEdit object.
      * @param parent the parent widget
      */
-    explicit TextEdit(QWidget *parent = 0);
+    explicit TextEdit(QWidget *parent = Q_NULLPTR);
 
     /**
      * Constructs a TextEdit object

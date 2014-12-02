@@ -35,7 +35,7 @@ class KPIMTEXTEDIT_EXPORT InsertImageDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit InsertImageDialog(QWidget *parent = 0);
+    explicit InsertImageDialog(QWidget *parent = Q_NULLPTR);
     ~InsertImageDialog();
 
     int imageWidth() const;
