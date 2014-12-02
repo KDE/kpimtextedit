@@ -21,7 +21,7 @@
 
 #include "textedit.h"
 
-#include <kmime/kmime_codecs.h>
+#include <KCodecs/KCodecs>
 
 #include <KIconLoader>
 
@@ -291,7 +291,7 @@ void TextEditTester::testImages()
     QBuffer imageWithNameBuffer;
     imageWithNameBuffer.open(QIODevice::WriteOnly);
     imageWithName->image.save(&imageWithNameBuffer, "PNG");
-    QByteArray encodedImage = KMime::Codec::codecForName("base64")->encode(buffer.buffer());
+    QByteArray encodedImage = KCodecs::Codec::codecForName("base64")->encode(buffer.buffer());
     QCOMPARE(image->image, encodedImage);
     QCOMPARE(buffer.buffer(), imageWithNameBuffer.buffer());
 

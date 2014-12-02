@@ -31,7 +31,7 @@ PUBLIC
   KF5::TextWidgets
 PRIVATE
   KF5::Emoticons
-  KF5::Mime
+  KF5::Codecs
   KF5::SonnetUi
   KF5::WidgetsAddons
   KF5::KIOWidgets

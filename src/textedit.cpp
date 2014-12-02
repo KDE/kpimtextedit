@@ -27,7 +27,7 @@
 #include "tableactionmenu.h"
 #include "insertimagedialog.h"
 
-#include <kmime/kmime_codecs.h>
+#include <KCodecs/KCodecs>
 
 #include <QAction>
 #include <KCursor>
@@ -606,7 +606,7 @@ QList< QSharedPointer<EmbeddedImage> > TextEdit::embeddedImages() const
         qsrand(QDateTime::currentDateTime().toTime_t() + qHash(normalImage->name));
         QSharedPointer<EmbeddedImage> embeddedImage(new EmbeddedImage());
         retImages.append(embeddedImage);
-        embeddedImage->image = KMime::Codec::codecForName("base64")->encode(buffer.buffer());
+        embeddedImage->image = KCodecs::Codec::codecForName("base64")->encode(buffer.buffer());
         embeddedImage->imageName = normalImage->name;
         embeddedImage->contentID = QString(QLatin1String("%1@KDE")).arg(qrand());
     }

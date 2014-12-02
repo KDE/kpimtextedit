@@ -17,7 +17,7 @@ include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings)
 
 
-set(KF5_VERSION "5.4.0")
+set(KF5_VERSION "5.5.0")
 set(KDEPIMLIBS_VERSION "4.76.0")
 
 ecm_setup_version(${KDEPIMLIBS_VERSION} VARIABLE_PREFIX KPIMTEXTEDIT
@@ -33,13 +33,9 @@ find_package(KF5Sonnet ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5TextWidgets ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5WidgetsAddons ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5KIO ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5Codecs ${KF5_VERSION} CONFIG REQUIRED)
 #REMOVE IT WHEN all kdelib4support removed
 find_package(KF5KDELibs4Support ${KF5_VERSION} CONFIG REQUIRED)
-
-# FIXME: Remove when kdepimlibs is split
-if(${CMAKE_SOURCE_DIR} STREQUAL ${KPimTextEdit_SOURCE_DIR})
-  find_package(KF5Mime ${KDEPIMLIBS_VERSION} CONFIG REQUIRED)
-endif()
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
 add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
