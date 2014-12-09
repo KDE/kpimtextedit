@@ -344,7 +344,6 @@ protected:
      */
     void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
 
-
     /**
      * Reimplemented from KTextEdit, to avoid spellchecking
      * quoted text.

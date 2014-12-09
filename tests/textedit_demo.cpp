@@ -24,7 +24,7 @@
 #include <QApplication>
 #include <QToolBar>
 
-int main(int argv, char** argc)
+int main(int argv, char **argc)
 {
     QApplication app(argv, argc);
     KPIMTextEdit::TextEdit textEdit;
@@ -35,8 +35,9 @@ int main(int argv, char** argc)
     textEdit.show();
 
     QToolBar bar;
-    foreach (QAction *action, textEdit.createActions())
-    bar.addAction(action);
+    foreach (QAction *action, textEdit.createActions()) {
+        bar.addAction(action);
+    }
     bar.show();
 
     return app.exec();
