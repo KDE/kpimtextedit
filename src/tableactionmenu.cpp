@@ -421,8 +421,8 @@ TableActionMenu::TableActionMenu(TextEdit *textEdit)
     KActionMenu *insertMenu = new KActionMenu(i18n("Insert"), this);
     addAction(insertMenu);
 
-    d->actionInsertTable = new QAction(QIcon::fromTheme(QLatin1String("insert-table")), i18n("Table..."), this);
-    d->actionInsertTable->setObjectName(QLatin1String("insert_new_table"));
+    d->actionInsertTable = new QAction(QIcon::fromTheme(QStringLiteral("insert-table")), i18n("Table..."), this);
+    d->actionInsertTable->setObjectName(QStringLiteral("insert_new_table"));
     d->listAction << d->actionInsertTable;
     insertMenu->addAction(d->actionInsertTable);
     connect(d->actionInsertTable, SIGNAL(triggered(bool)),
@@ -430,39 +430,39 @@ TableActionMenu::TableActionMenu(TextEdit *textEdit)
 
     insertMenu->addSeparator();
     d->actionInsertRowBelow =
-        new QAction(QIcon::fromTheme(QLatin1String("edit-table-insert-row-below")),
+        new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-row-below")),
                     i18n("Row Below"), this);
     insertMenu->addAction(d->actionInsertRowBelow);
-    d->actionInsertRowBelow->setObjectName(QLatin1String("insert_row_below"));
+    d->actionInsertRowBelow->setObjectName(QStringLiteral("insert_row_below"));
     d->listAction << d->actionInsertRowBelow;
     connect(d->actionInsertRowBelow, SIGNAL(triggered(bool)),
             SLOT(_k_slotInsertRowBelow()));
 
     d->actionInsertRowAbove =
-        new QAction(QIcon::fromTheme(QLatin1String("edit-table-insert-row-above")),
+        new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-row-above")),
                     i18n("Row Above"), this);
     insertMenu->addAction(d->actionInsertRowAbove);
-    d->actionInsertRowAbove->setObjectName(QLatin1String("insert_row_above"));
+    d->actionInsertRowAbove->setObjectName(QStringLiteral("insert_row_above"));
     d->listAction << d->actionInsertRowAbove;
     connect(d->actionInsertRowAbove, SIGNAL(triggered(bool)),
             SLOT(_k_slotInsertRowAbove()));
 
     insertMenu->addSeparator();
     d->actionInsertColumnBefore =
-        new QAction(QIcon::fromTheme(QLatin1String("edit-table-insert-column-left")),
+        new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-column-left")),
                     i18n("Column Before"), this);
     insertMenu->addAction(d->actionInsertColumnBefore);
     d->listAction << d->actionInsertColumnBefore;
-    d->actionInsertColumnBefore->setObjectName(QLatin1String("insert_column_before"));
+    d->actionInsertColumnBefore->setObjectName(QStringLiteral("insert_column_before"));
 
     connect(d->actionInsertColumnBefore, SIGNAL(triggered(bool)),
             SLOT(_k_slotInsertColumnBefore()));
 
     d->actionInsertColumnAfter =
-        new QAction(QIcon::fromTheme(QLatin1String("edit-table-insert-column-right")),
+        new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-column-right")),
                     i18n("Column After"), this);
     insertMenu->addAction(d->actionInsertColumnAfter);
-    d->actionInsertColumnAfter->setObjectName(QLatin1String("insert_column_after"));
+    d->actionInsertColumnAfter->setObjectName(QStringLiteral("insert_column_after"));
     d->listAction << d->actionInsertColumnAfter;
     connect(d->actionInsertColumnAfter, SIGNAL(triggered(bool)),
             SLOT(_k_slotInsertColumnAfter()));
@@ -472,7 +472,7 @@ TableActionMenu::TableActionMenu(TextEdit *textEdit)
 
     d->actionRemoveRowBelow = new QAction(i18n("Row Below"), this);
     removeMenu->addAction(d->actionRemoveRowBelow);
-    d->actionRemoveRowBelow->setObjectName(QLatin1String("remove_row_below"));
+    d->actionRemoveRowBelow->setObjectName(QStringLiteral("remove_row_below"));
     d->listAction << d->actionRemoveRowBelow;
     connect(d->actionRemoveRowBelow, SIGNAL(triggered(bool)),
             SLOT(_k_slotRemoveRowBelow()));
@@ -480,7 +480,7 @@ TableActionMenu::TableActionMenu(TextEdit *textEdit)
     d->actionRemoveRowAbove = new QAction(i18n("Row Above"), this);
     removeMenu->addAction(d->actionRemoveRowAbove);
     d->listAction << d->actionRemoveRowAbove;
-    d->actionRemoveRowAbove->setObjectName(QLatin1String("remove_row_above"));
+    d->actionRemoveRowAbove->setObjectName(QStringLiteral("remove_row_above"));
     connect(d->actionRemoveRowAbove, SIGNAL(triggered(bool)),
             SLOT(_k_slotRemoveRowAbove()));
 
@@ -488,7 +488,7 @@ TableActionMenu::TableActionMenu(TextEdit *textEdit)
     d->actionRemoveColumnBefore = new QAction(i18n("Column Before"), this);
     d->listAction << d->actionRemoveColumnBefore;
     removeMenu->addAction(d->actionRemoveColumnBefore);
-    d->actionRemoveColumnBefore->setObjectName(QLatin1String("remove_column_before"));
+    d->actionRemoveColumnBefore->setObjectName(QStringLiteral("remove_column_before"));
 
     connect(d->actionRemoveColumnBefore, SIGNAL(triggered(bool)),
             SLOT(_k_slotRemoveColumnBefore()));
@@ -496,7 +496,7 @@ TableActionMenu::TableActionMenu(TextEdit *textEdit)
     d->actionRemoveColumnAfter = new QAction(i18n("Column After"), this);
     d->listAction << d->actionRemoveColumnAfter;
     removeMenu->addAction(d->actionRemoveColumnAfter);
-    d->actionRemoveColumnAfter->setObjectName(QLatin1String("remove_column_after"));
+    d->actionRemoveColumnAfter->setObjectName(QStringLiteral("remove_column_after"));
     connect(d->actionRemoveColumnAfter, SIGNAL(triggered(bool)),
             SLOT(_k_slotRemoveColumnAfter()));
 
@@ -504,32 +504,32 @@ TableActionMenu::TableActionMenu(TextEdit *textEdit)
     d->actionRemoveCellContents = new QAction(i18n("Cell Contents"), this);
     removeMenu->addAction(d->actionRemoveCellContents);
     d->listAction << d->actionRemoveCellContents;
-    d->actionRemoveCellContents->setObjectName(QLatin1String("remove_cell_contents"));
+    d->actionRemoveCellContents->setObjectName(QStringLiteral("remove_cell_contents"));
     connect(d->actionRemoveCellContents, SIGNAL(triggered(bool)),
             SLOT(_k_slotRemoveCellContents()));
 
     addSeparator();
 
     d->actionMergeCell =
-        new QAction(QIcon::fromTheme(QLatin1String("edit-table-cell-merge")),
+        new QAction(QIcon::fromTheme(QStringLiteral("edit-table-cell-merge")),
                     i18n("Join With Cell to the Right"), this);
-    d->actionMergeCell->setObjectName(QLatin1String("join_cell_to_the_right"));
+    d->actionMergeCell->setObjectName(QStringLiteral("join_cell_to_the_right"));
     d->listAction << d->actionMergeCell;
     connect(d->actionMergeCell, SIGNAL(triggered(bool)),
             SLOT(_k_slotMergeCell()));
     addAction(d->actionMergeCell);
 
     d->actionMergeSelectedCells = new QAction(i18n("Join Selected Cells"), this);
-    d->actionMergeSelectedCells->setObjectName(QLatin1String("join_cell_selected_cells"));
+    d->actionMergeSelectedCells->setObjectName(QStringLiteral("join_cell_selected_cells"));
     d->listAction << d->actionMergeSelectedCells;
     connect(d->actionMergeSelectedCells, SIGNAL(triggered(bool)),
             SLOT(_k_slotMergeSelectedCells()));
     addAction(d->actionMergeSelectedCells);
 
     d->actionSplitCell =
-        new QAction(QIcon::fromTheme(QLatin1String("edit-table-cell-split")),
+        new QAction(QIcon::fromTheme(QStringLiteral("edit-table-cell-split")),
                     i18n("Split cells"), this);
-    d->actionSplitCell->setObjectName(QLatin1String("split_cells"));
+    d->actionSplitCell->setObjectName(QStringLiteral("split_cells"));
     d->listAction << d->actionSplitCell;
     connect(d->actionSplitCell, SIGNAL(triggered(bool)),
             SLOT(_k_slotSplitCell()));
@@ -538,14 +538,14 @@ TableActionMenu::TableActionMenu(TextEdit *textEdit)
     addSeparator();
 
     d->actionTableFormat = new QAction(i18n("Table Format..."), this);
-    d->actionTableFormat->setObjectName(QLatin1String("table_format"));
+    d->actionTableFormat->setObjectName(QStringLiteral("table_format"));
     d->listAction << d->actionTableFormat;
     connect(d->actionTableFormat, SIGNAL(triggered(bool)),
             SLOT(_k_slotTableFormat()));
     addAction(d->actionTableFormat);
 
     d->actionTableCellFormat = new QAction(i18n("Table Cell Format..."), this);
-    d->actionTableCellFormat->setObjectName(QLatin1String("table_cell_format"));
+    d->actionTableCellFormat->setObjectName(QStringLiteral("table_cell_format"));
     d->listAction << d->actionTableCellFormat;
     connect(d->actionTableCellFormat, SIGNAL(triggered(bool)),
             SLOT(_k_slotTableCellFormat()));
