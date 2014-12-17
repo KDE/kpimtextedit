@@ -43,7 +43,7 @@ public:
     ~HtmlHighlighter();
 
 protected:
-    void highlightBlock(const QString &text);
+    void highlightBlock(const QString &text) Q_DECL_OVERRIDE;
 
 private:
     friend class HtmlHighlighterPrivate;
