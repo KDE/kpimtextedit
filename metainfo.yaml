@@ -1,0 +1,14 @@
+maintainer: mlaurent
+description: Advanced text editor which provide advanced html feature.
+tier: 3
+type: functional
+platforms:
+    - name: All
+portingAid: false
+deprecated: false
+release: false
+libraries:
+ - qmake: KPIMTextEdit
+   cmake: "KF5::PIMTextEdit"
+cmakename: KPIMTextEdit 
+
