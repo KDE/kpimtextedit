@@ -46,7 +46,7 @@ add_subdirectory(autotests)
 add_subdirectory(tests)
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/KF5PimTextEdit")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5PimTextEdit")
 
 ecm_configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/KF5PimTextEditConfig.cmake.in"
@@ -69,7 +69,7 @@ install(EXPORT KF5PimTextEditTargets
 
 install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h
-   DESTINATION ${KF5_INCLUDE_INSTALL_DIR}
+   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}
    COMPONENT Devel
 )
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
