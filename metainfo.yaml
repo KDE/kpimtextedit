@@ -10,5 +10,5 @@ release: false
 libraries:
  - qmake: KPIMTextEdit
    cmake: "KF5::PIMTextEdit"
-cmakename: KPIMTextEdit 
+cmakename: KF5PIMTextEdit 
 
