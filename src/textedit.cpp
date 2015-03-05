@@ -184,13 +184,6 @@ TextEdit::TextEdit(const QString &text, QWidget *parent)
     d->init();
 }
 
-TextEdit::TextEdit(QWidget *parent)
-    : KRichTextWidget(parent),
-      d(new TextEditPrivate(this))
-{
-    d->init();
-}
-
 TextEdit::TextEdit(QWidget *parent, const QString &configFile)
     : KRichTextWidget(parent),
       d(new TextEditPrivate(this))

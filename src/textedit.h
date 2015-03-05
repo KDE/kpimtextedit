@@ -89,20 +89,12 @@ public:
     explicit TextEdit(const QString &text, QWidget *parent = Q_NULLPTR);
 
     /**
-     * Constructs a TextEdit object.
-     * @param parent the parent widget
-     */
-    explicit TextEdit(QWidget *parent = Q_NULLPTR);
-
-    /**
      * Constructs a TextEdit object
      * @param parent the parent widget
      * @param configFile the config file
      * @since 4.6
-     *
-     * TODO KDE-5 merge with other constructor
      */
-    explicit TextEdit(QWidget *parent, const QString &configFile);
+    explicit TextEdit(QWidget *parent = Q_NULLPTR, const QString &configFile = QString());
 
     /**
      * Calling this allows createActions() to create the add image actions.
