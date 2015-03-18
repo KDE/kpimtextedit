@@ -54,7 +54,7 @@ EmoticonTextEditAction::EmoticonTextEditAction(QObject *parent)
     : KActionMenu(i18n("Add Smiley"), parent), d(new EmoticonTextEditActionPrivate())
 {
     setMenu(d->emoticonMenu);
-    setIcon(QIcon::fromTheme(QLatin1String("face-smile")));
+    setIcon(QIcon::fromTheme(QStringLiteral("face-smile")));
     setDelayed(false);
     connect(d->selector, &EmoticonTextEditSelector::itemSelected, this, &EmoticonTextEditAction::emoticonActivated);
 }
