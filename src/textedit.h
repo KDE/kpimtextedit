@@ -317,7 +317,7 @@ protected:
     /**
      * Reimplemented for inline image support
      */
-    virtual bool canInsertFromMimeData(const QMimeData *source) const;
+    bool canInsertFromMimeData(const QMimeData *source) const Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented for inline image support
