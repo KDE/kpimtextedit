@@ -138,7 +138,6 @@ public:
     QString configFile;
     QFont saveFont;
 
-
     /// Whether or not adding or pasting images is supported
     bool imageSupportEnabled;
 
