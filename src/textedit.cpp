@@ -299,13 +299,15 @@ bool TextEdit::checkSpellingEnabled() const
 
 void TextEdit::setCheckSpellingEnabled(bool check)
 {
+#if 0
     EMailQuoteHighlighter *hlighter = dynamic_cast<EMailQuoteHighlighter *>(highlighter());
     if (hlighter) {
         hlighter->toggleSpellHighlighting(check);
     }
 
     d->spellCheckingEnabled = check;
-    emit checkSpellingChanged(check);
+#endif
+    KTextEdit::setCheckSpellingEnabled(check);
 }
 
 bool TextEdit::shouldBlockBeSpellChecked(const QString &block) const
@@ -346,8 +348,10 @@ const QString KPIMTextEdit::TextEdit::defaultQuoteSign() const
     return QLatin1String("> ");
 }
 
+#if 0
 void TextEdit::createHighlighter()
 {
+
     EMailQuoteHighlighter *emailHighLighter = new EMailQuoteHighlighter(this);
 
     setHighlighterColors(emailHighLighter);
@@ -359,6 +363,7 @@ void TextEdit::createHighlighter()
         setSpellCheckingLanguage(spellCheckingLanguage());
     }
 }
+#endif
 
 void TextEdit::setHighlighterColors(EMailQuoteHighlighter *highlighter)
 {
