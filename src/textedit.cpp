@@ -300,14 +300,12 @@ bool TextEdit::checkSpellingEnabled() const
 
 void TextEdit::setCheckSpellingEnabled(bool check)
 {
-#if 0
     EMailQuoteHighlighter *hlighter = dynamic_cast<EMailQuoteHighlighter *>(highlighter());
     if (hlighter) {
         hlighter->toggleSpellHighlighting(check);
     }
 
     d->spellCheckingEnabled = check;
-#endif
     KTextEdit::setCheckSpellingEnabled(check);
 }
 
