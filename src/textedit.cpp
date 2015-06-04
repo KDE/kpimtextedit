@@ -21,6 +21,7 @@
 */
 #include "textedit.h"
 
+#include "emailquotedecorator.h"
 #include "emailquotehighlighter.h"
 #include "emoticontexteditaction.h"
 #include "inserthtmldialog.h"
@@ -348,22 +349,24 @@ const QString KPIMTextEdit::TextEdit::defaultQuoteSign() const
     return QLatin1String("> ");
 }
 
-#if 0
 void TextEdit::createHighlighter()
 {
-
     EMailQuoteHighlighter *emailHighLighter = new EMailQuoteHighlighter(this);
 
     setHighlighterColors(emailHighLighter);
 
-    //TODO change config
-    KRichTextWidget::setHighlighter(emailHighLighter);
+    EmailQuoteDecorator *decorator = new EmailQuoteDecorator(this);
+    decorator->setHighlighter(emailHighLighter);
+
+    //KTextEdit used to take ownership of the highlighter, Sonnet::SpellCheckDecorator does not.
+    //so we reparent the highlighter so it will be deleted when the decorator is destroyed
+    emailHighLighter->setParent(decorator);
+    addTextDecorator(decorator);
 
     if (!spellCheckingLanguage().isEmpty()) {
         setSpellCheckingLanguage(spellCheckingLanguage());
     }
 }
-#endif
 
 void TextEdit::setHighlighterColors(EMailQuoteHighlighter *highlighter)
 {

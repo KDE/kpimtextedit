@@ -346,7 +346,7 @@ protected:
      * Reimplemented to create our own highlighter which does quote and
      * spellcheck highlighting
      */
-    //void createHighlighter() Q_DECL_OVERRIDE;
+    void createHighlighter() Q_DECL_OVERRIDE;
 
 private:
     void addImageHelper(const QUrl &url, int width = -1, int height = -1);
