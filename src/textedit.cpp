@@ -304,9 +304,26 @@ void TextEdit::setCheckSpellingEnabled(bool check)
     if (hlighter) {
         hlighter->toggleSpellHighlighting(check);
     }
-
     d->spellCheckingEnabled = check;
     KTextEdit::setCheckSpellingEnabled(check);
+#if 0
+    if (d->spellCheckingEnabled == check)
+        return;
+
+    d->spellCheckingEnabled = check;
+    if (check) {
+        if (hasFocus()) {
+            createHighlighter();
+            if (!spellCheckingLanguage().isEmpty()) {
+                setSpellCheckingLanguage(spellCheckingLanguage());
+            }
+        }
+    } else {
+        clearDecorator();
+    }
+
+    emit checkSpellingChanged( check );
+#endif
 }
 
 bool TextEdit::shouldBlockBeSpellChecked(const QString &block) const

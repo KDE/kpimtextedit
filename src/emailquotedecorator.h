@@ -31,9 +31,13 @@ class KPIMTEXTEDIT_EXPORT EmailQuoteDecorator : public Sonnet::SpellCheckDecorat
 {
 public:
     explicit EmailQuoteDecorator(KTextEdit *textEdit);
+    ~EmailQuoteDecorator();
 
 protected:
     bool isSpellCheckingEnabledForBlock(const QString &blockText) const Q_DECL_OVERRIDE;
+private:
+    class EmailQuoteDecoratorPrivate;
+    EmailQuoteDecoratorPrivate *const d;
 };
 }
 #endif // EMAILQUOTEDECORATOR_H

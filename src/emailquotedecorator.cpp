@@ -23,23 +23,32 @@
 
 using namespace KPIMTextEdit;
 
+class EmailQuoteDecorator::EmailQuoteDecoratorPrivate
+{
+public:
+    EmailQuoteDecoratorPrivate(KTextEdit *edit)
+        : textEdit(edit)
+    {
+
+    }
+
+    KTextEdit *textEdit;
+};
+
 EmailQuoteDecorator::EmailQuoteDecorator(KTextEdit *textEdit)
-    : Sonnet::SpellCheckDecorator(textEdit)
+    : Sonnet::SpellCheckDecorator(textEdit),
+      d(new EmailQuoteDecoratorPrivate(textEdit))
 {
 
 }
 
+EmailQuoteDecorator::~EmailQuoteDecorator()
+{
+    delete d;
+}
+
 bool EmailQuoteDecorator::isSpellCheckingEnabledForBlock(const QString &blockText) const
 {
-    QString simplified = blockText;
-    simplified = simplified.remove(QRegExp(QLatin1String("\\s"))).
-                 replace(QLatin1Char('|'), QLatin1Char('>'));
-
-    while (simplified.startsWith(QLatin1String(">>>>"))) {
-        simplified = simplified.mid(3);
-    }
-
-    // FIXME: custom quote prefix
-    return !simplified.startsWith(QLatin1Char('>'));
+    return d->textEdit->shouldBlockBeSpellChecked(blockText);
 }
 
