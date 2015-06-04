@@ -14,6 +14,7 @@ set(kpimtextedit_SRCS
   textedit.cpp
   textutils.cpp
   inserttablewidget.cpp
+  emailquotedecorator.cpp
 )
 
 add_library(KF5PimTextEdit ${kpimtextedit_SRCS})
@@ -49,6 +50,7 @@ install(TARGETS KF5PimTextEdit EXPORT KF5PimTextEditTargets ${KF5_INSTALL_TARGET
 ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
   HEADER_NAMES
   EMailQuoteHighlighter
+  EmailQuoteDecorator
   EmoticonTextEditAction
   HtmlHighlighter
   InsertHtmlDialog
