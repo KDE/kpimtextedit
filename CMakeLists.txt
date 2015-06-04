@@ -17,7 +17,7 @@ include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings)
 
 
-set(KF5_VERSION "5.10.0")
+set(KF5_VERSION "5.11.0")
 set(KPIMTEXTEDIT_LIB_VERSION "4.80.0")
 
 ecm_setup_version(${KPIMTEXTEDIT_LIB_VERSION} VARIABLE_PREFIX KPIMTEXTEDIT
