@@ -695,8 +695,12 @@ void TextEditPrivate::_k_slotAddImage()
 
 void TextEditPrivate::_k_slotTextModeChanged(KRichTextEdit::Mode mode)
 {
-    if (mode == KRichTextEdit::Rich) {
+    const bool richTextMode = (mode == KRichTextEdit::Rich);
+    if (richTextMode) {
         saveFont = q->currentFont();
+    }
+    if (actionTable) {
+        actionTable->setRichTextMode(richTextMode);
     }
 }
 

@@ -23,20 +23,21 @@
 
 #include <KActionMenu>
 #include "kpimtextedit_export.h"
+#include <QTextEdit>
 namespace KPIMTextEdit
 {
 
-class TextEdit;
 class TableActionMenuPrivate;
 
 class KPIMTEXTEDIT_EXPORT TableActionMenu : public KActionMenu
 {
     Q_OBJECT
 public:
-    explicit TableActionMenu(TextEdit *textEdit);
+    explicit TableActionMenu(QTextEdit *textEdit);
     ~TableActionMenu();
 
     QList<QAction *> listAction() const;
+    void setRichTextMode(bool richTextMode);
 private:
     TableActionMenuPrivate *const d;
     friend class TableActionMenuPrivate;

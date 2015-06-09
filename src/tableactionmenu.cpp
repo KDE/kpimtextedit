@@ -19,7 +19,6 @@
 */
 
 #include "tableactionmenu.h"
-#include "textedit.h"
 #include "inserttabledialog.h"
 #include "tableformatdialog.h"
 #include "tablecellformatdialog.h"
@@ -30,6 +29,7 @@
 
 #include <QTextTable>
 #include <QPointer>
+#include <QTextEdit>
 
 namespace KPIMTextEdit
 {
@@ -37,8 +37,8 @@ namespace KPIMTextEdit
 class TableActionMenuPrivate
 {
 public:
-    TableActionMenuPrivate(TextEdit *edit, TableActionMenu *qq)
-        : textEdit(edit), q(qq)
+    TableActionMenuPrivate(QTextEdit *edit, TableActionMenu *qq)
+        : textEdit(edit), q(qq), richTextMode(false)
     {
     }
 
@@ -86,13 +86,14 @@ public:
     QAction *actionRemoveCellContents;
 
     QList<QAction *> listAction;
-    TextEdit *textEdit;
+    QTextEdit *textEdit;
     TableActionMenu *q;
+    bool richTextMode;
 };
 
 void TableActionMenuPrivate::_k_slotRemoveCellContents()
 {
-    if (textEdit->textMode() == KRichTextEdit::Rich) {
+    if (richTextMode) {
         QTextTable *table = textEdit->textCursor().currentTable();
         const QTextTableCell cell = table->cellAt(textEdit->textCursor());
         if (cell.isValid()) {
@@ -111,7 +112,7 @@ void TableActionMenuPrivate::_k_slotRemoveCellContents()
 
 void TableActionMenuPrivate::_k_slotRemoveRowBelow()
 {
-    if (textEdit->textMode() == KRichTextEdit::Rich) {
+    if (richTextMode) {
         QTextTable *table = textEdit->textCursor().currentTable();
         if (table) {
             const QTextTableCell cell = table->cellAt(textEdit->textCursor());
@@ -124,7 +125,7 @@ void TableActionMenuPrivate::_k_slotRemoveRowBelow()
 
 void TableActionMenuPrivate::_k_slotRemoveRowAbove()
 {
-    if (textEdit->textMode() == KRichTextEdit::Rich) {
+    if (richTextMode) {
         QTextTable *table = textEdit->textCursor().currentTable();
         if (table) {
             const QTextTableCell cell = table->cellAt(textEdit->textCursor());
@@ -137,7 +138,7 @@ void TableActionMenuPrivate::_k_slotRemoveRowAbove()
 
 void TableActionMenuPrivate::_k_slotRemoveColumnBefore()
 {
-    if (textEdit->textMode() == KRichTextEdit::Rich) {
+    if (richTextMode) {
         QTextTable *table = textEdit->textCursor().currentTable();
         if (table) {
             const QTextTableCell cell = table->cellAt(textEdit->textCursor());
@@ -150,7 +151,7 @@ void TableActionMenuPrivate::_k_slotRemoveColumnBefore()
 
 void TableActionMenuPrivate::_k_slotRemoveColumnAfter()
 {
-    if (textEdit->textMode() == KRichTextEdit::Rich) {
+    if (richTextMode) {
         QTextTable *table = textEdit->textCursor().currentTable();
         if (table) {
             const QTextTableCell cell = table->cellAt(textEdit->textCursor());
@@ -163,7 +164,7 @@ void TableActionMenuPrivate::_k_slotRemoveColumnAfter()
 
 void TableActionMenuPrivate::_k_slotInsertRowBelow()
 {
-    if (textEdit->textMode() == KRichTextEdit::Rich) {
+    if (richTextMode) {
         QTextTable *table = textEdit->textCursor().currentTable();
         if (table) {
             const QTextTableCell cell = table->cellAt(textEdit->textCursor());
@@ -178,7 +179,7 @@ void TableActionMenuPrivate::_k_slotInsertRowBelow()
 
 void TableActionMenuPrivate::_k_slotInsertRowAbove()
 {
-    if (textEdit->textMode() == KRichTextEdit::Rich) {
+    if (richTextMode) {
         QTextTable *table = textEdit->textCursor().currentTable();
         if (table) {
             const QTextTableCell cell = table->cellAt(textEdit->textCursor());
@@ -189,7 +190,7 @@ void TableActionMenuPrivate::_k_slotInsertRowAbove()
 
 void TableActionMenuPrivate::_k_slotInsertColumnBefore()
 {
-    if (textEdit->textMode() == KRichTextEdit::Rich) {
+    if (richTextMode) {
         QTextTable *table = textEdit->textCursor().currentTable();
         if (table) {
             const QTextTableCell cell = table->cellAt(textEdit->textCursor());
@@ -200,7 +201,7 @@ void TableActionMenuPrivate::_k_slotInsertColumnBefore()
 
 void TableActionMenuPrivate::_k_slotInsertColumnAfter()
 {
-    if (textEdit->textMode() == KRichTextEdit::Rich) {
+    if (richTextMode) {
         QTextTable *table = textEdit->textCursor().currentTable();
         if (table) {
             const QTextTableCell cell = table->cellAt(textEdit->textCursor());
@@ -215,7 +216,7 @@ void TableActionMenuPrivate::_k_slotInsertColumnAfter()
 
 void TableActionMenuPrivate::_k_slotInsertTable()
 {
-    if (textEdit->textMode() == KRichTextEdit::Rich) {
+    if (richTextMode) {
         QPointer<InsertTableDialog> dialog = new InsertTableDialog(textEdit);
         if (dialog->exec()) {
             QTextCursor cursor = textEdit->textCursor();
@@ -241,7 +242,7 @@ void TableActionMenuPrivate::_k_slotInsertTable()
 
 void TableActionMenuPrivate::_k_slotMergeCell()
 {
-    if (textEdit->textMode() == KRichTextEdit::Rich) {
+    if (richTextMode) {
         QTextTable *table = textEdit->textCursor().currentTable();
         if (table) {
             const QTextTableCell cell = table->cellAt(textEdit->textCursor());
@@ -252,7 +253,7 @@ void TableActionMenuPrivate::_k_slotMergeCell()
 
 void TableActionMenuPrivate::_k_slotMergeSelectedCells()
 {
-    if (textEdit->textMode() == KRichTextEdit::Rich) {
+    if (richTextMode) {
         QTextTable *table = textEdit->textCursor().currentTable();
         if (table) {
             table->mergeCells(textEdit->textCursor());
@@ -262,7 +263,7 @@ void TableActionMenuPrivate::_k_slotMergeSelectedCells()
 
 void TableActionMenuPrivate::_k_slotTableFormat()
 {
-    if (textEdit->textMode() == KRichTextEdit::Rich) {
+    if (richTextMode) {
         QTextTable *table = textEdit->textCursor().currentTable();
         if (table) {
             QPointer<TableFormatDialog> dialog = new TableFormatDialog(textEdit);
@@ -321,7 +322,7 @@ void TableActionMenuPrivate::_k_slotTableFormat()
 
 void TableActionMenuPrivate::_k_slotTableCellFormat()
 {
-    if (textEdit->textMode() == KRichTextEdit::Rich) {
+    if (richTextMode) {
         QTextTable *table = textEdit->textCursor().currentTable();
         if (table) {
             QTextTableCell cell = table->cellAt(textEdit->textCursor());
@@ -350,7 +351,7 @@ void TableActionMenuPrivate::_k_slotTableCellFormat()
 
 void TableActionMenuPrivate::_k_slotSplitCell()
 {
-    if (textEdit->textMode() == KRichTextEdit::Rich) {
+    if (richTextMode) {
         QTextTable *table = textEdit->textCursor().currentTable();
         if (table) {
             const QTextTableCell cell = table->cellAt(textEdit->textCursor());
@@ -366,7 +367,7 @@ void TableActionMenuPrivate::_k_slotSplitCell()
 
 void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
 {
-    if ((textEdit->textMode() == KRichTextEdit::Rich) || forceUpdate) {
+    if ((richTextMode) || forceUpdate) {
         QTextTable *table = textEdit->textCursor().currentTable();
         const bool isTable = (table != 0);
         actionInsertRowBelow->setEnabled(isTable);
@@ -415,7 +416,7 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
     }
 }
 
-TableActionMenu::TableActionMenu(TextEdit *textEdit)
+TableActionMenu::TableActionMenu(QTextEdit *textEdit)
     : KActionMenu(textEdit), d(new TableActionMenuPrivate(textEdit, this))
 {
     KActionMenu *insertMenu = new KActionMenu(i18n("Insert"), this);
@@ -564,6 +565,11 @@ TableActionMenu::~TableActionMenu()
 QList<QAction *> TableActionMenu::listAction() const
 {
     return d->listAction;
+}
+
+void TableActionMenu::setRichTextMode(bool richTextMode)
+{
+    d->richTextMode = richTextMode;
 }
 
 }
