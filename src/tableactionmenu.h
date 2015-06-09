@@ -22,14 +22,14 @@
 #define KPIMTEXTEDIT_TABLEACTIONMENU_H
 
 #include <KActionMenu>
-
+#include "kpimtextedit_export.h"
 namespace KPIMTextEdit
 {
 
 class TextEdit;
 class TableActionMenuPrivate;
 
-class TableActionMenu : public KActionMenu
+class KPIMTEXTEDIT_EXPORT TableActionMenu : public KActionMenu
 {
     Q_OBJECT
 public:

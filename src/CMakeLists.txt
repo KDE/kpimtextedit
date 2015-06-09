@@ -61,6 +61,7 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
   SelectSpecialCharDialog
   TableCellFormatDialog
   TableFormatDialog
+  TableActionMenu
   TextEdit
   TextUtils
 
