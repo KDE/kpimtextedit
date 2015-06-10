@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2012 Montel Laurent <montel@kde.org>
+  Copyright (c) 2012-2015 Montel Laurent <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -22,6 +22,7 @@
 #include "inserttabledialog.h"
 #include "tableformatdialog.h"
 #include "tablecellformatdialog.h"
+#include <QDebug>
 
 #include <QAction>
 #include <QIcon>

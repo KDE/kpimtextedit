@@ -28,6 +28,7 @@
 #include <QCheckBox>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QDebug>
 #include <QSpinBox>
 #include <QVBoxLayout>
 
@@ -45,8 +46,15 @@ public:
         QLabel *lab = new QLabel(i18n("Image Location:"));
         imageUrlRequester = new KUrlRequester;
 
-        const QList<QByteArray> mimetypes = QImageReader::supportedMimeTypes();
-        //QT5 imageUrlRequester->fileDialog()->selectMimeTypeFilter( mimetypes.join( QLatin1String( " " ) ) );
+        const QList<QByteArray> mimetypes = QImageReader::supportedImageFormats();
+        QString filter;
+        Q_FOREACH(const QByteArray &ba, mimetypes) {
+            if (!filter.isEmpty()) {
+                filter += QLatin1Char('\n');
+            }
+            filter += QStringLiteral("*.%1").arg(QString::fromLatin1(ba));
+        }
+        imageUrlRequester->setFilter(filter);
         imageUrlRequester->setWindowTitle(i18n("Add Image"));
         //QT5       imageUrlRequester->fileDialog()->okButton()->setGuiItem(
         //         KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
