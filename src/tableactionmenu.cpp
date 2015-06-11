@@ -225,6 +225,7 @@ void TableActionMenuPrivate::_k_slotInsertTable()
             tableFormat.setBorder(dialog->border());
             const int numberOfColumns(dialog->columns());
             QVector<QTextLength> contrains;
+            contrains.reserve(numberOfColumns);
             const QTextLength::Type type = dialog->typeOfLength();
             const int length = dialog->length();
 
@@ -298,6 +299,7 @@ void TableActionMenuPrivate::_k_slotTableFormat()
                 tableFormat.setAlignment(dialog->alignment());
 
                 QVector<QTextLength> contrains;
+                contrains.reserve(newNumberOfColumns);
                 const QTextLength::Type type = dialog->typeOfLength();
                 const int length = dialog->length();
 

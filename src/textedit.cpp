@@ -615,6 +615,7 @@ QList< QSharedPointer<EmbeddedImage> > TextEdit::embeddedImages() const
 {
     ImageWithNameList normalImages = imagesWithName();
     QList< QSharedPointer<EmbeddedImage> > retImages;
+    retImages.reserve(normalImages.count());
     foreach (const ImageWithNamePtr &normalImage, normalImages) {
         QBuffer buffer;
         buffer.open(QIODevice::WriteOnly);
