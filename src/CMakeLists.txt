@@ -16,6 +16,7 @@ set(kpimtextedit_SRCS
   inserttablewidget.cpp
   emailquotedecorator.cpp
   syntaxhighlighterbase.cpp
+  texteditorcompleter.cpp
 )
 
 add_library(KF5PimTextEdit ${kpimtextedit_SRCS})
@@ -65,6 +66,7 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
   TableFormatDialog
   TableActionMenu
   TextEdit
+  TextEditorCompleter
   TextUtils
 
   PREFIX KPIMTextEdit
