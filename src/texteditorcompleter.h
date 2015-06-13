@@ -43,6 +43,7 @@ public:
 
     void completeText();
 
+    void setExcludeOfCharacters(const QString &excludes);
 private Q_SLOTS:
     void slotCompletion(const QString &text);
 

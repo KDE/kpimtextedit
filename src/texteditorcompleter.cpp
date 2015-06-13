@@ -50,6 +50,7 @@ public:
     QString wordUnderCursor() const;
     void createCompleter();
     void completeText();
+    QString excludeOfCharacters;
     QCompleter *completer;
     QPlainTextEdit *plainTextEdit;
     QTextEdit *textEdit;
@@ -61,13 +62,13 @@ void TextEditorCompleter::TextEditorCompleterPrivate::createCompleter()
     if (!completer) {
         completer = new QCompleter(q);
     }
-    completer->setModelSorting(QCompleter::CaseSensitivelySortedModel);
-    completer->setCaseSensitivity(Qt::CaseInsensitive);
-    completer->setCompletionMode(QCompleter::PopupCompletion);
     if (plainTextEdit)
         completer->setWidget(plainTextEdit);
     else
         completer->setWidget(textEdit);
+    completer->setModelSorting(QCompleter::CaseSensitivelySortedModel);
+    completer->setCaseSensitivity(Qt::CaseInsensitive);
+    completer->setCompletionMode(QCompleter::PopupCompletion);
     connect(completer, static_cast<void (QCompleter::*)(const QString &)>(&QCompleter::activated), q, &TextEditorCompleter::slotCompletion);
 }
 
@@ -85,11 +86,12 @@ QString TextEditorCompleter::TextEditorCompleterPrivate::wordUnderCursor() const
     }
 
     tc.anchor();
+    const QString eowStr = excludeOfCharacters.isEmpty() ? eow : excludeOfCharacters;
     while (1) {
         // vHanda: I don't understand why the cursor seems to give a pos 1 past the last char instead
         // of just the last char.
         int pos = tc.position() - 1;
-        if (pos < 0 || eow.contains(document->characterAt(pos))
+        if (pos < 0 || eowStr.contains(document->characterAt(pos))
                 || document->characterAt(pos) == QChar(QChar::LineSeparator)
                 || document->characterAt(pos) == QChar(QChar::ParagraphSeparator)) {
             break;
@@ -124,7 +126,6 @@ void TextEditorCompleter::TextEditorCompleterPrivate::completeText()
         return;
     }
     const QString text = wordUnderCursor();
-
     if (text.length() < 2) { // min 2 char for completion
         return;
     }
@@ -170,7 +171,7 @@ QCompleter *TextEditorCompleter::completer() const
 void TextEditorCompleter::setCompleterStringList(const QStringList &listWord)
 {
     d->createCompleter();
-    d->completer->setModel(new QStringListModel(listWord, d->completer));
+    d->completer->setModel(new QStringListModel(QStringList() << listWord << QLatin1String("TESTING"), d->completer));
 }
 
 void TextEditorCompleter::slotCompletion(const QString &completion)
@@ -181,4 +182,9 @@ void TextEditorCompleter::slotCompletion(const QString &completion)
 void TextEditorCompleter::completeText()
 {
     d->completeText();
+}
+
+void TextEditorCompleter::setExcludeOfCharacters(const QString &excludes)
+{
+    d->excludeOfCharacters = excludes;
 }
