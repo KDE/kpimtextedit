@@ -23,12 +23,24 @@
 
 #include "kpimtextedit_export.h"
 
+#include <KTextEdit>
 #include <QDialog>
 
 namespace KPIMTextEdit
 {
-
+class TextEditorCompleter;
 class InsertHtmlDialogPrivate;
+class InsertHtmlEditor : public KTextEdit
+{
+    Q_OBJECT
+public:
+    explicit InsertHtmlEditor(QWidget *parent = Q_NULLPTR);
+    ~InsertHtmlEditor();
+protected:
+    void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
+private:
+    KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter;
+};
 
 class KPIMTEXTEDIT_EXPORT InsertHtmlDialog : public QDialog
 {

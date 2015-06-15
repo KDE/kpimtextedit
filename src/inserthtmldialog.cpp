@@ -20,10 +20,13 @@
 
 #include "inserthtmldialog.h"
 #include "htmlhighlighter.h"
+#include "texteditorcompleter.h"
 
 #include <KLocalizedString>
 #include <KTextEdit>
 
+#include <QCompleter>
+#include <QAbstractItemView>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
@@ -43,10 +46,7 @@ public:
         q->setLayout(lay);
         QLabel *label = new QLabel(i18n("Insert HTML tags and texts:"));
         lay->addWidget(label);
-        editor = new KTextEdit;
-        new HtmlHighlighter(editor->document());
-        editor->setAcceptRichText(false);
-        editor->setFocus();
+        editor = new InsertHtmlEditor;
         lay->addWidget(editor);
         label = new QLabel(i18n("Example: <i> Hello word </i>"));
         QFont font = label->font();
@@ -71,7 +71,7 @@ public:
 
     void _k_slotTextChanged();
     QPushButton *okButton;
-    KTextEdit *editor;
+    InsertHtmlEditor *editor;
     InsertHtmlDialog *q;
 };
 
@@ -93,6 +93,46 @@ InsertHtmlDialog::~InsertHtmlDialog()
 QString InsertHtmlDialog::html() const
 {
     return d->editor->toPlainText();
+}
+
+InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
+    : KTextEdit(parent)
+{
+    new HtmlHighlighter(document());
+    setAcceptRichText(false);
+    setFocus();
+    mTextEditorCompleter = new KPIMTextEdit::TextEditorCompleter(this, this);
+    QStringList completerList;
+    completerList << QStringLiteral("<b></b>")
+                  << QStringLiteral("<i></i>")
+                  << QStringLiteral("<u></u>");
+    //Add more
+    mTextEditorCompleter->setCompleterStringList(completerList);
+    mTextEditorCompleter->setExcludeOfCharacters(QStringLiteral("~!@#$%^&*()+{}|,./;'[]\\-= "));
+}
+
+InsertHtmlEditor::~InsertHtmlEditor()
+{
+
+}
+
+void InsertHtmlEditor::keyPressEvent(QKeyEvent *e)
+{
+    if (mTextEditorCompleter->completer()->popup()->isVisible()) {
+        switch (e->key()) {
+        case Qt::Key_Enter:
+        case Qt::Key_Return:
+        case Qt::Key_Escape:
+        case Qt::Key_Tab:
+        case Qt::Key_Backtab:
+            e->ignore();
+            return; // let the completer do default behavior
+        default:
+            break;
+        }
+    }
+    KTextEdit::keyPressEvent(e);
+    mTextEditorCompleter->completeText();
 }
 
 }
