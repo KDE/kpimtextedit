@@ -62,10 +62,11 @@ void TextEditorCompleter::TextEditorCompleterPrivate::createCompleter()
     if (!completer) {
         completer = new QCompleter(q);
     }
-    if (plainTextEdit)
+    if (plainTextEdit) {
         completer->setWidget(plainTextEdit);
-    else
+    } else {
         completer->setWidget(textEdit);
+    }
     completer->setModelSorting(QCompleter::CaseSensitivelySortedModel);
     completer->setCaseSensitivity(Qt::CaseInsensitive);
     completer->setCompletionMode(QCompleter::PopupCompletion);
@@ -142,7 +143,6 @@ void TextEditorCompleter::TextEditorCompleterPrivate::completeText()
                 + completer->popup()->verticalScrollBar()->sizeHint().width());
     completer->complete(cr);
 }
-
 
 TextEditorCompleter::TextEditorCompleter(QTextEdit *editor, QObject *parent)
     : QObject(parent),

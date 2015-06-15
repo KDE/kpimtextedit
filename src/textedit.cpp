@@ -307,8 +307,9 @@ void TextEdit::setCheckSpellingEnabled(bool check)
     d->spellCheckingEnabled = check;
     KTextEdit::setCheckSpellingEnabled(check);
 #if 0
-    if (d->spellCheckingEnabled == check)
+    if (d->spellCheckingEnabled == check) {
         return;
+    }
 
     d->spellCheckingEnabled = check;
     if (check) {
@@ -322,7 +323,7 @@ void TextEdit::setCheckSpellingEnabled(bool check)
         clearDecorator();
     }
 
-    emit checkSpellingChanged( check );
+    emit checkSpellingChanged(check);
 #endif
 }
 
