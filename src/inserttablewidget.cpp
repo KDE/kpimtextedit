@@ -24,7 +24,8 @@
 #include <QDebug>
 
 #include <QSpinBox>
-#include <QFormLayout>
+#include <QLabel>
+#include <QGridLayout>
 
 using namespace KPIMTextEdit;
 
@@ -47,12 +48,17 @@ public:
         mBorder->setValue(1);
         mBorder->setSuffix(i18n(" px"));
 
-        QFormLayout *formLayout = new QFormLayout;
-        formLayout->addRow(i18n("Rows:"), mRows);
-        formLayout->addRow(i18n("Columns:"), mColumns);
-        formLayout->addRow(i18n("Border:"), mBorder);
+        QGridLayout *gridLayout = new QGridLayout;
+        gridLayout->addWidget(new QLabel(i18n("Rows:")), 0, 0);
+        gridLayout->addWidget(mRows, 0, 1);
 
-        QHBoxLayout *lay = new QHBoxLayout;
+        gridLayout->addWidget(new QLabel(i18n("Columns:")), 1, 0);
+        gridLayout->addWidget(mColumns, 1, 1);
+
+        gridLayout->addWidget(new QLabel(i18n("Border:")), 2, 0);
+        gridLayout->addWidget(mBorder, 2, 1);
+
+
         mTypeOfLength = new KComboBox;
         q->connect(mTypeOfLength, SIGNAL(activated(int)), q, SLOT(slotTypeOfLengthChanged(int)));
         // xgettext: no-c-format
@@ -62,11 +68,11 @@ public:
         mLength->setMinimum(1);
         mLength->setMaximum(100);
         mLength->setValue(100);
-        lay->addWidget(mLength);
-        lay->addWidget(mTypeOfLength);
 
-        formLayout->addRow(i18n("Width:"), lay);
-        q->setLayout(formLayout);
+        gridLayout->addWidget(new QLabel(i18n("Width:")), 3, 0);
+        gridLayout->addWidget(mLength, 3, 1);
+        gridLayout->addWidget(mTypeOfLength, 3, 2);
+        q->setLayout(gridLayout);
     }
 
     QSpinBox *mColumns;
