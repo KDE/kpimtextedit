@@ -34,8 +34,7 @@ find_package(KF5TextWidgets ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5WidgetsAddons ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5KIO ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5Codecs ${KF5_VERSION} CONFIG REQUIRED)
-#REMOVE IT WHEN all kdelib4support removed
-find_package(KF5KDELibs4Support ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5IconThemes ${KF5_VERSION} CONFIG REQUIRED)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
 add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
