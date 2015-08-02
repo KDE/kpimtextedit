@@ -362,7 +362,7 @@ int KPIMTextEdit::TextEdit::quoteLength(const QString &line) const
 
 const QString KPIMTextEdit::TextEdit::defaultQuoteSign() const
 {
-    return QLatin1String("> ");
+    return QStringLiteral("> ");
 }
 
 void TextEdit::createHighlighter()
@@ -398,7 +398,7 @@ QString TextEdit::toWrappedPlainText() const
 QString TextEdit::toWrappedPlainText(QTextDocument *doc) const
 {
     QString temp;
-    QRegExp rx(QLatin1String("(http|ftp|ldap)s?\\S+-$"));
+    QRegExp rx(QStringLiteral("(http|ftp|ldap)s?\\S+-$"));
     QTextBlock block = doc->begin();
     while (block.isValid()) {
         QTextLayout *layout = block.layout();
@@ -444,13 +444,13 @@ QList<QAction *> TextEdit::createActions()
     if (d->imageSupportEnabled) {
         d->actionAddImage = new QAction(QIcon::fromTheme(QStringLiteral("insert-image")),
                                         i18n("Add Image"), this);
-        d->actionAddImage->setObjectName(QLatin1String("add_image"));
+        d->actionAddImage->setObjectName(QStringLiteral("add_image"));
         connect(d->actionAddImage, SIGNAL(triggered(bool)), SLOT(_k_slotAddImage()));
         listAction << d->actionAddImage;
     }
     if (d->emoticonSupportEnabled) {
         d->actionAddEmoticon = new EmoticonTextEditAction(this);
-        d->actionAddEmoticon->setObjectName(QLatin1String("add_emoticon"));
+        d->actionAddEmoticon->setObjectName(QStringLiteral("add_emoticon"));
         connect(d->actionAddEmoticon, SIGNAL(emoticonActivated(QString)),
                 SLOT(_k_slotAddEmoticon(QString)));
         listAction << d->actionAddEmoticon;
@@ -458,7 +458,7 @@ QList<QAction *> TextEdit::createActions()
 
     if (d->insertHtmlSupportEnabled) {
         d->actionInsertHtml = new QAction(i18n("Insert HTML"), this);
-        d->actionInsertHtml->setObjectName(QLatin1String("insert_html"));
+        d->actionInsertHtml->setObjectName(QStringLiteral("insert_html"));
         connect(d->actionInsertHtml, SIGNAL(triggered(bool)), SLOT(_k_slotInsertHtml()));
         listAction << d->actionInsertHtml;
     }
@@ -468,20 +468,20 @@ QList<QAction *> TextEdit::createActions()
         d->actionTable->setIcon(QIcon::fromTheme(QStringLiteral("insert-table")));
         d->actionTable->setText(i18n("Table"));
         d->actionTable->setDelayed(false);
-        d->actionTable->setObjectName(QLatin1String("insert_table"));
+        d->actionTable->setObjectName(QStringLiteral("insert_table"));
         listAction << d->actionTable->listAction();
         listAction << d->actionTable;
     }
     d->actionDeleteLine = new QAction(i18n("Delete Line"), this);
     d->actionDeleteLine->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_K));
-    d->actionDeleteLine->setObjectName(QLatin1String("delete_line"));
+    d->actionDeleteLine->setObjectName(QStringLiteral("delete_line"));
     connect(d->actionDeleteLine, SIGNAL(triggered(bool)), SLOT(_k_slotDeleteLine()));
     listAction << d->actionDeleteLine;
 
     d->actionFormatReset =
         new QAction(QIcon::fromTheme(QStringLiteral("draw-eraser")), i18n("Reset Font Settings"), this);
     d->actionFormatReset->setIconText(i18n("Reset Font"));
-    d->actionFormatReset->setObjectName(QLatin1String("format_reset"));
+    d->actionFormatReset->setObjectName(QStringLiteral("format_reset"));
     connect(d->actionFormatReset, SIGNAL(triggered(bool)), SLOT(_k_slotFormatReset()));
     listAction << d->actionFormatReset;
     return listAction;
@@ -506,7 +506,7 @@ void TextEdit::addImageHelper(const QUrl &url, int width, int height)
     QFileInfo fi(url.path());
     QString imageName =
         fi.baseName().isEmpty() ?
-        QLatin1String("image.png") :
+        QStringLiteral("image.png") :
         QString(fi.baseName() + QLatin1String(".png"));
     d->addImageHelper(imageName, image, width, height);
 }

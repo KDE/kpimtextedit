@@ -45,7 +45,7 @@ void TextEditTester::testFormattingUsed()
 
     // Insert some text.
     QTextCursor cursor(textEdit.document());
-    cursor.insertText(QLatin1String("Hello World!!"));
+    cursor.insertText(QStringLiteral("Hello World!!"));
     QVERIFY(!textEdit.isFormattingUsed());
     cursor.setPosition(1);
     textEdit.setTextCursor(cursor);
@@ -53,8 +53,8 @@ void TextEditTester::testFormattingUsed()
     //
     // Test link
     //
-    QString someUrl = QLatin1String("www.test.de");
-    QString altText = QLatin1String("Hello");
+    QString someUrl = QStringLiteral("www.test.de");
+    QString altText = QStringLiteral("Hello");
     textEdit.updateLink(someUrl, altText);
     QVERIFY(textEdit.isFormattingUsed());
     QCOMPARE(textEdit.currentLinkUrl(), someUrl);
@@ -62,7 +62,7 @@ void TextEditTester::testFormattingUsed()
 
     cursor.setPosition(1);
     textEdit.setTextCursor(cursor);
-    textEdit.updateLink(QString(), QLatin1String("Hello"));
+    textEdit.updateLink(QString(), QStringLiteral("Hello"));
     QVERIFY(textEdit.currentLinkUrl().isEmpty());
     QVERIFY(!textEdit.currentLinkText().isEmpty());
     QVERIFY(!textEdit.isFormattingUsed());
@@ -110,7 +110,7 @@ void TextEditTester::testFormattingUsed()
     //
     // Test font attributes
     //
-    textEdit.setFontFamily(QLatin1String("Times"));
+    textEdit.setFontFamily(QStringLiteral("Times"));
     QVERIFY(textEdit.isFormattingUsed());
     textEdit.setFontFamily(textEdit.document()->defaultFont().family());
     QVERIFY(textEdit.isFormattingUsed());
@@ -166,7 +166,7 @@ void TextEditTester::testFormattingUsed()
     QVERIFY(textEdit.isFormattingUsed());
     // No way to easily remove the horizontal line, so clear the text edit and start over
     textEdit.clear();
-    cursor.insertText(QLatin1String("Hello World!!"));
+    cursor.insertText(QStringLiteral("Hello World!!"));
     QVERIFY(!textEdit.isFormattingUsed());
     cursor.setPosition(1);
     textEdit.setTextCursor(cursor);
@@ -186,7 +186,7 @@ void TextEditTester::testFormattingUsed()
     //
     // Image
     //
-    QString imagePath = KIconLoader::global()->iconPath(QLatin1String("folder-new"), KIconLoader::Small, false);
+    QString imagePath = KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false);
     textEdit.addImage(QUrl(imagePath));
     QVERIFY(textEdit.isFormattingUsed());
     cursor = textEdit.textCursor();
@@ -198,25 +198,25 @@ void TextEditTester::testFormattingUsed()
 void TextEditTester::testQuoting()
 {
     TextEdit edit;
-    QVERIFY(edit.isLineQuoted(QLatin1String("> Hello")));
-    QVERIFY(edit.isLineQuoted(QLatin1String(">Hello")));
-    QVERIFY(!edit.isLineQuoted(QLatin1String("Hello")));
-    QCOMPARE(edit.quoteLength(QLatin1String("Hello")), 0);
-    QCOMPARE(edit.quoteLength(QLatin1String(">Hello")), 1);
-    QCOMPARE(edit.quoteLength(QLatin1String("> Hello")), 2);
-    QCOMPARE(edit.quoteLength(QLatin1String(">>>Hello")), 3);
-    QCOMPARE(edit.quoteLength(QLatin1String("> > > Hello")), 6);
-    QCOMPARE(edit.quoteLength(QLatin1String("|Hello")), 1);
-    QCOMPARE(edit.quoteLength(QLatin1String("| |Hello")), 3);
+    QVERIFY(edit.isLineQuoted(QStringLiteral("> Hello")));
+    QVERIFY(edit.isLineQuoted(QStringLiteral(">Hello")));
+    QVERIFY(!edit.isLineQuoted(QStringLiteral("Hello")));
+    QCOMPARE(edit.quoteLength(QStringLiteral("Hello")), 0);
+    QCOMPARE(edit.quoteLength(QStringLiteral(">Hello")), 1);
+    QCOMPARE(edit.quoteLength(QStringLiteral("> Hello")), 2);
+    QCOMPARE(edit.quoteLength(QStringLiteral(">>>Hello")), 3);
+    QCOMPARE(edit.quoteLength(QStringLiteral("> > > Hello")), 6);
+    QCOMPARE(edit.quoteLength(QStringLiteral("|Hello")), 1);
+    QCOMPARE(edit.quoteLength(QStringLiteral("| |Hello")), 3);
 }
 
 void TextEditTester::testCleanText()
 {
     TextEdit edit;
-    QLatin1String html("<html><head></head><body>Heelllo&nbsp;World<br>Bye!</body></html>");
-    QLatin1String plain("Heelllo World\nBye!");
+    QString html(QStringLiteral("<html><head></head><body>Heelllo&nbsp;World<br>Bye!</body></html>"));
+    QString plain(QStringLiteral("Heelllo World\nBye!"));
     edit.setTextOrHtml(html);
-    edit.addImage(QUrl(KIconLoader::global()->iconPath(QLatin1String("folder-new"), KIconLoader::Small, false)));
+    edit.addImage(QUrl(KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false)));
     QVERIFY(edit.textMode() == TextEdit::Rich);
     QCOMPARE(edit.toCleanPlainText(), plain);
 
@@ -269,8 +269,8 @@ void TextEditTester::testEnter()
 void TextEditTester::testImages()
 {
     TextEdit edit;
-    QString image1Path = KIconLoader::global()->iconPath(QLatin1String("folder-new"), KIconLoader::Small, false);
-    QString image2Path = KIconLoader::global()->iconPath(QLatin1String("arrow-up"), KIconLoader::Small, false);
+    QString image1Path = KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false);
+    QString image2Path = KIconLoader::global()->iconPath(QStringLiteral("arrow-up"), KIconLoader::Small, false);
 
     // Add one image, check that embeddedImages() returns the right stuff
     edit.addImage(QUrl(image1Path));
@@ -339,16 +339,16 @@ void TextEditTester::testImages()
 void TextEditTester::testImageHtmlCode()
 {
     TextEdit edit;
-    QString image1Path = KIconLoader::global()->iconPath(QLatin1String("folder-new"), KIconLoader::Small, false);
-    QString image2Path = KIconLoader::global()->iconPath(QLatin1String("arrow-up"), KIconLoader::Small, false);
+    QString image1Path = KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false);
+    QString image2Path = KIconLoader::global()->iconPath(QStringLiteral("arrow-up"), KIconLoader::Small, false);
     edit.addImage(QUrl(image1Path));
     edit.addImage(QUrl(image2Path));
     KPIMTextEdit::ImageList images = edit.embeddedImages();
     QCOMPARE(images.size(), 2);
     KPIMTextEdit::EmbeddedImage *image1 = images.first().data();
     KPIMTextEdit::EmbeddedImage *image2 = images.last().data();
-    QString startHtml = QLatin1String("<img src=\"arrow-up.png\"><img src=\"folder-new.png\">Bla<b>Blub</b>");
-    QString endHtml = QString(QLatin1String("<img src=\"cid:%1\"><img src=\"cid:%2\">Bla<b>Blub</b>"))
+    QString startHtml = QStringLiteral("<img src=\"arrow-up.png\"><img src=\"folder-new.png\">Bla<b>Blub</b>");
+    QString endHtml = QString(QStringLiteral("<img src=\"cid:%1\"><img src=\"cid:%2\">Bla<b>Blub</b>"))
                       .arg(image2->contentID).arg(image1->contentID);
     QCOMPARE(TextEdit::imageNamesToContentIds(startHtml.toLatin1(), images), endHtml.toLatin1());
 }
@@ -411,35 +411,35 @@ void TextEditTester::testDeleteLine()
 void TextEditTester::testLoadImage()
 {
     TextEdit edit;
-    QString image1Path = KIconLoader::global()->iconPath(QLatin1String("folder-new"), KIconLoader::Small, false);
-    QString image2Path = KIconLoader::global()->iconPath(QLatin1String("arrow-up"), KIconLoader::Small, false);
+    QString image1Path = KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false);
+    QString image2Path = KIconLoader::global()->iconPath(QStringLiteral("arrow-up"), KIconLoader::Small, false);
     QImage image1, image2;
     QVERIFY(image1.load(image1Path));
     QVERIFY(image2.load(image1Path));
 
-    edit.setHtml(QLatin1String("Bla<img src=\"folder-new.png\">Bla"));
+    edit.setHtml(QStringLiteral("Bla<img src=\"folder-new.png\">Bla"));
 
     // First try to load an image with a name that doesn't match, it should fail
     edit.loadImage(image1, QString::fromLatin1("doesntmatch"), QString::fromLatin1("folder-new"));
-    QVERIFY(!edit.document()->resource(QTextDocument::ImageResource, QUrl(QLatin1String("folder-new"))).isValid());
+    QVERIFY(!edit.document()->resource(QTextDocument::ImageResource, QUrl(QStringLiteral("folder-new"))).isValid());
 
     // Now, load the image for real
     edit.loadImage(image1, QString::fromLatin1("folder-new.png"), QString::fromLatin1("folder-new"));
-    QVERIFY(edit.document()->resource(QTextDocument::ImageResource, QUrl(QLatin1String("folder-new"))).isValid());
+    QVERIFY(edit.document()->resource(QTextDocument::ImageResource, QUrl(QStringLiteral("folder-new"))).isValid());
 
     // New test with a new textedit (so that we don't use the cached resources
     // This example has two images in the same text block, make sure that doesn't crash (bug 204214)
     TextEdit edit2;
-    edit2.setHtml(QLatin1String("<img src=\"folder-new.png\"><img src=\"folder-new.png\">"));
+    edit2.setHtml(QStringLiteral("<img src=\"folder-new.png\"><img src=\"folder-new.png\">"));
     edit2.loadImage(image1, QString::fromLatin1("folder-new.png"), QString::fromLatin1("folder-new"));
-    QVERIFY(edit.document()->resource(QTextDocument::ImageResource, QUrl(QLatin1String("folder-new"))).isValid());
+    QVERIFY(edit.document()->resource(QTextDocument::ImageResource, QUrl(QStringLiteral("folder-new"))).isValid());
     QCOMPARE(edit.embeddedImages().size(), 1);
 }
 
 void TextEditTester::testWrappedPlainText()
 {
     TextEdit edit;
-    QLatin1String text("http://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\n  https://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\ntest ftp://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\nftps://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\n  ldap://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test");
+    QString text(QStringLiteral("http://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\n  https://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\ntest ftp://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\nftps://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\n  ldap://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test"));
     edit.setPlainText(text);
 
     edit.show(); // < otherwise toWrappedPlainText can't work, it needs a layout

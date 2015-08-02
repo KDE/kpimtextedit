@@ -84,20 +84,20 @@ QString EMailQuoteHighlighter::highlightParagraph(const QString &text,
         const QColor &quoteDepth3)
 {
     QString simplified = text;
-    simplified = simplified.remove(QRegExp(QLatin1String("\\s"))).
+    simplified = simplified.remove(QRegExp(QStringLiteral("\\s"))).
                  replace(QLatin1Char('|'), QLatin1Char('>')).
-                 replace(QLatin1String("&gt;"), QLatin1String(">"));
+                 replace(QStringLiteral("&gt;"), QStringLiteral(">"));
 
-    while (simplified.startsWith(QLatin1String(">>>>"))) {
+    while (simplified.startsWith(QStringLiteral(">>>>"))) {
         simplified = simplified.mid(3);
     }
 
-    QString result(QLatin1String("<font color=\"%1\">%2</font>"));
-    if (simplified.startsWith(QLatin1String(">>>"))) {
+    QString result(QStringLiteral("<font color=\"%1\">%2</font>"));
+    if (simplified.startsWith(QStringLiteral(">>>"))) {
         return result.arg(quoteDepth3.name(), text);
-    } else if (simplified.startsWith(QLatin1String(">>"))) {
+    } else if (simplified.startsWith(QStringLiteral(">>"))) {
         return result.arg(quoteDepth2.name(), text);
-    } else if (simplified.startsWith(QLatin1String(">"))) {
+    } else if (simplified.startsWith(QStringLiteral(">"))) {
         return result.arg(quoteDepth1.name(), text);
     }
 
