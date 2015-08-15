@@ -128,7 +128,7 @@ void EMailQuoteHighlighter::toggleSpellHighlighting(bool on)
 void EMailQuoteHighlighter::highlightBlock(const QString &text)
 {
     QString simplified = text;
-    simplified = simplified.remove(QRegExp(QLatin1String("\\s"))).
+    simplified = simplified.remove(QRegExp(QStringLiteral("\\s"))).
                  replace(QLatin1Char('|'), QLatin1Char('>'));
 
     while (simplified.startsWith(QLatin1String(">>>>"))) {

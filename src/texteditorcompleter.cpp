@@ -171,7 +171,7 @@ QCompleter *TextEditorCompleter::completer() const
 void TextEditorCompleter::setCompleterStringList(const QStringList &listWord)
 {
     d->createCompleter();
-    d->completer->setModel(new QStringListModel(QStringList() << listWord << QLatin1String("TESTING"), d->completer));
+    d->completer->setModel(new QStringListModel(QStringList() << listWord << QStringLiteral("TESTING"), d->completer));
 }
 
 void TextEditorCompleter::slotCompletion(const QString &completion)
