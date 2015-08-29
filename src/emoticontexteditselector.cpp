@@ -43,6 +43,8 @@ EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText,
     // Some of the custom icons are rather large
     // so lets limit them to a maximum size for this display panel
     //
+
+    //TODO need to fix hdpi support here.
     if (p.width() > 32 || p.height() > 32) {
         p = p.scaled(QSize(32, 32), Qt::KeepAspectRatio);
     }
