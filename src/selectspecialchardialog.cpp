@@ -38,8 +38,8 @@ public:
         QVBoxLayout *lay = new QVBoxLayout(q);
 
         mCharSelect = new KCharSelect(q, 0, KCharSelect::CharacterTable | KCharSelect::BlockCombos);
-        q->connect(mCharSelect, SIGNAL(charSelected(QChar)),
-                   q, SIGNAL(charSelected(QChar)));
+        q->connect(mCharSelect, &KCharSelect::charSelected,
+                   q, &SelectSpecialCharDialog::charSelected);
         lay->addWidget(mCharSelect);
 
         mButtonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
@@ -47,8 +47,8 @@ public:
         okButton->setText(i18n("Insert"));
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
         lay->addWidget(mButtonBox);
-        q->connect(mButtonBox, SIGNAL(accepted()), q, SLOT(accept()));
-        q->connect(mButtonBox, SIGNAL(rejected()), q, SLOT(reject()));
+        q->connect(mButtonBox, &QDialogButtonBox::accepted, q, &QDialog::accept);
+        q->connect(mButtonBox, &QDialogButtonBox::rejected, q, &QDialog::reject);
 
         q->connect(okButton, SIGNAL(clicked()),
                    q, SLOT(_k_slotInsertChar()));

@@ -106,8 +106,8 @@ public:
         backgroundColor->setEnabled(false);
         q->connect(useBackgroundColor, &QCheckBox::toggled, backgroundColor, &KColorButton::setEnabled);
         QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
-        connect(buttonBox, SIGNAL(accepted()), q, SLOT(accept()));
-        connect(buttonBox, SIGNAL(rejected()), q, SLOT(reject()));
+        connect(buttonBox, &QDialogButtonBox::accepted, q, &QDialog::accept);
+        connect(buttonBox, &QDialogButtonBox::rejected, q, &QDialog::reject);
 
         mainLayout->addWidget(page);
         mainLayout->addWidget(buttonBox);
