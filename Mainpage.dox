@@ -3,16 +3,12 @@
  *
  * @section purpose Purpose
  *
- * KPIMTextedit provides a textedit with PIM-specific features and can convert the
- * text edit content to various markup formats.
+ * KPIMTextedit provides a textedit with PIM-specific features 
  *
  * @section desc Description
  *
  * KPIMTextedit is a library that provides an enchanced text edit class, see TextEdit.
  * This text is highlighted with a EMailQuoteHighlighter.
- *
- * It also provides so-called rich text builders, that can convert the formatted text
- * in the text edit to all kinds of markup, like HTML or BBCODE.
  *
  * @authors
  *  The major authors of this library are:\n
@@ -20,8 +16,7 @@
  *  Thomas McGuire \<mcguire@kde.org\>,\n
  *  Laurent Montel \<montel@kde.org\>
  *
- * @maintainers Thomas McGuire \<mcguire@kde.org\>,\n
- *              Stephen Kelly \<steveire@gmail.com\>
+ * @maintainers Laurent Montel \<montel@kde.org\>
  *
  * @licenses
  * @lgpl
