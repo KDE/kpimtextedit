@@ -20,7 +20,7 @@
 #define PIMCOMMON_FINDBARBASE_H
 
 #include "kpimtextedit_export.h"
-#include "pimcommon/texteditfindbarbase.h"
+#include "texteditor/commonwidget/texteditfindbarbase.h"
 #include <QTextDocument>
 
 class QPlainTextEdit;
