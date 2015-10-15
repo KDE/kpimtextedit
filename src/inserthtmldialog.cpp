@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2012 Montel Laurent <montel@kde.org>
+  Copyright (c) 2015 Montel Laurent <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -19,11 +19,13 @@
 */
 
 #include "inserthtmldialog.h"
-#include "htmlhighlighter.h"
-#include "texteditorcompleter.h"
 
 #include <KLocalizedString>
 #include <KTextEdit>
+
+#include "texteditorcompleter.h"
+#include "htmlhighlighter.h"
+#include "texteditor/plaintexteditor/plaintexteditorwidget.h"
 
 #include <QCompleter>
 #include <QAbstractItemView>
@@ -41,13 +43,14 @@ public:
     InsertHtmlDialogPrivate(InsertHtmlDialog *qq)
         : q(qq)
     {
-        q->setWindowTitle(i18n("Insert HTML"));
+        q->setWindowTitle(i18nc("@title:window", "Insert HTML"));
         QVBoxLayout *lay = new QVBoxLayout;
         q->setLayout(lay);
         QLabel *label = new QLabel(i18n("Insert HTML tags and texts:"));
         lay->addWidget(label);
         editor = new InsertHtmlEditor;
-        lay->addWidget(editor);
+        KPIMTextEdit::PlainTextEditorWidget *editorWidget = new KPIMTextEdit::PlainTextEditorWidget(editor);
+        lay->addWidget(editorWidget);
         label = new QLabel(i18n("Example: <i> Hello word </i>"));
         QFont font = label->font();
         font.setBold(true);
@@ -57,7 +60,7 @@ public:
         QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
         okButton = buttonBox->button(QDialogButtonBox::Ok);
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
-        okButton->setText(i18n("Insert"));
+        okButton->setText(i18nc("@action:button", "Insert"));
 
         q->connect(buttonBox, &QDialogButtonBox::accepted, q, &QDialog::accept);
         q->connect(buttonBox, &QDialogButtonBox::rejected, q, &QDialog::reject);
@@ -96,10 +99,9 @@ QString InsertHtmlDialog::html() const
 }
 
 InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
-    : KTextEdit(parent)
+    : KPIMTextEdit::PlainTextEditor(parent)
 {
-    new HtmlHighlighter(document());
-    setAcceptRichText(false);
+    new KPIMTextEdit::HtmlHighlighter(document());
     setFocus();
     mTextEditorCompleter = new KPIMTextEdit::TextEditorCompleter(this, this);
     QStringList completerList;
@@ -131,10 +133,11 @@ void InsertHtmlEditor::keyPressEvent(QKeyEvent *e)
             break;
         }
     }
-    KTextEdit::keyPressEvent(e);
+    KPIMTextEdit::PlainTextEditor::keyPressEvent(e);
     mTextEditorCompleter->completeText();
 }
 
 }
 
 #include "moc_inserthtmldialog.cpp"
+

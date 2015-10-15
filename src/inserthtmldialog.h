@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2012 Montel Laurent <montel@kde.org>
+  Copyright (c) 2015 Montel Laurent <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -18,19 +18,22 @@
 
 */
 
-#ifndef KPIMTEXTEDIT_INSERTHTMLDIALOG_H
-#define KPIMTEXTEDIT_INSERTHTMLDIALOG_H
+#ifndef RICHTEXTCOMPOSER_INSERTHTMLDIALOG_H
+#define RICHTEXTCOMPOSER_INSERTHTMLDIALOG_H
 
-#include "kpimtextedit_export.h"
-
-#include <KTextEdit>
 #include <QDialog>
+#include "kpimtextedit_export.h"
+#include "kpimtextedit/plaintexteditor.h"
 
 namespace KPIMTextEdit
 {
 class TextEditorCompleter;
+}
+namespace KPIMTextEdit
+{
+class TextEditorCompleter;
 class InsertHtmlDialogPrivate;
-class InsertHtmlEditor : public KTextEdit
+class InsertHtmlEditor : public KPIMTextEdit::PlainTextEditor
 {
     Q_OBJECT
 public:
@@ -54,9 +57,8 @@ private:
     friend class InsertHtmlDialogPrivate;
     InsertHtmlDialogPrivate *const d;
     Q_PRIVATE_SLOT(d, void _k_slotTextChanged())
-
 };
 
 }
 
-#endif // KPIMTEXTEDIT_INSERTHTMLDIALOG_H
+#endif
