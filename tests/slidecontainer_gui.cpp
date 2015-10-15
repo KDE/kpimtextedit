@@ -26,7 +26,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 // Local
 #include "kpimtextedit/slidecontainer.h"
 
-using namespace PimCommon;
+using namespace KPIMTextEdit;
 
 class Window : public QWidget
 {

@@ -28,7 +28,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <QVBoxLayout>
 #include <QSignalSpy>
 
-using namespace PimCommon;
+using namespace KPIMTextEdit;
 
 struct TestWindow : public QWidget {
     explicit TestWindow(QWidget *parent = Q_NULLPTR)
