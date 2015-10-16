@@ -15,8 +15,8 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef RICHTEXTCOMPOSERACTIONS_H
-#define RICHTEXTCOMPOSERACTIONS_H
+#ifndef KPIMTEXTEDITRICHTEXTCOMPOSERACTIONS_H
+#define KPIMTEXTEDITRICHTEXTCOMPOSERACTIONS_H
 
 #include <QObject>
 #include "kpimtextedit_export.h"
