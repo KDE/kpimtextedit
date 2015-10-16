@@ -186,6 +186,7 @@ ecm_generate_headers(KPimTextEdit_CamelCasetexttospeechs_HEADERS
 
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_export.h
+  ${CMAKE_CURRENT_BINARY_DIR}/config-kpimtextedit.h
   ${kpimtextedit_HEADERS}
   ${KPimTextEdit_texttospeechs_HEADERS}
   ${PimCommon_richtexteditor_HEADERS}
