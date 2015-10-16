@@ -369,12 +369,6 @@ void RichTextComposer::evaluateListSupport(QKeyEvent *event)
     Q_EMIT cursorPositionChanged();
 }
 
-static bool isSpecial(const QTextCharFormat &charFormat)
-{
-    return charFormat.isFrameFormat() || charFormat.isImageFormat() ||
-           charFormat.isListFormat() || charFormat.isTableFormat() || charFormat.isTableCellFormat();
-}
-
 bool RichTextComposer::processKeyEvent(QKeyEvent *e)
 {
     if (d->externalComposer->useExternalEditor() &&
@@ -401,10 +395,17 @@ bool RichTextComposer::processKeyEvent(QKeyEvent *e)
         textCursor().clearSelection();
         Q_EMIT focusUp();
     } else {
-        //processAutoCorrection(e);
-        evaluateReturnKeySupport(e);
+        if (!processAutoCorrection(e)) {
+            evaluateReturnKeySupport(e);
+        }
     }
     return true;
+}
+
+bool RichTextComposer::processAutoCorrection(QKeyEvent *event)
+{
+    Q_UNUSED(event);
+    return false;
 }
 
 void RichTextComposer::keyPressEvent(QKeyEvent *e)

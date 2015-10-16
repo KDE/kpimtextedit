@@ -15,17 +15,13 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef RICHTEXTCOMPOSER_H
-#define RICHTEXTCOMPOSER_H
+#ifndef KPIMTEXTEDITRICHTEXTCOMPOSER_H
+#define KPIMTEXTEDITRICHTEXTCOMPOSER_H
 
 #include "kpimtextedit_export.h"
 
 #include <kpimtextedit/richtexteditor.h>
 class KActionCollection;
-namespace PimCommon
-{
-class AutoCorrection;
-}
 
 namespace KPIMTextEdit
 {
@@ -109,6 +105,8 @@ public:
     KPIMTextEdit::RichTextExternalComposer *externalComposer() const;
     KPIMTextEdit::RichTextComposerActions *composerActions() const;
     void createHighlighter() Q_DECL_OVERRIDE;
+    virtual bool processAutoCorrection(QKeyEvent *event);
+
 public Q_SLOTS:
     void insertPlainTextImplementation();
     void slotChangeInsertMode();
