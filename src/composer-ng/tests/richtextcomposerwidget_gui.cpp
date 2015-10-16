@@ -26,7 +26,7 @@
 
 #include <../richtextcomposer.h>
 
-#include <KPIMTextEdit/kpimtextedit/richtexteditorwidget.h>
+#include <kpimtextedit/richtexteditorwidget.h>
 
 int main(int argc, char **argv)
 {
