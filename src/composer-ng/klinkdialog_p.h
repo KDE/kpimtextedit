@@ -27,7 +27,7 @@
 #include <QDialog>
 
 class QString;
-namespace MessageComposer
+namespace KPIMTextEdit
 {
 /**
     @short Dialog to allow user to configure a hyperlink.
