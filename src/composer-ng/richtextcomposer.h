@@ -20,7 +20,7 @@
 
 #include "kpimtextedit_export.h"
 
-#include <KPIMTextEdit/kpimtextedit/richtexteditor.h>
+#include <kpimtextedit/richtexteditor.h>
 class KActionCollection;
 namespace PimCommon
 {
