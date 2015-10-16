@@ -37,7 +37,6 @@ void RichTextComposerTest::shouldHaveDefaultValue()
     KPIMTextEdit::RichTextComposer composer;
     KActionCollection *actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    QVERIFY(!composer.autocorrection());
     QCOMPARE(composer.linePosition(), 0);
     QCOMPARE(composer.columnNumber(), 0);
     QCOMPARE(composer.textMode(), KPIMTextEdit::RichTextComposer::Plain);

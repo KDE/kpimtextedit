@@ -26,7 +26,6 @@ namespace KPIMTextEdit
 {
 class RichTextComposer;
 class NestedListHelper;
-class TextPart;
 class RichTextComposerImages;
 class KPIMTEXTEDIT_EXPORT RichTextComposerControler : public QObject
 {
@@ -51,7 +50,6 @@ public:
     void insertLink(const QString &url);
     void setCursorPositionFromStart(unsigned int pos);
     void ensureCursorVisible();
-    void fillComposerTextPart(KPIMTextEdit::TextPart *textPart);
 
     RichTextComposerImages *composerImages() const;
     bool painterActive() const;

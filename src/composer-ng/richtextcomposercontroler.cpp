@@ -21,7 +21,7 @@
 #include "klinkdialog_p.h"
 #include "nestedlisthelper_p.h"
 #include "inserthtmldialog.h"
-#include "settings/messagecomposersettings.h"
+#include <QApplication>
 
 #include <KColorScheme>
 #include <KMessageBox>
@@ -35,9 +35,6 @@
 #include <QIcon>
 #include "textutils.h"
 #include "insertimagedialog.h"
-#include <grantlee/plaintextmarkupbuilder.h>
-
-#include <part/textpart.h>
 
 using namespace KPIMTextEdit;
 
@@ -59,11 +56,7 @@ public:
     void selectLinkText(QTextCursor *cursor) const;
     void fixupTextEditString(QString &text) const;
     void mergeFormatOnWordOrSelection(const QTextCharFormat &format);
-    QString toWrappedPlainText() const;
-    QString toWrappedPlainText(QTextDocument *doc) const;
     QString addQuotesToText(const QString &inputText);
-    QString toCleanPlainText(const QString &plainText = QString()) const;
-    void fixHtmlFontSize(QString &cleanHtml);
     void updateLink(const QString &linkUrl, const QString &linkText);
     QFont saveFont;
     QTextCharFormat painterFormat;
@@ -667,106 +660,6 @@ void RichTextComposerControler::RichTextComposerControlerPrivate::fixupTextEditS
     text.replace(QChar::Nbsp, QChar::fromLatin1(' '));
 }
 
-QString RichTextComposerControler::RichTextComposerControlerPrivate::toCleanPlainText(const QString &plainText) const
-{
-    QString temp = plainText.isEmpty() ? richtextComposer->toPlainText() : plainText;
-    fixupTextEditString(temp);
-    return temp;
-}
-
-void RichTextComposerControler::fillComposerTextPart(KPIMTextEdit::TextPart *textPart)
-{
-    if (isFormattingUsed() && KPIMTextEdit::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {
-        Grantlee::PlainTextMarkupBuilder *pb = new Grantlee::PlainTextMarkupBuilder();
-
-        Grantlee::MarkupDirector *pmd = new Grantlee::MarkupDirector(pb);
-        pmd->processDocument(richTextComposer()->document());
-        const QString plainText = pb->getResult();
-        textPart->setCleanPlainText(d->toCleanPlainText(plainText));
-        QTextDocument *doc = new QTextDocument(plainText);
-        doc->adjustSize();
-
-        textPart->setWrappedPlainText(d->toWrappedPlainText(doc));
-        delete doc;
-        delete pmd;
-        delete pb;
-    } else {
-        textPart->setCleanPlainText(d->toCleanPlainText());
-        textPart->setWrappedPlainText(d->toWrappedPlainText());
-    }
-    textPart->setWordWrappingEnabled(richTextComposer()->lineWrapMode() == QTextEdit::FixedColumnWidth);
-    if (isFormattingUsed()) {
-        QString cleanHtml = toCleanHtml();
-        d->fixHtmlFontSize(cleanHtml);
-        textPart->setCleanHtml(cleanHtml);
-        textPart->setEmbeddedImages(d->richTextImages->embeddedImages());
-    }
-}
-
-void RichTextComposerControler::RichTextComposerControlerPrivate::fixHtmlFontSize(QString &cleanHtml)
-{
-    static const QString FONTSTYLEREGEX = QStringLiteral("<span style=\".*font-size:(.*)pt;.*</span>");
-    QRegExp styleRegex(FONTSTYLEREGEX);
-    styleRegex.setMinimal(true);
-
-    int offset = styleRegex.indexIn(cleanHtml, 0);
-    while (offset != -1) {
-        // replace all the matching text with the new line text
-        bool ok = false;
-        const QString fontSizeStr = styleRegex.cap(1);
-        const int ptValue = fontSizeStr.toInt(&ok);
-        if (ok) {
-            double emValue = (double)ptValue / 12;
-            const QString emValueStr = QString::number(emValue, 'g', 2);
-            cleanHtml.replace(styleRegex.pos(1), QString(fontSizeStr + QLatin1String("px")).length(), emValueStr + QLatin1String("em"));
-        }
-        // advance the search offset to just beyond the last replace
-        offset += styleRegex.matchedLength();
-        // find the next occurrence
-        offset = styleRegex.indexIn(cleanHtml, offset);
-    }
-}
-
-QString RichTextComposerControler::RichTextComposerControlerPrivate::toWrappedPlainText() const
-{
-    QTextDocument *doc = richtextComposer->document();
-    return toWrappedPlainText(doc);
-}
-
-QString RichTextComposerControler::RichTextComposerControlerPrivate::toWrappedPlainText(QTextDocument *doc) const
-{
-    QString temp;
-    QRegExp rx(QStringLiteral("(http|ftp|ldap)s?\\S+-$"));
-    QTextBlock block = doc->begin();
-    while (block.isValid()) {
-        QTextLayout *layout = block.layout();
-        const int numberOfLine(layout->lineCount());
-        bool urlStart = false;
-        for (int i = 0; i < numberOfLine; ++i) {
-            QTextLine line = layout->lineAt(i);
-            QString lineText = block.text().mid(line.textStart(), line.textLength());
-
-            if (lineText.contains(rx) ||
-                    (urlStart && !lineText.contains(QLatin1Char(' ')) &&
-                     lineText.endsWith(QLatin1Char('-')))) {
-                // don't insert line break in URL
-                temp += lineText;
-                urlStart = true;
-            } else {
-                temp += lineText + QLatin1Char('\n');
-            }
-        }
-        block = block.next();
-    }
-
-    // Remove the last superfluous newline added above
-    if (temp.endsWith(QLatin1Char('\n'))) {
-        temp.chop(1);
-    }
-
-    fixupTextEditString(temp);
-    return temp;
-}
 
 bool RichTextComposerControler::isFormattingUsed() const
 {

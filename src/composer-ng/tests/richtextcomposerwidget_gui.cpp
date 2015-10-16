@@ -15,9 +15,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "richtexteditor/richtexteditor.h"
-#include "../richtexteditorwidget.h"
-#include "../richtextcomposer.h"
 
 #include <KLocalizedString>
 #include <QApplication>
@@ -26,6 +23,10 @@
 #include <QStandardPaths>
 #include <QToolBar>
 #include <KActionCollection>
+
+#include <../richtextcomposer.h>
+
+#include <KPIMTextEdit/kpimtextedit/richtexteditorwidget.h>
 
 int main(int argc, char **argv)
 {

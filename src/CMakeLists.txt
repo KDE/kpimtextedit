@@ -16,17 +16,17 @@ set(kpimtextedit_texteditor_SRCS
   texteditor/richtexteditor/richtexteditorwidget.cpp
 )
 
-# set(kpimtextedit_composerng_SRCS
-#      composer-ng/richtextcomposer.cpp
-#      composer-ng/richtextcomposercontroler.cpp
-#      composer-ng/richtextcomposeractions.cpp
-#      composer-ng/klinkdialog.cpp
-#      composer-ng/nestedlisthelper.cpp
-#      composer-ng/richtextexternalcomposer.cpp
-#      composer-ng/richtextcomposerimages.cpp
-#      composer-ng/richtextcomposeremailquotedecorator.cpp
-#      composer-ng/richtextcomposeremailquotehighlighter.cpp
-# )
+set(kpimtextedit_composerng_SRCS
+     composer-ng/richtextcomposer.cpp
+     composer-ng/richtextcomposercontroler.cpp
+     composer-ng/richtextcomposeractions.cpp
+     composer-ng/klinkdialog.cpp
+     composer-ng/nestedlisthelper.cpp
+     composer-ng/richtextexternalcomposer.cpp
+     composer-ng/richtextcomposerimages.cpp
+     composer-ng/richtextcomposeremailquotedecorator.cpp
+     composer-ng/richtextcomposeremailquotehighlighter.cpp
+)
 
 set(kpimtextedit_texttospeech_SRCS
   texttospeech/texttospeech.cpp
@@ -64,7 +64,7 @@ set(kpimtextedit_SRCS
   slidecontainer.cpp
 )
 
-add_library(KF5PimTextEdit ${kpimtextedit_SRCS} ${kpimtextedit_texteditor_SRCS} ${kpimtextedit_texttospeech_SRCS} )#${kpimtextedit_composerng_SRCS})
+add_library(KF5PimTextEdit ${kpimtextedit_SRCS} ${kpimtextedit_texteditor_SRCS} ${kpimtextedit_texttospeech_SRCS} ${kpimtextedit_composerng_SRCS})
 
 generate_export_header(KF5PimTextEdit BASE_NAME kpimtextedit)
 
@@ -168,18 +168,18 @@ ecm_generate_headers(KPimTextEdit_CamelCasetexttospeechs_HEADERS
   RELATIVE texttospeech
 )
 
-# ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
-#   HEADER_NAMES
-#   RichTextComposer
-#   RichTextComposerControler
-#   RichTextComposerImages
-#   RichTextExternalComposer
-#   RichTextComposerActions
-#   RichTextComposerEmailQuoteHighlighter
-#   REQUIRED_HEADERS KPimTextEdit_composerng_HEADERS
-#   PREFIX KPIMTextEdit
-#   RELATIVE composer-ng
-# )
+ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
+  HEADER_NAMES
+  RichTextComposer
+  RichTextComposerControler
+  RichTextComposerImages
+  RichTextExternalComposer
+  RichTextComposerActions
+  RichTextComposerEmailQuoteHighlighter
+  REQUIRED_HEADERS KPimTextEdit_composerng_HEADERS
+  PREFIX KPIMTextEdit
+  RELATIVE composer-ng
+)
 
 
 ########### install files ###############
@@ -192,7 +192,7 @@ install(FILES
   ${PimCommon_richtexteditor_HEADERS}
   ${PimCommon_texteditor_commonwidget_HEADERS}
   ${PimCommon_plaintexteditor_HEADERS}
-#   ${KPimTextEdit_composerng_HEADERS}
+  ${KPimTextEdit_composerng_HEADERS}
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit/kpimtextedit
   COMPONENT Devel
 )
@@ -203,7 +203,7 @@ install(FILES
   ${KPimTextEdit_CamelCasetexttospeechs_HEADERS}
   ${PimCommon_CamelCasetexteditor_commonwidget_HEADERS}
   ${PimCommon_CamelCasetexteditor_commonwidget_HEADERS}
-#   ${KPimTextEdit_Camelcasecomposerng_HEADERS}
+  ${KPimTextEdit_Camelcasecomposerng_HEADERS}
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit/KPIMTextEdit/
   COMPONENT Devel
 )
@@ -219,7 +219,7 @@ if (BUILD_TESTING)
    add_subdirectory(texteditor/richtexteditor/tests)
    add_subdirectory(texttospeech/autotests)
    add_subdirectory(texttospeech/tests)
-#    add_subdirectory(composer-ng/autotests)
-#    add_subdirectory(composer-ng/tests)
+   add_subdirectory(composer-ng/autotests)
+   add_subdirectory(composer-ng/tests)
 
 endif()

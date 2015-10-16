@@ -28,7 +28,7 @@
 #include <QTextCharFormat>
 #include <QTextList>
 
-using namespace KPIMTextEditMessageComposer;
+using namespace KPIMTextEdit;
 
 class Q_DECL_HIDDEN RichTextComposerActions::RichTextComposerActionsPrivate
 {

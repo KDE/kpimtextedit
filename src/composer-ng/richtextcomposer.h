@@ -18,8 +18,9 @@
 #ifndef RICHTEXTCOMPOSER_H
 #define RICHTEXTCOMPOSER_H
 
-#include "PimCommon/RichTextEditor"
 #include "kpimtextedit_export.h"
+
+#include <KPIMTextEdit/kpimtextedit/richtexteditor.h>
 class KActionCollection;
 namespace PimCommon
 {
