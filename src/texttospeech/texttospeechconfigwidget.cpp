@@ -26,6 +26,8 @@
 #include <QSlider>
 #include <QComboBox>
 #include <QTimer>
+#include <KConfig>
+#include <KConfigGroup>
 
 using namespace KPIMTextEdit;
 TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
@@ -76,33 +78,33 @@ void TextToSpeechConfigWidget::valueChanged()
 
 void TextToSpeechConfigWidget::updateLocale()
 {
-#if 0 //FIXME
-    const QString localeName = KPIMTextEdit::PimCommonSettings::self()->localeName();
+    KConfig config(QStringLiteral("texttospeechrc"));
+    KConfigGroup grp = config.group("Settings");
+    const QString localeName = grp.readEntry("localeName");
     if (localeName.isEmpty()) {
         return;
     }
     mLanguage->selectLocaleName(localeName);
-#endif
 }
 
 void TextToSpeechConfigWidget::readConfig()
 {
-#if 0 //FIXME
-    mVolume->setValue(static_cast<int>(KPIMTextEdit::PimCommonSettings::self()->volume()));
-    mRate->setValue(static_cast<int>(KPIMTextEdit::PimCommonSettings::self()->rate() * 100));
-    mPitch->setValue(static_cast<int>(KPIMTextEdit::PimCommonSettings::self()->pitch() * 100));
-#endif
+    KConfig config(QStringLiteral("texttospeechrc"));
+    KConfigGroup grp = config.group("Settings");
+    mRate->setValue(static_cast<int>(grp.readEntry("rate", 0) * 100));
+    mPitch->setValue(static_cast<int>(grp.readEntry("pitch", 0) * 100));
+    mVolume->setValue(static_cast<int>(grp.readEntry("volume", 0)));
     updateLocale();
 }
 
 void TextToSpeechConfigWidget::writeConfig()
 {
-#if 0 //FIXME
-    KPIMTextEdit::PimCommonSettings::self()->setVolume(mVolume->value());
-    KPIMTextEdit::PimCommonSettings::self()->setRate(static_cast<double>(mRate->value() / 100));
-    KPIMTextEdit::PimCommonSettings::self()->setPitch(static_cast<double>(mPitch->value() / 100));
-    KPIMTextEdit::PimCommonSettings::self()->setLocaleName(mLanguage->currentData().value<QLocale>().name());
-#endif
+    KConfig config(QStringLiteral("texttospeechrc"));
+    KConfigGroup grp = config.group("Settings");
+    grp.writeEntry("volume", mVolume->value());
+    grp.writeEntry("rate", static_cast<double>(mRate->value() / 100));
+    grp.writeEntry("pitch", static_cast<double>(mPitch->value() / 100));
+    grp.writeEntry("localeName", mLanguage->currentData().value<QLocale>().name());
 }
 
 void TextToSpeechConfigWidget::setTextToSpeechConfigInterface(AbstractTextToSpeechConfigInterface *interface)

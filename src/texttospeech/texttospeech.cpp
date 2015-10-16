@@ -17,6 +17,8 @@
 
 #include "texttospeech.h"
 
+#include <KConfig>
+#include <KConfigGroup>
 #include <QLocale>
 #include <QVector>
 //#include "settings/pimcommonsettings.h"
@@ -61,13 +63,13 @@ TextToSpeech::~TextToSpeech()
 
 void TextToSpeech::reloadSettings()
 {
-#if 0 //FIXME
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
-    mTextToSpeech->setRate(KPIMTextEdit::PimCommonSettings::self()->rate());
-    mTextToSpeech->setPitch(KPIMTextEdit::PimCommonSettings::self()->pitch());
-    mTextToSpeech->setVolume(KPIMTextEdit::PimCommonSettings::self()->volume());
-    mTextToSpeech->setLocale(QLocale(KPIMTextEdit::PimCommonSettings::self()->localeName()));
-#endif
+    KConfig config(QStringLiteral("texttospeechrc"));
+    KConfigGroup grp = config.group("Settings");
+    mTextToSpeech->setRate(grp.readEntry("rate", 0));
+    mTextToSpeech->setPitch(grp.readEntry("pitch", 0));
+    mTextToSpeech->setVolume(grp.readEntry("volume", 0));
+    mTextToSpeech->setLocale(QLocale(grp.readEntry("localeName"));
 #endif
 }
 
@@ -176,11 +178,9 @@ void TextToSpeech::setVolume(int volume)
 int TextToSpeech::volume() const
 {
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
-#if 0 //FIXME
-    return KPIMTextEdit::PimCommonSettings::self()->volume();
-#else
-    return 0;
-#endif
+    KConfig config(QStringLiteral("texttospeechrc"));
+    KConfigGroup grp = config.group("Settings");
+    return grp.readEntry("volume", 0));
 #else
     return 0;
 #endif
