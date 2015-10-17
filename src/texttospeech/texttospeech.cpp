@@ -69,7 +69,7 @@ void TextToSpeech::reloadSettings()
     mTextToSpeech->setRate(grp.readEntry("rate", 0));
     mTextToSpeech->setPitch(grp.readEntry("pitch", 0));
     mTextToSpeech->setVolume(grp.readEntry("volume", 0));
-    mTextToSpeech->setLocale(QLocale(grp.readEntry("localeName"));
+    mTextToSpeech->setLocale(QLocale(grp.readEntry("localeName")));
 #endif
 }
 
@@ -180,7 +180,7 @@ int TextToSpeech::volume() const
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
     KConfig config(QStringLiteral("texttospeechrc"));
     KConfigGroup grp = config.group("Settings");
-    return grp.readEntry("volume", 0));
+    return grp.readEntry("volume", 0);
 #else
     return 0;
 #endif

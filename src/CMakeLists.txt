@@ -91,6 +91,10 @@ PRIVATE
   KF5::XmlGui
 )
 
+if(KPIMTEXTEDIT_HAVE_TEXTTOSPEECH)
+  target_link_libraries(KF5PimTextEdit PRIVATE Qt5::TextToSpeech)
+endif()
+
 set_target_properties(KF5PimTextEdit PROPERTIES
     VERSION ${KPIMTEXTEDIT_VERSION_STRING}
     SOVERSION ${KPIMTEXTEDIT_SOVERSION}
