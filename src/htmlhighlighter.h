@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2012 Montel Laurent <montel@kde.org>
+  Copyright (c) 2012-2015 Montel Laurent <montel@kde.org>
 
   based on code from qt-labs-graphics-dojo/htmleditor/highlighter.*
 
