@@ -43,7 +43,6 @@ set(kpimtextedit_texttospeech_SRCS
 
 
 set(kpimtextedit_SRCS
-  emailquotehighlighter.cpp
   emoticontexteditaction.cpp
   emoticontexteditselector.cpp
   htmlhighlighter.cpp
@@ -55,10 +54,8 @@ set(kpimtextedit_SRCS
   tableactionmenu.cpp
   tablecellformatdialog.cpp
   tableformatdialog.cpp
-  textedit.cpp
   textutils.cpp
   inserttablewidget.cpp
-  emailquotedecorator.cpp
   syntaxhighlighterbase.cpp
   texteditorcompleter.cpp
   slidecontainer.cpp
@@ -106,8 +103,6 @@ install(TARGETS KF5PimTextEdit EXPORT KF5PimTextEditTargets ${KF5_INSTALL_TARGET
 ########### Generate Headers ###############
 ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
   HEADER_NAMES
-  EMailQuoteHighlighter
-  EmailQuoteDecorator
   EmoticonTextEditAction
   HtmlHighlighter
   InsertHtmlDialog
@@ -121,7 +116,6 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
   TableCellFormatDialog
   TableFormatDialog
   TableActionMenu
-  TextEdit
   TextEditorCompleter
   TextUtils
 
