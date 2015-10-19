@@ -58,6 +58,7 @@ public:
 
     void setFontForWholeText(const QFont &font);
     void textModeChanged(KPIMTextEdit::RichTextComposer::Mode mode);
+    void updateLink(const QString &linkUrl, const QString &linkText);
 public Q_SLOTS:
     void insertHorizontalRule();
     void alignLeft();

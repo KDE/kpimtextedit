@@ -407,6 +407,11 @@ void RichTextComposerControler::manageLink()
 
 }
 
+void RichTextComposerControler::RichTextComposerControler::updateLink(const QString &linkUrl, const QString &linkText)
+{
+    d->updateLink(linkUrl, linkText);
+}
+
 void RichTextComposerControler::RichTextComposerControlerPrivate::updateLink(const QString &linkUrl, const QString &linkText)
 {
     q->selectLinkText();
