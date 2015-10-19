@@ -218,7 +218,6 @@ void TextEditTester::testQuoting()
 
 void TextEditTester::testCleanText()
 {
-#if 0
     KPIMTextEdit::RichTextComposer edit;
     edit.createActions(new KActionCollection(this));
     QString html(QStringLiteral("<html><head></head><body>Heelllo&nbsp;World<br>Bye!</body></html>"));
@@ -229,8 +228,7 @@ void TextEditTester::testCleanText()
     QCOMPARE(edit.composerControler()->toCleanPlainText(), plain);
 
     edit.show(); // < otherwise toWrappedPlainText can't work, it needs a layout
-    QCOMPARE(edit.toWrappedPlainText(), plain);
-#endif
+    QCOMPARE(edit.composerControler()->toWrappedPlainText(), plain);
 }
 
 void TextEditTester::testEnter_data()
@@ -455,7 +453,6 @@ void TextEditTester::testLoadImage()
 
 void TextEditTester::testWrappedPlainText()
 {
-#if 0
     KPIMTextEdit::RichTextComposer edit;
     edit.createActions(new KActionCollection(this));
     QString text(QStringLiteral("http://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\n  https://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\ntest ftp://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\nftps://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\n  ldap://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test"));
@@ -463,6 +460,5 @@ void TextEditTester::testWrappedPlainText()
 
     edit.show(); // < otherwise toWrappedPlainText can't work, it needs a layout
 
-    QCOMPARE(edit.toWrappedPlainText(), text);
-#endif
+    QCOMPARE(edit.composerControler()->toWrappedPlainText(), text);
 }

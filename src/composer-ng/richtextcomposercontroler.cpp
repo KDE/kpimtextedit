@@ -867,3 +867,52 @@ void RichTextComposerControler::textModeChanged(KPIMTextEdit::RichTextComposer::
         d->saveFont = richTextComposer()->currentFont();
     }
 }
+
+QString RichTextComposerControler::toCleanPlainText(const QString &plainText) const
+{
+    QString temp = plainText.isEmpty() ? richTextComposer()->toPlainText() : plainText;
+    d->fixupTextEditString(temp);
+    return temp;
+}
+
+
+QString RichTextComposerControler::toWrappedPlainText() const
+{
+    QTextDocument *doc = richTextComposer()->document();
+    return toWrappedPlainText(doc);
+}
+
+QString RichTextComposerControler::toWrappedPlainText(QTextDocument *doc) const
+{
+    QString temp;
+    QRegExp rx(QStringLiteral("(http|ftp|ldap)s?\\S+-$"));
+    QTextBlock block = doc->begin();
+    while (block.isValid()) {
+        QTextLayout *layout = block.layout();
+        const int numberOfLine(layout->lineCount());
+        bool urlStart = false;
+        for (int i = 0; i < numberOfLine; ++i) {
+            QTextLine line = layout->lineAt(i);
+            QString lineText = block.text().mid(line.textStart(), line.textLength());
+
+            if (lineText.contains(rx) ||
+                    (urlStart && !lineText.contains(QLatin1Char(' ')) &&
+                     lineText.endsWith(QLatin1Char('-')))) {
+                // don't insert line break in URL
+                temp += lineText;
+                urlStart = true;
+            } else {
+                temp += lineText + QLatin1Char('\n');
+            }
+        }
+        block = block.next();
+    }
+
+    // Remove the last superfluous newline added above
+    if (temp.endsWith(QLatin1Char('\n'))) {
+        temp.chop(1);
+    }
+
+    d->fixupTextEditString(temp);
+    return temp;
+}
