@@ -42,7 +42,7 @@ class KPIMTEXTEDIT_EXPORT SlideContainer : public QFrame
     Q_OBJECT
     Q_PROPERTY(int slideHeight READ slideHeight WRITE setSlideHeight)
 public:
-    SlideContainer(QWidget *parent = Q_NULLPTR);
+    explicit SlideContainer(QWidget *parent = Q_NULLPTR);
 
     /**
      * Returns the content widget
