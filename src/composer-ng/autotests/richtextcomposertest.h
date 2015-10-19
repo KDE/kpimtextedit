@@ -29,6 +29,17 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldChangeMode();
+    void testFormattingUsed();
+    void testQuoting();
+    void testCleanText();
+    void testEnter();
+    void testEnter_data();
+    void testImages();
+    void testImageHtmlCode();
+    void testDeleteLine();
+    void testDeleteLine_data();
+    void testLoadImage();
+    void testWrappedPlainText();
 };
 
 #endif // RICHTEXTCOMPOSERTEST_H
