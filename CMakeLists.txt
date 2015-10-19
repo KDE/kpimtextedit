@@ -18,7 +18,7 @@ include(KDEFrameworkCompilerSettings)
 include(ECMAddTests)
 
 set(KF5_VERSION "5.16.0")
-set(KPIMTEXTEDIT_LIB_VERSION "4.87.0")
+set(KPIMTEXTEDIT_LIB_VERSION "4.88.0")
 
 ecm_setup_version(${KPIMTEXTEDIT_LIB_VERSION} VARIABLE_PREFIX KPIMTEXTEDIT
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h"
@@ -26,7 +26,7 @@ ecm_setup_version(${KPIMTEXTEDIT_LIB_VERSION} VARIABLE_PREFIX KPIMTEXTEDIT
                         SOVERSION 5
 )
 
-set(QT_REQUIRED_VERSION "5.2.0")
+set(QT_REQUIRED_VERSION "5.4.0")
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Widgets DBus)
 find_package(Grantlee5 "5.0" CONFIG REQUIRED)
 

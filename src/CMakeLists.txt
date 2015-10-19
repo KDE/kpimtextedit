@@ -59,6 +59,7 @@ set(kpimtextedit_SRCS
   syntaxhighlighterbase.cpp
   texteditorcompleter.cpp
   slidecontainer.cpp
+  editorutil.cpp
 )
 
 add_library(KF5PimTextEdit ${kpimtextedit_SRCS} ${kpimtextedit_texteditor_SRCS} ${kpimtextedit_texttospeech_SRCS} ${kpimtextedit_composerng_SRCS})
@@ -103,6 +104,7 @@ install(TARGETS KF5PimTextEdit EXPORT KF5PimTextEditTargets ${KF5_INSTALL_TARGET
 ########### Generate Headers ###############
 ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
   HEADER_NAMES
+  EditorUtil
   EmoticonTextEditAction
   HtmlHighlighter
   InsertHtmlDialog
