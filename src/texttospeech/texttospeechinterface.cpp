@@ -20,13 +20,25 @@
 
 using namespace KPIMTextEdit;
 
+class KPIMTextEdit::TextToSpeechInterfacePrivate
+{
+public:
+    TextToSpeechInterfacePrivate(TextToSpeechWidget *textToSpeechWidget)
+        : mTextToSpeechWidget(textToSpeechWidget)
+    {
+
+    }
+    TextToSpeechWidget *mTextToSpeechWidget;
+};
+
+
 TextToSpeechInterface::TextToSpeechInterface(TextToSpeechWidget *textToSpeechWidget, QObject *parent)
     : AbstractTextToSpeechInterface(parent),
-      mTextToSpeechWidget(textToSpeechWidget)
+      d(new KPIMTextEdit::TextToSpeechInterfacePrivate(textToSpeechWidget))
 {
     KPIMTextEdit::TextToSpeech::self(); //init
-    connect(mTextToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::stateChanged, this, &TextToSpeechInterface::stateChanged);
-    connect(KPIMTextEdit::TextToSpeech::self(), &KPIMTextEdit::TextToSpeech::stateChanged, mTextToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::slotStateChanged);
+    connect(d->mTextToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::stateChanged, this, &TextToSpeechInterface::stateChanged);
+    connect(KPIMTextEdit::TextToSpeech::self(), &KPIMTextEdit::TextToSpeech::stateChanged, d->mTextToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::slotStateChanged);
 }
 
 TextToSpeechInterface::~TextToSpeechInterface()
@@ -40,8 +52,8 @@ bool TextToSpeechInterface::isReady() const
 
 void TextToSpeechInterface::say(const QString &text)
 {
-    mTextToSpeechWidget->setState(KPIMTextEdit::TextToSpeechWidget::Play);
-    mTextToSpeechWidget->show();
+    d->mTextToSpeechWidget->setState(KPIMTextEdit::TextToSpeechWidget::Play);
+    d->mTextToSpeechWidget->show();
     KPIMTextEdit::TextToSpeech::self()->say(text);
 }
 

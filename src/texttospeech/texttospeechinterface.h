@@ -25,6 +25,7 @@
 namespace KPIMTextEdit
 {
 class TextToSpeechWidget;
+class TextToSpeechInterfacePrivate;
 class KPIMTEXTEDIT_EXPORT TextToSpeechInterface : public AbstractTextToSpeechInterface
 {
     Q_OBJECT
@@ -42,8 +43,7 @@ private Q_SLOTS:
     void stateChanged(KPIMTextEdit::TextToSpeechWidget::State state);
 
 private:
-    TextToSpeechWidget *mTextToSpeechWidget;
-
+    TextToSpeechInterfacePrivate *const d;
 };
 }
 

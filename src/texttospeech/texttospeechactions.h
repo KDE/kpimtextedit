@@ -24,6 +24,7 @@
 class QAction;
 namespace KPIMTextEdit
 {
+class TextToSpeechActionsPrivate;
 class KPIMTEXTEDIT_EXPORT TextToSpeechActions : public QObject
 {
     Q_OBJECT
@@ -48,10 +49,7 @@ private Q_SLOTS:
     void slotPlayPause();
 
 private:
-    void updateButtonState();
-    TextToSpeechWidget::State mState;
-    QAction *mStopAction;
-    QAction *mPlayPauseAction;
+    TextToSpeechActionsPrivate *const d;
 };
 }
 

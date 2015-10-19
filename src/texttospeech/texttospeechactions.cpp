@@ -21,55 +21,69 @@
 
 using namespace KPIMTextEdit;
 
+class KPIMTextEdit::TextToSpeechActionsPrivate
+{
+public:
+    TextToSpeechActionsPrivate()
+        : mState(TextToSpeechWidget::Stop),
+          mStopAction(Q_NULLPTR),
+          mPlayPauseAction(Q_NULLPTR)
+    {
+
+    }
+    void updateButtonState();
+    TextToSpeechWidget::State mState;
+    QAction *mStopAction;
+    QAction *mPlayPauseAction;
+};
+
 TextToSpeechActions::TextToSpeechActions(QObject *parent)
     : QObject(parent),
-      mState(TextToSpeechWidget::Stop),
-      mStopAction(Q_NULLPTR),
-      mPlayPauseAction(Q_NULLPTR)
+      d(new KPIMTextEdit::TextToSpeechActionsPrivate)
 {
-    mStopAction = new QAction(i18n("Stop"), this);
-    mStopAction->setObjectName(QStringLiteral("stopbutton"));
-    mStopAction->setIcon(QIcon::fromTheme(QStringLiteral("media-playback-stop")));
-    mStopAction->setToolTip(i18n("Stop"));
-    connect(mStopAction, &QAction::triggered, this, &TextToSpeechActions::slotStop);
+    d->mStopAction = new QAction(i18n("Stop"), this);
+    d->mStopAction->setObjectName(QStringLiteral("stopbutton"));
+    d->mStopAction->setIcon(QIcon::fromTheme(QStringLiteral("media-playback-stop")));
+    d->mStopAction->setToolTip(i18n("Stop"));
+    connect(d->mStopAction, &QAction::triggered, this, &TextToSpeechActions::slotStop);
 
-    mPlayPauseAction = new QAction(this);
-    mPlayPauseAction->setObjectName(QStringLiteral("playpausebutton"));
-    mPlayPauseAction->setIcon(QIcon::fromTheme(QStringLiteral("media-playback-start")));
-    connect(mPlayPauseAction, &QAction::triggered, this, &TextToSpeechActions::slotPlayPause);
+    d->mPlayPauseAction = new QAction(this);
+    d->mPlayPauseAction->setObjectName(QStringLiteral("playpausebutton"));
+    d->mPlayPauseAction->setIcon(QIcon::fromTheme(QStringLiteral("media-playback-start")));
+    connect(d->mPlayPauseAction, &QAction::triggered, this, &TextToSpeechActions::slotPlayPause);
 
-    updateButtonState();
+    d->updateButtonState();
 }
 
 TextToSpeechActions::~TextToSpeechActions()
 {
-
+    delete d;
 }
 
 QAction *TextToSpeechActions::stopAction() const
 {
-    return mStopAction;
+    return d->mStopAction;
 }
 
 QAction *TextToSpeechActions::playPauseAction() const
 {
-    return mPlayPauseAction;
+    return d->mPlayPauseAction;
 }
 
 TextToSpeechWidget::State TextToSpeechActions::state() const
 {
-    return mState;
+    return d->mState;
 }
 
 void TextToSpeechActions::setState(const TextToSpeechWidget::State &state)
 {
-    if (mState != state) {
-        mState = state;
-        updateButtonState();
+    if (d->mState != state) {
+        d->mState = state;
+        d->updateButtonState();
     }
 }
 
-void TextToSpeechActions::updateButtonState()
+void TextToSpeechActionsPrivate::updateButtonState()
 {
     mPlayPauseAction->setIcon(QIcon::fromTheme((mState == TextToSpeechWidget::Stop) ? QStringLiteral("media-playback-start") : QStringLiteral("media-playback-pause")));
     mPlayPauseAction->setEnabled((mState != TextToSpeechWidget::Stop));
@@ -80,24 +94,24 @@ void TextToSpeechActions::updateButtonState()
 
 void TextToSpeechActions::slotPlayPause()
 {
-    if (mState == KPIMTextEdit::TextToSpeechWidget::Pause) {
-        mState = KPIMTextEdit::TextToSpeechWidget::Play;
-    } else if (mState == KPIMTextEdit::TextToSpeechWidget::Play) {
-        mState = KPIMTextEdit::TextToSpeechWidget::Pause;
-    } else if (mState == KPIMTextEdit::TextToSpeechWidget::Stop) {
-        mState = KPIMTextEdit::TextToSpeechWidget::Play;
+    if (d->mState == KPIMTextEdit::TextToSpeechWidget::Pause) {
+        d->mState = KPIMTextEdit::TextToSpeechWidget::Play;
+    } else if (d->mState == KPIMTextEdit::TextToSpeechWidget::Play) {
+        d->mState = KPIMTextEdit::TextToSpeechWidget::Pause;
+    } else if (d->mState == KPIMTextEdit::TextToSpeechWidget::Stop) {
+        d->mState = KPIMTextEdit::TextToSpeechWidget::Play;
     } else {
         return;
     }
-    updateButtonState();
-    Q_EMIT stateChanged(mState);
+    d->updateButtonState();
+    Q_EMIT stateChanged(d->mState);
 }
 
 void TextToSpeechActions::slotStop()
 {
-    if (mState != KPIMTextEdit::TextToSpeechWidget::Stop) {
-        mState = KPIMTextEdit::TextToSpeechWidget::Stop;
-        updateButtonState();
-        Q_EMIT stateChanged(mState);
+    if (d->mState != KPIMTextEdit::TextToSpeechWidget::Stop) {
+        d->mState = KPIMTextEdit::TextToSpeechWidget::Stop;
+        d->updateButtonState();
+        Q_EMIT stateChanged(d->mState);
     }
 }
