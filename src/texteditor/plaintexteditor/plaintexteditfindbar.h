@@ -16,8 +16,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef PIMCOMMON_FINDBARBASE_H
-#define PIMCOMMON_FINDBARBASE_H
+#ifndef KPIMTEXTEDIT_FINDBARBASE_H
+#define KPIMTEXTEDIT_FINDBARBASE_H
 
 #include "kpimtextedit_export.h"
 #include "kpimtextedit/texteditfindbarbase.h"
