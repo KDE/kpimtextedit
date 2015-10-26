@@ -201,8 +201,8 @@ void RichTextComposerTest::testFormattingUsed()
     //
     // Image
     //
-    QString imagePath = KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false);
-    textEdit.composerControler()->composerImages()->addImage(QUrl(imagePath));
+    const QString imagePath = KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false);
+    textEdit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(imagePath));
     QVERIFY(textEdit.composerControler()->isFormattingUsed());
     cursor = textEdit.textCursor();
     cursor.movePosition(QTextCursor::Left, QTextCursor::KeepAnchor, 1);
@@ -233,7 +233,7 @@ void RichTextComposerTest::testCleanText()
     QString html(QStringLiteral("<html><head></head><body>Heelllo&nbsp;World<br>Bye!</body></html>"));
     QString plain(QStringLiteral("Heelllo World\nBye!"));
     edit.setTextOrHtml(html);
-    edit.composerControler()->composerImages()->addImage(QUrl(KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false)));
+    edit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false)));
     QVERIFY(edit.textMode() == KPIMTextEdit::RichTextComposer::Rich);
     QCOMPARE(edit.composerControler()->toCleanPlainText(), plain);
 
@@ -292,7 +292,7 @@ void RichTextComposerTest::testImages()
     QString image2Path = KIconLoader::global()->iconPath(QStringLiteral("arrow-up"), KIconLoader::Small, false);
 
     // Add one image, check that embeddedImages() returns the right stuff
-    edit.composerControler()->composerImages()->addImage(QUrl(image1Path));
+    edit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1Path));
     KPIMTextEdit::ImageList images = edit.composerControler()->composerImages()->embeddedImages();
     KPIMTextEdit::ImageWithNameList imagesWithNames = edit.composerControler()->composerImages()->imagesWithName();
     QCOMPARE(images.size(), 1);
@@ -320,7 +320,7 @@ void RichTextComposerTest::testImages()
     QVERIFY(edit.composerControler()->composerImages()->imagesWithName().isEmpty());
 
     // Check that manually removing the image also empties the image list
-    edit.composerControler()->composerImages()->addImage(QUrl(image1Path));
+    edit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1Path));
     QCOMPARE(edit.composerControler()->composerImages()->embeddedImages().size(), 1);
     QCOMPARE(edit.composerControler()->composerImages()->imagesWithName().size(), 1);
     QTextCursor cursor = edit.textCursor();
@@ -331,15 +331,15 @@ void RichTextComposerTest::testImages()
     QVERIFY(edit.composerControler()->composerImages()->imagesWithName().isEmpty());
 
     // Check that adding the identical image two times only adds the image once
-    edit.composerControler()->composerImages()->addImage(QUrl(image1Path));
-    edit.composerControler()->composerImages()->addImage(QUrl(image1Path));
+    edit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1Path));
+    edit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1Path));
     QCOMPARE(edit.composerControler()->composerImages()->embeddedImages().size(), 1);
     QCOMPARE(edit.composerControler()->composerImages()->imagesWithName().size(), 1);
 
     // Another different image added, and we should have two images
     edit.clear();
-    edit.composerControler()->composerImages()->addImage(QUrl(image1Path));
-    edit.composerControler()->composerImages()->addImage(QUrl(image2Path));
+    edit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1Path));
+    edit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image2Path));
     images = edit.composerControler()->composerImages()->embeddedImages();
     imagesWithNames = edit.composerControler()->composerImages()->imagesWithName();
     QCOMPARE(images.size(), 2);
@@ -361,8 +361,8 @@ void RichTextComposerTest::testImageHtmlCode()
     edit.createActions(new KActionCollection(this));
     QString image1Path = KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false);
     QString image2Path = KIconLoader::global()->iconPath(QStringLiteral("arrow-up"), KIconLoader::Small, false);
-    edit.composerControler()->composerImages()->addImage(QUrl(image1Path));
-    edit.composerControler()->composerImages()->addImage(QUrl(image2Path));
+    edit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1Path));
+    edit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image2Path));
     KPIMTextEdit::ImageList images = edit.composerControler()->composerImages()->embeddedImages();
     QCOMPARE(images.size(), 2);
     KPIMTextEdit::EmbeddedImage *image1 = images.first().data();
