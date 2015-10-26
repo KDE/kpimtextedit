@@ -181,9 +181,7 @@ void TextToSpeech::setVolume(int volume)
 int TextToSpeech::volume() const
 {
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
-    KConfig config(QStringLiteral("texttospeechrc"));
-    KConfigGroup grp = config.group("Settings");
-    return grp.readEntry("volume", 0);
+    return mTextToSpeech->volume();
 #else
     return 0;
 #endif
