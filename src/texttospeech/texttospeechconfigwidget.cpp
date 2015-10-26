@@ -16,7 +16,6 @@
 */
 
 #include "texttospeechconfigwidget.h"
-//FIXME #include "settings/pimcommonsettings.h"
 #include "abstracttexttospeechconfiginterface.h"
 #include "texttospeechconfiginterface.h"
 #include "texttospeechlanguagecombobox.h"
@@ -63,7 +62,12 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     layout->addRow(i18n("Language:"), mLanguage);
     connect(mLanguage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::valueChanged);
 
-    QTimer::singleShot(0, this, SLOT(slotUpdateAvailableLocales()));
+    mAvailableEngine = new QComboBox(this);
+    mAvailableEngine->setObjectName(QStringLiteral("engine"));
+    layout->addRow(i18n("Engine:"), mAvailableEngine);
+    connect(mAvailableEngine, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::valueChanged);
+
+    QTimer::singleShot(0, this, SLOT(slotUpdateSettings()));
 }
 
 TextToSpeechConfigWidget::~TextToSpeechConfigWidget()
@@ -105,16 +109,32 @@ void TextToSpeechConfigWidget::writeConfig()
     grp.writeEntry("rate", static_cast<double>(mRate->value() / 100));
     grp.writeEntry("pitch", static_cast<double>(mPitch->value() / 100));
     grp.writeEntry("localeName", mLanguage->currentData().value<QLocale>().name());
+    grp.writeEntry("engine", mAvailableEngine->currentData().toString());
+}
+
+void TextToSpeechConfigWidget::slotUpdateSettings()
+{
+    updateAvailableLocales();
+    updateAvailableEngine();
 }
 
 void TextToSpeechConfigWidget::setTextToSpeechConfigInterface(AbstractTextToSpeechConfigInterface *interface)
 {
     delete mAbstractTextToSpeechConfigInterface;
     mAbstractTextToSpeechConfigInterface = interface;
-    slotUpdateAvailableLocales();
+    slotUpdateSettings();
 }
 
-void TextToSpeechConfigWidget::slotUpdateAvailableLocales()
+void TextToSpeechConfigWidget::updateAvailableEngine()
+{
+    mAvailableEngine->clear();
+    mAvailableEngine->addItem(i18nc("Default tts engine", "Default"), QStringLiteral("default"));
+    Q_FOREACH (const QString &engine, mAbstractTextToSpeechConfigInterface->availableEngines()) {
+        mAvailableEngine->addItem(engine, engine);
+    }
+}
+
+void TextToSpeechConfigWidget::updateAvailableLocales()
 {
     mLanguage->clear();
     const QVector<QLocale> locales = mAbstractTextToSpeechConfigInterface->availableLocales();

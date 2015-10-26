@@ -48,6 +48,9 @@ public:
 
     int volume() const;
     QVector<QLocale> availableLocales() const;
+    QStringList availableEngines() const;
+    QStringList availableVoices() const;
+
     QLocale locale() const;
 
     void reloadSettings();
@@ -72,8 +75,8 @@ private:
     explicit TextToSpeech(QObject *parent = Q_NULLPTR);
     friend class TextToSpeechPrivate;
 
-    void init();
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
+    QString mDefaultEngine;
     QTextToSpeech *mTextToSpeech;
 #endif
 };

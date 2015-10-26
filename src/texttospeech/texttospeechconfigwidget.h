@@ -20,6 +20,7 @@
 #include <QWidget>
 #include "kpimtextedit_export.h"
 class QSlider;
+class QComboBox;
 namespace KPIMTextEdit
 {
 class TextToSpeechLanguageComboBox;
@@ -35,20 +36,24 @@ public:
     void readConfig();
 
     void setTextToSpeechConfigInterface(AbstractTextToSpeechConfigInterface *interface);
+
 private Q_SLOTS:
     void valueChanged();
+    void slotUpdateSettings();
 
-    void slotUpdateAvailableLocales();
 Q_SIGNALS:
     void configChanged(bool state);
 
 private:
     void updateLocale();
+    void updateAvailableLocales();
+    void updateAvailableEngine();
     QSlider *mVolume;
     QSlider *mRate;
     QSlider *mPitch;
     TextToSpeechLanguageComboBox *mLanguage;
     AbstractTextToSpeechConfigInterface *mAbstractTextToSpeechConfigInterface;
+    QComboBox *mAvailableEngine;
 };
 }
 

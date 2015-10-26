@@ -21,7 +21,6 @@
 #include <KConfigGroup>
 #include <QLocale>
 #include <QVector>
-//#include "settings/pimcommonsettings.h"
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
 #include <QtTextToSpeech/QTextToSpeech>
 #endif
@@ -50,10 +49,10 @@ Q_GLOBAL_STATIC(TextToSpeechPrivate, sInstance)
 TextToSpeech::TextToSpeech(QObject *parent)
     : QObject(parent)
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
-    , mTextToSpeech(new QTextToSpeech(this))
+    , mTextToSpeech(Q_NULLPTR)
 #endif
 {
-    init();
+    reloadSettings();
 }
 
 TextToSpeech::~TextToSpeech()
@@ -66,18 +65,21 @@ void TextToSpeech::reloadSettings()
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
     KConfig config(QStringLiteral("texttospeechrc"));
     KConfigGroup grp = config.group("Settings");
+    const QString engineName = grp.readEntry("engine");
+    if (!mTextToSpeech) {
+        mTextToSpeech = new QTextToSpeech(this, engineName);
+        connect(mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
+    } else if (mDefaultEngine != engineName) {
+        disconnect(mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
+        delete mTextToSpeech;
+        mTextToSpeech = new QTextToSpeech(this, engineName);
+        connect(mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
+    }
+    mDefaultEngine = engineName;
     mTextToSpeech->setRate(grp.readEntry("rate", 0));
     mTextToSpeech->setPitch(grp.readEntry("pitch", 0));
     mTextToSpeech->setVolume(grp.readEntry("volume", 0));
     mTextToSpeech->setLocale(QLocale(grp.readEntry("localeName")));
-#endif
-}
-
-void TextToSpeech::init()
-{
-#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
-    reloadSettings();
-    connect(mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
 #endif
 }
 
@@ -192,6 +194,26 @@ QVector<QLocale> TextToSpeech::availableLocales() const
     return mTextToSpeech->availableLocales();
 #else
     return QVector<QLocale>();
+#endif
+}
+
+QStringList TextToSpeech::availableVoices() const
+{
+    QStringList lst;
+#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
+    Q_FOREACH(const QVoice &voice, mTextToSpeech->availableVoices()) {
+        lst << voice.name();
+    }
+#endif
+    return lst;
+}
+
+QStringList TextToSpeech::availableEngines() const
+{
+#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
+    return QTextToSpeech::availableEngines();
+#else
+    return QStringList();
 #endif
 }
 

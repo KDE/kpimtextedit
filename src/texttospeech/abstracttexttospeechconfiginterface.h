@@ -33,6 +33,8 @@ public:
     virtual QLocale locale() const;
     virtual void setLocale(const QLocale &locale);
 
+    virtual QStringList availableEngines() const;
+    virtual QStringList availableVoices() const;
 };
 }
 

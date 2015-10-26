@@ -31,6 +31,16 @@ TextToSpeechConfigInterface::~TextToSpeechConfigInterface()
 
 }
 
+QStringList TextToSpeechConfigInterface::availableVoices() const
+{
+    return KPIMTextEdit::TextToSpeech::self()->availableVoices();
+}
+
+QStringList TextToSpeechConfigInterface::availableEngines() const
+{
+    return KPIMTextEdit::TextToSpeech::self()->availableEngines();
+}
+
 QVector<QLocale> TextToSpeechConfigInterface::availableLocales() const
 {
     return KPIMTextEdit::TextToSpeech::self()->availableLocales();

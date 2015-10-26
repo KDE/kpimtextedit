@@ -45,3 +45,12 @@ void AbstractTextToSpeechConfigInterface::setLocale(const QLocale &locale)
     Q_UNUSED(locale);
 }
 
+QStringList AbstractTextToSpeechConfigInterface::availableEngines() const
+{
+    return QStringList();
+}
+
+QStringList AbstractTextToSpeechConfigInterface::availableVoices() const
+{
+    return QStringList();
+}

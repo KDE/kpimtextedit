@@ -56,6 +56,9 @@ void TextToSpeechConfigWidgetTest::shouldHaveDefaultValue()
     QVERIFY(language);
     //FIXME
     //QVERIFY(language->count()>0);
+
+    QComboBox *availableEngine = textToSpeechConfigWidget.findChild<QComboBox *>(QStringLiteral("engine"));
+    QVERIFY(availableEngine);
 }
 
 void TextToSpeechConfigWidgetTest::shouldEmitConfigChangedWhenChangeConfigValue()
