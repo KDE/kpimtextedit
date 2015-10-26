@@ -46,6 +46,7 @@ Q_SIGNALS:
 
 private:
     void updateLocale();
+    void updateEngine();
     void updateAvailableLocales();
     void updateAvailableEngine();
     QSlider *mVolume;

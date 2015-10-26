@@ -128,10 +128,23 @@ void TextToSpeechConfigWidget::setTextToSpeechConfigInterface(AbstractTextToSpee
 void TextToSpeechConfigWidget::updateAvailableEngine()
 {
     mAvailableEngine->clear();
-    mAvailableEngine->addItem(i18nc("Default tts engine", "Default"), QStringLiteral("default"));
+    mAvailableEngine->addItem(i18nc("Default tts engine", "Default"), QString());
     Q_FOREACH (const QString &engine, mAbstractTextToSpeechConfigInterface->availableEngines()) {
         mAvailableEngine->addItem(engine, engine);
     }
+    updateEngine();
+}
+
+void TextToSpeechConfigWidget::updateEngine()
+{
+    KConfig config(QStringLiteral("texttospeechrc"));
+    KConfigGroup grp = config.group("Settings");
+    const QString engineName = grp.readEntry("engine");
+    int index = mAvailableEngine->findData(engineName);
+    if (index == -1) {
+        index = 0;
+    }
+    mAvailableEngine->setCurrentIndex(index);
 }
 
 void TextToSpeechConfigWidget::updateAvailableLocales()
