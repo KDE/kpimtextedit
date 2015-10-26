@@ -54,3 +54,8 @@ QStringList AbstractTextToSpeechConfigInterface::availableVoices() const
 {
     return QStringList();
 }
+
+void AbstractTextToSpeechConfigInterface::setEngine(const QString &engineName)
+{
+    Q_UNUSED(engineName);
+}

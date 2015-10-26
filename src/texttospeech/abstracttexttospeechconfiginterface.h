@@ -35,6 +35,7 @@ public:
 
     virtual QStringList availableEngines() const;
     virtual QStringList availableVoices() const;
+    virtual void setEngine(const QString &engineName);
 };
 }
 

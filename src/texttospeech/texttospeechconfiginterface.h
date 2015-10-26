@@ -31,9 +31,9 @@ public:
     QVector<QLocale> availableLocales() const Q_DECL_OVERRIDE;
     QLocale locale() const Q_DECL_OVERRIDE;
 
-    void setLocale(const QLocale &locale) Q_DECL_OVERRIDE;
     QStringList availableEngines() const Q_DECL_OVERRIDE;
     QStringList availableVoices() const Q_DECL_OVERRIDE;
+    void setEngine(const QString &engineName) Q_DECL_OVERRIDE;
 };
 }
 

@@ -51,7 +51,7 @@ QLocale TextToSpeechConfigInterface::locale() const
     return KPIMTextEdit::TextToSpeech::self()->locale();
 }
 
-void TextToSpeechConfigInterface::setLocale(const QLocale &locale)
+void TextToSpeechConfigInterface::setEngine(const QString &engineName)
 {
-    KPIMTextEdit::TextToSpeech::self()->setLocale(locale);
+    //TODO
 }
