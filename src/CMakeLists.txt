@@ -221,5 +221,4 @@ if (BUILD_TESTING)
    add_subdirectory(texttospeech/tests)
    add_subdirectory(composer-ng/autotests)
    add_subdirectory(composer-ng/tests)
-
 endif()
