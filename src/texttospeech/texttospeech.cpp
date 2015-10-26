@@ -80,6 +80,7 @@ void TextToSpeech::reloadSettings()
     mTextToSpeech->setPitch(grp.readEntry("pitch", 0));
     mTextToSpeech->setVolume(grp.readEntry("volume", 0));
     mTextToSpeech->setLocale(QLocale(grp.readEntry("localeName")));
+    //It doesn't have api for it mTextToSpeech->setVoice(grp.readEntry("voice"));
 #endif
 }
 

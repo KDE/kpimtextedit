@@ -57,15 +57,23 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     mPitch->setOrientation(Qt::Horizontal);
     layout->addRow(i18n("Pitch:"), mPitch);
 
-    mLanguage = new KPIMTextEdit::TextToSpeechLanguageComboBox;
-    mLanguage->setObjectName(QStringLiteral("language"));
-    layout->addRow(i18n("Language:"), mLanguage);
-    connect(mLanguage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::valueChanged);
-
     mAvailableEngine = new QComboBox(this);
     mAvailableEngine->setObjectName(QStringLiteral("engine"));
     layout->addRow(i18n("Engine:"), mAvailableEngine);
+    connect(mAvailableEngine, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::slotEngineChanged);
     connect(mAvailableEngine, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::valueChanged);
+
+    mLanguage = new KPIMTextEdit::TextToSpeechLanguageComboBox;
+    mLanguage->setObjectName(QStringLiteral("language"));
+    layout->addRow(i18n("Language:"), mLanguage);
+    connect(mAvailableEngine, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::slotLanguageChanged);
+    connect(mLanguage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::valueChanged);
+
+    mVoice = new QComboBox(this);
+    mVoice->setObjectName(QStringLiteral("voice"));
+    layout->addRow(i18n("Voice:"), mVoice);
+    connect(mVoice, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::valueChanged);
+
 
     QTimer::singleShot(0, this, SLOT(slotUpdateSettings()));
 }
@@ -110,12 +118,14 @@ void TextToSpeechConfigWidget::writeConfig()
     grp.writeEntry("pitch", static_cast<double>(mPitch->value() / 100));
     grp.writeEntry("localeName", mLanguage->currentData().value<QLocale>().name());
     grp.writeEntry("engine", mAvailableEngine->currentData().toString());
+    grp.writeEntry("voice", mVoice->currentData().toString());
 }
 
 void TextToSpeechConfigWidget::slotUpdateSettings()
 {
     updateAvailableLocales();
     updateAvailableEngine();
+    updateAvailableVoices();
 }
 
 void TextToSpeechConfigWidget::setTextToSpeechConfigInterface(AbstractTextToSpeechConfigInterface *interface)
@@ -133,6 +143,27 @@ void TextToSpeechConfigWidget::updateAvailableEngine()
         mAvailableEngine->addItem(engine, engine);
     }
     updateEngine();
+}
+
+void TextToSpeechConfigWidget::updateAvailableVoices()
+{
+    mVoice->clear();
+    Q_FOREACH (const QString &voice, mAbstractTextToSpeechConfigInterface->availableVoices()) {
+        mVoice->addItem(voice, voice);
+    }
+    updateVoice();
+}
+
+void TextToSpeechConfigWidget::updateVoice()
+{
+    KConfig config(QStringLiteral("texttospeechrc"));
+    KConfigGroup grp = config.group("Settings");
+    const QString voice = grp.readEntry("voice");
+    int index = mVoice->findData(voice);
+    if (index == -1) {
+        index = 0;
+    }
+    mVoice->setCurrentIndex(index);
 }
 
 void TextToSpeechConfigWidget::updateEngine()
@@ -154,4 +185,16 @@ void TextToSpeechConfigWidget::updateAvailableLocales()
     QLocale current = mAbstractTextToSpeechConfigInterface->locale();
     mLanguage->updateAvailableLocales(locales, current);
     updateLocale();
+}
+
+void TextToSpeechConfigWidget::slotEngineChanged()
+{
+    mAbstractTextToSpeechConfigInterface->setEngine(mAvailableEngine->currentData().toString());
+    updateAvailableLocales();
+}
+
+void TextToSpeechConfigWidget::slotLanguageChanged()
+{
+    //QLocale locale = mLanguage->currentData().value<QLocale>();
+
 }

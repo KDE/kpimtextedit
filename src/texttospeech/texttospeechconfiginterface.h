@@ -19,6 +19,11 @@
 #define TEXTTOSPEECHCONFIGINTERFACE_H
 #include "abstracttexttospeechconfiginterface.h"
 #include "kpimtextedit_export.h"
+#include "config-kpimtextedit.h"
+
+#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
+class QTextToSpeech;
+#endif
 namespace KPIMTextEdit
 {
 class KPIMTEXTEDIT_EXPORT TextToSpeechConfigInterface : public AbstractTextToSpeechConfigInterface
@@ -34,6 +39,9 @@ public:
     QStringList availableEngines() const Q_DECL_OVERRIDE;
     QStringList availableVoices() const Q_DECL_OVERRIDE;
     void setEngine(const QString &engineName) Q_DECL_OVERRIDE;
+#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
+    QTextToSpeech *mTextToSpeech;
+#endif
 };
 }
 

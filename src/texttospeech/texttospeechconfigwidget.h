@@ -40,21 +40,26 @@ public:
 private Q_SLOTS:
     void valueChanged();
     void slotUpdateSettings();
+    void slotEngineChanged();    
+    void slotLanguageChanged();
 
 Q_SIGNALS:
     void configChanged(bool state);
 
 private:
+    void updateVoice();
     void updateLocale();
     void updateEngine();
     void updateAvailableLocales();
     void updateAvailableEngine();
+    void updateAvailableVoices();
     QSlider *mVolume;
     QSlider *mRate;
     QSlider *mPitch;
     TextToSpeechLanguageComboBox *mLanguage;
     AbstractTextToSpeechConfigInterface *mAbstractTextToSpeechConfigInterface;
     QComboBox *mAvailableEngine;
+    QComboBox *mVoice;
 };
 }
 

@@ -59,6 +59,9 @@ void TextToSpeechConfigWidgetTest::shouldHaveDefaultValue()
 
     QComboBox *availableEngine = textToSpeechConfigWidget.findChild<QComboBox *>(QStringLiteral("engine"));
     QVERIFY(availableEngine);
+
+    QComboBox *voice = textToSpeechConfigWidget.findChild<QComboBox *>(QStringLiteral("voice"));
+    QVERIFY(voice);
 }
 
 void TextToSpeechConfigWidgetTest::shouldEmitConfigChangedWhenChangeConfigValue()

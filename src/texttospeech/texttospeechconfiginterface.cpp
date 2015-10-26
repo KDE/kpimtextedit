@@ -16,12 +16,16 @@
 */
 
 #include "texttospeechconfiginterface.h"
-#include "texttospeech.h"
-
+#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
+#include <QtTextToSpeech/QTextToSpeech>
+#endif
 using namespace KPIMTextEdit;
 
 TextToSpeechConfigInterface::TextToSpeechConfigInterface(QObject *parent)
     : AbstractTextToSpeechConfigInterface(parent)
+#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
+      ,mTextToSpeech(new QTextToSpeech(this))
+#endif
 {
 
 }
@@ -33,25 +37,46 @@ TextToSpeechConfigInterface::~TextToSpeechConfigInterface()
 
 QStringList TextToSpeechConfigInterface::availableVoices() const
 {
-    return KPIMTextEdit::TextToSpeech::self()->availableVoices();
+    QStringList lst;
+#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
+    Q_FOREACH(const QVoice &voice, mTextToSpeech->availableVoices()) {
+        lst << voice.name();
+    }
+#endif
+    return lst;
 }
 
 QStringList TextToSpeechConfigInterface::availableEngines() const
 {
-    return KPIMTextEdit::TextToSpeech::self()->availableEngines();
+#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
+    return mTextToSpeech->availableEngines();
+#else
+    return QStringList();
+#endif
 }
 
 QVector<QLocale> TextToSpeechConfigInterface::availableLocales() const
 {
-    return KPIMTextEdit::TextToSpeech::self()->availableLocales();
+#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
+    return mTextToSpeech->availableLocales();
+#else
+    return QVector<QLocale>();
+#endif
 }
 
 QLocale TextToSpeechConfigInterface::locale() const
 {
-    return KPIMTextEdit::TextToSpeech::self()->locale();
+#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
+    return mTextToSpeech->locale();
+#else
+    return QLocale();
+#endif
 }
 
 void TextToSpeechConfigInterface::setEngine(const QString &engineName)
 {
-    //TODO
+#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
+    delete mTextToSpeech;
+    mTextToSpeech = new QTextToSpeech(this, engineName);
+#endif
 }
