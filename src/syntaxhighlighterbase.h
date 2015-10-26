@@ -28,9 +28,13 @@ namespace KPIMTextEdit
 class KPIMTEXTEDIT_EXPORT Rule
 {
 public:
-    Rule() {}
+    Rule()
+    {
+    }
     Rule(const QRegExp &r, const QTextCharFormat &f)
-        : pattern(r), format(f) {}
+        : pattern(r), format(f)
+    {
+    }
 
     QRegExp pattern;
     QTextCharFormat format;

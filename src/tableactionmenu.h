@@ -36,7 +36,6 @@ public:
     explicit TableActionMenu(QTextEdit *textEdit);
     ~TableActionMenu();
 
-    QList<QAction *> listAction() const;
     void setRichTextMode(bool richTextMode);
 private:
     TableActionMenuPrivate *const d;
