@@ -247,23 +247,23 @@ void RichTextComposerTest::testEnter_data()
     QTest::addColumn<QString>("expectedText");
     QTest::addColumn<int>("cursorPos");
 
-    QTest::newRow("") << QLatin1String("> Hello World")
-                      << QLatin1String("> Hello \n> World")
+    QTest::newRow("") << QStringLiteral("> Hello World")
+                      << QStringLiteral("> Hello \n> World")
                       << 8;
-    QTest::newRow("") << QLatin1String("Hello World")
-                      << QLatin1String("Hello \nWorld")
+    QTest::newRow("") << QStringLiteral("Hello World")
+                      << QStringLiteral("Hello \nWorld")
                       << 6;
-    QTest::newRow("") << QLatin1String("> Hello World")
-                      << QLatin1String("> Hello World\n")
+    QTest::newRow("") << QStringLiteral("> Hello World")
+                      << QStringLiteral("> Hello World\n")
                       << 13;
-    QTest::newRow("") << QLatin1String(">Hello World")
-                      << QLatin1String(">Hello \n>World")
+    QTest::newRow("") << QStringLiteral(">Hello World")
+                      << QStringLiteral(">Hello \n>World")
                       << 7;
-    QTest::newRow("") << QLatin1String("> > Hello World")
-                      << QLatin1String("> > Hello \n> > World")
+    QTest::newRow("") << QStringLiteral("> > Hello World")
+                      << QStringLiteral("> > Hello \n> > World")
                       << 10;
-    QTest::newRow("") << QLatin1String("| | Hello World")
-                      << QLatin1String("| | Hello \n| | World")
+    QTest::newRow("") << QStringLiteral("| | Hello World")
+                      << QStringLiteral("| | Hello \n| | World")
                       << 10;
 }
 
@@ -379,34 +379,34 @@ void RichTextComposerTest::testDeleteLine_data()
     QTest::addColumn<QString>("expectedText");
     QTest::addColumn<int>("cursorPos");
 
-    QTest::newRow("") << QLatin1String("line1\nline2\nline3")
-                      << QLatin1String("line1\nline3")
+    QTest::newRow("") << QStringLiteral("line1\nline2\nline3")
+                      << QStringLiteral("line1\nline3")
                       << 6;
-    QTest::newRow("") << QLatin1String("line1\nline2\nline3")
-                      << QLatin1String("line2\nline3")
+    QTest::newRow("") << QStringLiteral("line1\nline2\nline3")
+                      << QStringLiteral("line2\nline3")
                       << 5;
-    QTest::newRow("") << QLatin1String("line1\nline2\nline3")
-                      << QLatin1String("line1\nline3")
+    QTest::newRow("") << QStringLiteral("line1\nline2\nline3")
+                      << QStringLiteral("line1\nline3")
                       << 11;
-    QTest::newRow("") << QLatin1String("line1\nline2\nline3")
-                      << QLatin1String("line2\nline3")
+    QTest::newRow("") << QStringLiteral("line1\nline2\nline3")
+                      << QStringLiteral("line2\nline3")
                       << 0;
-    QTest::newRow("") << QLatin1String("line1\nline2\nline3")
-                      << QLatin1String("line1\nline2")
+    QTest::newRow("") << QStringLiteral("line1\nline2\nline3")
+                      << QStringLiteral("line1\nline2")
                       << 17;
-    QTest::newRow("") << QLatin1String("line1")
-                      << QLatin1String("")
+    QTest::newRow("") << QStringLiteral("line1")
+                      << QStringLiteral("")
                       << 0;
-    QTest::newRow("") << QLatin1String("line1")
-                      << QLatin1String("")
+    QTest::newRow("") << QStringLiteral("line1")
+                      << QStringLiteral("")
                       << 5;
 
     // Now, test deletion with word wrapping. The line with the Ms is so long that it will get wrapped
-    QTest::newRow("") << QLatin1String("line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
-                      << QLatin1String("line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
+    QTest::newRow("") << QStringLiteral("line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
+                      << QStringLiteral("line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
                       << 6;
-    QTest::newRow("") << QLatin1String("line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
-                      << QLatin1String("line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
+    QTest::newRow("") << QStringLiteral("line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
+                      << QStringLiteral("line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
                       << 13;
 }
 
