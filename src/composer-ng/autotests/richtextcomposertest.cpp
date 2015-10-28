@@ -247,23 +247,23 @@ void RichTextComposerTest::testEnter_data()
     QTest::addColumn<QString>("expectedText");
     QTest::addColumn<int>("cursorPos");
 
-    QTest::newRow("") << QString::fromLatin1("> Hello World")
-                      << QString::fromLatin1("> Hello \n> World")
+    QTest::newRow("") << QLatin1String("> Hello World")
+                      << QLatin1String("> Hello \n> World")
                       << 8;
-    QTest::newRow("") << QString::fromLatin1("Hello World")
-                      << QString::fromLatin1("Hello \nWorld")
+    QTest::newRow("") << QLatin1String("Hello World")
+                      << QLatin1String("Hello \nWorld")
                       << 6;
-    QTest::newRow("") << QString::fromLatin1("> Hello World")
-                      << QString::fromLatin1("> Hello World\n")
+    QTest::newRow("") << QLatin1String("> Hello World")
+                      << QLatin1String("> Hello World\n")
                       << 13;
-    QTest::newRow("") << QString::fromLatin1(">Hello World")
-                      << QString::fromLatin1(">Hello \n>World")
+    QTest::newRow("") << QLatin1String(">Hello World")
+                      << QLatin1String(">Hello \n>World")
                       << 7;
-    QTest::newRow("") << QString::fromLatin1("> > Hello World")
-                      << QString::fromLatin1("> > Hello \n> > World")
+    QTest::newRow("") << QLatin1String("> > Hello World")
+                      << QLatin1String("> > Hello \n> > World")
                       << 10;
-    QTest::newRow("") << QString::fromLatin1("| | Hello World")
-                      << QString::fromLatin1("| | Hello \n| | World")
+    QTest::newRow("") << QLatin1String("| | Hello World")
+                      << QLatin1String("| | Hello \n| | World")
                       << 10;
 }
 
@@ -379,34 +379,34 @@ void RichTextComposerTest::testDeleteLine_data()
     QTest::addColumn<QString>("expectedText");
     QTest::addColumn<int>("cursorPos");
 
-    QTest::newRow("") << QString::fromLatin1("line1\nline2\nline3")
-                      << QString::fromLatin1("line1\nline3")
+    QTest::newRow("") << QLatin1String("line1\nline2\nline3")
+                      << QLatin1String("line1\nline3")
                       << 6;
-    QTest::newRow("") << QString::fromLatin1("line1\nline2\nline3")
-                      << QString::fromLatin1("line2\nline3")
+    QTest::newRow("") << QLatin1String("line1\nline2\nline3")
+                      << QLatin1String("line2\nline3")
                       << 5;
-    QTest::newRow("") << QString::fromLatin1("line1\nline2\nline3")
-                      << QString::fromLatin1("line1\nline3")
+    QTest::newRow("") << QLatin1String("line1\nline2\nline3")
+                      << QLatin1String("line1\nline3")
                       << 11;
-    QTest::newRow("") << QString::fromLatin1("line1\nline2\nline3")
-                      << QString::fromLatin1("line2\nline3")
+    QTest::newRow("") << QLatin1String("line1\nline2\nline3")
+                      << QLatin1String("line2\nline3")
                       << 0;
-    QTest::newRow("") << QString::fromLatin1("line1\nline2\nline3")
-                      << QString::fromLatin1("line1\nline2")
+    QTest::newRow("") << QLatin1String("line1\nline2\nline3")
+                      << QLatin1String("line1\nline2")
                       << 17;
-    QTest::newRow("") << QString::fromLatin1("line1")
-                      << QString::fromLatin1("")
+    QTest::newRow("") << QLatin1String("line1")
+                      << QLatin1String("")
                       << 0;
-    QTest::newRow("") << QString::fromLatin1("line1")
-                      << QString::fromLatin1("")
+    QTest::newRow("") << QLatin1String("line1")
+                      << QLatin1String("")
                       << 5;
 
     // Now, test deletion with word wrapping. The line with the Ms is so long that it will get wrapped
-    QTest::newRow("") << QString::fromLatin1("line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
-                      << QString::fromLatin1("line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
+    QTest::newRow("") << QLatin1String("line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
+                      << QLatin1String("line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
                       << 6;
-    QTest::newRow("") << QString::fromLatin1("line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
-                      << QString::fromLatin1("line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
+    QTest::newRow("") << QLatin1String("line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
+                      << QLatin1String("line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
                       << 13;
 }
 
@@ -444,11 +444,11 @@ void RichTextComposerTest::testLoadImage()
     edit.setHtml(QStringLiteral("Bla<img src=\"folder-new.png\">Bla"));
 
     // First try to load an image with a name that doesn't match, it should fail
-    edit.composerControler()->composerImages()->loadImage(image1, QString::fromLatin1("doesntmatch"), QString::fromLatin1("folder-new"));
+    edit.composerControler()->composerImages()->loadImage(image1, QStringLiteral("doesntmatch"), QStringLiteral("folder-new"));
     QVERIFY(!edit.document()->resource(QTextDocument::ImageResource, QUrl(QStringLiteral("folder-new"))).isValid());
 
     // Now, load the image for real
-    edit.composerControler()->composerImages()->loadImage(image1, QString::fromLatin1("folder-new.png"), QString::fromLatin1("folder-new"));
+    edit.composerControler()->composerImages()->loadImage(image1, QStringLiteral("folder-new.png"), QStringLiteral("folder-new"));
     QVERIFY(edit.document()->resource(QTextDocument::ImageResource, QUrl(QStringLiteral("folder-new"))).isValid());
 
     // New test with a new textedit (so that we don't use the cached resources
@@ -456,7 +456,7 @@ void RichTextComposerTest::testLoadImage()
     KPIMTextEdit::RichTextComposer edit2;
     edit2.createActions(new KActionCollection(this));
     edit2.setHtml(QStringLiteral("<img src=\"folder-new.png\"><img src=\"folder-new.png\">"));
-    edit2.composerControler()->composerImages()->loadImage(image1, QString::fromLatin1("folder-new.png"), QString::fromLatin1("folder-new"));
+    edit2.composerControler()->composerImages()->loadImage(image1, QStringLiteral("folder-new.png"), QStringLiteral("folder-new"));
     QVERIFY(edit.document()->resource(QTextDocument::ImageResource, QUrl(QStringLiteral("folder-new"))).isValid());
     QCOMPARE(edit.composerControler()->composerImages()->embeddedImages().size(), 1);
 }
