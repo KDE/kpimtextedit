@@ -21,6 +21,7 @@
 #define SYNTAXHIGHLIGHTERBASE_H
 
 #include <QSyntaxHighlighter>
+#include <QRegularExpression>
 #include "kpimtextedit_export.h"
 
 namespace KPIMTextEdit
@@ -31,12 +32,12 @@ public:
     Rule()
     {
     }
-    Rule(const QRegExp &r, const QTextCharFormat &f)
+    Rule(const QRegularExpression &r, const QTextCharFormat &f)
         : pattern(r), format(f)
     {
     }
 
-    QRegExp pattern;
+    QRegularExpression pattern;
     QTextCharFormat format;
 };
 

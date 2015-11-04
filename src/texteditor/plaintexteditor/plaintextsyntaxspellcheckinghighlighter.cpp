@@ -66,12 +66,14 @@ void PlainTextSyntaxSpellCheckingHighlighter::setSyntaxHighlighterRules(const QV
 void PlainTextSyntaxSpellCheckingHighlighter::highlightBlock(const QString &text)
 {
     Q_FOREACH (const KPIMTextEdit::Rule &rule, d->rules) {
-        const QRegExp expression(rule.pattern);
-        int index = expression.indexIn(text);
-        int length = 0;
-        while (index >= 0 && (length = expression.matchedLength()) > 0) {
-            setFormat(index, length, rule.format);
-            index = expression.indexIn(text, index + length);
+        const QRegularExpression expression(rule.pattern);
+        QRegularExpressionMatch match = expression.match(text);
+
+        int index = match.capturedStart();
+        while (index >= 0 && match.hasMatch()) {
+            setFormat(index, match.capturedLength(), rule.format);
+            match = expression.match(text, index + match.capturedLength());
+            index = match.capturedStart();
         }
     }
     if (d->spellCheckingEnabled && spellCheckBlock(text) && d->editor->isEnabled()) {
