@@ -19,6 +19,7 @@
 #include "plaintextsyntaxspellcheckinghighlighter.h"
 
 #include "syntaxhighlighterbase.h"
+#include <QDebug>
 
 using namespace KPIMTextEdit;
 
@@ -67,6 +68,11 @@ void PlainTextSyntaxSpellCheckingHighlighter::highlightBlock(const QString &text
 {
     Q_FOREACH (const KPIMTextEdit::Rule &rule, d->rules) {
         const QRegularExpression expression(rule.pattern);
+        if (!expression.isValid()) {
+             const QString errorString = expression.errorString();
+             qDebug() << "expression is invalid, pattern:" << rule.pattern << " error :" << errorString;
+        }
+
         QRegularExpressionMatch match = expression.match(text);
 
         int index = match.capturedStart();
