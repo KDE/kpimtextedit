@@ -35,10 +35,6 @@ NestedListHelper::NestedListHelper(QTextEdit *te)
     listNoMargin = 0;
 }
 
-NestedListHelper::~NestedListHelper()
-{
-}
-
 bool NestedListHelper::handleBeforeKeyPressEvent(QKeyEvent *event)
 {
     QTextCursor cursor = textEdit->textCursor();

@@ -54,11 +54,6 @@ public:
     NestedListHelper(QTextEdit *te);
 
     /**
-     * Destructor
-     */
-    ~NestedListHelper();
-
-    /**
      *
      * Handles a key press before it is processed by the text edit widget.
      *
