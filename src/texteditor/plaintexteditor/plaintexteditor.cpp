@@ -60,6 +60,7 @@ public:
           webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q)),
           richTextDecorator(Q_NULLPTR),
           speller(Q_NULLPTR),
+          mInitialFontSize(0),
           customPalette(false),
           activateLanguageMenu(true)
     {
@@ -88,6 +89,7 @@ public:
     QString spellCheckingLanguage;
     QTextDocumentFragment originalDoc;
     PlainTextEditor::SupportFeatures supportFeatures;
+    int mInitialFontSize;
     bool customPalette;
     bool activateLanguageMenu;
     bool checkSpellingEnabled;
@@ -99,6 +101,7 @@ PlainTextEditor::PlainTextEditor(QWidget *parent)
 {
     KCursor::setAutoHideCursor(this, true, false);
     setSpellCheckingConfigFileName(QString());
+    d->mInitialFontSize = font().pointSize();
 }
 
 PlainTextEditor::~PlainTextEditor()
@@ -777,4 +780,13 @@ void PlainTextEditor::slotToggleAutoSpellCheck()
     KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
     KConfigGroup group(config, "Spelling");
     group.writeEntry("checkerEnabledByDefault", d->checkSpellingEnabled);
+}
+
+void PlainTextEditor::slotZoomReset()
+{
+    if (d->mInitialFontSize > 0) {
+        QFont f = font();
+        f.setPointSize(d->mInitialFontSize);
+        setFont(f);
+    }
 }

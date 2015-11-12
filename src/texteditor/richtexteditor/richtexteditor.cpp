@@ -57,6 +57,7 @@ public:
           richTextDecorator(Q_NULLPTR),
           speller(Q_NULLPTR),
           webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q)),
+          mInitialFontSize(0),
           customPalette(false),
           activateLanguageMenu(true),
           showAutoCorrectionButton(false)
@@ -86,6 +87,7 @@ public:
     Sonnet::Speller *speller;
     KIO::KUriFilterSearchProviderActions *webshortcutMenuManager;
     RichTextEditor::SupportFeatures supportFeatures;
+    int mInitialFontSize;
     bool customPalette;
     bool checkSpellingEnabled;
     bool activateLanguageMenu;
@@ -99,6 +101,7 @@ RichTextEditor::RichTextEditor(QWidget *parent)
     setAcceptRichText(true);
     KCursor::setAutoHideCursor(this, true, false);
     setSpellCheckingConfigFileName(QString());
+    d->mInitialFontSize = font().pointSize();
 }
 
 RichTextEditor::~RichTextEditor()
@@ -842,3 +845,11 @@ void RichTextEditor::keyPressEvent(QKeyEvent *event)
     }
 }
 
+void RichTextEditor::slotZoomReset()
+{
+    if (d->mInitialFontSize > 0) {
+        QFont f = font();
+        f.setPointSize(d->mInitialFontSize);
+        setFont(f);
+    }
+}

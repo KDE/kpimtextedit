@@ -79,7 +79,7 @@ public Q_SLOTS:
     void slotDisplayMessageIndicator(const QString &message);
     void slotCheckSpelling();
     void slotSpeakText();
-
+    void slotZoomReset();
 private Q_SLOTS:
     void slotUndoableClear();
     void slotSpellCheckerMisspelling(const QString &text, int pos);

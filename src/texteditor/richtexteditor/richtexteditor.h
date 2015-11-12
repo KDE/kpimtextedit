@@ -96,7 +96,8 @@ Q_SIGNALS:
 public Q_SLOTS:
     void slotDisplayMessageIndicator(const QString &message);
     void slotSpeakText();
-    void slotCheckSpelling();
+    void slotCheckSpelling();    
+    void slotZoomReset();
 
 private Q_SLOTS:
     void slotUndoableClear();
