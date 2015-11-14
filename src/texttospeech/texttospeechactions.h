@@ -39,7 +39,7 @@ public:
     TextToSpeechWidget::State state() const;
 
 public Q_SLOTS:
-    void setState(const TextToSpeechWidget::State &state);
+    void setState(TextToSpeechWidget::State);
 
 Q_SIGNALS:
     void stateChanged(KPIMTextEdit::TextToSpeechWidget::State state);

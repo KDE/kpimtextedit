@@ -75,7 +75,7 @@ TextToSpeechWidget::State TextToSpeechActions::state() const
     return d->mState;
 }
 
-void TextToSpeechActions::setState(const TextToSpeechWidget::State &state)
+void TextToSpeechActions::setState(TextToSpeechWidget::State state)
 {
     if (d->mState != state) {
         d->mState = state;
