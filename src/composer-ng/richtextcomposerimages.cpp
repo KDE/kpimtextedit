@@ -193,7 +193,7 @@ QList< QSharedPointer<EmbeddedImage> > RichTextComposerImages::embeddedImages() 
         buffer.open(QIODevice::WriteOnly);
         normalImage->image.save(&buffer, "PNG");
 
-        qsrand(QDateTime::currentDateTime().toTime_t() + qHash(normalImage->name));
+        qsrand(QDateTime::currentDateTimeUtc().toTime_t() + qHash(normalImage->name));
         QSharedPointer<EmbeddedImage> embeddedImage(new EmbeddedImage());
         retImages.append(embeddedImage);
         embeddedImage->image = KCodecs::Codec::codecForName("base64")->encode(buffer.buffer());
