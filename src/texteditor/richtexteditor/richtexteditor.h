@@ -139,7 +139,6 @@ private:
     bool overrideShortcut(const QKeyEvent *event);
     void deleteWordBack();
     void deleteWordForward();
-    void defaultPopupMenu(const QPoint &pos);
     void highlightWord(int length, int pos);
     void checkSpelling(bool force);
     class RichTextEditorPrivate;
