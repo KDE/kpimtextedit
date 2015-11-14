@@ -142,7 +142,7 @@ void RichTextEditor::contextMenuEvent(QContextMenuEvent *event)
     }
 }
 
-QMenu *RichTextEditor::mousePopupMenu(const QPoint &pos)
+QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
 {
     QMenu *popup = createStandardContextMenu();
     if (popup) {
@@ -348,7 +348,7 @@ void RichTextEditor::slotAllowTab()
     setTabChangesFocus(!tabChangesFocus());
 }
 
-void RichTextEditor::addExtraMenuEntry(QMenu *menu, const QPoint &pos)
+void RichTextEditor::addExtraMenuEntry(QMenu *menu, QPoint pos)
 {
     Q_UNUSED(menu);
     Q_UNUSED(pos);

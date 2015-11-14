@@ -94,7 +94,7 @@ void SelectSpecialCharDialog::showSelectButton(bool show)
     }
 }
 
-void SelectSpecialCharDialog::setCurrentChar(const QChar &c)
+void SelectSpecialCharDialog::setCurrentChar(QChar c)
 {
     d->mCharSelect->setCurrentChar(c);
 }

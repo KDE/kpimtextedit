@@ -91,7 +91,7 @@ private Q_SLOTS:
     void slotLanguageSelected();
     void slotToggleAutoSpellCheck();
 protected:
-    virtual void addExtraMenuEntry(QMenu *menu, const QPoint &pos);
+    virtual void addExtraMenuEntry(QMenu *menu, QPoint pos);
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event) Q_DECL_OVERRIDE;

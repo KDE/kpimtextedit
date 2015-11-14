@@ -36,7 +36,7 @@ public:
     explicit SelectSpecialCharDialog(QWidget *parent);
     ~SelectSpecialCharDialog();
 
-    void setCurrentChar(const QChar &c);
+    void setCurrentChar(QChar c);
     QChar currentChar() const;
 
     void setOkButtonText(const QString &text);
@@ -49,7 +49,7 @@ public:
     void autoInsertChar();
 
 Q_SIGNALS:
-    void charSelected(const QChar &);
+    void charSelected(QChar );
 
 private:
     SelectSpecialCharDialogPrivate *const d;

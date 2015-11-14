@@ -111,13 +111,13 @@ private Q_SLOTS:
     void slotAllowTab();
 
 protected:
-    virtual void addExtraMenuEntry(QMenu *menu, const QPoint &pos);
+    virtual void addExtraMenuEntry(QMenu *menu, QPoint pos);
     void contextMenuEvent(QContextMenuEvent *event) Q_DECL_OVERRIDE;
     void focusInEvent(QFocusEvent *event) Q_DECL_OVERRIDE;
     bool event(QEvent *ev) Q_DECL_OVERRIDE;
     void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
 
-    QMenu *mousePopupMenu(const QPoint &pos);
+    QMenu *mousePopupMenu(QPoint pos);
     virtual Sonnet::SpellCheckDecorator *createSpellCheckDecorator();
     void setHighlighter(Sonnet::Highlighter *_highLighter);
 

@@ -219,7 +219,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
     }
 }
 
-void PlainTextEditor::addExtraMenuEntry(QMenu *menu, const QPoint &pos)
+void PlainTextEditor::addExtraMenuEntry(QMenu *menu, QPoint pos)
 {
     Q_UNUSED(menu);
     Q_UNUSED(pos);
