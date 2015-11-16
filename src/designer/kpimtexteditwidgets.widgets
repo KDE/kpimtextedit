@@ -7,3 +7,9 @@ WhatsThis=A RichTextEditor.
 IncludeFile=kpimtextedit/richtexteditorwidget.h
 Group=Input (KDE-PIM)
 
+[KPIMTextEdit::PlainTextEditorWidget]
+ToolTip=A PlainTextEditor (KDE-PIM)
+WhatsThis=A PlainTextEditor.
+IncludeFile=kpimtextedit/plaintexteditorwidget.h
+Group=Input (KDE-PIM)
+
