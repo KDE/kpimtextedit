@@ -24,6 +24,7 @@
 
 #include <KIconLoader>
 #include <KActionCollection>
+#include <QAction>
 
 #include <QTextCursor>
 #include <qtestevent.h>
@@ -471,6 +472,24 @@ void RichTextComposerTest::testWrappedPlainText()
     edit.show(); // < otherwise toWrappedPlainText can't work, it needs a layout
 
     QCOMPARE(edit.composerControler()->toWrappedPlainText(), text);
+}
+
+void RichTextComposerTest::testEnableDisableActions()
+{
+    KPIMTextEdit::RichTextComposer composer;
+    KActionCollection *actionCollection = new KActionCollection(&composer);
+    composer.createActions(actionCollection);
+    bool enableAction = true;
+    composer.setEnableActions(enableAction);
+    Q_FOREACH(QAction *act, composer.actions()) {
+        QCOMPARE(act->isEnabled(), enableAction);
+    }
+
+    enableAction = false;
+    composer.setEnableActions(enableAction);
+    Q_FOREACH(QAction *act, composer.actions()) {
+        QCOMPARE(act->isEnabled(), enableAction);
+    }
 }
 
 void RichTextComposerTest::shouldHaveDefaultValue()

@@ -40,6 +40,7 @@ private Q_SLOTS:
     void testDeleteLine_data();
     void testLoadImage();
     void testWrappedPlainText();
+    void testEnableDisableActions();
 };
 
 #endif // RICHTEXTCOMPOSERTEST_H
