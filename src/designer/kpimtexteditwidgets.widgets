@@ -1,0 +1,9 @@
+[Global]
+PluginName=KPimTextEditWidgets
+
+[KPIMTextEdit::RichTextEditorWidget]
+ToolTip=A RichTextEditor (KDE-PIM)
+WhatsThis=A RichTextEditor.
+IncludeFile=kpimtextedit/richtexteditorwidget.h
+Group=Input (KDE-PIM)
+

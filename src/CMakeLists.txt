@@ -222,3 +222,5 @@ if (BUILD_TESTING)
    add_subdirectory(composer-ng/autotests)
    add_subdirectory(composer-ng/tests)
 endif()
+
+add_subdirectory(designer)

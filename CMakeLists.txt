@@ -29,6 +29,12 @@ ecm_setup_version(${KPIMTEXTEDIT_LIB_VERSION} VARIABLE_PREFIX KPIMTEXTEDIT
 set(QT_REQUIRED_VERSION "5.4.0")
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Widgets DBus)
 find_package(Grantlee5 "5.0" CONFIG REQUIRED)
+find_package(Qt5Designer NO_MODULE)
+set_package_properties(Qt5Designer PROPERTIES
+   PURPOSE "Required to build the Qt Designer plugins"
+   TYPE OPTIONAL
+)
+
 
 ########### Find packages ###########
 find_package(KF5CoreAddons ${KF5_VERSION} CONFIG REQUIRED)
@@ -42,6 +48,7 @@ find_package(KF5IconThemes ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5ConfigWidgets ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5IconThemes ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5XmlGui ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5DesignerPlugin ${KF5_VERSION} CONFIG REQUIRED)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
 add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
