@@ -100,6 +100,7 @@ public:
     void createActions(KActionCollection *ac);
 
     QList<QAction *> richTextActionList() const;
+    void setEnableActions(bool state);
 
     KPIMTextEdit::RichTextComposerControler *composerControler() const;
     KPIMTextEdit::RichTextExternalComposer *externalComposer() const;

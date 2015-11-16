@@ -33,6 +33,7 @@
 #include <grantlee/plaintextmarkupbuilder.h>
 
 #include <KActionCollection>
+#include <QAction>
 #include <QFileInfo>
 #include <QMimeData>
 
@@ -93,6 +94,13 @@ KPIMTextEdit::RichTextComposerActions *RichTextComposer::composerActions() const
 QList<QAction *> RichTextComposer::richTextActionList() const
 {
     return d->richTextComposerActions->richTextActionList();
+}
+
+void RichTextComposer::setEnableActions(bool state)
+{
+    Q_FOREACH(QAction *act, richTextActionList()) {
+        act->setEnabled(state);
+    }
 }
 
 void RichTextComposer::createActions(KActionCollection *ac)
