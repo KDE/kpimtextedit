@@ -13,3 +13,10 @@ WhatsThis=A PlainTextEditor.
 IncludeFile=kpimtextedit/plaintexteditorwidget.h
 Group=Input (KDE-PIM)
 
+[KPIMTextEdit::RichTextComposer]
+ToolTip=A RichText Composer (KDE-PIM)
+WhatsThis=A RichText Composer.
+IncludeFile=kpimtextedit/richtextcomposer.h
+Group=Input (KDE-PIM)
+
+
