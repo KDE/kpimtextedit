@@ -15,20 +15,41 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 #include "richtextcomposerwidget.h"
+#include <kpimtextedit/richtextcomposer.h>
 #include <kpimtextedit/richtexteditorwidget.h>
 #include <QHBoxLayout>
 
 using namespace KPIMTextEdit;
 
+class KPIMTextEdit::RichTextComposerWidgetPrivate
+{
+public:
+    RichTextComposerWidgetPrivate()
+        : richTextComposer(Q_NULLPTR)
+    {
+
+    }
+    KPIMTextEdit::RichTextComposer *richTextComposer;
+};
+
 RichTextComposerWidget::RichTextComposerWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      d(new KPIMTextEdit::RichTextComposerWidgetPrivate)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
-
+    layout->setMargin(0);
+    d->richTextComposer = new KPIMTextEdit::RichTextComposer(this);
+    d->richTextComposer->setObjectName(QStringLiteral("richtextcomposer"));
+    RichTextEditorWidget *editorWidget = new RichTextEditorWidget(d->richTextComposer, this);
+    layout->addWidget(editorWidget);
 }
 
 RichTextComposerWidget::~RichTextComposerWidget()
 {
-
+    delete d;
 }
 
+KPIMTextEdit::RichTextComposer *RichTextComposerWidget::richTextComposer() const
+{
+    return d->richTextComposer;
+}

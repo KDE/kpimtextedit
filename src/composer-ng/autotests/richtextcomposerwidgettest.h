@@ -15,27 +15,20 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef RICHTEXTCOMPOSERWIDGET_H
-#define RICHTEXTCOMPOSERWIDGET_H
+#ifndef RICHTEXTCOMPOSERWIDGETTEST_H
+#define RICHTEXTCOMPOSERWIDGETTEST_H
 
-#include <QWidget>
-#include "kpimtextedit_export.h"
-namespace KPIMTextEdit
-{
-class RichTextComposerWidgetPrivate;
-class RichTextComposer;
+#include <QObject>
 
-class KPIMTEXTEDIT_EXPORT RichTextComposerWidget : public QWidget
+class RichTextComposerWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit RichTextComposerWidget(QWidget *parent = Q_NULLPTR);
-    ~RichTextComposerWidget();
+    explicit RichTextComposerWidgetTest(QObject *parent = Q_NULLPTR);
+    ~RichTextComposerWidgetTest();
 
-    KPIMTextEdit::RichTextComposer *richTextComposer() const;
-private:
-    RichTextComposerWidgetPrivate *const d;
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
-}
 
-#endif // RICHTEXTCOMPOSERWIDGET_H
+#endif // RICHTEXTCOMPOSERWIDGETTEST_H

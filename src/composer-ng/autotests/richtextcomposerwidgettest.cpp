@@ -15,27 +15,28 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef RICHTEXTCOMPOSERWIDGET_H
-#define RICHTEXTCOMPOSERWIDGET_H
+#include "richtextcomposerwidgettest.h"
+#include "../richtextcomposerwidget.h"
+#include <QTest>
+#include <kpimtextedit/richtextcomposer.h>
 
-#include <QWidget>
-#include "kpimtextedit_export.h"
-namespace KPIMTextEdit
+RichTextComposerWidgetTest::RichTextComposerWidgetTest(QObject *parent)
+    : QObject(parent)
 {
-class RichTextComposerWidgetPrivate;
-class RichTextComposer;
 
-class KPIMTEXTEDIT_EXPORT RichTextComposerWidget : public QWidget
-{
-    Q_OBJECT
-public:
-    explicit RichTextComposerWidget(QWidget *parent = Q_NULLPTR);
-    ~RichTextComposerWidget();
-
-    KPIMTextEdit::RichTextComposer *richTextComposer() const;
-private:
-    RichTextComposerWidgetPrivate *const d;
-};
 }
 
-#endif // RICHTEXTCOMPOSERWIDGET_H
+RichTextComposerWidgetTest::~RichTextComposerWidgetTest()
+{
+
+}
+
+void RichTextComposerWidgetTest::shouldHaveDefaultValue()
+{
+    KPIMTextEdit::RichTextComposerWidget w;
+    KPIMTextEdit::RichTextComposer *composer = w.findChild<KPIMTextEdit::RichTextComposer *>(QStringLiteral("richtextcomposer"));
+    QVERIFY(composer);
+    QVERIFY(w.richTextComposer());
+}
+
+QTEST_MAIN(RichTextComposerWidgetTest)
