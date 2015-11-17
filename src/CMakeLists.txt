@@ -26,6 +26,7 @@ set(kpimtextedit_composerng_SRCS
      composer-ng/richtextcomposerimages.cpp
      composer-ng/richtextcomposeremailquotedecorator.cpp
      composer-ng/richtextcomposeremailquotehighlighter.cpp
+     composer-ng/richtextcomposerwidget.cpp
 )
 
 set(kpimtextedit_texttospeech_SRCS
@@ -176,6 +177,7 @@ ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
   RichTextExternalComposer
   RichTextComposerActions
   RichTextComposerEmailQuoteHighlighter
+  RichTextComposerWidget
   REQUIRED_HEADERS KPimTextEdit_composerng_HEADERS
   PREFIX KPIMTextEdit
   RELATIVE composer-ng

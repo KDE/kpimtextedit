@@ -19,4 +19,9 @@ WhatsThis=A RichText Composer.
 IncludeFile=kpimtextedit/richtextcomposer.h
 Group=Input (KDE-PIM)
 
+[KPIMTextEdit::RichTextComposerWidget]
+ToolTip=A RichText Composer Widget(KDE-PIM)
+WhatsThis=A RichText Composer Widget.
+IncludeFile=kpimtextedit/richtextcomposerwidget.h
+Group=Input (KDE-PIM)
 
