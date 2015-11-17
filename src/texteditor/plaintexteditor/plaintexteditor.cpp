@@ -163,40 +163,42 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
         }
 
         if (!isReadOnly() && spellCheckingSupport()) {
-            QAction *spellCheckAction = popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")), i18n("Check Spelling..."), this, SLOT(slotCheckSpelling()));
-            if (emptyDocument) {
-                spellCheckAction->setEnabled(false);
+            if (!d->speller) {
+                d->speller = new Sonnet::Speller();
             }
-            popup->addSeparator();
-            QAction *autoSpellCheckAction = popup->addAction(i18n("Auto Spell Check"), this, SLOT(slotToggleAutoSpellCheck()));
-            autoSpellCheckAction->setCheckable(true);
-            autoSpellCheckAction->setChecked(checkSpellingEnabled());
-            popup->addAction(autoSpellCheckAction);
-
-            if (checkSpellingEnabled() &&  d->activateLanguageMenu) {
-                QMenu *languagesMenu = new QMenu(i18n("Spell Checking Language"), popup);
-                QActionGroup *languagesGroup = new QActionGroup(languagesMenu);
-                languagesGroup->setExclusive(true);
-                if (!d->speller) {
-                    d->speller = new Sonnet::Speller();
+            if (!d->speller->availableBackends().isEmpty()) {
+                QAction *spellCheckAction = popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")), i18n("Check Spelling..."), this, SLOT(slotCheckSpelling()));
+                if (emptyDocument) {
+                    spellCheckAction->setEnabled(false);
                 }
+                popup->addSeparator();
+                QAction *autoSpellCheckAction = popup->addAction(i18n("Auto Spell Check"), this, SLOT(slotToggleAutoSpellCheck()));
+                autoSpellCheckAction->setCheckable(true);
+                autoSpellCheckAction->setChecked(checkSpellingEnabled());
+                popup->addAction(autoSpellCheckAction);
 
-                QMapIterator<QString, QString> i(d->speller->availableDictionaries());
+                if (checkSpellingEnabled() &&  d->activateLanguageMenu) {
+                    QMenu *languagesMenu = new QMenu(i18n("Spell Checking Language"), popup);
+                    QActionGroup *languagesGroup = new QActionGroup(languagesMenu);
+                    languagesGroup->setExclusive(true);
 
-                while (i.hasNext()) {
-                    i.next();
+                    QMapIterator<QString, QString> i(d->speller->availableDictionaries());
 
-                    QAction *languageAction = languagesMenu->addAction(i.key());
-                    languageAction->setCheckable(true);
-                    languageAction->setChecked(spellCheckingLanguage() == i.value() || (spellCheckingLanguage().isEmpty()
-                                               && d->speller->defaultLanguage() == i.value()));
-                    languageAction->setData(i.value());
-                    languageAction->setActionGroup(languagesGroup);
-                    connect(languageAction, &QAction::triggered, this, &PlainTextEditor::slotLanguageSelected);
+                    while (i.hasNext()) {
+                        i.next();
+
+                        QAction *languageAction = languagesMenu->addAction(i.key());
+                        languageAction->setCheckable(true);
+                        languageAction->setChecked(spellCheckingLanguage() == i.value() || (spellCheckingLanguage().isEmpty()
+                                                                                            && d->speller->defaultLanguage() == i.value()));
+                        languageAction->setData(i.value());
+                        languageAction->setActionGroup(languagesGroup);
+                        connect(languageAction, &QAction::triggered, this, &PlainTextEditor::slotLanguageSelected);
+                    }
+                    popup->addMenu(languagesMenu);
                 }
-                popup->addMenu(languagesMenu);
+                popup->addSeparator();
             }
-            popup->addSeparator();
         }
         if (d->supportFeatures & TextToSpeech) {
             if (KPIMTextEdit::TextToSpeech::self()->isReady()) {
