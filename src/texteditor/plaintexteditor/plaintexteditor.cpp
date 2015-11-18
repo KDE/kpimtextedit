@@ -342,7 +342,7 @@ void PlainTextEditor::setReadOnly(bool readOnly)
 void PlainTextEditor::slotCheckSpelling()
 {
     if (document()->isEmpty()) {
-        KMessageBox::information(this, i18n("Nothing to spell check."));
+        slotDisplayMessageIndicator(i18n("Nothing to spell check."));
         return;
     }
     Sonnet::BackgroundChecker *backgroundSpellCheck = new Sonnet::BackgroundChecker;
