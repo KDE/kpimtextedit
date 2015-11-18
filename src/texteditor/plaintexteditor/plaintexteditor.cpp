@@ -186,6 +186,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
 
                     QString defaultSpellcheckingLanguage = spellCheckingLanguage();
                     if (defaultSpellcheckingLanguage.isEmpty()) {
+                        //TODO fix default value
                         defaultSpellcheckingLanguage = d->speller->defaultLanguage();
                     }
                     while (i.hasNext()) {
