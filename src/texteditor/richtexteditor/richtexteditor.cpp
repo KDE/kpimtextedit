@@ -411,6 +411,11 @@ void RichTextEditor::checkSpelling(bool force)
         return;
     }
     Sonnet::BackgroundChecker *backgroundSpellCheck = new Sonnet::BackgroundChecker;
+    if (backgroundSpellCheck->speller().availableBackends().isEmpty()) {
+        slotDisplayMessageIndicator(i18n("No backend available for spell checking."));
+        delete backgroundSpellCheck;
+        return;
+    }
     if (!d->spellCheckingLanguage.isEmpty()) {
         backgroundSpellCheck->changeLanguage(d->spellCheckingLanguage);
     }
