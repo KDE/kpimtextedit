@@ -36,6 +36,7 @@ public:
     void setMaximumLineCount(int max);
 Q_SIGNALS:
     void moveToLine(int);
+    void hideGotoLine();
 
 protected:
     bool event(QEvent *e) Q_DECL_OVERRIDE;

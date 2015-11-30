@@ -18,7 +18,7 @@ include(KDEFrameworkCompilerSettings)
 include(ECMAddTests)
 
 set(KF5_VERSION "5.16.0")
-set(KPIMTEXTEDIT_LIB_VERSION "5.1.41")
+set(KPIMTEXTEDIT_LIB_VERSION "5.1.42")
 
 ecm_setup_version(${KPIMTEXTEDIT_LIB_VERSION} VARIABLE_PREFIX KPIMTEXTEDIT
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h"

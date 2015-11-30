@@ -116,6 +116,7 @@ void TextGoToLineWidget::showEvent(QShowEvent *e)
 void TextGoToLineWidget::slotCloseBar()
 {
     hide();
+    Q_EMIT hideGotoLine();
 }
 
 bool TextGoToLineWidget::event(QEvent *e)
