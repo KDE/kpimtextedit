@@ -683,7 +683,7 @@ bool RichTextEditor::event(QEvent *ev)
     return QTextEdit::event(ev);
 }
 
-bool RichTextEditor::handleShortcut(const QKeyEvent *event)
+bool RichTextEditor::handleShortcut(QKeyEvent *event)
 {
     const int key = event->key() | event->modifiers();
 
@@ -796,11 +796,22 @@ bool RichTextEditor::handleShortcut(const QKeyEvent *event)
             insertPlainText(text);    // TODO: check if this is html? (MiB)
         }
         return true;
+    } else if (event == QKeySequence::DeleteEndOfLine) {
+        QTextCursor cursor = textCursor();
+        QTextBlock block = cursor.block();
+        if (cursor.position() == block.position() + block.length() - 2)
+            cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
+        else
+            cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+        cursor.removeSelectedText();
+        setTextCursor(cursor);
+        return true;
     }
+
     return false;
 }
 
-bool RichTextEditor::overrideShortcut(const QKeyEvent *event)
+bool RichTextEditor::overrideShortcut(QKeyEvent *event)
 {
     const int key = event->key() | event->modifiers();
 
@@ -843,6 +854,8 @@ bool RichTextEditor::overrideShortcut(const QKeyEvent *event)
     } else if (searchSupport() && KStandardShortcut::replace().contains(key)) {
         return true;
     } else if (event->matches(QKeySequence::SelectAll)) { // currently missing in QTextEdit
+        return true;
+    } else if (event == QKeySequence::DeleteEndOfLine) {
         return true;
     }
     return false;

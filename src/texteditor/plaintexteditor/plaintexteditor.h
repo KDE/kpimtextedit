@@ -97,8 +97,8 @@ protected:
     void contextMenuEvent(QContextMenuEvent *event) Q_DECL_OVERRIDE;
     bool event(QEvent *ev) Q_DECL_OVERRIDE;
     void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
-    bool overrideShortcut(const QKeyEvent *event);
-    bool handleShortcut(const QKeyEvent *event);
+    bool overrideShortcut(QKeyEvent *event);
+    bool handleShortcut(QKeyEvent *event);
 
     virtual Sonnet::SpellCheckDecorator *createSpellCheckDecorator();
     void setHighlighter(Sonnet::Highlighter *_highLighter);

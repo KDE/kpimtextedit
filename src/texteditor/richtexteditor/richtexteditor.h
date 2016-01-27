@@ -135,8 +135,8 @@ Q_SIGNALS:
 
 private:
     void addIgnoreWordsToHighLighter();
-    bool handleShortcut(const QKeyEvent *event);
-    bool overrideShortcut(const QKeyEvent *event);
+    bool handleShortcut(QKeyEvent *event);
+    bool overrideShortcut(QKeyEvent *event);
     void deleteWordBack();
     void deleteWordForward();
     void highlightWord(int length, int pos);

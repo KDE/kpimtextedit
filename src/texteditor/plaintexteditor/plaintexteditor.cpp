@@ -454,7 +454,7 @@ bool PlainTextEditor::event(QEvent *ev)
     return QPlainTextEdit::event(ev);
 }
 
-bool PlainTextEditor::overrideShortcut(const QKeyEvent *event)
+bool PlainTextEditor::overrideShortcut(QKeyEvent *event)
 {
     const int key = event->key() | event->modifiers();
     if (KStandardShortcut::copy().contains(key)) {
@@ -497,11 +497,13 @@ bool PlainTextEditor::overrideShortcut(const QKeyEvent *event)
         return true;
     } else if (event->matches(QKeySequence::SelectAll)) { // currently missing in QTextEdit
         return true;
+    } else if (event == QKeySequence::DeleteEndOfLine) {
+        return true;
     }
     return false;
 }
 
-bool PlainTextEditor::handleShortcut(const QKeyEvent *event)
+bool PlainTextEditor::handleShortcut(QKeyEvent *event)
 {
     const int key = event->key() | event->modifiers();
 
@@ -613,6 +615,16 @@ bool PlainTextEditor::handleShortcut(const QKeyEvent *event)
         if (!text.isEmpty()) {
             insertPlainText(text);    // TODO: check if this is html? (MiB)
         }
+        return true;
+    } else if (event == QKeySequence::DeleteEndOfLine) {
+        QTextCursor cursor = textCursor();
+        QTextBlock block = cursor.block();
+        if (cursor.position() == block.position() + block.length() - 2)
+            cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
+        else
+            cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+        cursor.removeSelectedText();
+        setTextCursor(cursor);
         return true;
     }
     return false;
