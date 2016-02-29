@@ -35,6 +35,7 @@ SlideContainer::SlideContainer(QWidget *parent)
       mSlidingOut(false)
 {
     setFixedHeight(0);
+    hide();
 }
 
 QWidget *SlideContainer::content() const
@@ -71,6 +72,7 @@ void SlideContainer::animTo(int newHeight)
 void SlideContainer::slideIn()
 {
     mSlidingOut = false;
+    show();
     mContent->show();
     mContent->adjustSize();
     delete mAnim.data();
@@ -148,6 +150,7 @@ void SlideContainer::slotAnimFinished()
 {
     if (height() == 0) {
         mSlidingOut = false;
+        hide();
         slidedOut();
     } else {
         slidedIn();
