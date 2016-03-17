@@ -104,7 +104,6 @@ void RichTextComposerControler::RichTextComposerControlerPrivate::selectLinkText
     }
 }
 
-
 void RichTextComposerControler::RichTextComposerControlerPrivate::mergeFormatOnWordOrSelection(const QTextCharFormat &format)
 {
     QTextCursor cursor = richtextComposer->textCursor();
@@ -665,7 +664,6 @@ void RichTextComposerControler::RichTextComposerControlerPrivate::fixupTextEditS
     text.replace(QChar::Nbsp, QChar::fromLatin1(' '));
 }
 
-
 bool RichTextComposerControler::isFormattingUsed() const
 {
     if (richTextComposer()->textMode() == RichTextComposer::Plain) {
@@ -874,7 +872,6 @@ QString RichTextComposerControler::toCleanPlainText(const QString &plainText) co
     d->fixupTextEditString(temp);
     return temp;
 }
-
 
 QString RichTextComposerControler::toWrappedPlainText() const
 {

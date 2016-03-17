@@ -481,13 +481,13 @@ void RichTextComposerTest::testEnableDisableActions()
     composer.createActions(actionCollection);
     bool enableAction = true;
     composer.setEnableActions(enableAction);
-    Q_FOREACH(QAction *act, composer.actions()) {
+    Q_FOREACH (QAction *act, composer.actions()) {
         QCOMPARE(act->isEnabled(), enableAction);
     }
 
     enableAction = false;
     composer.setEnableActions(enableAction);
-    Q_FOREACH(QAction *act, composer.actions()) {
+    Q_FOREACH (QAction *act, composer.actions()) {
         QCOMPARE(act->isEnabled(), enableAction);
     }
 }

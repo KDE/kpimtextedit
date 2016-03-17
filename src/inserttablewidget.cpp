@@ -58,7 +58,6 @@ public:
         gridLayout->addWidget(new QLabel(i18n("Border:")), 2, 0);
         gridLayout->addWidget(mBorder, 2, 1);
 
-
         mTypeOfLength = new KComboBox;
         q->connect(mTypeOfLength, SIGNAL(activated(int)), q, SLOT(slotTypeOfLengthChanged(int)));
         // xgettext: no-c-format

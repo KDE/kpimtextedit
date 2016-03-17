@@ -208,7 +208,7 @@ QStringList TextToSpeech::availableVoices() const
 {
     QStringList lst;
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
-    Q_FOREACH(const QVoice &voice, mTextToSpeech->availableVoices()) {
+    Q_FOREACH (const QVoice &voice, mTextToSpeech->availableVoices()) {
         lst << voice.name();
     }
 #endif

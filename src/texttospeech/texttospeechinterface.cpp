@@ -31,7 +31,6 @@ public:
     TextToSpeechWidget *mTextToSpeechWidget;
 };
 
-
 TextToSpeechInterface::TextToSpeechInterface(TextToSpeechWidget *textToSpeechWidget, QObject *parent)
     : AbstractTextToSpeechInterface(parent),
       d(new KPIMTextEdit::TextToSpeechInterfacePrivate(textToSpeechWidget))

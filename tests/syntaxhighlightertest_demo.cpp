@@ -26,7 +26,6 @@
 
 #include <texteditor/plaintexteditor/plaintexteditor.h>
 
-
 SyntaxHighlighterTest::SyntaxHighlighterTest(QTextDocument *doc)
     : KPIMTextEdit::SyntaxHighlighterBase(doc)
 {

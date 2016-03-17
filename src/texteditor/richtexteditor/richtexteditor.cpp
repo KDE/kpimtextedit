@@ -799,10 +799,11 @@ bool RichTextEditor::handleShortcut(QKeyEvent *event)
     } else if (event == QKeySequence::DeleteEndOfLine) {
         QTextCursor cursor = textCursor();
         QTextBlock block = cursor.block();
-        if (cursor.position() == block.position() + block.length() - 2)
+        if (cursor.position() == block.position() + block.length() - 2) {
             cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
-        else
+        } else {
             cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+        }
         cursor.removeSelectedText();
         setTextCursor(cursor);
         return true;

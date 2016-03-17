@@ -32,6 +32,4 @@ protected:
     void init();
 };
 
-
-
 #endif

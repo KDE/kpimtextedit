@@ -49,7 +49,7 @@ public:
     void autoInsertChar();
 
 Q_SIGNALS:
-    void charSelected(QChar );
+    void charSelected(QChar);
 
 private:
     SelectSpecialCharDialogPrivate *const d;

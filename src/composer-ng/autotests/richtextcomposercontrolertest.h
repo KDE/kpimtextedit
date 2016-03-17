@@ -45,7 +45,6 @@ private Q_SLOTS:
     void shouldTextSuperScript();
     void shouldTextSubScript();
 
-
 };
 
 #endif // RICHTEXTCOMPOSERCONTROLERTEST_H

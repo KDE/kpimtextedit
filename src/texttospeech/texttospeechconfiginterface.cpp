@@ -24,7 +24,7 @@ using namespace KPIMTextEdit;
 TextToSpeechConfigInterface::TextToSpeechConfigInterface(QObject *parent)
     : AbstractTextToSpeechConfigInterface(parent)
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
-      ,mTextToSpeech(new QTextToSpeech(this))
+    , mTextToSpeech(new QTextToSpeech(this))
 #endif
 {
 
@@ -39,7 +39,7 @@ QStringList TextToSpeechConfigInterface::availableVoices() const
 {
     QStringList lst;
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
-    Q_FOREACH(const QVoice &voice, mTextToSpeech->availableVoices()) {
+    Q_FOREACH (const QVoice &voice, mTextToSpeech->availableVoices()) {
         lst << voice.name();
     }
 #endif

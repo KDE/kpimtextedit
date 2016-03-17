@@ -40,7 +40,7 @@ public:
 private Q_SLOTS:
     void valueChanged();
     void slotUpdateSettings();
-    void slotEngineChanged();    
+    void slotEngineChanged();
     void slotLanguageChanged();
 
 Q_SIGNALS:

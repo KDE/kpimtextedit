@@ -98,7 +98,7 @@ QList<QAction *> RichTextComposer::richTextActionList() const
 
 void RichTextComposer::setEnableActions(bool state)
 {
-    Q_FOREACH(QAction *act, richTextActionList()) {
+    Q_FOREACH (QAction *act, richTextActionList()) {
         act->setEnabled(state);
     }
 }
@@ -533,7 +533,6 @@ bool RichTextComposer::canInsertFromMimeData(const QMimeData *source) const
 
     return KPIMTextEdit::RichTextEditor::canInsertFromMimeData(source);
 }
-
 
 void RichTextComposer::mouseReleaseEvent(QMouseEvent *event)
 {
