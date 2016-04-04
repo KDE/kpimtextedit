@@ -74,8 +74,6 @@ target_include_directories(KF5PimTextEdit PUBLIC "$<BUILD_INTERFACE:${KPimTextEd
 
 
 target_link_libraries(KF5PimTextEdit
-PUBLIC
-  KF5::TextWidgets
 PRIVATE
   KF5::Emoticons
   KF5::Codecs
@@ -88,6 +86,7 @@ PRIVATE
   Qt5::DBus
   Grantlee5::TextDocument
   KF5::XmlGui
+  KF5::I18n
 )
 
 if(KPIMTEXTEDIT_HAVE_TEXTTOSPEECH)

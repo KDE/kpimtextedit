@@ -1,7 +1,7 @@
 if (Qt5Designer_FOUND)
     kf5designerplugin_add_plugin(kpimtexteditwidgets kpimtexteditwidgets.widgets)
     target_link_libraries(kpimtexteditwidgets
-        KF5::PimTextEdit
+        KF5::PimTextEdit Qt5::Widgets
     )
     if(NOT WIN32)
         # Since there are no libraries provided by this module,

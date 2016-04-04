@@ -21,7 +21,6 @@
 #include "inserthtmldialog.h"
 
 #include <KLocalizedString>
-#include <KTextEdit>
 
 #include "texteditorcompleter.h"
 #include "htmlhighlighter.h"
