@@ -77,7 +77,7 @@ QString TextEditorCompleter::TextEditorCompleterPrivate::wordUnderCursor() const
 {
     static QString eow = QStringLiteral("~!@#$%^&*()+{}|\"<>,./;'[]\\-= ");   // everything without ':', '?' and '_'
     QTextCursor tc;
-    QTextDocument *document = 0;
+    QTextDocument *document = Q_NULLPTR;
     if (plainTextEdit) {
         tc = plainTextEdit->textCursor();
         document = plainTextEdit->document();
