@@ -67,20 +67,12 @@ void TextToSpeech::reloadSettings()
     KConfigGroup grp = config.group("Settings");
     const QString engineName = grp.readEntry("engine");
     if (!mTextToSpeech) {
-#if QT_VERSION < QT_VERSION_CHECK(5, 7, 0)
-        mTextToSpeech = new QTextToSpeech(this, engineName);
-#else
         mTextToSpeech = new QTextToSpeech(engineName, QVariantMap(), this);
-#endif
         connect(mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
     } else if (mDefaultEngine != engineName) {
         disconnect(mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
         delete mTextToSpeech;
-#if QT_VERSION < QT_VERSION_CHECK(5, 7, 0)
-        mTextToSpeech = new QTextToSpeech(this, engineName);
-#else
         mTextToSpeech = new QTextToSpeech(engineName, QVariantMap(), this);
-#endif
         connect(mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
     }
     mDefaultEngine = engineName;
