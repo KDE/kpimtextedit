@@ -28,7 +28,7 @@ ecm_setup_version(${KPIMTEXTEDIT_LIB_VERSION} VARIABLE_PREFIX KPIMTEXTEDIT
 )
 
 set(QT_REQUIRED_VERSION "5.4.0")
-find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Widgets DBus)
+find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Widgets)
 find_package(Grantlee5 "5.0" CONFIG REQUIRED)
 find_package(Qt5Designer NO_MODULE)
 set_package_properties(Qt5Designer PROPERTIES
@@ -38,18 +38,21 @@ set_package_properties(Qt5Designer PROPERTIES
 
 
 ########### Find packages ###########
+find_package(KF5Codecs ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5ConfigWidgets ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5CoreAddons ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5Emoticons ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5I18n ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5IconThemes ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5KIO ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5Sonnet ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5TextWidgets ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5WidgetsAddons ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5KIO ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5Codecs ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5IconThemes ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5ConfigWidgets ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5IconThemes ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5XmlGui ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5DesignerPlugin ${KF5_VERSION} CONFIG REQUIRED)
+
+if (Qt5Designer_FOUND)
+  find_package(KF5DesignerPlugin ${KF5_VERSION} CONFIG REQUIRED)
+endif()
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
 add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
