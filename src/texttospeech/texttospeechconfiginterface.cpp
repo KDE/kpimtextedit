@@ -77,6 +77,6 @@ void TextToSpeechConfigInterface::setEngine(const QString &engineName)
 {
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
     delete mTextToSpeech;
-    mTextToSpeech = new QTextToSpeech(engineName, QVariantMap(), this);
+    mTextToSpeech = new QTextToSpeech(engineName, this);
 #endif
 }
