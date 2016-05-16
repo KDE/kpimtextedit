@@ -7,4 +7,4 @@ ecm_add_test(slidecontainertest.cpp
     TEST_NAME slidecontainertest
     NAME_PREFIX kpimtextedit-widget
     LINK_LIBRARIES Qt5::Test Qt5::Gui KF5::PimTextEdit Qt5::Widgets
-)
+    )
