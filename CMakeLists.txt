@@ -25,17 +25,22 @@ ecm_setup_version(${KPIMTEXTEDIT_LIB_VERSION} VARIABLE_PREFIX KPIMTEXTEDIT
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfigVersion.cmake"
     SOVERSION 5
-    )
+)
 
 set(QT_REQUIRED_VERSION "5.4.0")
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Widgets)
 find_package(Grantlee5 "5.0" CONFIG REQUIRED)
+set_package_properties(Grantlee5 PROPERTIES
+    DESCRIPTION "A plug-in based String Template system for Qt"
+    URL "http://github.com/steveire/grantlee"
+    PURPOSE "Required for the RichText componser"
+    TYPE REQUIRED
+)
 find_package(Qt5Designer NO_MODULE)
 set_package_properties(Qt5Designer PROPERTIES
     PURPOSE "Required to build the Qt Designer plugins"
     TYPE OPTIONAL
-    )
-
+)
 
 ########### Find packages ###########
 find_package(KF5Codecs ${KF5_VERSION} CONFIG REQUIRED)
