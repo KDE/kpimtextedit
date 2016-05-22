@@ -3,7 +3,8 @@ cmake_minimum_required(VERSION 2.8.12)
 project(KPimTextEdit)
 
 # ECM setup
-find_package(ECM 5.19.0 CONFIG REQUIRED)
+set(KF5_VERSION "5.22.0")
+find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 include(GenerateExportHeader)
@@ -17,7 +18,6 @@ include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMAddTests)
 
-set(KF5_VERSION "5.19.0")
 set(PIM_VERSION "5.2.41")
 set(KPIMTEXTEDIT_LIB_VERSION ${PIM_VERSION})
 
