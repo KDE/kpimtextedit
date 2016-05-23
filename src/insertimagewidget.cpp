@@ -42,6 +42,7 @@ public:
         : imageRatio(-1), q(qq)
     {
         QVBoxLayout *lay = new QVBoxLayout(q);
+        lay->setMargin(0);
         QHBoxLayout *hbox = new QHBoxLayout;
         QLabel *lab = new QLabel(i18n("Image Location:"));
         imageUrlRequester = new KUrlRequester;
