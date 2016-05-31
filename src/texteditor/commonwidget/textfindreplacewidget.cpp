@@ -37,7 +37,7 @@ TextReplaceWidget::TextReplaceWidget(QWidget *parent)
     const int marg = lay->margin();
     lay->setContentsMargins(marg, 0, marg, 0);
 
-    mReplace = new QLineEdit;
+    mReplace = new QLineEdit(this);
     mReplace->setClearButtonEnabled(true);
     lay->addWidget(mReplace);
 
