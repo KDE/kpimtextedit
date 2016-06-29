@@ -121,14 +121,14 @@ TextFindWidget::~TextFindWidget()
 
 QRegExp TextFindWidget::findRegExp() const
 {
-    QString str = mSearch->text();
+    QString str = QRegExp::escape(mSearch->text());
     if (mWholeWordAct->isChecked()) {
-        str = QLatin1String("\b") + str + QLatin1String("\b");
+        str = QLatin1String("\\b") + str + QLatin1String("\\b");
     }
     if (mCaseSensitiveAct->isChecked()) {
-        return QRegExp(str, Qt::CaseSensitive, QRegExp::FixedString);
+        return QRegExp(str, Qt::CaseSensitive);
     } else {
-        return QRegExp(str, Qt::CaseInsensitive, QRegExp::FixedString);
+        return QRegExp(str, Qt::CaseInsensitive);
     }
 }
 
