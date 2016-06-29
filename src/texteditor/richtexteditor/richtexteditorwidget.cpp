@@ -133,14 +133,7 @@ void RichTextEditorWidget::init(RichTextEditor *customEditor)
     d->mSliderContainer->setContent(d->mFindBar);
     lay->addWidget(d->mSliderContainer);
 
-    QShortcut *shortcut = new QShortcut(this);
-    shortcut->setKey(Qt::Key_F + Qt::CTRL);
-    connect(shortcut, &QShortcut::activated, this, &RichTextEditorWidget::slotFind);
     connect(d->mEditor, &RichTextEditor::findText, this, &RichTextEditorWidget::slotFind);
-
-    shortcut = new QShortcut(this);
-    shortcut->setKey(Qt::Key_R + Qt::CTRL);
-    connect(shortcut, &QShortcut::activated, this, &RichTextEditorWidget::slotReplace);
     connect(d->mEditor, &RichTextEditor::replaceText, this, &RichTextEditorWidget::slotReplace);
 
     setLayout(lay);

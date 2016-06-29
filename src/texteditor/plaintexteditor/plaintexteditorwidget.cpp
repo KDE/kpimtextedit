@@ -112,14 +112,8 @@ void PlainTextEditorWidget::init(PlainTextEditor *customEditor)
 
     lay->addWidget(d->mSliderContainer);
 
-    QShortcut *shortcut = new QShortcut(this);
-    shortcut->setKey(Qt::Key_F + Qt::CTRL);
-    connect(shortcut, &QShortcut::activated, this, &PlainTextEditorWidget::slotFind);
     connect(d->mEditor, &PlainTextEditor::findText, this, &PlainTextEditorWidget::slotFind);
 
-    shortcut = new QShortcut(this);
-    shortcut->setKey(Qt::Key_R + Qt::CTRL);
-    connect(shortcut, &QShortcut::activated, this, &PlainTextEditorWidget::slotReplace);
     connect(d->mEditor, &PlainTextEditor::replaceText, this, &PlainTextEditorWidget::slotReplace);
 
     setLayout(lay);
