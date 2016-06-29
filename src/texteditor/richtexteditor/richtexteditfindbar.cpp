@@ -96,6 +96,8 @@ void RichTextEditFindBar::slotReplaceText()
 void RichTextEditFindBar::slotReplaceAllText()
 {
     //FIXME richtext
-    d->mView->setPlainText(d->mView->toPlainText().replace(mFindWidget->findRegExp(), mReplaceWidget->replace()->text()));
+    const QString newText = d->mView->toPlainText().replace(mFindWidget->findRegExp(), mReplaceWidget->replace()->text());
+    d->mView->selectAll();
+    d->mView->insertPlainText(newText);
 }
 
