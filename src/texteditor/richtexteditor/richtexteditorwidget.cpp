@@ -129,7 +129,7 @@ void RichTextEditorWidget::init(RichTextEditor *customEditor)
     d->mFindBar->setHideWhenClose(false);
     connect(d->mFindBar, &KPIMTextEdit::RichTextEditFindBar::displayMessageIndicator, d->mEditor, &RichTextEditor::slotDisplayMessageIndicator);
 
-    connect(d->mFindBar, &KPIMTextEdit::RichTextEditFindBar::hideFindBar, d->mSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
+    connect(d->mFindBar, &KPIMTextEdit::RichTextEditFindBar::hideFindBar, this, &RichTextEditorWidget::slotHideFindBar);
     d->mSliderContainer->setContent(d->mFindBar);
     lay->addWidget(d->mSliderContainer);
 
@@ -137,6 +137,12 @@ void RichTextEditorWidget::init(RichTextEditor *customEditor)
     connect(d->mEditor, &RichTextEditor::replaceText, this, &RichTextEditorWidget::slotReplace);
 
     setLayout(lay);
+}
+
+void RichTextEditorWidget::slotHideFindBar()
+{
+    d->mSliderContainer->slideOut();
+    d->mEditor->setFocus();
 }
 
 bool RichTextEditorWidget::isReadOnly() const

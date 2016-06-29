@@ -60,6 +60,7 @@ private Q_SLOTS:
     void slotFind();
     void slotReplace();
 
+    void slotHideFindBar();
 private:
     void init(RichTextEditor *customEditor = Q_NULLPTR);
     RichTextEditorWidgetPrivate *const d;

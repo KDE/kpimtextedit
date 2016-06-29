@@ -48,6 +48,7 @@ private Q_SLOTS:
     void slotFind();
     void slotReplace();
 
+    void slotHideFindBar();
 private:
     void init(PlainTextEditor *customEditor = Q_NULLPTR);
     PlainTextEditorWidgetPrivate *const d;

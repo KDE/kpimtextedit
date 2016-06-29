@@ -107,7 +107,7 @@ void PlainTextEditorWidget::init(PlainTextEditor *customEditor)
     d->mFindBar = new KPIMTextEdit::PlainTextEditFindBar(d->mEditor, this);
     d->mFindBar->setHideWhenClose(false);
     connect(d->mFindBar, &KPIMTextEdit::PlainTextEditFindBar::displayMessageIndicator, d->mEditor, &PlainTextEditor::slotDisplayMessageIndicator);
-    connect(d->mFindBar, &KPIMTextEdit::PlainTextEditFindBar::hideFindBar, d->mSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
+    connect(d->mFindBar, &KPIMTextEdit::PlainTextEditFindBar::hideFindBar, this, &PlainTextEditorWidget::slotHideFindBar);
     d->mSliderContainer->setContent(d->mFindBar);
 
     lay->addWidget(d->mSliderContainer);
@@ -117,6 +117,12 @@ void PlainTextEditorWidget::init(PlainTextEditor *customEditor)
     connect(d->mEditor, &PlainTextEditor::replaceText, this, &PlainTextEditorWidget::slotReplace);
 
     setLayout(lay);
+}
+
+void PlainTextEditorWidget::slotHideFindBar()
+{
+    d->mSliderContainer->slideOut();
+    d->mEditor->setFocus();
 }
 
 bool PlainTextEditorWidget::isReadOnly() const
