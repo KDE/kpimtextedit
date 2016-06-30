@@ -210,7 +210,9 @@ void TextEditFindBarBase::closeBar()
     mFindWidget->search()->setText(QString());
     mReplaceWidget->replace()->setText(QString());
     clearSelections();
-    if (mHideWhenClose) {
+    mReplaceWidget->hide();
+    updateGeometry();
+    if (mHideWhenClose) {        
         hide();
     }
     Q_EMIT hideFindBar();
