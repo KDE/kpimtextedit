@@ -134,7 +134,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
                 separatorAction = actionList.at(idx);
             }
             if (separatorAction) {
-                QAction *clearAllAction = KStandardAction::clear(this, SLOT(slotUndoableClear()), popup);
+                QAction *clearAllAction = KStandardAction::clear(this, &PlainTextEditor::slotUndoableClear, popup);
                 if (emptyDocument) {
                     clearAllAction->setEnabled(false);
                 }
