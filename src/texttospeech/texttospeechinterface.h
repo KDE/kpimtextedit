@@ -39,10 +39,8 @@ public:
     void setVolume(int value) Q_DECL_OVERRIDE;
     void reloadSettings() Q_DECL_OVERRIDE;
 
-private Q_SLOTS:
-    void stateChanged(KPIMTextEdit::TextToSpeechWidget::State state);
-
 private:
+    void stateChanged(KPIMTextEdit::TextToSpeechWidget::State state);
     TextToSpeechInterfacePrivate *const d;
 };
 }

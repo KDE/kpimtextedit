@@ -74,7 +74,7 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     layout->addRow(i18n("Voice:"), mVoice);
     connect(mVoice, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::valueChanged);
 
-    QTimer::singleShot(0, this, SLOT(slotUpdateSettings()));
+    QTimer::singleShot(0, this, &TextToSpeechConfigWidget::slotUpdateSettings);
 }
 
 TextToSpeechConfigWidget::~TextToSpeechConfigWidget()

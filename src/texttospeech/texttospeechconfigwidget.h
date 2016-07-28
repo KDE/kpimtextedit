@@ -37,16 +37,15 @@ public:
 
     void setTextToSpeechConfigInterface(AbstractTextToSpeechConfigInterface *interface);
 
-private Q_SLOTS:
-    void valueChanged();
-    void slotUpdateSettings();
-    void slotEngineChanged();
-    void slotLanguageChanged();
 
 Q_SIGNALS:
     void configChanged(bool state);
 
 private:
+    void valueChanged();
+    void slotUpdateSettings();
+    void slotEngineChanged();
+    void slotLanguageChanged();
     void updateVoice();
     void updateLocale();
     void updateEngine();

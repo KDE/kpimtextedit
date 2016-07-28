@@ -68,10 +68,8 @@ public Q_SLOTS:
 Q_SIGNALS:
     void stateChanged(TextToSpeech::State);
 
-private Q_SLOTS:
-    void slotStateChanged();
-
 private:
+    void slotStateChanged();
     explicit TextToSpeech(QObject *parent = Q_NULLPTR);
     friend class TextToSpeechPrivate;
 

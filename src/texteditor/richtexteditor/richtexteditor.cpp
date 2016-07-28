@@ -190,12 +190,12 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
                 d->speller = new Sonnet::Speller();
             }
             if (!d->speller->availableBackends().isEmpty()) {
-                QAction *spellCheckAction = popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")), i18n("Check Spelling..."), this, SLOT(slotCheckSpelling()));
+                QAction *spellCheckAction = popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")), i18n("Check Spelling..."), this, &RichTextEditor::slotCheckSpelling);
                 if (emptyDocument) {
                     spellCheckAction->setEnabled(false);
                 }
                 popup->addSeparator();
-                QAction *autoSpellCheckAction = popup->addAction(i18n("Auto Spell Check"), this, SLOT(slotToggleAutoSpellCheck()));
+                QAction *autoSpellCheckAction = popup->addAction(i18n("Auto Spell Check"), this, &RichTextEditor::slotToggleAutoSpellCheck);
                 autoSpellCheckAction->setCheckable(true);
                 autoSpellCheckAction->setChecked(checkSpellingEnabled());
                 popup->addAction(autoSpellCheckAction);

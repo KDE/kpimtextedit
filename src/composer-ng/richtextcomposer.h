@@ -138,10 +138,9 @@ protected:
     void clearDecorator() Q_DECL_OVERRIDE;
     void updateHighLighter() Q_DECL_OVERRIDE;
     bool processKeyEvent(QKeyEvent *e);
-private Q_SLOTS:
-    void slotTextModeChanged(KPIMTextEdit::RichTextComposer::Mode mode);
 
 private:
+    void slotTextModeChanged(KPIMTextEdit::RichTextComposer::Mode mode);
     void evaluateListSupport(QKeyEvent *event);
     void evaluateReturnKeySupport(QKeyEvent *event);
     class RichTextComposerPrivate;

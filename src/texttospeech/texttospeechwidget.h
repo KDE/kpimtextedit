@@ -55,11 +55,9 @@ public Q_SLOTS:
 Q_SIGNALS:
     void stateChanged(KPIMTextEdit::TextToSpeechWidget::State state);
 
-private Q_SLOTS:
+private:
     void slotVolumeChanged(int value);
     void slotConfigure();
-
-private:
     TextToSpeechWidgetPrivate *const d;
 };
 }
