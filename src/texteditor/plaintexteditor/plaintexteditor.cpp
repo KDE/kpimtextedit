@@ -808,8 +808,8 @@ void PlainTextEditor::slotToggleAutoSpellCheck()
 
 void PlainTextEditor::slotZoomReset()
 {
-    if (d->mInitialFontSize > 0) {
-        QFont f = font();
+    QFont f = font();
+    if (d->mInitialFontSize != f.pointSize()) {
         f.setPointSize(d->mInitialFontSize);
         setFont(f);
     }
