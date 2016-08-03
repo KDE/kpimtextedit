@@ -55,10 +55,10 @@ public:
 
 public Q_SLOTS:
     void slotFindNext();
-
-private:
     void slotFind();
     void slotReplace();
+
+private:
 
     void slotHideFindBar();
     void init(RichTextEditor *customEditor = Q_NULLPTR);
