@@ -201,6 +201,7 @@ install(FILES
 install(FILES
     ${KPimTextEdit_CamelCase_HEADERS}
     ${PimCommon_CamelCasetextrichtexteditor_HEADERS}
+    ${PimCommon_CamelCaseplaintexteditor_HEADERS}
     ${KPimTextEdit_CamelCasetexttospeechs_HEADERS}
     ${PimCommon_CamelCasetexteditor_commonwidget_HEADERS}
     ${PimCommon_CamelCasetexteditor_commonwidget_HEADERS}
