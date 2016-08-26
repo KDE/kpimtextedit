@@ -286,6 +286,11 @@ void RichTextEditor::addIgnoreWords(const QStringList &lst)
     addIgnoreWordsToHighLighter();
 }
 
+void RichTextEditor::forceAutoCorrection()
+{
+    //Nothing here
+}
+
 void RichTextEditor::setSearchSupport(bool b)
 {
     if (b) {
