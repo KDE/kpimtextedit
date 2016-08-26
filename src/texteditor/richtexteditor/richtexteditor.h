@@ -93,7 +93,7 @@ public:
     void addIgnoreWords(const QStringList &lst);
 
     // Reimplement it in subclass
-    virtual void forceAutoCorrection();
+    virtual void forceAutoCorrection(bool selectedText = false);
 
 Q_SIGNALS:
     void say(const QString &text);

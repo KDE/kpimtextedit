@@ -286,8 +286,9 @@ void RichTextEditor::addIgnoreWords(const QStringList &lst)
     addIgnoreWordsToHighLighter();
 }
 
-void RichTextEditor::forceAutoCorrection()
+void RichTextEditor::forceAutoCorrection(bool selectedText)
 {
+    Q_UNUSED(selectedText);
     //Nothing here
 }
 
