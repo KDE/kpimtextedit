@@ -33,8 +33,7 @@ TextToSpeechConfigDialog::TextToSpeechConfigDialog(QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18n("Configure Text-To-Speech"));
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mTextToSpeechConfigWidget = new TextToSpeechConfigWidget(parent);
     mainLayout->addWidget(mTextToSpeechConfigWidget);
 

@@ -113,7 +113,7 @@ QString RichTextEditorWidget::toPlainText() const
 
 void RichTextEditorWidget::init(RichTextEditor *customEditor)
 {
-    QVBoxLayout *lay = new QVBoxLayout;
+    QVBoxLayout *lay = new QVBoxLayout(this);
     lay->setMargin(0);
     d->mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
     lay->addWidget(d->mTextToSpeechWidget);
@@ -137,8 +137,6 @@ void RichTextEditorWidget::init(RichTextEditor *customEditor)
 
     connect(d->mEditor, &RichTextEditor::findText, this, &RichTextEditorWidget::slotFind);
     connect(d->mEditor, &RichTextEditor::replaceText, this, &RichTextEditorWidget::slotReplace);
-
-    setLayout(lay);
 }
 
 void RichTextEditorWidget::slotHideFindBar()
