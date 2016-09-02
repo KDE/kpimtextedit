@@ -167,10 +167,10 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
             }
             if (!d->speller->availableBackends().isEmpty()) {
                 if (!emptyDocument) {
-                    popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")), i18n("Check Spelling..."), this, SLOT(slotCheckSpelling()));
+                    popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")), i18n("Check Spelling..."), this, &PlainTextEditor::slotCheckSpelling);
                     popup->addSeparator();
                 }
-                QAction *autoSpellCheckAction = popup->addAction(i18n("Auto Spell Check"), this, SLOT(slotToggleAutoSpellCheck()));
+                QAction *autoSpellCheckAction = popup->addAction(i18n("Auto Spell Check"), this, &PlainTextEditor::slotToggleAutoSpellCheck);
                 autoSpellCheckAction->setCheckable(true);
                 autoSpellCheckAction->setChecked(checkSpellingEnabled());
                 popup->addAction(autoSpellCheckAction);
