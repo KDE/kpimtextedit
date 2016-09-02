@@ -136,11 +136,10 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
                 separatorAction = actionList.at(idx);
             }
             if (separatorAction) {
-                QAction *clearAllAction = KStandardAction::clear(this, &PlainTextEditor::slotUndoableClear, popup);
-                if (emptyDocument) {
-                    clearAllAction->setEnabled(false);
+                if (!emptyDocument) {
+                    QAction *clearAllAction = KStandardAction::clear(this, &PlainTextEditor::slotUndoableClear, popup);
+                    popup->insertAction(separatorAction, clearAllAction);
                 }
-                popup->insertAction(separatorAction, clearAllAction);
             }
         }
         KIconTheme::assignIconsToContextMenu(isReadOnly() ? KIconTheme::ReadOnlyText
@@ -148,17 +147,15 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
                                              popup->actions());
         if (d->supportFeatures & Search) {
             popup->addSeparator();
-            QAction *findAct = popup->addAction(KStandardGuiItem::find().icon(), KStandardGuiItem::find().text(), this, SIGNAL(findText()), Qt::Key_F + Qt::CTRL);
-            if (emptyDocument) {
-                findAct->setEnabled(false);
-            }
-            popup->addSeparator();
-            if (!isReadOnly()) {
-                QAction *act = popup->addAction(i18n("Replace..."), this, SIGNAL(replaceText()), Qt::Key_R + Qt::CTRL);
-                if (emptyDocument) {
-                    act->setEnabled(false);
-                }
+            if (!emptyDocument) {
+                popup->addAction(KStandardGuiItem::find().icon(), KStandardGuiItem::find().text(), this, SIGNAL(findText()), Qt::Key_F + Qt::CTRL);
                 popup->addSeparator();
+            }
+            if (!isReadOnly()) {
+                if (!emptyDocument) {
+                    popup->addAction(i18n("Replace..."), this, SIGNAL(replaceText()), Qt::Key_R + Qt::CTRL);
+                    popup->addSeparator();
+                }
             }
         } else {
             popup->addSeparator();
@@ -169,11 +166,10 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
                 d->speller = new Sonnet::Speller();
             }
             if (!d->speller->availableBackends().isEmpty()) {
-                QAction *spellCheckAction = popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")), i18n("Check Spelling..."), this, SLOT(slotCheckSpelling()));
-                if (emptyDocument) {
-                    spellCheckAction->setEnabled(false);
+                if (!emptyDocument) {
+                    popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")), i18n("Check Spelling..."), this, SLOT(slotCheckSpelling()));
+                    popup->addSeparator();
                 }
-                popup->addSeparator();
                 QAction *autoSpellCheckAction = popup->addAction(i18n("Auto Spell Check"), this, SLOT(slotToggleAutoSpellCheck()));
                 autoSpellCheckAction->setCheckable(true);
                 autoSpellCheckAction->setChecked(checkSpellingEnabled());
