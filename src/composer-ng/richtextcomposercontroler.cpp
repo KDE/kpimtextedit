@@ -24,6 +24,7 @@
 #include "nestedlisthelper_p.h"
 #include "inserthtmldialog.h"
 #include <QApplication>
+#include <QRegularExpression>
 
 #include <KColorScheme>
 #include <KMessageBox>
@@ -35,6 +36,7 @@
 #include <QPointer>
 #include <QClipboard>
 #include <QIcon>
+#include <QDebug>
 #include "textutils.h"
 #include "insertimagedialog.h"
 
@@ -884,7 +886,7 @@ QString RichTextComposerControler::toWrappedPlainText() const
 QString RichTextComposerControler::toWrappedPlainText(QTextDocument *doc) const
 {
     QString temp;
-    QRegExp rx(QLatin1String("(http|ftp|ldap)s?\\S+-$"));
+    QRegularExpression rx(QLatin1String("(http|ftp|ldap)s?\\S+-$"));
     QTextBlock block = doc->begin();
     while (block.isValid()) {
         QTextLayout *layout = block.layout();
@@ -911,7 +913,6 @@ QString RichTextComposerControler::toWrappedPlainText(QTextDocument *doc) const
     if (temp.endsWith(QLatin1Char('\n'))) {
         temp.chop(1);
     }
-
     d->fixupTextEditString(temp);
     return temp;
 }

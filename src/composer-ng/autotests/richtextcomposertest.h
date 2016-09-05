@@ -42,7 +42,10 @@ private Q_SLOTS:
     void testDeleteLine();
     void testDeleteLine_data();
     void testLoadImage();
+
+    void testWrappedPlainText_data();
     void testWrappedPlainText();
+
     void testEnableDisableActions();
 };
 
