@@ -18,7 +18,7 @@ include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMAddTests)
 
-set(PIM_VERSION "5.3.1")
+set(PIM_VERSION "5.3.2")
 set(KPIMTEXTEDIT_LIB_VERSION ${PIM_VERSION})
 
 ecm_setup_version(${KPIMTEXTEDIT_LIB_VERSION} VARIABLE_PREFIX KPIMTEXTEDIT
