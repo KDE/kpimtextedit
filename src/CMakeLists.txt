@@ -204,7 +204,6 @@ install(FILES
     ${PimCommon_CamelCaseplaintexteditor_HEADERS}
     ${KPimTextEdit_CamelCasetexttospeechs_HEADERS}
     ${PimCommon_CamelCasetexteditor_commonwidget_HEADERS}
-    ${PimCommon_CamelCasetexteditor_commonwidget_HEADERS}
     ${KPimTextEdit_Camelcasecomposerng_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit/KPIMTextEdit/
     COMPONENT Devel
