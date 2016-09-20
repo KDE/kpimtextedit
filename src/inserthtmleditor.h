@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2015 Montel Laurent <montel@kde.org>
+  Copyright (c) 2016 Montel Laurent <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -18,13 +18,12 @@
 
 */
 
-#ifndef RICHTEXTCOMPOSER_INSERTHTMLDIALOG_H
-#define RICHTEXTCOMPOSER_INSERTHTMLDIALOG_H
+#ifndef RICHTEXTCOMPOSER_INSERTHTMLEDITOR_H
+#define RICHTEXTCOMPOSER_INSERTHTMLEDITOR_H
 
-#include <QDialog>
 #include "config-kpimtextedit.h"
+#include <QWidget>
 
-#include "kpimtextedit_export.h"
 #include "kpimtextedit/plaintexteditor.h"
 #ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
 #include <SyntaxHighlighting/Repository>
@@ -32,21 +31,21 @@
 
 namespace KPIMTextEdit
 {
-class InsertHtmlDialogPrivate;
-class KPIMTEXTEDIT_EXPORT InsertHtmlDialog : public QDialog
+class TextEditorCompleter;
+class InsertHtmlEditor : public KPIMTextEdit::PlainTextEditor
 {
     Q_OBJECT
 public:
-    explicit InsertHtmlDialog(QWidget *parent = Q_NULLPTR);
-    ~InsertHtmlDialog();
-    QString html() const;
-
+    explicit InsertHtmlEditor(QWidget *parent = Q_NULLPTR);
+    ~InsertHtmlEditor();
+protected:
+    void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
 private:
-    friend class InsertHtmlDialogPrivate;
-    InsertHtmlDialogPrivate *const d;
-    Q_PRIVATE_SLOT(d, void _k_slotTextChanged())
+    KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter;
+#ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
+    SyntaxHighlighting::Repository mRepo;
+#endif
 };
-
 }
 
-#endif
+#endif // INSERTHTMLEDITOR_H

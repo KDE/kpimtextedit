@@ -19,15 +19,11 @@
 */
 
 #include "inserthtmldialog.h"
-
+#include "inserthtmleditor.h"
 #include <KLocalizedString>
 
-#include "texteditorcompleter.h"
-#include "htmlhighlighter.h"
 #include "texteditor/plaintexteditor/plaintexteditorwidget.h"
 
-#include <QCompleter>
-#include <QAbstractItemView>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
@@ -95,45 +91,6 @@ InsertHtmlDialog::~InsertHtmlDialog()
 QString InsertHtmlDialog::html() const
 {
     return d->editor->toPlainText();
-}
-
-InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
-    : KPIMTextEdit::PlainTextEditor(parent)
-{
-    new KPIMTextEdit::HtmlHighlighter(document());
-    setFocus();
-    mTextEditorCompleter = new KPIMTextEdit::TextEditorCompleter(this, this);
-    QStringList completerList;
-    completerList << QStringLiteral("<b></b>")
-                  << QStringLiteral("<i></i>")
-                  << QStringLiteral("<u></u>");
-    //Add more
-    mTextEditorCompleter->setCompleterStringList(completerList);
-    mTextEditorCompleter->setExcludeOfCharacters(QStringLiteral("~!@#$%^&*()+{}|,./;'[]\\-= "));
-}
-
-InsertHtmlEditor::~InsertHtmlEditor()
-{
-
-}
-
-void InsertHtmlEditor::keyPressEvent(QKeyEvent *e)
-{
-    if (mTextEditorCompleter->completer()->popup()->isVisible()) {
-        switch (e->key()) {
-        case Qt::Key_Enter:
-        case Qt::Key_Return:
-        case Qt::Key_Escape:
-        case Qt::Key_Tab:
-        case Qt::Key_Backtab:
-            e->ignore();
-            return; // let the completer do default behavior
-        default:
-            break;
-        }
-    }
-    KPIMTextEdit::PlainTextEditor::keyPressEvent(e);
-    mTextEditorCompleter->completeText();
 }
 
 }

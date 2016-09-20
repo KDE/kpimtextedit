@@ -1,7 +1,11 @@
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src ${CMAKE_CURRENT_BINARY_DIR}/../src)
 
 add_executable(inserthtmldialog_demo inserthtmldialog_demo.cpp)
-target_link_libraries(inserthtmldialog_demo KF5PimTextEdit Qt5::Widgets)
+set(inserthtmldialog_demo_LIBS KF5PimTextEdit Qt5::Widgets)
+if (KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT)
+    set(inserthtmldialog_demo_LIBS ${inserthtmldialog_demo_LIBS} KF5::SyntaxHighlighting)
+endif()
+target_link_libraries(inserthtmldialog_demo ${inserthtmldialog_demo_LIBS})
 
 set(slidecontainer_gui_SRCS slidecontainer_gui.cpp)
 add_executable(slidecontainer_gui ${slidecontainer_gui_SRCS})

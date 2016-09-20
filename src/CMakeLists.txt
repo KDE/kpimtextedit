@@ -59,6 +59,7 @@ set(kpimtextedit_SRCS
     inserttablewidget.cpp
     syntaxhighlighterbase.cpp
     texteditorcompleter.cpp
+    inserthtmleditor.cpp
     slidecontainer.cpp
     editorutil.cpp
     )
@@ -91,6 +92,10 @@ target_link_libraries(KF5PimTextEdit
 
 if(KPIMTEXTEDIT_HAVE_TEXTTOSPEECH)
     target_link_libraries(KF5PimTextEdit PRIVATE Qt5::TextToSpeech)
+endif()
+
+if (KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT)
+    target_link_libraries(KF5PimTextEdit PRIVATE KF5::SyntaxHighlighting)
 endif()
 
 set_target_properties(KF5PimTextEdit PROPERTIES
