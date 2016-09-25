@@ -44,9 +44,8 @@ InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
 
     SyntaxHighlighting::SyntaxHighlighter *hl = new SyntaxHighlighting::SyntaxHighlighter(document());
     hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
-        ? mRepo.theme(QStringLiteral("Breeze Dark"))
-        : mRepo.theme(QStringLiteral("Default")));
-
+                 ? mRepo.defaultTheme(SyntaxHighlighting::Repository::DarkTheme)
+                 : mRepo.defaultTheme(SyntaxHighlighting::Repository::LightTheme));
     hl->setDefinition(def);
 #else
     new KPIMTextEdit::HtmlHighlighter(document());
