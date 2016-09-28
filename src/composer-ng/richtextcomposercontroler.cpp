@@ -93,7 +93,14 @@ void RichTextComposerControler::RichTextComposerControlerPrivate::selectLinkText
             if (cursor->atEnd()) {
                 break;
             }
-            cursor->setPosition(cursor->position() + 1, QTextCursor::KeepAnchor);
+            const int oldPosition = cursor->position();
+            cursor->movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor);
+            //Wordaround Qt Bug. when we have a table.
+            //FIXME selection url
+            if (oldPosition == cursor->position()) {
+                break;
+            }
+
         }
         if (cursor->charFormat().anchorHref() != aHref) {
             cursor->setPosition(cursor->position() - 1, QTextCursor::KeepAnchor);
@@ -101,7 +108,6 @@ void RichTextComposerControler::RichTextComposerControlerPrivate::selectLinkText
     } else if (cursor->hasSelection()) {
         // Nothing to to. Using the currently selected text as the link text.
     } else {
-
         // Select current word
         cursor->movePosition(QTextCursor::StartOfWord);
         cursor->movePosition(QTextCursor::EndOfWord, QTextCursor::KeepAnchor);
