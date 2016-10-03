@@ -39,7 +39,6 @@ public:
 
     void setTextToSpeechConfigInterface(AbstractTextToSpeechConfigInterface *interface);
 
-
 Q_SIGNALS:
     void configChanged(bool state);
 
