@@ -57,12 +57,21 @@ public:
     {
         delete nestedListHelper;
     }
+    QColor linkColor()
+    {
+        if (mLinkColor.isValid()) {
+            return mLinkColor;
+        }
+        mLinkColor = KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::LinkText).color();
+        return mLinkColor;
+    }
     void selectLinkText(QTextCursor *cursor) const;
     void fixupTextEditString(QString &text) const;
     void mergeFormatOnWordOrSelection(const QTextCharFormat &format);
     QString addQuotesToText(const QString &inputText);
     void updateLink(const QString &linkUrl, const QString &linkText);
     QFont saveFont;
+    QColor mLinkColor;
     QTextCharFormat painterFormat;
     bool painterActive;
     NestedListHelper *nestedListHelper;
@@ -444,8 +453,8 @@ void RichTextComposerControler::RichTextComposerControlerPrivate::updateLink(con
         // Link formatting does not get applied immediately when setAnchor(true)
         // is called.  So the formatting needs to be applied manually.
         format.setUnderlineStyle(QTextCharFormat::SingleUnderline);
-        format.setUnderlineColor(KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::LinkText).color());
-        format.setForeground(KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::LinkText).color());
+        format.setUnderlineColor(linkColor());
+        format.setForeground(linkColor());
         richtextComposer->activateRichText();
     } else {
         // Remove link details
@@ -585,8 +594,8 @@ void RichTextComposerControler::insertLink(const QString &url)
         // Link formatting does not get applied immediately when setAnchor(true)
         // is called.  So the formatting needs to be applied manually.
         format.setUnderlineStyle(QTextCharFormat::SingleUnderline);
-        format.setUnderlineColor(KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::LinkText).color());
-        format.setForeground(KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::LinkText).color());
+        format.setUnderlineColor(d->linkColor());
+        format.setForeground(d->linkColor());
         // Insert link text specified in dialog, otherwise write out url.
         cursor.insertText(url, format);
 
@@ -622,8 +631,8 @@ void RichTextComposerControler::insertShareLink(const QString &url)
         // Link formatting does not get applied immediately when setAnchor(true)
         // is called.  So the formatting needs to be applied manually.
         format.setUnderlineStyle(QTextCharFormat::SingleUnderline);
-        format.setUnderlineColor(KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::LinkText).color());
-        format.setForeground(KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::LinkText).color());
+        format.setUnderlineColor(d->linkColor());
+        format.setForeground(d->linkColor());
         // Insert link text specified in dialog, otherwise write out url.
         cursor.insertText(url, format);
 
