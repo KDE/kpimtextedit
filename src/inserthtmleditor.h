@@ -26,7 +26,7 @@
 
 #include "kpimtextedit/plaintexteditor.h"
 #ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
-#include <SyntaxHighlighting/Repository>
+#include <KSyntaxHighlighting/Repository>
 #endif
 
 namespace KPIMTextEdit
@@ -43,7 +43,7 @@ protected:
 private:
     KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter;
 #ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
-    SyntaxHighlighting::Repository mRepo;
+    KSyntaxHighlighting::Repository mRepo;
 #endif
 };
 }

@@ -22,9 +22,9 @@
 #include "texteditorcompleter.h"
 
 #ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
-#include <SyntaxHighlighting/SyntaxHighlighter>
-#include <SyntaxHighlighting/Definition>
-#include <SyntaxHighlighting/Theme>
+#include <KSyntaxHighlighting/SyntaxHighlighter>
+#include <KSyntaxHighlighting/Definition>
+#include <KSyntaxHighlighting/Theme>
 #else
 #include "htmlhighlighter.h"
 #endif
@@ -39,13 +39,13 @@ InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
     : KPIMTextEdit::PlainTextEditor(parent)
 {
 #ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
-    SyntaxHighlighting::Definition def;
+    KSyntaxHighlighting::Definition def;
     def = mRepo.definitionForName(QStringLiteral("HTML"));
 
-    SyntaxHighlighting::SyntaxHighlighter *hl = new SyntaxHighlighting::SyntaxHighlighter(document());
+    KSyntaxHighlighting::SyntaxHighlighter *hl = new KSyntaxHighlighting::SyntaxHighlighter(document());
     hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
-                 ? mRepo.defaultTheme(SyntaxHighlighting::Repository::DarkTheme)
-                 : mRepo.defaultTheme(SyntaxHighlighting::Repository::LightTheme));
+                 ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+                 : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     hl->setDefinition(def);
 #else
     new KPIMTextEdit::HtmlHighlighter(document());
