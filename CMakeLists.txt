@@ -54,6 +54,7 @@ find_package(KF5Sonnet ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5TextWidgets ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5WidgetsAddons ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5XmlGui ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5SyntaxHighlighting ${KF5_VERSION} CONFIG REQUIRED)
 
 if (Qt5Designer_FOUND)
     find_package(KF5DesignerPlugin ${KF5_VERSION} CONFIG REQUIRED)
@@ -76,15 +77,7 @@ else()
     endif()
 endif()
 
-option(KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT "Enable this feature if you want to use new kf5 syntax highlighting module." TRUE)
 
-if (KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT)
-   find_package(KF5SyntaxHighlighting ${KF5_VERSION})
-   if (KF5SyntaxHighlighting_FOUND)
-       MESSAGE(STATUS "found KF5SyntaxHighlighting")
-       set(KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT true)
-   endif()
-endif()
 
 ########### Targets ###########
 add_subdirectory(src)

@@ -25,9 +25,7 @@
 #include <QWidget>
 
 #include "kpimtextedit/plaintexteditor.h"
-#ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
 #include <KSyntaxHighlighting/Repository>
-#endif
 
 namespace KPIMTextEdit
 {
@@ -42,9 +40,7 @@ protected:
     void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
 private:
     KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter;
-#ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
     KSyntaxHighlighting::Repository mRepo;
-#endif
 };
 }
 
