@@ -26,7 +26,6 @@
 
 #include "kpimtextedit_export.h"
 #include "kpimtextedit/plaintexteditor.h"
-#include <KSyntaxHighlighting/Repository>
 
 namespace KPIMTextEdit
 {
