@@ -33,6 +33,7 @@ namespace KPIMTextEdit
 {
 class TextMessageIndicator : public QWidget
 {
+    Q_OBJECT
 public:
     explicit TextMessageIndicator(QWidget *parent = Q_NULLPTR);
 

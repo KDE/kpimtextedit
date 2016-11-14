@@ -27,6 +27,7 @@ namespace KPIMTextEdit
 class RichTextComposer;
 class KPIMTEXTEDIT_EXPORT RichTextComposerEmailQuoteHighlighter : public Sonnet::Highlighter
 {
+    Q_OBJECT
 public:
 
     /**

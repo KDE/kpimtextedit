@@ -32,6 +32,7 @@ namespace KPIMTextEdit
 
 class KPIMTEXTEDIT_EXPORT InsertTableDialog : public QDialog
 {
+    Q_OBJECT
 public:
     explicit InsertTableDialog(QWidget *parent);
     ~InsertTableDialog();

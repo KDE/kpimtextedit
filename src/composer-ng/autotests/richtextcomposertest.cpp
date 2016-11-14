@@ -442,7 +442,7 @@ void RichTextComposerTest::testLoadImage()
     QString image2Path = KIconLoader::global()->iconPath(QStringLiteral("arrow-up"), KIconLoader::Small, false);
     QImage image1, image2;
     QVERIFY(image1.load(image1Path));
-    QVERIFY(image2.load(image1Path));
+    QVERIFY(image2.load(image2Path));
 
     edit.setHtml(QStringLiteral("Bla<img src=\"folder-new.png\">Bla"));
 

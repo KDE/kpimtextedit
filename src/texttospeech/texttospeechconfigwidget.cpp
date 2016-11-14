@@ -117,7 +117,7 @@ void TextToSpeechConfigWidget::writeConfig()
     grp.writeEntry("volume", mVolume->value());
     grp.writeEntry("rate", static_cast<double>(mRate->value() / 100));
     grp.writeEntry("pitch", static_cast<double>(mPitch->value() / 100));
-    grp.writeEntry("localeName", mLanguage->currentData().value<QLocale>().name());
+    grp.writeEntry("localeName", mLanguage->currentData().toLocale().name());
     grp.writeEntry("engine", mAvailableEngine->currentData().toString());
     grp.writeEntry("voice", mVoice->currentData().toString());
 }

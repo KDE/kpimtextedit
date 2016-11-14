@@ -27,7 +27,8 @@
 #include <QToolButton>
 #include <QPushButton>
 
-TextGoToLineWidgetTest::TextGoToLineWidgetTest()
+TextGoToLineWidgetTest::TextGoToLineWidgetTest(QObject *parent)
+    : QObject(parent)
 {
 }
 

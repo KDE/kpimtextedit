@@ -32,6 +32,7 @@ namespace KPIMTextEdit
 
 class KPIMTEXTEDIT_EXPORT TableCellFormatDialog : public QDialog
 {
+    Q_OBJECT
 public:
     explicit TableCellFormatDialog(QWidget *parent);
     ~TableCellFormatDialog();

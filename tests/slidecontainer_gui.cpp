@@ -30,9 +30,10 @@ using namespace KPIMTextEdit;
 
 class Window : public QWidget
 {
+    Q_OBJECT
 public:
-    Window()
-        : QWidget()
+    explicit Window(QWidget *parent = Q_NULLPTR)
+        : QWidget(parent)
     {
         SlideContainer *container = new SlideContainer(this);
 
@@ -64,3 +65,4 @@ int main(int argc, char *argv[])
     return app.exec();
 }
 
+#include "slidecontainer_gui.moc"

@@ -36,6 +36,12 @@ void TextUtilsTest::test_flowText()
     QCOMPARE(TextUtils::flowText(originalString, indent, lineLength), quotedString);
 }
 
+TextUtilsTest::TextUtilsTest(QObject *parent)
+    : QObject(parent)
+{
+
+}
+
 void TextUtilsTest::test_flowText_data()
 {
     QTest::addColumn<QString>("originalString");

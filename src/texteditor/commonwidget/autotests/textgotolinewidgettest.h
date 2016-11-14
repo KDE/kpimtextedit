@@ -25,7 +25,7 @@ class TextGoToLineWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    TextGoToLineWidgetTest();
+    explicit TextGoToLineWidgetTest(QObject *parent = Q_NULLPTR);
 
 private Q_SLOTS:
     void shouldHaveDefaultValuesOnCreation();

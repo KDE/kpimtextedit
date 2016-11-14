@@ -35,7 +35,7 @@ void TextToSpeechLanguageComboBox::selectLocaleName(const QString &localeName)
 {
     const int countItem(count());
     for (int i = 0; i < countItem; ++i) {
-        if (itemData(i).value<QLocale>().name() == localeName) {
+        if (itemData(i).toLocale().name() == localeName) {
             setCurrentIndex(i);
             break;
         }
