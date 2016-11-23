@@ -46,7 +46,6 @@ set(kpimtextedit_texttospeech_SRCS
 set(kpimtextedit_SRCS
     emoticontexteditaction.cpp
     emoticontexteditselector.cpp
-    htmlhighlighter.cpp
     inserthtmldialog.cpp
     insertimagedialog.cpp
     insertimagewidget.cpp
@@ -108,7 +107,6 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
     HEADER_NAMES
     EditorUtil
     EmoticonTextEditAction
-    HtmlHighlighter
     InsertHtmlDialog
     InsertImageDialog
     InsertImageWidget
