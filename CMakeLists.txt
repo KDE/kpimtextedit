@@ -17,6 +17,8 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMAddTests)
+include(ECMCoverageOption)
+
 
 set(PIM_VERSION "5.4.41")
 set(KPIMTEXTEDIT_LIB_VERSION ${PIM_VERSION})
