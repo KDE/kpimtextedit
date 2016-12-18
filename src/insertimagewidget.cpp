@@ -49,7 +49,7 @@ public:
 
         const QList<QByteArray> mimetypes = QImageReader::supportedImageFormats();
         QString filter;
-        Q_FOREACH (const QByteArray &ba, mimetypes) {
+        for (const QByteArray &ba : mimetypes) {
             if (!filter.isEmpty()) {
                 filter += QLatin1Char('\n');
             }

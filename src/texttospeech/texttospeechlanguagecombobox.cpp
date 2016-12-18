@@ -45,7 +45,7 @@ void TextToSpeechLanguageComboBox::selectLocaleName(const QString &localeName)
 void TextToSpeechLanguageComboBox::updateAvailableLocales(const QVector<QLocale> &locales, const QLocale &current)
 {
     clear();
-    Q_FOREACH (const QLocale &locale, locales) {
+    for (const QLocale &locale : locales) {
         QVariant localeVariant(locale);
         addItem(QLocale::languageToString(locale.language()), localeVariant);
         if (locale.name() == current.name()) {

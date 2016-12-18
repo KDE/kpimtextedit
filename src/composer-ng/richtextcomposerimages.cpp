@@ -168,8 +168,8 @@ ImageWithNameList RichTextComposerImages::imagesWithName() const
 {
     ImageWithNameList retImages;
     QStringList seenImageNames;
-    QList<QTextImageFormat> imageFormats = embeddedImageFormats();
-    foreach (const QTextImageFormat &imageFormat, imageFormats) {
+    const QList<QTextImageFormat> imageFormats = embeddedImageFormats();
+    for (const QTextImageFormat &imageFormat : imageFormats) {
         if (!seenImageNames.contains(imageFormat.name())) {
             QVariant resourceData = d->composer->document()->resource(QTextDocument::ImageResource,
                                     QUrl(imageFormat.name()));
@@ -187,10 +187,10 @@ ImageWithNameList RichTextComposerImages::imagesWithName() const
 
 QList< QSharedPointer<EmbeddedImage> > RichTextComposerImages::embeddedImages() const
 {
-    ImageWithNameList normalImages = imagesWithName();
+    const ImageWithNameList normalImages = imagesWithName();
     QList< QSharedPointer<EmbeddedImage> > retImages;
     retImages.reserve(normalImages.count());
-    foreach (const ImageWithNamePtr &normalImage, normalImages) {
+    for (const ImageWithNamePtr &normalImage : normalImages) {
         QBuffer buffer;
         buffer.open(QIODevice::WriteOnly);
         normalImage->image.save(&buffer, "PNG");
@@ -243,13 +243,11 @@ QByteArray RichTextComposerImages::imageNamesToContentIds(
     const QByteArray &htmlBody, const KPIMTextEdit::ImageList &imageList)
 {
     QByteArray result = htmlBody;
-    if (!imageList.isEmpty()) {
-        foreach (const QSharedPointer<EmbeddedImage> &image, imageList) {
-            const QString newImageName = QLatin1String("cid:") + image->contentID;
-            QByteArray quote("\"");
-            result.replace(QByteArray(quote + image->imageName.toLocal8Bit() + quote),
-                           QByteArray(quote + newImageName.toLocal8Bit() + quote));
-        }
+    for (const QSharedPointer<EmbeddedImage> &image : imageList) {
+        const QString newImageName = QLatin1String("cid:") + image->contentID;
+        QByteArray quote("\"");
+        result.replace(QByteArray(quote + image->imageName.toLocal8Bit() + quote),
+                       QByteArray(quote + newImageName.toLocal8Bit() + quote));
     }
     return result;
 }
