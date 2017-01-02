@@ -122,7 +122,7 @@ Sonnet::Highlighter *RichTextEditor::highlighter() const
     if (d->richTextDecorator) {
         return d->richTextDecorator->highlighter();
     } else {
-        return 0;
+        return Q_NULLPTR;
     }
 }
 

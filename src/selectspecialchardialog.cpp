@@ -31,13 +31,13 @@ class SelectSpecialCharDialogPrivate
 {
 public:
     SelectSpecialCharDialogPrivate(SelectSpecialCharDialog *qq)
-        : mSelectButton(0), q(qq)
+        : mSelectButton(Q_NULLPTR), q(qq)
     {
         q->setWindowTitle(i18n("Select Special Characters"));
 
         QVBoxLayout *lay = new QVBoxLayout(q);
 
-        mCharSelect = new KCharSelect(q, 0, KCharSelect::CharacterTable | KCharSelect::BlockCombos);
+        mCharSelect = new KCharSelect(q, Q_NULLPTR, KCharSelect::CharacterTable | KCharSelect::BlockCombos);
         q->connect(mCharSelect, &KCharSelect::charSelected,
                    q, &SelectSpecialCharDialog::charSelected);
         lay->addWidget(mCharSelect);

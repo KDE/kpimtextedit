@@ -653,7 +653,7 @@ Sonnet::Highlighter *PlainTextEditor::highlighter() const
     if (d->richTextDecorator) {
         return d->richTextDecorator->highlighter();
     } else {
-        return 0;
+        return Q_NULLPTR;
     }
 }
 
