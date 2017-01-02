@@ -371,7 +371,7 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
 {
     if ((richTextMode) || forceUpdate) {
         QTextTable *table = textEdit->textCursor().currentTable();
-        const bool isTable = (table != Q_NULLPTR);
+        const bool isTable = (table != nullptr);
         actionInsertRowBelow->setEnabled(isTable);
         actionInsertRowAbove->setEnabled(isTable);
 

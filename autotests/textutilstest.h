@@ -25,7 +25,7 @@ class TextUtilsTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextUtilsTest(QObject *parent = Q_NULLPTR);
+    explicit TextUtilsTest(QObject *parent = nullptr);
 
 private Q_SLOTS:
     void test_flowText_data();

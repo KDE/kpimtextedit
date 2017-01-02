@@ -26,7 +26,7 @@ class RichTextComposerControlerTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit RichTextComposerControlerTest(QObject *parent = Q_NULLPTR);
+    explicit RichTextComposerControlerTest(QObject *parent = nullptr);
     ~RichTextComposerControlerTest();
 
 private Q_SLOTS:

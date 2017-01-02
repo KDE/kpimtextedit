@@ -25,7 +25,7 @@ class RichTextExternalComposerTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit RichTextExternalComposerTest(QObject *parent = Q_NULLPTR);
+    explicit RichTextExternalComposerTest(QObject *parent = nullptr);
     ~RichTextExternalComposerTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

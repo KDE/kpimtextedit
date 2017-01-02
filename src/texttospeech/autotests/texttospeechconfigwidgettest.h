@@ -29,7 +29,7 @@ class TextToSpeechConfigWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextToSpeechConfigWidgetTest(QObject *parent = Q_NULLPTR);
+    explicit TextToSpeechConfigWidgetTest(QObject *parent = nullptr);
     ~TextToSpeechConfigWidgetTest();
 
 private Q_SLOTS:

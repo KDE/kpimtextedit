@@ -31,10 +31,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 using namespace KPIMTextEdit;
 
 struct TestWindow : public QWidget {
-    explicit TestWindow(QWidget *parent = Q_NULLPTR)
+    explicit TestWindow(QWidget *parent = nullptr)
         : QWidget(parent)
         , mContainer(new SlideContainer)
-        , mContent(Q_NULLPTR)
+        , mContent(nullptr)
     {
         createContent();
 

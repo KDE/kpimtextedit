@@ -32,7 +32,7 @@ class Window : public QWidget
 {
     Q_OBJECT
 public:
-    explicit Window(QWidget *parent = Q_NULLPTR)
+    explicit Window(QWidget *parent = nullptr)
         : QWidget(parent)
     {
         SlideContainer *container = new SlideContainer(this);

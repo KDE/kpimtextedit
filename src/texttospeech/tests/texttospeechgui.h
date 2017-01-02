@@ -26,7 +26,7 @@ class TextToSpeechGui : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TextToSpeechGui(QWidget *parent = Q_NULLPTR);
+    explicit TextToSpeechGui(QWidget *parent = nullptr);
     ~TextToSpeechGui();
 
 private Q_SLOTS:

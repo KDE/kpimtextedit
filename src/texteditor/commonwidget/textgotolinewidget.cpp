@@ -35,8 +35,8 @@ class KPIMTextEdit::TextGoToLineWidgetPrivate
 {
 public:
     TextGoToLineWidgetPrivate()
-        : mSpinbox(Q_NULLPTR),
-          mGoToLine(Q_NULLPTR)
+        : mSpinbox(nullptr),
+          mGoToLine(nullptr)
     {
 
     }

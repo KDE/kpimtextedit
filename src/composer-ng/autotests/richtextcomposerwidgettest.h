@@ -26,7 +26,7 @@ class RichTextComposerWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit RichTextComposerWidgetTest(QObject *parent = Q_NULLPTR);
+    explicit RichTextComposerWidgetTest(QObject *parent = nullptr);
     ~RichTextComposerWidgetTest();
 
 private Q_SLOTS:

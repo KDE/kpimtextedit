@@ -60,8 +60,8 @@ public:
         : q(qq),
           mTextIndicator(new KPIMTextEdit::TextMessageIndicator(q)),
           webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q)),
-          richTextDecorator(Q_NULLPTR),
-          speller(Q_NULLPTR),
+          richTextDecorator(nullptr),
+          speller(nullptr),
           mInitialFontSize(0),
           customPalette(false),
           activateLanguageMenu(true)
@@ -130,7 +130,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
         if (!isReadOnly()) {
             QList<QAction *> actionList = popup->actions();
             enum { UndoAct, RedoAct, CutAct, CopyAct, PasteAct, ClearAct, SelectAllAct, NCountActs };
-            QAction *separatorAction = Q_NULLPTR;
+            QAction *separatorAction = nullptr;
             const int idx = actionList.indexOf(actionList[SelectAllAct]) + 1;
             if (idx < actionList.count()) {
                 separatorAction = actionList.at(idx);
@@ -361,7 +361,7 @@ void PlainTextEditor::slotCheckSpelling()
             backgroundSpellCheck->speller().addToSession(word);
         }
     }
-    Sonnet::Dialog *spellDialog = new Sonnet::Dialog(backgroundSpellCheck, Q_NULLPTR);
+    Sonnet::Dialog *spellDialog = new Sonnet::Dialog(backgroundSpellCheck, nullptr);
     backgroundSpellCheck->setParent(spellDialog);
     spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
     connect(spellDialog, &Sonnet::Dialog::replace, this, &PlainTextEditor::slotSpellCheckerCorrected);
@@ -653,7 +653,7 @@ Sonnet::Highlighter *PlainTextEditor::highlighter() const
     if (d->richTextDecorator) {
         return d->richTextDecorator->highlighter();
     } else {
-        return Q_NULLPTR;
+        return nullptr;
     }
 }
 
@@ -735,7 +735,7 @@ void PlainTextEditor::updateHighLighter()
 void PlainTextEditor::clearDecorator()
 {
     delete d->richTextDecorator;
-    d->richTextDecorator = Q_NULLPTR;
+    d->richTextDecorator = nullptr;
 }
 
 void PlainTextEditor::createHighlighter()

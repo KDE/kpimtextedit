@@ -28,8 +28,8 @@ class KPIMTextEdit::TextToSpeechActionsPrivate
 public:
     TextToSpeechActionsPrivate()
         : mState(TextToSpeechWidget::Stop),
-          mStopAction(Q_NULLPTR),
-          mPlayPauseAction(Q_NULLPTR)
+          mStopAction(nullptr),
+          mPlayPauseAction(nullptr)
     {
 
     }

@@ -33,7 +33,7 @@ class KPIMTEXTEDIT_EXPORT InsertTableWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit InsertTableWidget(QWidget *parent = Q_NULLPTR);
+    explicit InsertTableWidget(QWidget *parent = nullptr);
     ~InsertTableWidget();
     int columns() const;
     int rows() const;

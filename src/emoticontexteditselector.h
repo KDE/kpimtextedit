@@ -46,7 +46,7 @@ class EmoticonTextEditSelector : public QWidget
 {
     Q_OBJECT
 public:
-    explicit EmoticonTextEditSelector(QWidget *parent = Q_NULLPTR);
+    explicit EmoticonTextEditSelector(QWidget *parent = nullptr);
     ~EmoticonTextEditSelector();
 
 public Q_SLOTS:

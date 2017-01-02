@@ -30,7 +30,7 @@
 using namespace KPIMTextEdit;
 TextMessageIndicator::TextMessageIndicator(QWidget *parent)
     : QWidget(parent),
-      mTimer(Q_NULLPTR),
+      mTimer(nullptr),
       mLineSpacing(0)
 {
     setObjectName(QStringLiteral("TextMessageIndicator"));

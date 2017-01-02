@@ -34,10 +34,10 @@ class KPIMTextEdit::RichTextEditorWidgetPrivate
 {
 public:
     RichTextEditorWidgetPrivate()
-        : mFindBar(Q_NULLPTR),
-          mEditor(Q_NULLPTR),
-          mTextToSpeechWidget(Q_NULLPTR),
-          mSliderContainer(Q_NULLPTR)
+        : mFindBar(nullptr),
+          mEditor(nullptr),
+          mTextToSpeechWidget(nullptr),
+          mSliderContainer(nullptr)
     {
 
     }

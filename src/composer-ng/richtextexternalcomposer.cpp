@@ -33,8 +33,8 @@ class Q_DECL_HIDDEN RichTextExternalComposer::RichTextExternalComposerPrivate
 {
 public:
     RichTextExternalComposerPrivate(RichTextComposer *composer)
-        : externalEditorProcess(Q_NULLPTR),
-          extEditorTempFile(Q_NULLPTR),
+        : externalEditorProcess(nullptr),
+          extEditorTempFile(nullptr),
           richTextComposer(composer),
           useExtEditor(false)
     {
@@ -93,7 +93,7 @@ void RichTextExternalComposer::startExternalEditor()
         d->extEditorTempFile = new QTemporaryFile();
         if (!d->extEditorTempFile->open()) {
             delete d->extEditorTempFile;
-            d->extEditorTempFile = Q_NULLPTR;
+            d->extEditorTempFile = nullptr;
             setUseExternalEditor(false);
             return;
         }
@@ -201,9 +201,9 @@ void RichTextExternalComposer::killExternalEditor()
     if (d->externalEditorProcess) {
         d->externalEditorProcess->deleteLater();
     }
-    d->externalEditorProcess = Q_NULLPTR;
+    d->externalEditorProcess = nullptr;
     delete d->extEditorTempFile;
-    d->extEditorTempFile = Q_NULLPTR;
+    d->extEditorTempFile = nullptr;
 }
 
 bool RichTextExternalComposer::isInProgress() const

@@ -57,8 +57,8 @@ public:
     RichTextEditorPrivate(RichTextEditor *qq)
         : q(qq),
           textIndicator(new KPIMTextEdit::TextMessageIndicator(q)),
-          richTextDecorator(Q_NULLPTR),
-          speller(Q_NULLPTR),
+          richTextDecorator(nullptr),
+          speller(nullptr),
           webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q)),
           mInitialFontSize(0),
           customPalette(false),
@@ -122,7 +122,7 @@ Sonnet::Highlighter *RichTextEditor::highlighter() const
     if (d->richTextDecorator) {
         return d->richTextDecorator->highlighter();
     } else {
-        return Q_NULLPTR;
+        return nullptr;
     }
 }
 
@@ -153,7 +153,7 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
         if (!isReadOnly()) {
             QList<QAction *> actionList = popup->actions();
             enum { UndoAct, RedoAct, CutAct, CopyAct, PasteAct, ClearAct, SelectAllAct, NCountActs };
-            QAction *separatorAction = Q_NULLPTR;
+            QAction *separatorAction = nullptr;
             const int idx = actionList.indexOf(actionList[SelectAllAct]) + 1;
             if (idx < actionList.count()) {
                 separatorAction = actionList.at(idx);
@@ -252,7 +252,7 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
         addExtraMenuEntry(popup, pos);
         return popup;
     }
-    return Q_NULLPTR;
+    return nullptr;
 }
 
 void RichTextEditor::slotSpeakText()
@@ -436,7 +436,7 @@ void RichTextEditor::checkSpelling(bool force)
             backgroundSpellCheck->speller().addToSession(word);
         }
     }
-    Sonnet::Dialog *spellDialog = new Sonnet::Dialog(backgroundSpellCheck, force ? this : Q_NULLPTR);
+    Sonnet::Dialog *spellDialog = new Sonnet::Dialog(backgroundSpellCheck, force ? this : nullptr);
     backgroundSpellCheck->setParent(spellDialog);
     spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
     spellDialog->activeAutoCorrect(d->showAutoCorrectionButton);
@@ -624,7 +624,7 @@ void RichTextEditor::updateHighLighter()
 void RichTextEditor::clearDecorator()
 {
     delete d->richTextDecorator;
-    d->richTextDecorator = Q_NULLPTR;
+    d->richTextDecorator = nullptr;
 }
 
 const QString &RichTextEditor::spellCheckingLanguage() const

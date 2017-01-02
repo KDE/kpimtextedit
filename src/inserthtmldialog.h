@@ -34,7 +34,7 @@ class KPIMTEXTEDIT_EXPORT InsertHtmlDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit InsertHtmlDialog(QWidget *parent = Q_NULLPTR);
+    explicit InsertHtmlDialog(QWidget *parent = nullptr);
     ~InsertHtmlDialog();
     QString html() const;
 

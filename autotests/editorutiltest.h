@@ -23,7 +23,7 @@ class EditorUtilTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit EditorUtilTest(QObject *parent = Q_NULLPTR);
+    explicit EditorUtilTest(QObject *parent = nullptr);
     ~EditorUtilTest();
 private Q_SLOTS:
     void testUpperCase();

@@ -29,7 +29,7 @@ class TextToSpeechWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextToSpeechWidgetTest(QObject *parent = Q_NULLPTR);
+    explicit TextToSpeechWidgetTest(QObject *parent = nullptr);
 
 private:
     void addInterface(KPIMTextEdit::TextToSpeechWidget *widget);

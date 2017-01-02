@@ -51,7 +51,7 @@ Q_GLOBAL_STATIC(TextToSpeechPrivate, sInstance)
 TextToSpeech::TextToSpeech(QObject *parent)
     : QObject(parent)
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
-    , mTextToSpeech(Q_NULLPTR)
+    , mTextToSpeech(nullptr)
 #endif
 {
     reloadSettings();

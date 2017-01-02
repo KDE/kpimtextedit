@@ -31,17 +31,17 @@ class TextEditorCompleter::TextEditorCompleterPrivate
 {
 public:
     TextEditorCompleterPrivate(QTextEdit *editor, TextEditorCompleter *qq)
-        : completer(Q_NULLPTR),
-          plainTextEdit(Q_NULLPTR),
+        : completer(nullptr),
+          plainTextEdit(nullptr),
           textEdit(editor),
           q(qq)
     {
 
     }
     TextEditorCompleterPrivate(QPlainTextEdit *editor, TextEditorCompleter *qq)
-        : completer(Q_NULLPTR),
+        : completer(nullptr),
           plainTextEdit(editor),
-          textEdit(Q_NULLPTR),
+          textEdit(nullptr),
           q(qq)
     {
 
@@ -77,7 +77,7 @@ QString TextEditorCompleter::TextEditorCompleterPrivate::wordUnderCursor() const
 {
     static QString eow = QStringLiteral("~!@#$%^&*()+{}|\"<>,./;'[]\\-= ");   // everything without ':', '?' and '_'
     QTextCursor tc;
-    QTextDocument *document = Q_NULLPTR;
+    QTextDocument *document = nullptr;
     if (plainTextEdit) {
         tc = plainTextEdit->textCursor();
         document = plainTextEdit->document();
