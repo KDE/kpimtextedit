@@ -7,6 +7,11 @@ set(KF5_VERSION "5.28.0")
 find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
+if (POLICY CMP0053)
+    cmake_policy(SET CMP0053 NEW)
+endif()
+
+
 include(GenerateExportHeader)
 include(ECMGenerateHeaders)
 include(ECMGeneratePriFile)
