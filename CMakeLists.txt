@@ -1,6 +1,7 @@
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.0)
+set(PIM_VERSION "5.4.41")
 
-project(KPimTextEdit)
+project(KPimTextEdit VERSION ${PIM_VERSION})
 
 # ECM setup
 set(KF5_VERSION "5.28.0")
@@ -25,10 +26,9 @@ include(ECMAddTests)
 include(ECMCoverageOption)
 
 
-set(PIM_VERSION "5.4.41")
 set(KPIMTEXTEDIT_LIB_VERSION ${PIM_VERSION})
 
-ecm_setup_version(${KPIMTEXTEDIT_LIB_VERSION} VARIABLE_PREFIX KPIMTEXTEDIT
+ecm_setup_version(PROJECT VARIABLE_PREFIX KPIMTEXTEDIT
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfigVersion.cmake"
     SOVERSION 5
