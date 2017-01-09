@@ -113,8 +113,9 @@ void EmoticonTextEditSelector::slotCreateEmoticonList()
 
     QHash<QString, QStringList>::const_iterator end = list.constEnd();
     for (QHash<QString, QStringList>::const_iterator it = list.constBegin(); it != end; ++it) {
-        if (!exclude.contains(it.value().first())) {
-            new EmoticonTextEditItem(it.value().first(), it.key(), d->listEmoticon);
+        const QString str = it.value().first();
+        if (!exclude.contains(str)) {
+            new EmoticonTextEditItem(str, it.key(), d->listEmoticon);
         }
     }
 
