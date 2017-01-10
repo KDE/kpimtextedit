@@ -32,8 +32,8 @@ class KPIMTEXTEDIT_EXPORT PlainTextEditorWidget : public QWidget
     Q_OBJECT
     Q_PROPERTY(bool readOnly READ isReadOnly WRITE setReadOnly)
 public:
-    explicit PlainTextEditorWidget(QWidget *parent = Q_NULLPTR);
-    explicit PlainTextEditorWidget(PlainTextEditor *customEditor, QWidget *parent = Q_NULLPTR);
+    explicit PlainTextEditorWidget(QWidget *parent = nullptr);
+    explicit PlainTextEditorWidget(PlainTextEditor *customEditor, QWidget *parent = nullptr);
     ~PlainTextEditorWidget();
 
     PlainTextEditor *editor() const;
@@ -53,7 +53,7 @@ private Q_SLOTS:
 
     void slotHideFindBar();
 private:
-    void init(PlainTextEditor *customEditor = Q_NULLPTR);
+    void init(PlainTextEditor *customEditor = nullptr);
     PlainTextEditorWidgetPrivate *const d;
 };
 }

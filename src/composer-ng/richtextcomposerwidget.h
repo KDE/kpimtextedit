@@ -34,7 +34,7 @@ class KPIMTEXTEDIT_EXPORT RichTextComposerWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit RichTextComposerWidget(QWidget *parent = Q_NULLPTR);
+    explicit RichTextComposerWidget(QWidget *parent = nullptr);
     ~RichTextComposerWidget();
 
     KPIMTextEdit::RichTextComposer *richTextComposer() const;

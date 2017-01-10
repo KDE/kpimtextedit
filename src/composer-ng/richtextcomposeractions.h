@@ -33,7 +33,7 @@ class KPIMTEXTEDIT_EXPORT RichTextComposerActions : public QObject
 {
     Q_OBJECT
 public:
-    explicit RichTextComposerActions(KPIMTextEdit::RichTextComposerControler *controler, QObject *parent = Q_NULLPTR);
+    explicit RichTextComposerActions(KPIMTextEdit::RichTextComposerControler *controler, QObject *parent = nullptr);
     ~RichTextComposerActions();
 
     void createActions(KActionCollection *ac);

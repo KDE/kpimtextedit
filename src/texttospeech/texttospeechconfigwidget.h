@@ -31,7 +31,7 @@ class KPIMTEXTEDIT_EXPORT TextToSpeechConfigWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextToSpeechConfigWidget(QWidget *parent = Q_NULLPTR);
+    explicit TextToSpeechConfigWidget(QWidget *parent = nullptr);
     ~TextToSpeechConfigWidget();
 
     void writeConfig();

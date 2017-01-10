@@ -72,7 +72,7 @@ Q_SIGNALS:
 
 private:
     void slotStateChanged();
-    explicit TextToSpeech(QObject *parent = Q_NULLPTR);
+    explicit TextToSpeech(QObject *parent = nullptr);
     friend class TextToSpeechPrivate;
 
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH

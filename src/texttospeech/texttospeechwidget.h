@@ -32,7 +32,7 @@ class KPIMTEXTEDIT_EXPORT TextToSpeechWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextToSpeechWidget(QWidget *parent = Q_NULLPTR);
+    explicit TextToSpeechWidget(QWidget *parent = nullptr);
     ~TextToSpeechWidget();
 
     enum State {

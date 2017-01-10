@@ -33,7 +33,7 @@ class KPIMTEXTEDIT_EXPORT RichTextComposerControler : public QObject
 {
     Q_OBJECT
 public:
-    explicit RichTextComposerControler(RichTextComposer *richtextComposer, QObject *parent = Q_NULLPTR);
+    explicit RichTextComposerControler(RichTextComposer *richtextComposer, QObject *parent = nullptr);
     ~RichTextComposerControler();
 
     RichTextComposer *richTextComposer() const;

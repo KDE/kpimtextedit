@@ -35,7 +35,7 @@ class TextMessageIndicator : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextMessageIndicator(QWidget *parent = Q_NULLPTR);
+    explicit TextMessageIndicator(QWidget *parent = nullptr);
 
     enum Icon {
         None,

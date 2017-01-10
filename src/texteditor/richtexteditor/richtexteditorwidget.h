@@ -33,8 +33,8 @@ class KPIMTEXTEDIT_EXPORT RichTextEditorWidget : public QWidget
     Q_OBJECT
     Q_PROPERTY(bool readOnly READ isReadOnly WRITE setReadOnly)
 public:
-    explicit RichTextEditorWidget(QWidget *parent = Q_NULLPTR);
-    explicit RichTextEditorWidget(RichTextEditor *customEditor, QWidget *parent = Q_NULLPTR);
+    explicit RichTextEditorWidget(QWidget *parent = nullptr);
+    explicit RichTextEditorWidget(RichTextEditor *customEditor, QWidget *parent = nullptr);
     ~RichTextEditorWidget();
 
     void clear();
@@ -63,7 +63,7 @@ public Q_SLOTS:
 private:
 
     void slotHideFindBar();
-    void init(RichTextEditor *customEditor = Q_NULLPTR);
+    void init(RichTextEditor *customEditor = nullptr);
     RichTextEditorWidgetPrivate *const d;
 };
 }

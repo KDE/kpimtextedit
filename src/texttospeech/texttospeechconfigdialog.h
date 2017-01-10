@@ -29,7 +29,7 @@ class KPIMTEXTEDIT_EXPORT TextToSpeechConfigDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit TextToSpeechConfigDialog(QWidget *parent = Q_NULLPTR);
+    explicit TextToSpeechConfigDialog(QWidget *parent = nullptr);
     ~TextToSpeechConfigDialog();
 
 private Q_SLOTS:

@@ -39,7 +39,7 @@ class KPIMTEXTEDIT_EXPORT PlainTextEditor : public QPlainTextEdit
     Q_PROPERTY(bool textToSpeechSupport READ textToSpeechSupport WRITE setTextToSpeechSupport)
     Q_PROPERTY(bool webShortcutSupport READ webShortcutSupport WRITE setWebShortcutSupport)
 public:
-    explicit PlainTextEditor(QWidget *parent = Q_NULLPTR);
+    explicit PlainTextEditor(QWidget *parent = nullptr);
     ~PlainTextEditor();
 
     enum SupportFeature {

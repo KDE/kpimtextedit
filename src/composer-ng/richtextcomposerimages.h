@@ -58,7 +58,7 @@ class KPIMTEXTEDIT_EXPORT RichTextComposerImages : public QObject
 {
     Q_OBJECT
 public:
-    explicit RichTextComposerImages(RichTextComposer *composer, QObject *parent = Q_NULLPTR);
+    explicit RichTextComposerImages(RichTextComposer *composer, QObject *parent = nullptr);
     ~RichTextComposerImages();
 
     /**

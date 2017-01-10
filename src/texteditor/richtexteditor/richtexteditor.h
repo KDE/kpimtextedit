@@ -42,7 +42,7 @@ class KPIMTEXTEDIT_EXPORT RichTextEditor : public QTextEdit
     Q_PROPERTY(bool tabSupport READ allowTabSupport WRITE setAllowTabSupport)
     Q_PROPERTY(bool webShortcutSupport READ webShortcutSupport WRITE setWebShortcutSupport)
 public:
-    explicit RichTextEditor(QWidget *parent = Q_NULLPTR);
+    explicit RichTextEditor(QWidget *parent = nullptr);
     ~RichTextEditor();
     enum SupportFeature {
         None = 0,

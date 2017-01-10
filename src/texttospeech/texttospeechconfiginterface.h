@@ -32,7 +32,7 @@ class KPIMTEXTEDIT_EXPORT TextToSpeechConfigInterface : public AbstractTextToSpe
 {
     Q_OBJECT
 public:
-    explicit TextToSpeechConfigInterface(QObject *parent = Q_NULLPTR);
+    explicit TextToSpeechConfigInterface(QObject *parent = nullptr);
     ~TextToSpeechConfigInterface();
 
     QVector<QLocale> availableLocales() const Q_DECL_OVERRIDE;

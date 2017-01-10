@@ -49,7 +49,7 @@ public:
      * Create a link dialog.
      * @param parent  Parent widget.
      */
-    explicit KLinkDialog(QWidget *parent = Q_NULLPTR);
+    explicit KLinkDialog(QWidget *parent = nullptr);
 
     /**
      * Destructor

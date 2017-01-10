@@ -33,7 +33,7 @@ class KPIMTEXTEDIT_EXPORT PlainTextEditFindBar : public TextEditFindBarBase
     Q_OBJECT
 
 public:
-    explicit PlainTextEditFindBar(QPlainTextEdit *view, QWidget *parent = Q_NULLPTR);
+    explicit PlainTextEditFindBar(QPlainTextEdit *view, QWidget *parent = nullptr);
     ~PlainTextEditFindBar();
 
 protected:

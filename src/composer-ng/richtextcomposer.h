@@ -36,7 +36,7 @@ class KPIMTEXTEDIT_EXPORT RichTextComposer : public KPIMTextEdit::RichTextEditor
 {
     Q_OBJECT
 public:
-    explicit RichTextComposer(QWidget *parent = Q_NULLPTR);
+    explicit RichTextComposer(QWidget *parent = nullptr);
     ~RichTextComposer();
 
     enum Mode {
