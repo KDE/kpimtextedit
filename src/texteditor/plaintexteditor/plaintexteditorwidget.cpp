@@ -24,7 +24,6 @@
 #include "slidecontainer.h"
 
 #include <QVBoxLayout>
-#include <QShortcut>
 #include <QTextCursor>
 
 using namespace KPIMTextEdit;

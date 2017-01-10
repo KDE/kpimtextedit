@@ -40,7 +40,6 @@
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
 #include <QTextDocumentFragment>
-#include <QShortcut>
 #include <QScrollBar>
 #include <QApplication>
 #include <QClipboard>

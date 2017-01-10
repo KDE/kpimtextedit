@@ -22,7 +22,6 @@
 #include "richtexteditfindbar.h"
 
 #include <QVBoxLayout>
-#include <QShortcut>
 #include <QTextCursor>
 #include <texttospeech/texttospeechwidget.h>
 
