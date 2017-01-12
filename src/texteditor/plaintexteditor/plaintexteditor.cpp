@@ -179,22 +179,22 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
                     QActionGroup *languagesGroup = new QActionGroup(languagesMenu);
                     languagesGroup->setExclusive(true);
 
-                    QMapIterator<QString, QString> i(d->speller->availableDictionaries());
 
                     QString defaultSpellcheckingLanguage = spellCheckingLanguage();
                     if (defaultSpellcheckingLanguage.isEmpty()) {
                         //TODO fix default value
                         defaultSpellcheckingLanguage = d->speller->defaultLanguage();
                     }
-                    while (i.hasNext()) {
-                        i.next();
-
+                    QMap<QString, QString>::const_iterator i = d->speller->availableDictionaries().constBegin();
+                    const QMap<QString, QString>::const_iterator end = d->speller->availableDictionaries().constEnd();
+                    while (i != end) {
                         QAction *languageAction = languagesMenu->addAction(i.key());
                         languageAction->setCheckable(true);
                         languageAction->setChecked(defaultSpellcheckingLanguage == i.value());
                         languageAction->setData(i.value());
                         languageAction->setActionGroup(languagesGroup);
                         connect(languageAction, &QAction::triggered, this, &PlainTextEditor::slotLanguageSelected);
+                        i++;
                     }
                     popup->addMenu(languagesMenu);
                 }
