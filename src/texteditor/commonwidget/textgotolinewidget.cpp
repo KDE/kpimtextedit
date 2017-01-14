@@ -115,6 +115,13 @@ void TextGoToLineWidget::showEvent(QShowEvent *e)
     QWidget::showEvent(e);
 }
 
+void TextGoToLineWidget::slotBlockCountChanged(int numberBlockCount)
+{
+    if (!isHidden()) {
+        setMaximumLineCount(numberBlockCount);
+    }
+}
+
 void TextGoToLineWidget::slotCloseBar()
 {
     hide();

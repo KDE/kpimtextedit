@@ -44,9 +44,13 @@ protected:
     bool event(QEvent *e) Q_DECL_OVERRIDE;
     void showEvent(QShowEvent *e) Q_DECL_OVERRIDE;
 
+public Q_SLOTS:
+    void slotBlockCountChanged(int numberBlockCount);
+
 private Q_SLOTS:
     void slotCloseBar();
     void slotGoToLine();
+
 
 private:
     TextGoToLineWidgetPrivate *const d;
