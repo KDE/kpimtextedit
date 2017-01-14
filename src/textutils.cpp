@@ -21,11 +21,10 @@
 */
 
 #include "textutils.h"
-
+#include "kpimtextedit_debug.h"
 #include <QTextBlock>
 #include <QTextCharFormat>
 #include <QTextDocument>
-#include <QDebug>
 
 using namespace KPIMTextEdit;
 
@@ -120,7 +119,7 @@ QString TextUtils::flowText(QString &wrappedText, const QString &indent, int max
     }
 
     if (maxLength <= indent.length()) {
-        qWarning() << "indent was set to a string that is longer or the same length "
+        qCWarning(KPIMTEXTEDIT_LOG) << "indent was set to a string that is longer or the same length "
                    << "as maxLength, setting maxLength to indent.length() + 1";
         maxLength = indent.length() + 1;
     }

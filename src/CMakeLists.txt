@@ -63,6 +63,8 @@ set(kpimtextedit_SRCS
     editorutil.cpp
     )
 
+ecm_qt_declare_logging_category(kpimtextedit_SRCS HEADER kpimtextedit_debug.h IDENTIFIER KPIMTEXTEDIT_LOG CATEGORY_NAME org.kde.pim.kpimtextedit)
+
 add_library(KF5PimTextEdit ${kpimtextedit_SRCS} ${kpimtextedit_texteditor_SRCS} ${kpimtextedit_texttospeech_SRCS} ${kpimtextedit_composerng_SRCS})
 
 generate_export_header(KF5PimTextEdit BASE_NAME kpimtextedit)

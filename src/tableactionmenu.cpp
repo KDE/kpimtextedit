@@ -22,7 +22,6 @@
 #include "inserttabledialog.h"
 #include "tableformatdialog.h"
 #include "tablecellformatdialog.h"
-#include <QDebug>
 
 #include <QAction>
 #include <QIcon>

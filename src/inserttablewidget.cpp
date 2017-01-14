@@ -19,9 +19,9 @@
 */
 
 #include "inserttablewidget.h"
+#include "kpimtextedit_debug.h"
 #include <KLocalizedString>
 #include <KComboBox>
-#include <QDebug>
 
 #include <QSpinBox>
 #include <QLabel>
@@ -105,7 +105,7 @@ void InsertTableWidget::slotTypeOfLengthChanged(int index)
         d->mLength->setMaximum(9999);
         break;
     default:
-        qDebug() << " index not defined " << index;
+        qCDebug(KPIMTEXTEDIT_LOG) << " index not defined " << index;
         break;
     }
 }

@@ -19,7 +19,7 @@
 
 #include "syntaxhighlighterbase.h"
 #include <QRegularExpressionMatch>
-#include <QDebug>
+#include "kpimtextedit_debug.h"
 using namespace KPIMTextEdit;
 SyntaxHighlighterBase::SyntaxHighlighterBase(QTextDocument *doc)
     : QSyntaxHighlighter(doc)
@@ -38,7 +38,7 @@ void SyntaxHighlighterBase::highlightBlock(const QString &text)
         const QRegularExpression expression(rule.pattern);
         if (!expression.isValid()) {
             const QString errorString = expression.errorString();
-            qDebug() << "expression is invalid, pattern:" << rule.pattern << " error :" << errorString;
+            qCDebug(KPIMTEXTEDIT_LOG) << "expression is invalid, pattern:" << rule.pattern << " error :" << errorString;
         }
         QRegularExpressionMatch match = expression.match(text);
 

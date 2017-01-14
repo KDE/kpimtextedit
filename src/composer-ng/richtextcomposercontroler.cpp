@@ -36,7 +36,6 @@
 #include <QPointer>
 #include <QClipboard>
 #include <QIcon>
-#include <QDebug>
 #include "textutils.h"
 #include "insertimagedialog.h"
 

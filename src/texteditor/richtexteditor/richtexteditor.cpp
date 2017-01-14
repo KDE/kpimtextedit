@@ -48,7 +48,7 @@
 #include <QScrollBar>
 #include <QApplication>
 #include <QClipboard>
-#include <QDebug>
+
 
 using namespace KPIMTextEdit;
 class Q_DECL_HIDDEN RichTextEditor::RichTextEditorPrivate
