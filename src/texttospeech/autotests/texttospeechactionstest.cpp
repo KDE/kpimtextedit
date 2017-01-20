@@ -29,6 +29,7 @@ TextToSpeechActionsTest::TextToSpeechActionsTest(QObject *parent)
     : QObject(parent)
 {
     qRegisterMetaType<KPIMTextEdit::TextToSpeechWidget::State>();
+    QIcon::setThemeName(QStringLiteral("breeze"));
 }
 
 TextToSpeechActionsTest::~TextToSpeechActionsTest()

@@ -43,6 +43,7 @@ RichTextComposerTest::RichTextComposerTest(QObject *parent)
     : QObject(parent)
 {
     qRegisterMetaType<KPIMTextEdit::RichTextComposer::Mode>();
+    QIcon::setThemeName(QStringLiteral("breeze"));
 }
 
 RichTextComposerTest::~RichTextComposerTest()
