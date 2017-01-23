@@ -16,7 +16,6 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-
 #include "plaintexteditor.h"
 #include "texteditor/commonwidget/textmessageindicator.h"
 #include <KIO/KUriFilterSearchProviderActions>
@@ -185,16 +184,16 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
                         //TODO fix default value
                         defaultSpellcheckingLanguage = d->speller->defaultLanguage();
                     }
-                    QMap<QString, QString>::const_iterator i = d->speller->availableDictionaries().constBegin();
-                    const QMap<QString, QString>::const_iterator end = d->speller->availableDictionaries().constEnd();
-                    while (i != end) {
+
+                    QMapIterator<QString, QString> i(d->speller->availableDictionaries());
+                    while(i.hasNext()) {
+                        i.next();
                         QAction *languageAction = languagesMenu->addAction(i.key());
                         languageAction->setCheckable(true);
                         languageAction->setChecked(defaultSpellcheckingLanguage == i.value());
                         languageAction->setData(i.value());
                         languageAction->setActionGroup(languagesGroup);
                         connect(languageAction, &QAction::triggered, this, &PlainTextEditor::slotLanguageSelected);
-                        i++;
                     }
                     popup->addMenu(languagesMenu);
                 }
@@ -215,6 +214,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
             d->webshortcutMenuManager->setSelectedText(selectedText);
             d->webshortcutMenuManager->addWebShortcutsToMenu(popup);
         }
+
         addExtraMenuEntry(popup, event->pos());
         popup->exec(event->globalPos());
 
