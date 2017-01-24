@@ -40,7 +40,6 @@ TextEditFindBarBase::TextEditFindBarBase(QWidget *parent)
       mHideWhenClose(true)
 {
     QVBoxLayout *topLayout = new QVBoxLayout;
-    //topLayout->setMargin(0);
     QHBoxLayout *lay = new QHBoxLayout;
     topLayout->addLayout(lay);
 

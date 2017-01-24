@@ -33,7 +33,7 @@ using namespace KPIMTextEdit;
 TextReplaceWidget::TextReplaceWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *lay = new QHBoxLayout;
+    QHBoxLayout *lay = new QHBoxLayout(this);
     QLabel *label = new QLabel(i18nc("Replace text", "Replace:"), this);
     lay->addWidget(label);
     const int marg = lay->margin();
@@ -50,8 +50,6 @@ TextReplaceWidget::TextReplaceWidget(QWidget *parent)
     mReplaceAllBtn = new QPushButton(i18n("Replace All"), this);
     connect(mReplaceAllBtn, &QPushButton::clicked, this, &TextReplaceWidget::replaceAllText);
     lay->addWidget(mReplaceAllBtn);
-
-    setLayout(lay);
 }
 
 TextReplaceWidget::~TextReplaceWidget()
@@ -73,7 +71,7 @@ void TextReplaceWidget::slotSearchStringEmpty(bool isEmpty)
 TextFindWidget::TextFindWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *lay = new QHBoxLayout;
+    QHBoxLayout *lay = new QHBoxLayout(this);
     const int marg = lay->margin();
     lay->setContentsMargins(marg, 0, marg, 0);
     QLabel *label = new QLabel(i18nc("Find text", "F&ind:"), this);
@@ -113,7 +111,6 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     connect(mCaseSensitiveAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
     connect(mWholeWordAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
     connect(mSearch, &QLineEdit::textChanged, this, &TextFindWidget::slotAutoSearch);
-    setLayout(lay);
 }
 
 TextFindWidget::~TextFindWidget()

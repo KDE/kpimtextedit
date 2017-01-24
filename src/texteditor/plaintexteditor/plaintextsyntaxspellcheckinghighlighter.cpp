@@ -22,6 +22,7 @@
 
 #include "syntaxhighlighterbase.h"
 #include "kpimtextedit_debug.h"
+#include "helper_p.h"
 
 using namespace KPIMTextEdit;
 
@@ -68,7 +69,7 @@ void PlainTextSyntaxSpellCheckingHighlighter::setSyntaxHighlighterRules(const QV
 
 void PlainTextSyntaxSpellCheckingHighlighter::highlightBlock(const QString &text)
 {
-    Q_FOREACH (const KPIMTextEdit::Rule &rule, d->rules) {
+    for (const KPIMTextEdit::Rule &rule : qAsConst(d->rules)) {
         const QRegularExpression expression(rule.pattern);
         if (!expression.isValid()) {
             const QString errorString = expression.errorString();

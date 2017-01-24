@@ -140,7 +140,8 @@ void TextToSpeechConfigWidget::updateAvailableEngine()
 {
     mAvailableEngine->clear();
     mAvailableEngine->addItem(i18nc("Default tts engine", "Default"), QString());
-    Q_FOREACH (const QString &engine, mAbstractTextToSpeechConfigInterface->availableEngines()) {
+    const QStringList lst = mAbstractTextToSpeechConfigInterface->availableEngines();
+    for (const QString &engine : lst) {
         mAvailableEngine->addItem(engine, engine);
     }
     updateEngine();
@@ -149,7 +150,8 @@ void TextToSpeechConfigWidget::updateAvailableEngine()
 void TextToSpeechConfigWidget::updateAvailableVoices()
 {
     mVoice->clear();
-    Q_FOREACH (const QString &voice, mAbstractTextToSpeechConfigInterface->availableVoices()) {
+    const QStringList lst = mAbstractTextToSpeechConfigInterface->availableVoices();
+    for (const QString &voice : lst) {
         mVoice->addItem(voice, voice);
     }
     updateVoice();

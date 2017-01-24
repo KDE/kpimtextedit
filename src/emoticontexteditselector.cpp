@@ -111,7 +111,7 @@ void EmoticonTextEditSelector::slotCreateEmoticonList()
     exclude << QStringLiteral("(g)") << QStringLiteral("(F)") << QStringLiteral("(f)") << QStringLiteral("(H)");
     exclude << QStringLiteral("8)") << QStringLiteral("(N)") << QStringLiteral("(n)") << QStringLiteral("(Y)") << QStringLiteral("(y)") << QStringLiteral("(U)") << QStringLiteral("(u)") << QStringLiteral("(W)") << QStringLiteral("(w)");
 
-    QHash<QString, QStringList>::const_iterator end = list.constEnd();
+    const QHash<QString, QStringList>::const_iterator end = list.constEnd();
     for (QHash<QString, QStringList>::const_iterator it = list.constBegin(); it != end; ++it) {
         const QString str = it.value().first();
         if (!exclude.contains(str)) {

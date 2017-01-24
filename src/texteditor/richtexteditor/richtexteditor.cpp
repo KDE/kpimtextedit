@@ -18,6 +18,7 @@
 */
 
 #include "richtexteditor.h"
+#include "helper_p.h"
 #include "texteditor/commonwidget/textmessageindicator.h"
 #include <KLocalizedString>
 #include <KStandardAction>
@@ -431,7 +432,7 @@ void RichTextEditor::checkSpelling(bool force)
         backgroundSpellCheck->changeLanguage(d->spellCheckingLanguage);
     }
     if (!d->ignoreSpellCheckingWords.isEmpty()) {
-        Q_FOREACH (const QString &word, d->ignoreSpellCheckingWords) {
+        for (const QString &word : qAsConst(d->ignoreSpellCheckingWords)) {
             backgroundSpellCheck->speller().addToSession(word);
         }
     }
@@ -534,7 +535,7 @@ void RichTextEditor::addIgnoreWordsToHighLighter()
     }
     if (d->richTextDecorator) {
         Sonnet::Highlighter *_highlighter = d->richTextDecorator->highlighter();
-        Q_FOREACH (const QString &word, d->ignoreSpellCheckingWords) {
+        for (const QString &word : qAsConst(d->ignoreSpellCheckingWords)) {
             _highlighter->ignoreWord(word);
         }
     }

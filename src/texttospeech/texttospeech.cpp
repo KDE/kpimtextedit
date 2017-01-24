@@ -202,7 +202,9 @@ QStringList TextToSpeech::availableVoices() const
 {
     QStringList lst;
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
-    Q_FOREACH (const QVoice &voice, mTextToSpeech->availableVoices()) {
+    const QVector<QVoice> voices = mTextToSpeech->availableVoices();
+    lst.reserve(voices.count());
+    for (const QVoice &voice : voices) {
         lst << voice.name();
     }
 #endif
