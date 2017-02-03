@@ -30,9 +30,19 @@
 #include <QLabel>
 #include <QSpinBox>
 #include <QVBoxLayout>
+#include <QMimeDatabase>
+#include <QDebug>
 
 namespace KPIMTextEdit
 {
+
+static inline QString resolveAlias(const QString& name)
+{
+    QMimeDatabase db;
+    QString str = db.mimeTypeForName(name).name();
+
+    return str;
+}
 
 class InsertImageWidgetPrivate
 {
@@ -46,18 +56,13 @@ public:
         QLabel *lab = new QLabel(i18n("Image Location:"));
         imageUrlRequester = new KUrlRequester;
 
-        const QList<QByteArray> mimetypes = QImageReader::supportedImageFormats();
-        QString filter;
+        QStringList lstMimeTypes;
+        const QList<QByteArray> mimetypes = QImageReader::supportedMimeTypes();
         for (const QByteArray &ba : mimetypes) {
-            if (!filter.isEmpty()) {
-                filter += QLatin1Char('\n');
-            }
-            filter += QStringLiteral("*.%1").arg(QString::fromLatin1(ba));
+            lstMimeTypes << resolveAlias(QString::fromUtf8(ba));
         }
-        imageUrlRequester->setFilter(filter);
+        imageUrlRequester->fileDialog()->setMimeTypeFilters(lstMimeTypes);
         imageUrlRequester->setWindowTitle(i18n("Add Image"));
-        //QT5       imageUrlRequester->fileDialog()->okButton()->setGuiItem(
-        //         KGuiItem( i18n( "&Add" ), QLatin1String( "document-open" ) ) );
         imageUrlRequester->setMode(KFile::File);
         q->connect(imageUrlRequester->lineEdit(), SIGNAL(textChanged(QString)),
                    q, SLOT(_k_slotUrlChanged(QString)));
