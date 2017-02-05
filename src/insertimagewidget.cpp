@@ -40,8 +40,7 @@ namespace KPIMTextEdit
 static inline QString resolveAlias(const QString& name)
 {
     QMimeDatabase db;
-    QString str = db.mimeTypeForName(name).name();
-
+    const QString str = db.mimeTypeForName(name).name();
     return str;
 }
 
@@ -59,8 +58,12 @@ public:
 
         QStringList lstMimeTypes;
         const QList<QByteArray> mimetypes = QImageReader::supportedMimeTypes();
+        lstMimeTypes.reserve(mimetypes.count());
         for (const QByteArray &ba : mimetypes) {
-            lstMimeTypes << resolveAlias(QString::fromUtf8(ba));
+            const QString resolvedAlias = resolveAlias(QString::fromUtf8(ba));
+            if (!resolvedAlias.isEmpty()) {
+                lstMimeTypes << resolvedAlias;
+            }
         }
 #if KIO_VERSION < QT_VERSION_CHECK(5, 31, 0)
         imageUrlRequester->fileDialog()->setMimeTypeFilters(lstMimeTypes);
