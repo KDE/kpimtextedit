@@ -29,10 +29,10 @@ class KPIMTEXTEDIT_EXPORT EditorUtil
 {
 public:
     EditorUtil();
-    void upperCase(QTextCursor &cursor);
-    void lowerCase(QTextCursor &cursor);
-    void sentenceCase(QTextCursor &cursor);
-    void reverseCase(QTextCursor &cursor);
+    void upperCase(QTextCursor &cursor) const;
+    void lowerCase(QTextCursor &cursor) const;
+    void sentenceCase(QTextCursor &cursor) const;
+    void reverseCase(QTextCursor &cursor) const;
 };
 }
 

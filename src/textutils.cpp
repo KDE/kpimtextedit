@@ -99,7 +99,7 @@ bool TextUtils::containsFormatting(const QTextDocument *document)
                 return true;
             }
 
-            it++;
+            ++it;
         }
 
         block = block.next();

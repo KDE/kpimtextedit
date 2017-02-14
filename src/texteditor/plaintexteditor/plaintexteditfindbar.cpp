@@ -32,7 +32,7 @@ using namespace KPIMTextEdit;
 class KPIMTextEdit::PlainTextEditFindBarPrivate
 {
 public:
-    PlainTextEditFindBarPrivate(QPlainTextEdit *view)
+    explicit PlainTextEditFindBarPrivate(QPlainTextEdit *view)
         : mView(view)
     {
 

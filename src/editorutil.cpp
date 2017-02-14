@@ -24,7 +24,7 @@ EditorUtil::EditorUtil()
 {
 }
 
-void EditorUtil::upperCase(QTextCursor &cursor)
+void EditorUtil::upperCase(QTextCursor &cursor) const
 {
     if (cursor.hasSelection()) {
         const QString newText = cursor.selectedText().toUpper();
@@ -32,7 +32,7 @@ void EditorUtil::upperCase(QTextCursor &cursor)
     }
 }
 
-void EditorUtil::lowerCase(QTextCursor &cursor)
+void EditorUtil::lowerCase(QTextCursor &cursor) const
 {
     if (cursor.hasSelection()) {
         const QString newText = cursor.selectedText().toLower();
@@ -40,7 +40,7 @@ void EditorUtil::lowerCase(QTextCursor &cursor)
     }
 }
 
-void EditorUtil::sentenceCase(QTextCursor &cursor)
+void EditorUtil::sentenceCase(QTextCursor &cursor) const
 {
     if (cursor.hasSelection()) {
         QString newText = cursor.selectedText();
@@ -61,7 +61,7 @@ void EditorUtil::sentenceCase(QTextCursor &cursor)
     }
 }
 
-void EditorUtil::reverseCase(QTextCursor &cursor)
+void EditorUtil::reverseCase(QTextCursor &cursor) const
 {
     if (cursor.hasSelection()) {
         QString newText = cursor.selectedText();

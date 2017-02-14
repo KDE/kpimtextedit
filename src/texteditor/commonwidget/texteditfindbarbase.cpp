@@ -149,17 +149,14 @@ void TextEditFindBarBase::autoSearch(const QString &str)
 
 void TextEditFindBarBase::messageInfo(bool backward, bool isAutoSearch, bool found)
 {
+    Q_UNUSED(backward);
     if (!found && !isAutoSearch) {
         QString str = mLastSearchStr;
         if (str.length() > 39) {
             str.truncate(40);
             str += QLatin1String("...");
         }
-        if (backward) {
-            Q_EMIT displayMessageIndicator(i18n("End of message reached.\nPhrase '%1' could not be found.", str));
-        } else {
-            Q_EMIT displayMessageIndicator(i18n("End of message reached.\nPhrase '%1' could not be found.", str));
-        }
+        Q_EMIT displayMessageIndicator(i18n("End of message reached.\nPhrase '%1' could not be found.", str));
     }
 }
 

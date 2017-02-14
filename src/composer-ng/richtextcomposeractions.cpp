@@ -414,7 +414,9 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
 
     d->action_add_quote_chars = new QAction(i18n("Add &Quote Characters"), this);
     d->action_add_quote_chars->setObjectName(QStringLiteral("tools_quote"));
-    ac->addAction(QStringLiteral("tools_quote"), d->action_add_quote_chars);
+    if (ac) {
+        ac->addAction(QStringLiteral("tools_quote"), d->action_add_quote_chars);
+    }
     connect(d->action_add_quote_chars, &QAction::triggered, d->composerControler, &RichTextComposerControler::slotAddQuotes);
 
     d->action_remove_quote_chars = new QAction(i18n("Re&move Quote Characters"), this);
@@ -468,7 +470,9 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     }
 
     d->action_delete_line = new QAction(i18n("Delete Line"), this);
-    ac->setDefaultShortcut(d->action_delete_line, QKeySequence(Qt::CTRL + Qt::Key_K));
+    if (ac) {
+        ac->setDefaultShortcut(d->action_delete_line, QKeySequence(Qt::CTRL + Qt::Key_K));
+    }
     d->action_delete_line->setObjectName(QStringLiteral("delete_line"));
     if (ac) {
         ac->addAction(QStringLiteral("delete_line"), d->action_delete_line);
@@ -481,7 +485,9 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     d->action_format_reset->setIconText(i18n("Reset Font"));
     d->action_format_reset->setObjectName(QStringLiteral("format_reset"));
     connect(d->action_format_reset, &QAction::triggered, d->composerControler, &RichTextComposerControler::slotFormatReset);
-    ac->addAction(QStringLiteral("format_reset"), d->action_format_reset);
+    if (ac) {
+        ac->addAction(QStringLiteral("format_reset"), d->action_format_reset);
+    }
     d->richTextActionList.append(d->action_format_reset);
 
     d->action_format_painter = new KToggleAction(QIcon::fromTheme(QStringLiteral("draw-brush")),
