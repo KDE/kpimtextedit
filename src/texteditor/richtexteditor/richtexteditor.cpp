@@ -18,6 +18,7 @@
 */
 
 #include "richtexteditor.h"
+#include "kpimtextedit_debug.h"
 #include "helper_p.h"
 #include "texteditor/commonwidget/textmessageindicator.h"
 #include <KLocalizedString>
@@ -49,6 +50,8 @@
 #include <QScrollBar>
 #include <QApplication>
 #include <QClipboard>
+#include <QDialogButtonBox>
+#include <QPushButton>
 
 
 using namespace KPIMTextEdit;
@@ -437,6 +440,15 @@ void RichTextEditor::checkSpelling(bool force)
         }
     }
     Sonnet::Dialog *spellDialog = new Sonnet::Dialog(backgroundSpellCheck, force ? this : nullptr);
+    QDialogButtonBox *buttonBox = spellDialog->findChild<QDialogButtonBox *>();
+    if (buttonBox) {
+        QPushButton *skipButton = new QPushButton(i18n("Skip"));
+        buttonBox->addButton(skipButton, QDialogButtonBox::ActionRole);
+        connect(skipButton, &QPushButton::clicked, spellDialog, &Sonnet::Dialog::close);
+        connect(skipButton, &QPushButton::clicked, this, &RichTextEditor::spellCheckingFinished);
+    } else {
+        qCWarning(KPIMTEXTEDIT_LOG) << " Impossible to find qdialogbuttonbox";
+    }
     backgroundSpellCheck->setParent(spellDialog);
     spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
     spellDialog->activeAutoCorrect(d->showAutoCorrectionButton);
