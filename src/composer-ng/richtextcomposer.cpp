@@ -112,7 +112,7 @@ void RichTextComposer::createActions(KActionCollection *ac)
 
 void RichTextComposer::updateHighLighter()
 {
-    KPIMTextEdit::RichTextComposerEmailQuoteHighlighter *hlighter = dynamic_cast<KPIMTextEdit::RichTextComposerEmailQuoteHighlighter *>(highlighter());
+    KPIMTextEdit::RichTextComposerEmailQuoteHighlighter *hlighter = qobject_cast<KPIMTextEdit::RichTextComposerEmailQuoteHighlighter *>(highlighter());
     if (hlighter) {
         hlighter->toggleSpellHighlighting(checkSpellingEnabled());
     }
