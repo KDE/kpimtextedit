@@ -75,7 +75,7 @@ public:
 
 void InsertHtmlDialogPrivate::_k_slotTextChanged()
 {
-    okButton->setEnabled(!editor->toPlainText().isEmpty());
+    okButton->setEnabled(!editor->document()->isEmpty());
 }
 
 InsertHtmlDialog::InsertHtmlDialog(QWidget *parent)
