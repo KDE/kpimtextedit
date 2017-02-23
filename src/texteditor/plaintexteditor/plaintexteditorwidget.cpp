@@ -85,6 +85,12 @@ void PlainTextEditorWidget::setPlainText(const QString &text)
     d->mEditor->setPlainText(text);
 }
 
+
+bool PlainTextEditorWidget::isEmpty() const
+{
+    return d->mEditor->document()->isEmpty();
+}
+
 QString PlainTextEditorWidget::toPlainText() const
 {
     return d->mEditor->toPlainText();

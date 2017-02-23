@@ -55,6 +55,7 @@ public:
 
     void setSpellCheckingConfigFileName(const QString &_fileName);
 
+    bool isEmpty() const;
 public Q_SLOTS:
     void slotFindNext();
     void slotFind();

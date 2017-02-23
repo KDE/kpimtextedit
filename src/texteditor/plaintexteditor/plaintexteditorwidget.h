@@ -47,6 +47,7 @@ public:
     void clear();
     void setSpellCheckingConfigFileName(const QString &_fileName);
 
+    bool isEmpty() const;
 private Q_SLOTS:
     void slotFind();
     void slotReplace();

@@ -106,6 +106,11 @@ void RichTextEditorWidget::setPlainText(const QString &text)
     d->mEditor->setPlainText(text);
 }
 
+bool RichTextEditorWidget::isEmpty() const
+{
+    return d->mEditor->document()->isEmpty();
+}
+
 QString RichTextEditorWidget::toPlainText() const
 {
     return d->mEditor->toPlainText();
