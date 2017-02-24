@@ -67,6 +67,7 @@ class EmoticonTextEditSelector::EmoticonTextEditSelectorPrivate
 {
 public:
     EmoticonTextEditSelectorPrivate()
+        : listEmoticon(nullptr)
     {
     }
     QListWidget *listEmoticon;
