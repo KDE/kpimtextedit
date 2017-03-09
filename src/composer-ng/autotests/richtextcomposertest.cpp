@@ -35,6 +35,7 @@
 #include <kpimtextedit/richtextcomposercontroler.h>
 #include <kpimtextedit/richtextcomposerimages.h>
 #include <kpimtextedit/richtextcomposer.h>
+#include <QStandardPaths>
 
 using namespace KPIMTextEdit;
 
@@ -44,6 +45,7 @@ RichTextComposerTest::RichTextComposerTest(QObject *parent)
 {
     qRegisterMetaType<KPIMTextEdit::RichTextComposer::Mode>();
     QIcon::setThemeName(QStringLiteral("breeze"));
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 RichTextComposerTest::~RichTextComposerTest()
