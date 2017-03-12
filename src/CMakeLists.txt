@@ -85,7 +85,6 @@ target_link_libraries(KF5PimTextEdit
     KF5::KIOWidgets
     KF5::ConfigWidgets
     KF5::IconThemes
-    Qt5::DBus
     Grantlee5::TextDocument
     KF5::XmlGui
     KF5::I18n
