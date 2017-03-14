@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-set(PIM_VERSION "5.4.43")
+set(PIM_VERSION "5.4.80")
 
 project(KPimTextEdit VERSION ${PIM_VERSION})
 
