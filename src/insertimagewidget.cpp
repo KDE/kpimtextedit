@@ -18,7 +18,6 @@
 
 */
 #include "insertimagewidget.h"
-#include "kio_version.h"
 
 #include <KLocalizedString>
 #include <KUrlRequester>
@@ -65,11 +64,7 @@ public:
                 lstMimeTypes << resolvedAlias;
             }
         }
-#if KIO_VERSION < QT_VERSION_CHECK(5, 31, 0)
-        imageUrlRequester->fileDialog()->setMimeTypeFilters(lstMimeTypes);
-#else
         imageUrlRequester->setMimeTypeFilters(lstMimeTypes);
-#endif
         imageUrlRequester->setWindowTitle(i18n("Add Image"));
         imageUrlRequester->setMode(KFile::File);
         q->connect(imageUrlRequester->lineEdit(), SIGNAL(textChanged(QString)),
