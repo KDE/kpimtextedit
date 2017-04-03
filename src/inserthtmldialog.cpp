@@ -88,6 +88,11 @@ InsertHtmlDialog::~InsertHtmlDialog()
     delete d;
 }
 
+void InsertHtmlDialog::setSelectedText(const QString &str)
+{
+    d->editor->setPlainText(str);
+}
+
 QString InsertHtmlDialog::html() const
 {
     return d->editor->toPlainText();

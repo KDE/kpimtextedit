@@ -36,6 +36,7 @@
 #include <QPointer>
 #include <QClipboard>
 #include <QIcon>
+#include <QTextDocumentFragment>
 #include "textutils.h"
 #include "insertimagedialog.h"
 
@@ -701,6 +702,10 @@ void RichTextComposerControler::slotInsertHtml()
 {
     if (richTextComposer()->textMode() == RichTextComposer::Rich) {
         QPointer<KPIMTextEdit::InsertHtmlDialog> dialog = new KPIMTextEdit::InsertHtmlDialog(richTextComposer());
+        const QTextDocumentFragment fragmentSelected = richTextComposer()->textCursor().selection();
+        if (!fragmentSelected.isEmpty()) {
+            dialog->setSelectedText(fragmentSelected.toHtml());
+        }
         if (dialog->exec()) {
             const QString str = dialog->html();
             if (!str.isEmpty()) {
