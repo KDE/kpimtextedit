@@ -36,7 +36,8 @@ class KPIMTEXTEDIT_EXPORT InsertHtmlDialog : public QDialog
 public:
     explicit InsertHtmlDialog(QWidget *parent = nullptr);
     ~InsertHtmlDialog();
-    QString html() const;
+    QString html() const;    
+    void setSelectedText(const QString &str);
 
 private:
     friend class InsertHtmlDialogPrivate;
