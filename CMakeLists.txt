@@ -85,7 +85,9 @@ else()
     endif()
 endif()
 
-
+if(BUILD_TESTING)
+   add_definitions(-DBUILD_TESTING)
+endif(BUILD_TESTING)
 
 ########### Targets ###########
 add_subdirectory(src)

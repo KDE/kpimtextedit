@@ -21,11 +21,11 @@
 #define TEXTTOSPEECHCONFIGDIALOG_H
 
 #include <QDialog>
-#include "kpimtextedit_export.h"
+#include "kpimtextedit_private_export.h"
 namespace KPIMTextEdit
 {
 class TextToSpeechConfigWidget;
-class KPIMTEXTEDIT_EXPORT TextToSpeechConfigDialog : public QDialog
+class KPIMTEXTEDIT_TESTS_EXPORT TextToSpeechConfigDialog : public QDialog
 {
     Q_OBJECT
 public:
