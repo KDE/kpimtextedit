@@ -20,7 +20,7 @@
 #include "syntaxhighlighterbase.h"
 #include <QRegularExpressionMatch>
 #include "kpimtextedit_debug.h"
-#include "helper_p.h"
+
 using namespace KPIMTextEdit;
 SyntaxHighlighterBase::SyntaxHighlighterBase(QTextDocument *doc)
     : QSyntaxHighlighter(doc)

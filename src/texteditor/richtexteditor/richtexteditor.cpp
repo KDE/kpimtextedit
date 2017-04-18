@@ -19,7 +19,7 @@
 
 #include "richtexteditor.h"
 #include "kpimtextedit_debug.h"
-#include "helper_p.h"
+
 #include "texteditor/commonwidget/textmessageindicator.h"
 #include <KLocalizedString>
 #include <KStandardAction>

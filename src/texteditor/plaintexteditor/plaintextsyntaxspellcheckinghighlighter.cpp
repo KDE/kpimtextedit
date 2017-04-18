@@ -22,7 +22,7 @@
 
 #include "syntaxhighlighterbase.h"
 #include "kpimtextedit_debug.h"
-#include "helper_p.h"
+
 
 using namespace KPIMTextEdit;
 
