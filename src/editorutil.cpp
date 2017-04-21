@@ -64,7 +64,7 @@ void EditorUtil::sentenceCase(QTextCursor &cursor) const
 void EditorUtil::reverseCase(QTextCursor &cursor) const
 {
     if (cursor.hasSelection()) {
-        QString newText = cursor.selectedText();
+        const QString newText = cursor.selectedText();
         QString reverseCaseText;
         const int nbChar(newText.count());
         for (int i = 0; i < nbChar; ++i) {
