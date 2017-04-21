@@ -528,7 +528,7 @@ void RichTextComposerActions::setListStyle(int _styleindex)
 
 void RichTextComposerActions::setActionsEnabled(bool enabled)
 {
-    Q_FOREACH (QAction *action, d->richTextActionList) {
+    for (QAction *action : qAsConst(d->richTextActionList)) {
         action->setEnabled(enabled);
     }
     d->richTextEnabled = enabled;
