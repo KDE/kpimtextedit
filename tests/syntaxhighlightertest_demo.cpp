@@ -34,7 +34,6 @@ SyntaxHighlighterTest::SyntaxHighlighterTest(QTextDocument *doc)
 
 SyntaxHighlighterTest::~SyntaxHighlighterTest()
 {
-
 }
 
 void SyntaxHighlighterTest::init()
@@ -53,4 +52,3 @@ int main(int argv, char **argc)
     textEdit.show();
     return app.exec();
 }
-

@@ -22,8 +22,7 @@
 
 #include <QDialog>
 #include "kpimtextedit_private_export.h"
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class TextToSpeechConfigWidget;
 class KPIMTEXTEDIT_TESTS_EXPORT TextToSpeechConfigDialog : public QDialog
 {
@@ -43,4 +42,3 @@ private:
 }
 
 #endif // TEXTTOSPEECHCONFIGDIALOG_H
-

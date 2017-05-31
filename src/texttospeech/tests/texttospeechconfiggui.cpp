@@ -40,7 +40,6 @@ TextToSpeechConfigGui::TextToSpeechConfigGui(QWidget *parent)
 
 TextToSpeechConfigGui::~TextToSpeechConfigGui()
 {
-
 }
 
 int main(int argc, char **argv)

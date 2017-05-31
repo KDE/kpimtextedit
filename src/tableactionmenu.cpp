@@ -31,14 +31,14 @@
 #include <QPointer>
 #include <QTextEdit>
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class TableActionMenuPrivate
 {
 public:
     TableActionMenuPrivate(QTextEdit *edit, TableActionMenu *qq)
-        : textEdit(edit), q(qq), richTextMode(false)
+        : textEdit(edit)
+        , q(qq)
+        , richTextMode(false)
     {
     }
 
@@ -287,8 +287,8 @@ void TableActionMenuPrivate::_k_slotTableFormat()
 
             if (dialog->exec()) {
                 const int newNumberOfColumns(dialog->columns());
-                if ((newNumberOfColumns != numberOfColumn) ||
-                        (dialog->rows() != numberOfRow)) {
+                if ((newNumberOfColumns != numberOfColumn)
+                    || (dialog->rows() != numberOfRow)) {
                     table->resize(dialog->rows(), newNumberOfColumns);
                 }
                 tableFormat.setBorder(dialog->border());
@@ -391,15 +391,15 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
             int firstColumn = -1;
             int numColumns = -1;
             textEdit->textCursor().selectedTableCells(&firstRow, &numRows, &firstColumn, &numColumns);
-            const bool hasSelectedTableCell =
-                (firstRow != -1) && (numRows != -1) &&
-                (firstColumn != -1) && (numColumns != -1);
+            const bool hasSelectedTableCell
+                = (firstRow != -1) && (numRows != -1)
+                  && (firstColumn != -1) && (numColumns != -1);
             if (cell.column() > table->columns() - 2) {
                 actionMergeCell->setEnabled(false);
             } else {
                 actionMergeCell->setEnabled(true);
             }
-            if (cell.columnSpan() > 1 ||  cell.rowSpan() > 1) {
+            if (cell.columnSpan() > 1 || cell.rowSpan() > 1) {
                 actionSplitCell->setEnabled(true);
             } else {
                 actionSplitCell->setEnabled(false);
@@ -418,7 +418,8 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
 }
 
 TableActionMenu::TableActionMenu(QTextEdit *textEdit)
-    : KActionMenu(textEdit), d(new TableActionMenuPrivate(textEdit, this))
+    : KActionMenu(textEdit)
+    , d(new TableActionMenuPrivate(textEdit, this))
 {
     KActionMenu *insertMenu = new KActionMenu(i18n("Insert"), this);
     addAction(insertMenu);
@@ -430,35 +431,35 @@ TableActionMenu::TableActionMenu(QTextEdit *textEdit)
             SLOT(_k_slotInsertTable()));
 
     insertMenu->addSeparator();
-    d->actionInsertRowBelow =
-        new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-row-below")),
-                    i18n("Row Below"), this);
+    d->actionInsertRowBelow
+        = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-row-below")),
+                      i18n("Row Below"), this);
     insertMenu->addAction(d->actionInsertRowBelow);
     d->actionInsertRowBelow->setObjectName(QStringLiteral("insert_row_below"));
     connect(d->actionInsertRowBelow, SIGNAL(triggered(bool)),
             SLOT(_k_slotInsertRowBelow()));
 
-    d->actionInsertRowAbove =
-        new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-row-above")),
-                    i18n("Row Above"), this);
+    d->actionInsertRowAbove
+        = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-row-above")),
+                      i18n("Row Above"), this);
     insertMenu->addAction(d->actionInsertRowAbove);
     d->actionInsertRowAbove->setObjectName(QStringLiteral("insert_row_above"));
     connect(d->actionInsertRowAbove, SIGNAL(triggered(bool)),
             SLOT(_k_slotInsertRowAbove()));
 
     insertMenu->addSeparator();
-    d->actionInsertColumnBefore =
-        new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-column-left")),
-                    i18n("Column Before"), this);
+    d->actionInsertColumnBefore
+        = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-column-left")),
+                      i18n("Column Before"), this);
     insertMenu->addAction(d->actionInsertColumnBefore);
     d->actionInsertColumnBefore->setObjectName(QStringLiteral("insert_column_before"));
 
     connect(d->actionInsertColumnBefore, SIGNAL(triggered(bool)),
             SLOT(_k_slotInsertColumnBefore()));
 
-    d->actionInsertColumnAfter =
-        new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-column-right")),
-                    i18n("Column After"), this);
+    d->actionInsertColumnAfter
+        = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-column-right")),
+                      i18n("Column After"), this);
     insertMenu->addAction(d->actionInsertColumnAfter);
     d->actionInsertColumnAfter->setObjectName(QStringLiteral("insert_column_after"));
     connect(d->actionInsertColumnAfter, SIGNAL(triggered(bool)),
@@ -502,9 +503,9 @@ TableActionMenu::TableActionMenu(QTextEdit *textEdit)
 
     addSeparator();
 
-    d->actionMergeCell =
-        new QAction(QIcon::fromTheme(QStringLiteral("edit-table-cell-merge")),
-                    i18n("Join With Cell to the Right"), this);
+    d->actionMergeCell
+        = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-cell-merge")),
+                      i18n("Join With Cell to the Right"), this);
     d->actionMergeCell->setObjectName(QStringLiteral("join_cell_to_the_right"));
     connect(d->actionMergeCell, SIGNAL(triggered(bool)),
             SLOT(_k_slotMergeCell()));
@@ -516,9 +517,9 @@ TableActionMenu::TableActionMenu(QTextEdit *textEdit)
             SLOT(_k_slotMergeSelectedCells()));
     addAction(d->actionMergeSelectedCells);
 
-    d->actionSplitCell =
-        new QAction(QIcon::fromTheme(QStringLiteral("edit-table-cell-split")),
-                    i18n("Split cells"), this);
+    d->actionSplitCell
+        = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-cell-split")),
+                      i18n("Split cells"), this);
     d->actionSplitCell->setObjectName(QStringLiteral("split_cells"));
     connect(d->actionSplitCell, SIGNAL(triggered(bool)),
             SLOT(_k_slotSplitCell()));
@@ -552,7 +553,6 @@ void TableActionMenu::setRichTextMode(bool richTextMode)
 {
     d->richTextMode = richTextMode;
 }
-
 }
 
 #include "moc_tableactionmenu.cpp"

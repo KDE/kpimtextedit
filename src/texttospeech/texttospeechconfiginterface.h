@@ -26,8 +26,7 @@
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
 class QTextToSpeech;
 #endif
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT TextToSpeechConfigInterface : public AbstractTextToSpeechConfigInterface
 {
     Q_OBJECT
@@ -48,4 +47,3 @@ public:
 }
 
 #endif // TEXTTOSPEECHCONFIGINTERFACE_H
-

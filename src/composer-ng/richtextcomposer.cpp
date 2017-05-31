@@ -45,9 +45,9 @@ class Q_DECL_HIDDEN RichTextComposer::RichTextComposerPrivate
 {
 public:
     RichTextComposerPrivate(RichTextComposer *qq)
-        : q(qq),
-          forcePlainTextMarkup(false),
-          mode(RichTextComposer::Plain)
+        : q(qq)
+        , forcePlainTextMarkup(false)
+        , mode(RichTextComposer::Plain)
     {
         composerControler = new RichTextComposerControler(q, q);
         richTextComposerActions = new RichTextComposerActions(composerControler, q);
@@ -55,8 +55,8 @@ public:
         q->connect(externalComposer, &RichTextExternalComposer::externalEditorClosed, qq, &RichTextComposer::externalEditorClosed);
         q->connect(externalComposer, &RichTextExternalComposer::externalEditorStarted, qq, &RichTextComposer::externalEditorStarted);
         q->connect(q, &RichTextComposer::textModeChanged, q, &RichTextComposer::slotTextModeChanged);
-
     }
+
     QString quotePrefix;
     RichTextComposerControler *composerControler;
     RichTextComposerActions *richTextComposerActions;
@@ -67,8 +67,8 @@ public:
 };
 
 RichTextComposer::RichTextComposer(QWidget *parent)
-    : KPIMTextEdit::RichTextEditor(parent),
-      d(new RichTextComposerPrivate(this))
+    : KPIMTextEdit::RichTextEditor(parent)
+    , d(new RichTextComposerPrivate(this))
 {
     setAcceptRichText(false);
 }
@@ -116,7 +116,6 @@ void RichTextComposer::updateHighLighter()
     if (hlighter) {
         hlighter->toggleSpellHighlighting(checkSpellingEnabled());
     }
-
 }
 
 void RichTextComposer::clearDecorator()
@@ -194,7 +193,6 @@ int RichTextComposer::linePosition() const
 
         // If the current block has the cursor in it, iterate over all its lines
         if (block == cursor.block()) {
-
             // Special case: Cursor at end of single non-wrapped line, exit early
             // in this case as the logic below can't handle it
             if (block.lineCount() == layout->lineCount()) {
@@ -205,8 +203,8 @@ int RichTextComposer::linePosition() const
             const int numberOfLine(layout->lineCount());
             for (int i = 0; i < numberOfLine; ++i) {
                 QTextLine line = layout->lineAt(i);
-                if (cursorBasePosition >= line.textStart() &&
-                        cursorBasePosition < line.textStart() + line.textLength()) {
+                if (cursorBasePosition >= line.textStart()
+                    && cursorBasePosition < line.textStart() + line.textLength()) {
                     break;
                 }
                 lineCount++;
@@ -302,7 +300,7 @@ void RichTextComposer::setTextOrHtml(const QString &text)
 
 void RichTextComposer::evaluateReturnKeySupport(QKeyEvent *event)
 {
-    if (event->key() ==  Qt::Key_Return) {
+    if (event->key() == Qt::Key_Return) {
         QTextCursor cursor = textCursor();
         int oldPos = cursor.position();
         int blockPos = cursor.block().position();
@@ -311,13 +309,13 @@ void RichTextComposer::evaluateReturnKeySupport(QKeyEvent *event)
         cursor.movePosition(QTextCursor::StartOfBlock);
         cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
         QString lineText = cursor.selectedText();
-        if (((oldPos - blockPos)  > 0) &&
-                ((oldPos - blockPos) < int(lineText.length()))) {
+        if (((oldPos - blockPos) > 0)
+            && ((oldPos - blockPos) < int(lineText.length()))) {
             bool isQuotedLine = false;
             int bot = 0; // bot = begin of text after quote indicators
             while (bot < lineText.length()) {
-                if ((lineText[bot] == QChar::fromLatin1('>')) ||
-                        (lineText[bot] == QChar::fromLatin1('|'))) {
+                if ((lineText[bot] == QChar::fromLatin1('>'))
+                    || (lineText[bot] == QChar::fromLatin1('|'))) {
                     isQuotedLine = true;
                     ++bot;
                 } else if (lineText[bot].isSpace()) {
@@ -330,9 +328,9 @@ void RichTextComposer::evaluateReturnKeySupport(QKeyEvent *event)
             // duplicate quote indicators of the previous line before the new
             // line if the line actually contained text (apart from the quote
             // indicators) and the cursor is behind the quote indicators
-            if (isQuotedLine &&
-                    (bot != lineText.length()) &&
-                    ((oldPos - blockPos) >= int(bot))) {
+            if (isQuotedLine
+                && (bot != lineText.length())
+                && ((oldPos - blockPos) >= int(bot))) {
                 // The cursor position might have changed unpredictably if there was selected
                 // text which got replaced by a new line, so we query it again:
                 cursor.movePosition(QTextCursor::StartOfBlock);
@@ -342,8 +340,8 @@ void RichTextComposer::evaluateReturnKeySupport(QKeyEvent *event)
                 // remove leading white space from the new line and instead
                 // add the quote indicators of the previous line
                 int leadingWhiteSpaceCount = 0;
-                while ((leadingWhiteSpaceCount < newLine.length()) &&
-                        newLine[leadingWhiteSpaceCount].isSpace()) {
+                while ((leadingWhiteSpaceCount < newLine.length())
+                       && newLine[leadingWhiteSpaceCount].isSpace()) {
                     ++leadingWhiteSpaceCount;
                 }
                 newLine = newLine.replace(0, leadingWhiteSpaceCount, lineText.left(bot));
@@ -381,24 +379,24 @@ void RichTextComposer::evaluateListSupport(QKeyEvent *event)
 
 bool RichTextComposer::processKeyEvent(QKeyEvent *e)
 {
-    if (d->externalComposer->useExternalEditor() &&
-            (e->key() != Qt::Key_Shift) &&
-            (e->key() != Qt::Key_Control) &&
-            (e->key() != Qt::Key_Meta) &&
-            (e->key() != Qt::Key_CapsLock) &&
-            (e->key() != Qt::Key_NumLock) &&
-            (e->key() != Qt::Key_ScrollLock) &&
-            (e->key() != Qt::Key_Alt) &&
-            (e->key() != Qt::Key_AltGr)) {
+    if (d->externalComposer->useExternalEditor()
+        && (e->key() != Qt::Key_Shift)
+        && (e->key() != Qt::Key_Control)
+        && (e->key() != Qt::Key_Meta)
+        && (e->key() != Qt::Key_CapsLock)
+        && (e->key() != Qt::Key_NumLock)
+        && (e->key() != Qt::Key_ScrollLock)
+        && (e->key() != Qt::Key_Alt)
+        && (e->key() != Qt::Key_AltGr)) {
         if (!d->externalComposer->isInProgress()) {
             d->externalComposer->startExternalEditor();
         }
         return true;
     }
 
-    if (e->key() == Qt::Key_Up && e->modifiers() != Qt::ShiftModifier &&
-            textCursor().block().position() == 0 &&
-            textCursor().block().layout()->lineForTextPosition(textCursor().position()).lineNumber() == 0) {
+    if (e->key() == Qt::Key_Up && e->modifiers() != Qt::ShiftModifier
+        && textCursor().block().position() == 0
+        && textCursor().block().layout()->lineForTextPosition(textCursor().position()).lineNumber() == 0) {
         textCursor().clearSelection();
         Q_EMIT focusUp();
     } else if (e->key() == Qt::Key_Backtab && e->modifiers() == Qt::ShiftModifier) {

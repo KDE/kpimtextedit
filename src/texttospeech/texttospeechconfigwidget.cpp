@@ -32,8 +32,8 @@
 
 using namespace KPIMTextEdit;
 TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
-    : QWidget(parent),
-      mAbstractTextToSpeechConfigInterface(new TextToSpeechConfigInterface(this))
+    : QWidget(parent)
+    , mAbstractTextToSpeechConfigInterface(new TextToSpeechConfigInterface(this))
 {
     QFormLayout *layout = new QFormLayout;
     setLayout(layout);
@@ -81,7 +81,6 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
 
 TextToSpeechConfigWidget::~TextToSpeechConfigWidget()
 {
-
 }
 
 void TextToSpeechConfigWidget::valueChanged()
@@ -199,5 +198,4 @@ void TextToSpeechConfigWidget::slotEngineChanged()
 void TextToSpeechConfigWidget::slotLanguageChanged()
 {
     //QLocale locale = mLanguage->currentData().value<QLocale>();
-
 }

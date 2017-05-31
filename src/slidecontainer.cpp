@@ -24,15 +24,13 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <QPropertyAnimation>
 #include <QResizeEvent>
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 static const int SLIDE_DURATION = 250;
 
 SlideContainer::SlideContainer(QWidget *parent)
-    : QFrame(parent),
-      mContent(nullptr),
-      mSlidingOut(false)
+    : QFrame(parent)
+    , mContent(nullptr)
+    , mSlidingOut(false)
 {
     setFixedHeight(0);
     hide();
@@ -156,5 +154,4 @@ void SlideContainer::slotAnimFinished()
         Q_EMIT slidedIn();
     }
 }
-
 } // namespace

@@ -31,12 +31,11 @@ class KPIMTextEdit::PlainTextEditorWidgetPrivate
 {
 public:
     PlainTextEditorWidgetPrivate()
-        : mFindBar(nullptr),
-          mEditor(nullptr),
-          mTextToSpeechWidget(nullptr),
-          mSliderContainer(nullptr)
+        : mFindBar(nullptr)
+        , mEditor(nullptr)
+        , mTextToSpeechWidget(nullptr)
+        , mSliderContainer(nullptr)
     {
-
     }
 
     KPIMTextEdit::PlainTextEditFindBar *mFindBar;
@@ -46,15 +45,15 @@ public:
 };
 
 PlainTextEditorWidget::PlainTextEditorWidget(PlainTextEditor *customEditor, QWidget *parent)
-    : QWidget(parent),
-      d(new KPIMTextEdit::PlainTextEditorWidgetPrivate)
+    : QWidget(parent)
+    , d(new KPIMTextEdit::PlainTextEditorWidgetPrivate)
 {
     init(customEditor);
 }
 
 PlainTextEditorWidget::PlainTextEditorWidget(QWidget *parent)
-    : QWidget(parent),
-      d(new KPIMTextEdit::PlainTextEditorWidgetPrivate)
+    : QWidget(parent)
+    , d(new KPIMTextEdit::PlainTextEditorWidgetPrivate)
 {
     init();
 }
@@ -83,7 +82,6 @@ void PlainTextEditorWidget::setPlainText(const QString &text)
 {
     d->mEditor->setPlainText(text);
 }
-
 
 bool PlainTextEditorWidget::isEmpty() const
 {
@@ -164,4 +162,3 @@ void PlainTextEditorWidget::slotFind()
         d->mFindBar->focusAndSetCursor();
     }
 }
-

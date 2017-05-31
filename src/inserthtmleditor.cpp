@@ -55,7 +55,6 @@ InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
 
 InsertHtmlEditor::~InsertHtmlEditor()
 {
-
 }
 
 void InsertHtmlEditor::keyPressEvent(QKeyEvent *e)

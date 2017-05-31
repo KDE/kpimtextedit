@@ -33,10 +33,8 @@
 #include <QMimeDatabase>
 #include <QDebug>
 
-namespace KPIMTextEdit
-{
-
-static inline QString resolveAlias(const QString& name)
+namespace KPIMTextEdit {
+static inline QString resolveAlias(const QString &name)
 {
     QMimeDatabase db;
     const QString str = db.mimeTypeForName(name).name();
@@ -47,7 +45,8 @@ class InsertImageWidgetPrivate
 {
 public:
     InsertImageWidgetPrivate(InsertImageWidget *qq)
-        : imageRatio(-1), q(qq)
+        : imageRatio(-1)
+        , q(qq)
     {
         QVBoxLayout *lay = new QVBoxLayout(q);
         lay->setMargin(0);
@@ -190,7 +189,8 @@ void InsertImageWidgetPrivate::_k_slotImageHeightChanged(int value)
 }
 
 InsertImageWidget::InsertImageWidget(QWidget *parent)
-    : QWidget(parent), d(new InsertImageWidgetPrivate(this))
+    : QWidget(parent)
+    , d(new InsertImageWidgetPrivate(this))
 {
 }
 
@@ -233,7 +233,6 @@ bool InsertImageWidget::keepOriginalSize() const
 {
     return d->keepOriginalSize->isChecked();
 }
-
 }
 
 #include "moc_insertimagewidget.cpp"

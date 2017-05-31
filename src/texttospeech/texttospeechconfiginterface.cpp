@@ -29,12 +29,10 @@ TextToSpeechConfigInterface::TextToSpeechConfigInterface(QObject *parent)
     , mTextToSpeech(new QTextToSpeech(this))
 #endif
 {
-
 }
 
 TextToSpeechConfigInterface::~TextToSpeechConfigInterface()
 {
-
 }
 
 QStringList TextToSpeechConfigInterface::availableVoices() const

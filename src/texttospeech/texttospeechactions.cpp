@@ -27,12 +27,12 @@ class KPIMTextEdit::TextToSpeechActionsPrivate
 {
 public:
     TextToSpeechActionsPrivate()
-        : mState(TextToSpeechWidget::Stop),
-          mStopAction(nullptr),
-          mPlayPauseAction(nullptr)
+        : mState(TextToSpeechWidget::Stop)
+        , mStopAction(nullptr)
+        , mPlayPauseAction(nullptr)
     {
-
     }
+
     void updateButtonState();
     TextToSpeechWidget::State mState;
     QAction *mStopAction;
@@ -40,8 +40,8 @@ public:
 };
 
 TextToSpeechActions::TextToSpeechActions(QObject *parent)
-    : QObject(parent),
-      d(new KPIMTextEdit::TextToSpeechActionsPrivate)
+    : QObject(parent)
+    , d(new KPIMTextEdit::TextToSpeechActionsPrivate)
 {
     d->mStopAction = new QAction(i18n("Stop"), this);
     d->mStopAction->setObjectName(QStringLiteral("stopbutton"));

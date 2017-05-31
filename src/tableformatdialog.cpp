@@ -124,7 +124,8 @@ public:
 };
 
 TableFormatDialog::TableFormatDialog(QWidget *parent)
-    : QDialog(parent), d(new TableFormatDialogPrivate(this))
+    : QDialog(parent)
+    , d(new TableFormatDialogPrivate(this))
 {
 }
 
@@ -228,4 +229,3 @@ bool TableFormatDialog::useBackgroundColor() const
 {
     return d->useBackgroundColor->isChecked();
 }
-

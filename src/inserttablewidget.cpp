@@ -85,7 +85,8 @@ public:
 };
 
 InsertTableWidget::InsertTableWidget(QWidget *parent)
-    : QWidget(parent), d(new InsertTableWidgetPrivate(this))
+    : QWidget(parent)
+    , d(new InsertTableWidgetPrivate(this))
 {
 }
 
@@ -114,7 +115,7 @@ QTextLength::Type InsertTableWidget::typeOfLength() const
 {
     return
         (QTextLength::Type)d->mTypeOfLength->itemData(
-            d->mTypeOfLength->currentIndex()).toInt();
+        d->mTypeOfLength->currentIndex()).toInt();
 }
 
 void InsertTableWidget::setTypeOfLength(QTextLength::Type type)
@@ -163,4 +164,3 @@ int InsertTableWidget::border() const
 {
     return d->mBorder->value();
 }
-

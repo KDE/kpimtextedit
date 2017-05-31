@@ -25,12 +25,10 @@
 RichTextComposerWidgetTest::RichTextComposerWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 RichTextComposerWidgetTest::~RichTextComposerWidgetTest()
 {
-
 }
 
 void RichTextComposerWidgetTest::shouldHaveDefaultValue()

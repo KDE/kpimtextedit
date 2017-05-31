@@ -23,8 +23,7 @@
 #include <sonnet/spellcheckdecorator.h>
 #include "kpimtextedit_export.h"
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class RichTextComposer;
 class KPIMTEXTEDIT_EXPORT RichTextComposerEmailQuoteDecorator : public Sonnet::SpellCheckDecorator
 {

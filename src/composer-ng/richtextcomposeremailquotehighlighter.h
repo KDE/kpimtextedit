@@ -22,8 +22,7 @@
 
 #include <sonnet/highlighter.h>
 #include "kpimtextedit_export.h"
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class RichTextComposer;
 class KPIMTEXTEDIT_EXPORT RichTextComposerEmailQuoteHighlighter : public Sonnet::Highlighter
 {
@@ -34,12 +33,8 @@ public:
      * Constructor. See setQuoteColor() for the parameters.
      * FIXME: Default colors don't obey color scheme
      */
-    explicit RichTextComposerEmailQuoteHighlighter(RichTextComposer *textEdit,
-            const QColor &normalColor = Qt::black,
-            const QColor &quoteDepth1 = QColor(0x00, 0x80, 0x00),
-            const QColor &quoteDepth2 = QColor(0x00, 0x80, 0x00),
-            const QColor &quoteDepth3 = QColor(0x00, 0x80, 0x00),
-            const QColor &misspelledColor = Qt::red);
+    explicit RichTextComposerEmailQuoteHighlighter(RichTextComposer *textEdit, const QColor &normalColor = Qt::black, const QColor &quoteDepth1 = QColor(0x00, 0x80, 0x00),
+                                                   const QColor &quoteDepth2 = QColor(0x00, 0x80, 0x00), const QColor &quoteDepth3 = QColor(0x00, 0x80, 0x00), const QColor &misspelledColor = Qt::red);
 
     ~RichTextComposerEmailQuoteHighlighter();
 
@@ -53,11 +48,7 @@ public:
      * @param normalColor will be ignored, only provided for KNode
      *                    compatibility.
      */
-    void setQuoteColor(const QColor &normalColor,
-                       const QColor &quoteDepth1,
-                       const QColor &quoteDepth2,
-                       const QColor &quoteDepth3,
-                       const QColor &misspelledColor = Qt::red);
+    void setQuoteColor(const QColor &normalColor, const QColor &quoteDepth1, const QColor &quoteDepth2, const QColor &quoteDepth3, const QColor &misspelledColor = Qt::red);
 
     /**
      * Turns spellcheck highlighting on or off.
@@ -91,7 +82,6 @@ private:
     class RichTextComposerEmailQuoteHighlighterPrivate;
     RichTextComposerEmailQuoteHighlighterPrivate *const d;
 };
-
 }
 
 #endif // RICHTEXTCOMPOSEREMAILQUOTEHIGHLIGHTER_H

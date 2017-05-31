@@ -26,8 +26,7 @@
 class KActionCollection;
 class QTextCharFormat;
 class QAction;
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class RichTextComposerControler;
 class KPIMTEXTEDIT_EXPORT RichTextComposerActions : public QObject
 {

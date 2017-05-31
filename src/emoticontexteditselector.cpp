@@ -32,9 +32,7 @@ Q_GLOBAL_STATIC(KEmoticons, sEmoticons)
 
 using namespace KPIMTextEdit;
 
-EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText,
-        const QString &pixmapPath,
-        QListWidget *parent)
+EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText, const QString &pixmapPath, QListWidget *parent)
     : QListWidgetItem(parent)
 {
     mText = emoticonText;
@@ -70,11 +68,13 @@ public:
         : listEmoticon(nullptr)
     {
     }
+
     QListWidget *listEmoticon;
 };
 
 EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
-    : QWidget(parent), d(new EmoticonTextEditSelectorPrivate())
+    : QWidget(parent)
+    , d(new EmoticonTextEditSelectorPrivate())
 {
     QHBoxLayout *lay = new QHBoxLayout(this);
     lay->setSpacing(0);
@@ -101,16 +101,20 @@ void EmoticonTextEditSelector::slotCreateEmoticonList()
     if (cachedEmoticonsThemeName.isEmpty()) {
         cachedEmoticonsThemeName = KEmoticons::currentThemeName();
     }
-    const QHash<QString, QStringList> list =
-        sEmoticons->theme(cachedEmoticonsThemeName).emoticonsMap();
+    const QHash<QString, QStringList> list
+        = sEmoticons->theme(cachedEmoticonsThemeName).emoticonsMap();
 
     //Keep in sync with linklocator.cpp
     QStringList exclude;
-    exclude << QStringLiteral("(c)") << QStringLiteral("(C)") << QStringLiteral("&gt;:-(") << QStringLiteral("&gt;:(") << QStringLiteral("(B)") << QStringLiteral("(b)") << QStringLiteral("(P)") << QStringLiteral("(p)");
-    exclude << QStringLiteral("(O)") << QStringLiteral("(o)") << QStringLiteral("(D)") << QStringLiteral("(d)") << QStringLiteral("(E)") << QStringLiteral("(e)") << QStringLiteral("(K)") << QStringLiteral("(k)");
-    exclude << QStringLiteral("(I)") << QStringLiteral("(i)") << QStringLiteral("(L)") << QStringLiteral("(l)") << QStringLiteral("(8)") << QStringLiteral("(T)") << QStringLiteral("(t)") << QStringLiteral("(G)");
+    exclude << QStringLiteral("(c)") << QStringLiteral("(C)") << QStringLiteral("&gt;:-(") << QStringLiteral("&gt;:(") << QStringLiteral("(B)") << QStringLiteral("(b)") << QStringLiteral("(P)")
+            << QStringLiteral("(p)");
+    exclude << QStringLiteral("(O)") << QStringLiteral("(o)") << QStringLiteral("(D)") << QStringLiteral("(d)") << QStringLiteral("(E)") << QStringLiteral("(e)") << QStringLiteral("(K)")
+            << QStringLiteral("(k)");
+    exclude << QStringLiteral("(I)") << QStringLiteral("(i)") << QStringLiteral("(L)") << QStringLiteral("(l)") << QStringLiteral("(8)") << QStringLiteral("(T)") << QStringLiteral("(t)")
+            << QStringLiteral("(G)");
     exclude << QStringLiteral("(g)") << QStringLiteral("(F)") << QStringLiteral("(f)") << QStringLiteral("(H)");
-    exclude << QStringLiteral("8)") << QStringLiteral("(N)") << QStringLiteral("(n)") << QStringLiteral("(Y)") << QStringLiteral("(y)") << QStringLiteral("(U)") << QStringLiteral("(u)") << QStringLiteral("(W)") << QStringLiteral("(w)");
+    exclude << QStringLiteral("8)") << QStringLiteral("(N)") << QStringLiteral("(n)") << QStringLiteral("(Y)") << QStringLiteral("(y)") << QStringLiteral("(U)") << QStringLiteral("(u)")
+            << QStringLiteral("(W)") << QStringLiteral("(w)");
 
     const QHash<QString, QStringList>::const_iterator end = list.constEnd();
     for (QHash<QString, QStringList>::const_iterator it = list.constBegin(); it != end; ++it) {
@@ -139,9 +143,8 @@ void EmoticonTextEditSelector::slotEmoticonClicked(QListWidgetItem *item)
     EmoticonTextEditItem *itemEmoticon = static_cast<EmoticonTextEditItem *>(item);
 
     emit itemSelected(itemEmoticon->text());
-    if (isVisible() && parentWidget() &&
-            parentWidget()->inherits("QMenu")) {
+    if (isVisible() && parentWidget()
+        && parentWidget()->inherits("QMenu")) {
         parentWidget()->close();
     }
 }
-

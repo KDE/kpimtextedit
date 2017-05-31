@@ -33,13 +33,13 @@ class Q_DECL_HIDDEN RichTextExternalComposer::RichTextExternalComposerPrivate
 {
 public:
     RichTextExternalComposerPrivate(RichTextComposer *composer)
-        : externalEditorProcess(nullptr),
-          extEditorTempFile(nullptr),
-          richTextComposer(composer),
-          useExtEditor(false)
+        : externalEditorProcess(nullptr)
+        , extEditorTempFile(nullptr)
+        , richTextComposer(composer)
+        , useExtEditor(false)
     {
-
     }
+
     void cannotStartProcess(const QString &commandLine);
     QString extEditorPath;
     KProcess *externalEditorProcess;
@@ -49,9 +49,9 @@ public:
 };
 
 RichTextExternalComposer::RichTextExternalComposer(RichTextComposer *composer, QObject *parent)
-    : QObject(parent), d(new RichTextExternalComposerPrivate(composer))
+    : QObject(parent)
+    , d(new RichTextExternalComposerPrivate(composer))
 {
-
 }
 
 RichTextExternalComposer::~RichTextExternalComposer()
@@ -82,7 +82,6 @@ QString RichTextExternalComposer::externalEditorPath() const
 void RichTextExternalComposer::startExternalEditor()
 {
     if (d->useExtEditor && !d->externalEditorProcess) {
-
         const QString commandLine = d->extEditorPath.trimmed();
         if (d->extEditorPath.isEmpty()) {
             setUseExternalEditor(false);
@@ -174,15 +173,15 @@ bool RichTextExternalComposer::checkExternalEditorFinished()
     }
 
     int ret = KMessageBox::warningYesNoCancel(
-                  d->richTextComposer,
-                  xi18nc("@info",
-                         "The external editor is still running.<nl/>"
-                         "Do you want to stop the editor or keep it running?<nl/>"
-                         "<warning>Stopping the editor will cause all your "
-                         "unsaved changes to be lost.</warning>"),
-                  i18nc("@title:window", "External Editor Running"),
-                  KGuiItem(i18nc("@action:button", "Stop Editor")),
-                  KGuiItem(i18nc("@action:button", "Keep Editor Running")));
+        d->richTextComposer,
+        xi18nc("@info",
+               "The external editor is still running.<nl/>"
+               "Do you want to stop the editor or keep it running?<nl/>"
+               "<warning>Stopping the editor will cause all your "
+               "unsaved changes to be lost.</warning>"),
+        i18nc("@title:window", "External Editor Running"),
+        KGuiItem(i18nc("@action:button", "Stop Editor")),
+        KGuiItem(i18nc("@action:button", "Keep Editor Running")));
 
     switch (ret) {
     case KMessageBox::Yes:
@@ -192,7 +191,6 @@ bool RichTextExternalComposer::checkExternalEditorFinished()
         return true;
     default:
         return false;
-
     }
 }
 

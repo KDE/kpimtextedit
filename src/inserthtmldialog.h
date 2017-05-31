@@ -27,8 +27,7 @@
 #include "kpimtextedit_export.h"
 #include "kpimtextedit/plaintexteditor.h"
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class InsertHtmlDialogPrivate;
 class KPIMTEXTEDIT_EXPORT InsertHtmlDialog : public QDialog
 {
@@ -36,7 +35,7 @@ class KPIMTEXTEDIT_EXPORT InsertHtmlDialog : public QDialog
 public:
     explicit InsertHtmlDialog(QWidget *parent = nullptr);
     ~InsertHtmlDialog();
-    QString html() const;    
+    QString html() const;
     void setSelectedText(const QString &str);
 
 private:
@@ -44,7 +43,6 @@ private:
     InsertHtmlDialogPrivate *const d;
     Q_PRIVATE_SLOT(d, void _k_slotTextChanged())
 };
-
 }
 
 #endif

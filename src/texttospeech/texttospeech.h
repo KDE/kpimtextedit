@@ -28,9 +28,7 @@
 class QTextToSpeech;
 #endif
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT TextToSpeech : public QObject
 {
     Q_OBJECT

@@ -23,8 +23,7 @@
 #include <QObject>
 #include <QVector>
 #include <QLocale>
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT AbstractTextToSpeechInterface : public QObject
 {
     Q_OBJECT

@@ -26,8 +26,7 @@
 #include <QTextImageFormat>
 #include <QSharedPointer>
 #include "kpimtextedit_export.h"
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class RichTextComposer;
 /**
  * Holds information about an embedded HTML image that will be useful for mail clients.

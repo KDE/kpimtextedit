@@ -24,9 +24,7 @@
 #include <KActionMenu>
 #include "kpimtextedit_export.h"
 #include <QTextEdit>
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class TableActionMenuPrivate;
 
 class KPIMTEXTEDIT_EXPORT TableActionMenu : public KActionMenu
@@ -58,7 +56,6 @@ private:
     Q_PRIVATE_SLOT(d, void _k_slotSplitCell())
     Q_PRIVATE_SLOT(d, void _k_updateActions(bool forceUpdate = false))
 };
-
 }
 
 #endif // KPIMTEXTEDIT_TABLEACTIONMENU_H

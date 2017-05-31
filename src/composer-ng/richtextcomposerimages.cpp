@@ -37,8 +37,8 @@ public:
     RichTextComposerImagesPrivate(RichTextComposer *editor)
         : composer(editor)
     {
-
     }
+
     /**
      * The names of embedded images.
      * Used to easily obtain the names of the images.
@@ -50,9 +50,9 @@ public:
 };
 
 RichTextComposerImages::RichTextComposerImages(RichTextComposer *composer, QObject *parent)
-    : QObject(parent), d(new RichTextComposerImages::RichTextComposerImagesPrivate(composer))
+    : QObject(parent)
+    , d(new RichTextComposerImages::RichTextComposerImagesPrivate(composer))
 {
-
 }
 
 RichTextComposerImages::~RichTextComposerImages()
@@ -77,15 +77,14 @@ void RichTextComposerImages::addImageHelper(const QUrl &url, int width, int heig
         return;
     }
     QFileInfo fi(url.path());
-    QString imageName =
-        fi.baseName().isEmpty() ?
-        QStringLiteral("image.png") :
-        QString(fi.baseName() + QLatin1String(".png"));
+    QString imageName
+        = fi.baseName().isEmpty()
+          ? QStringLiteral("image.png")
+          : QString(fi.baseName() + QLatin1String(".png"));
     addImageHelper(imageName, image, width, height);
 }
 
-void RichTextComposerImages::loadImage(const QImage &image, const QString &matchName,
-                                       const QString &resourceName)
+void RichTextComposerImages::loadImage(const QImage &image, const QString &matchName, const QString &resourceName)
 {
     QSet<int> cursorPositionsToSkip;
     QTextBlock currentBlock = d->composer->document()->begin();
@@ -125,8 +124,7 @@ void RichTextComposerImages::loadImage(const QImage &image, const QString &match
     }
 }
 
-void RichTextComposerImages::addImageHelper(const QString &imageName, const QImage &image,
-        int width, int height)
+void RichTextComposerImages::addImageHelper(const QString &imageName, const QImage &image, int width, int height)
 {
     QString imageNameToAdd = imageName;
     QTextDocument *document = d->composer->document();
@@ -143,8 +141,8 @@ void RichTextComposerImages::addImageHelper(const QString &imageName, const QIma
         if (firstDot == -1) {
             imageNameToAdd = imageName + QString::number(imageNumber++);
         } else {
-            imageNameToAdd = imageName.left(firstDot) + QString::number(imageNumber++) +
-                             imageName.mid(firstDot);
+            imageNameToAdd = imageName.left(firstDot) + QString::number(imageNumber++)
+                             +imageName.mid(firstDot);
         }
     }
 
@@ -172,7 +170,7 @@ ImageWithNameList RichTextComposerImages::imagesWithName() const
     for (const QTextImageFormat &imageFormat : imageFormats) {
         if (!seenImageNames.contains(imageFormat.name())) {
             QVariant resourceData = d->composer->document()->resource(QTextDocument::ImageResource,
-                                    QUrl(imageFormat.name()));
+                                                                      QUrl(imageFormat.name()));
             QImage image = qvariant_cast<QImage>(resourceData);
             QString name = imageFormat.name();
             ImageWithNamePtr newImage(new ImageWithName);
@@ -233,9 +231,9 @@ QList<QTextImageFormat> RichTextComposerImages::embeddedImageFormats() const
 
 void RichTextComposerImages::insertImage(const QImage &image, const QFileInfo &fileInfo)
 {
-    QString imageName = fileInfo.baseName().isEmpty() ?
-                        i18nc("Start of the filename for an image", "image") :
-                        fileInfo.baseName();
+    QString imageName = fileInfo.baseName().isEmpty()
+                        ? i18nc("Start of the filename for an image", "image")
+                        : fileInfo.baseName();
     addImageHelper(imageName, image);
 }
 

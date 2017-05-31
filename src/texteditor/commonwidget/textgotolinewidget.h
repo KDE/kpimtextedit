@@ -23,8 +23,7 @@
 #include "kpimtextedit_export.h"
 #include <QWidget>
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class TextGoToLineWidgetPrivate;
 class KPIMTEXTEDIT_EXPORT TextGoToLineWidget : public QWidget
 {
@@ -50,7 +49,6 @@ public Q_SLOTS:
 private Q_SLOTS:
     void slotCloseBar();
     void slotGoToLine();
-
 
 private:
     TextGoToLineWidgetPrivate *const d;

@@ -32,11 +32,10 @@ public:
     RichTextComposer *parent;
 };
 
-RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighter(RichTextComposer *textEdit, const QColor &normalColor,
-        const QColor &quoteDepth1, const QColor &quoteDepth2,
-        const QColor &quoteDepth3, const QColor &misspelledColor)
-    : Sonnet::Highlighter(textEdit),
-      d(new KPIMTextEdit::RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighterPrivate())
+RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighter(RichTextComposer *textEdit, const QColor &normalColor, const QColor &quoteDepth1, const QColor &quoteDepth2,
+                                                                             const QColor &quoteDepth3, const QColor &misspelledColor)
+    : Sonnet::Highlighter(textEdit)
+    , d(new KPIMTextEdit::RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighterPrivate())
 {
     Q_UNUSED(normalColor);
     // Don't automatically disable the spell checker, for example because there
@@ -57,11 +56,8 @@ RichTextComposerEmailQuoteHighlighter::~RichTextComposerEmailQuoteHighlighter()
 {
     delete d;
 }
-void RichTextComposerEmailQuoteHighlighter::setQuoteColor(const QColor &normalColor,
-        const QColor &quoteDepth1,
-        const QColor &quoteDepth2,
-        const QColor &quoteDepth3,
-        const QColor &misspelledColor)
+
+void RichTextComposerEmailQuoteHighlighter::setQuoteColor(const QColor &normalColor, const QColor &quoteDepth1, const QColor &quoteDepth2, const QColor &quoteDepth3, const QColor &misspelledColor)
 {
     Q_UNUSED(normalColor);
     d->col1 = quoteDepth1;

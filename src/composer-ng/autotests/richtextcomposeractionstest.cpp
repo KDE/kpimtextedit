@@ -28,12 +28,10 @@
 RichTextComposerActionsTest::RichTextComposerActionsTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 RichTextComposerActionsTest::~RichTextComposerActionsTest()
 {
-
 }
 
 void RichTextComposerActionsTest::shouldHaveDefaultValue()

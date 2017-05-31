@@ -46,17 +46,19 @@ class Q_DECL_HIDDEN RichTextComposerControler::RichTextComposerControlerPrivate
 {
 public:
     RichTextComposerControlerPrivate(RichTextComposer *composer, RichTextComposerControler *qq)
-        : painterActive(false),
-          richtextComposer(composer),
-          q(qq)
+        : painterActive(false)
+        , richtextComposer(composer)
+        , q(qq)
     {
         nestedListHelper = new NestedListHelper(composer);
         richTextImages = new RichTextComposerImages(richtextComposer, q);
     }
+
     ~RichTextComposerControlerPrivate()
     {
         delete nestedListHelper;
     }
+
     QColor linkColor()
     {
         if (mLinkColor.isValid()) {
@@ -65,6 +67,7 @@ public:
         mLinkColor = KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::LinkText).color();
         return mLinkColor;
     }
+
     void selectLinkText(QTextCursor *cursor) const;
     void fixupTextEditString(QString &text) const;
     void mergeFormatOnWordOrSelection(const QTextCharFormat &format);
@@ -109,7 +112,6 @@ void RichTextComposerControler::RichTextComposerControlerPrivate::selectLinkText
             if (oldPosition == cursor->position()) {
                 break;
             }
-
         }
         if (cursor->charFormat().anchorHref() != aHref) {
             cursor->setPosition(cursor->position() - 1, QTextCursor::KeepAnchor);
@@ -142,9 +144,9 @@ void RichTextComposerControler::RichTextComposerControlerPrivate::mergeFormatOnW
 }
 
 RichTextComposerControler::RichTextComposerControler(RichTextComposer *richtextComposer, QObject *parent)
-    : QObject(parent), d(new RichTextComposerControlerPrivate(richtextComposer, this))
+    : QObject(parent)
+    , d(new RichTextComposerControlerPrivate(richtextComposer, this))
 {
-
 }
 
 RichTextComposerControler::~RichTextComposerControler()
@@ -422,7 +424,6 @@ void RichTextComposerControler::manageLink()
     }
 
     delete linkDialog;
-
 }
 
 void RichTextComposerControler::RichTextComposerControler::updateLink(const QString &linkUrl, const QString &linkText)
@@ -496,25 +497,25 @@ QString RichTextComposerControler::toCleanHtml() const
     QString result = richTextComposer()->toHtml();
 
     static const QString EMPTYLINEHTML = QStringLiteral(
-            "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-            "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; \">&nbsp;</p>");
+        "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+        "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; \">&nbsp;</p>");
 
     // Qt inserts various style properties based on the current mode of the editor (underline,
     // bold, etc), but only empty paragraphs *also* have qt-paragraph-type set to 'empty'.
     static const QString EMPTYLINEREGEX = QStringLiteral(
-            "<p style=\"-qt-paragraph-type:empty;(.*)</p>");
+        "<p style=\"-qt-paragraph-type:empty;(.*)</p>");
 
     static const QString OLLISTPATTERNQT = QStringLiteral(
-            "<ol style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
+        "<ol style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
 
     static const QString ULLISTPATTERNQT = QStringLiteral(
-            "<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
+        "<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
 
     static const QString ORDEREDLISTHTML = QStringLiteral(
-            "<ol style=\"margin-top: 0px; margin-bottom: 0px;");
+        "<ol style=\"margin-top: 0px; margin-bottom: 0px;");
 
     static const QString UNORDEREDLISTHTML = QStringLiteral(
-                "<ul style=\"margin-top: 0px; margin-bottom: 0px;");
+        "<ul style=\"margin-top: 0px; margin-bottom: 0px;");
 
     // fix 1 - empty lines should show as empty lines - MS Outlook treats margin-top:0px; as
     // a non-existing line.
@@ -773,8 +774,8 @@ void RichTextComposerControler::slotDeleteLine()
 
                 // When deleting the last line in the document,
                 // remove the newline of the line before the last line instead
-                if (deleteStart + deleteLength >= richTextComposer()->document()->characterCount() &&
-                        deleteStart > 0) {
+                if (deleteStart + deleteLength >= richTextComposer()->document()->characterCount()
+                    && deleteStart > 0) {
                     deleteStart--;
                 }
 
@@ -915,9 +916,9 @@ QString RichTextComposerControler::toWrappedPlainText(QTextDocument *doc) const
             QTextLine line = layout->lineAt(i);
             QString lineText = block.text().mid(line.textStart(), line.textLength());
 
-            if (lineText.contains(rx) ||
-                    (urlStart && !lineText.contains(QLatin1Char(' ')) &&
-                     lineText.endsWith(QLatin1Char('-')))) {
+            if (lineText.contains(rx)
+                || (urlStart && !lineText.contains(QLatin1Char(' '))
+                    && lineText.endsWith(QLatin1Char('-')))) {
                 // don't insert line break in URL
                 temp += lineText;
                 urlStart = true;

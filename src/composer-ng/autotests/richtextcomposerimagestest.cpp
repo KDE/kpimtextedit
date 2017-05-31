@@ -23,12 +23,10 @@
 RichTextComposerImagesTest::RichTextComposerImagesTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 RichTextComposerImagesTest::~RichTextComposerImagesTest()
 {
-
 }
 
 QTEST_MAIN(RichTextComposerImagesTest)

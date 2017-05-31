@@ -31,8 +31,7 @@ class QDropEvent;
 class QTextCursor;
 class QTextList;
 class QTextBlock;
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 /**
  *
  * @short Helper class for automatic handling of nested lists in a text edit
@@ -137,7 +136,6 @@ private:
     int listBottomMargin;
     int listTopMargin;
     int listNoMargin;
-
 };
 }
 //@endcond

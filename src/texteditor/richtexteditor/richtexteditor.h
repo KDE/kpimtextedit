@@ -25,13 +25,11 @@
 
 class QContextMenuEvent;
 class QMenu;
-namespace Sonnet
-{
+namespace Sonnet {
 class Highlighter;
 class SpellCheckDecorator;
 }
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT RichTextEditor : public QTextEdit
 {
     Q_OBJECT

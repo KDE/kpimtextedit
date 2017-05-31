@@ -23,15 +23,13 @@
 #include "kpimtextedit_export.h"
 
 #include <Sonnet/Highlighter>
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class Rule;
 }
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class PlainTextEditor;
-class KPIMTEXTEDIT_EXPORT PlainTextSyntaxSpellCheckingHighlighter: public Sonnet::Highlighter
+class KPIMTEXTEDIT_EXPORT PlainTextSyntaxSpellCheckingHighlighter : public Sonnet::Highlighter
 {
 public:
     explicit PlainTextSyntaxSpellCheckingHighlighter(PlainTextEditor *plainText, const QColor &misspelledColor = Qt::red);

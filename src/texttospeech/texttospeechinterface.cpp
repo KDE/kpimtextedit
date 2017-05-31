@@ -28,14 +28,14 @@ public:
     TextToSpeechInterfacePrivate(TextToSpeechWidget *textToSpeechWidget)
         : mTextToSpeechWidget(textToSpeechWidget)
     {
-
     }
+
     TextToSpeechWidget *mTextToSpeechWidget;
 };
 
 TextToSpeechInterface::TextToSpeechInterface(TextToSpeechWidget *textToSpeechWidget, QObject *parent)
-    : AbstractTextToSpeechInterface(parent),
-      d(new KPIMTextEdit::TextToSpeechInterfacePrivate(textToSpeechWidget))
+    : AbstractTextToSpeechInterface(parent)
+    , d(new KPIMTextEdit::TextToSpeechInterfacePrivate(textToSpeechWidget))
 {
     KPIMTextEdit::TextToSpeech::self(); //init
     connect(d->mTextToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::stateChanged, this, &TextToSpeechInterface::stateChanged);

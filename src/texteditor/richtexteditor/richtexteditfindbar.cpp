@@ -34,15 +34,14 @@ public:
     RichTextEditFindBarPrivate(QTextEdit *view)
         : mView(view)
     {
-
     }
 
     QTextEdit *mView;
 };
 
 RichTextEditFindBar::RichTextEditFindBar(QTextEdit *view, QWidget *parent)
-    : TextEditFindBarBase(parent),
-      d(new KPIMTextEdit::RichTextEditFindBarPrivate(view))
+    : TextEditFindBarBase(parent)
+    , d(new KPIMTextEdit::RichTextEditFindBarPrivate(view))
 {
 }
 
@@ -102,4 +101,3 @@ void RichTextEditFindBar::slotReplaceAllText()
     d->mView->selectAll();
     d->mView->insertPlainText(newText);
 }
-

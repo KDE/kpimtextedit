@@ -54,7 +54,6 @@ TextReplaceWidget::TextReplaceWidget(QWidget *parent)
 
 TextReplaceWidget::~TextReplaceWidget()
 {
-
 }
 
 QLineEdit *TextReplaceWidget::replace() const
@@ -115,7 +114,6 @@ TextFindWidget::TextFindWidget(QWidget *parent)
 
 TextFindWidget::~TextFindWidget()
 {
-
 }
 
 QRegExp TextFindWidget::findRegExp() const
@@ -136,7 +134,7 @@ void TextFindWidget::setFoundMatch(bool match)
 #ifndef QT_NO_STYLE_STYLESHEET
     QString styleSheet;
 
-    if (! mSearch->text().isEmpty()) {
+    if (!mSearch->text().isEmpty()) {
         KColorScheme::BackgroundRole bgColorScheme;
 
         if (match) {
@@ -183,4 +181,3 @@ QTextDocument::FindFlags TextFindWidget::searchOptions() const
     }
     return opt;
 }
-

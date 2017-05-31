@@ -26,9 +26,7 @@
 #include <QDialog>
 #include <QUrl>
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class InsertImageDialogPrivate;
 
 class KPIMTEXTEDIT_EXPORT InsertImageDialog : public QDialog
@@ -54,7 +52,6 @@ private:
     InsertImageDialogPrivate *const d;
     Q_PRIVATE_SLOT(d, void _k_slotEnabledButtonChanged(bool))
 };
-
 }
 
 #endif // KPIMTEXTEDIT_INSERTIMAGEDIALOG_H

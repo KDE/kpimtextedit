@@ -56,14 +56,14 @@ class Q_DECL_HIDDEN PlainTextEditor::PlainTextEditorPrivate
 {
 public:
     PlainTextEditorPrivate(PlainTextEditor *qq)
-        : q(qq),
-          mTextIndicator(new KPIMTextEdit::TextMessageIndicator(q)),
-          webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q)),
-          richTextDecorator(nullptr),
-          speller(nullptr),
-          mInitialFontSize(0),
-          customPalette(false),
-          activateLanguageMenu(true)
+        : q(qq)
+        , mTextIndicator(new KPIMTextEdit::TextMessageIndicator(q))
+        , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
+        , richTextDecorator(nullptr)
+        , speller(nullptr)
+        , mInitialFontSize(0)
+        , customPalette(false)
+        , activateLanguageMenu(true)
     {
         KConfig sonnetKConfig(QStringLiteral("sonnetrc"));
         KConfigGroup group(&sonnetKConfig, "Spelling");
@@ -73,6 +73,7 @@ public:
         supportFeatures |= PlainTextEditor::TextToSpeech;
         supportFeatures |= PlainTextEditor::AllowWebShortcut;
     }
+
     ~PlainTextEditorPrivate()
     {
         delete richTextDecorator;
@@ -97,8 +98,8 @@ public:
 };
 
 PlainTextEditor::PlainTextEditor(QWidget *parent)
-    : QPlainTextEdit(parent),
-      d(new PlainTextEditor::PlainTextEditorPrivate(this))
+    : QPlainTextEdit(parent)
+    , d(new PlainTextEditor::PlainTextEditorPrivate(this))
 {
     KCursor::setAutoHideCursor(this, true, false);
     setSpellCheckingConfigFileName(QString());
@@ -128,7 +129,9 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
         const bool emptyDocument = document()->isEmpty();
         if (!isReadOnly()) {
             QList<QAction *> actionList = popup->actions();
-            enum { UndoAct, RedoAct, CutAct, CopyAct, PasteAct, ClearAct, SelectAllAct, NCountActs };
+            enum {
+                UndoAct, RedoAct, CutAct, CopyAct, PasteAct, ClearAct, SelectAllAct, NCountActs
+            };
             QAction *separatorAction = nullptr;
             const int idx = actionList.indexOf(actionList[SelectAllAct]) + 1;
             if (idx < actionList.count()) {
@@ -174,11 +177,10 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
                 autoSpellCheckAction->setChecked(checkSpellingEnabled());
                 popup->addAction(autoSpellCheckAction);
 
-                if (checkSpellingEnabled() &&  d->activateLanguageMenu) {
+                if (checkSpellingEnabled() && d->activateLanguageMenu) {
                     QMenu *languagesMenu = new QMenu(i18n("Spell Checking Language"), popup);
                     QActionGroup *languagesGroup = new QActionGroup(languagesMenu);
                     languagesGroup->setExclusive(true);
-
 
                     QString defaultSpellcheckingLanguage = spellCheckingLanguage();
                     if (defaultSpellcheckingLanguage.isEmpty()) {
@@ -187,7 +189,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
                     }
 
                     QMapIterator<QString, QString> i(d->speller->availableDictionaries());
-                    while(i.hasNext()) {
+                    while (i.hasNext()) {
                         i.next();
                         QAction *languageAction = languagesMenu->addAction(i.key());
                         languageAction->setCheckable(true);
@@ -256,13 +258,13 @@ void PlainTextEditor::setSearchSupport(bool b)
     if (b) {
         d->supportFeatures |= Search;
     } else {
-        d->supportFeatures = (d->supportFeatures & ~ Search);
+        d->supportFeatures = (d->supportFeatures & ~Search);
     }
 }
 
 bool PlainTextEditor::searchSupport() const
 {
-    return (d->supportFeatures & Search);
+    return d->supportFeatures & Search;
 }
 
 void PlainTextEditor::setTextToSpeechSupport(bool b)
@@ -270,18 +272,18 @@ void PlainTextEditor::setTextToSpeechSupport(bool b)
     if (b) {
         d->supportFeatures |= TextToSpeech;
     } else {
-        d->supportFeatures = (d->supportFeatures & ~ TextToSpeech);
+        d->supportFeatures = (d->supportFeatures & ~TextToSpeech);
     }
 }
 
 bool PlainTextEditor::textToSpeechSupport() const
 {
-    return (d->supportFeatures & TextToSpeech);
+    return d->supportFeatures & TextToSpeech;
 }
 
 bool PlainTextEditor::spellCheckingSupport() const
 {
-    return (d->supportFeatures & SpellChecking);
+    return d->supportFeatures & SpellChecking;
 }
 
 void PlainTextEditor::setSpellCheckingSupport(bool check)
@@ -289,7 +291,7 @@ void PlainTextEditor::setSpellCheckingSupport(bool check)
     if (check) {
         d->supportFeatures |= SpellChecking;
     } else {
-        d->supportFeatures = (d->supportFeatures & ~ SpellChecking);
+        d->supportFeatures = (d->supportFeatures & ~SpellChecking);
     }
 }
 
@@ -298,13 +300,13 @@ void PlainTextEditor::setWebShortcutSupport(bool b)
     if (b) {
         d->supportFeatures |= AllowWebShortcut;
     } else {
-        d->supportFeatures = (d->supportFeatures & ~ AllowWebShortcut);
+        d->supportFeatures = (d->supportFeatures & ~AllowWebShortcut);
     }
 }
 
 bool PlainTextEditor::webShortcutSupport() const
 {
-    return (d->supportFeatures & AllowWebShortcut);
+    return d->supportFeatures & AllowWebShortcut;
 }
 
 void PlainTextEditor::setReadOnly(bool readOnly)
@@ -729,7 +731,6 @@ void PlainTextEditor::setCheckSpellingEnabled(bool check)
 
 void PlainTextEditor::updateHighLighter()
 {
-
 }
 
 void PlainTextEditor::clearDecorator()

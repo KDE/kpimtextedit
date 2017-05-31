@@ -26,9 +26,7 @@
 
 #include <QTextLength>
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT InsertTableWidget : public QWidget
 {
     Q_OBJECT

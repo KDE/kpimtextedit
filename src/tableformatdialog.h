@@ -27,9 +27,7 @@
 
 #include <QTextLength>
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT TableFormatDialog : public QDialog
 {
     Q_OBJECT
@@ -69,6 +67,5 @@ private:
     class TableFormatDialogPrivate;
     TableFormatDialogPrivate *const d;
 };
-
 }
 #endif // KPIMTEXTEDIT_TABLEFORMATDIALOG_H

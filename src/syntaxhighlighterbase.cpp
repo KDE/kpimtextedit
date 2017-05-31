@@ -25,12 +25,10 @@ using namespace KPIMTextEdit;
 SyntaxHighlighterBase::SyntaxHighlighterBase(QTextDocument *doc)
     : QSyntaxHighlighter(doc)
 {
-
 }
 
 SyntaxHighlighterBase::~SyntaxHighlighterBase()
 {
-
 }
 
 void SyntaxHighlighterBase::highlightBlock(const QString &text)

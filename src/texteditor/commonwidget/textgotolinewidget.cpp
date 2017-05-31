@@ -35,10 +35,9 @@ class KPIMTextEdit::TextGoToLineWidgetPrivate
 {
 public:
     TextGoToLineWidgetPrivate()
-        : mSpinbox(nullptr),
-          mGoToLine(nullptr)
+        : mSpinbox(nullptr)
+        , mGoToLine(nullptr)
     {
-
     }
 
     QSpinBox *mSpinbox;
@@ -46,8 +45,8 @@ public:
 };
 
 TextGoToLineWidget::TextGoToLineWidget(QWidget *parent)
-    : QWidget(parent),
-      d(new KPIMTextEdit::TextGoToLineWidgetPrivate)
+    : QWidget(parent)
+    , d(new KPIMTextEdit::TextGoToLineWidgetPrivate)
 {
     QHBoxLayout *hbox = new QHBoxLayout(this);
     hbox->setMargin(2);

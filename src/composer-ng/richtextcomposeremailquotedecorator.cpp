@@ -27,16 +27,15 @@ public:
     RichTextComposerEmailQuoteDecoratorPrivate(RichTextComposer *textEdit)
         : composerEditor(textEdit)
     {
-
     }
+
     RichTextComposer *composerEditor;
 };
 
 RichTextComposerEmailQuoteDecorator::RichTextComposerEmailQuoteDecorator(RichTextComposer *textEdit)
-    : Sonnet::SpellCheckDecorator(textEdit),
-      d(new RichTextComposerEmailQuoteDecorator::RichTextComposerEmailQuoteDecoratorPrivate(textEdit))
+    : Sonnet::SpellCheckDecorator(textEdit)
+    , d(new RichTextComposerEmailQuoteDecorator::RichTextComposerEmailQuoteDecoratorPrivate(textEdit))
 {
-
 }
 
 RichTextComposerEmailQuoteDecorator::~RichTextComposerEmailQuoteDecorator()

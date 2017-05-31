@@ -24,16 +24,17 @@
 #include <QRegularExpression>
 #include "kpimtextedit_export.h"
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT Rule
 {
 public:
     Rule()
     {
     }
+
     Rule(const QRegularExpression &r, const QTextCharFormat &f)
-        : pattern(r), format(f)
+        : pattern(r)
+        , format(f)
     {
     }
 

@@ -24,13 +24,11 @@
 
 #include <QPlainTextEdit>
 
-namespace Sonnet
-{
+namespace Sonnet {
 class Highlighter;
 class SpellCheckDecorator;
 }
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT PlainTextEditor : public QPlainTextEdit
 {
     Q_OBJECT

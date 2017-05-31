@@ -22,8 +22,7 @@
 
 #include <QWidget>
 #include "kpimtextedit_export.h"
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class RichTextComposerWidgetPrivate;
 class RichTextComposer;
 /**

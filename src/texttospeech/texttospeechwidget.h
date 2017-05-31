@@ -24,8 +24,7 @@
 #include <QWidget>
 #include "kpimtextedit_export.h"
 #include "texttospeech.h"
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class AbstractTextToSpeechInterface;
 class TextToSpeechWidgetPrivate;
 class KPIMTEXTEDIT_EXPORT TextToSpeechWidget : public QWidget

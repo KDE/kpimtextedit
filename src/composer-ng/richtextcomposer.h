@@ -25,8 +25,7 @@
 #include <kpimtextedit/richtexteditor.h>
 class KActionCollection;
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class RichTextComposerSignatures;
 class RichTextComposerControler;
 class RichTextComposerActions;

@@ -25,8 +25,7 @@
 #include <QTextDocument>
 
 class QPlainTextEdit;
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class PlainTextEditFindBarPrivate;
 class KPIMTEXTEDIT_EXPORT PlainTextEditFindBar : public TextEditFindBarBase
 {
@@ -52,8 +51,6 @@ private Q_SLOTS:
 private:
     PlainTextEditFindBarPrivate *const d;
 };
-
 }
 
 #endif
-

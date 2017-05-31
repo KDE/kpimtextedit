@@ -28,9 +28,7 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class InsertImageDialogPrivate
 {
 public:
@@ -67,7 +65,8 @@ public:
 };
 
 InsertImageDialog::InsertImageDialog(QWidget *parent)
-    : QDialog(parent), d(new InsertImageDialogPrivate(this))
+    : QDialog(parent)
+    , d(new InsertImageDialogPrivate(this))
 {
 }
 
@@ -110,6 +109,5 @@ bool InsertImageDialog::keepOriginalSize() const
 {
     return d->imageWidget->keepOriginalSize();
 }
-
 }
 #include "moc_insertimagedialog.cpp"

@@ -27,8 +27,7 @@
 #include "kpimtextedit/plaintexteditor.h"
 #include <KSyntaxHighlighting/Repository>
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class TextEditorCompleter;
 class InsertHtmlEditor : public KPIMTextEdit::PlainTextEditor
 {

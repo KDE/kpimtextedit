@@ -29,9 +29,9 @@
 
 using namespace KPIMTextEdit;
 TextMessageIndicator::TextMessageIndicator(QWidget *parent)
-    : QWidget(parent),
-      mTimer(nullptr),
-      mLineSpacing(0)
+    : QWidget(parent)
+    , mTimer(nullptr)
+    , mLineSpacing(0)
 {
     setObjectName(QStringLiteral("TextMessageIndicator"));
     setFocusPolicy(Qt::NoFocus);
@@ -90,7 +90,6 @@ void TextMessageIndicator::display(const QString &message, const QString &detail
     }
 
     qobject_cast<QAbstractScrollArea *>(parentWidget())->viewport()->installEventFilter(this);
-
 }
 
 QRect TextMessageIndicator::computeTextRect(const QString &message, int extra_width) const
@@ -104,7 +103,7 @@ QRect TextMessageIndicator::computeTextRect(const QString &message, int extra_wi
      */
     const int boundingWidth = qobject_cast<QAbstractScrollArea *>(parentWidget())->viewport()->width() - 20 - (extra_width > 0 ? 2 + extra_width : 0) - 2 * charSize;
     QRect textRect = fontMetrics().boundingRect(0, 0, boundingWidth, 0,
-                     Qt::AlignLeft | Qt::AlignTop | Qt::TextWordWrap, message);
+                                                Qt::AlignLeft | Qt::AlignTop | Qt::TextWordWrap, message);
     textRect.translate(-textRect.left(), -textRect.top());
     textRect.adjust(0, 0, 2, 2);
 
@@ -220,4 +219,3 @@ void TextMessageIndicator::mousePressEvent(QMouseEvent * /*e*/)
     }
     hide();
 }
-

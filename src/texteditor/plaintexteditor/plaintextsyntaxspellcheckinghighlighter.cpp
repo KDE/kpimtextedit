@@ -23,18 +23,17 @@
 #include "syntaxhighlighterbase.h"
 #include "kpimtextedit_debug.h"
 
-
 using namespace KPIMTextEdit;
 
 class Q_DECL_HIDDEN KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter::PlainTextSyntaxSpellCheckingHighlighterPrivate
 {
 public:
     PlainTextSyntaxSpellCheckingHighlighterPrivate(PlainTextEditor *plainText)
-        : editor(plainText),
-          spellCheckingEnabled(false)
+        : editor(plainText)
+        , spellCheckingEnabled(false)
     {
-
     }
+
     QVector<KPIMTextEdit::Rule> rules;
     PlainTextEditor *editor;
     QColor misspelledColor;
@@ -42,8 +41,8 @@ public:
 };
 
 PlainTextSyntaxSpellCheckingHighlighter::PlainTextSyntaxSpellCheckingHighlighter(PlainTextEditor *plainText, const QColor &misspelledColor)
-    : Sonnet::Highlighter(plainText),
-      d(new PlainTextSyntaxSpellCheckingHighlighter::PlainTextSyntaxSpellCheckingHighlighterPrivate(plainText))
+    : Sonnet::Highlighter(plainText)
+    , d(new PlainTextSyntaxSpellCheckingHighlighter::PlainTextSyntaxSpellCheckingHighlighterPrivate(plainText))
 {
     d->misspelledColor = misspelledColor;
     setAutomatic(false);

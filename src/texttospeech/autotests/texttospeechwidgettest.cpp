@@ -87,7 +87,6 @@ void TextToSpeechWidgetTest::shouldChangeButtonEnableStateWhenChangeState()
     textToSpeechWidget.setState(KPIMTextEdit::TextToSpeechWidget::Stop);
     QVERIFY(stopButton->isEnabled());
     QVERIFY(!playPauseButton->isEnabled());
-
 }
 
 void TextToSpeechWidgetTest::shouldChangeStateWhenClickOnPlayPause()
@@ -115,7 +114,6 @@ void TextToSpeechWidgetTest::shouldChangeStateWhenClickOnStop()
     QToolButton *stopButton = textToSpeechWidget.findChild<QToolButton *>(QStringLiteral("stopbutton"));
     QTest::mouseClick(stopButton, Qt::LeftButton);
     QCOMPARE(textToSpeechWidget.state(), KPIMTextEdit::TextToSpeechWidget::Stop);
-
 }
 
 void TextToSpeechWidgetTest::shouldEmitStateChanged()

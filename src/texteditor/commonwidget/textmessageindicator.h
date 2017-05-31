@@ -29,8 +29,7 @@
  */
 #include <QWidget>
 class QTimer;
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class TextMessageIndicator : public QWidget
 {
     Q_OBJECT
@@ -63,4 +62,3 @@ private:
 }
 
 #endif // TEXTMESSAGEINDICATOR_H
-

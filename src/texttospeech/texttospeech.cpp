@@ -27,9 +27,7 @@
 #include <QtTextToSpeech/QTextToSpeech>
 #endif
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class TextToSpeechPrivate
 {
 public:
@@ -59,7 +57,6 @@ TextToSpeech::TextToSpeech(QObject *parent)
 
 TextToSpeech::~TextToSpeech()
 {
-
 }
 
 void TextToSpeech::reloadSettings()
@@ -116,7 +113,7 @@ void TextToSpeech::slotStateChanged()
 bool TextToSpeech::isReady() const
 {
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
-    return (mTextToSpeech->state() != QTextToSpeech::BackendError);
+    return mTextToSpeech->state() != QTextToSpeech::BackendError;
 #else
     return false;
 #endif
@@ -129,7 +126,6 @@ void TextToSpeech::say(const QString &text)
 #else
     Q_UNUSED(text);
 #endif
-
 }
 
 void TextToSpeech::stop()
@@ -237,5 +233,4 @@ QLocale TextToSpeech::locale() const
     return QLocale();
 #endif
 }
-
 }

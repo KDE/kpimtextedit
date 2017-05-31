@@ -48,7 +48,8 @@ public:
 //@endcond
 
 KLinkDialog::KLinkDialog(QWidget *parent)
-    : QDialog(parent), d(new KLinkDialog::KLinkDialogPrivate)
+    : QDialog(parent)
+    , d(new KLinkDialog::KLinkDialogPrivate)
 {
     setWindowTitle(i18n("Manage Link"));
     setModal(true);

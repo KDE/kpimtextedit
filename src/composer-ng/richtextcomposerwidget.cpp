@@ -30,14 +30,14 @@ public:
     RichTextComposerWidgetPrivate()
         : richTextComposer(nullptr)
     {
-
     }
+
     KPIMTextEdit::RichTextComposer *richTextComposer;
 };
 
 RichTextComposerWidget::RichTextComposerWidget(QWidget *parent)
-    : QWidget(parent),
-      d(new KPIMTextEdit::RichTextComposerWidgetPrivate)
+    : QWidget(parent)
+    , d(new KPIMTextEdit::RichTextComposerWidgetPrivate)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setMargin(0);

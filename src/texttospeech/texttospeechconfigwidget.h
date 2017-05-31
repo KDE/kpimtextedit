@@ -23,8 +23,7 @@
 #include "kpimtextedit_private_export.h"
 class QSlider;
 class QComboBox;
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class TextToSpeechLanguageComboBox;
 class AbstractTextToSpeechConfigInterface;
 class KPIMTEXTEDIT_TESTS_EXPORT TextToSpeechConfigWidget : public QWidget

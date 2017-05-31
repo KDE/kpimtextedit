@@ -51,5 +51,4 @@ void AbstractTextToSpeechInterface::setVolume(int value)
 
 void AbstractTextToSpeechInterface::reloadSettings()
 {
-
 }

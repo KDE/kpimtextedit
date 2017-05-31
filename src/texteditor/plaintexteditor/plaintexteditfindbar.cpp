@@ -35,15 +35,14 @@ public:
     explicit PlainTextEditFindBarPrivate(QPlainTextEdit *view)
         : mView(view)
     {
-
     }
 
     QPlainTextEdit *mView;
 };
 
 PlainTextEditFindBar::PlainTextEditFindBar(QPlainTextEdit *view, QWidget *parent)
-    : TextEditFindBarBase(parent),
-      d(new KPIMTextEdit::PlainTextEditFindBarPrivate(view))
+    : TextEditFindBarBase(parent)
+    , d(new KPIMTextEdit::PlainTextEditFindBarPrivate(view))
 {
 }
 
@@ -101,4 +100,3 @@ void PlainTextEditFindBar::slotReplaceAllText()
     d->mView->selectAll();
     d->mView->insertPlainText(newText);
 }
-

@@ -23,8 +23,7 @@
 #include "kpimtextedit_export.h"
 #include <QWidget>
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class PlainTextEditor;
 class PlainTextEditorWidgetPrivate;
 class KPIMTEXTEDIT_EXPORT PlainTextEditorWidget : public QWidget

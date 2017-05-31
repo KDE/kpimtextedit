@@ -76,6 +76,7 @@ public:
 
         mainLayout->addWidget(buttonBox);
     }
+
     QCheckBox *useBackgroundColor;
 
     KColorButton *backgroundColor;
@@ -84,7 +85,8 @@ public:
 };
 
 TableCellFormatDialog::TableCellFormatDialog(QWidget *parent)
-    : QDialog(parent), d(new TableCellFormatDialogPrivate(this))
+    : QDialog(parent)
+    , d(new TableCellFormatDialogPrivate(this))
 {
 }
 
@@ -108,7 +110,7 @@ QTextCharFormat::VerticalAlignment TableCellFormatDialog::verticalAlignment() co
 {
     return
         (QTextCharFormat::VerticalAlignment)d->verticalAlignment->itemData(
-            d->verticalAlignment->currentIndex()).toInt();
+        d->verticalAlignment->currentIndex()).toInt();
 }
 
 void TableCellFormatDialog::setVerticalAlignment(QTextCharFormat::VerticalAlignment vertical)

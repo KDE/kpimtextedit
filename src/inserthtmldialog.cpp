@@ -29,9 +29,7 @@
 #include <QVBoxLayout>
 #include <QLabel>
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class InsertHtmlDialogPrivate
 {
 public:
@@ -80,7 +78,8 @@ void InsertHtmlDialogPrivate::_k_slotTextChanged()
 }
 
 InsertHtmlDialog::InsertHtmlDialog(QWidget *parent)
-    : QDialog(parent), d(new InsertHtmlDialogPrivate(this))
+    : QDialog(parent)
+    , d(new InsertHtmlDialogPrivate(this))
 {
 }
 
@@ -98,8 +97,6 @@ QString InsertHtmlDialog::html() const
 {
     return d->editor->toPlainText();
 }
-
 }
 
 #include "moc_inserthtmldialog.cpp"
-

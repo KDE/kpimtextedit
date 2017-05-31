@@ -26,9 +26,7 @@
 
 #include <QWidget>
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class InsertImageWidgetPrivate;
 
 class KPIMTEXTEDIT_EXPORT InsertImageWidget : public QWidget
@@ -59,9 +57,7 @@ private:
     Q_PRIVATE_SLOT(d, void _k_slotUrlChanged(const QString &))
     Q_PRIVATE_SLOT(d, void _k_slotImageWidthChanged(int))
     Q_PRIVATE_SLOT(d, void _k_slotImageHeightChanged(int))
-
 };
-
 }
 
 #endif // KPIMTEXTEDIT_INSERTIMAGEWIDGET_H

@@ -27,9 +27,7 @@
 
 #include <QTextLength>
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT InsertTableDialog : public QDialog
 {
     Q_OBJECT
@@ -53,7 +51,6 @@ private:
     class InsertTableDialogPrivate;
     InsertTableDialogPrivate *const d;
 };
-
 }
 
 #endif // KPIMTEXTEDIT_INSERTTABLEDIALOG_H

@@ -26,9 +26,7 @@
 class QAction;
 class QLineEdit;
 class QPushButton;
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class TextFindWidget : public QWidget
 {
     Q_OBJECT

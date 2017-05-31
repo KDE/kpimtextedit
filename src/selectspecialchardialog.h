@@ -24,9 +24,7 @@
 
 #include <QDialog>
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class SelectSpecialCharDialogPrivate;
 
 class KPIMTEXTEDIT_EXPORT SelectSpecialCharDialog : public QDialog
@@ -56,7 +54,6 @@ private:
     friend class SelectSpecialCharDialogPrivate;
     Q_PRIVATE_SLOT(d, void _k_slotInsertChar())
 };
-
 }
 
 #endif // KPIMTEXTEDIT_SELECTSPECIAL_CHAR_H

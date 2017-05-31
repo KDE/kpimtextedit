@@ -24,8 +24,7 @@
 
 #include <QWidget>
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class RichTextEditor;
 class RichTextEditorWidgetPrivate;
 class KPIMTEXTEDIT_EXPORT RichTextEditorWidget : public QWidget

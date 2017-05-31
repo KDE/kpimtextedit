@@ -28,7 +28,6 @@ TextToSpeechLanguageComboBox::TextToSpeechLanguageComboBox(QWidget *parent)
 
 TextToSpeechLanguageComboBox::~TextToSpeechLanguageComboBox()
 {
-
 }
 
 void TextToSpeechLanguageComboBox::selectLocaleName(const QString &localeName)

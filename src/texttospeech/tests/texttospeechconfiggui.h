@@ -27,7 +27,6 @@ class TextToSpeechConfigGui : public QWidget
 public:
     explicit TextToSpeechConfigGui(QWidget *parent = nullptr);
     ~TextToSpeechConfigGui();
-
 };
 
 #endif // TEXTTOSPEECHConfigGUI_H

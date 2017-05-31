@@ -33,13 +33,13 @@ class KPIMTextEdit::RichTextEditorWidgetPrivate
 {
 public:
     RichTextEditorWidgetPrivate()
-        : mFindBar(nullptr),
-          mEditor(nullptr),
-          mTextToSpeechWidget(nullptr),
-          mSliderContainer(nullptr)
+        : mFindBar(nullptr)
+        , mEditor(nullptr)
+        , mTextToSpeechWidget(nullptr)
+        , mSliderContainer(nullptr)
     {
-
     }
+
     KPIMTextEdit::RichTextEditFindBar *mFindBar;
     RichTextEditor *mEditor;
     KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget;
@@ -47,15 +47,15 @@ public:
 };
 
 RichTextEditorWidget::RichTextEditorWidget(RichTextEditor *customEditor, QWidget *parent)
-    : QWidget(parent),
-      d(new KPIMTextEdit::RichTextEditorWidgetPrivate)
+    : QWidget(parent)
+    , d(new KPIMTextEdit::RichTextEditorWidgetPrivate)
 {
     init(customEditor);
 }
 
 RichTextEditorWidget::RichTextEditorWidget(QWidget *parent)
-    : QWidget(parent),
-      d(new KPIMTextEdit::RichTextEditorWidgetPrivate)
+    : QWidget(parent)
+    , d(new KPIMTextEdit::RichTextEditorWidgetPrivate)
 {
     init();
 }
@@ -193,4 +193,3 @@ void RichTextEditorWidget::slotFind()
         d->mFindBar->focusAndSetCursor();
     }
 }
-

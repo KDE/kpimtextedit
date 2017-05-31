@@ -34,15 +34,14 @@ class KPIMTextEdit::TextToSpeechWidgetPrivate
 {
 public:
     TextToSpeechWidgetPrivate()
-        : mNeedToHide(false),
-          mStopButton(nullptr),
-          mPlayPauseButton(nullptr),
-          mConfigureButton(nullptr),
-          mTextToSpeechInterface(nullptr),
-          mTextToSpeechActions(nullptr),
-          mVolume(nullptr)
+        : mNeedToHide(false)
+        , mStopButton(nullptr)
+        , mPlayPauseButton(nullptr)
+        , mConfigureButton(nullptr)
+        , mTextToSpeechInterface(nullptr)
+        , mTextToSpeechActions(nullptr)
+        , mVolume(nullptr)
     {
-
     }
 
     bool mNeedToHide;
@@ -56,8 +55,8 @@ public:
 };
 
 TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
-    : QWidget(parent),
-      d(new KPIMTextEdit::TextToSpeechWidgetPrivate)
+    : QWidget(parent)
+    , d(new KPIMTextEdit::TextToSpeechWidgetPrivate)
 {
     QHBoxLayout *hbox = new QHBoxLayout;
     setLayout(hbox);
@@ -150,7 +149,7 @@ TextToSpeechWidget::State TextToSpeechWidget::state() const
 void TextToSpeechWidget::slotStateChanged(KPIMTextEdit::TextToSpeech::State state)
 {
     switch (state) {
-    case KPIMTextEdit::TextToSpeech::Ready: {
+    case KPIMTextEdit::TextToSpeech::Ready:
         if (state == KPIMTextEdit::TextToSpeech::Ready) {
             d->mTextToSpeechActions->setState(TextToSpeechWidget::Stop);
             if (d->mConfigDialog) {
@@ -160,7 +159,6 @@ void TextToSpeechWidget::slotStateChanged(KPIMTextEdit::TextToSpeech::State stat
             }
         }
         break;
-    }
     default:
         //TODO
         break;

@@ -36,8 +36,8 @@
 using namespace KPIMTextEdit;
 
 TextEditFindBarBase::TextEditFindBarBase(QWidget *parent)
-    : QWidget(parent),
-      mHideWhenClose(true)
+    : QWidget(parent)
+    , mHideWhenClose(true)
 {
     QVBoxLayout *topLayout = new QVBoxLayout;
     QHBoxLayout *lay = new QHBoxLayout;
@@ -233,8 +233,8 @@ bool TextEditFindBarBase::event(QEvent *e)
             e->accept();
             closeBar();
             return true;
-        } else if (kev->key() == Qt::Key_Enter ||
-                   kev->key() == Qt::Key_Return) {
+        } else if (kev->key() == Qt::Key_Enter
+                   || kev->key() == Qt::Key_Return) {
             e->accept();
             if (shortCutOverride) {
                 return true;
@@ -253,4 +253,3 @@ bool TextEditFindBarBase::event(QEvent *e)
     }
     return QWidget::event(e);
 }
-

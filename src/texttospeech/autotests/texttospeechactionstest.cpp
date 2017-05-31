@@ -34,7 +34,6 @@ TextToSpeechActionsTest::TextToSpeechActionsTest(QObject *parent)
 
 TextToSpeechActionsTest::~TextToSpeechActionsTest()
 {
-
 }
 
 void TextToSpeechActionsTest::shouldHaveDefaultValue()

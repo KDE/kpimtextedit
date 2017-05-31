@@ -24,8 +24,7 @@
 #include "kpimtextedit_export.h"
 #include "texttospeechwidget.h"
 class QAction;
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class TextToSpeechActionsPrivate;
 class KPIMTEXTEDIT_EXPORT TextToSpeechActions : public QObject
 {

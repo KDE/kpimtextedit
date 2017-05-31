@@ -27,9 +27,7 @@
 
 #include <QTextCharFormat>
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT TableCellFormatDialog : public QDialog
 {
     Q_OBJECT
@@ -71,7 +69,6 @@ private:
     class TableCellFormatDialogPrivate;
     TableCellFormatDialogPrivate *const d;
 };
-
 }
 
 #endif // KPIMTEXTEDIT_TABLECELLFORMATDIALOG_H

@@ -21,8 +21,7 @@
 #define TEXTTOSPEECHCONFIGWIDGETTEST_H
 
 #include <QObject>
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class TextToSpeechConfigWidget;
 }
 class TextToSpeechConfigWidgetTest : public QObject

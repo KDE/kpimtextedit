@@ -29,9 +29,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class QPropertyAnimation;
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 /**
  * This widget is design to contain one child widget, the "content" widget.
  * It will start hidden by default. Calling slideIn() will slide in the content
@@ -94,7 +92,6 @@ private:
 
     void animTo(int height);
 };
-
 } /* namespace */
 
 #endif /* SLIDECONTAINER_H */

@@ -24,8 +24,7 @@
 #include <QVector>
 #include <QObject>
 #include "kpimtextedit_export.h"
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT AbstractTextToSpeechConfigInterface : public QObject
 {
     Q_OBJECT
@@ -43,4 +42,3 @@ public:
 }
 
 #endif // ABSTRACTTEXTTOSPEECHCONFIGINTERFACE_H
-

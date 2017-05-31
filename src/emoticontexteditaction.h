@@ -25,9 +25,7 @@
 
 #include <KActionMenu>
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT EmoticonTextEditAction : public KActionMenu
 {
     Q_OBJECT
@@ -42,7 +40,6 @@ private:
     class EmoticonTextEditActionPrivate;
     EmoticonTextEditActionPrivate *const d;
 };
-
 }
 
 #endif /* KPIMTEXTEDIT_EMOTICONTEXTEDITACTION_H */

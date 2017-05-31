@@ -31,21 +31,21 @@ class TextEditorCompleter::TextEditorCompleterPrivate
 {
 public:
     TextEditorCompleterPrivate(QTextEdit *editor, TextEditorCompleter *qq)
-        : completer(nullptr),
-          plainTextEdit(nullptr),
-          textEdit(editor),
-          q(qq)
+        : completer(nullptr)
+        , plainTextEdit(nullptr)
+        , textEdit(editor)
+        , q(qq)
     {
-
     }
+
     TextEditorCompleterPrivate(QPlainTextEdit *editor, TextEditorCompleter *qq)
-        : completer(nullptr),
-          plainTextEdit(editor),
-          textEdit(nullptr),
-          q(qq)
+        : completer(nullptr)
+        , plainTextEdit(editor)
+        , textEdit(nullptr)
+        , q(qq)
     {
-
     }
+
     void setCompletion(const QString &completion);
     QString wordUnderCursor() const;
     void createCompleter();
@@ -93,8 +93,8 @@ QString TextEditorCompleter::TextEditorCompleterPrivate::wordUnderCursor() const
         // of just the last char.
         int pos = tc.position() - 1;
         if (pos < 0 || eowStr.contains(document->characterAt(pos))
-                || document->characterAt(pos) == QChar(QChar::LineSeparator)
-                || document->characterAt(pos) == QChar(QChar::ParagraphSeparator)) {
+            || document->characterAt(pos) == QChar(QChar::LineSeparator)
+            || document->characterAt(pos) == QChar(QChar::ParagraphSeparator)) {
             break;
         }
         tc.movePosition(QTextCursor::Left, QTextCursor::KeepAnchor);
@@ -145,17 +145,15 @@ void TextEditorCompleter::TextEditorCompleterPrivate::completeText()
 }
 
 TextEditorCompleter::TextEditorCompleter(QTextEdit *editor, QObject *parent)
-    : QObject(parent),
-      d(new TextEditorCompleter::TextEditorCompleterPrivate(editor, this))
+    : QObject(parent)
+    , d(new TextEditorCompleter::TextEditorCompleterPrivate(editor, this))
 {
-
 }
 
 TextEditorCompleter::TextEditorCompleter(QPlainTextEdit *editor, QObject *parent)
-    : QObject(parent),
-      d(new TextEditorCompleter::TextEditorCompleterPrivate(editor, this))
+    : QObject(parent)
+    , d(new TextEditorCompleter::TextEditorCompleterPrivate(editor, this))
 {
-
 }
 
 TextEditorCompleter::~TextEditorCompleter()

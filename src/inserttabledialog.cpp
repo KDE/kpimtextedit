@@ -61,7 +61,8 @@ public:
 };
 
 InsertTableDialog::InsertTableDialog(QWidget *parent)
-    : QDialog(parent), d(new InsertTableDialogPrivate(this))
+    : QDialog(parent)
+    , d(new InsertTableDialogPrivate(this))
 {
 }
 

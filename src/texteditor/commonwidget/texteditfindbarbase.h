@@ -24,8 +24,7 @@
 #include <QWidget>
 #include <QTextDocument>
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class TextFindWidget;
 class TextReplaceWidget;
 class KPIMTEXTEDIT_EXPORT TextEditFindBarBase : public QWidget
@@ -83,7 +82,6 @@ protected:
     TextReplaceWidget *mReplaceWidget;
     bool mHideWhenClose;
 };
-
 }
 
 #endif // TEXTEDITFINDBARBASE_H

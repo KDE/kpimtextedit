@@ -24,12 +24,10 @@ using namespace KPIMTextEdit;
 AbstractTextToSpeechConfigInterface::AbstractTextToSpeechConfigInterface(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 AbstractTextToSpeechConfigInterface::~AbstractTextToSpeechConfigInterface()
 {
-
 }
 
 QVector<QLocale> AbstractTextToSpeechConfigInterface::availableLocales() const

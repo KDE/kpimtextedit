@@ -24,14 +24,13 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-namespace KPIMTextEdit
-{
-
+namespace KPIMTextEdit {
 class SelectSpecialCharDialogPrivate
 {
 public:
     SelectSpecialCharDialogPrivate(SelectSpecialCharDialog *qq)
-        : mSelectButton(nullptr), q(qq)
+        : mSelectButton(nullptr)
+        , q(qq)
     {
         q->setWindowTitle(i18n("Select Special Characters"));
 
@@ -76,7 +75,8 @@ void SelectSpecialCharDialogPrivate::_k_slotInsertChar()
 }
 
 SelectSpecialCharDialog::SelectSpecialCharDialog(QWidget *parent)
-    : QDialog(parent), d(new SelectSpecialCharDialogPrivate(this))
+    : QDialog(parent)
+    , d(new SelectSpecialCharDialogPrivate(this))
 {
 }
 
@@ -113,7 +113,6 @@ void SelectSpecialCharDialog::setOkButtonText(const QString &text)
 {
     d->mButtonBox->button(QDialogButtonBox::Ok)->setText(text);
 }
-
 }
 
 #include "moc_selectspecialchardialog.cpp"

@@ -24,8 +24,7 @@
 #include "texttospeechwidget.h"
 #include "abstracttexttospeechinterface.h"
 #include "kpimtextedit_export.h"
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class TextToSpeechWidget;
 class TextToSpeechInterfacePrivate;
 class KPIMTEXTEDIT_EXPORT TextToSpeechInterface : public AbstractTextToSpeechInterface

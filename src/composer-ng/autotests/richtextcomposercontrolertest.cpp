@@ -26,12 +26,10 @@
 RichTextComposerControlerTest::RichTextComposerControlerTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 RichTextComposerControlerTest::~RichTextComposerControlerTest()
 {
-
 }
 
 void RichTextComposerControlerTest::shouldAlignLeft()
@@ -150,7 +148,6 @@ void RichTextComposerControlerTest::shouldTextUnderline()
     QVERIFY(controler.richTextComposer()->hasFocus());
     QVERIFY(controler.richTextComposer()->acceptRichText());
     //TODO text format.
-
 }
 
 void RichTextComposerControlerTest::shouldTextStrikeOut()
@@ -165,7 +162,6 @@ void RichTextComposerControlerTest::shouldTextStrikeOut()
     QVERIFY(controler.richTextComposer()->hasFocus());
     QVERIFY(controler.richTextComposer()->acceptRichText());
     //TODO text format.
-
 }
 
 void RichTextComposerControlerTest::shouldFontFamily()
@@ -188,7 +184,6 @@ void RichTextComposerControlerTest::shouldFontSize()
     composer.show();
     QTest::qWaitForWindowExposed(&composer);
     //TODO
-
 }
 
 void RichTextComposerControlerTest::shouldFont()
@@ -200,7 +195,6 @@ void RichTextComposerControlerTest::shouldFont()
     composer.show();
     QTest::qWaitForWindowExposed(&composer);
     //TODO
-
 }
 
 void RichTextComposerControlerTest::shouldTextSuperScript()
@@ -215,7 +209,6 @@ void RichTextComposerControlerTest::shouldTextSuperScript()
     QVERIFY(controler.richTextComposer()->hasFocus());
     QVERIFY(controler.richTextComposer()->acceptRichText());
     //TODO
-
 }
 
 void RichTextComposerControlerTest::shouldTextSubScript()
@@ -231,7 +224,6 @@ void RichTextComposerControlerTest::shouldTextSubScript()
     QVERIFY(controler.richTextComposer()->acceptRichText());
 
     //TODO
-
 }
 
 QTEST_MAIN(RichTextComposerControlerTest)

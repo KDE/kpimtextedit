@@ -49,7 +49,6 @@ TextToSpeechGui::TextToSpeechGui(QWidget *parent)
 
 TextToSpeechGui::~TextToSpeechGui()
 {
-
 }
 
 void TextToSpeechGui::slotTextToSpeech()

@@ -28,7 +28,6 @@ RichTextEditorTest::RichTextEditorTest(QObject *parent)
 
 RichTextEditorTest::~RichTextEditorTest()
 {
-
 }
 
 void RichTextEditorTest::shouldHaveDefaultValue()
