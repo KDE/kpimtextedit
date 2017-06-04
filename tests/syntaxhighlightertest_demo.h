@@ -29,7 +29,7 @@ public:
     explicit SyntaxHighlighterTest(QTextDocument *doc);
     ~SyntaxHighlighterTest();
 protected:
-    void init() Q_DECL_OVERRIDE;
+    void init() override;
 };
 
 #endif

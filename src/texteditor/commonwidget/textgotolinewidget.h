@@ -40,8 +40,8 @@ Q_SIGNALS:
     void hideGotoLine();
 
 protected:
-    bool event(QEvent *e) Q_DECL_OVERRIDE;
-    void showEvent(QShowEvent *e) Q_DECL_OVERRIDE;
+    bool event(QEvent *e) override;
+    void showEvent(QShowEvent *e) override;
 
 public Q_SLOTS:
     void slotBlockCountChanged(int numberBlockCount);

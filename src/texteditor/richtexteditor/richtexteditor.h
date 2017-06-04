@@ -115,10 +115,10 @@ private Q_SLOTS:
 
 protected:
     virtual void addExtraMenuEntry(QMenu *menu, QPoint pos);
-    void contextMenuEvent(QContextMenuEvent *event) Q_DECL_OVERRIDE;
-    void focusInEvent(QFocusEvent *event) Q_DECL_OVERRIDE;
-    bool event(QEvent *ev) Q_DECL_OVERRIDE;
-    void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
+    void contextMenuEvent(QContextMenuEvent *event) override;
+    void focusInEvent(QFocusEvent *event) override;
+    bool event(QEvent *ev) override;
+    void keyPressEvent(QKeyEvent *event) override;
 
     QMenu *mousePopupMenu(QPoint pos);
     virtual Sonnet::SpellCheckDecorator *createSpellCheckDecorator();

@@ -34,11 +34,11 @@ public:
     explicit TextToSpeechInterface(TextToSpeechWidget *textToSpeechWidget, QObject *parent = nullptr);
     ~TextToSpeechInterface();
 
-    bool isReady() const Q_DECL_OVERRIDE;
-    void say(const QString &text) Q_DECL_OVERRIDE;
-    int volume() const Q_DECL_OVERRIDE;
-    void setVolume(int value) Q_DECL_OVERRIDE;
-    void reloadSettings() Q_DECL_OVERRIDE;
+    bool isReady() const override;
+    void say(const QString &text) override;
+    int volume() const override;
+    void setVolume(int value) override;
+    void reloadSettings() override;
 
 private:
     void stateChanged(KPIMTextEdit::TextToSpeechWidget::State state);

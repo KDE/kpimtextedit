@@ -106,7 +106,7 @@ public:
     KPIMTextEdit::RichTextComposerControler *composerControler() const;
     KPIMTextEdit::RichTextExternalComposer *externalComposer() const;
     KPIMTextEdit::RichTextComposerActions *composerActions() const;
-    void createHighlighter() Q_DECL_OVERRIDE;
+    void createHighlighter() override;
     virtual bool processAutoCorrection(QKeyEvent *event);
 
 public Q_SLOTS:
@@ -131,13 +131,13 @@ Q_SIGNALS:
     void externalEditorClosed();
 
 protected:
-    void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
-    Sonnet::SpellCheckDecorator *createSpellCheckDecorator() Q_DECL_OVERRIDE;
-    void insertFromMimeData(const QMimeData *source) Q_DECL_OVERRIDE;
-    bool canInsertFromMimeData(const QMimeData *source) const Q_DECL_OVERRIDE;
-    void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-    void clearDecorator() Q_DECL_OVERRIDE;
-    void updateHighLighter() Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent *event) override;
+    Sonnet::SpellCheckDecorator *createSpellCheckDecorator() override;
+    void insertFromMimeData(const QMimeData *source) override;
+    bool canInsertFromMimeData(const QMimeData *source) const override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
+    void clearDecorator() override;
+    void updateHighLighter() override;
     bool processKeyEvent(QKeyEvent *e);
 
 private:

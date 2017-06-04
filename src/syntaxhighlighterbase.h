@@ -49,7 +49,7 @@ public:
     explicit SyntaxHighlighterBase(QTextDocument *doc);
     ~SyntaxHighlighterBase();
 
-    void highlightBlock(const QString &text) Q_DECL_OVERRIDE;
+    void highlightBlock(const QString &text) override;
 
 protected:
     virtual void init() = 0;

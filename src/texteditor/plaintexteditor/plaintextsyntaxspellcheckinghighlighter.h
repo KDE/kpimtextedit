@@ -40,7 +40,7 @@ public:
     /**
      * Reimplemented to highlight quote blocks.
      */
-    void highlightBlock(const QString &text) Q_DECL_OVERRIDE;
+    void highlightBlock(const QString &text) override;
 
     void setSyntaxHighlighterRules(const QVector<KPIMTextEdit::Rule> &rule);
 protected:
@@ -51,13 +51,13 @@ protected:
      * @param start the beginning of text
      * @param count the amount of characters to set
      */
-    void unsetMisspelled(int start, int count) Q_DECL_OVERRIDE;
+    void unsetMisspelled(int start, int count) override;
 
     /**
      * Reimplemented to set the color of the misspelled word to a color
      * defined by setQuoteColor().
      */
-    void setMisspelled(int start, int count) Q_DECL_OVERRIDE;
+    void setMisspelled(int start, int count) override;
 
     virtual bool spellCheckBlock(const QString &text);
 private:

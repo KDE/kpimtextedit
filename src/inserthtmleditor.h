@@ -36,7 +36,7 @@ public:
     explicit InsertHtmlEditor(QWidget *parent = nullptr);
     ~InsertHtmlEditor();
 protected:
-    void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent *e) override;
 private:
     KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter;
     KSyntaxHighlighting::Repository mRepo;

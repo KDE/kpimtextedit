@@ -34,12 +34,12 @@ public:
     explicit TextToSpeechConfigInterface(QObject *parent = nullptr);
     ~TextToSpeechConfigInterface();
 
-    QVector<QLocale> availableLocales() const Q_DECL_OVERRIDE;
-    QLocale locale() const Q_DECL_OVERRIDE;
+    QVector<QLocale> availableLocales() const override;
+    QLocale locale() const override;
 
-    QStringList availableEngines() const Q_DECL_OVERRIDE;
-    QStringList availableVoices() const Q_DECL_OVERRIDE;
-    void setEngine(const QString &engineName) Q_DECL_OVERRIDE;
+    QStringList availableEngines() const override;
+    QStringList availableVoices() const override;
+    void setEngine(const QString &engineName) override;
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
     QTextToSpeech *mTextToSpeech;
 #endif

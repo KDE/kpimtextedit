@@ -35,17 +35,17 @@ public:
     ~RichTextEditFindBar();
 
 protected:
-    bool viewIsReadOnly() const Q_DECL_OVERRIDE;
-    bool documentIsEmpty() const Q_DECL_OVERRIDE;
-    bool searchInDocument(const QString &text, QTextDocument::FindFlags searchOptions) Q_DECL_OVERRIDE;
-    void autoSearchMoveCursor() Q_DECL_OVERRIDE;
+    bool viewIsReadOnly() const override;
+    bool documentIsEmpty() const override;
+    bool searchInDocument(const QString &text, QTextDocument::FindFlags searchOptions) override;
+    void autoSearchMoveCursor() override;
 
 public Q_SLOTS:
-    void slotSearchText(bool backward = false, bool isAutoSearch = true) Q_DECL_OVERRIDE;
+    void slotSearchText(bool backward = false, bool isAutoSearch = true) override;
 
 private Q_SLOTS:
-    void slotReplaceText() Q_DECL_OVERRIDE;
-    void slotReplaceAllText() Q_DECL_OVERRIDE;
+    void slotReplaceText() override;
+    void slotReplaceAllText() override;
 
 private:
     RichTextEditFindBarPrivate *const d;

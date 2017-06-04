@@ -94,15 +94,15 @@ protected:
     virtual void addExtraMenuEntry(QMenu *menu, QPoint pos);
 
 protected:
-    void contextMenuEvent(QContextMenuEvent *event) Q_DECL_OVERRIDE;
-    bool event(QEvent *ev) Q_DECL_OVERRIDE;
-    void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
+    void contextMenuEvent(QContextMenuEvent *event) override;
+    bool event(QEvent *ev) override;
+    void keyPressEvent(QKeyEvent *event) override;
     bool overrideShortcut(QKeyEvent *event);
     bool handleShortcut(QKeyEvent *event);
 
     virtual Sonnet::SpellCheckDecorator *createSpellCheckDecorator();
     void setHighlighter(Sonnet::Highlighter *_highLighter);
-    void focusInEvent(QFocusEvent *event) Q_DECL_OVERRIDE;
+    void focusInEvent(QFocusEvent *event) override;
     virtual void updateHighLighter();
     virtual void clearDecorator();
 
