@@ -461,6 +461,7 @@ int RichTextComposer::quoteLength(const QString &line) const
         for (int i = 0; i < lineLength; ++i) {
             if (line[i] == QLatin1Char('>') || line[i] == QLatin1Char('|')) {
                 quoteFound = true;
+                break;
             } else if (line[i] != QLatin1Char(' ')) {
                 startOfText = i;
                 break;
