@@ -98,17 +98,6 @@ void RichTextComposerControlerTest::shouldHaveDefaultValue()
     QVERIFY(!controler.richTextComposer()->acceptRichText());
 }
 
-void RichTextComposerControlerTest::shouldAddQuote()
-{
-#if 0
-    KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
-    composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
-
-    controler.alignLeft();
-#endif
-}
 
 void RichTextComposerControlerTest::shouldBoldText()
 {
@@ -245,6 +234,12 @@ void RichTextComposerControlerTest::shouldRemoveQuote_data()
     //Bug David, new line with quote
     QTest::newRow("removequotewithnewline") << QStringLiteral(">foo\n>\n>bla\n>blo\n") << QStringLiteral("foo\n\nbla\nblo\n");
 
+    QTest::newRow("removequote2") << QStringLiteral(">foo\n\nbla\n>blo\nbli") << QStringLiteral("foo\n\nbla\nblo\nbli");
+
+    QTest::newRow("twoquotes") << QStringLiteral(">>foo\n\nbla\n>blo\nbli") << QStringLiteral(">foo\n\nbla\nblo\nbli");
+
+    QTest::newRow("quoteintext") << QStringLiteral("foo>>\n\nbla\n>blo\nbli") << QStringLiteral("foo>>\n\nbla\nblo\nbli");
+    QTest::newRow("emptyline") << QStringLiteral("foo>>\n\n\nbla\n>blo\nbli") << QStringLiteral("foo>>\n\n\nbla\nblo\nbli");
 }
 
 void RichTextComposerControlerTest::shouldRemoveQuote()
@@ -261,6 +256,67 @@ void RichTextComposerControlerTest::shouldRemoveQuote()
     composer.setPlainText(input);
     controler.slotRemoveQuotes();
     QCOMPARE(composer.toPlainText(), output);
+}
+
+void RichTextComposerControlerTest::shouldRemoveQuoteWithSpecificQuote_data()
+{
+    QTest::addColumn<QString>("input");
+    QTest::addColumn<QString>("output");
+    QTest::addColumn<QString>("quote");
+    QTest::newRow("empty") << QString() << QString() << QString();
+    QTest::newRow("empty1") << QString() << QString() << QStringLiteral("QT");
+    QTest::newRow("removequote1") << QStringLiteral(">foo\n>bla\n>blo\n") << QStringLiteral(">foo\n>bla\n>blo\n") << QStringLiteral("QT");
+    QTest::newRow("removequote2") << QStringLiteral("QTfoo\nQTbla\n>blo\n") << QStringLiteral("foo\nbla\n>blo\n") << QStringLiteral("QT");
+    QTest::newRow("removequote3") << QStringLiteral("|foo\n|bla\n>blo\n") << QStringLiteral("foo\nbla\n>blo\n") << QStringLiteral("|");
+}
+
+void RichTextComposerControlerTest::shouldRemoveQuoteWithSpecificQuote()
+{
+    QFETCH(QString, input);
+    QFETCH(QString, output);
+    QFETCH(QString, quote);
+    KPIMTextEdit::RichTextComposer composer;
+    composer.setQuotePrefixName(quote);
+    KActionCollection *actionCollection = new KActionCollection(&composer);
+    composer.createActions(actionCollection);
+    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    composer.show();
+    QTest::qWaitForWindowExposed(&composer);
+
+    composer.setPlainText(input);
+    controler.slotRemoveQuotes();
+    QCOMPARE(composer.toPlainText(), output);
+}
+
+void RichTextComposerControlerTest::shouldAddQuote_data()
+{
+//    QTest::addColumn<QString>("input");
+//    QTest::addColumn<QString>("output");
+//    QTest::addColumn<QString>("quote");
+//    QTest::newRow("empty") << QString() << QString() << QString();
+//    QTest::newRow("empty1") << QString() << QString() << QStringLiteral("QT");
+//    QTest::newRow("removequote1") << QStringLiteral(">foo\n>bla\n>blo\n") << QStringLiteral("QT>foo\nQT>bla\nQT>blo\n") << QStringLiteral("QT");
+//    QTest::newRow("removequote2") << QStringLiteral("QTfoo\nQTbla\n>blo\n") << QStringLiteral("QTQTfoo\nQTQTbla\n>QTblo\n") << QStringLiteral("QT");
+//    QTest::newRow("removequote3") << QStringLiteral("|foo\n|bla\n>blo\n") << QStringLiteral("||foo\n||bla\n|>blo\n") << QStringLiteral("|");
+
+}
+
+void RichTextComposerControlerTest::shouldAddQuote()
+{
+//    QFETCH(QString, input);
+//    QFETCH(QString, output);
+//    QFETCH(QString, quote);
+//    KPIMTextEdit::RichTextComposer composer;
+//    composer.setQuotePrefixName(quote);
+//    KActionCollection *actionCollection = new KActionCollection(&composer);
+//    composer.createActions(actionCollection);
+//    KPIMTextEdit::RichTextComposerControler controler(&composer);
+//    composer.show();
+//    QTest::qWaitForWindowExposed(&composer);
+
+//    composer.setPlainText(input);
+//    controler.slotAddQuotes();
+//    QCOMPARE(composer.toPlainText(), QString(output + QChar::ParagraphSeparator));
 }
 
 

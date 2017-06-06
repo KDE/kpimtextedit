@@ -35,7 +35,6 @@ private Q_SLOTS:
     void shouldAlignRight();
     void shouldAlignJustify();
     void shouldHaveDefaultValue();
-    void shouldAddQuote();
     void shouldBoldText();
     void shouldItalicText();
     void shouldTextUnderline();
@@ -49,6 +48,12 @@ private Q_SLOTS:
 
     void shouldRemoveQuote_data();
     void shouldRemoveQuote();
+
+    void shouldRemoveQuoteWithSpecificQuote_data();
+    void shouldRemoveQuoteWithSpecificQuote();
+
+    void shouldAddQuote_data();
+    void shouldAddQuote();
 };
 
 #endif // RICHTEXTCOMPOSERCONTROLERTEST_H

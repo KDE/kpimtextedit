@@ -826,7 +826,7 @@ void RichTextComposerControler::slotRemoveQuotes()
     int selectionEnd = cursor.selectionEnd();
     while (block.isValid() && block.position() <= selectionEnd) {
         cursor.setPosition(block.position());
-        int length = richTextComposer()->isLineQuoted(block.text());
+        int length = richTextComposer()->quoteLength(block.text());
         if (length > 0) {
             cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, length);
             cursor.removeSelectedText();
