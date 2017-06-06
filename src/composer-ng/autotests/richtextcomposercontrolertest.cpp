@@ -226,4 +226,34 @@ void RichTextComposerControlerTest::shouldTextSubScript()
     //TODO
 }
 
+void RichTextComposerControlerTest::shouldRemoveQuote_data()
+{
+    QTest::addColumn<QString>("input");
+    QTest::addColumn<QString>("output");
+    QTest::newRow("removequote1") << QStringLiteral(">foo\n>bla\n>blo\n") << QStringLiteral("foo\nbla\nblo\n");
+    QTest::newRow("withoutquote") << QStringLiteral("bli\nblo\bla\n") << QStringLiteral("bli\nblo\bla\n");
+    QTest::newRow("removequote2") << QStringLiteral(">foo\n>bla\n>blo") << QStringLiteral("foo\nbla\nblo");
+    QTest::newRow("empty") << QString() << QString();
+    //Bug David, new line with quote
+    QTest::newRow("removequotewithnewline") << QStringLiteral(">foo\n>\n>bla\n>blo\n") << QStringLiteral("foo\n\nbla\nblo\n");
+
+}
+
+void RichTextComposerControlerTest::shouldRemoveQuote()
+{
+    QFETCH(QString, input);
+    QFETCH(QString, output);
+    KPIMTextEdit::RichTextComposer composer;
+    KActionCollection *actionCollection = new KActionCollection(&composer);
+    composer.createActions(actionCollection);
+    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    composer.show();
+    QTest::qWaitForWindowExposed(&composer);
+
+    composer.setPlainText(input);
+    controler.slotRemoveQuotes();
+    QCOMPARE(composer.toPlainText(), output);
+}
+
+
 QTEST_MAIN(RichTextComposerControlerTest)

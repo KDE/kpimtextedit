@@ -38,6 +38,7 @@
 #include <QAction>
 #include <QFileInfo>
 #include <QMimeData>
+#include <QDebug>
 
 using namespace KPIMTextEdit;
 
@@ -466,8 +467,9 @@ int RichTextComposer::quoteLength(const QString &line) const
             }
         }
         if (quoteFound) {
+            //We found a quote but it's just quote element => 1 => remove 1 char.
             if (startOfText == -1) {
-                startOfText = line.length() - 1;
+                startOfText = 1;
             }
             return startOfText;
         } else {
