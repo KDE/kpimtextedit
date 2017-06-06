@@ -47,6 +47,8 @@ private Q_SLOTS:
     void shouldTextSuperScript();
     void shouldTextSubScript();
 
+    void shouldRemoveQuote_data();
+    void shouldRemoveQuote();
 };
 
 #endif // RICHTEXTCOMPOSERCONTROLERTEST_H
