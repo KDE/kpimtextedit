@@ -19,6 +19,7 @@
 
 #include "richtextcomposeremailquotehighlighter.h"
 #include "richtextcomposer.h"
+#include <QRegularExpression>
 using namespace KPIMTextEdit;
 
 class Q_DECL_HIDDEN KPIMTextEdit::RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighterPrivate
@@ -81,7 +82,7 @@ void RichTextComposerEmailQuoteHighlighter::toggleSpellHighlighting(bool on)
 void RichTextComposerEmailQuoteHighlighter::highlightBlock(const QString &text)
 {
     QString simplified = text;
-    simplified = simplified.remove(QRegExp(QLatin1String("\\s"))).
+    simplified = simplified.remove(QRegularExpression(QStringLiteral("\\s"))).
                  replace(QLatin1Char('|'), QLatin1Char('>'));
 
     while (simplified.startsWith(QStringLiteral(">>>>"))) {
