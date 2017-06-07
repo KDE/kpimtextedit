@@ -427,7 +427,7 @@ void RichTextComposerControler::manageLink()
     delete linkDialog;
 }
 
-void RichTextComposerControler::RichTextComposerControler::updateLink(const QString &linkUrl, const QString &linkText)
+void RichTextComposerControler::updateLink(const QString &linkUrl, const QString &linkText)
 {
     d->updateLink(linkUrl, linkText);
 }
