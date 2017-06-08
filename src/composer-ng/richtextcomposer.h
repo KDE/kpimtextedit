@@ -95,7 +95,7 @@ public:
     QString quotePrefixName() const;
 
     void setCursorPositionFromStart(unsigned int pos);
-    int quoteLength(const QString &line) const;
+    int quoteLength(const QString &line, bool oneQuote = false) const;
     bool isLineQuoted(const QString &line) const;
     const QString defaultQuoteSign() const;
     void createActions(KActionCollection *ac);

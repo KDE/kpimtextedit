@@ -227,6 +227,7 @@ void RichTextComposerControlerTest::shouldRemoveQuote_data()
     QTest::newRow("removequotewithnewline") << QStringLiteral(">foo\n>\n>bla\n>blo\n") << QStringLiteral("foo\n\nbla\nblo\n");
 
     QTest::newRow("removequote2") << QStringLiteral(">foo\n\nbla\n>blo\nbli") << QStringLiteral("foo\n\nbla\nblo\nbli");
+    QTest::newRow("removequote2withspace") << QStringLiteral("> foo\n\nbla\n> blo\nbli") << QStringLiteral("foo\n\nbla\nblo\nbli");
 
     QTest::newRow("twoquotes") << QStringLiteral(">>foo\n\nbla\n>blo\nbli") << QStringLiteral(">foo\n\nbla\nblo\nbli");
 

@@ -446,7 +446,7 @@ QString RichTextComposer::quotePrefixName() const
     }
 }
 
-int RichTextComposer::quoteLength(const QString &line) const
+int RichTextComposer::quoteLength(const QString &line, bool oneQuote) const
 {
     if (!d->quotePrefix.simplified().isEmpty()) {
         if (line.startsWith(d->quotePrefix)) {
@@ -460,8 +460,10 @@ int RichTextComposer::quoteLength(const QString &line) const
         const int lineLength(line.length());
         for (int i = 0; i < lineLength; ++i) {
             if (line[i] == QLatin1Char('>') || line[i] == QLatin1Char('|')) {
+                if (quoteFound && oneQuote) {
+                    break;
+                }
                 quoteFound = true;
-                break;
             } else if (line[i] != QLatin1Char(' ')) {
                 startOfText = i;
                 break;
