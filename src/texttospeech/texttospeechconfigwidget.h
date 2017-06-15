@@ -37,6 +37,7 @@ public:
     void readConfig();
 
     void setTextToSpeechConfigInterface(AbstractTextToSpeechConfigInterface *interface);
+    void restoreDefaults();
 
 Q_SIGNALS:
     void configChanged(bool state);

@@ -135,6 +135,11 @@ void TextToSpeechConfigWidget::setTextToSpeechConfigInterface(AbstractTextToSpee
     slotUpdateSettings();
 }
 
+void TextToSpeechConfigWidget::restoreDefaults()
+{
+    //TODO
+}
+
 void TextToSpeechConfigWidget::updateAvailableEngine()
 {
     mAvailableEngine->clear();

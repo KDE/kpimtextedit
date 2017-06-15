@@ -37,12 +37,13 @@ TextToSpeechConfigDialog::TextToSpeechConfigDialog(QWidget *parent)
     mTextToSpeechConfigWidget = new TextToSpeechConfigWidget(parent);
     mainLayout->addWidget(mTextToSpeechConfigWidget);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults, this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &TextToSpeechConfigDialog::slotAccepted);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &TextToSpeechConfigDialog::reject);
+    connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &TextToSpeechConfigDialog::slotRestoreDefaults);
     mainLayout->addWidget(buttonBox);
     mTextToSpeechConfigWidget->readConfig();
     readConfig();
@@ -51,6 +52,11 @@ TextToSpeechConfigDialog::TextToSpeechConfigDialog(QWidget *parent)
 TextToSpeechConfigDialog::~TextToSpeechConfigDialog()
 {
     writeConfig();
+}
+
+void TextToSpeechConfigDialog::slotRestoreDefaults()
+{
+    mTextToSpeechConfigWidget->restoreDefaults();
 }
 
 void TextToSpeechConfigDialog::readConfig()

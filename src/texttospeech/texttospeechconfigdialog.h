@@ -31,10 +31,9 @@ public:
     explicit TextToSpeechConfigDialog(QWidget *parent = nullptr);
     ~TextToSpeechConfigDialog();
 
-private Q_SLOTS:
-    void slotAccepted();
-
 private:
+    void slotAccepted();
+    void slotRestoreDefaults();
     void readConfig();
     void writeConfig();
     KPIMTextEdit::TextToSpeechConfigWidget *mTextToSpeechConfigWidget;
