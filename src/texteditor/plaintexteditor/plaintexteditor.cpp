@@ -205,10 +205,11 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
         }
         if (d->supportFeatures & TextToSpeech) {
             if (KPIMTextEdit::TextToSpeech::self()->isReady()) {
-                QAction *speakAction = popup->addAction(i18n("Speak Text"));
-                speakAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
-                speakAction->setEnabled(!emptyDocument);
-                connect(speakAction, &QAction::triggered, this, &PlainTextEditor::slotSpeakText);
+                if (!emptyDocument) {
+                    QAction *speakAction = popup->addAction(i18n("Speak Text"));
+                    speakAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
+                    connect(speakAction, &QAction::triggered, this, &PlainTextEditor::slotSpeakText);
+                }
             }
         }
         if (webShortcutSupport() && textCursor().hasSelection()) {

@@ -242,10 +242,11 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
         }
 
         if (KPIMTextEdit::TextToSpeech::self()->isReady()) {
-            QAction *speakAction = popup->addAction(i18n("Speak Text"));
-            speakAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
-            speakAction->setEnabled(!emptyDocument);
-            connect(speakAction, &QAction::triggered, this, &RichTextEditor::slotSpeakText);
+            if (!emptyDocument) {
+                QAction *speakAction = popup->addAction(i18n("Speak Text"));
+                speakAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
+                connect(speakAction, &QAction::triggered, this, &RichTextEditor::slotSpeakText);
+            }
         }
         if (webShortcutSupport() && textCursor().hasSelection()) {
             popup->addSeparator();
