@@ -105,7 +105,7 @@ void TextToSpeechConfigWidget::readConfig()
     KConfigGroup grp = config.group("Settings");
     mRate->setValue(static_cast<int>(grp.readEntry("rate", 0) * 100));
     mPitch->setValue(static_cast<int>(grp.readEntry("pitch", 0) * 100));
-    mVolume->setValue(static_cast<int>(grp.readEntry("volume", 0)));
+    mVolume->setValue(static_cast<int>(grp.readEntry("volume", 50)));
     updateLocale();
 }
 
@@ -137,6 +137,10 @@ void TextToSpeechConfigWidget::setTextToSpeechConfigInterface(AbstractTextToSpee
 
 void TextToSpeechConfigWidget::restoreDefaults()
 {
+    mRate->setValue(0);
+    mPitch->setValue(0);
+    mVolume->setValue(50);
+
     //TODO
 }
 
