@@ -35,25 +35,27 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     : QWidget(parent)
     , mAbstractTextToSpeechConfigInterface(new TextToSpeechConfigInterface(this))
 {
-    QFormLayout *layout = new QFormLayout;
-    setLayout(layout);
-    mVolume = new QSlider;
+    QFormLayout *layout = new QFormLayout(this);
+    mVolume = new QSlider(this);
     mVolume->setObjectName(QStringLiteral("volume"));
     mVolume->setRange(0, 100);
     mVolume->setOrientation(Qt::Horizontal);
+    mVolume->setTickPosition(QSlider::TicksBelow);
     connect(mVolume, &QSlider::valueChanged, this, &TextToSpeechConfigWidget::valueChanged);
 
     layout->addRow(i18n("Volume:"), mVolume);
 
-    mRate = new QSlider;
+    mRate = new QSlider(this);
+    mRate->setTickPosition(QSlider::TicksBelow);
     mRate->setObjectName(QStringLiteral("rate"));
     mRate->setRange(-100, 100);
     mRate->setOrientation(Qt::Horizontal);
     layout->addRow(i18n("Rate:"), mRate);
     connect(mRate, &QSlider::valueChanged, this, &TextToSpeechConfigWidget::valueChanged);
 
-    mPitch = new QSlider;
+    mPitch = new QSlider(this);
     mPitch->setRange(-100, 100);
+    mPitch->setTickPosition(QSlider::TicksBelow);
     connect(mPitch, &QSlider::valueChanged, this, &TextToSpeechConfigWidget::valueChanged);
     mPitch->setObjectName(QStringLiteral("pitch"));
     mPitch->setOrientation(Qt::Horizontal);
@@ -65,7 +67,7 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     connect(mAvailableEngine, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::slotEngineChanged);
     connect(mAvailableEngine, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::valueChanged);
 
-    mLanguage = new KPIMTextEdit::TextToSpeechLanguageComboBox;
+    mLanguage = new KPIMTextEdit::TextToSpeechLanguageComboBox(this);
     mLanguage->setObjectName(QStringLiteral("language"));
     layout->addRow(i18n("Language:"), mLanguage);
     connect(mAvailableEngine, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::slotLanguageChanged);
