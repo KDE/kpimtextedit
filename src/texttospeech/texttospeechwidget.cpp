@@ -99,7 +99,7 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
     connect(d->mConfigureButton, &QToolButton::clicked, this, &TextToSpeechWidget::slotConfigure);
     hbox->addWidget(d->mConfigureButton);
 
-    d->mTextToSpeechInterface = new TextToSpeechInterface(this, this);
+    setTextToSpeechInterface(new TextToSpeechInterface(this, this));
     hide();
 }
 
@@ -174,4 +174,9 @@ void TextToSpeechWidget::setTextToSpeechInterface(AbstractTextToSpeechInterface 
 {
     delete d->mTextToSpeechInterface;
     d->mTextToSpeechInterface = interface;
+    //Update volume value
+    if (d->mTextToSpeechInterface) {
+        d->mTextToSpeechInterface->reloadSettings();
+        d->mVolume->setValue(interface->volume());
+    }
 }
