@@ -79,6 +79,7 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
     d->mVolume->setOrientation(Qt::Horizontal);
     d->mVolume->setObjectName(QStringLiteral("volumeslider"));
     d->mVolume->setRange(0, 100);
+    d->mVolume->setTickPosition(QSlider::TicksBelow);
     connect(d->mVolume, &QSlider::valueChanged, this, &TextToSpeechWidget::slotVolumeChanged);
     hbox->addWidget(d->mVolume);
 
