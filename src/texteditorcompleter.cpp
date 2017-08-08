@@ -70,7 +70,7 @@ void TextEditorCompleter::TextEditorCompleterPrivate::createCompleter()
     completer->setModelSorting(QCompleter::CaseSensitivelySortedModel);
     completer->setCaseSensitivity(Qt::CaseInsensitive);
     completer->setCompletionMode(QCompleter::PopupCompletion);
-    connect(completer, static_cast<void (QCompleter::*)(const QString &)>(&QCompleter::activated), q, &TextEditorCompleter::slotCompletion);
+    connect(completer, QOverload<const QString &>::of(&QCompleter::activated), q, &TextEditorCompleter::slotCompletion);
 }
 
 QString TextEditorCompleter::TextEditorCompleterPrivate::wordUnderCursor() const
