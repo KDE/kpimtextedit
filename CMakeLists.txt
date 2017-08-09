@@ -36,7 +36,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KPIMTEXTEDIT
 )
 
 set(QT_REQUIRED_VERSION "5.7.0")
-find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Widgets)
+find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
 find_package(Grantlee5 "5.1" CONFIG REQUIRED)
 set_package_properties(Grantlee5 PROPERTIES
     DESCRIPTION "A plug-in based String Template system for Qt"
@@ -88,6 +88,7 @@ else()
 endif()
 
 if(BUILD_TESTING)
+    find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
    add_definitions(-DBUILD_TESTING)
 endif(BUILD_TESTING)
 
