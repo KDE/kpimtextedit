@@ -28,24 +28,6 @@
 #endif
 
 namespace KPIMTextEdit {
-class TextToSpeechPrivate
-{
-public:
-    TextToSpeechPrivate()
-        : textToSpeech(new TextToSpeech)
-    {
-    }
-
-    ~TextToSpeechPrivate()
-    {
-        delete textToSpeech;
-    }
-
-    TextToSpeech *textToSpeech;
-};
-
-Q_GLOBAL_STATIC(TextToSpeechPrivate, sInstance)
-
 TextToSpeech::TextToSpeech(QObject *parent)
     : QObject(parent)
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
@@ -85,7 +67,8 @@ void TextToSpeech::reloadSettings()
 
 TextToSpeech *TextToSpeech::self()
 {
-    return sInstance->textToSpeech; //will create it
+    static TextToSpeech s_self;
+    return &s_self;
 }
 
 void TextToSpeech::slotStateChanged()
