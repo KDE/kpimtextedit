@@ -51,12 +51,10 @@ set_package_properties(Grantlee5 PROPERTIES
     URL "http://github.com/steveire/grantlee"
     PURPOSE "Required for the RichText composer"
     TYPE REQUIRED
-)
-find_package(Qt5Designer NO_MODULE)
-set_package_properties(Qt5Designer PROPERTIES
-    PURPOSE "Required to build the Qt Designer plugins"
-    TYPE OPTIONAL
-)
+    )
+
+find_package(KF5DesignerPlugin ${KF5_VERSION} CONFIG)
+set_package_properties(KF5DesignerPlugin PROPERTIES DESCRIPTION "KF5 designer plugin" TYPE OPTIONAL)
 
 ########### Find packages ###########
 find_package(KF5Codecs ${KF5_VERSION} CONFIG REQUIRED)
