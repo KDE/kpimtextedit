@@ -38,7 +38,7 @@ public:
 protected:
     void keyPressEvent(QKeyEvent *e) override;
 private:
-    KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter;
+    KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter = nullptr;
     KSyntaxHighlighting::Repository mRepo;
 };
 }

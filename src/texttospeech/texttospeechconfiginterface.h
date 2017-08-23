@@ -41,7 +41,7 @@ public:
     QStringList availableVoices() const override;
     void setEngine(const QString &engineName) override;
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
-    QTextToSpeech *mTextToSpeech;
+    QTextToSpeech *mTextToSpeech = nullptr;
 #endif
 };
 }

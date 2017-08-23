@@ -55,9 +55,9 @@ private:
     void computeSizeAndResize();
     QString mMessage;
     QString mDetails;
-    QTimer *mTimer;
+    QTimer *mTimer = nullptr;
     QPixmap mSymbol;
-    int mLineSpacing;
+    int mLineSpacing = 0;
 };
 }
 

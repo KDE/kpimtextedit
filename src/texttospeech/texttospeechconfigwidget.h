@@ -53,13 +53,13 @@ private:
     void updateAvailableLocales();
     void updateAvailableEngine();
     void updateAvailableVoices();
-    QSlider *mVolume;
-    QSlider *mRate;
-    QSlider *mPitch;
-    TextToSpeechLanguageComboBox *mLanguage;
-    AbstractTextToSpeechConfigInterface *mAbstractTextToSpeechConfigInterface;
-    QComboBox *mAvailableEngine;
-    QComboBox *mVoice;
+    QSlider *mVolume = nullptr;
+    QSlider *mRate = nullptr;
+    QSlider *mPitch = nullptr;
+    TextToSpeechLanguageComboBox *mLanguage = nullptr;
+    AbstractTextToSpeechConfigInterface *mAbstractTextToSpeechConfigInterface = nullptr;
+    QComboBox *mAvailableEngine = nullptr;
+    QComboBox *mVoice = nullptr;
 };
 }
 

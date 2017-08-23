@@ -78,9 +78,9 @@ private Q_SLOTS:
 
 protected:
     QString mLastSearchStr;
-    TextFindWidget *mFindWidget;
-    TextReplaceWidget *mReplaceWidget;
-    bool mHideWhenClose;
+    TextFindWidget *mFindWidget = nullptr;
+    TextReplaceWidget *mReplaceWidget = nullptr;
+    bool mHideWhenClose = true;
 };
 }
 

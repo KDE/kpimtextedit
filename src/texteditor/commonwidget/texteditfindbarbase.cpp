@@ -37,7 +37,6 @@ using namespace KPIMTextEdit;
 
 TextEditFindBarBase::TextEditFindBarBase(QWidget *parent)
     : QWidget(parent)
-    , mHideWhenClose(true)
 {
     QVBoxLayout *topLayout = new QVBoxLayout;
     QHBoxLayout *lay = new QHBoxLayout;

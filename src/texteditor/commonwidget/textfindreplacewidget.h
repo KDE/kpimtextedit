@@ -53,12 +53,12 @@ Q_SIGNALS:
     void searchStringEmpty(bool);
 
 private:
-    QLineEdit *mSearch;
-    QAction *mCaseSensitiveAct;
-    QAction *mWholeWordAct;
+    QLineEdit *mSearch = nullptr;
+    QAction *mCaseSensitiveAct = nullptr;
+    QAction *mWholeWordAct = nullptr;
 
-    QPushButton *mFindPrevBtn;
-    QPushButton *mFindNextBtn;
+    QPushButton *mFindPrevBtn = nullptr;
+    QPushButton *mFindNextBtn = nullptr;
 };
 
 class TextReplaceWidget : public QWidget
@@ -78,9 +78,9 @@ Q_SIGNALS:
     void replaceAllText();
 
 private:
-    QLineEdit *mReplace;
-    QPushButton *mReplaceBtn;
-    QPushButton *mReplaceAllBtn;
+    QLineEdit *mReplace = nullptr;
+    QPushButton *mReplaceBtn = nullptr;
+    QPushButton *mReplaceAllBtn = nullptr;
 };
 }
 #endif // TEXTFINDREPLACEWIDGET_H

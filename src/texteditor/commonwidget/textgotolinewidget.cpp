@@ -35,13 +35,11 @@ class KPIMTextEdit::TextGoToLineWidgetPrivate
 {
 public:
     TextGoToLineWidgetPrivate()
-        : mSpinbox(nullptr)
-        , mGoToLine(nullptr)
     {
     }
 
-    QSpinBox *mSpinbox;
-    QPushButton *mGoToLine;
+    QSpinBox *mSpinbox = nullptr;
+    QPushButton *mGoToLine = nullptr;
 };
 
 TextGoToLineWidget::TextGoToLineWidget(QWidget *parent)

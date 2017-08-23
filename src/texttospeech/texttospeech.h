@@ -75,7 +75,7 @@ private:
 
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
     QString mDefaultEngine;
-    QTextToSpeech *mTextToSpeech;
+    QTextToSpeech *mTextToSpeech = nullptr;
 #endif
 };
 }

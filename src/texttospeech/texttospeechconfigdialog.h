@@ -36,7 +36,7 @@ private:
     void slotRestoreDefaults();
     void readConfig();
     void writeConfig();
-    KPIMTextEdit::TextToSpeechConfigWidget *mTextToSpeechConfigWidget;
+    KPIMTextEdit::TextToSpeechConfigWidget *mTextToSpeechConfigWidget = nullptr;
 };
 }
 

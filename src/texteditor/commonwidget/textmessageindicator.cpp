@@ -30,8 +30,6 @@
 using namespace KPIMTextEdit;
 TextMessageIndicator::TextMessageIndicator(QWidget *parent)
     : QWidget(parent)
-    , mTimer(nullptr)
-    , mLineSpacing(0)
 {
     setObjectName(QStringLiteral("TextMessageIndicator"));
     setFocusPolicy(Qt::NoFocus);

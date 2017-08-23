@@ -82,10 +82,10 @@ public:
 
     QStringList ignoreSpellCheckingWords;
     PlainTextEditor *q;
-    KPIMTextEdit::TextMessageIndicator *mTextIndicator;
-    KIO::KUriFilterSearchProviderActions *webshortcutMenuManager;
-    Sonnet::SpellCheckDecorator *richTextDecorator;
-    Sonnet::Speller *speller;
+    KPIMTextEdit::TextMessageIndicator *mTextIndicator = nullptr;
+    KIO::KUriFilterSearchProviderActions *webshortcutMenuManager = nullptr;
+    Sonnet::SpellCheckDecorator *richTextDecorator = nullptr;
+    Sonnet::Speller *speller = nullptr;
 
     QString spellCheckingConfigFileName;
     QString spellCheckingLanguage;
