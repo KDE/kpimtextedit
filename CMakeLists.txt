@@ -69,10 +69,8 @@ find_package(KF5Sonnet ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5SyntaxHighlighting ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5WidgetsAddons ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5XmlGui ${KF5_VERSION} CONFIG REQUIRED)
-
-if (Qt5Designer_FOUND)
-    find_package(KF5DesignerPlugin ${KF5_VERSION} CONFIG REQUIRED)
-endif()
+find_package(KF5DesignerPlugin ${KF5_VERSION} CONFIG)
+set_package_properties(KF5DesignerPlugin PROPERTIES DESCRIPTION "KF5 designer plugin" TYPE OPTIONAL)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
 add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
