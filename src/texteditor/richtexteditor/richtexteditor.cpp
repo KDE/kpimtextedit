@@ -447,7 +447,9 @@ void RichTextEditor::checkSpelling(bool force)
         QPushButton *skipButton = new QPushButton(i18n("Skip"));
         buttonBox->addButton(skipButton, QDialogButtonBox::ActionRole);
         connect(skipButton, &QPushButton::clicked, spellDialog, &Sonnet::Dialog::close);
-        connect(skipButton, &QPushButton::clicked, this, &RichTextEditor::spellCheckingFinished);
+        if (force) {
+            connect(skipButton, &QPushButton::clicked, this, &RichTextEditor::spellCheckingFinished);
+        }
     } else {
         qCWarning(KPIMTEXTEDIT_LOG) << " Impossible to find qdialogbuttonbox";
     }
