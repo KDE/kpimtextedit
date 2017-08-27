@@ -59,9 +59,9 @@ public:
         okButton->setEnabled(enabled);
     }
 
-    InsertImageWidget *imageWidget;
-    QPushButton *okButton;
-    InsertImageDialog *q;
+    InsertImageWidget *imageWidget = nullptr;
+    QPushButton *okButton = nullptr;
+    InsertImageDialog *q = nullptr;
 };
 
 InsertImageDialog::InsertImageDialog(QWidget *parent)

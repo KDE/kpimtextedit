@@ -78,10 +78,10 @@ public:
     QColor mLinkColor;
     QTextCharFormat painterFormat;
     bool painterActive;
-    NestedListHelper *nestedListHelper;
-    RichTextComposer *richtextComposer;
-    RichTextComposerImages *richTextImages;
-    RichTextComposerControler *q;
+    NestedListHelper *nestedListHelper = nullptr;
+    RichTextComposer *richtextComposer = nullptr;
+    RichTextComposerImages *richTextImages = nullptr;
+    RichTextComposerControler *q = nullptr;
 };
 
 void RichTextComposerControler::RichTextComposerControlerPrivate::selectLinkText(QTextCursor *cursor) const

@@ -35,9 +35,9 @@ public:
     }
 
     QVector<KPIMTextEdit::Rule> rules;
-    PlainTextEditor *editor;
+    PlainTextEditor *editor = nullptr;
     QColor misspelledColor;
-    bool spellCheckingEnabled;
+    bool spellCheckingEnabled = false;
 };
 
 PlainTextSyntaxSpellCheckingHighlighter::PlainTextSyntaxSpellCheckingHighlighter(PlainTextEditor *plainText, const QColor &misspelledColor)

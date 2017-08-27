@@ -29,8 +29,8 @@ public:
     QColor col2;
     QColor col3;
     QColor misspelledColor;
-    bool spellCheckingEnabled;
-    RichTextComposer *parent;
+    bool spellCheckingEnabled = false;
+    RichTextComposer *parent = nullptr;
 };
 
 RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighter(RichTextComposer *textEdit, const QColor &normalColor, const QColor &quoteDepth1, const QColor &quoteDepth2,

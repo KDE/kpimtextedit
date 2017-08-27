@@ -59,11 +59,11 @@ public:
     }
 
     QString quotePrefix;
-    RichTextComposerControler *composerControler;
-    RichTextComposerActions *richTextComposerActions;
-    KPIMTextEdit::RichTextExternalComposer *externalComposer;
-    RichTextComposer *q;
-    bool forcePlainTextMarkup;
+    RichTextComposerControler *composerControler = nullptr;
+    RichTextComposerActions *richTextComposerActions = nullptr;
+    KPIMTextEdit::RichTextExternalComposer *externalComposer = nullptr;
+    RichTextComposer *q = nullptr;
+    bool forcePlainTextMarkup = false;
     RichTextComposer::Mode mode;
 };
 

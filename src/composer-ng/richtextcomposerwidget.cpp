@@ -32,7 +32,7 @@ public:
     {
     }
 
-    KPIMTextEdit::RichTextComposer *richTextComposer;
+    KPIMTextEdit::RichTextComposer *richTextComposer = nullptr;
 };
 
 RichTextComposerWidget::RichTextComposerWidget(QWidget *parent)

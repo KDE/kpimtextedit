@@ -63,10 +63,10 @@ public:
 
     void _k_slotInsertChar();
 
-    KCharSelect *mCharSelect;
-    QDialogButtonBox *mButtonBox;
-    QPushButton *mSelectButton;
-    SelectSpecialCharDialog *q;
+    KCharSelect *mCharSelect = nullptr;
+    QDialogButtonBox *mButtonBox = nullptr;
+    QPushButton *mSelectButton = nullptr;
+    SelectSpecialCharDialog *q = nullptr;
 };
 
 void SelectSpecialCharDialogPrivate::_k_slotInsertChar()

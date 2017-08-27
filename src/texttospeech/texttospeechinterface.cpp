@@ -30,7 +30,7 @@ public:
     {
     }
 
-    TextToSpeechWidget *mTextToSpeechWidget;
+    TextToSpeechWidget *mTextToSpeechWidget = nullptr;
 };
 
 TextToSpeechInterface::TextToSpeechInterface(TextToSpeechWidget *textToSpeechWidget, QObject *parent)

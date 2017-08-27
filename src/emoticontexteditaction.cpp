@@ -46,8 +46,8 @@ public:
         delete emoticonMenu;
     }
 
-    QMenu *emoticonMenu;
-    EmoticonTextEditSelector *selector;
+    QMenu *emoticonMenu = nullptr;
+    EmoticonTextEditSelector *selector = nullptr;
 };
 
 EmoticonTextEditAction::EmoticonTextEditAction(QObject *parent)

@@ -56,8 +56,8 @@ public:
         mainLayout->addWidget(buttonBox);
     }
 
-    InsertTableWidget *insertTableWidget;
-    InsertTableDialog *q;
+    InsertTableWidget *insertTableWidget = nullptr;
+    InsertTableDialog *q = nullptr;
 };
 
 InsertTableDialog::InsertTableDialog(QWidget *parent)

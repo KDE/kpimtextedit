@@ -29,7 +29,7 @@ public:
     {
     }
 
-    RichTextComposer *composerEditor;
+    RichTextComposer *composerEditor = nullptr;
 };
 
 RichTextComposerEmailQuoteDecorator::RichTextComposerEmailQuoteDecorator(RichTextComposer *textEdit)

@@ -38,10 +38,10 @@ public:
     {
     }
 
-    KPIMTextEdit::PlainTextEditFindBar *mFindBar;
-    PlainTextEditor *mEditor;
-    KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget;
-    KPIMTextEdit::SlideContainer *mSliderContainer;
+    KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;
+    PlainTextEditor *mEditor = nullptr;
+    KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
+    KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
 };
 
 PlainTextEditorWidget::PlainTextEditorWidget(PlainTextEditor *customEditor, QWidget *parent)

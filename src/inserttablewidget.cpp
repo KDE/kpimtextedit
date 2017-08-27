@@ -75,13 +75,13 @@ public:
         q->setLayout(gridLayout);
     }
 
-    QSpinBox *mColumns;
-    QSpinBox *mRows;
-    QSpinBox *mBorder;
-    QSpinBox *mLength;
-    KComboBox *mTypeOfLength;
+    QSpinBox *mColumns = nullptr;
+    QSpinBox *mRows = nullptr;
+    QSpinBox *mBorder = nullptr;
+    QSpinBox *mLength = nullptr;
+    KComboBox *mTypeOfLength = nullptr;
 
-    InsertTableWidget *q;
+    InsertTableWidget *q = nullptr;
 };
 
 InsertTableWidget::InsertTableWidget(QWidget *parent)

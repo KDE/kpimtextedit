@@ -42,10 +42,10 @@ public:
 
     void cannotStartProcess(const QString &commandLine);
     QString extEditorPath;
-    KProcess *externalEditorProcess;
-    QTemporaryFile *extEditorTempFile;
-    RichTextComposer *richTextComposer;
-    bool useExtEditor;
+    KProcess *externalEditorProcess = nullptr;
+    QTemporaryFile *extEditorTempFile = nullptr;
+    RichTextComposer *richTextComposer = nullptr;
+    bool useExtEditor = false;
 };
 
 RichTextExternalComposer::RichTextExternalComposer(RichTextComposer *composer, QObject *parent)

@@ -36,7 +36,7 @@ public:
     {
     }
 
-    QTextEdit *mView;
+    QTextEdit *mView = nullptr;
 };
 
 RichTextEditFindBar::RichTextEditFindBar(QTextEdit *view, QWidget *parent)

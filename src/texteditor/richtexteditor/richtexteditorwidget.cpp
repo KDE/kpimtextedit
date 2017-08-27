@@ -33,17 +33,13 @@ class KPIMTextEdit::RichTextEditorWidgetPrivate
 {
 public:
     RichTextEditorWidgetPrivate()
-        : mFindBar(nullptr)
-        , mEditor(nullptr)
-        , mTextToSpeechWidget(nullptr)
-        , mSliderContainer(nullptr)
     {
     }
 
-    KPIMTextEdit::RichTextEditFindBar *mFindBar;
-    RichTextEditor *mEditor;
-    KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget;
-    KPIMTextEdit::SlideContainer *mSliderContainer;
+    KPIMTextEdit::RichTextEditFindBar *mFindBar = nullptr;
+    RichTextEditor *mEditor = nullptr;
+    KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
+    KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
 };
 
 RichTextEditorWidget::RichTextEditorWidget(RichTextEditor *customEditor, QWidget *parent)

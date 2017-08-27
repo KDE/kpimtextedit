@@ -114,13 +114,13 @@ public:
         mainLayout->addWidget(buttonBox);
     }
 
-    QCheckBox *useBackgroundColor;
-    KColorButton *backgroundColor;
-    KComboBox *alignment;
-    QSpinBox *spacing;
-    QSpinBox *padding;
-    KPIMTextEdit::InsertTableWidget *tableWidget;
-    TableFormatDialog *q;
+    QCheckBox *useBackgroundColor = nullptr;
+    KColorButton *backgroundColor = nullptr;
+    KComboBox *alignment = nullptr;
+    QSpinBox *spacing = nullptr;
+    QSpinBox *padding = nullptr;
+    KPIMTextEdit::InsertTableWidget *tableWidget = nullptr;
+    TableFormatDialog *q = nullptr;
 };
 
 TableFormatDialog::TableFormatDialog(QWidget *parent)

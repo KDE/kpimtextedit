@@ -132,13 +132,13 @@ public:
     void _k_slotImageHeightChanged(int);
 
     qreal imageRatio;
-    QCheckBox *keepOriginalSize;
-    QCheckBox *keepImageRatio;
-    QSpinBox *width;
-    QSpinBox *height;
-    KUrlRequester *imageUrlRequester;
-    QLabel *preview;
-    InsertImageWidget *q;
+    QCheckBox *keepOriginalSize = nullptr;
+    QCheckBox *keepImageRatio = nullptr;
+    QSpinBox *width = nullptr;
+    QSpinBox *height = nullptr;
+    KUrlRequester *imageUrlRequester = nullptr;
+    QLabel *preview = nullptr;
+    InsertImageWidget *q = nullptr;
 };
 
 void InsertImageWidgetPrivate::_k_slotKeepOriginalSizeClicked(bool checked)

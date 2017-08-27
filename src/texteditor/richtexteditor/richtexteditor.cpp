@@ -85,14 +85,14 @@ public:
     }
 
     QStringList ignoreSpellCheckingWords;
-    RichTextEditor *q;
-    KPIMTextEdit::TextMessageIndicator *textIndicator;
+    RichTextEditor *q = nullptr;
+    KPIMTextEdit::TextMessageIndicator *textIndicator = nullptr;
     QString spellCheckingConfigFileName;
     QString spellCheckingLanguage;
     QTextDocumentFragment originalDoc;
-    Sonnet::SpellCheckDecorator *richTextDecorator;
-    Sonnet::Speller *speller;
-    KIO::KUriFilterSearchProviderActions *webshortcutMenuManager;
+    Sonnet::SpellCheckDecorator *richTextDecorator = nullptr;
+    Sonnet::Speller *speller = nullptr;
+    KIO::KUriFilterSearchProviderActions *webshortcutMenuManager = nullptr;
     RichTextEditor::SupportFeatures supportFeatures;
     int mInitialFontSize;
     bool customPalette;

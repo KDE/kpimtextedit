@@ -131,7 +131,7 @@ private:
     void reformatList(QTextBlock block);
     void reformatList();
 
-    QTextEdit *textEdit;
+    QTextEdit *textEdit = nullptr;
 
     int listBottomMargin;
     int listTopMargin;

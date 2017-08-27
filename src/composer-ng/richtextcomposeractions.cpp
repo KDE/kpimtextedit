@@ -75,51 +75,51 @@ public:
 
     QList<QAction *> richTextActionList;
 
-    KPIMTextEdit::RichTextComposerControler *composerControler;
-    KToggleAction *action_align_left;
-    KToggleAction *action_align_right;
-    KToggleAction *action_align_center;
-    KToggleAction *action_align_justify;
+    KPIMTextEdit::RichTextComposerControler *composerControler = nullptr;
+    KToggleAction *action_align_left = nullptr;
+    KToggleAction *action_align_right = nullptr;
+    KToggleAction *action_align_center = nullptr;
+    KToggleAction *action_align_justify = nullptr;
 
-    KToggleAction *action_direction_ltr;
-    KToggleAction *action_direction_rtl;
+    KToggleAction *action_direction_ltr = nullptr;
+    KToggleAction *action_direction_rtl = nullptr;
 
-    KToggleAction *action_text_superscript;
-    KToggleAction *action_text_subscript;
+    KToggleAction *action_text_superscript = nullptr;
+    KToggleAction *action_text_subscript = nullptr;
 
-    KToggleAction *action_text_bold;
-    KToggleAction *action_text_italic;
-    KToggleAction *action_text_underline;
-    KToggleAction *action_text_strikeout;
+    KToggleAction *action_text_bold = nullptr;
+    KToggleAction *action_text_italic = nullptr;
+    KToggleAction *action_text_underline = nullptr;
+    KToggleAction *action_text_strikeout = nullptr;
 
-    KFontAction *action_font_family;
-    KFontSizeAction *action_font_size;
+    KFontAction *action_font_family = nullptr;
+    KFontSizeAction *action_font_size = nullptr;
 
-    QAction *action_insert_horizontal_rule;
-    QAction *action_text_foreground_color;
-    QAction *action_text_background_color;
-    QAction *action_manage_link;
+    QAction *action_insert_horizontal_rule = nullptr;
+    QAction *action_text_foreground_color = nullptr;
+    QAction *action_text_background_color = nullptr;
+    QAction *action_manage_link = nullptr;
 
-    QAction *action_list_indent;
-    QAction *action_list_dedent;
+    QAction *action_list_indent = nullptr;
+    QAction *action_list_dedent = nullptr;
 
-    KSelectAction *action_list_style;
+    KSelectAction *action_list_style = nullptr;
 
-    QAction *action_paste_quotation;
-    QAction *action_add_quote_chars;
-    QAction *action_remove_quote_chars;
-    QAction *action_paste_without_formatting;
+    QAction *action_paste_quotation = nullptr;
+    QAction *action_add_quote_chars = nullptr;
+    QAction *action_remove_quote_chars = nullptr;
+    QAction *action_paste_without_formatting = nullptr;
 
-    QAction *action_add_image;
-    QAction *action_add_emoticon;
-    QAction *action_insert_html;
-    KPIMTextEdit::TableActionMenu *action_add_table;
-    QAction *action_delete_line;
-    QAction *action_format_reset;
+    QAction *action_add_image = nullptr;
+    QAction *action_add_emoticon = nullptr;
+    QAction *action_insert_html = nullptr;
+    KPIMTextEdit::TableActionMenu *action_add_table = nullptr;
+    QAction *action_delete_line = nullptr;
+    QAction *action_format_reset = nullptr;
 
-    KToggleAction *action_format_painter;
+    KToggleAction *action_format_painter = nullptr;
 
-    bool richTextEnabled;
+    bool richTextEnabled = false;
 };
 
 RichTextComposerActions::RichTextComposerActions(KPIMTextEdit::RichTextComposerControler *controler, QObject *parent)

@@ -51,10 +51,10 @@ public:
     void createCompleter();
     void completeText();
     QString excludeOfCharacters;
-    QCompleter *completer;
-    QPlainTextEdit *plainTextEdit;
-    QTextEdit *textEdit;
-    TextEditorCompleter *q;
+    QCompleter *completer = nullptr;
+    QPlainTextEdit *plainTextEdit = nullptr;
+    QTextEdit *textEdit = nullptr;
+    TextEditorCompleter *q = nullptr;
 };
 
 void TextEditorCompleter::TextEditorCompleterPrivate::createCompleter()

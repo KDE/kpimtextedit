@@ -62,32 +62,32 @@ public:
     void _k_slotSplitCell();
     void _k_updateActions(bool forceUpdate = false);
 
-    QAction *actionInsertTable;
+    QAction *actionInsertTable = nullptr;
 
-    QAction *actionInsertRowBelow;
-    QAction *actionInsertRowAbove;
+    QAction *actionInsertRowBelow = nullptr;
+    QAction *actionInsertRowAbove = nullptr;
 
-    QAction *actionInsertColumnBefore;
-    QAction *actionInsertColumnAfter;
+    QAction *actionInsertColumnBefore = nullptr;
+    QAction *actionInsertColumnAfter = nullptr;
 
-    QAction *actionRemoveRowBelow;
-    QAction *actionRemoveRowAbove;
+    QAction *actionRemoveRowBelow = nullptr;
+    QAction *actionRemoveRowAbove = nullptr;
 
-    QAction *actionRemoveColumnBefore;
-    QAction *actionRemoveColumnAfter;
+    QAction *actionRemoveColumnBefore = nullptr;
+    QAction *actionRemoveColumnAfter = nullptr;
 
-    QAction *actionMergeCell;
-    QAction *actionMergeSelectedCells;
-    QAction *actionSplitCell;
+    QAction *actionMergeCell = nullptr;
+    QAction *actionMergeSelectedCells = nullptr;
+    QAction *actionSplitCell = nullptr;
 
-    QAction *actionTableFormat;
-    QAction *actionTableCellFormat;
+    QAction *actionTableFormat = nullptr;
+    QAction *actionTableCellFormat = nullptr;
 
-    QAction *actionRemoveCellContents;
+    QAction *actionRemoveCellContents = nullptr;
 
-    QTextEdit *textEdit;
-    TableActionMenu *q;
-    bool richTextMode;
+    QTextEdit *textEdit = nullptr;
+    TableActionMenu *q = nullptr;
+    bool richTextMode = false;
 };
 
 void TableActionMenuPrivate::_k_slotRemoveCellContents()

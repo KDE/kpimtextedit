@@ -67,9 +67,9 @@ public:
     }
 
     void _k_slotTextChanged();
-    QPushButton *okButton;
-    InsertHtmlEditor *editor;
-    InsertHtmlDialog *q;
+    QPushButton *okButton = nullptr;
+    InsertHtmlEditor *editor = nullptr;
+    InsertHtmlDialog *q = nullptr;
 };
 
 void InsertHtmlDialogPrivate::_k_slotTextChanged()

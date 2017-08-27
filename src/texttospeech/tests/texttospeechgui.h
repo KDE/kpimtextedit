@@ -33,7 +33,7 @@ private Q_SLOTS:
     void slotTextToSpeech();
 
 private:
-    QTextEdit *mEdit;
+    QTextEdit *mEdit = nullptr;
 };
 
 #endif // TEXTTOSPEECHGUI_H

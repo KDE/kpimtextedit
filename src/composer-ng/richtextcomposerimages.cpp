@@ -46,7 +46,7 @@ public:
      */
     QStringList mImageNames;
 
-    RichTextComposer *composer;
+    RichTextComposer *composer = nullptr;
 };
 
 RichTextComposerImages::RichTextComposerImages(RichTextComposer *composer, QObject *parent)

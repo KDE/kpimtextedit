@@ -27,16 +27,13 @@ class KPIMTextEdit::TextToSpeechActionsPrivate
 {
 public:
     TextToSpeechActionsPrivate()
-        : mState(TextToSpeechWidget::Stop)
-        , mStopAction(nullptr)
-        , mPlayPauseAction(nullptr)
     {
     }
 
     void updateButtonState();
-    TextToSpeechWidget::State mState;
-    QAction *mStopAction;
-    QAction *mPlayPauseAction;
+    TextToSpeechWidget::State mState = TextToSpeechWidget::Stop;
+    QAction *mStopAction = nullptr;
+    QAction *mPlayPauseAction = nullptr;
 };
 
 TextToSpeechActions::TextToSpeechActions(QObject *parent)

@@ -77,11 +77,11 @@ public:
         mainLayout->addWidget(buttonBox);
     }
 
-    QCheckBox *useBackgroundColor;
+    QCheckBox *useBackgroundColor = nullptr;
 
-    KColorButton *backgroundColor;
-    KComboBox *verticalAlignment;
-    TableCellFormatDialog *q;
+    KColorButton *backgroundColor = nullptr;
+    KComboBox *verticalAlignment = nullptr;
+    TableCellFormatDialog *q = nullptr;
 };
 
 TableCellFormatDialog::TableCellFormatDialog(QWidget *parent)
