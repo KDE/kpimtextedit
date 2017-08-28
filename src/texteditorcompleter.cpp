@@ -36,6 +36,7 @@ public:
         , textEdit(editor)
         , q(qq)
     {
+        createCompleter();
     }
 
     TextEditorCompleterPrivate(QPlainTextEdit *editor, TextEditorCompleter *qq)
@@ -44,6 +45,7 @@ public:
         , textEdit(nullptr)
         , q(qq)
     {
+        createCompleter();
     }
 
     void setCompletion(const QString &completion);
@@ -168,7 +170,6 @@ QCompleter *TextEditorCompleter::completer() const
 
 void TextEditorCompleter::setCompleterStringList(const QStringList &listWord)
 {
-    d->createCompleter();
     d->completer->setModel(new QStringListModel(QStringList() << listWord << QStringLiteral("TESTING"), d->completer));
 }
 
