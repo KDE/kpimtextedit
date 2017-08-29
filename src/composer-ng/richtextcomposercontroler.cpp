@@ -416,7 +416,7 @@ void RichTextComposerControler::selectLinkText() const
 void RichTextComposerControler::manageLink()
 {
     selectLinkText();
-    KLinkDialog *linkDialog = new KLinkDialog(richTextComposer());
+    QPointer<KLinkDialog> linkDialog = new KLinkDialog(richTextComposer());
     linkDialog->setLinkText(currentLinkText());
     linkDialog->setLinkUrl(currentLinkUrl());
 
