@@ -26,7 +26,6 @@
 class KActionCollection;
 
 namespace KPIMTextEdit {
-class RichTextComposerSignatures;
 class RichTextComposerControler;
 class RichTextComposerActions;
 class RichTextExternalComposer;

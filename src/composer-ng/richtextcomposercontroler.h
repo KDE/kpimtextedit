@@ -23,7 +23,6 @@
 #include <QObject>
 #include "richtextcomposer.h"
 #include "kpimtextedit_export.h"
-class QTextCursor;
 namespace KPIMTextEdit {
 class RichTextComposer;
 class NestedListHelper;
