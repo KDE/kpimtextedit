@@ -56,8 +56,7 @@ Q_SIGNALS:
     void itemSelected(const QString &);
 
 private:
-    class EmoticonTextEditSelectorPrivate;
-    EmoticonTextEditSelectorPrivate *const d;
+    QListWidget *mListEmoticon = nullptr;
 };
 }
 

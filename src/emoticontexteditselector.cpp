@@ -61,41 +61,29 @@ QString EmoticonTextEditItem::pixmapPath() const
     return mPixmapPath;
 }
 
-class EmoticonTextEditSelector::EmoticonTextEditSelectorPrivate
-{
-public:
-    EmoticonTextEditSelectorPrivate()
-    {
-    }
-
-    QListWidget *listEmoticon = nullptr;
-};
-
 EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     : QWidget(parent)
-    , d(new EmoticonTextEditSelectorPrivate())
 {
     QHBoxLayout *lay = new QHBoxLayout(this);
     lay->setSpacing(0);
     lay->setContentsMargins(0, 0, 0, 0);
-    d->listEmoticon = new QListWidget(this);
-    lay->addWidget(d->listEmoticon);
-    d->listEmoticon->setViewMode(QListView::IconMode);
-    d->listEmoticon->setSelectionMode(QAbstractItemView::SingleSelection);
-    d->listEmoticon->setMouseTracking(true);
-    d->listEmoticon->setDragEnabled(false);
-    connect(d->listEmoticon, &QListWidget::itemEntered, this, &EmoticonTextEditSelector::slotMouseOverItem);
-    connect(d->listEmoticon, &QListWidget::itemClicked, this, &EmoticonTextEditSelector::slotEmoticonClicked);
+    mListEmoticon = new QListWidget(this);
+    lay->addWidget(mListEmoticon);
+    mListEmoticon->setViewMode(QListView::IconMode);
+    mListEmoticon->setSelectionMode(QAbstractItemView::SingleSelection);
+    mListEmoticon->setMouseTracking(true);
+    mListEmoticon->setDragEnabled(false);
+    connect(mListEmoticon, &QListWidget::itemEntered, this, &EmoticonTextEditSelector::slotMouseOverItem);
+    connect(mListEmoticon, &QListWidget::itemClicked, this, &EmoticonTextEditSelector::slotEmoticonClicked);
 }
 
 EmoticonTextEditSelector::~EmoticonTextEditSelector()
 {
-    delete d;
 }
 
 void EmoticonTextEditSelector::slotCreateEmoticonList()
 {
-    d->listEmoticon->clear();
+    mListEmoticon->clear();
     static QString cachedEmoticonsThemeName;
     if (cachedEmoticonsThemeName.isEmpty()) {
         cachedEmoticonsThemeName = KEmoticons::currentThemeName();
@@ -119,18 +107,18 @@ void EmoticonTextEditSelector::slotCreateEmoticonList()
     for (QHash<QString, QStringList>::const_iterator it = list.constBegin(); it != end; ++it) {
         const QString str = it.value().first();
         if (!exclude.contains(str)) {
-            new EmoticonTextEditItem(str, it.key(), d->listEmoticon);
+            new EmoticonTextEditItem(str, it.key(), mListEmoticon);
         }
     }
 
-    d->listEmoticon->setIconSize(QSize(32, 32));
+    mListEmoticon->setIconSize(QSize(32, 32));
 }
 
 void EmoticonTextEditSelector::slotMouseOverItem(QListWidgetItem *item)
 {
     item->setSelected(true);
-    if (!d->listEmoticon->hasFocus()) {
-        d->listEmoticon->setFocus();
+    if (!mListEmoticon->hasFocus()) {
+        mListEmoticon->setFocus();
     }
 }
 
