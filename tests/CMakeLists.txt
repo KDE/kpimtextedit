@@ -13,6 +13,3 @@ target_link_libraries(slidecontainer_gui
     KF5PimTextEdit
     )
 
-add_executable(syntaxhighlightertest_demo syntaxhighlightertest_demo.cpp)
-target_link_libraries(syntaxhighlightertest_demo KF5PimTextEdit Qt5::Widgets)
-

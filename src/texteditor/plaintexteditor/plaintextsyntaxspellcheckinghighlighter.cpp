@@ -19,13 +19,50 @@
 
 #include "plaintexteditor.h"
 #include "plaintextsyntaxspellcheckinghighlighter.h"
-
-#include "syntaxhighlighterbase.h"
 #include "kpimtextedit_debug.h"
+
+#include <KSyntaxHighlighting/Definition>
+#include <KSyntaxHighlighting/Format>
+#include <KSyntaxHighlighting/State>
+#include <KSyntaxHighlighting/Theme>
+
+#include <vector>
+
+Q_DECLARE_METATYPE(QTextBlock)
 
 using namespace KPIMTextEdit;
 
-class Q_DECL_HIDDEN KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter::PlainTextSyntaxSpellCheckingHighlighterPrivate
+namespace KPIMTextEdit {
+struct SpellCheckRange
+{
+    SpellCheckRange(int o, int l)
+        : offset(o)
+        , length(l)
+    {}
+
+    int end() const
+    {
+        return offset + length;
+    }
+
+    int offset;
+    int length;
+};
+
+QDebug operator<<(QDebug dbg, const SpellCheckRange &s)
+{
+    dbg << '(' << s.offset << ',' << s.length << ')';
+    return dbg;
+}
+
+class TextBlockUserData : public QTextBlockUserData
+{
+public:
+    KSyntaxHighlighting::State state;
+    QTextBlockUserData *spellData = nullptr;
+};
+
+class PlainTextSyntaxSpellCheckingHighlighterPrivate
 {
 public:
     PlainTextSyntaxSpellCheckingHighlighterPrivate(PlainTextEditor *plainText)
@@ -34,16 +71,24 @@ public:
     {
     }
 
-    QVector<KPIMTextEdit::Rule> rules;
     PlainTextEditor *editor = nullptr;
     QColor misspelledColor;
     bool spellCheckingEnabled = false;
+
+    // We can't use QTextBlock user data, Sonnet is occupying that already
+    // and we can't just daisy-chain them, as QTextBlock deletes the previous
+    // one when setting a new one. Instead, we need to store this out-of-band.
+    QHash<int, KSyntaxHighlighting::State> blockState;
+
+    std::vector<SpellCheckRange> spellCheckRanges;
 };
+}
 
 PlainTextSyntaxSpellCheckingHighlighter::PlainTextSyntaxSpellCheckingHighlighter(PlainTextEditor *plainText, const QColor &misspelledColor)
     : Sonnet::Highlighter(plainText)
-    , d(new PlainTextSyntaxSpellCheckingHighlighter::PlainTextSyntaxSpellCheckingHighlighterPrivate(plainText))
+    , d(new PlainTextSyntaxSpellCheckingHighlighterPrivate(plainText))
 {
+    qRegisterMetaType<QTextBlock>();
     d->misspelledColor = misspelledColor;
     setAutomatic(false);
 }
@@ -61,38 +106,42 @@ void PlainTextSyntaxSpellCheckingHighlighter::toggleSpellHighlighting(bool on)
     }
 }
 
-void PlainTextSyntaxSpellCheckingHighlighter::setSyntaxHighlighterRules(const QVector<KPIMTextEdit::Rule> &rule)
+void PlainTextSyntaxSpellCheckingHighlighter::setDefinition(const KSyntaxHighlighting::Definition &def)
 {
-    d->rules = rule;
+    const auto needsRehighlight = definition() != def;
+    AbstractHighlighter::setDefinition(def);
+    if (needsRehighlight)
+        rehighlight();
 }
 
 void PlainTextSyntaxSpellCheckingHighlighter::highlightBlock(const QString &text)
 {
-    for (const KPIMTextEdit::Rule &rule : qAsConst(d->rules)) {
-        const QRegularExpression expression(rule.pattern);
-        if (!expression.isValid()) {
-            const QString errorString = expression.errorString();
-            qCDebug(KPIMTEXTEDIT_LOG) << "expression is invalid, pattern:" << rule.pattern << " error :" << errorString;
-        }
+    d->spellCheckRanges.clear();
 
-        QRegularExpressionMatch match = expression.match(text);
-
-        int index = match.capturedStart();
-        while (index >= 0 && match.hasMatch()) {
-            setFormat(index, match.capturedLength(), rule.format);
-            match = expression.match(text, index + match.capturedLength());
-            index = match.capturedStart();
-        }
+    KSyntaxHighlighting::State state;
+    if (currentBlock().position() > 0) {
+        const auto prevBlock = currentBlock().previous();
+        state = d->blockState.value(prevBlock.userState());
     }
-    if (d->spellCheckingEnabled && spellCheckBlock(text) && d->editor->isEnabled()) {
+
+    state = highlightLine(text, state);
+    if (d->spellCheckingEnabled && d->editor->isEnabled() && !d->spellCheckRanges.empty()) {
         Highlighter::highlightBlock(text);
     }
-}
 
-bool PlainTextSyntaxSpellCheckingHighlighter::spellCheckBlock(const QString &text)
-{
-    Q_UNUSED(text);
-    return true;
+    if (currentBlockState() <= 0) { // first time we highlight this
+        setCurrentBlockState(d->blockState.size() + 1);
+        d->blockState.insert(currentBlockState(), state);
+        return;
+    }
+
+    if (d->blockState.value(currentBlockState()) == state)
+        return;
+    d->blockState.insert(currentBlockState(), state);
+
+    const auto nextBlock = currentBlock().next();
+    if (nextBlock.isValid())
+        QMetaObject::invokeMethod(this, "rehighlightBlock", Qt::QueuedConnection, Q_ARG(QTextBlock, nextBlock));
 }
 
 void PlainTextSyntaxSpellCheckingHighlighter::unsetMisspelled(int start, int count)
@@ -104,5 +153,46 @@ void PlainTextSyntaxSpellCheckingHighlighter::unsetMisspelled(int start, int cou
 void PlainTextSyntaxSpellCheckingHighlighter::setMisspelled(int start, int count)
 {
     setMisspelledColor(d->misspelledColor);
-    Sonnet::Highlighter::setMisspelled(start, count);
+    for (const auto &range : d->spellCheckRanges) {
+        if (range.offset <= start && range.end() >= start + count) {
+            auto f = format(start);
+            f.setFontUnderline(true);
+            f.setUnderlineStyle(QTextCharFormat::SpellCheckUnderline);
+            f.setUnderlineColor(d->misspelledColor);
+            setFormat(start, count, f);
+            return;
+        }
+    }
+}
+
+void PlainTextSyntaxSpellCheckingHighlighter::applyFormat(int offset, int length, const KSyntaxHighlighting::Format &format)
+{
+    if (format.spellCheck() && length > 0) {
+        if (d->spellCheckRanges.empty())
+            d->spellCheckRanges.push_back({offset, length});
+        else if (d->spellCheckRanges.back().end() + 1 == offset)
+            d->spellCheckRanges.back().length += length;
+        else
+            d->spellCheckRanges.push_back({offset, length});
+    }
+
+    if (format.isDefaultTextStyle(theme()) || length == 0)
+        return;
+
+    QTextCharFormat tf;
+    if (format.hasTextColor(theme()))
+        tf.setForeground(format.textColor(theme()));
+    if (format.hasBackgroundColor(theme()))
+        tf.setBackground(format.backgroundColor(theme()));
+
+    if (format.isBold(theme()))
+        tf.setFontWeight(QFont::Bold);
+    if (format.isItalic(theme()))
+        tf.setFontItalic(true);
+    if (format.isUnderline(theme()))
+        tf.setFontUnderline(true);
+    if (format.isStrikeThrough(theme()))
+        tf.setFontStrikeOut(true);
+
+    QSyntaxHighlighter::setFormat(offset, length, tf);
 }

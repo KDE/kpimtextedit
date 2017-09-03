@@ -56,7 +56,6 @@ set(kpimtextedit_SRCS
     tableformatdialog.cpp
     textutils.cpp
     inserttablewidget.cpp
-    syntaxhighlighterbase.cpp
     texteditorcompleter.cpp
     inserthtmleditor.cpp
     slidecontainer.cpp
@@ -114,7 +113,6 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
     InsertTableDialog
     InsertTableWidget
     SelectSpecialCharDialog
-    SyntaxHighlighterBase
     SlideContainer
     TableCellFormatDialog
     TableFormatDialog

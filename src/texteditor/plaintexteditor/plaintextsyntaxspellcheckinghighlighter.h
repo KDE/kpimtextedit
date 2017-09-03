@@ -23,13 +23,17 @@
 #include "kpimtextedit_export.h"
 
 #include <Sonnet/Highlighter>
-namespace KPIMTextEdit {
-class Rule;
+#include <KSyntaxHighlighting/SyntaxHighlighter>
+
+namespace KSyntaxHighlighting {
+class Format;
 }
 
 namespace KPIMTextEdit {
 class PlainTextEditor;
-class KPIMTEXTEDIT_EXPORT PlainTextSyntaxSpellCheckingHighlighter : public Sonnet::Highlighter
+class PlainTextSyntaxSpellCheckingHighlighterPrivate;
+
+class KPIMTEXTEDIT_EXPORT PlainTextSyntaxSpellCheckingHighlighter : public Sonnet::Highlighter, public KSyntaxHighlighting::AbstractHighlighter
 {
 public:
     explicit PlainTextSyntaxSpellCheckingHighlighter(PlainTextEditor *plainText, const QColor &misspelledColor = Qt::red);
@@ -37,12 +41,13 @@ public:
 
     void toggleSpellHighlighting(bool on);
 
+    void setDefinition(const KSyntaxHighlighting::Definition &def) override;
+
     /**
      * Reimplemented to highlight quote blocks.
      */
     void highlightBlock(const QString &text) override;
 
-    void setSyntaxHighlighterRules(const QVector<KPIMTextEdit::Rule> &rule);
 protected:
     /**
      * Reimplemented, the base version sets the text color to black, which
@@ -59,9 +64,8 @@ protected:
      */
     void setMisspelled(int start, int count) override;
 
-    virtual bool spellCheckBlock(const QString &text);
+    void applyFormat(int offset, int length, const KSyntaxHighlighting::Format &format) override;
 private:
-    class PlainTextSyntaxSpellCheckingHighlighterPrivate;
     PlainTextSyntaxSpellCheckingHighlighterPrivate *const d;
 };
 }
