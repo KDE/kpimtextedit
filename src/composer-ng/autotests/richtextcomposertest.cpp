@@ -50,7 +50,6 @@ RichTextComposerTest::RichTextComposerTest(QObject *parent)
 
 RichTextComposerTest::~RichTextComposerTest()
 {
-
 }
 
 void RichTextComposerTest::testFormattingUsed()
@@ -472,12 +471,16 @@ void RichTextComposerTest::testWrappedPlainText_data()
     QTest::addColumn<QString>("input");
     QTest::addColumn<QString>("output");
 
-    QString defaultStr = QStringLiteral("http://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\n  https://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\ntest ftp://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\nftps://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\n  ldap://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test");
+    QString defaultStr = QStringLiteral(
+        "http://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\n  https://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\ntest ftp://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\nftps://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test\n  ldap://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test");
     QTest::newRow("default") << defaultStr << defaultStr;
     QTest::newRow("empty") << QString() << QString();
-    QTest::newRow("wrap") << QStringLiteral("foosdfsdf sdsf sdfsdfsfs fsf sdfs df sfsdf dsf sdfsdf sf sf sfsdf sdsdf") << QStringLiteral("foosdfsdf sdsf sdfsdfsfs fsf sdfs df sfsdf \ndsf sdfsdf sf sf sfsdf sdsdf");
-    QTest::newRow("wrap-2") << QStringLiteral("test-test-test-test-test-test-test-test-test-test-test-test-test") << QStringLiteral("test-test-test-test-test-test-test-test-test-\ntest-test-test-test");
-    QTest::newRow("wrap-3") << QStringLiteral("test-test-test-test-test-test-test-test-test-test-test-test-test\n\n") << QStringLiteral("test-test-test-test-test-test-test-test-test-\ntest-test-test-test\n\n");
+    QTest::newRow("wrap") << QStringLiteral("foosdfsdf sdsf sdfsdfsfs fsf sdfs df sfsdf dsf sdfsdf sf sf sfsdf sdsdf") << QStringLiteral(
+        "foosdfsdf sdsf sdfsdfsfs fsf sdfs df sfsdf \ndsf sdfsdf sf sf sfsdf sdsdf");
+    QTest::newRow("wrap-2") << QStringLiteral("test-test-test-test-test-test-test-test-test-test-test-test-test")
+                            << QStringLiteral("test-test-test-test-test-test-test-test-test-\ntest-test-test-test");
+    QTest::newRow("wrap-3") << QStringLiteral("test-test-test-test-test-test-test-test-test-test-test-test-test\n\n") << QStringLiteral(
+        "test-test-test-test-test-test-test-test-test-\ntest-test-test-test\n\n");
 }
 
 void RichTextComposerTest::testWrappedPlainText()

@@ -38,7 +38,8 @@ struct SpellCheckRange
     SpellCheckRange(int o, int l)
         : offset(o)
         , length(l)
-    {}
+    {
+    }
 
     int end() const
     {
@@ -110,8 +111,9 @@ void PlainTextSyntaxSpellCheckingHighlighter::setDefinition(const KSyntaxHighlig
 {
     const auto needsRehighlight = definition() != def;
     AbstractHighlighter::setDefinition(def);
-    if (needsRehighlight)
+    if (needsRehighlight) {
         rehighlight();
+    }
 }
 
 void PlainTextSyntaxSpellCheckingHighlighter::highlightBlock(const QString &text)
@@ -135,13 +137,15 @@ void PlainTextSyntaxSpellCheckingHighlighter::highlightBlock(const QString &text
         return;
     }
 
-    if (d->blockState.value(currentBlockState()) == state)
+    if (d->blockState.value(currentBlockState()) == state) {
         return;
+    }
     d->blockState.insert(currentBlockState(), state);
 
     const auto nextBlock = currentBlock().next();
-    if (nextBlock.isValid())
+    if (nextBlock.isValid()) {
         QMetaObject::invokeMethod(this, "rehighlightBlock", Qt::QueuedConnection, Q_ARG(QTextBlock, nextBlock));
+    }
 }
 
 void PlainTextSyntaxSpellCheckingHighlighter::unsetMisspelled(int start, int count)
@@ -168,31 +172,39 @@ void PlainTextSyntaxSpellCheckingHighlighter::setMisspelled(int start, int count
 void PlainTextSyntaxSpellCheckingHighlighter::applyFormat(int offset, int length, const KSyntaxHighlighting::Format &format)
 {
     if (format.spellCheck() && length > 0) {
-        if (d->spellCheckRanges.empty())
+        if (d->spellCheckRanges.empty()) {
             d->spellCheckRanges.push_back({offset, length});
-        else if (d->spellCheckRanges.back().end() + 1 == offset)
+        } else if (d->spellCheckRanges.back().end() + 1 == offset) {
             d->spellCheckRanges.back().length += length;
-        else
+        } else {
             d->spellCheckRanges.push_back({offset, length});
+        }
     }
 
-    if (format.isDefaultTextStyle(theme()) || length == 0)
+    if (format.isDefaultTextStyle(theme()) || length == 0) {
         return;
+    }
 
     QTextCharFormat tf;
-    if (format.hasTextColor(theme()))
+    if (format.hasTextColor(theme())) {
         tf.setForeground(format.textColor(theme()));
-    if (format.hasBackgroundColor(theme()))
+    }
+    if (format.hasBackgroundColor(theme())) {
         tf.setBackground(format.backgroundColor(theme()));
+    }
 
-    if (format.isBold(theme()))
+    if (format.isBold(theme())) {
         tf.setFontWeight(QFont::Bold);
-    if (format.isItalic(theme()))
+    }
+    if (format.isItalic(theme())) {
         tf.setFontItalic(true);
-    if (format.isUnderline(theme()))
+    }
+    if (format.isUnderline(theme())) {
         tf.setFontUnderline(true);
-    if (format.isStrikeThrough(theme()))
+    }
+    if (format.isStrikeThrough(theme())) {
         tf.setFontStrikeOut(true);
+    }
 
     QSyntaxHighlighter::setFormat(offset, length, tf);
 }

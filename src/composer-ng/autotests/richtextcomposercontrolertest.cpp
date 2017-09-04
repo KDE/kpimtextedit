@@ -96,7 +96,6 @@ void RichTextComposerControlerTest::shouldHaveDefaultValue()
     QVERIFY(!controler.richTextComposer()->acceptRichText());
 }
 
-
 void RichTextComposerControlerTest::shouldBoldText()
 {
     KPIMTextEdit::RichTextComposer composer;
@@ -291,7 +290,6 @@ void RichTextComposerControlerTest::shouldAddQuote_data()
 //    QTest::newRow("removequote1") << QStringLiteral(">foo\n>bla\n>blo\n") << QStringLiteral("QT>foo\nQT>bla\nQT>blo\n") << QStringLiteral("QT");
 //    QTest::newRow("removequote2") << QStringLiteral("QTfoo\nQTbla\n>blo\n") << QStringLiteral("QTQTfoo\nQTQTbla\n>QTblo\n") << QStringLiteral("QT");
 //    QTest::newRow("removequote3") << QStringLiteral("|foo\n|bla\n>blo\n") << QStringLiteral("||foo\n||bla\n|>blo\n") << QStringLiteral("|");
-
 }
 
 void RichTextComposerControlerTest::shouldAddQuote()
@@ -311,6 +309,5 @@ void RichTextComposerControlerTest::shouldAddQuote()
 //    controler.slotAddQuotes();
 //    QCOMPARE(composer.toPlainText(), QString(output + QChar::ParagraphSeparator));
 }
-
 
 QTEST_MAIN(RichTextComposerControlerTest)
