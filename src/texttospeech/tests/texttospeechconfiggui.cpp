@@ -32,8 +32,7 @@
 TextToSpeechConfigGui::TextToSpeechConfigGui(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *hbox = new QHBoxLayout;
-    setLayout(hbox);
+    QHBoxLayout *hbox = new QHBoxLayout(this);
     KPIMTextEdit::TextToSpeechConfigWidget *widget = new KPIMTextEdit::TextToSpeechConfigWidget(this);
     hbox->addWidget(widget);
 }
