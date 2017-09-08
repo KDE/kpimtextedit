@@ -38,7 +38,7 @@ using namespace KPIMTextEdit;
 TextEditFindBarBase::TextEditFindBarBase(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *topLayout = new QVBoxLayout;
+    QVBoxLayout *topLayout = new QVBoxLayout(this);
     QHBoxLayout *lay = new QHBoxLayout;
     topLayout->addLayout(lay);
 
@@ -73,7 +73,6 @@ TextEditFindBarBase::TextEditFindBarBase(QWidget *parent)
     connect(mReplaceWidget, &TextReplaceWidget::replaceAllText, this, &TextEditFindBarBase::slotReplaceAllText);
     setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
     hide();
-    setLayout(topLayout);
 }
 
 TextEditFindBarBase::~TextEditFindBarBase()
