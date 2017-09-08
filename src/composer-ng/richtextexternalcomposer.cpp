@@ -33,10 +33,7 @@ class Q_DECL_HIDDEN RichTextExternalComposer::RichTextExternalComposerPrivate
 {
 public:
     RichTextExternalComposerPrivate(RichTextComposer *composer)
-        : externalEditorProcess(nullptr)
-        , extEditorTempFile(nullptr)
-        , richTextComposer(composer)
-        , useExtEditor(false)
+        : richTextComposer(composer)
     {
     }
 

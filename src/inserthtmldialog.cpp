@@ -37,8 +37,7 @@ public:
         : q(qq)
     {
         q->setWindowTitle(i18nc("@title:window", "Insert HTML"));
-        QVBoxLayout *lay = new QVBoxLayout;
-        q->setLayout(lay);
+        QVBoxLayout *lay = new QVBoxLayout(q);
         QLabel *label = new QLabel(i18n("Insert HTML tags and texts:"));
         lay->addWidget(label);
         editor = new InsertHtmlEditor;

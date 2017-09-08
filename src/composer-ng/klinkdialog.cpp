@@ -31,25 +31,9 @@
 #include <QVBoxLayout>
 
 using namespace KPIMTextEdit;
-/**
-  Private class that helps to provide binary compatibility between releases.
-  @internal
-*/
-//@cond PRIVATE
-class KLinkDialog::KLinkDialogPrivate
-{
-public:
-    QLabel *textLabel = nullptr;
-    QLineEdit *textLineEdit = nullptr;
-    QLabel *linkUrlLabel = nullptr;
-    QLineEdit *linkUrlLineEdit = nullptr;
-    QDialogButtonBox *buttonBox = nullptr;
-};
-//@endcond
 
 KLinkDialog::KLinkDialog(QWidget *parent)
     : QDialog(parent)
-    , d(new KLinkDialog::KLinkDialogPrivate)
 {
     setWindowTitle(i18n("Manage Link"));
     setModal(true);
@@ -58,60 +42,59 @@ KLinkDialog::KLinkDialog(QWidget *parent)
 
     QGridLayout *grid = new QGridLayout;
 
-    d->textLabel = new QLabel(i18n("Link Text:"), this);
-    d->textLineEdit = new QLineEdit(this);
-    d->textLineEdit->setClearButtonEnabled(true);
-    d->linkUrlLabel = new QLabel(i18n("Link URL:"), this);
-    d->linkUrlLineEdit = new QLineEdit(this);
-    d->linkUrlLineEdit->setClearButtonEnabled(true);
+    textLabel = new QLabel(i18n("Link Text:"), this);
+    textLineEdit = new QLineEdit(this);
+    textLineEdit->setClearButtonEnabled(true);
+    linkUrlLabel = new QLabel(i18n("Link URL:"), this);
+    linkUrlLineEdit = new QLineEdit(this);
+    linkUrlLineEdit->setClearButtonEnabled(true);
 
-    grid->addWidget(d->textLabel, 0, 0);
-    grid->addWidget(d->textLineEdit, 0, 1);
-    grid->addWidget(d->linkUrlLabel, 1, 0);
-    grid->addWidget(d->linkUrlLineEdit, 1, 1);
+    grid->addWidget(textLabel, 0, 0);
+    grid->addWidget(textLineEdit, 0, 1);
+    grid->addWidget(linkUrlLabel, 1, 0);
+    grid->addWidget(linkUrlLineEdit, 1, 1);
 
     layout->addLayout(grid);
 
-    d->buttonBox = new QDialogButtonBox(this);
-    d->buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
-    connect(d->buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
-    connect(d->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
-    layout->addWidget(d->buttonBox);
+    buttonBox = new QDialogButtonBox(this);
+    buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
+    layout->addWidget(buttonBox);
 
-    d->textLineEdit->setFocus();
-    d->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
-    connect(d->textLineEdit, &QLineEdit::textChanged, this, &KLinkDialog::slotTextChanged);
+    textLineEdit->setFocus();
+    buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+    connect(textLineEdit, &QLineEdit::textChanged, this, &KLinkDialog::slotTextChanged);
 }
 
 KLinkDialog::~KLinkDialog()
 {
-    delete d;
 }
 
 void KLinkDialog::slotTextChanged(const QString &text)
 {
-    d->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(!text.trimmed().isEmpty());
+    buttonBox->button(QDialogButtonBox::Ok)->setEnabled(!text.trimmed().isEmpty());
 }
 
 void KLinkDialog::setLinkText(const QString &linkText)
 {
-    d->textLineEdit->setText(linkText);
+    textLineEdit->setText(linkText);
     if (!linkText.trimmed().isEmpty()) {
-        d->linkUrlLineEdit->setFocus();
+        linkUrlLineEdit->setFocus();
     }
 }
 
 void KLinkDialog::setLinkUrl(const QString &linkUrl)
 {
-    d->linkUrlLineEdit->setText(linkUrl);
+    linkUrlLineEdit->setText(linkUrl);
 }
 
 QString KLinkDialog::linkText() const
 {
-    return d->textLineEdit->text().trimmed();
+    return textLineEdit->text().trimmed();
 }
 
 QString KLinkDialog::linkUrl() const
 {
-    return d->linkUrlLineEdit->text();
+    return linkUrlLineEdit->text();
 }

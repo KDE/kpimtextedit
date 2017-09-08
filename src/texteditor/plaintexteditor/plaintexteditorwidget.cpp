@@ -31,10 +31,6 @@ class KPIMTextEdit::PlainTextEditorWidgetPrivate
 {
 public:
     PlainTextEditorWidgetPrivate()
-        : mFindBar(nullptr)
-        , mEditor(nullptr)
-        , mTextToSpeechWidget(nullptr)
-        , mSliderContainer(nullptr)
     {
     }
 

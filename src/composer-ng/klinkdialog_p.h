@@ -26,7 +26,9 @@
 
 #include <QDialog>
 
-class QString;
+class QDialogButtonBox;
+class QLabel;
+class QLineEdit;
 namespace KPIMTextEdit {
 /**
     @short Dialog to allow user to configure a hyperlink.
@@ -83,10 +85,11 @@ private Q_SLOTS:
     void slotTextChanged(const QString &);
 
 private:
-    //@cond PRIVATE
-    class KLinkDialogPrivate;
-    KLinkDialogPrivate *const d;
-    //@endcond
+    QLabel *textLabel = nullptr;
+    QLineEdit *textLineEdit = nullptr;
+    QLabel *linkUrlLabel = nullptr;
+    QLineEdit *linkUrlLineEdit = nullptr;
+    QDialogButtonBox *buttonBox = nullptr;
 };
 }
 //@endcond

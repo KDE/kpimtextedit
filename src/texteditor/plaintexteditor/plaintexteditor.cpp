@@ -91,7 +91,7 @@ public:
     QString spellCheckingLanguage;
     QTextDocumentFragment originalDoc;
     PlainTextEditor::SupportFeatures supportFeatures;
-    int mInitialFontSize;
+    int mInitialFontSize = 0;
     bool customPalette;
     bool activateLanguageMenu;
     bool checkSpellingEnabled;

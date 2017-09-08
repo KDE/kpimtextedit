@@ -34,13 +34,6 @@ class KPIMTextEdit::TextToSpeechWidgetPrivate
 {
 public:
     TextToSpeechWidgetPrivate()
-        : mNeedToHide(false)
-        , mStopButton(nullptr)
-        , mPlayPauseButton(nullptr)
-        , mConfigureButton(nullptr)
-        , mTextToSpeechInterface(nullptr)
-        , mTextToSpeechActions(nullptr)
-        , mVolume(nullptr)
     {
     }
 
