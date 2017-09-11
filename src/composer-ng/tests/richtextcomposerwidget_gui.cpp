@@ -19,7 +19,6 @@
 
 #include <KLocalizedString>
 #include <QApplication>
-#include <KAboutData>
 #include <QCommandLineParser>
 #include <QStandardPaths>
 #include <QToolBar>
@@ -34,15 +33,10 @@ int main(int argc, char **argv)
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
 
-    KAboutData aboutData(QStringLiteral("richtextcomposerwidget_gui"), i18n("RichTextComposerWidgetTest_Gui"), QStringLiteral("1.0"));
-    aboutData.setShortDescription(i18n("Test for richtextcomposertest widget"));
     QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
-    aboutData.setupCommandLine(&parser);
     parser.process(app);
-    aboutData.processCommandLine(&parser);
     KPIMTextEdit::RichTextComposer *richtextcomposerwidget = new KPIMTextEdit::RichTextComposer;
     KActionCollection *ac = new KActionCollection(richtextcomposerwidget);
     richtextcomposerwidget->createActions(ac);
