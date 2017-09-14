@@ -85,7 +85,7 @@ private Q_SLOTS:
 
 private:
     QPointer<QWidget> mContent;
-    QWeakPointer<QPropertyAnimation> mAnim;
+    QPointer<QPropertyAnimation> mAnim;
     bool mSlidingOut;
 
     void adjustContentGeometry();
