@@ -24,10 +24,8 @@
 #include "richtextcomposeremailquotehighlighter.h"
 #include "nestedlisthelper_p.h"
 #include "richtextexternalcomposer.h"
-#include <KLocalizedString>
 #include <QTextBlock>
 #include <QTextLayout>
-#include <QApplication>
 #include <QClipboard>
 
 #include "richtextcomposeremailquotedecorator.h"
@@ -38,7 +36,6 @@
 #include <QAction>
 #include <QFileInfo>
 #include <QMimeData>
-#include <QDebug>
 
 using namespace KPIMTextEdit;
 

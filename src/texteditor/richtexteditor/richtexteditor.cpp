@@ -42,7 +42,6 @@
 
 #include <QMenu>
 #include <QContextMenuEvent>
-#include <QDBusInterface>
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
 #include <QTextCursor>

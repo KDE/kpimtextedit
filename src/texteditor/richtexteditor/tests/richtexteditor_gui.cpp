@@ -19,7 +19,6 @@
 
 #include "texteditor/richtexteditor/richtexteditorwidget.h"
 
-#include <KLocalizedString>
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QStandardPaths>

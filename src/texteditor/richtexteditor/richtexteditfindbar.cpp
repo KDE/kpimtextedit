@@ -20,7 +20,6 @@
 #include "richtexteditfindbar.h"
 #include "texteditor/commonwidget/textfindreplacewidget.h"
 
-#include <KLocalizedString>
 #include <kmessagebox.h>
 #include <klineedit.h>
 #include <KColorScheme>

@@ -19,7 +19,6 @@
 
 #include "texteditor/plaintexteditor/plaintexteditorwidget.h"
 
-#include <KLocalizedString>
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QStandardPaths>

@@ -23,7 +23,6 @@
 #include <KLocalizedString>
 #include <KIconTheme>
 #include <KStandardGuiItem>
-#include <KMessageBox>
 #include <KStandardAction>
 #include <KCursor>
 #include <QIcon>
@@ -36,7 +35,6 @@
 #include "texttospeech/texttospeech.h"
 
 #include <QMenu>
-#include <QDBusInterface>
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
 #include <QTextDocumentFragment>

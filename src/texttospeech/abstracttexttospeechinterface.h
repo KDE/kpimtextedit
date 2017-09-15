@@ -21,8 +21,6 @@
 #define ABSTRACTTEXTTOSPEECHINTERFACE_H
 #include "kpimtextedit_export.h"
 #include <QObject>
-#include <QVector>
-#include <QLocale>
 namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT AbstractTextToSpeechInterface : public QObject
 {

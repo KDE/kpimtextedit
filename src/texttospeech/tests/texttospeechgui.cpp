@@ -22,7 +22,6 @@
 #include <KLocalizedString>
 #include <QApplication>
 #include <QTextEdit>
-#include <QVBoxLayout>
 #include <QCommandLineParser>
 #include <QMainWindow>
 #include <QAction>

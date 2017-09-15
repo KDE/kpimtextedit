@@ -20,13 +20,10 @@
 #include "texttospeechconfiggui.h"
 #include "texttospeech/texttospeechconfigwidget.h"
 #include "texttospeech/texttospeech.h"
-#include <KLocalizedString>
 #include <QApplication>
-#include <QTextEdit>
-#include <QVBoxLayout>
 #include <QCommandLineParser>
-#include <QMainWindow>
 #include <QStandardPaths>
+#include <QHBoxLayout>
 
 TextToSpeechConfigGui::TextToSpeechConfigGui(QWidget *parent)
     : QWidget(parent)

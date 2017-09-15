@@ -31,7 +31,6 @@
 #include <QSpinBox>
 #include <QVBoxLayout>
 #include <QMimeDatabase>
-#include <QDebug>
 
 namespace KPIMTextEdit {
 static inline QString resolveAlias(const QString &name)

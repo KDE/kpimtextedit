@@ -39,7 +39,6 @@
 #include <QTextDocumentFragment>
 #include "textutils.h"
 #include "insertimagedialog.h"
-#include <QDebug>
 
 using namespace KPIMTextEdit;
 

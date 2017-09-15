@@ -20,7 +20,6 @@
 #ifndef TEXTTOSPEECHWIDGET_H
 #define TEXTTOSPEECHWIDGET_H
 
-#include <QPointer>
 #include <QWidget>
 #include "kpimtextedit_export.h"
 #include "texttospeech.h"
