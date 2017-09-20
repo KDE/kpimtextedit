@@ -59,8 +59,7 @@ public:
         q->connect(buttonBox, &QDialogButtonBox::rejected, q, &QDialog::reject);
 
         lay->addWidget(buttonBox);
-        q->connect(editor, SIGNAL(textChanged()),
-                   q, SLOT(_k_slotTextChanged()));
+        q->connect(editor, &InsertHtmlEditor::textChanged, q, [this]() {_k_slotTextChanged(); });
         okButton->setEnabled(false);
         q->resize(640, 480);
     }

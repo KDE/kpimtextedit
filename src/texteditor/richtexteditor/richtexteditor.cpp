@@ -458,7 +458,8 @@ void RichTextEditor::checkSpelling(bool force)
     connect(spellDialog, &Sonnet::Dialog::replace, this, &RichTextEditor::slotSpellCheckerCorrected);
     connect(spellDialog, &Sonnet::Dialog::misspelling, this, &RichTextEditor::slotSpellCheckerMisspelling);
     connect(spellDialog, &Sonnet::Dialog::autoCorrect, this, &RichTextEditor::slotSpellCheckerAutoCorrect);
-    connect(spellDialog, SIGNAL(done(QString)), this, SLOT(slotSpellCheckerFinished()));
+    connect(spellDialog, QOverload<const QString &>::of(&Sonnet::Dialog::done),
+            this, &RichTextEditor::slotSpellCheckerFinished);
     connect(spellDialog, &Sonnet::Dialog::cancel, this, &RichTextEditor::slotSpellCheckerCanceled);
     connect(spellDialog, &Sonnet::Dialog::spellCheckStatus, this, &RichTextEditor::spellCheckStatus);
     connect(spellDialog, &Sonnet::Dialog::languageChanged, this, &RichTextEditor::languageChanged);

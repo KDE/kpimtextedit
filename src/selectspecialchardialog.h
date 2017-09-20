@@ -52,7 +52,6 @@ Q_SIGNALS:
 private:
     SelectSpecialCharDialogPrivate *const d;
     friend class SelectSpecialCharDialogPrivate;
-    Q_PRIVATE_SLOT(d, void _k_slotInsertChar())
 };
 }
 
