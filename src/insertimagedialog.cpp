@@ -41,8 +41,7 @@ public:
 
         imageWidget = new InsertImageWidget(q);
         vbox->addWidget(imageWidget);
-        q->connect(imageWidget, SIGNAL(enableButtonOk(bool)),
-                   q, SLOT(_k_slotEnabledButtonChanged(bool)));
+        q->connect(imageWidget, &InsertImageWidget::enableButtonOk, q, [this](bool b) { _k_slotEnabledButtonChanged(b); });
         QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
         okButton = buttonBox->button(QDialogButtonBox::Ok);
         okButton->setText(i18n("Insert"));

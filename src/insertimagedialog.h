@@ -50,7 +50,6 @@ public:
 private:
     friend class InsertImageDialogPrivate;
     InsertImageDialogPrivate *const d;
-    Q_PRIVATE_SLOT(d, void _k_slotEnabledButtonChanged(bool))
 };
 }
 
