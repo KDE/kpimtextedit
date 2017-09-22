@@ -111,7 +111,7 @@ public:
     QAction *action_paste_without_formatting = nullptr;
 
     QAction *action_add_image = nullptr;
-    QAction *action_add_emoticon = nullptr;
+    KPIMTextEdit::EmoticonTextEditAction *action_add_emoticon = nullptr;
     QAction *action_insert_html = nullptr;
     KPIMTextEdit::TableActionMenu *action_add_table = nullptr;
     QAction *action_delete_line = nullptr;
@@ -448,7 +448,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     if (ac) {
         ac->addAction(QStringLiteral("add_emoticon"), d->action_add_emoticon);
     }
-    connect(d->action_add_emoticon, SIGNAL(emoticonActivated(QString)), d->composerControler, SLOT(slotAddEmoticon(QString)));
+    connect(d->action_add_emoticon, &EmoticonTextEditAction::emoticonActivated, d->composerControler, &RichTextComposerControler::slotAddEmoticon);
     d->richTextActionList.append(d->action_add_emoticon);
 
     d->action_insert_html = new QAction(i18n("Insert HTML"), this);

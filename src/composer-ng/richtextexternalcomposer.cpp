@@ -19,6 +19,7 @@
 
 #include "richtextcomposer.h"
 #include "richtextexternalcomposer.h"
+#include "richtextexternalcomposer.h"
 
 #include <KProcess>
 #include <KMacroExpander>
@@ -123,8 +124,7 @@ void RichTextExternalComposer::startExternalEditor()
             (*d->externalEditorProcess) << d->extEditorTempFile->fileName();
         }
 
-        connect(d->externalEditorProcess, SIGNAL(finished(int,QProcess::ExitStatus)),
-                this, SLOT(slotEditorFinished(int,QProcess::ExitStatus)));
+        connect(d->externalEditorProcess, QOverload<int,QProcess::ExitStatus>::of(&KProcess::finished), this, &RichTextExternalComposer::slotEditorFinished);
         d->externalEditorProcess->start();
         if (!d->externalEditorProcess->waitForStarted()) {
             d->cannotStartProcess(commandLine);
