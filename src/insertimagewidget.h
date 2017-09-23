@@ -53,10 +53,6 @@ Q_SIGNALS:
 private:
     friend class InsertImageWidgetPrivate;
     InsertImageWidgetPrivate *const d;
-    Q_PRIVATE_SLOT(d, void _k_slotKeepOriginalSizeClicked(bool))
-    Q_PRIVATE_SLOT(d, void _k_slotUrlChanged(const QString &))
-    Q_PRIVATE_SLOT(d, void _k_slotImageWidthChanged(int))
-    Q_PRIVATE_SLOT(d, void _k_slotImageHeightChanged(int))
 };
 }
 

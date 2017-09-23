@@ -139,7 +139,7 @@ void TextEditFindBarBase::autoSearch(const QString &str)
 {
     const bool isNotEmpty = (!str.isEmpty());
     if (isNotEmpty) {
-        QTimer::singleShot(0, this, SLOT(slotSearchText()));
+        QTimer::singleShot(0, this, [this]() { slotSearchText(); });
     } else {
         clearSelections();
     }

@@ -65,8 +65,8 @@ public:
         imageUrlRequester->setMimeTypeFilters(lstMimeTypes);
         imageUrlRequester->setWindowTitle(i18n("Add Image"));
         imageUrlRequester->setMode(KFile::File);
-        q->connect(imageUrlRequester->lineEdit(), SIGNAL(textChanged(QString)),
-                   q, SLOT(_k_slotUrlChanged(QString)));
+        q->connect(imageUrlRequester->lineEdit(), &KLineEdit::textChanged,
+                   q, [this](const QString &str) { _k_slotUrlChanged(str);});
 
         hbox->addWidget(lab);
         hbox->addWidget(imageUrlRequester);
@@ -74,8 +74,8 @@ public:
         lay->addLayout(hbox);
 
         keepOriginalSize = new QCheckBox(i18n("Keep Original Size"));
-        q->connect(keepOriginalSize, SIGNAL(clicked(bool)),
-                   q, SLOT(_k_slotKeepOriginalSizeClicked(bool)));
+        q->connect(keepOriginalSize, &QCheckBox::clicked,
+                   q, [this](bool b) { _k_slotKeepOriginalSizeClicked(b);});
         keepOriginalSize->setChecked(true);
         lay->addWidget(keepOriginalSize);
 
@@ -92,8 +92,8 @@ public:
         width->setEnabled(false);
         width->setSuffix(i18n(" px"));
         lab->setBuddy(width);
-        q->connect(width, SIGNAL(valueChanged(int)),
-                   q, SLOT(_k_slotImageWidthChanged(int)));
+        q->connect(width, QOverload<int>::of(&QSpinBox::valueChanged),
+                   q, [this](int val) { _k_slotImageWidthChanged(val);});
         hbox->addWidget(lab);
         hbox->addWidget(width);
         lay->addLayout(hbox);
@@ -106,8 +106,8 @@ public:
         height->setEnabled(false);
         height->setSuffix(i18n(" px"));
         lab->setBuddy(height);
-        q->connect(height, SIGNAL(valueChanged(int)),
-                   q, SLOT(_k_slotImageHeightChanged(int)));
+        q->connect(height, QOverload<int>::of(&QSpinBox::valueChanged),
+                   q, [this](int val) { _k_slotImageHeightChanged(val);});
         hbox->addWidget(lab);
         hbox->addWidget(height);
         lay->addLayout(hbox);

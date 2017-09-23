@@ -305,7 +305,8 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     if (ac) {
         ac->addAction(QStringLiteral("format_font_family"), d->action_font_family);
     }
-    connect(d->action_font_family, SIGNAL(triggered(QString)), d->composerControler, SLOT(setFontFamily(QString)));
+    connect(d->action_font_family, QOverload<const QString &>::of(&KFontAction::triggered),
+            d->composerControler, &RichTextComposerControler::setFontFamily);
 
     //Font Size
     d->action_font_size = new KFontSizeAction(i18nc("@action", "Font &Size"), this);
@@ -399,11 +400,10 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     if (ac) {
         ac->addAction(QStringLiteral("format_list_style"), d->action_list_style);
     }
-    connect(d->action_list_style, SIGNAL(triggered(int)),
-            this, SLOT(setListStyle(int)));
+    connect(d->action_list_style, QOverload<int>::of(&KSelectAction::triggered),
+            this, &RichTextComposerActions::setListStyle);
     connect(d->action_list_style, SIGNAL(triggered()),
-            this, SLOT(slotUpdateMiscActions()));
-
+                this, SLOT(slotUpdateMiscActions()));
     d->action_paste_quotation = new QAction(i18n("Pa&ste as Quotation"), this);
     d->action_paste_quotation->setObjectName(QStringLiteral("paste_quoted"));
     if (ac) {

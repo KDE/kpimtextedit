@@ -60,7 +60,7 @@ public:
         gridLayout->addWidget(mBorder, 2, 1);
 
         mTypeOfLength = new KComboBox;
-        q->connect(mTypeOfLength, SIGNAL(activated(int)), q, SLOT(slotTypeOfLengthChanged(int)));
+        q->connect(mTypeOfLength, QOverload<int>::of(&KComboBox::activated), q, &InsertTableWidget::slotTypeOfLengthChanged);
         // xgettext: no-c-format
         mTypeOfLength->addItem(i18n("% of windows"), QTextLength::PercentageLength);
         mTypeOfLength->addItem(i18n("pixels"), QTextLength::FixedLength);
