@@ -81,10 +81,8 @@ public:
      */
     QString linkUrl() const;
 
-private Q_SLOTS:
-    void slotTextChanged(const QString &);
-
 private:
+    void slotTextChanged(const QString &);
     QLabel *textLabel = nullptr;
     QLineEdit *textLineEdit = nullptr;
     QLabel *linkUrlLabel = nullptr;
