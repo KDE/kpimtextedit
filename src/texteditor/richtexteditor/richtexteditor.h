@@ -102,17 +102,6 @@ public Q_SLOTS:
     void slotCheckSpelling();
     void slotZoomReset();
 
-private Q_SLOTS:
-    void slotUndoableClear();
-    void slotSpellCheckerMisspelling(const QString &text, int pos);
-    void slotSpellCheckerCorrected(const QString &, int, const QString &);
-    void slotSpellCheckerAutoCorrect(const QString &, const QString &);
-    void slotSpellCheckerCanceled();
-    void slotSpellCheckerFinished();
-    void slotToggleAutoSpellCheck();
-    void slotLanguageSelected();
-    void slotAllowTab();
-
 protected:
     virtual void addExtraMenuEntry(QMenu *menu, QPoint pos);
     void contextMenuEvent(QContextMenuEvent *event) override;
@@ -137,6 +126,16 @@ Q_SIGNALS:
     void spellCheckingCanceled();
 
 private:
+    void slotUndoableClear();
+    void slotSpellCheckerMisspelling(const QString &text, int pos);
+    void slotSpellCheckerCorrected(const QString &, int, const QString &);
+    void slotSpellCheckerAutoCorrect(const QString &, const QString &);
+    void slotSpellCheckerCanceled();
+    void slotSpellCheckerFinished();
+    void slotToggleAutoSpellCheck();
+    void slotLanguageSelected();
+    void slotAllowTab();
+
     void addIgnoreWordsToHighLighter();
     bool handleShortcut(QKeyEvent *event);
     bool overrideShortcut(QKeyEvent *event);

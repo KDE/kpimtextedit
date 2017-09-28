@@ -47,10 +47,8 @@ public:
     int length() const;
     void setLength(int);
 
-private Q_SLOTS:
-    void slotTypeOfLengthChanged(int);
-
 private:
+    void slotTypeOfLengthChanged(int);
     class InsertTableWidgetPrivate;
     InsertTableWidgetPrivate *const d;
 };
