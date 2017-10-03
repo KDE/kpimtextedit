@@ -35,14 +35,13 @@ public:
     InsertImageDialogPrivate(InsertImageDialog *qq)
         : q(qq)
     {
-        QVBoxLayout *vbox = new QVBoxLayout;
-        q->setLayout(vbox);
+        QVBoxLayout *vbox = new QVBoxLayout(q);
         q->setWindowTitle(i18n("Insert Image"));
 
         imageWidget = new InsertImageWidget(q);
         vbox->addWidget(imageWidget);
         q->connect(imageWidget, &InsertImageWidget::enableButtonOk, q, [this](bool b) { _k_slotEnabledButtonChanged(b); });
-        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
         okButton = buttonBox->button(QDialogButtonBox::Ok);
         okButton->setText(i18n("Insert"));
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);

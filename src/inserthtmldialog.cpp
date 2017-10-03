@@ -50,7 +50,7 @@ public:
         label->setFont(font);
         label->setTextFormat(Qt::PlainText);
         lay->addWidget(label);
-        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
         okButton = buttonBox->button(QDialogButtonBox::Ok);
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
         okButton->setText(i18nc("@action:button", "Insert"));

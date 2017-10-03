@@ -41,7 +41,7 @@ public:
                    q, &SelectSpecialCharDialog::charSelected);
         lay->addWidget(mCharSelect);
 
-        mButtonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+        mButtonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
         QPushButton *okButton = mButtonBox->button(QDialogButtonBox::Ok);
         okButton->setText(i18n("Insert"));
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);

@@ -37,16 +37,15 @@ public:
         : q(qq)
     {
         q->setWindowTitle(i18n("Insert Table"));
-        QVBoxLayout *mainLayout = new QVBoxLayout;
-        q->setLayout(mainLayout);
+        QVBoxLayout *mainLayout = new QVBoxLayout(q);
 
-        insertTableWidget = new InsertTableWidget;
+        insertTableWidget = new InsertTableWidget(q);
         mainLayout->addWidget(insertTableWidget);
 
-        KSeparator *sep = new KSeparator;
+        KSeparator *sep = new KSeparator(q);
         mainLayout->addWidget(sep);
 
-        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
         QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
         okButton->setText(i18n("Insert"));
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);

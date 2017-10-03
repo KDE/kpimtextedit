@@ -69,7 +69,7 @@ public:
         backgroundColor->setEnabled(false);
         q->connect(useBackgroundColor, &QCheckBox::toggled, backgroundColor, &KColorButton::setEnabled);
 
-        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
         buttonBox->button(QDialogButtonBox::Ok)->setShortcut(Qt::CTRL | Qt::Key_Return);
         q->connect(buttonBox, &QDialogButtonBox::accepted, q, &QDialog::accept);
         q->connect(buttonBox, &QDialogButtonBox::rejected, q, &QDialog::reject);

@@ -42,8 +42,7 @@ public:
         : q(qq)
     {
         q->setWindowTitle(i18n("Table Format"));
-        QVBoxLayout *mainLayout = new QVBoxLayout;
-        q->setLayout(mainLayout);
+        QVBoxLayout *mainLayout = new QVBoxLayout(q);
 
         QWidget *page = new QWidget(q);
         QVBoxLayout *lay = new QVBoxLayout(page);
@@ -106,7 +105,7 @@ public:
         lay->addWidget(sep);
         backgroundColor->setEnabled(false);
         q->connect(useBackgroundColor, &QCheckBox::toggled, backgroundColor, &KColorButton::setEnabled);
-        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
         connect(buttonBox, &QDialogButtonBox::accepted, q, &QDialog::accept);
         connect(buttonBox, &QDialogButtonBox::rejected, q, &QDialog::reject);
 
