@@ -57,7 +57,10 @@ void SlideContainer::setContent(QWidget *content)
 
 void SlideContainer::animTo(int newHeight)
 {
-    delete mAnim.data();
+    if (mAnim.data()) {
+        mAnim.data()->deleteLater();
+        disconnect(mAnim.data(), &QPropertyAnimation::finished, this, &SlideContainer::slotAnimFinished);
+    }
     QPropertyAnimation *anim = new QPropertyAnimation(this, "slideHeight", this);
     anim->setDuration(SLIDE_DURATION);
     anim->setStartValue(slideHeight());
