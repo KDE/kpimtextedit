@@ -57,8 +57,8 @@ void TextToSpeech::reloadSettings()
         connect(mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
     }
     mDefaultEngine = engineName;
-    mTextToSpeech->setRate(grp.readEntry("rate", 0));
-    mTextToSpeech->setPitch(grp.readEntry("pitch", 0));
+    mTextToSpeech->setRate(grp.readEntry("rate", 0.0));
+    mTextToSpeech->setPitch(grp.readEntry("pitch", 0.0));
     mTextToSpeech->setVolume(grp.readEntry("volume", 0));
     mTextToSpeech->setLocale(QLocale(grp.readEntry("localeName")));
     //It doesn't have api for it mTextToSpeech->setVoice(grp.readEntry("voice"));
