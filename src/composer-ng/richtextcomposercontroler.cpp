@@ -721,7 +721,7 @@ void RichTextComposerControler::slotInsertHtml()
 void RichTextComposerControler::slotAddImage()
 {
     QPointer<KPIMTextEdit::InsertImageDialog> dlg = new KPIMTextEdit::InsertImageDialog(richTextComposer());
-    if (dlg->exec() == QDialog::Accepted && dlg) {
+    if (dlg->exec() == QDialog::Accepted) {
         const QUrl url = dlg->imageUrl();
         int imageWidth = -1;
         int imageHeight = -1;
