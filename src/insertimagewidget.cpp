@@ -162,7 +162,7 @@ void InsertImageWidgetPrivate::_k_slotUrlChanged(const QString &text)
         preview->clear();
         imageRatio = -1;
     }
-    q->enableButtonOk(!text.trimmed().isEmpty());
+    Q_EMIT q->enableButtonOk(!text.trimmed().isEmpty());
 }
 
 void InsertImageWidgetPrivate::_k_slotImageWidthChanged(int value)
