@@ -198,7 +198,7 @@ void TextMessageIndicator::paintEvent(QPaintEvent * /* e */)
     const int textDrawingFlags = Qt::AlignLeft | Qt::AlignTop | Qt::TextWordWrap;
 
     // draw shadow and text
-    painter.setPen(palette().color(QPalette::Window).dark(115));
+    painter.setPen(palette().color(QPalette::Window).darker(115));
     painter.drawText(xStartPoint + shadowOffset, yStartPoint + shadowOffset, textRect.width(), textRect.height(), textDrawingFlags, mMessage);
     if (!mDetails.isEmpty()) {
         painter.drawText(xStartPoint + shadowOffset, yStartPoint + textRect.height() + mLineSpacing + shadowOffset, textRect.width(), detailsRect.height(), textDrawingFlags, mDetails);
