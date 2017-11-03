@@ -172,6 +172,8 @@ void RichTextEditorWidget::slotFindNext()
     if (d->mEditor->searchSupport()) {
         if (d->mFindBar->isVisible()) {
             d->mFindBar->findNext();
+        } else {
+            slotFind();
         }
     }
 }
