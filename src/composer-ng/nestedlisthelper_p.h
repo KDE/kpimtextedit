@@ -50,7 +50,7 @@ public:
      *
      * @param te The text edit object to handle lists in.
      */
-    NestedListHelper(QTextEdit *te);
+    explicit NestedListHelper(QTextEdit *te);
 
     /**
      *
