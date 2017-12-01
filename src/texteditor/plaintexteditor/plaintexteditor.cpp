@@ -630,6 +630,19 @@ bool PlainTextEditor::handleShortcut(QKeyEvent *event)
     return false;
 }
 
+void PlainTextEditor::wheelEvent(QWheelEvent *event)
+{
+    if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
+        if (event->delta() > 0) {
+            zoomIn();
+        } else if (event->delta() < 0) {
+            zoomOut();
+        }
+        event->accept();
+    }
+}
+
+
 void PlainTextEditor::keyPressEvent(QKeyEvent *event)
 {
     if (handleShortcut(event)) {
