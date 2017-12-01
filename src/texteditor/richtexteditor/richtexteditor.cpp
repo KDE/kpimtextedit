@@ -706,6 +706,18 @@ bool RichTextEditor::event(QEvent *ev)
     return QTextEdit::event(ev);
 }
 
+void RichTextEditor::wheelEvent(QWheelEvent *event)
+{
+    if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
+        if (event->delta() > 0) {
+            zoomIn();
+        } else if (event->delta() < 0) {
+            zoomOut();
+        }
+        event->accept();
+    }
+}
+
 bool RichTextEditor::handleShortcut(QKeyEvent *event)
 {
     const int key = event->key() | event->modifiers();

@@ -99,6 +99,7 @@ protected:
     void keyPressEvent(QKeyEvent *event) override;
     bool overrideShortcut(QKeyEvent *event);
     bool handleShortcut(QKeyEvent *event);
+    void wheelEvent(QWheelEvent *event) override;
 
     virtual Sonnet::SpellCheckDecorator *createSpellCheckDecorator();
     void setHighlighter(Sonnet::Highlighter *_highLighter);

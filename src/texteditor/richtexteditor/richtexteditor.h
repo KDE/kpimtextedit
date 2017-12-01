@@ -108,6 +108,7 @@ protected:
     void focusInEvent(QFocusEvent *event) override;
     bool event(QEvent *ev) override;
     void keyPressEvent(QKeyEvent *event) override;
+    void wheelEvent(QWheelEvent *e) override;
 
     QMenu *mousePopupMenu(QPoint pos);
     virtual Sonnet::SpellCheckDecorator *createSpellCheckDecorator();
