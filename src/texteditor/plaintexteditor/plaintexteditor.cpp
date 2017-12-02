@@ -639,7 +639,9 @@ void PlainTextEditor::wheelEvent(QWheelEvent *event)
             zoomOut();
         }
         event->accept();
+        return;
     }
+    QPlainTextEdit::wheelEvent(event);
 }
 
 

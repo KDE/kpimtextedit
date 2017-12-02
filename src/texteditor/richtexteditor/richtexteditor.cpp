@@ -715,7 +715,9 @@ void RichTextEditor::wheelEvent(QWheelEvent *event)
             zoomOut();
         }
         event->accept();
+        return;
     }
+    QTextEdit::wheelEvent(event);
 }
 
 bool RichTextEditor::handleShortcut(QKeyEvent *event)
