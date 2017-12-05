@@ -49,14 +49,18 @@ public:
         q->connect(mButtonBox, &QDialogButtonBox::accepted, q, &QDialog::accept);
         q->connect(mButtonBox, &QDialogButtonBox::rejected, q, &QDialog::reject);
 
-        q->connect(okButton, &QPushButton::clicked, q, [this]() { _k_slotInsertChar(); });
+        q->connect(okButton, &QPushButton::clicked, q, [this]() {
+                _k_slotInsertChar();
+            });
     }
 
     void addSelectButton()
     {
         mSelectButton = new QPushButton(i18n("Select"));
         mButtonBox->addButton(mSelectButton, QDialogButtonBox::ActionRole);
-        q->connect(mSelectButton, &QPushButton::clicked, q, [this]() { _k_slotInsertChar(); });
+        q->connect(mSelectButton, &QPushButton::clicked, q, [this]() {
+                _k_slotInsertChar();
+            });
     }
 
     void _k_slotInsertChar();

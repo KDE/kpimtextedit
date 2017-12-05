@@ -644,7 +644,6 @@ void PlainTextEditor::wheelEvent(QWheelEvent *event)
     QPlainTextEdit::wheelEvent(event);
 }
 
-
 void PlainTextEditor::keyPressEvent(QKeyEvent *event)
 {
     if (handleShortcut(event)) {
