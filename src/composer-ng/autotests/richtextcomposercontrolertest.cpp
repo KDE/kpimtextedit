@@ -39,7 +39,7 @@ void RichTextComposerControlerTest::shouldAlignLeft()
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
-    QTest::qWaitForWindowExposed(&composer);
+    QVERIFY(QTest::qWaitForWindowExposed(&composer));
     controler.alignLeft();
     QVERIFY(controler.richTextComposer()->hasFocus());
     QCOMPARE(controler.richTextComposer()->alignment(), Qt::AlignLeft);
@@ -53,7 +53,7 @@ void RichTextComposerControlerTest::shouldAlignRight()
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
-    QTest::qWaitForWindowExposed(&composer);
+    QVERIFY(QTest::qWaitForWindowExposed(&composer));
     controler.alignRight();
     QVERIFY(controler.richTextComposer()->hasFocus());
     QCOMPARE(controler.richTextComposer()->alignment(), Qt::AlignRight);
@@ -67,7 +67,7 @@ void RichTextComposerControlerTest::shouldAlignJustify()
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
-    QTest::qWaitForWindowExposed(&composer);
+    QVERIFY(QTest::qWaitForWindowExposed(&composer));
     controler.alignJustify();
     QVERIFY(controler.richTextComposer()->hasFocus());
     QCOMPARE(controler.richTextComposer()->alignment(), Qt::AlignJustify);
@@ -81,7 +81,7 @@ void RichTextComposerControlerTest::shouldAlignCenter()
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
-    QTest::qWaitForWindowExposed(&composer);
+    QVERIFY(QTest::qWaitForWindowExposed(&composer));
     controler.alignCenter();
     QVERIFY(controler.richTextComposer()->hasFocus());
     QCOMPARE(controler.richTextComposer()->alignment(), Qt::AlignHCenter);
@@ -103,7 +103,7 @@ void RichTextComposerControlerTest::shouldBoldText()
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
-    QTest::qWaitForWindowExposed(&composer);
+    QVERIFY(QTest::qWaitForWindowExposed(&composer));
     controler.setTextBold(true);
     QVERIFY(controler.richTextComposer()->hasFocus());
     QVERIFY(controler.richTextComposer()->acceptRichText());
@@ -117,7 +117,7 @@ void RichTextComposerControlerTest::shouldItalicText()
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
-    QTest::qWaitForWindowExposed(&composer);
+    QVERIFY(QTest::qWaitForWindowExposed(&composer));
     controler.setTextItalic(true);
     QVERIFY(controler.richTextComposer()->hasFocus());
     QVERIFY(controler.richTextComposer()->acceptRichText());
@@ -131,7 +131,7 @@ void RichTextComposerControlerTest::shouldTextUnderline()
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
-    QTest::qWaitForWindowExposed(&composer);
+    QVERIFY(QTest::qWaitForWindowExposed(&composer));
     controler.setTextUnderline(true);
     QVERIFY(controler.richTextComposer()->hasFocus());
     QVERIFY(controler.richTextComposer()->acceptRichText());
@@ -145,7 +145,7 @@ void RichTextComposerControlerTest::shouldTextStrikeOut()
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
-    QTest::qWaitForWindowExposed(&composer);
+    QVERIFY(QTest::qWaitForWindowExposed(&composer));
     controler.setTextStrikeOut(true);
     QVERIFY(controler.richTextComposer()->hasFocus());
     QVERIFY(controler.richTextComposer()->acceptRichText());
@@ -159,7 +159,7 @@ void RichTextComposerControlerTest::shouldFontFamily()
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
-    QTest::qWaitForWindowExposed(&composer);
+    QVERIFY(QTest::qWaitForWindowExposed(&composer));
     //TODO
 }
 
@@ -170,7 +170,7 @@ void RichTextComposerControlerTest::shouldFontSize()
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
-    QTest::qWaitForWindowExposed(&composer);
+    QVERIFY(QTest::qWaitForWindowExposed(&composer));
     //TODO
 }
 
@@ -181,7 +181,7 @@ void RichTextComposerControlerTest::shouldFont()
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
-    QTest::qWaitForWindowExposed(&composer);
+    QVERIFY(QTest::qWaitForWindowExposed(&composer));
     //TODO
 }
 
@@ -192,7 +192,7 @@ void RichTextComposerControlerTest::shouldTextSuperScript()
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
-    QTest::qWaitForWindowExposed(&composer);
+    QVERIFY(QTest::qWaitForWindowExposed(&composer));
     controler.setTextSuperScript(true);
     QVERIFY(controler.richTextComposer()->hasFocus());
     QVERIFY(controler.richTextComposer()->acceptRichText());
@@ -206,7 +206,7 @@ void RichTextComposerControlerTest::shouldTextSubScript()
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
-    QTest::qWaitForWindowExposed(&composer);
+    QVERIFY(QTest::qWaitForWindowExposed(&composer));
     controler.setTextSubScript(true);
     QVERIFY(controler.richTextComposer()->hasFocus());
     QVERIFY(controler.richTextComposer()->acceptRichText());
@@ -243,7 +243,7 @@ void RichTextComposerControlerTest::shouldRemoveQuote()
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
-    QTest::qWaitForWindowExposed(&composer);
+    QVERIFY(QTest::qWaitForWindowExposed(&composer));
 
     composer.setPlainText(input);
     controler.slotRemoveQuotes();
@@ -273,7 +273,7 @@ void RichTextComposerControlerTest::shouldRemoveQuoteWithSpecificQuote()
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
-    QTest::qWaitForWindowExposed(&composer);
+    QVERIFY(QTest::qWaitForWindowExposed(&composer));
 
     composer.setPlainText(input);
     controler.slotRemoveQuotes();
@@ -303,7 +303,7 @@ void RichTextComposerControlerTest::shouldAddQuote()
 //    composer.createActions(actionCollection);
 //    KPIMTextEdit::RichTextComposerControler controler(&composer);
 //    composer.show();
-//    QTest::qWaitForWindowExposed(&composer);
+//    QVERIFY(QTest::qWaitForWindowExposed(&composer));
 
 //    composer.setPlainText(input);
 //    controler.slotAddQuotes();

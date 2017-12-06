@@ -36,7 +36,7 @@ void TextGoToLineWidgetTest::shouldHaveDefaultValuesOnCreation()
 {
     KPIMTextEdit::TextGoToLineWidget edit;
     edit.show();
-    QTest::qWaitForWindowExposed(&edit);
+    QVERIFY(QTest::qWaitForWindowExposed(&edit));
     QSpinBox *line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
     QVERIFY(line);
     QCOMPARE(line->minimum(), 1);
@@ -73,7 +73,7 @@ void TextGoToLineWidgetTest::shouldHideWidgetWhenClickOnCloseButton()
 {
     KPIMTextEdit::TextGoToLineWidget edit;
     edit.show();
-    QTest::qWaitForWindowExposed(&edit);
+    QVERIFY(QTest::qWaitForWindowExposed(&edit));
     QVERIFY(edit.isVisible());
     QToolButton *closebutton = edit.findChild<QToolButton *>(QStringLiteral("closebutton"));
     QTest::mouseClick(closebutton, Qt::LeftButton);
@@ -84,7 +84,7 @@ void TextGoToLineWidgetTest::shouldHideWidgetWhenPressEscape()
 {
     KPIMTextEdit::TextGoToLineWidget edit;
     edit.show();
-    QTest::qWaitForWindowExposed(&edit);
+    QVERIFY(QTest::qWaitForWindowExposed(&edit));
     QTest::keyPress(&edit, Qt::Key_Escape);
     QCOMPARE(edit.isVisible(), false);
 }
@@ -93,7 +93,7 @@ void TextGoToLineWidgetTest::shouldEmitGoToLineSignalWhenSpinboxHasFocusAndWePre
 {
     KPIMTextEdit::TextGoToLineWidget edit;
     edit.show();
-    QTest::qWaitForWindowExposed(&edit);
+    QVERIFY(QTest::qWaitForWindowExposed(&edit));
     QSpinBox *line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
     line->setFocus();
     QVERIFY(line->hasFocus());
@@ -108,14 +108,14 @@ void TextGoToLineWidgetTest::shouldHasFocusEachTimeThatItShown()
 {
     KPIMTextEdit::TextGoToLineWidget edit;
     edit.show();
-    QTest::qWaitForWindowExposed(&edit);
+    QVERIFY(QTest::qWaitForWindowExposed(&edit));
     QSpinBox *line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
     QVERIFY(line);
     QVERIFY(line->hasFocus());
     edit.hide();
     QVERIFY(!line->hasFocus());
     edit.show();
-    QTest::qWaitForWindowExposed(&edit);
+    QVERIFY(QTest::qWaitForWindowExposed(&edit));
     //FIXME QVERIFY(line->hasFocus());
 }
 
@@ -123,7 +123,7 @@ void TextGoToLineWidgetTest::shouldSetFocusWhenWeRecallGotToLine()
 {
     KPIMTextEdit::TextGoToLineWidget edit;
     edit.show();
-    QTest::qWaitForWindowExposed(&edit);
+    QVERIFY(QTest::qWaitForWindowExposed(&edit));
     QSpinBox *line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
     QVERIFY(line->hasFocus());
     edit.setFocus();
@@ -136,7 +136,7 @@ void TextGoToLineWidgetTest::shouldChangeMaximumValue()
 {
     KPIMTextEdit::TextGoToLineWidget edit;
     edit.show();
-    QTest::qWaitForWindowExposed(&edit);
+    QVERIFY(QTest::qWaitForWindowExposed(&edit));
     QSpinBox *line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
 
     QCOMPARE(line->value(), 1);
