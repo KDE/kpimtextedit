@@ -616,18 +616,32 @@ bool PlainTextEditor::handleShortcut(QKeyEvent *event)
         }
         return true;
     } else if (event == QKeySequence::DeleteEndOfLine) {
-        QTextCursor cursor = textCursor();
-        QTextBlock block = cursor.block();
-        if (cursor.position() == block.position() + block.length() - 2) {
-            cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
-        } else {
-            cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
-        }
-        cursor.removeSelectedText();
-        setTextCursor(cursor);
+        deleteEndOfLine();
         return true;
     }
     return false;
+}
+
+void PlainTextEditor::deleteEndOfLine()
+{
+    QTextCursor cursor = textCursor();
+    QTextBlock block = cursor.block();
+    if (cursor.position() == block.position() + block.length() - 2) {
+        cursor.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
+    } else {
+        cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+    }
+    cursor.removeSelectedText();
+    setTextCursor(cursor);
+}
+
+void PlainTextEditor::moveUpDownText()
+{
+    //TODO select all block text
+    QTextCursor cursor = textCursor();
+    cursor.movePosition(QTextCursor::StartOfBlock, QTextCursor::MoveAnchor);
+    cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+    setTextCursor(cursor);
 }
 
 void PlainTextEditor::wheelEvent(QWheelEvent *event)
