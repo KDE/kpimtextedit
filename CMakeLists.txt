@@ -87,7 +87,7 @@ endif()
 if(BUILD_TESTING)
     find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
    add_definitions(-DBUILD_TESTING)
-endif(BUILD_TESTING)
+endif()
 
 ########### Targets ###########
 add_subdirectory(src)
