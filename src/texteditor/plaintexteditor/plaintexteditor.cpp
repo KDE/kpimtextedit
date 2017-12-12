@@ -109,7 +109,6 @@ PlainTextEditor::PlainTextEditor(QWidget *parent)
 
     QShortcut *moveDown = new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Down), this);
     connect(moveDown, &QShortcut::activated, [this]() {moveLineUpDown(false);});
-
 }
 
 PlainTextEditor::~PlainTextEditor()

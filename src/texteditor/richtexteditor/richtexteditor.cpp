@@ -51,6 +51,7 @@
 #include <QClipboard>
 #include <QDialogButtonBox>
 #include <QPushButton>
+#include <QShortcut>
 
 using namespace KPIMTextEdit;
 class Q_DECL_HIDDEN RichTextEditor::RichTextEditorPrivate
@@ -108,6 +109,11 @@ RichTextEditor::RichTextEditor(QWidget *parent)
     KCursor::setAutoHideCursor(this, true, false);
     setSpellCheckingConfigFileName(QString());
     d->mInitialFontSize = font().pointSize();
+    QShortcut *moveUp = new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Up), this);
+    connect(moveUp, &QShortcut::activated, [this]() {moveLineUpDown(true);});
+
+    QShortcut *moveDown = new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Down), this);
+    connect(moveDown, &QShortcut::activated, [this]() {moveLineUpDown(false);});
 }
 
 RichTextEditor::~RichTextEditor()
@@ -915,4 +921,58 @@ void RichTextEditor::slotZoomReset()
         f.setPointSize(d->mInitialFontSize);
         setFont(f);
     }
+}
+
+void RichTextEditor::moveLineUpDown(bool moveUp)
+{
+    QTextCursor cursor = textCursor();
+    QTextCursor move = cursor;
+    move.beginEditBlock();
+
+    bool hasSelection = cursor.hasSelection();
+
+    if (hasSelection) {
+        move.setPosition(cursor.selectionStart());
+        move.movePosition(QTextCursor::StartOfBlock);
+        move.setPosition(cursor.selectionEnd(), QTextCursor::KeepAnchor);
+        move.movePosition(move.atBlockStart() ? QTextCursor::Left: QTextCursor::EndOfBlock,
+                          QTextCursor::KeepAnchor);
+    } else {
+        move.movePosition(QTextCursor::StartOfBlock);
+        move.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+    }
+    QString text = move.selectedText();
+
+    move.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
+    move.removeSelectedText();
+
+    if (moveUp) {
+        move.movePosition(QTextCursor::PreviousBlock);
+        move.insertBlock();
+        move.movePosition(QTextCursor::Left);
+    } else {
+        move.movePosition(QTextCursor::EndOfBlock);
+        if (move.atBlockStart()) { // empty block
+            move.movePosition(QTextCursor::NextBlock);
+            move.insertBlock();
+            move.movePosition(QTextCursor::Left);
+        } else {
+            move.insertBlock();
+        }
+    }
+
+    int start = move.position();
+    move.clearSelection();
+    move.insertText(text);
+    int end = move.position();
+
+    if (hasSelection) {
+        move.setPosition(end);
+        move.setPosition(start, QTextCursor::KeepAnchor);
+    } else {
+        move.setPosition(start);
+    }
+    move.endEditBlock();
+
+    setTextCursor(move);
 }

@@ -144,6 +144,7 @@ private:
     void deleteWordForward();
     void highlightWord(int length, int pos);
     void checkSpelling(bool force);
+    void moveLineUpDown(bool moveUp);
     class RichTextEditorPrivate;
     RichTextEditorPrivate *const d;
 };
