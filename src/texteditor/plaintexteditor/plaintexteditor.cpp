@@ -17,6 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 #include "plaintexteditor.h"
+#include "kpimtextedit_debug.h"
 
 #include "texteditor/commonwidget/textmessageindicator.h"
 #include <KIO/KUriFilterSearchProviderActions>
@@ -238,7 +239,7 @@ void PlainTextEditor::slotSpeakText()
     } else {
         text = toPlainText();
     }
-    //qCDebug(PIMCOMMON_LOG) << " KPIMTextEdit::TextToSpeech::self()->isReady() :" << KPIMTextEdit::TextToSpeech::self()->isReady();
+    //qCDebug(KPIMTEXTEDIT_LOG) << " KPIMTextEdit::TextToSpeech::self()->isReady() :" << KPIMTextEdit::TextToSpeech::self()->isReady();
     Q_EMIT say(text);
 }
 
