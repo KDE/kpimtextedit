@@ -711,7 +711,6 @@ void PlainTextEditor::keyPressEvent(QKeyEvent *event)
         event->accept();
     } else if (event->key() == Qt::Key_Up && event->modifiers() == Qt::CTRL) {
         moveLineUpDown(true);
-        qDebug() << "ssssssssss";
         event->accept();
     } else if (event->key() == Qt::Key_Down && event->modifiers() == Qt::CTRL) {
         moveLineUpDown(false);
