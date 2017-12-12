@@ -104,11 +104,6 @@ PlainTextEditor::PlainTextEditor(QWidget *parent)
     KCursor::setAutoHideCursor(this, true, false);
     setSpellCheckingConfigFileName(QString());
     d->mInitialFontSize = font().pointSize();
-    QShortcut *moveUp = new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Up), this);
-    connect(moveUp, &QShortcut::activated, [this]() {moveLineUpDown(true);});
-
-    QShortcut *moveDown = new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Down), this);
-    connect(moveDown, &QShortcut::activated, [this]() {moveLineUpDown(false);});
 }
 
 PlainTextEditor::~PlainTextEditor()
@@ -713,6 +708,13 @@ void PlainTextEditor::wheelEvent(QWheelEvent *event)
 void PlainTextEditor::keyPressEvent(QKeyEvent *event)
 {
     if (handleShortcut(event)) {
+        event->accept();
+    } else if (event->key() == Qt::Key_Up && event->modifiers() == Qt::CTRL) {
+        moveLineUpDown(true);
+        qDebug() << "ssssssssss";
+        event->accept();
+    } else if (event->key() == Qt::Key_Down && event->modifiers() == Qt::CTRL) {
+        moveLineUpDown(false);
         event->accept();
     } else {
         QPlainTextEdit::keyPressEvent(event);
