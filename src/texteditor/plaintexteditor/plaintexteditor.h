@@ -122,7 +122,7 @@ private:
     void deleteWordForward();
     void highlightWord(int length, int pos);
     void deleteEndOfLine();
-    void moveUpDownText();
+    void moveUpDownText(bool moveUp);
     class PlainTextEditorPrivate;
     PlainTextEditorPrivate *const d;
 };

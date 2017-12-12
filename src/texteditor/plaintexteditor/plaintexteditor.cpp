@@ -635,12 +635,15 @@ void PlainTextEditor::deleteEndOfLine()
     setTextCursor(cursor);
 }
 
-void PlainTextEditor::moveUpDownText()
+void PlainTextEditor::moveUpDownText(bool moveUp)
 {
     //TODO select all block text
     QTextCursor cursor = textCursor();
+    cursor.beginEditBlock();
     cursor.movePosition(QTextCursor::StartOfBlock, QTextCursor::MoveAnchor);
     cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+    //TODO more
+    cursor.endEditBlock();
     setTextCursor(cursor);
 }
 
