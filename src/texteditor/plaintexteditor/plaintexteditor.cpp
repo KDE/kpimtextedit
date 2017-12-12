@@ -42,6 +42,7 @@
 #include <QScrollBar>
 #include <QApplication>
 #include <QClipboard>
+#include <QShortcut>
 
 #include <sonnet/spellcheckdecorator.h>
 
@@ -103,6 +104,12 @@ PlainTextEditor::PlainTextEditor(QWidget *parent)
     KCursor::setAutoHideCursor(this, true, false);
     setSpellCheckingConfigFileName(QString());
     d->mInitialFontSize = font().pointSize();
+    QShortcut *moveUp = new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Up), this);
+    connect(moveUp, &QShortcut::activated, [this]() {moveLineUpDown(true);});
+
+    QShortcut *moveDown = new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Down), this);
+    connect(moveDown, &QShortcut::activated, [this]() {moveLineUpDown(false);});
+
 }
 
 PlainTextEditor::~PlainTextEditor()
@@ -638,7 +645,6 @@ void PlainTextEditor::deleteEndOfLine()
 
 void PlainTextEditor::moveLineUpDown(bool moveUp)
 {
-    qDebug() << " void PlainTextEditor::moveUpDownText(bool moveUp)" << moveUp;
     QTextCursor cursor = textCursor();
     QTextCursor move = cursor;
     move.beginEditBlock();
