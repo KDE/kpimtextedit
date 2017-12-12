@@ -51,7 +51,6 @@
 #include <QClipboard>
 #include <QDialogButtonBox>
 #include <QPushButton>
-#include <QShortcut>
 
 using namespace KPIMTextEdit;
 class Q_DECL_HIDDEN RichTextEditor::RichTextEditorPrivate
@@ -109,11 +108,6 @@ RichTextEditor::RichTextEditor(QWidget *parent)
     KCursor::setAutoHideCursor(this, true, false);
     setSpellCheckingConfigFileName(QString());
     d->mInitialFontSize = font().pointSize();
-    QShortcut *moveUp = new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Up), this);
-    connect(moveUp, &QShortcut::activated, [this]() {moveLineUpDown(true);});
-
-    QShortcut *moveDown = new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Down), this);
-    connect(moveDown, &QShortcut::activated, [this]() {moveLineUpDown(false);});
 }
 
 RichTextEditor::~RichTextEditor()
@@ -907,7 +901,15 @@ bool RichTextEditor::overrideShortcut(QKeyEvent *event)
 
 void RichTextEditor::keyPressEvent(QKeyEvent *event)
 {
+    const bool isControlClicked = event->modifiers() & Qt::ControlModifier;
+    const bool isShiftClicked = event->modifiers() & Qt::ShiftModifier;
     if (handleShortcut(event)) {
+        event->accept();
+    } else if (event->key() == Qt::Key_Up && isControlClicked && isShiftClicked) {
+        moveLineUpDown(true);
+        event->accept();
+    } else if (event->key() == Qt::Key_Down && isControlClicked && isShiftClicked) {
+        moveLineUpDown(false);
         event->accept();
     } else {
         QTextEdit::keyPressEvent(event);

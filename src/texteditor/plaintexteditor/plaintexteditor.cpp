@@ -707,12 +707,14 @@ void PlainTextEditor::wheelEvent(QWheelEvent *event)
 
 void PlainTextEditor::keyPressEvent(QKeyEvent *event)
 {
+    const bool isControlClicked = event->modifiers() & Qt::ControlModifier;
+    const bool isShiftClicked = event->modifiers() & Qt::ShiftModifier;
     if (handleShortcut(event)) {
         event->accept();
-    } else if (event->key() == Qt::Key_Up && event->modifiers() == Qt::CTRL) {
+    } else if (event->key() == Qt::Key_Up && isControlClicked && isShiftClicked) {
         moveLineUpDown(true);
         event->accept();
-    } else if (event->key() == Qt::Key_Down && event->modifiers() == Qt::CTRL) {
+    } else if (event->key() == Qt::Key_Down && isControlClicked && isShiftClicked) {
         moveLineUpDown(false);
         event->accept();
     } else {
