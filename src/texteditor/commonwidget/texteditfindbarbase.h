@@ -52,6 +52,7 @@ protected:
     virtual bool viewIsReadOnly() const = 0;
     virtual bool documentIsEmpty() const = 0;
     virtual bool searchInDocument(const QString &text, QTextDocument::FindFlags searchOptions) = 0;
+    virtual bool searchInDocument(const QRegExp &regExp, QTextDocument::FindFlags searchOptions) = 0;
     virtual void autoSearchMoveCursor() = 0;
 
     bool event(QEvent *e) override;

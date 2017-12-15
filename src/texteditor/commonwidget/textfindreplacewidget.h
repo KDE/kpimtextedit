@@ -41,6 +41,8 @@ public:
     void setFoundMatch(bool match);
     QRegExp findRegExp() const;
 
+    bool isRegularExpression() const;
+
 private Q_SLOTS:
     void slotAutoSearch(const QString &str);
 
@@ -56,6 +58,7 @@ private:
     QLineEdit *mSearch = nullptr;
     QAction *mCaseSensitiveAct = nullptr;
     QAction *mWholeWordAct = nullptr;
+    QAction *mRegExpAct = nullptr;
 
     QPushButton *mFindPrevBtn = nullptr;
     QPushButton *mFindNextBtn = nullptr;

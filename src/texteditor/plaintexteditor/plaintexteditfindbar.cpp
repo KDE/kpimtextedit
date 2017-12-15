@@ -73,6 +73,13 @@ bool PlainTextEditFindBar::searchInDocument(const QString &text, QTextDocument::
     return found;
 }
 
+bool PlainTextEditFindBar::searchInDocument(const QRegExp &regExp, QTextDocument::FindFlags searchOptions)
+{
+    const bool found = d->mView->find(regExp, searchOptions);
+    mFindWidget->setFoundMatch(found);
+    return found;
+}
+
 void PlainTextEditFindBar::autoSearchMoveCursor()
 {
     QTextCursor cursor = d->mView->textCursor();

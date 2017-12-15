@@ -102,6 +102,9 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     mWholeWordAct = optionsMenu->addAction(i18n("Whole word"));
     mWholeWordAct->setCheckable(true);
 
+    mRegExpAct = optionsMenu->addAction(i18n("Regular Expression"));
+    mRegExpAct->setCheckable(true);
+
     optionsBtn->setMenu(optionsMenu);
     lay->addWidget(optionsBtn);
 
@@ -109,6 +112,7 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     connect(mFindPrevBtn, &QPushButton::clicked, this, &TextFindWidget::findPrev);
     connect(mCaseSensitiveAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
     connect(mWholeWordAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
+    connect(mRegExpAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
     connect(mSearch, &QLineEdit::textChanged, this, &TextFindWidget::slotAutoSearch);
 }
 
@@ -168,6 +172,11 @@ void TextFindWidget::slotAutoSearch(const QString &str)
 QLineEdit *TextFindWidget::search() const
 {
     return mSearch;
+}
+
+bool TextFindWidget::isRegularExpression() const
+{
+    return mRegExpAct->isChecked();
 }
 
 QTextDocument::FindFlags TextFindWidget::searchOptions() const

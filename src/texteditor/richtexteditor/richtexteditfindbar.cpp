@@ -72,6 +72,13 @@ bool RichTextEditFindBar::searchInDocument(const QString &text, QTextDocument::F
     return found;
 }
 
+bool RichTextEditFindBar::searchInDocument(const QRegExp &regExp, QTextDocument::FindFlags searchOptions)
+{
+    const bool found = d->mView->find(regExp, searchOptions);
+    mFindWidget->setFoundMatch(found);
+    return found;
+}
+
 void RichTextEditFindBar::autoSearchMoveCursor()
 {
     QTextCursor cursor = d->mView->textCursor();
