@@ -170,6 +170,8 @@ bool TextEditFindBarBase::searchText(bool backward, bool isAutoSearch)
 
     if (isAutoSearch) {
         autoSearchMoveCursor();
+    } else if (mFindWidget->isRegularExpression()) {
+        //TODO
     } else if (!mLastSearchStr.contains(mFindWidget->search()->text(), Qt::CaseSensitive)) {
         clearSelections();
     }
