@@ -178,7 +178,6 @@ bool TextEditFindBarBase::searchText(bool backward, bool isAutoSearch)
 
     bool found = false;
     if (mFindWidget->isRegularExpression()) {
-        qDebug() << " mLastSearchRegExp"<<mLastSearchRegExp;
         found = searchInDocument(mLastSearchRegExp, searchOptions);
     } else {
         found = searchInDocument(mLastSearchStr, searchOptions);
@@ -203,7 +202,6 @@ void TextEditFindBarBase::slotUpdateSearchOptions()
     const QTextDocument::FindFlags searchOptions = mFindWidget->searchOptions();
     mLastSearchStr = mFindWidget->search()->text();
     mLastSearchRegExp = mFindWidget->searchRegExp();
-    qDebug() << " mLastSearchRegExp"<<mLastSearchRegExp;
     if (mFindWidget->isRegularExpression()) {
         searchInDocument(mLastSearchRegExp, searchOptions);
     } else {
