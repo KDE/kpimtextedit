@@ -102,8 +102,12 @@ void RichTextEditFindBar::slotReplaceText()
 
 void RichTextEditFindBar::slotReplaceAllText()
 {
-    //FIXME richtext
-    const QString newText = d->mView->toPlainText().replace(mFindWidget->findRegExp(), mReplaceWidget->replace()->text());
+    QString newText = d->mView->toPlainText().replace(mFindWidget->findRegExp(), mReplaceWidget->replace()->text());
+    if (mFindWidget->isRegularExpression()) {
+        newText = d->mView->toPlainText().replace(mFindWidget->searchRegExp(), mReplaceWidget->replace()->text());
+    } else {
+        newText = d->mView->toPlainText().replace(mFindWidget->search()->text(), mReplaceWidget->replace()->text());
+    }
     d->mView->selectAll();
     d->mView->insertPlainText(newText);
 }
