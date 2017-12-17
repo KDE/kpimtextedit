@@ -44,6 +44,8 @@ public:
 
     QRegExp searchRegExp() const;
 
+    QString searchText() const;
+
 private Q_SLOTS:
     void slotAutoSearch(const QString &str);
 

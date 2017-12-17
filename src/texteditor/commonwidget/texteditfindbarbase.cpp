@@ -83,7 +83,7 @@ void TextEditFindBarBase::showFind()
     if (documentIsEmpty()) {
         return;
     }
-    mReplaceWidget->slotSearchStringEmpty(mFindWidget->search()->text().isEmpty());
+    mReplaceWidget->slotSearchStringEmpty(mFindWidget->searchText().isEmpty());
     show();
     if (mReplaceWidget->isVisible()) {
         mReplaceWidget->hide();
@@ -104,7 +104,7 @@ void TextEditFindBarBase::showReplace()
     if (documentIsEmpty()) {
         return;
     }
-    mReplaceWidget->slotSearchStringEmpty(mFindWidget->search()->text().isEmpty());
+    mReplaceWidget->slotSearchStringEmpty(mFindWidget->searchText().isEmpty());
     show();
     if (!mReplaceWidget->isVisible()) {
         mReplaceWidget->show();
@@ -119,7 +119,7 @@ void TextEditFindBarBase::setText(const QString &text)
 
 QString TextEditFindBarBase::text() const
 {
-    return mFindWidget->search()->text();
+    return mFindWidget->searchText();
 }
 
 void TextEditFindBarBase::focusAndSetCursor()
@@ -161,7 +161,7 @@ void TextEditFindBarBase::messageInfo(bool backward, bool isAutoSearch, bool fou
 
 bool TextEditFindBarBase::searchText(bool backward, bool isAutoSearch)
 {
-    mLastSearchStr = mFindWidget->search()->text();
+    mLastSearchStr = mFindWidget->searchText();
     mLastSearchRegExp = mFindWidget->searchRegExp();
     QTextDocument::FindFlags searchOptions = mFindWidget->searchOptions();
     if (backward) {
@@ -172,7 +172,7 @@ bool TextEditFindBarBase::searchText(bool backward, bool isAutoSearch)
         autoSearchMoveCursor();
     } else if (mFindWidget->isRegularExpression()) {
         //TODO
-    } else if (!mLastSearchStr.contains(mFindWidget->search()->text(), Qt::CaseSensitive)) {
+    } else if (!mLastSearchStr.contains(mFindWidget->searchText(), Qt::CaseSensitive)) {
         clearSelections();
     }
 
@@ -200,7 +200,7 @@ void TextEditFindBarBase::findPrev()
 void TextEditFindBarBase::slotUpdateSearchOptions()
 {
     const QTextDocument::FindFlags searchOptions = mFindWidget->searchOptions();
-    mLastSearchStr = mFindWidget->search()->text();
+    mLastSearchStr = mFindWidget->searchText();
     mLastSearchRegExp = mFindWidget->searchRegExp();
     if (mFindWidget->isRegularExpression()) {
         searchInDocument(mLastSearchRegExp, searchOptions);
@@ -251,7 +251,7 @@ bool TextEditFindBarBase::event(QEvent *e)
             if (shortCutOverride) {
                 return true;
             }
-            if (mFindWidget->search()->text().isEmpty()) {
+            if (mFindWidget->searchText().isEmpty()) {
                 return true;
             }
 

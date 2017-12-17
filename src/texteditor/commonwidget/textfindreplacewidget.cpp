@@ -166,6 +166,11 @@ bool TextFindWidget::isRegularExpression() const
     return mRegExpAct->isChecked();
 }
 
+QString TextFindWidget::searchText() const
+{
+    return mSearch->text();
+}
+
 QRegExp TextFindWidget::searchRegExp() const
 {
     QRegExp reg;

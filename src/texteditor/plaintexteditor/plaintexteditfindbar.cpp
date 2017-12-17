@@ -90,7 +90,7 @@ void PlainTextEditFindBar::autoSearchMoveCursor()
 void PlainTextEditFindBar::slotReplaceText()
 {
     if (d->mView->textCursor().hasSelection()) {
-        if (d->mView->textCursor().selectedText() == mFindWidget->search()->text()) {
+        if (d->mView->textCursor().selectedText() == mFindWidget->searchText()) {
             d->mView->textCursor().insertText(mReplaceWidget->replace()->text());
             //search next after replace text.
             searchText(false, false);
@@ -106,7 +106,7 @@ void PlainTextEditFindBar::slotReplaceAllText()
     if (mFindWidget->isRegularExpression()) {
         newText = d->mView->toPlainText().replace(mFindWidget->searchRegExp(), mReplaceWidget->replace()->text());
     } else {
-        newText = d->mView->toPlainText().replace(mFindWidget->search()->text(), mReplaceWidget->replace()->text());
+        newText = d->mView->toPlainText().replace(mFindWidget->searchText(), mReplaceWidget->replace()->text());
     }
     d->mView->selectAll();
     d->mView->insertPlainText(newText);
