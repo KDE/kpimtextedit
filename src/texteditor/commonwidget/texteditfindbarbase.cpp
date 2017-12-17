@@ -162,6 +162,7 @@ void TextEditFindBarBase::messageInfo(bool backward, bool isAutoSearch, bool fou
 bool TextEditFindBarBase::searchText(bool backward, bool isAutoSearch)
 {
     mLastSearchStr = mFindWidget->search()->text();
+    mLastSearchRegExp = mFindWidget->searchRegExp();
     QTextDocument::FindFlags searchOptions = mFindWidget->searchOptions();
     if (backward) {
         searchOptions |= QTextDocument::FindBackward;
