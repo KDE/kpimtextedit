@@ -65,7 +65,6 @@ TextEditFindBarBase::TextEditFindBarBase(QWidget *parent)
     connect(mFindWidget, &TextFindWidget::findNext, this, &TextEditFindBarBase::findNext);
     connect(mFindWidget, &TextFindWidget::findPrev, this, &TextEditFindBarBase::findPrev);
     connect(mFindWidget, &TextFindWidget::updateSearchOptions, this, &TextEditFindBarBase::slotUpdateSearchOptions);
-    connect(mFindWidget, &TextFindWidget::updateSearchOptions, this, &TextEditFindBarBase::slotUpdateSearchOptions);
     connect(mFindWidget, &TextFindWidget::autoSearch, this, &TextEditFindBarBase::autoSearch);
     connect(mFindWidget, &TextFindWidget::clearSearch, this, &TextEditFindBarBase::slotClearSearch);
     connect(mFindWidget, &TextFindWidget::searchStringEmpty, mReplaceWidget, &TextReplaceWidget::slotSearchStringEmpty);
