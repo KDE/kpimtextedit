@@ -21,14 +21,13 @@
 #ifndef KPIMTEXTEDIT_INSERTTABLEDIALOG_H
 #define KPIMTEXTEDIT_INSERTTABLEDIALOG_H
 
-#include "kpimtextedit_export.h"
 
 #include <QDialog>
 
 #include <QTextLength>
 
 namespace KPIMTextEdit {
-class KPIMTEXTEDIT_EXPORT InsertTableDialog : public QDialog
+class InsertTableDialog : public QDialog
 {
     Q_OBJECT
 public:

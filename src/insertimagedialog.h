@@ -21,15 +21,13 @@
 #ifndef KPIMTEXTEDIT_INSERTIMAGEDIALOG_H
 #define KPIMTEXTEDIT_INSERTIMAGEDIALOG_H
 
-#include "kpimtextedit_export.h"
-
 #include <QDialog>
 #include <QUrl>
 
 namespace KPIMTextEdit {
 class InsertImageDialogPrivate;
 
-class KPIMTEXTEDIT_EXPORT InsertImageDialog : public QDialog
+class InsertImageDialog : public QDialog
 {
     Q_OBJECT
 public:

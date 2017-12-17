@@ -20,14 +20,13 @@
 
 #ifndef INSERTTABLEWIDGET_H
 #define INSERTTABLEWIDGET_H
-#include "kpimtextedit_export.h"
 
 #include <QWidget>
 
 #include <QTextLength>
 
 namespace KPIMTextEdit {
-class KPIMTEXTEDIT_EXPORT InsertTableWidget : public QWidget
+class InsertTableWidget : public QWidget
 {
     Q_OBJECT
 public:

@@ -26,7 +26,7 @@
 #include <KActionMenu>
 
 namespace KPIMTextEdit {
-class KPIMTEXTEDIT_EXPORT EmoticonTextEditAction : public KActionMenu
+class EmoticonTextEditAction : public KActionMenu
 {
     Q_OBJECT
 public:
