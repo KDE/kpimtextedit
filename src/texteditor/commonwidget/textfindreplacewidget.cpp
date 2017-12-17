@@ -120,19 +120,6 @@ TextFindWidget::~TextFindWidget()
 {
 }
 
-QRegExp TextFindWidget::findRegExp() const
-{
-    QString str = QRegExp::escape(mSearch->text());
-    if (mWholeWordAct->isChecked()) {
-        str = QLatin1String("\\b") + str + QLatin1String("\\b");
-    }
-    if (mCaseSensitiveAct->isChecked()) {
-        return QRegExp(str, Qt::CaseSensitive);
-    } else {
-        return QRegExp(str, Qt::CaseInsensitive);
-    }
-}
-
 void TextFindWidget::setFoundMatch(bool match)
 {
 #ifndef QT_NO_STYLE_STYLESHEET

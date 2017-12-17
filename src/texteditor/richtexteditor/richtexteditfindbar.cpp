@@ -102,7 +102,7 @@ void RichTextEditFindBar::slotReplaceText()
 
 void RichTextEditFindBar::slotReplaceAllText()
 {
-    QString newText = d->mView->toPlainText().replace(mFindWidget->findRegExp(), mReplaceWidget->replace()->text());
+    QString newText;
     if (mFindWidget->isRegularExpression()) {
         newText = d->mView->toPlainText().replace(mFindWidget->searchRegExp(), mReplaceWidget->replace()->text());
     } else {

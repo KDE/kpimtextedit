@@ -39,7 +39,6 @@ public:
     QLineEdit *search() const;
 
     void setFoundMatch(bool match);
-    QRegExp findRegExp() const;
 
     bool isRegularExpression() const;
 
