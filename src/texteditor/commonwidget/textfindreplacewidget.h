@@ -43,6 +43,8 @@ public:
 
     bool isRegularExpression() const;
 
+    QRegExp searchRegExp() const;
+
 private Q_SLOTS:
     void slotAutoSearch(const QString &str);
 

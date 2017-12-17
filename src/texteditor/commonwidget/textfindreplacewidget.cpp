@@ -179,6 +179,17 @@ bool TextFindWidget::isRegularExpression() const
     return mRegExpAct->isChecked();
 }
 
+QRegExp TextFindWidget::searchRegExp() const
+{
+    QRegExp reg;
+    if (mCaseSensitiveAct->isChecked()) {
+        reg.setCaseSensitivity(Qt::CaseInsensitive);
+    }
+    //TODO QTextDocument::FindWholeWords ?
+    reg.setPattern(mSearch->text());
+    return reg;
+}
+
 QTextDocument::FindFlags TextFindWidget::searchOptions() const
 {
     QTextDocument::FindFlags opt = nullptr;

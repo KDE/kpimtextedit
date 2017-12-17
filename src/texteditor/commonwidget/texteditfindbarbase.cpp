@@ -19,7 +19,7 @@
 
 #include "texteditfindbarbase.h"
 #include "texteditor/commonwidget/textfindreplacewidget.h"
-
+#include "kpimtextedit_debug.h"
 #include <QIcon>
 #include <KLocalizedString>
 #include <kmessagebox.h>
@@ -176,7 +176,12 @@ bool TextEditFindBarBase::searchText(bool backward, bool isAutoSearch)
         clearSelections();
     }
 
-    const bool found = searchInDocument(mLastSearchStr, searchOptions);
+    bool found = false;
+    if (mFindWidget->isRegularExpression()) {
+        found = searchInDocument(mLastSearchRegExp, searchOptions);
+    } else {
+        found = searchInDocument(mLastSearchStr, searchOptions);
+    }
     mFindWidget->setFoundMatch(found);
     messageInfo(backward, isAutoSearch, found);
     return found;
@@ -196,7 +201,12 @@ void TextEditFindBarBase::slotUpdateSearchOptions()
 {
     const QTextDocument::FindFlags searchOptions = mFindWidget->searchOptions();
     mLastSearchStr = mFindWidget->search()->text();
-    searchInDocument(mLastSearchStr, searchOptions);
+    mLastSearchRegExp = mFindWidget->searchRegExp();
+    if (mFindWidget->isRegularExpression()) {
+        searchInDocument(mLastSearchRegExp, searchOptions);
+    } else {
+        searchInDocument(mLastSearchStr, searchOptions);
+    }
 }
 
 void TextEditFindBarBase::clearSelections()
