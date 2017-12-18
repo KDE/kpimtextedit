@@ -24,12 +24,12 @@
 #include <QDialog>
 #include "config-kpimtextedit.h"
 
-#include "kpimtextedit_export.h"
+#include "kpimtextedit_private_export.h"
 #include "kpimtextedit/plaintexteditor.h"
 
 namespace KPIMTextEdit {
 class InsertHtmlDialogPrivate;
-class KPIMTEXTEDIT_EXPORT InsertHtmlDialog : public QDialog
+class KPIMTEXTEDIT_TESTS_EXPORT InsertHtmlDialog : public QDialog
 {
     Q_OBJECT
 public:

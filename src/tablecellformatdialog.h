@@ -21,14 +21,12 @@
 #ifndef KPIMTEXTEDIT_TABLECELLFORMATDIALOG_H
 #define KPIMTEXTEDIT_TABLECELLFORMATDIALOG_H
 
-#include "kpimtextedit_export.h"
-
 #include <QDialog>
 
 #include <QTextCharFormat>
 
 namespace KPIMTextEdit {
-class KPIMTEXTEDIT_EXPORT TableCellFormatDialog : public QDialog
+class TableCellFormatDialog : public QDialog
 {
     Q_OBJECT
 public:

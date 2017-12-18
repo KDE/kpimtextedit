@@ -20,7 +20,6 @@
 #ifndef KPIMTEXTEDIT_INSERTIMAGEWIDGET_H
 #define KPIMTEXTEDIT_INSERTIMAGEWIDGET_H
 
-#include "kpimtextedit_export.h"
 
 #include <QUrl>
 
@@ -29,7 +28,7 @@
 namespace KPIMTextEdit {
 class InsertImageWidgetPrivate;
 
-class KPIMTEXTEDIT_EXPORT InsertImageWidget : public QWidget
+class InsertImageWidget : public QWidget
 {
     Q_OBJECT
 public:
