@@ -90,10 +90,18 @@ void RichTextEditFindBar::slotReplaceText()
 {
     //FIXME!
     if (d->mView->textCursor().hasSelection()) {
-        if (d->mView->textCursor().selectedText() == mFindWidget->searchText()) {
-            d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
-            //search next after replace text.
-            searchText(false, false);
+        if (mFindWidget->isRegularExpression()) {
+            if (d->mView->textCursor().selectedText().contains(mFindWidget->searchRegExp())) {
+                d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
+                //search next after replace text.
+                searchText(false, false);
+            }
+        } else {
+            if (d->mView->textCursor().selectedText() == mFindWidget->searchText()) {
+                d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
+                //search next after replace text.
+                searchText(false, false);
+            }
         }
     } else {
         searchText(false, false);
