@@ -36,7 +36,7 @@ public:
 
     QTextDocument::FindFlags searchOptions() const;
 
-    QLineEdit *search() const;
+    QLineEdit *searchLineEdit() const;
 
     void setFoundMatch(bool match);
 
@@ -74,7 +74,7 @@ public:
     explicit TextReplaceWidget(QWidget *parent = nullptr);
     ~TextReplaceWidget();
 
-    QLineEdit *replace() const;
+    QLineEdit *replaceLineEdit() const;
 
 public Q_SLOTS:
     void slotSearchStringEmpty(bool);

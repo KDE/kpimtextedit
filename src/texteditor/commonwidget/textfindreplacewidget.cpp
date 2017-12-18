@@ -56,7 +56,7 @@ TextReplaceWidget::~TextReplaceWidget()
 {
 }
 
-QLineEdit *TextReplaceWidget::replace() const
+QLineEdit *TextReplaceWidget::replaceLineEdit() const
 {
     return mReplace;
 }
@@ -156,7 +156,7 @@ void TextFindWidget::slotAutoSearch(const QString &str)
     }
 }
 
-QLineEdit *TextFindWidget::search() const
+QLineEdit *TextFindWidget::searchLineEdit() const
 {
     return mSearch;
 }

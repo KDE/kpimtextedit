@@ -114,7 +114,7 @@ void TextEditFindBarBase::showReplace()
 
 void TextEditFindBarBase::setText(const QString &text)
 {
-    mFindWidget->search()->setText(text);
+    mFindWidget->searchLineEdit()->setText(text);
 }
 
 QString TextEditFindBarBase::text() const
@@ -125,8 +125,8 @@ QString TextEditFindBarBase::text() const
 void TextEditFindBarBase::focusAndSetCursor()
 {
     setFocus();
-    mFindWidget->search()->selectAll();
-    mFindWidget->search()->setFocus();
+    mFindWidget->searchLineEdit()->selectAll();
+    mFindWidget->searchLineEdit()->setFocus();
 }
 
 void TextEditFindBarBase::slotClearSearch()
@@ -217,8 +217,8 @@ void TextEditFindBarBase::clearSelections()
 void TextEditFindBarBase::closeBar()
 {
     // Make sure that all old searches are cleared
-    mFindWidget->search()->setText(QString());
-    mReplaceWidget->replace()->setText(QString());
+    mFindWidget->searchLineEdit()->setText(QString());
+    mReplaceWidget->replaceLineEdit()->setText(QString());
     clearSelections();
     mReplaceWidget->hide();
     updateGeometry();
