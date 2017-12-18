@@ -23,7 +23,7 @@
 
 using namespace KPIMTextEdit;
 
-class KPIMTextEdit::TextToSpeechActionsPrivate
+class Q_DECL_HIDDEN KPIMTextEdit::TextToSpeechActionsPrivate
 {
 public:
     TextToSpeechActionsPrivate()

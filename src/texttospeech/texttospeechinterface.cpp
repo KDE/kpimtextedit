@@ -22,7 +22,7 @@
 
 using namespace KPIMTextEdit;
 
-class KPIMTextEdit::TextToSpeechInterfacePrivate
+class Q_DECL_HIDDEN KPIMTextEdit::TextToSpeechInterfacePrivate
 {
 public:
     TextToSpeechInterfacePrivate(TextToSpeechWidget *textToSpeechWidget)

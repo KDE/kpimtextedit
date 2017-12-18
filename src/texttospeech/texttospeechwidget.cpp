@@ -30,7 +30,7 @@
 
 using namespace KPIMTextEdit;
 
-class KPIMTextEdit::TextToSpeechWidgetPrivate
+class Q_DECL_HIDDEN KPIMTextEdit::TextToSpeechWidgetPrivate
 {
 public:
     TextToSpeechWidgetPrivate()

@@ -31,7 +31,7 @@
 
 using namespace KPIMTextEdit;
 
-class KPIMTextEdit::TextGoToLineWidgetPrivate
+class Q_DECL_HIDDEN KPIMTextEdit::TextGoToLineWidgetPrivate
 {
 public:
     TextGoToLineWidgetPrivate()
