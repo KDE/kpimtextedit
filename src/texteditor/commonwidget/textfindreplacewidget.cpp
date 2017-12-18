@@ -179,8 +179,11 @@ QRegExp TextFindWidget::searchRegExp() const
     } else {
         reg.setCaseSensitivity(Qt::CaseInsensitive);
     }
-    //TODO QTextDocument::FindWholeWords ?
-    reg.setPattern(mSearch->text());
+    QString searchTextString = mSearch->text();
+    if (mWholeWordAct->isChecked()) {
+        searchTextString = QStringLiteral("\\b") + searchTextString + QStringLiteral("\\b");
+    }
+    reg.setPattern(searchTextString);
     return reg;
 }
 
