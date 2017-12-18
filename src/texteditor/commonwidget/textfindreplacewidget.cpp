@@ -175,6 +175,8 @@ QRegExp TextFindWidget::searchRegExp() const
 {
     QRegExp reg;
     if (mCaseSensitiveAct->isChecked()) {
+        reg.setCaseSensitivity(Qt::CaseSensitive);
+    } else {
         reg.setCaseSensitivity(Qt::CaseInsensitive);
     }
     //TODO QTextDocument::FindWholeWords ?
