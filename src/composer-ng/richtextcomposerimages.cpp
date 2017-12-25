@@ -76,8 +76,8 @@ void RichTextComposerImages::addImageHelper(const QUrl &url, int width, int heig
                    url.path()));
         return;
     }
-    QFileInfo fi(url.path());
-    QString imageName
+    const QFileInfo fi(url.path());
+    const QString imageName
         = fi.baseName().isEmpty()
           ? QStringLiteral("image.png")
           : QString(fi.baseName() + QLatin1String(".png"));
@@ -210,8 +210,7 @@ QList<QTextImageFormat> RichTextComposerImages::embeddedImageFormats() const
 
     QTextBlock currentBlock = doc->begin();
     while (currentBlock.isValid()) {
-        QTextBlock::iterator it;
-        for (it = currentBlock.begin(); !it.atEnd(); ++it) {
+        for (QTextBlock::iterator it = currentBlock.begin(); !it.atEnd(); ++it) {
             QTextFragment fragment = it.fragment();
             if (fragment.isValid()) {
                 QTextImageFormat imageFormat = fragment.charFormat().toImageFormat();
@@ -231,7 +230,7 @@ QList<QTextImageFormat> RichTextComposerImages::embeddedImageFormats() const
 
 void RichTextComposerImages::insertImage(const QImage &image, const QFileInfo &fileInfo)
 {
-    QString imageName = fileInfo.baseName().isEmpty()
+    const QString imageName = fileInfo.baseName().isEmpty()
                         ? i18nc("Start of the filename for an image", "image")
                         : fileInfo.baseName();
     addImageHelper(imageName, image);
