@@ -129,7 +129,7 @@ void EmoticonTextEditSelector::slotEmoticonClicked(QListWidgetItem *item)
     }
     EmoticonTextEditItem *itemEmoticon = static_cast<EmoticonTextEditItem *>(item);
 
-    emit itemSelected(itemEmoticon->text());
+    Q_EMIT itemSelected(itemEmoticon->text());
     if (isVisible() && parentWidget()
         && parentWidget()->inherits("QMenu")) {
         parentWidget()->close();
