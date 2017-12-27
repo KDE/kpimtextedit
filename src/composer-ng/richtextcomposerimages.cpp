@@ -217,7 +217,7 @@ QList<QTextImageFormat> RichTextComposerImages::embeddedImageFormats() const
                 if (imageFormat.isValid()) {
                     //TODO: Replace with a way to see if an image is an embedded image or a remote
                     QUrl url(imageFormat.name());
-                    if (!url.isValid() || !url.scheme().startsWith(QStringLiteral("http"))) {
+                    if (!url.isValid() || !url.scheme().startsWith(QLatin1String("http"))) {
                         retList.append(imageFormat);
                     }
                 }

@@ -81,15 +81,15 @@ void RichTextComposerEmailQuoteHighlighter::highlightBlock(const QString &text)
     simplified = simplified.remove(QRegularExpression(QStringLiteral("\\s"))).
                  replace(QLatin1Char('|'), QLatin1Char('>'));
 
-    while (simplified.startsWith(QStringLiteral(">>>>"))) {
+    while (simplified.startsWith(QLatin1String(">>>>"))) {
         simplified = simplified.mid(3);
     }
 
-    if (simplified.startsWith(QStringLiteral(">>>"))) {
+    if (simplified.startsWith(QLatin1String(">>>"))) {
         setFormat(0, text.length(), d->col3);
-    } else if (simplified.startsWith(QStringLiteral(">>"))) {
+    } else if (simplified.startsWith(QLatin1String(">>"))) {
         setFormat(0, text.length(), d->col2);
-    } else if (simplified.startsWith(QStringLiteral(">"))) {
+    } else if (simplified.startsWith(QLatin1String(">"))) {
         setFormat(0, text.length(), d->col1);
     } else if (d->parent->isLineQuoted(text)) {
         setFormat(0, text.length(), d->col1);   // FIXME: custom quote prefix
