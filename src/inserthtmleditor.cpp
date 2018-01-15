@@ -20,6 +20,7 @@
 
 #include "inserthtmleditor.h"
 #include "texteditorcompleter.h"
+#include "kpimtextedit_debug.h"
 
 #include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Definition>
@@ -36,6 +37,9 @@ InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
 {
     KSyntaxHighlighting::Definition def;
     def = mRepo.definitionForName(QStringLiteral("HTML"));
+    if (!def.isValid()) {
+        qCWarning(KPIMTEXTEDIT_LOG) << "Invalid definition name";
+    }
 
     KSyntaxHighlighting::SyntaxHighlighter *hl = new KSyntaxHighlighting::SyntaxHighlighter(document());
     hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
