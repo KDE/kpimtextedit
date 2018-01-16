@@ -35,8 +35,7 @@ using namespace KPIMTextEdit;
 InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
     : KPIMTextEdit::PlainTextEditor(parent)
 {
-    KSyntaxHighlighting::Definition def;
-    def = mRepo.definitionForName(QStringLiteral("HTML"));
+    const KSyntaxHighlighting::Definition def = mRepo.definitionForName(QStringLiteral("HTML"));
     if (!def.isValid()) {
         qCWarning(KPIMTEXTEDIT_LOG) << "Invalid definition name";
     }
