@@ -3,6 +3,7 @@ if (KF5DesignerPlugin_FOUND)
     target_link_libraries(kpimtexteditwidgets
         KF5::PimTextEdit Qt5::Widgets
     )
+    set_property(SOURCE ${CMAKE_CURRENT_BINARY_DIR}/kpimtexteditwidgetswidgets.cpp PROPERTY SKIP_AUTOMOC ON)
     if(NOT WIN32)
         # Since there are no libraries provided by this module,
         # there is no point including the build tree in RPath,
