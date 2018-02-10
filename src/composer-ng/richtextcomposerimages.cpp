@@ -105,7 +105,7 @@ void RichTextComposerImages::loadImage(const QImage &image, const QString &match
                                                              QUrl(resourceName), QVariant(image));
                         QTextImageFormat format;
                         format.setName(resourceName);
-                        if ((imageFormat.width() != 0) && (imageFormat.height() != 0)) {
+                        if ((imageFormat.width() != 0.0) && (imageFormat.height() != 0.0)) {
                             format.setWidth(imageFormat.width());
                             format.setHeight(imageFormat.height());
                         }

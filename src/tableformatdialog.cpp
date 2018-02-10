@@ -190,7 +190,7 @@ void TableFormatDialog::setAlignment(Qt::Alignment alignment)
 
 Qt::Alignment TableFormatDialog::alignment() const
 {
-    return (Qt::Alignment)d->alignment->itemData(d->alignment->currentIndex()).toInt();
+    return static_cast<Qt::Alignment>(d->alignment->itemData(d->alignment->currentIndex()).toInt());
 }
 
 QTextLength::Type TableFormatDialog::typeOfLength() const

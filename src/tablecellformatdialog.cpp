@@ -109,8 +109,8 @@ void TableCellFormatDialog::setTableCellBackgroundColor(const QColor &col)
 QTextCharFormat::VerticalAlignment TableCellFormatDialog::verticalAlignment() const
 {
     return
-        (QTextCharFormat::VerticalAlignment)d->verticalAlignment->itemData(
-        d->verticalAlignment->currentIndex()).toInt();
+        static_cast<QTextCharFormat::VerticalAlignment>(d->verticalAlignment->itemData(
+        d->verticalAlignment->currentIndex()).toInt());
 }
 
 void TableCellFormatDialog::setVerticalAlignment(QTextCharFormat::VerticalAlignment vertical)

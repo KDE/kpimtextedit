@@ -102,7 +102,7 @@ void RichTextExternalComposer::startExternalEditor()
         // construct command line...
         QHash<QChar, QString> map;
         map.insert(QLatin1Char('l'), QString::number(d->richTextComposer->textCursor().blockNumber() + 1));
-        map.insert(QLatin1Char('w'), QString::number((qulonglong)d->richTextComposer->winId()));
+        map.insert(QLatin1Char('w'), QString::number(static_cast<qulonglong>(d->richTextComposer->winId())));
         map.insert(QLatin1Char('f'), d->extEditorTempFile->fileName());
         const QString cmd = KMacroExpander::expandMacrosShellQuote(commandLine, map);
         const QStringList arg = KShell::splitArgs(cmd);

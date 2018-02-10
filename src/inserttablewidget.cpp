@@ -114,8 +114,8 @@ void InsertTableWidget::slotTypeOfLengthChanged(int index)
 QTextLength::Type InsertTableWidget::typeOfLength() const
 {
     return
-        (QTextLength::Type)d->mTypeOfLength->itemData(
-        d->mTypeOfLength->currentIndex()).toInt();
+        static_cast<QTextLength::Type>(d->mTypeOfLength->itemData(
+        d->mTypeOfLength->currentIndex()).toInt());
 }
 
 void InsertTableWidget::setTypeOfLength(QTextLength::Type type)

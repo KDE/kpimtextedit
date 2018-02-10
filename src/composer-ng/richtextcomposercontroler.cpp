@@ -46,9 +46,9 @@ class Q_DECL_HIDDEN RichTextComposerControler::RichTextComposerControlerPrivate
 {
 public:
     RichTextComposerControlerPrivate(RichTextComposer *composer, RichTextComposerControler *qq)
-        : painterActive(false)
-        , richtextComposer(composer)
+        : richtextComposer(composer)
         , q(qq)
+        , painterActive(false)
     {
         nestedListHelper = new NestedListHelper(composer);
         richTextImages = new RichTextComposerImages(richtextComposer, q);
@@ -76,11 +76,11 @@ public:
     QFont saveFont;
     QColor mLinkColor;
     QTextCharFormat painterFormat;
-    bool painterActive;
     NestedListHelper *nestedListHelper = nullptr;
     RichTextComposer *richtextComposer = nullptr;
     RichTextComposerImages *richTextImages = nullptr;
     RichTextComposerControler *q = nullptr;
+    bool painterActive;
 };
 
 void RichTextComposerControler::RichTextComposerControlerPrivate::selectLinkText(QTextCursor *cursor) const

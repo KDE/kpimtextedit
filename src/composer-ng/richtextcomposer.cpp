@@ -44,8 +44,8 @@ class Q_DECL_HIDDEN RichTextComposer::RichTextComposerPrivate
 public:
     RichTextComposerPrivate(RichTextComposer *qq)
         : q(qq)
-        , forcePlainTextMarkup(false)
         , mode(RichTextComposer::Plain)
+        , forcePlainTextMarkup(false)
     {
         composerControler = new RichTextComposerControler(q, q);
         richTextComposerActions = new RichTextComposerActions(composerControler, q);
@@ -60,8 +60,8 @@ public:
     RichTextComposerActions *richTextComposerActions = nullptr;
     KPIMTextEdit::RichTextExternalComposer *externalComposer = nullptr;
     RichTextComposer *q = nullptr;
-    bool forcePlainTextMarkup = false;
     RichTextComposer::Mode mode;
+    bool forcePlainTextMarkup = false;
 };
 
 RichTextComposer::RichTextComposer(QWidget *parent)
