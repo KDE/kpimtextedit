@@ -24,7 +24,7 @@
 
 using namespace KPIMTextEdit;
 
-QTEST_MAIN(TextUtilsTest)
+QTEST_GUILESS_MAIN(TextUtilsTest)
 #define lineLength 40
 
 void TextUtilsTest::test_flowText()
