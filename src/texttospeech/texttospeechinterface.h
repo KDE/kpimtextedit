@@ -32,7 +32,7 @@ class KPIMTEXTEDIT_EXPORT TextToSpeechInterface : public AbstractTextToSpeechInt
     Q_OBJECT
 public:
     explicit TextToSpeechInterface(TextToSpeechWidget *textToSpeechWidget, QObject *parent = nullptr);
-    ~TextToSpeechInterface();
+    ~TextToSpeechInterface() override;
 
     bool isReady() const override;
     void say(const QString &text) override;

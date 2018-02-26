@@ -33,7 +33,7 @@ class KPIMTEXTEDIT_EXPORT PlainTextEditFindBar : public TextEditFindBarBase
 
 public:
     explicit PlainTextEditFindBar(QPlainTextEdit *view, QWidget *parent = nullptr);
-    ~PlainTextEditFindBar();
+    ~PlainTextEditFindBar() override;
 
 protected:
     bool viewIsReadOnly() const override;

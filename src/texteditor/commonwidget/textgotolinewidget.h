@@ -30,7 +30,7 @@ class KPIMTEXTEDIT_EXPORT TextGoToLineWidget : public QWidget
     Q_OBJECT
 public:
     explicit TextGoToLineWidget(QWidget *parent = nullptr);
-    ~TextGoToLineWidget();
+    ~TextGoToLineWidget() override;
 
     void goToLine();
 

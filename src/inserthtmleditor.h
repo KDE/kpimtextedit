@@ -34,7 +34,7 @@ class InsertHtmlEditor : public KPIMTextEdit::PlainTextEditor
     Q_OBJECT
 public:
     explicit InsertHtmlEditor(QWidget *parent = nullptr);
-    ~InsertHtmlEditor();
+    ~InsertHtmlEditor() override;
 protected:
     void keyPressEvent(QKeyEvent *e) override;
 private:

@@ -33,7 +33,7 @@ class KPIMTEXTEDIT_EXPORT TextEditFindBarBase : public QWidget
 
 public:
     explicit TextEditFindBarBase(QWidget *parent = nullptr);
-    ~TextEditFindBarBase();
+    ~TextEditFindBarBase() override;
 
     QString text() const;
     void setText(const QString &text);

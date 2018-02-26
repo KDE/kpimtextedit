@@ -38,7 +38,7 @@ class KPIMTEXTEDIT_EXPORT PlainTextEditor : public QPlainTextEdit
     Q_PROPERTY(bool webShortcutSupport READ webShortcutSupport WRITE setWebShortcutSupport)
 public:
     explicit PlainTextEditor(QWidget *parent = nullptr);
-    ~PlainTextEditor();
+    ~PlainTextEditor() override;
 
     enum SupportFeature {
         None = 0,

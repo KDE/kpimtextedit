@@ -41,7 +41,7 @@ class KPIMTEXTEDIT_EXPORT RichTextEditor : public QTextEdit
     Q_PROPERTY(bool webShortcutSupport READ webShortcutSupport WRITE setWebShortcutSupport)
 public:
     explicit RichTextEditor(QWidget *parent = nullptr);
-    ~RichTextEditor();
+    ~RichTextEditor() override;
     enum SupportFeature {
         None = 0,
         Search = 1,

@@ -29,7 +29,7 @@ class KPIMTEXTEDIT_EXPORT RichTextComposerEmailQuoteDecorator : public Sonnet::S
 {
 public:
     explicit RichTextComposerEmailQuoteDecorator(RichTextComposer *textEdit);
-    ~RichTextComposerEmailQuoteDecorator();
+    ~RichTextComposerEmailQuoteDecorator() override;
 
 protected:
     bool isSpellCheckingEnabledForBlock(const QString &blockText) const override;

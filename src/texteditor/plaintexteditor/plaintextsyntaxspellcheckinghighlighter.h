@@ -37,7 +37,7 @@ class KPIMTEXTEDIT_EXPORT PlainTextSyntaxSpellCheckingHighlighter : public Sonne
 {
 public:
     explicit PlainTextSyntaxSpellCheckingHighlighter(PlainTextEditor *plainText, const QColor &misspelledColor = Qt::red);
-    ~PlainTextSyntaxSpellCheckingHighlighter();
+    ~PlainTextSyntaxSpellCheckingHighlighter() override;
 
     void toggleSpellHighlighting(bool on);
 

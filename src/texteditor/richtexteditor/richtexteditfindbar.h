@@ -32,7 +32,7 @@ class KPIMTEXTEDIT_EXPORT RichTextEditFindBar : public TextEditFindBarBase
     Q_OBJECT
 public:
     explicit RichTextEditFindBar(QTextEdit *view, QWidget *parent = nullptr);
-    ~RichTextEditFindBar();
+    ~RichTextEditFindBar() override;
 
 protected:
     bool viewIsReadOnly() const override;

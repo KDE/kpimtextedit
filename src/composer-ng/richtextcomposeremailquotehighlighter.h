@@ -36,7 +36,7 @@ public:
     explicit RichTextComposerEmailQuoteHighlighter(RichTextComposer *textEdit, const QColor &normalColor = Qt::black, const QColor &quoteDepth1 = QColor(0x00, 0x80, 0x00),
                                                    const QColor &quoteDepth2 = QColor(0x00, 0x80, 0x00), const QColor &quoteDepth3 = QColor(0x00, 0x80, 0x00), const QColor &misspelledColor = Qt::red);
 
-    ~RichTextComposerEmailQuoteHighlighter();
+    ~RichTextComposerEmailQuoteHighlighter() override;
 
     /**
      * Sets the colors used for highlighting quoted text and spelling mistakes.
