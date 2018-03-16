@@ -35,7 +35,7 @@ class KPIMTEXTEDIT_EXPORT RichTextComposer : public KPIMTextEdit::RichTextEditor
     Q_OBJECT
 public:
     explicit RichTextComposer(QWidget *parent = nullptr);
-    ~RichTextComposer();
+    ~RichTextComposer() override;
 
     enum Mode {
         Plain,    ///< Plain text mode
