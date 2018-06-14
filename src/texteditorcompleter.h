@@ -38,7 +38,7 @@ public:
 
     void setCompleterStringList(const QStringList &list);
 
-    QCompleter *completer() const;
+    Q_REQUIRED_RESULT QCompleter *completer() const;
 
     void completeText();
 

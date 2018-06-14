@@ -36,7 +36,7 @@ public:
 
     bool isReady() const override;
     void say(const QString &text) override;
-    int volume() const override;
+    Q_REQUIRED_RESULT int volume() const override;
     void setVolume(int value) override;
     void reloadSettings() override;
 

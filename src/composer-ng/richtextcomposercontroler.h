@@ -34,34 +34,34 @@ public:
     explicit RichTextComposerControler(RichTextComposer *richtextComposer, QObject *parent = nullptr);
     ~RichTextComposerControler();
 
-    RichTextComposer *richTextComposer() const;
+    Q_REQUIRED_RESULT RichTextComposer *richTextComposer() const;
 
-    QString currentLinkUrl() const;
+    Q_REQUIRED_RESULT QString currentLinkUrl() const;
 
-    QString currentLinkText() const;
+    Q_REQUIRED_RESULT QString currentLinkText() const;
     void selectLinkText() const;
-    QString toCleanHtml() const;
+    Q_REQUIRED_RESULT QString toCleanHtml() const;
 
-    bool canIndentList() const;
-    bool canDedentList() const;
+    Q_REQUIRED_RESULT bool canIndentList() const;
+    Q_REQUIRED_RESULT bool canDedentList() const;
 
-    NestedListHelper *nestedListHelper() const;
+    Q_REQUIRED_RESULT NestedListHelper *nestedListHelper() const;
     void insertShareLink(const QString &url);
     void insertLink(const QString &url);
     void setCursorPositionFromStart(unsigned int pos);
     void ensureCursorVisible();
 
     RichTextComposerImages *composerImages() const;
-    bool painterActive() const;
+    Q_REQUIRED_RESULT bool painterActive() const;
     void disablePainter();
     bool isFormattingUsed() const;
 
     void setFontForWholeText(const QFont &font);
     void textModeChanged(KPIMTextEdit::RichTextComposer::Mode mode);
     void updateLink(const QString &linkUrl, const QString &linkText);
-    QString toWrappedPlainText(QTextDocument *doc) const;
-    QString toWrappedPlainText() const;
-    QString toCleanPlainText(const QString &plainText = QString()) const;
+    Q_REQUIRED_RESULT QString toWrappedPlainText(QTextDocument *doc) const;
+    Q_REQUIRED_RESULT QString toWrappedPlainText() const;
+    Q_REQUIRED_RESULT QString toCleanPlainText(const QString &plainText = QString()) const;
 public Q_SLOTS:
     void insertHorizontalRule();
     void alignLeft();

@@ -32,18 +32,18 @@ class InsertTableWidget : public QWidget
 public:
     explicit InsertTableWidget(QWidget *parent = nullptr);
     ~InsertTableWidget();
-    int columns() const;
-    int rows() const;
-    int border() const;
+    Q_REQUIRED_RESULT int columns() const;
+    Q_REQUIRED_RESULT int rows() const;
+    Q_REQUIRED_RESULT int border() const;
 
     void setColumns(int col);
     void setRows(int rows);
     void setBorder(int border);
 
-    QTextLength::Type typeOfLength() const;
+    Q_REQUIRED_RESULT QTextLength::Type typeOfLength() const;
     void setTypeOfLength(QTextLength::Type type);
 
-    int length() const;
+    Q_REQUIRED_RESULT int length() const;
     void setLength(int);
 
 private:

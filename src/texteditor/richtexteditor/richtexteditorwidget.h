@@ -38,23 +38,23 @@ public:
 
     void clear();
 
-    RichTextEditor *editor() const;
+    Q_REQUIRED_RESULT RichTextEditor *editor() const;
 
     void setReadOnly(bool readOnly);
     bool isReadOnly() const;
 
     void setHtml(const QString &html);
-    QString toHtml() const;
+    Q_REQUIRED_RESULT QString toHtml() const;
 
     void setPlainText(const QString &text);
-    QString toPlainText() const;
+    Q_REQUIRED_RESULT QString toPlainText() const;
 
     void setAcceptRichText(bool b);
     bool acceptRichText() const;
 
     void setSpellCheckingConfigFileName(const QString &_fileName);
 
-    bool isEmpty() const;
+    Q_REQUIRED_RESULT bool isEmpty() const;
 public Q_SLOTS:
     void slotFindNext();
     void slotFind();

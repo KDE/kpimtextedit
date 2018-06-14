@@ -40,12 +40,12 @@ public:
     };
     Q_ENUMS(State)
 
-    State state() const;
+    Q_REQUIRED_RESULT State state() const;
     void setState(KPIMTextEdit::TextToSpeechWidget::State state);
 
     void setTextToSpeechInterface(AbstractTextToSpeechInterface *interface);
 
-    bool isReady() const;
+    Q_REQUIRED_RESULT bool isReady() const;
 
 public Q_SLOTS:
     void say(const QString &text);

@@ -37,7 +37,7 @@ public:
      * @brief tableCellBackgroundColor
      * @return background color of cell.
      */
-    QColor tableCellBackgroundColor() const;
+    Q_REQUIRED_RESULT QColor tableCellBackgroundColor() const;
 
     /**
      * @brief setTableCellBackgroundColor
@@ -49,7 +49,7 @@ public:
      * @brief verticalAlignment
      * @return vertical alignment for current cell.
      */
-    QTextCharFormat::VerticalAlignment verticalAlignment() const;
+    Q_REQUIRED_RESULT QTextCharFormat::VerticalAlignment verticalAlignment() const;
 
     /**
      * @brief setVerticalAlignment
@@ -61,7 +61,7 @@ public:
      * @brief useBackgroundColor
      * @return true if we define background color. Otherwise false and allows to clear it.
      */
-    bool useBackgroundColor() const;
+    Q_REQUIRED_RESULT bool useBackgroundColor() const;
 
 private:
     class TableCellFormatDialogPrivate;

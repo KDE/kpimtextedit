@@ -36,7 +36,7 @@ public:
     explicit RichTextComposerWidget(QWidget *parent = nullptr);
     ~RichTextComposerWidget();
 
-    KPIMTextEdit::RichTextComposer *richTextComposer() const;
+    Q_REQUIRED_RESULT KPIMTextEdit::RichTextComposer *richTextComposer() const;
 private:
     RichTextComposerWidgetPrivate *const d;
 };

@@ -33,33 +33,33 @@ public:
     explicit TableFormatDialog(QWidget *parent);
     ~TableFormatDialog();
 
-    int columns() const;
-    int rows() const;
-    int border() const;
+    Q_REQUIRED_RESULT int columns() const;
+    Q_REQUIRED_RESULT int rows() const;
+    Q_REQUIRED_RESULT int border() const;
 
     void setColumns(int);
     void setRows(int);
     void setBorder(int);
 
-    int padding() const;
+    Q_REQUIRED_RESULT int padding() const;
     void setPadding(int);
 
-    int spacing() const;
+    Q_REQUIRED_RESULT int spacing() const;
     void setSpacing(int);
 
     void setAlignment(Qt::Alignment alignment);
-    Qt::Alignment alignment() const;
+    Q_REQUIRED_RESULT Qt::Alignment alignment() const;
 
-    QTextLength::Type typeOfLength() const;
+    Q_REQUIRED_RESULT QTextLength::Type typeOfLength() const;
     void setTypeOfLength(QTextLength::Type type);
 
-    int length() const;
+    Q_REQUIRED_RESULT int length() const;
     void setLength(int);
 
-    QColor tableBackgroundColor() const;
+    Q_REQUIRED_RESULT QColor tableBackgroundColor() const;
     void setTableBackgroundColor(const QColor &col);
 
-    bool useBackgroundColor() const;
+    Q_REQUIRED_RESULT bool useBackgroundColor() const;
 
 private:
     class TableFormatDialogPrivate;

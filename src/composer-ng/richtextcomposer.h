@@ -45,7 +45,7 @@ public:
     /**
      * @return The current text mode
      */
-    Mode textMode() const;
+    Q_REQUIRED_RESULT Mode textMode() const;
 
     /**
      * Enables word wrap. Words will be wrapped at the specified column.
@@ -65,12 +65,12 @@ public:
      * @return the line number where the cursor is. This takes word-wrapping
      *         into account. Line numbers start at 0.
      */
-    int linePosition() const;
+    Q_REQUIRED_RESULT int linePosition() const;
 
     /**
      * @return the column numbe where the cursor is.
      */
-    int columnNumber() const;
+    Q_REQUIRED_RESULT int columnNumber() const;
 
     void forcePlainTextMarkup(bool force);
 
@@ -78,24 +78,24 @@ public:
     void switchToPlainText();
 
     void setTextOrHtml(const QString &text);
-    QString textOrHtml() const;
+    Q_REQUIRED_RESULT QString textOrHtml() const;
 
     virtual void setHighlighterColors(KPIMTextEdit::RichTextComposerEmailQuoteHighlighter *highlighter);
 
     void setUseExternalEditor(bool use);
     void setExternalEditorPath(const QString &path);
-    bool checkExternalEditorFinished();
+    Q_REQUIRED_RESULT bool checkExternalEditorFinished();
     void killExternalEditor();
 
     //Redefine it for each apps
     virtual QString smartQuote(const QString &msg);    //need by kmail
 
     void setQuotePrefixName(const QString &quotePrefix);
-    QString quotePrefixName() const;
+    Q_REQUIRED_RESULT QString quotePrefixName() const;
 
     void setCursorPositionFromStart(unsigned int pos);
-    int quoteLength(const QString &line, bool oneQuote = false) const;
-    bool isLineQuoted(const QString &line) const;
+    Q_REQUIRED_RESULT int quoteLength(const QString &line, bool oneQuote = false) const;
+    Q_REQUIRED_RESULT bool isLineQuoted(const QString &line) const;
     const QString defaultQuoteSign() const;
     void createActions(KActionCollection *ac);
 

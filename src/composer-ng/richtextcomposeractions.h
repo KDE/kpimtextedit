@@ -36,9 +36,9 @@ public:
     ~RichTextComposerActions();
 
     void createActions(KActionCollection *ac);
-    int numberOfActions() const;
+    Q_REQUIRED_RESULT int numberOfActions() const;
 
-    QList<QAction *> richTextActionList() const;
+    Q_REQUIRED_RESULT QList<QAction *> richTextActionList() const;
 
     void uncheckActionFormatPainter();
     void updateActionStates();

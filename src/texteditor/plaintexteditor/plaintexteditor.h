@@ -50,29 +50,29 @@ public:
     Q_DECLARE_FLAGS(SupportFeatures, SupportFeature)
 
     void setSearchSupport(bool b);
-    bool searchSupport() const;
+    Q_REQUIRED_RESULT bool searchSupport() const;
 
-    bool spellCheckingSupport() const;
+    Q_REQUIRED_RESULT bool spellCheckingSupport() const;
     void setSpellCheckingSupport(bool check);
 
     virtual void setReadOnly(bool readOnly);
 
     void setTextToSpeechSupport(bool b);
-    bool textToSpeechSupport() const;
+    Q_REQUIRED_RESULT bool textToSpeechSupport() const;
 
     void setWebShortcutSupport(bool b);
-    bool webShortcutSupport() const;
+    Q_REQUIRED_RESULT bool webShortcutSupport() const;
 
     virtual void createHighlighter();
 
     void addIgnoreWords(const QStringList &lst);
-    bool activateLanguageMenu() const;
+    Q_REQUIRED_RESULT bool activateLanguageMenu() const;
     void setActivateLanguageMenu(bool activate);
-    Sonnet::Highlighter *highlighter() const;
+    Q_REQUIRED_RESULT Sonnet::Highlighter *highlighter() const;
     bool checkSpellingEnabled() const;
     void setCheckSpellingEnabled(bool check);
     void setSpellCheckingConfigFileName(const QString &_fileName);
-    QString spellCheckingConfigFileName() const;
+    Q_REQUIRED_RESULT QString spellCheckingConfigFileName() const;
     const QString &spellCheckingLanguage() const;
     void setSpellCheckingLanguage(const QString &_language);
 public Q_SLOTS:

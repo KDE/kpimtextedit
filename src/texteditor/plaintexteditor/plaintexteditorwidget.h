@@ -35,18 +35,18 @@ public:
     explicit PlainTextEditorWidget(PlainTextEditor *customEditor, QWidget *parent = nullptr);
     ~PlainTextEditorWidget();
 
-    PlainTextEditor *editor() const;
+    Q_REQUIRED_RESULT PlainTextEditor *editor() const;
 
     void setReadOnly(bool readOnly);
-    bool isReadOnly() const;
+    Q_REQUIRED_RESULT bool isReadOnly() const;
 
     void setPlainText(const QString &text);
-    QString toPlainText() const;
+    Q_REQUIRED_RESULT QString toPlainText() const;
 
     void clear();
     void setSpellCheckingConfigFileName(const QString &_fileName);
 
-    bool isEmpty() const;
+    Q_REQUIRED_RESULT bool isEmpty() const;
 private Q_SLOTS:
     void slotFind();
     void slotReplace();

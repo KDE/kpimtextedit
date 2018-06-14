@@ -35,7 +35,7 @@ public:
     ~SelectSpecialCharDialog();
 
     void setCurrentChar(QChar c);
-    QChar currentChar() const;
+    Q_REQUIRED_RESULT QChar currentChar() const;
 
     void setOkButtonText(const QString &text);
 

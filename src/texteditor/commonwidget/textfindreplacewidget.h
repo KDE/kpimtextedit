@@ -34,7 +34,7 @@ public:
     explicit TextFindWidget(QWidget *parent = nullptr);
     ~TextFindWidget();
 
-    QTextDocument::FindFlags searchOptions() const;
+    Q_REQUIRED_RESULT QTextDocument::FindFlags searchOptions() const;
 
     QLineEdit *searchLineEdit() const;
 
@@ -42,9 +42,9 @@ public:
 
     bool isRegularExpression() const;
 
-    QRegExp searchRegExp() const;
+    Q_REQUIRED_RESULT QRegExp searchRegExp() const;
 
-    QString searchText() const;
+    Q_REQUIRED_RESULT QString searchText() const;
 
 private Q_SLOTS:
     void slotAutoSearch(const QString &str);

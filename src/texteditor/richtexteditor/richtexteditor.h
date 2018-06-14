@@ -53,9 +53,9 @@ public:
     Q_DECLARE_FLAGS(SupportFeatures, SupportFeature)
 
     void setSearchSupport(bool b);
-    bool searchSupport() const;
+    Q_REQUIRED_RESULT bool searchSupport() const;
 
-    bool spellCheckingSupport() const;
+    Q_REQUIRED_RESULT bool spellCheckingSupport() const;
     void setSpellCheckingSupport(bool check);
 
     void setSpellCheckingConfigFileName(const QString &_fileName);
@@ -69,24 +69,24 @@ public:
     virtual void setReadOnly(bool readOnly);
     virtual void createHighlighter();
 
-    bool textToSpeechSupport() const;
+    Q_REQUIRED_RESULT bool textToSpeechSupport() const;
     void setTextToSpeechSupport(bool b);
-    Sonnet::Highlighter *highlighter() const;
+    Q_REQUIRED_RESULT Sonnet::Highlighter *highlighter() const;
 
-    bool activateLanguageMenu() const;
+    Q_REQUIRED_RESULT bool activateLanguageMenu() const;
     void setActivateLanguageMenu(bool activate);
 
     void setAllowTabSupport(bool b);
-    bool allowTabSupport() const;
+    Q_REQUIRED_RESULT bool allowTabSupport() const;
 
     void setShowAutoCorrectButton(bool b);
-    bool showAutoCorrectButton() const;
+    Q_REQUIRED_RESULT bool showAutoCorrectButton() const;
 
     void forceSpellChecking();
-    QString spellCheckingConfigFileName() const;
+    Q_REQUIRED_RESULT QString spellCheckingConfigFileName() const;
 
     void setWebShortcutSupport(bool b);
-    bool webShortcutSupport() const;
+    Q_REQUIRED_RESULT bool webShortcutSupport() const;
 
     void addIgnoreWords(const QStringList &lst);
 
