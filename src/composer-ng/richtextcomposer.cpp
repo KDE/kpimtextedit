@@ -44,8 +44,6 @@ class Q_DECL_HIDDEN RichTextComposer::RichTextComposerPrivate
 public:
     RichTextComposerPrivate(RichTextComposer *qq)
         : q(qq)
-        , mode(RichTextComposer::Plain)
-        , forcePlainTextMarkup(false)
     {
         composerControler = new RichTextComposerControler(q, q);
         richTextComposerActions = new RichTextComposerActions(composerControler, q);
@@ -60,7 +58,7 @@ public:
     RichTextComposerActions *richTextComposerActions = nullptr;
     KPIMTextEdit::RichTextExternalComposer *externalComposer = nullptr;
     RichTextComposer *q = nullptr;
-    RichTextComposer::Mode mode;
+    RichTextComposer::Mode mode = RichTextComposer::Plain;
     bool forcePlainTextMarkup = false;
 };
 

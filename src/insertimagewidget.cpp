@@ -44,8 +44,7 @@ class InsertImageWidgetPrivate
 {
 public:
     InsertImageWidgetPrivate(InsertImageWidget *qq)
-        : imageRatio(-1)
-        , q(qq)
+        : q(qq)
     {
         QVBoxLayout *lay = new QVBoxLayout(q);
         lay->setMargin(0);
@@ -138,7 +137,7 @@ public:
     void _k_slotImageWidthChanged(int);
     void _k_slotImageHeightChanged(int);
 
-    qreal imageRatio;
+    qreal imageRatio = -1;
     QCheckBox *keepOriginalSize = nullptr;
     QCheckBox *keepImageRatio = nullptr;
     QSpinBox *width = nullptr;

@@ -29,8 +29,7 @@ class SelectSpecialCharDialogPrivate
 {
 public:
     SelectSpecialCharDialogPrivate(SelectSpecialCharDialog *qq)
-        : mSelectButton(nullptr)
-        , q(qq)
+        : q(qq)
     {
         q->setWindowTitle(i18n("Select Special Characters"));
 

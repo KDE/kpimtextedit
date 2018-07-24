@@ -25,12 +25,12 @@ using namespace KPIMTextEdit;
 class Q_DECL_HIDDEN KPIMTextEdit::RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighterPrivate
 {
 public:
+    RichTextComposer *parent = nullptr;
     QColor col1;
     QColor col2;
     QColor col3;
     QColor misspelledColor;
     bool spellCheckingEnabled = false;
-    RichTextComposer *parent = nullptr;
 };
 
 RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighter(RichTextComposer *textEdit, const QColor &normalColor, const QColor &quoteDepth1, const QColor &quoteDepth2,

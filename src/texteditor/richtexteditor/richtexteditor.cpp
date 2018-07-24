@@ -59,13 +59,7 @@ public:
     RichTextEditorPrivate(RichTextEditor *qq)
         : q(qq)
         , textIndicator(new KPIMTextEdit::TextMessageIndicator(q))
-        , richTextDecorator(nullptr)
-        , speller(nullptr)
         , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
-        , mInitialFontSize(0)
-        , customPalette(false)
-        , activateLanguageMenu(true)
-        , showAutoCorrectionButton(false)
     {
         KConfig sonnetKConfig(QStringLiteral("sonnetrc"));
         KConfigGroup group(&sonnetKConfig, "Spelling");
@@ -94,10 +88,10 @@ public:
     KIO::KUriFilterSearchProviderActions *webshortcutMenuManager = nullptr;
     RichTextEditor::SupportFeatures supportFeatures;
     int mInitialFontSize;
-    bool customPalette;
-    bool checkSpellingEnabled;
-    bool activateLanguageMenu;
-    bool showAutoCorrectionButton;
+    bool customPalette = false;
+    bool checkSpellingEnabled = false;
+    bool activateLanguageMenu = true;
+    bool showAutoCorrectionButton = false;
 };
 
 RichTextEditor::RichTextEditor(QWidget *parent)

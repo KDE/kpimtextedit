@@ -37,7 +37,6 @@ public:
     {
     }
 
-    bool mNeedToHide = false;
     QPointer<KPIMTextEdit::TextToSpeechConfigDialog> mConfigDialog;
     QToolButton *mStopButton = nullptr;
     QToolButton *mPlayPauseButton = nullptr;
@@ -45,6 +44,7 @@ public:
     AbstractTextToSpeechInterface *mTextToSpeechInterface = nullptr;
     TextToSpeechActions *mTextToSpeechActions = nullptr;
     QSlider *mVolume = nullptr;
+    bool mNeedToHide = false;
 };
 
 TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)

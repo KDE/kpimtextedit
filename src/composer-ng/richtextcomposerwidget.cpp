@@ -28,7 +28,6 @@ class Q_DECL_HIDDEN KPIMTextEdit::RichTextComposerWidgetPrivate
 {
 public:
     RichTextComposerWidgetPrivate()
-        : richTextComposer(nullptr)
     {
     }
 

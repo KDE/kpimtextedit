@@ -59,11 +59,6 @@ public:
         : q(qq)
         , mTextIndicator(new KPIMTextEdit::TextMessageIndicator(q))
         , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
-        , richTextDecorator(nullptr)
-        , speller(nullptr)
-        , mInitialFontSize(0)
-        , customPalette(false)
-        , activateLanguageMenu(true)
     {
         KConfig sonnetKConfig(QStringLiteral("sonnetrc"));
         KConfigGroup group(&sonnetKConfig, "Spelling");
@@ -92,9 +87,9 @@ public:
     QTextDocumentFragment originalDoc;
     PlainTextEditor::SupportFeatures supportFeatures;
     int mInitialFontSize = 0;
-    bool customPalette;
-    bool activateLanguageMenu;
-    bool checkSpellingEnabled;
+    bool customPalette = false;
+    bool activateLanguageMenu = true;
+    bool checkSpellingEnabled = false;
 };
 
 PlainTextEditor::PlainTextEditor(QWidget *parent)

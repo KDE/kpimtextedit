@@ -31,18 +31,14 @@ class TextEditorCompleter::TextEditorCompleterPrivate
 {
 public:
     TextEditorCompleterPrivate(QTextEdit *editor, TextEditorCompleter *qq)
-        : completer(nullptr)
-        , plainTextEdit(nullptr)
-        , textEdit(editor)
+        : textEdit(editor)
         , q(qq)
     {
         createCompleter();
     }
 
     TextEditorCompleterPrivate(QPlainTextEdit *editor, TextEditorCompleter *qq)
-        : completer(nullptr)
-        , plainTextEdit(editor)
-        , textEdit(nullptr)
+        : plainTextEdit(editor)
         , q(qq)
     {
         createCompleter();

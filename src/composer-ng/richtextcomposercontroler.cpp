@@ -48,7 +48,6 @@ public:
     RichTextComposerControlerPrivate(RichTextComposer *composer, RichTextComposerControler *qq)
         : richtextComposer(composer)
         , q(qq)
-        , painterActive(false)
     {
         nestedListHelper = new NestedListHelper(composer);
         richTextImages = new RichTextComposerImages(richtextComposer, q);
@@ -80,7 +79,7 @@ public:
     RichTextComposer *richtextComposer = nullptr;
     RichTextComposerImages *richTextImages = nullptr;
     RichTextComposerControler *q = nullptr;
-    bool painterActive;
+    bool painterActive = false;
 };
 
 void RichTextComposerControler::RichTextComposerControlerPrivate::selectLinkText(QTextCursor *cursor) const
