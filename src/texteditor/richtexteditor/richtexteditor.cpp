@@ -36,6 +36,7 @@
 #include <Sonnet/Highlighter>
 #include <sonnet/spellcheckdecorator.h>
 #include <sonnet/speller.h>
+#include <sonnet_version.h>
 #include <texttospeech/texttospeech.h>
 #include <SonnetCore/sonnet/backgroundchecker.h>
 #include <KIO/KUriFilterSearchProviderActions>
@@ -644,7 +645,9 @@ void RichTextEditor::setSpellCheckingLanguage(const QString &_language)
 {
     if (highlighter()) {
         highlighter()->setCurrentLanguage(_language);
+#if SONNET_VERSION < QT_VERSION_CHECK(5, 49, 0)
         highlighter()->rehighlight();
+#endif
     }
 
     if (_language != d->spellCheckingLanguage) {

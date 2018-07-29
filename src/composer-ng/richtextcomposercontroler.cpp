@@ -658,8 +658,6 @@ void RichTextComposerControler::setCursorPositionFromStart(unsigned int pos)
 
 void RichTextComposerControler::ensureCursorVisible()
 {
-    QCoreApplication::processEvents();
-
     // Hack: In KMail, the layout of the composer changes again after
     //       creating the editor (the toolbar/menubar creation is delayed), so
     //       the size of the editor changes as well, possibly hiding the cursor
