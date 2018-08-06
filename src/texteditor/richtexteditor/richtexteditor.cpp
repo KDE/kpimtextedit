@@ -110,6 +110,12 @@ RichTextEditor::~RichTextEditor()
     delete d;
 }
 
+void RichTextEditor::setDefaultFontSize(int val)
+{
+    d->mInitialFontSize = val;
+    slotZoomReset();
+}
+
 void RichTextEditor::slotDisplayMessageIndicator(const QString &message)
 {
     d->textIndicator->display(message);
@@ -911,6 +917,16 @@ void RichTextEditor::keyPressEvent(QKeyEvent *event)
     } else {
         QTextEdit::keyPressEvent(event);
     }
+}
+
+int RichTextEditor::zoomFactor() const
+{
+    int pourcentage = 100;
+    QFont f = font();
+    if (d->mInitialFontSize != f.pointSize()) {
+        pourcentage = (f.pointSize() * 100) / d->mInitialFontSize;
+    }
+    return pourcentage;
 }
 
 void RichTextEditor::slotZoomReset()

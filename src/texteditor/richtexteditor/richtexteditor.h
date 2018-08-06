@@ -93,6 +93,8 @@ public:
     // Reimplement it in subclass
     virtual void forceAutoCorrection(bool selectedText = false);
 
+    void setDefaultFontSize(int val);
+    int zoomFactor() const;
 Q_SIGNALS:
     void say(const QString &text);
 
