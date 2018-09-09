@@ -21,7 +21,6 @@
 #include "../richtextcomposer.h"
 #include <qtest.h>
 #include <qsignalspy.h>
-#include <KActionCollection>
 #include <KCodecs/KCodecs>
 
 #include <KIconLoader>

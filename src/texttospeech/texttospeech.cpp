@@ -24,7 +24,7 @@
 #include <QLocale>
 #include <QVector>
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
-#include <QtTextToSpeech/QTextToSpeech>
+#include <QTextToSpeech>
 #endif
 
 namespace KPIMTextEdit {

@@ -19,7 +19,7 @@
 
 #include "texttospeechconfiginterface.h"
 #if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
-#include <QtTextToSpeech/QTextToSpeech>
+#include <QTextToSpeech>
 #endif
 using namespace KPIMTextEdit;
 

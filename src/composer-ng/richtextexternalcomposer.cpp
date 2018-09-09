@@ -19,7 +19,6 @@
 
 #include "richtextcomposer.h"
 #include "richtextexternalcomposer.h"
-#include "richtextexternalcomposer.h"
 
 #include <KProcess>
 #include <KMacroExpander>
