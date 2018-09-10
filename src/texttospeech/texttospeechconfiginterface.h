@@ -23,9 +23,7 @@
 #include "kpimtextedit_export.h"
 #include "config-kpimtextedit.h"
 
-#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
 class QTextToSpeech;
-#endif
 namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT TextToSpeechConfigInterface : public AbstractTextToSpeechConfigInterface
 {
@@ -40,9 +38,7 @@ public:
     QStringList availableEngines() const override;
     QStringList availableVoices() const override;
     void setEngine(const QString &engineName) override;
-#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
     QTextToSpeech *mTextToSpeech = nullptr;
-#endif
 };
 }
 

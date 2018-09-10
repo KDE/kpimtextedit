@@ -87,11 +87,8 @@ target_link_libraries(KF5PimTextEdit
     KF5::XmlGui
     KF5::I18n
     KF5::SyntaxHighlighting
+    Qt5::TextToSpeech
     )
-
-if(KPIMTEXTEDIT_HAVE_TEXTTOSPEECH)
-    target_link_libraries(KF5PimTextEdit PRIVATE Qt5::TextToSpeech)
-endif()
 
 set_target_properties(KF5PimTextEdit PROPERTIES
     VERSION ${KPIMTEXTEDIT_VERSION_STRING}

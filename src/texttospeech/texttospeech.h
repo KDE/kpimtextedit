@@ -24,9 +24,7 @@
 #include "config-kpimtextedit.h"
 #include <QObject>
 
-#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
 class QTextToSpeech;
-#endif
 
 namespace KPIMTextEdit {
 class KPIMTEXTEDIT_EXPORT TextToSpeech : public QObject
@@ -73,10 +71,8 @@ private:
     explicit TextToSpeech(QObject *parent = nullptr);
     friend class TextToSpeechPrivate;
 
-#if KPIMTEXTEDIT_HAVE_TEXTTOSPEECH
     QString mDefaultEngine;
     QTextToSpeech *mTextToSpeech = nullptr;
-#endif
 };
 }
 
