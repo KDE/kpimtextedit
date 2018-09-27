@@ -103,7 +103,6 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
     HEADER_NAMES
     EditorUtil
     EmoticonTextEditAction
-    InsertHtmlDialog
     InsertImageDialog
     InsertImageWidget
     InsertTableDialog
@@ -182,7 +181,6 @@ ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_export.h
-    ${CMAKE_CURRENT_BINARY_DIR}/config-kpimtextedit.h
     ${kpimtextedit_HEADERS}
     ${KPimTextEdit_texttospeechs_HEADERS}
     ${PimCommon_richtexteditor_HEADERS}

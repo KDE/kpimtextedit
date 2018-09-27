@@ -22,7 +22,6 @@
 #define RICHTEXTCOMPOSER_INSERTHTMLDIALOG_H
 
 #include <QDialog>
-#include "config-kpimtextedit.h"
 
 #include "kpimtextedit_private_export.h"
 #include "kpimtextedit/plaintexteditor.h"

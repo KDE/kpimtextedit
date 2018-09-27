@@ -21,7 +21,6 @@
 #define TEXTTOSPEECH_H
 
 #include "kpimtextedit_export.h"
-#include "config-kpimtextedit.h"
 #include <QObject>
 
 class QTextToSpeech;
