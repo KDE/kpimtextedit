@@ -21,7 +21,6 @@
 #ifndef KPIMTEXTEDIT_INSERTTABLEDIALOG_H
 #define KPIMTEXTEDIT_INSERTTABLEDIALOG_H
 
-
 #include <QDialog>
 
 #include <QTextLength>

@@ -110,7 +110,7 @@ QTextCharFormat::VerticalAlignment TableCellFormatDialog::verticalAlignment() co
 {
     return
         static_cast<QTextCharFormat::VerticalAlignment>(d->verticalAlignment->itemData(
-        d->verticalAlignment->currentIndex()).toInt());
+                                                            d->verticalAlignment->currentIndex()).toInt());
 }
 
 void TableCellFormatDialog::setVerticalAlignment(QTextCharFormat::VerticalAlignment vertical)

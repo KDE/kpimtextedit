@@ -20,7 +20,6 @@
 #ifndef KPIMTEXTEDIT_INSERTIMAGEWIDGET_H
 #define KPIMTEXTEDIT_INSERTIMAGEWIDGET_H
 
-
 #include <QUrl>
 
 #include <QWidget>

@@ -231,8 +231,8 @@ QList<QTextImageFormat> RichTextComposerImages::embeddedImageFormats() const
 void RichTextComposerImages::insertImage(const QImage &image, const QFileInfo &fileInfo)
 {
     const QString imageName = fileInfo.baseName().isEmpty()
-                        ? i18nc("Start of the filename for an image", "image")
-                        : fileInfo.baseName();
+                              ? i18nc("Start of the filename for an image", "image")
+                              : fileInfo.baseName();
     addImageHelper(imageName, image);
 }
 

@@ -950,7 +950,7 @@ void RichTextEditor::moveLineUpDown(bool moveUp)
         move.setPosition(cursor.selectionStart());
         move.movePosition(QTextCursor::StartOfBlock);
         move.setPosition(cursor.selectionEnd(), QTextCursor::KeepAnchor);
-        move.movePosition(move.atBlockStart() ? QTextCursor::Left: QTextCursor::EndOfBlock,
+        move.movePosition(move.atBlockStart() ? QTextCursor::Left : QTextCursor::EndOfBlock,
                           QTextCursor::KeepAnchor);
     } else {
         move.movePosition(QTextCursor::StartOfBlock);

@@ -145,7 +145,9 @@ void PlainTextSyntaxSpellCheckingHighlighter::highlightBlock(const QString &text
     const auto nextBlock = currentBlock().next();
     if (nextBlock.isValid()) {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
-        QMetaObject::invokeMethod(this, [this, nextBlock] { rehighlightBlock(nextBlock); }, Qt::QueuedConnection);
+        QMetaObject::invokeMethod(this, [this, nextBlock] {
+            rehighlightBlock(nextBlock);
+        }, Qt::QueuedConnection);
 #else
         QMetaObject::invokeMethod(this, "rehighlightBlock", Qt::QueuedConnection, Q_ARG(QTextBlock, nextBlock));
 #endif
