@@ -25,7 +25,7 @@ include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMAddTests)
 include(ECMQtDeclareLoggingCategory)
-include(ECMCoverageOption)
+
 
 
 set(KPIMTEXTEDIT_LIB_VERSION ${PIM_VERSION})
