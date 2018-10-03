@@ -103,7 +103,6 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
     HEADER_NAMES
     EditorUtil
     EmoticonTextEditAction
-    InsertImageDialog
     InsertImageWidget
     InsertTableDialog
     InsertTableWidget
