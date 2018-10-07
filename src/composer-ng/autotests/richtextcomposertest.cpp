@@ -383,33 +383,33 @@ void RichTextComposerTest::testDeleteLine_data()
     QTest::addColumn<QString>("expectedText");
     QTest::addColumn<int>("cursorPos");
 
-    QTest::newRow("") << QStringLiteral("line1\nline2\nline3")
+    QTest::newRow("delete1") << QStringLiteral("line1\nline2\nline3")
                       << QStringLiteral("line1\nline3")
                       << 6;
-    QTest::newRow("") << QStringLiteral("line1\nline2\nline3")
+    QTest::newRow("delete2") << QStringLiteral("line1\nline2\nline3")
                       << QStringLiteral("line2\nline3")
                       << 5;
-    QTest::newRow("") << QStringLiteral("line1\nline2\nline3")
+    QTest::newRow("delete3") << QStringLiteral("line1\nline2\nline3")
                       << QStringLiteral("line1\nline3")
                       << 11;
-    QTest::newRow("") << QStringLiteral("line1\nline2\nline3")
+    QTest::newRow("delete4") << QStringLiteral("line1\nline2\nline3")
                       << QStringLiteral("line2\nline3")
                       << 0;
-    QTest::newRow("") << QStringLiteral("line1\nline2\nline3")
+    QTest::newRow("delete5") << QStringLiteral("line1\nline2\nline3")
                       << QStringLiteral("line1\nline2")
                       << 17;
-    QTest::newRow("") << QStringLiteral("line1")
-                      << QStringLiteral("")
+    QTest::newRow("delete6") << QStringLiteral("line1")
+                      << QString()
                       << 0;
-    QTest::newRow("") << QStringLiteral("line1")
-                      << QStringLiteral("")
+    QTest::newRow("delete7") << QStringLiteral("line1")
+                      << QString()
                       << 5;
 
     // Now, test deletion with word wrapping. The line with the Ms is so long that it will get wrapped
-    QTest::newRow("") << QStringLiteral("line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
+    QTest::newRow("delete8") << QStringLiteral("line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
                       << QStringLiteral("line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
                       << 6;
-    QTest::newRow("") << QStringLiteral("line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
+    QTest::newRow("delete9") << QStringLiteral("line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
                       << QStringLiteral("line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
                       << 13;
 }
