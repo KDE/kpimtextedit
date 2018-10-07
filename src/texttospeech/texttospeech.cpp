@@ -28,7 +28,6 @@
 using namespace KPIMTextEdit;
 TextToSpeech::TextToSpeech(QObject *parent)
     : QObject(parent)
-    , mTextToSpeech(nullptr)
 {
     reloadSettings();
 }
