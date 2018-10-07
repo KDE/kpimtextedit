@@ -25,7 +25,7 @@
 #include <QVector>
 #include <QTextToSpeech>
 
-namespace KPIMTextEdit {
+using namespace KPIMTextEdit;
 TextToSpeech::TextToSpeech(QObject *parent)
     : QObject(parent)
     , mTextToSpeech(nullptr)
@@ -159,5 +159,4 @@ void TextToSpeech::setLocale(const QLocale &locale) const
 QLocale TextToSpeech::locale() const
 {
     return mTextToSpeech->locale();
-}
 }
