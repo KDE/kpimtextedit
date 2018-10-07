@@ -43,7 +43,7 @@ public:
         BackendError
     };
 
-    int volume() const;
+    double volume() const;
     QVector<QLocale> availableLocales() const;
     QStringList availableEngines() const;
     QStringList availableVoices() const;
@@ -59,7 +59,7 @@ public Q_SLOTS:
 
     void setRate(double rate);
     void setPitch(double pitch);
-    void setVolume(int volume);
+    void setVolume(double volume);
     void setLocale(const QLocale &locale) const;
 
 Q_SIGNALS:

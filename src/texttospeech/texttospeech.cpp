@@ -119,12 +119,12 @@ void TextToSpeech::setPitch(double pitch)
     mTextToSpeech->setPitch(pitch);
 }
 
-void TextToSpeech::setVolume(int volume)
+void TextToSpeech::setVolume(double volume)
 {
     mTextToSpeech->setVolume(volume);
 }
 
-int TextToSpeech::volume() const
+double TextToSpeech::volume() const
 {
     return mTextToSpeech->volume();
 }
