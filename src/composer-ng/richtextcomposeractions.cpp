@@ -325,7 +325,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
             d->composerControler, &RichTextComposerControler::manageLink);
 
     d->action_list_indent = new QAction(QIcon::fromTheme(QStringLiteral("format-indent-more")),
-                                        i18nc("@action", "Increase Indent"), this);
+                                        i18nc("@action", "Increase List Level"), this);
     d->richTextActionList.append((d->action_list_indent));
     d->action_list_indent->setObjectName(QStringLiteral("format_list_indent_more"));
     if (ac) {
@@ -336,7 +336,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     connect(d->action_list_indent, &QAction::triggered,
             this, &RichTextComposerActions::slotUpdateMiscActions);
     d->action_list_dedent = new QAction(QIcon::fromTheme(QStringLiteral("format-indent-less")),
-                                        i18nc("@action", "Decrease Indent"), this);
+                                        i18nc("@action", "Decrease List Level"), this);
     d->richTextActionList.append((d->action_list_dedent));
     d->action_list_dedent->setObjectName(QStringLiteral("format_list_indent_less"));
     if (ac) {
