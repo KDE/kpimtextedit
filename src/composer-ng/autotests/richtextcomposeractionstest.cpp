@@ -95,7 +95,7 @@ void RichTextComposerActionsTest::shouldHaveActions()
                      << QStringLiteral("paste_without_formatting");
 
     QCOMPARE(lst.count(), composerActions.numberOfActions());
-    Q_FOREACH (QAction *act, actionCollection->actions()) {
+    for (QAction *act : actionCollection->actions()) {
         const QString actionName = act->objectName();
         if (!actionNoRichText.contains(actionName)) {
             QVERIFY(lst.contains(actionName));
@@ -119,13 +119,13 @@ void RichTextComposerActionsTest::shouldChangeEnableState()
                      << QStringLiteral("paste_without_formatting");
 
     composerActions.setActionsEnabled(false);
-    Q_FOREACH (QAction *act, actionCollection->actions()) {
+    for (QAction *act : actionCollection->actions()) {
         if (!actionNoRichText.contains(act->objectName())) {
             QVERIFY(!act->isEnabled());
         }
     }
     composerActions.setActionsEnabled(true);
-    Q_FOREACH (QAction *act, actionCollection->actions()) {
+    for (QAction *act : actionCollection->actions()) {
         if (!actionNoRichText.contains(act->objectName())) {
             QVERIFY(act->isEnabled());
         }

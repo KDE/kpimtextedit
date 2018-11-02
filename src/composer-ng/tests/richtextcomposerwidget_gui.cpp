@@ -44,7 +44,7 @@ int main(int argc, char **argv)
     editor->show();
 
     QToolBar bar;
-    foreach (QAction *action, richtextcomposerwidget->richTextActionList()) {
+    for (QAction *action : richtextcomposerwidget->richTextActionList()) {
         bar.addAction(action);
     }
     bar.show();

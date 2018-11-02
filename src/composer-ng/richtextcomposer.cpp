@@ -96,7 +96,7 @@ QList<QAction *> RichTextComposer::richTextActionList() const
 
 void RichTextComposer::setEnableActions(bool state)
 {
-    Q_FOREACH (QAction *act, richTextActionList()) {
+    for (QAction *act : richTextActionList()) {
         act->setEnabled(state);
     }
 }
