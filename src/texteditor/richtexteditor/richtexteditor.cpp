@@ -650,7 +650,6 @@ void RichTextEditor::setSpellCheckingLanguage(const QString &_language)
 {
     if (highlighter()) {
         highlighter()->setCurrentLanguage(_language);
-        highlighter()->rehighlight();
     }
 
     if (_language != d->spellCheckingLanguage) {
