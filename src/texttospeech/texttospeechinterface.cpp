@@ -44,6 +44,7 @@ TextToSpeechInterface::TextToSpeechInterface(TextToSpeechWidget *textToSpeechWid
 
 TextToSpeechInterface::~TextToSpeechInterface()
 {
+    delete d;
 }
 
 bool TextToSpeechInterface::isReady() const
