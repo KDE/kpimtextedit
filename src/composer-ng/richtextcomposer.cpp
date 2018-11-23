@@ -47,7 +47,7 @@ public:
     {
         composerControler = new RichTextComposerControler(q, q);
         richTextComposerActions = new RichTextComposerActions(composerControler, q);
-        externalComposer = new KPIMTextEdit::RichTextExternalComposer(q);
+        externalComposer = new KPIMTextEdit::RichTextExternalComposer(q, q);
         q->connect(externalComposer, &RichTextExternalComposer::externalEditorClosed, qq, &RichTextComposer::externalEditorClosed);
         q->connect(externalComposer, &RichTextExternalComposer::externalEditorStarted, qq, &RichTextComposer::externalEditorStarted);
         q->connect(q, &RichTextComposer::textModeChanged, q, &RichTextComposer::slotTextModeChanged);
