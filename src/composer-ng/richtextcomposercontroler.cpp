@@ -116,7 +116,7 @@ void RichTextComposerControler::RichTextComposerControlerPrivate::selectLinkText
             cursor->setPosition(cursor->position() - 1, QTextCursor::KeepAnchor);
         }
     } else if (cursor->hasSelection()) {
-        // Nothing to to. Using the currently selected text as the link text.
+        // Nothing to do. Using the currently selected text as the link text.
     } else {
         // Select current word
         cursor->movePosition(QTextCursor::StartOfWord);

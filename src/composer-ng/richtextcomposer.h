@@ -68,7 +68,7 @@ public:
     Q_REQUIRED_RESULT int linePosition() const;
 
     /**
-     * @return the column numbe where the cursor is.
+     * @return the column number where the cursor is.
      */
     Q_REQUIRED_RESULT int columnNumber() const;
 

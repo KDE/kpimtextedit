@@ -41,7 +41,7 @@ public:
 
     /**
      * @brief setTableCellBackgroundColor
-     * @param color, set the background color of cell
+     * @param color set the background color of cell
      */
     void setTableCellBackgroundColor(const QColor &color);
 

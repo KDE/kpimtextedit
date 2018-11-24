@@ -221,16 +221,16 @@ void TableActionMenuPrivate::_k_slotInsertTable()
             QTextTableFormat tableFormat;
             tableFormat.setBorder(dialog->border());
             const int numberOfColumns(dialog->columns());
-            QVector<QTextLength> contrains;
-            contrains.reserve(numberOfColumns);
+            QVector<QTextLength> constrains;
+            constrains.reserve(numberOfColumns);
             const QTextLength::Type type = dialog->typeOfLength();
             const int length = dialog->length();
 
             const QTextLength textlength(type, length / numberOfColumns);
             for (int i = 0; i < numberOfColumns; ++i) {
-                contrains.append(textlength);
+                constrains.append(textlength);
             }
-            tableFormat.setColumnWidthConstraints(contrains);
+            tableFormat.setColumnWidthConstraints(constrains);
             tableFormat.setAlignment(Qt::AlignLeft);
             QTextTable *table = cursor.insertTable(dialog->rows(), numberOfColumns);
             table->setFormat(tableFormat);
@@ -278,10 +278,10 @@ void TableActionMenuPrivate::_k_slotTableFormat()
             if (tableFormat.hasProperty(QTextFormat::BackgroundBrush)) {
                 dialog->setTableBackgroundColor(tableFormat.background().color());
             }
-            QVector<QTextLength> contrains = tableFormat.columnWidthConstraints();
-            if (!contrains.isEmpty()) {
-                dialog->setTypeOfLength(contrains.at(0).type());
-                dialog->setLength(contrains.at(0).rawValue() * numberOfColumn);
+            QVector<QTextLength> constrains = tableFormat.columnWidthConstraints();
+            if (!constrains.isEmpty()) {
+                dialog->setTypeOfLength(constrains.at(0).type());
+                dialog->setLength(constrains.at(0).rawValue() * numberOfColumn);
             }
 
             if (dialog->exec()) {
@@ -295,16 +295,16 @@ void TableActionMenuPrivate::_k_slotTableFormat()
                 tableFormat.setCellSpacing(dialog->spacing());
                 tableFormat.setAlignment(dialog->alignment());
 
-                QVector<QTextLength> contrains;
-                contrains.reserve(newNumberOfColumns);
+                QVector<QTextLength> constrains;
+                constrains.reserve(newNumberOfColumns);
                 const QTextLength::Type type = dialog->typeOfLength();
                 const int length = dialog->length();
 
                 const QTextLength textlength(type, length / newNumberOfColumns);
                 for (int i = 0; i < newNumberOfColumns; ++i) {
-                    contrains.append(textlength);
+                    constrains.append(textlength);
                 }
-                tableFormat.setColumnWidthConstraints(contrains);
+                tableFormat.setColumnWidthConstraints(constrains);
                 const QColor tableBackgroundColor = dialog->tableBackgroundColor();
                 if (dialog->useBackgroundColor()) {
                     if (tableBackgroundColor.isValid()) {

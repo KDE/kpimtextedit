@@ -475,7 +475,7 @@ void RichTextComposerTest::testWrappedPlainText_data()
     QTest::newRow("default") << defaultStr << defaultStr;
     QTest::newRow("empty") << QString() << QString();
     QTest::newRow("wrap") << QStringLiteral("foosdfsdf sdsf sdfsdfsfs fsf sdfs df sfsdf dsf sdfsdf sf sf sfsdf sdsdf") << QStringLiteral(
-        "foosdfsdf sdsf sdfsdfsfs fsf sdfs df \nsfsdf dsf sdfsdf sf sf sfsdf sdsdf");
+        "foosdfsdf sdsf sdfsdfsfs fsf sdfs df sfsdf \ndsf sdfsdf sf sf sfsdf sdsdf");
     QTest::newRow("wrap-2") << QStringLiteral("test-test-test-test-test-test-test-test-test-test-test-test-test")
                             << QStringLiteral("test-test-test-test-test-test-test-test-\ntest-test-test-test-test");
     QTest::newRow("wrap-3") << QStringLiteral("test-test-test-test-test-test-test-test-test-test-test-test-test\n\n") << QStringLiteral(

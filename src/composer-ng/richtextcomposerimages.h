@@ -94,20 +94,20 @@ public:
 
     /**
      * For all given embedded images, this function replace the image name
-     * in the <img> tag of the HTML body with cid:content-id, so that the
+     * in the \<img\> tag of the HTML body with cid:content-id, so that the
      * HTML references the image body parts, see RFC 2557.
      *
      * This is useful when building a MIME message with inline images.
      *
      * Note that this function works on encoded content already.
      *
-     * @param htmlBody the HTML code in which the <img> tag will be modified.
+     * @param htmlBody the HTML code in which the \<img\> tag will be modified.
      *                 The HTML code here could come from toHtml(), for example.
      *
-     * @param imageList the list of images of which the <img> tag will be modified.
+     * @param imageList the list of images of which the \<img\> tag will be modified.
      *                  You can get such a list from the embeddedImages() function.
      *
-     * @return a modified HTML code, where the <img> tags got replaced
+     * @return a modified HTML code, where the \<img\> tags got replaced
      */
     static QByteArray imageNamesToContentIds(const QByteArray &htmlBody, const ImageList &imageList);
 
