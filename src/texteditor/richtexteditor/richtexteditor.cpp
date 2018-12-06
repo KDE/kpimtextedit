@@ -431,9 +431,7 @@ void RichTextEditor::checkSpelling(bool force)
     if (backgroundSpellCheck->speller().availableBackends().isEmpty()) {
         if (force) {
             if (KMessageBox::Yes == KMessageBox::questionYesNo(this, i18n("No backend available for spell checking. Do you want to send the email anyways?"))) {
-                if (force) {
-                    Q_EMIT spellCheckingFinished();
-                }
+                Q_EMIT spellCheckingFinished();
             }
         } else {
             slotDisplayMessageIndicator(i18n("No backend available for spell checking."));
