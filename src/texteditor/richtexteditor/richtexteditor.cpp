@@ -30,6 +30,7 @@
 #include <KConfig>
 #include <KStandardGuiItem>
 #include <KSharedConfig>
+#include <KMessageBox>
 
 #include <sonnet/backgroundchecker.h>
 #include <Sonnet/Dialog>
@@ -428,7 +429,15 @@ void RichTextEditor::checkSpelling(bool force)
     }
     Sonnet::BackgroundChecker *backgroundSpellCheck = new Sonnet::BackgroundChecker;
     if (backgroundSpellCheck->speller().availableBackends().isEmpty()) {
-        slotDisplayMessageIndicator(i18n("No backend available for spell checking."));
+        if (force) {
+            if (KMessageBox::Yes == KMessageBox::questionYesNo(this, i18n("No backend available for spell checking. Do you want to send email anyway?s"))) {
+                if (force) {
+                    Q_EMIT spellCheckingFinished();
+                }
+            }
+        } else {
+            slotDisplayMessageIndicator(i18n("No backend available for spell checking."));
+        }
         delete backgroundSpellCheck;
         return;
     }
