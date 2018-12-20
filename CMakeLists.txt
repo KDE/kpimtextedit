@@ -4,9 +4,9 @@ set(PIM_VERSION "5.10.40")
 project(KPimTextEdit VERSION ${PIM_VERSION})
 
 # ECM setup
-set(KF5_VERSION "5.53.0")
+set(KF5_MIN_VERSION "5.53.0")
 
-find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
+find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 if (POLICY CMP0053)
@@ -46,23 +46,23 @@ set_package_properties(Grantlee5 PROPERTIES
     TYPE REQUIRED
     )
 
-find_package(KF5DesignerPlugin ${KF5_VERSION} CONFIG)
+find_package(KF5DesignerPlugin ${KF5_MIN_VERSION} CONFIG)
 set_package_properties(KF5DesignerPlugin PROPERTIES DESCRIPTION "KF5 designer plugin" TYPE OPTIONAL)
 
 ########### Find packages ###########
-find_package(KF5Codecs ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5Config ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5ConfigWidgets ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5CoreAddons ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5Emoticons ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5I18n ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5IconThemes ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5KIO ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5Sonnet ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5SyntaxHighlighting ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5WidgetsAddons ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5XmlGui ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5DesignerPlugin ${KF5_VERSION} CONFIG)
+find_package(KF5Codecs ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5Config ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5ConfigWidgets ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5CoreAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5Emoticons ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5I18n ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5IconThemes ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5KIO ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5Sonnet ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5SyntaxHighlighting ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5WidgetsAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5XmlGui ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5DesignerPlugin ${KF5_MIN_VERSION} CONFIG)
 set_package_properties(KF5DesignerPlugin PROPERTIES DESCRIPTION "KF5 designer plugin" TYPE OPTIONAL)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
@@ -80,7 +80,7 @@ endif()
 add_subdirectory(src)
 
 if(BUILD_TESTING)
-    find_package(KF5TextWidgets ${KF5_VERSION} CONFIG REQUIRED)
+    find_package(KF5TextWidgets ${KF5_MIN_VERSION} CONFIG REQUIRED)
     add_subdirectory(autotests)
     add_subdirectory(tests)
 endif()
