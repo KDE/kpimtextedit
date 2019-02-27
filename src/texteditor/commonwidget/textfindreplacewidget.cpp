@@ -36,8 +36,9 @@ TextReplaceWidget::TextReplaceWidget(QWidget *parent)
     QHBoxLayout *lay = new QHBoxLayout(this);
     QLabel *label = new QLabel(i18nc("Replace text", "Replace:"), this);
     lay->addWidget(label);
-    const int marg = lay->margin();
-    lay->setContentsMargins(marg, 0, marg, 0);
+    const int marg1 = lay->contentsMargins().left();
+    const int marg2 = lay->contentsMargins().right();
+    lay->setContentsMargins(marg1, 0, marg2, 0);
 
     mReplace = new QLineEdit(this);
     mReplace->setClearButtonEnabled(true);
@@ -71,8 +72,9 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     : QWidget(parent)
 {
     QHBoxLayout *lay = new QHBoxLayout(this);
-    const int marg = lay->margin();
-    lay->setContentsMargins(marg, 0, marg, 0);
+    const int marg1 = lay->contentsMargins().left();
+    const int marg2 = lay->contentsMargins().right();
+    lay->setContentsMargins(marg1, 0, marg2, 0);
     QLabel *label = new QLabel(i18nc("Find text", "F&ind:"), this);
     lay->addWidget(label);
 

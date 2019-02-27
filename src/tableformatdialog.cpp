@@ -46,7 +46,7 @@ public:
 
         QWidget *page = new QWidget(q);
         QVBoxLayout *lay = new QVBoxLayout(page);
-        lay->setMargin(0);
+        lay->setContentsMargins(0, 0, 0, 0);
         tableWidget = new InsertTableWidget;
         lay->addWidget(tableWidget);
 

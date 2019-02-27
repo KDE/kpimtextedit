@@ -47,7 +47,7 @@ TextGoToLineWidget::TextGoToLineWidget(QWidget *parent)
     , d(new KPIMTextEdit::TextGoToLineWidgetPrivate)
 {
     QHBoxLayout *hbox = new QHBoxLayout(this);
-    hbox->setMargin(2);
+    hbox->setContentsMargins(2, 2, 2, 2);
     QToolButton *closeBtn = new QToolButton(this);
     closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
     closeBtn->setIconSize(QSize(16, 16));

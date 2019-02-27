@@ -92,7 +92,7 @@ QString PlainTextEditorWidget::toPlainText() const
 void PlainTextEditorWidget::init(PlainTextEditor *customEditor)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
     d->mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
     lay->addWidget(d->mTextToSpeechWidget);
     if (customEditor) {
