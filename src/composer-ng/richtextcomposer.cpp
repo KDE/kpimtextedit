@@ -24,13 +24,14 @@
 #include "richtextcomposeremailquotehighlighter.h"
 #include "nestedlisthelper_p.h"
 #include "richtextexternalcomposer.h"
+#include "grantleebuilder/plaintextmarkupbuilder.h"
+#include "grantleebuilder/markupdirector.h"
 #include <QTextBlock>
 #include <QTextLayout>
 #include <QClipboard>
 
 #include "richtextcomposeremailquotedecorator.h"
 
-#include <grantlee/plaintextmarkupbuilder.h>
 
 #include <KActionCollection>
 #include <QAction>
@@ -233,9 +234,9 @@ void RichTextComposer::forcePlainTextMarkup(bool force)
 void RichTextComposer::insertPlainTextImplementation()
 {
     if (d->forcePlainTextMarkup) {
-        Grantlee::PlainTextMarkupBuilder *pb = new Grantlee::PlainTextMarkupBuilder();
+        KPIMTextEdit::PlainTextMarkupBuilder *pb = new KPIMTextEdit::PlainTextMarkupBuilder();
 
-        Grantlee::MarkupDirector *pmd = new Grantlee::MarkupDirector(pb);
+        KPIMTextEdit::MarkupDirector *pmd = new KPIMTextEdit::MarkupDirector(pb);
         pmd->processDocument(document());
         const QString plainText = pb->getResult();
         document()->setPlainText(plainText);
