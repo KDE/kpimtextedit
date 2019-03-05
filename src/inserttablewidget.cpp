@@ -21,7 +21,7 @@
 #include "inserttablewidget.h"
 #include "kpimtextedit_debug.h"
 #include <KLocalizedString>
-#include <KComboBox>
+#include <QComboBox>
 
 #include <QSpinBox>
 #include <QLabel>
@@ -59,8 +59,8 @@ public:
         gridLayout->addWidget(new QLabel(i18n("Border:")), 2, 0);
         gridLayout->addWidget(mBorder, 2, 1);
 
-        mTypeOfLength = new KComboBox;
-        q->connect(mTypeOfLength, QOverload<int>::of(&KComboBox::activated), q, &InsertTableWidget::slotTypeOfLengthChanged);
+        mTypeOfLength = new QComboBox;
+        q->connect(mTypeOfLength, QOverload<int>::of(&QComboBox::activated), q, &InsertTableWidget::slotTypeOfLengthChanged);
         // xgettext: no-c-format
         mTypeOfLength->addItem(i18n("% of windows"), QTextLength::PercentageLength);
         mTypeOfLength->addItem(i18n("pixels"), QTextLength::FixedLength);
@@ -79,7 +79,7 @@ public:
     QSpinBox *mRows = nullptr;
     QSpinBox *mBorder = nullptr;
     QSpinBox *mLength = nullptr;
-    KComboBox *mTypeOfLength = nullptr;
+    QComboBox *mTypeOfLength = nullptr;
 
     InsertTableWidget *q = nullptr;
 };

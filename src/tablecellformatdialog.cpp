@@ -21,7 +21,7 @@
 #include "tablecellformatdialog.h"
 
 #include <KColorButton>
-#include <KComboBox>
+#include <QComboBox>
 #include <KLocalizedString>
 #include <KSeparator>
 
@@ -45,7 +45,7 @@ public:
         QHBoxLayout *hbox = new QHBoxLayout;
         QLabel *lab = new QLabel(i18n("Vertical Alignment:"));
         hbox->addWidget(lab);
-        verticalAlignment = new KComboBox;
+        verticalAlignment = new QComboBox;
         verticalAlignment->addItem(i18n("Top"), QTextCharFormat::AlignTop);
         verticalAlignment->addItem(i18n("Middle"), QTextCharFormat::AlignMiddle);
         verticalAlignment->addItem(i18n("Bottom"), QTextCharFormat::AlignBottom);
@@ -80,7 +80,7 @@ public:
     QCheckBox *useBackgroundColor = nullptr;
 
     KColorButton *backgroundColor = nullptr;
-    KComboBox *verticalAlignment = nullptr;
+    QComboBox *verticalAlignment = nullptr;
     TableCellFormatDialog *q = nullptr;
 };
 

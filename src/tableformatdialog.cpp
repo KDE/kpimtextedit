@@ -22,7 +22,7 @@
 #include "inserttablewidget.h"
 
 #include <KLocalizedString>
-#include <KComboBox>
+#include <QComboBox>
 #include <KSeparator>
 #include <KColorButton>
 
@@ -76,7 +76,7 @@ public:
         sep = new KSeparator;
         lay->addWidget(sep);
 
-        alignment = new KComboBox;
+        alignment = new QComboBox;
         alignment->addItem(i18n("Left"), Qt::AlignLeft);
         alignment->addItem(i18n("Right"), Qt::AlignRight);
         alignment->addItem(i18n("Center"), Qt::AlignHCenter);
@@ -115,7 +115,7 @@ public:
 
     QCheckBox *useBackgroundColor = nullptr;
     KColorButton *backgroundColor = nullptr;
-    KComboBox *alignment = nullptr;
+    QComboBox *alignment = nullptr;
     QSpinBox *spacing = nullptr;
     QSpinBox *padding = nullptr;
     KPIMTextEdit::InsertTableWidget *tableWidget = nullptr;
