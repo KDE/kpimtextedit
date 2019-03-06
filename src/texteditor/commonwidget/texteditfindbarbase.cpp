@@ -32,6 +32,7 @@
 #include <QKeyEvent>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QRegularExpression>
 
 using namespace KPIMTextEdit;
 

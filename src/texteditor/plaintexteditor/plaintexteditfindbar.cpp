@@ -24,6 +24,7 @@
 #include <klineedit.h>
 #include <KColorScheme>
 
+#include <QRegularExpression>
 #include <QPlainTextEdit>
 
 using namespace KPIMTextEdit;
@@ -72,13 +73,21 @@ bool PlainTextEditFindBar::searchInDocument(const QString &text, QTextDocument::
     mFindWidget->setFoundMatch(found);
     return found;
 }
-
+#if QT_VERSION < QT_VERSION_CHECK(5, 13, 0)
 bool PlainTextEditFindBar::searchInDocument(const QRegExp &regExp, QTextDocument::FindFlags searchOptions)
 {
     const bool found = d->mView->find(regExp, searchOptions);
     mFindWidget->setFoundMatch(found);
     return found;
 }
+#else
+bool PlainTextEditFindBar::searchInDocument(const QRegularExpression &regExp, QTextDocument::FindFlags searchOptions)
+{
+    const bool found = d->mView->find(regExp, searchOptions);
+    mFindWidget->setFoundMatch(found);
+    return found;
+}
+#endif
 
 void PlainTextEditFindBar::autoSearchMoveCursor()
 {

@@ -27,6 +27,7 @@
 #include <QLabel>
 #include <QMenu>
 #include <QHBoxLayout>
+#include <QRegularExpression>
 
 using namespace KPIMTextEdit;
 
@@ -173,6 +174,7 @@ QString TextFindWidget::searchText() const
     return mSearch->text();
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 13, 0)
 QRegExp TextFindWidget::searchRegExp() const
 {
     QRegExp reg;
@@ -188,7 +190,21 @@ QRegExp TextFindWidget::searchRegExp() const
     reg.setPattern(searchTextString);
     return reg;
 }
-
+#else
+QRegularExpression TextFindWidget::searchRegExp() const
+{
+    QRegularExpression reg;
+    if (!mCaseSensitiveAct->isChecked()) {
+        reg.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+    }
+    QString searchTextString = mSearch->text();
+    if (mWholeWordAct->isChecked()) {
+        searchTextString = QStringLiteral("\\b") + searchTextString + QStringLiteral("\\b");
+    }
+    reg.setPattern(searchTextString);
+    return reg;
+}
+#endif
 QTextDocument::FindFlags TextFindWidget::searchOptions() const
 {
     QTextDocument::FindFlags opt = nullptr;
