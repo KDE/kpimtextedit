@@ -46,8 +46,10 @@ public:
         delete emoticonMenu;
     }
 
+
     QMenu *emoticonMenu = nullptr;
     EmoticonTextEditSelector *selector = nullptr;
+    bool mEmojiPlainText = false;
 };
 
 EmoticonTextEditAction::EmoticonTextEditAction(QObject *parent)
@@ -64,4 +66,9 @@ EmoticonTextEditAction::EmoticonTextEditAction(QObject *parent)
 EmoticonTextEditAction::~EmoticonTextEditAction()
 {
     delete d;
+}
+
+void EmoticonTextEditAction::setEmojiPlainText(bool b)
+{
+    d->mEmojiPlainText = b;
 }
