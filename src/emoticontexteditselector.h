@@ -29,7 +29,7 @@ class EmoticonTextEditItem : public QListWidgetItem
 {
 public:
     explicit EmoticonTextEditItem(const QString &emoticonText, const QString &pixmapPath, QListWidget *parent);
-
+    explicit EmoticonTextEditItem(const QString &emoticonText, QListWidget *parent);
     QString text() const;
     QString pixmapPath() const;
 

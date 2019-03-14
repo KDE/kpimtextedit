@@ -32,6 +32,14 @@ Q_GLOBAL_STATIC(KEmoticons, sEmoticons)
 
 using namespace KPIMTextEdit;
 
+EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText, QListWidget *parent)
+    : QListWidgetItem(parent)
+{
+    mText = emoticonText;
+    setText(mText);
+    setToolTip(mText);
+}
+
 EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText, const QString &pixmapPath, QListWidget *parent)
     : QListWidgetItem(parent)
 {
