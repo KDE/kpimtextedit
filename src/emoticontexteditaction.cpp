@@ -49,7 +49,6 @@ public:
 
     QMenu *emoticonMenu = nullptr;
     EmoticonTextEditSelector *selector = nullptr;
-    bool mEmojiPlainText = false;
 };
 
 EmoticonTextEditAction::EmoticonTextEditAction(QObject *parent)
@@ -70,5 +69,5 @@ EmoticonTextEditAction::~EmoticonTextEditAction()
 
 void EmoticonTextEditAction::setEmojiPlainText(bool b)
 {
-    d->mEmojiPlainText = b;
+    d->selector->setEmojiPlainText(b);
 }

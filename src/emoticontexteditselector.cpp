@@ -135,3 +135,13 @@ void EmoticonTextEditSelector::slotEmoticonClicked(QListWidgetItem *item)
         parentWidget()->close();
     }
 }
+
+bool EmoticonTextEditSelector::emojiPlainText() const
+{
+    return mEmojiPlainText;
+}
+
+void EmoticonTextEditSelector::setEmojiPlainText(bool emojiPlainText)
+{
+    mEmojiPlainText = emojiPlainText;
+}
