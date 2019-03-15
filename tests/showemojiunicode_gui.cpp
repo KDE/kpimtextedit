@@ -19,9 +19,9 @@
     02110-1301, USA.
 */
 #include <QApplication>
-#include <QLineEdit>
-#include <QPushButton>
+#include <QWidget>
 #include <QVBoxLayout>
+#include <QTextEdit>
 
 
 class Window : public QWidget
@@ -31,7 +31,16 @@ public:
     explicit Window(QWidget *parent = nullptr)
         : QWidget(parent)
     {
-
+        QVBoxLayout *mainLayout = new QVBoxLayout(this);
+        QTextEdit *edit = new QTextEdit(this);
+        edit->setReadOnly(true);
+        mainLayout->addWidget(edit);
+        QString str;
+        const QList<uint> lstEmoji{0x1F50E, 0x1F603, 0x1F604, 0x1F601, 0x1F606, 0x1F605}; //Add more
+        for (uint emoji : lstEmoji) {
+            str += QString::fromUcs4(&emoji, 1);
+        }
+        edit->setPlainText(str);
     }
 };
 
