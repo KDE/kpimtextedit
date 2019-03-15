@@ -13,3 +13,7 @@ target_link_libraries(slidecontainer_gui
     KF5PimTextEdit
     )
 
+
+add_executable(showemojiunicode_gui showemojiunicode_gui.cpp)
+set(showemojiunicode_gui_LIBS KF5PimTextEdit Qt5::Widgets)
+target_link_libraries(showemojiunicode_gui ${showemojiunicode_gui_LIBS})
