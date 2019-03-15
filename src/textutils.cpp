@@ -165,3 +165,9 @@ QString TextUtils::flowText(QString &wrappedText, const QString &indent, int max
 
     return result.left(result.length() - 1);
 }
+
+QList<uint> TextUtils::unicodeEmoji()
+{
+    const QList<uint> lstEmoji{0x1F50E, 0x1F603, 0x1F604, 0x1F601, 0x1F606, 0x1F605}; //Add more
+    return lstEmoji;
+}

@@ -23,6 +23,7 @@
 #include <QVBoxLayout>
 #include <QTextEdit>
 
+#include "textutils.h"
 
 class Window : public QWidget
 {
@@ -36,7 +37,7 @@ public:
         edit->setReadOnly(true);
         mainLayout->addWidget(edit);
         QString str;
-        const QList<uint> lstEmoji{0x1F50E, 0x1F603, 0x1F604, 0x1F601, 0x1F606, 0x1F605}; //Add more
+        const QList<uint> lstEmoji = KPIMTextEdit::TextUtils::unicodeEmoji();
         for (uint emoji : lstEmoji) {
             str += QString::fromUcs4(&emoji, 1);
         }

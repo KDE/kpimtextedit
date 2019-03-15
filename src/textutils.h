@@ -55,6 +55,8 @@ KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT bool containsFormatting(const QTextDocumen
    *            "> this is a test."
    */
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QString flowText(QString &text, const QString &indent, int maxLength);
+
+KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeEmoji();
 }
 }
 

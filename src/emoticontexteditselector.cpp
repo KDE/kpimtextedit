@@ -19,7 +19,7 @@
 */
 
 #include "emoticontexteditselector.h"
-
+#include "textutils.h"
 #include <KEmoticons>
 #include <kemoticonstheme.h>
 
@@ -93,7 +93,7 @@ void EmoticonTextEditSelector::slotCreateEmoticonList()
 {
     mListEmoticon->clear();
     if (mEmojiPlainText) {
-        const QList<uint> lstEmoji{0x1F50E, 0x1F603, 0x1F604, 0x1F601, 0x1F606, 0x1F605}; //Add more
+        const QList<uint> lstEmoji = TextUtils::unicodeEmoji();
         for (uint emoji : lstEmoji) {
             const QString str = QString::fromUcs4(&emoji, 1);
             new EmoticonTextEditItem(str, mListEmoticon);
