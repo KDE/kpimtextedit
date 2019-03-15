@@ -93,10 +93,11 @@ void EmoticonTextEditSelector::slotCreateEmoticonList()
 {
     mListEmoticon->clear();
     if (mEmojiPlainText) {
-        uint cp = 0x1F50E;
-        const QString str = QString::fromUcs4(&cp, 1);
-        new EmoticonTextEditItem(str, mListEmoticon);
-        //TODO
+        const QList<uint> lstEmoji{0x1F50E, 0x1F603, 0x1F604, 0x1F601, 0x1F606, 0x1F605}; //Add more
+        for (uint emoji : lstEmoji) {
+            const QString str = QString::fromUcs4(&emoji, 1);
+            new EmoticonTextEditItem(str, mListEmoticon);
+        }
     } else {
         static QString cachedEmoticonsThemeName;
         if (cachedEmoticonsThemeName.isEmpty()) {
