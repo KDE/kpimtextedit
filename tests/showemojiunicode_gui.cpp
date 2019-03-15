@@ -37,7 +37,7 @@ public:
         edit->setReadOnly(true);
         mainLayout->addWidget(edit);
         QString str;
-        const QList<uint> lstEmoji = KPIMTextEdit::TextUtils::unicodeEmoji();
+        const QList<uint> lstEmoji = KPIMTextEdit::TextUtils::unicodeFullEmoji();
         for (uint emoji : lstEmoji) {
             str += QString::fromUcs4(&emoji, 1);
         }

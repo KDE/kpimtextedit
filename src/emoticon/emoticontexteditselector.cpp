@@ -93,7 +93,7 @@ void EmoticonTextEditSelector::slotCreateEmoticonList()
 {
     mListEmoticon->clear();
     if (mEmojiPlainText) {
-        const QList<uint> lstEmoji = TextUtils::unicodeEmoji();
+        const QList<uint> lstEmoji = TextUtils::unicodeFullEmoji();
         for (uint emoji : lstEmoji) {
             const QString str = QString::fromUcs4(&emoji, 1);
             new EmoticonTextEditItem(str, mListEmoticon);

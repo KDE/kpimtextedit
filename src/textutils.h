@@ -56,7 +56,9 @@ KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT bool containsFormatting(const QTextDocumen
    */
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QString flowText(QString &text, const QString &indent, int maxLength);
 
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeEmoji();
+KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeFullEmoji();
+KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeFacesEmoji();
+KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeCatsEmoji();
 }
 }
 

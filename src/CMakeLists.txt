@@ -49,6 +49,7 @@ set(kpimtextedit_grantlee_builder_SRCS
 set(kpimtextedit_emoticon_builder_SRCS
     emoticon/emoticontexteditaction.cpp
     emoticon/emoticontexteditselector.cpp
+    emoticon/emoticonunicodetab.cpp
     )
 
 set(kpimtextedit_SRCS
