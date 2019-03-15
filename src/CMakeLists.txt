@@ -46,9 +46,13 @@ set(kpimtextedit_grantlee_builder_SRCS
     grantleebuilder/markupdirector.cpp
     )
 
+set(kpimtextedit_emoticon_builder_SRCS
+    emoticon/emoticontexteditaction.cpp
+    emoticon/emoticontexteditselector.cpp
+    )
+
 set(kpimtextedit_SRCS
-    emoticontexteditaction.cpp
-    emoticontexteditselector.cpp
+    ${kpimtextedit_emoticon_builder_SRCS}
     inserthtmldialog.cpp
     insertimagedialog.cpp
     insertimagewidget.cpp
@@ -106,7 +110,6 @@ install(TARGETS KF5PimTextEdit EXPORT KF5PimTextEditTargets ${KF5_INSTALL_TARGET
 ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
     HEADER_NAMES
     EditorUtil
-    EmoticonTextEditAction
     InsertImageWidget
     InsertTableDialog
     InsertTableWidget
@@ -121,6 +124,15 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
     PREFIX KPIMTextEdit
     REQUIRED_HEADERS kpimtextedit_HEADERS
     )
+
+ecm_generate_headers(KPimTextEdit_CamelCaseemoticon_HEADERS
+    HEADER_NAMES
+    EmoticonTextEditAction
+    PREFIX KPIMTextEditemoticon
+    REQUIRED_HEADERS kpimtextedit_HEADERS
+    RELATIVE emoticon
+    )
+
 
 ecm_generate_headers(PimCommon_CamelCasetextrichtexteditor_HEADERS
     HEADER_NAMES
@@ -190,6 +202,7 @@ install(FILES
     ${PimCommon_texteditor_commonwidget_HEADERS}
     ${PimCommon_plaintexteditor_HEADERS}
     ${KPimTextEdit_composerng_HEADERS}
+    ${KPimTextEdit_emoticon_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit/kpimtextedit
     COMPONENT Devel
     )
@@ -201,6 +214,7 @@ install(FILES
     ${KPimTextEdit_CamelCasetexttospeechs_HEADERS}
     ${PimCommon_CamelCasetexteditor_commonwidget_HEADERS}
     ${KPimTextEdit_Camelcasecomposerng_HEADERS}
+    ${KPimTextEdit_CamelCaseemoticon_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit/KPIMTextEdit/
     COMPONENT Devel
     )

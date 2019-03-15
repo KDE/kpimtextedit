@@ -20,7 +20,7 @@
 #include "richtextcomposeractions.h"
 #include "richtextcomposercontroler.h"
 #include "richtextcomposer.h"
-#include "emoticontexteditaction.h"
+#include "emoticon/emoticontexteditaction.h"
 #include "tableactionmenu.h"
 #include <KToggleAction>
 #include <KLocalizedString>
