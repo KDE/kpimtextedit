@@ -73,6 +73,7 @@ bool PlainTextEditFindBar::searchInDocument(const QString &text, QTextDocument::
     mFindWidget->setFoundMatch(found);
     return found;
 }
+
 #if QT_VERSION < QT_VERSION_CHECK(5, 13, 0)
 bool PlainTextEditFindBar::searchInDocument(const QRegExp &regExp, QTextDocument::FindFlags searchOptions)
 {
@@ -80,6 +81,7 @@ bool PlainTextEditFindBar::searchInDocument(const QRegExp &regExp, QTextDocument
     mFindWidget->setFoundMatch(found);
     return found;
 }
+
 #else
 bool PlainTextEditFindBar::searchInDocument(const QRegularExpression &regExp, QTextDocument::FindFlags searchOptions)
 {
@@ -87,6 +89,7 @@ bool PlainTextEditFindBar::searchInDocument(const QRegularExpression &regExp, QT
     mFindWidget->setFoundMatch(found);
     return found;
 }
+
 #endif
 
 void PlainTextEditFindBar::autoSearchMoveCursor()

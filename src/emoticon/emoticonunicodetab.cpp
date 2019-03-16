@@ -23,16 +23,12 @@ using namespace KPIMTextEdit;
 EmoticonUnicodeTab::EmoticonUnicodeTab(QWidget *parent)
     : QTabWidget(parent)
 {
-
 }
 
 EmoticonUnicodeTab::~EmoticonUnicodeTab()
 {
-
 }
-
 
 void EmoticonUnicodeTab::loadEmoticons()
 {
-
 }

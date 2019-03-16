@@ -46,7 +46,6 @@ public:
         delete emoticonMenu;
     }
 
-
     QMenu *emoticonMenu = nullptr;
     EmoticonTextEditSelector *selector = nullptr;
 };

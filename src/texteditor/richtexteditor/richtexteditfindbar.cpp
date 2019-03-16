@@ -72,6 +72,7 @@ bool RichTextEditFindBar::searchInDocument(const QString &text, QTextDocument::F
     mFindWidget->setFoundMatch(found);
     return found;
 }
+
 #if QT_VERSION < QT_VERSION_CHECK(5, 13, 0)
 bool RichTextEditFindBar::searchInDocument(const QRegExp &regExp, QTextDocument::FindFlags searchOptions)
 {
@@ -79,6 +80,7 @@ bool RichTextEditFindBar::searchInDocument(const QRegExp &regExp, QTextDocument:
     mFindWidget->setFoundMatch(found);
     return found;
 }
+
 #else
 bool RichTextEditFindBar::searchInDocument(const QRegularExpression &regExp, QTextDocument::FindFlags searchOptions)
 {

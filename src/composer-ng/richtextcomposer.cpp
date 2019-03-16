@@ -32,7 +32,6 @@
 
 #include "richtextcomposeremailquotedecorator.h"
 
-
 #include <KActionCollection>
 #include <QAction>
 #include <QFileInfo>

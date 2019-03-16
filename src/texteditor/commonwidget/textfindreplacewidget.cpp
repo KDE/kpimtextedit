@@ -190,6 +190,7 @@ QRegExp TextFindWidget::searchRegExp() const
     reg.setPattern(searchTextString);
     return reg;
 }
+
 #else
 QRegularExpression TextFindWidget::searchRegExp() const
 {
@@ -204,6 +205,7 @@ QRegularExpression TextFindWidget::searchRegExp() const
     reg.setPattern(searchTextString);
     return reg;
 }
+
 #endif
 QTextDocument::FindFlags TextFindWidget::searchOptions() const
 {
