@@ -21,10 +21,11 @@
 #define EMOTICONLISTWIDGETSELECTOR_H
 
 #include <QListWidget>
+#include "kpimtextedit_private_export.h"
 
 namespace KPIMTextEdit {
 
-class EmoticonTextEditItem : public QListWidgetItem
+class KPIMTEXTEDIT_TESTS_EXPORT EmoticonTextEditItem : public QListWidgetItem
 {
 public:
     explicit EmoticonTextEditItem(const QString &emoticonText, const QString &pixmapPath, QListWidget *parent);
@@ -38,11 +39,11 @@ private:
 };
 
 
-class EmoticonListWidgetSelector : public QListWidget
+class KPIMTEXTEDIT_TESTS_EXPORT EmoticonListWidgetSelector : public QListWidget
 {
     Q_OBJECT
 public:
-    explicit EmoticonListWidgetSelector(QWidget *parent);
+    explicit EmoticonListWidgetSelector(QWidget *parent = nullptr);
     ~EmoticonListWidgetSelector();
 
 Q_SIGNALS:
