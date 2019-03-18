@@ -173,7 +173,8 @@ QList<uint> TextUtils::unicodeFullEmoji()
             TextUtils::unicodeEmotionEmoji() +
             TextUtils::unicodeBodyEmoji() +
             TextUtils::unicodeTransportEmoji() +
-            TextUtils::unicodeEventEmoji();
+            TextUtils::unicodeEventEmoji() +
+            TextUtils::unicodeFlagsEmoji();
 }
 
 QList<uint> TextUtils::unicodeFacesEmoji()
@@ -217,6 +218,13 @@ QList<uint> TextUtils::unicodeTransportEmoji()
 QList<uint> TextUtils::unicodeEventEmoji()
 {
     //Add more
-    const QList<uint> lstEmoji{0x1F383, 0x1F384, 0x1F386, 0x1F387, 0x1F9E8, 0x2728, 0x1F388};
+    const QList<uint> lstEmoji{0x1F383, 0x1F384, 0x1F386, 0x1F387, 0x1F9E8, 0x2728, 0x1F388, 0x1F389, 0x1F38A, 0x1F38B, 0x1F38D, 0x1F38E, 0x1F38F, 0x1F390, 0x1F391};
+    return lstEmoji;
+}
+
+QList<uint> TextUtils::unicodeFlagsEmoji()
+{
+    //Add more
+    const QList<uint> lstEmoji{0x1F1E6, 0x1F1E9, 0x1F1EA, 0x1F1EB, 0x1F1EC, 0x1F1EE, 0x1F1FB, 0x1F1FE};
     return lstEmoji;
 }
