@@ -59,6 +59,8 @@ KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QString flowText(QString &text, const QStr
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeFullEmoji();
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeFacesEmoji();
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeAnimalsEmoji();
+KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeEmotionEmoji();
+KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeBodyEmoji();
 }
 }
 
