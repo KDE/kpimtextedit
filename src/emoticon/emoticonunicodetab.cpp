@@ -18,6 +18,8 @@
 */
 
 #include "emoticonunicodetab.h"
+#include "emoticonlistwidgetselector.h"
+#include "textutils.h"
 
 using namespace KPIMTextEdit;
 EmoticonUnicodeTab::EmoticonUnicodeTab(QWidget *parent)

@@ -31,6 +31,11 @@ class KPIMTEXTEDIT_EXPORT EmoticonUnicodeTab : public QTabWidget
 public:
     explicit EmoticonUnicodeTab(QWidget *parent);
     ~EmoticonUnicodeTab();
+
+Q_SIGNALS:
+    void itemSelected(const QString &);
+
+private:
     void loadEmoticons();
 };
 }
