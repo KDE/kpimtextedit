@@ -168,7 +168,12 @@ QString TextUtils::flowText(QString &wrappedText, const QString &indent, int max
 
 QList<uint> TextUtils::unicodeFullEmoji()
 {
-    return TextUtils::unicodeFacesEmoji() + TextUtils::unicodeAnimalsEmoji() + TextUtils::unicodeEmotionEmoji() + TextUtils::unicodeBodyEmoji();
+    return TextUtils::unicodeFacesEmoji() +
+            TextUtils::unicodeAnimalsEmoji() +
+            TextUtils::unicodeEmotionEmoji() +
+            TextUtils::unicodeBodyEmoji() +
+            TextUtils::unicodeTransportEmoji() +
+            TextUtils::unicodeEventEmoji();
 }
 
 QList<uint> TextUtils::unicodeFacesEmoji()
@@ -200,4 +205,18 @@ QList<uint> TextUtils::unicodeBodyEmoji()
     const QList<uint> lstEmoji{0x1F44B, 0x1F91A, 0x1F590, 0x270B, 0x1F596, 0x1F44C, 0x270C, 0x1F91F, 0x1F44D, 0x1F44F, 0x1F4AA};
     return lstEmoji;
 
+}
+
+QList<uint> TextUtils::unicodeTransportEmoji()
+{
+    //Add more
+    const QList<uint> lstEmoji{0x1F682, 0x1F683, 0x1F684, 0x1F685, 0x1F686, 0x1F687, 0x1F688, 0x1F689, 0x1F69D, 0x1F691, 0x1F692, 0x1F693, 0x1F694, 0x1F695, 0x1F696, 0x1F697};
+    return lstEmoji;
+}
+
+QList<uint> TextUtils::unicodeEventEmoji()
+{
+    //Add more
+    const QList<uint> lstEmoji{0x1F383, 0x1F384, 0x1F386, 0x1F387, 0x1F9E8, 0x2728, 0x1F388};
+    return lstEmoji;
 }
