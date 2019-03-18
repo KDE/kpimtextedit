@@ -18,6 +18,7 @@
   02110-1301, USA.
 */
 
+#include "emoticonlistwidgetselector.h"
 #include "emoticontexteditselector.h"
 #include "textutils.h"
 #include <KEmoticons>
@@ -32,42 +33,6 @@ Q_GLOBAL_STATIC(KEmoticons, sEmoticons)
 
 using namespace KPIMTextEdit;
 
-EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText, QListWidget *parent)
-    : QListWidgetItem(parent)
-{
-    mText = emoticonText;
-    setText(mText);
-    setToolTip(mText);
-}
-
-EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText, const QString &pixmapPath, QListWidget *parent)
-    : QListWidgetItem(parent)
-{
-    mText = emoticonText;
-    mPixmapPath = pixmapPath;
-    QPixmap p(mPixmapPath);
-    // Some of the custom icons are rather large
-    // so lets limit them to a maximum size for this display panel
-    //
-
-    //TODO need to fix hdpi support here.
-    if (p.width() > 32 || p.height() > 32) {
-        p = p.scaled(QSize(32, 32), Qt::KeepAspectRatio);
-    }
-
-    setIcon(p);
-    setToolTip(mText);
-}
-
-QString EmoticonTextEditItem::text() const
-{
-    return mText;
-}
-
-QString EmoticonTextEditItem::pixmapPath() const
-{
-    return mPixmapPath;
-}
 
 EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     : QWidget(parent)
@@ -75,18 +40,22 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     QHBoxLayout *lay = new QHBoxLayout(this);
     lay->setSpacing(0);
     lay->setContentsMargins(0, 0, 0, 0);
-    mListEmoticon = new QListWidget(this);
+    mListEmoticon = new EmoticonListWidgetSelector(this);
     lay->addWidget(mListEmoticon);
-    mListEmoticon->setViewMode(QListView::IconMode);
-    mListEmoticon->setSelectionMode(QAbstractItemView::SingleSelection);
-    mListEmoticon->setMouseTracking(true);
-    mListEmoticon->setDragEnabled(false);
-    connect(mListEmoticon, &QListWidget::itemEntered, this, &EmoticonTextEditSelector::slotMouseOverItem);
-    connect(mListEmoticon, &QListWidget::itemClicked, this, &EmoticonTextEditSelector::slotEmoticonClicked);
+    connect(mListEmoticon, &EmoticonListWidgetSelector::itemSelected, this, &EmoticonTextEditSelector::slotItemSelected);
 }
 
 EmoticonTextEditSelector::~EmoticonTextEditSelector()
 {
+}
+
+void EmoticonTextEditSelector::slotItemSelected(const QString &str)
+{
+    Q_EMIT itemSelected(str);
+    if (isVisible() && parentWidget()
+        && parentWidget()->inherits("QMenu")) {
+        parentWidget()->close();
+    }
 }
 
 void EmoticonTextEditSelector::slotCreateEmoticonList()
@@ -129,28 +98,6 @@ void EmoticonTextEditSelector::slotCreateEmoticonList()
     mListEmoticon->setIconSize(QSize(32, 32));
 }
 
-void EmoticonTextEditSelector::slotMouseOverItem(QListWidgetItem *item)
-{
-    item->setSelected(true);
-    if (!mListEmoticon->hasFocus()) {
-        mListEmoticon->setFocus();
-    }
-}
-
-void EmoticonTextEditSelector::slotEmoticonClicked(QListWidgetItem *item)
-{
-    if (!item) {
-        return;
-    }
-    EmoticonTextEditItem *itemEmoticon = static_cast<EmoticonTextEditItem *>(item);
-
-    Q_EMIT itemSelected(itemEmoticon->text());
-    if (isVisible() && parentWidget()
-        && parentWidget()->inherits("QMenu")) {
-        parentWidget()->close();
-    }
-}
-
 bool EmoticonTextEditSelector::emojiPlainText() const
 {
     return mEmojiPlainText;
@@ -160,3 +107,4 @@ void EmoticonTextEditSelector::setEmojiPlainText(bool emojiPlainText)
 {
     mEmojiPlainText = emojiPlainText;
 }
+

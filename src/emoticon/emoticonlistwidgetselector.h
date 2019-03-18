@@ -1,6 +1,5 @@
 /*
-  Copyright (c) 2012-2019 Montel Laurent <montel@kde.org>
-  based on code from kopete
+  Copyright (c) 2019 Montel Laurent <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -18,37 +17,41 @@
   02110-1301, USA.
 */
 
-#ifndef KPIMTEXTEDIT_EMOTICONTEXTEDITSELECTOR_H
-#define KPIMTEXTEDIT_EMOTICONTEXTEDITSELECTOR_H
+#ifndef EMOTICONLISTWIDGETSELECTOR_H
+#define EMOTICONLISTWIDGETSELECTOR_H
 
-#include <QListWidgetItem>
-#include <QWidget>
+#include <QListWidget>
 
 namespace KPIMTextEdit {
-class EmoticonListWidgetSelector;
+
+class EmoticonTextEditItem : public QListWidgetItem
+{
+public:
+    explicit EmoticonTextEditItem(const QString &emoticonText, const QString &pixmapPath, QListWidget *parent);
+    explicit EmoticonTextEditItem(const QString &emoticonText, QListWidget *parent);
+    QString text() const;
+    QString pixmapPath() const;
+
+private:
+    QString mText;
+    QString mPixmapPath;
+};
 
 
-class EmoticonTextEditSelector : public QWidget
+class EmoticonListWidgetSelector : public QListWidget
 {
     Q_OBJECT
 public:
-    explicit EmoticonTextEditSelector(QWidget *parent = nullptr);
-    ~EmoticonTextEditSelector();
-
-    Q_REQUIRED_RESULT bool emojiPlainText() const;
-    void setEmojiPlainText(bool emojiPlainText);
-
-public Q_SLOTS:
-    void slotCreateEmoticonList();
+    explicit EmoticonListWidgetSelector(QWidget *parent);
+    ~EmoticonListWidgetSelector();
 
 Q_SIGNALS:
     void itemSelected(const QString &);
 
 private:
-    void slotItemSelected(const QString &str);
-    EmoticonListWidgetSelector *mListEmoticon = nullptr;
-    bool mEmojiPlainText = false;
+    void slotMouseOverItem(QListWidgetItem *item);
+    void slotEmoticonClicked(QListWidgetItem *item);
 };
 }
 
-#endif /* KPIMTEXTEDIT_EMOTICONTEXTEDITSELECTOR_H */
+#endif // EMOTICONLISTWIDGETSELECTOR_H

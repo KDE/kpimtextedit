@@ -50,6 +50,7 @@ set(kpimtextedit_emoticon_builder_SRCS
     emoticon/emoticontexteditaction.cpp
     emoticon/emoticontexteditselector.cpp
     emoticon/emoticonunicodetab.cpp
+    emoticon/emoticonlistwidgetselector.cpp
     )
 
 set(kpimtextedit_SRCS
