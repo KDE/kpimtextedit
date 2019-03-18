@@ -34,6 +34,7 @@ public:
     {
         QVBoxLayout *mainLayout = new QVBoxLayout(this);
         QTextEdit *edit = new QTextEdit(this);
+        edit->setFontPointSize(25);
         edit->setReadOnly(true);
         mainLayout->addWidget(edit);
         QString str;
