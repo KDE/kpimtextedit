@@ -36,7 +36,12 @@ EmoticonUnicodeTab::~EmoticonUnicodeTab()
 void EmoticonUnicodeTab::loadEmoticons()
 {
     createTab(i18n("Faces"), KPIMTextEdit::TextUtils::unicodeFacesEmoji());
-    //TODO add more
+    createTab(i18n("Animals"), KPIMTextEdit::TextUtils::unicodeAnimalsEmoji());
+    createTab(i18n("Emotions"), KPIMTextEdit::TextUtils::unicodeEmotionEmoji());
+    createTab(i18n("Body"), KPIMTextEdit::TextUtils::unicodeBodyEmoji());
+    createTab(i18n("Transports"), KPIMTextEdit::TextUtils::unicodeTransportEmoji());
+    createTab(i18n("Events"), KPIMTextEdit::TextUtils::unicodeEventEmoji());
+    createTab(i18n("Flags"), KPIMTextEdit::TextUtils::unicodeFlagsEmoji());
 }
 
 void EmoticonUnicodeTab::createTab(const QString &str, const QList<uint> &emoticons)
