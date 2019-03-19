@@ -84,6 +84,14 @@ void EmoticonListWidgetSelector::slotMouseOverItem(QListWidgetItem *item)
     }
 }
 
+void EmoticonListWidgetSelector::setEmoticons(const QList<uint> &lst)
+{
+    for (uint emoji : lst) {
+        const QString str = QString::fromUcs4(&emoji, 1);
+        new KPIMTextEdit::EmoticonTextEditItem(str, this);
+    }
+}
+
 void EmoticonListWidgetSelector::slotEmoticonClicked(QListWidgetItem *item)
 {
     if (!item) {

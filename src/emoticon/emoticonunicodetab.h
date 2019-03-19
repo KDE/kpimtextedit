@@ -37,6 +37,7 @@ Q_SIGNALS:
 
 private:
     void loadEmoticons();
+    void createTab(const QString &str, const QList<uint> &emoticons);
 };
 }
 

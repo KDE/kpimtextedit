@@ -46,6 +46,7 @@ public:
     explicit EmoticonListWidgetSelector(QWidget *parent = nullptr);
     ~EmoticonListWidgetSelector();
 
+    void setEmoticons(const QList<uint> &lst);
 Q_SIGNALS:
     void itemSelected(const QString &);
 

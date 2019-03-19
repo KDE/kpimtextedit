@@ -20,11 +20,13 @@
 #include "emoticonunicodetab.h"
 #include "emoticonlistwidgetselector.h"
 #include "textutils.h"
+#include <KLocalizedString>
 
 using namespace KPIMTextEdit;
 EmoticonUnicodeTab::EmoticonUnicodeTab(QWidget *parent)
     : QTabWidget(parent)
 {
+    loadEmoticons();
 }
 
 EmoticonUnicodeTab::~EmoticonUnicodeTab()
@@ -33,4 +35,14 @@ EmoticonUnicodeTab::~EmoticonUnicodeTab()
 
 void EmoticonUnicodeTab::loadEmoticons()
 {
+    createTab(i18n("Faces"), KPIMTextEdit::TextUtils::unicodeFacesEmoji());
+    //TODO add more
+}
+
+void EmoticonUnicodeTab::createTab(const QString &str, const QList<uint> &emoticons)
+{
+    EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
+    selector->setEmoticons(emoticons);
+    //TODO add i18n ? or icons ?
+    addTab(selector, str);
 }
