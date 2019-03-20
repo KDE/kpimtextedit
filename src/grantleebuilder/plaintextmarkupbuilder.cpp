@@ -29,6 +29,11 @@ PlainTextMarkupBuilder::PlainTextMarkupBuilder()
 
 void PlainTextMarkupBuilder::beginParagraph(Qt::Alignment a, qreal top, qreal bottom, qreal left, qreal right)
 {
+    Q_UNUSED(a);
+    Q_UNUSED(top);
+    Q_UNUSED(bottom);
+    Q_UNUSED(left);
+    Q_UNUSED(right);
     //TODO
     //qDebug() << " left " << left << right << bottom << top << a;
 }
