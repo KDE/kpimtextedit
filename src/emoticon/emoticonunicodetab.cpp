@@ -48,6 +48,7 @@ void EmoticonUnicodeTab::createTab(const QString &str, const QList<uint> &emotic
 {
     EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
     selector->setEmoticons(emoticons);
+    connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
     //TODO add i18n ? or icons ?
     addTab(selector, str);
 }
