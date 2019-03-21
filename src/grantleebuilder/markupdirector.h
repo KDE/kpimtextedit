@@ -30,6 +30,8 @@ class MarkupDirector : public Grantlee::MarkupDirector
 public:
     explicit MarkupDirector(Grantlee::AbstractMarkupBuilder *builder);
     ~MarkupDirector() override;
+
+    QTextFrame::iterator processBlockContents(QTextFrame::iterator frameIt, const QTextBlock &block) override;
 protected:
     QTextBlock::iterator processFragment(QTextBlock::iterator it, const QTextFragment &fragment, const QTextDocument *doc) override;
 };

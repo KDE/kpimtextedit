@@ -32,6 +32,8 @@ public:
     PlainTextMarkupBuilder();
 
     void beginParagraph(Qt::Alignment a, qreal top, qreal bottom, qreal left, qreal right) override;
+private:
+    bool isQuoteBlock(qreal top, qreal bottom, qreal left, qreal right) const;
 };
 }
 

@@ -37,3 +37,18 @@ void PlainTextMarkupBuilder::beginParagraph(Qt::Alignment a, qreal top, qreal bo
     //TODO
     //qDebug() << " left " << left << right << bottom << top << a;
 }
+
+
+bool PlainTextMarkupBuilder::isQuoteBlock(qreal top, qreal bottom, qreal left, qreal right) const
+{
+/*
+    case Html_blockquote:
+         margin[QTextHtmlParser::MarginTop] = 12;
+         margin[QTextHtmlParser::MarginBottom] = 12;
+         margin[QTextHtmlParser::MarginLeft] = 40;
+         margin[QTextHtmlParser::MarginRight] = 40;
+         break;
+*/
+    //TODO
+    return false;
+}

@@ -33,6 +33,69 @@ MarkupDirector::~MarkupDirector()
 
 }
 
+QTextFrame::iterator
+MarkupDirector::processBlockContents(QTextFrame::iterator frameIt,
+                                     const QTextBlock &block)
+{
+    //Same code as grantlee  but interprete margin
+
+    auto blockFormat = block.blockFormat();
+    auto blockAlignment = blockFormat.alignment();
+
+    // TODO: decide when to use <h1> etc.
+
+    if (blockFormat.hasProperty(QTextFormat::BlockTrailingHorizontalRulerWidth)) {
+        m_builder->insertHorizontalRule();
+        if (!frameIt.atEnd())
+            return ++frameIt;
+        return frameIt;
+    }
+
+    auto it = block.begin();
+
+    // The beginning is the end. This is an empty block. Insert a newline and
+    // move
+    // on.
+    if (it.atEnd()) {
+        m_builder->addNewline();
+        if (!frameIt.atEnd())
+            return ++frameIt;
+        return frameIt;
+    }
+
+    // Don't have p tags inside li tags.
+    if (!block.textList()) {
+        //Laurent : we need this margin as it's necessary to show blockquote
+
+        // Don't instruct builders to use margins. The rich text widget doesn't
+        // have
+        // an action for them yet,
+        // So users can't edit them. See bug
+        // http://bugs.kde.org/show_bug.cgi?id=160600
+        m_builder->beginParagraph(
+                    blockAlignment,
+                    blockFormat.topMargin(),
+                    blockFormat.bottomMargin(),
+                    blockFormat.leftMargin(),
+                    blockFormat.rightMargin()
+                    );
+    }
+
+    while (!it.atEnd()) {
+        it = processFragment(it, it.fragment(), block.document());
+    }
+
+    // Don't have p tags inside li tags.
+    if (!block.textList()) {
+        m_builder->endParagraph();
+    }
+
+    if (!frameIt.atEnd())
+        return ++frameIt;
+    return frameIt;
+}
+
+
 QTextBlock::iterator
 MarkupDirector::processFragment(QTextBlock::iterator it,
                                 const QTextFragment &fragment,
