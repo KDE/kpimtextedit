@@ -17,28 +17,19 @@
   02110-1301, USA.
 */
 
-#ifndef EMOTICONUNICODETAB_H
-#define EMOTICONUNICODETAB_H
+#include "emoticonunicodetabtest.h"
+#include "emoticon/emoticonunicodetab.h"
+#include <QTest>
 
-#include <QTabWidget>
-
-#include "kpimtextedit_export.h"
-
-namespace KPIMTextEdit {
-class KPIMTEXTEDIT_EXPORT EmoticonUnicodeTab : public QTabWidget
+QTEST_MAIN(EmoticonUnicodeTabTest)
+EmoticonUnicodeTabTest::EmoticonUnicodeTabTest(QObject *parent)
+    : QObject(parent)
 {
-    Q_OBJECT
-public:
-    explicit EmoticonUnicodeTab(QWidget *parent = nullptr);
-    ~EmoticonUnicodeTab();
 
-Q_SIGNALS:
-    void itemSelected(const QString &);
-
-private:
-    void loadEmoticons();
-    void createTab(const QString &str, const QList<uint> &emoticons);
-};
 }
 
-#endif // EMOTICONUNICODETAB_H
+void EmoticonUnicodeTabTest::shouldHaveDefaultValues()
+{
+    KPIMTextEdit::EmoticonUnicodeTab w;
+    QVERIFY(w.count() > 0);
+}
