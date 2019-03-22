@@ -54,6 +54,8 @@ public:
 
     QString m_text;
 
+    QString m_quoteprefix;
+
     PlainTextMarkupBuilder *q_ptr;
 
     Q_DECLARE_PUBLIC(PlainTextMarkupBuilder)
@@ -149,7 +151,16 @@ QString PlainTextMarkupBuilderPrivate::getReferences()
 }
 
 
-PlainTextMarkupBuilder::~PlainTextMarkupBuilder() { delete d_ptr; }
+PlainTextMarkupBuilder::~PlainTextMarkupBuilder()
+{
+    delete d_ptr;
+}
+
+void PlainTextMarkupBuilder::setQuotePrefix(const QString &prefix)
+{
+    Q_D(PlainTextMarkupBuilder);
+    d->m_quoteprefix = prefix;
+}
 
 void PlainTextMarkupBuilder::beginStrong()
 {
@@ -405,14 +416,20 @@ void PlainTextMarkupBuilder::beginFontFamily(const QString &family)
     Q_UNUSED(family);
 }
 
-void PlainTextMarkupBuilder::beginFontPointSize(int size) { Q_UNUSED(size); }
+void PlainTextMarkupBuilder::beginFontPointSize(int size)
+{
+    Q_UNUSED(size);
+}
 
 void PlainTextMarkupBuilder::beginForeground(const QBrush &brush)
 {
     Q_UNUSED(brush);
 }
 
-void PlainTextMarkupBuilder::beginHeader(int level) { Q_UNUSED(level); }
+void PlainTextMarkupBuilder::beginHeader(int level)
+{
+    Q_UNUSED(level);
+}
 
 void PlainTextMarkupBuilder::beginTable(qreal cellpadding, qreal cellspacing,
                                         const QString &width)
@@ -438,22 +455,43 @@ void PlainTextMarkupBuilder::beginTableHeaderCell(const QString &width,
     Q_UNUSED(rowSpan);
 }
 
-void PlainTextMarkupBuilder::beginTableRow() {}
+void PlainTextMarkupBuilder::beginTableRow()
+{
+}
 
-void PlainTextMarkupBuilder::endBackground() {}
+void PlainTextMarkupBuilder::endBackground()
+{
+}
 
-void PlainTextMarkupBuilder::endFontFamily() {}
+void PlainTextMarkupBuilder::endFontFamily()
+{
+}
 
-void PlainTextMarkupBuilder::endFontPointSize() {}
+void PlainTextMarkupBuilder::endFontPointSize()
+{
+}
 
-void PlainTextMarkupBuilder::endForeground() {}
+void PlainTextMarkupBuilder::endForeground()
+{
+}
 
-void PlainTextMarkupBuilder::endHeader(int level) { Q_UNUSED(level) }
+void PlainTextMarkupBuilder::endHeader(int level)
+{
+    Q_UNUSED(level)
+}
 
-void PlainTextMarkupBuilder::endTable() {}
+void PlainTextMarkupBuilder::endTable()
+{
+}
 
-void PlainTextMarkupBuilder::endTableCell() {}
+void PlainTextMarkupBuilder::endTableCell()
+{
+}
 
-void PlainTextMarkupBuilder::endTableHeaderCell() {}
+void PlainTextMarkupBuilder::endTableHeaderCell()
+{
+}
 
-void PlainTextMarkupBuilder::endTableRow() {}
+void PlainTextMarkupBuilder::endTableRow()
+{
+}

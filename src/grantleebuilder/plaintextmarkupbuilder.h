@@ -39,6 +39,9 @@ public:
 
     ~PlainTextMarkupBuilder() override;
 
+    void setQuotePrefix(const QString &prefix);
+
+
     void beginStrong() override;
     void endStrong() override;
     void beginEmph() override;
@@ -124,7 +127,6 @@ public:
 private:
     PlainTextMarkupBuilderPrivate *const d_ptr;
     Q_DECLARE_PRIVATE(PlainTextMarkupBuilder)
-
 };
 }
 
