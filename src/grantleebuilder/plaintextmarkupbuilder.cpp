@@ -394,7 +394,8 @@ void PlainTextMarkupBuilder::beginParagraph(Qt::Alignment a, qreal top,
 
 bool PlainTextMarkupBuilder::isQuoteBlock(qreal top, qreal bottom, qreal left, qreal right) const
 {
-    return (top == 12) && (bottom == 12) && (left == 40) && (right == 40);
+    //qDebug() << " bool PlainTextMarkupBuilder::isQuoteBlock(qreal top, qreal bottom, qreal left, qreal right) const" << " top " << top << " bottom " << bottom << " left " << left << " righ " << right;
+    return /*(top == 12) && (bottom == 12) &&*/ (left == 40) && (right == 40);
     /*
     case Html_blockquote:
          margin[QTextHtmlParser::MarginTop] = 12;

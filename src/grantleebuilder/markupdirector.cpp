@@ -19,7 +19,7 @@
 */
 
 #include "markupdirector.h"
-
+#include <QDebug>
 using namespace KPIMTextEdit;
 
 MarkupDirector::MarkupDirector(Grantlee::AbstractMarkupBuilder *builder)
@@ -84,7 +84,6 @@ MarkupDirector::processBlockContents(QTextFrame::iterator frameIt,
     while (!it.atEnd()) {
         it = processFragment(it, it.fragment(), block.document());
     }
-
     // Don't have p tags inside li tags.
     if (!block.textList()) {
         m_builder->endParagraph();
