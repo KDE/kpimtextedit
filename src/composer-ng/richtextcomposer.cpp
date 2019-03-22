@@ -234,7 +234,7 @@ void RichTextComposer::insertPlainTextImplementation()
 {
     if (d->forcePlainTextMarkup) {
         KPIMTextEdit::PlainTextMarkupBuilder *pb = new KPIMTextEdit::PlainTextMarkupBuilder();
-
+        pb->setQuotePrefix(defaultQuoteSign());
         KPIMTextEdit::MarkupDirector *pmd = new KPIMTextEdit::MarkupDirector(pb);
         pmd->processDocument(document());
         const QString plainText = pb->getResult();

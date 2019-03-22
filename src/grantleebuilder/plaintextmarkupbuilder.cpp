@@ -386,14 +386,15 @@ void PlainTextMarkupBuilder::beginParagraph(Qt::Alignment a, qreal top,
                                             qreal right)
 {
     Q_UNUSED(a);
-    Q_UNUSED(top);
-    Q_UNUSED(bottom);
-    Q_UNUSED(left);
-    Q_UNUSED(right);
+    Q_D(PlainTextMarkupBuilder);
+    if (isQuoteBlock(top, bottom, left, right)) {
+        d->m_text.append(d->m_quoteprefix);
+    }
 }
 
 bool PlainTextMarkupBuilder::isQuoteBlock(qreal top, qreal bottom, qreal left, qreal right) const
 {
+    return (top == 12) && (bottom == 12) && (left == 40) && (right == 40);
     /*
     case Html_blockquote:
          margin[QTextHtmlParser::MarginTop] = 12;
@@ -402,8 +403,6 @@ bool PlainTextMarkupBuilder::isQuoteBlock(qreal top, qreal bottom, qreal left, q
          margin[QTextHtmlParser::MarginRight] = 40;
          break;
 */
-    //TODO
-    return false;
 }
 
 void PlainTextMarkupBuilder::beginBackground(const QBrush &brush)
