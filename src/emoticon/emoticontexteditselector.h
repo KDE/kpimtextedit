@@ -27,7 +27,6 @@
 namespace KPIMTextEdit {
 class EmoticonListWidgetSelector;
 
-
 class EmoticonTextEditSelector : public QWidget
 {
     Q_OBJECT

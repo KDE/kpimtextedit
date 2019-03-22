@@ -59,9 +59,8 @@ QString EmoticonTextEditItem::pixmapPath() const
     return mPixmapPath;
 }
 
-
 EmoticonListWidgetSelector::EmoticonListWidgetSelector(QWidget *parent)
-    : QListWidget (parent)
+    : QListWidget(parent)
 {
     setViewMode(QListView::IconMode);
     setSelectionMode(QAbstractItemView::SingleSelection);
@@ -73,7 +72,6 @@ EmoticonListWidgetSelector::EmoticonListWidgetSelector(QWidget *parent)
 
 EmoticonListWidgetSelector::~EmoticonListWidgetSelector()
 {
-
 }
 
 void EmoticonListWidgetSelector::slotMouseOverItem(QListWidgetItem *item)
@@ -101,4 +99,3 @@ void EmoticonListWidgetSelector::slotEmoticonClicked(QListWidgetItem *item)
 
     Q_EMIT itemSelected(itemEmoticon->text());
 }
-

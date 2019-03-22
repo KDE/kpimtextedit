@@ -25,7 +25,6 @@ QTEST_MAIN(EmoticonListWidgetSelectorTest)
 EmoticonListWidgetSelectorTest::EmoticonListWidgetSelectorTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void EmoticonListWidgetSelectorTest::shouldHaveDefaultValues()

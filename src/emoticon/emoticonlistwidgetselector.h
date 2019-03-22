@@ -24,7 +24,6 @@
 #include "kpimtextedit_private_export.h"
 
 namespace KPIMTextEdit {
-
 class KPIMTEXTEDIT_TESTS_EXPORT EmoticonTextEditItem : public QListWidgetItem
 {
 public:
@@ -37,7 +36,6 @@ private:
     QString mText;
     QString mPixmapPath;
 };
-
 
 class KPIMTEXTEDIT_TESTS_EXPORT EmoticonListWidgetSelector : public QListWidget
 {

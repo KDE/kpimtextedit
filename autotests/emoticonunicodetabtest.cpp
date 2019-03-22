@@ -25,7 +25,6 @@ QTEST_MAIN(EmoticonUnicodeTabTest)
 EmoticonUnicodeTabTest::EmoticonUnicodeTabTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void EmoticonUnicodeTabTest::shouldHaveDefaultValues()

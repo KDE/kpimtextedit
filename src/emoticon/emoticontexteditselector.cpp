@@ -33,7 +33,6 @@ Q_GLOBAL_STATIC(KEmoticons, sEmoticons)
 
 using namespace KPIMTextEdit;
 
-
 EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     : QWidget(parent)
 {
@@ -107,4 +106,3 @@ void EmoticonTextEditSelector::setEmojiPlainText(bool emojiPlainText)
 {
     mEmojiPlainText = emojiPlainText;
 }
-

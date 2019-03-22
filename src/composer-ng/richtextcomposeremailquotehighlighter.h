@@ -33,8 +33,7 @@ public:
      * Constructor. See setQuoteColor() for the parameters.
      * FIXME: Default colors don't obey color scheme
      */
-    explicit RichTextComposerEmailQuoteHighlighter(RichTextComposer *textEdit, const QColor &normalColor = Qt::black, const QColor &quoteDepth1 = QColor(0x00, 0x80, 0x00),
-                                                   const QColor &quoteDepth2 = QColor(0x00, 0x80, 0x00), const QColor &quoteDepth3 = QColor(0x00, 0x80, 0x00), const QColor &misspelledColor = Qt::red);
+    explicit RichTextComposerEmailQuoteHighlighter(RichTextComposer *textEdit, const QColor &normalColor = Qt::black, const QColor &quoteDepth1 = QColor(0x00, 0x80, 0x00), const QColor &quoteDepth2 = QColor(0x00, 0x80, 0x00), const QColor &quoteDepth3 = QColor(0x00, 0x80, 0x00), const QColor &misspelledColor = Qt::red);
 
     ~RichTextComposerEmailQuoteHighlighter() override;
 
