@@ -40,7 +40,8 @@ Q_SIGNALS:
 
 private:
     void loadEmoticons();
-    void createTab(const QString &str, const QList<uint> &emoticons);
+    void createPlainTextEmoticonTab(const QString &str, const QList<uint> &emoticons);
+    void createEmoticonTab(const QString &str);
     bool mEmojiPlainText = true;
 };
 }
