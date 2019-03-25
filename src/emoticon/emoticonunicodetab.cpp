@@ -26,6 +26,7 @@ using namespace KPIMTextEdit;
 EmoticonUnicodeTab::EmoticonUnicodeTab(QWidget *parent)
     : QTabWidget(parent)
 {
+    setTabBarAutoHide(true);
     loadEmoticons();
 }
 
