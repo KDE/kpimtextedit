@@ -128,6 +128,7 @@ Q_SIGNALS:
 
     void externalEditorStarted();
     void externalEditorClosed();
+    void insertEmoticon(const QString &str);
 
 protected:
     void keyPressEvent(QKeyEvent *event) override;
