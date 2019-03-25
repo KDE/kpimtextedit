@@ -59,42 +59,43 @@ void EmoticonTextEditSelector::slotItemSelected(const QString &str)
 
 void EmoticonTextEditSelector::slotCreateEmoticonList()
 {
-    mListEmoticon->clear();
-    if (mEmojiPlainText) {
-        const QList<uint> lstEmoji = TextUtils::unicodeFullEmoji();
-        for (uint emoji : lstEmoji) {
-            const QString str = QString::fromUcs4(&emoji, 1);
-            new EmoticonTextEditItem(str, mListEmoticon);
-        }
-    } else {
-        static QString cachedEmoticonsThemeName;
-        if (cachedEmoticonsThemeName.isEmpty()) {
-            cachedEmoticonsThemeName = KEmoticons::currentThemeName();
-        }
-        const QHash<QString, QStringList> list
-            = sEmoticons->theme(cachedEmoticonsThemeName).emoticonsMap();
+    if (mListEmoticon->count() == 0) {
+        if (mEmojiPlainText) {
+            const QList<uint> lstEmoji = TextUtils::unicodeFullEmoji();
+            for (uint emoji : lstEmoji) {
+                const QString str = QString::fromUcs4(&emoji, 1);
+                new EmoticonTextEditItem(str, mListEmoticon);
+            }
+        } else {
+            static QString cachedEmoticonsThemeName;
+            if (cachedEmoticonsThemeName.isEmpty()) {
+                cachedEmoticonsThemeName = KEmoticons::currentThemeName();
+            }
+            const QHash<QString, QStringList> list
+                    = sEmoticons->theme(cachedEmoticonsThemeName).emoticonsMap();
 
-        //Keep in sync with linklocator.cpp
-        QStringList exclude;
-        exclude << QStringLiteral("(c)") << QStringLiteral("(C)") << QStringLiteral("&gt;:-(") << QStringLiteral("&gt;:(") << QStringLiteral("(B)") << QStringLiteral("(b)") << QStringLiteral("(P)")
-                << QStringLiteral("(p)");
-        exclude << QStringLiteral("(O)") << QStringLiteral("(o)") << QStringLiteral("(D)") << QStringLiteral("(d)") << QStringLiteral("(E)") << QStringLiteral("(e)") << QStringLiteral("(K)")
-                << QStringLiteral("(k)");
-        exclude << QStringLiteral("(I)") << QStringLiteral("(i)") << QStringLiteral("(L)") << QStringLiteral("(l)") << QStringLiteral("(8)") << QStringLiteral("(T)") << QStringLiteral("(t)")
-                << QStringLiteral("(G)");
-        exclude << QStringLiteral("(g)") << QStringLiteral("(F)") << QStringLiteral("(f)") << QStringLiteral("(H)");
-        exclude << QStringLiteral("8)") << QStringLiteral("(N)") << QStringLiteral("(n)") << QStringLiteral("(Y)") << QStringLiteral("(y)") << QStringLiteral("(U)") << QStringLiteral("(u)")
-                << QStringLiteral("(W)") << QStringLiteral("(w)");
+            //Keep in sync with linklocator.cpp
+            QStringList exclude;
+            exclude << QStringLiteral("(c)") << QStringLiteral("(C)") << QStringLiteral("&gt;:-(") << QStringLiteral("&gt;:(") << QStringLiteral("(B)") << QStringLiteral("(b)") << QStringLiteral("(P)")
+                    << QStringLiteral("(p)");
+            exclude << QStringLiteral("(O)") << QStringLiteral("(o)") << QStringLiteral("(D)") << QStringLiteral("(d)") << QStringLiteral("(E)") << QStringLiteral("(e)") << QStringLiteral("(K)")
+                    << QStringLiteral("(k)");
+            exclude << QStringLiteral("(I)") << QStringLiteral("(i)") << QStringLiteral("(L)") << QStringLiteral("(l)") << QStringLiteral("(8)") << QStringLiteral("(T)") << QStringLiteral("(t)")
+                    << QStringLiteral("(G)");
+            exclude << QStringLiteral("(g)") << QStringLiteral("(F)") << QStringLiteral("(f)") << QStringLiteral("(H)");
+            exclude << QStringLiteral("8)") << QStringLiteral("(N)") << QStringLiteral("(n)") << QStringLiteral("(Y)") << QStringLiteral("(y)") << QStringLiteral("(U)") << QStringLiteral("(u)")
+                    << QStringLiteral("(W)") << QStringLiteral("(w)");
 
-        const QHash<QString, QStringList>::const_iterator end = list.constEnd();
-        for (QHash<QString, QStringList>::const_iterator it = list.constBegin(); it != end; ++it) {
-            const QString str = it.value().first();
-            if (!exclude.contains(str)) {
-                new EmoticonTextEditItem(str, it.key(), mListEmoticon);
+            const QHash<QString, QStringList>::const_iterator end = list.constEnd();
+            for (QHash<QString, QStringList>::const_iterator it = list.constBegin(); it != end; ++it) {
+                const QString str = it.value().first();
+                if (!exclude.contains(str)) {
+                    new EmoticonTextEditItem(str, it.key(), mListEmoticon);
+                }
             }
         }
+        mListEmoticon->setIconSize(QSize(32, 32));
     }
-    mListEmoticon->setIconSize(QSize(32, 32));
 }
 
 bool EmoticonTextEditSelector::emojiPlainText() const
@@ -105,4 +106,5 @@ bool EmoticonTextEditSelector::emojiPlainText() const
 void EmoticonTextEditSelector::setEmojiPlainText(bool emojiPlainText)
 {
     mEmojiPlainText = emojiPlainText;
+    mListEmoticon->clear();
 }
