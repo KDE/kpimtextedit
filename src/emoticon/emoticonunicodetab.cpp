@@ -36,13 +36,17 @@ EmoticonUnicodeTab::~EmoticonUnicodeTab()
 
 void EmoticonUnicodeTab::loadEmoticons()
 {
-    createTab(i18n("Faces"), KPIMTextEdit::TextUtils::unicodeFacesEmoji());
-    createTab(i18n("Animals"), KPIMTextEdit::TextUtils::unicodeAnimalsEmoji());
-    createTab(i18n("Emotions"), KPIMTextEdit::TextUtils::unicodeEmotionEmoji());
-    createTab(i18n("Body"), KPIMTextEdit::TextUtils::unicodeBodyEmoji());
-    createTab(i18n("Transports"), KPIMTextEdit::TextUtils::unicodeTransportEmoji());
-    createTab(i18n("Events"), KPIMTextEdit::TextUtils::unicodeEventEmoji());
-    createTab(i18n("Flags"), KPIMTextEdit::TextUtils::unicodeFlagsEmoji());
+    if (mEmojiPlainText) {
+        createTab(i18n("Faces"), KPIMTextEdit::TextUtils::unicodeFacesEmoji());
+        createTab(i18n("Animals"), KPIMTextEdit::TextUtils::unicodeAnimalsEmoji());
+        createTab(i18n("Emotions"), KPIMTextEdit::TextUtils::unicodeEmotionEmoji());
+        createTab(i18n("Body"), KPIMTextEdit::TextUtils::unicodeBodyEmoji());
+        createTab(i18n("Transports"), KPIMTextEdit::TextUtils::unicodeTransportEmoji());
+        createTab(i18n("Events"), KPIMTextEdit::TextUtils::unicodeEventEmoji());
+        createTab(i18n("Flags"), KPIMTextEdit::TextUtils::unicodeFlagsEmoji());
+    } else {
+        //TODO
+    }
 }
 
 void EmoticonUnicodeTab::createTab(const QString &str, const QList<uint> &emoticons)
@@ -52,4 +56,15 @@ void EmoticonUnicodeTab::createTab(const QString &str, const QList<uint> &emotic
     connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
     //TODO add i18n ? or icons ?
     addTab(selector, str);
+}
+
+bool EmoticonUnicodeTab::emojiPlainText() const
+{
+    return mEmojiPlainText;
+}
+
+void EmoticonUnicodeTab::setEmojiPlainText(bool emojiPlainText)
+{
+    mEmojiPlainText = emojiPlainText;
+    clear();
 }

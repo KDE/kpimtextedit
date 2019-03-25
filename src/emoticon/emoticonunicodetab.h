@@ -32,12 +32,16 @@ public:
     explicit EmoticonUnicodeTab(QWidget *parent = nullptr);
     ~EmoticonUnicodeTab();
 
+    Q_REQUIRED_RESULT bool emojiPlainText() const;
+    void setEmojiPlainText(bool emojiPlainText);
+
 Q_SIGNALS:
     void itemSelected(const QString &);
 
 private:
     void loadEmoticons();
     void createTab(const QString &str, const QList<uint> &emoticons);
+    bool mEmojiPlainText = true;
 };
 }
 
