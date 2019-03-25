@@ -18,7 +18,6 @@
 */
 
 #include "emoticonlistwidgetselector.h"
-#include "emoticontexteditselector.h"
 
 using namespace KPIMTextEdit;
 
