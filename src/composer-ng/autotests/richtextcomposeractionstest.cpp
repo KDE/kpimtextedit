@@ -46,7 +46,7 @@ void RichTextComposerActionsTest::shouldHaveDefaultValue()
     composerActions.createActions(actionCollection);
 
     QVERIFY(!actionCollection->actions().isEmpty());
-    QCOMPARE(composerActions.numberOfActions(), actionCollection->actions().count() - 4);
+    QCOMPARE(composerActions.numberOfActions(), actionCollection->actions().count() - 5);
 }
 
 void RichTextComposerActionsTest::shouldHaveActions()
@@ -81,7 +81,6 @@ void RichTextComposerActionsTest::shouldHaveActions()
         << QStringLiteral("format_list_indent_more")
         << QStringLiteral("format_list_style")
         << QStringLiteral("add_image")
-        << QStringLiteral("add_emoticon")
         << QStringLiteral("insert_html")
         << QStringLiteral("insert_table")
         << QStringLiteral("delete_line")
@@ -92,6 +91,7 @@ void RichTextComposerActionsTest::shouldHaveActions()
     actionNoRichText << QStringLiteral("paste_quoted")
                      << QStringLiteral("tools_quote")
                      << QStringLiteral("tools_unquote")
+                     << QStringLiteral("add_emoticon")
                      << QStringLiteral("paste_without_formatting");
 
     QCOMPARE(lst.count(), composerActions.numberOfActions());
@@ -116,6 +116,7 @@ void RichTextComposerActionsTest::shouldChangeEnableState()
     actionNoRichText << QStringLiteral("paste_quoted")
                      << QStringLiteral("tools_quote")
                      << QStringLiteral("tools_unquote")
+                     << QStringLiteral("add_emoticon")
                      << QStringLiteral("paste_without_formatting");
 
     composerActions.setActionsEnabled(false);
