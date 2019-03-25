@@ -507,7 +507,7 @@ void RichTextComposerActions::slotUpdateCharFormatActions(const QTextCharFormat 
 
     d->action_font_family->setFont(f.family());
     if (f.pointSize() > 0) {
-        d->action_font_size->setFontSize((int)f.pointSize());
+        d->action_font_size->setFontSize(f.pointSize());
     }
     d->action_text_bold->setChecked(f.bold());
     d->action_text_italic->setChecked(f.italic());
