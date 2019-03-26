@@ -60,7 +60,9 @@ void EmoticonUnicodeTab::createPlainTextEmoticonTab(const QString &str, const QL
     selector->setEmoticons(emoticons);
     connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
     //TODO add i18n ? or icons ?
-    addTab(selector, str);
+    const int index = addTab(selector, str);
+    setTabToolTip(index, str);
+    //TODO use emoticon as icon tab. Remove text tab
 }
 
 bool EmoticonUnicodeTab::emojiPlainText() const
