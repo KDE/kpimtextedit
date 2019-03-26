@@ -112,14 +112,8 @@ install(TARGETS KF5PimTextEdit EXPORT KF5PimTextEditTargets ${KF5_INSTALL_TARGET
 ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
     HEADER_NAMES
     EditorUtil
-    InsertImageWidget
-    InsertTableDialog
-    InsertTableWidget
     SelectSpecialCharDialog
     SlideContainer
-    TableCellFormatDialog
-    TableFormatDialog
-    TableActionMenu
     TextEditorCompleter
     TextUtils
 
@@ -129,7 +123,6 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
 
 ecm_generate_headers(KPimTextEdit_CamelCaseemoticon_HEADERS
     HEADER_NAMES
-    EmoticonTextEditAction
     EmoticonUnicodeTab
     PREFIX KPIMTextEditemoticon
     REQUIRED_HEADERS kpimtextedit_HEADERS
