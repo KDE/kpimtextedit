@@ -54,7 +54,7 @@ void EmoticonTextEditSelector::slotItemSelected(const QString &str)
     }
 }
 
-void EmoticonTextEditSelector::slotCreateEmoticonList()
+void EmoticonTextEditSelector::loadEmoticons()
 {
     if (mListEmoticon->count() == 0) {
         if (mEmojiPlainText) {

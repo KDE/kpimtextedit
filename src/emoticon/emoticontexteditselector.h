@@ -38,7 +38,7 @@ public:
     void setEmojiPlainText(bool emojiPlainText);
 
 public Q_SLOTS:
-    void slotCreateEmoticonList();
+    void loadEmoticons();
 
 Q_SIGNALS:
     void itemSelected(const QString &);

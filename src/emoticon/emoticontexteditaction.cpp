@@ -38,7 +38,7 @@ public:
         QWidgetAction *action = new QWidgetAction(emoticonMenu);
         action->setDefaultWidget(selector);
         emoticonMenu->addAction(action);
-        connect(emoticonMenu, &QMenu::aboutToShow, selector, &EmoticonTextEditSelector::slotCreateEmoticonList);
+        connect(emoticonMenu, &QMenu::aboutToShow, selector, &EmoticonTextEditSelector::loadEmoticons);
     }
 
     ~EmoticonTextEditActionPrivate()
