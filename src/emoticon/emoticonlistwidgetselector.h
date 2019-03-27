@@ -45,6 +45,7 @@ public:
     ~EmoticonListWidgetSelector();
 
     void setEmoticons(const QList<uint> &lst);
+    void loadEmotionsFromTheme();
 Q_SIGNALS:
     void itemSelected(const QString &);
 

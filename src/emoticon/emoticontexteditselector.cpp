@@ -28,9 +28,6 @@
 #include <QPixmap>
 #include <QHBoxLayout>
 
-// Use a static for this as calls to the KEmoticons constructor are expensive.
-Q_GLOBAL_STATIC(KEmoticons, sEmoticons)
-
 using namespace KPIMTextEdit;
 
 EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
@@ -63,34 +60,8 @@ void EmoticonTextEditSelector::slotCreateEmoticonList()
         if (mEmojiPlainText) {
             mListEmoticon->setEmoticons(TextUtils::unicodeFullEmoji());
         } else {
-            static QString cachedEmoticonsThemeName;
-            if (cachedEmoticonsThemeName.isEmpty()) {
-                cachedEmoticonsThemeName = KEmoticons::currentThemeName();
-            }
-            const QHash<QString, QStringList> list
-                    = sEmoticons->theme(cachedEmoticonsThemeName).emoticonsMap();
-
-            //Keep in sync with linklocator.cpp
-            QStringList exclude;
-            exclude << QStringLiteral("(c)") << QStringLiteral("(C)") << QStringLiteral("&gt;:-(") << QStringLiteral("&gt;:(") << QStringLiteral("(B)") << QStringLiteral("(b)") << QStringLiteral("(P)")
-                    << QStringLiteral("(p)");
-            exclude << QStringLiteral("(O)") << QStringLiteral("(o)") << QStringLiteral("(D)") << QStringLiteral("(d)") << QStringLiteral("(E)") << QStringLiteral("(e)") << QStringLiteral("(K)")
-                    << QStringLiteral("(k)");
-            exclude << QStringLiteral("(I)") << QStringLiteral("(i)") << QStringLiteral("(L)") << QStringLiteral("(l)") << QStringLiteral("(8)") << QStringLiteral("(T)") << QStringLiteral("(t)")
-                    << QStringLiteral("(G)");
-            exclude << QStringLiteral("(g)") << QStringLiteral("(F)") << QStringLiteral("(f)") << QStringLiteral("(H)");
-            exclude << QStringLiteral("8)") << QStringLiteral("(N)") << QStringLiteral("(n)") << QStringLiteral("(Y)") << QStringLiteral("(y)") << QStringLiteral("(U)") << QStringLiteral("(u)")
-                    << QStringLiteral("(W)") << QStringLiteral("(w)");
-
-            const QHash<QString, QStringList>::const_iterator end = list.constEnd();
-            for (QHash<QString, QStringList>::const_iterator it = list.constBegin(); it != end; ++it) {
-                const QString str = it.value().first();
-                if (!exclude.contains(str)) {
-                    new EmoticonTextEditItem(str, it.key(), mListEmoticon);
-                }
-            }
+            mListEmoticon->loadEmotionsFromTheme();
         }
-        mListEmoticon->setIconSize(QSize(32, 32));
     }
 }
 
