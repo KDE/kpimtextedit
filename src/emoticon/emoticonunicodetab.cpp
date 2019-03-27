@@ -45,12 +45,19 @@ void EmoticonUnicodeTab::loadEmoticons()
         createPlainTextEmoticonTab(i18n("Events"), KPIMTextEdit::TextUtils::unicodeEventEmoji());
         createPlainTextEmoticonTab(i18n("Flags"), KPIMTextEdit::TextUtils::unicodeFlagsEmoji());
     } else {
+        createEmoticonTab(QString());
         //TODO
     }
 }
 
 void EmoticonUnicodeTab::createEmoticonTab(const QString &str)
 {
+    //Only one tab
+    EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
+    //TODO load it
+    //selector->setEmoticons(emoticons);
+    addTab(selector, str);
+    connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
     //TODO
 }
 
@@ -72,6 +79,8 @@ bool EmoticonUnicodeTab::emojiPlainText() const
 
 void EmoticonUnicodeTab::setEmojiPlainText(bool emojiPlainText)
 {
-    mEmojiPlainText = emojiPlainText;
-    clear();
+    if (mEmojiPlainText != emojiPlainText) {
+        mEmojiPlainText = emojiPlainText;
+        clear();
+    }
 }

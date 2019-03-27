@@ -61,11 +61,7 @@ void EmoticonTextEditSelector::slotCreateEmoticonList()
 {
     if (mListEmoticon->count() == 0) {
         if (mEmojiPlainText) {
-            const QList<uint> lstEmoji = TextUtils::unicodeFullEmoji();
-            for (uint emoji : lstEmoji) {
-                const QString str = QString::fromUcs4(&emoji, 1);
-                new EmoticonTextEditItem(str, mListEmoticon);
-            }
+            mListEmoticon->setEmoticons(TextUtils::unicodeFullEmoji());
         } else {
             static QString cachedEmoticonsThemeName;
             if (cachedEmoticonsThemeName.isEmpty()) {
