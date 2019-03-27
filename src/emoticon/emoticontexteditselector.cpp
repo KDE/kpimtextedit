@@ -72,6 +72,8 @@ bool EmoticonTextEditSelector::emojiPlainText() const
 
 void EmoticonTextEditSelector::setEmojiPlainText(bool emojiPlainText)
 {
-    mEmojiPlainText = emojiPlainText;
-    mListEmoticon->clear();
+    if (mEmojiPlainText != emojiPlainText) {
+        mEmojiPlainText = emojiPlainText;
+        mListEmoticon->clear();
+    }
 }
