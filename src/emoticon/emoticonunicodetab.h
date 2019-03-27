@@ -35,11 +35,12 @@ public:
     Q_REQUIRED_RESULT bool emojiPlainText() const;
     void setEmojiPlainText(bool emojiPlainText);
 
+    void loadEmoticons();
+
 Q_SIGNALS:
     void itemSelected(const QString &);
 
 private:
-    void loadEmoticons();
     void createPlainTextEmoticonTab(const QString &str, const QList<uint> &emoticons);
     void createEmoticonTab(const QString &str);
     bool mEmojiPlainText = true;
