@@ -23,10 +23,10 @@
 
 #include <QListWidgetItem>
 #include <QWidget>
-
+#define USE_UNICODE_TAB 1
 namespace KPIMTextEdit {
 class EmoticonListWidgetSelector;
-
+class EmoticonUnicodeTab;
 class EmoticonTextEditSelector : public QWidget
 {
     Q_OBJECT
@@ -45,8 +45,12 @@ Q_SIGNALS:
 
 private:
     void slotItemSelected(const QString &str);
+#ifdef USE_UNICODE_TAB
+    EmoticonUnicodeTab *mUnicodeTab = nullptr;
+#else
     EmoticonListWidgetSelector *mListEmoticon = nullptr;
     bool mEmojiPlainText = false;
+#endif
 };
 }
 
