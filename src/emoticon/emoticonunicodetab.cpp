@@ -46,7 +46,6 @@ void EmoticonUnicodeTab::loadEmoticons()
         createPlainTextEmoticonTab(i18n("Flags"), KPIMTextEdit::TextUtils::unicodeFlagsEmoji());
     } else {
         createEmoticonTab(QString());
-        //TODO
     }
 }
 
@@ -54,11 +53,9 @@ void EmoticonUnicodeTab::createEmoticonTab(const QString &str)
 {
     //Only one tab
     EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
-    //TODO load it
-    //selector->setEmoticons(emoticons);
+    selector->loadEmotionsFromTheme();
     addTab(selector, str);
     connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
-    //TODO
 }
 
 void EmoticonUnicodeTab::createPlainTextEmoticonTab(const QString &str, const QList<uint> &emoticons)
