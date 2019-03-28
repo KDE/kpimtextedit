@@ -45,6 +45,7 @@ void EmoticonUnicodeTab::loadEmoticons()
         createPlainTextEmoticonTab(i18n("Events"), KPIMTextEdit::TextUtils::unicodeEventEmoji());
         createPlainTextEmoticonTab(i18n("Flags"), KPIMTextEdit::TextUtils::unicodeFlagsEmoji());
         createPlainTextEmoticonTab(i18n("Weather"), KPIMTextEdit::TextUtils::unicodeWeatherEmoji());
+        createPlainTextEmoticonTab(i18n("Foods"), KPIMTextEdit::TextUtils::unicodeFoodEmoji());
     } else {
         createEmoticonTab(QString());
     }
@@ -64,7 +65,6 @@ void EmoticonUnicodeTab::createPlainTextEmoticonTab(const QString &str, const QL
     EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
     selector->setEmoticons(emoticons);
     connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
-    //TODO add i18n ? or icons ?
     const int index = addTab(selector, str);
     setTabToolTip(index, str);
     //TODO use emoticon as icon tab. Remove text tab
