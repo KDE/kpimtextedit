@@ -44,6 +44,7 @@ void EmoticonUnicodeTab::loadEmoticons()
         createPlainTextEmoticonTab(i18n("Transports"), KPIMTextEdit::TextUtils::unicodeTransportEmoji());
         createPlainTextEmoticonTab(i18n("Events"), KPIMTextEdit::TextUtils::unicodeEventEmoji());
         createPlainTextEmoticonTab(i18n("Flags"), KPIMTextEdit::TextUtils::unicodeFlagsEmoji());
+        createPlainTextEmoticonTab(i18n("Weather"), KPIMTextEdit::TextUtils::unicodeWeatherEmoji());
     } else {
         createEmoticonTab(QString());
     }

@@ -174,7 +174,8 @@ QList<uint> TextUtils::unicodeFullEmoji()
            +TextUtils::unicodeBodyEmoji()
            +TextUtils::unicodeTransportEmoji()
            +TextUtils::unicodeEventEmoji()
-           +TextUtils::unicodeFlagsEmoji();
+           +TextUtils::unicodeFlagsEmoji()
+           +TextUtils::unicodeWeatherEmoji();
 }
 
 QList<uint> TextUtils::unicodeFacesEmoji()
@@ -211,7 +212,8 @@ QList<uint> TextUtils::unicodeBodyEmoji()
 QList<uint> TextUtils::unicodeTransportEmoji()
 {
     //Add more
-    const QList<uint> lstEmoji{0x1F682, 0x1F683, 0x1F684, 0x1F685, 0x1F686, 0x1F687, 0x1F688, 0x1F689, 0x1F69D, 0x1F691, 0x1F692, 0x1F693, 0x1F694, 0x1F695, 0x1F696, 0x1F697};
+    const QList<uint> lstEmoji{0x1F682, 0x1F683, 0x1F684, 0x1F685, 0x1F686, 0x1F687, 0x1F688, 0x1F689, 0x1F69D, 0x1F691, 0x1F692, 0x1F693, 0x1F694, 0x1F695, 0x1F696, 0x1F697, 0x2708
+                              ,0x1F6E9, 0x1F6EB, 0x1F6EC, 0x1F681, 0x1F69F, 0x1F6A0, 0x1F680, 0x1F6F0, 0x1F6F8};
     return lstEmoji;
 }
 
@@ -226,5 +228,13 @@ QList<uint> TextUtils::unicodeFlagsEmoji()
 {
     //Add more
     const QList<uint> lstEmoji{0x1F1E8, 0x1F1E9, 0x1F1EA, 0x1F1EB, 0x1F1EC, 0x1F1EE, 0x1F1FB, 0x1F1FE};
+    return lstEmoji;
+}
+
+QList<uint> TextUtils::unicodeWeatherEmoji()
+{
+    //Add more
+    const QList<uint> lstEmoji{0x2601, 0x26C5, 0x26C8, 0x1F324, 0x1F325, 0x1F326, 0x1F327, 0x1F328, 0x1F329, 0x1F32A, 0x1F32B, 0x1F32C, 0x1F300, 0x1F308, 0x1F302,
+                              0x2602, 0x2603, 0x26C4, 0x2604, 0x1F525, 0x1F4A7, 0x1F30A};
     return lstEmoji;
 }
