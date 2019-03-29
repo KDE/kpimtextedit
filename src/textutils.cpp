@@ -228,7 +228,7 @@ QList<uint> TextUtils::unicodeEventEmoji()
 QList<uint> TextUtils::unicodeFlagsEmoji()
 {
     //Add more
-    const QList<uint> lstEmoji{0x1F1E8, 0x1F1E9, 0x1F1EA, 0x1F1EB, 0x1F1EC, 0x1F1EE, 0x1F1FB, 0x1F1FE};
+    const QList<uint> lstEmoji{/*0x1F1E8, 0x1F1E9, 0x1F1EA, 0x1F1EB, 0x1F1EC, 0x1F1EE, 0x1F1FB, 0x1F1FE,*/ 0x1F3C1, 0x1F6A9, 0x1F3F4, 0x1F3F3};
     return lstEmoji;
 }
 
