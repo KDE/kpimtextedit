@@ -93,7 +93,7 @@ void EmoticonListWidgetSelector::loadEmotionsFromTheme()
         cachedEmoticonsThemeName = KEmoticons::currentThemeName();
     }
     const QHash<QString, QStringList> list
-            = sEmoticons->theme(cachedEmoticonsThemeName).emoticonsMap();
+        = sEmoticons->theme(cachedEmoticonsThemeName).emoticonsMap();
 
     //Keep in sync with linklocator.cpp
     QStringList exclude;
