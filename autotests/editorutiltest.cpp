@@ -18,7 +18,7 @@
 #include "editorutiltest.h"
 #include "../src/editorutil.h"
 #include <QTextDocument>
-#include <qtest.h>
+#include <QTest>
 
 EditorUtilTest::EditorUtilTest(QObject *parent)
     : QObject(parent)

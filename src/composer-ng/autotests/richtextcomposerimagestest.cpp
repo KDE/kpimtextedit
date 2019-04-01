@@ -18,7 +18,7 @@
 */
 
 #include "richtextcomposerimagestest.h"
-#include <qtest.h>
+#include <QTest>
 
 RichTextComposerImagesTest::RichTextComposerImagesTest(QObject *parent)
     : QObject(parent)

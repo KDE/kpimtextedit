@@ -23,7 +23,7 @@
 #include "../richtextcomposer.h"
 #include <KActionCollection>
 #include <QAction>
-#include <qtest.h>
+#include <QTest>
 
 RichTextComposerActionsTest::RichTextComposerActionsTest(QObject *parent)
     : QObject(parent)

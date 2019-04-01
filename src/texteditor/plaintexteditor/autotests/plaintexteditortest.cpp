@@ -19,7 +19,7 @@
 
 #include "plaintexteditortest.h"
 #include "texteditor/plaintexteditor/plaintexteditor.h"
-#include <qtest.h>
+#include <QTest>
 
 PlainTextEditorTest::PlainTextEditorTest(QObject *parent)
     : QObject(parent)

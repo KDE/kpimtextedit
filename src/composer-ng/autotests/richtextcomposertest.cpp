@@ -19,8 +19,8 @@
 
 #include "richtextcomposertest.h"
 #include "../richtextcomposer.h"
-#include <qtest.h>
-#include <qsignalspy.h>
+#include <QTest>
+#include <QSignalSpy>
 #include <KCodecs/KCodecs>
 
 #include <KIconLoader>
@@ -28,7 +28,7 @@
 #include <QAction>
 
 #include <QTextCursor>
-#include <qtestevent.h>
+#include <QTestEvent>
 #include <QBuffer>
 #include <QTextBlock>
 #include <kpimtextedit/richtextcomposercontroler.h>

@@ -19,7 +19,7 @@
 
 #include "textgotolinewidgettest.h"
 #include "texteditor/commonwidget/textgotolinewidget.h"
-#include <qtest.h>
+#include <QTest>
 #include <QSignalSpy>
 #include <qtestmouse.h>
 #include <qtestkeyboard.h>

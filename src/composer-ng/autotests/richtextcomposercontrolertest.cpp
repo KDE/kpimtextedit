@@ -21,7 +21,7 @@
 #include "../richtextcomposercontroler.h"
 #include "../richtextcomposer.h"
 #include <KActionCollection>
-#include <qtest.h>
+#include <QTest>
 
 RichTextComposerControlerTest::RichTextComposerControlerTest(QObject *parent)
     : QObject(parent)

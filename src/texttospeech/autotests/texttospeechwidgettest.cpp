@@ -19,7 +19,7 @@
 
 #include "texttospeechwidgettest.h"
 #include "../abstracttexttospeechinterface.h"
-#include <qtest.h>
+#include <QTest>
 #include "texttospeech/texttospeechwidget.h"
 #include <QToolButton>
 #include <qtestmouse.h>

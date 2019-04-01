@@ -21,7 +21,7 @@
 #include "texttospeech/texttospeechconfigwidget.h"
 #include "texttospeech/abstracttexttospeechconfiginterface.h"
 
-#include <qtest.h>
+#include <QTest>
 #include <QSlider>
 #include <QSignalSpy>
 #include <QComboBox>

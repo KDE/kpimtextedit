@@ -19,7 +19,7 @@
 
 #include "richtexteditortest.h"
 #include "texteditor/richtexteditor/richtexteditor.h"
-#include <qtest.h>
+#include <QTest>
 
 RichTextEditorTest::RichTextEditorTest(QObject *parent)
     : QObject(parent)

@@ -20,7 +20,7 @@
 #include "textfindreplacewidget.h"
 
 #include <KLocalizedString>
-#include <qpushbutton.h>
+#include <QPushButton>
 #include <klineedit.h>
 #include <KColorScheme>
 

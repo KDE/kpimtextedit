@@ -19,7 +19,7 @@
 
 #include "texttospeechactionstest.h"
 #include "../texttospeechactions.h"
-#include <qtest.h>
+#include <QTest>
 #include <QAction>
 #include <QSignalSpy>
 

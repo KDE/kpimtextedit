@@ -20,7 +20,7 @@
 #include "richtextexternalcomposertest.h"
 #include "../richtextexternalcomposer.h"
 #include "../richtextcomposer.h"
-#include <qtest.h>
+#include <QTest>
 
 RichTextExternalComposerTest::RichTextExternalComposerTest(QObject *parent)
     : QObject(parent)

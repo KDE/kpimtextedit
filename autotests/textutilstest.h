@@ -19,7 +19,7 @@
 #ifndef TEXTUTILSTEST_H
 #define TEXTUTILSTEST_H
 
-#include <qobject.h>
+#include <QObject>
 
 class TextUtilsTest : public QObject
 {
