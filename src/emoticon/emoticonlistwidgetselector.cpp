@@ -72,6 +72,9 @@ EmoticonListWidgetSelector::EmoticonListWidgetSelector(QWidget *parent)
     connect(this, &EmoticonListWidgetSelector::itemEntered, this, &EmoticonListWidgetSelector::slotMouseOverItem);
     connect(this, &EmoticonListWidgetSelector::itemClicked, this, &EmoticonListWidgetSelector::slotEmoticonClicked);
     setIconSize(QSize(32, 32));
+    QFont f;
+    f.setPointSize(22);
+    setFont(f);
 }
 
 EmoticonListWidgetSelector::~EmoticonListWidgetSelector()
