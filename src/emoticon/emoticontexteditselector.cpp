@@ -19,11 +19,7 @@
 */
 
 #include "emoticontexteditselector.h"
-#ifdef USE_UNICODE_TAB
 #include "emoticonunicodetab.h"
-#else
-#include "emoticonlistwidgetselector.h"
-#endif
 #include "textutils.h"
 #include <KEmoticons>
 #include <kemoticonstheme.h>
@@ -40,15 +36,9 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     QHBoxLayout *lay = new QHBoxLayout(this);
     lay->setSpacing(0);
     lay->setContentsMargins(0, 0, 0, 0);
-#ifdef USE_UNICODE_TAB
     mUnicodeTab = new EmoticonUnicodeTab(this);
     lay->addWidget(mUnicodeTab);
     connect(mUnicodeTab, &EmoticonUnicodeTab::itemSelected, this, &EmoticonTextEditSelector::slotItemSelected);
-#else
-    mListEmoticon = new EmoticonListWidgetSelector(this);
-    lay->addWidget(mListEmoticon);
-    connect(mListEmoticon, &EmoticonListWidgetSelector::itemSelected, this, &EmoticonTextEditSelector::slotItemSelected);
-#endif
 }
 
 EmoticonTextEditSelector::~EmoticonTextEditSelector()
@@ -66,38 +56,17 @@ void EmoticonTextEditSelector::slotItemSelected(const QString &str)
 
 void EmoticonTextEditSelector::loadEmoticons()
 {
-#ifdef USE_UNICODE_TAB
     if (mUnicodeTab->count() == 0) {
         mUnicodeTab->loadEmoticons();
     }
-#else
-    if (mListEmoticon->count() == 0) {
-        if (mEmojiPlainText) {
-            mListEmoticon->setEmoticons(TextUtils::unicodeFullEmoji());
-        } else {
-            mListEmoticon->loadEmotionsFromTheme();
-        }
-    }
-#endif
 }
 
 bool EmoticonTextEditSelector::emojiPlainText() const
 {
-#ifdef USE_UNICODE_TAB
     return mUnicodeTab->emojiPlainText();
-#else
-    return mEmojiPlainText;
-#endif
 }
 
 void EmoticonTextEditSelector::setEmojiPlainText(bool emojiPlainText)
 {
-#ifdef USE_UNICODE_TAB
     mUnicodeTab->setEmojiPlainText(emojiPlainText);
-#else
-    if (mEmojiPlainText != emojiPlainText) {
-        mEmojiPlainText = emojiPlainText;
-        mListEmoticon->clear();
-    }
-#endif
 }
