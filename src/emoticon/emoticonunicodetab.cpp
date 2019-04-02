@@ -58,7 +58,6 @@ void EmoticonUnicodeTab::loadEmoticons()
 
 void EmoticonUnicodeTab::createHtmlEmoticonTab()
 {
-    //Only one tab
     EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
     selector->loadEmotionsFromTheme();
     addTab(selector, QString());
@@ -67,13 +66,15 @@ void EmoticonUnicodeTab::createHtmlEmoticonTab()
 
 void EmoticonUnicodeTab::createPlainTextEmoticonTab(const QString &str, const QList<uint> &emoticons)
 {
-    EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
-    connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
-    selector->setEmoticons(emoticons);
-    const QString strTab = QString::fromUcs4(&emoticons.at(0), 1);
-    const int index = addTab(selector, strTab);
-    if (!str.isEmpty()) {
-        setTabToolTip(index, str);
+    if (!emoticons.isEmpty()) {
+        EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
+        connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
+        selector->setEmoticons(emoticons);
+        const QString strTab = QString::fromUcs4(&emoticons.at(0), 1);
+        const int index = addTab(selector, strTab);
+        if (!str.isEmpty()) {
+            setTabToolTip(index, str);
+        }
     }
 }
 
