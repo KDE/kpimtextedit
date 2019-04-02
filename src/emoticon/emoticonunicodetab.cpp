@@ -58,7 +58,6 @@ void EmoticonUnicodeTab::loadEmoticons()
 
 void EmoticonUnicodeTab::createHtmlEmoticonTab()
 {
-    //Only one tab
     EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
     selector->loadEmotionsFromTheme();
     addTab(selector, QString());
