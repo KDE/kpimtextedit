@@ -67,6 +67,8 @@ KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeFlagsEmoji();
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeWeatherEmoji();
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeFoodEmoji();
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeSportEmoji();
+KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeTimeEmoji();
+KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeGameEmoji();
 }
 }
 
