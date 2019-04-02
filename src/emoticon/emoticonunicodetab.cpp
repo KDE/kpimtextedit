@@ -48,16 +48,16 @@ void EmoticonUnicodeTab::loadEmoticons()
         createPlainTextEmoticonTab(i18n("Foods"), KPIMTextEdit::TextUtils::unicodeFoodEmoji());
         createPlainTextEmoticonTab(QString(), KPIMTextEdit::TextUtils::unicodeSportEmoji());
     } else {
-        createEmoticonTab(QString());
+        createHtmlEmoticonTab();
     }
 }
 
-void EmoticonUnicodeTab::createEmoticonTab(const QString &str)
+void EmoticonUnicodeTab::createHtmlEmoticonTab()
 {
     //Only one tab
     EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
     selector->loadEmotionsFromTheme();
-    addTab(selector, str);
+    addTab(selector, QString());
     connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
 }
 
