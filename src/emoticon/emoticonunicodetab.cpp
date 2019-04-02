@@ -64,11 +64,13 @@ void EmoticonUnicodeTab::createEmoticonTab(const QString &str)
 void EmoticonUnicodeTab::createPlainTextEmoticonTab(const QString &str, const QList<uint> &emoticons)
 {
     EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
-    selector->setEmoticons(emoticons);
     connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
-    const int index = addTab(selector, str);
-    setTabToolTip(index, str);
-    //TODO use emoticon as icon tab. Remove text tab
+    selector->setEmoticons(emoticons);
+    const QString strTab = QString::fromUcs4(&emoticons.at(0), 1);
+    const int index = addTab(selector, strTab);
+    if (!str.isEmpty()) {
+        setTabToolTip(index, str);
+    }
 }
 
 bool EmoticonUnicodeTab::emojiPlainText() const
