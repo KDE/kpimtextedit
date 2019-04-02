@@ -177,7 +177,10 @@ QList<uint> TextUtils::unicodeFullEmoji()
            +TextUtils::unicodeFlagsEmoji()
            +TextUtils::unicodeWeatherEmoji()
            +TextUtils::unicodeFoodEmoji()
-           +TextUtils::unicodeSportEmoji();
+           +TextUtils::unicodeSportEmoji()
+           +TextUtils::unicodeTimeEmoji()
+           +TextUtils::unicodeGameEmoji()
+           +TextUtils::unicodeClothingEmoji();
 }
 
 QList<uint> TextUtils::unicodeFacesEmoji()
@@ -254,6 +257,31 @@ QList<uint> TextUtils::unicodeFoodEmoji()
 QList<uint> TextUtils::unicodeSportEmoji()
 {
     //Add more
-    const QList<uint> lstEmoji{0x1F93A, 0x1F3C7, 0x26F7, 0x1F3C2, 0x1F3CC, 0x1F3C4, 0x1F6A3, 0x1F3CA, 0x26F9, 0x1F3CB, 0x1F6B4, 0x1F938, 0x1F93C, 0x1F93D, 0x1F93E};
+    const QList<uint> lstEmoji{0x1F93A, 0x1F3C7, 0x26F7, 0x1F3C2, 0x1F3CC, 0x1F3C4, 0x1F6A3, 0x1F3CA, 0x26F9, 0x1F3CB, 0x1F6B4, 0x1F938, 0x1F93C, 0x1F93D, 0x1F93E, 0x26BD,
+                              0x26BE, 0x1F94E, 0x1F3C0, 0x1F3D0, 0x1F3C8, 0x1F3C9, 0x1F3BE, 0x1F94F, 0x1F3B3, 0x1F3CF, 0x1F3D1, 0x26F8, 0x1F3A3, 0x1F94C};
+    return lstEmoji;
+}
+
+QList<uint> TextUtils::unicodeTimeEmoji()
+{
+    //Add more
+    const QList<uint> lstEmoji{0x231B, 0x23F3, 0x231A, 0x23F0, 0x23F1, 0x23F2, 0x1F570, 0x1F55B, 0x1F567, 0x1F550, 0x1F55C, 0x1F551, 0x1F55D, 0x1F552, 0x1F55E,
+                              0x1F553, 0x1F55F, 0x1F554, 0x1F560, 0x1F555, 0x1F561, 0x1F556, 0x1F562, 0x1F557, 0x1F563, 0x1F558, 0x1F564,
+                              0x1F559, 0x1F565, 0x1F55A, 0x1F566};
+    return lstEmoji;
+}
+
+QList<uint> TextUtils::unicodeGameEmoji()
+{
+    //Add more
+    const QList<uint> lstEmoji{0x1F3AF, 0x1F3B1, 0x1F52E, 0x1F9FF, 0x1F3AE, 0x1F579, 0x1F3B0, 0x1F3B2, 0x1F9F8, 0x265F, 0x1F0CF};
+    return lstEmoji;
+}
+
+QList<uint> TextUtils::unicodeClothingEmoji()
+{
+    //Add more
+    const QList<uint> lstEmoji{0x1F453, 0x1F576, 0x1F97D, 0x1F97C, 0x1F454, 0x1F455, 0x1F456, 0x1F9E3, 0x1F9E4, 0x1F9E5, 0x1F9E6, 0x1F457, 0x1F458, 0x1F459, 0x1F45A,
+                              0x1F45B, 0x1F45C, 0x1F45D};
     return lstEmoji;
 }

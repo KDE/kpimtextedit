@@ -37,27 +37,30 @@ EmoticonUnicodeTab::~EmoticonUnicodeTab()
 void EmoticonUnicodeTab::loadEmoticons()
 {
     if (mEmojiPlainText) {
-        createPlainTextEmoticonTab(i18n("Faces"), KPIMTextEdit::TextUtils::unicodeFacesEmoji());
-        createPlainTextEmoticonTab(i18n("Animals"), KPIMTextEdit::TextUtils::unicodeAnimalsEmoji());
-        createPlainTextEmoticonTab(i18n("Emotions"), KPIMTextEdit::TextUtils::unicodeEmotionEmoji());
-        createPlainTextEmoticonTab(i18n("Body"), KPIMTextEdit::TextUtils::unicodeBodyEmoji());
-        createPlainTextEmoticonTab(i18n("Transports"), KPIMTextEdit::TextUtils::unicodeTransportEmoji());
-        createPlainTextEmoticonTab(i18n("Events"), KPIMTextEdit::TextUtils::unicodeEventEmoji());
-        createPlainTextEmoticonTab(i18n("Flags"), KPIMTextEdit::TextUtils::unicodeFlagsEmoji());
-        createPlainTextEmoticonTab(i18n("Weather"), KPIMTextEdit::TextUtils::unicodeWeatherEmoji());
-        createPlainTextEmoticonTab(i18n("Foods"), KPIMTextEdit::TextUtils::unicodeFoodEmoji());
-        createPlainTextEmoticonTab(QString(), KPIMTextEdit::TextUtils::unicodeSportEmoji());
+        createPlainTextEmoticonTab(i18n("Faces"), TextUtils::unicodeFacesEmoji());
+        createPlainTextEmoticonTab(i18n("Animals"), TextUtils::unicodeAnimalsEmoji());
+        createPlainTextEmoticonTab(i18n("Emotions"), TextUtils::unicodeEmotionEmoji());
+        createPlainTextEmoticonTab(i18n("Body"), TextUtils::unicodeBodyEmoji());
+        createPlainTextEmoticonTab(i18n("Transports"), TextUtils::unicodeTransportEmoji());
+        createPlainTextEmoticonTab(i18n("Events"), TextUtils::unicodeEventEmoji());
+        createPlainTextEmoticonTab(i18n("Flags"), TextUtils::unicodeFlagsEmoji());
+        createPlainTextEmoticonTab(i18n("Weather"), TextUtils::unicodeWeatherEmoji());
+        createPlainTextEmoticonTab(i18n("Foods"), TextUtils::unicodeFoodEmoji());
+        createPlainTextEmoticonTab(QString(), TextUtils::unicodeSportEmoji());
+        createPlainTextEmoticonTab(QString(), TextUtils::unicodeTimeEmoji());
+        createPlainTextEmoticonTab(QString(), TextUtils::unicodeGameEmoji());
+        createPlainTextEmoticonTab(QString(), TextUtils::unicodeClothingEmoji());
     } else {
-        createEmoticonTab(QString());
+        createHtmlEmoticonTab();
     }
 }
 
-void EmoticonUnicodeTab::createEmoticonTab(const QString &str)
+void EmoticonUnicodeTab::createHtmlEmoticonTab()
 {
     //Only one tab
     EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
     selector->loadEmotionsFromTheme();
-    addTab(selector, str);
+    addTab(selector, QString());
     connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
 }
 
