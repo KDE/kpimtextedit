@@ -179,7 +179,8 @@ QList<uint> TextUtils::unicodeFullEmoji()
            +TextUtils::unicodeFoodEmoji()
            +TextUtils::unicodeSportEmoji()
            +TextUtils::unicodeTimeEmoji()
-           +TextUtils::unicodeGameEmoji();
+           +TextUtils::unicodeGameEmoji()
+           +TextUtils::unicodeClothingEmoji();
 }
 
 QList<uint> TextUtils::unicodeFacesEmoji()
@@ -274,5 +275,13 @@ QList<uint> TextUtils::unicodeGameEmoji()
 {
     //Add more
     const QList<uint> lstEmoji{0x1F3AF, 0x1F3B1, 0x1F52E, 0x1F9FF, 0x1F3AE, 0x1F579, 0x1F3B0, 0x1F3B2, 0x1F9F8, 0x265F, 0x1F0CF};
+    return lstEmoji;
+}
+
+QList<uint> TextUtils::unicodeClothingEmoji()
+{
+    //Add more
+    const QList<uint> lstEmoji{0x1F453, 0x1F576, 0x1F97D, 0x1F97C, 0x1F454, 0x1F455, 0x1F456, 0x1F9E3, 0x1F9E4, 0x1F9E5, 0x1F9E6, 0x1F457, 0x1F458, 0x1F459, 0x1F45A,
+                              0x1F45B, 0x1F45C, 0x1F45D};
     return lstEmoji;
 }

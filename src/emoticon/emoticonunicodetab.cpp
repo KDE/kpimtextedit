@@ -49,6 +49,7 @@ void EmoticonUnicodeTab::loadEmoticons()
         createPlainTextEmoticonTab(QString(), TextUtils::unicodeSportEmoji());
         createPlainTextEmoticonTab(QString(), TextUtils::unicodeTimeEmoji());
         createPlainTextEmoticonTab(QString(), TextUtils::unicodeGameEmoji());
+        createPlainTextEmoticonTab(QString(), TextUtils::unicodeClothingEmoji());
     } else {
         createHtmlEmoticonTab();
     }
