@@ -71,6 +71,8 @@ KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeTimeEmoji();
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeGameEmoji();
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeClothingEmoji();
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeSoundMusicEmoji();
+KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeComputerEmoji();
+KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeSymbolsEmoji();
 }
 }
 

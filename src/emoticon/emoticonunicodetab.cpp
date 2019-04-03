@@ -51,6 +51,8 @@ void EmoticonUnicodeTab::loadEmoticons()
         createPlainTextEmoticonTab(QString(), TextUtils::unicodeGameEmoji());
         createPlainTextEmoticonTab(QString(), TextUtils::unicodeClothingEmoji());
         createPlainTextEmoticonTab(QString(), TextUtils::unicodeSoundMusicEmoji());
+        createPlainTextEmoticonTab(QString(), TextUtils::unicodeComputerEmoji());
+        createPlainTextEmoticonTab(QString(), TextUtils::unicodeSymbolsEmoji());
     } else {
         createHtmlEmoticonTab();
     }
