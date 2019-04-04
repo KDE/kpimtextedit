@@ -185,7 +185,8 @@ QList<uint> TextUtils::unicodeFullEmoji()
            +TextUtils::unicodeComputerEmoji()
            +TextUtils::unicodeSymbolsEmoji()
            +TextUtils::unicodeFaceEmoji()
-           +TextUtils::unicodeFantasyEmoji();
+           +TextUtils::unicodeFantasyEmoji()
+           +TextUtils::unicodePlantEmoji();
 }
 
 QList<uint> TextUtils::unicodeFacesEmoji()
@@ -329,5 +330,13 @@ QList<uint> TextUtils::unicodeFantasyEmoji()
 {
     //Add more
     const QList<uint> lstEmoji{0x1F47C, 0x1F385, 0x1F936, 0x1F9B8, 0x1F9B9, 0x1F9D9, 0x1F9DA, 0x1F9DB, 0x1F9DC, 0x1F9DD, 0x1F9DE, 0x1F9DF, 0x1F9DE};
+    return lstEmoji;
+}
+
+QList<uint> TextUtils::unicodePlantEmoji()
+{
+    //Add more
+    const QList<uint> lstEmoji{0x1F490, 0x1F338, 0x1F4AE, 0x1F3F5, 0x1F339, 0x1F940, 0x1F33A, 0x1F33B, 0x1F33C, 0x1F337, 0x1F331, 0x1F332, 0x1F333, 0x1F334,
+                              0x1F335, 0x1F33E, 0x1F33F, 0x2618, 0x1F340, 0x1F341, 0x1F342, 0x1F343};
     return lstEmoji;
 }
