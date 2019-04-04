@@ -183,7 +183,9 @@ QList<uint> TextUtils::unicodeFullEmoji()
            +TextUtils::unicodeClothingEmoji()
            +TextUtils::unicodeSoundMusicEmoji()
            +TextUtils::unicodeComputerEmoji()
-           +TextUtils::unicodeSymbolsEmoji();
+           +TextUtils::unicodeSymbolsEmoji()
+           +TextUtils::unicodeFaceEmoji()
+           +TextUtils::unicodeFantasyEmoji();
 }
 
 QList<uint> TextUtils::unicodeFacesEmoji()
@@ -313,5 +315,19 @@ QList<uint> TextUtils::unicodeSymbolsEmoji()
     const QList<uint> lstEmoji{0x1F3E7, 0x1F6AE, 0x1F6B0, 0x267F, 0x1F6B9, 0x1F6BA, 0x1F6BB, 0x1F6BC, 0x1F6BE, 0x1F6C2, 0x1F6C3, 0x1F6C4, 0x1F6C5,
                               0x26A0, 0x1F6B8, 0x26D4, 0x1F6AB, 0x1F6B3, 0x1F6AD, 0x1F6AF, 0x1F6B1, 0x1F6B7, 0x1F4F5, 0x1F51E, 0x2622, 0x2623,
                               0x2B06, 0x2197, 0x2640, 0x2642, 0x2695};
+    return lstEmoji;
+}
+
+QList<uint> TextUtils::unicodeFaceEmoji()
+{
+    //Add more
+    const QList<uint> lstEmoji{0x1F4A9, 0x1F921, 0x1F479, 0x1F47A, 0x1F47B, 0x1F47D, 0x1F47E, 0x1F916, 0x1F624, 0x1F621, 0x1F620, 0x1F92C, 0x1F608, 0x1F47F, 0x1F480, 0x2620};
+    return lstEmoji;
+}
+
+QList<uint> TextUtils::unicodeFantasyEmoji()
+{
+    //Add more
+    const QList<uint> lstEmoji{0x1F47C, 0x1F385, 0x1F936, 0x1F9B8, 0x1F9B9, 0x1F9D9, 0x1F9DA, 0x1F9DB, 0x1F9DC, 0x1F9DD, 0x1F9DE, 0x1F9DF, 0x1F9DE};
     return lstEmoji;
 }

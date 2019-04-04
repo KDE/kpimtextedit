@@ -53,6 +53,8 @@ void EmoticonUnicodeTab::loadEmoticons()
         createPlainTextEmoticonTab(QString(), TextUtils::unicodeSoundMusicEmoji());
         createPlainTextEmoticonTab(QString(), TextUtils::unicodeComputerEmoji());
         createPlainTextEmoticonTab(QString(), TextUtils::unicodeSymbolsEmoji());
+        createPlainTextEmoticonTab(QString(), TextUtils::unicodeFaceEmoji());
+        createPlainTextEmoticonTab(QString(), TextUtils::unicodeFantasyEmoji());
     } else {
         createHtmlEmoticonTab();
     }
