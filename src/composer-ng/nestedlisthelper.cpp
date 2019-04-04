@@ -89,7 +89,7 @@ bool NestedListHelper::canDedent() const
         if (thisBlock.textList()) {
             thisBlockIndent = thisBlock.textList()->format().indent();
             if (thisBlockIndent >= nextBlockIndent) {
-                return thisBlock.textList()->format().indent() > 0;
+                return thisBlockIndent > 0;
             }
         }
     }
