@@ -75,6 +75,7 @@ KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeComputerEmoji();
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeSymbolsEmoji();
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeFaceEmoji();
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeFantasyEmoji();
+KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodePlantEmoji();
 }
 }
 
