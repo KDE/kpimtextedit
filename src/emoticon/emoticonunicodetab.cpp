@@ -57,6 +57,7 @@ void EmoticonUnicodeTab::loadEmoticons()
         createPlainTextEmoticonTab(QString(), TextUtils::unicodeFantasyEmoji());
         createPlainTextEmoticonTab(QString(), TextUtils::unicodePlantEmoji());
         createPlainTextEmoticonTab(QString(), TextUtils::unicodeTravelEmoji());
+        createPlainTextEmoticonTab(QString(), TextUtils::unicodeBookPaperEmoji());
     } else {
         createHtmlEmoticonTab();
     }
