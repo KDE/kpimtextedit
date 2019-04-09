@@ -20,6 +20,7 @@
 #include "emoticonlistwidgetselector.h"
 #include <KEmoticons>
 #include <kemoticonstheme.h>
+#include "kpimtextedit_debug.h"
 // Use a static for this as calls to the KEmoticons constructor are expensive.
 Q_GLOBAL_STATIC(KEmoticons, sEmoticons)
 
@@ -98,23 +99,27 @@ void EmoticonListWidgetSelector::loadEmotionsFromTheme()
     const QHash<QString, QStringList> list
         = sEmoticons->theme(cachedEmoticonsThemeName).emoticonsMap();
 
-    //Keep in sync with linklocator.cpp
-    QStringList exclude;
-    exclude << QStringLiteral("(c)") << QStringLiteral("(C)") << QStringLiteral("&gt;:-(") << QStringLiteral("&gt;:(") << QStringLiteral("(B)") << QStringLiteral("(b)") << QStringLiteral("(P)")
-            << QStringLiteral("(p)");
-    exclude << QStringLiteral("(O)") << QStringLiteral("(o)") << QStringLiteral("(D)") << QStringLiteral("(d)") << QStringLiteral("(E)") << QStringLiteral("(e)") << QStringLiteral("(K)")
-            << QStringLiteral("(k)");
-    exclude << QStringLiteral("(I)") << QStringLiteral("(i)") << QStringLiteral("(L)") << QStringLiteral("(l)") << QStringLiteral("(8)") << QStringLiteral("(T)") << QStringLiteral("(t)")
-            << QStringLiteral("(G)");
-    exclude << QStringLiteral("(g)") << QStringLiteral("(F)") << QStringLiteral("(f)") << QStringLiteral("(H)");
-    exclude << QStringLiteral("8)") << QStringLiteral("(N)") << QStringLiteral("(n)") << QStringLiteral("(Y)") << QStringLiteral("(y)") << QStringLiteral("(U)") << QStringLiteral("(u)")
-            << QStringLiteral("(W)") << QStringLiteral("(w)");
+    if (list.isEmpty()) {
+        qCWarning(KPIMTEXTEDIT_LOG) << "It seems that there is a problem with emoticon support in KDE";
+    } else {
+        //Keep in sync with linklocator.cpp
+        QStringList exclude;
+        exclude << QStringLiteral("(c)") << QStringLiteral("(C)") << QStringLiteral("&gt;:-(") << QStringLiteral("&gt;:(") << QStringLiteral("(B)") << QStringLiteral("(b)") << QStringLiteral("(P)")
+                << QStringLiteral("(p)");
+        exclude << QStringLiteral("(O)") << QStringLiteral("(o)") << QStringLiteral("(D)") << QStringLiteral("(d)") << QStringLiteral("(E)") << QStringLiteral("(e)") << QStringLiteral("(K)")
+                << QStringLiteral("(k)");
+        exclude << QStringLiteral("(I)") << QStringLiteral("(i)") << QStringLiteral("(L)") << QStringLiteral("(l)") << QStringLiteral("(8)") << QStringLiteral("(T)") << QStringLiteral("(t)")
+                << QStringLiteral("(G)");
+        exclude << QStringLiteral("(g)") << QStringLiteral("(F)") << QStringLiteral("(f)") << QStringLiteral("(H)");
+        exclude << QStringLiteral("8)") << QStringLiteral("(N)") << QStringLiteral("(n)") << QStringLiteral("(Y)") << QStringLiteral("(y)") << QStringLiteral("(U)") << QStringLiteral("(u)")
+                << QStringLiteral("(W)") << QStringLiteral("(w)");
 
-    const QHash<QString, QStringList>::const_iterator end = list.constEnd();
-    for (QHash<QString, QStringList>::const_iterator it = list.constBegin(); it != end; ++it) {
-        const QString str = it.value().first();
-        if (!exclude.contains(str)) {
-            new EmoticonTextEditItem(str, it.key(), this);
+        const QHash<QString, QStringList>::const_iterator end = list.constEnd();
+        for (QHash<QString, QStringList>::const_iterator it = list.constBegin(); it != end; ++it) {
+            const QString str = it.value().first();
+            if (!exclude.contains(str)) {
+                new EmoticonTextEditItem(str, it.key(), this);
+            }
         }
     }
 }
