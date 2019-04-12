@@ -189,7 +189,8 @@ QList<uint> TextUtils::unicodeFullEmoji()
            +TextUtils::unicodePlantEmoji()
            +TextUtils::unicodeTravelEmoji()
            +TextUtils::unicodeBookPaperEmoji()
-           +TextUtils::unicodeBookToolsEmoji();
+           +TextUtils::unicodeBookToolsEmoji()
+           +TextUtils::unicodeScienceEmoji();
 }
 
 QList<uint> TextUtils::unicodeFacesEmoji()
@@ -219,7 +220,9 @@ QList<uint> TextUtils::unicodeEmotionEmoji()
 QList<uint> TextUtils::unicodeBodyEmoji()
 {
     //Add more
-    const QList<uint> lstEmoji{0x1F44B, 0x1F91A, 0x1F590, 0x270B, 0x1F596, 0x1F44C, 0x270C, 0x1F91F, 0x1F44D, 0x1F44F, 0x1F4AA};
+    const QList<uint> lstEmoji{0x1F44B, 0x1F91A, 0x1F590, 0x270B, 0x1F596, 0x1F44C, 0x270C, 0x1F91F, 0x1F44D, 0x1F44F, 0x1F4AA, 0x1F448, 0x1F449,
+                              0x1F446, 0x1F595, 0x1F447, 0x261D, 0x1F44D, 0x1F44E, 0x270A, 0x1F44A, 0x1F91B, 0x1F91C, 0x1F44F, 0x1F64C, 0x1F450,
+                              0x1F932, 0x1F91D, 0x1F64F, 0x270D, 0x1F485, 0x1F933, 0x1F9E0, 0x1F9B7, 0x1F9B4, 0x1F440, 0x1F441, 0x1F445, 0x1F444};
     return lstEmoji;
 }
 
@@ -370,5 +373,12 @@ QList<uint> TextUtils::unicodeBookToolsEmoji()
     //Add more
     const QList<uint> lstEmoji{0x1F528, 0x26CF, 0x2692, 0x1F6E0, 0x1F5E1, 0x2694, 0x1F52B, 0x1F3F9, 0x1F6E1, 0x1F527, 0x1F529, 0x2699, 0x1F5DC, 0x2696,
                               0x1F517, 0x26D3, 0x1F9F0, 0x1F9F2};
+    return lstEmoji;
+}
+
+QList<uint> TextUtils::unicodeScienceEmoji()
+{
+    //Add more
+    const QList<uint> lstEmoji{0x2697, 0x1F9EA, 0x1F9EB, 0x1F9EC, 0x1F52C, 0x1F52D, 0x1F4E1, 0x1F489, 0x1F48A, 0x1FA79};
     return lstEmoji;
 }
