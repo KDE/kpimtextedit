@@ -74,7 +74,7 @@ else()
    add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
 endif()
 add_definitions(-DQT_NO_FOREACH)
-set(CMAKE_CXX_STANDARD 14)
+
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS TextToSpeech)
 
 if(BUILD_TESTING)

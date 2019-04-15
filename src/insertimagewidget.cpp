@@ -95,7 +95,7 @@ public:
         width->setEnabled(false);
         width->setSuffix(i18n(" px"));
         lab->setBuddy(width);
-        q->connect(width, qOverload<int>(&QSpinBox::valueChanged),
+        q->connect(width, QOverload<int>::of(&QSpinBox::valueChanged),
                    q, [this](int val) {
                 _k_slotImageWidthChanged(val);
             });
@@ -111,7 +111,7 @@ public:
         height->setEnabled(false);
         height->setSuffix(i18n(" px"));
         lab->setBuddy(height);
-        q->connect(height, qOverload<int>(&QSpinBox::valueChanged),
+        q->connect(height, QOverload<int>::of(&QSpinBox::valueChanged),
                    q, [this](int val) {
                 _k_slotImageHeightChanged(val);
             });
