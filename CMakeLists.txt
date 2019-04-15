@@ -74,13 +74,13 @@ else()
    add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
 endif()
 add_definitions(-DQT_NO_FOREACH)
-set(CMAKE_CXX_STANDARD 14)
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS TextToSpeech)
 
 if(BUILD_TESTING)
     find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
    add_definitions(-DBUILD_TESTING)
 endif()
+set(CMAKE_CXX_STANDARD 14)
 
 ########### Targets ###########
 add_subdirectory(src)
