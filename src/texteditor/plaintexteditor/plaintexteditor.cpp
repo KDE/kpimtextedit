@@ -365,7 +365,7 @@ void PlainTextEditor::slotCheckSpelling()
     connect(spellDialog, &Sonnet::Dialog::replace, this, &PlainTextEditor::slotSpellCheckerCorrected);
     connect(spellDialog, &Sonnet::Dialog::misspelling, this, &PlainTextEditor::slotSpellCheckerMisspelling);
     connect(spellDialog, &Sonnet::Dialog::autoCorrect, this, &PlainTextEditor::slotSpellCheckerAutoCorrect);
-    connect(spellDialog, QOverload<const QString &>::of(&Sonnet::Dialog::done),
+    connect(spellDialog, qOverload<const QString &>(&Sonnet::Dialog::done),
             this, &PlainTextEditor::slotSpellCheckerFinished);
 
     connect(spellDialog, &Sonnet::Dialog::cancel, this, &PlainTextEditor::slotSpellCheckerCanceled);

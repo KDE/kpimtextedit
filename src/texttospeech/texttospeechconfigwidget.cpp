@@ -64,19 +64,19 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     mAvailableEngine = new QComboBox(this);
     mAvailableEngine->setObjectName(QStringLiteral("engine"));
     layout->addRow(i18n("Engine:"), mAvailableEngine);
-    connect(mAvailableEngine, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::slotEngineChanged);
-    connect(mAvailableEngine, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::valueChanged);
+    connect(mAvailableEngine, qOverload<int>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::slotEngineChanged);
+    connect(mAvailableEngine, qOverload<int>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::valueChanged);
 
     mLanguage = new KPIMTextEdit::TextToSpeechLanguageComboBox(this);
     mLanguage->setObjectName(QStringLiteral("language"));
     layout->addRow(i18n("Language:"), mLanguage);
-    connect(mAvailableEngine, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::slotLanguageChanged);
-    connect(mLanguage, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::valueChanged);
+    connect(mAvailableEngine, qOverload<int>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::slotLanguageChanged);
+    connect(mLanguage, qOverload<int>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::valueChanged);
 
     mVoice = new QComboBox(this);
     mVoice->setObjectName(QStringLiteral("voice"));
     layout->addRow(i18n("Voice:"), mVoice);
-    connect(mVoice, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::valueChanged);
+    connect(mVoice, qOverload<int>(&QComboBox::currentIndexChanged), this, &TextToSpeechConfigWidget::valueChanged);
 
     QTimer::singleShot(0, this, &TextToSpeechConfigWidget::slotUpdateSettings);
 }
