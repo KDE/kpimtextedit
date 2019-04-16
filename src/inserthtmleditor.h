@@ -21,7 +21,6 @@
 #ifndef RICHTEXTCOMPOSER_INSERTHTMLEDITOR_H
 #define RICHTEXTCOMPOSER_INSERTHTMLEDITOR_H
 
-#include "config-kpimtextedit.h"
 #include <QWidget>
 
 #include "kpimtextedit/plaintexteditor.h"
