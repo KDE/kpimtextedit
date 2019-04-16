@@ -1,5 +1,4 @@
 
-configure_file(config-kpimtextedit.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kpimtextedit.h )
 
 set(kpimtextedit_texteditor_SRCS
     texteditor/plaintexteditor/plaintexteditfindbar.cpp

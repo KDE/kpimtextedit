@@ -21,7 +21,6 @@
 #define TEXTTOSPEECHCONFIGINTERFACE_H
 #include "abstracttexttospeechconfiginterface.h"
 #include "kpimtextedit_export.h"
-#include "config-kpimtextedit.h"
 
 class QTextToSpeech;
 namespace KPIMTextEdit {
