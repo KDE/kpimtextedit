@@ -51,7 +51,7 @@ void TextGoToLineWidgetTest::shouldEmitGoToLineSignalWhenPressOnButton()
 {
     KPIMTextEdit::TextGoToLineWidget edit;
     QPushButton *gotolinebutton = edit.findChild<QPushButton *>(QStringLiteral("gotoline"));
-    QSignalSpy spy(&edit, SIGNAL(moveToLine(int)));
+    QSignalSpy spy(&edit, &KPIMTextEdit::TextGoToLineWidget::moveToLine);
     QTest::mouseClick(gotolinebutton, Qt::LeftButton);
     QCOMPARE(spy.count(), 1);
 }
@@ -63,7 +63,7 @@ void TextGoToLineWidgetTest::shouldEmitGoToLineSignalCorrectValueWhenPressOnButt
     QSpinBox *line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
     line->setValue(5);
     QCOMPARE(line->value(), 5);
-    QSignalSpy spy(&edit, SIGNAL(moveToLine(int)));
+    QSignalSpy spy(&edit, &KPIMTextEdit::TextGoToLineWidget::moveToLine);
     QTest::mouseClick(gotolinebutton, Qt::LeftButton);
     QCOMPARE(spy.count(), 1);
     QCOMPARE(spy.at(0).at(0).toInt(), 5);
@@ -98,7 +98,7 @@ void TextGoToLineWidgetTest::shouldEmitGoToLineSignalWhenSpinboxHasFocusAndWePre
     line->setFocus();
     QVERIFY(line->hasFocus());
     line->setValue(5);
-    QSignalSpy spy(&edit, SIGNAL(moveToLine(int)));
+    QSignalSpy spy(&edit, &KPIMTextEdit::TextGoToLineWidget::moveToLine);
     QTest::keyPress(line, Qt::Key_Enter);
     QCOMPARE(spy.count(), 1);
     QCOMPARE(spy.at(0).at(0).toInt(), 5);

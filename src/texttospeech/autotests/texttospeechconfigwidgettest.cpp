@@ -70,7 +70,7 @@ void TextToSpeechConfigWidgetTest::shouldEmitConfigChangedWhenChangeConfigValue(
 {
     KPIMTextEdit::TextToSpeechConfigWidget textToSpeechConfigWidget;
     addInterface(&textToSpeechConfigWidget);
-    QSignalSpy spy(&textToSpeechConfigWidget, SIGNAL(configChanged(bool)));
+    QSignalSpy spy(&textToSpeechConfigWidget, &KPIMTextEdit::TextToSpeechConfigWidget::configChanged);
     QSlider *volume = textToSpeechConfigWidget.findChild<QSlider *>(QStringLiteral("volume"));
     volume->setValue(5);
     QCOMPARE(spy.count(), 1);

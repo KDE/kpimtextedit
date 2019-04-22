@@ -94,7 +94,7 @@ void TextToSpeechActionsTest::shouldEmitStateChanged()
 {
     KPIMTextEdit::TextToSpeechActions act;
     act.setState(KPIMTextEdit::TextToSpeechWidget::Play);
-    QSignalSpy spy(&act, SIGNAL(stateChanged(KPIMTextEdit::TextToSpeechWidget::State)));
+    QSignalSpy spy(&act, &KPIMTextEdit::TextToSpeechActions::stateChanged);
     act.setState(KPIMTextEdit::TextToSpeechWidget::Play);
     QCOMPARE(spy.count(), 0);
 

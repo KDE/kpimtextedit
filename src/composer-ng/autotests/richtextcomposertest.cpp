@@ -530,7 +530,7 @@ void RichTextComposerTest::shouldChangeMode()
     KPIMTextEdit::RichTextComposer composer;
     KActionCollection *actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    QSignalSpy spy(&composer, SIGNAL(textModeChanged(KPIMTextEdit::RichTextComposer::Mode)));
+    QSignalSpy spy(&composer, &RichTextComposer::textModeChanged);
     composer.activateRichText();
     QCOMPARE(composer.textMode(), KPIMTextEdit::RichTextComposer::Rich);
     QVERIFY(composer.acceptRichText());

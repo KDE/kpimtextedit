@@ -72,8 +72,8 @@ void SlideContainerAutoTest::testInit()
 void SlideContainerAutoTest::testSlideIn()
 {
     TestWindow window;
-    QSignalSpy inSpy(window.mContainer, SIGNAL(slidedIn()));
-    QSignalSpy outSpy(window.mContainer, SIGNAL(slidedOut()));
+    QSignalSpy inSpy(window.mContainer, &SlideContainer::slidedIn);
+    QSignalSpy outSpy(window.mContainer, &SlideContainer::slidedOut);
     window.show();
 
     window.mContainer->slideIn();
@@ -95,8 +95,8 @@ void SlideContainerAutoTest::testSlideOut()
         QTest::qWait(100);
     }
 
-    QSignalSpy inSpy(window.mContainer, SIGNAL(slidedIn()));
-    QSignalSpy outSpy(window.mContainer, SIGNAL(slidedOut()));
+    QSignalSpy inSpy(window.mContainer, &SlideContainer::slidedIn);
+    QSignalSpy outSpy(window.mContainer, &SlideContainer::slidedOut);
     window.mContainer->slideOut();
     while (window.mContainer->slideHeight() != 0) {
         QTest::qWait(100);

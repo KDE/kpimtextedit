@@ -177,13 +177,13 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
                                              popup->actions());
         if (searchSupport()) {
             popup->addSeparator();
-            QAction *findAct = popup->addAction(KStandardGuiItem::find().icon(), KStandardGuiItem::find().text(), this, SIGNAL(findText()), Qt::Key_F + Qt::CTRL);
+            QAction *findAct = popup->addAction(KStandardGuiItem::find().icon(), KStandardGuiItem::find().text(), this, &RichTextEditor::findText, Qt::Key_F + Qt::CTRL);
             if (emptyDocument) {
                 findAct->setEnabled(false);
             }
             popup->addSeparator();
             if (!isReadOnly()) {
-                QAction *act = popup->addAction(i18n("Replace..."), this, SIGNAL(replaceText()), Qt::Key_R + Qt::CTRL);
+                QAction *act = popup->addAction(i18n("Replace..."), this, &RichTextEditor::replaceText, Qt::Key_R + Qt::CTRL);
                 if (emptyDocument) {
                     act->setEnabled(false);
                 }
