@@ -137,7 +137,7 @@ void RichTextComposerImages::addImageHelper(const QString &imageName, const QIma
             // use the same name
             break;
         }
-        int firstDot = imageName.indexOf(QLatin1Char('.'));
+        const int firstDot = imageName.indexOf(QLatin1Char('.'));
         if (firstDot == -1) {
             imageNameToAdd = imageName + QString::number(imageNumber++);
         } else {
@@ -168,16 +168,17 @@ ImageWithNameList RichTextComposerImages::imagesWithName() const
     QStringList seenImageNames;
     const QList<QTextImageFormat> imageFormats = embeddedImageFormats();
     for (const QTextImageFormat &imageFormat : imageFormats) {
-        if (!seenImageNames.contains(imageFormat.name())) {
+        const QString name = imageFormat.name();
+        if (!seenImageNames.contains(name)) {
             QVariant resourceData = d->composer->document()->resource(QTextDocument::ImageResource,
-                                                                      QUrl(imageFormat.name()));
+                                                                      QUrl(name));
             QImage image = qvariant_cast<QImage>(resourceData);
-            QString name = imageFormat.name();
+
             ImageWithNamePtr newImage(new ImageWithName);
             newImage->image = image;
             newImage->name = name;
             retImages.append(newImage);
-            seenImageNames.append(imageFormat.name());
+            seenImageNames.append(name);
         }
     }
     return retImages;
