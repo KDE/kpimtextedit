@@ -190,19 +190,25 @@ QList< QSharedPointer<EmbeddedImage> > RichTextComposerImages::embeddedImages() 
     QList< QSharedPointer<EmbeddedImage> > retImages;
     retImages.reserve(normalImages.count());
     for (const ImageWithNamePtr &normalImage : normalImages) {
-        QBuffer buffer;
-        buffer.open(QIODevice::WriteOnly);
-        normalImage->image.save(&buffer, "PNG");
-
-        qsrand(QDateTime::currentDateTimeUtc().toSecsSinceEpoch() + qHash(normalImage->name));
-        QSharedPointer<EmbeddedImage> embeddedImage(new EmbeddedImage());
-        retImages.append(embeddedImage);
-        embeddedImage->image = KCodecs::Codec::codecForName("base64")->encode(buffer.buffer());
-        embeddedImage->imageName = normalImage->name;
-        embeddedImage->contentID = QStringLiteral("%1@KDE").arg(qrand());
+        retImages.append(createEmbeddedImage(normalImage->image, normalImage->name));
     }
     return retImages;
 }
+
+QSharedPointer<EmbeddedImage> RichTextComposerImages::createEmbeddedImage(const QImage &img, const QString &imageName) const
+{
+    QBuffer buffer;
+    buffer.open(QIODevice::WriteOnly);
+    img.save(&buffer, "PNG");
+
+    qsrand(QDateTime::currentDateTimeUtc().toSecsSinceEpoch() + qHash(imageName));
+    QSharedPointer<EmbeddedImage> embeddedImage(new EmbeddedImage());
+    embeddedImage->image = KCodecs::Codec::codecForName("base64")->encode(buffer.buffer());
+    embeddedImage->imageName = imageName;
+    embeddedImage->contentID = QStringLiteral("%1@KDE").arg(qrand());
+    return embeddedImage;
+}
+
 
 QList<QTextImageFormat> RichTextComposerImages::embeddedImageFormats() const
 {

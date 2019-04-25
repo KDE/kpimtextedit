@@ -111,6 +111,7 @@ public:
      */
     static QByteArray imageNamesToContentIds(const QByteArray &htmlBody, const ImageList &imageList);
 
+    Q_REQUIRED_RESULT QSharedPointer<EmbeddedImage> createEmbeddedImage(const QImage &img, const QString &imageName) const;
 private:
     class RichTextComposerImagesPrivate;
     RichTextComposerImagesPrivate *const d;
