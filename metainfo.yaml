@@ -10,7 +10,7 @@ release: false
 libraries:
  - qmake: KPIMTextEdit
    cmake: "KF5::PIMTextEdit"
-   cmakename: KF5PIMTextEdit 
+cmakename: KF5PIMTextEdit 
 
 public_lib: true
 group: kdepim
