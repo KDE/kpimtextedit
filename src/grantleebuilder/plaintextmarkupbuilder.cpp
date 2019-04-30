@@ -141,7 +141,7 @@ QString PlainTextMarkupBuilderPrivate::getReferences()
     if (!m_urls.isEmpty()) {
         refs.append(QStringLiteral("\n--------\n"));
 
-        auto index = 1;
+        int index = 1;
         while (!m_urls.isEmpty()) {
             refs.append(
                         QStringLiteral("[%1] %2\n").arg(index++).arg(m_urls.takeFirst()));
