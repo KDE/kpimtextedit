@@ -28,6 +28,10 @@ EmoticonUnicodeTab::EmoticonUnicodeTab(QWidget *parent)
 {
     setTabBarAutoHide(true);
     loadEmoticons();
+    QFont f;
+    f.setPointSize(22);
+    f.setFamily(QStringLiteral("NotoColorEmoji"));
+    setFont(f);
 }
 
 EmoticonUnicodeTab::~EmoticonUnicodeTab()
