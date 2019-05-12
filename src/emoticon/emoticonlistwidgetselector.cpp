@@ -75,6 +75,7 @@ EmoticonListWidgetSelector::EmoticonListWidgetSelector(QWidget *parent)
     setIconSize(QSize(32, 32));
     QFont f;
     f.setPointSize(22);
+    f.setFamily(QStringLiteral("NotoColorEmoji"));
     setFont(f);
 }
 
