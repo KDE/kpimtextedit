@@ -19,7 +19,9 @@
 
 #include "selectspecialchardialog.h"
 #include <KCharSelect>
+#include <KConfigGroup>
 #include <KLocalizedString>
+#include <KSharedConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
@@ -79,10 +81,12 @@ SelectSpecialCharDialog::SelectSpecialCharDialog(QWidget *parent)
     : QDialog(parent)
     , d(new SelectSpecialCharDialogPrivate(this))
 {
+    readConfig();
 }
 
 SelectSpecialCharDialog::~SelectSpecialCharDialog()
 {
+    writeConfig();
     delete d;
 }
 
@@ -114,6 +118,23 @@ void SelectSpecialCharDialog::setOkButtonText(const QString &text)
 {
     d->mButtonBox->button(QDialogButtonBox::Ok)->setText(text);
 }
+
+void SelectSpecialCharDialog::readConfig()
+{
+    KConfigGroup group(KSharedConfig::openConfig(), "SelectSpecialCharDialog");
+    const QSize sizeDialog = group.readEntry("Size", QSize(300, 200));
+    if (sizeDialog.isValid()) {
+        resize(sizeDialog);
+    }
+}
+
+void SelectSpecialCharDialog::writeConfig()
+{
+    KConfigGroup group(KSharedConfig::openConfig(), "SelectSpecialCharDialog");
+    group.writeEntry("Size", size());
+}
+
+
 }
 
 #include "moc_selectspecialchardialog.cpp"

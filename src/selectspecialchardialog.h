@@ -52,6 +52,8 @@ Q_SIGNALS:
 private:
     SelectSpecialCharDialogPrivate *const d;
     friend class SelectSpecialCharDialogPrivate;
+    void readConfig();
+    void writeConfig();
 };
 }
 
