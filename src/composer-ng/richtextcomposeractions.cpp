@@ -498,7 +498,8 @@ void RichTextComposerActions::setActionsEnabled(bool enabled)
     for (QAction *action : qAsConst(d->richTextActionList)) {
         action->setEnabled(enabled);
     }
-    d->action_add_emoticon->setEmojiPlainText(!enabled);
+    //Use all the time emojiunicode
+    //d->action_add_emoticon->setEmojiPlainText(!enabled);
     d->richTextEnabled = enabled;
 }
 
