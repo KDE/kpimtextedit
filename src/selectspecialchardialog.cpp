@@ -133,8 +133,6 @@ void SelectSpecialCharDialog::writeConfig()
     KConfigGroup group(KSharedConfig::openConfig(), "SelectSpecialCharDialog");
     group.writeEntry("Size", size());
 }
-
-
 }
 
 #include "moc_selectspecialchardialog.cpp"

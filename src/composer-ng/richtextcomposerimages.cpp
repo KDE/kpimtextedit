@@ -209,7 +209,6 @@ QSharedPointer<EmbeddedImage> RichTextComposerImages::createEmbeddedImage(const 
     return embeddedImage;
 }
 
-
 QList<QTextImageFormat> RichTextComposerImages::embeddedImageFormats() const
 {
     QTextDocument *doc = d->composer->document();
