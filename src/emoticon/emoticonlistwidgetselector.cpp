@@ -31,7 +31,6 @@ EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText, QListWid
 {
     mText = emoticonText;
     setText(mText);
-    setToolTip(mText);
 }
 
 EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText, const QString &pixmapPath, QListWidget *parent)
