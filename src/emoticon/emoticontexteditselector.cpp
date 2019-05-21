@@ -61,12 +61,4 @@ void EmoticonTextEditSelector::loadEmoticons()
     }
 }
 
-bool EmoticonTextEditSelector::emojiPlainText() const
-{
-    return mUnicodeTab->emojiPlainText();
-}
 
-void EmoticonTextEditSelector::setEmojiPlainText(bool emojiPlainText)
-{
-    mUnicodeTab->setEmojiPlainText(emojiPlainText);
-}

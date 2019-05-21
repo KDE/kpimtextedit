@@ -40,41 +40,29 @@ EmoticonUnicodeTab::~EmoticonUnicodeTab()
 
 void EmoticonUnicodeTab::loadEmoticons()
 {
-    if (mEmojiPlainText) {
-        createPlainTextEmoticonTab(i18n("Faces"), TextUtils::unicodeFacesEmoji());
-        createPlainTextEmoticonTab(i18n("Animals"), TextUtils::unicodeAnimalsEmoji());
-        createPlainTextEmoticonTab(i18n("Emotions"), TextUtils::unicodeEmotionEmoji());
-        createPlainTextEmoticonTab(i18n("Body"), TextUtils::unicodeBodyEmoji());
-        createPlainTextEmoticonTab(i18n("Transports"), TextUtils::unicodeTransportEmoji());
-        createPlainTextEmoticonTab(i18n("Events"), TextUtils::unicodeEventEmoji());
-        createPlainTextEmoticonTab(i18n("Flags"), TextUtils::unicodeFlagsEmoji());
-        createPlainTextEmoticonTab(i18n("Weather"), TextUtils::unicodeWeatherEmoji());
-        createPlainTextEmoticonTab(i18n("Foods"), TextUtils::unicodeFoodEmoji());
-        createPlainTextEmoticonTab(i18n("Sports"), TextUtils::unicodeSportEmoji());
-        createPlainTextEmoticonTab(i18n("Time"), TextUtils::unicodeTimeEmoji());
-        createPlainTextEmoticonTab(i18n("Game"), TextUtils::unicodeGameEmoji());
-        createPlainTextEmoticonTab(i18n("Clothing"), TextUtils::unicodeClothingEmoji());
-        createPlainTextEmoticonTab(i18n("Music"), TextUtils::unicodeSoundMusicEmoji());
-        createPlainTextEmoticonTab(i18n("Computer"), TextUtils::unicodeComputerEmoji());
-        createPlainTextEmoticonTab(i18n("Symbols"), TextUtils::unicodeSymbolsEmoji());
-        createPlainTextEmoticonTab(i18n("Face"), TextUtils::unicodeFaceEmoji());
-        createPlainTextEmoticonTab(i18n("Fantasy"), TextUtils::unicodeFantasyEmoji());
-        createPlainTextEmoticonTab(i18n("Plant"), TextUtils::unicodePlantEmoji());
-        createPlainTextEmoticonTab(i18n("Travel"), TextUtils::unicodeTravelEmoji());
-        createPlainTextEmoticonTab(i18n("Book"), TextUtils::unicodeBookPaperEmoji());
-        createPlainTextEmoticonTab(i18n("Book Tools"), TextUtils::unicodeBookToolsEmoji());
-        createPlainTextEmoticonTab(i18n("Science"), TextUtils::unicodeScienceEmoji());
-    } else {
-        createHtmlEmoticonTab();
-    }
-}
-
-void EmoticonUnicodeTab::createHtmlEmoticonTab()
-{
-    EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
-    selector->loadEmotionsFromTheme();
-    addTab(selector, QString());
-    connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
+    createPlainTextEmoticonTab(i18n("Faces"), TextUtils::unicodeFacesEmoji());
+    createPlainTextEmoticonTab(i18n("Animals"), TextUtils::unicodeAnimalsEmoji());
+    createPlainTextEmoticonTab(i18n("Emotions"), TextUtils::unicodeEmotionEmoji());
+    createPlainTextEmoticonTab(i18n("Body"), TextUtils::unicodeBodyEmoji());
+    createPlainTextEmoticonTab(i18n("Transports"), TextUtils::unicodeTransportEmoji());
+    createPlainTextEmoticonTab(i18n("Events"), TextUtils::unicodeEventEmoji());
+    createPlainTextEmoticonTab(i18n("Flags"), TextUtils::unicodeFlagsEmoji());
+    createPlainTextEmoticonTab(i18n("Weather"), TextUtils::unicodeWeatherEmoji());
+    createPlainTextEmoticonTab(i18n("Foods"), TextUtils::unicodeFoodEmoji());
+    createPlainTextEmoticonTab(i18n("Sports"), TextUtils::unicodeSportEmoji());
+    createPlainTextEmoticonTab(i18n("Time"), TextUtils::unicodeTimeEmoji());
+    createPlainTextEmoticonTab(i18n("Game"), TextUtils::unicodeGameEmoji());
+    createPlainTextEmoticonTab(i18n("Clothing"), TextUtils::unicodeClothingEmoji());
+    createPlainTextEmoticonTab(i18n("Music"), TextUtils::unicodeSoundMusicEmoji());
+    createPlainTextEmoticonTab(i18n("Computer"), TextUtils::unicodeComputerEmoji());
+    createPlainTextEmoticonTab(i18n("Symbols"), TextUtils::unicodeSymbolsEmoji());
+    createPlainTextEmoticonTab(i18n("Face"), TextUtils::unicodeFaceEmoji());
+    createPlainTextEmoticonTab(i18n("Fantasy"), TextUtils::unicodeFantasyEmoji());
+    createPlainTextEmoticonTab(i18n("Plant"), TextUtils::unicodePlantEmoji());
+    createPlainTextEmoticonTab(i18n("Travel"), TextUtils::unicodeTravelEmoji());
+    createPlainTextEmoticonTab(i18n("Book"), TextUtils::unicodeBookPaperEmoji());
+    createPlainTextEmoticonTab(i18n("Book Tools"), TextUtils::unicodeBookToolsEmoji());
+    createPlainTextEmoticonTab(i18n("Science"), TextUtils::unicodeScienceEmoji());
 }
 
 void EmoticonUnicodeTab::createPlainTextEmoticonTab(const QString &str, const QList<uint> &emoticons)
@@ -91,15 +79,3 @@ void EmoticonUnicodeTab::createPlainTextEmoticonTab(const QString &str, const QL
     }
 }
 
-bool EmoticonUnicodeTab::emojiPlainText() const
-{
-    return mEmojiPlainText;
-}
-
-void EmoticonUnicodeTab::setEmojiPlainText(bool emojiPlainText)
-{
-    if (mEmojiPlainText != emojiPlainText) {
-        mEmojiPlainText = emojiPlainText;
-        clear();
-    }
-}

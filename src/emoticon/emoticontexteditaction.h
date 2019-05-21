@@ -33,8 +33,6 @@ public:
     explicit EmoticonTextEditAction(QObject *parent);
     ~EmoticonTextEditAction();
 
-    void setEmojiPlainText(bool b);
-
 Q_SIGNALS:
     void emoticonActivated(const QString &);
 

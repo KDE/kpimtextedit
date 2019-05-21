@@ -27,7 +27,6 @@ namespace KPIMTextEdit {
 class KPIMTEXTEDIT_TESTS_EXPORT EmoticonTextEditItem : public QListWidgetItem
 {
 public:
-    explicit EmoticonTextEditItem(const QString &emoticonText, const QString &pixmapPath, QListWidget *parent);
     explicit EmoticonTextEditItem(const QString &emoticonText, QListWidget *parent);
     QString text() const;
     QString pixmapPath() const;
@@ -45,7 +44,6 @@ public:
     ~EmoticonListWidgetSelector();
 
     void setEmoticons(const QList<uint> &lst);
-    void loadEmotionsFromTheme();
 Q_SIGNALS:
     void itemSelected(const QString &);
 

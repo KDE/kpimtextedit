@@ -33,9 +33,6 @@ public:
     explicit EmoticonTextEditSelector(QWidget *parent = nullptr);
     ~EmoticonTextEditSelector();
 
-    Q_REQUIRED_RESULT bool emojiPlainText() const;
-    void setEmojiPlainText(bool emojiPlainText);
-
 public Q_SLOTS:
     void loadEmoticons();
 

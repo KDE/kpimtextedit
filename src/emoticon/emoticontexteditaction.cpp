@@ -66,7 +66,3 @@ EmoticonTextEditAction::~EmoticonTextEditAction()
     delete d;
 }
 
-void EmoticonTextEditAction::setEmojiPlainText(bool b)
-{
-    d->selector->setEmojiPlainText(b);
-}
