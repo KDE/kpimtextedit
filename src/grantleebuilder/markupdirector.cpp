@@ -71,7 +71,7 @@ MarkupDirector::processBlockContents(QTextFrame::iterator frameIt,
         // have
         // an action for them yet,
         // So users can't edit them. See bug
-        // http://bugs.kde.org/show_bug.cgi?id=160600
+        // https://bugs.kde.org/show_bug.cgi?id=160600
         m_builder->beginParagraph(
                     blockAlignment,
                     blockFormat.topMargin(),

@@ -41,7 +41,7 @@ find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
 find_package(Grantlee5 "5.1" CONFIG REQUIRED)
 set_package_properties(Grantlee5 PROPERTIES
     DESCRIPTION "A plug-in based String Template system for Qt"
-    URL "http://github.com/steveire/grantlee"
+    URL "https://github.com/steveire/grantlee"
     PURPOSE "Required for the RichText composer"
     TYPE REQUIRED
     )
