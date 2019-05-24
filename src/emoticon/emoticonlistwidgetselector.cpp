@@ -76,6 +76,13 @@ void EmoticonListWidgetSelector::setEmoticons(const QList<uint> &lst)
     }
 }
 
+void EmoticonListWidgetSelector::setEmoticons(const QStringList &lst)
+{
+    for (const QString& emoji : lst) {
+        new KPIMTextEdit::EmoticonTextEditItem(emoji, this);
+    }
+}
+
 void EmoticonListWidgetSelector::slotEmoticonClicked(QListWidgetItem *item)
 {
     if (!item) {
