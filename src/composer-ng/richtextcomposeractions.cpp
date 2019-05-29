@@ -40,7 +40,7 @@ public:
     {
     }
 
-    QList<QAction *> richTextActionList;
+    QVector<QAction *> richTextActionList;
 
     KPIMTextEdit::RichTextComposerControler *composerControler = nullptr;
     KToggleAction *action_align_left = nullptr;
@@ -100,7 +100,7 @@ RichTextComposerActions::~RichTextComposerActions()
     delete d;
 }
 
-QList<QAction *> RichTextComposerActions::richTextActionList() const
+QVector<QAction *> RichTextComposerActions::richTextActionList() const
 {
     return d->richTextActionList;
 }

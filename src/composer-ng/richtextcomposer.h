@@ -99,7 +99,7 @@ public:
     const QString defaultQuoteSign() const;
     void createActions(KActionCollection *ac);
 
-    QList<QAction *> richTextActionList() const;
+    QVector<QAction *> richTextActionList() const;
     void setEnableActions(bool state);
 
     KPIMTextEdit::RichTextComposerControler *composerControler() const;
