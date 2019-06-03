@@ -24,7 +24,6 @@
 #include <QListWidgetItem>
 #include <QWidget>
 namespace KPIMTextEdit {
-class EmoticonListWidgetSelector;
 class EmoticonUnicodeTab;
 class EmoticonTextEditSelector : public QWidget
 {
