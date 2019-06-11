@@ -114,7 +114,11 @@ install(FILES
     COMPONENT Devel
     )
 
-install( FILES kpimtextedit.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
+if (${ECM_VERSION} STRGREATER "5.58.0")
+    install(FILES kpimtextedit.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
+else()
+    install(FILES kpimtextedit.categories  DESTINATION ${KDE_INSTALL_CONFDIR})
+endif()
 
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
