@@ -21,7 +21,6 @@
 #ifndef KPIMTEXTEDIT_EMOTICONTEXTEDITSELECTOR_H
 #define KPIMTEXTEDIT_EMOTICONTEXTEDITSELECTOR_H
 
-#include <QListWidgetItem>
 #include <QWidget>
 namespace KPIMTextEdit {
 class EmoticonUnicodeTab;

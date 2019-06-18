@@ -31,7 +31,6 @@
 #include <KLocalizedString>
 #include <QColorDialog>
 #include <QTextBlock>
-#include <QCoreApplication>
 #include <QTimer>
 #include <QPointer>
 #include <QClipboard>

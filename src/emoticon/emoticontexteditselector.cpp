@@ -21,11 +21,8 @@
 #include "emoticontexteditselector.h"
 #include "emoticonunicodetab.h"
 #include "textutils.h"
-#include <KEmoticons>
 #include <kemoticonstheme.h>
 
-#include <QListWidget>
-#include <QPixmap>
 #include <QHBoxLayout>
 
 using namespace KPIMTextEdit;

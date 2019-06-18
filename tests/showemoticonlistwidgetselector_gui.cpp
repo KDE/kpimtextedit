@@ -21,7 +21,6 @@
 #include <QApplication>
 #include <QWidget>
 #include <QVBoxLayout>
-#include <QTextEdit>
 
 #include "textutils.h"
 #include "emoticon/emoticonlistwidgetselector.h"
