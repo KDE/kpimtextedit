@@ -524,6 +524,11 @@ void RichTextComposer::insertFromMimeData(const QMimeData *source)
                     || sourceText.startsWith(QStringLiteral("mailto:"))
                     || sourceText.startsWith(QStringLiteral("smb://"))
                     || sourceText.startsWith(QStringLiteral("file://"))
+                    || sourceText.startsWith(QStringLiteral("webdavs://"))
+                    || sourceText.startsWith(QStringLiteral("imaps://"))
+                    || sourceText.startsWith(QStringLiteral("sftp://"))
+                    || sourceText.startsWith(QStringLiteral("fish://"))
+                    || sourceText.startsWith(QStringLiteral("tel:"))
                     ) {
                 insertHtml(QStringLiteral("<a href=\"%1\">%1</a> ").arg(sourceText));
                 return;
