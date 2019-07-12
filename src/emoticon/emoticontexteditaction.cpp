@@ -65,4 +65,3 @@ EmoticonTextEditAction::~EmoticonTextEditAction()
 {
     delete d;
 }
-

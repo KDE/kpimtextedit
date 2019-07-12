@@ -57,5 +57,3 @@ void EmoticonTextEditSelector::loadEmoticons()
         mUnicodeTab->loadEmoticons();
     }
 }
-
-

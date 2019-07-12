@@ -29,7 +29,6 @@ EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText, QListWid
     setText(mText);
 }
 
-
 QString EmoticonTextEditItem::text() const
 {
     return mText;
@@ -78,7 +77,7 @@ void EmoticonListWidgetSelector::setEmoticons(const QList<uint> &lst)
 
 void EmoticonListWidgetSelector::setEmoticons(const QStringList &lst)
 {
-    for (const QString& emoji : lst) {
+    for (const QString &emoji : lst) {
         new KPIMTextEdit::EmoticonTextEditItem(emoji, this);
     }
 }
