@@ -62,8 +62,16 @@ find_package(KF5Sonnet ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5SyntaxHighlighting ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5WidgetsAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5XmlGui ${KF5_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF5DesignerPlugin ${KF5_MIN_VERSION} CONFIG)
-set_package_properties(KF5DesignerPlugin PROPERTIES DESCRIPTION "KF5 designer plugin" TYPE OPTIONAL)
+
+set(USE_NEW_DESIGNERPLUGIN_MACRO false)
+if (ECM_VERSION VERSION_GREATER "5.61.0")
+	option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ON)
+	add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Designer")
+	set(USE_NEW_DESIGNERPLUGIN_MACRO true)
+else()
+	find_package(KF5DesignerPlugin ${KF5_MIN_VERSION} CONFIG)
+	set_package_properties(KF5DesignerPlugin PROPERTIES DESCRIPTION "KF5 designer plugin" TYPE OPTIONAL)
+endif()
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
 
