@@ -57,6 +57,7 @@ Q_SIGNALS:
 
 private:
     void slotVolumeChanged(int value);
+    void slotCloseTextToSpeechWidget();
     void slotConfigure();
     TextToSpeechWidgetPrivate *const d;
 };

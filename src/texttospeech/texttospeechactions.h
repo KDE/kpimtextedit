@@ -41,13 +41,13 @@ public:
 
 public Q_SLOTS:
     void setState(TextToSpeechWidget::State);
+    void slotStop();
 
 Q_SIGNALS:
     void stateChanged(KPIMTextEdit::TextToSpeechWidget::State state);
 
 private:
     void slotPlayPause();
-    void slotStop();
     TextToSpeechActionsPrivate *const d;
 };
 }

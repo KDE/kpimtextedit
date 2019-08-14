@@ -60,11 +60,11 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
     close->setObjectName(QStringLiteral("close-button"));
     close->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
     close->setToolTip(i18n("Close"));
-    connect(close, &QToolButton::clicked, this, &TextToSpeechWidget::hide);
+    connect(close, &QToolButton::clicked, this, &TextToSpeechWidget::slotCloseTextToSpeechWidget);
     hbox->addWidget(close);
     hbox->addStretch(0);
 
-    QLabel *volume = new QLabel(i18n("Volume:"));
+    QLabel *volume = new QLabel(i18n("Volume:"), this);
     hbox->addWidget(volume);
     d->mVolume = new QSlider;
     d->mVolume->setMinimumWidth(100);
@@ -75,17 +75,17 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
     connect(d->mVolume, &QSlider::valueChanged, this, &TextToSpeechWidget::slotVolumeChanged);
     hbox->addWidget(d->mVolume);
 
-    d->mStopButton = new QToolButton;
+    d->mStopButton = new QToolButton(this);
     d->mStopButton->setObjectName(QStringLiteral("stopbutton"));
     d->mStopButton->setDefaultAction(d->mTextToSpeechActions->stopAction());
     hbox->addWidget(d->mStopButton);
 
-    d->mPlayPauseButton = new QToolButton;
+    d->mPlayPauseButton = new QToolButton(this);
     d->mPlayPauseButton->setObjectName(QStringLiteral("playpausebutton"));
     d->mPlayPauseButton->setDefaultAction(d->mTextToSpeechActions->playPauseAction());
     hbox->addWidget(d->mPlayPauseButton);
 
-    d->mConfigureButton = new QToolButton;
+    d->mConfigureButton = new QToolButton(this);
     d->mConfigureButton->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
     d->mConfigureButton->setToolTip(i18n("Configure..."));
     d->mConfigureButton->setObjectName(QStringLiteral("configurebutton"));
@@ -100,6 +100,12 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
 TextToSpeechWidget::~TextToSpeechWidget()
 {
     delete d;
+}
+
+void TextToSpeechWidget::slotCloseTextToSpeechWidget()
+{
+    d->mTextToSpeechActions->slotStop();
+    hide();
 }
 
 void TextToSpeechWidget::slotConfigure()
