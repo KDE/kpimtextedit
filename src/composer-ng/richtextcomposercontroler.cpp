@@ -69,7 +69,7 @@ public:
     void selectLinkText(QTextCursor *cursor) const;
     void fixupTextEditString(QString &text) const;
     void mergeFormatOnWordOrSelection(const QTextCharFormat &format);
-    QString addQuotesToText(const QString &inputText);
+    QString addQuotesToText(const QString &inputText, const QString &defaultQuoteSign);
     void updateLink(const QString &linkUrl, const QString &linkText);
     QFont saveFont;
     QColor mLinkColor;
@@ -792,7 +792,7 @@ void RichTextComposerControler::slotPasteAsQuotation()
     if (richTextComposer()->hasFocus()) {
         const QString s = QApplication::clipboard()->text();
         if (!s.isEmpty()) {
-            richTextComposer()->insertPlainText(d->addQuotesToText(s));
+            richTextComposer()->insertPlainText(d->addQuotesToText(s, d->richtextComposer->defaultQuoteSign()));
         }
     }
 #endif
@@ -836,6 +836,11 @@ void RichTextComposerControler::slotRemoveQuotes()
 
 void RichTextComposerControler::slotAddQuotes()
 {
+    addQuotes(d->richtextComposer->defaultQuoteSign());
+}
+
+void RichTextComposerControler::addQuotes(const QString &defaultQuote)
+{
     QTextCursor cursor = richTextComposer()->textCursor();
     cursor.beginEditBlock();
     QString selectedText;
@@ -850,18 +855,17 @@ void RichTextComposerControler::slotAddQuotes()
             lastCharacterIsAParagraphChar = true;
         }
     }
-    richTextComposer()->insertPlainText(d->addQuotesToText(selectedText) + (lastCharacterIsAParagraphChar ? QChar::ParagraphSeparator : QChar()));
+    richTextComposer()->insertPlainText(d->addQuotesToText(selectedText, defaultQuote) + (lastCharacterIsAParagraphChar ? QChar::ParagraphSeparator : QChar()));
     cursor.endEditBlock();
 }
 
-QString RichTextComposerControler::RichTextComposerControlerPrivate::addQuotesToText(const QString &inputText)
+QString RichTextComposerControler::RichTextComposerControlerPrivate::addQuotesToText(const QString &inputText, const QString &defaultQuoteSign)
 {
     QString answer = inputText;
-    const QString indentStr = richtextComposer->defaultQuoteSign();
-    answer.replace(QLatin1Char('\n'), QLatin1Char('\n') + indentStr);
+    answer.replace(QLatin1Char('\n'), QLatin1Char('\n') + defaultQuoteSign);
     //cursor.selectText() as QChar::ParagraphSeparator as paragraph separator.
-    answer.replace(QChar::ParagraphSeparator, QLatin1Char('\n') + indentStr);
-    answer.prepend(indentStr);
+    answer.replace(QChar::ParagraphSeparator, QLatin1Char('\n') + defaultQuoteSign);
+    answer.prepend(defaultQuoteSign);
     answer += QLatin1Char('\n');
     return richtextComposer->smartQuote(answer);
 }

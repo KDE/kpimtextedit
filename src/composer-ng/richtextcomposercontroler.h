@@ -62,6 +62,7 @@ public:
     Q_REQUIRED_RESULT QString toWrappedPlainText(QTextDocument *doc) const;
     Q_REQUIRED_RESULT QString toWrappedPlainText() const;
     Q_REQUIRED_RESULT QString toCleanPlainText(const QString &plainText = QString()) const;
+    void addQuotes(const QString &defaultQuote);
 public Q_SLOTS:
     void insertHorizontalRule();
     void alignLeft();
