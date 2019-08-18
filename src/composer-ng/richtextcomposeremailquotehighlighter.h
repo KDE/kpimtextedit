@@ -24,6 +24,12 @@
 #include "kpimtextedit_export.h"
 namespace KPIMTextEdit {
 class RichTextComposer;
+/**
+ * @short A highlighter for email quoting.
+ *
+ * @author Laurent Montel <montel@kde.org>
+ */
+class RichTextComposer;
 class KPIMTEXTEDIT_EXPORT RichTextComposerEmailQuoteHighlighter : public Sonnet::Highlighter
 {
     Q_OBJECT
