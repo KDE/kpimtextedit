@@ -34,6 +34,7 @@ class PlainTextEditor;
 class PlainTextSyntaxSpellCheckingHighlighterPrivate;
 /**
  * @brief The PlainTextSyntaxSpellCheckingHighlighter class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT PlainTextSyntaxSpellCheckingHighlighter : public Sonnet::Highlighter, public KSyntaxHighlighting::AbstractHighlighter
 {

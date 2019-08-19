@@ -30,6 +30,7 @@ class QPlainTextEdit;
 namespace KPIMTextEdit {
 /**
  * @brief The TextEditorCompleter class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT TextEditorCompleter : public QObject
 {

@@ -27,6 +27,7 @@
 namespace KPIMTextEdit {
 /**
  * @brief The EmoticonUnicodeTab class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT EmoticonUnicodeTab : public QTabWidget
 {

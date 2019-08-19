@@ -28,6 +28,7 @@ namespace KPIMTextEdit {
 class SelectSpecialCharDialogPrivate;
 /**
  * @brief The SelectSpecialCharDialog class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT SelectSpecialCharDialog : public QDialog
 {

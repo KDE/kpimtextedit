@@ -29,6 +29,7 @@ class NestedListHelper;
 class RichTextComposerImages;
 /**
  * @brief The RichTextComposerControler class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposerControler : public QObject
 {

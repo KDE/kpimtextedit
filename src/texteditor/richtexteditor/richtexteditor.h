@@ -32,6 +32,7 @@ class SpellCheckDecorator;
 namespace KPIMTextEdit {
 /**
  * @brief The RichTextEditor class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextEditor : public QTextEdit
 {

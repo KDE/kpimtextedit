@@ -29,6 +29,7 @@ class RichTextEditor;
 class RichTextEditorWidgetPrivate;
 /**
  * @brief The RichTextEditorWidget class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextEditorWidget : public QWidget
 {

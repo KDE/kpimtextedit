@@ -29,6 +29,7 @@ class TextToSpeechWidget;
 class TextToSpeechInterfacePrivate;
 /**
  * @brief The TextToSpeechInterface class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT TextToSpeechInterface : public AbstractTextToSpeechInterface
 {

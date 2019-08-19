@@ -29,6 +29,7 @@ namespace KPIMTextEdit {
  * This is a widget with thin border and rounded corners that displays a given
  * text along as an icon. It's meant to be used for displaying messages to the
  * user by placing this above other widgets.
+ * @author Laurent Montel <montel@kde.org>
  */
 class TextMessageIndicator : public QWidget
 {

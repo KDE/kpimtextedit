@@ -29,6 +29,7 @@ namespace KPIMTextEdit {
 class RichTextEditFindBarPrivate;
 /**
  * @brief The RichTextEditFindBar class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextEditFindBar : public TextEditFindBarBase
 {

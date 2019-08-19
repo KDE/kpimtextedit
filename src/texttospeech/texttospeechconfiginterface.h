@@ -26,6 +26,7 @@ class QTextToSpeech;
 namespace KPIMTextEdit {
 /**
  * @brief The TextToSpeechConfigInterface class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT TextToSpeechConfigInterface : public AbstractTextToSpeechConfigInterface
 {

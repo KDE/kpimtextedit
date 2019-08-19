@@ -27,6 +27,7 @@ class RichTextComposerWidgetPrivate;
 class RichTextComposer;
 /**
  * @brief The RichTextComposerWidget class
+ * @author Laurent Montel <montel@kde.org>
  * @since 5.2
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposerWidget : public QWidget

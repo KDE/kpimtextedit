@@ -28,6 +28,7 @@ class QTextToSpeech;
 namespace KPIMTextEdit {
 /**
  * @brief The TextToSpeech class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT TextToSpeech : public QObject
 {

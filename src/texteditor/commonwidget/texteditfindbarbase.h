@@ -31,6 +31,7 @@ class TextFindWidget;
 class TextReplaceWidget;
 /**
  * @brief The TextEditFindBarBase class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT TextEditFindBarBase : public QWidget
 {

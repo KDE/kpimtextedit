@@ -28,6 +28,7 @@ namespace KPIMTextEdit {
 class TextToSpeechActionsPrivate;
 /**
  * @brief The TextToSpeechActions class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT TextToSpeechActions : public QObject
 {

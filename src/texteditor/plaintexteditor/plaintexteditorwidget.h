@@ -28,6 +28,7 @@ class PlainTextEditor;
 class PlainTextEditorWidgetPrivate;
 /**
  * @brief The PlainTextEditorWidget class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT PlainTextEditorWidget : public QWidget
 {

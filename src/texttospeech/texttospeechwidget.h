@@ -28,6 +28,7 @@ class AbstractTextToSpeechInterface;
 class TextToSpeechWidgetPrivate;
 /**
  * @brief The TextToSpeechWidget class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT TextToSpeechWidget : public QWidget
 {

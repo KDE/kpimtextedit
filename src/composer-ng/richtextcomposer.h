@@ -32,6 +32,7 @@ class RichTextExternalComposer;
 class RichTextComposerEmailQuoteHighlighter;
 /**
  * @brief The RichTextComposer class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposer : public KPIMTextEdit::RichTextEditor
 {

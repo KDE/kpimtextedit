@@ -30,6 +30,7 @@ namespace KPIMTextEdit {
 class RichTextComposerControler;
 /**
  * @brief The RichTextComposerActions class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposerActions : public QObject
 {

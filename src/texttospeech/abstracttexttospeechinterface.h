@@ -24,6 +24,7 @@
 namespace KPIMTextEdit {
 /**
  * @brief The AbstractTextToSpeechInterface class
+ * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT AbstractTextToSpeechInterface : public QObject
 {
