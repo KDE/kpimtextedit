@@ -22,6 +22,9 @@
 #include "kpimtextedit_export.h"
 #include <QObject>
 namespace KPIMTextEdit {
+/**
+ * @brief The AbstractTextToSpeechInterface class
+ */
 class KPIMTEXTEDIT_EXPORT AbstractTextToSpeechInterface : public QObject
 {
     Q_OBJECT

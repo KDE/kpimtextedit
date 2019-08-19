@@ -27,6 +27,9 @@
 class QTextEdit;
 namespace KPIMTextEdit {
 class RichTextEditFindBarPrivate;
+/**
+ * @brief The RichTextEditFindBar class
+ */
 class KPIMTEXTEDIT_EXPORT RichTextEditFindBar : public TextEditFindBarBase
 {
     Q_OBJECT

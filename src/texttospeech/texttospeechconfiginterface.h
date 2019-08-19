@@ -24,6 +24,9 @@
 
 class QTextToSpeech;
 namespace KPIMTextEdit {
+/**
+ * @brief The TextToSpeechConfigInterface class
+ */
 class KPIMTEXTEDIT_EXPORT TextToSpeechConfigInterface : public AbstractTextToSpeechConfigInterface
 {
     Q_OBJECT

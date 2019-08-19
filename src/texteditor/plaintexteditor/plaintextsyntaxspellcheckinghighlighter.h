@@ -32,7 +32,9 @@ class Format;
 namespace KPIMTextEdit {
 class PlainTextEditor;
 class PlainTextSyntaxSpellCheckingHighlighterPrivate;
-
+/**
+ * @brief The PlainTextSyntaxSpellCheckingHighlighter class
+ */
 class KPIMTEXTEDIT_EXPORT PlainTextSyntaxSpellCheckingHighlighter : public Sonnet::Highlighter, public KSyntaxHighlighting::AbstractHighlighter
 {
 public:

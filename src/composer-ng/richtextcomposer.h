@@ -30,6 +30,9 @@ class RichTextComposerControler;
 class RichTextComposerActions;
 class RichTextExternalComposer;
 class RichTextComposerEmailQuoteHighlighter;
+/**
+ * @brief The RichTextComposer class
+ */
 class KPIMTEXTEDIT_EXPORT RichTextComposer : public KPIMTextEdit::RichTextEditor
 {
     Q_OBJECT

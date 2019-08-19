@@ -20,6 +20,9 @@
 #ifndef TEXTMESSAGEINDICATOR_H
 #define TEXTMESSAGEINDICATOR_H
 
+#include <QWidget>
+class QTimer;
+namespace KPIMTextEdit {
 /**
  * @short A widget that displays messages in the top-left corner.
  *
@@ -27,9 +30,6 @@
  * text along as an icon. It's meant to be used for displaying messages to the
  * user by placing this above other widgets.
  */
-#include <QWidget>
-class QTimer;
-namespace KPIMTextEdit {
 class TextMessageIndicator : public QWidget
 {
     Q_OBJECT

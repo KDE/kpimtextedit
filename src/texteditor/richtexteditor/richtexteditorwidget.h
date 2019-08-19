@@ -27,6 +27,9 @@
 namespace KPIMTextEdit {
 class RichTextEditor;
 class RichTextEditorWidgetPrivate;
+/**
+ * @brief The RichTextEditorWidget class
+ */
 class KPIMTEXTEDIT_EXPORT RichTextEditorWidget : public QWidget
 {
     Q_OBJECT

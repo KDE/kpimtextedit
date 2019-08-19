@@ -26,6 +26,9 @@
 
 namespace KPIMTextEdit {
 class RichTextComposer;
+/**
+ * @brief The RichTextExternalComposer class
+ */
 class KPIMTEXTEDIT_EXPORT RichTextExternalComposer : public QObject
 {
     Q_OBJECT

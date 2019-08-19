@@ -25,6 +25,9 @@
 
 namespace KPIMTextEdit {
 class TextGoToLineWidgetPrivate;
+/**
+ * @brief The TextGoToLineWidget class
+ */
 class KPIMTEXTEDIT_EXPORT TextGoToLineWidget : public QWidget
 {
     Q_OBJECT

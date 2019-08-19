@@ -26,6 +26,9 @@
 class QAction;
 namespace KPIMTextEdit {
 class TextToSpeechActionsPrivate;
+/**
+ * @brief The TextToSpeechActions class
+ */
 class KPIMTEXTEDIT_EXPORT TextToSpeechActions : public QObject
 {
     Q_OBJECT

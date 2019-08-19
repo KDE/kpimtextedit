@@ -29,6 +29,9 @@
 namespace KPIMTextEdit {
 class TextFindWidget;
 class TextReplaceWidget;
+/**
+ * @brief The TextEditFindBarBase class
+ */
 class KPIMTEXTEDIT_EXPORT TextEditFindBarBase : public QWidget
 {
     Q_OBJECT

@@ -25,6 +25,9 @@
 
 namespace KPIMTextEdit {
 class RichTextComposer;
+/**
+ * @brief The RichTextComposerEmailQuoteDecorator class
+ */
 class KPIMTEXTEDIT_EXPORT RichTextComposerEmailQuoteDecorator : public Sonnet::SpellCheckDecorator
 {
 public:

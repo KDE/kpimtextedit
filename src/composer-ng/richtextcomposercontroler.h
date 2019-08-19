@@ -27,6 +27,9 @@ namespace KPIMTextEdit {
 class RichTextComposer;
 class NestedListHelper;
 class RichTextComposerImages;
+/**
+ * @brief The RichTextComposerControler class
+ */
 class KPIMTEXTEDIT_EXPORT RichTextComposerControler : public QObject
 {
     Q_OBJECT

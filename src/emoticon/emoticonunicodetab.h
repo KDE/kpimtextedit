@@ -25,6 +25,9 @@
 #include "kpimtextedit_export.h"
 
 namespace KPIMTextEdit {
+/**
+ * @brief The EmoticonUnicodeTab class
+ */
 class KPIMTEXTEDIT_EXPORT EmoticonUnicodeTab : public QTabWidget
 {
     Q_OBJECT

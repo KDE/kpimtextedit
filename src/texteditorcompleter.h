@@ -28,6 +28,9 @@ class QTextEdit;
 class QPlainTextEdit;
 
 namespace KPIMTextEdit {
+/**
+ * @brief The TextEditorCompleter class
+ */
 class KPIMTEXTEDIT_EXPORT TextEditorCompleter : public QObject
 {
     Q_OBJECT

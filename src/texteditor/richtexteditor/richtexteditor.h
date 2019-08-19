@@ -30,6 +30,9 @@ class Highlighter;
 class SpellCheckDecorator;
 }
 namespace KPIMTextEdit {
+/**
+ * @brief The RichTextEditor class
+ */
 class KPIMTEXTEDIT_EXPORT RichTextEditor : public QTextEdit
 {
     Q_OBJECT

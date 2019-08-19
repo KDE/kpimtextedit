@@ -26,7 +26,9 @@
 
 namespace KPIMTextEdit {
 class SelectSpecialCharDialogPrivate;
-
+/**
+ * @brief The SelectSpecialCharDialog class
+ */
 class KPIMTEXTEDIT_EXPORT SelectSpecialCharDialog : public QDialog
 {
     Q_OBJECT

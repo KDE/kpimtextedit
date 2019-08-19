@@ -26,6 +26,9 @@
 namespace KPIMTextEdit {
 class AbstractTextToSpeechInterface;
 class TextToSpeechWidgetPrivate;
+/**
+ * @brief The TextToSpeechWidget class
+ */
 class KPIMTEXTEDIT_EXPORT TextToSpeechWidget : public QWidget
 {
     Q_OBJECT
