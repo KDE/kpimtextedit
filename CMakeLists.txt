@@ -14,15 +14,16 @@ if (POLICY CMP0053)
 endif()
 
 
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
+
 include(GenerateExportHeader)
 include(ECMGenerateHeaders)
 include(ECMGeneratePriFile)
 
 include(ECMSetupVersion)
 include(FeatureSummary)
-include(KDEInstallDirs)
-include(KDECMakeSettings)
-include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMAddTests)
 include(ECMQtDeclareLoggingCategory)
 
