@@ -340,7 +340,7 @@ void RichTextComposer::evaluateReturnKeySupport(QKeyEvent *event)
                        && newLine[leadingWhiteSpaceCount].isSpace()) {
                     ++leadingWhiteSpaceCount;
                 }
-                newLine = newLine.replace(0, leadingWhiteSpaceCount, lineText.left(bot));
+                newLine.replace(0, leadingWhiteSpaceCount, lineText.left(bot));
                 cursor.insertText(newLine);
                 //cursor.setPosition( cursor.position() + 2 );
                 cursor.movePosition(QTextCursor::StartOfBlock);
@@ -517,18 +517,18 @@ void RichTextComposer::insertFromMimeData(const QMimeData *source)
     if (textMode() == RichTextComposer::Rich) {
         if (source->hasText()) {
             const QString sourceText = source->text();
-            if (sourceText.startsWith(QStringLiteral("http://"))
-                || sourceText.startsWith(QStringLiteral("https://"))
-                || sourceText.startsWith(QStringLiteral("ftps://"))
-                || sourceText.startsWith(QStringLiteral("ftp://"))
-                || sourceText.startsWith(QStringLiteral("mailto:"))
-                || sourceText.startsWith(QStringLiteral("smb://"))
-                || sourceText.startsWith(QStringLiteral("file://"))
-                || sourceText.startsWith(QStringLiteral("webdavs://"))
-                || sourceText.startsWith(QStringLiteral("imaps://"))
-                || sourceText.startsWith(QStringLiteral("sftp://"))
-                || sourceText.startsWith(QStringLiteral("fish://"))
-                || sourceText.startsWith(QStringLiteral("tel:"))
+            if (sourceText.startsWith(QLatin1String("http://"))
+                || sourceText.startsWith(QLatin1String("https://"))
+                || sourceText.startsWith(QLatin1String("ftps://"))
+                || sourceText.startsWith(QLatin1String("ftp://"))
+                || sourceText.startsWith(QLatin1String("mailto:"))
+                || sourceText.startsWith(QLatin1String("smb://"))
+                || sourceText.startsWith(QLatin1String("file://"))
+                || sourceText.startsWith(QLatin1String("webdavs://"))
+                || sourceText.startsWith(QLatin1String("imaps://"))
+                || sourceText.startsWith(QLatin1String("sftp://"))
+                || sourceText.startsWith(QLatin1String("fish://"))
+                || sourceText.startsWith(QLatin1String("tel:"))
                 ) {
                 insertHtml(QStringLiteral("<a href=\"%1\">%1</a> ").arg(sourceText));
                 return;
