@@ -157,7 +157,7 @@ QString TextUtils::flowText(QString &wrappedText, const QString &indent, int max
 
         // Strip leading whitespace of new lines, since that looks strange
         if (!result.isEmpty() && line.startsWith(QLatin1Char(' '))) {
-            line = line.mid(1);
+            line.remove(0, 1);
         }
 
         result += indent + line + QLatin1Char('\n');

@@ -81,7 +81,7 @@ void RichTextComposerEmailQuoteHighlighter::highlightBlock(const QString &text)
                  replace(QLatin1Char('|'), QLatin1Char('>'));
 
     while (simplified.startsWith(QLatin1String(">>>>"))) {
-        simplified = simplified.mid(3);
+        simplified.remove(0, 3);
     }
 
     if (simplified.startsWith(QLatin1String(">>>"))) {
