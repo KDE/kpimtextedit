@@ -715,9 +715,9 @@ bool RichTextEditor::event(QEvent *ev)
 void RichTextEditor::wheelEvent(QWheelEvent *event)
 {
     if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
-        if (event->delta() > 0) {
+        if (event->angleDelta().y() > 0) {
             zoomIn();
-        } else if (event->delta() < 0) {
+        } else if (event->angleDelta().y() < 0) {
             zoomOut();
         }
         event->accept();
