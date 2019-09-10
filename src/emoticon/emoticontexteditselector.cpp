@@ -21,7 +21,6 @@
 #include "emoticontexteditselector.h"
 #include "emoticonunicodetab.h"
 #include "textutils.h"
-#include <kemoticonstheme.h>
 
 #include <QHBoxLayout>
 
