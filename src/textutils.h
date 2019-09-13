@@ -55,31 +55,6 @@ KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT bool containsFormatting(const QTextDocumen
    *            "> this is a test."
    */
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QString flowText(QString &text, const QString &indent, int maxLength);
-
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeFullEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeFacesEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeAnimalsEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeEmotionEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeBodyEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeTransportEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeEventEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QStringList unicodeFlagsEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeWeatherEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeFoodEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeSportEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeTimeEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeGameEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeClothingEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeSoundMusicEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeComputerEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeSymbolsEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeFaceEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeFantasyEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodePlantEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeTravelEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeBookPaperEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeBookToolsEmoji();
-KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QList<uint> unicodeScienceEmoji();
 }
 }
 

@@ -45,55 +45,37 @@ void EmoticonUnicodeTab::loadEmoticons()
 
     createPlainTextEmoticonTab(i18n("Animals"), EmoticonUnicodeUtils::unicodeAnimalsEmoji());
 
-    createPlainTextEmoticonTab(i18n("Emotions"), TextUtils::unicodeEmotionEmoji());
-    createPlainTextEmoticonTab(i18n("Body"), TextUtils::unicodeBodyEmoji());
+    createPlainTextEmoticonTab(i18n("Emotions"), EmoticonUnicodeUtils::unicodeEmotionEmoji());
+    createPlainTextEmoticonTab(i18n("Body"), EmoticonUnicodeUtils::unicodeBodyEmoji());
     createPlainTextEmoticonTab(i18n("Transports"), EmoticonUnicodeUtils::unicodeTransportEmoji());
     createPlainTextEmoticonTab(i18n("Events"), EmoticonUnicodeUtils::unicodeEventEmoji());
     createPlainTextEmoticonTab(i18n("Flags"), EmoticonUnicodeUtils::unicodeFlagsEmoji());
     createPlainTextEmoticonTab(i18n("Weather"), EmoticonUnicodeUtils::unicodeWeatherEmoji());
     createPlainTextEmoticonTab(i18n("Foods"), EmoticonUnicodeUtils::unicodeFoodEmoji());
-    createPlainTextEmoticonTab(i18n("Sports"), TextUtils::unicodeSportEmoji());
+    createPlainTextEmoticonTab(i18n("Sports"), EmoticonUnicodeUtils::unicodeSportEmoji());
     createPlainTextEmoticonTab(i18n("Time"), EmoticonUnicodeUtils::unicodeTimeEmoji());
     createPlainTextEmoticonTab(i18n("Game"), EmoticonUnicodeUtils::unicodeGameEmoji());
     createPlainTextEmoticonTab(i18n("Clothing"), EmoticonUnicodeUtils::unicodeClothingEmoji());
     createPlainTextEmoticonTab(i18n("Music"), EmoticonUnicodeUtils::unicodeSoundMusicEmoji());
     createPlainTextEmoticonTab(i18n("Computer"), EmoticonUnicodeUtils::unicodeComputerEmoji());
-    createPlainTextEmoticonTab(i18n("Symbols"), TextUtils::unicodeSymbolsEmoji());
-    createPlainTextEmoticonTab(i18n("Fantasy"), TextUtils::unicodeFantasyEmoji());
+    createPlainTextEmoticonTab(i18n("Symbols"), EmoticonUnicodeUtils::unicodeSymbolsEmoji());
     createPlainTextEmoticonTab(i18n("Plant"), EmoticonUnicodeUtils::unicodePlantEmoji());
-    createPlainTextEmoticonTab(i18n("Travel"), TextUtils::unicodeTravelEmoji());
     createPlainTextEmoticonTab(i18n("Book"), EmoticonUnicodeUtils::unicodeBookPaperEmoji());
-    createPlainTextEmoticonTab(i18n("Book Tools"), TextUtils::unicodeBookToolsEmoji());
     createPlainTextEmoticonTab(i18n("Science"), EmoticonUnicodeUtils::unicodeScienceEmoji());
     createPlainTextEmoticonTab(i18n("Person"), EmoticonUnicodeUtils::unicodePersonEmoji());
-}
-
-void EmoticonUnicodeTab::createPlainTextEmoticonTab(const QString &str, const QList<uint> &emoticons)
-{
-    if (!emoticons.isEmpty()) {
-        EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
-        connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
-        selector->setEmoticons(emoticons);
-        const QString strTab = QString::fromUcs4(&emoticons.at(0), 1);
-        const int index = addTab(selector, strTab);
-        if (!str.isEmpty()) {
-            setTabToolTip(index, str);
-        }
-    }
-}
-
-void EmoticonUnicodeTab::createPlainTextEmoticonTab(const QString &str, const QStringList &emoticons)
-{
-    if (!emoticons.isEmpty()) {
-        EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
-        connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
-        selector->setEmoticons(emoticons);
-        const QString strTab = emoticons.first();
-        const int index = addTab(selector, strTab);
-        if (!str.isEmpty()) {
-            setTabToolTip(index, str);
-        }
-    }
+    createPlainTextEmoticonTab(i18n("Place"), EmoticonUnicodeUtils::unicodePlaceEmoji());
+    createPlainTextEmoticonTab(i18n("Money"), EmoticonUnicodeUtils::unicodeMoneyEmoji());
+    createPlainTextEmoticonTab(i18n("Mail"), EmoticonUnicodeUtils::unicodeMailEmoji());
+    createPlainTextEmoticonTab(i18n("Office"), EmoticonUnicodeUtils::unicodeOfficeEmoji());
+    createPlainTextEmoticonTab(i18n("Tools"), EmoticonUnicodeUtils::unicodeToolsEmoji());
+    createPlainTextEmoticonTab(i18n("Phone"), EmoticonUnicodeUtils::unicodePhoneEmoji());
+    createPlainTextEmoticonTab(i18n("Lock"), EmoticonUnicodeUtils::unicodeLockEmoji());
+    createPlainTextEmoticonTab(i18n("Drink"), EmoticonUnicodeUtils::unicodeDrinkEmoji());
+    createPlainTextEmoticonTab(i18n("Video"), EmoticonUnicodeUtils::unicodeVideoEmoji());
+    createPlainTextEmoticonTab(i18n("House"), EmoticonUnicodeUtils::unicodeHouseEmoji());
+    createPlainTextEmoticonTab(i18n("Dishware"), EmoticonUnicodeUtils::unicodeDishwareEmoji());
+    createPlainTextEmoticonTab(i18n("Hotel"), EmoticonUnicodeUtils::unicodeHotelEmoji());
+    createPlainTextEmoticonTab(i18n("Award-Medal"), EmoticonUnicodeUtils::unicodeAwardMedalEmoji());
 }
 
 void EmoticonUnicodeTab::createPlainTextEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons)

@@ -14,15 +14,6 @@ target_link_libraries(slidecontainer_gui
     )
 
 
-add_executable(showemojiunicode_gui showemojiunicode_gui.cpp)
-set(showemojiunicode_gui_LIBS KF5PimTextEdit Qt5::Widgets)
-target_link_libraries(showemojiunicode_gui ${showemojiunicode_gui_LIBS})
-
-
-add_executable(showemoticonlistwidgetselector_gui showemoticonlistwidgetselector_gui.cpp)
-set(showemoticonlistwidgetselector_gui_LIBS KF5PimTextEdit Qt5::Widgets)
-target_link_libraries(showemoticonlistwidgetselector_gui ${showemoticonlistwidgetselector_gui_LIBS})
-
 add_executable(showemoticonunicodetab_gui showemoticonunicodetab_gui.cpp)
 set(showemoticonunicodetab_gui_LIBS KF5PimTextEdit Qt5::Widgets)
 target_link_libraries(showemoticonunicodetab_gui ${showemoticonunicodetab_gui_LIBS})

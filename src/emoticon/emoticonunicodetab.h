@@ -43,8 +43,6 @@ Q_SIGNALS:
     void itemSelected(const QString &);
 
 private:
-    void createPlainTextEmoticonTab(const QString &str, const QList<uint> &emoticons);
-    void createPlainTextEmoticonTab(const QString &str, const QStringList &emoticons);
     void createPlainTextEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons);
 };
 }

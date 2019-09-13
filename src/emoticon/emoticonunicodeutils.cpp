@@ -407,7 +407,11 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeFaceE
         {QStringLiteral(":kissing_cat:"), QString::fromUtf16(u"\U0001F63D")},
         {QStringLiteral(":weary_cat:"), QString::fromUtf16(u"\U0001F640")},
         {QStringLiteral(":crying_cat:"), QString::fromUtf16(u"\U0001F63F")},
-        {QStringLiteral(":pouting_cat:"), QString::fromUtf16(u"\U0001F63E")}};
+        {QStringLiteral(":pouting_cat:"), QString::fromUtf16(u"\U0001F63E")},
+        {QStringLiteral(":see-no-evil_monkey:"), QString::fromUtf16(u"\U0001F648")},
+        {QStringLiteral(":hear-no-evil_monkey:"), QString::fromUtf16(u"\U0001F649")},
+        {QStringLiteral(":speak-no-evil_monkey:"), QString::fromUtf16(u"\U0001F64A")},
+    };
     return lst;
 }
 
@@ -1294,23 +1298,671 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePerso
     return lst;
 }
 
-#if 0
-QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeTransportEmoji()
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePlaceEmoji()
 {
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":globe_showing_Europe-Africa:"), QString::fromUtf16(u"\U0001F30D")},
+        {QStringLiteral(":globe_showing_Americas:"), QString::fromUtf16(u"\U0001F30E")},
+        {QStringLiteral(":globe_showing_Asia-Australia:"), QString::fromUtf16(u"\U0001F30F")},
+        {QStringLiteral(":globe_with_meridians:"), QString::fromUtf16(u"\U0001F310")},
+        {QStringLiteral(":world_map:"), QString::fromUtf16(u"\U0001F5FA")},
+        {QStringLiteral(":map_of_Japan:"), QString::fromUtf16(u"\U0001F5FE")},
+        {QStringLiteral(":compass:"), QString::fromUtf16(u"\U0001F9ED")},
+        {QStringLiteral(":snow-capped_mountain:"), QString::fromUtf16(u"\U0001F3D4")},
+        {QStringLiteral(":mountain:"), QString::fromUtf16(u"\U000026F0")},
+        {QStringLiteral(":volcano:"), QString::fromUtf16(u"\U0001F30B")},
+        {QStringLiteral(":mount_fuji:"), QString::fromUtf16(u"\U0001F5FB")},
+        {QStringLiteral(":camping:"), QString::fromUtf16(u"\U0001F3D5")},
+        {QStringLiteral(":beach_with_umbrella:"), QString::fromUtf16(u"\U0001F3D6")},
+        {QStringLiteral(":desert:"), QString::fromUtf16(u"\U0001F3DC")},
+        {QStringLiteral(":desert_island:"), QString::fromUtf16(u"\U0001F3DD")},
+        {QStringLiteral(":national_park:"), QString::fromUtf16(u"\U0001F3DE")},
+        {QStringLiteral(":stadium:"), QString::fromUtf16(u"\U0001F3DF")},
+        {QStringLiteral(":classical_building:"), QString::fromUtf16(u"\U0001F3DB")},
+        {QStringLiteral(":building_construction:"), QString::fromUtf16(u"\U0001F3D7")},
+        {QStringLiteral(":brick:"), QString::fromUtf16(u"\U0001F9F1")},
+        {QStringLiteral(":houses:"), QString::fromUtf16(u"\U0001F3D8")},
+        {QStringLiteral(":derelict_house:"), QString::fromUtf16(u"\U0001F3DA")},
+        {QStringLiteral(":house:"), QString::fromUtf16(u"\U0001F3E0")},
+        {QStringLiteral(":house_with_garden:"), QString::fromUtf16(u"\U0001F3E1")},
+        {QStringLiteral(":office_building:"), QString::fromUtf16(u"\U0001F3E2")},
+        {QStringLiteral(":Japanese_post_office:"), QString::fromUtf16(u"\U0001F3E3")},
+        {QStringLiteral(":post_office:"), QString::fromUtf16(u"\U0001F3E4")},
+        {QStringLiteral(":hospital:"), QString::fromUtf16(u"\U0001F3E5")},
+        {QStringLiteral(":bank:"), QString::fromUtf16(u"\U0001F3E6")},
+        {QStringLiteral(":hotel:"), QString::fromUtf16(u"\U0001F3E8")},
+        {QStringLiteral(":love_hotel:"), QString::fromUtf16(u"\U0001F3E9")},
+        {QStringLiteral(":convenience_store:"), QString::fromUtf16(u"\U0001F3EA")},
+        {QStringLiteral(":school:"), QString::fromUtf16(u"\U0001F3EB")},
+        {QStringLiteral(":department_store:"), QString::fromUtf16(u"\U0001F3EC")},
+        {QStringLiteral(":factory:"), QString::fromUtf16(u"\U0001F3ED")},
+        {QStringLiteral(":Japanese_castle:"), QString::fromUtf16(u"\U0001F3EF")},
+        {QStringLiteral(":castle:"), QString::fromUtf16(u"\U0001F3F0")},
+        {QStringLiteral(":wedding:"), QString::fromUtf16(u"\U0001F492")},
+        {QStringLiteral(":Tokyo_tower:"), QString::fromUtf16(u"\U0001F5FC")},
+        {QStringLiteral(":Statue_of_Liberty:"), QString::fromUtf16(u"\U0001F5FD")},
+        {QStringLiteral(":church:"), QString::fromUtf16(u"\U000026EA")},
+        {QStringLiteral(":mosque:"), QString::fromUtf16(u"\U0001F54C")},
+        {QStringLiteral(":hindu_temple:"), QString::fromUtf16(u"\U0001F6D5")},
+        {QStringLiteral(":synagogue:"), QString::fromUtf16(u"\U0001F54D")},
+        {QStringLiteral(":shinto_shrine:"), QString::fromUtf16(u"\U000026E9")},
+        {QStringLiteral(":kaaba:"), QString::fromUtf16(u"\U0001F54B")},
+        {QStringLiteral(":fountain:"), QString::fromUtf16(u"\U000026F2")},
+        {QStringLiteral(":tent:"), QString::fromUtf16(u"\U000026FA")},
+        {QStringLiteral(":foggy:"), QString::fromUtf16(u"\U0001F301")},
+        {QStringLiteral(":night_with_stars:"), QString::fromUtf16(u"\U0001F303")},
+        {QStringLiteral(":cityscape:"), QString::fromUtf16(u"\U0001F3D9")},
+        {QStringLiteral(":sunrise_over_mountains:"), QString::fromUtf16(u"\U0001F304")},
+        {QStringLiteral(":sunrise:"), QString::fromUtf16(u"\U0001F305")},
+        {QStringLiteral(":cityscape_at_dusk:"), QString::fromUtf16(u"\U0001F306")},
+        {QStringLiteral(":sunset:"), QString::fromUtf16(u"\U0001F307")},
+        {QStringLiteral(":bridge_at_night:"), QString::fromUtf16(u"\U0001F309")},
+        {QStringLiteral(":hot_springs:"), QString::fromUtf16(u"\U00002668")},
+        {QStringLiteral(":carousel_horse:"), QString::fromUtf16(u"\U0001F3A0")},
+        {QStringLiteral(":ferris_wheel:"), QString::fromUtf16(u"\U0001F3A1")},
+        {QStringLiteral(":roller_coaster:"), QString::fromUtf16(u"\U0001F3A2")},
+        {QStringLiteral(":barber_pole:"), QString::fromUtf16(u"\U0001F488")},
+        {QStringLiteral(":circus_tent:"), QString::fromUtf16(u"\U0001F3AA")},
+
     };
     return lst;
 }
-QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeTransportEmoji()
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSymbolsEmoji()
 {
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":ATM_sign:"), QString::fromUtf16(u"\U0001F3E7")},
+        {QStringLiteral(":litter_in_bin_sign:"), QString::fromUtf16(u"\U0001F6AE")},
+        {QStringLiteral(":potable_water:"), QString::fromUtf16(u"\U0001F6B0")},
+        {QStringLiteral(":wheelchair_symbol:"), QString::fromUtf16(u"\U0000267F")},
+        {QStringLiteral(":men’s_room:"), QString::fromUtf16(u"\U0001F6B9")},
+        {QStringLiteral(":women’s_room:"), QString::fromUtf16(u"\U0001F6BA")},
+        {QStringLiteral(":restroom:"), QString::fromUtf16(u"\U0001F6BB")},
+        {QStringLiteral(":baby_symbol:"), QString::fromUtf16(u"\U0001F6BC")},
+        {QStringLiteral(":water_closet:"), QString::fromUtf16(u"\U0001F6BE")},
+        {QStringLiteral(":passport_control:"), QString::fromUtf16(u"\U0001F6C2")},
+        {QStringLiteral(":customs:"), QString::fromUtf16(u"\U0001F6C3")},
+        {QStringLiteral(":baggage_claim:"), QString::fromUtf16(u"\U0001F6C4")},
+        {QStringLiteral(":left_luggage:"), QString::fromUtf16(u"\U0001F6C5")},
+        {QStringLiteral(":warning:"), QString::fromUtf16(u"\U000026A0")},
+        {QStringLiteral(":children_crossing:"), QString::fromUtf16(u"\U0001F6B8")},
+        {QStringLiteral(":no_entry:"), QString::fromUtf16(u"\U000026D4")},
+        {QStringLiteral(":prohibited:"), QString::fromUtf16(u"\U0001F6AB")},
+        {QStringLiteral(":no_bicycles:"), QString::fromUtf16(u"\U0001F6B3")},
+        {QStringLiteral(":no_smoking:"), QString::fromUtf16(u"\U0001F6AD")},
+        {QStringLiteral(":no_littering:"), QString::fromUtf16(u"\U0001F6AF")},
+        {QStringLiteral(":non-potable_water:"), QString::fromUtf16(u"\U0001F6B1")},
+        {QStringLiteral(":no_pedestrians:"), QString::fromUtf16(u"\U0001F6B7")},
+        {QStringLiteral(":no_mobile_phones:"), QString::fromUtf16(u"\U0001F4F5")},
+        {QStringLiteral(":no_one_under_eighteen:"), QString::fromUtf16(u"\U0001F51E")},
+        {QStringLiteral(":radioactive:"), QString::fromUtf16(u"\U00002622")},
+        {QStringLiteral(":biohazard:"), QString::fromUtf16(u"\U00002623")},
+        {QStringLiteral(":up_arrow:"), QString::fromUtf16(u"\U00002B06")},
+        {QStringLiteral(":up-right_arrow:"), QString::fromUtf16(u"\U00002197")},
+        {QStringLiteral(":right_arrow:"), QString::fromUtf16(u"\U000027A1")},
+        {QStringLiteral(":down-right_arrow:"), QString::fromUtf16(u"\U00002198")},
+        {QStringLiteral(":down_arrow:"), QString::fromUtf16(u"\U00002B07")},
+        {QStringLiteral(":down-left_arrow:"), QString::fromUtf16(u"\U00002199")},
+        {QStringLiteral(":left_arrow:"), QString::fromUtf16(u"\U00002B05")},
+        {QStringLiteral(":up-left_arrow:"), QString::fromUtf16(u"\U00002196")},
+        {QStringLiteral(":up-down_arrow:"), QString::fromUtf16(u"\U00002195")},
+        {QStringLiteral(":left-right_arrow:"), QString::fromUtf16(u"\U00002194")},
+        {QStringLiteral(":right_arrow_curving_left:"), QString::fromUtf16(u"\U000021A9")},
+        {QStringLiteral(":left_arrow_curving_right:"), QString::fromUtf16(u"\U000021AA")},
+        {QStringLiteral(":right_arrow_curving_up:"), QString::fromUtf16(u"\U00002934")},
+        {QStringLiteral(":right_arrow_curving_down:"), QString::fromUtf16(u"\U00002935")},
+        {QStringLiteral(":clockwise_vertical_arrows:"), QString::fromUtf16(u"\U0001F503")},
+        {QStringLiteral(":counterclockwise_arrows_button:"), QString::fromUtf16(u"\U0001F504")},
+        {QStringLiteral(":BACK_arrow:"), QString::fromUtf16(u"\U0001F519")},
+        {QStringLiteral(":END_arrow:"), QString::fromUtf16(u"\U0001F51A")},
+        {QStringLiteral(":ON!_arrow:"), QString::fromUtf16(u"\U0001F51B")},
+        {QStringLiteral(":SOON_arrow:"), QString::fromUtf16(u"\U0001F51C")},
+        {QStringLiteral(":TOP_arrow:"), QString::fromUtf16(u"\U0001F51D")},
+        {QStringLiteral(":place_of_worship:"), QString::fromUtf16(u"\U0001F6D0")},
+        {QStringLiteral(":atom_symbol:"), QString::fromUtf16(u"\U0000269B")},
+        {QStringLiteral(":om:"), QString::fromUtf16(u"\U0001F549")},
+        {QStringLiteral(":star_of_David:"), QString::fromUtf16(u"\U00002721")},
+        {QStringLiteral(":wheel_of_dharma:"), QString::fromUtf16(u"\U00002638")},
+        {QStringLiteral(":yin_yang:"), QString::fromUtf16(u"\U0000262F")},
+        {QStringLiteral(":latin_cross:"), QString::fromUtf16(u"\U0000271D")},
+        {QStringLiteral(":orthodox_cross:"), QString::fromUtf16(u"\U00002626")},
+        {QStringLiteral(":star_and_crescent:"), QString::fromUtf16(u"\U0000262A")},
+        {QStringLiteral(":peace_symbol:"), QString::fromUtf16(u"\U0000262E")},
+        {QStringLiteral(":menorah:"), QString::fromUtf16(u"\U0001F54E")},
+        {QStringLiteral(":dotted_six-pointed_star:"), QString::fromUtf16(u"\U0001F52F")},
+        {QStringLiteral(":Aries:"), QString::fromUtf16(u"\U00002648")},
+        {QStringLiteral(":Taurus:"), QString::fromUtf16(u"\U00002649")},
+        {QStringLiteral(":Gemini:"), QString::fromUtf16(u"\U0000264A")},
+        {QStringLiteral(":Cancer:"), QString::fromUtf16(u"\U0000264B")},
+        {QStringLiteral(":Leo:"), QString::fromUtf16(u"\U0000264C")},
+        {QStringLiteral(":Virgo:"), QString::fromUtf16(u"\U0000264D")},
+        {QStringLiteral(":Libra:"), QString::fromUtf16(u"\U0000264E")},
+        {QStringLiteral(":Scorpio:"), QString::fromUtf16(u"\U0000264F")},
+        {QStringLiteral(":Sagittarius:"), QString::fromUtf16(u"\U00002650")},
+        {QStringLiteral(":Capricorn:"), QString::fromUtf16(u"\U00002651")},
+        {QStringLiteral(":Aquarius:"), QString::fromUtf16(u"\U00002652")},
+        {QStringLiteral(":Pisces:"), QString::fromUtf16(u"\U00002653")},
+        {QStringLiteral(":Ophiuchus:"), QString::fromUtf16(u"\U000026CE")},
+        {QStringLiteral(":shuffle_tracks_button:"), QString::fromUtf16(u"\U0001F500")},
+        {QStringLiteral(":repeat_button:"), QString::fromUtf16(u"\U0001F501")},
+        {QStringLiteral(":repeat_single_button:"), QString::fromUtf16(u"\U0001F502")},
+        {QStringLiteral(":play_button:"), QString::fromUtf16(u"\U000025B6")},
+        {QStringLiteral(":fast-forward_button:"), QString::fromUtf16(u"\U000023E9")},
+        {QStringLiteral(":next_track_button:"), QString::fromUtf16(u"\U000023ED")},
+        {QStringLiteral(":play_or_pause_button:"), QString::fromUtf16(u"\U000023EF")},
+        {QStringLiteral(":reverse_button:"), QString::fromUtf16(u"\U000025C0")},
+        {QStringLiteral(":fast_reverse_button:"), QString::fromUtf16(u"\U000023EA")},
+        {QStringLiteral(":last_track_button:"), QString::fromUtf16(u"\U000023EE")},
+        {QStringLiteral(":upwards_button:"), QString::fromUtf16(u"\U0001F53C")},
+        {QStringLiteral(":fast_up_button:"), QString::fromUtf16(u"\U000023EB")},
+        {QStringLiteral(":downwards_button:"), QString::fromUtf16(u"\U0001F53D")},
+        {QStringLiteral(":fast_down_button:"), QString::fromUtf16(u"\U000023EC")},
+        {QStringLiteral(":pause_button:"), QString::fromUtf16(u"\U000023F8")},
+        {QStringLiteral(":stop_button:"), QString::fromUtf16(u"\U000023F9")},
+        {QStringLiteral(":record_button:"), QString::fromUtf16(u"\U000023FA")},
+        {QStringLiteral(":eject_button:"), QString::fromUtf16(u"\U000023CF")},
+        {QStringLiteral(":cinema:"), QString::fromUtf16(u"\U0001F3A6")},
+        {QStringLiteral(":dim_button:"), QString::fromUtf16(u"\U0001F505")},
+        {QStringLiteral(":bright_button:"), QString::fromUtf16(u"\U0001F506")},
+        {QStringLiteral(":antenna_bars:"), QString::fromUtf16(u"\U0001F4F6")},
+        {QStringLiteral(":vibration_mode:"), QString::fromUtf16(u"\U0001F4F3")},
+        {QStringLiteral(":mobile_phone_off:"), QString::fromUtf16(u"\U0001F4F4")},
+        {QStringLiteral(":female_sign:"), QString::fromUtf16(u"\U00002640")},
+        {QStringLiteral(":male_sign:"), QString::fromUtf16(u"\U00002642")},
+        {QStringLiteral(":medical_symbol:"), QString::fromUtf16(u"\U00002695")},
+        {QStringLiteral(":infinity:"), QString::fromUtf16(u"\U0000267E")},
+        {QStringLiteral(":recycling_symbol:"), QString::fromUtf16(u"\U0000267B")},
+        {QStringLiteral(":fleur-de-lis:"), QString::fromUtf16(u"\U0000269C")},
+        {QStringLiteral(":trident_emblem:"), QString::fromUtf16(u"\U0001F531")},
+        {QStringLiteral(":name_badge:"), QString::fromUtf16(u"\U0001F4DB")},
+        {QStringLiteral(":Japanese_symbol_for_beginner:"), QString::fromUtf16(u"\U0001F530")},
+        {QStringLiteral(":hollow_red_circle:"), QString::fromUtf16(u"\U00002B55")},
+        {QStringLiteral(":check_mark_button:"), QString::fromUtf16(u"\U00002705")},
+        {QStringLiteral(":check_box_with_check:"), QString::fromUtf16(u"\U00002611")},
+        {QStringLiteral(":check_mark:"), QString::fromUtf16(u"\U00002714")},
+        {QStringLiteral(":multiplication_sign:"), QString::fromUtf16(u"\U00002716")},
+        {QStringLiteral(":cross_mark:"), QString::fromUtf16(u"\U0000274C")},
+        {QStringLiteral(":cross_mark_button:"), QString::fromUtf16(u"\U0000274E")},
+        {QStringLiteral(":plus_sign:"), QString::fromUtf16(u"\U00002795")},
+        {QStringLiteral(":minus_sign:"), QString::fromUtf16(u"\U00002796")},
+        {QStringLiteral(":division_sign:"), QString::fromUtf16(u"\U00002797")},
+        {QStringLiteral(":curly_loop:"), QString::fromUtf16(u"\U000027B0")},
+        {QStringLiteral(":double_curly_loop:"), QString::fromUtf16(u"\U000027BF")},
+        {QStringLiteral(":part_alternation_mark:"), QString::fromUtf16(u"\U0000303D")},
+        {QStringLiteral(":eight-spoked_asterisk:"), QString::fromUtf16(u"\U00002733")},
+        {QStringLiteral(":eight-pointed_star:"), QString::fromUtf16(u"\U00002734")},
+        {QStringLiteral(":sparkle:"), QString::fromUtf16(u"\U00002747")},
+        {QStringLiteral(":double_exclamation_mark:"), QString::fromUtf16(u"\U0000203C")},
+        {QStringLiteral(":exclamation_question_mark:"), QString::fromUtf16(u"\U00002049")},
+        {QStringLiteral(":question_mark:"), QString::fromUtf16(u"\U00002753")},
+        {QStringLiteral(":white_question_mark:"), QString::fromUtf16(u"\U00002754")},
+        {QStringLiteral(":white_exclamation_mark:"), QString::fromUtf16(u"\U00002755")},
+        {QStringLiteral(":exclamation_mark:"), QString::fromUtf16(u"\U00002757")},
+        {QStringLiteral(":wavy_dash:"), QString::fromUtf16(u"\U00003030")},
+        {QStringLiteral(":copyright:"), QString::fromUtf16(u"\U000000A9")},
+        {QStringLiteral(":registered:"), QString::fromUtf16(u"\U000000AE")},
+        {QStringLiteral(":trade_mark:"), QString::fromUtf16(u"\U00002122")},
+        {QStringLiteral(":keycap_#:"), QString::fromUtf16(u"\U00000023\U0000FE0F\U000020E3")},
+        {QStringLiteral(":keycap_*:"), QString::fromUtf16(u"\U0000002A\U0000FE0F\U000020E3")},
+        {QStringLiteral(":keycap_0:"), QString::fromUtf16(u"\U00000030\U0000FE0F\U000020E3")},
+        {QStringLiteral(":keycap_1:"), QString::fromUtf16(u"\U00000031\U0000FE0F\U000020E3")},
+        {QStringLiteral(":keycap_2:"), QString::fromUtf16(u"\U00000032\U0000FE0F\U000020E3")},
+        {QStringLiteral(":keycap_3:"), QString::fromUtf16(u"\U00000033\U0000FE0F\U000020E3")},
+        {QStringLiteral(":keycap_4:"), QString::fromUtf16(u"\U00000034\U0000FE0F\U000020E3")},
+        {QStringLiteral(":keycap_5:"), QString::fromUtf16(u"\U00000035\U0000FE0F\U000020E3")},
+        {QStringLiteral(":keycap_6:"), QString::fromUtf16(u"\U00000036\U0000FE0F\U000020E3")},
+        {QStringLiteral(":keycap_7:"), QString::fromUtf16(u"\U00000037\U0000FE0F\U000020E3")},
+        {QStringLiteral(":keycap_8:"), QString::fromUtf16(u"\U00000038\U0000FE0F\U000020E3")},
+        {QStringLiteral(":keycap_9:"), QString::fromUtf16(u"\U00000039\U0000FE0F\U000020E3")},
+        {QStringLiteral(":keycap_10:"), QString::fromUtf16(u"\U0001F51F")},
+        {QStringLiteral(":input_latin_uppercase:"), QString::fromUtf16(u"\U0001F520")},
+        {QStringLiteral(":input_latin_lowercase:"), QString::fromUtf16(u"\U0001F521")},
+        {QStringLiteral(":input_numbers:"), QString::fromUtf16(u"\U0001F522")},
+        {QStringLiteral(":input_symbols:"), QString::fromUtf16(u"\U0001F523")},
+        {QStringLiteral(":input_latin_letters:"), QString::fromUtf16(u"\U0001F524")},
+        {QStringLiteral(":A_button_(blood_type):"), QString::fromUtf16(u"\U0001F170")},
+        {QStringLiteral(":AB_button_(blood_type):"), QString::fromUtf16(u"\U0001F18E")},
+        {QStringLiteral(":B_button_(blood_type):"), QString::fromUtf16(u"\U0001F171")},
+        {QStringLiteral(":CL_button:"), QString::fromUtf16(u"\U0001F191")},
+        {QStringLiteral(":COOL_button:"), QString::fromUtf16(u"\U0001F192")},
+        {QStringLiteral(":FREE_button:"), QString::fromUtf16(u"\U0001F193")},
+        {QStringLiteral(":information:"), QString::fromUtf16(u"\U00002139")},
+        {QStringLiteral(":ID_button:"), QString::fromUtf16(u"\U0001F194")},
+        {QStringLiteral(":circled_M:"), QString::fromUtf16(u"\U000024C2")},
+        {QStringLiteral(":NEW_button:"), QString::fromUtf16(u"\U0001F195")},
+        {QStringLiteral(":NG_button:"), QString::fromUtf16(u"\U0001F196")},
+        {QStringLiteral(":O_button_(blood_type):"), QString::fromUtf16(u"\U0001F17E")},
+        {QStringLiteral(":OK_button:"), QString::fromUtf16(u"\U0001F197")},
+        {QStringLiteral(":P_button:"), QString::fromUtf16(u"\U0001F17F")},
+        {QStringLiteral(":SOS_button:"), QString::fromUtf16(u"\U0001F198")},
+        {QStringLiteral(":UP!_button:"), QString::fromUtf16(u"\U0001F199")},
+        {QStringLiteral(":VS_button:"), QString::fromUtf16(u"\U0001F19A")},
+        {QStringLiteral(":Japanese_here_button:"), QString::fromUtf16(u"\U0001F201")},
+        {QStringLiteral(":Japanese_service_charge_button:"), QString::fromUtf16(u"\U0001F202")},
+        {QStringLiteral(":Japanese_monthly_amount_button:"), QString::fromUtf16(u"\U0001F237")},
+        {QStringLiteral(":Japanese_not_free_of_charge_button:"), QString::fromUtf16(u"\U0001F236")},
+        {QStringLiteral(":Japanese_reserved_button:"), QString::fromUtf16(u"\U0001F22F")},
+        {QStringLiteral(":Japanese_bargain_button:"), QString::fromUtf16(u"\U0001F250")},
+        {QStringLiteral(":Japanese_discount_button:"), QString::fromUtf16(u"\U0001F239")},
+        {QStringLiteral(":Japanese_free_of_charge_button:"), QString::fromUtf16(u"\U0001F21A")},
+        {QStringLiteral(":Japanese_prohibited_button:"), QString::fromUtf16(u"\U0001F232")},
+        {QStringLiteral(":Japanese_acceptable_button:"), QString::fromUtf16(u"\U0001F251")},
+        {QStringLiteral(":Japanese_application_button:"), QString::fromUtf16(u"\U0001F238")},
+        {QStringLiteral(":Japanese_passing_grade_button:"), QString::fromUtf16(u"\U0001F234")},
+        {QStringLiteral(":Japanese_vacancy_button:"), QString::fromUtf16(u"\U0001F233")},
+        {QStringLiteral(":Japanese_congratulations_button:"), QString::fromUtf16(u"\U00003297")},
+        {QStringLiteral(":Japanese_secret_button:"), QString::fromUtf16(u"\U00003299")},
+        {QStringLiteral(":Japanese_open_for_business_button:"), QString::fromUtf16(u"\U0001F23A")},
+        {QStringLiteral(":Japanese_no_vacancy_button:"), QString::fromUtf16(u"\U0001F235")},
+        {QStringLiteral(":red_circle:"), QString::fromUtf16(u"\U0001F534")},
+        {QStringLiteral(":orange_circle:"), QString::fromUtf16(u"\U0001F7E0")},
+        {QStringLiteral(":yellow_circle:"), QString::fromUtf16(u"\U0001F7E1")},
+        {QStringLiteral(":green_circle:"), QString::fromUtf16(u"\U0001F7E2")},
+        {QStringLiteral(":blue_circle:"), QString::fromUtf16(u"\U0001F535")},
+        {QStringLiteral(":purple_circle:"), QString::fromUtf16(u"\U0001F7E3")},
+        {QStringLiteral(":brown_circle:"), QString::fromUtf16(u"\U0001F7E4")},
+        {QStringLiteral(":black_circle:"), QString::fromUtf16(u"\U000026AB")},
+        {QStringLiteral(":white_circle:"), QString::fromUtf16(u"\U000026AA")},
+        {QStringLiteral(":red_square:"), QString::fromUtf16(u"\U0001F7E5")},
+        {QStringLiteral(":orange_square:"), QString::fromUtf16(u"\U0001F7E7")},
+        {QStringLiteral(":yellow_square:"), QString::fromUtf16(u"\U0001F7E8")},
+        {QStringLiteral(":green_square:"), QString::fromUtf16(u"\U0001F7E9")},
+        {QStringLiteral(":blue_square:"), QString::fromUtf16(u"\U0001F7E6")},
+        {QStringLiteral(":purple_square:"), QString::fromUtf16(u"\U0001F7EA")},
+        {QStringLiteral(":brown_square:"), QString::fromUtf16(u"\U0001F7EB")},
+        {QStringLiteral(":black_large_square:"), QString::fromUtf16(u"\U00002B1B")},
+        {QStringLiteral(":white_large_square:"), QString::fromUtf16(u"\U00002B1C")},
+        {QStringLiteral(":black_medium_square:"), QString::fromUtf16(u"\U000025FC")},
+        {QStringLiteral(":white_medium_square:"), QString::fromUtf16(u"\U000025FB")},
+        {QStringLiteral(":black_medium-small_square:"), QString::fromUtf16(u"\U000025FE")},
+        {QStringLiteral(":white_medium-small_square:"), QString::fromUtf16(u"\U000025FD")},
+        {QStringLiteral(":black_small_square:"), QString::fromUtf16(u"\U000025AA")},
+        {QStringLiteral(":white_small_square:"), QString::fromUtf16(u"\U000025AB")},
+        {QStringLiteral(":large_orange_diamond:"), QString::fromUtf16(u"\U0001F536")},
+        {QStringLiteral(":large_blue_diamond:"), QString::fromUtf16(u"\U0001F537")},
+        {QStringLiteral(":small_orange_diamond:"), QString::fromUtf16(u"\U0001F538")},
+        {QStringLiteral(":small_blue_diamond:"), QString::fromUtf16(u"\U0001F539")},
+        {QStringLiteral(":red_triangle_pointed_up:"), QString::fromUtf16(u"\U0001F53A")},
+        {QStringLiteral(":red_triangle_pointed_down:"), QString::fromUtf16(u"\U0001F53B")},
+        {QStringLiteral(":diamond_with_a_dot:"), QString::fromUtf16(u"\U0001F4A0")},
+        {QStringLiteral(":radio_button:"), QString::fromUtf16(u"\U0001F518")},
+        {QStringLiteral(":white_square_button:"), QString::fromUtf16(u"\U0001F533")},
+        {QStringLiteral(":black_square_button:"), QString::fromUtf16(u"\U0001F532")},
+
     };
     return lst;
 }
-QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeTransportEmoji()
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSportEmoji()
 {
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":soccer_ball:"), QString::fromUtf16(u"\U000026BD")},
+        {QStringLiteral(":baseball:"), QString::fromUtf16(u"\U000026BE")},
+        {QStringLiteral(":softball:"), QString::fromUtf16(u"\U0001F94E")},
+        {QStringLiteral(":basketball:"), QString::fromUtf16(u"\U0001F3C0")},
+        {QStringLiteral(":volleyball:"), QString::fromUtf16(u"\U0001F3D0")},
+        {QStringLiteral(":american_football:"), QString::fromUtf16(u"\U0001F3C8")},
+        {QStringLiteral(":rugby_football:"), QString::fromUtf16(u"\U0001F3C9")},
+        {QStringLiteral(":tennis:"), QString::fromUtf16(u"\U0001F3BE")},
+        {QStringLiteral(":flying_disc:"), QString::fromUtf16(u"\U0001F94F")},
+        {QStringLiteral(":bowling:"), QString::fromUtf16(u"\U0001F3B3")},
+        {QStringLiteral(":cricket_game:"), QString::fromUtf16(u"\U0001F3CF")},
+        {QStringLiteral(":field_hockey:"), QString::fromUtf16(u"\U0001F3D1")},
+        {QStringLiteral(":ice_hockey:"), QString::fromUtf16(u"\U0001F3D2")},
+        {QStringLiteral(":lacrosse:"), QString::fromUtf16(u"\U0001F94D")},
+        {QStringLiteral(":ping_pong:"), QString::fromUtf16(u"\U0001F3D3")},
+        {QStringLiteral(":badminton:"), QString::fromUtf16(u"\U0001F3F8")},
+        {QStringLiteral(":boxing_glove:"), QString::fromUtf16(u"\U0001F94A")},
+        {QStringLiteral(":martial_arts_uniform:"), QString::fromUtf16(u"\U0001F94B")},
+        {QStringLiteral(":goal_net:"), QString::fromUtf16(u"\U0001F945")},
+        {QStringLiteral(":flag_in_hole:"), QString::fromUtf16(u"\U000026F3")},
+        {QStringLiteral(":ice_skate:"), QString::fromUtf16(u"\U000026F8")},
+        {QStringLiteral(":fishing_pole:"), QString::fromUtf16(u"\U0001F3A3")},
+        {QStringLiteral(":diving_mask:"), QString::fromUtf16(u"\U0001F93F")},
+        {QStringLiteral(":running_shirt:"), QString::fromUtf16(u"\U0001F3BD")},
+        {QStringLiteral(":skis:"), QString::fromUtf16(u"\U0001F3BF")},
+        {QStringLiteral(":sled:"), QString::fromUtf16(u"\U0001F6F7")},
+        {QStringLiteral(":curling_stone:"), QString::fromUtf16(u"\U0001F94C")},
+
     };
     return lst;
 }
-#endif
+
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeEmotionEmoji()
+{
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":kiss_mark:"), QString::fromUtf16(u"\U0001F48B")},
+        {QStringLiteral(":love_letter:"), QString::fromUtf16(u"\U0001F48C")},
+        {QStringLiteral(":heart_with_arrow:"), QString::fromUtf16(u"\U0001F498")},
+        {QStringLiteral(":heart_with_ribbon:"), QString::fromUtf16(u"\U0001F49D")},
+        {QStringLiteral(":sparkling_heart:"), QString::fromUtf16(u"\U0001F496")},
+        {QStringLiteral(":growing_heart:"), QString::fromUtf16(u"\U0001F497")},
+        {QStringLiteral(":beating_heart:"), QString::fromUtf16(u"\U0001F493")},
+        {QStringLiteral(":revolving_hearts:"), QString::fromUtf16(u"\U0001F49E")},
+        {QStringLiteral(":two_hearts:"), QString::fromUtf16(u"\U0001F495")},
+        {QStringLiteral(":heart_decoration:"), QString::fromUtf16(u"\U0001F49F")},
+        {QStringLiteral(":heart_exclamation:"), QString::fromUtf16(u"\U00002763")},
+        {QStringLiteral(":broken_heart:"), QString::fromUtf16(u"\U0001F494")},
+        {QStringLiteral(":red_heart:"), QString::fromUtf16(u"\U00002764")},
+        {QStringLiteral(":orange_heart:"), QString::fromUtf16(u"\U0001F9E1")},
+        {QStringLiteral(":yellow_heart:"), QString::fromUtf16(u"\U0001F49B")},
+        {QStringLiteral(":green_heart:"), QString::fromUtf16(u"\U0001F49A")},
+        {QStringLiteral(":blue_heart:"), QString::fromUtf16(u"\U0001F499")},
+        {QStringLiteral(":purple_heart:"), QString::fromUtf16(u"\U0001F49C")},
+        {QStringLiteral(":brown_heart:"), QString::fromUtf16(u"\U0001F90E")},
+        {QStringLiteral(":black_heart:"), QString::fromUtf16(u"\U0001F5A4")},
+        {QStringLiteral(":white_heart:"), QString::fromUtf16(u"\U0001F90D")},
+        {QStringLiteral(":hundred_points:"), QString::fromUtf16(u"\U0001F4AF")},
+        {QStringLiteral(":anger_symbol:"), QString::fromUtf16(u"\U0001F4A2")},
+        {QStringLiteral(":collision:"), QString::fromUtf16(u"\U0001F4A5")},
+        {QStringLiteral(":dizzy:"), QString::fromUtf16(u"\U0001F4AB")},
+        {QStringLiteral(":sweat_droplets:"), QString::fromUtf16(u"\U0001F4A6")},
+        {QStringLiteral(":dashing_away:"), QString::fromUtf16(u"\U0001F4A8")},
+        {QStringLiteral(":hole:"), QString::fromUtf16(u"\U0001F573")},
+        {QStringLiteral(":bomb:"), QString::fromUtf16(u"\U0001F4A3")},
+        {QStringLiteral(":speech_balloon:"), QString::fromUtf16(u"\U0001F4AC")},
+        {QStringLiteral(":eye_in_speech_bubble:"), QString::fromUtf16(u"\U0001F441\U0000FE0F\U0000200D\U0001F5E8\U0000FE0F")},
+        {QStringLiteral(":left_speech_bubble:"), QString::fromUtf16(u"\U0001F5E8")},
+        {QStringLiteral(":right_anger_bubble:"), QString::fromUtf16(u"\U0001F5EF")},
+        {QStringLiteral(":thought_balloon:"), QString::fromUtf16(u"\U0001F4AD")},
+        {QStringLiteral(":zzz:"), QString::fromUtf16(u"\U0001F4A4")},
+
+    };
+    return lst;
+}
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeMoneyEmoji()
+{
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":money_bag:"), QString::fromUtf16(u"\U0001F4B0")},
+        {QStringLiteral(":yen_banknote:"), QString::fromUtf16(u"\U0001F4B4")},
+        {QStringLiteral(":dollar_banknote:"), QString::fromUtf16(u"\U0001F4B5")},
+        {QStringLiteral(":euro_banknote:"), QString::fromUtf16(u"\U0001F4B6")},
+        {QStringLiteral(":pound_banknote:"), QString::fromUtf16(u"\U0001F4B7")},
+        {QStringLiteral(":money_with_wings:"), QString::fromUtf16(u"\U0001F4B8")},
+        {QStringLiteral(":credit_card:"), QString::fromUtf16(u"\U0001F4B3")},
+        {QStringLiteral(":receipt:"), QString::fromUtf16(u"\U0001F9FE")},
+        {QStringLiteral(":chart_increasing_with_yen:"), QString::fromUtf16(u"\U0001F4B9")},
+        {QStringLiteral(":currency_exchange:"), QString::fromUtf16(u"\U0001F4B1")},
+        {QStringLiteral(":heavy_dollar_sign:"), QString::fromUtf16(u"\U0001F4B2")},
+    };
+    return lst;
+}
+
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeBodyEmoji()
+{
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":waving_hand:"), QString::fromUtf16(u"\U0001F44B")},
+        {QStringLiteral(":raised_back_of_hand:"), QString::fromUtf16(u"\U0001F91A")},
+        {QStringLiteral(":hand_with_fingers_splayed:"), QString::fromUtf16(u"\U0001F590")},
+        {QStringLiteral(":raised_hand:"), QString::fromUtf16(u"\U0000270B")},
+        {QStringLiteral(":vulcan_salute:"), QString::fromUtf16(u"\U0001F596")},
+        {QStringLiteral(":OK_hand:"), QString::fromUtf16(u"\U0001F44C")},
+        {QStringLiteral(":pinching_hand:"), QString::fromUtf16(u"\U0001F90F")},
+        {QStringLiteral(":victory_hand:"), QString::fromUtf16(u"\U0000270C")},
+        {QStringLiteral(":crossed_fingers:"), QString::fromUtf16(u"\U0001F91E")},
+        {QStringLiteral(":love-you_gesture:"), QString::fromUtf16(u"\U0001F91F")},
+        {QStringLiteral(":sign_of_the_horns:"), QString::fromUtf16(u"\U0001F918")},
+        {QStringLiteral(":call_me_hand:"), QString::fromUtf16(u"\U0001F919")},
+        {QStringLiteral(":backhand_index_pointing_left:"), QString::fromUtf16(u"\U0001F448")},
+        {QStringLiteral(":backhand_index_pointing_right:"), QString::fromUtf16(u"\U0001F449")},
+        {QStringLiteral(":backhand_index_pointing_up:"), QString::fromUtf16(u"\U0001F446")},
+        {QStringLiteral(":middle_finger:"), QString::fromUtf16(u"\U0001F595")},
+        {QStringLiteral(":backhand_index_pointing_down:"), QString::fromUtf16(u"\U0001F447")},
+        {QStringLiteral(":index_pointing_up:"), QString::fromUtf16(u"\U0000261D")},
+        {QStringLiteral(":thumbs_up:"), QString::fromUtf16(u"\U0001F44D")},
+        {QStringLiteral(":thumbs_down:"), QString::fromUtf16(u"\U0001F44E")},
+        {QStringLiteral(":raised_fist:"), QString::fromUtf16(u"\U0000270A")},
+        {QStringLiteral(":oncoming_fist:"), QString::fromUtf16(u"\U0001F44A")},
+        {QStringLiteral(":left-facing_fist:"), QString::fromUtf16(u"\U0001F91B")},
+        {QStringLiteral(":right-facing_fist:"), QString::fromUtf16(u"\U0001F91C")},
+        {QStringLiteral(":clapping_hands:"), QString::fromUtf16(u"\U0001F44F")},
+        {QStringLiteral(":raising_hands:"), QString::fromUtf16(u"\U0001F64C")},
+        {QStringLiteral(":open_hands:"), QString::fromUtf16(u"\U0001F450")},
+        {QStringLiteral(":palms_up_together:"), QString::fromUtf16(u"\U0001F932")},
+        {QStringLiteral(":handshake:"), QString::fromUtf16(u"\U0001F91D")},
+        {QStringLiteral(":folded_hands:"), QString::fromUtf16(u"\U0001F64F")},
+        {QStringLiteral(":writing_hand:"), QString::fromUtf16(u"\U0000270D")},
+        {QStringLiteral(":nail_polish:"), QString::fromUtf16(u"\U0001F485")},
+        {QStringLiteral(":selfie:"), QString::fromUtf16(u"\U0001F933")},
+        {QStringLiteral(":flexed_biceps:"), QString::fromUtf16(u"\U0001F4AA")},
+        {QStringLiteral(":mechanical_arm:"), QString::fromUtf16(u"\U0001F9BE")},
+        {QStringLiteral(":mechanical_leg:"), QString::fromUtf16(u"\U0001F9BF")},
+        {QStringLiteral(":leg:"), QString::fromUtf16(u"\U0001F9B5")},
+        {QStringLiteral(":foot:"), QString::fromUtf16(u"\U0001F9B6")},
+        {QStringLiteral(":ear:"), QString::fromUtf16(u"\U0001F442")},
+        {QStringLiteral(":ear_with_hearing_aid:"), QString::fromUtf16(u"\U0001F9BB")},
+        {QStringLiteral(":nose:"), QString::fromUtf16(u"\U0001F443")},
+        {QStringLiteral(":brain:"), QString::fromUtf16(u"\U0001F9E0")},
+        {QStringLiteral(":tooth:"), QString::fromUtf16(u"\U0001F9B7")},
+        {QStringLiteral(":bone:"), QString::fromUtf16(u"\U0001F9B4")},
+        {QStringLiteral(":eyes:"), QString::fromUtf16(u"\U0001F440")},
+        {QStringLiteral(":eye:"), QString::fromUtf16(u"\U0001F441")},
+        {QStringLiteral(":tongue:"), QString::fromUtf16(u"\U0001F445")},
+        {QStringLiteral(":mouth:"), QString::fromUtf16(u"\U0001F444")},
+        {QStringLiteral(":red_hair:"), QString::fromUtf16(u"\U0001F9B0")},
+        {QStringLiteral(":curly_hair:"), QString::fromUtf16(u"\U0001F9B1")},
+        {QStringLiteral(":white_hair:"), QString::fromUtf16(u"\U0001F9B3")},
+        {QStringLiteral(":bald:"), QString::fromUtf16(u"\U0001F9B2")},
+
+    };
+    return lst;
+}
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeMailEmoji()
+{
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":envelope:"), QString::fromUtf16(u"\U00002709")},
+        {QStringLiteral(":e-mail:"), QString::fromUtf16(u"\U0001F4E7")},
+        {QStringLiteral(":incoming_envelope:"), QString::fromUtf16(u"\U0001F4E8")},
+        {QStringLiteral(":envelope_with_arrow:"), QString::fromUtf16(u"\U0001F4E9")},
+        {QStringLiteral(":outbox_tray:"), QString::fromUtf16(u"\U0001F4E4")},
+        {QStringLiteral(":inbox_tray:"), QString::fromUtf16(u"\U0001F4E5")},
+        {QStringLiteral(":package:"), QString::fromUtf16(u"\U0001F4E6")},
+        {QStringLiteral(":closed_mailbox_with_raised_flag:"), QString::fromUtf16(u"\U0001F4EB")},
+        {QStringLiteral(":closed_mailbox_with_lowered_flag:"), QString::fromUtf16(u"\U0001F4EA")},
+        {QStringLiteral(":open_mailbox_with_raised_flag:"), QString::fromUtf16(u"\U0001F4EC")},
+        {QStringLiteral(":open_mailbox_with_lowered_flag:"), QString::fromUtf16(u"\U0001F4ED")},
+        {QStringLiteral(":postbox:"), QString::fromUtf16(u"\U0001F4EE")},
+        {QStringLiteral(":ballot_box_with_ballot:"), QString::fromUtf16(u"\U0001F5F3")},
+    };
+    return lst;
+}
+
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeOfficeEmoji()
+{
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":pencil:"), QString::fromUtf16(u"\U0000270F")},
+        {QStringLiteral(":black_nib:"), QString::fromUtf16(u"\U00002712")},
+        {QStringLiteral(":fountain_pen:"), QString::fromUtf16(u"\U0001F58B")},
+        {QStringLiteral(":pen:"), QString::fromUtf16(u"\U0001F58A")},
+        {QStringLiteral(":paintbrush:"), QString::fromUtf16(u"\U0001F58C")},
+        {QStringLiteral(":crayon:"), QString::fromUtf16(u"\U0001F58D")},
+        {QStringLiteral(":memo:"), QString::fromUtf16(u"\U0001F4DD")},
+        {QStringLiteral(":briefcase:"), QString::fromUtf16(u"\U0001F4BC")},
+        {QStringLiteral(":file_folder:"), QString::fromUtf16(u"\U0001F4C1")},
+        {QStringLiteral(":open_file_folder:"), QString::fromUtf16(u"\U0001F4C2")},
+        {QStringLiteral(":card_index_dividers:"), QString::fromUtf16(u"\U0001F5C2")},
+        {QStringLiteral(":calendar:"), QString::fromUtf16(u"\U0001F4C5")},
+        {QStringLiteral(":tear-off_calendar:"), QString::fromUtf16(u"\U0001F4C6")},
+        {QStringLiteral(":spiral_notepad:"), QString::fromUtf16(u"\U0001F5D2")},
+        {QStringLiteral(":spiral_calendar:"), QString::fromUtf16(u"\U0001F5D3")},
+        {QStringLiteral(":card_index:"), QString::fromUtf16(u"\U0001F4C7")},
+        {QStringLiteral(":chart_increasing:"), QString::fromUtf16(u"\U0001F4C8")},
+        {QStringLiteral(":chart_decreasing:"), QString::fromUtf16(u"\U0001F4C9")},
+        {QStringLiteral(":bar_chart:"), QString::fromUtf16(u"\U0001F4CA")},
+        {QStringLiteral(":clipboard:"), QString::fromUtf16(u"\U0001F4CB")},
+        {QStringLiteral(":pushpin:"), QString::fromUtf16(u"\U0001F4CC")},
+        {QStringLiteral(":round_pushpin:"), QString::fromUtf16(u"\U0001F4CD")},
+        {QStringLiteral(":paperclip:"), QString::fromUtf16(u"\U0001F4CE")},
+        {QStringLiteral(":linked_paperclips:"), QString::fromUtf16(u"\U0001F587")},
+        {QStringLiteral(":straight_ruler:"), QString::fromUtf16(u"\U0001F4CF")},
+        {QStringLiteral(":triangular_ruler:"), QString::fromUtf16(u"\U0001F4D0")},
+        {QStringLiteral(":scissors:"), QString::fromUtf16(u"\U00002702")},
+        {QStringLiteral(":card_file_box:"), QString::fromUtf16(u"\U0001F5C3")},
+        {QStringLiteral(":file_cabinet:"), QString::fromUtf16(u"\U0001F5C4")},
+        {QStringLiteral(":wastebasket:"), QString::fromUtf16(u"\U0001F5D1")},
+
+    };
+    return lst;
+}
+
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeToolsEmoji()
+{
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":hammer:"), QString::fromUtf16(u"\U0001F528")},
+        {QStringLiteral(":axe:"), QString::fromUtf16(u"\U0001FA93")},
+        {QStringLiteral(":pick:"), QString::fromUtf16(u"\U000026CF")},
+        {QStringLiteral(":hammer_and_pick:"), QString::fromUtf16(u"\U00002692")},
+        {QStringLiteral(":hammer_and_wrench:"), QString::fromUtf16(u"\U0001F6E0")},
+        {QStringLiteral(":dagger:"), QString::fromUtf16(u"\U0001F5E1")},
+        {QStringLiteral(":crossed_swords:"), QString::fromUtf16(u"\U00002694")},
+        {QStringLiteral(":pistol:"), QString::fromUtf16(u"\U0001F52B")},
+        {QStringLiteral(":bow_and_arrow:"), QString::fromUtf16(u"\U0001F3F9")},
+        {QStringLiteral(":shield:"), QString::fromUtf16(u"\U0001F6E1")},
+        {QStringLiteral(":wrench:"), QString::fromUtf16(u"\U0001F527")},
+        {QStringLiteral(":nut_and_bolt:"), QString::fromUtf16(u"\U0001F529")},
+        {QStringLiteral(":gear:"), QString::fromUtf16(u"\U00002699")},
+        {QStringLiteral(":clamp:"), QString::fromUtf16(u"\U0001F5DC")},
+        {QStringLiteral(":balance_scale:"), QString::fromUtf16(u"\U00002696")},
+        {QStringLiteral(":probing_cane:"), QString::fromUtf16(u"\U0001F9AF")},
+        {QStringLiteral(":link:"), QString::fromUtf16(u"\U0001F517")},
+        {QStringLiteral(":chains:"), QString::fromUtf16(u"\U000026D3")},
+        {QStringLiteral(":toolbox:"), QString::fromUtf16(u"\U0001F9F0")},
+        {QStringLiteral(":magnet:"), QString::fromUtf16(u"\U0001F9F2")},
+
+    };
+    return lst;
+}
+
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePhoneEmoji()
+{
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":mobile_phone:"), QString::fromUtf16(u"\U0001F4F1")},
+        {QStringLiteral(":mobile_phone_with_arrow:"), QString::fromUtf16(u"\U0001F4F2")},
+        {QStringLiteral(":telephone:"), QString::fromUtf16(u"\U0000260E")},
+        {QStringLiteral(":telephone_receiver:"), QString::fromUtf16(u"\U0001F4DE")},
+        {QStringLiteral(":pager:"), QString::fromUtf16(u"\U0001F4DF")},
+        {QStringLiteral(":fax_machine:"), QString::fromUtf16(u"\U0001F4E0")},
+
+    };
+    return lst;
+}
+
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeLockEmoji()
+{
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":mobile_phone:"), QString::fromUtf16(u"\U0001F4F1")},
+        {QStringLiteral(":mobile_phone_with_arrow:"), QString::fromUtf16(u"\U0001F4F2")},
+        {QStringLiteral(":telephone:"), QString::fromUtf16(u"\U0000260E")},
+        {QStringLiteral(":telephone_receiver:"), QString::fromUtf16(u"\U0001F4DE")},
+        {QStringLiteral(":pager:"), QString::fromUtf16(u"\U0001F4DF")},
+        {QStringLiteral(":fax_machine:"), QString::fromUtf16(u"\U0001F4E0")},
+
+    };
+    return lst;
+}
+
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeDrinkEmoji()
+{
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":baby_bottle:"), QString::fromUtf16(u"\U0001F37C")},
+        {QStringLiteral(":glass_of_milk:"), QString::fromUtf16(u"\U0001F95B")},
+        {QStringLiteral(":hot_beverage:"), QString::fromUtf16(u"\U00002615")},
+        {QStringLiteral(":teacup_without_handle:"), QString::fromUtf16(u"\U0001F375")},
+        {QStringLiteral(":sake:"), QString::fromUtf16(u"\U0001F376")},
+        {QStringLiteral(":bottle_with_popping_cork:"), QString::fromUtf16(u"\U0001F37E")},
+        {QStringLiteral(":wine_glass:"), QString::fromUtf16(u"\U0001F377")},
+        {QStringLiteral(":cocktail_glass:"), QString::fromUtf16(u"\U0001F378")},
+        {QStringLiteral(":tropical_drink:"), QString::fromUtf16(u"\U0001F379")},
+        {QStringLiteral(":beer_mug:"), QString::fromUtf16(u"\U0001F37A")},
+        {QStringLiteral(":clinking_beer_mugs:"), QString::fromUtf16(u"\U0001F37B")},
+        {QStringLiteral(":clinking_glasses:"), QString::fromUtf16(u"\U0001F942")},
+        {QStringLiteral(":tumbler_glass:"), QString::fromUtf16(u"\U0001F943")},
+        {QStringLiteral(":cup_with_straw:"), QString::fromUtf16(u"\U0001F964")},
+        {QStringLiteral(":beverage_box:"), QString::fromUtf16(u"\U0001F9C3")},
+        {QStringLiteral(":mate:"), QString::fromUtf16(u"\U0001F9C9")},
+        {QStringLiteral(":ice:"), QString::fromUtf16(u"\U0001F9CA")},
+    };
+    return lst;
+}
+
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeVideoEmoji()
+{
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":movie_camera:"), QString::fromUtf16(u"\U0001F3A5")},
+        {QStringLiteral(":film_frames:"), QString::fromUtf16(u"\U0001F39E")},
+        {QStringLiteral(":film_projector:"), QString::fromUtf16(u"\U0001F4FD")},
+        {QStringLiteral(":clapper_board:"), QString::fromUtf16(u"\U0001F3AC")},
+        {QStringLiteral(":television:"), QString::fromUtf16(u"\U0001F4FA")},
+        {QStringLiteral(":camera:"), QString::fromUtf16(u"\U0001F4F7")},
+        {QStringLiteral(":camera_with_flash:"), QString::fromUtf16(u"\U0001F4F8")},
+        {QStringLiteral(":video_camera:"), QString::fromUtf16(u"\U0001F4F9")},
+        {QStringLiteral(":videocassette:"), QString::fromUtf16(u"\U0001F4FC")},
+        {QStringLiteral(":magnifying_glass_tilted_left:"), QString::fromUtf16(u"\U0001F50D")},
+        {QStringLiteral(":magnifying_glass_tilted_right:"), QString::fromUtf16(u"\U0001F50E")},
+        {QStringLiteral(":candle:"), QString::fromUtf16(u"\U0001F56F")},
+        {QStringLiteral(":light_bulb:"), QString::fromUtf16(u"\U0001F4A1")},
+        {QStringLiteral(":flashlight:"), QString::fromUtf16(u"\U0001F526")},
+        {QStringLiteral(":red_paper_lantern:"), QString::fromUtf16(u"\U0001F3EE")},
+        {QStringLiteral(":diya_lamp:"), QString::fromUtf16(u"\U0001FA94")},
+    };
+    return lst;
+}
+
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeHouseEmoji()
+{
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":door:"), QString::fromUtf16(u"\U0001F6AA")},
+        {QStringLiteral(":bed:"), QString::fromUtf16(u"\U0001F6CF")},
+        {QStringLiteral(":couch_and_lamp:"), QString::fromUtf16(u"\U0001F6CB")},
+        {QStringLiteral(":chair:"), QString::fromUtf16(u"\U0001FA91")},
+        {QStringLiteral(":toilet:"), QString::fromUtf16(u"\U0001F6BD")},
+        {QStringLiteral(":shower:"), QString::fromUtf16(u"\U0001F6BF")},
+        {QStringLiteral(":bathtub:"), QString::fromUtf16(u"\U0001F6C1")},
+        {QStringLiteral(":razor:"), QString::fromUtf16(u"\U0001FA92")},
+        {QStringLiteral(":lotion_bottle:"), QString::fromUtf16(u"\U0001F9F4")},
+        {QStringLiteral(":safety_pin:"), QString::fromUtf16(u"\U0001F9F7")},
+        {QStringLiteral(":broom:"), QString::fromUtf16(u"\U0001F9F9")},
+        {QStringLiteral(":basket:"), QString::fromUtf16(u"\U0001F9FA")},
+        {QStringLiteral(":roll_of_paper:"), QString::fromUtf16(u"\U0001F9FB")},
+        {QStringLiteral(":soap:"), QString::fromUtf16(u"\U0001F9FC")},
+        {QStringLiteral(":sponge:"), QString::fromUtf16(u"\U0001F9FD")},
+        {QStringLiteral(":fire_extinguisher:"), QString::fromUtf16(u"\U0001F9EF")},
+        {QStringLiteral(":shopping_cart:"), QString::fromUtf16(u"\U0001F6D2")},
+    };
+    return lst;
+}
+
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeDishwareEmoji()
+{
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":chopsticks:"), QString::fromUtf16(u"\U0001F962")},
+        {QStringLiteral(":fork_and_knife_with_plate:"), QString::fromUtf16(u"\U0001F37D")},
+        {QStringLiteral(":fork_and_knife:"), QString::fromUtf16(u"\U0001F374")},
+        {QStringLiteral(":spoon:"), QString::fromUtf16(u"\U0001F944")},
+        {QStringLiteral(":kitchen_knife:"), QString::fromUtf16(u"\U0001F52A")},
+        {QStringLiteral(":amphora:"), QString::fromUtf16(u"\U0001F3FA")},
+
+    };
+    return lst;
+}
+
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeHotelEmoji()
+{
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":bellhop_bell:"), QString::fromUtf16(u"\U0001F6CE")},
+        {QStringLiteral(":luggage:"), QString::fromUtf16(u"\U0001F9F3")},
+    };
+    return lst;
+}
+
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeAwardMedalEmoji()
+{
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+        {QStringLiteral(":military_medal:"), QString::fromUtf16(u"\U0001F396")},
+        {QStringLiteral(":trophy:"), QString::fromUtf16(u"\U0001F3C6")},
+        {QStringLiteral(":sports_medal:"), QString::fromUtf16(u"\U0001F3C5")},
+        {QStringLiteral(":1st_place_medal:"), QString::fromUtf16(u"\U0001F947")},
+        {QStringLiteral(":2nd_place_medal:"), QString::fromUtf16(u"\U0001F948")},
+        {QStringLiteral(":3rd_place_medal:"), QString::fromUtf16(u"\U0001F949")},
+    };
+    return lst;
+}
+
