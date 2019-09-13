@@ -245,6 +245,9 @@ QList<uint> TextUtils::unicodeEventEmoji()
 QStringList TextUtils::unicodeFlagsEmoji()
 {
     QStringList lst = {
+        QString::fromUtf16(u"\U0001F1FA\U0001F1FE"),
+        QString::fromUtf16(u"\U0001F3F4\U000E0067\U000E0062\U000E0065\U000E006E\U000E0067\U000E007F"),
+        QString::fromUtf16(u"\U0001F482\U0000200D\U00002642\U0000FE0F"),
         QString::fromUtf8("\xf0\x9f\x87\xa6\xf0\x9f\x87\xa8"),
         QString::fromUtf8("\xf0\x9f\x87\xa6\xf0\x9f\x87\xa9"),
         QString::fromUtf8("\xf0\x9f\x87\xa6\xf0\x9f\x87\xaa"),
@@ -754,13 +757,6 @@ QStringList TextUtils::unicodeFlagsEmoji()
         QString::fromUtf8("\xf0\x9f\x87\xbf\xf0\x9f\x87\xbc") };
     return lst;
 }
-
-//QList<uint> TextUtils::unicodeFlagsEmoji()
-//{
-//    //Add more
-//    const QList<uint> lstEmoji{ /*0x1F1E8, 0x1F1E9, 0x1F1EA, 0x1F1EB, 0x1F1EC, 0x1F1EE, 0x1F1FB, 0x1F1FE,*/ 0x1F3C1, 0x1F6A9, 0x1F3F4, 0x1F3F3, 0x1F1EB};
-//    return lstEmoji;
-//}
 
 QList<uint> TextUtils::unicodeWeatherEmoji()
 {

@@ -22,6 +22,7 @@
 
 #include <QTabWidget>
 
+#include "emoticonunicodeutils.h"
 #include "kpimtextedit_export.h"
 
 namespace KPIMTextEdit {
@@ -44,6 +45,7 @@ Q_SIGNALS:
 private:
     void createPlainTextEmoticonTab(const QString &str, const QList<uint> &emoticons);
     void createPlainTextEmoticonTab(const QString &str, const QStringList &emoticons);
+    void createPlainTextEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons);
 };
 }
 
