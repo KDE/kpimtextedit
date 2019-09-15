@@ -42,9 +42,7 @@ EmoticonUnicodeTab::~EmoticonUnicodeTab()
 void EmoticonUnicodeTab::loadEmoticons()
 {
     createPlainTextEmoticonTab(i18n("Faces"), EmoticonUnicodeUtils::unicodeFaceEmoji());
-
     createPlainTextEmoticonTab(i18n("Animals"), EmoticonUnicodeUtils::unicodeAnimalsEmoji());
-
     createPlainTextEmoticonTab(i18n("Emotions"), EmoticonUnicodeUtils::unicodeEmotionEmoji());
     createPlainTextEmoticonTab(i18n("Body"), EmoticonUnicodeUtils::unicodeBodyEmoji());
     createPlainTextEmoticonTab(i18n("Transports"), EmoticonUnicodeUtils::unicodeTransportEmoji());

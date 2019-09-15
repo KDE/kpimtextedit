@@ -24,8 +24,8 @@ using namespace KPIMTextEdit;
 
 EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText, QListWidget *parent)
     : QListWidgetItem(parent)
+    , mText(emoticonText)
 {
-    mText = emoticonText;
     setText(mText);
 }
 
