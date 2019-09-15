@@ -574,6 +574,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeScien
     };
     return lst;
 }
+
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeComputerEmoji()
 {
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
@@ -1023,7 +1024,6 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeTrans
         {QStringLiteral(":satellite:"), QString::fromUtf16(u"\U0001F6F0")},
         {QStringLiteral(":rocket:"), QString::fromUtf16(u"\U0001F680")},
         {QStringLiteral(":flying_saucer:"), QString::fromUtf16(u"\U0001F6F8")},
-
     };
     return lst;
 }
@@ -1363,10 +1363,10 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePlace
         {QStringLiteral(":roller_coaster:"), QString::fromUtf16(u"\U0001F3A2")},
         {QStringLiteral(":barber_pole:"), QString::fromUtf16(u"\U0001F488")},
         {QStringLiteral(":circus_tent:"), QString::fromUtf16(u"\U0001F3AA")},
-
     };
     return lst;
 }
+
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSymbolsEmoji()
 {
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
@@ -1587,10 +1587,10 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSymbo
         {QStringLiteral(":radio_button:"), QString::fromUtf16(u"\U0001F518")},
         {QStringLiteral(":white_square_button:"), QString::fromUtf16(u"\U0001F533")},
         {QStringLiteral(":black_square_button:"), QString::fromUtf16(u"\U0001F532")},
-
     };
     return lst;
 }
+
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSportEmoji()
 {
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
@@ -1621,7 +1621,6 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSport
         {QStringLiteral(":skis:"), QString::fromUtf16(u"\U0001F3BF")},
         {QStringLiteral(":sled:"), QString::fromUtf16(u"\U0001F6F7")},
         {QStringLiteral(":curling_stone:"), QString::fromUtf16(u"\U0001F94C")},
-
     };
     return lst;
 }
@@ -1664,10 +1663,10 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeEmoti
         {QStringLiteral(":right_anger_bubble:"), QString::fromUtf16(u"\U0001F5EF")},
         {QStringLiteral(":thought_balloon:"), QString::fromUtf16(u"\U0001F4AD")},
         {QStringLiteral(":zzz:"), QString::fromUtf16(u"\U0001F4A4")},
-
     };
     return lst;
 }
+
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeMoneyEmoji()
 {
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
@@ -1741,10 +1740,10 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeBodyE
         {QStringLiteral(":curly_hair:"), QString::fromUtf16(u"\U0001F9B1")},
         {QStringLiteral(":white_hair:"), QString::fromUtf16(u"\U0001F9B3")},
         {QStringLiteral(":bald:"), QString::fromUtf16(u"\U0001F9B2")},
-
     };
     return lst;
 }
+
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeMailEmoji()
 {
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
@@ -1798,7 +1797,6 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeOffic
         {QStringLiteral(":card_file_box:"), QString::fromUtf16(u"\U0001F5C3")},
         {QStringLiteral(":file_cabinet:"), QString::fromUtf16(u"\U0001F5C4")},
         {QStringLiteral(":wastebasket:"), QString::fromUtf16(u"\U0001F5D1")},
-
     };
     return lst;
 }
@@ -1826,7 +1824,6 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeTools
         {QStringLiteral(":chains:"), QString::fromUtf16(u"\U000026D3")},
         {QStringLiteral(":toolbox:"), QString::fromUtf16(u"\U0001F9F0")},
         {QStringLiteral(":magnet:"), QString::fromUtf16(u"\U0001F9F2")},
-
     };
     return lst;
 }
@@ -1840,7 +1837,6 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePhone
         {QStringLiteral(":telephone_receiver:"), QString::fromUtf16(u"\U0001F4DE")},
         {QStringLiteral(":pager:"), QString::fromUtf16(u"\U0001F4DF")},
         {QStringLiteral(":fax_machine:"), QString::fromUtf16(u"\U0001F4E0")},
-
     };
     return lst;
 }
@@ -1854,7 +1850,6 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeLockE
         {QStringLiteral(":telephone_receiver:"), QString::fromUtf16(u"\U0001F4DE")},
         {QStringLiteral(":pager:"), QString::fromUtf16(u"\U0001F4DF")},
         {QStringLiteral(":fax_machine:"), QString::fromUtf16(u"\U0001F4E0")},
-
     };
     return lst;
 }
@@ -1939,7 +1934,6 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeDishw
         {QStringLiteral(":spoon:"), QString::fromUtf16(u"\U0001F944")},
         {QStringLiteral(":kitchen_knife:"), QString::fromUtf16(u"\U0001F52A")},
         {QStringLiteral(":amphora:"), QString::fromUtf16(u"\U0001F3FA")},
-
     };
     return lst;
 }
@@ -1965,4 +1959,3 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeAward
     };
     return lst;
 }
-

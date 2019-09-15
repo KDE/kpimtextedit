@@ -165,4 +165,3 @@ QString TextUtils::flowText(QString &wrappedText, const QString &indent, int max
 
     return result.left(result.length() - 1);
 }
-

@@ -24,14 +24,14 @@
 #include <QVector>
 #include "kpimtextedit_export.h"
 namespace KPIMTextEdit {
-namespace EmoticonUnicodeUtils
-{
+namespace EmoticonUnicodeUtils {
 struct EmoticonStruct {
     EmoticonStruct(const QString &name, const QString &code)
-        : emoticonName(name),
-          emoticonCode(code)
+        : emoticonName(name)
+        , emoticonCode(code)
     {
     }
+
     QString emoticonName;
     QString emoticonCode;
 };
