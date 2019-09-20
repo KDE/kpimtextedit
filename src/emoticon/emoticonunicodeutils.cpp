@@ -1844,12 +1844,12 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePhone
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeLockEmoji()
 {
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
-        {QStringLiteral(":mobile_phone:"), QString::fromUtf16(u"\U0001F4F1")},
-        {QStringLiteral(":mobile_phone_with_arrow:"), QString::fromUtf16(u"\U0001F4F2")},
-        {QStringLiteral(":telephone:"), QString::fromUtf16(u"\U0000260E")},
-        {QStringLiteral(":telephone_receiver:"), QString::fromUtf16(u"\U0001F4DE")},
-        {QStringLiteral(":pager:"), QString::fromUtf16(u"\U0001F4DF")},
-        {QStringLiteral(":fax_machine:"), QString::fromUtf16(u"\U0001F4E0")},
+        {QStringLiteral(":locked:"), QString::fromUtf16(u"\U0001F512")},
+        {QStringLiteral(":unlocked:"), QString::fromUtf16(u"\U0001F513")},
+        {QStringLiteral(":locked_with_pen:"), QString::fromUtf16(u"\U0001F50F")},
+        {QStringLiteral(":locked_with_key:"), QString::fromUtf16(u"\U0001F510")},
+        {QStringLiteral(":key:"), QString::fromUtf16(u"\U0001F511")},
+        {QStringLiteral(":old_key:"), QString::fromUtf16(u"\U0001F5DD")},
     };
     return lst;
 }
