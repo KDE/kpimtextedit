@@ -4,7 +4,7 @@ set(PIM_VERSION "5.12.41")
 project(KPimTextEdit VERSION ${PIM_VERSION})
 
 # ECM setup
-set(KF5_MIN_VERSION "5.61.0")
+set(KF5_MIN_VERSION "5.62.0")
 
 find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
@@ -47,9 +47,6 @@ set_package_properties(Grantlee5 PROPERTIES
     TYPE REQUIRED
     )
 
-find_package(KF5DesignerPlugin ${KF5_MIN_VERSION} CONFIG)
-set_package_properties(KF5DesignerPlugin PROPERTIES DESCRIPTION "KF5 designer plugin" TYPE OPTIONAL)
-
 ########### Find packages ###########
 find_package(KF5Codecs ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5Config ${KF5_MIN_VERSION} CONFIG REQUIRED)
@@ -63,15 +60,8 @@ find_package(KF5SyntaxHighlighting ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5WidgetsAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5XmlGui ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
-set(USE_NEW_DESIGNERPLUGIN_MACRO false)
-if (ECM_VERSION VERSION_GREATER "5.61.0")
-	option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ON)
-	add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Designer")
-	set(USE_NEW_DESIGNERPLUGIN_MACRO true)
-else()
-	find_package(KF5DesignerPlugin ${KF5_MIN_VERSION} CONFIG)
-	set_package_properties(KF5DesignerPlugin PROPERTIES DESCRIPTION "KF5 designer plugin" TYPE OPTIONAL)
-endif()
+option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ON)
+add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Designer")
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
 
