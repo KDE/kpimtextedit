@@ -110,7 +110,7 @@ public:
     KPIMTextEdit::RichTextExternalComposer *externalComposer() const;
     KPIMTextEdit::RichTextComposerActions *composerActions() const;
     void createHighlighter() override;
-    virtual bool processAutoCorrection(QKeyEvent *event);
+    virtual bool processModifyText(QKeyEvent *event);
 
 public Q_SLOTS:
     void insertPlainTextImplementation();

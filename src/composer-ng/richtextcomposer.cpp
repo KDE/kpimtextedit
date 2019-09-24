@@ -399,14 +399,14 @@ bool RichTextComposer::processKeyEvent(QKeyEvent *e)
         textCursor().clearSelection();
         Q_EMIT focusUp();
     } else {
-        if (!processAutoCorrection(e)) {
+        if (!processModifyText(e)) {
             evaluateReturnKeySupport(e);
         }
     }
     return true;
 }
 
-bool RichTextComposer::processAutoCorrection(QKeyEvent *event)
+bool RichTextComposer::processModifyText(QKeyEvent *event)
 {
     Q_UNUSED(event);
     return false;
