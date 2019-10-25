@@ -26,7 +26,6 @@
 #include <KCursor>
 #include <KConfigGroup>
 #include <QIcon>
-#include <KIconTheme>
 #include <KConfig>
 #include <KStandardGuiItem>
 #include <KSharedConfig>
@@ -172,9 +171,6 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
                 popup->insertAction(separatorAction, clearAllAction);
             }
         }
-        KIconTheme::assignIconsToContextMenu(isReadOnly() ? KIconTheme::ReadOnlyText
-                                             : KIconTheme::TextEditor,
-                                             popup->actions());
         if (searchSupport()) {
             popup->addSeparator();
             QAction *findAct = popup->addAction(KStandardGuiItem::find().icon(), KStandardGuiItem::find().text(), this, &RichTextEditor::findText, Qt::Key_F + Qt::CTRL);

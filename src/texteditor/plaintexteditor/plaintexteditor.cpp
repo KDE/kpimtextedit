@@ -22,7 +22,6 @@
 #include "texteditor/commonwidget/textmessageindicator.h"
 #include <KIO/KUriFilterSearchProviderActions>
 #include <KLocalizedString>
-#include <KIconTheme>
 #include <KStandardGuiItem>
 #include <KStandardAction>
 #include <KCursor>
@@ -139,9 +138,6 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
                 }
             }
         }
-        KIconTheme::assignIconsToContextMenu(isReadOnly() ? KIconTheme::ReadOnlyText
-                                             : KIconTheme::TextEditor,
-                                             popup->actions());
         if (d->supportFeatures & Search) {
             popup->addSeparator();
             if (!emptyDocument) {

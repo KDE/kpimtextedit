@@ -19,13 +19,12 @@
 
 #include "textmessageindicator.h"
 
-#include <KIconLoader>
-
 #include <QAbstractScrollArea>
 #include <QPainter>
 #include <QTimer>
 #include <QResizeEvent>
 #include <QApplication>
+#include <QStyle>
 
 using namespace KPIMTextEdit;
 TextMessageIndicator::TextMessageIndicator(QWidget *parent)
@@ -56,16 +55,17 @@ void TextMessageIndicator::display(const QString &message, const QString &detail
     mLineSpacing = 0;
     // load icon (if set)
     mSymbol = QPixmap();
+    const auto iconSize = style()->pixelMetric(QStyle::PM_SmallIconSize);
     if (icon != None) {
         switch (icon) {
         case Error:
-            mSymbol = SmallIcon(QStringLiteral("dialog-error"));
+            mSymbol = QIcon::fromTheme(QStringLiteral("dialog-error")).pixmap(iconSize);
             break;
         case Warning:
-            mSymbol = SmallIcon(QStringLiteral("dialog-warning"));
+            mSymbol = QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(iconSize);
             break;
         default:
-            mSymbol = SmallIcon(QStringLiteral("dialog-information"));
+            mSymbol = QIcon::fromTheme(QStringLiteral("dialog-information")).pixmap(iconSize);
             break;
         }
     }
