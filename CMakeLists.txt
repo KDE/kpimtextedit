@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.5)
-set(PIM_VERSION "5.12.80")
+set(PIM_VERSION "5.13.40")
 
 project(KPimTextEdit VERSION ${PIM_VERSION})
 
 # ECM setup
-set(KF5_MIN_VERSION "5.63.0")
+set(KF5_MIN_VERSION "5.64.0")
 
 find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
@@ -37,7 +37,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KPIMTEXTEDIT
     SOVERSION 5
 )
 
-set(QT_REQUIRED_VERSION "5.11.0")
+set(QT_REQUIRED_VERSION "5.12.0")
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
 find_package(Grantlee5 "5.1" CONFIG REQUIRED)
 set_package_properties(Grantlee5 PROPERTIES
