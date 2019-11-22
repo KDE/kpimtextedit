@@ -228,4 +228,6 @@ if (BUILD_TESTING)
     add_subdirectory(composer-ng/tests)
 endif()
 
-add_subdirectory(designer)
+if(BUILD_DESIGNERPLUGIN)
+    add_subdirectory(designer)
+endif()
