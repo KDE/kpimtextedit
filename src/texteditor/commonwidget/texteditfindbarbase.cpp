@@ -23,9 +23,8 @@
 #include <QIcon>
 #include <KLocalizedString>
 #include <kmessagebox.h>
-#include <klineedit.h>
 #include <KColorScheme>
-
+#include <QLineEdit>
 #include <QTimer>
 #include <QToolButton>
 #include <QEvent>

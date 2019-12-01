@@ -21,9 +21,9 @@
 
 #include <KLocalizedString>
 #include <QPushButton>
-#include <klineedit.h>
 #include <KColorScheme>
 
+#include <QLineEdit>
 #include <QLabel>
 #include <QMenu>
 #include <QHBoxLayout>

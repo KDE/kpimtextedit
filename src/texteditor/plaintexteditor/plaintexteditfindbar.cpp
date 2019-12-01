@@ -21,9 +21,9 @@
 #include "texteditor/commonwidget/textfindreplacewidget.h"
 
 #include <kmessagebox.h>
-#include <klineedit.h>
 #include <KColorScheme>
 
+#include <QLineEdit>
 #include <QRegularExpression>
 #include <QPlainTextEdit>
 
