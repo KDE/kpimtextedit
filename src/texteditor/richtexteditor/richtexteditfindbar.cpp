@@ -20,7 +20,7 @@
 #include "richtexteditfindbar.h"
 #include "texteditor/commonwidget/textfindreplacewidget.h"
 
-#include <kmessagebox.h>
+#include <KMessageBox>
 #include <KColorScheme>
 
 #include <QTextEdit>

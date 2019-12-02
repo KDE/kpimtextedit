@@ -22,7 +22,7 @@
 #include "kpimtextedit_debug.h"
 #include <QIcon>
 #include <KLocalizedString>
-#include <kmessagebox.h>
+#include <KMessageBox>
 #include <KColorScheme>
 #include <QLineEdit>
 #include <QTimer>

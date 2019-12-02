@@ -24,7 +24,7 @@
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
 #include <QPushButton>
-#include <kconfiggroup.h>
+#include <KConfigGroup>
 #include <KSharedConfig>
 
 using namespace KPIMTextEdit;
