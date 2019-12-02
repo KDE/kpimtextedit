@@ -209,7 +209,7 @@ QRegularExpression TextFindWidget::searchRegExp() const
 #endif
 QTextDocument::FindFlags TextFindWidget::searchOptions() const
 {
-    QTextDocument::FindFlags opt = nullptr;
+    QTextDocument::FindFlags opt = {};
     if (mCaseSensitiveAct->isChecked()) {
         opt |= QTextDocument::FindCaseSensitively;
     }
