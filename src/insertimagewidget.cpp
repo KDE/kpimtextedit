@@ -62,7 +62,7 @@ public:
             }
         }
         imageUrlRequester->setMimeTypeFilters(lstMimeTypes);
-        imageUrlRequester->setWindowTitle(i18n("Add Image"));
+        imageUrlRequester->setWindowTitle(i18nc("@title:window", "Add Image"));
         imageUrlRequester->setMode(KFile::File);
         q->connect(imageUrlRequester->lineEdit(), &KLineEdit::textChanged,
                    q, [this](const QString &str) {

@@ -35,7 +35,7 @@ using namespace KPIMTextEdit;
 KLinkDialog::KLinkDialog(QWidget *parent)
     : QDialog(parent)
 {
-    setWindowTitle(i18n("Manage Link"));
+    setWindowTitle(i18nc("@title:window", "Manage Link"));
     setModal(true);
 
     QVBoxLayout *layout = new QVBoxLayout(this);

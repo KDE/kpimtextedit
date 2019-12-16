@@ -41,7 +41,7 @@ public:
     TableFormatDialogPrivate(TableFormatDialog *qq)
         : q(qq)
     {
-        q->setWindowTitle(i18n("Table Format"));
+        q->setWindowTitle(i18nc("@title:window", "Table Format"));
         QVBoxLayout *mainLayout = new QVBoxLayout(q);
 
         QWidget *page = new QWidget(q);

@@ -33,7 +33,7 @@ public:
     SelectSpecialCharDialogPrivate(SelectSpecialCharDialog *qq)
         : q(qq)
     {
-        q->setWindowTitle(i18n("Select Special Characters"));
+        q->setWindowTitle(i18nc("@title:window", "Select Special Characters"));
 
         QVBoxLayout *lay = new QVBoxLayout(q);
 

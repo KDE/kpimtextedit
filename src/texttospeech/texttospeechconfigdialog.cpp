@@ -32,7 +32,7 @@ using namespace KPIMTextEdit;
 TextToSpeechConfigDialog::TextToSpeechConfigDialog(QWidget *parent)
     : QDialog(parent)
 {
-    setWindowTitle(i18n("Configure Text-To-Speech"));
+    setWindowTitle(i18nc("@title:window", "Configure Text-To-Speech"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mTextToSpeechConfigWidget = new TextToSpeechConfigWidget(parent);
     mainLayout->addWidget(mTextToSpeechConfigWidget);

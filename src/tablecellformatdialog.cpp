@@ -38,7 +38,7 @@ public:
     TableCellFormatDialogPrivate(TableCellFormatDialog *qq)
         : q(qq)
     {
-        q->setWindowTitle(i18n("Cell Format"));
+        q->setWindowTitle(i18nc("@title:window", "Cell Format"));
         QVBoxLayout *mainLayout = new QVBoxLayout;
         q->setLayout(mainLayout);
 

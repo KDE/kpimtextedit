@@ -36,7 +36,7 @@ public:
         : q(qq)
     {
         QVBoxLayout *vbox = new QVBoxLayout(q);
-        q->setWindowTitle(i18n("Insert Image"));
+        q->setWindowTitle(i18nc("@title:window", "Insert Image"));
 
         imageWidget = new InsertImageWidget(q);
         vbox->addWidget(imageWidget);

@@ -36,7 +36,7 @@ public:
     InsertTableDialogPrivate(InsertTableDialog *qq)
         : q(qq)
     {
-        q->setWindowTitle(i18n("Insert Table"));
+        q->setWindowTitle(i18nc("@title:window", "Insert Table"));
         QVBoxLayout *mainLayout = new QVBoxLayout(q);
 
         insertTableWidget = new InsertTableWidget(q);
