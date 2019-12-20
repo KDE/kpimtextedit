@@ -38,7 +38,6 @@
 #include <sonnet/speller.h>
 #include <texttospeech/texttospeech.h>
 #include <SonnetCore/sonnet/backgroundchecker.h>
-#include <sonnet_version.h>
 #include <KIO/KUriFilterSearchProviderActions>
 
 #include <QMenu>
@@ -462,21 +461,12 @@ void RichTextEditor::checkSpelling(bool force)
     connect(spellDialog, &Sonnet::Dialog::replace, this, &RichTextEditor::slotSpellCheckerCorrected);
     connect(spellDialog, &Sonnet::Dialog::misspelling, this, &RichTextEditor::slotSpellCheckerMisspelling);
     connect(spellDialog, &Sonnet::Dialog::autoCorrect, this, &RichTextEditor::slotSpellCheckerAutoCorrect);
-#if SONNET_VERSION < QT_VERSION_CHECK(5, 65, 0)
-    connect(spellDialog, QOverload<const QString &>::of(&Sonnet::Dialog::done),
-            this, &RichTextEditor::slotSpellCheckerFinished);
-#else
     connect(spellDialog, &Sonnet::Dialog::spellCheckDone, this, &RichTextEditor::slotSpellCheckerFinished);
-#endif
     connect(spellDialog, &Sonnet::Dialog::cancel, this, &RichTextEditor::slotSpellCheckerCanceled);
     connect(spellDialog, &Sonnet::Dialog::spellCheckStatus, this, &RichTextEditor::spellCheckStatus);
     connect(spellDialog, &Sonnet::Dialog::languageChanged, this, &RichTextEditor::languageChanged);
     if (force) {
-#if SONNET_VERSION < QT_VERSION_CHECK(5, 65, 0)
-        connect(spellDialog, SIGNAL(done(QString)), this, SIGNAL(spellCheckingFinished()));
-#else
         connect(spellDialog, &Sonnet::Dialog::spellCheckDone, this, &RichTextEditor::spellCheckingFinished);
-#endif
         connect(spellDialog, &Sonnet::Dialog::cancel, this, &RichTextEditor::spellCheckingCanceled);
 
     }

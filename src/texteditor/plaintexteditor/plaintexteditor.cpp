@@ -33,7 +33,6 @@
 #include <sonnet/backgroundchecker.h>
 #include <Sonnet/Dialog>
 #include "texttospeech/texttospeech.h"
-#include <sonnet_version.h>
 
 #include <QMenu>
 #include <QDBusConnection>
@@ -362,12 +361,7 @@ void PlainTextEditor::slotCheckSpelling()
     connect(spellDialog, &Sonnet::Dialog::replace, this, &PlainTextEditor::slotSpellCheckerCorrected);
     connect(spellDialog, &Sonnet::Dialog::misspelling, this, &PlainTextEditor::slotSpellCheckerMisspelling);
     connect(spellDialog, &Sonnet::Dialog::autoCorrect, this, &PlainTextEditor::slotSpellCheckerAutoCorrect);
-#if SONNET_VERSION < QT_VERSION_CHECK(5, 65, 0)
-    connect(spellDialog, QOverload<const QString &>::of(&Sonnet::Dialog::done),
-            this, &PlainTextEditor::slotSpellCheckerFinished);
-#else
     connect(spellDialog, &Sonnet::Dialog::spellCheckDone, this, &PlainTextEditor::slotSpellCheckerFinished);
-#endif
     connect(spellDialog, &Sonnet::Dialog::cancel, this, &PlainTextEditor::slotSpellCheckerCanceled);
     connect(spellDialog, &Sonnet::Dialog::spellCheckStatus, this, &PlainTextEditor::spellCheckStatus);
     connect(spellDialog, &Sonnet::Dialog::languageChanged, this, &PlainTextEditor::languageChanged);
