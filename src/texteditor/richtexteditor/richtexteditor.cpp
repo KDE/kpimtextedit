@@ -468,7 +468,6 @@ void RichTextEditor::checkSpelling(bool force)
     if (force) {
         connect(spellDialog, &Sonnet::Dialog::spellCheckDone, this, &RichTextEditor::spellCheckingFinished);
         connect(spellDialog, &Sonnet::Dialog::cancel, this, &RichTextEditor::spellCheckingCanceled);
-
     }
     d->originalDoc = QTextDocumentFragment(document());
     spellDialog->setBuffer(toPlainText());
