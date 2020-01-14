@@ -39,7 +39,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KPIMTEXTEDIT
 
 set(QT_REQUIRED_VERSION "5.12.0")
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
-find_package(Grantlee5 "5.1" CONFIG REQUIRED)
+find_package(Grantlee5 "5.2" CONFIG REQUIRED)
 set_package_properties(Grantlee5 PROPERTIES
     DESCRIPTION "A plug-in based String Template system for Qt"
     URL "https://github.com/steveire/grantlee"
