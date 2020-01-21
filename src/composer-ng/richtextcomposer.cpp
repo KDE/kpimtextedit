@@ -72,6 +72,7 @@ public:
         }
     };
     UndoHtmlVersion undoHtmlVersion;
+    bool blockClearUndoHtmlVersion = false;
 };
 
 RichTextComposer::RichTextComposer(QWidget *parent)
@@ -79,6 +80,13 @@ RichTextComposer::RichTextComposer(QWidget *parent)
     , d(new RichTextComposerPrivate(this))
 {
     setAcceptRichText(false);
+    connect(this, &RichTextComposer::textChanged, this, [this]() {
+        if (!d->blockClearUndoHtmlVersion && d->undoHtmlVersion.isValid() && (d->mode == RichTextComposer::Plain)) {
+            if (toPlainText() != d->undoHtmlVersion.plainText) {
+                d->undoHtmlVersion.clear();
+            }
+        }
+    });
 }
 
 RichTextComposer::~RichTextComposer()
@@ -281,11 +289,13 @@ void RichTextComposer::switchToPlainText()
 {
     if (d->mode == RichTextComposer::Rich) {
         d->mode = RichTextComposer::Plain;
+        d->blockClearUndoHtmlVersion = true;
         d->undoHtmlVersion.originalHtml = toHtml();
         // TODO: Warn the user about this?
         insertPlainTextImplementation();
         setAcceptRichText(false);
         d->undoHtmlVersion.plainText = toPlainText();
+        d->blockClearUndoHtmlVersion = false;
         Q_EMIT textModeChanged(d->mode);
     }
 }
