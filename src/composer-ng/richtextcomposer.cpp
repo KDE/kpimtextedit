@@ -60,6 +60,18 @@ public:
     RichTextComposer *q = nullptr;
     RichTextComposer::Mode mode = RichTextComposer::Plain;
     bool forcePlainTextMarkup = false;
+    struct UndoHtmlVersion {
+        QString originalHtml;
+        QString plainText;
+        Q_REQUIRED_RESULT bool isValid() const {
+            return !originalHtml.isEmpty() && !plainText.isEmpty();
+        }
+        void clear() {
+            originalHtml.clear();
+            plainText.clear();
+        }
+    };
+    UndoHtmlVersion undoHtmlVersion;
 };
 
 RichTextComposer::RichTextComposer(QWidget *parent)
@@ -257,6 +269,10 @@ void RichTextComposer::activateRichText()
     if (d->mode == RichTextComposer::Plain) {
         setAcceptRichText(true);
         d->mode = RichTextComposer::Rich;
+        if (d->undoHtmlVersion.isValid() && (toPlainText() == d->undoHtmlVersion.plainText)) {
+            setHtml(d->undoHtmlVersion.originalHtml);
+            d->undoHtmlVersion.clear();
+        }
         Q_EMIT textModeChanged(d->mode);
     }
 }
@@ -265,9 +281,11 @@ void RichTextComposer::switchToPlainText()
 {
     if (d->mode == RichTextComposer::Rich) {
         d->mode = RichTextComposer::Plain;
+        d->undoHtmlVersion.originalHtml = toHtml();
         // TODO: Warn the user about this?
         insertPlainTextImplementation();
         setAcceptRichText(false);
+        d->undoHtmlVersion.plainText = toPlainText();
         Q_EMIT textModeChanged(d->mode);
     }
 }
