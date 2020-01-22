@@ -280,6 +280,13 @@ void RichTextComposer::activateRichText()
         if (d->undoHtmlVersion.isValid() && (toPlainText() == d->undoHtmlVersion.plainText)) {
             setHtml(d->undoHtmlVersion.originalHtml);
             d->undoHtmlVersion.clear();
+        } else {
+#if 0 //Need to investigate it
+            //try to import markdown
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+            document()->setMarkdown(toPlainText(), QTextDocument::MarkdownDialectCommonMark);
+#endif
+#endif
         }
         Q_EMIT textModeChanged(d->mode);
     }
