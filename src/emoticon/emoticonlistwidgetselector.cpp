@@ -34,11 +34,6 @@ QString EmoticonTextEditItem::text() const
     return mText;
 }
 
-QString EmoticonTextEditItem::pixmapPath() const
-{
-    return mPixmapPath;
-}
-
 EmoticonListWidgetSelector::EmoticonListWidgetSelector(QWidget *parent)
     : QListWidget(parent)
 {

@@ -29,11 +29,9 @@ class KPIMTEXTEDIT_TESTS_EXPORT EmoticonTextEditItem : public QListWidgetItem
 public:
     explicit EmoticonTextEditItem(const QString &emoticonText, QListWidget *parent);
     QString text() const;
-    QString pixmapPath() const;
 
 private:
     QString mText;
-    QString mPixmapPath;
 };
 
 class KPIMTEXTEDIT_TESTS_EXPORT EmoticonListWidgetSelector : public QListWidget
