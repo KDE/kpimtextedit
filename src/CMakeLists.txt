@@ -71,12 +71,8 @@ set(kpimtextedit_SRCS
     editorutil.cpp
     )
 
-if (ECM_VERSION VERSION_LESS "5.68.0")
-    ecm_qt_declare_logging_category(kpimtextedit_SRCS HEADER kpimtextedit_debug.h IDENTIFIER KPIMTEXTEDIT_LOG CATEGORY_NAME org.kde.pim.kpimtextedit)
-else()
-    ecm_qt_declare_logging_category(kpimtextedit_SRCS HEADER kpimtextedit_debug.h IDENTIFIER KPIMTEXTEDIT_LOG CATEGORY_NAME org.kde.pim.kpimtextedit
+ecm_qt_declare_logging_category(kpimtextedit_SRCS HEADER kpimtextedit_debug.h IDENTIFIER KPIMTEXTEDIT_LOG CATEGORY_NAME org.kde.pim.kpimtextedit
         DESCRIPTION "kpimtextedit (kpimtextedit)" EXPORT KPIMTEXTEDIT)
-endif()
 
 
 add_library(KF5PimTextEdit ${kpimtextedit_SRCS} ${kpimtextedit_texteditor_SRCS} ${kpimtextedit_texttospeech_SRCS} ${kpimtextedit_composerng_SRCS} ${kpimtextedit_grantlee_builder_SRCS})
@@ -238,6 +234,4 @@ if(BUILD_DESIGNERPLUGIN)
     add_subdirectory(designer)
 endif()
 
-if (NOT ECM_VERSION VERSION_LESS "5.68.0")
-   ecm_qt_install_logging_categories(EXPORT KPIMTEXTEDIT FILE kpimtextedit.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
-endif()
+ecm_qt_install_logging_categories(EXPORT KPIMTEXTEDIT FILE kpimtextedit.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
