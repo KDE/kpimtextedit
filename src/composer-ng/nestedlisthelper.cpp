@@ -82,12 +82,11 @@ bool NestedListHelper::canDedent() const
     QTextBlock nextBlock = thisBlock.next();
     if (thisBlock.isValid()) {
         int nextBlockIndent = 0;
-        int thisBlockIndent = 0;
         if (nextBlock.isValid() && nextBlock.textList()) {
             nextBlockIndent = nextBlock.textList()->format().indent();
         }
         if (thisBlock.textList()) {
-            thisBlockIndent = thisBlock.textList()->format().indent();
+            int thisBlockIndent = thisBlock.textList()->format().indent();
             if (thisBlockIndent >= nextBlockIndent) {
                 return thisBlockIndent > 0;
             }
