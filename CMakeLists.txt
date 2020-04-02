@@ -75,7 +75,7 @@ add_definitions(-DQT_NO_FOREACH)
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS TextToSpeech)
 
 if(BUILD_TESTING)
-    find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
+   find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
    add_definitions(-DBUILD_TESTING)
 endif()
 
