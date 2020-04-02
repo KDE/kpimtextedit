@@ -73,6 +73,7 @@ public:
     };
     UndoHtmlVersion undoHtmlVersion;
     bool blockClearUndoHtmlVersion = false;
+    QMetaObject::Connection mRichTextChangedConnection;
 };
 
 RichTextComposer::RichTextComposer(QWidget *parent)
@@ -80,7 +81,7 @@ RichTextComposer::RichTextComposer(QWidget *parent)
     , d(new RichTextComposerPrivate(this))
 {
     setAcceptRichText(false);
-    connect(this, &RichTextComposer::textChanged, this, [this]() {
+    d->mRichTextChangedConnection = connect(this, &RichTextComposer::textChanged, this, [this]() {
         if (!d->blockClearUndoHtmlVersion && d->undoHtmlVersion.isValid() && (d->mode == RichTextComposer::Plain)) {
             if (toPlainText() != d->undoHtmlVersion.plainText) {
                 d->undoHtmlVersion.clear();
@@ -91,6 +92,7 @@ RichTextComposer::RichTextComposer(QWidget *parent)
 
 RichTextComposer::~RichTextComposer()
 {
+    disconnect(d->mRichTextChangedConnection);
     delete d;
 }
 
