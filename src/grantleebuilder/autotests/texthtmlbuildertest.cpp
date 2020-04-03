@@ -35,7 +35,8 @@ void TextHTMLBuilderTest::testHtmlText_data()
     QTest::addColumn<QString>("text");
     QTest::addColumn<QString>("regexpText");
     QTest::newRow("link") <<  QStringLiteral("A <a href=\"http://www.kde.org\">link</a> to KDE.") << QStringLiteral("^<p>A <a href=\"http://www.kde.org\">link</a> to KDE.</p>\\n$");
-    //QTest::newRow("text with espace at begin") <<  QStringLiteral("   foo") << QStringLiteral("^<p>A <a href=\"http://www.kde.org\">link</a> to KDE.</p>\\n$");
+    QTest::newRow("text with espace") <<  QStringLiteral("         foo") << QStringLiteral("^<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foo</p>\\n$");
+    QTest::newRow("text with espace at begin") <<  QStringLiteral(" foo") << QStringLiteral("^<p>&nbsp;foo</p>\\n$");
 }
 
 void TextHTMLBuilderTest::testHtmlText()
@@ -44,7 +45,7 @@ void TextHTMLBuilderTest::testHtmlText()
     QFETCH(QString, regexpText);
 
     auto doc = new QTextDocument();
-    doc->setHtml(text);
+    doc->setPlainText(text);
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new Grantlee::MarkupDirector(hb);

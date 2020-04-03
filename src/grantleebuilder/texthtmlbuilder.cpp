@@ -22,6 +22,7 @@
 
 #include <QList>
 #include <QTextDocument>
+#include <QDebug>
 
 namespace KPIMTextEdit {
 
@@ -461,13 +462,36 @@ void TextHTMLBuilder::endTableCell()
 void TextHTMLBuilder::appendLiteralText(const QString &text)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(text.toHtmlEscaped());
+    qDebug() << " appendLiteralText " << text;
+    const QString textEscaped = text.toHtmlEscaped();
+    QString textEscapedResult;
+    for (int i = 0, total = textEscaped.count(); i < total; ++i) {
+        const QChar c = textEscaped.at(i);
+
+        if (c == QLatin1Char(' ')) {
+            if (i == 0) {
+                textEscapedResult += QStringLiteral("&nbsp;");
+            } else {
+                if (i + 1 < textEscaped.count() && (textEscaped.at(i + 1) == QLatin1Char(' '))) {
+                    textEscapedResult += QStringLiteral("&nbsp;");
+                } else {
+                    textEscapedResult += c;
+                }
+            }
+        } else {
+            textEscapedResult += c;
+        }
+    }
+    d->m_text.append(textEscapedResult);
+    qDebug() << " d->m_text " << d->m_text;
 }
 
 void TextHTMLBuilder::appendRawText(const QString &text)
 {
     Q_D(TextHTMLBuilder);
+    qDebug() << " appendRawText " << text;
     d->m_text.append(text);
+    qDebug() << " d->m_text " << d->m_text;
 }
 
 QString TextHTMLBuilder::getResult()
