@@ -238,6 +238,7 @@ if (BUILD_TESTING)
     add_subdirectory(texttospeech/tests)
     add_subdirectory(composer-ng/autotests)
     add_subdirectory(composer-ng/tests)
+    add_subdirectory(grantleebuilder/autotests)
 endif()
 
 if(BUILD_DESIGNERPLUGIN)
