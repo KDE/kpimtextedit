@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2019 Montel Laurent <montel@kde.org>
+  Copyright (c) 2019-2020 Montel Laurent <montel@kde.org>
   based on grantlee PlainTextMarkupBuilder
 
   This library is free software; you can redistribute it and/or modify it
