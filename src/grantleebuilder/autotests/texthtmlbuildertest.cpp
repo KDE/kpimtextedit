@@ -30,22 +30,56 @@ TextHTMLBuilderTest::TextHTMLBuilderTest(QObject *parent)
 
 }
 
+void TextHTMLBuilderTest::testHtmlWithTab()
+{
+    auto doc = new QTextDocument(this);
+    QTextCursor cursor(doc);
+    cursor.movePosition(QTextCursor::Start);
+    cursor.insertText(QStringLiteral("\n"));
+    cursor.insertText(QStringLiteral("\t"));
+    cursor.insertText(QStringLiteral("foo"));
+
+    auto hb = new KPIMTextEdit::TextHTMLBuilder();
+    auto md = new Grantlee::MarkupDirector(hb);
+    md->processDocument(doc);
+    auto result = hb->getResult();
+
+    auto regex = QRegularExpression(
+        QStringLiteral("^<p>Foo</p>\\n<p>&nbsp;<p>&nbsp;<p>Bar</p>\\n$"));
+
+    const bool regexpHasResult = regex.match(result).hasMatch();
+    if (!regexpHasResult) {
+        qDebug() << " result found " << result;
+    }
+    QVERIFY(regexpHasResult);
+    delete md;
+    delete hb;
+    delete doc;
+
+}
+
 void TextHTMLBuilderTest::testHtmlText_data()
 {
     QTest::addColumn<QString>("text");
     QTest::addColumn<QString>("regexpText");
-    QTest::newRow("link") <<  QStringLiteral("A <a href=\"http://www.kde.org\">link</a> to KDE.") << QStringLiteral("^<p>A <a href=\"http://www.kde.org\">link</a> to KDE.</p>\\n$");
-    QTest::newRow("text with espace") <<  QStringLiteral("         foo") << QStringLiteral("^<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foo</p>\\n$");
-    QTest::newRow("text with espace at begin") <<  QStringLiteral(" foo") << QStringLiteral("^<p>&nbsp;foo</p>\\n$");
+    QTest::addColumn<bool>("htmlFormat");
+    QTest::newRow("link") <<  QStringLiteral("A <a href=\"http://www.kde.org\">link</a> to KDE.") << QStringLiteral("^<p>A <a href=\"http://www.kde.org\">link</a>&nbsp;to KDE.</p>\\n$") << true;
+    QTest::newRow("text with espace") <<  QStringLiteral("         foo") << QStringLiteral("^<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foo</p>\\n$") << false;
+    QTest::newRow("text with espace at begin") <<  QStringLiteral(" foo") << QStringLiteral("^<p>&nbsp;foo</p>\\n$") << false;
 }
 
 void TextHTMLBuilderTest::testHtmlText()
 {
     QFETCH(QString, text);
     QFETCH(QString, regexpText);
+    QFETCH(bool, htmlFormat);
 
     auto doc = new QTextDocument();
-    doc->setPlainText(text);
+    if (htmlFormat) {
+        doc->setHtml(text);
+    } else {
+        doc->setPlainText(text);
+    }
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new Grantlee::MarkupDirector(hb);

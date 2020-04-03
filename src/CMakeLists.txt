@@ -133,6 +133,7 @@ ecm_generate_headers(KPimTextEdit_CamelCaseemoticon_HEADERS
 ecm_generate_headers(KPimTextEdit_CamelCasegrantlee_HEADERS
     HEADER_NAMES
     PlainTextMarkupBuilder
+    TextHTMLBuilder
     PREFIX KPIMTextEdit
     REQUIRED_HEADERS kpimtextedit_HEADERS
     RELATIVE grantleebuilder
