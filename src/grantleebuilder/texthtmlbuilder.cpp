@@ -477,6 +477,9 @@ void TextHTMLBuilder::appendLiteralText(const QString &text)
                     textEscapedResult += c;
                 }
             }
+        } else if (c == QLatin1Char('\t')) {
+            //TODO fixme ?
+            textEscapedResult += QStringLiteral("&nbsp;&nbsp;&nbsp; ");
         } else {
             textEscapedResult += c;
         }

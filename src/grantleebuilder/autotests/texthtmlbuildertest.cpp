@@ -45,7 +45,7 @@ void TextHTMLBuilderTest::testHtmlWithTab()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(
-        QStringLiteral("^<p>Foo</p>\\n<p>&nbsp;<p>&nbsp;<p>Bar</p>\\n$"));
+        QStringLiteral("^<p>&nbsp;<p>&nbsp;&nbsp;&nbsp; foo</p>\\n$"));
 
     const bool regexpHasResult = regex.match(result).hasMatch();
     if (!regexpHasResult) {
