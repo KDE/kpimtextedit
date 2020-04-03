@@ -462,7 +462,6 @@ void TextHTMLBuilder::endTableCell()
 void TextHTMLBuilder::appendLiteralText(const QString &text)
 {
     Q_D(TextHTMLBuilder);
-    qDebug() << " appendLiteralText " << text;
     const QString textEscaped = text.toHtmlEscaped();
     QString textEscapedResult;
     for (int i = 0, total = textEscaped.count(); i < total; ++i) {
@@ -483,15 +482,12 @@ void TextHTMLBuilder::appendLiteralText(const QString &text)
         }
     }
     d->m_text.append(textEscapedResult);
-    qDebug() << " d->m_text " << d->m_text;
 }
 
 void TextHTMLBuilder::appendRawText(const QString &text)
 {
     Q_D(TextHTMLBuilder);
-    qDebug() << " appendRawText " << text;
     d->m_text.append(text);
-    qDebug() << " d->m_text " << d->m_text;
 }
 
 QString TextHTMLBuilder::getResult()

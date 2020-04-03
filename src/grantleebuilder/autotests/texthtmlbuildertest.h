@@ -31,6 +31,7 @@ public:
 private Q_SLOTS:
     void testHtmlText_data();
     void testHtmlText();
+    void testHtmlWithTab();
 };
 
 #endif // TEXTHTMLBUILDERTEST_H
