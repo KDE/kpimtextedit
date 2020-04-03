@@ -125,7 +125,7 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
 ecm_generate_headers(KPimTextEdit_CamelCaseemoticon_HEADERS
     HEADER_NAMES
     EmoticonUnicodeTab
-    PREFIX KPIMTextEditemoticon
+    PREFIX KPIMTextEdit
     REQUIRED_HEADERS kpimtextedit_HEADERS
     RELATIVE emoticon
     )
