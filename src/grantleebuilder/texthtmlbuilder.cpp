@@ -45,7 +45,10 @@ TextHTMLBuilder::TextHTMLBuilder()
 {
 }
 
-TextHTMLBuilder::~TextHTMLBuilder() { delete d_ptr; }
+TextHTMLBuilder::~TextHTMLBuilder()
+{
+    delete d_ptr;
+}
 
 void TextHTMLBuilder::beginStrong()
 {
