@@ -29,6 +29,7 @@ public:
     explicit TextHTMLBuilderTest(QObject *parent = nullptr);
     ~TextHTMLBuilderTest() = default;
 private Q_SLOTS:
+    void testHtmlText_data();
     void testHtmlText();
 };
 

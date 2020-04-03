@@ -30,21 +30,34 @@ TextHTMLBuilderTest::TextHTMLBuilderTest(QObject *parent)
 
 }
 
+void TextHTMLBuilderTest::testHtmlText_data()
+{
+    QTest::addColumn<QString>("text");
+    QTest::addColumn<QString>("regexpText");
+    QTest::newRow("link") <<  QStringLiteral("A <a href=\"http://www.kde.org\">link</a> to KDE.") << QStringLiteral("^<p>A <a href=\"http://www.kde.org\">link</a> to KDE.</p>\\n$");
+    //QTest::newRow("text with espace at begin") <<  QStringLiteral("   foo") << QStringLiteral("^<p>A <a href=\"http://www.kde.org\">link</a> to KDE.</p>\\n$");
+}
+
 void TextHTMLBuilderTest::testHtmlText()
 {
+    QFETCH(QString, text);
+    QFETCH(QString, regexpText);
+
     auto doc = new QTextDocument();
-    doc->setHtml(
-                QStringLiteral("A <a href=\"http://www.kde.org\">link</a> to KDE."));
+    doc->setHtml(text);
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new Grantlee::MarkupDirector(hb);
     md->processDocument(doc);
-    auto result = hb->getResult();
+    const auto result = hb->getResult();
 
-    const QRegularExpression regex(QStringLiteral(
-                                 "^<p>A <a href=\"http://www.kde.org\">link</a> to KDE.</p>\\n$"));
+    const QRegularExpression regex(regexpText);
 
-    QVERIFY(regex.match(result).hasMatch());
+    const bool regexpHasResult = regex.match(result).hasMatch();
+    if (!regexpHasResult) {
+        qDebug() << " result found " << result;
+    }
+    QVERIFY(regexpHasResult);
     delete md;
     delete hb;
     delete doc;
