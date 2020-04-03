@@ -23,8 +23,7 @@
 
 #include <grantlee/markupdirector.h>
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class MarkupDirector : public Grantlee::MarkupDirector
 {
 public:

@@ -25,17 +25,14 @@ using namespace KPIMTextEdit;
 MarkupDirector::MarkupDirector(Grantlee::AbstractMarkupBuilder *builder)
     : Grantlee::MarkupDirector(builder)
 {
-
 }
 
 MarkupDirector::~MarkupDirector()
 {
-
 }
 
 QTextFrame::iterator
-MarkupDirector::processBlockContents(QTextFrame::iterator frameIt,
-                                     const QTextBlock &block)
+MarkupDirector::processBlockContents(QTextFrame::iterator frameIt, const QTextBlock &block)
 {
     //Same code as grantlee  but interprete margin
 
@@ -46,8 +43,9 @@ MarkupDirector::processBlockContents(QTextFrame::iterator frameIt,
 
     if (blockFormat.hasProperty(QTextFormat::BlockTrailingHorizontalRulerWidth)) {
         m_builder->insertHorizontalRule();
-        if (!frameIt.atEnd())
+        if (!frameIt.atEnd()) {
             return ++frameIt;
+        }
         return frameIt;
     }
 
@@ -58,8 +56,9 @@ MarkupDirector::processBlockContents(QTextFrame::iterator frameIt,
     // on.
     if (it.atEnd()) {
         m_builder->addNewline();
-        if (!frameIt.atEnd())
+        if (!frameIt.atEnd()) {
             return ++frameIt;
+        }
         return frameIt;
     }
 
@@ -73,12 +72,12 @@ MarkupDirector::processBlockContents(QTextFrame::iterator frameIt,
         // So users can't edit them. See bug
         // https://bugs.kde.org/show_bug.cgi?id=160600
         m_builder->beginParagraph(
-                    blockAlignment,
-                    blockFormat.topMargin(),
-                    blockFormat.bottomMargin(),
-                    blockFormat.leftMargin(),
-                    blockFormat.rightMargin()
-                    );
+            blockAlignment,
+            blockFormat.topMargin(),
+            blockFormat.bottomMargin(),
+            blockFormat.leftMargin(),
+            blockFormat.rightMargin()
+            );
     }
 
     while (!it.atEnd()) {
@@ -89,16 +88,14 @@ MarkupDirector::processBlockContents(QTextFrame::iterator frameIt,
         m_builder->endParagraph();
     }
 
-    if (!frameIt.atEnd())
+    if (!frameIt.atEnd()) {
         return ++frameIt;
+    }
     return frameIt;
 }
 
-
 QTextBlock::iterator
-MarkupDirector::processFragment(QTextBlock::iterator it,
-                                const QTextFragment &fragment,
-                                QTextDocument const *doc)
+MarkupDirector::processFragment(QTextBlock::iterator it, const QTextFragment &fragment, QTextDocument const *doc)
 {
     //Same code as Grantlee + a fix !
 
@@ -107,20 +104,23 @@ MarkupDirector::processFragment(QTextBlock::iterator it,
 
     if (charFormat.objectType() >= QTextFormat::UserObject) {
         processCustomFragment(fragment, doc);
-        if (!it.atEnd())
+        if (!it.atEnd()) {
             return ++it;
+        }
         return it;
     }
 
     auto textObject = doc->objectForFormat(charFormat);
-    if (textObject)
+    if (textObject) {
         return processCharTextObject(it, fragment, textObject);
+    }
 
     if (fragment.text().at(0).category() == QChar::Separator_Line) {
         m_builder->addNewline();
 
-        if (!it.atEnd())
+        if (!it.atEnd()) {
             return ++it;
+        }
         return it;
     }
 
@@ -189,8 +189,9 @@ MarkupDirector::processFragment(QTextBlock::iterator it,
             }
         }
     }
-    if (!it.atEnd())
+    if (!it.atEnd()) {
         ++it;
+    }
 
     processClosingElements(it);
 
