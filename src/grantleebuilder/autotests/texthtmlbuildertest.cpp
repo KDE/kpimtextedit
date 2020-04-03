@@ -45,7 +45,7 @@ void TextHTMLBuilderTest::testHtmlWithTab()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(
-        QStringLiteral("^<p>Foo</p>\\n<p>&nbsp;<p>&nbsp;<p>Bar</p>\\n$"));
+        QStringLiteral("^<p>&nbsp;<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">&nbsp;&nbsp;&nbsp; foo</p>\\n$"));
 
     const bool regexpHasResult = regex.match(result).hasMatch();
     if (!regexpHasResult) {
@@ -63,9 +63,9 @@ void TextHTMLBuilderTest::testHtmlText_data()
     QTest::addColumn<QString>("text");
     QTest::addColumn<QString>("regexpText");
     QTest::addColumn<bool>("htmlFormat");
-    QTest::newRow("link") <<  QStringLiteral("A <a href=\"http://www.kde.org\">link</a> to KDE.") << QStringLiteral("^<p>A <a href=\"http://www.kde.org\">link</a>&nbsp;to KDE.</p>\\n$") << true;
-    QTest::newRow("text with espace") <<  QStringLiteral("         foo") << QStringLiteral("^<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foo</p>\\n$") << false;
-    QTest::newRow("text with espace at begin") <<  QStringLiteral(" foo") << QStringLiteral("^<p>&nbsp;foo</p>\\n$") << false;
+    QTest::newRow("link") <<  QStringLiteral("A <a href=\"http://www.kde.org\">link</a> to KDE.") << QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">A <a href=\"http://www.kde.org\">link</a>&nbsp;to KDE.</p>\\n$") << true;
+    QTest::newRow("text with espace") <<  QStringLiteral("         foo") << QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foo</p>\\n$") << false;
+    QTest::newRow("text with espace at begin") <<  QStringLiteral(" foo") << QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">&nbsp;foo</p>\\n$") << false;
 }
 
 void TextHTMLBuilderTest::testHtmlText()

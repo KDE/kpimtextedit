@@ -183,18 +183,10 @@ void TextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin,
     //     if (currentListItemStyles.size() != 0)
     //     {
     QString styleString;
-    if (topMargin != 0) {
-        styleString.append(QStringLiteral("margin-top:%1;").arg(topMargin));
-    }
-    if (bottomMargin != 0) {
-        styleString.append(QStringLiteral("margin-bottom:%1;").arg(bottomMargin));
-    }
-    if (leftMargin != 0) {
-        styleString.append(QStringLiteral("margin-left:%1;").arg(leftMargin));
-    }
-    if (rightMargin != 0) {
-        styleString.append(QStringLiteral("margin-right:%1;").arg(rightMargin));
-    }
+    styleString.append(QStringLiteral("margin-top:%1;").arg(topMargin));
+    styleString.append(QStringLiteral("margin-bottom:%1;").arg(bottomMargin));
+    styleString.append(QStringLiteral("margin-left:%1;").arg(leftMargin));
+    styleString.append(QStringLiteral("margin-right:%1;").arg(rightMargin));
 
     // Using == doesn't work here.
     // Using bitwise comparison because an alignment can contain a vertical and
@@ -213,7 +205,7 @@ void TextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin,
     }
 
     if (!styleString.isEmpty()) {
-        d->m_text.append(QStringLiteral(" \"") + styleString + QLatin1Char('"'));
+        d->m_text.append(QStringLiteral(" style=\"") + styleString + QLatin1Char('"'));
     }
     d->m_text.append(QLatin1Char('>'));
     //     }
@@ -477,6 +469,9 @@ void TextHTMLBuilder::appendLiteralText(const QString &text)
                     textEscapedResult += c;
                 }
             }
+        } else if (c == QLatin1Char('\t')) {
+            //TODO fixme ?
+            textEscapedResult += QStringLiteral("&nbsp;&nbsp;&nbsp; ");
         } else {
             textEscapedResult += c;
         }
