@@ -43,6 +43,7 @@ set(kpimtextedit_texttospeech_SRCS
 set(kpimtextedit_grantlee_builder_SRCS
     grantleebuilder/plaintextmarkupbuilder.cpp
     grantleebuilder/markupdirector.cpp
+    grantleebuilder/texthtmlbuilder.cpp
     )
 
 set(kpimtextedit_emoticon_builder_SRCS
@@ -129,6 +130,13 @@ ecm_generate_headers(KPimTextEdit_CamelCaseemoticon_HEADERS
     RELATIVE emoticon
     )
 
+ecm_generate_headers(KPimTextEdit_CamelCasegrantlee_HEADERS
+    HEADER_NAMES
+    PlainTextMarkupBuilder
+    PREFIX KPIMTextEdit
+    REQUIRED_HEADERS kpimtextedit_HEADERS
+    RELATIVE grantleebuilder
+    )
 
 ecm_generate_headers(PimCommon_CamelCasetextrichtexteditor_HEADERS
     HEADER_NAMES
@@ -199,6 +207,7 @@ install(FILES
     ${PimCommon_plaintexteditor_HEADERS}
     ${KPimTextEdit_composerng_HEADERS}
     ${KPimTextEdit_emoticon_HEADERS}
+    ${KPimTextEdit_grantlee_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit/kpimtextedit
     COMPONENT Devel
     )
@@ -211,6 +220,7 @@ install(FILES
     ${PimCommon_CamelCasetexteditor_commonwidget_HEADERS}
     ${KPimTextEdit_Camelcasecomposerng_HEADERS}
     ${KPimTextEdit_CamelCaseemoticon_HEADERS}
+    ${KPimTextEdit_CamelCasegrantlee_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit/KPIMTextEdit/
     COMPONENT Devel
     )
