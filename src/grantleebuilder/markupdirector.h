@@ -33,6 +33,8 @@ public:
     QTextFrame::iterator processBlockContents(QTextFrame::iterator frameIt, const QTextBlock &block) override;
 protected:
     QTextBlock::iterator processFragment(QTextBlock::iterator it, const QTextFragment &fragment, const QTextDocument *doc) override;
+private:
+    Q_DISABLE_COPY(MarkupDirector)
 };
 }
 

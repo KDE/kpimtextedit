@@ -42,7 +42,7 @@ public:
         Play,
         Pause
     };
-    Q_ENUMS(State)
+    Q_ENUM(State)
 
     Q_REQUIRED_RESULT State state() const;
     void setState(KPIMTextEdit::TextToSpeechWidget::State state);

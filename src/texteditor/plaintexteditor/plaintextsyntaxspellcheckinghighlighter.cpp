@@ -50,7 +50,7 @@ struct SpellCheckRange
     int length;
 };
 
-QDebug operator<<(QDebug dbg, const SpellCheckRange &s)
+QDebug operator<<(QDebug dbg, SpellCheckRange s)
 {
     dbg << '(' << s.offset << ',' << s.length << ')';
     return dbg;
