@@ -29,6 +29,10 @@ class PlainTextMarkupBuilderTest : public QObject
 public:
     explicit PlainTextMarkupBuilderTest(QObject *parent = nullptr);
     ~PlainTextMarkupBuilderTest() = default;
+
+private Q_SLOTS:
+    void testPlainText();
+    void testPlainText_data();
 };
 
 #endif // PLAINTEXTMARKUPBUILDERTEST_H
