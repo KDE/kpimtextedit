@@ -289,7 +289,7 @@ void PlainTextMarkupBuilder::endList()
 void PlainTextMarkupBuilder::beginListItem()
 {
     Q_D(PlainTextMarkupBuilder);
-    for (auto i = 0; i < d->currentListItemNumbers.size(); i++) {
+    for (int i = 0, total = d->currentListItemNumbers.size(); i < total; ++i) {
         d->m_text.append(QStringLiteral("    "));
     }
 
