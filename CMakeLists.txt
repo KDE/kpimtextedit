@@ -71,6 +71,7 @@ if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
 endif()
 
 add_definitions(-DQT_NO_FOREACH)
+add_definitions(-DQT_NO_KEYWORDS)
 
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS TextToSpeech)
 
