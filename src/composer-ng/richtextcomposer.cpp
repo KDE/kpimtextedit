@@ -404,6 +404,19 @@ void RichTextComposer::evaluateListSupport(QKeyEvent *event)
         KPIMTextEdit::RichTextEditor::keyPressEvent(event);
     }
 
+    // Match the behavior of office suites: newline after header switches to normal text
+    if ((event->key() == Qt::Key_Return)
+            && (textCursor().blockFormat().headingLevel() > 0)
+            && (textCursor().atBlockEnd())) {
+        d->composerControler->setHeadingLevel(0);
+    }
+
+    // If a line was merged with previous one, with different heading level,
+    // the style should also be adjusted accordingly (i.e. merged)
+    if ((event->key() == Qt::Key_Backspace) || (event->key() == Qt::Key_Delete)) {
+        d->composerControler->setHeadingLevel(textCursor().blockFormat().headingLevel());
+    }
+
     if (textCursor().currentList()) {
         d->composerControler->nestedListHelper()->handleAfterKeyPressEvent(event);
     }

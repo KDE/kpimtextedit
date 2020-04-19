@@ -85,6 +85,7 @@ public:
     QAction *action_format_reset = nullptr;
 
     KToggleAction *action_format_painter = nullptr;
+    KSelectAction *action_heading_level = nullptr;
 
     bool richTextEnabled = false;
 };
@@ -464,6 +465,28 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     if (ac) {
         ac->addAction(QStringLiteral("format_painter"), d->action_format_painter);
     }
+
+
+    d->action_heading_level = new KSelectAction(i18nc("@title:menu", "Heading Level"), this);
+    const QStringList headingLevels = {i18nc("@item:inmenu no heading",                 "Basic text"),
+                                       i18nc("@item:inmenu heading level 1 (largest)",  "Title"),
+                                       i18nc("@item:inmenu heading level 2",            "Subtitle"),
+                                       i18nc("@item:inmenu heading level 3",            "Section"),
+                                       i18nc("@item:inmenu heading level 4",            "Subsection"),
+                                       i18nc("@item:inmenu heading level 5",            "Paragraph"),
+                                       i18nc("@item:inmenu heading level 6 (smallest)", "Subparagraph")};
+
+    d->action_heading_level->setItems(headingLevels);
+    d->action_heading_level->setCurrentItem(0);
+    d->richTextActionList.append(d->action_heading_level);
+    d->action_heading_level->setObjectName(QStringLiteral("format_heading_level"));
+    connect(d->action_heading_level, QOverload<int>::of(&KSelectAction::triggered),
+            this, &RichTextComposerActions::setHeadingLevel);
+    if (ac) {
+        ac->addAction(QStringLiteral("format_heading_level"), d->action_heading_level);
+    }
+
+
     connect(d->action_format_painter, &QAction::toggled,
             d->composerControler, &RichTextComposerControler::slotFormatPainter);
 
@@ -484,6 +507,13 @@ void RichTextComposerActions::updateActionStates()
 {
     slotUpdateMiscActions();
     slotUpdateCharFormatActions(d->composerControler->richTextComposer()->currentCharFormat());
+}
+
+void RichTextComposerActions::setHeadingLevel(int level)
+{
+    d->composerControler->setHeadingLevel(level);
+    //Needed ?
+    slotUpdateMiscActions();
 }
 
 void RichTextComposerActions::setListStyle(int _styleindex)
@@ -551,6 +581,7 @@ void RichTextComposerActions::slotUpdateMiscActions()
     const Qt::LayoutDirection direction = d->composerControler->richTextComposer()->textCursor().blockFormat().layoutDirection();
     d->action_direction_ltr->setChecked(direction == Qt::LeftToRight);
     d->action_direction_rtl->setChecked(direction == Qt::RightToLeft);
+    d->action_heading_level->setCurrentItem(d->composerControler->richTextComposer()->textCursor().blockFormat().headingLevel());
 }
 
 void RichTextComposerActions::uncheckActionFormatPainter()

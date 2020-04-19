@@ -69,6 +69,7 @@ public:
     void addQuotes(const QString &defaultQuote);
 public Q_SLOTS:
     void insertHorizontalRule();
+    void setHeadingLevel(int level);
     void alignLeft();
     void alignCenter();
     void alignRight();

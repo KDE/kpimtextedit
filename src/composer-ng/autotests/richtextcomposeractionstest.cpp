@@ -85,7 +85,8 @@ void RichTextComposerActionsTest::shouldHaveActions()
         << QStringLiteral("insert_table")
         << QStringLiteral("delete_line")
         << QStringLiteral("format_reset")
-        << QStringLiteral("format_painter");
+        << QStringLiteral("format_painter")
+        << QStringLiteral("format_heading_level");
 
     QStringList actionNoRichText;
     actionNoRichText << QStringLiteral("paste_quoted")

@@ -55,6 +55,7 @@ private:
     void slotUpdateCharFormatActions(const QTextCharFormat &format);
     void slotUpdateMiscActions();
 
+    void setHeadingLevel(int level);
     void setListStyle(int _styleindex);
     class RichTextComposerActionsPrivate;
     RichTextComposerActionsPrivate *const d;
