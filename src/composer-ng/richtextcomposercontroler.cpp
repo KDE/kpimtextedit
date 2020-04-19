@@ -85,7 +85,7 @@ void RichTextComposerControler::RichTextComposerControlerPrivate::selectLinkText
 {
     // If the cursor is on a link, select the text of the link.
     if (cursor->charFormat().isAnchor()) {
-        QString aHref = cursor->charFormat().anchorHref();
+        const QString aHref = cursor->charFormat().anchorHref();
 
         // Move cursor to start of link
         while (cursor->charFormat().anchorHref() == aHref) {
@@ -955,8 +955,8 @@ QString RichTextComposerControler::toWrappedPlainText(QTextDocument *doc) const
         const int numberOfLine(layout->lineCount());
         bool urlStart = false;
         for (int i = 0; i < numberOfLine; ++i) {
-            QTextLine line = layout->lineAt(i);
-            QString lineText = block.text().mid(line.textStart(), line.textLength());
+            const QTextLine line = layout->lineAt(i);
+            const QString lineText = block.text().mid(line.textStart(), line.textLength());
 
             if (lineText.contains(rx)
                 || (urlStart && !lineText.contains(QLatin1Char(' '))
