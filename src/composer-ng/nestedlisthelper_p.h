@@ -123,8 +123,6 @@ public:
     bool canDedent() const;
 
 private:
-    void reformatBoundingItemSpacing(QTextBlock block);
-    void reformatBoundingItemSpacing();
     QTextCursor topOfSelection();
     QTextCursor bottomOfSelection();
     void processList(QTextList *list);
