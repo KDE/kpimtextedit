@@ -63,8 +63,8 @@ bool NestedListHelper::canIndent() const
     if ((textEdit->textCursor().block().isValid())
 //            && (  textEdit->textCursor().block().previous().isValid() )
         ) {
-        QTextBlock block = textEdit->textCursor().block();
-        QTextBlock prevBlock = textEdit->textCursor().block().previous();
+        const QTextBlock block = textEdit->textCursor().block();
+        const QTextBlock prevBlock = textEdit->textCursor().block().previous();
         if (block.textList()) {
             if (prevBlock.textList()) {
                 return block.textList()->format().indent() <= prevBlock.textList()->format().indent();
@@ -133,9 +133,9 @@ bool NestedListHelper::handleAfterDropEvent(QDropEvent *dropEvent)
     QTextCursor cursor = topOfSelection();
 
     QTextBlock droppedBlock = cursor.block();
-    int firstDroppedItemIndent = droppedBlock.textList()->format().indent();
+    const int firstDroppedItemIndent = droppedBlock.textList()->format().indent();
 
-    int minimumIndent = droppedBlock.previous().textList()->format().indent();
+    const int minimumIndent = droppedBlock.previous().textList()->format().indent();
 
     if (firstDroppedItemIndent < minimumIndent) {
         cursor = QTextCursor(droppedBlock);
@@ -160,7 +160,7 @@ bool NestedListHelper::handleAfterDropEvent(QDropEvent *dropEvent)
 void NestedListHelper::processList(QTextList *list)
 {
     QTextBlock block = list->item(0);
-    int thisListIndent = list->format().indent();
+    const int thisListIndent = list->format().indent();
 
     QTextCursor cursor = QTextCursor(block);
     list = cursor.createList(list->format());

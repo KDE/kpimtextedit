@@ -147,7 +147,7 @@ void RichTextExternalComposer::slotEditorFinished(int codeError, QProcess::ExitS
         // with the given filename, so we need to reopen the file after the editor exited
         QFile localFile(d->extEditorTempFile->fileName());
         if (localFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            QByteArray f = localFile.readAll();
+            const QByteArray f = localFile.readAll();
             d->richTextComposer->setTextOrHtml(QString::fromUtf8(f.data(), f.size()));
             d->richTextComposer->document()->setModified(true);
             localFile.close();
@@ -168,7 +168,7 @@ bool RichTextExternalComposer::checkExternalEditorFinished()
         return true;
     }
 
-    int ret = KMessageBox::warningYesNoCancel(
+    const int ret = KMessageBox::warningYesNoCancel(
         d->richTextComposer,
         xi18nc("@info",
                "The external editor is still running.<nl/>"
