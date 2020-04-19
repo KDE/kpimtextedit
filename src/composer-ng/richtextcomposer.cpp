@@ -400,6 +400,25 @@ void RichTextComposer::evaluateListSupport(QKeyEvent *event)
         handled = d->composerControler->nestedListHelper()->handleBeforeKeyPressEvent(event);
     }
 
+    // If a line was merged with previous (next) one, with different heading level,
+    // the style should also be adjusted accordingly (i.e. merged)
+    if ((event->key() == Qt::Key_Backspace && textCursor().atBlockStart() &&
+            (textCursor().blockFormat().headingLevel() != textCursor().block().previous().blockFormat().headingLevel()))
+     || (event->key() == Qt::Key_Delete && textCursor().atBlockEnd() &&
+            (textCursor().blockFormat().headingLevel() != textCursor().block().next().blockFormat().headingLevel())))
+    {
+        QTextCursor cursor = textCursor();
+        cursor.beginEditBlock();
+        if (event->key() == Qt::Key_Delete) {
+            cursor.deleteChar();
+        } else {
+            cursor.deletePreviousChar();
+        }
+        d->composerControler->setHeadingLevel(cursor.blockFormat().headingLevel());
+        cursor.endEditBlock();
+        handled = true;
+    }
+
     if (!handled) {
         KPIMTextEdit::RichTextEditor::keyPressEvent(event);
     }
@@ -408,7 +427,10 @@ void RichTextComposer::evaluateListSupport(QKeyEvent *event)
     if ((event->key() == Qt::Key_Return)
             && (textCursor().blockFormat().headingLevel() > 0)
             && (textCursor().atBlockEnd())) {
+        // it should be undoable together with actual "return" keypress
+        textCursor().joinPreviousEditBlock();
         d->composerControler->setHeadingLevel(0);
+        textCursor().endEditBlock();
     }
 
     // If a line was merged with previous one, with different heading level,

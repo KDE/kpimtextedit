@@ -370,6 +370,7 @@ void RichTextComposerControler::setHeadingLevel(int level)
     const int sizeAdjustment = boundedLevel > 0 ? 5 - boundedLevel: 0;
 
     QTextCursor cursor = richTextComposer()->textCursor();
+    cursor.beginEditBlock();
 
     QTextBlockFormat blkfmt;
     blkfmt.setHeadingLevel(boundedLevel);
@@ -397,6 +398,7 @@ void RichTextComposerControler::setHeadingLevel(int level)
     selectCursor.mergeCharFormat(chrfmt);
 
     cursor.mergeBlockCharFormat(chrfmt);
+    cursor.endEditBlock();
     richTextComposer()->setTextCursor(cursor);
     richTextComposer()->setFocus();
     richTextComposer()->activateRichText();
