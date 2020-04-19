@@ -208,9 +208,9 @@ void RichTextComposerControler::insertHorizontalRule()
     cursor.beginEditBlock();
     cursor.insertHtml(QStringLiteral("<hr>"));
     cursor.insertBlock(bf, cf);
+    cursor.endEditBlock();
     richTextComposer()->setTextCursor(cursor);
     richTextComposer()->activateRichText();
-    cursor.endEditBlock();
 }
 
 void RichTextComposerControler::alignLeft()
