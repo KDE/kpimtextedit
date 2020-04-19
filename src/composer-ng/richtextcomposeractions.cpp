@@ -512,14 +512,12 @@ void RichTextComposerActions::updateActionStates()
 void RichTextComposerActions::setHeadingLevel(int level)
 {
     d->composerControler->setHeadingLevel(level);
-    //Needed ?
     slotUpdateMiscActions();
 }
 
 void RichTextComposerActions::setListStyle(int _styleindex)
 {
     d->composerControler->setListStyle(_styleindex);
-    //Needed ?
     slotUpdateMiscActions();
 }
 
@@ -528,8 +526,6 @@ void RichTextComposerActions::setActionsEnabled(bool enabled)
     for (QAction *action : qAsConst(d->richTextActionList)) {
         action->setEnabled(enabled);
     }
-    //Use all the time emojiunicode
-    //d->action_add_emoticon->setEmojiPlainText(!enabled);
     d->richTextEnabled = enabled;
 }
 
@@ -552,7 +548,8 @@ void RichTextComposerActions::slotUpdateCharFormatActions(const QTextCharFormat 
 
 void RichTextComposerActions::slotUpdateMiscActions()
 {
-    const Qt::Alignment a = d->composerControler->richTextComposer()->alignment();
+    const RichTextComposer *richTextComposer = d->composerControler->richTextComposer();
+    const Qt::Alignment a = richTextComposer->alignment();
     if (a & Qt::AlignLeft) {
         d->action_align_left->setChecked(true);
     } else if (a & Qt::AlignHCenter) {
@@ -562,8 +559,8 @@ void RichTextComposerActions::slotUpdateMiscActions()
     } else if (a & Qt::AlignJustify) {
         d->action_align_justify->setChecked(true);
     }
-    if (d->composerControler->richTextComposer()->textCursor().currentList()) {
-        d->action_list_style->setCurrentItem(-d->composerControler->richTextComposer()->textCursor().currentList()->format().style());
+    if (richTextComposer->textCursor().currentList()) {
+        d->action_list_style->setCurrentItem(-richTextComposer->textCursor().currentList()->format().style());
     } else {
         d->action_list_style->setCurrentItem(0);
     }
@@ -578,10 +575,10 @@ void RichTextComposerActions::slotUpdateMiscActions()
         d->action_list_dedent->setEnabled(false);
     }
 
-    const Qt::LayoutDirection direction = d->composerControler->richTextComposer()->textCursor().blockFormat().layoutDirection();
+    const Qt::LayoutDirection direction = richTextComposer->textCursor().blockFormat().layoutDirection();
     d->action_direction_ltr->setChecked(direction == Qt::LeftToRight);
     d->action_direction_rtl->setChecked(direction == Qt::RightToLeft);
-    d->action_heading_level->setCurrentItem(d->composerControler->richTextComposer()->textCursor().blockFormat().headingLevel());
+    d->action_heading_level->setCurrentItem(richTextComposer->textCursor().blockFormat().headingLevel());
 }
 
 void RichTextComposerActions::uncheckActionFormatPainter()
