@@ -946,7 +946,7 @@ QString RichTextComposerControler::toWrappedPlainText() const
 QString RichTextComposerControler::toWrappedPlainText(QTextDocument *doc) const
 {
     QString temp;
-    QRegularExpression rx(QStringLiteral("(http|ftp|ldap)s?\\S+-$"));
+    static const QRegularExpression rx(QStringLiteral("(http|ftp|ldap)s?\\S+-$"));
     QTextBlock block = doc->begin();
     while (block.isValid()) {
         QTextLayout *layout = block.layout();
