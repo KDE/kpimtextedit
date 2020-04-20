@@ -118,7 +118,8 @@ QVector<QAction *> RichTextComposer::richTextActionList() const
 
 void RichTextComposer::setEnableActions(bool state)
 {
-    for (QAction *act : richTextActionList()) {
+    const QVector<QAction *> richAction = richTextActionList();
+    for (QAction *act : richAction) {
         act->setEnabled(state);
     }
 }
@@ -282,8 +283,8 @@ void RichTextComposer::activateRichText()
         if (d->undoHtmlVersion.isValid() && (toPlainText() == d->undoHtmlVersion.plainText)) {
             setHtml(d->undoHtmlVersion.originalHtml);
             d->undoHtmlVersion.clear();
-        } else {
 #if 0 //Need to investigate it
+        } else {
             //try to import markdown
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
             document()->setMarkdown(toPlainText(), QTextDocument::MarkdownDialectCommonMark);
@@ -335,8 +336,8 @@ void RichTextComposer::evaluateReturnKeySupport(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Return) {
         QTextCursor cursor = textCursor();
-        int oldPos = cursor.position();
-        int blockPos = cursor.block().position();
+        const int oldPos = cursor.position();
+        const int blockPos = cursor.block().position();
 
         //selection all the line.
         cursor.movePosition(QTextCursor::StartOfBlock);

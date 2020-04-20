@@ -50,7 +50,6 @@ public:
     Q_REQUIRED_RESULT bool canDedentList() const;
 
     Q_REQUIRED_RESULT NestedListHelper *nestedListHelper() const;
-    void insertShareLink(const QString &url);
     void insertLink(const QString &url);
     void setCursorPositionFromStart(unsigned int pos);
     void ensureCursorVisible();

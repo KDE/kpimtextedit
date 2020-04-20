@@ -169,7 +169,7 @@ void NestedListHelper::processList(QTextList *list)
         block = block.next();
 
         QTextList *nextList = block.textList();
-        int nextItemIndent = nextList->format().indent();
+        const int nextItemIndent = nextList->format().indent();
         if (nextItemIndent < thisListIndent) {
             return;
         } else if (nextItemIndent > thisListIndent) {
@@ -190,7 +190,7 @@ void NestedListHelper::processList(QTextList *list)
 void NestedListHelper::reformatList(QTextBlock block)
 {
     if (block.textList()) {
-        int minimumIndent = block.textList()->format().indent();
+        const int minimumIndent = block.textList()->format().indent();
 
         // Start at the top of the list
         while (block.previous().textList() != nullptr) {
@@ -268,8 +268,7 @@ void NestedListHelper::handleOnIndentLess()
     if (!currentList) {
         return;
     }
-    QTextListFormat listFmt;
-    listFmt = currentList->format();
+    QTextListFormat listFmt = currentList->format();
     if (listFmt.indent() > 1) {
         listFmt.setIndent(listFmt.indent() - 1);
         cursor.createList(listFmt);

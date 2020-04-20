@@ -69,7 +69,7 @@ public:
     void selectLinkText(QTextCursor *cursor) const;
     void fixupTextEditString(QString &text) const;
     void mergeFormatOnWordOrSelection(const QTextCharFormat &format);
-    QString addQuotesToText(const QString &inputText, const QString &defaultQuoteSign);
+    Q_REQUIRED_RESULT QString addQuotesToText(const QString &inputText, const QString &defaultQuoteSign);
     void updateLink(const QString &linkUrl, const QString &linkText);
     QFont saveFont;
     QColor mLinkColor;
@@ -646,43 +646,6 @@ void RichTextComposerControler::insertLink(const QString &url)
         cursor.endEditBlock();
     } else {
         richTextComposer()->textCursor().insertText(url + QLatin1Char('\n'));
-    }
-}
-
-void RichTextComposerControler::insertShareLink(const QString &url)
-{
-    if (url.isEmpty()) {
-        return;
-    }
-    const QString msg = i18n("I've linked 1 file to this email:");
-    if (richTextComposer()->textMode() == RichTextComposer::Rich) {
-        QTextCursor cursor = richTextComposer()->textCursor();
-
-        cursor.beginEditBlock();
-        cursor.insertText(QLatin1Char('\n') + msg + QLatin1Char('\n'));
-
-        QTextCharFormat format = cursor.charFormat();
-        // Save original format to create an extra space with the existing char
-        // format for the block
-        const QTextCharFormat originalFormat = format;
-        // Add link details
-        format.setAnchor(true);
-        format.setAnchorHref(url);
-        // Workaround for QTBUG-1814:
-        // Link formatting does not get applied immediately when setAnchor(true)
-        // is called.  So the formatting needs to be applied manually.
-        format.setUnderlineStyle(QTextCharFormat::SingleUnderline);
-        format.setUnderlineColor(d->linkColor());
-        format.setForeground(d->linkColor());
-        // Insert link text specified in dialog, otherwise write out url.
-        cursor.insertText(url, format);
-
-        cursor.setPosition(cursor.selectionEnd());
-        cursor.setCharFormat(originalFormat);
-        cursor.insertText(QStringLiteral(" \n"));
-        cursor.endEditBlock();
-    } else {
-        richTextComposer()->textCursor().insertText(QLatin1Char('\n') + msg + QLatin1Char('\n') + url + QLatin1Char('\n'));
     }
 }
 
