@@ -27,7 +27,7 @@
 #include <QTextCursor>
 
 using namespace KPIMTextEdit;
-class KPIMTextEdit::PlainTextEditorWidgetPrivate
+class Q_DECL_HIDDEN KPIMTextEdit::PlainTextEditorWidgetPrivate
 {
 public:
     PlainTextEditorWidgetPrivate()

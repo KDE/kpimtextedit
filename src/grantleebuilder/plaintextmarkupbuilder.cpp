@@ -36,15 +36,15 @@ public:
     @param The number to convert
     @return The letter string representation of the number.
   */
-    QString getLetterString(int itemNumber);
+    Q_REQUIRED_RESULT QString getLetterString(int itemNumber);
 
-    QString getRomanString(int itemNumber);
+    Q_REQUIRED_RESULT QString getRomanString(int itemNumber);
 
     /**
     Gets a block of references in the body of the text.
     This is an ordered list of links and images in the text.
   */
-    QString getReferences();
+    Q_REQUIRED_RESULT QString getReferences();
 
     QStringList m_urls;
     QList<QTextListFormat::Style> currentListItemStyles;

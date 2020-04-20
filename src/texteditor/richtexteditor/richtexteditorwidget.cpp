@@ -29,7 +29,7 @@
 
 using namespace KPIMTextEdit;
 
-class KPIMTextEdit::RichTextEditorWidgetPrivate
+class Q_DECL_HIDDEN KPIMTextEdit::RichTextEditorWidgetPrivate
 {
 public:
     RichTextEditorWidgetPrivate()

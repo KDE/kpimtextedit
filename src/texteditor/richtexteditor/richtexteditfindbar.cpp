@@ -28,7 +28,7 @@
 #include <QRegularExpression>
 
 using namespace KPIMTextEdit;
-class KPIMTextEdit::RichTextEditFindBarPrivate
+class Q_DECL_HIDDEN KPIMTextEdit::RichTextEditFindBarPrivate
 {
 public:
     RichTextEditFindBarPrivate(QTextEdit *view)
