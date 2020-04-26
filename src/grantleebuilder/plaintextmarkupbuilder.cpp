@@ -421,7 +421,30 @@ void PlainTextMarkupBuilder::beginForeground(const QBrush &brush)
 
 void PlainTextMarkupBuilder::beginHeader(int level)
 {
-    Q_UNUSED(level);
+    Q_D(PlainTextMarkupBuilder);
+    switch (level) {
+    case 1:
+        d->m_text.append(QStringLiteral("# "));
+        break;
+    case 2:
+        d->m_text.append(QStringLiteral("## "));
+        break;
+    case 3:
+        d->m_text.append(QStringLiteral("### "));
+        break;
+    case 4:
+        d->m_text.append(QStringLiteral("#### "));
+        break;
+    case 5:
+        d->m_text.append(QStringLiteral("##### "));
+        break;
+    case 6:
+        d->m_text.append(QStringLiteral("###### "));
+        break;
+    default:
+        break;
+    }
+
 }
 
 void PlainTextMarkupBuilder::beginTable(qreal cellpadding, qreal cellspacing,
@@ -470,7 +493,30 @@ void PlainTextMarkupBuilder::endForeground()
 
 void PlainTextMarkupBuilder::endHeader(int level)
 {
-    Q_UNUSED(level)
+    Q_D(PlainTextMarkupBuilder);
+    qDebug() << " void PlainTextMarkupBuilder::endHeader(int level)"<< level;
+    switch (level) {
+    case 1:
+        d->m_text.append(QStringLiteral(" #\n"));
+        break;
+    case 2:
+        d->m_text.append(QStringLiteral(" ##\n"));
+        break;
+    case 3:
+        d->m_text.append(QStringLiteral(" ###\n"));
+        break;
+    case 4:
+        d->m_text.append(QStringLiteral(" ####\n"));
+        break;
+    case 5:
+        d->m_text.append(QStringLiteral(" #####\n"));
+        break;
+    case 6:
+        d->m_text.append(QStringLiteral(" ######\n"));
+        break;
+    default:
+        break;
+    }
 }
 
 void PlainTextMarkupBuilder::endTable()
