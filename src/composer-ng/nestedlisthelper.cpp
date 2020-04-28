@@ -309,4 +309,3 @@ void NestedListHelper::handleOnBulletType(int styleIndex)
 
     reformatList();
 }
-

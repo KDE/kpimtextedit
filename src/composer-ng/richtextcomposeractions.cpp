@@ -466,14 +466,13 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
         ac->addAction(QStringLiteral("format_painter"), d->action_format_painter);
     }
 
-
     d->action_heading_level = new KSelectAction(i18nc("@title:menu", "Heading Level"), this);
-    const QStringList headingLevels = {i18nc("@item:inmenu no heading",                 "Basic text"),
-                                       i18nc("@item:inmenu heading level 1 (largest)",  "Title"),
-                                       i18nc("@item:inmenu heading level 2",            "Subtitle"),
-                                       i18nc("@item:inmenu heading level 3",            "Section"),
-                                       i18nc("@item:inmenu heading level 4",            "Subsection"),
-                                       i18nc("@item:inmenu heading level 5",            "Paragraph"),
+    const QStringList headingLevels = {i18nc("@item:inmenu no heading", "Basic text"),
+                                       i18nc("@item:inmenu heading level 1 (largest)", "Title"),
+                                       i18nc("@item:inmenu heading level 2", "Subtitle"),
+                                       i18nc("@item:inmenu heading level 3", "Section"),
+                                       i18nc("@item:inmenu heading level 4", "Subsection"),
+                                       i18nc("@item:inmenu heading level 5", "Paragraph"),
                                        i18nc("@item:inmenu heading level 6 (smallest)", "Subparagraph")};
 
     d->action_heading_level->setItems(headingLevels);
@@ -485,7 +484,6 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     if (ac) {
         ac->addAction(QStringLiteral("format_heading_level"), d->action_heading_level);
     }
-
 
     connect(d->action_format_painter, &QAction::toggled,
             d->composerControler, &RichTextComposerControler::slotFormatPainter);

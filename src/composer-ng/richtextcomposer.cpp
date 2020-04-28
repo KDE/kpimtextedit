@@ -63,10 +63,13 @@ public:
     struct UndoHtmlVersion {
         QString originalHtml;
         QString plainText;
-        Q_REQUIRED_RESULT bool isValid() const {
+        Q_REQUIRED_RESULT bool isValid() const
+        {
             return !originalHtml.isEmpty() && !plainText.isEmpty();
         }
-        void clear() {
+
+        void clear()
+        {
             originalHtml.clear();
             plainText.clear();
         }
@@ -403,11 +406,10 @@ void RichTextComposer::evaluateListSupport(QKeyEvent *event)
 
     // If a line was merged with previous (next) one, with different heading level,
     // the style should also be adjusted accordingly (i.e. merged)
-    if ((event->key() == Qt::Key_Backspace && textCursor().atBlockStart() &&
-            (textCursor().blockFormat().headingLevel() != textCursor().block().previous().blockFormat().headingLevel()))
-     || (event->key() == Qt::Key_Delete && textCursor().atBlockEnd() &&
-            (textCursor().blockFormat().headingLevel() != textCursor().block().next().blockFormat().headingLevel())))
-    {
+    if ((event->key() == Qt::Key_Backspace && textCursor().atBlockStart()
+         && (textCursor().blockFormat().headingLevel() != textCursor().block().previous().blockFormat().headingLevel()))
+        || (event->key() == Qt::Key_Delete && textCursor().atBlockEnd()
+            && (textCursor().blockFormat().headingLevel() != textCursor().block().next().blockFormat().headingLevel()))) {
         QTextCursor cursor = textCursor();
         cursor.beginEditBlock();
         if (event->key() == Qt::Key_Delete) {
@@ -426,8 +428,8 @@ void RichTextComposer::evaluateListSupport(QKeyEvent *event)
 
     // Match the behavior of office suites: newline after header switches to normal text
     if ((event->key() == Qt::Key_Return)
-            && (textCursor().blockFormat().headingLevel() > 0)
-            && (textCursor().atBlockEnd())) {
+        && (textCursor().blockFormat().headingLevel() > 0)
+        && (textCursor().atBlockEnd())) {
         // it should be undoable together with actual "return" keypress
         textCursor().joinPreviousEditBlock();
         d->composerControler->setHeadingLevel(0);

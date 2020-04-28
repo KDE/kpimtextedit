@@ -39,7 +39,6 @@ void TextUtilsTest::test_flowText()
 TextUtilsTest::TextUtilsTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void TextUtilsTest::test_flowText_data()
@@ -52,27 +51,26 @@ void TextUtilsTest::test_flowText_data()
 
     QTest::newRow("Indent == Maxlenght ") << "A line"
                                           << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>A\n"
-                                          ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n"
-                                          ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>l\n"
-                                          ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>i\n"
-                                          ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>n\n"
-                                          ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>e"
+        ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n"
+        ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>l\n"
+        ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>i\n"
+        ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>n\n"
+        ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>e"
                                           << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
     //                                                                                   40
     //                                                                                    ↓
-    QTest::newRow("One non-wrapping line")  << "A long line that is right on the border."
-                                            << "A long line that is right on the border."
-                                            << "";
+    QTest::newRow("One non-wrapping line") << "A long line that is right on the border."
+                                           << "A long line that is right on the border."
+                                           << "";
     QTest::newRow("Two non-wrapping lines") << "A long line that is right on the border.\n"
-                                            "A long line that is right on the border."
+                                               "A long line that is right on the border."
                                             << "A long line that is right on the border.\n"
-                                            "A long line that is right on the border."
+        "A long line that is right on the border."
                                             << "";
     //                                                                               40
     //                                                                                ↓
     QTest::newRow("Two wrapping lines") << "A long line that is right over the border"
                                         << "A long line that is right over the\n"
-                                        "border"
+        "border"
                                         << "";
 }
-

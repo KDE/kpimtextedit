@@ -367,7 +367,7 @@ void RichTextComposerControler::setHeadingLevel(int level)
     const int boundedLevel = qBound(0, 6, level);
     // Apparently, 5 is maximum for FontSizeAdjustment; otherwise level=1 and
     // level=2 look the same
-    const int sizeAdjustment = boundedLevel > 0 ? 5 - boundedLevel: 0;
+    const int sizeAdjustment = boundedLevel > 0 ? 5 - boundedLevel : 0;
 
     QTextCursor cursor = richTextComposer()->textCursor();
     cursor.beginEditBlock();
