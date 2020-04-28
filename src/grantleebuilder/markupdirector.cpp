@@ -672,23 +672,23 @@ QSet<int> MarkupDirector::getElementsToClose(QTextBlock::iterator it) const
     if (!fragment.isValid())
         return closedElements;
 
-    auto fragmentFormat = fragment.charFormat();
+    const auto fragmentFormat = fragment.charFormat();
 
-    auto fontWeight = fragmentFormat.fontWeight();
-    auto fontItalic = fragmentFormat.fontItalic();
-    auto fontUnderline = fragmentFormat.fontUnderline();
-    auto fontStrikeout = fragmentFormat.fontStrikeOut();
+    const auto fontWeight = fragmentFormat.fontWeight();
+    const auto fontItalic = fragmentFormat.fontItalic();
+    const auto fontUnderline = fragmentFormat.fontUnderline();
+    const auto fontStrikeout = fragmentFormat.fontStrikeOut();
 
-    auto fontForeground = fragmentFormat.foreground();
-    auto fontBackground = fragmentFormat.background();
+    const auto fontForeground = fragmentFormat.foreground();
+    const auto fontBackground = fragmentFormat.background();
 
-    auto fontFamily = fragmentFormat.fontFamily();
-    auto fontPointSize = fragmentFormat.font().pointSize();
-    auto anchorHref = fragmentFormat.anchorHref();
+    const auto fontFamily = fragmentFormat.fontFamily();
+    const auto fontPointSize = fragmentFormat.font().pointSize();
+    const auto anchorHref = fragmentFormat.anchorHref();
 
-    auto vAlign = fragmentFormat.verticalAlignment();
-    auto superscript = (vAlign == QTextCharFormat::AlignSuperScript);
-    auto subscript = (vAlign == QTextCharFormat::AlignSubScript);
+    const auto vAlign = fragmentFormat.verticalAlignment();
+    const auto superscript = (vAlign == QTextCharFormat::AlignSuperScript);
+    const auto subscript = (vAlign == QTextCharFormat::AlignSubScript);
 
     if (!fontStrikeout
             && (d->m_openElements.contains(StrikeOut)
@@ -770,23 +770,23 @@ QList<int> MarkupDirector::getElementsToOpen(QTextBlock::iterator it)
     if (!fragment.isValid()) {
         return QList<int>();
     }
-    auto fragmentFormat = fragment.charFormat();
+    const auto fragmentFormat = fragment.charFormat();
 
-    auto fontWeight = fragmentFormat.fontWeight();
-    auto fontItalic = fragmentFormat.fontItalic();
-    auto fontUnderline = fragmentFormat.fontUnderline();
-    auto fontStrikeout = fragmentFormat.fontStrikeOut();
+    const auto fontWeight = fragmentFormat.fontWeight();
+    const auto fontItalic = fragmentFormat.fontItalic();
+    const auto fontUnderline = fragmentFormat.fontUnderline();
+    const auto fontStrikeout = fragmentFormat.fontStrikeOut();
 
-    auto fontForeground = fragmentFormat.foreground();
-    auto fontBackground = fragmentFormat.background();
+    const auto fontForeground = fragmentFormat.foreground();
+    const auto fontBackground = fragmentFormat.background();
 
-    auto fontFamily = fragmentFormat.fontFamily();
-    auto fontPointSize = fragmentFormat.font().pointSize();
-    auto anchorHref = fragmentFormat.anchorHref();
+    const auto fontFamily = fragmentFormat.fontFamily();
+    const auto fontPointSize = fragmentFormat.font().pointSize();
+    const auto anchorHref = fragmentFormat.anchorHref();
 
-    auto vAlign = fragmentFormat.verticalAlignment();
-    auto superscript = (vAlign == QTextCharFormat::AlignSuperScript);
-    auto subscript = (vAlign == QTextCharFormat::AlignSubScript);
+    const auto vAlign = fragmentFormat.verticalAlignment();
+    const auto superscript = (vAlign == QTextCharFormat::AlignSuperScript);
+    const auto subscript = (vAlign == QTextCharFormat::AlignSubScript);
 
     if (superscript && !(d->m_openElements.contains(SuperScript))) {
         d->m_elementsToOpen.insert(SuperScript);
@@ -875,7 +875,7 @@ QList<int> MarkupDirector::sortOpeningOrder(QSet<int> openingOrder,
     // be out of order.
     // The rest of the block is traversed until there are no more elements to
     // sort, or the end is reached.
-    while (openingOrder.size() != 0) {
+    while (openingOrder.count()) {
         if (!it.atEnd()) {
             it++;
 
