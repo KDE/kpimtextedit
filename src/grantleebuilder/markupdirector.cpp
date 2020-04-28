@@ -41,7 +41,8 @@
 using namespace KPIMTextEdit;
 
 MarkupDirector::MarkupDirector(Grantlee::AbstractMarkupBuilder *builder)
-    : d_ptr(new MarkupDirectorPrivate(this)), m_builder(builder)
+    : d_ptr(new MarkupDirectorPrivate(this))
+    , m_builder(builder)
 {
 }
 
@@ -55,8 +56,8 @@ MarkupDirector::processBlockContents(QTextFrame::iterator frameIt, const QTextBl
 {
     //Same code as grantlee  but interprete margin
 
-    auto blockFormat = block.blockFormat();
-    auto blockAlignment = blockFormat.alignment();
+    const auto blockFormat = block.blockFormat();
+    const auto blockAlignment = blockFormat.alignment();
 
     // TODO: decide when to use <h1> etc.
 
@@ -119,7 +120,7 @@ MarkupDirector::processFragment(QTextBlock::iterator it, const QTextFragment &fr
     //Same code as Grantlee + a fix !
 
     //   Q_D( MarkupDirector );
-    auto charFormat = fragment.charFormat();
+    const auto charFormat = fragment.charFormat();
 
     if (charFormat.objectType() >= QTextFormat::UserObject) {
         processCustomFragment(fragment, doc);
@@ -270,11 +271,11 @@ QTextFrame::iterator MarkupDirector::processBlock(QTextFrame::iterator it,
 QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it,
                                                   QTextTable *table)
 {
-    auto format = table->format();
+    const auto format = table->format();
 
-    auto colLengths = format.columnWidthConstraints();
+    const auto colLengths = format.columnWidthConstraints();
 
-    auto tableWidth = format.width();
+    const auto tableWidth = format.width();
     QString sWidth;
 
     if (tableWidth.type() == QTextLength::PercentageLength) {
@@ -287,11 +288,11 @@ QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it,
 
     m_builder->beginTable(format.cellPadding(), format.cellSpacing(), sWidth);
 
-    auto headerRowCount = format.headerRowCount();
+    const auto headerRowCount = format.headerRowCount();
 
     QList<QTextTableCell> alreadyProcessedCells;
 
-    for (auto row = 0; row < table->rows(); ++row) {
+    for (int row = 0, total = table->rows(); row < total; ++row) {
         // Put a thead element around here somewhere?
         // if (row < headerRowCount)
         // {
@@ -305,7 +306,7 @@ QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it,
         // rows.
         // http://www.webdesignfromscratch.com/html-tables.cfm
 
-        for (auto column = 0; column < table->columns(); ++column) {
+        for (int column = 0, total = table->columns(); column < total; ++column) {
 
             auto tableCell = table->cellAt(row, column);
 
@@ -325,11 +326,9 @@ QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it,
             QString sCellWidth;
 
             if (cellWidth.type() == QTextLength::PercentageLength) {
-                sCellWidth = QStringLiteral("%1%");
-                sCellWidth = sCellWidth.arg(cellWidth.rawValue());
+                sCellWidth = QStringLiteral("%1%").arg(cellWidth.rawValue());
             } else if (cellWidth.type() == QTextLength::FixedLength) {
-                sCellWidth = QStringLiteral("%1");
-                sCellWidth = sCellWidth.arg(cellWidth.rawValue());
+                sCellWidth = QStringLiteral("%1").arg(cellWidth.rawValue());
             }
 
             // TODO: Use THEAD instead
@@ -367,7 +366,7 @@ QPair<QTextFrame::iterator, QTextBlock>
 MarkupDirector::processList(QTextFrame::iterator it, const QTextBlock &_block,
                             QTextList *list)
 {
-    auto style = list->format().style();
+    const auto style = list->format().style();
     m_builder->beginList(style);
     auto block = _block;
     while (block.isValid() && block.textList()) {
@@ -391,8 +390,6 @@ MarkupDirector::processList(QTextFrame::iterator it, const QTextBlock &_block,
     m_builder->endList();
     return qMakePair(it, block);
 }
-
-
 
 void MarkupDirector::processCustomFragment(const QTextFragment &fragment,
                                            const QTextDocument *doc)
@@ -460,7 +457,7 @@ MarkupDirector::processBlockGroup(QTextFrame::iterator it,
                                   const QTextBlock &block,
                                   QTextBlockGroup *blockGroup)
 {
-    auto list = qobject_cast<QTextList *>(blockGroup);
+    const auto list = qobject_cast<QTextList *>(blockGroup);
     if (list) {
         return processList(it, block, list);
     }
@@ -477,9 +474,9 @@ MarkupDirector::processCharTextObject(QTextBlock::iterator it,
                                       const QTextFragment &fragment,
                                       QTextObject *textObject)
 {
-    auto fragmentFormat = fragment.charFormat();
+    const auto fragmentFormat = fragment.charFormat();
     if (fragmentFormat.isImageFormat()) {
-        auto imageFormat = fragmentFormat.toImageFormat();
+        const auto imageFormat = fragmentFormat.toImageFormat();
         return processImage(it, imageFormat, textObject->document());
     }
     if (!it.atEnd())
