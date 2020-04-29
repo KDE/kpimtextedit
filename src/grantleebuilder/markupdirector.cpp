@@ -121,6 +121,11 @@ MarkupDirector::processFragment(QTextBlock::iterator it, const QTextFragment &fr
 
     //   Q_D( MarkupDirector );
     const auto charFormat = fragment.charFormat();
+    //Need to check if it's a image format.
+    if (charFormat.isImageFormat()) {
+        const auto imageFormat = charFormat.toImageFormat();
+        return processImage(it, imageFormat, doc);
+    }
 
     if (charFormat.objectType() >= QTextFormat::UserObject) {
         processCustomFragment(fragment, doc);
@@ -487,7 +492,7 @@ MarkupDirector::processCharTextObject(QTextBlock::iterator it,
 QTextBlock::iterator
 MarkupDirector::processImage(QTextBlock::iterator it,
                              const QTextImageFormat &imageFormat,
-                             QTextDocument *doc)
+                             const QTextDocument *doc)
 {
     Q_UNUSED(doc)
     // TODO: Close any open format elements?

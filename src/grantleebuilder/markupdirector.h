@@ -197,7 +197,7 @@ public:
   */
     virtual QTextBlock::iterator processImage(QTextBlock::iterator it,
                                               const QTextImageFormat &imageFormat,
-                                              QTextDocument *doc);
+                                              QTextDocument const *doc);
 
     /**
     Directs the builder to create output for the contents of the single @p
