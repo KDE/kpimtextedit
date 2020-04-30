@@ -54,6 +54,8 @@ private Q_SLOTS:
     void testHorizontalRule();
     void testNewlines();
     void testNewlinesThroughQTextCursor();
+    void testInsertImage();
+    void testInsertImageWithSize();
 };
 
 #endif // TEXTHTMLBUILDERTEST_H

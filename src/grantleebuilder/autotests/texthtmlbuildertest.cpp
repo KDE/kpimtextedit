@@ -721,3 +721,71 @@ void TextHTMLBuilderTest::testNewlinesThroughQTextCursor()
     delete doc;
 
 }
+
+void TextHTMLBuilderTest::testInsertImage()
+{
+    auto doc = new QTextDocument(this);
+    QTextCursor cursor(doc);
+    cursor.movePosition(QTextCursor::Start);
+    cursor.insertText(QStringLiteral("Foo"));
+    cursor.insertText(QStringLiteral("\n"));
+    cursor.insertText(QStringLiteral("\n"));
+    cursor.insertText(QStringLiteral("\n"));
+    cursor.insertText(QStringLiteral("Bar"));
+
+    const QString imagePath = QStringLiteral(GRANTLEEBUILDER_DIR "/object-fill.svg");
+    const QImage image(imagePath);
+    QString imageNameToAdd = QStringLiteral("imagename");
+    doc->addResource(QTextDocument::ImageResource, QUrl(imageNameToAdd), image);
+    cursor.insertImage(imageNameToAdd);
+
+
+    auto hb = new KPIMTextEdit::TextHTMLBuilder();
+    auto md = new KPIMTextEdit::MarkupDirector(hb);
+    md->processDocument(doc);
+    auto result = hb->getResult();
+
+    auto regex = QRegularExpression(
+                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<p>&nbsp;<p>&nbsp;<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar<img src=\"imagename\" /></p>\\n$"));
+    QVERIFY(regex.match(result).hasMatch());
+    delete md;
+    delete hb;
+    delete doc;
+
+}
+
+void TextHTMLBuilderTest::testInsertImageWithSize()
+{
+    auto doc = new QTextDocument(this);
+    QTextCursor cursor(doc);
+    cursor.movePosition(QTextCursor::Start);
+    cursor.insertText(QStringLiteral("Foo"));
+    cursor.insertText(QStringLiteral("\n"));
+    cursor.insertText(QStringLiteral("\n"));
+    cursor.insertText(QStringLiteral("\n"));
+    cursor.insertText(QStringLiteral("Bar"));
+
+    const QString imagePath = QStringLiteral(GRANTLEEBUILDER_DIR "/object-fill.svg");
+    const QImage image(imagePath);
+    QString imageNameToAdd = QStringLiteral("imagename");
+    doc->addResource(QTextDocument::ImageResource, QUrl(imageNameToAdd), image);
+
+    QTextImageFormat format;
+    format.setName(imageNameToAdd);
+    format.setWidth(100);
+    format.setHeight(120);
+    cursor.insertImage(format);
+
+    auto hb = new KPIMTextEdit::TextHTMLBuilder();
+    auto md = new KPIMTextEdit::MarkupDirector(hb);
+    md->processDocument(doc);
+    auto result = hb->getResult();
+
+    auto regex = QRegularExpression(
+                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<p>&nbsp;<p>&nbsp;<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar<img src=\"imagename\" width=\"100\" height=\"120\" /></p>\\n$"));
+    QVERIFY(regex.match(result).hasMatch());
+    delete md;
+    delete hb;
+    delete doc;
+
+}
