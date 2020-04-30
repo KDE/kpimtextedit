@@ -32,6 +32,28 @@ private Q_SLOTS:
     void testHtmlText_data();
     void testHtmlText();
     void testHtmlWithTab();
+    void testSingleFormat();
+    void testDoubleFormat();
+    void testDoubleStartDifferentFinish();
+    void testDoubleStartDifferentFinishReverseOrder();
+    void testDifferentStartDoubleFinish();
+    void testDifferentStartDoubleFinishReverseOrder();
+    void testOverlap();
+    void testAnchor();
+    void testAnchorWithFormattedContent();
+    void testAdjacentAnchors();
+    void testNestedFormatting();
+    void testSpan();
+    void testDoubleSpan();
+    void testSpanNesting();
+    void testEdgeCaseLeft();
+    void testEdgeCaseRight();
+    void testImage();
+    void testImageResized();
+    void testEachFormatTagSingly();
+    void testHorizontalRule();
+    void testNewlines();
+    void testNewlinesThroughQTextCursor();
 };
 
 #endif // TEXTHTMLBUILDERTEST_H
