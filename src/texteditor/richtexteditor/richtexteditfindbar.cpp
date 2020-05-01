@@ -19,9 +19,11 @@
 
 #include "richtexteditfindbar.h"
 #include "texteditor/commonwidget/textfindreplacewidget.h"
+#include "texteditor/commonwidget/findutils.h"
 
 #include <KMessageBox>
 #include <KColorScheme>
+#include <KLocalizedString>
 
 #include <QTextEdit>
 #include <QLineEdit>
@@ -122,12 +124,6 @@ void RichTextEditFindBar::slotReplaceText()
 
 void RichTextEditFindBar::slotReplaceAllText()
 {
-    QString newText;
-    if (mFindWidget->isRegularExpression()) {
-        newText = d->mView->toPlainText().replace(mFindWidget->searchRegExp(), mReplaceWidget->replaceLineEdit()->text());
-    } else {
-        newText = d->mView->toPlainText().replace(mFindWidget->searchText(), mReplaceWidget->replaceLineEdit()->text());
-    }
-    d->mView->selectAll();
-    d->mView->insertPlainText(newText);
+    const int count = FindUtils::replaceAll(d->mView->document(), mFindWidget, mReplaceWidget);
+    Q_EMIT displayMessageIndicator(i18np("%1 replacement made", "%1 replacements made", count));
 }
