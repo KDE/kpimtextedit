@@ -667,7 +667,7 @@ QSet<int> MarkupDirector::getElementsToClose(QTextBlock::iterator it) const
         // End of block?. Close all open tags.
 
         const QList<int> openElement = d->m_openElements;
-#if QT_VERSION < QT_VERSION_CHECK(5, 12, 0)
+#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
         auto elementsToClose = d->m_openElements.toSet();
 #else
         auto elementsToClose = QSet<int>(openElement.begin(), openElement.end());
