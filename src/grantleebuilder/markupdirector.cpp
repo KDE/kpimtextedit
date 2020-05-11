@@ -51,6 +51,8 @@ MarkupDirector::~MarkupDirector()
     delete d_ptr;
 }
 
+//#define ADD_HEADER_SUPPORT 1
+
 QTextFrame::iterator
 MarkupDirector::processBlockContents(QTextFrame::iterator frameIt, const QTextBlock &block)
 {
@@ -60,7 +62,13 @@ MarkupDirector::processBlockContents(QTextFrame::iterator frameIt, const QTextBl
     const auto blockAlignment = blockFormat.alignment();
 
     // TODO: decide when to use <h1> etc.
-
+#ifdef ADD_HEADER_SUPPORT
+    if (blockFormat.headingLevel() > 0) {
+        //Header
+        qDebug() << " header " << blockFormat.headingLevel();
+        m_builder->beginHeader(blockFormat.headingLevel());
+    }
+#endif
     if (blockFormat.hasProperty(QTextFormat::BlockTrailingHorizontalRulerWidth)) {
         m_builder->insertHorizontalRule();
         if (!frameIt.atEnd()) {
