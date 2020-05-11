@@ -39,7 +39,7 @@ namespace FindUtils {
     Q_REQUIRED_RESULT int replaceAll(QTextDocument *document, const TextFindWidget *findWidget, const TextReplaceWidget *replaceWidget);
 }
 
-}; // namespace KPIMTextEdit
+} // namespace KPIMTextEdit
 
 
 #endif // FINDUTILS_H
