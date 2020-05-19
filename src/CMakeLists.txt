@@ -145,6 +145,7 @@ ecm_generate_headers(PimCommon_CamelCasetextrichtexteditor_HEADERS
     HEADER_NAMES
     RichTextEditorWidget
     RichTextEditor
+    RichTextEditFindBar
     REQUIRED_HEADERS PimCommon_richtexteditor_HEADERS
     PREFIX KPIMTextEdit
     RELATIVE texteditor/richtexteditor

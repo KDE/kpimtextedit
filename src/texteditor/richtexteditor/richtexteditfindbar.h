@@ -21,7 +21,7 @@
 #define RICHTEXTEDITFINDBAR_H
 
 #include "kpimtextedit_export.h"
-#include "texteditor/commonwidget/texteditfindbarbase.h"
+#include "kpimtextedit/texteditfindbarbase.h"
 #include <QTextDocument>
 
 class QTextEdit;
