@@ -21,7 +21,7 @@
 #ifndef MARKUPDIRECTOR_H
 #define MARKUPDIRECTOR_H
 
-#include <grantlee/abstractmarkupbuilder.h>
+#include "abstractmarkupbuilder.h"
 #include "kpimtextedit_export.h"
 #include <QTextDocument>
 #include <QTextFrame>
@@ -93,7 +93,7 @@ public:
     /**
     Constructor
   */
-    MarkupDirector(Grantlee::AbstractMarkupBuilder *builder);
+    explicit MarkupDirector(KPIMTextEdit::AbstractMarkupBuilder *builder);
 
     /**
     Destructor
@@ -292,7 +292,7 @@ protected:
     The builder this MarkupDirector is operating on. This is available when
     subclassing to customize behaviour.
   */
-    Grantlee::AbstractMarkupBuilder *m_builder;
+    KPIMTextEdit::AbstractMarkupBuilder *m_builder;
 
 #ifndef Q_QDOC
 private:

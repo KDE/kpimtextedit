@@ -20,6 +20,7 @@
 
 #include "plaintextmarkupbuildertest.h"
 #include <KPIMTextEdit/PlainTextMarkupBuilder>
+#include <KPIMTextEdit/MarkupDirector>
 #include <QRegularExpression>
 #include <QTest>
 #include <QTextDocument>
@@ -58,7 +59,7 @@ void PlainTextMarkupBuilderTest::testPlainText()
     doc->setHtml(text);
 
     auto hb = new KPIMTextEdit::PlainTextMarkupBuilder();
-    auto md = new Grantlee::MarkupDirector(hb);
+    auto md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
     const auto result = hb->getResult();
 

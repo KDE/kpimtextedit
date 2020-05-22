@@ -23,7 +23,6 @@
 #include <QRegularExpression>
 #include <QTest>
 #include <QTextDocument>
-#include <grantlee/markupdirector.h>
 QTEST_MAIN(TextHTMLBuilderTest)
 TextHTMLBuilderTest::TextHTMLBuilderTest(QObject *parent)
     : QObject(parent)
@@ -783,6 +782,71 @@ void TextHTMLBuilderTest::testInsertImageWithSize()
 
     auto regex = QRegularExpression(
                 QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<p>&nbsp;<p>&nbsp;<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar<img src=\"imagename\" width=\"100\" height=\"120\" /></p>\\n$"));
+    QVERIFY(regex.match(result).hasMatch());
+    delete md;
+    delete hb;
+    delete doc;
+
+}
+
+void TextHTMLBuilderTest::testTitle1()
+{
+    const int boundedLevel = 1;
+    auto doc = new QTextDocument(this);
+    QTextCursor cursor(doc);
+    cursor.movePosition(QTextCursor::Start);
+    cursor.insertText(QStringLiteral("Foo"));
+
+    const int sizeAdjustment = boundedLevel > 0 ? 5 - boundedLevel : 0;
+    QTextBlockFormat blkfmt;
+    blkfmt.setHeadingLevel(boundedLevel);
+    cursor.mergeBlockFormat(blkfmt);
+
+    QTextCharFormat chrfmt;
+    chrfmt.setFontWeight(boundedLevel > 0 ? QFont::Bold : QFont::Normal);
+    chrfmt.setProperty(QTextFormat::FontSizeAdjustment, sizeAdjustment);
+    QTextCursor selectCursor = cursor;
+    QTextCursor top = selectCursor;
+    top.setPosition(qMin(top.anchor(), top.position()));
+    top.movePosition(QTextCursor::StartOfBlock);
+
+    QTextCursor bottom = selectCursor;
+    bottom.setPosition(qMax(bottom.anchor(), bottom.position()));
+    bottom.movePosition(QTextCursor::EndOfBlock);
+
+    selectCursor.setPosition(top.position(), QTextCursor::MoveAnchor);
+    selectCursor.setPosition(bottom.position(), QTextCursor::KeepAnchor);
+    selectCursor.mergeCharFormat(chrfmt);
+
+    cursor.mergeBlockCharFormat(chrfmt);
+
+    auto hb = new KPIMTextEdit::TextHTMLBuilder();
+    auto md = new KPIMTextEdit::MarkupDirector(hb);
+    md->processDocument(doc);
+    auto result = hb->getResult();
+
+    auto regex = QRegularExpression(
+                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"font-size:29pt;\"><strong>Foo</strong></span></p>\n$"));
+    //qDebug() << " result " << result;
+    //TODO implement header support now.
+    QVERIFY(regex.match(result).hasMatch());
+    delete md;
+    delete hb;
+    delete doc;
+}
+
+void TextHTMLBuilderTest::testBug421908()
+{
+    auto doc = new QTextDocument();
+    doc->setHtml(QStringLiteral("<p><span style=\" color:#aaaaff;\">some colored text<br />some colored text</span></p>"));
+
+    auto hb = new KPIMTextEdit::TextHTMLBuilder();
+    auto md = new KPIMTextEdit::MarkupDirector(hb);
+    md->processDocument(doc);
+    auto result = hb->getResult();
+
+    auto regex = QRegularExpression(
+                QStringLiteral("^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\"><span style=\"color:#aaaaff;\">some colored text<br />some colored text</span></p>\n$"));
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;

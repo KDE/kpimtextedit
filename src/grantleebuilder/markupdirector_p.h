@@ -36,30 +36,30 @@ namespace KPIMTextEdit
 */
 class MarkupDirectorPrivate
 {
-  MarkupDirectorPrivate(MarkupDirector *md) : q_ptr(md) {}
+    MarkupDirectorPrivate(MarkupDirector *md) : q_ptr(md) {}
 
-  Q_DECLARE_PUBLIC(MarkupDirector)
-  MarkupDirector *const q_ptr;
+    Q_DECLARE_PUBLIC(MarkupDirector)
+    MarkupDirector *const q_ptr;
 
-  QString m_openAnchorHref;
-  QString m_anchorHrefToOpen;
-  QString m_openAnchorName;
+    QString m_openAnchorHref;
+    QString m_anchorHrefToOpen;
+    QString m_openAnchorName;
 
-  QBrush m_openForeground;
-  QBrush m_foregroundToOpen;
-  QBrush m_openBackground;
-  QBrush m_backgroundToOpen;
-  int m_openFontPointSize;
-  int m_fontPointSizeToOpen;
-  QString m_openFontFamily;
-  QString m_fontFamilyToOpen;
+    QBrush m_openForeground;
+    QBrush m_foregroundToOpen;
+    QBrush m_openBackground;
+    QBrush m_backgroundToOpen;
+    int m_openFontPointSize;
+    int m_fontPointSizeToOpen;
+    QString m_openFontFamily;
+    QString m_fontFamilyToOpen;
 
-  // An ordered list containing the order elements were opened in.
-  QList<int> m_openElements;
+    // An ordered list containing the order elements were opened in.
+    QList<int> m_openElements;
 
-  // Elements that have yet to be opened. Used while determine the order to
-  // open them.
-  QSet<int> m_elementsToOpen;
+    // Elements that have yet to be opened. Used while determine the order to
+    // open them.
+    QSet<int> m_elementsToOpen;
 };
 }
 

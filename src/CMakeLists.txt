@@ -135,6 +135,7 @@ ecm_generate_headers(KPimTextEdit_CamelCasegrantlee_HEADERS
     PlainTextMarkupBuilder
     TextHTMLBuilder
     MarkupDirector
+    AbstractMarkupBuilder
     PREFIX KPIMTextEdit
     REQUIRED_HEADERS kpimtextedit_HEADERS
     RELATIVE grantleebuilder

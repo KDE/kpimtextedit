@@ -23,15 +23,16 @@
 #define PLAINTEXTMARKUPBUILDER_H
 
 #include "kpimtextedit_export.h"
-#include <grantlee/abstractmarkupbuilder.h>
-#include <grantlee/plaintextmarkupbuilder.h>
+#include "abstractmarkupbuilder.h"
+
+#define LETTERSINALPHABET 26
+#define DIGITSOFFSET 10
 
 namespace KPIMTextEdit
 {
 class PlainTextMarkupBuilderPrivate;
-
 class KPIMTEXTEDIT_EXPORT PlainTextMarkupBuilder
-        : virtual public Grantlee::AbstractMarkupBuilder
+        : virtual public KPIMTextEdit::AbstractMarkupBuilder
 {
 public:
     /** Construct a new PlainTextHTMLMarkupBuilder. */
@@ -124,9 +125,11 @@ public:
     void endTableCell() override;
     void beginHeader(int level) override;
     void endHeader(int level) override;
+    void addSingleBreakLine() override;
 private:
     PlainTextMarkupBuilderPrivate *const d_ptr;
     Q_DECLARE_PRIVATE(PlainTextMarkupBuilder)
+
 };
 }
 
