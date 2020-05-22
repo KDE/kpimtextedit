@@ -53,7 +53,6 @@ TextHTMLBuilder::~TextHTMLBuilder() { delete d_ptr; }
 void TextHTMLBuilder::beginStrong()
 {
     Q_D(TextHTMLBuilder);
-    ;
     d->m_text.append(QStringLiteral("<strong>"));
 }
 
@@ -491,7 +490,6 @@ QString TextHTMLBuilder::getResult()
     d->m_text.clear();
     return ret;
 }
-
 
 void KPIMTextEdit::TextHTMLBuilder::addSingleBreakLine()
 {

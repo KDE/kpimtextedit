@@ -25,21 +25,18 @@
 class QTextDocument;
 
 namespace KPIMTextEdit {
-
 class TextFindWidget;
 class TextReplaceWidget;
 
 namespace FindUtils {
-    /**
+/**
      * Replaces all occurences of a search string provided by @p findWidget
      * by a string provided by @p replaceWidget in a @p document
      *
      * @return number of replacements done
      */
-    Q_REQUIRED_RESULT int replaceAll(QTextDocument *document, const TextFindWidget *findWidget, const TextReplaceWidget *replaceWidget);
+Q_REQUIRED_RESULT int replaceAll(QTextDocument *document, const TextFindWidget *findWidget, const TextReplaceWidget *replaceWidget);
 }
-
 } // namespace KPIMTextEdit
-
 
 #endif // FINDUTILS_H
