@@ -56,7 +56,9 @@ private Q_SLOTS:
     void testNewlinesThroughQTextCursor();
     void testInsertImage();
     void testInsertImageWithSize();
+
     void testTitle1();
+    void testBug421908();
 };
 
 #endif // TEXTHTMLBUILDERTEST_H

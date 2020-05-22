@@ -534,3 +534,9 @@ void PlainTextMarkupBuilder::endTableHeaderCell()
 void PlainTextMarkupBuilder::endTableRow()
 {
 }
+
+void PlainTextMarkupBuilder::addSingleBreakLine()
+{
+    Q_D(PlainTextMarkupBuilder);
+    d->m_text.append(QLatin1Char('\n'));
+}

@@ -21,7 +21,7 @@
 #include "markupdirector.h"
 #include "markupdirector_p.h"
 
-#include <grantlee/abstractmarkupbuilder.h>
+#include "abstractmarkupbuilder.h"
 
 #include <QFlags>
 #include <QMap>
@@ -40,7 +40,7 @@
 #include <QDebug>
 using namespace KPIMTextEdit;
 
-MarkupDirector::MarkupDirector(Grantlee::AbstractMarkupBuilder *builder)
+MarkupDirector::MarkupDirector(KPIMTextEdit::AbstractMarkupBuilder *builder)
     : d_ptr(new MarkupDirectorPrivate(this))
     , m_builder(builder)
 {
@@ -217,8 +217,8 @@ MarkupDirector::processFragment(QTextBlock::iterator it, const QTextFragment &fr
                 m_builder->beginParagraph(/* blockAlignment */);
                 paraClosed = false;
             } else {
-                //Bug fixing : missing end line here
-                m_builder->addNewline();
+                //Bug fixing : add missing single break line
+                m_builder->addSingleBreakLine();
             }
         }
     }

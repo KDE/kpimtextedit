@@ -23,7 +23,6 @@
 #include <QRegularExpression>
 #include <QTest>
 #include <QTextDocument>
-#include <grantlee/markupdirector.h>
 QTEST_MAIN(TextHTMLBuilderTest)
 TextHTMLBuilderTest::TextHTMLBuilderTest(QObject *parent)
     : QObject(parent)
@@ -828,10 +827,29 @@ void TextHTMLBuilderTest::testTitle1()
 
     auto regex = QRegularExpression(
                 QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"font-size:29pt;\"><strong>Foo</strong></span></p>\n$"));
-    qDebug() << " result : " << result;
+    //qDebug() << " result " << result;
     //TODO implement header support now.
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
+}
+
+void TextHTMLBuilderTest::testBug421908()
+{
+    auto doc = new QTextDocument();
+    doc->setHtml(QStringLiteral("<p><span style=\" color:#aaaaff;\">some colored text<br />some colored text</span></p>"));
+
+    auto hb = new KPIMTextEdit::TextHTMLBuilder();
+    auto md = new KPIMTextEdit::MarkupDirector(hb);
+    md->processDocument(doc);
+    auto result = hb->getResult();
+
+    auto regex = QRegularExpression(
+                QStringLiteral("^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\"><span style=\"color:#aaaaff;\">some colored text<br />some colored text</span></p>\n$"));
+    QVERIFY(regex.match(result).hasMatch());
+    delete md;
+    delete hb;
+    delete doc;
+
 }
