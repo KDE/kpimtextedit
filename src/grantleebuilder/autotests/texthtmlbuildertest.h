@@ -58,6 +58,7 @@ private Q_SLOTS:
     void testInsertImageWithSize();
     void testTitle1();
     void testBug421908();
+    void testBug421908_2();
 };
 
 #endif // TEXTHTMLBUILDERTEST_H

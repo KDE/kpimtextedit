@@ -83,7 +83,8 @@ MarkupDirector::processBlockContents(QTextFrame::iterator frameIt, const QTextBl
     // move
     // on.
     if (it.atEnd()) {
-        m_builder->addNewline();
+        m_builder->addSingleBreakLine();
+
         if (!frameIt.atEnd()) {
             return ++frameIt;
         }
