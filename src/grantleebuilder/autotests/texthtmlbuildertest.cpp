@@ -45,7 +45,7 @@ void TextHTMLBuilderTest::testHtmlWithTab()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(
-                QStringLiteral("^<p>&nbsp;<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">&nbsp;&nbsp;&nbsp; foo</p>\\n$"));
+                QStringLiteral("^<br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">&nbsp;&nbsp;&nbsp; foo</p>\\n$"));
 
     const bool regexpHasResult = regex.match(result).hasMatch();
     if (!regexpHasResult) {
@@ -713,7 +713,8 @@ void TextHTMLBuilderTest::testNewlinesThroughQTextCursor()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<p>&nbsp;<p>&nbsp;<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar</p>\\n$"));
+                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<br /><br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar</p>\\n$"));
+    //qDebug() << "result " << result;
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
@@ -745,7 +746,7 @@ void TextHTMLBuilderTest::testInsertImage()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<p>&nbsp;<p>&nbsp;<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar<img src=\"imagename\" /></p>\\n$"));
+                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<br /><br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar<img src=\"imagename\" /></p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
@@ -781,7 +782,7 @@ void TextHTMLBuilderTest::testInsertImageWithSize()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<p>&nbsp;<p>&nbsp;<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar<img src=\"imagename\" width=\"100\" height=\"120\" /></p>\\n$"));
+                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<br /><br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar<img src=\"imagename\" width=\"100\" height=\"120\" /></p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
@@ -851,5 +852,25 @@ void TextHTMLBuilderTest::testBug421908()
     delete md;
     delete hb;
     delete doc;
+}
 
+void TextHTMLBuilderTest::testBug421908_2()
+{
+    auto doc = new QTextDocument();
+    doc->setHtml(QStringLiteral("<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">phone: +123456 7890<br />mail: some@mail.com</p>"
+    "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>"
+    "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7pt;\">small text</span></p>"));
+
+    auto hb = new KPIMTextEdit::TextHTMLBuilder();
+    auto md = new KPIMTextEdit::MarkupDirector(hb);
+    md->processDocument(doc);
+    auto result = hb->getResult();
+
+    auto regex = QRegularExpression(
+                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">phone: +123456 7890<br />mail: some@mail.com</p>\n<br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"font-size:7pt;\">small text</span></p>\n$"));
+    qDebug() << " result "<< result;
+    QVERIFY(regex.match(result).hasMatch());
+    delete md;
+    delete hb;
+    delete doc;
 }
