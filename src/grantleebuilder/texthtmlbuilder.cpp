@@ -24,8 +24,6 @@
 #include <QTextDocument>
 #include <QDebug>
 
-
-
 namespace KPIMTextEdit
 {
 class TextHTMLBuilderPrivate
@@ -48,7 +46,10 @@ TextHTMLBuilder::TextHTMLBuilder()
 {
 }
 
-TextHTMLBuilder::~TextHTMLBuilder() { delete d_ptr; }
+TextHTMLBuilder::~TextHTMLBuilder()
+{
+    delete d_ptr;
+}
 
 void TextHTMLBuilder::beginStrong()
 {
@@ -289,10 +290,12 @@ void TextHTMLBuilder::insertImage(const QString &src, qreal width, qreal height)
 {
     Q_D(TextHTMLBuilder);
     d->m_text.append(QStringLiteral("<img src=\"%1\" ").arg(src));
-    if (width != 0)
+    if (width != 0) {
         d->m_text.append(QStringLiteral("width=\"%2\" ").arg(width));
-    if (height != 0)
+    }
+    if (height != 0) {
         d->m_text.append(QStringLiteral("height=\"%2\" ").arg(height));
+    }
     d->m_text.append(QStringLiteral("/>"));
 }
 
