@@ -74,7 +74,7 @@ TestGenerateHTMLBuilderGui::TestGenerateHTMLBuilderGui(QWidget *parent)
     mainLayout->addWidget(generatedHtmlFromGrantleeToTextEdit);
 
 
-    connect(generateHtmlFromQTextEditButton, &QPushButton::clicked, [=]{
+    connect(generateHtmlFromQTextEditButton, &QPushButton::clicked, this, [=]{
         generatedHtml->setHtml(htmlEdit->toPlainText());
         generatedHtmlFromTextEdit->setPlainText(generatedHtml->document()->toHtml());
 

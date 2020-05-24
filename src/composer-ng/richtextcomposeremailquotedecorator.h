@@ -31,6 +31,7 @@ class RichTextComposer;
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposerEmailQuoteDecorator : public Sonnet::SpellCheckDecorator
 {
+    Q_OBJECT
 public:
     explicit RichTextComposerEmailQuoteDecorator(RichTextComposer *textEdit);
     ~RichTextComposerEmailQuoteDecorator() override;

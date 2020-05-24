@@ -373,7 +373,7 @@ void RichTextComposerTest::testImageHtmlCode()
     KPIMTextEdit::EmbeddedImage *image2 = images.last().data();
     QString startHtml = QStringLiteral("<img src=\"arrow-up.png\"><img src=\"folder-new.png\">Bla<b>Blub</b>");
     QString endHtml = QStringLiteral("<img src=\"cid:%1\"><img src=\"cid:%2\">Bla<b>Blub</b>")
-                      .arg(image2->contentID).arg(image1->contentID);
+                      .arg(image2->contentID, image1->contentID);
     QCOMPARE(KPIMTextEdit::RichTextComposerImages::imageNamesToContentIds(startHtml.toLatin1(), images), endHtml.toLatin1());
 }
 

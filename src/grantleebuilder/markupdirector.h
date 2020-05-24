@@ -139,7 +139,7 @@ public:
     The block @p block is the first block in the @p textBlockGroup.
   */
     virtual QPair<QTextFrame::iterator, QTextBlock>
-    processBlockGroup(QTextFrame::iterator it, const QTextBlock &block,
+    processBlockGroup(const QTextFrame::iterator &it, const QTextBlock &block,
                       QTextBlockGroup *textBlockGroup);
 
     /**
@@ -221,7 +221,7 @@ protected:
     Processes the document between @p begin and @p end
   */
     void processDocumentContents(QTextFrame::iterator begin,
-                                 QTextFrame::iterator end);
+                                 const QTextFrame::iterator &end);
 
     /**
     Iterates the iterator @p it to the first block after @p blockGroup. @p
@@ -248,22 +248,22 @@ protected:
     Directs the builder to close the appropriate tags at the position of @p
     it.
   */
-    virtual void processClosingElements(QTextBlock::iterator it);
+    virtual void processClosingElements(const QTextBlock::iterator &it);
 
     /**
     Directs the builder to open the appropriate tags at the position of @p it.
   */
-    virtual void processOpeningElements(QTextBlock::iterator it);
+    virtual void processOpeningElements(const QTextBlock::iterator &it);
 
     /**
     Returns the tags that should be closed at the position of @p it.
   */
-    virtual QSet<int> getElementsToClose(QTextBlock::iterator it) const;
+    virtual QSet<int> getElementsToClose(const QTextBlock::iterator &it) const;
 
     /**
     Returns the tags that should be opened at the position of @p it.
   */
-    virtual QList<int> getElementsToOpen(QTextBlock::iterator it);
+    virtual QList<int> getElementsToOpen(const QTextBlock::iterator &it);
 
     /**
     Flags for the tags that may be open.

@@ -234,7 +234,7 @@ MarkupDirector::processFragment(QTextBlock::iterator it, const QTextFragment &fr
 
 
 void MarkupDirector::processDocumentContents(QTextFrame::iterator start,
-                                             QTextFrame::iterator end)
+                                             const QTextFrame::iterator &end)
 {
     while (!start.atEnd() && start != end) {
         auto frame = start.currentFrame();
@@ -304,7 +304,7 @@ QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it,
 
     const auto headerRowCount = format.headerRowCount();
 
-    QList<QTextTableCell> alreadyProcessedCells;
+    QVector<QTextTableCell> alreadyProcessedCells;
 
     for (int row = 0, total = table->rows(); row < total; ++row) {
         // Put a thead element around here somewhere?
@@ -467,7 +467,7 @@ MarkupDirector::skipBlockGroup(QTextFrame::iterator it,
 }
 
 QPair<QTextFrame::iterator, QTextBlock>
-MarkupDirector::processBlockGroup(QTextFrame::iterator it,
+MarkupDirector::processBlockGroup(const QTextFrame::iterator &it,
                                   const QTextBlock &block,
                                   QTextBlockGroup *blockGroup)
 {
@@ -512,7 +512,7 @@ MarkupDirector::processImage(QTextBlock::iterator it,
     return it;
 }
 
-void MarkupDirector::processClosingElements(QTextBlock::iterator it)
+void MarkupDirector::processClosingElements(const QTextBlock::iterator &it)
 {
     Q_D(MarkupDirector);
     // The order of closing elements is determined by the order they were opened
@@ -588,7 +588,7 @@ void MarkupDirector::processClosingElements(QTextBlock::iterator it)
     }
 }
 
-void MarkupDirector::processOpeningElements(QTextBlock::iterator it)
+void MarkupDirector::processOpeningElements(const QTextBlock::iterator &it)
 {
     Q_D(MarkupDirector);
     auto fragment = it.fragment();
@@ -667,7 +667,7 @@ void MarkupDirector::processOpeningElements(QTextBlock::iterator it)
     }
 }
 
-QSet<int> MarkupDirector::getElementsToClose(QTextBlock::iterator it) const
+QSet<int> MarkupDirector::getElementsToClose(const QTextBlock::iterator &it) const
 {
     Q_D(const MarkupDirector);
     QSet<int> closedElements;
@@ -780,7 +780,7 @@ QSet<int> MarkupDirector::getElementsToClose(QTextBlock::iterator it) const
     return closedElements;
 }
 
-QList<int> MarkupDirector::getElementsToOpen(QTextBlock::iterator it)
+QList<int> MarkupDirector::getElementsToOpen(const QTextBlock::iterator &it)
 {
     Q_D(MarkupDirector);
     auto fragment = it.fragment();
