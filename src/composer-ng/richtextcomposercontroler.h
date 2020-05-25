@@ -67,6 +67,9 @@ public:
     Q_REQUIRED_RESULT QString toCleanPlainText(const QString &plainText = QString()) const;
     void addQuotes(const QString &defaultQuote);
 public Q_SLOTS:
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+    void addCheckbox(bool add = true);
+#endif
     void insertHorizontalRule();
     void setHeadingLevel(int level);
     void alignLeft();

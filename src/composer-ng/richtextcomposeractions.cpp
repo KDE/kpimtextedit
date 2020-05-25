@@ -86,6 +86,7 @@ public:
 
     KToggleAction *action_format_painter = nullptr;
     KSelectAction *action_heading_level = nullptr;
+    KToggleAction *action_list_checkbox = nullptr;
 
     bool richTextEnabled = false;
 };
@@ -487,6 +488,18 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
         ac->addAction(QStringLiteral("format_heading_level"), d->action_heading_level);
     }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+    d->action_list_checkbox = new KToggleAction(QIcon::fromTheme(QStringLiteral("checkbox")),
+                                                 i18nc("@action", "Checkbox"), this);
+    d->richTextActionList.append(d->action_list_checkbox);
+    d->action_list_checkbox->setObjectName(QStringLiteral("format_list_checkbox"));
+    connect(d->action_list_checkbox, &KToggleAction::toggled,
+            d->composerControler, &RichTextComposerControler::addCheckbox);
+    if (ac) {
+        ac->addAction(QStringLiteral("format_list_checkbox"), d->action_list_checkbox);
+    }
+#endif
+
     disconnect(d->composerControler->richTextComposer(), &QTextEdit::currentCharFormatChanged,
                this, &RichTextComposerActions::slotUpdateCharFormatActions);
     disconnect(d->composerControler->richTextComposer(), &QTextEdit::cursorPositionChanged,
@@ -576,6 +589,9 @@ void RichTextComposerActions::slotUpdateMiscActions()
     d->action_direction_ltr->setChecked(direction == Qt::LeftToRight);
     d->action_direction_rtl->setChecked(direction == Qt::RightToLeft);
     d->action_heading_level->setCurrentItem(richTextComposer->textCursor().blockFormat().headingLevel());
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+    d->action_list_checkbox->setChecked(richTextComposer->textCursor().blockFormat().marker() != QTextBlockFormat::MarkerType::NoMarker);
+#endif
 }
 
 void RichTextComposerActions::uncheckActionFormatPainter()

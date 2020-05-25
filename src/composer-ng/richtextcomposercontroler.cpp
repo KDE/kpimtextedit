@@ -36,6 +36,7 @@
 #include <QClipboard>
 #include <QIcon>
 #include <QTextDocumentFragment>
+#include <QTextList>
 #include "textutils.h"
 #include "insertimagedialog.h"
 
@@ -156,6 +157,28 @@ bool RichTextComposerControler::painterActive() const
 {
     return d->painterActive;
 }
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+void RichTextComposerControler::addCheckbox(bool add)
+{
+    QTextBlockFormat fmt;
+    fmt.setMarker(add ? QTextBlockFormat::MarkerType::Unchecked : QTextBlockFormat::MarkerType::NoMarker);
+    QTextCursor cursor = richTextComposer()->textCursor();
+    cursor.beginEditBlock();
+    if (add && !cursor.currentList()) {
+        // Checkbox only works with lists, so if we are not at list, add a new one
+        setListStyle(1);
+    } else if (!add && cursor.currentList() && cursor.currentList()->count() == 1) {
+        // If this is a single-element list with a checkbox, and user disables
+        // a checkbox, assume user don't want a list too
+        // (so when cursor is not on a list, and enables checkbox and disables
+        // it right after, he returns to the same state with no list)
+        setListStyle(0);
+    }
+    cursor.mergeBlockFormat(fmt);
+    cursor.endEditBlock();
+}
+#endif
 
 void RichTextComposerControler::setFontForWholeText(const QFont &font)
 {
