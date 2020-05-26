@@ -40,7 +40,7 @@ public:
 
     void setFoundMatch(bool match);
 
-    bool isRegularExpression() const;
+    Q_REQUIRED_RESULT bool isRegularExpression() const;
     Q_REQUIRED_RESULT QRegularExpression searchRegExp() const;
 
     Q_REQUIRED_RESULT QString searchText() const;

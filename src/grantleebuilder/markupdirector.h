@@ -109,7 +109,7 @@ public:
     Directs the builder to create output for the single @p frame. If calling
     this method directly, an invalid QTextFrame::iterator may be used.
   */
-    virtual QTextFrame::iterator processFrame(QTextFrame::iterator it,
+    virtual Q_REQUIRED_RESULT QTextFrame::iterator processFrame(QTextFrame::iterator it,
                                               QTextFrame *frame);
 
     /**
@@ -119,7 +119,7 @@ public:
     This method does not process the contents of the @p block, but uses the
     @ref processBlockContents method to do so.
   */
-    virtual QTextFrame::iterator processBlock(QTextFrame::iterator it,
+    virtual Q_REQUIRED_RESULT QTextFrame::iterator processBlock(QTextFrame::iterator it,
                                               const QTextBlock &block);
 
     /**
@@ -128,7 +128,7 @@ public:
 
     The block @p block is the container of the @p textObject.
   */
-    virtual QTextFrame::iterator processObject(QTextFrame::iterator it,
+    virtual Q_REQUIRED_RESULT QTextFrame::iterator processObject(QTextFrame::iterator it,
                                                const QTextBlock &block,
                                                QTextObject *textObject);
 
@@ -138,7 +138,7 @@ public:
 
     The block @p block is the first block in the @p textBlockGroup.
   */
-    virtual QPair<QTextFrame::iterator, QTextBlock>
+    virtual Q_REQUIRED_RESULT QPair<QTextFrame::iterator, QTextBlock>
     processBlockGroup(const QTextFrame::iterator &it, const QTextBlock &block,
                       QTextBlockGroup *textBlockGroup);
 
@@ -148,7 +148,7 @@ public:
 
     The block @p block is the first block in the @p textList.
   */
-    virtual QPair<QTextFrame::iterator, QTextBlock>
+    virtual Q_REQUIRED_RESULT QPair<QTextFrame::iterator, QTextBlock>
     processList(QTextFrame::iterator it, const QTextBlock &block,
                 QTextList *textList);
 
@@ -157,7 +157,7 @@ public:
     block. If calling this method directly, an invalid QTextFrame::iterator
     may be used.
   */
-    virtual QTextFrame::iterator processBlockContents(QTextFrame::iterator it,
+    virtual Q_REQUIRED_RESULT QTextFrame::iterator processBlockContents(QTextFrame::iterator it,
                                                       const QTextBlock &block);
 
     /**
@@ -172,7 +172,7 @@ public:
     fragment. If calling this method directly, an invalid QTextBlock::iterator
     may be used. @p doc is the document the fragment is in.
   */
-    virtual QTextBlock::iterator processFragment(QTextBlock::iterator it,
+    virtual Q_REQUIRED_RESULT QTextBlock::iterator processFragment(QTextBlock::iterator it,
                                                  const QTextFragment &fragment,
                                                  QTextDocument const *doc);
 
@@ -184,7 +184,7 @@ public:
     If calling this method directly, an invalid QTextBlock::iterator may be
     used.
   */
-    virtual QTextBlock::iterator
+    virtual Q_REQUIRED_RESULT QTextBlock::iterator
     processCharTextObject(QTextBlock::iterator it, const QTextFragment &fragment,
                           QTextObject *textObject);
 
@@ -195,7 +195,7 @@ public:
     If calling this method directly, an invalid QTextBlock::iterator may be
     used. @p doc is the document the fragment is in.
   */
-    virtual QTextBlock::iterator processImage(QTextBlock::iterator it,
+    virtual Q_REQUIRED_RESULT QTextBlock::iterator processImage(QTextBlock::iterator it,
                                               const QTextImageFormat &imageFormat,
                                               QTextDocument const *doc);
 
@@ -206,7 +206,7 @@ public:
     If calling this method directly, an invalid QTextFrame::iterator may be
     used.
   */
-    virtual QTextFrame::iterator processTable(QTextFrame::iterator it,
+    virtual Q_REQUIRED_RESULT QTextFrame::iterator processTable(QTextFrame::iterator it,
                                               QTextTable *table);
 
     /**
@@ -230,7 +230,7 @@ protected:
     The return pair is the iterator pointing after the end of @p blockGroup
     and the first block after @p blockGroup.
   */
-    QPair<QTextFrame::iterator, QTextBlock>
+    Q_REQUIRED_RESULT QPair<QTextFrame::iterator, QTextBlock>
     skipBlockGroup(QTextFrame::iterator it, const QTextBlock &_block,
                    QTextBlockGroup *blockGroup);
 
@@ -241,7 +241,7 @@ protected:
     @p openingTags should be a set of tags opened at the fragment pointed to
     by @p it.
   */
-    QList<int> sortOpeningOrder(QSet<int> openingTags,
+    Q_REQUIRED_RESULT QList<int> sortOpeningOrder(QSet<int> openingTags,
                                 QTextBlock::iterator it) const;
 
     /**
@@ -258,12 +258,12 @@ protected:
     /**
     Returns the tags that should be closed at the position of @p it.
   */
-    virtual QSet<int> getElementsToClose(const QTextBlock::iterator &it) const;
+    virtual Q_REQUIRED_RESULT QSet<int> getElementsToClose(const QTextBlock::iterator &it) const;
 
     /**
     Returns the tags that should be opened at the position of @p it.
   */
-    virtual QList<int> getElementsToOpen(const QTextBlock::iterator &it);
+    virtual Q_REQUIRED_RESULT QList<int> getElementsToOpen(const QTextBlock::iterator &it);
 
     /**
     Flags for the tags that may be open.

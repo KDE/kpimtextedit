@@ -28,7 +28,7 @@ class KPIMTEXTEDIT_TESTS_EXPORT EmoticonTextEditItem : public QListWidgetItem
 {
 public:
     explicit EmoticonTextEditItem(const QString &emoticonText, QListWidget *parent);
-    QString text() const;
+    Q_REQUIRED_RESULT QString text() const;
 
 private:
     QString mText;

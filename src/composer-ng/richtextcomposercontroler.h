@@ -57,7 +57,7 @@ public:
     RichTextComposerImages *composerImages() const;
     Q_REQUIRED_RESULT bool painterActive() const;
     void disablePainter();
-    bool isFormattingUsed() const;
+    Q_REQUIRED_RESULT bool isFormattingUsed() const;
 
     void setFontForWholeText(const QFont &font);
     void textModeChanged(KPIMTextEdit::RichTextComposer::Mode mode);

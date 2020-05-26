@@ -39,10 +39,10 @@ public:
     ~RichTextEditFindBar() override;
 
 protected:
-    bool viewIsReadOnly() const override;
-    bool documentIsEmpty() const override;
-    bool searchInDocument(const QString &text, QTextDocument::FindFlags searchOptions) override;
-    bool searchInDocument(const QRegularExpression &regExp, QTextDocument::FindFlags searchOptions) override;
+    Q_REQUIRED_RESULT bool viewIsReadOnly() const override;
+    Q_REQUIRED_RESULT bool documentIsEmpty() const override;
+    Q_REQUIRED_RESULT bool searchInDocument(const QString &text, QTextDocument::FindFlags searchOptions) override;
+    Q_REQUIRED_RESULT bool searchInDocument(const QRegularExpression &regExp, QTextDocument::FindFlags searchOptions) override;
     void autoSearchMoveCursor() override;
 
 public Q_SLOTS:

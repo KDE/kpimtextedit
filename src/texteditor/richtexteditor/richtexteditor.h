@@ -64,7 +64,7 @@ public:
 
     void setSpellCheckingConfigFileName(const QString &_fileName);
 
-    bool checkSpellingEnabled() const;
+    Q_REQUIRED_RESULT bool checkSpellingEnabled() const;
     void setCheckSpellingEnabled(bool check);
 
     void setSpellCheckingLanguage(const QString &_language);

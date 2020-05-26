@@ -99,10 +99,10 @@ protected:
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
-    bool event(QEvent *ev) override;
+    Q_REQUIRED_RESULT bool event(QEvent *ev) override;
     void keyPressEvent(QKeyEvent *event) override;
-    bool overrideShortcut(QKeyEvent *event);
-    bool handleShortcut(QKeyEvent *event);
+    Q_REQUIRED_RESULT bool overrideShortcut(QKeyEvent *event);
+    Q_REQUIRED_RESULT bool handleShortcut(QKeyEvent *event);
     void wheelEvent(QWheelEvent *event) override;
 
     virtual Sonnet::SpellCheckDecorator *createSpellCheckDecorator();

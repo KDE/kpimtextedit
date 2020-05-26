@@ -53,16 +53,16 @@ Q_SIGNALS:
     void hideFindBar();
 
 protected:
-    virtual bool viewIsReadOnly() const = 0;
-    virtual bool documentIsEmpty() const = 0;
-    virtual bool searchInDocument(const QString &text, QTextDocument::FindFlags searchOptions) = 0;
-    virtual bool searchInDocument(const QRegularExpression &regExp, QTextDocument::FindFlags searchOptions) = 0;
+    virtual Q_REQUIRED_RESULT bool viewIsReadOnly() const = 0;
+    virtual Q_REQUIRED_RESULT bool documentIsEmpty() const = 0;
+    virtual Q_REQUIRED_RESULT bool searchInDocument(const QString &text, QTextDocument::FindFlags searchOptions) = 0;
+    virtual Q_REQUIRED_RESULT bool searchInDocument(const QRegularExpression &regExp, QTextDocument::FindFlags searchOptions) = 0;
     virtual void autoSearchMoveCursor() = 0;
 
     bool event(QEvent *e) override;
     void clearSelections();
     void updateHighLight(bool);
-    bool searchText(bool backward, bool isAutoSearch);
+    Q_REQUIRED_RESULT bool searchText(bool backward, bool isAutoSearch);
     void updateSensitivity(bool);
 
     void setFoundMatch(bool match);
