@@ -23,9 +23,7 @@
 #include "kpimtextedit_export.h"
 #include <QWidget>
 #include <QTextDocument>
-#if QT_VERSION >= QT_VERSION_CHECK(5, 13, 0)
 #include <QRegularExpression>
-#endif
 namespace KPIMTextEdit {
 class TextFindWidget;
 class TextReplaceWidget;
@@ -58,11 +56,7 @@ protected:
     virtual bool viewIsReadOnly() const = 0;
     virtual bool documentIsEmpty() const = 0;
     virtual bool searchInDocument(const QString &text, QTextDocument::FindFlags searchOptions) = 0;
-#if QT_VERSION < QT_VERSION_CHECK(5, 13, 0)
-    virtual bool searchInDocument(const QRegExp &regExp, QTextDocument::FindFlags searchOptions) = 0;
-#else
     virtual bool searchInDocument(const QRegularExpression &regExp, QTextDocument::FindFlags searchOptions) = 0;
-#endif
     virtual void autoSearchMoveCursor() = 0;
 
     bool event(QEvent *e) override;
@@ -89,11 +83,7 @@ private Q_SLOTS:
 
 protected:
     QString mLastSearchStr;
-#if QT_VERSION < QT_VERSION_CHECK(5, 13, 0)
-    QRegExp mLastSearchRegExp;
-#else
     QRegularExpression mLastSearchRegExp;
-#endif
     TextFindWidget *mFindWidget = nullptr;
     TextReplaceWidget *mReplaceWidget = nullptr;
     bool mHideWhenClose = true;

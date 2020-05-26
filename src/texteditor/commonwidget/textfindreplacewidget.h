@@ -41,11 +41,7 @@ public:
     void setFoundMatch(bool match);
 
     bool isRegularExpression() const;
-#if QT_VERSION < QT_VERSION_CHECK(5, 13, 0)
-    Q_REQUIRED_RESULT QRegExp searchRegExp() const;
-#else
     Q_REQUIRED_RESULT QRegularExpression searchRegExp() const;
-#endif
 
     Q_REQUIRED_RESULT QString searchText() const;
 

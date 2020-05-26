@@ -174,24 +174,6 @@ QString TextFindWidget::searchText() const
     return mSearch->text();
 }
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 13, 0)
-QRegExp TextFindWidget::searchRegExp() const
-{
-    QRegExp reg;
-    if (mCaseSensitiveAct->isChecked()) {
-        reg.setCaseSensitivity(Qt::CaseSensitive);
-    } else {
-        reg.setCaseSensitivity(Qt::CaseInsensitive);
-    }
-    QString searchTextString = mSearch->text();
-    if (mWholeWordAct->isChecked()) {
-        searchTextString = QLatin1String("\\b") + searchTextString + QLatin1String("\\b");
-    }
-    reg.setPattern(searchTextString);
-    return reg;
-}
-
-#else
 QRegularExpression TextFindWidget::searchRegExp() const
 {
     QRegularExpression reg;
@@ -206,7 +188,6 @@ QRegularExpression TextFindWidget::searchRegExp() const
     return reg;
 }
 
-#endif
 QTextDocument::FindFlags TextFindWidget::searchOptions() const
 {
     QTextDocument::FindFlags opt = {};

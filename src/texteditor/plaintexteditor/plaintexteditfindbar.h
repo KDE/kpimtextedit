@@ -43,11 +43,7 @@ protected:
     bool viewIsReadOnly() const override;
     bool documentIsEmpty() const override;
     bool searchInDocument(const QString &text, QTextDocument::FindFlags searchOptions) override;
-#if QT_VERSION < QT_VERSION_CHECK(5, 13, 0)
-    bool searchInDocument(const QRegExp &regExp, QTextDocument::FindFlags searchOptions) override;
-#else
     bool searchInDocument(const QRegularExpression &regExp, QTextDocument::FindFlags searchOptions) override;
-#endif
     void autoSearchMoveCursor() override;
 
 public Q_SLOTS:
