@@ -37,7 +37,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KPIMTEXTEDIT
     SOVERSION 5
 )
 
-set(QT_REQUIRED_VERSION "5.12.0")
+set(QT_REQUIRED_VERSION "5.13.0")
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
 
 ########### Find packages ###########
