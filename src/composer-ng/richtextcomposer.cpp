@@ -121,10 +121,7 @@ QVector<QAction *> RichTextComposer::richTextActionList() const
 
 void RichTextComposer::setEnableActions(bool state)
 {
-    const QVector<QAction *> richAction = richTextActionList();
-    for (QAction *act : richAction) {
-        act->setEnabled(state);
-    }
+    d->richTextComposerActions->setActionsEnabled(state);
 }
 
 void RichTextComposer::createActions(KActionCollection *ac)
