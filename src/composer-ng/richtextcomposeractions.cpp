@@ -601,5 +601,7 @@ void RichTextComposerActions::uncheckActionFormatPainter()
 
 void RichTextComposerActions::textModeChanged(KPIMTextEdit::RichTextComposer::Mode mode)
 {
-    d->action_add_table->setRichTextMode(mode == KPIMTextEdit::RichTextComposer::Rich);
+    if (d->action_add_table) {
+        d->action_add_table->setRichTextMode(mode == KPIMTextEdit::RichTextComposer::Rich);
+    }
 }
