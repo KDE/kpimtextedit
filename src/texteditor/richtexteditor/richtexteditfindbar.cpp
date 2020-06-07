@@ -21,7 +21,6 @@
 #include "texteditor/commonwidget/textfindreplacewidget.h"
 #include "texteditor/commonwidget/findutils.h"
 
-#include <KMessageBox>
 #include <KColorScheme>
 #include <KLocalizedString>
 

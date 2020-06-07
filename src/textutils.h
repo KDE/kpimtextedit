@@ -25,7 +25,6 @@
 
 #include "kpimtextedit_export.h"
 #include <qglobal.h>
-#include <QStringList>
 class QTextDocument;
 
 namespace KPIMTextEdit {

@@ -28,7 +28,6 @@
 #include <QAction>
 
 #include <QTextCursor>
-#include <QTestEvent>
 #include <QBuffer>
 #include <QTextBlock>
 #include <kpimtextedit/richtextcomposercontroler.h>

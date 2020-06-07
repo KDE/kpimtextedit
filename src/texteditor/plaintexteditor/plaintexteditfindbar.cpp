@@ -21,13 +21,12 @@
 #include "texteditor/commonwidget/textfindreplacewidget.h"
 #include "texteditor/commonwidget/findutils.h"
 
-#include <KMessageBox>
 #include <KColorScheme>
 #include <KLocalizedString>
 
-#include <QLineEdit>
 #include <QRegularExpression>
 #include <QPlainTextEdit>
+#include <QLineEdit>
 
 using namespace KPIMTextEdit;
 

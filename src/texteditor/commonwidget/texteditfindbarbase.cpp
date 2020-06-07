@@ -22,15 +22,14 @@
 #include "kpimtextedit_debug.h"
 #include <QIcon>
 #include <KLocalizedString>
-#include <KMessageBox>
 #include <KColorScheme>
-#include <QLineEdit>
 #include <QTimer>
 #include <QToolButton>
 #include <QEvent>
 #include <QKeyEvent>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QLineEdit>
 
 using namespace KPIMTextEdit;
 
