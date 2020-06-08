@@ -188,10 +188,10 @@ ImageWithNameList RichTextComposerImages::imagesWithName() const
     return retImages;
 }
 
-QList< QSharedPointer<EmbeddedImage> > RichTextComposerImages::embeddedImages() const
+QVector< QSharedPointer<EmbeddedImage> > RichTextComposerImages::embeddedImages() const
 {
     const ImageWithNameList normalImages = imagesWithName();
-    QList< QSharedPointer<EmbeddedImage> > retImages;
+    QVector< QSharedPointer<EmbeddedImage> > retImages;
     retImages.reserve(normalImages.count());
     for (const ImageWithNamePtr &normalImage : normalImages) {
         retImages.append(createEmbeddedImage(normalImage->image, normalImage->name));
