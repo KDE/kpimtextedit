@@ -28,6 +28,7 @@
 #include <KMessageBox>
 #include <KLocalizedString>
 #include <QFileInfo>
+#include <QRandomGenerator>
 
 using namespace KPIMTextEdit;
 
@@ -204,11 +205,10 @@ QSharedPointer<EmbeddedImage> RichTextComposerImages::createEmbeddedImage(const 
     buffer.open(QIODevice::WriteOnly);
     img.save(&buffer, "PNG");
 
-    qsrand(QDateTime::currentDateTimeUtc().toSecsSinceEpoch() + qHash(imageName));
     QSharedPointer<EmbeddedImage> embeddedImage(new EmbeddedImage());
     embeddedImage->image = KCodecs::Codec::codecForName("base64")->encode(buffer.buffer());
     embeddedImage->imageName = imageName;
-    embeddedImage->contentID = QStringLiteral("%1@KDE").arg(qrand());
+    embeddedImage->contentID = QStringLiteral("%1@KDE").arg(QRandomGenerator::global()->generate64());
     return embeddedImage;
 }
 
