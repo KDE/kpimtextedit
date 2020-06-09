@@ -867,8 +867,8 @@ void TextHTMLBuilderTest::testBug421908_2()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">phone: +123456 7890<br />mail: some@mail.com</p>\n<br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"font-size:7pt;\">small text</span></p>\n$"));
-    qDebug() << " result "<< result;
+                QStringLiteral("<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">phone: \\+123456 7890<br />mail: some@mail.com</p>\n<br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"font-size:7pt;\">small text</span></p>$"));
+    //qDebug() << " result "<< result;
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
@@ -891,7 +891,7 @@ void TextHTMLBuilderTest::testBug421908_full()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">phone: +123456 7890<br />mail: some@mail.com</p>\n<br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"font-size:7pt;\">small text</span></p>\n<br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"color:#aaaaff;\">some colored text<br />some colored text</span></p>\n<br />\n$"));
+                QStringLiteral("<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">phone: \\+123456 7890<br />mail: some@mail.com</p>\n<br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"font-size:7pt;\">small text</span></p>\n<br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"color:\\#aaaaff;\">some colored text<br />some colored text</span></p>\n<br />$"));
     //qDebug() << " result "<< result;
     QVERIFY(regex.match(result).hasMatch());
     delete md;
