@@ -82,6 +82,7 @@ void EmoticonUnicodeTab::createPlainTextEmoticonTab(const QString &str, const QV
         EmoticonListWidgetSelector *selector = new EmoticonListWidgetSelector(this);
         connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
         QStringList lst;
+        lst.reserve(emoticons.count());
         for (const EmoticonUnicodeUtils::EmoticonStruct &emoji : emoticons) {
             lst.append(emoji.emoticonCode);
         }

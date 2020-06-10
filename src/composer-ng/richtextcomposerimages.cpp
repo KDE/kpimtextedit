@@ -170,7 +170,7 @@ ImageWithNameList RichTextComposerImages::imagesWithName() const
 {
     ImageWithNameList retImages;
     QStringList seenImageNames;
-    const QList<QTextImageFormat> imageFormats = embeddedImageFormats();
+    const QVector<QTextImageFormat> imageFormats = embeddedImageFormats();
     for (const QTextImageFormat &imageFormat : imageFormats) {
         const QString name = imageFormat.name();
         if (!seenImageNames.contains(name)) {
@@ -212,10 +212,10 @@ QSharedPointer<EmbeddedImage> RichTextComposerImages::createEmbeddedImage(const 
     return embeddedImage;
 }
 
-QList<QTextImageFormat> RichTextComposerImages::embeddedImageFormats() const
+QVector<QTextImageFormat> RichTextComposerImages::embeddedImageFormats() const
 {
     QTextDocument *doc = d->composer->document();
-    QList<QTextImageFormat> retList;
+    QVector<QTextImageFormat> retList;
 
     QTextBlock currentBlock = doc->begin();
     while (currentBlock.isValid()) {
