@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2020 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2020 Laurent Montel <montel@kde.org>
    based on code from Stephen Kelly <steveire@gmail.com>
 
    This library is free software; you can redistribute it and/or

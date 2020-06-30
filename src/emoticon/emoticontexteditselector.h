@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2012-2020 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2012-2020 Laurent Montel <montel@kde.org>
   based on code from kopete
 
   This library is free software; you can redistribute it and/or modify it

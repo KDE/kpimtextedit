@@ -1,8 +1,8 @@
 /*
     This file is part of KDE.
 
-    Copyright (c) 2009 Thomas McGuire <mcguire@kde.org>
-    Copyright (c) 2010 Stephen Kelly <steveire@gmail.com>
+    SPDX-FileCopyrightText: 2009 Thomas McGuire <mcguire@kde.org>
+    SPDX-FileCopyrightText: 2010 Stephen Kelly <steveire@gmail.com>
 
     This library is free software; you can redistribute it and/or modify it
     under the terms of the GNU Library General Public License as published by
