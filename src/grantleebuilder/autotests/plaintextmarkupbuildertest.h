@@ -33,6 +33,32 @@ public:
 private Q_SLOTS:
     void testPlainText();
     void testPlainText_data();
+    // Test paragraph contents:
+    void testSingleFormat();
+    void testDoubleFormat();
+    void testDoubleStartDifferentFinish();
+    void testDoubleStartDifferentFinishReverseOrder();
+    void testDifferentStartDoubleFinish();
+    void testDifferentStartDoubleFinishReverseOrder();
+    void testOverlap();
+    void testAnchor();
+    void testAnchorWithFormattedContent();
+    void testAdjacentAnchors();
+    void testNestedFormatting();
+    void testSpan();
+    void testDoubleSpan();
+    void testSpanNesting();
+    void testEdgeCaseLeft();
+    void testEdgeCaseRight();
+    void testImage();
+    void testImageResized();
+    void testEachFormatTagSingly();
+    void testHorizontalRule();
+    void testNewlines();
+    void testEmptyParagraphs();
+    void testNewlinesThroughQTextCursor();
+    void testBrInsideParagraph();
+    void testLongDocument();
 };
 
 #endif // PLAINTEXTMARKUPBUILDERTEST_H
