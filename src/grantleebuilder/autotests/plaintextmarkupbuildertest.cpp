@@ -463,6 +463,9 @@ void PlainTextMarkupBuilderTest::testImageResized()
                      "Paragraph with an inline <img src=\"http://kde.org/img/kde41.png\" "
                      "height=\"10\" /> image."));
 
+    delete md;
+    delete hb;
+
     hb = new KPIMTextEdit::PlainTextMarkupBuilder();
     md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
@@ -477,6 +480,9 @@ void PlainTextMarkupBuilderTest::testImageResized()
     doc->setHtml(QStringLiteral(
                      "Paragraph with an inline <img src=\"http://kde.org/img/kde41.png\" "
                      "height=\"10\" width=\"10\" /> image."));
+
+    delete md;
+    delete hb;
 
     hb = new KPIMTextEdit::PlainTextMarkupBuilder();
     md = new KPIMTextEdit::MarkupDirector(hb);
@@ -514,6 +520,9 @@ void PlainTextMarkupBuilderTest::testEachFormatTagSingly()
 
     // Test Italic
     doc->setHtml(QStringLiteral("Some <i>formatted</i> text."));
+    delete md;
+    delete hb;
+
     hb = new KPIMTextEdit::PlainTextMarkupBuilder();
     md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
@@ -524,6 +533,9 @@ void PlainTextMarkupBuilderTest::testEachFormatTagSingly()
 
     // Test Underline
     doc->setHtml(QStringLiteral("Some <u>formatted</u> text."));
+    delete md;
+    delete hb;
+
     hb = new KPIMTextEdit::PlainTextMarkupBuilder();
     md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
@@ -534,6 +546,9 @@ void PlainTextMarkupBuilderTest::testEachFormatTagSingly()
 
     // Test Strikeout
     doc->setHtml(QStringLiteral("Some <s>formatted</s> text."));
+    delete md;
+    delete hb;
+
     hb = new KPIMTextEdit::PlainTextMarkupBuilder();
     md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
@@ -544,6 +559,9 @@ void PlainTextMarkupBuilderTest::testEachFormatTagSingly()
 
     // Test Superscript
     doc->setHtml(QStringLiteral("Some <sup>formatted</sup> text."));
+    delete md;
+    delete hb;
+
     hb = new KPIMTextEdit::PlainTextMarkupBuilder();
     md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
@@ -555,6 +573,9 @@ void PlainTextMarkupBuilderTest::testEachFormatTagSingly()
 
     // Test Subscript
     doc->setHtml(QStringLiteral("Some <sub>formatted</sub> text."));
+    delete md;
+    delete hb;
+
     hb = new KPIMTextEdit::PlainTextMarkupBuilder();
     md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
@@ -567,6 +588,9 @@ void PlainTextMarkupBuilderTest::testEachFormatTagSingly()
     // Test Foreground
     doc->setHtml(QStringLiteral(
                      "Some <span style=\"color:#ff0000;\">formatted</span> text."));
+    delete md;
+    delete hb;
+
     hb = new KPIMTextEdit::PlainTextMarkupBuilder();
     md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
@@ -578,6 +602,9 @@ void PlainTextMarkupBuilderTest::testEachFormatTagSingly()
     // Test Background
     doc->setHtml(QStringLiteral(
                      "Some <span style=\"background-color:#ff0000;\">formatted</span> text."));
+    delete md;
+    delete hb;
+
     hb = new KPIMTextEdit::PlainTextMarkupBuilder();
     md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
@@ -589,6 +616,9 @@ void PlainTextMarkupBuilderTest::testEachFormatTagSingly()
     // Test Font Family
     doc->setHtml(QStringLiteral(
                      "Some <span style=\"font-family:courier;\">formatted</span> text."));
+    delete md;
+    delete hb;
+
     hb = new KPIMTextEdit::PlainTextMarkupBuilder();
     md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
@@ -600,6 +630,9 @@ void PlainTextMarkupBuilderTest::testEachFormatTagSingly()
     // Test Font Size
     doc->setHtml(QStringLiteral(
                      "Some <span style=\"font-size:20pt;\">formatted</span> text."));
+    delete md;
+    delete hb;
+
     hb = new KPIMTextEdit::PlainTextMarkupBuilder();
     md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
