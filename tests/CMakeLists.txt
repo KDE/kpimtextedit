@@ -21,3 +21,8 @@ target_link_libraries(showemoticonunicodetab_gui ${showemoticonunicodetab_gui_LI
 add_executable(testgeneratehtmlbuildergui_gui testgeneratehtmlbuildergui.cpp)
 set(testgeneratehtmlbuildergui_gui_LIBS KF5PimTextEdit Qt5::Widgets )
 target_link_libraries(testgeneratehtmlbuildergui_gui ${testgeneratehtmlbuildergui_gui_LIBS})
+
+#####
+add_executable(testgenerateplaintextbuilder_gui testgenerateplaintextbuildergui.cpp)
+set(testgenerateplaintextbuilder_gui_LIBS KF5PimTextEdit Qt5::Widgets )
+target_link_libraries(testgenerateplaintextbuilder_gui ${testgenerateplaintextbuilder_gui_LIBS})
