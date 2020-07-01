@@ -216,7 +216,6 @@ void PlainTextMarkupBuilder::beginAnchor(const QString &href,
     Q_D(PlainTextMarkupBuilder);
     Q_UNUSED(name);
     if (!d->m_urls.contains(href)) {
-
         d->m_urls.append(href);
     }
     d->activeLink = href;
