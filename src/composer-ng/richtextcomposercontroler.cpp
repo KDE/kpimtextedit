@@ -178,6 +178,7 @@ void RichTextComposerControler::addCheckbox(bool add)
     cursor.mergeBlockFormat(fmt);
     cursor.endEditBlock();
 }
+
 #endif
 
 void RichTextComposerControler::setFontForWholeText(const QFont &font)

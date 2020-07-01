@@ -490,7 +490,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
     d->action_list_checkbox = new KToggleAction(QIcon::fromTheme(QStringLiteral("checkbox")),
-                                                 i18nc("@action", "Checkbox"), this);
+                                                i18nc("@action", "Checkbox"), this);
     d->richTextActionList.append(d->action_list_checkbox);
     d->action_list_checkbox->setObjectName(QStringLiteral("format_list_checkbox"));
     connect(d->action_list_checkbox, &KToggleAction::toggled,
