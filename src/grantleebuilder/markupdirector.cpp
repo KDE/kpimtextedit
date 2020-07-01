@@ -149,8 +149,24 @@ MarkupDirector::processFragment(QTextBlock::iterator it, const QTextFragment &fr
         return processCharTextObject(it, fragment, textObject);
     }
 
-    if (fragment.text().at(0).category() == QChar::Separator_Line) {
-        m_builder->addNewline();
+    const auto textStr = fragment.text();
+    if (textStr.at(0).category() == QChar::Separator_Line) {
+        m_builder->addSingleBreakLine();
+        QString t;
+        for (int i = 1; i < textStr.length(); ++i) {
+            if (fragment.text().at(i).category() == QChar::Separator_Line) {
+                m_builder->appendLiteralText(t);
+                if (i < textStr.length() -1) { //Don't add \n when we have the last char
+                    m_builder->addSingleBreakLine();
+                }
+                t.clear();
+            } else {
+                t += fragment.text().at(i);
+            }
+        }
+        if (!t.isEmpty()) {
+            m_builder->appendLiteralText(t);
+        }
 
         if (!it.atEnd()) {
             return ++it;
