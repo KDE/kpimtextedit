@@ -861,10 +861,10 @@ void TextHTMLBuilderTest::testTitle1()
                 QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"font-size:29pt;\"><strong>Foo</strong></span></p>\n$"));
     //qDebug() << " result " << result;
     //TODO implement header support now.
-    QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
+    QVERIFY(regex.match(result).hasMatch());
 }
 
 void TextHTMLBuilderTest::testBug421908()
