@@ -47,10 +47,7 @@ InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
     hl->setDefinition(def);
     setFocus();
     mTextEditorCompleter = new KPIMTextEdit::TextEditorCompleter(this, this);
-    QStringList completerList;
-    completerList << QStringLiteral("<b></b>")
-                  << QStringLiteral("<i></i>")
-                  << QStringLiteral("<u></u>");
+    const QStringList completerList = { QStringLiteral("<b></b>"), QStringLiteral("<i></i>"), QStringLiteral("<u></u>")};
     //Add more
     mTextEditorCompleter->setCompleterStringList(completerList);
     mTextEditorCompleter->setExcludeOfCharacters(QStringLiteral("~!@#$%^&*()+{}|,./;'[]\\-= "));

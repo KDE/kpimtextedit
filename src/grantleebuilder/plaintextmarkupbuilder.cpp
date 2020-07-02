@@ -264,7 +264,7 @@ void PlainTextMarkupBuilder::insertImage(const QString &src, qreal width,
     Q_UNUSED(width)
     Q_UNUSED(height)
 
-    auto ref = addReference(src);
+    const auto ref = addReference(src);
 
     d->m_text.append(QStringLiteral("[%1]").arg(ref));
 }
