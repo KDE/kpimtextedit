@@ -776,3 +776,21 @@ void PlainTextMarkupBuilderTest::testLongDocument()
     delete hb;
 }
 
+
+void PlainTextMarkupBuilderTest::testBrInsideAnchor()
+{
+
+    auto doc = new QTextDocument();
+    doc->setHtml(QStringLiteral("<html><body><p >url: <a href=\"https://www.kde.org\"><span>foo</span></a><br />line1<br />line2</p><p>-- </p><p>bla</p><br /></p></body></html>"));
+
+    auto hb = new KPIMTextEdit::PlainTextMarkupBuilder();
+    auto md = new KPIMTextEdit::MarkupDirector(hb);
+    md->processDocument(doc);
+    auto result = hb->getResult();
+
+    auto regex = QRegularExpression(QStringLiteral("^url: foo\\[1\\]\\nline1\\nline2\\n-- \\nbla\\n\n\\n\\n--------\\n\\[1\\] https://www.kde.org\\n$"));
+    QVERIFY(regex.match(result).hasMatch());
+    delete md;
+    delete hb;
+    delete doc;
+}

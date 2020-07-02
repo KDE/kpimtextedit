@@ -59,6 +59,7 @@ private Q_SLOTS:
     void testNewlinesThroughQTextCursor();
     void testBrInsideParagraph();
     void testLongDocument();
+    void testBrInsideAnchor();
 };
 
 #endif // PLAINTEXTMARKUPBUILDERTEST_H
