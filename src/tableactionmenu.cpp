@@ -85,7 +85,7 @@ public:
     QAction *actionRemoveCellContents = nullptr;
 
     QTextEdit *textEdit = nullptr;
-    TableActionMenu *q = nullptr;
+    TableActionMenu *const q;
     bool richTextMode = false;
 };
 

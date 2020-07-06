@@ -78,7 +78,7 @@ public:
     NestedListHelper *nestedListHelper = nullptr;
     RichTextComposer *richtextComposer = nullptr;
     RichTextComposerImages *richTextImages = nullptr;
-    RichTextComposerControler *q = nullptr;
+    RichTextComposerControler *const q;
     bool painterActive = false;
 };
 

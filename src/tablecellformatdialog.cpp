@@ -81,7 +81,7 @@ public:
 
     KColorButton *backgroundColor = nullptr;
     QComboBox *verticalAlignment = nullptr;
-    TableCellFormatDialog *q = nullptr;
+    TableCellFormatDialog *const q;
 };
 
 TableCellFormatDialog::TableCellFormatDialog(QWidget *parent)

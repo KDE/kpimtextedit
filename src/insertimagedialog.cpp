@@ -61,7 +61,7 @@ public:
 
     InsertImageWidget *imageWidget = nullptr;
     QPushButton *okButton = nullptr;
-    InsertImageDialog *q = nullptr;
+    InsertImageDialog *const q;
 };
 
 InsertImageDialog::InsertImageDialog(QWidget *parent)

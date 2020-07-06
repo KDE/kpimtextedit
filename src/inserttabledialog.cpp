@@ -56,7 +56,7 @@ public:
     }
 
     InsertTableWidget *insertTableWidget = nullptr;
-    InsertTableDialog *q = nullptr;
+    InsertTableDialog *const q;
 };
 
 InsertTableDialog::InsertTableDialog(QWidget *parent)

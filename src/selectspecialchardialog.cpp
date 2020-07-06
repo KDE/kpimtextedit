@@ -69,7 +69,7 @@ public:
     KCharSelect *mCharSelect = nullptr;
     QDialogButtonBox *mButtonBox = nullptr;
     QPushButton *mSelectButton = nullptr;
-    SelectSpecialCharDialog *q = nullptr;
+    SelectSpecialCharDialog *const q;
 };
 
 void SelectSpecialCharDialogPrivate::_k_slotInsertChar()

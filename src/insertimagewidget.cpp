@@ -144,7 +144,7 @@ public:
     QSpinBox *height = nullptr;
     KUrlRequester *imageUrlRequester = nullptr;
     QLabel *preview = nullptr;
-    InsertImageWidget *q = nullptr;
+    InsertImageWidget *const q;
 };
 
 void InsertImageWidgetPrivate::_k_slotKeepOriginalSizeClicked(bool checked)

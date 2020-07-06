@@ -34,7 +34,7 @@ public:
     QList<QTextListFormat::Style> currentListItemStyles;
     QString m_text;
 
-    TextHTMLBuilder *q_ptr;
+    TextHTMLBuilder * const q_ptr;
 
     Q_DECLARE_PUBLIC(TextHTMLBuilder)
 };

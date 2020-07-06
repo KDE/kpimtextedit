@@ -52,7 +52,7 @@ public:
     QCompleter *completer = nullptr;
     QPlainTextEdit *plainTextEdit = nullptr;
     QTextEdit *textEdit = nullptr;
-    TextEditorCompleter *q = nullptr;
+    TextEditorCompleter *const q;
 };
 
 void TextEditorCompleter::TextEditorCompleterPrivate::createCompleter()

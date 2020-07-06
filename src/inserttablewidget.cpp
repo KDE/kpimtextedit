@@ -81,7 +81,7 @@ public:
     QSpinBox *mLength = nullptr;
     QComboBox *mTypeOfLength = nullptr;
 
-    InsertTableWidget *q = nullptr;
+    InsertTableWidget *const q;
 };
 
 InsertTableWidget::InsertTableWidget(QWidget *parent)

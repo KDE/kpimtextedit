@@ -56,7 +56,7 @@ public:
 
     QString m_quoteprefix;
 
-    PlainTextMarkupBuilder *q_ptr;
+    PlainTextMarkupBuilder * const q_ptr;
 
     Q_DECLARE_PUBLIC(PlainTextMarkupBuilder)
 };

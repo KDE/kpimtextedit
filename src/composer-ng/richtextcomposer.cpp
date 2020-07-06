@@ -57,7 +57,7 @@ public:
     RichTextComposerControler *composerControler = nullptr;
     RichTextComposerActions *richTextComposerActions = nullptr;
     KPIMTextEdit::RichTextExternalComposer *externalComposer = nullptr;
-    RichTextComposer *q = nullptr;
+    RichTextComposer *const q;
     RichTextComposer::Mode mode = RichTextComposer::Plain;
     bool forcePlainTextMarkup = false;
     struct UndoHtmlVersion {

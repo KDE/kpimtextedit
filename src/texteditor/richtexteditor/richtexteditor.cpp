@@ -78,7 +78,7 @@ public:
     }
 
     QStringList ignoreSpellCheckingWords;
-    RichTextEditor *q = nullptr;
+    RichTextEditor *const q;
     KPIMTextEdit::TextMessageIndicator *textIndicator = nullptr;
     QString spellCheckingConfigFileName;
     QString spellCheckingLanguage;

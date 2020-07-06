@@ -119,7 +119,7 @@ public:
     QSpinBox *spacing = nullptr;
     QSpinBox *padding = nullptr;
     KPIMTextEdit::InsertTableWidget *tableWidget = nullptr;
-    TableFormatDialog *q = nullptr;
+    TableFormatDialog *const q;
 };
 
 TableFormatDialog::TableFormatDialog(QWidget *parent)
