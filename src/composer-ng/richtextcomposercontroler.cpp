@@ -545,14 +545,6 @@ void RichTextComposerControler::RichTextComposerControlerPrivate::updateLink(con
     }
     cursor.insertText(_linkText, format);
 
-    // Insert a space after the link if at the end of the block so that
-    // typing some text after the link does not carry link formatting
-    if (!linkUrl.isEmpty() && cursor.atBlockEnd()) {
-        cursor.setPosition(cursor.selectionEnd());
-        cursor.setCharFormat(originalFormat);
-        cursor.insertText(QStringLiteral(" "));
-    }
-
     cursor.endEditBlock();
 }
 

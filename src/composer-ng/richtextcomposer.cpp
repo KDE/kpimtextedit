@@ -596,7 +596,7 @@ void RichTextComposer::insertFromMimeData(const QMimeData *source)
                 || sourceText.startsWith(QLatin1String("fish://"))
                 || sourceText.startsWith(QLatin1String("tel:"))
                 ) {
-                insertHtml(QStringLiteral("<a href=\"%1\">%1</a> ").arg(sourceText));
+                insertHtml(QStringLiteral("<a href=\"%1\">%1</a>").arg(sourceText));
                 return;
             }
         }

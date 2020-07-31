@@ -69,6 +69,31 @@ public:
         supportFeatures |= RichTextEditor::TextToSpeech;
         supportFeatures |= RichTextEditor::AllowTab;
         supportFeatures |= RichTextEditor::AllowWebShortcut;
+
+        // Workaround QTextEdit behavior: if the cursor points right after the link
+        // and start typing, the char format is kept. If user wants to write normal
+        // text right after the link, the only way is to move cursor at the next character
+        // (say for "<a>text</a>more text" the character has to be before letter "o"!)
+        // It's impossible if the whole document ends with a link.
+        // The same happens when text starts with a link: it's impossible to write normal text before it.
+        QObject::connect(q, &RichTextEditor::cursorPositionChanged, q, [this](){
+                QTextCursor c = q->textCursor();
+                if (c.charFormat().isAnchor() && !c.hasSelection()) {
+                    QTextCharFormat fmt;
+                    // If we are at block start or end (and at anchor), we just set the "default" format
+                    if (!c.atBlockEnd() && !c.atBlockStart() && !c.hasSelection()) {
+                        QTextCursor probe = c;
+                        // Otherwise, if the next character is not a link, we just grab it's format
+                        probe.movePosition(QTextCursor::NextCharacter);
+                        if (!probe.charFormat().isAnchor()) {
+                            fmt = probe.charFormat();
+                        }
+                    }
+                    c.setCharFormat(fmt);
+                    q->setTextCursor(c);
+                }
+            });
+
     }
 
     ~RichTextEditorPrivate()
