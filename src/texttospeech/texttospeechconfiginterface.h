@@ -35,11 +35,11 @@ public:
     explicit TextToSpeechConfigInterface(QObject *parent = nullptr);
     ~TextToSpeechConfigInterface() override;
 
-    QVector<QLocale> availableLocales() const override;
-    QLocale locale() const override;
+    Q_REQUIRED_RESULT QVector<QLocale> availableLocales() const override;
+    Q_REQUIRED_RESULT QLocale locale() const override;
 
-    QStringList availableEngines() const override;
-    QStringList availableVoices() const override;
+    Q_REQUIRED_RESULT QStringList availableEngines() const override;
+    Q_REQUIRED_RESULT QStringList availableVoices() const override;
     void setEngine(const QString &engineName) override;
     QTextToSpeech *mTextToSpeech = nullptr;
 };

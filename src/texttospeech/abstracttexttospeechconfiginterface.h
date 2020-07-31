@@ -35,12 +35,12 @@ class KPIMTEXTEDIT_EXPORT AbstractTextToSpeechConfigInterface : public QObject
 public:
     explicit AbstractTextToSpeechConfigInterface(QObject *parent = nullptr);
     ~AbstractTextToSpeechConfigInterface();
-    virtual QVector<QLocale> availableLocales() const;
-    virtual QLocale locale() const;
+    virtual Q_REQUIRED_RESULT QVector<QLocale> availableLocales() const;
+    virtual Q_REQUIRED_RESULT QLocale locale() const;
     virtual void setLocale(const QLocale &locale);
 
-    virtual QStringList availableEngines() const;
-    virtual QStringList availableVoices() const;
+    virtual Q_REQUIRED_RESULT QStringList availableEngines() const;
+    virtual Q_REQUIRED_RESULT QStringList availableVoices() const;
     virtual void setEngine(const QString &engineName);
 };
 }

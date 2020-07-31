@@ -41,7 +41,7 @@ public:
 
     QAction *playPauseAction() const;
 
-    TextToSpeechWidget::State state() const;
+    Q_REQUIRED_RESULT TextToSpeechWidget::State state() const;
 
 public Q_SLOTS:
     void setState(TextToSpeechWidget::State);

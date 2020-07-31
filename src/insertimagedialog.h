@@ -34,16 +34,16 @@ public:
     explicit InsertImageDialog(QWidget *parent = nullptr);
     ~InsertImageDialog();
 
-    int imageWidth() const;
-    int imageHeight() const;
+    Q_REQUIRED_RESULT int imageWidth() const;
+    Q_REQUIRED_RESULT int imageHeight() const;
 
     void setImageWidth(int value);
     void setImageHeight(int value);
 
-    QUrl imageUrl() const;
+    Q_REQUIRED_RESULT QUrl imageUrl() const;
     void setImageUrl(const QUrl &url);
 
-    bool keepOriginalSize() const;
+    Q_REQUIRED_RESULT bool keepOriginalSize() const;
 
 private:
     friend class InsertImageDialogPrivate;

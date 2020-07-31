@@ -23,7 +23,7 @@
 #define NESTEDLISTHELPER_H
 
 //@cond PRIVATE
-
+#include <QObject>
 class QTextEdit;
 
 class QKeyEvent;
@@ -109,7 +109,7 @@ public:
      *
      * @return Whether the item can be indented.
      */
-    bool canIndent() const;
+    Q_REQUIRED_RESULT bool canIndent() const;
 
     /**
      * \brief Check whether the current item in the list may be dedented.
@@ -120,7 +120,7 @@ public:
      *
      * @return Whether the item can be dedented.
      */
-    bool canDedent() const;
+    Q_REQUIRED_RESULT bool canDedent() const;
 
 private:
     QTextCursor topOfSelection();

@@ -38,7 +38,7 @@ public:
     explicit TextToSpeechInterface(TextToSpeechWidget *textToSpeechWidget, QObject *parent = nullptr);
     ~TextToSpeechInterface() override;
 
-    bool isReady() const override;
+    Q_REQUIRED_RESULT bool isReady() const override;
     void say(const QString &text) override;
     Q_REQUIRED_RESULT int volume() const override;
     void setVolume(int value) override;

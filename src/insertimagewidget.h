@@ -35,15 +35,15 @@ public:
     ~InsertImageWidget();
 
     void setImageWidth(int value);
-    int imageWidth() const;
+    Q_REQUIRED_RESULT int imageWidth() const;
 
     void setImageHeight(int value);
-    int imageHeight() const;
+    Q_REQUIRED_RESULT int imageHeight() const;
 
-    QUrl imageUrl() const;
+    Q_REQUIRED_RESULT QUrl imageUrl() const;
     void setImageUrl(const QUrl &url);
 
-    bool keepOriginalSize() const;
+    Q_REQUIRED_RESULT bool keepOriginalSize() const;
 
 Q_SIGNALS:
     void enableButtonOk(bool enabled);

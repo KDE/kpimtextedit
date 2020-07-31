@@ -33,9 +33,9 @@ public:
     explicit AbstractTextToSpeechInterface(QObject *parent = nullptr);
     ~AbstractTextToSpeechInterface();
 
-    virtual bool isReady() const;
+    virtual Q_REQUIRED_RESULT bool isReady() const;
     virtual void say(const QString &text);
-    virtual int volume() const;
+    virtual Q_REQUIRED_RESULT int volume() const;
     virtual void setVolume(int value);
     virtual void reloadSettings();
 };

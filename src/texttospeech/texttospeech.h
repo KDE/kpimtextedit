@@ -38,7 +38,7 @@ public:
 
     ~TextToSpeech();
 
-    bool isReady() const;
+    Q_REQUIRED_RESULT bool isReady() const;
 
     enum State {
         Ready = 0,
@@ -47,12 +47,12 @@ public:
         BackendError
     };
 
-    double volume() const;
-    QVector<QLocale> availableLocales() const;
-    QStringList availableEngines() const;
-    QStringList availableVoices() const;
+    Q_REQUIRED_RESULT double volume() const;
+    Q_REQUIRED_RESULT QVector<QLocale> availableLocales() const;
+    Q_REQUIRED_RESULT QStringList availableEngines() const;
+    Q_REQUIRED_RESULT QStringList availableVoices() const;
 
-    QLocale locale() const;
+    Q_REQUIRED_RESULT QLocale locale() const;
 
     void reloadSettings();
 public Q_SLOTS:
