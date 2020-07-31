@@ -62,7 +62,7 @@ protected:
     bool event(QEvent *e) override;
     void clearSelections();
     void updateHighLight(bool);
-    Q_REQUIRED_RESULT bool searchText(bool backward, bool isAutoSearch);
+    bool searchText(bool backward, bool isAutoSearch);
     void updateSensitivity(bool);
 
     void setFoundMatch(bool match);
