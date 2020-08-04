@@ -50,7 +50,7 @@ struct ImageWithName {
 };
 
 typedef QSharedPointer<ImageWithName> ImageWithNamePtr;
-typedef QList< ImageWithNamePtr > ImageWithNameList;
+typedef QVector< ImageWithNamePtr > ImageWithNameList;
 typedef QVector< QSharedPointer<EmbeddedImage> > ImageList;
 
 class KPIMTEXTEDIT_EXPORT RichTextComposerImages : public QObject

@@ -908,7 +908,7 @@ QList<int> MarkupDirector::sortOpeningOrder(QSet<int> openingOrder,
     // be out of order.
     // The rest of the block is traversed until there are no more elements to
     // sort, or the end is reached.
-    while (openingOrder.count()) {
+    while (!openingOrder.isEmpty()) {
         if (!it.atEnd()) {
             it++;
 
