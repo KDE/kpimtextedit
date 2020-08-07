@@ -151,6 +151,7 @@ private:
     void highlightWord(int length, int pos);
     void checkSpelling(bool force);
     void moveLineUpDown(bool moveUp);
+    void moveCursorBeginUpDown(bool moveUp);
     class RichTextEditorPrivate;
     RichTextEditorPrivate *const d;
 };

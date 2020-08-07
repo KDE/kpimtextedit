@@ -626,13 +626,25 @@ void PlainTextEditor::deleteEndOfLine()
     setTextCursor(cursor);
 }
 
+void PlainTextEditor::moveCursorBeginUpDown(bool moveUp)
+{
+    QTextCursor cursor = textCursor();
+    QTextCursor move = cursor;
+    move.beginEditBlock();
+    cursor.clearSelection();
+    move.movePosition(QTextCursor::StartOfBlock);
+    move.movePosition(moveUp ? QTextCursor::PreviousBlock : QTextCursor::NextBlock);
+    move.endEditBlock();
+    setTextCursor(move);
+}
+
 void PlainTextEditor::moveLineUpDown(bool moveUp)
 {
     QTextCursor cursor = textCursor();
     QTextCursor move = cursor;
     move.beginEditBlock();
 
-    bool hasSelection = cursor.hasSelection();
+    const bool hasSelection = cursor.hasSelection();
 
     if (hasSelection) {
         move.setPosition(cursor.selectionStart());
@@ -644,7 +656,7 @@ void PlainTextEditor::moveLineUpDown(bool moveUp)
         move.movePosition(QTextCursor::StartOfBlock);
         move.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
     }
-    QString text = move.selectedText();
+    const QString text = move.selectedText();
 
     move.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
     move.removeSelectedText();
@@ -705,6 +717,12 @@ void PlainTextEditor::keyPressEvent(QKeyEvent *event)
         event->accept();
     } else if (event->key() == Qt::Key_Down && isControlClicked && isShiftClicked) {
         moveLineUpDown(false);
+        event->accept();
+    } else if (event->key() == Qt::Key_Up && isControlClicked) {
+        moveCursorBeginUpDown(true);
+        event->accept();
+    } else if (event->key() == Qt::Key_Down && isControlClicked) {
+        moveCursorBeginUpDown(false);
         event->accept();
     } else {
         QPlainTextEdit::keyPressEvent(event);

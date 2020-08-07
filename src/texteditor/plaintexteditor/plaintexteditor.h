@@ -127,6 +127,7 @@ private:
     void highlightWord(int length, int pos);
     void deleteEndOfLine();
     void moveLineUpDown(bool moveUp);
+    void moveCursorBeginUpDown(bool moveUp);
     class PlainTextEditorPrivate;
     PlainTextEditorPrivate *const d;
 };

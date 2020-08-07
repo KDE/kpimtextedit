@@ -936,6 +936,12 @@ void RichTextEditor::keyPressEvent(QKeyEvent *event)
     } else if (event->key() == Qt::Key_Down && isControlClicked && isShiftClicked) {
         moveLineUpDown(false);
         event->accept();
+    } else if (event->key() == Qt::Key_Up && isControlClicked) {
+        moveCursorBeginUpDown(true);
+        event->accept();
+    } else if (event->key() == Qt::Key_Down && isControlClicked) {
+        moveCursorBeginUpDown(false);
+        event->accept();
     } else {
         QTextEdit::keyPressEvent(event);
     }
@@ -960,13 +966,25 @@ void RichTextEditor::slotZoomReset()
     }
 }
 
+void RichTextEditor::moveCursorBeginUpDown(bool moveUp)
+{
+    QTextCursor cursor = textCursor();
+    QTextCursor move = cursor;
+    move.beginEditBlock();
+    cursor.clearSelection();
+    move.movePosition(QTextCursor::StartOfBlock);
+    move.movePosition(moveUp ? QTextCursor::PreviousBlock : QTextCursor::NextBlock);
+    move.endEditBlock();
+    setTextCursor(move);
+}
+
 void RichTextEditor::moveLineUpDown(bool moveUp)
 {
     QTextCursor cursor = textCursor();
     QTextCursor move = cursor;
     move.beginEditBlock();
 
-    bool hasSelection = cursor.hasSelection();
+    const bool hasSelection = cursor.hasSelection();
 
     if (hasSelection) {
         move.setPosition(cursor.selectionStart());
@@ -978,7 +996,7 @@ void RichTextEditor::moveLineUpDown(bool moveUp)
         move.movePosition(QTextCursor::StartOfBlock);
         move.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
     }
-    QString text = move.selectedText();
+    const QString text = move.selectedText();
 
     move.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
     move.removeSelectedText();
