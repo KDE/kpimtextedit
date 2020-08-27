@@ -23,7 +23,7 @@
 using namespace KPIMTextEdit;
 
 EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText, QListWidget *parent)
-    : QListWidgetItem(mText, parent)
+    : QListWidgetItem(emoticonText, parent)
     , mText(emoticonText)
 {
 }
