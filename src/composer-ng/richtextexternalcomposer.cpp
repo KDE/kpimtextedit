@@ -28,7 +28,7 @@ public:
     QString extEditorPath;
     KProcess *externalEditorProcess = nullptr;
     QTemporaryFile *extEditorTempFile = nullptr;
-    RichTextComposer *const richTextComposer = nullptr;
+    RichTextComposer *const richTextComposer;
     bool useExtEditor = false;
 };
 

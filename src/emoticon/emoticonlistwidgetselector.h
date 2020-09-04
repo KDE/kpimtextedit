@@ -18,7 +18,7 @@ public:
     Q_REQUIRED_RESULT QString text() const;
 
 private:
-    QString mText;
+    const QString mText;
 };
 
 class KPIMTEXTEDIT_TESTS_EXPORT EmoticonListWidgetSelector : public QListWidget

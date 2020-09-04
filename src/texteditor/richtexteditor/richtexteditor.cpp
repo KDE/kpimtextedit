@@ -91,13 +91,13 @@ public:
 
     QStringList ignoreSpellCheckingWords;
     RichTextEditor *const q;
-    KPIMTextEdit::TextMessageIndicator *textIndicator = nullptr;
+    KPIMTextEdit::TextMessageIndicator *const textIndicator;
     QString spellCheckingConfigFileName;
     QString spellCheckingLanguage;
     QTextDocumentFragment originalDoc;
     Sonnet::SpellCheckDecorator *richTextDecorator = nullptr;
     Sonnet::Speller *speller = nullptr;
-    KIO::KUriFilterSearchProviderActions *webshortcutMenuManager = nullptr;
+    KIO::KUriFilterSearchProviderActions *const webshortcutMenuManager;
     RichTextEditor::SupportFeatures supportFeatures;
     int mInitialFontSize;
     bool customPalette = false;

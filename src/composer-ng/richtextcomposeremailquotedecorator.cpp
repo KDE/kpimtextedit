@@ -16,7 +16,7 @@ public:
     {
     }
 
-    RichTextComposer *composerEditor = nullptr;
+    RichTextComposer *const composerEditor;
 };
 
 RichTextComposerEmailQuoteDecorator::RichTextComposerEmailQuoteDecorator(RichTextComposer *textEdit)

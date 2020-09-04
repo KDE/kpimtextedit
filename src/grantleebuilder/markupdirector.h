@@ -279,7 +279,7 @@ protected:
     The builder this MarkupDirector is operating on. This is available when
     subclassing to customize behaviour.
   */
-    KPIMTextEdit::AbstractMarkupBuilder *m_builder;
+    KPIMTextEdit::AbstractMarkupBuilder *const m_builder;
 
 #ifndef Q_QDOC
 private:

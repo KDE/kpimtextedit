@@ -17,7 +17,7 @@ public:
     {
     }
 
-    TextToSpeechWidget *mTextToSpeechWidget = nullptr;
+    TextToSpeechWidget *const mTextToSpeechWidget;
 };
 
 TextToSpeechInterface::TextToSpeechInterface(TextToSpeechWidget *textToSpeechWidget, QObject *parent)

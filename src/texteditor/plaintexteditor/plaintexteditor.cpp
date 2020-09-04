@@ -62,9 +62,9 @@ public:
     }
 
     QStringList ignoreSpellCheckingWords;
-    PlainTextEditor *q;
-    KPIMTextEdit::TextMessageIndicator *mTextIndicator = nullptr;
-    KIO::KUriFilterSearchProviderActions *webshortcutMenuManager = nullptr;
+    PlainTextEditor *const q;
+    KPIMTextEdit::TextMessageIndicator *const mTextIndicator;
+    KIO::KUriFilterSearchProviderActions *const webshortcutMenuManager;
     Sonnet::SpellCheckDecorator *richTextDecorator = nullptr;
     Sonnet::Speller *speller = nullptr;
 

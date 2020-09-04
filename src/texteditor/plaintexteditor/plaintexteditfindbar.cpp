@@ -25,7 +25,7 @@ public:
     {
     }
 
-    QPlainTextEdit *mView = nullptr;
+    QPlainTextEdit *const mView;
 };
 
 PlainTextEditFindBar::PlainTextEditFindBar(QPlainTextEdit *view, QWidget *parent)

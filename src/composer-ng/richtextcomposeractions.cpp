@@ -29,7 +29,7 @@ public:
 
     QVector<QAction *> richTextActionList;
 
-    KPIMTextEdit::RichTextComposerControler *composerControler = nullptr;
+    KPIMTextEdit::RichTextComposerControler *const composerControler;
     KToggleAction *action_align_left = nullptr;
     KToggleAction *action_align_right = nullptr;
     KToggleAction *action_align_center = nullptr;

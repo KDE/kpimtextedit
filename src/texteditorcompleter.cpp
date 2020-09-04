@@ -32,7 +32,7 @@ public:
     }
 
     void setCompletion(const QString &completion);
-    QString wordUnderCursor() const;
+    Q_REQUIRED_RESULT QString wordUnderCursor() const;
     void createCompleter();
     void completeText();
     QString excludeOfCharacters;
