@@ -19,8 +19,8 @@ class EmoticonTextEditAction::EmoticonTextEditActionPrivate
 {
 public:
     EmoticonTextEditActionPrivate()
+        : emoticonMenu(new QMenu())
     {
-        emoticonMenu = new QMenu();
         selector = new EmoticonTextEditSelector(emoticonMenu);
         QWidgetAction *action = new QWidgetAction(emoticonMenu);
         action->setDefaultWidget(selector);
@@ -33,7 +33,7 @@ public:
         delete emoticonMenu;
     }
 
-    QMenu *emoticonMenu = nullptr;
+    QMenu *const emoticonMenu;
     EmoticonTextEditSelector *selector = nullptr;
 };
 
