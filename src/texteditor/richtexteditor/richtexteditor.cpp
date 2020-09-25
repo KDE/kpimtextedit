@@ -64,23 +64,22 @@ public:
         // It's impossible if the whole document ends with a link.
         // The same happens when text starts with a link: it's impossible to write normal text before it.
         QObject::connect(q, &RichTextEditor::cursorPositionChanged, q, [this](){
-                QTextCursor c = q->textCursor();
-                if (c.charFormat().isAnchor() && !c.hasSelection()) {
-                    QTextCharFormat fmt;
-                    // If we are at block start or end (and at anchor), we just set the "default" format
-                    if (!c.atBlockEnd() && !c.atBlockStart() && !c.hasSelection()) {
-                        QTextCursor probe = c;
-                        // Otherwise, if the next character is not a link, we just grab it's format
-                        probe.movePosition(QTextCursor::NextCharacter);
-                        if (!probe.charFormat().isAnchor()) {
-                            fmt = probe.charFormat();
-                        }
+            QTextCursor c = q->textCursor();
+            if (c.charFormat().isAnchor() && !c.hasSelection()) {
+                QTextCharFormat fmt;
+                // If we are at block start or end (and at anchor), we just set the "default" format
+                if (!c.atBlockEnd() && !c.atBlockStart() && !c.hasSelection()) {
+                    QTextCursor probe = c;
+                    // Otherwise, if the next character is not a link, we just grab it's format
+                    probe.movePosition(QTextCursor::NextCharacter);
+                    if (!probe.charFormat().isAnchor()) {
+                        fmt = probe.charFormat();
                     }
-                    c.setCharFormat(fmt);
-                    q->setTextCursor(c);
                 }
-            });
-
+                c.setCharFormat(fmt);
+                q->setTextCursor(c);
+            }
+        });
     }
 
     ~RichTextEditorPrivate()
