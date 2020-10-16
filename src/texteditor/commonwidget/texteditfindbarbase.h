@@ -48,9 +48,7 @@ protected:
 
     bool event(QEvent *e) override;
     void clearSelections();
-    void updateHighLight(bool);
     bool searchText(bool backward, bool isAutoSearch);
-    void updateSensitivity(bool);
 
     void setFoundMatch(bool match);
     void messageInfo(bool backward, bool isAutoSearch, bool found);
