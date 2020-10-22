@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "richtextcomposer.h"
 #include "richtextcomposercontroler.h"
 #include "richtextcomposerimages.h"
 #include "klinkdialog_p.h"

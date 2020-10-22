@@ -16,7 +16,6 @@
 
 #include <QTextTable>
 #include <QPointer>
-#include <QTextEdit>
 
 namespace KPIMTextEdit {
 class TableActionMenuPrivate

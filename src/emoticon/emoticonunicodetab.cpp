@@ -7,7 +7,6 @@
 #include "emoticonunicodetab.h"
 #include "emoticonlistwidgetselector.h"
 #include "textutils.h"
-#include "emoticonunicodeutils.h"
 #include <KLocalizedString>
 
 using namespace KPIMTextEdit;

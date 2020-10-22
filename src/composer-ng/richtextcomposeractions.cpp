@@ -6,7 +6,6 @@
 
 #include "richtextcomposeractions.h"
 #include "richtextcomposercontroler.h"
-#include "richtextcomposer.h"
 #include "emoticon/emoticontexteditaction.h"
 #include "tableactionmenu.h"
 #include <KToggleAction>

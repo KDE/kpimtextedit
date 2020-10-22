@@ -10,7 +10,6 @@
 #include <QApplication>
 #include <QTextEdit>
 #include <QCommandLineParser>
-#include <QMainWindow>
 #include <QAction>
 #include <QMenuBar>
 #include <QMenu>

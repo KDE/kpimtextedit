@@ -14,7 +14,6 @@
 #include <KCodecs>
 #include <KMessageBox>
 #include <KLocalizedString>
-#include <QFileInfo>
 #include <QRandomGenerator>
 
 using namespace KPIMTextEdit;
