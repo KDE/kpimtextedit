@@ -22,7 +22,7 @@ public:
     InsertImageDialogPrivate(InsertImageDialog *qq)
         : q(qq)
     {
-        QVBoxLayout *vbox = new QVBoxLayout(q);
+        auto *vbox = new QVBoxLayout(q);
         q->setWindowTitle(i18nc("@title:window", "Insert Image"));
 
         imageWidget = new InsertImageWidget(q);

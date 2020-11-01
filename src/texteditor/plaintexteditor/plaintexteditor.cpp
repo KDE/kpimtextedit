@@ -157,7 +157,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
 
                 if (checkSpellingEnabled() && d->activateLanguageMenu) {
                     QMenu *languagesMenu = new QMenu(i18n("Spell Checking Language"), popup);
-                    QActionGroup *languagesGroup = new QActionGroup(languagesMenu);
+                    auto *languagesGroup = new QActionGroup(languagesMenu);
                     languagesGroup->setExclusive(true);
 
                     QString defaultSpellcheckingLanguage = spellCheckingLanguage();
@@ -328,7 +328,7 @@ void PlainTextEditor::slotCheckSpelling()
         slotDisplayMessageIndicator(i18n("Nothing to spell check."));
         return;
     }
-    Sonnet::BackgroundChecker *backgroundSpellCheck = new Sonnet::BackgroundChecker;
+    auto *backgroundSpellCheck = new Sonnet::BackgroundChecker;
     if (backgroundSpellCheck->speller().availableBackends().isEmpty()) {
         slotDisplayMessageIndicator(i18n("No backend available for spell checking."));
         delete backgroundSpellCheck;
@@ -342,7 +342,7 @@ void PlainTextEditor::slotCheckSpelling()
             backgroundSpellCheck->speller().addToSession(word);
         }
     }
-    Sonnet::Dialog *spellDialog = new Sonnet::Dialog(backgroundSpellCheck, nullptr);
+    auto *spellDialog = new Sonnet::Dialog(backgroundSpellCheck, nullptr);
     backgroundSpellCheck->setParent(spellDialog);
     spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
     connect(spellDialog, &Sonnet::Dialog::replace, this, &PlainTextEditor::slotSpellCheckerCorrected);
@@ -422,7 +422,7 @@ void PlainTextEditor::deleteWordForward()
 bool PlainTextEditor::event(QEvent *ev)
 {
     if (ev->type() == QEvent::ShortcutOverride) {
-        QKeyEvent *e = static_cast<QKeyEvent *>(ev);
+        auto *e = static_cast<QKeyEvent *>(ev);
         if (overrideShortcut(e)) {
             e->accept();
             return true;
@@ -846,7 +846,7 @@ QString PlainTextEditor::spellCheckingConfigFileName() const
 
 void PlainTextEditor::slotLanguageSelected()
 {
-    QAction *languageAction = static_cast<QAction *>(QObject::sender());
+    auto *languageAction = static_cast<QAction *>(QObject::sender());
     setSpellCheckingLanguage(languageAction->data().toString());
 }
 

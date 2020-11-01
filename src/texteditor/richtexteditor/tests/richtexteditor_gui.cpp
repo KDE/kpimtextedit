@@ -19,7 +19,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    KPIMTextEdit::RichTextEditorWidget *w = new KPIMTextEdit::RichTextEditorWidget();
+    auto *w = new KPIMTextEdit::RichTextEditorWidget();
     w->resize(800, 600);
     w->show();
     app.exec();

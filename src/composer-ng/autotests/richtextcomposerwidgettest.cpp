@@ -21,7 +21,7 @@ RichTextComposerWidgetTest::~RichTextComposerWidgetTest()
 void RichTextComposerWidgetTest::shouldHaveDefaultValue()
 {
     KPIMTextEdit::RichTextComposerWidget w;
-    KPIMTextEdit::RichTextComposer *composer = w.findChild<KPIMTextEdit::RichTextComposer *>(QStringLiteral("richtextcomposer"));
+    auto *composer = w.findChild<KPIMTextEdit::RichTextComposer *>(QStringLiteral("richtextcomposer"));
     QVERIFY(composer);
     QVERIFY(w.richTextComposer());
 }

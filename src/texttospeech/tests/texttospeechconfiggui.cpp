@@ -15,8 +15,8 @@
 TextToSpeechConfigGui::TextToSpeechConfigGui(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *hbox = new QHBoxLayout(this);
-    KPIMTextEdit::TextToSpeechConfigWidget *widget = new KPIMTextEdit::TextToSpeechConfigWidget(this);
+    auto *hbox = new QHBoxLayout(this);
+    auto *widget = new KPIMTextEdit::TextToSpeechConfigWidget(this);
     hbox->addWidget(widget);
 }
 
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    TextToSpeechConfigGui *w = new TextToSpeechConfigGui;
+    auto *w = new TextToSpeechConfigGui;
 
     w->show();
     app.exec();

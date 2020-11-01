@@ -16,11 +16,11 @@
 TestGenerateHTMLBuilderGui::TestGenerateHTMLBuilderGui(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
     QLabel *lab = new QLabel(QStringLiteral("html text"), this);
     mainLayout->addWidget(lab);
 
-    QTextEdit *htmlEdit = new QTextEdit(this);
+    auto *htmlEdit = new QTextEdit(this);
     htmlEdit->setAcceptRichText(false);
     mainLayout->addWidget(htmlEdit);
 
@@ -30,7 +30,7 @@ TestGenerateHTMLBuilderGui::TestGenerateHTMLBuilderGui(QWidget *parent)
     lab = new QLabel(QStringLiteral("Generate Html"), this);
     mainLayout->addWidget(lab);
 
-    QTextEdit *generatedHtml = new QTextEdit(this);
+    auto *generatedHtml = new QTextEdit(this);
     generatedHtml->setAcceptRichText(false);
     generatedHtml->setReadOnly(true);
     mainLayout->addWidget(generatedHtml);
@@ -38,7 +38,7 @@ TestGenerateHTMLBuilderGui::TestGenerateHTMLBuilderGui(QWidget *parent)
     lab = new QLabel(QStringLiteral("HTML from QTextEdit"), this);
     mainLayout->addWidget(lab);
 
-    QTextEdit *generatedHtmlFromTextEdit = new QTextEdit(this);
+    auto *generatedHtmlFromTextEdit = new QTextEdit(this);
     generatedHtmlFromTextEdit->setAcceptRichText(false);
     generatedHtmlFromTextEdit->setReadOnly(true);
     mainLayout->addWidget(generatedHtmlFromTextEdit);
@@ -47,7 +47,7 @@ TestGenerateHTMLBuilderGui::TestGenerateHTMLBuilderGui(QWidget *parent)
     lab = new QLabel(QStringLiteral("HTML from Grantlee"), this);
     mainLayout->addWidget(lab);
 
-    QTextEdit *generatedHtmlFromGrantlee = new QTextEdit(this);
+    auto *generatedHtmlFromGrantlee = new QTextEdit(this);
     generatedHtmlFromGrantlee->setAcceptRichText(false);
     generatedHtmlFromGrantlee->setReadOnly(true);
     mainLayout->addWidget(generatedHtmlFromGrantlee);
@@ -55,7 +55,7 @@ TestGenerateHTMLBuilderGui::TestGenerateHTMLBuilderGui(QWidget *parent)
     lab = new QLabel(QStringLiteral("HTML from Grantlee to TextEdit"), this);
     mainLayout->addWidget(lab);
 
-    QTextEdit *generatedHtmlFromGrantleeToTextEdit = new QTextEdit(this);
+    auto *generatedHtmlFromGrantleeToTextEdit = new QTextEdit(this);
     generatedHtmlFromGrantleeToTextEdit->setAcceptRichText(false);
     generatedHtmlFromGrantleeToTextEdit->setReadOnly(true);
     mainLayout->addWidget(generatedHtmlFromGrantleeToTextEdit);

@@ -22,7 +22,7 @@ public:
     {
         q->setWindowTitle(i18nc("@title:window", "Select Special Characters"));
 
-        QVBoxLayout *lay = new QVBoxLayout(q);
+        auto *lay = new QVBoxLayout(q);
 
         mCharSelect = new KCharSelect(q, nullptr, KCharSelect::CharacterTable | KCharSelect::BlockCombos);
         q->connect(mCharSelect, &KCharSelect::charSelected,

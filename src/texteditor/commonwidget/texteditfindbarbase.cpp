@@ -23,11 +23,11 @@ using namespace KPIMTextEdit;
 TextEditFindBarBase::TextEditFindBarBase(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *topLayout = new QVBoxLayout(this);
-    QHBoxLayout *lay = new QHBoxLayout;
+    auto *topLayout = new QVBoxLayout(this);
+    auto *lay = new QHBoxLayout;
     topLayout->addLayout(lay);
 
-    QToolButton *closeBtn = new QToolButton(this);
+    auto *closeBtn = new QToolButton(this);
     closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
     closeBtn->setIconSize(QSize(16, 16));
     closeBtn->setToolTip(i18n("Close"));
@@ -221,7 +221,7 @@ bool TextEditFindBarBase::event(QEvent *e)
     // With a shortcut override we can catch this before it gets to kactions.
     const bool shortCutOverride = (e->type() == QEvent::ShortcutOverride);
     if (shortCutOverride || e->type() == QEvent::KeyPress) {
-        QKeyEvent *kev = static_cast<QKeyEvent * >(e);
+        auto *kev = static_cast<QKeyEvent * >(e);
         if (kev->key() == Qt::Key_Escape) {
             if (shortCutOverride) {
                 e->accept();

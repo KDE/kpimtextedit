@@ -35,7 +35,7 @@ void EditorUtilTest::testUpperCase()
     QFETCH(QString, result);
     QFETCH(int, startcursorposition);
     QFETCH(int, endcursorposition);
-    QTextDocument *document = new QTextDocument(this);
+    auto *document = new QTextDocument(this);
     document->setPlainText(input);
     QTextCursor textCursor(document);
     if (startcursorposition != -1 && endcursorposition != -1) {
@@ -65,7 +65,7 @@ void EditorUtilTest::testLowerCase()
     QFETCH(QString, result);
     QFETCH(int, startcursorposition);
     QFETCH(int, endcursorposition);
-    QTextDocument *document = new QTextDocument(this);
+    auto *document = new QTextDocument(this);
     document->setPlainText(input);
     QTextCursor textCursor(document);
     if (startcursorposition != -1 && endcursorposition != -1) {
@@ -95,7 +95,7 @@ void EditorUtilTest::testSentenceCase()
     QFETCH(QString, result);
     QFETCH(int, startcursorposition);
     QFETCH(int, endcursorposition);
-    QTextDocument *document = new QTextDocument(this);
+    auto *document = new QTextDocument(this);
     document->setPlainText(input);
     QTextCursor textCursor(document);
     if (startcursorposition != -1 && endcursorposition != -1) {
@@ -127,7 +127,7 @@ void EditorUtilTest::testReverseCase()
     QFETCH(int, startcursorposition);
     QFETCH(int, endcursorposition);
 
-    QTextDocument *document = new QTextDocument(this);
+    auto *document = new QTextDocument(this);
     document->setPlainText(input);
     QTextCursor textCursor(document);
     if (startcursorposition != -1 && endcursorposition != -1) {

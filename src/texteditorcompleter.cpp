@@ -73,7 +73,7 @@ QString TextEditorCompleter::TextEditorCompleterPrivate::wordUnderCursor() const
 
     tc.anchor();
     const QString eowStr = excludeOfCharacters.isEmpty() ? eow : excludeOfCharacters;
-    while (1) {
+    while (true) {
         // vHanda: I don't understand why the cursor seems to give a pos 1 past the last char instead
         // of just the last char.
         int pos = tc.position() - 1;

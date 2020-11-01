@@ -21,7 +21,7 @@ using namespace KPIMTextEdit;
 TextReplaceWidget::TextReplaceWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *lay = new QHBoxLayout(this);
+    auto *lay = new QHBoxLayout(this);
     QLabel *label = new QLabel(i18nc("Replace text", "Replace:"), this);
     lay->addWidget(label);
     const int marg1 = lay->contentsMargins().left();
@@ -59,7 +59,7 @@ void TextReplaceWidget::slotSearchStringEmpty(bool isEmpty)
 TextFindWidget::TextFindWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *lay = new QHBoxLayout(this);
+    auto *lay = new QHBoxLayout(this);
     const int marg1 = lay->contentsMargins().left();
     const int marg2 = lay->contentsMargins().right();
     lay->setContentsMargins(marg1, 0, marg2, 0);
@@ -82,10 +82,10 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     lay->addWidget(mFindPrevBtn);
     mFindPrevBtn->setEnabled(false);
 
-    QPushButton *optionsBtn = new QPushButton(this);
+    auto *optionsBtn = new QPushButton(this);
     optionsBtn->setText(i18n("Options"));
     optionsBtn->setToolTip(i18n("Modify search behavior"));
-    QMenu *optionsMenu = new QMenu(optionsBtn);
+    auto *optionsMenu = new QMenu(optionsBtn);
     mCaseSensitiveAct = optionsMenu->addAction(i18n("Case sensitive"));
     mCaseSensitiveAct->setCheckable(true);
 

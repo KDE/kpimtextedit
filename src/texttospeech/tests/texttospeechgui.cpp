@@ -57,7 +57,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    TextToSpeechGui *w = new TextToSpeechGui;
+    auto *w = new TextToSpeechGui;
 
     w->show();
     app.exec();

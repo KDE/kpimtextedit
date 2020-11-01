@@ -118,7 +118,7 @@ void RichTextComposer::createActions(KActionCollection *ac)
 
 void RichTextComposer::updateHighLighter()
 {
-    KPIMTextEdit::RichTextComposerEmailQuoteHighlighter *hlighter = qobject_cast<KPIMTextEdit::RichTextComposerEmailQuoteHighlighter *>(highlighter());
+    auto *hlighter = qobject_cast<KPIMTextEdit::RichTextComposerEmailQuoteHighlighter *>(highlighter());
     if (hlighter) {
         hlighter->toggleSpellHighlighting(checkSpellingEnabled());
     }
@@ -243,9 +243,9 @@ void RichTextComposer::forcePlainTextMarkup(bool force)
 void RichTextComposer::insertPlainTextImplementation()
 {
     if (d->forcePlainTextMarkup) {
-        KPIMTextEdit::PlainTextMarkupBuilder *pb = new KPIMTextEdit::PlainTextMarkupBuilder();
+        auto *pb = new KPIMTextEdit::PlainTextMarkupBuilder();
         pb->setQuotePrefix(defaultQuoteSign());
-        KPIMTextEdit::MarkupDirector *pmd = new KPIMTextEdit::MarkupDirector(pb);
+        auto *pmd = new KPIMTextEdit::MarkupDirector(pb);
         pmd->processDocument(document());
         const QString plainText = pb->getResult();
         document()->setPlainText(plainText);

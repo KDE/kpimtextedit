@@ -25,11 +25,11 @@ RichTextComposerWidget::RichTextComposerWidget(QWidget *parent)
     : QWidget(parent)
     , d(new KPIMTextEdit::RichTextComposerWidgetPrivate)
 {
-    QHBoxLayout *layout = new QHBoxLayout(this);
+    auto *layout = new QHBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
     d->richTextComposer = new KPIMTextEdit::RichTextComposer(this);
     d->richTextComposer->setObjectName(QStringLiteral("richtextcomposer"));
-    RichTextEditorWidget *editorWidget = new RichTextEditorWidget(d->richTextComposer, this);
+    auto *editorWidget = new RichTextEditorWidget(d->richTextComposer, this);
     layout->addWidget(editorWidget);
 }
 
