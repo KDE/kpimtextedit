@@ -6,6 +6,7 @@
 */
 #include "emoticontexteditaction.h"
 #include "emoticontexteditselector.h"
+#include <kwidgetsaddons_version.h>
 
 #include <KLocalizedString>
 #include <QMenu>
@@ -44,7 +45,11 @@ EmoticonTextEditAction::EmoticonTextEditAction(QObject *parent)
     delete menu();
     setMenu(d->emoticonMenu);
     setIcon(QIcon::fromTheme(QStringLiteral("face-smile")));
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     setPopupMode(QToolButton::InstantPopup);
+#else
+    setDelayed(false);
+#endif
     connect(d->selector, &EmoticonTextEditSelector::itemSelected, this, &EmoticonTextEditAction::emoticonActivated);
 }
 
