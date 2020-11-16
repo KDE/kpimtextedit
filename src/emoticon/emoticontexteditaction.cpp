@@ -44,7 +44,7 @@ EmoticonTextEditAction::EmoticonTextEditAction(QObject *parent)
     delete menu();
     setMenu(d->emoticonMenu);
     setIcon(QIcon::fromTheme(QStringLiteral("face-smile")));
-    setDelayed(false);
+    setPopupMode(QToolButton::InstantPopup);
     connect(d->selector, &EmoticonTextEditSelector::itemSelected, this, &EmoticonTextEditAction::emoticonActivated);
 }
 
