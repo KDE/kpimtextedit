@@ -10,7 +10,6 @@
 #include <QTextBlock>
 #include <QTextDocument>
 #include <QBuffer>
-#include <QDateTime>
 #include <KCodecs>
 #include <KMessageBox>
 #include <KLocalizedString>
