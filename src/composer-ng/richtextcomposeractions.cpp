@@ -209,7 +209,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     d->action_text_bold->setObjectName(QStringLiteral("format_text_bold"));
     if (ac) {
         ac->addAction(QStringLiteral("format_text_bold"), d->action_text_bold);
-        ac->setDefaultShortcut(d->action_text_bold, Qt::CTRL + Qt::Key_B);
+        ac->setDefaultShortcut(d->action_text_bold, Qt::CTRL | Qt::Key_B);
     }
     connect(d->action_text_bold, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::setTextBold);
 
@@ -222,7 +222,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     d->action_text_italic->setObjectName(QStringLiteral("format_text_italic"));
     if (ac) {
         ac->addAction(QStringLiteral("format_text_italic"), d->action_text_italic);
-        ac->setDefaultShortcut(d->action_text_italic, Qt::CTRL + Qt::Key_I);
+        ac->setDefaultShortcut(d->action_text_italic, Qt::CTRL | Qt::Key_I);
     }
     connect(d->action_text_italic, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::setTextItalic);
 
@@ -235,7 +235,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     d->action_text_underline->setObjectName(QStringLiteral("format_text_underline"));
     if (ac) {
         ac->addAction(QStringLiteral("format_text_underline"), d->action_text_underline);
-        ac->setDefaultShortcut(d->action_text_underline, Qt::CTRL + Qt::Key_U);
+        ac->setDefaultShortcut(d->action_text_underline, Qt::CTRL | Qt::Key_U);
     }
     connect(d->action_text_underline, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::setTextUnderline);
 
@@ -250,7 +250,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     }
     d->action_text_strikeout->setObjectName(QStringLiteral("format_text_strikeout"));
     if (ac) {
-        ac->setDefaultShortcut(d->action_text_strikeout, Qt::CTRL + Qt::Key_L);
+        ac->setDefaultShortcut(d->action_text_strikeout, Qt::CTRL | Qt::Key_L);
     }
     connect(d->action_text_strikeout, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::setTextStrikeOut);
 
@@ -364,7 +364,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     d->action_paste_quotation->setObjectName(QStringLiteral("paste_quoted"));
     if (ac) {
         ac->addAction(QStringLiteral("paste_quoted"), d->action_paste_quotation);
-        ac->setDefaultShortcut(d->action_paste_quotation, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_O));
+        ac->setDefaultShortcut(d->action_paste_quotation, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_O));
     }
     connect(d->action_paste_quotation, &QAction::triggered, d->composerControler, &RichTextComposerControler::slotPasteAsQuotation);
 
@@ -386,7 +386,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     d->action_paste_without_formatting->setObjectName(QStringLiteral("paste_without_formatting"));
     if (ac) {
         ac->addAction(QStringLiteral("paste_without_formatting"), d->action_paste_without_formatting);
-        ac->setDefaultShortcut(d->action_paste_without_formatting, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_V));
+        ac->setDefaultShortcut(d->action_paste_without_formatting, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_V));
     }
     connect(d->action_paste_without_formatting, &QAction::triggered, d->composerControler, &RichTextComposerControler::slotPasteWithoutFormatting);
 
@@ -432,7 +432,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
 
     d->action_delete_line = new QAction(i18n("Delete Line"), this);
     if (ac) {
-        ac->setDefaultShortcut(d->action_delete_line, QKeySequence(Qt::CTRL + Qt::Key_K));
+        ac->setDefaultShortcut(d->action_delete_line, QKeySequence(Qt::CTRL | Qt::Key_K));
     }
     d->action_delete_line->setObjectName(QStringLiteral("delete_line"));
     if (ac) {
