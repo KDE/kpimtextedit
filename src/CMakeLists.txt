@@ -78,7 +78,7 @@ ecm_qt_declare_logging_category(kpimtextedit_SRCS HEADER kpimtextedit_debug.h ID
 
 
 add_library(KF5PimTextEdit ${kpimtextedit_SRCS} ${kpimtextedit_texteditor_SRCS} ${kpimtextedit_texttospeech_SRCS} ${kpimtextedit_composerng_SRCS} ${kpimtextedit_grantlee_builder_SRCS})
-if (COMPILE_WITH_CMAKE_SUPPORT)
+if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5PimTextEdit PROPERTIES UNITY_BUILD ON)
 endif()
 generate_export_header(KF5PimTextEdit BASE_NAME kpimtextedit)
