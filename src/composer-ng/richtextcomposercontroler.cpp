@@ -144,7 +144,6 @@ bool RichTextComposerControler::painterActive() const
     return d->painterActive;
 }
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
 void RichTextComposerControler::addCheckbox(bool add)
 {
     QTextBlockFormat fmt;
@@ -164,8 +163,6 @@ void RichTextComposerControler::addCheckbox(bool add)
     cursor.mergeBlockFormat(fmt);
     cursor.endEditBlock();
 }
-
-#endif
 
 void RichTextComposerControler::setFontForWholeText(const QFont &font)
 {
