@@ -431,11 +431,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     d->action_add_table = new KPIMTextEdit::TableActionMenu(d->composerControler->richTextComposer());
     d->action_add_table->setIcon(QIcon::fromTheme(QStringLiteral("insert-table")));
     d->action_add_table->setText(i18n("Table"));
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     d->action_add_table->setPopupMode(QToolButton::InstantPopup);
-#else
-    d->action_add_table->setDelayed(false);
-#endif
 
     d->action_add_table->setObjectName(QStringLiteral("insert_table"));
     d->richTextActionList.append(d->action_add_table);
