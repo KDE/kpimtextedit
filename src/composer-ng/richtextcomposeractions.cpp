@@ -5,7 +5,6 @@
 */
 
 #include "richtextcomposeractions.h"
-#include <kwidgetsaddons_version.h>
 #include "richtextcomposercontroler.h"
 #include "emoticon/emoticontexteditaction.h"
 #include "tableactionmenu.h"
@@ -261,13 +260,8 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     if (ac) {
         ac->addAction(QStringLiteral("format_font_family"), d->action_font_family);
     }
-#if KWIDGETSADDONS_VERSION < QT_VERSION_CHECK(5, 78, 0)
-    connect(d->action_font_family, QOverload<const QString &>::of(&KFontAction::triggered),
-            d->composerControler, &RichTextComposerControler::setFontFamily);
-#else
     connect(d->action_font_family, &KFontAction::textTriggered,
             d->composerControler, &RichTextComposerControler::setFontFamily);
-#endif
 
 
 
@@ -364,13 +358,8 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     if (ac) {
         ac->addAction(QStringLiteral("format_list_style"), d->action_list_style);
     }
-#if KWIDGETSADDONS_VERSION < QT_VERSION_CHECK(5, 78, 0)
-    connect(d->action_list_style, QOverload<int>::of(&KSelectAction::triggered),
-            this, &RichTextComposerActions::setListStyle);
-#else
     connect(d->action_list_style, &KSelectAction::indexTriggered,
             this, &RichTextComposerActions::setListStyle);
-#endif
     connect(d->action_list_style, QOverload<bool>::of(&QAction::triggered),
             this, &RichTextComposerActions::slotUpdateMiscActions);
     d->action_paste_quotation = new QAction(i18n("Pa&ste as Quotation"), this);
@@ -483,13 +472,8 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     d->action_heading_level->setCurrentItem(0);
     d->richTextActionList.append(d->action_heading_level);
     d->action_heading_level->setObjectName(QStringLiteral("format_heading_level"));
-#if KWIDGETSADDONS_VERSION < QT_VERSION_CHECK(5, 78, 0)
-    connect(d->action_heading_level, QOverload<int>::of(&KSelectAction::triggered),
-            this, &RichTextComposerActions::setHeadingLevel);
-#else
     connect(d->action_heading_level, &KSelectAction::indexTriggered,
             this, &RichTextComposerActions::setHeadingLevel);
-#endif
     if (ac) {
         ac->addAction(QStringLiteral("format_heading_level"), d->action_heading_level);
     }
