@@ -116,7 +116,7 @@ bool NestedListHelper::handleAfterKeyPressEvent(QKeyEvent *event)
 
 bool NestedListHelper::handleAfterDropEvent(QDropEvent *dropEvent)
 {
-    Q_UNUSED(dropEvent);
+    Q_UNUSED(dropEvent)
     QTextCursor cursor = topOfSelection();
 
     QTextBlock droppedBlock = cursor.block();

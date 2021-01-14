@@ -139,7 +139,7 @@ void RichTextComposer::createHighlighter()
 
 void RichTextComposer::setHighlighterColors(KPIMTextEdit::RichTextComposerEmailQuoteHighlighter *highlighter)
 {
-    Q_UNUSED(highlighter);
+    Q_UNUSED(highlighter)
 }
 
 void RichTextComposer::setUseExternalEditor(bool use)
@@ -459,7 +459,7 @@ bool RichTextComposer::processKeyEvent(QKeyEvent *e)
 
 bool RichTextComposer::processModifyText(QKeyEvent *event)
 {
-    Q_UNUSED(event);
+    Q_UNUSED(event)
     return false;
 }
 

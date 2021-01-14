@@ -206,8 +206,8 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
 
 void PlainTextEditor::addExtraMenuEntry(QMenu *menu, QPoint pos)
 {
-    Q_UNUSED(menu);
-    Q_UNUSED(pos);
+    Q_UNUSED(menu)
+    Q_UNUSED(pos)
 }
 
 void PlainTextEditor::slotSpeakText()

@@ -29,7 +29,7 @@ QLocale AbstractTextToSpeechConfigInterface::locale() const
 
 void AbstractTextToSpeechConfigInterface::setLocale(const QLocale &locale)
 {
-    Q_UNUSED(locale);
+    Q_UNUSED(locale)
 }
 
 QStringList AbstractTextToSpeechConfigInterface::availableEngines() const
@@ -44,5 +44,5 @@ QStringList AbstractTextToSpeechConfigInterface::availableVoices() const
 
 void AbstractTextToSpeechConfigInterface::setEngine(const QString &engineName)
 {
-    Q_UNUSED(engineName);
+    Q_UNUSED(engineName)
 }

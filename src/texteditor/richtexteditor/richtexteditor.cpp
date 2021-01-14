@@ -300,7 +300,7 @@ void RichTextEditor::addIgnoreWords(const QStringList &lst)
 
 void RichTextEditor::forceAutoCorrection(bool selectedText)
 {
-    Q_UNUSED(selectedText);
+    Q_UNUSED(selectedText)
     //Nothing here
 }
 
@@ -377,8 +377,8 @@ void RichTextEditor::slotAllowTab()
 
 void RichTextEditor::addExtraMenuEntry(QMenu *menu, QPoint pos)
 {
-    Q_UNUSED(menu);
-    Q_UNUSED(pos);
+    Q_UNUSED(menu)
+    Q_UNUSED(pos)
 }
 
 void RichTextEditor::slotUndoableClear()

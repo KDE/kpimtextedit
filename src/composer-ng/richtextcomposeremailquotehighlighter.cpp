@@ -24,7 +24,7 @@ RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighter(Ric
     : Sonnet::Highlighter(textEdit)
     , d(new KPIMTextEdit::RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighterPrivate())
 {
-    Q_UNUSED(normalColor);
+    Q_UNUSED(normalColor)
     // Don't automatically disable the spell checker, for example because there
     // are too many misspelled words. That would also disable quote highlighting.
     // FIXME: disable this spell checking!
@@ -46,7 +46,7 @@ RichTextComposerEmailQuoteHighlighter::~RichTextComposerEmailQuoteHighlighter()
 
 void RichTextComposerEmailQuoteHighlighter::setQuoteColor(const QColor &normalColor, const QColor &quoteDepth1, const QColor &quoteDepth2, const QColor &quoteDepth3, const QColor &misspelledColor)
 {
-    Q_UNUSED(normalColor);
+    Q_UNUSED(normalColor)
     d->col1 = quoteDepth1;
     d->col2 = quoteDepth2;
     d->col3 = quoteDepth3;
@@ -89,8 +89,8 @@ void RichTextComposerEmailQuoteHighlighter::highlightBlock(const QString &text)
 
 void RichTextComposerEmailQuoteHighlighter::unsetMisspelled(int start, int count)
 {
-    Q_UNUSED(start);
-    Q_UNUSED(count);
+    Q_UNUSED(start)
+    Q_UNUSED(count)
 }
 
 void RichTextComposerEmailQuoteHighlighter::setMisspelled(int start, int count)

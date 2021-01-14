@@ -22,7 +22,7 @@ bool AbstractTextToSpeechInterface::isReady() const
 
 void AbstractTextToSpeechInterface::say(const QString &text)
 {
-    Q_UNUSED(text);
+    Q_UNUSED(text)
 }
 
 int AbstractTextToSpeechInterface::volume() const
@@ -33,7 +33,7 @@ int AbstractTextToSpeechInterface::volume() const
 
 void AbstractTextToSpeechInterface::setVolume(int value)
 {
-    Q_UNUSED(value);
+    Q_UNUSED(value)
 }
 
 void AbstractTextToSpeechInterface::reloadSettings()

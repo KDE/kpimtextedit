@@ -133,7 +133,7 @@ void TextEditFindBarBase::autoSearch(const QString &str)
 
 void TextEditFindBarBase::messageInfo(bool backward, bool isAutoSearch, bool found)
 {
-    Q_UNUSED(backward);
+    Q_UNUSED(backward)
     if (!found && !isAutoSearch) {
         QString str = mLastSearchStr;
         if (str.length() > 39) {
