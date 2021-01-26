@@ -12,11 +12,12 @@
 #include "texteditor/plaintexteditor/plaintexteditorwidget.h"
 
 #include <QDialogButtonBox>
+#include <QLabel>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QLabel>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class InsertHtmlDialogPrivate
 {
 public:
@@ -47,8 +48,8 @@ public:
 
         lay->addWidget(buttonBox);
         q->connect(editor, &InsertHtmlEditor::textChanged, q, [this]() {
-                _k_slotTextChanged();
-            });
+            _k_slotTextChanged();
+        });
         okButton->setEnabled(false);
         q->resize(640, 480);
     }

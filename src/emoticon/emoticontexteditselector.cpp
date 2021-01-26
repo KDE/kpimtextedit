@@ -31,8 +31,7 @@ EmoticonTextEditSelector::~EmoticonTextEditSelector()
 void EmoticonTextEditSelector::slotItemSelected(const QString &str)
 {
     Q_EMIT itemSelected(str);
-    if (isVisible() && parentWidget()
-        && parentWidget()->inherits("QMenu")) {
+    if (isVisible() && parentWidget() && parentWidget()->inherits("QMenu")) {
         parentWidget()->close();
     }
 }

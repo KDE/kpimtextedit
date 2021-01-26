@@ -8,36 +8,36 @@
 #include "kpimtextedit_debug.h"
 
 #include "texteditor/commonwidget/textmessageindicator.h"
-#include <KLocalizedString>
-#include <KStandardAction>
-#include <KCursor>
-#include <KConfigGroup>
-#include <QIcon>
 #include <KConfig>
-#include <KStandardGuiItem>
-#include <KSharedConfig>
+#include <KConfigGroup>
+#include <KCursor>
+#include <KLocalizedString>
 #include <KMessageBox>
+#include <KSharedConfig>
+#include <KStandardAction>
+#include <KStandardGuiItem>
+#include <QIcon>
 
-#include <sonnet/backgroundchecker.h>
+#include <KIO/KUriFilterSearchProviderActions>
 #include <Sonnet/Dialog>
 #include <Sonnet/Highlighter>
+#include <SonnetCore/sonnet/backgroundchecker.h>
+#include <sonnet/backgroundchecker.h>
 #include <sonnet/spellcheckdecorator.h>
 #include <sonnet/speller.h>
 #include <texttospeech/texttospeech.h>
-#include <SonnetCore/sonnet/backgroundchecker.h>
-#include <KIO/KUriFilterSearchProviderActions>
 
-#include <QMenu>
+#include <QApplication>
+#include <QClipboard>
 #include <QContextMenuEvent>
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
+#include <QDialogButtonBox>
+#include <QMenu>
+#include <QPushButton>
+#include <QScrollBar>
 #include <QTextCursor>
 #include <QTextDocumentFragment>
-#include <QScrollBar>
-#include <QApplication>
-#include <QClipboard>
-#include <QDialogButtonBox>
-#include <QPushButton>
 
 using namespace KPIMTextEdit;
 class Q_DECL_HIDDEN RichTextEditor::RichTextEditorPrivate
@@ -63,7 +63,7 @@ public:
         // (say for "<a>text</a>more text" the character has to be before letter "o"!)
         // It's impossible if the whole document ends with a link.
         // The same happens when text starts with a link: it's impossible to write normal text before it.
-        QObject::connect(q, &RichTextEditor::cursorPositionChanged, q, [this](){
+        QObject::connect(q, &RichTextEditor::cursorPositionChanged, q, [this]() {
             QTextCursor c = q->textCursor();
             if (c.charFormat().isAnchor() && !c.hasSelection()) {
                 QTextCharFormat fmt;
@@ -166,9 +166,7 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
         const bool emptyDocument = document()->isEmpty();
         if (!isReadOnly()) {
             QList<QAction *> actionList = popup->actions();
-            enum {
-                UndoAct, RedoAct, CutAct, CopyAct, PasteAct, ClearAct, SelectAllAct, NCountActs
-            };
+            enum { UndoAct, RedoAct, CutAct, CopyAct, PasteAct, ClearAct, SelectAllAct, NCountActs };
             QAction *separatorAction = nullptr;
             const int idx = actionList.indexOf(actionList[SelectAllAct]) + 1;
             if (idx < actionList.count()) {
@@ -184,7 +182,8 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
         }
         if (searchSupport()) {
             popup->addSeparator();
-            QAction *findAct = popup->addAction(KStandardGuiItem::find().icon(), KStandardGuiItem::find().text(), this, &RichTextEditor::findText, Qt::Key_F | Qt::CTRL);
+            QAction *findAct =
+                popup->addAction(KStandardGuiItem::find().icon(), KStandardGuiItem::find().text(), this, &RichTextEditor::findText, Qt::Key_F | Qt::CTRL);
             if (emptyDocument) {
                 findAct->setEnabled(false);
             }
@@ -205,7 +204,10 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
                 d->speller = new Sonnet::Speller();
             }
             if (!d->speller->availableBackends().isEmpty()) {
-                QAction *spellCheckAction = popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")), i18n("Check Spelling..."), this, &RichTextEditor::slotCheckSpelling);
+                QAction *spellCheckAction = popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")),
+                                                             i18n("Check Spelling..."),
+                                                             this,
+                                                             &RichTextEditor::slotCheckSpelling);
                 if (emptyDocument) {
                     spellCheckAction->setEnabled(false);
                 }
@@ -301,7 +303,7 @@ void RichTextEditor::addIgnoreWords(const QStringList &lst)
 void RichTextEditor::forceAutoCorrection(bool selectedText)
 {
     Q_UNUSED(selectedText)
-    //Nothing here
+    // Nothing here
 }
 
 void RichTextEditor::setSearchSupport(bool b)
@@ -574,8 +576,8 @@ void RichTextEditor::setHighlighter(Sonnet::Highlighter *_highLighter)
     delete decorator->highlighter();
     decorator->setHighlighter(_highLighter);
 
-    //KTextEdit used to take ownership of the highlighter, Sonnet::SpellCheckDecorator does not.
-    //so we reparent the highlighter so it will be deleted when the decorator is destroyed
+    // KTextEdit used to take ownership of the highlighter, Sonnet::SpellCheckDecorator does not.
+    // so we reparent the highlighter so it will be deleted when the decorator is destroyed
     _highLighter->setParent(decorator);
     d->richTextDecorator = decorator;
     addIgnoreWordsToHighLighter();
@@ -841,7 +843,7 @@ bool RichTextEditor::handleShortcut(QKeyEvent *event)
     } else if (KStandardShortcut::pasteSelection().contains(key)) {
         QString text = QApplication::clipboard()->text(QClipboard::Selection);
         if (!text.isEmpty()) {
-            insertPlainText(text);    // TODO: check if this is html? (MiB)
+            insertPlainText(text); // TODO: check if this is html? (MiB)
         }
         return true;
     } else if (event == QKeySequence::DeleteEndOfLine) {
@@ -976,8 +978,7 @@ void RichTextEditor::moveLineUpDown(bool moveUp)
         move.setPosition(cursor.selectionStart());
         move.movePosition(QTextCursor::StartOfBlock);
         move.setPosition(cursor.selectionEnd(), QTextCursor::KeepAnchor);
-        move.movePosition(move.atBlockStart() ? QTextCursor::Left : QTextCursor::EndOfBlock,
-                          QTextCursor::KeepAnchor);
+        move.movePosition(move.atBlockStart() ? QTextCursor::Left : QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
     } else {
         move.movePosition(QTextCursor::StartOfBlock);
         move.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);

@@ -10,10 +10,11 @@
 
 #include <QDialog>
 
-#include "kpimtextedit_private_export.h"
 #include "kpimtextedit/plaintexteditor.h"
+#include "kpimtextedit_private_export.h"
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class InsertHtmlDialogPrivate;
 class KPIMTEXTEDIT_TESTS_EXPORT InsertHtmlDialog : public QDialog
 {

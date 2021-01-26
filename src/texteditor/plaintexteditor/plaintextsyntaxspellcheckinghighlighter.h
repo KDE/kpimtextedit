@@ -9,14 +9,16 @@
 
 #include "kpimtextedit_export.h"
 
-#include <Sonnet/Highlighter>
 #include <KSyntaxHighlighting/SyntaxHighlighter>
+#include <Sonnet/Highlighter>
 
-namespace KSyntaxHighlighting {
+namespace KSyntaxHighlighting
+{
 class Format;
 }
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class PlainTextEditor;
 class PlainTextSyntaxSpellCheckingHighlighterPrivate;
 /**
@@ -55,6 +57,7 @@ protected:
     void setMisspelled(int start, int count) override;
 
     void applyFormat(int offset, int length, const KSyntaxHighlighting::Format &format) override;
+
 private:
     PlainTextSyntaxSpellCheckingHighlighterPrivate *const d;
 };

@@ -8,17 +8,17 @@
 #include "tableformatdialog.h"
 #include "inserttablewidget.h"
 
-#include <KLocalizedString>
-#include <QComboBox>
-#include <KSeparator>
 #include <KColorButton>
+#include <KLocalizedString>
+#include <KSeparator>
+#include <QComboBox>
 
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QSpinBox>
-#include <QLabel>
 #include <QCheckBox>
 #include <QDialogButtonBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QSpinBox>
+#include <QVBoxLayout>
 
 using namespace KPIMTextEdit;
 

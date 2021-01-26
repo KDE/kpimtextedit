@@ -7,11 +7,15 @@
 
 #include "plaintextmarkupbuilder.h"
 #include <QDebug>
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class PlainTextMarkupBuilderPrivate
 {
 public:
-    PlainTextMarkupBuilderPrivate(PlainTextMarkupBuilder *b) : q_ptr(b) {}
+    PlainTextMarkupBuilderPrivate(PlainTextMarkupBuilder *b)
+        : q_ptr(b)
+    {
+    }
 
     /**
     Get a letter string to represent a number.
@@ -43,7 +47,7 @@ public:
 
     QString m_quoteprefix;
 
-    PlainTextMarkupBuilder * const q_ptr;
+    PlainTextMarkupBuilder *const q_ptr;
 
     Q_DECLARE_PUBLIC(PlainTextMarkupBuilder)
 };
@@ -108,10 +112,9 @@ QString PlainTextMarkupBuilderPrivate::getLetterString(int itemNumber)
         // alphabet plus 10) after being increased by 10 (to pass out the digits
         // 0
         // to 9).
-        letterString.prepend(QStringLiteral("%1").arg(
-                                 (itemNumber % LETTERSINALPHABET) + DIGITSOFFSET,
-                                 0, // no padding while building this string.
-                                 LETTERSINALPHABET + DIGITSOFFSET));
+        letterString.prepend(QStringLiteral("%1").arg((itemNumber % LETTERSINALPHABET) + DIGITSOFFSET,
+                                                      0, // no padding while building this string.
+                                                      LETTERSINALPHABET + DIGITSOFFSET));
         if ((itemNumber >= LETTERSINALPHABET)) {
             itemNumber = itemNumber / LETTERSINALPHABET;
             itemNumber--;
@@ -130,13 +133,11 @@ QString PlainTextMarkupBuilderPrivate::getReferences()
 
         int index = 1;
         while (!m_urls.isEmpty()) {
-            refs.append(
-                        QStringLiteral("[%1] %2\n").arg(index++).arg(m_urls.takeFirst()));
+            refs.append(QStringLiteral("[%1] %2\n").arg(index++).arg(m_urls.takeFirst()));
         }
     }
     return refs;
 }
-
 
 PlainTextMarkupBuilder::~PlainTextMarkupBuilder()
 {
@@ -197,8 +198,7 @@ void PlainTextMarkupBuilder::endStrikeout()
     d->m_text.append(QLatin1Char('-'));
 }
 
-void PlainTextMarkupBuilder::beginAnchor(const QString &href,
-                                         const QString &name)
+void PlainTextMarkupBuilder::beginAnchor(const QString &href, const QString &name)
 {
     Q_D(PlainTextMarkupBuilder);
     Q_UNUSED(name)
@@ -211,8 +211,7 @@ void PlainTextMarkupBuilder::beginAnchor(const QString &href,
 void PlainTextMarkupBuilder::endAnchor()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(
-                QStringLiteral("[%1]").arg(d->m_urls.indexOf(d->activeLink) + 1));
+    d->m_text.append(QStringLiteral("[%1]").arg(d->m_urls.indexOf(d->activeLink) + 1));
 }
 
 void PlainTextMarkupBuilder::endParagraph()
@@ -244,8 +243,7 @@ int PlainTextMarkupBuilder::addReference(const QString &reference)
     return d->m_urls.indexOf(reference) + 1;
 }
 
-void PlainTextMarkupBuilder::insertImage(const QString &src, qreal width,
-                                         qreal height)
+void PlainTextMarkupBuilder::insertImage(const QString &src, qreal width, qreal height)
 {
     Q_D(PlainTextMarkupBuilder);
     Q_UNUSED(width)
@@ -295,20 +293,16 @@ void PlainTextMarkupBuilder::beginListItem()
         d->m_text.append(QStringLiteral(" %1. ").arg(itemNumber + 1));
         break;
     case QTextListFormat::ListLowerAlpha:
-        d->m_text.append(
-                    QStringLiteral(" %1. ").arg(d->getLetterString(itemNumber)));
+        d->m_text.append(QStringLiteral(" %1. ").arg(d->getLetterString(itemNumber)));
         break;
     case QTextListFormat::ListUpperAlpha:
-        d->m_text.append(
-                    QStringLiteral(" %1. ").arg(d->getLetterString(itemNumber).toUpper()));
+        d->m_text.append(QStringLiteral(" %1. ").arg(d->getLetterString(itemNumber).toUpper()));
         break;
     case QTextListFormat::ListLowerRoman:
-        d->m_text.append(
-                    QStringLiteral(" %1. ").arg(d->getRomanString(itemNumber + 1)));
+        d->m_text.append(QStringLiteral(" %1. ").arg(d->getRomanString(itemNumber + 1)));
         break;
     case QTextListFormat::ListUpperRoman:
-        d->m_text.append(QStringLiteral(" %1. ").arg(
-                             d->getRomanString(itemNumber + 1).toUpper()));
+        d->m_text.append(QStringLiteral(" %1. ").arg(d->getRomanString(itemNumber + 1).toUpper()));
         break;
     default:
         break;
@@ -367,9 +361,7 @@ QString PlainTextMarkupBuilder::getResult()
     return ret;
 }
 
-void PlainTextMarkupBuilder::beginParagraph(Qt::Alignment a, qreal top,
-                                            qreal bottom, qreal left,
-                                            qreal right)
+void PlainTextMarkupBuilder::beginParagraph(Qt::Alignment a, qreal top, qreal bottom, qreal left, qreal right)
 {
     Q_UNUSED(a)
     Q_D(PlainTextMarkupBuilder);
@@ -430,27 +422,23 @@ void PlainTextMarkupBuilder::beginHeader(int level)
     default:
         break;
     }
-
 }
 
-void PlainTextMarkupBuilder::beginTable(qreal cellpadding, qreal cellspacing,
-                                        const QString &width)
+void PlainTextMarkupBuilder::beginTable(qreal cellpadding, qreal cellspacing, const QString &width)
 {
     Q_UNUSED(cellpadding)
     Q_UNUSED(cellspacing)
     Q_UNUSED(width)
 }
 
-void PlainTextMarkupBuilder::beginTableCell(const QString &width, int colSpan,
-                                            int rowSpan)
+void PlainTextMarkupBuilder::beginTableCell(const QString &width, int colSpan, int rowSpan)
 {
     Q_UNUSED(width)
     Q_UNUSED(colSpan)
     Q_UNUSED(rowSpan)
 }
 
-void PlainTextMarkupBuilder::beginTableHeaderCell(const QString &width,
-                                                  int colSpan, int rowSpan)
+void PlainTextMarkupBuilder::beginTableHeaderCell(const QString &width, int colSpan, int rowSpan)
 {
     Q_UNUSED(width)
     Q_UNUSED(colSpan)
@@ -480,7 +468,7 @@ void PlainTextMarkupBuilder::endForeground()
 void PlainTextMarkupBuilder::endHeader(int level)
 {
     Q_D(PlainTextMarkupBuilder);
-    qDebug() << " void PlainTextMarkupBuilder::endHeader(int level)"<< level;
+    qDebug() << " void PlainTextMarkupBuilder::endHeader(int level)" << level;
     switch (level) {
     case 1:
         d->m_text.append(QStringLiteral(" #\n"));

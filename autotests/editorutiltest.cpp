@@ -6,8 +6,8 @@
 
 #include "editorutiltest.h"
 #include "../src/editorutil.h"
-#include <QTextDocument>
 #include <QTest>
+#include <QTextDocument>
 
 EditorUtilTest::EditorUtilTest(QObject *parent)
     : QObject(parent)
@@ -24,9 +24,9 @@ void EditorUtilTest::testUpperCase_data()
     QTest::addColumn<QString>("result");
     QTest::addColumn<int>("startcursorposition");
     QTest::addColumn<int>("endcursorposition");
-    QTest::newRow("onelinewithoutselection") <<  QStringLiteral("foo") << QStringLiteral("foo") << -1 << -1;
-    QTest::newRow("onelinewithselection") <<  QStringLiteral("foo") << QStringLiteral("FOO") << 0 << 3;
-    QTest::newRow("onelinewithselectionuppercase") <<  QStringLiteral("FOO") << QStringLiteral("FOO") << 0 << 3;
+    QTest::newRow("onelinewithoutselection") << QStringLiteral("foo") << QStringLiteral("foo") << -1 << -1;
+    QTest::newRow("onelinewithselection") << QStringLiteral("foo") << QStringLiteral("FOO") << 0 << 3;
+    QTest::newRow("onelinewithselectionuppercase") << QStringLiteral("FOO") << QStringLiteral("FOO") << 0 << 3;
 }
 
 void EditorUtilTest::testUpperCase()
@@ -54,9 +54,9 @@ void EditorUtilTest::testLowerCase_data()
     QTest::addColumn<QString>("result");
     QTest::addColumn<int>("startcursorposition");
     QTest::addColumn<int>("endcursorposition");
-    QTest::newRow("onelinewithoutselection") <<  QStringLiteral("foo") << QStringLiteral("foo") << -1 << -1;
-    QTest::newRow("onelinewithselection") <<  QStringLiteral("foo") << QStringLiteral("foo") << 0 << 3;
-    QTest::newRow("onelinewithselectionuppercase") <<  QStringLiteral("FOO") << QStringLiteral("foo") << 0 << 3;
+    QTest::newRow("onelinewithoutselection") << QStringLiteral("foo") << QStringLiteral("foo") << -1 << -1;
+    QTest::newRow("onelinewithselection") << QStringLiteral("foo") << QStringLiteral("foo") << 0 << 3;
+    QTest::newRow("onelinewithselectionuppercase") << QStringLiteral("FOO") << QStringLiteral("foo") << 0 << 3;
 }
 
 void EditorUtilTest::testLowerCase()
@@ -84,9 +84,9 @@ void EditorUtilTest::testSentenceCase_data()
     QTest::addColumn<QString>("result");
     QTest::addColumn<int>("startcursorposition");
     QTest::addColumn<int>("endcursorposition");
-    QTest::newRow("onelinewithoutselection") <<  QStringLiteral("foo") << QStringLiteral("foo") << -1 << -1;
-    QTest::newRow("onelinewithselection") <<  QStringLiteral("foo") << QStringLiteral("Foo") << 0 << 3;
-    QTest::newRow("bigline") <<  QStringLiteral("foo bla foo.\nddd") << QStringLiteral("Foo bla foo.\nDdd") << 0 << 16;
+    QTest::newRow("onelinewithoutselection") << QStringLiteral("foo") << QStringLiteral("foo") << -1 << -1;
+    QTest::newRow("onelinewithselection") << QStringLiteral("foo") << QStringLiteral("Foo") << 0 << 3;
+    QTest::newRow("bigline") << QStringLiteral("foo bla foo.\nddd") << QStringLiteral("Foo bla foo.\nDdd") << 0 << 16;
 }
 
 void EditorUtilTest::testSentenceCase()
@@ -114,10 +114,10 @@ void EditorUtilTest::testReverseCase_data()
     QTest::addColumn<QString>("result");
     QTest::addColumn<int>("startcursorposition");
     QTest::addColumn<int>("endcursorposition");
-    QTest::newRow("onelinewithoutselection") <<  QStringLiteral("foo") << QStringLiteral("foo") << -1 << -1;
-    QTest::newRow("onelinewithselection") <<  QStringLiteral("foo") << QStringLiteral("FOO") << 0 << 3;
-    QTest::newRow("reverseCase") <<  QStringLiteral("fOo bla\tfOO") << QStringLiteral("FoO BLA\tFoo") << 0 << 12;
-    QTest::newRow("notallineselected") <<  QStringLiteral("fOo bla\tfOO") << QStringLiteral("FoO bla\tfOO") << 0 << 3;
+    QTest::newRow("onelinewithoutselection") << QStringLiteral("foo") << QStringLiteral("foo") << -1 << -1;
+    QTest::newRow("onelinewithselection") << QStringLiteral("foo") << QStringLiteral("FOO") << 0 << 3;
+    QTest::newRow("reverseCase") << QStringLiteral("fOo bla\tfOO") << QStringLiteral("FoO BLA\tFoo") << 0 << 12;
+    QTest::newRow("notallineselected") << QStringLiteral("fOo bla\tfOO") << QStringLiteral("FoO bla\tfOO") << 0 << 3;
 }
 
 void EditorUtilTest::testReverseCase()

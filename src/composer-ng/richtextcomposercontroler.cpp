@@ -5,26 +5,26 @@
 */
 
 #include "richtextcomposercontroler.h"
-#include "richtextcomposerimages.h"
+#include "inserthtmldialog.h"
 #include "klinkdialog_p.h"
 #include "nestedlisthelper_p.h"
-#include "inserthtmldialog.h"
+#include "richtextcomposerimages.h"
 #include <QApplication>
 #include <QRegularExpression>
 
+#include "insertimagedialog.h"
+#include "textutils.h"
 #include <KColorScheme>
-#include <KMessageBox>
 #include <KLocalizedString>
-#include <QColorDialog>
-#include <QTextBlock>
-#include <QTimer>
-#include <QPointer>
+#include <KMessageBox>
 #include <QClipboard>
+#include <QColorDialog>
 #include <QIcon>
+#include <QPointer>
+#include <QTextBlock>
 #include <QTextDocumentFragment>
 #include <QTextList>
-#include "textutils.h"
-#include "insertimagedialog.h"
+#include <QTimer>
 
 using namespace KPIMTextEdit;
 
@@ -92,8 +92,8 @@ void RichTextComposerControler::RichTextComposerControlerPrivate::selectLinkText
             }
             const int oldPosition = cursor->position();
             cursor->movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor);
-            //Wordaround Qt Bug. when we have a table.
-            //FIXME selection url
+            // Wordaround Qt Bug. when we have a table.
+            // FIXME selection url
             if (oldPosition == cursor->position()) {
                 break;
             }
@@ -541,20 +541,15 @@ QString RichTextComposerControler::toCleanHtml() const
 
     // Qt inserts various style properties based on the current mode of the editor (underline,
     // bold, etc), but only empty paragraphs *also* have qt-paragraph-type set to 'empty'.
-    static const QString EMPTYLINEREGEX = QStringLiteral(
-        "<p style=\"-qt-paragraph-type:empty;(.*)</p>");
+    static const QString EMPTYLINEREGEX = QStringLiteral("<p style=\"-qt-paragraph-type:empty;(.*)</p>");
 
-    static const QString OLLISTPATTERNQT = QStringLiteral(
-        "<ol style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
+    static const QString OLLISTPATTERNQT = QStringLiteral("<ol style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
 
-    static const QString ULLISTPATTERNQT = QStringLiteral(
-        "<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
+    static const QString ULLISTPATTERNQT = QStringLiteral("<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
 
-    static const QString ORDEREDLISTHTML = QStringLiteral(
-        "<ol style=\"margin-top: 0px; margin-bottom: 0px;");
+    static const QString ORDEREDLISTHTML = QStringLiteral("<ol style=\"margin-top: 0px; margin-bottom: 0px;");
 
-    static const QString UNORDEREDLISTHTML = QStringLiteral(
-        "<ul style=\"margin-top: 0px; margin-bottom: 0px;");
+    static const QString UNORDEREDLISTHTML = QStringLiteral("<ul style=\"margin-top: 0px; margin-bottom: 0px;");
 
     // fix 1 - empty lines should show as empty lines - MS Outlook treats margin-top:0px; as
     // a non-existing line.
@@ -652,7 +647,7 @@ void RichTextComposerControler::setCursorPositionFromStart(unsigned int pos)
 {
     if (pos > 0) {
         QTextCursor cursor = richTextComposer()->textCursor();
-        //Fix html pos cursor
+        // Fix html pos cursor
         cursor.setPosition(qMin(pos, (unsigned int)cursor.document()->characterCount() - 1));
         richTextComposer()->setTextCursor(cursor);
         ensureCursorVisible();
@@ -774,8 +769,7 @@ void RichTextComposerControler::slotDeleteLine()
 
                 // When deleting the last line in the document,
                 // remove the newline of the line before the last line instead
-                if (deleteStart + deleteLength >= richTextComposer()->document()->characterCount()
-                    && deleteStart > 0) {
+                if (deleteStart + deleteLength >= richTextComposer()->document()->characterCount() && deleteStart > 0) {
                     deleteStart--;
                 }
 
@@ -867,7 +861,7 @@ QString RichTextComposerControler::RichTextComposerControlerPrivate::addQuotesTo
 {
     QString answer = inputText;
     answer.replace(QLatin1Char('\n'), QLatin1Char('\n') + defaultQuoteSign);
-    //cursor.selectText() as QChar::ParagraphSeparator as paragraph separator.
+    // cursor.selectText() as QChar::ParagraphSeparator as paragraph separator.
     answer.replace(QChar::ParagraphSeparator, QLatin1Char('\n') + defaultQuoteSign);
     answer.prepend(defaultQuoteSign);
     answer += QLatin1Char('\n');
@@ -920,9 +914,7 @@ QString RichTextComposerControler::toWrappedPlainText(QTextDocument *doc) const
             const QTextLine line = layout->lineAt(i);
             const QString lineText = block.text().mid(line.textStart(), line.textLength());
 
-            if (lineText.contains(rx)
-                || (urlStart && !lineText.contains(QLatin1Char(' '))
-                    && lineText.endsWith(QLatin1Char('-')))) {
+            if (lineText.contains(rx) || (urlStart && !lineText.contains(QLatin1Char(' ')) && lineText.endsWith(QLatin1Char('-')))) {
                 // don't insert line break in URL
                 temp += lineText;
                 urlStart = true;

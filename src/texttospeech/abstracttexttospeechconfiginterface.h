@@ -7,11 +7,12 @@
 #ifndef ABSTRACTTEXTTOSPEECHCONFIGINTERFACE_H
 #define ABSTRACTTEXTTOSPEECHCONFIGINTERFACE_H
 
-#include <QLocale>
-#include <QVector>
-#include <QObject>
 #include "kpimtextedit_export.h"
-namespace KPIMTextEdit {
+#include <QLocale>
+#include <QObject>
+#include <QVector>
+namespace KPIMTextEdit
+{
 /**
  * @brief The AbstractTextToSpeechConfigInterface class
  * @author Laurent Montel <montel@kde.org>

@@ -7,14 +7,14 @@
 #include "texttospeechgui.h"
 #include "texttospeech/texttospeech.h"
 #include <KLocalizedString>
-#include <QApplication>
-#include <QTextEdit>
-#include <QCommandLineParser>
 #include <QAction>
-#include <QMenuBar>
-#include <QMenu>
+#include <QApplication>
+#include <QCommandLineParser>
 #include <QDebug>
+#include <QMenu>
+#include <QMenuBar>
 #include <QStandardPaths>
+#include <QTextEdit>
 
 TextToSpeechGui::TextToSpeechGui(QWidget *parent)
     : QMainWindow(parent)

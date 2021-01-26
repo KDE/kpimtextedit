@@ -10,7 +10,8 @@
 #include "kpimtextedit_export.h"
 
 class QTextToSpeech;
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 /**
  * @brief The TextToSpeechConfigInterface class
  * @author Laurent Montel <montel@kde.org>

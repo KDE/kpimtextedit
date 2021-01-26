@@ -11,7 +11,8 @@
 #include <QObject>
 #include <QProcess>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class RichTextComposer;
 /**
  * @brief The RichTextExternalComposer class

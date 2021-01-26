@@ -7,28 +7,28 @@
 #include "kpimtextedit_debug.h"
 
 #include "texteditor/commonwidget/textmessageindicator.h"
+#include <KConfig>
+#include <KConfigGroup>
+#include <KCursor>
 #include <KIO/KUriFilterSearchProviderActions>
 #include <KLocalizedString>
-#include <KStandardGuiItem>
-#include <KStandardAction>
-#include <KCursor>
-#include <QIcon>
-#include <KConfigGroup>
 #include <KSharedConfig>
-#include <KConfig>
+#include <KStandardAction>
+#include <KStandardGuiItem>
+#include <QIcon>
 
-#include <sonnet/backgroundchecker.h>
-#include <Sonnet/Dialog>
 #include "texttospeech/texttospeech.h"
+#include <Sonnet/Dialog>
+#include <sonnet/backgroundchecker.h>
 
-#include <QMenu>
-#include <QDBusConnection>
-#include <QDBusConnectionInterface>
-#include <QTextDocumentFragment>
-#include <QScrollBar>
 #include <QApplication>
 #include <QClipboard>
+#include <QDBusConnection>
+#include <QDBusConnectionInterface>
+#include <QMenu>
+#include <QScrollBar>
 #include <QShortcut>
+#include <QTextDocumentFragment>
 
 #include <sonnet/spellcheckdecorator.h>
 
@@ -110,9 +110,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
         const bool emptyDocument = document()->isEmpty();
         if (!isReadOnly()) {
             QList<QAction *> actionList = popup->actions();
-            enum {
-                UndoAct, RedoAct, CutAct, CopyAct, PasteAct, ClearAct, SelectAllAct, NCountActs
-            };
+            enum { UndoAct, RedoAct, CutAct, CopyAct, PasteAct, ClearAct, SelectAllAct, NCountActs };
             QAction *separatorAction = nullptr;
             const int idx = actionList.indexOf(actionList[SelectAllAct]) + 1;
             if (idx < actionList.count()) {
@@ -147,7 +145,10 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
             }
             if (!d->speller->availableBackends().isEmpty()) {
                 if (!emptyDocument) {
-                    popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")), i18n("Check Spelling..."), this, &PlainTextEditor::slotCheckSpelling);
+                    popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")),
+                                     i18n("Check Spelling..."),
+                                     this,
+                                     &PlainTextEditor::slotCheckSpelling);
                     popup->addSeparator();
                 }
                 QAction *autoSpellCheckAction = popup->addAction(i18n("Auto Spell Check"), this, &PlainTextEditor::slotToggleAutoSpellCheck);
@@ -162,7 +163,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
 
                     QString defaultSpellcheckingLanguage = spellCheckingLanguage();
                     if (defaultSpellcheckingLanguage.isEmpty()) {
-                        //TODO fix default value
+                        // TODO fix default value
                         defaultSpellcheckingLanguage = d->speller->defaultLanguage();
                     }
 
@@ -218,7 +219,7 @@ void PlainTextEditor::slotSpeakText()
     } else {
         text = toPlainText();
     }
-    //qCDebug(KPIMTEXTEDIT_LOG) << " KPIMTextEdit::TextToSpeech::self()->isReady() :" << KPIMTextEdit::TextToSpeech::self()->isReady();
+    // qCDebug(KPIMTEXTEDIT_LOG) << " KPIMTextEdit::TextToSpeech::self()->isReady() :" << KPIMTextEdit::TextToSpeech::self()->isReady();
     Q_EMIT say(text);
 }
 
@@ -590,7 +591,7 @@ bool PlainTextEditor::handleShortcut(QKeyEvent *event)
     } else if (KStandardShortcut::pasteSelection().contains(key)) {
         QString text = QApplication::clipboard()->text(QClipboard::Selection);
         if (!text.isEmpty()) {
-            insertPlainText(text);    // TODO: check if this is html? (MiB)
+            insertPlainText(text); // TODO: check if this is html? (MiB)
         }
         return true;
     } else if (event == QKeySequence::DeleteEndOfLine) {
@@ -637,8 +638,7 @@ void PlainTextEditor::moveLineUpDown(bool moveUp)
         move.setPosition(cursor.selectionStart());
         move.movePosition(QTextCursor::StartOfBlock);
         move.setPosition(cursor.selectionEnd(), QTextCursor::KeepAnchor);
-        move.movePosition(move.atBlockStart() ? QTextCursor::Left : QTextCursor::EndOfBlock,
-                          QTextCursor::KeepAnchor);
+        move.movePosition(move.atBlockStart() ? QTextCursor::Left : QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
     } else {
         move.movePosition(QTextCursor::StartOfBlock);
         move.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
@@ -759,8 +759,8 @@ void PlainTextEditor::setHighlighter(Sonnet::Highlighter *_highLighter)
     delete decorator->highlighter();
     decorator->setHighlighter(_highLighter);
 
-    //KTextEdit used to take ownership of the highlighter, Sonnet::SpellCheckDecorator does not.
-    //so we reparent the highlighter so it will be deleted when the decorator is destroyed
+    // KTextEdit used to take ownership of the highlighter, Sonnet::SpellCheckDecorator does not.
+    // so we reparent the highlighter so it will be deleted when the decorator is destroyed
     _highLighter->setParent(decorator);
     d->richTextDecorator = decorator;
     addIgnoreWordsToHighLighter();

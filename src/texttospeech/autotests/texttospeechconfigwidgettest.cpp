@@ -5,13 +5,13 @@
 */
 
 #include "texttospeechconfigwidgettest.h"
-#include "texttospeech/texttospeechconfigwidget.h"
 #include "texttospeech/abstracttexttospeechconfiginterface.h"
+#include "texttospeech/texttospeechconfigwidget.h"
 
-#include <QTest>
-#include <QSlider>
-#include <QSignalSpy>
 #include <QComboBox>
+#include <QSignalSpy>
+#include <QSlider>
+#include <QTest>
 
 TextToSpeechConfigWidgetTest::TextToSpeechConfigWidgetTest(QObject *parent)
     : QObject(parent)
@@ -43,8 +43,8 @@ void TextToSpeechConfigWidgetTest::shouldHaveDefaultValue()
 
     auto *language = textToSpeechConfigWidget.findChild<QComboBox *>(QStringLiteral("language"));
     QVERIFY(language);
-    //FIXME
-    //QVERIFY(language->count()>0);
+    // FIXME
+    // QVERIFY(language->count()>0);
 
     auto *availableEngine = textToSpeechConfigWidget.findChild<QComboBox *>(QStringLiteral("engine"));
     QVERIFY(availableEngine);

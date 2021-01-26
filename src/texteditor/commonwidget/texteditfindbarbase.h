@@ -8,10 +8,11 @@
 #define TEXTEDITFINDBARBASE_H
 
 #include "kpimtextedit_export.h"
-#include <QWidget>
-#include <QTextDocument>
 #include <QRegularExpression>
-namespace KPIMTextEdit {
+#include <QTextDocument>
+#include <QWidget>
+namespace KPIMTextEdit
+{
 class TextFindWidget;
 class TextReplaceWidget;
 /**

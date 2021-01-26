@@ -11,11 +11,13 @@
 
 #include <QPlainTextEdit>
 
-namespace Sonnet {
+namespace Sonnet
+{
 class Highlighter;
 class SpellCheckDecorator;
 }
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 /**
  * @brief The PlainTextEditor class
  * @author Laurent Montel <montel@kde.org>
@@ -31,13 +33,7 @@ public:
     explicit PlainTextEditor(QWidget *parent = nullptr);
     ~PlainTextEditor() override;
 
-    enum SupportFeature {
-        None = 0,
-        Search = 1,
-        SpellChecking = 2,
-        TextToSpeech = 4,
-        AllowWebShortcut = 8
-    };
+    enum SupportFeature { None = 0, Search = 1, SpellChecking = 2, TextToSpeech = 4, AllowWebShortcut = 8 };
     Q_DECLARE_FLAGS(SupportFeatures, SupportFeature)
 
     void setSearchSupport(bool b);
@@ -81,6 +77,7 @@ private Q_SLOTS:
 
     void slotLanguageSelected();
     void slotToggleAutoSpellCheck();
+
 protected:
     virtual void addExtraMenuEntry(QMenu *menu, QPoint pos);
 

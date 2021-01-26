@@ -10,9 +10,9 @@
 #include <KLocalizedString>
 #include <QComboBox>
 
-#include <QSpinBox>
-#include <QLabel>
 #include <QGridLayout>
+#include <QLabel>
+#include <QSpinBox>
 
 using namespace KPIMTextEdit;
 
@@ -100,9 +100,7 @@ void InsertTableWidget::slotTypeOfLengthChanged(int index)
 
 QTextLength::Type InsertTableWidget::typeOfLength() const
 {
-    return
-        static_cast<QTextLength::Type>(d->mTypeOfLength->itemData(
-                                           d->mTypeOfLength->currentIndex()).toInt());
+    return static_cast<QTextLength::Type>(d->mTypeOfLength->itemData(d->mTypeOfLength->currentIndex()).toInt());
 }
 
 void InsertTableWidget::setTypeOfLength(QTextLength::Type type)

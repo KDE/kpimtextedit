@@ -6,13 +6,13 @@
 
 #include "textgotolinewidgettest.h"
 #include "texteditor/commonwidget/textgotolinewidget.h"
-#include <QTest>
-#include <QSignalSpy>
-#include <qtestmouse.h>
-#include <qtestkeyboard.h>
-#include <QSpinBox>
-#include <QToolButton>
 #include <QPushButton>
+#include <QSignalSpy>
+#include <QSpinBox>
+#include <QTest>
+#include <QToolButton>
+#include <qtestkeyboard.h>
+#include <qtestmouse.h>
 
 TextGoToLineWidgetTest::TextGoToLineWidgetTest(QObject *parent)
     : QObject(parent)
@@ -103,7 +103,7 @@ void TextGoToLineWidgetTest::shouldHasFocusEachTimeThatItShown()
     QVERIFY(!line->hasFocus());
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
-    //FIXME QVERIFY(line->hasFocus());
+    // FIXME QVERIFY(line->hasFocus());
 }
 
 void TextGoToLineWidgetTest::shouldSetFocusWhenWeRecallGotToLine()

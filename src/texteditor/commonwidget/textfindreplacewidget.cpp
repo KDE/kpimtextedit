@@ -6,14 +6,14 @@
 
 #include "textfindreplacewidget.h"
 
+#include <KColorScheme>
 #include <KLocalizedString>
 #include <QPushButton>
-#include <KColorScheme>
 
-#include <QLineEdit>
-#include <QLabel>
-#include <QMenu>
 #include <QHBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QMenu>
 #include <QRegularExpression>
 
 using namespace KPIMTextEdit;
@@ -126,8 +126,7 @@ void TextFindWidget::setFoundMatch(bool match)
 
         KStatefulBrush bgBrush(KColorScheme::View, bgColorScheme);
 
-        styleSheet = QStringLiteral("QLineEdit{ background-color:%1 }")
-                     .arg(bgBrush.brush(mSearch).color().name());
+        styleSheet = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch).color().name());
     }
 
     mSearch->setStyleSheet(styleSheet);

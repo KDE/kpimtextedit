@@ -8,7 +8,8 @@
 #define TEXTTOSPEECHCONFIGWIDGETTEST_H
 
 #include <QObject>
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class TextToSpeechConfigWidget;
 }
 class TextToSpeechConfigWidgetTest : public QObject
@@ -21,6 +22,7 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldEmitConfigChangedWhenChangeConfigValue();
+
 private:
     void addInterface(KPIMTextEdit::TextToSpeechConfigWidget *widget);
 };

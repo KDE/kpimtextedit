@@ -13,7 +13,8 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class SelectSpecialCharDialogPrivate
 {
 public:
@@ -25,8 +26,7 @@ public:
         auto *lay = new QVBoxLayout(q);
 
         mCharSelect = new KCharSelect(q, nullptr, KCharSelect::CharacterTable | KCharSelect::BlockCombos);
-        q->connect(mCharSelect, &KCharSelect::charSelected,
-                   q, &SelectSpecialCharDialog::charSelected);
+        q->connect(mCharSelect, &KCharSelect::charSelected, q, &SelectSpecialCharDialog::charSelected);
         lay->addWidget(mCharSelect);
 
         mButtonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
@@ -38,8 +38,8 @@ public:
         q->connect(mButtonBox, &QDialogButtonBox::rejected, q, &QDialog::reject);
 
         q->connect(okButton, &QPushButton::clicked, q, [this]() {
-                _k_slotInsertChar();
-            });
+            _k_slotInsertChar();
+        });
     }
 
     void addSelectButton()
@@ -47,8 +47,8 @@ public:
         mSelectButton = new QPushButton(i18n("Select"));
         mButtonBox->addButton(mSelectButton, QDialogButtonBox::ActionRole);
         q->connect(mSelectButton, &QPushButton::clicked, q, [this]() {
-                _k_slotInsertChar();
-            });
+            _k_slotInsertChar();
+        });
     }
 
     void _k_slotInsertChar();

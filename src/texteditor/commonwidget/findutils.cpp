@@ -9,8 +9,8 @@
 
 #include <QLineEdit>
 #include <QRegularExpression>
-#include <QTextDocument>
 #include <QTextCursor>
+#include <QTextDocument>
 
 using namespace KPIMTextEdit;
 

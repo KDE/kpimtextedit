@@ -11,10 +11,10 @@ SPDX-License-Identifier: GPL-2.0-or-later
 // Local
 #include "kpimtextedit/slidecontainer.h"
 
+#include <QSignalSpy>
 #include <QTest>
 #include <QTextEdit>
 #include <QVBoxLayout>
-#include <QSignalSpy>
 
 using namespace KPIMTextEdit;
 

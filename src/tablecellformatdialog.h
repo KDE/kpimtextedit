@@ -12,7 +12,8 @@
 
 #include <QTextCharFormat>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class TableCellFormatDialog : public QDialog
 {
     Q_OBJECT

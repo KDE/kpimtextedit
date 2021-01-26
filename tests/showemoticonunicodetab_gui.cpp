@@ -6,11 +6,11 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include <QApplication>
-#include <QWidget>
 #include <QVBoxLayout>
+#include <QWidget>
 
-#include "textutils.h"
 #include "emoticon/emoticonunicodetab.h"
+#include "textutils.h"
 
 class Window : public QWidget
 {

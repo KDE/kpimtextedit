@@ -5,13 +5,13 @@
 */
 
 #include "testgenerateplaintextbuildergui.h"
-#include <QVBoxLayout>
+#include <KPIMTextEdit/MarkupDirector>
+#include <KPIMTextEdit/PlainTextMarkupBuilder>
 #include <QApplication>
 #include <QLabel>
-#include <QTextEdit>
 #include <QPushButton>
-#include <KPIMTextEdit/PlainTextMarkupBuilder>
-#include <KPIMTextEdit/MarkupDirector>
+#include <QTextEdit>
+#include <QVBoxLayout>
 
 TestGeneratePlainTextBuilderGui::TestGeneratePlainTextBuilderGui(QWidget *parent)
     : QWidget(parent)
@@ -43,8 +43,7 @@ TestGeneratePlainTextBuilderGui::TestGeneratePlainTextBuilderGui(QWidget *parent
     generatedPlainTextFromGrantleeToTextEdit->setReadOnly(true);
     mainLayout->addWidget(generatedPlainTextFromGrantleeToTextEdit);
 
-
-    connect(generateHtmlFromQTextEditButton, &QPushButton::clicked, this, [=]{
+    connect(generateHtmlFromQTextEditButton, &QPushButton::clicked, this, [=] {
         generatedHtml->setHtml(htmlEdit->toPlainText());
 
         auto hb = new KPIMTextEdit::PlainTextMarkupBuilder();
@@ -59,9 +58,7 @@ TestGeneratePlainTextBuilderGui::TestGeneratePlainTextBuilderGui(QWidget *parent
 
 TestGeneratePlainTextBuilderGui::~TestGeneratePlainTextBuilderGui()
 {
-
 }
-
 
 int main(int argc, char *argv[])
 {

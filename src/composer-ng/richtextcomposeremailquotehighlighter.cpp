@@ -20,7 +20,12 @@ public:
     bool spellCheckingEnabled = false;
 };
 
-RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighter(RichTextComposer *textEdit, const QColor &normalColor, const QColor &quoteDepth1, const QColor &quoteDepth2, const QColor &quoteDepth3, const QColor &misspelledColor)
+RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighter(RichTextComposer *textEdit,
+                                                                             const QColor &normalColor,
+                                                                             const QColor &quoteDepth1,
+                                                                             const QColor &quoteDepth2,
+                                                                             const QColor &quoteDepth3,
+                                                                             const QColor &misspelledColor)
     : Sonnet::Highlighter(textEdit)
     , d(new KPIMTextEdit::RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighterPrivate())
 {
@@ -44,7 +49,11 @@ RichTextComposerEmailQuoteHighlighter::~RichTextComposerEmailQuoteHighlighter()
     delete d;
 }
 
-void RichTextComposerEmailQuoteHighlighter::setQuoteColor(const QColor &normalColor, const QColor &quoteDepth1, const QColor &quoteDepth2, const QColor &quoteDepth3, const QColor &misspelledColor)
+void RichTextComposerEmailQuoteHighlighter::setQuoteColor(const QColor &normalColor,
+                                                          const QColor &quoteDepth1,
+                                                          const QColor &quoteDepth2,
+                                                          const QColor &quoteDepth3,
+                                                          const QColor &misspelledColor)
 {
     Q_UNUSED(normalColor)
     d->col1 = quoteDepth1;
@@ -64,8 +73,7 @@ void RichTextComposerEmailQuoteHighlighter::toggleSpellHighlighting(bool on)
 void RichTextComposerEmailQuoteHighlighter::highlightBlock(const QString &text)
 {
     QString simplified = text;
-    simplified.remove(QRegularExpression(QStringLiteral("\\s"))).
-    replace(QLatin1Char('|'), QLatin1Char('>'));
+    simplified.remove(QRegularExpression(QStringLiteral("\\s"))).replace(QLatin1Char('|'), QLatin1Char('>'));
 
     while (simplified.startsWith(QLatin1String(">>>>"))) {
         simplified.remove(0, 3);
@@ -78,11 +86,11 @@ void RichTextComposerEmailQuoteHighlighter::highlightBlock(const QString &text)
     } else if (simplified.startsWith(QLatin1String(">"))) {
         setFormat(0, text.length(), d->col1);
     } else if (d->parent->isLineQuoted(text)) {
-        setFormat(0, text.length(), d->col1);   // FIXME: custom quote prefix
+        setFormat(0, text.length(), d->col1); // FIXME: custom quote prefix
         // can't handle multiple levels
     } else if (d->spellCheckingEnabled) {
         Highlighter::highlightBlock(text);
-        return; //setCurrentBlockState already done in Highlighter::highlightBlock
+        return; // setCurrentBlockState already done in Highlighter::highlightBlock
     }
     setCurrentBlockState(0);
 }

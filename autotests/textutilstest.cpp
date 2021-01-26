@@ -35,15 +35,17 @@ void TextUtilsTest::test_flowText_data()
     QTest::addColumn<QString>("quotedString");
     QTest::addColumn<QString>("indent");
 
-    QTest::newRow("Empty string ") << "" << "" << "";
+    QTest::newRow("Empty string ") << ""
+                                   << ""
+                                   << "";
 
     QTest::newRow("Indent == Maxlenght ") << "A line"
                                           << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>A\n"
-        ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n"
-        ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>l\n"
-        ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>i\n"
-        ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>n\n"
-        ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>e"
+                                             ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n"
+                                             ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>l\n"
+                                             ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>i\n"
+                                             ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>n\n"
+                                             ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>e"
                                           << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
     //                                                                                   40
     //                                                                                    ↓
@@ -53,12 +55,12 @@ void TextUtilsTest::test_flowText_data()
     QTest::newRow("Two non-wrapping lines") << "A long line that is right on the border.\n"
                                                "A long line that is right on the border."
                                             << "A long line that is right on the border.\n"
-        "A long line that is right on the border."
+                                               "A long line that is right on the border."
                                             << "";
     //                                                                               40
     //                                                                                ↓
     QTest::newRow("Two wrapping lines") << "A long line that is right over the border"
                                         << "A long line that is right over the\n"
-        "border"
+                                           "border"
                                         << "";
 }

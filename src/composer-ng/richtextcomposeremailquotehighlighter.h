@@ -7,9 +7,10 @@
 #ifndef KPIMTEXTEDITRICHTEXTCOMPOSEREMAILQUOTEHIGHLIGHTER_H
 #define KPIMTEXTEDITRICHTEXTCOMPOSEREMAILQUOTEHIGHLIGHTER_H
 
-#include <sonnet/highlighter.h>
 #include "kpimtextedit_export.h"
-namespace KPIMTextEdit {
+#include <sonnet/highlighter.h>
+namespace KPIMTextEdit
+{
 class RichTextComposer;
 /**
  * @short A highlighter for email quoting.
@@ -21,12 +22,15 @@ class KPIMTEXTEDIT_EXPORT RichTextComposerEmailQuoteHighlighter : public Sonnet:
 {
     Q_OBJECT
 public:
-
     /**
      * Constructor. See setQuoteColor() for the parameters.
      * FIXME: Default colors don't obey color scheme
      */
-    explicit RichTextComposerEmailQuoteHighlighter(RichTextComposer *textEdit, const QColor &normalColor = Qt::black, const QColor &quoteDepth1 = QColor(0x00, 0x80, 0x00), const QColor &quoteDepth2 = QColor(0x00, 0x80, 0x00), const QColor &quoteDepth3 = QColor(0x00, 0x80, 0x00),
+    explicit RichTextComposerEmailQuoteHighlighter(RichTextComposer *textEdit,
+                                                   const QColor &normalColor = Qt::black,
+                                                   const QColor &quoteDepth1 = QColor(0x00, 0x80, 0x00),
+                                                   const QColor &quoteDepth2 = QColor(0x00, 0x80, 0x00),
+                                                   const QColor &quoteDepth3 = QColor(0x00, 0x80, 0x00),
                                                    const QColor &misspelledColor = Qt::red);
 
     ~RichTextComposerEmailQuoteHighlighter() override;
@@ -41,7 +45,11 @@ public:
      * @param normalColor will be ignored, only provided for KNode
      *                    compatibility.
      */
-    void setQuoteColor(const QColor &normalColor, const QColor &quoteDepth1, const QColor &quoteDepth2, const QColor &quoteDepth3, const QColor &misspelledColor = Qt::red);
+    void setQuoteColor(const QColor &normalColor,
+                       const QColor &quoteDepth1,
+                       const QColor &quoteDepth2,
+                       const QColor &quoteDepth3,
+                       const QColor &misspelledColor = Qt::red);
 
     /**
      * Turns spellcheck highlighting on or off.
@@ -54,8 +62,8 @@ public:
      * Reimplemented to highlight quote blocks.
      */
     void highlightBlock(const QString &text) override;
-protected:
 
+protected:
     /**
      * Reimplemented, the base version sets the text color to black, which
      * is not what we want. We do nothing, the format is already reset by

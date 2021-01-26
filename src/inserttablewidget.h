@@ -12,7 +12,8 @@
 
 #include <QTextLength>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class InsertTableWidget : public QWidget
 {
     Q_OBJECT

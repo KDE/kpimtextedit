@@ -7,10 +7,11 @@
 #ifndef KPIMTEXTEDITRICHTEXTCOMPOSEREMAILQUOTEDECORATOR_H
 #define KPIMTEXTEDITRICHTEXTCOMPOSEREMAILQUOTEDECORATOR_H
 
-#include <sonnet/spellcheckdecorator.h>
 #include "kpimtextedit_export.h"
+#include <sonnet/spellcheckdecorator.h>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class RichTextComposer;
 /**
  * @brief The RichTextComposerEmailQuoteDecorator class
@@ -25,6 +26,7 @@ public:
 
 protected:
     Q_REQUIRED_RESULT bool isSpellCheckingEnabledForBlock(const QString &blockText) const override;
+
 private:
     class RichTextComposerEmailQuoteDecoratorPrivate;
     RichTextComposerEmailQuoteDecoratorPrivate *const d;

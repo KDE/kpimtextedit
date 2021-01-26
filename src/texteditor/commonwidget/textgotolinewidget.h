@@ -10,7 +10,8 @@
 #include "kpimtextedit_export.h"
 #include <QWidget>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class TextGoToLineWidgetPrivate;
 /**
  * @brief The TextGoToLineWidget class

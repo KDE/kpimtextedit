@@ -6,11 +6,12 @@
 
 #ifndef TEXTTOSPEECHCONFIGWIDGET_H
 #define TEXTTOSPEECHCONFIGWIDGET_H
-#include <QWidget>
 #include "kpimtextedit_private_export.h"
+#include <QWidget>
 class QSlider;
 class QComboBox;
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class TextToSpeechLanguageComboBox;
 class AbstractTextToSpeechConfigInterface;
 class KPIMTEXTEDIT_TESTS_EXPORT TextToSpeechConfigWidget : public QWidget

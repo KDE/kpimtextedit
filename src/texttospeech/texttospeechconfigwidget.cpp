@@ -10,12 +10,12 @@
 #include "texttospeechlanguagecombobox.h"
 #include <KLocalizedString>
 
-#include <QFormLayout>
-#include <QSlider>
-#include <QComboBox>
-#include <QTimer>
 #include <KConfig>
 #include <KConfigGroup>
+#include <QComboBox>
+#include <QFormLayout>
+#include <QSlider>
+#include <QTimer>
 
 using namespace KPIMTextEdit;
 TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
@@ -130,7 +130,7 @@ void TextToSpeechConfigWidget::restoreDefaults()
     mPitch->setValue(0);
     mVolume->setValue(50);
 
-    //TODO
+    // TODO
 }
 
 void TextToSpeechConfigWidget::updateAvailableEngine()
@@ -195,5 +195,5 @@ void TextToSpeechConfigWidget::slotEngineChanged()
 
 void TextToSpeechConfigWidget::slotLanguageChanged()
 {
-    //QLocale locale = mLanguage->currentData().value<QLocale>();
+    // QLocale locale = mLanguage->currentData().value<QLocale>();
 }

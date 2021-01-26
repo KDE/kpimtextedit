@@ -11,7 +11,8 @@
 
 #include <QWidget>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class InsertImageWidgetPrivate;
 
 class InsertImageWidget : public QWidget

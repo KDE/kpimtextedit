@@ -11,7 +11,8 @@
 
 #include <QDialog>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class SelectSpecialCharDialogPrivate;
 /**
  * @brief The SelectSpecialCharDialog class

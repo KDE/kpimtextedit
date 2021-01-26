@@ -18,7 +18,8 @@ class QDropEvent;
 class QTextCursor;
 class QTextList;
 class QTextBlock;
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 /**
  *
  * @short Helper class for automatic handling of nested lists in a text edit
@@ -31,7 +32,6 @@ namespace KPIMTextEdit {
 class NestedListHelper
 {
 public:
-
     /**
      * Create a helper
      *

@@ -6,9 +6,9 @@
 
 #include "texttospeechactionstest.h"
 #include "../texttospeechactions.h"
-#include <QTest>
 #include <QAction>
 #include <QSignalSpy>
+#include <QTest>
 
 Q_DECLARE_METATYPE(KPIMTextEdit::TextToSpeechWidget::State)
 

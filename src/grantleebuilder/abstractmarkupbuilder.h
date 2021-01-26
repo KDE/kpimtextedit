@@ -16,8 +16,8 @@
 
 class QBrush;
 
-namespace KPIMTextEdit {
-
+namespace KPIMTextEdit
+{
 class AbstractMarkupBuilderPrivate;
 
 /// @headerfile abstractmarkupbuilder.h grantlee/abstractmarkupbuilder.h
@@ -39,7 +39,9 @@ class KPIMTEXTEDIT_EXPORT AbstractMarkupBuilder
 {
 public:
     /** Destructor */
-    virtual ~AbstractMarkupBuilder() {}
+    virtual ~AbstractMarkupBuilder()
+    {
+    }
 
     /** Begin a bold element in the markup */
     virtual void beginStrong() = 0;
@@ -88,8 +90,7 @@ public:
     @param href The href of the anchor.
     @param name The name of the anchor.
   */
-    virtual void beginAnchor(const QString &href = {}, const QString &name = {})
-    = 0;
+    virtual void beginAnchor(const QString &href = {}, const QString &name = {}) = 0;
 
     /** Close the anchor element */
     virtual void endAnchor() = 0;
@@ -120,10 +121,7 @@ public:
     @param left The left margin of the new paragraph.
     @param right The right margin of the new paragraph.
   */
-    virtual void beginParagraph(Qt::Alignment a = Qt::AlignLeft, qreal top = 0.0,
-                                qreal bottom = 0.0, qreal left = 0.0,
-                                qreal right = 0.0)
-    = 0;
+    virtual void beginParagraph(Qt::Alignment a = Qt::AlignLeft, qreal top = 0.0, qreal bottom = 0.0, qreal left = 0.0, qreal right = 0.0) = 0;
 
     /** Close the paragraph in the markup. */
     virtual void endParagraph() = 0;
@@ -182,9 +180,7 @@ public:
     @param width The width of the table. May be either an integer, or a
     percentage value.
   */
-    virtual void beginTable(qreal cellpadding, qreal cellspacing,
-                            const QString &width)
-    = 0;
+    virtual void beginTable(qreal cellpadding, qreal cellspacing, const QString &width) = 0;
 
     /**
     Begin a new table row
@@ -197,9 +193,7 @@ public:
     @param colSpan The column span of the cell.
     @param rowSpan The row span of the cell.
   */
-    virtual void beginTableHeaderCell(const QString &width, int colSpan,
-                                      int rowSpan)
-    = 0;
+    virtual void beginTableHeaderCell(const QString &width, int colSpan, int rowSpan) = 0;
 
     /**
     Begin a new table cell.
@@ -207,8 +201,7 @@ public:
     @param colSpan The column span of the cell.
     @param rowSpan The row span of the cell.
   */
-    virtual void beginTableCell(const QString &width, int colSpan, int rowSpan)
-    = 0;
+    virtual void beginTableCell(const QString &width, int colSpan, int rowSpan) = 0;
 
     /** End a table element */
     virtual void endTable() = 0;

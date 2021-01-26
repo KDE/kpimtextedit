@@ -5,13 +5,13 @@
 */
 
 #include "plaintexteditorwidget.h"
-#include "plaintexteditor.h"
 #include "plaintexteditfindbar.h"
-#include "texttospeech/texttospeechwidget.h"
+#include "plaintexteditor.h"
 #include "slidecontainer.h"
+#include "texttospeech/texttospeechwidget.h"
 
-#include <QVBoxLayout>
 #include <QTextCursor>
+#include <QVBoxLayout>
 
 using namespace KPIMTextEdit;
 class Q_DECL_HIDDEN KPIMTextEdit::PlainTextEditorWidgetPrivate

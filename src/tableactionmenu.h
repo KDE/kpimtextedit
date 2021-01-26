@@ -10,7 +10,8 @@
 
 #include <KActionMenu>
 #include <QTextEdit>
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class TableActionMenuPrivate;
 
 class TableActionMenu : public KActionMenu
@@ -21,6 +22,7 @@ public:
     ~TableActionMenu();
 
     void setRichTextMode(bool richTextMode);
+
 private:
     TableActionMenuPrivate *const d;
     friend class TableActionMenuPrivate;

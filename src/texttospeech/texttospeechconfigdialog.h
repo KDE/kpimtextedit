@@ -7,9 +7,10 @@
 #ifndef TEXTTOSPEECHCONFIGDIALOG_H
 #define TEXTTOSPEECHCONFIGDIALOG_H
 
-#include <QDialog>
 #include "kpimtextedit_private_export.h"
-namespace KPIMTextEdit {
+#include <QDialog>
+namespace KPIMTextEdit
+{
 class TextToSpeechConfigWidget;
 class KPIMTEXTEDIT_TESTS_EXPORT TextToSpeechConfigDialog : public QDialog
 {

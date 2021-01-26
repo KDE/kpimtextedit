@@ -7,10 +7,11 @@
 #ifndef EMOTICONLISTWIDGETSELECTOR_H
 #define EMOTICONLISTWIDGETSELECTOR_H
 
-#include <QListWidget>
 #include "kpimtextedit_private_export.h"
+#include <QListWidget>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class KPIMTEXTEDIT_TESTS_EXPORT EmoticonTextEditItem : public QListWidgetItem
 {
 public:

@@ -9,7 +9,8 @@
 #define KPIMTEXTEDIT_EMOTICONTEXTEDITSELECTOR_H
 
 #include <QWidget>
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class EmoticonUnicodeTab;
 class EmoticonTextEditSelector : public QWidget
 {

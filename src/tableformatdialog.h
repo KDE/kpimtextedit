@@ -12,7 +12,8 @@
 
 #include <QTextLength>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class TableFormatDialog : public QDialog
 {
     Q_OBJECT

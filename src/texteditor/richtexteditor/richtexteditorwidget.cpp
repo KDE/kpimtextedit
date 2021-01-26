@@ -5,11 +5,11 @@
 */
 
 #include "richtexteditorwidget.h"
-#include "richtexteditor.h"
 #include "richtexteditfindbar.h"
+#include "richtexteditor.h"
 
-#include <QVBoxLayout>
 #include <QTextCursor>
+#include <QVBoxLayout>
 #include <texttospeech/texttospeechwidget.h>
 
 #include "slidecontainer.h"

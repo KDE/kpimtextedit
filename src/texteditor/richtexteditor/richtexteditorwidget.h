@@ -11,7 +11,8 @@
 
 #include <QWidget>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class RichTextEditor;
 class RichTextEditorWidgetPrivate;
 /**
@@ -52,7 +53,6 @@ public Q_SLOTS:
     void slotReplace();
 
 private:
-
     void slotHideFindBar();
     void init(RichTextEditor *customEditor = nullptr);
     RichTextEditorWidgetPrivate *const d;

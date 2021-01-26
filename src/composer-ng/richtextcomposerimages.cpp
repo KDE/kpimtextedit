@@ -4,16 +4,16 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "richtextcomposer.h"
 #include "richtextcomposerimages.h"
+#include "richtextcomposer.h"
 
+#include <KCodecs>
+#include <KLocalizedString>
+#include <KMessageBox>
+#include <QBuffer>
+#include <QRandomGenerator>
 #include <QTextBlock>
 #include <QTextDocument>
-#include <QBuffer>
-#include <KCodecs>
-#include <KMessageBox>
-#include <KLocalizedString>
-#include <QRandomGenerator>
 
 using namespace KPIMTextEdit;
 
@@ -55,18 +55,11 @@ void RichTextComposerImages::addImageHelper(const QUrl &url, int width, int heig
 {
     QImage image;
     if (!image.load(url.path())) {
-        KMessageBox::error(
-            d->composer,
-            xi18nc("@info",
-                   "Unable to load image <filename>%1</filename>.",
-                   url.path()));
+        KMessageBox::error(d->composer, xi18nc("@info", "Unable to load image <filename>%1</filename>.", url.path()));
         return;
     }
     const QFileInfo fi(url.path());
-    const QString imageName
-        = fi.baseName().isEmpty()
-          ? QStringLiteral("image.png")
-          : QString(fi.baseName() + QLatin1String(".png"));
+    const QString imageName = fi.baseName().isEmpty() ? QStringLiteral("image.png") : QString(fi.baseName() + QLatin1String(".png"));
     if (width != -1 && height != -1 && (image.width() > width && image.height() > height)) {
         image = image.scaled(width, height);
     }
@@ -90,8 +83,7 @@ void RichTextComposerImages::loadImage(const QImage &image, const QString &match
                         cursor.setPosition(pos);
                         cursor.setPosition(pos + 1, QTextCursor::KeepAnchor);
                         cursor.removeSelectedText();
-                        d->composer->document()->addResource(QTextDocument::ImageResource,
-                                                             QUrl(resourceName), QVariant(image));
+                        d->composer->document()->addResource(QTextDocument::ImageResource, QUrl(resourceName), QVariant(image));
                         QTextImageFormat format;
                         format.setName(resourceName);
                         if ((imageFormat.width() != 0.0) && (imageFormat.height() != 0.0)) {
@@ -130,8 +122,7 @@ void RichTextComposerImages::addImageHelper(const QString &imageName, const QIma
         if (firstDot == -1) {
             imageNameToAdd = imageName + QString::number(imageNumber++);
         } else {
-            imageNameToAdd = imageName.left(firstDot) + QString::number(imageNumber++)
-                             +imageName.mid(firstDot);
+            imageNameToAdd = imageName.left(firstDot) + QString::number(imageNumber++) + imageName.mid(firstDot);
         }
     }
 
@@ -159,8 +150,7 @@ ImageWithNameList RichTextComposerImages::imagesWithName() const
     for (const QTextImageFormat &imageFormat : imageFormats) {
         const QString name = imageFormat.name();
         if (!seenImageNames.contains(name)) {
-            QVariant resourceData = d->composer->document()->resource(QTextDocument::ImageResource,
-                                                                      QUrl(name));
+            QVariant resourceData = d->composer->document()->resource(QTextDocument::ImageResource, QUrl(name));
             QImage image = qvariant_cast<QImage>(resourceData);
 
             ImageWithNamePtr newImage(new ImageWithName);
@@ -173,10 +163,10 @@ ImageWithNameList RichTextComposerImages::imagesWithName() const
     return retImages;
 }
 
-QVector< QSharedPointer<EmbeddedImage> > RichTextComposerImages::embeddedImages() const
+QVector<QSharedPointer<EmbeddedImage>> RichTextComposerImages::embeddedImages() const
 {
     const ImageWithNameList normalImages = imagesWithName();
-    QVector< QSharedPointer<EmbeddedImage> > retImages;
+    QVector<QSharedPointer<EmbeddedImage>> retImages;
     retImages.reserve(normalImages.count());
     for (const ImageWithNamePtr &normalImage : normalImages) {
         retImages.append(createEmbeddedImage(normalImage->image, normalImage->name));
@@ -209,7 +199,7 @@ QVector<QTextImageFormat> RichTextComposerImages::embeddedImageFormats() const
             if (fragment.isValid()) {
                 QTextImageFormat imageFormat = fragment.charFormat().toImageFormat();
                 if (imageFormat.isValid()) {
-                    //TODO: Replace with a way to see if an image is an embedded image or a remote
+                    // TODO: Replace with a way to see if an image is an embedded image or a remote
                     const QUrl url(imageFormat.name());
                     if (!url.isValid() || !url.scheme().startsWith(QLatin1String("http"))) {
                         retList.append(imageFormat);
@@ -224,21 +214,17 @@ QVector<QTextImageFormat> RichTextComposerImages::embeddedImageFormats() const
 
 void RichTextComposerImages::insertImage(const QImage &image, const QFileInfo &fileInfo)
 {
-    const QString imageName = fileInfo.baseName().isEmpty()
-                              ? i18nc("Start of the filename for an image", "image")
-                              : fileInfo.baseName();
+    const QString imageName = fileInfo.baseName().isEmpty() ? i18nc("Start of the filename for an image", "image") : fileInfo.baseName();
     addImageHelper(imageName, image);
 }
 
-QByteArray RichTextComposerImages::imageNamesToContentIds(
-    const QByteArray &htmlBody, const KPIMTextEdit::ImageList &imageList)
+QByteArray RichTextComposerImages::imageNamesToContentIds(const QByteArray &htmlBody, const KPIMTextEdit::ImageList &imageList)
 {
     QByteArray result = htmlBody;
     for (const QSharedPointer<EmbeddedImage> &image : imageList) {
         const QString newImageName = QLatin1String("cid:") + image->contentID;
         QByteArray quote("\"");
-        result.replace(QByteArray(quote + image->imageName.toLocal8Bit() + quote),
-                       QByteArray(quote + newImageName.toLocal8Bit() + quote));
+        result.replace(QByteArray(quote + image->imageName.toLocal8Bit() + quote), QByteArray(quote + newImageName.toLocal8Bit() + quote));
     }
     return result;
 }

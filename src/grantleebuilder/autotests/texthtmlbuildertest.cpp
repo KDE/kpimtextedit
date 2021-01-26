@@ -5,8 +5,8 @@
 */
 
 #include "texthtmlbuildertest.h"
-#include "grantleebuilder/texthtmlbuilder.h"
 #include "grantleebuilder/markupdirector.h"
+#include "grantleebuilder/texthtmlbuilder.h"
 #include <QRegularExpression>
 #include <QTest>
 #include <QTextDocument>
@@ -14,7 +14,6 @@ QTEST_MAIN(TextHTMLBuilderTest)
 TextHTMLBuilderTest::TextHTMLBuilderTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void TextHTMLBuilderTest::testHtmlWithTab()
@@ -31,8 +30,8 @@ void TextHTMLBuilderTest::testHtmlWithTab()
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    auto regex = QRegularExpression(
-                QStringLiteral("^<br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">&nbsp;&nbsp;&nbsp; foo</p>\\n$"));
+    auto regex =
+        QRegularExpression(QStringLiteral("^<br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">&nbsp;&nbsp;&nbsp; foo</p>\\n$"));
 
     const bool regexpHasResult = regex.match(result).hasMatch();
     if (!regexpHasResult) {
@@ -42,7 +41,6 @@ void TextHTMLBuilderTest::testHtmlWithTab()
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testHtmlText_data()
@@ -50,9 +48,19 @@ void TextHTMLBuilderTest::testHtmlText_data()
     QTest::addColumn<QString>("text");
     QTest::addColumn<QString>("regexpText");
     QTest::addColumn<bool>("htmlFormat");
-    QTest::newRow("link") <<  QStringLiteral("A <a href=\"http://www.kde.org\">link</a> to KDE.") << QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">A <a href=\"http://www.kde.org\">link</a>&nbsp;to KDE.</p>\\n$") << true;
-    QTest::newRow("text with espace") <<  QStringLiteral("         foo") << QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foo</p>\\n$") << false;
-    QTest::newRow("text with espace at begin") <<  QStringLiteral(" foo") << QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">&nbsp;foo</p>\\n$") << false;
+    QTest::newRow("link")
+        << QStringLiteral("A <a href=\"http://www.kde.org\">link</a> to KDE.")
+        << QStringLiteral(
+               "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">A <a href=\"http://www.kde.org\">link</a>&nbsp;to KDE.</p>\\n$")
+        << true;
+    QTest::newRow("text with espace")
+        << QStringLiteral("         foo")
+        << QStringLiteral(
+               "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foo</p>\\n$")
+        << false;
+    QTest::newRow("text with espace at begin") << QStringLiteral(" foo")
+                                               << QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">&nbsp;foo</p>\\n$")
+                                               << false;
 }
 
 void TextHTMLBuilderTest::testHtmlText()
@@ -97,13 +105,12 @@ void TextHTMLBuilderTest::testSingleFormat()
     md->processDocument(doc);
     auto result = hb->getResult();
     QRegularExpression regex(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">This <strong>text</strong>&nbsp;is bold.</p>\\n$"));
+        QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">This <strong>text</strong>&nbsp;is bold.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testDoubleFormat()
@@ -118,22 +125,20 @@ void TextHTMLBuilderTest::testDoubleFormat()
     md->processDocument(doc);
     auto result = hb->getResult();
     QRegularExpression regex(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some "
-                               "(<strong><em>|<em><strong>)formatted(</em></strong>|</"
-                               "strong></em>)&nbsp;text.</p>\\n$"));
+        QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some "
+                       "(<strong><em>|<em><strong>)formatted(</em></strong>|</"
+                       "strong></em>)&nbsp;text.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testAnchor()
 {
     auto doc = new QTextDocument();
-    doc->setHtml(
-                QStringLiteral("A <a href=\"http://www.kde.org\">link</a> to KDE."));
+    doc->setHtml(QStringLiteral("A <a href=\"http://www.kde.org\">link</a> to KDE."));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
@@ -141,20 +146,18 @@ void TextHTMLBuilderTest::testAnchor()
     auto result = hb->getResult();
 
     QRegularExpression regex(QStringLiteral(
-                                 "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">A <a href=\"http://www.kde.org\">link</a>&nbsp;to KDE.</p>\\n$"));
+        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">A <a href=\"http://www.kde.org\">link</a>&nbsp;to KDE.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testAnchorWithFormattedContent()
 {
     auto doc = new QTextDocument();
-    doc->setHtml(QStringLiteral(
-                     "A <a href=\"http://www.kde.org\"><b>formatted</b> link</a> to KDE."));
+    doc->setHtml(QStringLiteral("A <a href=\"http://www.kde.org\"><b>formatted</b> link</a> to KDE."));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
@@ -162,37 +165,35 @@ void TextHTMLBuilderTest::testAnchorWithFormattedContent()
     auto result = hb->getResult();
 
     QRegularExpression regex(QStringLiteral(
-                                 "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">A <a href=\"http://www.kde.org\"><strong>formatted</strong>&nbsp;"
-                                 "link</a>&nbsp;to KDE.</p>\\n$"));
+        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">A <a href=\"http://www.kde.org\"><strong>formatted</strong>&nbsp;"
+        "link</a>&nbsp;to KDE.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testAdjacentAnchors()
 {
     auto doc = new QTextDocument();
     doc->setHtml(
-                QStringLiteral("Two <a href=\"http://www.kde.org\">links</a><a "
-                               "href=\"http://www.google.com\">next</a> to eachother."));
+        QStringLiteral("Two <a href=\"http://www.kde.org\">links</a><a "
+                       "href=\"http://www.google.com\">next</a> to eachother."));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    QRegularExpression regex(QStringLiteral(
-                                 "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Two <a href=\"http://www.kde.org\">links</a><a "
-                                 "href=\"http://www.google.com\">next</a>&nbsp;to eachother.</p>\\n$"));
+    QRegularExpression regex(
+        QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Two <a href=\"http://www.kde.org\">links</a><a "
+                       "href=\"http://www.google.com\">next</a>&nbsp;to eachother.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testNestedFormatting()
@@ -206,20 +207,18 @@ void TextHTMLBuilderTest::testNestedFormatting()
     auto result = hb->getResult();
 
     QRegularExpression regex(QStringLiteral(
-                                 "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">This <strong>text is <em>italic</em>&nbsp;and</strong>&nbsp;bold.</p>\\n$"));
+        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">This <strong>text is <em>italic</em>&nbsp;and</strong>&nbsp;bold.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testSpan()
 {
     auto doc = new QTextDocument();
-    doc->setHtml(QStringLiteral(
-                     "Some <span style=\"color:#ff0000;\">formatted</span> text."));
+    doc->setHtml(QStringLiteral("Some <span style=\"color:#ff0000;\">formatted</span> text."));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
@@ -227,47 +226,46 @@ void TextHTMLBuilderTest::testSpan()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <span style=\"color:#ff0000;\">formatted</span>&nbsp;"
-                               "text.</p>\\n$"));
+        QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <span style=\"color:#ff0000;\">formatted</span>&nbsp;"
+                       "text.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testDoubleSpan()
 {
     auto doc = new QTextDocument();
-    doc->setHtml(QStringLiteral("Some <span "
-                                "style=\"color:#ff0000;background-color:#00ff00;"
-                                "\">formatted</span> text."));
+    doc->setHtml(
+        QStringLiteral("Some <span "
+                       "style=\"color:#ff0000;background-color:#00ff00;"
+                       "\">formatted</span> text."));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    auto regex = QRegularExpression(QStringLiteral(
-                                        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <span "
-                                        "style=\"(color:#ff0000|background-color:#00ff00);\"><span "
-                                        "style=\"(color:#ff0000|background-color:#00ff00);\">formatted</span></"
-                                        "span>&nbsp;text.</p>\\n$"));
+    auto regex =
+        QRegularExpression(QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <span "
+                                          "style=\"(color:#ff0000|background-color:#00ff00);\"><span "
+                                          "style=\"(color:#ff0000|background-color:#00ff00);\">formatted</span></"
+                                          "span>&nbsp;text.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testSpanNesting()
 {
     auto doc = new QTextDocument();
-    doc->setHtml(QStringLiteral(
-                     "Paragraph <span style=\"background-color:#00ff00;\">with some <span "
-                     "style=\"color:#ff0000;\">formatted</span> nested</span> text."));
+    doc->setHtml(
+        QStringLiteral("Paragraph <span style=\"background-color:#00ff00;\">with some <span "
+                       "style=\"color:#ff0000;\">formatted</span> nested</span> text."));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
@@ -275,20 +273,18 @@ void TextHTMLBuilderTest::testSpanNesting()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(QStringLiteral(
-                                        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph <span style=\"background-color:#00ff00;\">with some <span "
-                                        "style=\"color:#ff0000;\">formatted</span>&nbsp;nested</span>&nbsp;text.</p>\\n$"));
+        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph <span style=\"background-color:#00ff00;\">with some <span "
+        "style=\"color:#ff0000;\">formatted</span>&nbsp;nested</span>&nbsp;text.</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testDoubleStartDifferentFinish()
 {
     auto doc = new QTextDocument();
-    doc->setHtml(
-                QStringLiteral("Paragraph <i><b>with</b> some formatted</i> text."));
+    doc->setHtml(QStringLiteral("Paragraph <i><b>with</b> some formatted</i> text."));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
@@ -296,86 +292,78 @@ void TextHTMLBuilderTest::testDoubleStartDifferentFinish()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph <em><strong>with</strong>&nbsp;some "
-                               "formatted</em>&nbsp;text.</p>\\n$"));
+        QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph <em><strong>with</strong>&nbsp;some "
+                       "formatted</em>&nbsp;text.</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testDoubleStartDifferentFinishReverseOrder()
 {
     auto doc = new QTextDocument();
-    doc->setHtml(
-                QStringLiteral("Paragraph <b><i>with</i> some formatted</b> text."));
+    doc->setHtml(QStringLiteral("Paragraph <b><i>with</i> some formatted</b> text."));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph <strong><em>with</em>&nbsp;some "
-                               "formatted</strong>&nbsp;text.</p>\\n$"));
+    auto regex =
+        QRegularExpression(QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph <strong><em>with</em>&nbsp;some "
+                                          "formatted</strong>&nbsp;text.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testDifferentStartDoubleFinish()
 {
     auto doc = new QTextDocument();
-    doc->setHtml(
-                QStringLiteral("Paragraph <i>with some <b>formatted<b></i> text."));
+    doc->setHtml(QStringLiteral("Paragraph <i>with some <b>formatted<b></i> text."));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph <em>with some "
-                               "<strong>formatted</strong></em>&nbsp;text.</p>\\n$"));
+    auto regex =
+        QRegularExpression(QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph <em>with some "
+                                          "<strong>formatted</strong></em>&nbsp;text.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testDifferentStartDoubleFinishReverseOrder()
 {
     auto doc = new QTextDocument();
-    doc->setHtml(
-                QStringLiteral("Paragraph <b>with some <i>formatted</i></b> text."));
+    doc->setHtml(QStringLiteral("Paragraph <b>with some <i>formatted</i></b> text."));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph <strong>with some "
-                               "<em>formatted</em></strong>&nbsp;text.</p>\\n$"));
+    auto regex =
+        QRegularExpression(QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph <strong>with some "
+                                          "<em>formatted</em></strong>&nbsp;text.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testOverlap()
 {
     auto doc = new QTextDocument();
-    doc->setHtml(QStringLiteral(
-                     "Paragraph <b>with <i>some</i></b><i> formatted</i> text."));
+    doc->setHtml(QStringLiteral("Paragraph <b>with <i>some</i></b><i> formatted</i> text."));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
@@ -383,14 +371,13 @@ void TextHTMLBuilderTest::testOverlap()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph <strong>with <em>some</em></strong><em>&nbsp;"
-                               "formatted</em>&nbsp;text.</p>\\n$"));
+        QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph <strong>with <em>some</em></strong><em>&nbsp;"
+                       "formatted</em>&nbsp;text.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testEdgeCaseLeft()
@@ -404,13 +391,12 @@ void TextHTMLBuilderTest::testEdgeCaseLeft()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(QStringLiteral(
-                                        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph <strong>with some formatted text.</strong></p>\\n$"));
+        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph <strong>with some formatted text.</strong></p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testEdgeCaseRight()
@@ -424,36 +410,34 @@ void TextHTMLBuilderTest::testEdgeCaseRight()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(QStringLiteral(
-                                        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><strong>Paragraph with some formatted</strong>&nbsp;text.</p>\\n$"));
+        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><strong>Paragraph with some formatted</strong>&nbsp;text.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testImage()
 {
     auto doc = new QTextDocument();
     doc->setHtml(
-                QStringLiteral("Paragraph with an inline <img "
-                               "src=\"http://kde.org/img/kde41.png\" /> image."));
+        QStringLiteral("Paragraph with an inline <img "
+                       "src=\"http://kde.org/img/kde41.png\" /> image."));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph with an inline <img "
-                               "src=\"http://kde.org/img/kde41.png\" />&nbsp;image.</p>\\n$"));
+    auto regex =
+        QRegularExpression(QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph with an inline <img "
+                                          "src=\"http://kde.org/img/kde41.png\" />&nbsp;image.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testImageResized()
@@ -463,9 +447,9 @@ void TextHTMLBuilderTest::testImageResized()
     auto doc = new QTextDocument();
 
     // width
-    doc->setHtml(QStringLiteral(
-                     "Paragraph with an inline <img src=\"http://kde.org/img/kde41.png\" "
-                     "width=\"10\" /> image."));
+    doc->setHtml(
+        QStringLiteral("Paragraph with an inline <img src=\"http://kde.org/img/kde41.png\" "
+                       "width=\"10\" /> image."));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
@@ -473,14 +457,14 @@ void TextHTMLBuilderTest::testImageResized()
     result = hb->getResult();
 
     regex = QRegularExpression(QStringLiteral(
-                                   "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph with an inline <img src=\"http://kde.org/img/kde41.png\" "
-                                   "width=\"10\" />&nbsp;image.</p>\\n$"));
+        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph with an inline <img src=\"http://kde.org/img/kde41.png\" "
+        "width=\"10\" />&nbsp;image.</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
 
     // height
-    doc->setHtml(QStringLiteral(
-                     "Paragraph with an inline <img src=\"http://kde.org/img/kde41.png\" "
-                     "height=\"10\" /> image."));
+    doc->setHtml(
+        QStringLiteral("Paragraph with an inline <img src=\"http://kde.org/img/kde41.png\" "
+                       "height=\"10\" /> image."));
 
     delete hb;
     delete md;
@@ -490,14 +474,14 @@ void TextHTMLBuilderTest::testImageResized()
     result = hb->getResult();
 
     regex = QRegularExpression(QStringLiteral(
-                                   "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph with an inline <img src=\"http://kde.org/img/kde41.png\" "
-                                   "height=\"10\" />&nbsp;image.</p>\\n$"));
+        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph with an inline <img src=\"http://kde.org/img/kde41.png\" "
+        "height=\"10\" />&nbsp;image.</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
 
     // height and width
-    doc->setHtml(QStringLiteral(
-                     "Paragraph with an inline <img src=\"http://kde.org/img/kde41.png\" "
-                     "height=\"10\" width=\"10\" /> image."));
+    doc->setHtml(
+        QStringLiteral("Paragraph with an inline <img src=\"http://kde.org/img/kde41.png\" "
+                       "height=\"10\" width=\"10\" /> image."));
 
     delete hb;
     delete md;
@@ -507,14 +491,13 @@ void TextHTMLBuilderTest::testImageResized()
     result = hb->getResult();
 
     regex = QRegularExpression(QStringLiteral(
-                                   "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph with an inline <img src=\"http://kde.org/img/kde41.png\" "
-                                   "width=\"10\" height=\"10\" />&nbsp;image.</p>\\n$"));
+        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph with an inline <img src=\"http://kde.org/img/kde41.png\" "
+        "width=\"10\" height=\"10\" />&nbsp;image.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testEachFormatTagSingly()
@@ -531,7 +514,7 @@ void TextHTMLBuilderTest::testEachFormatTagSingly()
     result = hb->getResult();
 
     regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <strong>formatted</strong>&nbsp;text.</p>\\n$"));
+        QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <strong>formatted</strong>&nbsp;text.</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
 
     // Test Italic
@@ -545,7 +528,7 @@ void TextHTMLBuilderTest::testEachFormatTagSingly()
     result = hb->getResult();
 
     regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <em>formatted</em>&nbsp;text.</p>\\n$"));
+        QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <em>formatted</em>&nbsp;text.</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
 
     // Test Underline
@@ -558,8 +541,8 @@ void TextHTMLBuilderTest::testEachFormatTagSingly()
     md->processDocument(doc);
     result = hb->getResult();
 
-    regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <u>formatted</u>&nbsp;text.</p>\\n$"));
+    regex =
+        QRegularExpression(QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <u>formatted</u>&nbsp;text.</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
 
     // Test Strikeout
@@ -572,8 +555,8 @@ void TextHTMLBuilderTest::testEachFormatTagSingly()
     md->processDocument(doc);
     result = hb->getResult();
 
-    regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <s>formatted</s>&nbsp;text.</p>\\n$"));
+    regex =
+        QRegularExpression(QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <s>formatted</s>&nbsp;text.</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
 
     // Test Superscript
@@ -587,7 +570,7 @@ void TextHTMLBuilderTest::testEachFormatTagSingly()
     result = hb->getResult();
 
     regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <sup>formatted</sup>&nbsp;text.</p>\\n$"));
+        QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <sup>formatted</sup>&nbsp;text.</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
 
     // Test Subscript
@@ -601,12 +584,11 @@ void TextHTMLBuilderTest::testEachFormatTagSingly()
     result = hb->getResult();
 
     regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <sub>formatted</sub>&nbsp;text.</p>\\n$"));
+        QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <sub>formatted</sub>&nbsp;text.</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
 
     // Test Foreground
-    doc->setHtml(QStringLiteral(
-                     "Some <span style=\"color:#ff0000;\">formatted</span> text."));
+    doc->setHtml(QStringLiteral("Some <span style=\"color:#ff0000;\">formatted</span> text."));
     delete hb;
     delete md;
 
@@ -616,13 +598,12 @@ void TextHTMLBuilderTest::testEachFormatTagSingly()
     result = hb->getResult();
 
     regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <span style=\"color:#ff0000;\">formatted</span>&nbsp;"
-                               "text.</p>\\n$"));
+        QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <span style=\"color:#ff0000;\">formatted</span>&nbsp;"
+                       "text.</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
 
     // Test Background
-    doc->setHtml(QStringLiteral(
-                     "Some <span style=\"background-color:#ff0000;\">formatted</span> text."));
+    doc->setHtml(QStringLiteral("Some <span style=\"background-color:#ff0000;\">formatted</span> text."));
     delete hb;
     delete md;
 
@@ -632,13 +613,12 @@ void TextHTMLBuilderTest::testEachFormatTagSingly()
     result = hb->getResult();
 
     regex = QRegularExpression(QStringLiteral(
-                                   "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <span style=\"background-color:#ff0000;\">formatted</span>&nbsp;"
-                                   "text.</p>\\n$"));
+        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <span style=\"background-color:#ff0000;\">formatted</span>&nbsp;"
+        "text.</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
 
     // Test Font Family
-    doc->setHtml(QStringLiteral(
-                     "Some <span style=\"font-family:courier;\">formatted</span> text."));
+    doc->setHtml(QStringLiteral("Some <span style=\"font-family:courier;\">formatted</span> text."));
     delete hb;
     delete md;
 
@@ -648,13 +628,12 @@ void TextHTMLBuilderTest::testEachFormatTagSingly()
     result = hb->getResult();
 
     regex = QRegularExpression(QStringLiteral(
-                                   "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <span style=\"font-family:courier;\">formatted</span>&nbsp;"
-                                   "text.</p>\\n$"));
+        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <span style=\"font-family:courier;\">formatted</span>&nbsp;"
+        "text.</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
 
     // Test Font Size
-    doc->setHtml(QStringLiteral(
-                     "Some <span style=\"font-size:20pt;\">formatted</span> text."));
+    doc->setHtml(QStringLiteral("Some <span style=\"font-size:20pt;\">formatted</span> text."));
     delete hb;
     delete md;
 
@@ -663,36 +642,35 @@ void TextHTMLBuilderTest::testEachFormatTagSingly()
     md->processDocument(doc);
     result = hb->getResult();
 
-    regex = QRegularExpression(QStringLiteral(
-                                   "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <span style=\"font-size:20pt;\">formatted</span>&nbsp;"
-                                   "text.</p>\\n$"));
+    regex = QRegularExpression(
+        QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <span style=\"font-size:20pt;\">formatted</span>&nbsp;"
+                       "text.</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testHorizontalRule()
 {
     auto doc = new QTextDocument();
     doc->setHtml(
-                QStringLiteral("<p style=\"margin-top:0;margin-bottom:0;\">Foo</p><hr "
-                               "/><p style=\"margin-top:0;margin-bottom:0;\">Bar</p>"));
+        QStringLiteral("<p style=\"margin-top:0;margin-bottom:0;\">Foo</p><hr "
+                       "/><p style=\"margin-top:0;margin-bottom:0;\">Bar</p>"));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<hr />\\n<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar</p>\\n$"));
+    auto regex =
+        QRegularExpression(QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<hr />\\n<p "
+                                          "style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testNewlines()
@@ -705,13 +683,13 @@ void TextHTMLBuilderTest::testNewlines()
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\">Foo</p>\\n<p>&nbsp;<p>&nbsp;</p>\\n<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\">Bar</p>\\n$"));
+    auto regex =
+        QRegularExpression(QStringLiteral("^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\">Foo</p>\\n<p>&nbsp;<p>&nbsp;</p>\\n<p "
+                                          "style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\">Bar</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testNewlinesThroughQTextCursor()
@@ -730,14 +708,14 @@ void TextHTMLBuilderTest::testNewlinesThroughQTextCursor()
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<br /><br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar</p>\\n$"));
-    //qDebug() << "result " << result;
+    auto regex =
+        QRegularExpression(QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<br /><br /><p "
+                                          "style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar</p>\\n$"));
+    // qDebug() << "result " << result;
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testInsertImage()
@@ -757,19 +735,18 @@ void TextHTMLBuilderTest::testInsertImage()
     doc->addResource(QTextDocument::ImageResource, QUrl(imageNameToAdd), image);
     cursor.insertImage(imageNameToAdd);
 
-
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<br /><br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar<img src=\"imagename\" /></p>\\n$"));
+    auto regex =
+        QRegularExpression(QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<br /><br /><p "
+                                          "style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar<img src=\"imagename\" /></p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testInsertImageWithSize()
@@ -799,13 +776,13 @@ void TextHTMLBuilderTest::testInsertImageWithSize()
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<br /><br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar<img src=\"imagename\" width=\"100\" height=\"120\" /></p>\\n$"));
+    auto regex = QRegularExpression(QStringLiteral(
+        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<br /><br /><p "
+        "style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar<img src=\"imagename\" width=\"100\" height=\"120\" /></p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
     delete doc;
-
 }
 
 void TextHTMLBuilderTest::testTitle1()
@@ -844,10 +821,10 @@ void TextHTMLBuilderTest::testTitle1()
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"font-size:29pt;\"><strong>Foo</strong></span></p>\n$"));
-    //qDebug() << " result " << result;
-    //TODO implement header support now.
+    auto regex = QRegularExpression(QStringLiteral(
+        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"font-size:29pt;\"><strong>Foo</strong></span></p>\n$"));
+    // qDebug() << " result " << result;
+    // TODO implement header support now.
     delete md;
     delete hb;
     delete doc;
@@ -864,8 +841,9 @@ void TextHTMLBuilderTest::testBug421908()
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    auto regex = QRegularExpression(
-                QStringLiteral("^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\"><span style=\"color:#aaaaff;\">some colored text<br />some colored text</span></p>\n$"));
+    auto regex =
+        QRegularExpression(QStringLiteral("^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\"><span style=\"color:#aaaaff;\">some "
+                                          "colored text<br />some colored text</span></p>\n$"));
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
@@ -875,9 +853,13 @@ void TextHTMLBuilderTest::testBug421908()
 void TextHTMLBuilderTest::testBug421908_2()
 {
     auto doc = new QTextDocument();
-    doc->setHtml(QStringLiteral("<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">phone: +123456 7890<br />mail: some@mail.com</p>"
-    "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>"
-    "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7pt;\">small text</span></p>"));
+    doc->setHtml(
+        QStringLiteral("<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">phone: "
+                       "+123456 7890<br />mail: some@mail.com</p>"
+                       "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+                       "text-indent:0px;\"><br /></p>"
+                       "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+                       "style=\" font-size:7pt;\">small text</span></p>"));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
@@ -885,8 +867,9 @@ void TextHTMLBuilderTest::testBug421908_2()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(
-                QStringLiteral("<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">phone: \\+123456 7890<br />mail: some@mail.com</p>\n<br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"font-size:7pt;\">small text</span></p>$"));
-    //qDebug() << " result "<< result;
+        QStringLiteral("<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">phone: \\+123456 7890<br />mail: some@mail.com</p>\n<br /><p "
+                       "style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"font-size:7pt;\">small text</span></p>$"));
+    // qDebug() << " result "<< result;
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
@@ -896,12 +879,19 @@ void TextHTMLBuilderTest::testBug421908_2()
 void TextHTMLBuilderTest::testBug421908_full()
 {
     auto doc = new QTextDocument();
-    doc->setHtml(QStringLiteral("<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><!--StartFragment-->phone: +123456 7890<br />mail: some@mail.com</p>"
-                                "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>"
-                                "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7pt;\">small text</span></p>"
-                                "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>"
-                                "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#aaaaff;\">some colored text<br />some colored text</span></p>"
-                                "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /><!--EndFragment--></p>"));
+    doc->setHtml(
+        QStringLiteral("<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+                       "text-indent:0px;\"><!--StartFragment-->phone: +123456 7890<br />mail: some@mail.com</p>"
+                       "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+                       "text-indent:0px;\"><br /></p>"
+                       "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+                       "style=\" font-size:7pt;\">small text</span></p>"
+                       "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+                       "text-indent:0px;\"><br /></p>"
+                       "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+                       "style=\" color:#aaaaff;\">some colored text<br />some colored text</span></p>"
+                       "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+                       "text-indent:0px;\"><br /><!--EndFragment--></p>"));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
@@ -909,8 +899,11 @@ void TextHTMLBuilderTest::testBug421908_full()
     auto result = hb->getResult();
 
     auto regex = QRegularExpression(
-                QStringLiteral("<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">phone: \\+123456 7890<br />mail: some@mail.com</p>\n<br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"font-size:7pt;\">small text</span></p>\n<br /><p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"color:\\#aaaaff;\">some colored text<br />some colored text</span></p>\n<br />$"));
-    //qDebug() << " result "<< result;
+        QStringLiteral("<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">phone: \\+123456 7890<br />mail: some@mail.com</p>\n<br /><p "
+                       "style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"font-size:7pt;\">small text</span></p>\n<br /><p "
+                       "style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"color:\\#aaaaff;\">some colored text<br />some "
+                       "colored text</span></p>\n<br />$"));
+    // qDebug() << " result "<< result;
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;

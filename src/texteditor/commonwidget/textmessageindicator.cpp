@@ -7,11 +7,11 @@
 #include "textmessageindicator.h"
 
 #include <QAbstractScrollArea>
-#include <QPainter>
-#include <QTimer>
-#include <QResizeEvent>
 #include <QApplication>
+#include <QPainter>
+#include <QResizeEvent>
 #include <QStyle>
+#include <QTimer>
 
 using namespace KPIMTextEdit;
 TextMessageIndicator::TextMessageIndicator(QWidget *parent)
@@ -86,9 +86,9 @@ QRect TextMessageIndicator::computeTextRect(const QString &message, int extra_wi
        twice the mean width of a character to ensure that the bounding box is
        really smaller than the container.
      */
-    const int boundingWidth = qobject_cast<QAbstractScrollArea *>(parentWidget())->viewport()->width() - 20 - (extra_width > 0 ? 2 + extra_width : 0) - 2 * charSize;
-    QRect textRect = fontMetrics().boundingRect(0, 0, boundingWidth, 0,
-                                                Qt::AlignLeft | Qt::AlignTop | Qt::TextWordWrap, message);
+    const int boundingWidth =
+        qobject_cast<QAbstractScrollArea *>(parentWidget())->viewport()->width() - 20 - (extra_width > 0 ? 2 + extra_width : 0) - 2 * charSize;
+    QRect textRect = fontMetrics().boundingRect(0, 0, boundingWidth, 0, Qt::AlignLeft | Qt::AlignTop | Qt::TextWordWrap, message);
     textRect.translate(-textRect.left(), -textRect.top());
     textRect.adjust(0, 0, 2, 2);
 
@@ -99,8 +99,7 @@ void TextMessageIndicator::computeSizeAndResize()
 {
     // determine text rectangle
     const QRect textRect = computeTextRect(mMessage, mSymbol.width());
-    int width = textRect.width(),
-        height = textRect.height();
+    int width = textRect.width(), height = textRect.height();
 
     if (!mDetails.isEmpty()) {
         // determine details text rectangle
@@ -109,7 +108,7 @@ void TextMessageIndicator::computeSizeAndResize()
         height += detailsRect.height();
 
         // plus add a ~60% line spacing
-        mLineSpacing = static_cast< int >(fontMetrics().height() * 0.6);
+        mLineSpacing = static_cast<int>(fontMetrics().height() * 0.6);
         height += mLineSpacing;
     }
 
@@ -188,12 +187,22 @@ void TextMessageIndicator::paintEvent(QPaintEvent * /* e */)
     painter.setPen(palette().color(QPalette::Window).darker(115));
     painter.drawText(xStartPoint + shadowOffset, yStartPoint + shadowOffset, textRect.width(), textRect.height(), textDrawingFlags, mMessage);
     if (!mDetails.isEmpty()) {
-        painter.drawText(xStartPoint + shadowOffset, yStartPoint + textRect.height() + mLineSpacing + shadowOffset, textRect.width(), detailsRect.height(), textDrawingFlags, mDetails);
+        painter.drawText(xStartPoint + shadowOffset,
+                         yStartPoint + textRect.height() + mLineSpacing + shadowOffset,
+                         textRect.width(),
+                         detailsRect.height(),
+                         textDrawingFlags,
+                         mDetails);
     }
     painter.setPen(palette().color(QPalette::WindowText));
     painter.drawText(xStartPoint, yStartPoint, textRect.width(), textRect.height(), textDrawingFlags, mMessage);
     if (!mDetails.isEmpty()) {
-        painter.drawText(xStartPoint + shadowOffset, yStartPoint + textRect.height() + mLineSpacing, textRect.width(), detailsRect.height(), textDrawingFlags, mDetails);
+        painter.drawText(xStartPoint + shadowOffset,
+                         yStartPoint + textRect.height() + mLineSpacing,
+                         textRect.width(),
+                         detailsRect.height(),
+                         textDrawingFlags,
+                         mDetails);
     }
 }
 

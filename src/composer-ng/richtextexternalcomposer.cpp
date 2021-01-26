@@ -4,14 +4,14 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "richtextcomposer.h"
 #include "richtextexternalcomposer.h"
+#include "richtextcomposer.h"
 
-#include <KProcess>
-#include <KMacroExpander>
-#include <KShell>
 #include <KLocalizedString>
+#include <KMacroExpander>
 #include <KMessageBox>
+#include <KProcess>
+#include <KShell>
 #include <QTemporaryFile>
 
 using namespace KPIMTextEdit;
@@ -106,7 +106,7 @@ void RichTextExternalComposer::startExternalEditor()
         }
 
         (*d->externalEditorProcess) << command;
-        if (!filenameAdded) {   // no %f in the editor command
+        if (!filenameAdded) { // no %f in the editor command
             (*d->externalEditorProcess) << d->extEditorTempFile->fileName();
         }
 
@@ -146,7 +146,7 @@ void RichTextExternalComposer::slotEditorFinished(int codeError, QProcess::ExitS
         Q_EMIT externalEditorClosed();
     }
 
-    killExternalEditor();   // cleanup...
+    killExternalEditor(); // cleanup...
 }
 
 bool RichTextExternalComposer::checkExternalEditorFinished()
@@ -155,16 +155,15 @@ bool RichTextExternalComposer::checkExternalEditorFinished()
         return true;
     }
 
-    const int ret = KMessageBox::warningYesNoCancel(
-        d->richTextComposer,
-        xi18nc("@info",
-               "The external editor is still running.<nl/>"
-               "Do you want to stop the editor or keep it running?<nl/>"
-               "<warning>Stopping the editor will cause all your "
-               "unsaved changes to be lost.</warning>"),
-        i18nc("@title:window", "External Editor Running"),
-        KGuiItem(i18nc("@action:button", "Stop Editor")),
-        KGuiItem(i18nc("@action:button", "Keep Editor Running")));
+    const int ret = KMessageBox::warningYesNoCancel(d->richTextComposer,
+                                                    xi18nc("@info",
+                                                           "The external editor is still running.<nl/>"
+                                                           "Do you want to stop the editor or keep it running?<nl/>"
+                                                           "<warning>Stopping the editor will cause all your "
+                                                           "unsaved changes to be lost.</warning>"),
+                                                    i18nc("@title:window", "External Editor Running"),
+                                                    KGuiItem(i18nc("@action:button", "Stop Editor")),
+                                                    KGuiItem(i18nc("@action:button", "Keep Editor Running")));
 
     switch (ret) {
     case KMessageBox::Yes:

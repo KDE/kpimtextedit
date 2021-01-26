@@ -8,8 +8,8 @@
 #include "emoticontexteditselector.h"
 
 #include <KLocalizedString>
-#include <QMenu>
 #include <QIcon>
+#include <QMenu>
 
 #include <QWidgetAction>
 

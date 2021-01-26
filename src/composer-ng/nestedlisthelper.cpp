@@ -9,10 +9,10 @@
 #include "nestedlisthelper_p.h"
 
 #include <QKeyEvent>
-#include <QTextCursor>
-#include <QTextList>
 #include <QTextBlock>
+#include <QTextCursor>
 #include <QTextEdit>
+#include <QTextList>
 using namespace KPIMTextEdit;
 NestedListHelper::NestedListHelper(QTextEdit *te)
 {
@@ -27,17 +27,13 @@ bool NestedListHelper::handleBeforeKeyPressEvent(QKeyEvent *event)
     QTextCursor cursor = textEdit->textCursor();
 
     // Only attempt to handle Backspace while on a list
-    if ((event->key() != Qt::Key_Backspace)
-        || (!cursor.currentList())) {
+    if ((event->key() != Qt::Key_Backspace) || (!cursor.currentList())) {
         return false;
     }
 
     bool handled = false;
 
-    if (!cursor.hasSelection()
-        && cursor.currentList()
-        && event->key() == Qt::Key_Backspace
-        && cursor.atBlockStart()) {
+    if (!cursor.hasSelection() && cursor.currentList() && event->key() == Qt::Key_Backspace && cursor.atBlockStart()) {
         handleOnIndentLess();
         handled = true;
     }
@@ -48,8 +44,8 @@ bool NestedListHelper::handleBeforeKeyPressEvent(QKeyEvent *event)
 bool NestedListHelper::canIndent() const
 {
     if ((textEdit->textCursor().block().isValid())
-//            && (  textEdit->textCursor().block().previous().isValid() )
-        ) {
+        //            && (  textEdit->textCursor().block().previous().isValid() )
+    ) {
         const QTextBlock block = textEdit->textCursor().block();
         const QTextBlock prevBlock = textEdit->textCursor().block().previous();
         if (block.textList()) {
@@ -85,8 +81,7 @@ bool NestedListHelper::canDedent() const
 bool NestedListHelper::handleAfterKeyPressEvent(QKeyEvent *event)
 {
     // Only attempt to handle Backspace and Return
-    if ((event->key() != Qt::Key_Backspace)
-        && (event->key() != Qt::Key_Return)) {
+    if ((event->key() != Qt::Key_Backspace) && (event->key() != Qt::Key_Return)) {
         return false;
     }
 
@@ -138,7 +133,7 @@ bool NestedListHelper::handleAfterDropEvent(QDropEvent *dropEvent)
             }
             list->add(droppedBlock);
         }
-//         list.add( droppedBlock );
+        //         list.add( droppedBlock );
     }
 
     return true;
@@ -170,8 +165,8 @@ void NestedListHelper::processList(QTextList *list)
             list->add(block);
         }
     }
-//     delete nextList;
-//     nextList = 0;
+    //     delete nextList;
+    //     nextList = 0;
 }
 
 void NestedListHelper::reformatList(QTextBlock block)

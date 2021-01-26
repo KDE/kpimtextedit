@@ -9,8 +9,8 @@
 #ifndef PLAINTEXTMARKUPBUILDER_H
 #define PLAINTEXTMARKUPBUILDER_H
 
-#include "kpimtextedit_export.h"
 #include "abstractmarkupbuilder.h"
+#include "kpimtextedit_export.h"
 
 #define LETTERSINALPHABET 26
 #define DIGITSOFFSET 10
@@ -18,8 +18,7 @@
 namespace KPIMTextEdit
 {
 class PlainTextMarkupBuilderPrivate;
-class KPIMTEXTEDIT_EXPORT PlainTextMarkupBuilder
-        : virtual public KPIMTextEdit::AbstractMarkupBuilder
+class KPIMTEXTEDIT_EXPORT PlainTextMarkupBuilder : virtual public KPIMTextEdit::AbstractMarkupBuilder
 {
 public:
     /** Construct a new PlainTextHTMLMarkupBuilder. */
@@ -28,7 +27,6 @@ public:
     ~PlainTextMarkupBuilder() override;
 
     void setQuotePrefix(const QString &prefix);
-
 
     void beginStrong() override;
     void endStrong() override;
@@ -39,14 +37,11 @@ public:
     void beginStrikeout() override;
     void endStrikeout() override;
 
-    void beginAnchor(const QString &href = QString(),
-                     const QString &name = QString()) override;
+    void beginAnchor(const QString &href = QString(), const QString &name = QString()) override;
 
     void endAnchor() override;
 
-    void beginParagraph(Qt::Alignment a = Qt::AlignLeft, qreal top = 0.0,
-                        qreal bottom = 0.0, qreal left = 0.0,
-                        qreal right = 0.0) override;
+    void beginParagraph(Qt::Alignment a = Qt::AlignLeft, qreal top = 0.0, qreal bottom = 0.0, qreal left = 0.0, qreal right = 0.0) override;
 
     void endParagraph() override;
     void addNewline() override;
@@ -71,13 +66,11 @@ public:
 
     void endSubscript() override;
 
-    void beginTable(qreal cellpadding, qreal cellspacing,
-                    const QString &width) override;
+    void beginTable(qreal cellpadding, qreal cellspacing, const QString &width) override;
 
     void beginTableRow() override;
 
-    void beginTableHeaderCell(const QString &width, int colSpan,
-                              int rowSpan) override;
+    void beginTableHeaderCell(const QString &width, int colSpan, int rowSpan) override;
 
     void beginTableCell(const QString &width, int colSpan, int rowSpan) override;
 
@@ -113,10 +106,10 @@ public:
     void beginHeader(int level) override;
     void endHeader(int level) override;
     void addSingleBreakLine() override;
+
 private:
     PlainTextMarkupBuilderPrivate *const d_ptr;
     Q_DECLARE_PRIVATE(PlainTextMarkupBuilder)
-
 };
 }
 

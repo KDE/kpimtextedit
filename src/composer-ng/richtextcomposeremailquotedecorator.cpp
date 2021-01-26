@@ -4,8 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "richtextcomposer.h"
 #include "richtextcomposeremailquotedecorator.h"
+#include "richtextcomposer.h"
 using namespace KPIMTextEdit;
 
 class Q_DECL_HIDDEN RichTextComposerEmailQuoteDecorator::RichTextComposerEmailQuoteDecoratorPrivate

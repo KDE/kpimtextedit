@@ -5,17 +5,17 @@
 */
 
 #include "richtextcomposer.h"
-#include "richtextcomposercontroler.h"
-#include "richtextcomposeractions.h"
-#include "richtextcomposerimages.h"
-#include "richtextcomposeremailquotehighlighter.h"
-#include "nestedlisthelper_p.h"
-#include "richtextexternalcomposer.h"
-#include "grantleebuilder/plaintextmarkupbuilder.h"
 #include "grantleebuilder/markupdirector.h"
+#include "grantleebuilder/plaintextmarkupbuilder.h"
+#include "nestedlisthelper_p.h"
+#include "richtextcomposeractions.h"
+#include "richtextcomposercontroler.h"
+#include "richtextcomposeremailquotehighlighter.h"
+#include "richtextcomposerimages.h"
+#include "richtextexternalcomposer.h"
+#include <QClipboard>
 #include <QTextBlock>
 #include <QTextLayout>
-#include <QClipboard>
 
 #include "richtextcomposeremailquotedecorator.h"
 
@@ -126,7 +126,7 @@ void RichTextComposer::updateHighLighter()
 
 void RichTextComposer::clearDecorator()
 {
-    //Nothing
+    // Nothing
 }
 
 void RichTextComposer::createHighlighter()
@@ -209,8 +209,7 @@ int RichTextComposer::linePosition() const
             const int numberOfLine(layout->lineCount());
             for (int i = 0; i < numberOfLine; ++i) {
                 QTextLine line = layout->lineAt(i);
-                if (cursorBasePosition >= line.textStart()
-                    && cursorBasePosition < line.textStart() + line.textLength()) {
+                if (cursorBasePosition >= line.textStart() && cursorBasePosition < line.textStart() + line.textLength()) {
                     break;
                 }
                 lineCount++;
@@ -270,7 +269,7 @@ void RichTextComposer::activateRichText()
         if (d->undoHtmlVersion.isValid() && (toPlainText() == d->undoHtmlVersion.plainText)) {
             setHtml(d->undoHtmlVersion.originalHtml);
             d->undoHtmlVersion.clear();
-#if 0 //Need to investigate it
+#if 0 // Need to investigate it
         } else {
             //try to import markdown
             document()->setMarkdown(toPlainText(), QTextDocument::MarkdownDialectCommonMark);
@@ -324,17 +323,15 @@ void RichTextComposer::evaluateReturnKeySupport(QKeyEvent *event)
         const int oldPos = cursor.position();
         const int blockPos = cursor.block().position();
 
-        //selection all the line.
+        // selection all the line.
         cursor.movePosition(QTextCursor::StartOfBlock);
         cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
         QString lineText = cursor.selectedText();
-        if (((oldPos - blockPos) > 0)
-            && ((oldPos - blockPos) < int(lineText.length()))) {
+        if (((oldPos - blockPos) > 0) && ((oldPos - blockPos) < int(lineText.length()))) {
             bool isQuotedLine = false;
             int bot = 0; // bot = begin of text after quote indicators
             while (bot < lineText.length()) {
-                if ((lineText[bot] == QChar::fromLatin1('>'))
-                    || (lineText[bot] == QChar::fromLatin1('|'))) {
+                if ((lineText[bot] == QChar::fromLatin1('>')) || (lineText[bot] == QChar::fromLatin1('|'))) {
                     isQuotedLine = true;
                     ++bot;
                 } else if (lineText[bot].isSpace()) {
@@ -347,9 +344,7 @@ void RichTextComposer::evaluateReturnKeySupport(QKeyEvent *event)
             // duplicate quote indicators of the previous line before the new
             // line if the line actually contained text (apart from the quote
             // indicators) and the cursor is behind the quote indicators
-            if (isQuotedLine
-                && (bot != lineText.length())
-                && ((oldPos - blockPos) >= int(bot))) {
+            if (isQuotedLine && (bot != lineText.length()) && ((oldPos - blockPos) >= int(bot))) {
                 // The cursor position might have changed unpredictably if there was selected
                 // text which got replaced by a new line, so we query it again:
                 cursor.movePosition(QTextCursor::StartOfBlock);
@@ -359,13 +354,12 @@ void RichTextComposer::evaluateReturnKeySupport(QKeyEvent *event)
                 // remove leading white space from the new line and instead
                 // add the quote indicators of the previous line
                 int leadingWhiteSpaceCount = 0;
-                while ((leadingWhiteSpaceCount < newLine.length())
-                       && newLine[leadingWhiteSpaceCount].isSpace()) {
+                while ((leadingWhiteSpaceCount < newLine.length()) && newLine[leadingWhiteSpaceCount].isSpace()) {
                     ++leadingWhiteSpaceCount;
                 }
                 newLine.replace(0, leadingWhiteSpaceCount, lineText.left(bot));
                 cursor.insertText(newLine);
-                //cursor.setPosition( cursor.position() + 2 );
+                // cursor.setPosition( cursor.position() + 2 );
                 cursor.movePosition(QTextCursor::StartOfBlock);
                 setTextCursor(cursor);
             }
@@ -409,9 +403,7 @@ void RichTextComposer::evaluateListSupport(QKeyEvent *event)
     }
 
     // Match the behavior of office suites: newline after header switches to normal text
-    if ((event->key() == Qt::Key_Return)
-        && (textCursor().blockFormat().headingLevel() > 0)
-        && (textCursor().atBlockEnd())) {
+    if ((event->key() == Qt::Key_Return) && (textCursor().blockFormat().headingLevel() > 0) && (textCursor().atBlockEnd())) {
         // it should be undoable together with actual "return" keypress
         textCursor().joinPreviousEditBlock();
         d->composerControler->setHeadingLevel(0);
@@ -426,14 +418,8 @@ void RichTextComposer::evaluateListSupport(QKeyEvent *event)
 
 bool RichTextComposer::processKeyEvent(QKeyEvent *e)
 {
-    if (d->externalComposer->useExternalEditor()
-        && (e->key() != Qt::Key_Shift)
-        && (e->key() != Qt::Key_Control)
-        && (e->key() != Qt::Key_Meta)
-        && (e->key() != Qt::Key_CapsLock)
-        && (e->key() != Qt::Key_NumLock)
-        && (e->key() != Qt::Key_ScrollLock)
-        && (e->key() != Qt::Key_Alt)
+    if (d->externalComposer->useExternalEditor() && (e->key() != Qt::Key_Shift) && (e->key() != Qt::Key_Control) && (e->key() != Qt::Key_Meta)
+        && (e->key() != Qt::Key_CapsLock) && (e->key() != Qt::Key_NumLock) && (e->key() != Qt::Key_ScrollLock) && (e->key() != Qt::Key_Alt)
         && (e->key() != Qt::Key_AltGr)) {
         if (!d->externalComposer->isInProgress()) {
             d->externalComposer->startExternalEditor();
@@ -441,8 +427,7 @@ bool RichTextComposer::processKeyEvent(QKeyEvent *e)
         return true;
     }
 
-    if (e->key() == Qt::Key_Up && e->modifiers() != Qt::ShiftModifier
-        && textCursor().block().position() == 0
+    if (e->key() == Qt::Key_Up && e->modifiers() != Qt::ShiftModifier && textCursor().block().position() == 0
         && textCursor().block().layout()->lineForTextPosition(textCursor().position()).lineNumber() == 0) {
         textCursor().clearSelection();
         Q_EMIT focusUp();
@@ -516,7 +501,7 @@ int RichTextComposer::quoteLength(const QString &line, bool oneQuote) const
             }
         }
         if (quoteFound) {
-            //We found a quote but it's just quote element => 1 => remove 1 char.
+            // We found a quote but it's just quote element => 1 => remove 1 char.
             if (startOfText == -1) {
                 startOfText = 1;
             }
@@ -568,19 +553,12 @@ void RichTextComposer::insertFromMimeData(const QMimeData *source)
     if (textMode() == RichTextComposer::Rich) {
         if (source->hasText()) {
             const QString sourceText = source->text();
-            if (sourceText.startsWith(QLatin1String("http://"))
-                || sourceText.startsWith(QLatin1String("https://"))
-                || sourceText.startsWith(QLatin1String("ftps://"))
-                || sourceText.startsWith(QLatin1String("ftp://"))
-                || sourceText.startsWith(QLatin1String("mailto:"))
-                || sourceText.startsWith(QLatin1String("smb://"))
-                || sourceText.startsWith(QLatin1String("file://"))
-                || sourceText.startsWith(QLatin1String("webdavs://"))
-                || sourceText.startsWith(QLatin1String("imaps://"))
-                || sourceText.startsWith(QLatin1String("sftp://"))
-                || sourceText.startsWith(QLatin1String("fish://"))
-                || sourceText.startsWith(QLatin1String("tel:"))
-                ) {
+            if (sourceText.startsWith(QLatin1String("http://")) || sourceText.startsWith(QLatin1String("https://"))
+                || sourceText.startsWith(QLatin1String("ftps://")) || sourceText.startsWith(QLatin1String("ftp://"))
+                || sourceText.startsWith(QLatin1String("mailto:")) || sourceText.startsWith(QLatin1String("smb://"))
+                || sourceText.startsWith(QLatin1String("file://")) || sourceText.startsWith(QLatin1String("webdavs://"))
+                || sourceText.startsWith(QLatin1String("imaps://")) || sourceText.startsWith(QLatin1String("sftp://"))
+                || sourceText.startsWith(QLatin1String("fish://")) || sourceText.startsWith(QLatin1String("tel:"))) {
                 insertHtml(QStringLiteral("<a href=\"%1\">%1</a>").arg(sourceText));
                 return;
             }

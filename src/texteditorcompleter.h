@@ -7,14 +7,15 @@
 #ifndef TEXTEDITORCOMPLETER_H
 #define TEXTEDITORCOMPLETER_H
 
-#include <QObject>
 #include "kpimtextedit_export.h"
+#include <QObject>
 
 class QCompleter;
 class QTextEdit;
 class QPlainTextEdit;
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 /**
  * @brief The TextEditorCompleter class
  * @author Laurent Montel <montel@kde.org>
@@ -34,6 +35,7 @@ public:
     void completeText();
 
     void setExcludeOfCharacters(const QString &excludes);
+
 private:
     void slotCompletion(const QString &text);
     class TextEditorCompleterPrivate;

@@ -7,11 +7,12 @@
 #ifndef TEXTTOSPEECHINTERFACE_H
 #define TEXTTOSPEECHINTERFACE_H
 
-#include <QObject>
-#include "texttospeechwidget.h"
 #include "abstracttexttospeechinterface.h"
 #include "kpimtextedit_export.h"
-namespace KPIMTextEdit {
+#include "texttospeechwidget.h"
+#include <QObject>
+namespace KPIMTextEdit
+{
 class TextToSpeechWidget;
 class TextToSpeechInterfacePrivate;
 /**

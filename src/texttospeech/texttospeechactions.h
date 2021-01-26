@@ -7,11 +7,12 @@
 #ifndef TEXTTOSPEECHACTIONS_H
 #define TEXTTOSPEECHACTIONS_H
 
-#include <QObject>
 #include "kpimtextedit_export.h"
 #include "texttospeechwidget.h"
+#include <QObject>
 class QAction;
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class TextToSpeechActionsPrivate;
 /**
  * @brief The TextToSpeechActions class

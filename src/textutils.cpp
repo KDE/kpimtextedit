@@ -17,13 +17,9 @@ using namespace KPIMTextEdit;
 
 static bool isCharFormatFormatted(const QTextCharFormat &format, const QFont &defaultFont, const QTextCharFormat &defaultBlockFormat)
 {
-    if (!format.anchorHref().isEmpty()
-        || format.font() != defaultFont
-        || format.isAnchor()
-        || format.verticalAlignment() != defaultBlockFormat.verticalAlignment()
-        || format.layoutDirection() != defaultBlockFormat.layoutDirection()
-        || format.underlineStyle() != defaultBlockFormat.underlineStyle()
-        || format.foreground().color() != defaultBlockFormat.foreground().color()
+    if (!format.anchorHref().isEmpty() || format.font() != defaultFont || format.isAnchor()
+        || format.verticalAlignment() != defaultBlockFormat.verticalAlignment() || format.layoutDirection() != defaultBlockFormat.layoutDirection()
+        || format.underlineStyle() != defaultBlockFormat.underlineStyle() || format.foreground().color() != defaultBlockFormat.foreground().color()
         || format.background().color() != defaultBlockFormat.background().color()) {
         return true;
     }
@@ -33,10 +29,8 @@ static bool isCharFormatFormatted(const QTextCharFormat &format, const QFont &de
 
 static bool isBlockFormatFormatted(const QTextBlockFormat &format, const QTextBlockFormat &defaultFormat)
 {
-    if (format.alignment() != defaultFormat.alignment()
-        || format.layoutDirection() != defaultFormat.layoutDirection()
-        || format.indent() != defaultFormat.indent()
-        || format.textIndent() != defaultFormat.textIndent()) {
+    if (format.alignment() != defaultFormat.alignment() || format.layoutDirection() != defaultFormat.layoutDirection()
+        || format.indent() != defaultFormat.indent() || format.textIndent() != defaultFormat.textIndent()) {
         return true;
     }
 
@@ -46,8 +40,8 @@ static bool isBlockFormatFormatted(const QTextBlockFormat &format, const QTextBl
 /// @return true if the format represents a list, table, image or something like that.
 static bool isSpecial(const QTextFormat &charFormat)
 {
-    return charFormat.isFrameFormat() || charFormat.isImageFormat()
-           || charFormat.isListFormat() || charFormat.isTableFormat() || charFormat.isTableCellFormat();
+    return charFormat.isFrameFormat() || charFormat.isImageFormat() || charFormat.isListFormat() || charFormat.isTableFormat()
+        || charFormat.isTableCellFormat();
 }
 
 bool TextUtils::containsFormatting(const QTextDocument *document)
@@ -67,8 +61,7 @@ bool TextUtils::containsFormatting(const QTextDocument *document)
             return true;
         }
 
-        if (isSpecial(block.charFormat()) || isSpecial(block.blockFormat())
-            || block.textList()) {
+        if (isSpecial(block.charFormat()) || isSpecial(block.blockFormat()) || block.textList()) {
             return true;
         }
 

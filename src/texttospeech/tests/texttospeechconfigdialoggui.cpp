@@ -4,8 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "texttospeech/texttospeechconfigdialog.h"
 #include "texttospeech/texttospeech.h"
+#include "texttospeech/texttospeechconfigdialog.h"
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QStandardPaths>

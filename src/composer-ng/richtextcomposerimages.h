@@ -7,22 +7,23 @@
 #ifndef KPIMTEXTEDITRICHTEXTCOMPOSERIMAGES_H
 #define KPIMTEXTEDITRICHTEXTCOMPOSERIMAGES_H
 
+#include "kpimtextedit_export.h"
+#include <QFileInfo>
 #include <QImage>
 #include <QObject>
-#include <QFileInfo>
-#include <QTextImageFormat>
 #include <QSharedPointer>
-#include "kpimtextedit_export.h"
-namespace KPIMTextEdit {
+#include <QTextImageFormat>
+namespace KPIMTextEdit
+{
 class RichTextComposer;
 /**
  * Holds information about an embedded HTML image that will be useful for mail clients.
  * A list with all images can be retrieved with TextEdit::embeddedImages().
  */
 struct EmbeddedImage {
-    QByteArray image;   ///< The image, encoded as PNG with base64 encoding
-    QString contentID;  ///< The content id of the embedded image
-    QString imageName;  ///< Name of the image as it is available as a resource in the editor
+    QByteArray image; ///< The image, encoded as PNG with base64 encoding
+    QString contentID; ///< The content id of the embedded image
+    QString imageName; ///< Name of the image as it is available as a resource in the editor
 };
 
 /**
@@ -37,8 +38,8 @@ struct ImageWithName {
 };
 
 typedef QSharedPointer<ImageWithName> ImageWithNamePtr;
-typedef QVector< ImageWithNamePtr > ImageWithNameList;
-typedef QVector< QSharedPointer<EmbeddedImage> > ImageList;
+typedef QVector<ImageWithNamePtr> ImageWithNameList;
+typedef QVector<QSharedPointer<EmbeddedImage>> ImageList;
 
 class KPIMTEXTEDIT_EXPORT RichTextComposerImages : public QObject
 {
@@ -74,7 +75,7 @@ public:
 
     void addImageHelper(const QString &imageName, const QImage &image, int width = -1, int height = -1);
     Q_REQUIRED_RESULT ImageWithNameList imagesWithName() const;
-    Q_REQUIRED_RESULT QVector<QSharedPointer<EmbeddedImage> > embeddedImages() const;
+    Q_REQUIRED_RESULT QVector<QSharedPointer<EmbeddedImage>> embeddedImages() const;
     Q_REQUIRED_RESULT QVector<QTextImageFormat> embeddedImageFormats() const;
     void addImageHelper(const QUrl &url, int width = -1, int height = -1);
     void insertImage(const QImage &image, const QFileInfo &fileInfo);
@@ -99,6 +100,7 @@ public:
     static Q_REQUIRED_RESULT QByteArray imageNamesToContentIds(const QByteArray &htmlBody, const ImageList &imageList);
 
     Q_REQUIRED_RESULT QSharedPointer<EmbeddedImage> createEmbeddedImage(const QImage &img, const QString &imageName) const;
+
 private:
     class RichTextComposerImagesPrivate;
     RichTextComposerImagesPrivate *const d;

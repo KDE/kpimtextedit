@@ -12,7 +12,8 @@
 
 #include <KActionMenu>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class EmoticonTextEditAction : public KActionMenu
 {
     Q_OBJECT

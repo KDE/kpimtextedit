@@ -5,15 +5,15 @@
 */
 
 #include "richtexteditfindbar.h"
-#include "texteditor/commonwidget/textfindreplacewidget.h"
 #include "texteditor/commonwidget/findutils.h"
+#include "texteditor/commonwidget/textfindreplacewidget.h"
 
 #include <KColorScheme>
 #include <KLocalizedString>
 
-#include <QTextEdit>
 #include <QLineEdit>
 #include <QRegularExpression>
+#include <QTextEdit>
 
 using namespace KPIMTextEdit;
 class Q_DECL_HIDDEN KPIMTextEdit::RichTextEditFindBarPrivate
@@ -77,18 +77,18 @@ void RichTextEditFindBar::autoSearchMoveCursor()
 
 void RichTextEditFindBar::slotReplaceText()
 {
-    //FIXME!
+    // FIXME!
     if (d->mView->textCursor().hasSelection()) {
         if (mFindWidget->isRegularExpression()) {
             if (d->mView->textCursor().selectedText().contains(mFindWidget->searchRegExp())) {
                 d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
-                //search next after replace text.
+                // search next after replace text.
                 searchText(false, false);
             }
         } else {
             if (d->mView->textCursor().selectedText() == mFindWidget->searchText()) {
                 d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
-                //search next after replace text.
+                // search next after replace text.
                 searchText(false, false);
             }
         }

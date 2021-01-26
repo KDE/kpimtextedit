@@ -7,10 +7,11 @@
 #ifndef KPIMTEXTEDITRICHTEXTCOMPOSERCONTROLER_H
 #define KPIMTEXTEDITRICHTEXTCOMPOSERCONTROLER_H
 
-#include <QObject>
-#include "richtextcomposer.h"
 #include "kpimtextedit_export.h"
-namespace KPIMTextEdit {
+#include "richtextcomposer.h"
+#include <QObject>
+namespace KPIMTextEdit
+{
 class RichTextComposer;
 class NestedListHelper;
 class RichTextComposerImages;
@@ -91,6 +92,7 @@ public Q_SLOTS:
     void slotAddImage();
     void slotFormatPainter(bool active);
     void ensureCursorVisibleDelayed();
+
 private:
     class RichTextComposerControlerPrivate;
     RichTextComposerControlerPrivate *const d;

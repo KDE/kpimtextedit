@@ -6,14 +6,14 @@
 
 #include "texttospeechwidget.h"
 #include "texttospeechactions.h"
-#include "texttospeechinterface.h"
 #include "texttospeechconfigdialog.h"
+#include "texttospeechinterface.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
-#include <QToolButton>
 #include <QLabel>
-#include <QSlider>
 #include <QPointer>
+#include <QSlider>
+#include <QToolButton>
 
 using namespace KPIMTextEdit;
 
@@ -147,7 +147,7 @@ void TextToSpeechWidget::slotStateChanged(KPIMTextEdit::TextToSpeech::State stat
         }
         break;
     default:
-        //TODO
+        // TODO
         break;
     }
 }
@@ -161,7 +161,7 @@ void TextToSpeechWidget::setTextToSpeechInterface(AbstractTextToSpeechInterface 
 {
     delete d->mTextToSpeechInterface;
     d->mTextToSpeechInterface = interface;
-    //Update volume value
+    // Update volume value
     if (d->mTextToSpeechInterface) {
         d->mTextToSpeechInterface->reloadSettings();
         d->mVolume->setValue(interface->volume());

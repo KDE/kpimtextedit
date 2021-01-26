@@ -11,8 +11,8 @@
 #include <KLocalizedString>
 #include <KSeparator>
 
-#include <QPushButton>
 #include <QDialogButtonBox>
+#include <QPushButton>
 #include <QVBoxLayout>
 
 using namespace KPIMTextEdit;

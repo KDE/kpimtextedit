@@ -4,11 +4,11 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include <KActionCollection>
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QStandardPaths>
 #include <QToolBar>
-#include <KActionCollection>
 
 #include <../richtextcomposer.h>
 

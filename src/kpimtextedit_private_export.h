@@ -11,11 +11,11 @@
 
 /* Classes which are exported only for unit tests */
 #ifdef BUILD_TESTING
-# ifndef KPIMTEXTEDIT_TESTS_EXPORT
-#  define KPIMTEXTEDIT_TESTS_EXPORT KPIMTEXTEDIT_EXPORT
-# endif
+#ifndef KPIMTEXTEDIT_TESTS_EXPORT
+#define KPIMTEXTEDIT_TESTS_EXPORT KPIMTEXTEDIT_EXPORT
+#endif
 #else /* not compiling tests */
-# define KPIMTEXTEDIT_TESTS_EXPORT
+#define KPIMTEXTEDIT_TESTS_EXPORT
 #endif
 
 #endif

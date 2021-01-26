@@ -13,7 +13,8 @@
 #include "kpimtextedit/plaintexteditor.h"
 #include <KSyntaxHighlighting/Repository>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class TextEditorCompleter;
 class InsertHtmlEditor : public KPIMTextEdit::PlainTextEditor
 {
@@ -21,8 +22,10 @@ class InsertHtmlEditor : public KPIMTextEdit::PlainTextEditor
 public:
     explicit InsertHtmlEditor(QWidget *parent = nullptr);
     ~InsertHtmlEditor() override;
+
 protected:
     void keyPressEvent(QKeyEvent *e) override;
+
 private:
     KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter = nullptr;
     KSyntaxHighlighting::Repository mRepo;

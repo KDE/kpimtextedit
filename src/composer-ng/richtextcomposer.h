@@ -12,7 +12,8 @@
 #include <kpimtextedit/richtexteditor.h>
 class KActionCollection;
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class RichTextComposerControler;
 class RichTextComposerActions;
 class RichTextExternalComposer;
@@ -29,8 +30,8 @@ public:
     ~RichTextComposer() override;
 
     enum Mode {
-        Plain,    ///< Plain text mode
-        Rich      ///< Rich text mode
+        Plain, ///< Plain text mode
+        Rich ///< Rich text mode
     };
 
     /**
@@ -78,8 +79,8 @@ public:
     Q_REQUIRED_RESULT bool checkExternalEditorFinished();
     void killExternalEditor();
 
-    //Redefine it for each apps
-    virtual QString smartQuote(const QString &msg);    //need by kmail
+    // Redefine it for each apps
+    virtual QString smartQuote(const QString &msg); // need by kmail
 
     void setQuotePrefixName(const QString &quotePrefix);
     Q_REQUIRED_RESULT QString quotePrefixName() const;

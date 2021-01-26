@@ -8,14 +8,14 @@
 #include "tablecellformatdialog.h"
 
 #include <KColorButton>
-#include <QComboBox>
 #include <KLocalizedString>
 #include <KSeparator>
+#include <QComboBox>
 
 #include <QCheckBox>
+#include <QDialogButtonBox>
 #include <QLabel>
 #include <QVBoxLayout>
-#include <QDialogButtonBox>
 
 using namespace KPIMTextEdit;
 
@@ -95,9 +95,7 @@ void TableCellFormatDialog::setTableCellBackgroundColor(const QColor &col)
 
 QTextCharFormat::VerticalAlignment TableCellFormatDialog::verticalAlignment() const
 {
-    return
-        static_cast<QTextCharFormat::VerticalAlignment>(d->verticalAlignment->itemData(
-                                                            d->verticalAlignment->currentIndex()).toInt());
+    return static_cast<QTextCharFormat::VerticalAlignment>(d->verticalAlignment->itemData(d->verticalAlignment->currentIndex()).toInt());
 }
 
 void TableCellFormatDialog::setVerticalAlignment(QTextCharFormat::VerticalAlignment vertical)

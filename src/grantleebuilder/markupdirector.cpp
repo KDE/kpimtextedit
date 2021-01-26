@@ -10,12 +10,12 @@
 
 #include "abstractmarkupbuilder.h"
 
+#include <QBrush>
+#include <QColor>
 #include <QFlags>
 #include <QMap>
 #include <QStack>
 #include <QString>
-#include <QBrush>
-#include <QColor>
 #include <QTextCharFormat>
 #include <QTextCursor>
 #include <QTextDocument>
@@ -40,10 +40,9 @@ MarkupDirector::~MarkupDirector()
 
 //#define ADD_HEADER_SUPPORT 1
 
-QTextFrame::iterator
-MarkupDirector::processBlockContents(QTextFrame::iterator frameIt, const QTextBlock &block)
+QTextFrame::iterator MarkupDirector::processBlockContents(QTextFrame::iterator frameIt, const QTextBlock &block)
 {
-    //Same code as grantlee  but interprete margin
+    // Same code as grantlee  but interprete margin
 
     const auto blockFormat = block.blockFormat();
     const auto blockAlignment = blockFormat.alignment();
@@ -51,7 +50,7 @@ MarkupDirector::processBlockContents(QTextFrame::iterator frameIt, const QTextBl
     // TODO: decide when to use <h1> etc.
 #ifdef ADD_HEADER_SUPPORT
     if (blockFormat.headingLevel() > 0) {
-        //Header
+        // Header
         qDebug() << " header " << blockFormat.headingLevel();
         m_builder->beginHeader(blockFormat.headingLevel());
     }
@@ -80,20 +79,14 @@ MarkupDirector::processBlockContents(QTextFrame::iterator frameIt, const QTextBl
 
     // Don't have p tags inside li tags.
     if (!block.textList()) {
-        //Laurent : we need this margin as it's necessary to show blockquote
+        // Laurent : we need this margin as it's necessary to show blockquote
 
         // Don't instruct builders to use margins. The rich text widget doesn't
         // have
         // an action for them yet,
         // So users can't edit them. See bug
         // https://bugs.kde.org/show_bug.cgi?id=160600
-        m_builder->beginParagraph(
-                    blockAlignment,
-                    blockFormat.topMargin(),
-                    blockFormat.bottomMargin(),
-                    blockFormat.leftMargin(),
-                    blockFormat.rightMargin()
-                    );
+        m_builder->beginParagraph(blockAlignment, blockFormat.topMargin(), blockFormat.bottomMargin(), blockFormat.leftMargin(), blockFormat.rightMargin());
     }
 
     while (!it.atEnd()) {
@@ -110,14 +103,13 @@ MarkupDirector::processBlockContents(QTextFrame::iterator frameIt, const QTextBl
     return frameIt;
 }
 
-QTextBlock::iterator
-MarkupDirector::processFragment(QTextBlock::iterator it, const QTextFragment &fragment, QTextDocument const *doc)
+QTextBlock::iterator MarkupDirector::processFragment(QTextBlock::iterator it, const QTextFragment &fragment, QTextDocument const *doc)
 {
-    //Same code as Grantlee + a fix !
+    // Same code as Grantlee + a fix !
 
     //   Q_D( MarkupDirector );
     const auto charFormat = fragment.charFormat();
-    //Need to check if it's a image format.
+    // Need to check if it's a image format.
     if (charFormat.isImageFormat()) {
         const auto imageFormat = charFormat.toImageFormat();
         return processImage(it, imageFormat, doc);
@@ -143,7 +135,7 @@ MarkupDirector::processFragment(QTextBlock::iterator it, const QTextFragment &fr
         for (int i = 1; i < textStr.length(); ++i) {
             if (fragment.text().at(i).category() == QChar::Separator_Line) {
                 m_builder->appendLiteralText(t);
-                if (i < textStr.length() -1) { //Don't add \n when we have the last char
+                if (i < textStr.length() - 1) { // Don't add \n when we have the last char
                     m_builder->addSingleBreakLine();
                 }
                 t.clear();
@@ -221,7 +213,7 @@ MarkupDirector::processFragment(QTextBlock::iterator it, const QTextFragment &fr
                 m_builder->beginParagraph(/* blockAlignment */);
                 paraClosed = false;
             } else {
-                //Bug fixing : add missing single break line
+                // Bug fixing : add missing single break line
                 m_builder->addSingleBreakLine();
             }
         }
@@ -235,9 +227,7 @@ MarkupDirector::processFragment(QTextBlock::iterator it, const QTextFragment &fr
     return it;
 }
 
-
-void MarkupDirector::processDocumentContents(QTextFrame::iterator start,
-                                             const QTextFrame::iterator &end)
+void MarkupDirector::processDocumentContents(QTextFrame::iterator start, const QTextFrame::iterator &end)
 {
     while (!start.atEnd() && start != end) {
         auto frame = start.currentFrame();
@@ -256,8 +246,7 @@ void MarkupDirector::processDocumentContents(QTextFrame::iterator start,
     }
 }
 
-QTextFrame::iterator MarkupDirector::processFrame(QTextFrame::iterator it,
-                                                  QTextFrame *frame)
+QTextFrame::iterator MarkupDirector::processFrame(QTextFrame::iterator it, QTextFrame *frame)
 {
     if (frame) {
         processDocumentContents(frame->begin(), frame->end());
@@ -267,8 +256,7 @@ QTextFrame::iterator MarkupDirector::processFrame(QTextFrame::iterator it,
     return it;
 }
 
-QTextFrame::iterator MarkupDirector::processBlock(QTextFrame::iterator it,
-                                                  const QTextBlock &block)
+QTextFrame::iterator MarkupDirector::processBlock(QTextFrame::iterator it, const QTextBlock &block)
 {
     if (block.isValid()) {
         auto fmt = block.blockFormat();
@@ -285,8 +273,7 @@ QTextFrame::iterator MarkupDirector::processBlock(QTextFrame::iterator it,
     return it;
 }
 
-QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it,
-                                                  QTextTable *table)
+QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it, QTextTable *table)
 {
     const auto format = table->format();
 
@@ -324,7 +311,6 @@ QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it,
         // http://www.webdesignfromscratch.com/html-tables.cfm
 
         for (int column = 0, total = table->columns(); column < total; ++column) {
-
             auto tableCell = table->cellAt(row, column);
 
             auto columnSpan = tableCell.columnSpan();
@@ -372,16 +358,13 @@ QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it,
     return it;
 }
 
-void MarkupDirector::processTableCell(const QTextTableCell &tableCell,
-                                      QTextTable *table)
+void MarkupDirector::processTableCell(const QTextTableCell &tableCell, QTextTable *table)
 {
     Q_UNUSED(table)
     processDocumentContents(tableCell.begin(), tableCell.end());
 }
 
-QPair<QTextFrame::iterator, QTextBlock>
-MarkupDirector::processList(QTextFrame::iterator it, const QTextBlock &_block,
-                            QTextList *list)
+QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::processList(QTextFrame::iterator it, const QTextBlock &_block, QTextList *list)
 {
     const auto style = list->format().style();
     m_builder->beginList(style);
@@ -408,16 +391,13 @@ MarkupDirector::processList(QTextFrame::iterator it, const QTextBlock &_block,
     return qMakePair(it, block);
 }
 
-void MarkupDirector::processCustomFragment(const QTextFragment &fragment,
-                                           const QTextDocument *doc)
+void MarkupDirector::processCustomFragment(const QTextFragment &fragment, const QTextDocument *doc)
 {
     Q_UNUSED(fragment)
     Q_UNUSED(doc)
 }
 
-QTextFrame::iterator MarkupDirector::processObject(QTextFrame::iterator it,
-                                                   const QTextBlock &block,
-                                                   QTextObject *object)
+QTextFrame::iterator MarkupDirector::processObject(QTextFrame::iterator it, const QTextBlock &block, QTextObject *object)
 {
     auto group = qobject_cast<QTextBlockGroup *>(object);
     if (group) {
@@ -428,10 +408,7 @@ QTextFrame::iterator MarkupDirector::processObject(QTextFrame::iterator it,
     return it;
 }
 
-QPair<QTextFrame::iterator, QTextBlock>
-MarkupDirector::skipBlockGroup(QTextFrame::iterator it,
-                               const QTextBlock &_block,
-                               QTextBlockGroup *blockGroup)
+QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::skipBlockGroup(QTextFrame::iterator it, const QTextBlock &_block, QTextBlockGroup *blockGroup)
 {
     auto block = _block;
     auto lastBlock = _block;
@@ -469,10 +446,7 @@ MarkupDirector::skipBlockGroup(QTextFrame::iterator it,
     return qMakePair(lastIt, lastBlock);
 }
 
-QPair<QTextFrame::iterator, QTextBlock>
-MarkupDirector::processBlockGroup(const QTextFrame::iterator &it,
-                                  const QTextBlock &block,
-                                  QTextBlockGroup *blockGroup)
+QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::processBlockGroup(const QTextFrame::iterator &it, const QTextBlock &block, QTextBlockGroup *blockGroup)
 {
     const auto list = qobject_cast<QTextList *>(blockGroup);
     if (list) {
@@ -486,10 +460,7 @@ void MarkupDirector::processDocument(QTextDocument *doc)
     processFrame(QTextFrame::iterator(), doc->rootFrame());
 }
 
-QTextBlock::iterator
-MarkupDirector::processCharTextObject(QTextBlock::iterator it,
-                                      const QTextFragment &fragment,
-                                      QTextObject *textObject)
+QTextBlock::iterator MarkupDirector::processCharTextObject(QTextBlock::iterator it, const QTextFragment &fragment, QTextObject *textObject)
 {
     const auto fragmentFormat = fragment.charFormat();
     if (fragmentFormat.isImageFormat()) {
@@ -501,15 +472,11 @@ MarkupDirector::processCharTextObject(QTextBlock::iterator it,
     return it;
 }
 
-QTextBlock::iterator
-MarkupDirector::processImage(QTextBlock::iterator it,
-                             const QTextImageFormat &imageFormat,
-                             const QTextDocument *doc)
+QTextBlock::iterator MarkupDirector::processImage(QTextBlock::iterator it, const QTextImageFormat &imageFormat, const QTextDocument *doc)
 {
     Q_UNUSED(doc)
     // TODO: Close any open format elements?
-    m_builder->insertImage(imageFormat.name(), imageFormat.width(),
-                           imageFormat.height());
+    m_builder->insertImage(imageFormat.name(), imageFormat.width(), imageFormat.height());
     if (!it.atEnd())
         return ++it;
     return it;
@@ -706,74 +673,51 @@ QSet<int> MarkupDirector::getElementsToClose(const QTextBlock::iterator &it) con
     const auto superscript = (vAlign == QTextCharFormat::AlignSuperScript);
     const auto subscript = (vAlign == QTextCharFormat::AlignSubScript);
 
-    if (!fontStrikeout
-            && (d->m_openElements.contains(StrikeOut)
-                || d->m_elementsToOpen.contains(StrikeOut))) {
+    if (!fontStrikeout && (d->m_openElements.contains(StrikeOut) || d->m_elementsToOpen.contains(StrikeOut))) {
         closedElements.insert(StrikeOut);
     }
 
-    if (!fontUnderline
-            && (d->m_openElements.contains(Underline)
-                || d->m_elementsToOpen.contains(Underline))
-            && !(d->m_openElements.contains(Anchor)
-                 || d->m_elementsToOpen.contains(Anchor))) {
+    if (!fontUnderline && (d->m_openElements.contains(Underline) || d->m_elementsToOpen.contains(Underline))
+        && !(d->m_openElements.contains(Anchor) || d->m_elementsToOpen.contains(Anchor))) {
         closedElements.insert(Underline);
     }
 
-    if (!fontItalic
-            && (d->m_openElements.contains(Emph)
-                || d->m_elementsToOpen.contains(Emph))) {
+    if (!fontItalic && (d->m_openElements.contains(Emph) || d->m_elementsToOpen.contains(Emph))) {
         closedElements.insert(Emph);
     }
 
-    if (fontWeight != QFont::Bold
-            && (d->m_openElements.contains(Strong)
-                || d->m_elementsToOpen.contains(Strong))) {
+    if (fontWeight != QFont::Bold && (d->m_openElements.contains(Strong) || d->m_elementsToOpen.contains(Strong))) {
         closedElements.insert(Strong);
     }
 
-    if ((d->m_openElements.contains(SpanFontPointSize)
-         || d->m_elementsToOpen.contains(SpanFontPointSize))
-            && (d->m_openFontPointSize != fontPointSize)) {
+    if ((d->m_openElements.contains(SpanFontPointSize) || d->m_elementsToOpen.contains(SpanFontPointSize)) && (d->m_openFontPointSize != fontPointSize)) {
         closedElements.insert(SpanFontPointSize);
     }
 
-    if ((d->m_openElements.contains(SpanFontFamily)
-         || d->m_elementsToOpen.contains(SpanFontFamily))
-            && (d->m_openFontFamily != fontFamily)) {
+    if ((d->m_openElements.contains(SpanFontFamily) || d->m_elementsToOpen.contains(SpanFontFamily)) && (d->m_openFontFamily != fontFamily)) {
         closedElements.insert(SpanFontFamily);
     }
 
-    if ((d->m_openElements.contains(SpanBackground)
-         && (d->m_openBackground != fontBackground))
-            || (d->m_elementsToOpen.contains(SpanBackground)
-                && (d->m_backgroundToOpen != fontBackground))) {
+    if ((d->m_openElements.contains(SpanBackground) && (d->m_openBackground != fontBackground))
+        || (d->m_elementsToOpen.contains(SpanBackground) && (d->m_backgroundToOpen != fontBackground))) {
         closedElements.insert(SpanBackground);
     }
 
-    if ((d->m_openElements.contains(SpanForeground)
-         && (d->m_openForeground != fontForeground))
-            || (d->m_elementsToOpen.contains(SpanForeground)
-                && (d->m_foregroundToOpen != fontForeground))) {
+    if ((d->m_openElements.contains(SpanForeground) && (d->m_openForeground != fontForeground))
+        || (d->m_elementsToOpen.contains(SpanForeground) && (d->m_foregroundToOpen != fontForeground))) {
         closedElements.insert(SpanForeground);
     }
 
-    if ((d->m_openElements.contains(Anchor)
-         && (d->m_openAnchorHref != anchorHref))
-            || (d->m_elementsToOpen.contains(Anchor)
-                && (d->m_anchorHrefToOpen != anchorHref))) {
+    if ((d->m_openElements.contains(Anchor) && (d->m_openAnchorHref != anchorHref))
+        || (d->m_elementsToOpen.contains(Anchor) && (d->m_anchorHrefToOpen != anchorHref))) {
         closedElements.insert(Anchor);
     }
 
-    if (!subscript
-            && (d->m_openElements.contains(SubScript)
-                || d->m_elementsToOpen.contains(SubScript))) {
+    if (!subscript && (d->m_openElements.contains(SubScript) || d->m_elementsToOpen.contains(SubScript))) {
         closedElements.insert(SubScript);
     }
 
-    if (!superscript
-            && (d->m_openElements.contains(SuperScript)
-                || d->m_elementsToOpen.contains(SuperScript))) {
+    if (!superscript && (d->m_openElements.contains(SuperScript) || d->m_elementsToOpen.contains(SuperScript))) {
         closedElements.insert(SuperScript);
     }
     return closedElements;
@@ -812,41 +756,34 @@ QList<int> MarkupDirector::getElementsToOpen(const QTextBlock::iterator &it)
         d->m_elementsToOpen.insert(SubScript);
     }
 
-    if (!anchorHref.isEmpty() && !(d->m_openElements.contains(Anchor))
-            && (d->m_openAnchorHref != anchorHref)) {
+    if (!anchorHref.isEmpty() && !(d->m_openElements.contains(Anchor)) && (d->m_openAnchorHref != anchorHref)) {
         d->m_elementsToOpen.insert(Anchor);
         d->m_anchorHrefToOpen = anchorHref;
     }
 
     if (fontForeground != Qt::NoBrush
-            && !(d->m_openElements.contains(SpanForeground)) // Can only open one
-            // foreground element
-            // at a time.
-            && (fontForeground != d->m_openForeground)
-            && !((d->m_openElements.contains(
-                      Anchor) // Links can't have a foreground color.
-                  || d->m_elementsToOpen.contains(Anchor)))) {
+        && !(d->m_openElements.contains(SpanForeground)) // Can only open one
+        // foreground element
+        // at a time.
+        && (fontForeground != d->m_openForeground)
+        && !((d->m_openElements.contains(Anchor) // Links can't have a foreground color.
+              || d->m_elementsToOpen.contains(Anchor)))) {
         d->m_elementsToOpen.insert(SpanForeground);
         d->m_foregroundToOpen = fontForeground;
     }
 
-    if (fontBackground != Qt::NoBrush
-            && !(d->m_openElements.contains(SpanBackground))
-            && (fontBackground != d->m_openBackground)) {
+    if (fontBackground != Qt::NoBrush && !(d->m_openElements.contains(SpanBackground)) && (fontBackground != d->m_openBackground)) {
         d->m_elementsToOpen.insert(SpanBackground);
         d->m_backgroundToOpen = fontBackground;
     }
 
-    if (!fontFamily.isEmpty() && !(d->m_openElements.contains(SpanFontFamily))
-            && (fontFamily != d->m_openFontFamily)) {
+    if (!fontFamily.isEmpty() && !(d->m_openElements.contains(SpanFontFamily)) && (fontFamily != d->m_openFontFamily)) {
         d->m_elementsToOpen.insert(SpanFontFamily);
         d->m_fontFamilyToOpen = fontFamily;
     }
 
-    if ((QTextCharFormat().font().pointSize()
-         != fontPointSize) // Different from the default.
-            && !(d->m_openElements.contains(SpanFontPointSize))
-            && (fontPointSize != d->m_openFontPointSize)) {
+    if ((QTextCharFormat().font().pointSize() != fontPointSize) // Different from the default.
+        && !(d->m_openElements.contains(SpanFontPointSize)) && (fontPointSize != d->m_openFontPointSize)) {
         d->m_elementsToOpen.insert(SpanFontPointSize);
         d->m_fontPointSizeToOpen = fontPointSize;
     }
@@ -864,10 +801,8 @@ QList<int> MarkupDirector::getElementsToOpen(const QTextBlock::iterator &it)
     }
 
     if (fontUnderline && !(d->m_openElements.contains(Underline))
-            && !(d->m_openElements.contains(Anchor)
-                 || d->m_elementsToOpen.contains(
-                     Anchor)) // Can't change the underline state of a link.
-            ) {
+        && !(d->m_openElements.contains(Anchor) || d->m_elementsToOpen.contains(Anchor)) // Can't change the underline state of a link.
+    ) {
         d->m_elementsToOpen.insert(Underline);
     }
 
@@ -881,8 +816,7 @@ QList<int> MarkupDirector::getElementsToOpen(const QTextBlock::iterator &it)
     return sortOpeningOrder(d->m_elementsToOpen, it);
 }
 
-QList<int> MarkupDirector::sortOpeningOrder(QSet<int> openingOrder,
-                                            QTextBlock::iterator it) const
+QList<int> MarkupDirector::sortOpeningOrder(QSet<int> openingOrder, QTextBlock::iterator it) const
 {
     QList<int> sortedOpenedElements;
 

@@ -10,7 +10,8 @@
 
 #include <QTextCursor>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class KPIMTEXTEDIT_EXPORT EditorUtil
 {
 public:

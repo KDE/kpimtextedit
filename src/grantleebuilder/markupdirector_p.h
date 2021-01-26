@@ -18,14 +18,16 @@
 
 namespace KPIMTextEdit
 {
-
 /**
   @internal
   Maintainability class for MarkupDirector
 */
 class MarkupDirectorPrivate
 {
-    MarkupDirectorPrivate(MarkupDirector *md) : q_ptr(md) {}
+    MarkupDirectorPrivate(MarkupDirector *md)
+        : q_ptr(md)
+    {
+    }
 
     Q_DECLARE_PUBLIC(MarkupDirector)
     MarkupDirector *const q_ptr;

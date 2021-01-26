@@ -9,8 +9,8 @@
 #include <KConfig>
 #include <KConfigGroup>
 #include <QLocale>
-#include <QVector>
 #include <QTextToSpeech>
+#include <QVector>
 
 using namespace KPIMTextEdit;
 TextToSpeech::TextToSpeech(QObject *parent)
@@ -42,7 +42,7 @@ void TextToSpeech::reloadSettings()
     mTextToSpeech->setPitch(grp.readEntry("pitch", 0.0));
     mTextToSpeech->setVolume(grp.readEntry("volume", 0));
     mTextToSpeech->setLocale(QLocale(grp.readEntry("localeName")));
-    //It doesn't have api for it mTextToSpeech->setVoice(grp.readEntry("voice"));
+    // It doesn't have api for it mTextToSpeech->setVoice(grp.readEntry("voice"));
 }
 
 TextToSpeech *TextToSpeech::self()

@@ -24,9 +24,12 @@ TextToSpeechInterface::TextToSpeechInterface(TextToSpeechWidget *textToSpeechWid
     : AbstractTextToSpeechInterface(parent)
     , d(new KPIMTextEdit::TextToSpeechInterfacePrivate(textToSpeechWidget))
 {
-    KPIMTextEdit::TextToSpeech::self(); //init
+    KPIMTextEdit::TextToSpeech::self(); // init
     connect(d->mTextToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::stateChanged, this, &TextToSpeechInterface::stateChanged);
-    connect(KPIMTextEdit::TextToSpeech::self(), &KPIMTextEdit::TextToSpeech::stateChanged, d->mTextToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::slotStateChanged);
+    connect(KPIMTextEdit::TextToSpeech::self(),
+            &KPIMTextEdit::TextToSpeech::stateChanged,
+            d->mTextToSpeechWidget,
+            &KPIMTextEdit::TextToSpeechWidget::slotStateChanged);
 }
 
 TextToSpeechInterface::~TextToSpeechInterface()

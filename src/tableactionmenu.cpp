@@ -7,17 +7,18 @@
 
 #include "tableactionmenu.h"
 #include "inserttabledialog.h"
-#include "tableformatdialog.h"
 #include "tablecellformatdialog.h"
+#include "tableformatdialog.h"
 
+#include <KLocalizedString>
 #include <QAction>
 #include <QIcon>
-#include <KLocalizedString>
 
-#include <QTextTable>
 #include <QPointer>
+#include <QTextTable>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class TableActionMenuPrivate
 {
 public:
@@ -86,8 +87,7 @@ void TableActionMenuPrivate::_k_slotRemoveCellContents()
             QTextCursor cursor = textEdit->textCursor();
             cursor.beginEditBlock();
             cursor.setPosition(firstCursor.position());
-            cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor,
-                                endCursor.position() - firstCursor.position());
+            cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, endCursor.position() - firstCursor.position());
             cursor.removeSelectedText();
             cursor.endEditBlock();
         }
@@ -272,8 +272,7 @@ void TableActionMenuPrivate::_k_slotTableFormat()
 
             if (dialog->exec()) {
                 const int newNumberOfColumns(dialog->columns());
-                if ((newNumberOfColumns != numberOfColumn)
-                    || (dialog->rows() != numberOfRow)) {
+                if ((newNumberOfColumns != numberOfColumn) || (dialog->rows() != numberOfRow)) {
                     table->resize(dialog->rows(), newNumberOfColumns);
                 }
                 tableFormat.setBorder(dialog->border());
@@ -342,9 +341,7 @@ void TableActionMenuPrivate::_k_slotSplitCell()
         if (table) {
             const QTextTableCell cell = table->cellAt(textEdit->textCursor());
             if (cell.columnSpan() > 1 || cell.rowSpan() > 1) {
-                table->splitCell(cell.row(), cell.column(),
-                                 qMax(1, cell.rowSpan() - 1),
-                                 qMax(1, cell.columnSpan() - 1));
+                table->splitCell(cell.row(), cell.column(), qMax(1, cell.rowSpan() - 1), qMax(1, cell.columnSpan() - 1));
                 _k_updateActions();
             }
         }
@@ -376,9 +373,7 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
             int firstColumn = -1;
             int numColumns = -1;
             textEdit->textCursor().selectedTableCells(&firstRow, &numRows, &firstColumn, &numColumns);
-            const bool hasSelectedTableCell
-                = (firstRow != -1) && (numRows != -1)
-                  && (firstColumn != -1) && (numColumns != -1);
+            const bool hasSelectedTableCell = (firstRow != -1) && (numRows != -1) && (firstColumn != -1) && (numColumns != -1);
             if (cell.column() > table->columns() - 2) {
                 actionMergeCell->setEnabled(false);
             } else {
@@ -413,47 +408,39 @@ TableActionMenu::TableActionMenu(QTextEdit *textEdit)
     d->actionInsertTable->setObjectName(QStringLiteral("insert_new_table"));
     insertMenu->addAction(d->actionInsertTable);
     connect(d->actionInsertTable, &QAction::triggered, this, [this]() {
-            d->_k_slotInsertTable();
-        });
+        d->_k_slotInsertTable();
+    });
 
     insertMenu->addSeparator();
-    d->actionInsertRowBelow
-        = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-row-below")),
-                      i18n("Row Below"), this);
+    d->actionInsertRowBelow = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-row-below")), i18n("Row Below"), this);
     insertMenu->addAction(d->actionInsertRowBelow);
     d->actionInsertRowBelow->setObjectName(QStringLiteral("insert_row_below"));
     connect(d->actionInsertRowBelow, &QAction::triggered, this, [this]() {
-            d->_k_slotInsertRowBelow();
-        });
+        d->_k_slotInsertRowBelow();
+    });
 
-    d->actionInsertRowAbove
-        = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-row-above")),
-                      i18n("Row Above"), this);
+    d->actionInsertRowAbove = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-row-above")), i18n("Row Above"), this);
     insertMenu->addAction(d->actionInsertRowAbove);
     d->actionInsertRowAbove->setObjectName(QStringLiteral("insert_row_above"));
     connect(d->actionInsertRowAbove, &QAction::triggered, this, [this]() {
-            d->_k_slotInsertRowAbove();
-        });
+        d->_k_slotInsertRowAbove();
+    });
 
     insertMenu->addSeparator();
-    d->actionInsertColumnBefore
-        = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-column-left")),
-                      i18n("Column Before"), this);
+    d->actionInsertColumnBefore = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-column-left")), i18n("Column Before"), this);
     insertMenu->addAction(d->actionInsertColumnBefore);
     d->actionInsertColumnBefore->setObjectName(QStringLiteral("insert_column_before"));
 
     connect(d->actionInsertColumnBefore, &QAction::triggered, this, [this]() {
-            d->_k_slotInsertColumnBefore();
-        });
+        d->_k_slotInsertColumnBefore();
+    });
 
-    d->actionInsertColumnAfter
-        = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-column-right")),
-                      i18n("Column After"), this);
+    d->actionInsertColumnAfter = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-insert-column-right")), i18n("Column After"), this);
     insertMenu->addAction(d->actionInsertColumnAfter);
     d->actionInsertColumnAfter->setObjectName(QStringLiteral("insert_column_after"));
     connect(d->actionInsertColumnAfter, &QAction::triggered, this, [this]() {
-            d->_k_slotInsertColumnAfter();
-        });
+        d->_k_slotInsertColumnAfter();
+    });
 
     KActionMenu *removeMenu = new KActionMenu(i18n("Delete"), this);
     addAction(removeMenu);
@@ -462,15 +449,15 @@ TableActionMenu::TableActionMenu(QTextEdit *textEdit)
     removeMenu->addAction(d->actionRemoveRowBelow);
     d->actionRemoveRowBelow->setObjectName(QStringLiteral("remove_row_below"));
     connect(d->actionRemoveRowBelow, &QAction::triggered, this, [this]() {
-            d->_k_slotRemoveRowBelow();
-        });
+        d->_k_slotRemoveRowBelow();
+    });
 
     d->actionRemoveRowAbove = new QAction(i18n("Row Above"), this);
     removeMenu->addAction(d->actionRemoveRowAbove);
     d->actionRemoveRowAbove->setObjectName(QStringLiteral("remove_row_above"));
     connect(d->actionRemoveRowAbove, &QAction::triggered, this, [this]() {
-            d->_k_slotRemoveRowAbove();
-        });
+        d->_k_slotRemoveRowAbove();
+    });
 
     removeMenu->addSeparator();
     d->actionRemoveColumnBefore = new QAction(i18n("Column Before"), this);
@@ -478,49 +465,45 @@ TableActionMenu::TableActionMenu(QTextEdit *textEdit)
     d->actionRemoveColumnBefore->setObjectName(QStringLiteral("remove_column_before"));
 
     connect(d->actionRemoveColumnBefore, &QAction::triggered, this, [this]() {
-            d->_k_slotRemoveColumnBefore();
-        });
+        d->_k_slotRemoveColumnBefore();
+    });
 
     d->actionRemoveColumnAfter = new QAction(i18n("Column After"), this);
     removeMenu->addAction(d->actionRemoveColumnAfter);
     d->actionRemoveColumnAfter->setObjectName(QStringLiteral("remove_column_after"));
     connect(d->actionRemoveColumnAfter, &QAction::triggered, this, [this]() {
-            d->_k_slotRemoveColumnAfter();
-        });
+        d->_k_slotRemoveColumnAfter();
+    });
 
     removeMenu->addSeparator();
     d->actionRemoveCellContents = new QAction(i18n("Cell Contents"), this);
     removeMenu->addAction(d->actionRemoveCellContents);
     d->actionRemoveCellContents->setObjectName(QStringLiteral("remove_cell_contents"));
     connect(d->actionRemoveCellContents, &QAction::triggered, this, [this]() {
-            d->_k_slotRemoveCellContents();
-        });
+        d->_k_slotRemoveCellContents();
+    });
 
     addSeparator();
 
-    d->actionMergeCell
-        = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-cell-merge")),
-                      i18n("Join With Cell to the Right"), this);
+    d->actionMergeCell = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-cell-merge")), i18n("Join With Cell to the Right"), this);
     d->actionMergeCell->setObjectName(QStringLiteral("join_cell_to_the_right"));
     connect(d->actionMergeCell, &QAction::triggered, this, [this]() {
-            d->_k_slotMergeCell();
-        });
+        d->_k_slotMergeCell();
+    });
     addAction(d->actionMergeCell);
 
     d->actionMergeSelectedCells = new QAction(i18n("Join Selected Cells"), this);
     d->actionMergeSelectedCells->setObjectName(QStringLiteral("join_cell_selected_cells"));
     connect(d->actionMergeSelectedCells, &QAction::triggered, this, [this]() {
-            d->_k_slotMergeSelectedCells();
-        });
+        d->_k_slotMergeSelectedCells();
+    });
     addAction(d->actionMergeSelectedCells);
 
-    d->actionSplitCell
-        = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-cell-split")),
-                      i18n("Split cells"), this);
+    d->actionSplitCell = new QAction(QIcon::fromTheme(QStringLiteral("edit-table-cell-split")), i18n("Split cells"), this);
     d->actionSplitCell->setObjectName(QStringLiteral("split_cells"));
     connect(d->actionSplitCell, &QAction::triggered, this, [this]() {
-            d->_k_slotSplitCell();
-        });
+        d->_k_slotSplitCell();
+    });
     addAction(d->actionSplitCell);
 
     addSeparator();
@@ -528,20 +511,20 @@ TableActionMenu::TableActionMenu(QTextEdit *textEdit)
     d->actionTableFormat = new QAction(i18n("Table Format..."), this);
     d->actionTableFormat->setObjectName(QStringLiteral("table_format"));
     connect(d->actionTableFormat, &QAction::triggered, this, [this]() {
-            d->_k_slotTableFormat();
-        });
+        d->_k_slotTableFormat();
+    });
     addAction(d->actionTableFormat);
 
     d->actionTableCellFormat = new QAction(i18n("Table Cell Format..."), this);
     d->actionTableCellFormat->setObjectName(QStringLiteral("table_cell_format"));
     connect(d->actionTableCellFormat, &QAction::triggered, this, [this]() {
-            d->_k_slotTableCellFormat();
-        });
+        d->_k_slotTableCellFormat();
+    });
     addAction(d->actionTableCellFormat);
 
     connect(textEdit, &QTextEdit::cursorPositionChanged, this, [this]() {
-            d->_k_updateActions(false);
-        });
+        d->_k_updateActions(false);
+    });
     d->_k_updateActions(true);
 }
 

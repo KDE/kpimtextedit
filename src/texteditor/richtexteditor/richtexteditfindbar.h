@@ -7,12 +7,13 @@
 #ifndef RICHTEXTEDITFINDBAR_H
 #define RICHTEXTEDITFINDBAR_H
 
-#include "kpimtextedit_export.h"
 #include "kpimtextedit/texteditfindbarbase.h"
+#include "kpimtextedit_export.h"
 #include <QTextDocument>
 
 class QTextEdit;
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class RichTextEditFindBarPrivate;
 /**
  * @brief The RichTextEditFindBar class

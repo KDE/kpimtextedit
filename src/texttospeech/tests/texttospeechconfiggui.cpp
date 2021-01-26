@@ -5,12 +5,12 @@
 */
 
 #include "texttospeechconfiggui.h"
-#include "texttospeech/texttospeechconfigwidget.h"
 #include "texttospeech/texttospeech.h"
+#include "texttospeech/texttospeechconfigwidget.h"
 #include <QApplication>
 #include <QCommandLineParser>
-#include <QStandardPaths>
 #include <QHBoxLayout>
+#include <QStandardPaths>
 
 TextToSpeechConfigGui::TextToSpeechConfigGui(QWidget *parent)
     : QWidget(parent)

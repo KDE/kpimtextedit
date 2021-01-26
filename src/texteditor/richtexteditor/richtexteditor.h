@@ -12,11 +12,13 @@
 
 class QContextMenuEvent;
 class QMenu;
-namespace Sonnet {
+namespace Sonnet
+{
 class Highlighter;
 class SpellCheckDecorator;
 }
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 /**
  * @brief The RichTextEditor class
  * @author Laurent Montel <montel@kde.org>
@@ -33,14 +35,7 @@ class KPIMTEXTEDIT_EXPORT RichTextEditor : public QTextEdit
 public:
     explicit RichTextEditor(QWidget *parent = nullptr);
     ~RichTextEditor() override;
-    enum SupportFeature {
-        None = 0,
-        Search = 1,
-        SpellChecking = 2,
-        TextToSpeech = 4,
-        AllowTab = 8,
-        AllowWebShortcut = 16
-    };
+    enum SupportFeature { None = 0, Search = 1, SpellChecking = 2, TextToSpeech = 4, AllowTab = 8, AllowWebShortcut = 16 };
     Q_DECLARE_FLAGS(SupportFeatures, SupportFeature)
 
     void setSearchSupport(bool b);

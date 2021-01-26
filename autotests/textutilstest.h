@@ -18,4 +18,4 @@ private Q_SLOTS:
     void test_flowText();
 };
 
-#endif //TEXTUTILSTEST_H
+#endif // TEXTUTILSTEST_H

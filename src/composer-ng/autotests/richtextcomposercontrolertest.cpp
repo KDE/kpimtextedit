@@ -5,8 +5,8 @@
 */
 
 #include "richtextcomposercontrolertest.h"
-#include "../richtextcomposercontroler.h"
 #include "../richtextcomposer.h"
+#include "../richtextcomposercontroler.h"
 #include <KActionCollection>
 #include <QTest>
 
@@ -94,7 +94,7 @@ void RichTextComposerControlerTest::shouldBoldText()
     controler.setTextBold(true);
     QVERIFY(controler.richTextComposer()->hasFocus());
     QVERIFY(controler.richTextComposer()->acceptRichText());
-    //TODO text format.
+    // TODO text format.
 }
 
 void RichTextComposerControlerTest::shouldItalicText()
@@ -108,7 +108,7 @@ void RichTextComposerControlerTest::shouldItalicText()
     controler.setTextItalic(true);
     QVERIFY(controler.richTextComposer()->hasFocus());
     QVERIFY(controler.richTextComposer()->acceptRichText());
-    //TODO text format.
+    // TODO text format.
 }
 
 void RichTextComposerControlerTest::shouldTextUnderline()
@@ -122,7 +122,7 @@ void RichTextComposerControlerTest::shouldTextUnderline()
     controler.setTextUnderline(true);
     QVERIFY(controler.richTextComposer()->hasFocus());
     QVERIFY(controler.richTextComposer()->acceptRichText());
-    //TODO text format.
+    // TODO text format.
 }
 
 void RichTextComposerControlerTest::shouldTextStrikeOut()
@@ -136,7 +136,7 @@ void RichTextComposerControlerTest::shouldTextStrikeOut()
     controler.setTextStrikeOut(true);
     QVERIFY(controler.richTextComposer()->hasFocus());
     QVERIFY(controler.richTextComposer()->acceptRichText());
-    //TODO text format.
+    // TODO text format.
 }
 
 void RichTextComposerControlerTest::shouldFontFamily()
@@ -147,7 +147,7 @@ void RichTextComposerControlerTest::shouldFontFamily()
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
-    //TODO
+    // TODO
 }
 
 void RichTextComposerControlerTest::shouldFontSize()
@@ -158,7 +158,7 @@ void RichTextComposerControlerTest::shouldFontSize()
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
-    //TODO
+    // TODO
 }
 
 void RichTextComposerControlerTest::shouldFont()
@@ -169,7 +169,7 @@ void RichTextComposerControlerTest::shouldFont()
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
-    //TODO
+    // TODO
 }
 
 void RichTextComposerControlerTest::shouldTextSuperScript()
@@ -183,7 +183,7 @@ void RichTextComposerControlerTest::shouldTextSuperScript()
     controler.setTextSuperScript(true);
     QVERIFY(controler.richTextComposer()->hasFocus());
     QVERIFY(controler.richTextComposer()->acceptRichText());
-    //TODO
+    // TODO
 }
 
 void RichTextComposerControlerTest::shouldTextSubScript()
@@ -198,7 +198,7 @@ void RichTextComposerControlerTest::shouldTextSubScript()
     QVERIFY(controler.richTextComposer()->hasFocus());
     QVERIFY(controler.richTextComposer()->acceptRichText());
 
-    //TODO
+    // TODO
 }
 
 void RichTextComposerControlerTest::shouldRemoveQuote_data()
@@ -209,7 +209,7 @@ void RichTextComposerControlerTest::shouldRemoveQuote_data()
     QTest::newRow("withoutquote") << QStringLiteral("bli\nblo\bla\n") << QStringLiteral("bli\nblo\bla\n");
     QTest::newRow("removequote2") << QStringLiteral(">foo\n>bla\n>blo") << QStringLiteral("foo\nbla\nblo");
     QTest::newRow("empty") << QString() << QString();
-    //Bug David, new line with quote
+    // Bug David, new line with quote
     QTest::newRow("removequotewithnewline") << QStringLiteral(">foo\n>\n>bla\n>blo\n") << QStringLiteral("foo\n\nbla\nblo\n");
 
     QTest::newRow("removequote2") << QStringLiteral(">foo\n\nbla\n>blo\nbli") << QStringLiteral("foo\n\nbla\nblo\nbli");
@@ -269,32 +269,32 @@ void RichTextComposerControlerTest::shouldRemoveQuoteWithSpecificQuote()
 
 void RichTextComposerControlerTest::shouldAddQuote_data()
 {
-//    QTest::addColumn<QString>("input");
-//    QTest::addColumn<QString>("output");
-//    QTest::addColumn<QString>("quote");
-//    QTest::newRow("empty") << QString() << QString() << QString();
-//    QTest::newRow("empty1") << QString() << QString() << QStringLiteral("QT");
-//    QTest::newRow("removequote1") << QStringLiteral(">foo\n>bla\n>blo\n") << QStringLiteral("QT>foo\nQT>bla\nQT>blo\n") << QStringLiteral("QT");
-//    QTest::newRow("removequote2") << QStringLiteral("QTfoo\nQTbla\n>blo\n") << QStringLiteral("QTQTfoo\nQTQTbla\n>QTblo\n") << QStringLiteral("QT");
-//    QTest::newRow("removequote3") << QStringLiteral("|foo\n|bla\n>blo\n") << QStringLiteral("||foo\n||bla\n|>blo\n") << QStringLiteral("|");
+    //    QTest::addColumn<QString>("input");
+    //    QTest::addColumn<QString>("output");
+    //    QTest::addColumn<QString>("quote");
+    //    QTest::newRow("empty") << QString() << QString() << QString();
+    //    QTest::newRow("empty1") << QString() << QString() << QStringLiteral("QT");
+    //    QTest::newRow("removequote1") << QStringLiteral(">foo\n>bla\n>blo\n") << QStringLiteral("QT>foo\nQT>bla\nQT>blo\n") << QStringLiteral("QT");
+    //    QTest::newRow("removequote2") << QStringLiteral("QTfoo\nQTbla\n>blo\n") << QStringLiteral("QTQTfoo\nQTQTbla\n>QTblo\n") << QStringLiteral("QT");
+    //    QTest::newRow("removequote3") << QStringLiteral("|foo\n|bla\n>blo\n") << QStringLiteral("||foo\n||bla\n|>blo\n") << QStringLiteral("|");
 }
 
 void RichTextComposerControlerTest::shouldAddQuote()
 {
-//    QFETCH(QString, input);
-//    QFETCH(QString, output);
-//    QFETCH(QString, quote);
-//    KPIMTextEdit::RichTextComposer composer;
-//    composer.setQuotePrefixName(quote);
-//    KActionCollection *actionCollection = new KActionCollection(&composer);
-//    composer.createActions(actionCollection);
-//    KPIMTextEdit::RichTextComposerControler controler(&composer);
-//    composer.show();
-//    QVERIFY(QTest::qWaitForWindowExposed(&composer));
+    //    QFETCH(QString, input);
+    //    QFETCH(QString, output);
+    //    QFETCH(QString, quote);
+    //    KPIMTextEdit::RichTextComposer composer;
+    //    composer.setQuotePrefixName(quote);
+    //    KActionCollection *actionCollection = new KActionCollection(&composer);
+    //    composer.createActions(actionCollection);
+    //    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    //    composer.show();
+    //    QVERIFY(QTest::qWaitForWindowExposed(&composer));
 
-//    composer.setPlainText(input);
-//    controler.slotAddQuotes();
-//    QCOMPARE(composer.toPlainText(), QString(output + QChar::ParagraphSeparator));
+    //    composer.setPlainText(input);
+    //    controler.slotAddQuotes();
+    //    QCOMPARE(composer.toPlainText(), QString(output + QChar::ParagraphSeparator));
 }
 
 QTEST_MAIN(RichTextComposerControlerTest)

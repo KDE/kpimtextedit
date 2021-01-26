@@ -7,10 +7,11 @@
 #ifndef TEXTTOSPEECHWIDGET_H
 #define TEXTTOSPEECHWIDGET_H
 
-#include <QWidget>
 #include "kpimtextedit_export.h"
 #include "texttospeech.h"
-namespace KPIMTextEdit {
+#include <QWidget>
+namespace KPIMTextEdit
+{
 class AbstractTextToSpeechInterface;
 class TextToSpeechWidgetPrivate;
 /**
@@ -24,11 +25,7 @@ public:
     explicit TextToSpeechWidget(QWidget *parent = nullptr);
     ~TextToSpeechWidget();
 
-    enum State {
-        Stop = 0,
-        Play,
-        Pause
-    };
+    enum State { Stop = 0, Play, Pause };
     Q_ENUM(State)
 
     Q_REQUIRED_RESULT State state() const;

@@ -7,9 +7,10 @@
 #ifndef RICHTEXTCOMPOSERWIDGET_H
 #define RICHTEXTCOMPOSERWIDGET_H
 
-#include <QWidget>
 #include "kpimtextedit_export.h"
-namespace KPIMTextEdit {
+#include <QWidget>
+namespace KPIMTextEdit
+{
 class RichTextComposerWidgetPrivate;
 class RichTextComposer;
 /**
@@ -25,6 +26,7 @@ public:
     ~RichTextComposerWidget();
 
     Q_REQUIRED_RESULT KPIMTextEdit::RichTextComposer *richTextComposer() const;
+
 private:
     RichTextComposerWidgetPrivate *const d;
 };

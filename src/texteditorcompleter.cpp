@@ -5,12 +5,12 @@
  */
 
 #include "texteditorcompleter.h"
+#include <QAbstractItemView>
 #include <QCompleter>
 #include <QPlainTextEdit>
+#include <QScrollBar>
 #include <QStringListModel>
 #include <QTextEdit>
-#include <QScrollBar>
-#include <QAbstractItemView>
 
 using namespace KPIMTextEdit;
 
@@ -60,7 +60,7 @@ void TextEditorCompleter::TextEditorCompleterPrivate::createCompleter()
 
 QString TextEditorCompleter::TextEditorCompleterPrivate::wordUnderCursor() const
 {
-    static QString eow = QStringLiteral("~!@#$%^&*()+{}|\"<>,./;'[]\\-= ");   // everything without ':', '?' and '_'
+    static QString eow = QStringLiteral("~!@#$%^&*()+{}|\"<>,./;'[]\\-= "); // everything without ':', '?' and '_'
     QTextCursor tc;
     QTextDocument *document = nullptr;
     if (plainTextEdit) {
@@ -77,8 +77,7 @@ QString TextEditorCompleter::TextEditorCompleterPrivate::wordUnderCursor() const
         // vHanda: I don't understand why the cursor seems to give a pos 1 past the last char instead
         // of just the last char.
         int pos = tc.position() - 1;
-        if (pos < 0 || eowStr.contains(document->characterAt(pos))
-            || document->characterAt(pos) == QChar(QChar::LineSeparator)
+        if (pos < 0 || eowStr.contains(document->characterAt(pos)) || document->characterAt(pos) == QChar(QChar::LineSeparator)
             || document->characterAt(pos) == QChar(QChar::ParagraphSeparator)) {
             break;
         }
@@ -124,8 +123,7 @@ void TextEditorCompleter::TextEditorCompleterPrivate::completeText()
     } else {
         cr = textEdit->cursorRect();
     }
-    cr.setWidth(completer->popup()->sizeHintForColumn(0)
-                + completer->popup()->verticalScrollBar()->sizeHint().width());
+    cr.setWidth(completer->popup()->sizeHintForColumn(0) + completer->popup()->verticalScrollBar()->sizeHint().width());
     completer->complete(cr);
 }
 

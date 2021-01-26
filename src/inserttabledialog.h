@@ -12,7 +12,8 @@
 
 #include <QTextLength>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class InsertTableDialog : public QDialog
 {
     Q_OBJECT

@@ -7,12 +7,13 @@
 #ifndef KPIMTEXTEDIT_FINDBARBASE_H
 #define KPIMTEXTEDIT_FINDBARBASE_H
 
-#include "kpimtextedit_export.h"
 #include "kpimtextedit/texteditfindbarbase.h"
+#include "kpimtextedit_export.h"
 #include <QTextDocument>
 
 class QPlainTextEdit;
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class PlainTextEditFindBarPrivate;
 /**
  * @brief The PlainTextEditFindBar class

@@ -8,7 +8,8 @@
 #define TEXTTOSPEECHWIDGETTEST_H
 
 #include <QObject>
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class TextToSpeechWidget;
 }
 class TextToSpeechWidgetTest : public QObject

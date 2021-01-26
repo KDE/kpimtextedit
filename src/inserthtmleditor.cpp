@@ -6,16 +6,16 @@
 */
 
 #include "inserthtmleditor.h"
-#include "texteditorcompleter.h"
 #include "kpimtextedit_debug.h"
+#include "texteditorcompleter.h"
 
-#include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Definition>
+#include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Theme>
 
-#include <QStringList>
-#include <QCompleter>
 #include <QAbstractItemView>
+#include <QCompleter>
+#include <QStringList>
 
 using namespace KPIMTextEdit;
 
@@ -28,14 +28,13 @@ InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
     }
 
     auto *hl = new KSyntaxHighlighting::SyntaxHighlighter(document());
-    hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
-                 ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
-                 : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
+    hl->setTheme((palette().color(QPalette::Base).lightness() < 128) ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+                                                                     : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     hl->setDefinition(def);
     setFocus();
     mTextEditorCompleter = new KPIMTextEdit::TextEditorCompleter(this, this);
-    const QStringList completerList = { QStringLiteral("<b></b>"), QStringLiteral("<i></i>"), QStringLiteral("<u></u>")};
-    //Add more
+    const QStringList completerList = {QStringLiteral("<b></b>"), QStringLiteral("<i></i>"), QStringLiteral("<u></u>")};
+    // Add more
     mTextEditorCompleter->setCompleterStringList(completerList);
     mTextEditorCompleter->setExcludeOfCharacters(QStringLiteral("~!@#$%^&*()+{}|,./;'[]\\-= "));
 }

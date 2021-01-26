@@ -17,8 +17,8 @@ class QTextTableCell;
 class QTextList;
 class QTextCharFormat;
 
-namespace KPIMTextEdit {
-
+namespace KPIMTextEdit
+{
 class MarkupDirectorPrivate;
 class AbstractMarkupBuilder;
 
@@ -96,8 +96,7 @@ public:
     Directs the builder to create output for the single @p frame. If calling
     this method directly, an invalid QTextFrame::iterator may be used.
   */
-    virtual Q_REQUIRED_RESULT QTextFrame::iterator processFrame(QTextFrame::iterator it,
-                                              QTextFrame *frame);
+    virtual Q_REQUIRED_RESULT QTextFrame::iterator processFrame(QTextFrame::iterator it, QTextFrame *frame);
 
     /**
     Directs the builder to create output for the single @p block. If calling
@@ -106,8 +105,7 @@ public:
     This method does not process the contents of the @p block, but uses the
     @ref processBlockContents method to do so.
   */
-    virtual Q_REQUIRED_RESULT QTextFrame::iterator processBlock(QTextFrame::iterator it,
-                                              const QTextBlock &block);
+    virtual Q_REQUIRED_RESULT QTextFrame::iterator processBlock(QTextFrame::iterator it, const QTextBlock &block);
 
     /**
     Directs the builder to create output for the single @p textObject. If
@@ -115,9 +113,7 @@ public:
 
     The block @p block is the container of the @p textObject.
   */
-    virtual Q_REQUIRED_RESULT QTextFrame::iterator processObject(QTextFrame::iterator it,
-                                               const QTextBlock &block,
-                                               QTextObject *textObject);
+    virtual Q_REQUIRED_RESULT QTextFrame::iterator processObject(QTextFrame::iterator it, const QTextBlock &block, QTextObject *textObject);
 
     /**
     Directs the builder to create output for the single @p textBlockGroup. If
@@ -126,8 +122,7 @@ public:
     The block @p block is the first block in the @p textBlockGroup.
   */
     virtual Q_REQUIRED_RESULT QPair<QTextFrame::iterator, QTextBlock>
-    processBlockGroup(const QTextFrame::iterator &it, const QTextBlock &block,
-                      QTextBlockGroup *textBlockGroup);
+    processBlockGroup(const QTextFrame::iterator &it, const QTextBlock &block, QTextBlockGroup *textBlockGroup);
 
     /**
     Directs the builder to create output for the single @p textList. If
@@ -135,33 +130,27 @@ public:
 
     The block @p block is the first block in the @p textList.
   */
-    virtual Q_REQUIRED_RESULT QPair<QTextFrame::iterator, QTextBlock>
-    processList(QTextFrame::iterator it, const QTextBlock &block,
-                QTextList *textList);
+    virtual Q_REQUIRED_RESULT QPair<QTextFrame::iterator, QTextBlock> processList(QTextFrame::iterator it, const QTextBlock &block, QTextList *textList);
 
     /**
     Directs the builder to create output for the contents of the single @p
     block. If calling this method directly, an invalid QTextFrame::iterator
     may be used.
   */
-    virtual Q_REQUIRED_RESULT QTextFrame::iterator processBlockContents(QTextFrame::iterator it,
-                                                      const QTextBlock &block);
+    virtual Q_REQUIRED_RESULT QTextFrame::iterator processBlockContents(QTextFrame::iterator it, const QTextBlock &block);
 
     /**
     Hook for instructing the builder to create output for the @p fragemnt with
     a custom type. @p doc is the document the fragment is in.
   */
-    virtual void processCustomFragment(const QTextFragment &fragment,
-                                       QTextDocument const *doc);
+    virtual void processCustomFragment(const QTextFragment &fragment, QTextDocument const *doc);
 
     /**
     Directs the builder to create output for the contents of the single @p
     fragment. If calling this method directly, an invalid QTextBlock::iterator
     may be used. @p doc is the document the fragment is in.
   */
-    virtual Q_REQUIRED_RESULT QTextBlock::iterator processFragment(QTextBlock::iterator it,
-                                                 const QTextFragment &fragment,
-                                                 QTextDocument const *doc);
+    virtual Q_REQUIRED_RESULT QTextBlock::iterator processFragment(QTextBlock::iterator it, const QTextFragment &fragment, QTextDocument const *doc);
 
     /**
     Directs the builder to create output for the contents of the single @p
@@ -171,9 +160,7 @@ public:
     If calling this method directly, an invalid QTextBlock::iterator may be
     used.
   */
-    virtual Q_REQUIRED_RESULT QTextBlock::iterator
-    processCharTextObject(QTextBlock::iterator it, const QTextFragment &fragment,
-                          QTextObject *textObject);
+    virtual Q_REQUIRED_RESULT QTextBlock::iterator processCharTextObject(QTextBlock::iterator it, const QTextFragment &fragment, QTextObject *textObject);
 
     /**
     Directs the builder to create output for the image represented by the @p
@@ -182,9 +169,7 @@ public:
     If calling this method directly, an invalid QTextBlock::iterator may be
     used. @p doc is the document the fragment is in.
   */
-    virtual Q_REQUIRED_RESULT QTextBlock::iterator processImage(QTextBlock::iterator it,
-                                              const QTextImageFormat &imageFormat,
-                                              QTextDocument const *doc);
+    virtual Q_REQUIRED_RESULT QTextBlock::iterator processImage(QTextBlock::iterator it, const QTextImageFormat &imageFormat, QTextDocument const *doc);
 
     /**
     Directs the builder to create output for the contents of the single @p
@@ -193,22 +178,19 @@ public:
     If calling this method directly, an invalid QTextFrame::iterator may be
     used.
   */
-    virtual Q_REQUIRED_RESULT QTextFrame::iterator processTable(QTextFrame::iterator it,
-                                              QTextTable *table);
+    virtual Q_REQUIRED_RESULT QTextFrame::iterator processTable(QTextFrame::iterator it, QTextTable *table);
 
     /**
     Directs the builder to create output for the contents of the single @p
     tableCell. The tableCell is in the @p table.
   */
-    virtual void processTableCell(const QTextTableCell &tableCell,
-                                  QTextTable *table);
+    virtual void processTableCell(const QTextTableCell &tableCell, QTextTable *table);
 
 protected:
     /**
     Processes the document between @p begin and @p end
   */
-    void processDocumentContents(QTextFrame::iterator begin,
-                                 const QTextFrame::iterator &end);
+    void processDocumentContents(QTextFrame::iterator begin, const QTextFrame::iterator &end);
 
     /**
     Iterates the iterator @p it to the first block after @p blockGroup. @p
@@ -217,9 +199,7 @@ protected:
     The return pair is the iterator pointing after the end of @p blockGroup
     and the first block after @p blockGroup.
   */
-    Q_REQUIRED_RESULT QPair<QTextFrame::iterator, QTextBlock>
-    skipBlockGroup(QTextFrame::iterator it, const QTextBlock &_block,
-                   QTextBlockGroup *blockGroup);
+    Q_REQUIRED_RESULT QPair<QTextFrame::iterator, QTextBlock> skipBlockGroup(QTextFrame::iterator it, const QTextBlock &_block, QTextBlockGroup *blockGroup);
 
     /**
     Returns a list of tags contained in @p openingTags sorted so they can be
@@ -228,8 +208,7 @@ protected:
     @p openingTags should be a set of tags opened at the fragment pointed to
     by @p it.
   */
-    Q_REQUIRED_RESULT QList<int> sortOpeningOrder(QSet<int> openingTags,
-                                QTextBlock::iterator it) const;
+    Q_REQUIRED_RESULT QList<int> sortOpeningOrder(QSet<int> openingTags, QTextBlock::iterator it) const;
 
     /**
     Directs the builder to close the appropriate tags at the position of @p
@@ -256,18 +235,18 @@ protected:
     Flags for the tags that may be open.
   */
     enum OpenElementValues {
-        None = 0x0,               /// No tags are open
-        SuperScript = 0x01,       /// A superscript tag is open
-        SubScript = 0x02,         /// A subscript tag is open
-        Anchor = 0x04,            /// An anchor tag is open
-        SpanForeground = 0x08,    /// A foreground altering span tag is open.
-        SpanBackground = 0x10,    /// A background altering span tag is open.
-        SpanFontFamily = 0x20,    /// A font family altering span tag is open.
+        None = 0x0, /// No tags are open
+        SuperScript = 0x01, /// A superscript tag is open
+        SubScript = 0x02, /// A subscript tag is open
+        Anchor = 0x04, /// An anchor tag is open
+        SpanForeground = 0x08, /// A foreground altering span tag is open.
+        SpanBackground = 0x10, /// A background altering span tag is open.
+        SpanFontFamily = 0x20, /// A font family altering span tag is open.
         SpanFontPointSize = 0x40, /// A font size altering span tag is open.
-        Strong = 0x80,            /// A strong tag is open.
-        Emph = 0x100,             /// A emphasis tag is open.
-        Underline = 0x200,        /// An underline tag is open.
-        StrikeOut = 0x400         /// A strikeout tag is open.
+        Strong = 0x80, /// A strong tag is open.
+        Emph = 0x100, /// A emphasis tag is open.
+        Underline = 0x200, /// An underline tag is open.
+        StrikeOut = 0x400 /// A strikeout tag is open.
     };
 
 protected:
@@ -289,4 +268,3 @@ private:
 }
 
 #endif
-

@@ -71,7 +71,8 @@ void TextToSpeechActions::setState(TextToSpeechWidget::State state)
 
 void TextToSpeechActionsPrivate::updateButtonState()
 {
-    mPlayPauseAction->setIcon(QIcon::fromTheme((mState == TextToSpeechWidget::Stop) ? QStringLiteral("media-playback-start") : QStringLiteral("media-playback-pause")));
+    mPlayPauseAction->setIcon(
+        QIcon::fromTheme((mState == TextToSpeechWidget::Stop) ? QStringLiteral("media-playback-start") : QStringLiteral("media-playback-pause")));
     mPlayPauseAction->setEnabled((mState != TextToSpeechWidget::Stop));
     const QString text = (mState != TextToSpeechWidget::Play) ? i18n("Pause") : i18n("Play");
     mPlayPauseAction->setToolTip(text);

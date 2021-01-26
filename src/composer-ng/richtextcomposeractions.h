@@ -7,13 +7,14 @@
 #ifndef KPIMTEXTEDITRICHTEXTCOMPOSERACTIONS_H
 #define KPIMTEXTEDITRICHTEXTCOMPOSERACTIONS_H
 
-#include <QObject>
 #include "kpimtextedit_export.h"
 #include "richtextcomposer.h"
+#include <QObject>
 class KActionCollection;
 class QTextCharFormat;
 class QAction;
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class RichTextComposerControler;
 /**
  * @brief The RichTextComposerActions class

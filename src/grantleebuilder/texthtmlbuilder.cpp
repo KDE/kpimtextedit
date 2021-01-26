@@ -7,21 +7,24 @@
 
 #include "texthtmlbuilder.h"
 
+#include <QDebug>
 #include <QList>
 #include <QTextDocument>
-#include <QDebug>
 
 namespace KPIMTextEdit
 {
 class TextHTMLBuilderPrivate
 {
 public:
-    TextHTMLBuilderPrivate(TextHTMLBuilder *b) : q_ptr(b) {}
+    TextHTMLBuilderPrivate(TextHTMLBuilder *b)
+        : q_ptr(b)
+    {
+    }
 
     QList<QTextListFormat::Style> currentListItemStyles;
     QString m_text;
 
-    TextHTMLBuilder * const q_ptr;
+    TextHTMLBuilder *const q_ptr;
 
     Q_DECLARE_PUBLIC(TextHTMLBuilder)
 };
@@ -29,7 +32,8 @@ public:
 
 using namespace KPIMTextEdit;
 TextHTMLBuilder::TextHTMLBuilder()
-    : AbstractMarkupBuilder(), d_ptr(new TextHTMLBuilderPrivate(this))
+    : AbstractMarkupBuilder()
+    , d_ptr(new TextHTMLBuilderPrivate(this))
 {
 }
 
@@ -89,8 +93,7 @@ void TextHTMLBuilder::endStrikeout()
 void TextHTMLBuilder::beginForeground(const QBrush &brush)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(
-                QStringLiteral("<span style=\"color:%1;\">").arg(brush.color().name()));
+    d->m_text.append(QStringLiteral("<span style=\"color:%1;\">").arg(brush.color().name()));
 }
 
 void TextHTMLBuilder::endForeground()
@@ -102,8 +105,7 @@ void TextHTMLBuilder::endForeground()
 void TextHTMLBuilder::beginBackground(const QBrush &brush)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<span style=\"background-color:%1;\">")
-                     .arg(brush.color().name()));
+    d->m_text.append(QStringLiteral("<span style=\"background-color:%1;\">").arg(brush.color().name()));
 }
 
 void TextHTMLBuilder::endBackground()
@@ -117,8 +119,7 @@ void TextHTMLBuilder::beginAnchor(const QString &href, const QString &name)
     Q_D(TextHTMLBuilder);
     if (!href.isEmpty()) {
         if (!name.isEmpty()) {
-            d->m_text.append(
-                        QStringLiteral("<a href=\"%1\" name=\"%2\">").arg(href, name));
+            d->m_text.append(QStringLiteral("<a href=\"%1\" name=\"%2\">").arg(href, name));
         } else {
             d->m_text.append(QStringLiteral("<a href=\"%1\">").arg(href));
         }
@@ -138,8 +139,7 @@ void TextHTMLBuilder::endAnchor()
 void TextHTMLBuilder::beginFontFamily(const QString &family)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(
-                QStringLiteral("<span style=\"font-family:%1;\">").arg(family));
+    d->m_text.append(QStringLiteral("<span style=\"font-family:%1;\">").arg(family));
 }
 
 void TextHTMLBuilder::endFontFamily()
@@ -151,8 +151,7 @@ void TextHTMLBuilder::endFontFamily()
 void TextHTMLBuilder::beginFontPointSize(int size)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<span style=\"font-size:%1pt;\">")
-                     .arg(QString::number(size)));
+    d->m_text.append(QStringLiteral("<span style=\"font-size:%1pt;\">").arg(QString::number(size)));
 }
 
 void TextHTMLBuilder::endFontPointSize()
@@ -161,9 +160,7 @@ void TextHTMLBuilder::endFontPointSize()
     d->m_text.append(QStringLiteral("</span>"));
 }
 
-void TextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin,
-                                     qreal bottomMargin, qreal leftMargin,
-                                     qreal rightMargin)
+void TextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin, qreal bottomMargin, qreal leftMargin, qreal rightMargin)
 {
     Q_D(TextHTMLBuilder);
     // Don't put paragraph tags inside li tags. Qt bug reported.
@@ -190,7 +187,7 @@ void TextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin,
     } else {
         d->m_text.append(QStringLiteral("<p"));
     }
-    //Bug in grantlee => style is not defined
+    // Bug in grantlee => style is not defined
     if (!styleString.isEmpty()) {
         d->m_text.append(QStringLiteral(" style=\"") + styleString + QLatin1Char('"'));
     }
@@ -376,16 +373,14 @@ void TextHTMLBuilder::endSubscript()
     d->m_text.append(QStringLiteral("</sub>"));
 }
 
-void TextHTMLBuilder::beginTable(qreal cellpadding, qreal cellspacing,
-                                 const QString &width)
+void TextHTMLBuilder::beginTable(qreal cellpadding, qreal cellspacing, const QString &width)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(
-                QStringLiteral("<table cellpadding=\"%1\" cellspacing=\"%2\" "
-                               "width=\"%3\" border=\"1\">")
-                .arg(cellpadding)
-                .arg(cellspacing)
-                .arg(width));
+    d->m_text.append(QStringLiteral("<table cellpadding=\"%1\" cellspacing=\"%2\" "
+                                    "width=\"%3\" border=\"1\">")
+                         .arg(cellpadding)
+                         .arg(cellspacing)
+                         .arg(width));
 }
 
 void TextHTMLBuilder::beginTableRow()
@@ -394,26 +389,16 @@ void TextHTMLBuilder::beginTableRow()
     d->m_text.append(QStringLiteral("<tr>"));
 }
 
-void TextHTMLBuilder::beginTableHeaderCell(const QString &width, int colspan,
-                                           int rowspan)
+void TextHTMLBuilder::beginTableHeaderCell(const QString &width, int colspan, int rowspan)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(
-                QStringLiteral("<th width=\"%1\" colspan=\"%2\" rowspan=\"%3\">")
-                .arg(width)
-                .arg(colspan)
-                .arg(rowspan));
+    d->m_text.append(QStringLiteral("<th width=\"%1\" colspan=\"%2\" rowspan=\"%3\">").arg(width).arg(colspan).arg(rowspan));
 }
 
-void TextHTMLBuilder::beginTableCell(const QString &width, int colspan,
-                                     int rowspan)
+void TextHTMLBuilder::beginTableCell(const QString &width, int colspan, int rowspan)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(
-                QStringLiteral("<td width=\"%1\" colspan=\"%2\" rowspan=\"%3\">")
-                .arg(width)
-                .arg(colspan)
-                .arg(rowspan));
+    d->m_text.append(QStringLiteral("<td width=\"%1\" colspan=\"%2\" rowspan=\"%3\">").arg(width).arg(colspan).arg(rowspan));
 }
 
 void TextHTMLBuilder::endTable()

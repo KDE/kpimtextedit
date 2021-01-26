@@ -10,7 +10,8 @@
 #include "kpimtextedit_export.h"
 #include <QWidget>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class PlainTextEditor;
 class PlainTextEditorWidgetPrivate;
 /**
@@ -43,6 +44,7 @@ private Q_SLOTS:
     void slotReplace();
 
     void slotHideFindBar();
+
 private:
     void init(PlainTextEditor *customEditor = nullptr);
     PlainTextEditorWidgetPrivate *const d;

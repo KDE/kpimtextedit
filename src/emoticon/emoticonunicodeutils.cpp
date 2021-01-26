@@ -9,7 +9,7 @@ using namespace KPIMTextEdit;
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeFlagsEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":chequered_flag:"), QString::fromUtf16(u"\U0001F3C1")},
         {QStringLiteral(":triangular_flag:"), QString::fromUtf16(u"\U0001F6A9")},
         {QStringLiteral(":crossed_flags:"), QString::fromUtf16(u"\U0001F38C")},
@@ -283,7 +283,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeFlags
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeFaceEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":grinning_face:"), QString::fromUtf16(u"\U0001F600")},
         {QStringLiteral(":grinning_face_with_big_eyes:"), QString::fromUtf16(u"\U0001F603")},
         {QStringLiteral(":grinning_face_with_smiling_eyes:"), QString::fromUtf16(u"\U0001F604")},
@@ -404,119 +404,117 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeFaceE
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeAnimalsEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
-        {QStringLiteral(":monkey_face:"), QString::fromUtf16(u"\U0001F435")},
-        {QStringLiteral(":monkey:"), QString::fromUtf16(u"\U0001F412")},
-        {QStringLiteral(":gorilla:"), QString::fromUtf16(u"\U0001F98D")},
-        {QStringLiteral(":orangutan:"), QString::fromUtf16(u"\U0001F9A7")},
-        {QStringLiteral(":dog_face:"), QString::fromUtf16(u"\U0001F436")},
-        {QStringLiteral(":dog:"), QString::fromUtf16(u"\U0001F415")},
-        {QStringLiteral(":guide_dog:"), QString::fromUtf16(u"\U0001F9AE")},
-        {QStringLiteral(":service_dog:"), QString::fromUtf16(u"\U0001F415\U0000200D\U0001F9BA")},
-        {QStringLiteral(":poodle:"), QString::fromUtf16(u"\U0001F429")},
-        {QStringLiteral(":wolf:"), QString::fromUtf16(u"\U0001F43A")},
-        {QStringLiteral(":fox:"), QString::fromUtf16(u"\U0001F98A")},
-        {QStringLiteral(":raccoon:"), QString::fromUtf16(u"\U0001F99D")},
-        {QStringLiteral(":cat_face:"), QString::fromUtf16(u"\U0001F431")},
-        {QStringLiteral(":cat:"), QString::fromUtf16(u"\U0001F408")},
-        {QStringLiteral(":lion:"), QString::fromUtf16(u"\U0001F981")},
-        {QStringLiteral(":tiger_face:"), QString::fromUtf16(u"\U0001F42F")},
-        {QStringLiteral(":tiger:"), QString::fromUtf16(u"\U0001F405")},
-        {QStringLiteral(":leopard:"), QString::fromUtf16(u"\U0001F406")},
-        {QStringLiteral(":horse_face:"), QString::fromUtf16(u"\U0001F434")},
-        {QStringLiteral(":horse:"), QString::fromUtf16(u"\U0001F40E")},
-        {QStringLiteral(":unicorn:"), QString::fromUtf16(u"\U0001F984")},
-        {QStringLiteral(":zebra:"), QString::fromUtf16(u"\U0001F993")},
-        {QStringLiteral(":deer:"), QString::fromUtf16(u"\U0001F98C")},
-        {QStringLiteral(":cow_face:"), QString::fromUtf16(u"\U0001F42E")},
-        {QStringLiteral(":ox:"), QString::fromUtf16(u"\U0001F402")},
-        {QStringLiteral(":water_buffalo:"), QString::fromUtf16(u"\U0001F403")},
-        {QStringLiteral(":cow:"), QString::fromUtf16(u"\U0001F404")},
-        {QStringLiteral(":pig_face:"), QString::fromUtf16(u"\U0001F437")},
-        {QStringLiteral(":pig:"), QString::fromUtf16(u"\U0001F416")},
-        {QStringLiteral(":boar:"), QString::fromUtf16(u"\U0001F417")},
-        {QStringLiteral(":pig_nose:"), QString::fromUtf16(u"\U0001F43D")},
-        {QStringLiteral(":ram:"), QString::fromUtf16(u"\U0001F40F")},
-        {QStringLiteral(":ewe:"), QString::fromUtf16(u"\U0001F411")},
-        {QStringLiteral(":goat:"), QString::fromUtf16(u"\U0001F410")},
-        {QStringLiteral(":camel:"), QString::fromUtf16(u"\U0001F42A")},
-        {QStringLiteral(":two-hump_camel:"), QString::fromUtf16(u"\U0001F42B")},
-        {QStringLiteral(":llama:"), QString::fromUtf16(u"\U0001F999")},
-        {QStringLiteral(":giraffe:"), QString::fromUtf16(u"\U0001F992")},
-        {QStringLiteral(":elephant:"), QString::fromUtf16(u"\U0001F418")},
-        {QStringLiteral(":rhinoceros:"), QString::fromUtf16(u"\U0001F98F")},
-        {QStringLiteral(":hippopotamus:"), QString::fromUtf16(u"\U0001F99B")},
-        {QStringLiteral(":mouse_face:"), QString::fromUtf16(u"\U0001F42D")},
-        {QStringLiteral(":mouse:"), QString::fromUtf16(u"\U0001F401")},
-        {QStringLiteral(":rat:"), QString::fromUtf16(u"\U0001F400")},
-        {QStringLiteral(":hamster:"), QString::fromUtf16(u"\U0001F439")},
-        {QStringLiteral(":rabbit_face:"), QString::fromUtf16(u"\U0001F430")},
-        {QStringLiteral(":rabbit:"), QString::fromUtf16(u"\U0001F407")},
-        {QStringLiteral(":chipmunk:"), QString::fromUtf16(u"\U0001F43F")},
-        {QStringLiteral(":hedgehog:"), QString::fromUtf16(u"\U0001F994")},
-        {QStringLiteral(":bat:"), QString::fromUtf16(u"\U0001F987")},
-        {QStringLiteral(":bear:"), QString::fromUtf16(u"\U0001F43B")},
-        {QStringLiteral(":koala:"), QString::fromUtf16(u"\U0001F428")},
-        {QStringLiteral(":panda:"), QString::fromUtf16(u"\U0001F43C")},
-        {QStringLiteral(":sloth:"), QString::fromUtf16(u"\U0001F9A5")},
-        {QStringLiteral(":otter:"), QString::fromUtf16(u"\U0001F9A6")},
-        {QStringLiteral(":skunk:"), QString::fromUtf16(u"\U0001F9A8")},
-        {QStringLiteral(":kangaroo:"), QString::fromUtf16(u"\U0001F998")},
-        {QStringLiteral(":badger:"), QString::fromUtf16(u"\U0001F9A1")},
-        {QStringLiteral(":paw_prints:"), QString::fromUtf16(u"\U0001F43E")},
-        {QStringLiteral(":turkey:"), QString::fromUtf16(u"\U0001F983")},
-        {QStringLiteral(":chicken:"), QString::fromUtf16(u"\U0001F414")},
-        {QStringLiteral(":rooster:"), QString::fromUtf16(u"\U0001F413")},
-        {QStringLiteral(":hatching_chick:"), QString::fromUtf16(u"\U0001F423")},
-        {QStringLiteral(":baby_chick:"), QString::fromUtf16(u"\U0001F424")},
-        {QStringLiteral(":front-facing_baby_chick:"), QString::fromUtf16(u"\U0001F425")},
-        {QStringLiteral(":bird:"), QString::fromUtf16(u"\U0001F426")},
-        {QStringLiteral(":penguin:"), QString::fromUtf16(u"\U0001F427")},
-        {QStringLiteral(":dove:"), QString::fromUtf16(u"\U0001F54A")},
-        {QStringLiteral(":eagle:"), QString::fromUtf16(u"\U0001F985")},
-        {QStringLiteral(":duck:"), QString::fromUtf16(u"\U0001F986")},
-        {QStringLiteral(":swan:"), QString::fromUtf16(u"\U0001F9A2")},
-        {QStringLiteral(":owl:"), QString::fromUtf16(u"\U0001F989")},
-        {QStringLiteral(":flamingo:"), QString::fromUtf16(u"\U0001F9A9")},
-        {QStringLiteral(":peacock:"), QString::fromUtf16(u"\U0001F99A")},
-        {QStringLiteral(":parrot:"), QString::fromUtf16(u"\U0001F99C")},
-        {QStringLiteral(":frog:"), QString::fromUtf16(u"\U0001F438")},
-        {QStringLiteral(":crocodile:"), QString::fromUtf16(u"\U0001F40A")},
-        {QStringLiteral(":turtle:"), QString::fromUtf16(u"\U0001F422")},
-        {QStringLiteral(":lizard:"), QString::fromUtf16(u"\U0001F98E")},
-        {QStringLiteral(":snake:"), QString::fromUtf16(u"\U0001F40D")},
-        {QStringLiteral(":dragon_face:"), QString::fromUtf16(u"\U0001F432")},
-        {QStringLiteral(":dragon:"), QString::fromUtf16(u"\U0001F409")},
-        {QStringLiteral(":sauropod:"), QString::fromUtf16(u"\U0001F995")},
-        {QStringLiteral(":T-Rex:"), QString::fromUtf16(u"\U0001F996")},
-        {QStringLiteral(":spouting_whale:"), QString::fromUtf16(u"\U0001F433")},
-        {QStringLiteral(":whale:"), QString::fromUtf16(u"\U0001F40B")},
-        {QStringLiteral(":dolphin:"), QString::fromUtf16(u"\U0001F42C")},
-        {QStringLiteral(":fish:"), QString::fromUtf16(u"\U0001F41F")},
-        {QStringLiteral(":tropical_fish:"), QString::fromUtf16(u"\U0001F420")},
-        {QStringLiteral(":blowfish:"), QString::fromUtf16(u"\U0001F421")},
-        {QStringLiteral(":shark:"), QString::fromUtf16(u"\U0001F988")},
-        {QStringLiteral(":octopus:"), QString::fromUtf16(u"\U0001F419")},
-        {QStringLiteral(":spiral_shell:"), QString::fromUtf16(u"\U0001F41A")},
-        {QStringLiteral(":snail:"), QString::fromUtf16(u"\U0001F40C")},
-        {QStringLiteral(":butterfly:"), QString::fromUtf16(u"\U0001F98B")},
-        {QStringLiteral(":bug:"), QString::fromUtf16(u"\U0001F41B")},
-        {QStringLiteral(":ant:"), QString::fromUtf16(u"\U0001F41C")},
-        {QStringLiteral(":honeybee:"), QString::fromUtf16(u"\U0001F41D")},
-        {QStringLiteral(":lady_beetle:"), QString::fromUtf16(u"\U0001F41E")},
-        {QStringLiteral(":cricket:"), QString::fromUtf16(u"\U0001F997")},
-        {QStringLiteral(":spider:"), QString::fromUtf16(u"\U0001F577")},
-        {QStringLiteral(":spider_web:"), QString::fromUtf16(u"\U0001F578")},
-        {QStringLiteral(":scorpion:"), QString::fromUtf16(u"\U0001F982")},
-        {QStringLiteral(":mosquito:"), QString::fromUtf16(u"\U0001F99F")},
-        {QStringLiteral(":microbe:"), QString::fromUtf16(u"\U0001F9A0")}
-    };
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{{QStringLiteral(":monkey_face:"), QString::fromUtf16(u"\U0001F435")},
+                                                            {QStringLiteral(":monkey:"), QString::fromUtf16(u"\U0001F412")},
+                                                            {QStringLiteral(":gorilla:"), QString::fromUtf16(u"\U0001F98D")},
+                                                            {QStringLiteral(":orangutan:"), QString::fromUtf16(u"\U0001F9A7")},
+                                                            {QStringLiteral(":dog_face:"), QString::fromUtf16(u"\U0001F436")},
+                                                            {QStringLiteral(":dog:"), QString::fromUtf16(u"\U0001F415")},
+                                                            {QStringLiteral(":guide_dog:"), QString::fromUtf16(u"\U0001F9AE")},
+                                                            {QStringLiteral(":service_dog:"), QString::fromUtf16(u"\U0001F415\U0000200D\U0001F9BA")},
+                                                            {QStringLiteral(":poodle:"), QString::fromUtf16(u"\U0001F429")},
+                                                            {QStringLiteral(":wolf:"), QString::fromUtf16(u"\U0001F43A")},
+                                                            {QStringLiteral(":fox:"), QString::fromUtf16(u"\U0001F98A")},
+                                                            {QStringLiteral(":raccoon:"), QString::fromUtf16(u"\U0001F99D")},
+                                                            {QStringLiteral(":cat_face:"), QString::fromUtf16(u"\U0001F431")},
+                                                            {QStringLiteral(":cat:"), QString::fromUtf16(u"\U0001F408")},
+                                                            {QStringLiteral(":lion:"), QString::fromUtf16(u"\U0001F981")},
+                                                            {QStringLiteral(":tiger_face:"), QString::fromUtf16(u"\U0001F42F")},
+                                                            {QStringLiteral(":tiger:"), QString::fromUtf16(u"\U0001F405")},
+                                                            {QStringLiteral(":leopard:"), QString::fromUtf16(u"\U0001F406")},
+                                                            {QStringLiteral(":horse_face:"), QString::fromUtf16(u"\U0001F434")},
+                                                            {QStringLiteral(":horse:"), QString::fromUtf16(u"\U0001F40E")},
+                                                            {QStringLiteral(":unicorn:"), QString::fromUtf16(u"\U0001F984")},
+                                                            {QStringLiteral(":zebra:"), QString::fromUtf16(u"\U0001F993")},
+                                                            {QStringLiteral(":deer:"), QString::fromUtf16(u"\U0001F98C")},
+                                                            {QStringLiteral(":cow_face:"), QString::fromUtf16(u"\U0001F42E")},
+                                                            {QStringLiteral(":ox:"), QString::fromUtf16(u"\U0001F402")},
+                                                            {QStringLiteral(":water_buffalo:"), QString::fromUtf16(u"\U0001F403")},
+                                                            {QStringLiteral(":cow:"), QString::fromUtf16(u"\U0001F404")},
+                                                            {QStringLiteral(":pig_face:"), QString::fromUtf16(u"\U0001F437")},
+                                                            {QStringLiteral(":pig:"), QString::fromUtf16(u"\U0001F416")},
+                                                            {QStringLiteral(":boar:"), QString::fromUtf16(u"\U0001F417")},
+                                                            {QStringLiteral(":pig_nose:"), QString::fromUtf16(u"\U0001F43D")},
+                                                            {QStringLiteral(":ram:"), QString::fromUtf16(u"\U0001F40F")},
+                                                            {QStringLiteral(":ewe:"), QString::fromUtf16(u"\U0001F411")},
+                                                            {QStringLiteral(":goat:"), QString::fromUtf16(u"\U0001F410")},
+                                                            {QStringLiteral(":camel:"), QString::fromUtf16(u"\U0001F42A")},
+                                                            {QStringLiteral(":two-hump_camel:"), QString::fromUtf16(u"\U0001F42B")},
+                                                            {QStringLiteral(":llama:"), QString::fromUtf16(u"\U0001F999")},
+                                                            {QStringLiteral(":giraffe:"), QString::fromUtf16(u"\U0001F992")},
+                                                            {QStringLiteral(":elephant:"), QString::fromUtf16(u"\U0001F418")},
+                                                            {QStringLiteral(":rhinoceros:"), QString::fromUtf16(u"\U0001F98F")},
+                                                            {QStringLiteral(":hippopotamus:"), QString::fromUtf16(u"\U0001F99B")},
+                                                            {QStringLiteral(":mouse_face:"), QString::fromUtf16(u"\U0001F42D")},
+                                                            {QStringLiteral(":mouse:"), QString::fromUtf16(u"\U0001F401")},
+                                                            {QStringLiteral(":rat:"), QString::fromUtf16(u"\U0001F400")},
+                                                            {QStringLiteral(":hamster:"), QString::fromUtf16(u"\U0001F439")},
+                                                            {QStringLiteral(":rabbit_face:"), QString::fromUtf16(u"\U0001F430")},
+                                                            {QStringLiteral(":rabbit:"), QString::fromUtf16(u"\U0001F407")},
+                                                            {QStringLiteral(":chipmunk:"), QString::fromUtf16(u"\U0001F43F")},
+                                                            {QStringLiteral(":hedgehog:"), QString::fromUtf16(u"\U0001F994")},
+                                                            {QStringLiteral(":bat:"), QString::fromUtf16(u"\U0001F987")},
+                                                            {QStringLiteral(":bear:"), QString::fromUtf16(u"\U0001F43B")},
+                                                            {QStringLiteral(":koala:"), QString::fromUtf16(u"\U0001F428")},
+                                                            {QStringLiteral(":panda:"), QString::fromUtf16(u"\U0001F43C")},
+                                                            {QStringLiteral(":sloth:"), QString::fromUtf16(u"\U0001F9A5")},
+                                                            {QStringLiteral(":otter:"), QString::fromUtf16(u"\U0001F9A6")},
+                                                            {QStringLiteral(":skunk:"), QString::fromUtf16(u"\U0001F9A8")},
+                                                            {QStringLiteral(":kangaroo:"), QString::fromUtf16(u"\U0001F998")},
+                                                            {QStringLiteral(":badger:"), QString::fromUtf16(u"\U0001F9A1")},
+                                                            {QStringLiteral(":paw_prints:"), QString::fromUtf16(u"\U0001F43E")},
+                                                            {QStringLiteral(":turkey:"), QString::fromUtf16(u"\U0001F983")},
+                                                            {QStringLiteral(":chicken:"), QString::fromUtf16(u"\U0001F414")},
+                                                            {QStringLiteral(":rooster:"), QString::fromUtf16(u"\U0001F413")},
+                                                            {QStringLiteral(":hatching_chick:"), QString::fromUtf16(u"\U0001F423")},
+                                                            {QStringLiteral(":baby_chick:"), QString::fromUtf16(u"\U0001F424")},
+                                                            {QStringLiteral(":front-facing_baby_chick:"), QString::fromUtf16(u"\U0001F425")},
+                                                            {QStringLiteral(":bird:"), QString::fromUtf16(u"\U0001F426")},
+                                                            {QStringLiteral(":penguin:"), QString::fromUtf16(u"\U0001F427")},
+                                                            {QStringLiteral(":dove:"), QString::fromUtf16(u"\U0001F54A")},
+                                                            {QStringLiteral(":eagle:"), QString::fromUtf16(u"\U0001F985")},
+                                                            {QStringLiteral(":duck:"), QString::fromUtf16(u"\U0001F986")},
+                                                            {QStringLiteral(":swan:"), QString::fromUtf16(u"\U0001F9A2")},
+                                                            {QStringLiteral(":owl:"), QString::fromUtf16(u"\U0001F989")},
+                                                            {QStringLiteral(":flamingo:"), QString::fromUtf16(u"\U0001F9A9")},
+                                                            {QStringLiteral(":peacock:"), QString::fromUtf16(u"\U0001F99A")},
+                                                            {QStringLiteral(":parrot:"), QString::fromUtf16(u"\U0001F99C")},
+                                                            {QStringLiteral(":frog:"), QString::fromUtf16(u"\U0001F438")},
+                                                            {QStringLiteral(":crocodile:"), QString::fromUtf16(u"\U0001F40A")},
+                                                            {QStringLiteral(":turtle:"), QString::fromUtf16(u"\U0001F422")},
+                                                            {QStringLiteral(":lizard:"), QString::fromUtf16(u"\U0001F98E")},
+                                                            {QStringLiteral(":snake:"), QString::fromUtf16(u"\U0001F40D")},
+                                                            {QStringLiteral(":dragon_face:"), QString::fromUtf16(u"\U0001F432")},
+                                                            {QStringLiteral(":dragon:"), QString::fromUtf16(u"\U0001F409")},
+                                                            {QStringLiteral(":sauropod:"), QString::fromUtf16(u"\U0001F995")},
+                                                            {QStringLiteral(":T-Rex:"), QString::fromUtf16(u"\U0001F996")},
+                                                            {QStringLiteral(":spouting_whale:"), QString::fromUtf16(u"\U0001F433")},
+                                                            {QStringLiteral(":whale:"), QString::fromUtf16(u"\U0001F40B")},
+                                                            {QStringLiteral(":dolphin:"), QString::fromUtf16(u"\U0001F42C")},
+                                                            {QStringLiteral(":fish:"), QString::fromUtf16(u"\U0001F41F")},
+                                                            {QStringLiteral(":tropical_fish:"), QString::fromUtf16(u"\U0001F420")},
+                                                            {QStringLiteral(":blowfish:"), QString::fromUtf16(u"\U0001F421")},
+                                                            {QStringLiteral(":shark:"), QString::fromUtf16(u"\U0001F988")},
+                                                            {QStringLiteral(":octopus:"), QString::fromUtf16(u"\U0001F419")},
+                                                            {QStringLiteral(":spiral_shell:"), QString::fromUtf16(u"\U0001F41A")},
+                                                            {QStringLiteral(":snail:"), QString::fromUtf16(u"\U0001F40C")},
+                                                            {QStringLiteral(":butterfly:"), QString::fromUtf16(u"\U0001F98B")},
+                                                            {QStringLiteral(":bug:"), QString::fromUtf16(u"\U0001F41B")},
+                                                            {QStringLiteral(":ant:"), QString::fromUtf16(u"\U0001F41C")},
+                                                            {QStringLiteral(":honeybee:"), QString::fromUtf16(u"\U0001F41D")},
+                                                            {QStringLiteral(":lady_beetle:"), QString::fromUtf16(u"\U0001F41E")},
+                                                            {QStringLiteral(":cricket:"), QString::fromUtf16(u"\U0001F997")},
+                                                            {QStringLiteral(":spider:"), QString::fromUtf16(u"\U0001F577")},
+                                                            {QStringLiteral(":spider_web:"), QString::fromUtf16(u"\U0001F578")},
+                                                            {QStringLiteral(":scorpion:"), QString::fromUtf16(u"\U0001F982")},
+                                                            {QStringLiteral(":mosquito:"), QString::fromUtf16(u"\U0001F99F")},
+                                                            {QStringLiteral(":microbe:"), QString::fromUtf16(u"\U0001F9A0")}};
     return lst;
 }
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePlantEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":bouquet:"), QString::fromUtf16(u"\U0001F490")},
         {QStringLiteral(":cherry_blossom:"), QString::fromUtf16(u"\U0001F338")},
         {QStringLiteral(":white_flower:"), QString::fromUtf16(u"\U0001F4AE")},
@@ -545,7 +543,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePlant
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeScienceEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":alembic:"), QString::fromUtf16(u"\U00002697")},
         {QStringLiteral(":test_tube:"), QString::fromUtf16(u"\U0001F9EA")},
         {QStringLiteral(":petri_dish:"), QString::fromUtf16(u"\U0001F9EB")},
@@ -564,7 +562,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeScien
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeComputerEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":battery:"), QString::fromUtf16(u"\U0001F50B")},
         {QStringLiteral(":electric_plug:"), QString::fromUtf16(u"\U0001F50C")},
         {QStringLiteral(":laptop_computer:"), QString::fromUtf16(u"\U0001F4BB")},
@@ -584,7 +582,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeCompu
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeBookPaperEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":notebook_with_decorative_cover:"), QString::fromUtf16(u"\U0001F4D4")},
         {QStringLiteral(":closed_book:"), QString::fromUtf16(u"\U0001F4D5")},
         {QStringLiteral(":open_book:"), QString::fromUtf16(u"\U0001F4D6")},
@@ -608,7 +606,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeBookP
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSoundMusicEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":muted_speaker:"), QString::fromUtf16(u"\U0001F507")},
         {QStringLiteral(":speaker_low_volume:"), QString::fromUtf16(u"\U0001F508")},
         {QStringLiteral(":speaker_medium_volume:"), QString::fromUtf16(u"\U0001F509")},
@@ -640,7 +638,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSound
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeWeatherEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":new_moon:"), QString::fromUtf16(u"\U0001F311")},
         {QStringLiteral(":waxing_crescent_moon:"), QString::fromUtf16(u"\U0001F312")},
         {QStringLiteral(":first_quarter_moon:"), QString::fromUtf16(u"\U0001F313")},
@@ -694,7 +692,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeWeath
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeTimeEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":hourglass_done:"), QString::fromUtf16(u"\U0000231B")},
         {QStringLiteral(":hourglass_not_done:"), QString::fromUtf16(u"\U000023F3")},
         {QStringLiteral(":watch:"), QString::fromUtf16(u"\U0000231A")},
@@ -732,7 +730,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeTimeE
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeGameEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":direct_hit:"), QString::fromUtf16(u"\U0001F3AF")},
         {QStringLiteral(":yo-yo:"), QString::fromUtf16(u"\U0001FA80")},
         {QStringLiteral(":kite:"), QString::fromUtf16(u"\U0001FA81")},
@@ -759,7 +757,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeGameE
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeClothingEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":glasses:"), QString::fromUtf16(u"\U0001F453")},
         {QStringLiteral(":sunglasses:"), QString::fromUtf16(u"\U0001F576")},
         {QStringLiteral(":goggles:"), QString::fromUtf16(u"\U0001F97D")},
@@ -809,7 +807,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeCloth
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeEventEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":jack-o-lantern:"), QString::fromUtf16(u"\U0001F383")},
         {QStringLiteral(":Christmas_tree:"), QString::fromUtf16(u"\U0001F384")},
         {QStringLiteral(":fireworks:"), QString::fromUtf16(u"\U0001F386")},
@@ -837,7 +835,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeEvent
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeFoodEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":grapes:"), QString::fromUtf16(u"\U0001F347")},
         {QStringLiteral(":melon:"), QString::fromUtf16(u"\U0001F348")},
         {QStringLiteral(":watermelon:"), QString::fromUtf16(u"\U0001F349")},
@@ -942,7 +940,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeFoodE
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeTransportEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":locomotive:"), QString::fromUtf16(u"\U0001F682")},
         {QStringLiteral(":railway_car:"), QString::fromUtf16(u"\U0001F683")},
         {QStringLiteral(":high-speed_train:"), QString::fromUtf16(u"\U0001F684")},
@@ -1017,7 +1015,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeTrans
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePersonEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":baby:"), QString::fromUtf16(u"\U0001F476")},
         {QStringLiteral(":child:"), QString::fromUtf16(u"\U0001F9D2")},
         {QStringLiteral(":boy:"), QString::fromUtf16(u"\U0001F466")},
@@ -1287,7 +1285,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePerso
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePlaceEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":globe_showing_Europe-Africa:"), QString::fromUtf16(u"\U0001F30D")},
         {QStringLiteral(":globe_showing_Americas:"), QString::fromUtf16(u"\U0001F30E")},
         {QStringLiteral(":globe_showing_Asia-Australia:"), QString::fromUtf16(u"\U0001F30F")},
@@ -1356,7 +1354,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePlace
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSymbolsEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":ATM_sign:"), QString::fromUtf16(u"\U0001F3E7")},
         {QStringLiteral(":litter_in_bin_sign:"), QString::fromUtf16(u"\U0001F6AE")},
         {QStringLiteral(":potable_water:"), QString::fromUtf16(u"\U0001F6B0")},
@@ -1580,33 +1578,20 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSymbo
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSportEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
-        {QStringLiteral(":soccer_ball:"), QString::fromUtf16(u"\U000026BD")},
-        {QStringLiteral(":baseball:"), QString::fromUtf16(u"\U000026BE")},
-        {QStringLiteral(":softball:"), QString::fromUtf16(u"\U0001F94E")},
-        {QStringLiteral(":basketball:"), QString::fromUtf16(u"\U0001F3C0")},
-        {QStringLiteral(":volleyball:"), QString::fromUtf16(u"\U0001F3D0")},
-        {QStringLiteral(":american_football:"), QString::fromUtf16(u"\U0001F3C8")},
-        {QStringLiteral(":rugby_football:"), QString::fromUtf16(u"\U0001F3C9")},
-        {QStringLiteral(":tennis:"), QString::fromUtf16(u"\U0001F3BE")},
-        {QStringLiteral(":flying_disc:"), QString::fromUtf16(u"\U0001F94F")},
-        {QStringLiteral(":bowling:"), QString::fromUtf16(u"\U0001F3B3")},
-        {QStringLiteral(":cricket_game:"), QString::fromUtf16(u"\U0001F3CF")},
-        {QStringLiteral(":field_hockey:"), QString::fromUtf16(u"\U0001F3D1")},
-        {QStringLiteral(":ice_hockey:"), QString::fromUtf16(u"\U0001F3D2")},
-        {QStringLiteral(":lacrosse:"), QString::fromUtf16(u"\U0001F94D")},
-        {QStringLiteral(":ping_pong:"), QString::fromUtf16(u"\U0001F3D3")},
-        {QStringLiteral(":badminton:"), QString::fromUtf16(u"\U0001F3F8")},
-        {QStringLiteral(":boxing_glove:"), QString::fromUtf16(u"\U0001F94A")},
-        {QStringLiteral(":martial_arts_uniform:"), QString::fromUtf16(u"\U0001F94B")},
-        {QStringLiteral(":goal_net:"), QString::fromUtf16(u"\U0001F945")},
-        {QStringLiteral(":flag_in_hole:"), QString::fromUtf16(u"\U000026F3")},
-        {QStringLiteral(":ice_skate:"), QString::fromUtf16(u"\U000026F8")},
-        {QStringLiteral(":fishing_pole:"), QString::fromUtf16(u"\U0001F3A3")},
-        {QStringLiteral(":diving_mask:"), QString::fromUtf16(u"\U0001F93F")},
-        {QStringLiteral(":running_shirt:"), QString::fromUtf16(u"\U0001F3BD")},
-        {QStringLiteral(":skis:"), QString::fromUtf16(u"\U0001F3BF")},
-        {QStringLiteral(":sled:"), QString::fromUtf16(u"\U0001F6F7")},
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
+        {QStringLiteral(":soccer_ball:"), QString::fromUtf16(u"\U000026BD")},    {QStringLiteral(":baseball:"), QString::fromUtf16(u"\U000026BE")},
+        {QStringLiteral(":softball:"), QString::fromUtf16(u"\U0001F94E")},       {QStringLiteral(":basketball:"), QString::fromUtf16(u"\U0001F3C0")},
+        {QStringLiteral(":volleyball:"), QString::fromUtf16(u"\U0001F3D0")},     {QStringLiteral(":american_football:"), QString::fromUtf16(u"\U0001F3C8")},
+        {QStringLiteral(":rugby_football:"), QString::fromUtf16(u"\U0001F3C9")}, {QStringLiteral(":tennis:"), QString::fromUtf16(u"\U0001F3BE")},
+        {QStringLiteral(":flying_disc:"), QString::fromUtf16(u"\U0001F94F")},    {QStringLiteral(":bowling:"), QString::fromUtf16(u"\U0001F3B3")},
+        {QStringLiteral(":cricket_game:"), QString::fromUtf16(u"\U0001F3CF")},   {QStringLiteral(":field_hockey:"), QString::fromUtf16(u"\U0001F3D1")},
+        {QStringLiteral(":ice_hockey:"), QString::fromUtf16(u"\U0001F3D2")},     {QStringLiteral(":lacrosse:"), QString::fromUtf16(u"\U0001F94D")},
+        {QStringLiteral(":ping_pong:"), QString::fromUtf16(u"\U0001F3D3")},      {QStringLiteral(":badminton:"), QString::fromUtf16(u"\U0001F3F8")},
+        {QStringLiteral(":boxing_glove:"), QString::fromUtf16(u"\U0001F94A")},   {QStringLiteral(":martial_arts_uniform:"), QString::fromUtf16(u"\U0001F94B")},
+        {QStringLiteral(":goal_net:"), QString::fromUtf16(u"\U0001F945")},       {QStringLiteral(":flag_in_hole:"), QString::fromUtf16(u"\U000026F3")},
+        {QStringLiteral(":ice_skate:"), QString::fromUtf16(u"\U000026F8")},      {QStringLiteral(":fishing_pole:"), QString::fromUtf16(u"\U0001F3A3")},
+        {QStringLiteral(":diving_mask:"), QString::fromUtf16(u"\U0001F93F")},    {QStringLiteral(":running_shirt:"), QString::fromUtf16(u"\U0001F3BD")},
+        {QStringLiteral(":skis:"), QString::fromUtf16(u"\U0001F3BF")},           {QStringLiteral(":sled:"), QString::fromUtf16(u"\U0001F6F7")},
         {QStringLiteral(":curling_stone:"), QString::fromUtf16(u"\U0001F94C")},
     };
     return lst;
@@ -1614,7 +1599,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSport
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeEmotionEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":kiss_mark:"), QString::fromUtf16(u"\U0001F48B")},
         {QStringLiteral(":love_letter:"), QString::fromUtf16(u"\U0001F48C")},
         {QStringLiteral(":heart_with_arrow:"), QString::fromUtf16(u"\U0001F498")},
@@ -1656,7 +1641,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeEmoti
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeMoneyEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":money_bag:"), QString::fromUtf16(u"\U0001F4B0")},
         {QStringLiteral(":yen_banknote:"), QString::fromUtf16(u"\U0001F4B4")},
         {QStringLiteral(":dollar_banknote:"), QString::fromUtf16(u"\U0001F4B5")},
@@ -1674,7 +1659,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeMoney
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeBodyEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":waving_hand:"), QString::fromUtf16(u"\U0001F44B")},
         {QStringLiteral(":raised_back_of_hand:"), QString::fromUtf16(u"\U0001F91A")},
         {QStringLiteral(":hand_with_fingers_splayed:"), QString::fromUtf16(u"\U0001F590")},
@@ -1733,7 +1718,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeBodyE
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeMailEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":envelope:"), QString::fromUtf16(u"\U00002709")},
         {QStringLiteral(":e-mail:"), QString::fromUtf16(u"\U0001F4E7")},
         {QStringLiteral(":incoming_envelope:"), QString::fromUtf16(u"\U0001F4E8")},
@@ -1753,7 +1738,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeMailE
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeOfficeEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":pencil:"), QString::fromUtf16(u"\U0000270F")},
         {QStringLiteral(":black_nib:"), QString::fromUtf16(u"\U00002712")},
         {QStringLiteral(":fountain_pen:"), QString::fromUtf16(u"\U0001F58B")},
@@ -1790,7 +1775,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeOffic
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeToolsEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":hammer:"), QString::fromUtf16(u"\U0001F528")},
         {QStringLiteral(":axe:"), QString::fromUtf16(u"\U0001FA93")},
         {QStringLiteral(":pick:"), QString::fromUtf16(u"\U000026CF")},
@@ -1817,7 +1802,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeTools
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePhoneEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":mobile_phone:"), QString::fromUtf16(u"\U0001F4F1")},
         {QStringLiteral(":mobile_phone_with_arrow:"), QString::fromUtf16(u"\U0001F4F2")},
         {QStringLiteral(":telephone:"), QString::fromUtf16(u"\U0000260E")},
@@ -1830,7 +1815,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePhone
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeLockEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":locked:"), QString::fromUtf16(u"\U0001F512")},
         {QStringLiteral(":unlocked:"), QString::fromUtf16(u"\U0001F513")},
         {QStringLiteral(":locked_with_pen:"), QString::fromUtf16(u"\U0001F50F")},
@@ -1843,7 +1828,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeLockE
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeDrinkEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":baby_bottle:"), QString::fromUtf16(u"\U0001F37C")},
         {QStringLiteral(":glass_of_milk:"), QString::fromUtf16(u"\U0001F95B")},
         {QStringLiteral(":hot_beverage:"), QString::fromUtf16(u"\U00002615")},
@@ -1867,7 +1852,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeDrink
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeVideoEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":movie_camera:"), QString::fromUtf16(u"\U0001F3A5")},
         {QStringLiteral(":film_frames:"), QString::fromUtf16(u"\U0001F39E")},
         {QStringLiteral(":film_projector:"), QString::fromUtf16(u"\U0001F4FD")},
@@ -1890,7 +1875,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeVideo
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeHouseEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":door:"), QString::fromUtf16(u"\U0001F6AA")},
         {QStringLiteral(":bed:"), QString::fromUtf16(u"\U0001F6CF")},
         {QStringLiteral(":couch_and_lamp:"), QString::fromUtf16(u"\U0001F6CB")},
@@ -1914,7 +1899,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeHouse
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeDishwareEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":chopsticks:"), QString::fromUtf16(u"\U0001F962")},
         {QStringLiteral(":fork_and_knife_with_plate:"), QString::fromUtf16(u"\U0001F37D")},
         {QStringLiteral(":fork_and_knife:"), QString::fromUtf16(u"\U0001F374")},
@@ -1927,7 +1912,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeDishw
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeHotelEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":bellhop_bell:"), QString::fromUtf16(u"\U0001F6CE")},
         {QStringLiteral(":luggage:"), QString::fromUtf16(u"\U0001F9F3")},
     };
@@ -1936,7 +1921,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeHotel
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeAwardMedalEmoji()
 {
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst {
+    const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":military_medal:"), QString::fromUtf16(u"\U0001F396")},
         {QStringLiteral(":trophy:"), QString::fromUtf16(u"\U0001F3C6")},
         {QStringLiteral(":sports_medal:"), QString::fromUtf16(u"\U0001F3C5")},

@@ -16,7 +16,8 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 class QPropertyAnimation;
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 /**
  * This widget is design to contain one child widget, the "content" widget.
  * It will start hidden by default. Calling slideIn() will slide in the content

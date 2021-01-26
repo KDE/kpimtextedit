@@ -8,7 +8,8 @@
 #define ABSTRACTTEXTTOSPEECHINTERFACE_H
 #include "kpimtextedit_export.h"
 #include <QObject>
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 /**
  * @brief The AbstractTextToSpeechInterface class
  * @author Laurent Montel <montel@kde.org>

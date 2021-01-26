@@ -9,7 +9,8 @@
 
 #include <QComboBox>
 #include <QLocale>
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class TextToSpeechLanguageComboBox : public QComboBox
 {
     Q_OBJECT

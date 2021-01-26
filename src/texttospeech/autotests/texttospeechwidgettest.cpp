@@ -6,12 +6,12 @@
 
 #include "texttospeechwidgettest.h"
 #include "../abstracttexttospeechinterface.h"
-#include <QTest>
 #include "texttospeech/texttospeechwidget.h"
-#include <QToolButton>
-#include <qtestmouse.h>
 #include <QSignalSpy>
 #include <QSlider>
+#include <QTest>
+#include <QToolButton>
+#include <qtestmouse.h>
 
 Q_DECLARE_METATYPE(KPIMTextEdit::TextToSpeechWidget::State)
 

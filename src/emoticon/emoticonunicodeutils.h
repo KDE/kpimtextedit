@@ -7,11 +7,13 @@
 #ifndef EMOTICONUNICODEUTILS_H
 #define EMOTICONUNICODEUTILS_H
 
+#include "kpimtextedit_export.h"
 #include <QString>
 #include <QVector>
-#include "kpimtextedit_export.h"
-namespace KPIMTextEdit {
-namespace EmoticonUnicodeUtils {
+namespace KPIMTextEdit
+{
+namespace EmoticonUnicodeUtils
+{
 struct EmoticonStruct {
     EmoticonStruct(const QString &name, const QString &code)
         : emoticonName(name)

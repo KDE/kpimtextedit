@@ -5,14 +5,14 @@
 */
 
 #include "texttospeechconfigdialog.h"
-#include <KLocalizedString>
 #include "texttospeechconfigwidget.h"
+#include <KLocalizedString>
 
-#include <QVBoxLayout>
-#include <QDialogButtonBox>
-#include <QPushButton>
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <QDialogButtonBox>
+#include <QPushButton>
+#include <QVBoxLayout>
 
 using namespace KPIMTextEdit;
 

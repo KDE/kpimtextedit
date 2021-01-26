@@ -4,9 +4,9 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "plaintexteditor.h"
 #include "plaintextsyntaxspellcheckinghighlighter.h"
 #include "kpimtextedit_debug.h"
+#include "plaintexteditor.h"
 
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Format>
@@ -19,9 +19,9 @@ Q_DECLARE_METATYPE(QTextBlock)
 
 using namespace KPIMTextEdit;
 
-namespace KPIMTextEdit {
-struct SpellCheckRange
+namespace KPIMTextEdit
 {
+struct SpellCheckRange {
     SpellCheckRange(int o, int l)
         : offset(o)
         , length(l)
@@ -131,9 +131,12 @@ void PlainTextSyntaxSpellCheckingHighlighter::highlightBlock(const QString &text
 
     const auto nextBlock = currentBlock().next();
     if (nextBlock.isValid()) {
-        QMetaObject::invokeMethod(this, [this, nextBlock] {
-            rehighlightBlock(nextBlock);
-        }, Qt::QueuedConnection);
+        QMetaObject::invokeMethod(
+            this,
+            [this, nextBlock] {
+                rehighlightBlock(nextBlock);
+            },
+            Qt::QueuedConnection);
     }
 }
 

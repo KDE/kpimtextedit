@@ -11,7 +11,8 @@
 #include <QDialog>
 #include <QUrl>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class InsertImageDialogPrivate;
 
 class InsertImageDialog : public QDialog

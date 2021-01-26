@@ -12,7 +12,8 @@
 #include "emoticonunicodeutils.h"
 #include "kpimtextedit_export.h"
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 /**
  * @brief The EmoticonUnicodeTab class
  * @author Laurent Montel <montel@kde.org>

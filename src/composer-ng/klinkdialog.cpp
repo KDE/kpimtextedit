@@ -11,9 +11,9 @@
 #include <KLocalizedString>
 
 #include <QDialogButtonBox>
+#include <QGridLayout>
 #include <QLabel>
 #include <QLineEdit>
-#include <QGridLayout>
 #include <QPushButton>
 #include <QVBoxLayout>
 

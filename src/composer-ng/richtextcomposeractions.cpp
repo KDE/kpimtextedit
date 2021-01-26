@@ -5,14 +5,14 @@
 */
 
 #include "richtextcomposeractions.h"
-#include "richtextcomposercontroler.h"
 #include "emoticon/emoticontexteditaction.h"
+#include "richtextcomposercontroler.h"
 #include "tableactionmenu.h"
-#include <KToggleAction>
-#include <KLocalizedString>
 #include <KActionCollection>
 #include <KFontAction>
 #include <KFontSizeAction>
+#include <KLocalizedString>
+#include <KToggleAction>
 #include <QTextCharFormat>
 #include <QTextList>
 
@@ -100,47 +100,39 @@ int RichTextComposerActions::numberOfActions() const
 
 void RichTextComposerActions::createActions(KActionCollection *ac)
 {
-    //Alignment
-    d->action_align_left = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-justify-left")),
-                                             i18nc("@action", "Align &Left"), this);
+    // Alignment
+    d->action_align_left = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-justify-left")), i18nc("@action", "Align &Left"), this);
     d->action_align_left->setIconText(i18nc("@label left justify", "Left"));
     d->richTextActionList.append((d->action_align_left));
     d->action_align_left->setObjectName(QStringLiteral("format_align_left"));
-    connect(d->action_align_left, &KToggleAction::triggered,
-            d->composerControler, &RichTextComposerControler::alignLeft);
+    connect(d->action_align_left, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::alignLeft);
     if (ac) {
         ac->addAction(QStringLiteral("format_align_left"), d->action_align_left);
     }
 
-    d->action_align_center = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-justify-center")),
-                                               i18nc("@action", "Align &Center"), this);
+    d->action_align_center = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-justify-center")), i18nc("@action", "Align &Center"), this);
     d->action_align_center->setIconText(i18nc("@label center justify", "Center"));
     d->richTextActionList.append((d->action_align_center));
     d->action_align_center->setObjectName(QStringLiteral("format_align_center"));
-    connect(d->action_align_center, &KToggleAction::triggered,
-            d->composerControler, &RichTextComposerControler::alignCenter);
+    connect(d->action_align_center, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::alignCenter);
     if (ac) {
         ac->addAction(QStringLiteral("format_align_center"), d->action_align_center);
     }
 
-    d->action_align_right = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-justify-right")),
-                                              i18nc("@action", "Align &Right"), this);
+    d->action_align_right = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-justify-right")), i18nc("@action", "Align &Right"), this);
     d->action_align_right->setIconText(i18nc("@label right justify", "Right"));
     d->richTextActionList.append((d->action_align_right));
     d->action_align_right->setObjectName(QStringLiteral("format_align_right"));
-    connect(d->action_align_right, &KToggleAction::triggered,
-            d->composerControler, &RichTextComposerControler::alignRight);
+    connect(d->action_align_right, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::alignRight);
     if (ac) {
         ac->addAction(QStringLiteral("format_align_right"), d->action_align_right);
     }
 
-    d->action_align_justify = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-justify-fill")),
-                                                i18nc("@action", "&Justify"), this);
+    d->action_align_justify = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-justify-fill")), i18nc("@action", "&Justify"), this);
     d->action_align_justify->setIconText(i18nc("@label justify fill", "Justify"));
     d->richTextActionList.append((d->action_align_justify));
     d->action_align_justify->setObjectName(QStringLiteral("format_align_justify"));
-    connect(d->action_align_justify, &KToggleAction::triggered,
-            d->composerControler, &RichTextComposerControler::alignJustify);
+    connect(d->action_align_justify, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::alignJustify);
     if (ac) {
         ac->addAction(QStringLiteral("format_align_justify"), d->action_align_justify);
     }
@@ -151,25 +143,21 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     alignmentGroup->addAction(d->action_align_right);
     alignmentGroup->addAction(d->action_align_justify);
 
-    //Align text
-    d->action_direction_ltr = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-direction-ltr")),
-                                                i18nc("@action", "Left-to-Right"), this);
+    // Align text
+    d->action_direction_ltr = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-direction-ltr")), i18nc("@action", "Left-to-Right"), this);
     d->action_direction_ltr->setIconText(i18nc("@label left-to-right", "Left-to-Right"));
     d->richTextActionList.append(d->action_direction_ltr);
     d->action_direction_ltr->setObjectName(QStringLiteral("direction_ltr"));
-    connect(d->action_direction_ltr, &KToggleAction::triggered,
-            d->composerControler, &RichTextComposerControler::makeLeftToRight);
+    connect(d->action_direction_ltr, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::makeLeftToRight);
     if (ac) {
         ac->addAction(QStringLiteral("direction_ltr"), d->action_direction_ltr);
     }
 
-    d->action_direction_rtl = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-direction-rtl")),
-                                                i18nc("@action", "Right-to-Left"), this);
+    d->action_direction_rtl = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-direction-rtl")), i18nc("@action", "Right-to-Left"), this);
     d->action_direction_rtl->setIconText(i18nc("@label right-to-left", "Right-to-Left"));
     d->richTextActionList.append(d->action_direction_rtl);
     d->action_direction_rtl->setObjectName(QStringLiteral("direction_rtl"));
-    connect(d->action_direction_rtl, &KToggleAction::triggered,
-            d->composerControler, &RichTextComposerControler::makeRightToLeft);
+    connect(d->action_direction_rtl, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::makeRightToLeft);
     if (ac) {
         ac->addAction(QStringLiteral("direction_rtl"), d->action_direction_rtl);
     }
@@ -179,28 +167,23 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     directionGroup->addAction(d->action_direction_rtl);
 
     // Sub/Super script
-    d->action_text_subscript = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-subscript")),
-                                                 i18nc("@action", "Subscript"), this);
+    d->action_text_subscript = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-subscript")), i18nc("@action", "Subscript"), this);
     d->richTextActionList.append((d->action_text_subscript));
     d->action_text_subscript->setObjectName(QStringLiteral("format_text_subscript"));
-    connect(d->action_text_subscript, &KToggleAction::triggered,
-            d->composerControler, &RichTextComposerControler::setTextSubScript);
+    connect(d->action_text_subscript, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::setTextSubScript);
     if (ac) {
         ac->addAction(QStringLiteral("format_text_subscript"), d->action_text_subscript);
     }
 
-    d->action_text_superscript = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-superscript")),
-                                                   i18nc("@action", "Superscript"), this);
+    d->action_text_superscript = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-superscript")), i18nc("@action", "Superscript"), this);
     d->richTextActionList.append((d->action_text_superscript));
     d->action_text_superscript->setObjectName(QStringLiteral("format_text_superscript"));
-    connect(d->action_text_superscript, &KToggleAction::triggered,
-            d->composerControler, &RichTextComposerControler::setTextSuperScript);
+    connect(d->action_text_superscript, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::setTextSuperScript);
     if (ac) {
         ac->addAction(QStringLiteral("format_text_superscript"), d->action_text_superscript);
     }
 
-    d->action_text_bold = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-bold")),
-                                            i18nc("@action boldify selected text", "&Bold"), this);
+    d->action_text_bold = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-bold")), i18nc("@action boldify selected text", "&Bold"), this);
     QFont bold;
     bold.setBold(true);
     d->action_text_bold->setFont(bold);
@@ -212,8 +195,8 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     }
     connect(d->action_text_bold, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::setTextBold);
 
-    d->action_text_italic = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-italic")),
-                                              i18nc("@action italicize selected text", "&Italic"), this);
+    d->action_text_italic =
+        new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-italic")), i18nc("@action italicize selected text", "&Italic"), this);
     QFont italic;
     italic.setItalic(true);
     d->action_text_italic->setFont(italic);
@@ -225,8 +208,8 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     }
     connect(d->action_text_italic, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::setTextItalic);
 
-    d->action_text_underline = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-underline")),
-                                                 i18nc("@action underline selected text", "&Underline"), this);
+    d->action_text_underline =
+        new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-underline")), i18nc("@action underline selected text", "&Underline"), this);
     QFont underline;
     underline.setUnderline(true);
     d->action_text_underline->setFont(underline);
@@ -238,8 +221,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     }
     connect(d->action_text_underline, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::setTextUnderline);
 
-    d->action_text_strikeout = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-strikethrough")),
-                                                 i18nc("@action", "&Strike Out"), this);
+    d->action_text_strikeout = new KToggleAction(QIcon::fromTheme(QStringLiteral("format-text-strikethrough")), i18nc("@action", "&Strike Out"), this);
     QFont strikeout;
     strikeout.setStrikeOut(true);
     d->action_text_strikeout->setFont(strikeout);
@@ -253,20 +235,16 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     }
     connect(d->action_text_strikeout, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::setTextStrikeOut);
 
-    //Font Family
+    // Font Family
     d->action_font_family = new KFontAction(i18nc("@action", "&Font"), this);
     d->richTextActionList.append((d->action_font_family));
     d->action_font_family->setObjectName(QStringLiteral("format_font_family"));
     if (ac) {
         ac->addAction(QStringLiteral("format_font_family"), d->action_font_family);
     }
-    connect(d->action_font_family, &KFontAction::textTriggered,
-            d->composerControler, &RichTextComposerControler::setFontFamily);
+    connect(d->action_font_family, &KFontAction::textTriggered, d->composerControler, &RichTextComposerControler::setFontFamily);
 
-
-
-
-    //Font Size
+    // Font Size
     d->action_font_size = new KFontSizeAction(i18nc("@action", "Font &Size"), this);
     d->richTextActionList.append((d->action_font_size));
     d->action_font_size->setObjectName(QStringLiteral("format_font_size"));
@@ -275,19 +253,16 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     }
     connect(d->action_font_size, &KFontSizeAction::fontSizeChanged, d->composerControler, &RichTextComposerControler::setFontSize);
 
-    d->action_insert_horizontal_rule = new QAction(QIcon::fromTheme(QStringLiteral("insert-horizontal-rule")),
-                                                   i18nc("@action", "Insert Rule Line"), this);
+    d->action_insert_horizontal_rule = new QAction(QIcon::fromTheme(QStringLiteral("insert-horizontal-rule")), i18nc("@action", "Insert Rule Line"), this);
     d->richTextActionList.append((d->action_insert_horizontal_rule));
     d->action_insert_horizontal_rule->setObjectName(QStringLiteral("insert_horizontal_rule"));
     if (ac) {
         ac->addAction(QStringLiteral("insert_horizontal_rule"), d->action_insert_horizontal_rule);
     }
-    connect(d->action_insert_horizontal_rule, &QAction::triggered,
-            d->composerControler, &RichTextComposerControler::insertHorizontalRule);
+    connect(d->action_insert_horizontal_rule, &QAction::triggered, d->composerControler, &RichTextComposerControler::insertHorizontalRule);
 
-    //Foreground Color
-    d->action_text_foreground_color = new QAction(QIcon::fromTheme(QStringLiteral("format-stroke-color")),
-                                                  i18nc("@action", "Text &Color..."), this);
+    // Foreground Color
+    d->action_text_foreground_color = new QAction(QIcon::fromTheme(QStringLiteral("format-stroke-color")), i18nc("@action", "Text &Color..."), this);
     d->action_text_foreground_color->setIconText(i18nc("@label stroke color", "Color"));
     d->richTextActionList.append((d->action_text_foreground_color));
     d->action_text_foreground_color->setObjectName(QStringLiteral("format_text_foreground_color"));
@@ -295,9 +270,8 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
         ac->addAction(QStringLiteral("format_text_foreground_color"), d->action_text_foreground_color);
     }
     connect(d->action_text_foreground_color, &QAction::triggered, d->composerControler, &RichTextComposerControler::setChangeTextForegroundColor);
-    //Background Color
-    d->action_text_background_color = new QAction(QIcon::fromTheme(QStringLiteral("format-fill-color")),
-                                                  i18nc("@action", "Text &Highlight..."), this);
+    // Background Color
+    d->action_text_background_color = new QAction(QIcon::fromTheme(QStringLiteral("format-fill-color")), i18nc("@action", "Text &Highlight..."), this);
     d->richTextActionList.append((d->action_text_background_color));
     if (ac) {
         ac->addAction(QStringLiteral("format_text_background_color"), d->action_text_background_color);
@@ -305,50 +279,37 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     d->action_text_background_color->setObjectName(QStringLiteral("format_text_background_color"));
     connect(d->action_text_background_color, &QAction::triggered, d->composerControler, &RichTextComposerControler::setChangeTextBackgroundColor);
 
-    d->action_manage_link = new QAction(QIcon::fromTheme(QStringLiteral("insert-link")),
-                                        i18nc("@action", "Link"), this);
+    d->action_manage_link = new QAction(QIcon::fromTheme(QStringLiteral("insert-link")), i18nc("@action", "Link"), this);
     d->richTextActionList.append((d->action_manage_link));
     d->action_manage_link->setObjectName(QStringLiteral("manage_link"));
     if (ac) {
         ac->addAction(QStringLiteral("manage_link"), d->action_manage_link);
     }
-    connect(d->action_manage_link, &QAction::triggered,
-            d->composerControler, &RichTextComposerControler::manageLink);
+    connect(d->action_manage_link, &QAction::triggered, d->composerControler, &RichTextComposerControler::manageLink);
 
-    d->action_list_indent = new QAction(QIcon::fromTheme(QStringLiteral("format-indent-more")),
-                                        i18nc("@action", "Increase List Level"), this);
+    d->action_list_indent = new QAction(QIcon::fromTheme(QStringLiteral("format-indent-more")), i18nc("@action", "Increase List Level"), this);
     d->richTextActionList.append((d->action_list_indent));
     d->action_list_indent->setObjectName(QStringLiteral("format_list_indent_more"));
     if (ac) {
         ac->addAction(QStringLiteral("format_list_indent_more"), d->action_list_indent);
     }
-    connect(d->action_list_indent, &QAction::triggered,
-            d->composerControler, &RichTextComposerControler::indentListMore);
-    connect(d->action_list_indent, &QAction::triggered,
-            this, &RichTextComposerActions::slotUpdateMiscActions);
-    d->action_list_dedent = new QAction(QIcon::fromTheme(QStringLiteral("format-indent-less")),
-                                        i18nc("@action", "Decrease List Level"), this);
+    connect(d->action_list_indent, &QAction::triggered, d->composerControler, &RichTextComposerControler::indentListMore);
+    connect(d->action_list_indent, &QAction::triggered, this, &RichTextComposerActions::slotUpdateMiscActions);
+    d->action_list_dedent = new QAction(QIcon::fromTheme(QStringLiteral("format-indent-less")), i18nc("@action", "Decrease List Level"), this);
     d->richTextActionList.append((d->action_list_dedent));
     d->action_list_dedent->setObjectName(QStringLiteral("format_list_indent_less"));
     if (ac) {
         ac->addAction(QStringLiteral("format_list_indent_less"), d->action_list_dedent);
     }
-    connect(d->action_list_dedent, &QAction::triggered,
-            d->composerControler, &RichTextComposerControler::indentListLess);
-    connect(d->action_list_dedent, &QAction::triggered,
-            this, &RichTextComposerActions::slotUpdateMiscActions);
+    connect(d->action_list_dedent, &QAction::triggered, d->composerControler, &RichTextComposerControler::indentListLess);
+    connect(d->action_list_dedent, &QAction::triggered, this, &RichTextComposerActions::slotUpdateMiscActions);
 
-    d->action_list_style = new KSelectAction(QIcon::fromTheme(QStringLiteral("format-list-unordered")),
-                                             i18nc("@title:menu", "List Style"), this);
+    d->action_list_style = new KSelectAction(QIcon::fromTheme(QStringLiteral("format-list-unordered")), i18nc("@title:menu", "List Style"), this);
     QStringList listStyles;
-    listStyles << i18nc("@item:inmenu no list style", "None")
-               << i18nc("@item:inmenu disc list style", "Disc")
-               << i18nc("@item:inmenu circle list style", "Circle")
-               << i18nc("@item:inmenu square list style", "Square")
-               << i18nc("@item:inmenu numbered lists", "123")
-               << i18nc("@item:inmenu lowercase abc lists", "abc")
-               << i18nc("@item:inmenu uppercase abc lists", "ABC")
-               << i18nc("@item:inmenu lower case roman numerals", "i ii iii")
+    listStyles << i18nc("@item:inmenu no list style", "None") << i18nc("@item:inmenu disc list style", "Disc")
+               << i18nc("@item:inmenu circle list style", "Circle") << i18nc("@item:inmenu square list style", "Square")
+               << i18nc("@item:inmenu numbered lists", "123") << i18nc("@item:inmenu lowercase abc lists", "abc")
+               << i18nc("@item:inmenu uppercase abc lists", "ABC") << i18nc("@item:inmenu lower case roman numerals", "i ii iii")
                << i18nc("@item:inmenu upper case roman numerals", "I II III");
 
     d->action_list_style->setItems(listStyles);
@@ -358,10 +319,8 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     if (ac) {
         ac->addAction(QStringLiteral("format_list_style"), d->action_list_style);
     }
-    connect(d->action_list_style, &KSelectAction::indexTriggered,
-            this, &RichTextComposerActions::setListStyle);
-    connect(d->action_list_style, QOverload<bool>::of(&QAction::triggered),
-            this, &RichTextComposerActions::slotUpdateMiscActions);
+    connect(d->action_list_style, &KSelectAction::indexTriggered, this, &RichTextComposerActions::setListStyle);
+    connect(d->action_list_style, QOverload<bool>::of(&QAction::triggered), this, &RichTextComposerActions::slotUpdateMiscActions);
     d->action_paste_quotation = new QAction(i18n("Pa&ste as Quotation"), this);
     d->action_paste_quotation->setObjectName(QStringLiteral("paste_quoted"));
     if (ac) {
@@ -392,8 +351,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     }
     connect(d->action_paste_without_formatting, &QAction::triggered, d->composerControler, &RichTextComposerControler::slotPasteWithoutFormatting);
 
-    d->action_add_image = new QAction(QIcon::fromTheme(QStringLiteral("insert-image")),
-                                      i18n("Add Image"), this);
+    d->action_add_image = new QAction(QIcon::fromTheme(QStringLiteral("insert-image")), i18n("Add Image"), this);
     d->action_add_image->setObjectName(QStringLiteral("add_image"));
     if (ac) {
         ac->addAction(QStringLiteral("add_image"), d->action_add_image);
@@ -406,7 +364,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     if (ac) {
         ac->addAction(QStringLiteral("add_emoticon"), d->action_add_emoticon);
     }
-    //Don't add to d->richTextActionList as we want to use it when we use plain text email too
+    // Don't add to d->richTextActionList as we want to use it when we use plain text email too
     connect(d->action_add_emoticon, &EmoticonTextEditAction::emoticonActivated, d->composerControler->richTextComposer(), &RichTextComposer::insertEmoticon);
 
     d->action_insert_html = new QAction(i18n("Insert HTML"), this);
@@ -439,8 +397,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     connect(d->action_delete_line, &QAction::triggered, d->composerControler, &RichTextComposerControler::slotDeleteLine);
     d->richTextActionList.append(d->action_delete_line);
 
-    d->action_format_reset
-        = new QAction(QIcon::fromTheme(QStringLiteral("draw-eraser")), i18n("Reset Font Settings"), this);
+    d->action_format_reset = new QAction(QIcon::fromTheme(QStringLiteral("draw-eraser")), i18n("Reset Font Settings"), this);
     d->action_format_reset->setIconText(i18n("Reset Font"));
     d->action_format_reset->setObjectName(QStringLiteral("format_reset"));
     connect(d->action_format_reset, &QAction::triggered, d->composerControler, &RichTextComposerControler::slotFormatReset);
@@ -449,15 +406,13 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     }
     d->richTextActionList.append(d->action_format_reset);
 
-    d->action_format_painter = new KToggleAction(QIcon::fromTheme(QStringLiteral("draw-brush")),
-                                                 i18nc("@action", "Format Painter"), this);
+    d->action_format_painter = new KToggleAction(QIcon::fromTheme(QStringLiteral("draw-brush")), i18nc("@action", "Format Painter"), this);
     d->richTextActionList.append(d->action_format_painter);
     d->action_format_painter->setObjectName(QStringLiteral("format_painter"));
     if (ac) {
         ac->addAction(QStringLiteral("format_painter"), d->action_format_painter);
     }
-    connect(d->action_format_painter, &QAction::toggled,
-            d->composerControler, &RichTextComposerControler::slotFormatPainter);
+    connect(d->action_format_painter, &QAction::toggled, d->composerControler, &RichTextComposerControler::slotFormatPainter);
 
     d->action_heading_level = new KSelectAction(i18nc("@title:menu", "Heading Level"), this);
     const QStringList headingLevels = {i18nc("@item:inmenu no heading", "Basic text"),
@@ -472,31 +427,24 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     d->action_heading_level->setCurrentItem(0);
     d->richTextActionList.append(d->action_heading_level);
     d->action_heading_level->setObjectName(QStringLiteral("format_heading_level"));
-    connect(d->action_heading_level, &KSelectAction::indexTriggered,
-            this, &RichTextComposerActions::setHeadingLevel);
+    connect(d->action_heading_level, &KSelectAction::indexTriggered, this, &RichTextComposerActions::setHeadingLevel);
     if (ac) {
         ac->addAction(QStringLiteral("format_heading_level"), d->action_heading_level);
     }
 
-    d->action_list_checkbox = new KToggleAction(QIcon::fromTheme(QStringLiteral("checkbox")),
-                                                i18nc("@action", "Checkbox"), this);
+    d->action_list_checkbox = new KToggleAction(QIcon::fromTheme(QStringLiteral("checkbox")), i18nc("@action", "Checkbox"), this);
     d->richTextActionList.append(d->action_list_checkbox);
     d->action_list_checkbox->setObjectName(QStringLiteral("format_list_checkbox"));
-    connect(d->action_list_checkbox, &KToggleAction::toggled,
-            d->composerControler, &RichTextComposerControler::addCheckbox);
+    connect(d->action_list_checkbox, &KToggleAction::toggled, d->composerControler, &RichTextComposerControler::addCheckbox);
     if (ac) {
         ac->addAction(QStringLiteral("format_list_checkbox"), d->action_list_checkbox);
     }
 
-    disconnect(d->composerControler->richTextComposer(), &QTextEdit::currentCharFormatChanged,
-               this, &RichTextComposerActions::slotUpdateCharFormatActions);
-    disconnect(d->composerControler->richTextComposer(), &QTextEdit::cursorPositionChanged,
-               this, &RichTextComposerActions::slotUpdateMiscActions);
+    disconnect(d->composerControler->richTextComposer(), &QTextEdit::currentCharFormatChanged, this, &RichTextComposerActions::slotUpdateCharFormatActions);
+    disconnect(d->composerControler->richTextComposer(), &QTextEdit::cursorPositionChanged, this, &RichTextComposerActions::slotUpdateMiscActions);
 
-    connect(d->composerControler->richTextComposer(), &QTextEdit::currentCharFormatChanged,
-            this, &RichTextComposerActions::slotUpdateCharFormatActions);
-    connect(d->composerControler->richTextComposer(), &QTextEdit::cursorPositionChanged,
-            this, &RichTextComposerActions::slotUpdateMiscActions);
+    connect(d->composerControler->richTextComposer(), &QTextEdit::currentCharFormatChanged, this, &RichTextComposerActions::slotUpdateCharFormatActions);
+    connect(d->composerControler->richTextComposer(), &QTextEdit::cursorPositionChanged, this, &RichTextComposerActions::slotUpdateMiscActions);
 
     updateActionStates();
 }

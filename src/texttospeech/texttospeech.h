@@ -12,7 +12,8 @@
 
 class QTextToSpeech;
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 /**
  * @brief The TextToSpeech class
  * @author Laurent Montel <montel@kde.org>
@@ -27,12 +28,7 @@ public:
 
     Q_REQUIRED_RESULT bool isReady() const;
 
-    enum State {
-        Ready = 0,
-        Speaking,
-        Paused,
-        BackendError
-    };
+    enum State { Ready = 0, Speaking, Paused, BackendError };
 
     Q_REQUIRED_RESULT double volume() const;
     Q_REQUIRED_RESULT QVector<QLocale> availableLocales() const;

@@ -5,15 +5,15 @@
 */
 
 #include "plaintexteditfindbar.h"
-#include "texteditor/commonwidget/textfindreplacewidget.h"
 #include "texteditor/commonwidget/findutils.h"
+#include "texteditor/commonwidget/textfindreplacewidget.h"
 
 #include <KColorScheme>
 #include <KLocalizedString>
 
-#include <QRegularExpression>
-#include <QPlainTextEdit>
 #include <QLineEdit>
+#include <QPlainTextEdit>
+#include <QRegularExpression>
 
 using namespace KPIMTextEdit;
 
@@ -82,13 +82,13 @@ void PlainTextEditFindBar::slotReplaceText()
         if (mFindWidget->isRegularExpression()) {
             if (d->mView->textCursor().selectedText().contains(mFindWidget->searchRegExp())) {
                 d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
-                //search next after replace text.
+                // search next after replace text.
                 searchText(false, false);
             }
         } else {
             if (d->mView->textCursor().selectedText() == mFindWidget->searchText()) {
                 d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
-                //search next after replace text.
+                // search next after replace text.
                 searchText(false, false);
             }
         }

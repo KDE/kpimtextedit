@@ -5,13 +5,13 @@
 */
 
 #include "testgeneratehtmlbuildergui.h"
-#include <QVBoxLayout>
+#include <KPIMTextEdit/MarkupDirector>
+#include <KPIMTextEdit/TextHTMLBuilder>
 #include <QApplication>
 #include <QLabel>
-#include <QTextEdit>
 #include <QPushButton>
-#include <KPIMTextEdit/TextHTMLBuilder>
-#include <KPIMTextEdit/MarkupDirector>
+#include <QTextEdit>
+#include <QVBoxLayout>
 
 TestGenerateHTMLBuilderGui::TestGenerateHTMLBuilderGui(QWidget *parent)
     : QWidget(parent)
@@ -43,7 +43,6 @@ TestGenerateHTMLBuilderGui::TestGenerateHTMLBuilderGui(QWidget *parent)
     generatedHtmlFromTextEdit->setReadOnly(true);
     mainLayout->addWidget(generatedHtmlFromTextEdit);
 
-
     lab = new QLabel(QStringLiteral("HTML from Grantlee"), this);
     mainLayout->addWidget(lab);
 
@@ -60,8 +59,7 @@ TestGenerateHTMLBuilderGui::TestGenerateHTMLBuilderGui(QWidget *parent)
     generatedHtmlFromGrantleeToTextEdit->setReadOnly(true);
     mainLayout->addWidget(generatedHtmlFromGrantleeToTextEdit);
 
-
-    connect(generateHtmlFromQTextEditButton, &QPushButton::clicked, this, [=]{
+    connect(generateHtmlFromQTextEditButton, &QPushButton::clicked, this, [=] {
         generatedHtml->setHtml(htmlEdit->toPlainText());
         generatedHtmlFromTextEdit->setPlainText(generatedHtml->document()->toHtml());
 
@@ -78,9 +76,7 @@ TestGenerateHTMLBuilderGui::TestGenerateHTMLBuilderGui(QWidget *parent)
 
 TestGenerateHTMLBuilderGui::~TestGenerateHTMLBuilderGui()
 {
-
 }
-
 
 int main(int argc, char *argv[])
 {

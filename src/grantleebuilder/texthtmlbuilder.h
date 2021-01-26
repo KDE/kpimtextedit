@@ -7,12 +7,11 @@
 #ifndef TEXTHTMLBUILDER_H
 #define TEXTHTMLBUILDER_H
 
-#include "kpimtextedit_export.h"
 #include "abstractmarkupbuilder.h"
+#include "kpimtextedit_export.h"
 
 namespace KPIMTextEdit
 {
-
 class TextHTMLBuilderPrivate;
 
 /// @headerfile texthtmlbuilder.h grantlee/texthtmlbuilder.h
@@ -89,8 +88,7 @@ class TextHTMLBuilderPrivate;
 
   @author Stephen Kelly <steveire@gmail.com>
 */
-class KPIMTEXTEDIT_EXPORT TextHTMLBuilder
-        : virtual public KPIMTextEdit::AbstractMarkupBuilder
+class KPIMTEXTEDIT_EXPORT TextHTMLBuilder : virtual public KPIMTextEdit::AbstractMarkupBuilder
 {
 public:
     TextHTMLBuilder();
@@ -132,9 +130,8 @@ public:
     @param leftMargin The new paragraph leftMargin
     @param rightMargin The new paragraph rightMargin
   */
-    void beginParagraph(Qt::Alignment al = Qt::AlignLeft, qreal topMargin = 0.0,
-                        qreal bottomMargin = 0.0, qreal leftMargin = 0.0,
-                        qreal rightMargin = 0.0) override;
+    void
+    beginParagraph(Qt::Alignment al = Qt::AlignLeft, qreal topMargin = 0.0, qreal bottomMargin = 0.0, qreal leftMargin = 0.0, qreal rightMargin = 0.0) override;
 
     /**
     Begin a new header element.
@@ -170,12 +167,10 @@ public:
 
     void endSubscript() override;
 
-    void beginTable(qreal cellpadding, qreal cellspacing,
-                    const QString &width) override;
+    void beginTable(qreal cellpadding, qreal cellspacing, const QString &width) override;
 
     void beginTableRow() override;
-    void beginTableHeaderCell(const QString &width, int colspan,
-                              int rowspan) override;
+    void beginTableHeaderCell(const QString &width, int colspan, int rowspan) override;
 
     void beginTableCell(const QString &width, int colspan, int rowspan) override;
 
@@ -211,10 +206,10 @@ public:
     Q_REQUIRED_RESULT QString getResult() override;
 
     void addSingleBreakLine() override;
+
 private:
     TextHTMLBuilderPrivate *d_ptr;
     Q_DECLARE_PRIVATE(TextHTMLBuilder)
-
 };
 
 }
