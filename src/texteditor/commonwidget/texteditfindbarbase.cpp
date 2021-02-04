@@ -39,10 +39,10 @@ TextEditFindBarBase::TextEditFindBarBase(QWidget *parent)
     closeBtn->setAutoRaise(true);
     lay->addWidget(closeBtn);
 
-    mFindWidget = new TextFindWidget;
+    mFindWidget = new TextFindWidget(this);
     lay->addWidget(mFindWidget);
 
-    mReplaceWidget = new TextReplaceWidget;
+    mReplaceWidget = new TextReplaceWidget(this);
     topLayout->addWidget(mReplaceWidget);
     mReplaceWidget->hide();
 

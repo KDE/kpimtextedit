@@ -104,6 +104,7 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     connect(mWholeWordAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
     connect(mRegExpAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
     connect(mSearch, &QLineEdit::textChanged, this, &TextFindWidget::slotAutoSearch);
+    connect(mSearch, &QLineEdit::returnPressed, this, &TextFindWidget::findNext);
 }
 
 TextFindWidget::~TextFindWidget()
