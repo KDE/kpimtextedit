@@ -23,7 +23,7 @@ class KPIMTEXTEDIT_EXPORT RichTextExternalComposer : public QObject
     Q_OBJECT
 public:
     explicit RichTextExternalComposer(RichTextComposer *composer, QObject *parent = nullptr);
-    ~RichTextExternalComposer();
+    ~RichTextExternalComposer() override;
 
     Q_REQUIRED_RESULT bool useExternalEditor() const;
     void setUseExternalEditor(bool value);

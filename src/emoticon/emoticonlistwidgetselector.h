@@ -27,7 +27,7 @@ class KPIMTEXTEDIT_TESTS_EXPORT EmoticonListWidgetSelector : public QListWidget
     Q_OBJECT
 public:
     explicit EmoticonListWidgetSelector(QWidget *parent = nullptr);
-    ~EmoticonListWidgetSelector();
+    ~EmoticonListWidgetSelector() override;
 
     void setEmoticons(const QList<uint> &lst);
     void setEmoticons(const QStringList &lst);

@@ -17,7 +17,7 @@ class KPIMTEXTEDIT_TESTS_EXPORT TextToSpeechConfigDialog : public QDialog
     Q_OBJECT
 public:
     explicit TextToSpeechConfigDialog(QWidget *parent = nullptr);
-    ~TextToSpeechConfigDialog();
+    ~TextToSpeechConfigDialog() override;
 
 private:
     void slotAccepted();

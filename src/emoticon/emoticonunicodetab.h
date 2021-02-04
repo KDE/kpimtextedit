@@ -23,7 +23,7 @@ class KPIMTEXTEDIT_EXPORT EmoticonUnicodeTab : public QTabWidget
     Q_OBJECT
 public:
     explicit EmoticonUnicodeTab(QWidget *parent = nullptr);
-    ~EmoticonUnicodeTab();
+    ~EmoticonUnicodeTab() override;
 
     void loadEmoticons();
 

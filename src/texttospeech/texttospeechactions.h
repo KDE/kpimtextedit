@@ -23,7 +23,7 @@ class KPIMTEXTEDIT_EXPORT TextToSpeechActions : public QObject
     Q_OBJECT
 public:
     explicit TextToSpeechActions(QObject *parent = nullptr);
-    ~TextToSpeechActions();
+    ~TextToSpeechActions() override;
 
     QAction *stopAction() const;
 

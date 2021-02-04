@@ -23,7 +23,7 @@ class KPIMTEXTEDIT_EXPORT TextToSpeechWidget : public QWidget
     Q_OBJECT
 public:
     explicit TextToSpeechWidget(QWidget *parent = nullptr);
-    ~TextToSpeechWidget();
+    ~TextToSpeechWidget() override;
 
     enum State { Stop = 0, Play, Pause };
     Q_ENUM(State)

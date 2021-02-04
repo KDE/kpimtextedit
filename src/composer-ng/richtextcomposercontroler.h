@@ -24,7 +24,7 @@ class KPIMTEXTEDIT_EXPORT RichTextComposerControler : public QObject
     Q_OBJECT
 public:
     explicit RichTextComposerControler(RichTextComposer *richtextComposer, QObject *parent = nullptr);
-    ~RichTextComposerControler();
+    ~RichTextComposerControler() override;
 
     Q_REQUIRED_RESULT RichTextComposer *richTextComposer() const;
 

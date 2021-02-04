@@ -20,7 +20,7 @@ class InsertImageWidget : public QWidget
     Q_OBJECT
 public:
     explicit InsertImageWidget(QWidget *parent);
-    ~InsertImageWidget();
+    ~InsertImageWidget() override;
 
     void setImageWidth(int value);
     Q_REQUIRED_RESULT int imageWidth() const;

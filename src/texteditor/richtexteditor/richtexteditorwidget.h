@@ -26,7 +26,7 @@ class KPIMTEXTEDIT_EXPORT RichTextEditorWidget : public QWidget
 public:
     explicit RichTextEditorWidget(QWidget *parent = nullptr);
     explicit RichTextEditorWidget(RichTextEditor *customEditor, QWidget *parent = nullptr);
-    ~RichTextEditorWidget();
+    ~RichTextEditorWidget() override;
 
     void clear();
 

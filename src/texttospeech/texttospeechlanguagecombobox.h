@@ -16,7 +16,7 @@ class TextToSpeechLanguageComboBox : public QComboBox
     Q_OBJECT
 public:
     explicit TextToSpeechLanguageComboBox(QWidget *parent = nullptr);
-    ~TextToSpeechLanguageComboBox();
+    ~TextToSpeechLanguageComboBox() override;
     void selectLocaleName(const QString &localeName);
     void updateAvailableLocales(const QVector<QLocale> &locales, const QLocale &current);
 };

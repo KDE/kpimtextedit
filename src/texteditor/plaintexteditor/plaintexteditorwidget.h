@@ -25,7 +25,7 @@ class KPIMTEXTEDIT_EXPORT PlainTextEditorWidget : public QWidget
 public:
     explicit PlainTextEditorWidget(QWidget *parent = nullptr);
     explicit PlainTextEditorWidget(PlainTextEditor *customEditor, QWidget *parent = nullptr);
-    ~PlainTextEditorWidget();
+    ~PlainTextEditorWidget() override;
 
     Q_REQUIRED_RESULT PlainTextEditor *editor() const;
 

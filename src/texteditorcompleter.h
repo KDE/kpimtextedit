@@ -26,7 +26,7 @@ class KPIMTEXTEDIT_EXPORT TextEditorCompleter : public QObject
 public:
     explicit TextEditorCompleter(QTextEdit *editor, QObject *parent);
     explicit TextEditorCompleter(QPlainTextEdit *editor, QObject *parent);
-    ~TextEditorCompleter();
+    ~TextEditorCompleter() override;
 
     void setCompleterStringList(const QStringList &list);
 

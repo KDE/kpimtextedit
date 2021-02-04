@@ -19,7 +19,7 @@ class TableFormatDialog : public QDialog
     Q_OBJECT
 public:
     explicit TableFormatDialog(QWidget *parent);
-    ~TableFormatDialog();
+    ~TableFormatDialog() override;
 
     Q_REQUIRED_RESULT int columns() const;
     Q_REQUIRED_RESULT int rows() const;

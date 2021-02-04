@@ -24,7 +24,7 @@ class KPIMTEXTEDIT_EXPORT TextToSpeech : public QObject
 public:
     static TextToSpeech *self();
 
-    ~TextToSpeech();
+    ~TextToSpeech() override;
 
     Q_REQUIRED_RESULT bool isReady() const;
 

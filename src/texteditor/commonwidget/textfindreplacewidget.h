@@ -20,7 +20,7 @@ class TextFindWidget : public QWidget
     Q_OBJECT
 public:
     explicit TextFindWidget(QWidget *parent = nullptr);
-    ~TextFindWidget();
+    ~TextFindWidget() override;
 
     Q_REQUIRED_RESULT QTextDocument::FindFlags searchOptions() const;
 

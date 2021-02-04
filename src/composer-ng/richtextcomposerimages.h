@@ -46,7 +46,7 @@ class KPIMTEXTEDIT_EXPORT RichTextComposerImages : public QObject
     Q_OBJECT
 public:
     explicit RichTextComposerImages(RichTextComposer *composer, QObject *parent = nullptr);
-    ~RichTextComposerImages();
+    ~RichTextComposerImages() override;
 
     /**
      * Adds an image. The image is loaded from file and then pasted to the current

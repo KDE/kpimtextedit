@@ -19,7 +19,7 @@ class TableCellFormatDialog : public QDialog
     Q_OBJECT
 public:
     explicit TableCellFormatDialog(QWidget *parent);
-    ~TableCellFormatDialog();
+    ~TableCellFormatDialog() override;
 
     /**
      * @brief tableCellBackgroundColor

@@ -17,7 +17,7 @@ class EmoticonTextEditSelector : public QWidget
     Q_OBJECT
 public:
     explicit EmoticonTextEditSelector(QWidget *parent = nullptr);
-    ~EmoticonTextEditSelector();
+    ~EmoticonTextEditSelector() override;
 
 public Q_SLOTS:
     void loadEmoticons();

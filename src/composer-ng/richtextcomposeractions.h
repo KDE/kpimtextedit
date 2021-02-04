@@ -25,7 +25,7 @@ class KPIMTEXTEDIT_EXPORT RichTextComposerActions : public QObject
     Q_OBJECT
 public:
     explicit RichTextComposerActions(KPIMTextEdit::RichTextComposerControler *controler, QObject *parent = nullptr);
-    ~RichTextComposerActions();
+    ~RichTextComposerActions() override;
 
     void createActions(KActionCollection *ac);
     Q_REQUIRED_RESULT int numberOfActions() const;

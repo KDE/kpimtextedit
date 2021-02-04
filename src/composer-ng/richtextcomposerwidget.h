@@ -23,7 +23,7 @@ class KPIMTEXTEDIT_EXPORT RichTextComposerWidget : public QWidget
     Q_OBJECT
 public:
     explicit RichTextComposerWidget(QWidget *parent = nullptr);
-    ~RichTextComposerWidget();
+    ~RichTextComposerWidget() override;
 
     Q_REQUIRED_RESULT KPIMTextEdit::RichTextComposer *richTextComposer() const;
 

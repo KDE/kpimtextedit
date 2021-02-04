@@ -19,7 +19,7 @@ class InsertTableWidget : public QWidget
     Q_OBJECT
 public:
     explicit InsertTableWidget(QWidget *parent = nullptr);
-    ~InsertTableWidget();
+    ~InsertTableWidget() override;
     Q_REQUIRED_RESULT int columns() const;
     Q_REQUIRED_RESULT int rows() const;
     Q_REQUIRED_RESULT int border() const;

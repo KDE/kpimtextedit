@@ -43,7 +43,7 @@ public:
     /**
      * Destructor
      */
-    ~KLinkDialog();
+    ~KLinkDialog() override;
 
     /**
      * Returns the link text shown in the dialog

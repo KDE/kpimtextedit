@@ -19,7 +19,7 @@ class InsertTableDialog : public QDialog
     Q_OBJECT
 public:
     explicit InsertTableDialog(QWidget *parent);
-    ~InsertTableDialog();
+    ~InsertTableDialog() override;
     Q_REQUIRED_RESULT int columns() const;
     Q_REQUIRED_RESULT int rows() const;
     Q_REQUIRED_RESULT int border() const;

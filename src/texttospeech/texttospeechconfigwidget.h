@@ -19,7 +19,7 @@ class KPIMTEXTEDIT_TESTS_EXPORT TextToSpeechConfigWidget : public QWidget
     Q_OBJECT
 public:
     explicit TextToSpeechConfigWidget(QWidget *parent = nullptr);
-    ~TextToSpeechConfigWidget();
+    ~TextToSpeechConfigWidget() override;
 
     void writeConfig();
     void readConfig();

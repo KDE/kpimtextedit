@@ -19,7 +19,7 @@ class EmoticonTextEditAction : public KActionMenu
     Q_OBJECT
 public:
     explicit EmoticonTextEditAction(QObject *parent);
-    ~EmoticonTextEditAction();
+    ~EmoticonTextEditAction() override;
 
 Q_SIGNALS:
     void emoticonActivated(const QString &);

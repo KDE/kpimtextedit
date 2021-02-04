@@ -19,7 +19,7 @@ class TableActionMenu : public KActionMenu
     Q_OBJECT
 public:
     explicit TableActionMenu(QTextEdit *textEdit);
-    ~TableActionMenu();
+    ~TableActionMenu() override;
 
     void setRichTextMode(bool richTextMode);
 

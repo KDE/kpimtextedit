@@ -19,7 +19,7 @@ class KPIMTEXTEDIT_EXPORT AbstractTextToSpeechInterface : public QObject
     Q_OBJECT
 public:
     explicit AbstractTextToSpeechInterface(QObject *parent = nullptr);
-    ~AbstractTextToSpeechInterface();
+    ~AbstractTextToSpeechInterface() override;
 
     virtual Q_REQUIRED_RESULT bool isReady() const;
     virtual void say(const QString &text);

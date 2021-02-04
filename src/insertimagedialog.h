@@ -20,7 +20,7 @@ class InsertImageDialog : public QDialog
     Q_OBJECT
 public:
     explicit InsertImageDialog(QWidget *parent = nullptr);
-    ~InsertImageDialog();
+    ~InsertImageDialog() override;
 
     Q_REQUIRED_RESULT int imageWidth() const;
     Q_REQUIRED_RESULT int imageHeight() const;

@@ -23,7 +23,7 @@ class KPIMTEXTEDIT_EXPORT SelectSpecialCharDialog : public QDialog
     Q_OBJECT
 public:
     explicit SelectSpecialCharDialog(QWidget *parent);
-    ~SelectSpecialCharDialog();
+    ~SelectSpecialCharDialog() override;
 
     void setCurrentChar(QChar c);
     Q_REQUIRED_RESULT QChar currentChar() const;
