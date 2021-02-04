@@ -38,12 +38,12 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
     : QWidget(parent)
     , d(new KPIMTextEdit::TextToSpeechWidgetPrivate)
 {
-    auto *hbox = new QHBoxLayout(this);
+    auto hbox = new QHBoxLayout(this);
 
     d->mTextToSpeechActions = new TextToSpeechActions(this);
     connect(d->mTextToSpeechActions, &TextToSpeechActions::stateChanged, this, &TextToSpeechWidget::stateChanged);
 
-    auto *close = new QToolButton(this);
+    auto close = new QToolButton(this);
     close->setObjectName(QStringLiteral("close-button"));
     close->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
     close->setToolTip(i18n("Close"));

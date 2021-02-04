@@ -24,7 +24,7 @@ public:
         : q(qq)
     {
         q->setWindowTitle(i18nc("@title:window", "Insert Table"));
-        auto *mainLayout = new QVBoxLayout(q);
+        auto mainLayout = new QVBoxLayout(q);
 
         insertTableWidget = new InsertTableWidget(q);
         mainLayout->addWidget(insertTableWidget);

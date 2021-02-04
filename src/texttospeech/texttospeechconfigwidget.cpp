@@ -22,7 +22,7 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     : QWidget(parent)
     , mAbstractTextToSpeechConfigInterface(new TextToSpeechConfigInterface(this))
 {
-    auto *layout = new QFormLayout(this);
+    auto layout = new QFormLayout(this);
     mVolume = new QSlider(this);
     mVolume->setObjectName(QStringLiteral("volume"));
     mVolume->setRange(0, 100);

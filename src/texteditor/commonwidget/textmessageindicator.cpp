@@ -135,7 +135,7 @@ bool TextMessageIndicator::eventFilter(QObject *obj, QEvent *event)
     /* if the parent object (scroll area) resizes, the message should
        resize as well */
     if (event->type() == QEvent::Resize) {
-        auto *resizeEvent = static_cast<QResizeEvent *>(event);
+        auto resizeEvent = static_cast<QResizeEvent *>(event);
         if (resizeEvent->oldSize() != resizeEvent->size()) {
             computeSizeAndResize();
         }

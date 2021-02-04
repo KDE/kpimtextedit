@@ -16,11 +16,11 @@
 TestGeneratePlainTextBuilderGui::TestGeneratePlainTextBuilderGui(QWidget *parent)
     : QWidget(parent)
 {
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
     QLabel *lab = new QLabel(QStringLiteral("html text"), this);
     mainLayout->addWidget(lab);
 
-    auto *htmlEdit = new QTextEdit(this);
+    auto htmlEdit = new QTextEdit(this);
     htmlEdit->setAcceptRichText(false);
     mainLayout->addWidget(htmlEdit);
 
@@ -30,7 +30,7 @@ TestGeneratePlainTextBuilderGui::TestGeneratePlainTextBuilderGui(QWidget *parent
     lab = new QLabel(QStringLiteral("Generate Html"), this);
     mainLayout->addWidget(lab);
 
-    auto *generatedHtml = new QTextEdit(this);
+    auto generatedHtml = new QTextEdit(this);
     generatedHtml->setAcceptRichText(false);
     generatedHtml->setReadOnly(true);
     mainLayout->addWidget(generatedHtml);
@@ -38,7 +38,7 @@ TestGeneratePlainTextBuilderGui::TestGeneratePlainTextBuilderGui(QWidget *parent
     lab = new QLabel(QStringLiteral("Plaintext from Grantlee to TextEdit"), this);
     mainLayout->addWidget(lab);
 
-    auto *generatedPlainTextFromGrantleeToTextEdit = new QTextEdit(this);
+    auto generatedPlainTextFromGrantleeToTextEdit = new QTextEdit(this);
     generatedPlainTextFromGrantleeToTextEdit->setAcceptRichText(false);
     generatedPlainTextFromGrantleeToTextEdit->setReadOnly(true);
     mainLayout->addWidget(generatedPlainTextFromGrantleeToTextEdit);

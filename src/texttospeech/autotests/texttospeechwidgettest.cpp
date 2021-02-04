@@ -24,7 +24,7 @@ TextToSpeechWidgetTest::TextToSpeechWidgetTest(QObject *parent)
 
 void TextToSpeechWidgetTest::addInterface(KPIMTextEdit::TextToSpeechWidget *widget)
 {
-    auto *interface = new KPIMTextEdit::AbstractTextToSpeechInterface(this);
+    auto interface = new KPIMTextEdit::AbstractTextToSpeechInterface(this);
     widget->setTextToSpeechInterface(interface);
 }
 

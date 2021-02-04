@@ -23,10 +23,10 @@ int main(int argc, char **argv)
     parser.addVersionOption();
     parser.addHelpOption();
     parser.process(app);
-    auto *richtextcomposerwidget = new KPIMTextEdit::RichTextComposer;
+    auto richtextcomposerwidget = new KPIMTextEdit::RichTextComposer;
     KActionCollection *ac = new KActionCollection(richtextcomposerwidget);
     richtextcomposerwidget->createActions(ac);
-    auto *editor = new KPIMTextEdit::RichTextEditorWidget(richtextcomposerwidget);
+    auto editor = new KPIMTextEdit::RichTextEditorWidget(richtextcomposerwidget);
     editor->resize(800, 600);
     editor->show();
 

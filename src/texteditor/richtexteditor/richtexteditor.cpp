@@ -219,7 +219,7 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
 
                 if (checkSpellingEnabled() && d->activateLanguageMenu) {
                     QMenu *languagesMenu = new QMenu(i18n("Spell Checking Language"), popup);
-                    auto *languagesGroup = new QActionGroup(languagesMenu);
+                    auto languagesGroup = new QActionGroup(languagesMenu);
                     languagesGroup->setExclusive(true);
 
                     QString defaultSpellcheckingLanguage = spellCheckingLanguage();
@@ -436,7 +436,7 @@ void RichTextEditor::checkSpelling(bool force)
         }
         return;
     }
-    auto *backgroundSpellCheck = new Sonnet::BackgroundChecker;
+    auto backgroundSpellCheck = new Sonnet::BackgroundChecker;
     if (backgroundSpellCheck->speller().availableBackends().isEmpty()) {
         if (force) {
             if (KMessageBox::Yes == KMessageBox::questionYesNo(this, i18n("No backend available for spell checking. Do you want to send the email anyways?"))) {
@@ -456,7 +456,7 @@ void RichTextEditor::checkSpelling(bool force)
             backgroundSpellCheck->speller().addToSession(word);
         }
     }
-    auto *spellDialog = new Sonnet::Dialog(backgroundSpellCheck, force ? this : nullptr);
+    auto spellDialog = new Sonnet::Dialog(backgroundSpellCheck, force ? this : nullptr);
     auto *buttonBox = spellDialog->findChild<QDialogButtonBox *>();
     if (buttonBox) {
         QPushButton *skipButton = new QPushButton(i18n("Skip"));
@@ -686,7 +686,7 @@ void RichTextEditor::slotToggleAutoSpellCheck()
 
 void RichTextEditor::slotLanguageSelected()
 {
-    auto *languageAction = static_cast<QAction *>(QObject::sender());
+    auto languageAction = static_cast<QAction *>(QObject::sender());
     setSpellCheckingLanguage(languageAction->data().toString());
 }
 
@@ -710,7 +710,7 @@ void RichTextEditor::deleteWordForward()
 bool RichTextEditor::event(QEvent *ev)
 {
     if (ev->type() == QEvent::ShortcutOverride) {
-        auto *e = static_cast<QKeyEvent *>(ev);
+        auto e = static_cast<QKeyEvent *>(ev);
         if (overrideShortcut(e)) {
             e->accept();
             return true;

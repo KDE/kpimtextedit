@@ -22,7 +22,7 @@ public:
         : emoticonMenu(new QMenu())
     {
         selector = new EmoticonTextEditSelector(emoticonMenu);
-        auto *action = new QWidgetAction(emoticonMenu);
+        auto action = new QWidgetAction(emoticonMenu);
         action->setDefaultWidget(selector);
         emoticonMenu->addAction(action);
         connect(emoticonMenu, &QMenu::aboutToShow, selector, &EmoticonTextEditSelector::loadEmoticons);

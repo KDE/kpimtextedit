@@ -29,10 +29,10 @@ public:
         : q(qq)
     {
         q->setWindowTitle(i18nc("@title:window", "Table Format"));
-        auto *mainLayout = new QVBoxLayout(q);
+        auto mainLayout = new QVBoxLayout(q);
 
         QWidget *page = new QWidget(q);
-        auto *lay = new QVBoxLayout(page);
+        auto lay = new QVBoxLayout(page);
         lay->setContentsMargins(0, 0, 0, 0);
         tableWidget = new InsertTableWidget;
         lay->addWidget(tableWidget);
@@ -40,7 +40,7 @@ public:
         KSeparator *sep = new KSeparator;
         lay->addWidget(sep);
 
-        auto *hbox = new QHBoxLayout;
+        auto hbox = new QHBoxLayout;
         QLabel *lab = new QLabel(i18n("Spacing:"));
         hbox->addWidget(lab);
         spacing = new QSpinBox;

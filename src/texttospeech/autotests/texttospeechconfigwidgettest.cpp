@@ -24,7 +24,7 @@ TextToSpeechConfigWidgetTest::~TextToSpeechConfigWidgetTest()
 
 void TextToSpeechConfigWidgetTest::addInterface(KPIMTextEdit::TextToSpeechConfigWidget *widget)
 {
-    auto *interface = new KPIMTextEdit::AbstractTextToSpeechConfigInterface(this);
+    auto interface = new KPIMTextEdit::AbstractTextToSpeechConfigInterface(this);
     widget->setTextToSpeechConfigInterface(interface);
 }
 

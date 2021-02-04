@@ -16,7 +16,7 @@ using namespace KPIMTextEdit;
 EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     : QWidget(parent)
 {
-    auto *lay = new QHBoxLayout(this);
+    auto lay = new QHBoxLayout(this);
     lay->setSpacing(0);
     lay->setContentsMargins(0, 0, 0, 0);
     mUnicodeTab = new EmoticonUnicodeTab(this);

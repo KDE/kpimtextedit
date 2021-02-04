@@ -33,9 +33,9 @@ TextGoToLineWidget::TextGoToLineWidget(QWidget *parent)
     : QWidget(parent)
     , d(new KPIMTextEdit::TextGoToLineWidgetPrivate)
 {
-    auto *hbox = new QHBoxLayout(this);
+    auto hbox = new QHBoxLayout(this);
     hbox->setContentsMargins(2, 2, 2, 2);
-    auto *closeBtn = new QToolButton(this);
+    auto closeBtn = new QToolButton(this);
     closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
     closeBtn->setIconSize(QSize(16, 16));
     closeBtn->setToolTip(i18n("Close"));
@@ -119,7 +119,7 @@ bool TextGoToLineWidget::event(QEvent *e)
     // With a shortcut override we can catch this before it gets to kactions.
     const bool shortCutOverride = (e->type() == QEvent::ShortcutOverride);
     if (shortCutOverride || e->type() == QEvent::KeyPress) {
-        auto *kev = static_cast<QKeyEvent *>(e);
+        auto kev = static_cast<QKeyEvent *>(e);
         if (kev->key() == Qt::Key_Escape) {
             e->accept();
             slotCloseBar();

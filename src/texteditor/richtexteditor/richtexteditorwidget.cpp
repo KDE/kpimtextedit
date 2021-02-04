@@ -100,7 +100,7 @@ QString RichTextEditorWidget::toPlainText() const
 
 void RichTextEditorWidget::init(RichTextEditor *customEditor)
 {
-    auto *lay = new QVBoxLayout(this);
+    auto lay = new QVBoxLayout(this);
     lay->setContentsMargins(0, 0, 0, 0);
     d->mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
     lay->addWidget(d->mTextToSpeechWidget);

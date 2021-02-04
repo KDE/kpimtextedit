@@ -27,7 +27,7 @@ InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
         qCWarning(KPIMTEXTEDIT_LOG) << "Invalid definition name";
     }
 
-    auto *hl = new KSyntaxHighlighting::SyntaxHighlighter(document());
+    auto hl = new KSyntaxHighlighting::SyntaxHighlighter(document());
     hl->setTheme((palette().color(QPalette::Base).lightness() < 128) ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
                                                                      : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     hl->setDefinition(def);

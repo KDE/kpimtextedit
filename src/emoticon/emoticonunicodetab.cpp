@@ -65,7 +65,7 @@ void EmoticonUnicodeTab::loadEmoticons()
 void EmoticonUnicodeTab::createPlainTextEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons)
 {
     if (!emoticons.isEmpty()) {
-        auto *selector = new EmoticonListWidgetSelector(this);
+        auto selector = new EmoticonListWidgetSelector(this);
         connect(selector, &KPIMTextEdit::EmoticonListWidgetSelector::itemSelected, this, &EmoticonUnicodeTab::itemSelected);
         QStringList lst;
         lst.reserve(emoticons.count());

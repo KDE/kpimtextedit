@@ -19,8 +19,8 @@ public:
     explicit Window(QWidget *parent = nullptr)
         : QWidget(parent)
     {
-        auto *mainLayout = new QVBoxLayout(this);
-        auto *w = new KPIMTextEdit::EmoticonUnicodeTab(this);
+        auto mainLayout = new QVBoxLayout(this);
+        auto w = new KPIMTextEdit::EmoticonUnicodeTab(this);
         mainLayout->addWidget(w);
     }
 };

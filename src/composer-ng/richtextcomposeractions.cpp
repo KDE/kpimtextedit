@@ -137,7 +137,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
         ac->addAction(QStringLiteral("format_align_justify"), d->action_align_justify);
     }
 
-    auto *alignmentGroup = new QActionGroup(this);
+    auto alignmentGroup = new QActionGroup(this);
     alignmentGroup->addAction(d->action_align_left);
     alignmentGroup->addAction(d->action_align_center);
     alignmentGroup->addAction(d->action_align_right);
@@ -162,7 +162,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
         ac->addAction(QStringLiteral("direction_rtl"), d->action_direction_rtl);
     }
 
-    auto *directionGroup = new QActionGroup(this);
+    auto directionGroup = new QActionGroup(this);
     directionGroup->addAction(d->action_direction_ltr);
     directionGroup->addAction(d->action_direction_rtl);
 

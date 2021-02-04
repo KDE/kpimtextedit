@@ -25,12 +25,12 @@ public:
         : q(qq)
     {
         q->setWindowTitle(i18nc("@title:window", "Insert HTML"));
-        auto *lay = new QVBoxLayout(q);
+        auto lay = new QVBoxLayout(q);
         QLabel *label = new QLabel(i18n("Insert HTML tags and texts:"));
         lay->addWidget(label);
         editor = new InsertHtmlEditor;
         editor->setSpellCheckingSupport(false);
-        auto *editorWidget = new KPIMTextEdit::PlainTextEditorWidget(editor);
+        auto editorWidget = new KPIMTextEdit::PlainTextEditorWidget(editor);
         lay->addWidget(editorWidget);
         label = new QLabel(i18n("Example: <i> Hello word </i>"));
         QFont font = label->font();

@@ -26,10 +26,10 @@ public:
         : q(qq)
     {
         q->setWindowTitle(i18nc("@title:window", "Cell Format"));
-        auto *mainLayout = new QVBoxLayout;
+        auto mainLayout = new QVBoxLayout;
         q->setLayout(mainLayout);
 
-        auto *hbox = new QHBoxLayout;
+        auto hbox = new QHBoxLayout;
         QLabel *lab = new QLabel(i18n("Vertical Alignment:"));
         hbox->addWidget(lab);
         verticalAlignment = new QComboBox;
