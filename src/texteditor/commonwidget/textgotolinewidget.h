@@ -34,6 +34,7 @@ Q_SIGNALS:
 protected:
     bool event(QEvent *e) override;
     void showEvent(QShowEvent *e) override;
+    bool eventFilter(QObject *obj, QEvent *event) override;
 
 public Q_SLOTS:
     void slotBlockCountChanged(int numberBlockCount);

@@ -62,6 +62,7 @@ TextGoToLineWidget::TextGoToLineWidget(QWidget *parent)
     hbox->addWidget(d->mGoToLine);
     hbox->addStretch();
     d->mSpinbox->setFocus();
+    d->mSpinbox->installEventFilter(this);
 }
 
 TextGoToLineWidget::~TextGoToLineWidget()
@@ -71,6 +72,20 @@ TextGoToLineWidget::~TextGoToLineWidget()
     delete d->mSpinbox;
 
     delete d;
+}
+
+bool TextGoToLineWidget::eventFilter(QObject *obj, QEvent *event)
+{
+    if (obj == d->mSpinbox) {
+        if (event->type() == QEvent::KeyPress) {
+            auto e = static_cast<QKeyEvent *>(event);
+            if (e->key() == Qt::Key_Return || e->key() == Qt::Key_Enter) {
+                slotGoToLine();
+                return true;
+            }
+        }
+    }
+    return QObject::eventFilter(obj, event);
 }
 
 void TextGoToLineWidget::setMaximumLineCount(int max)
