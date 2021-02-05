@@ -50,7 +50,7 @@ TextGoToLineWidget::TextGoToLineWidget(QWidget *parent)
 
     QLabel *lab = new QLabel(i18n("Go to Line:"));
     hbox->addWidget(lab);
-    d->mSpinbox = new QSpinBox;
+    d->mSpinbox = new QSpinBox(this);
     d->mSpinbox->setMinimum(1);
     d->mSpinbox->setObjectName(QStringLiteral("line"));
     connect(d->mSpinbox, &QSpinBox::editingFinished, this, &TextGoToLineWidget::slotGoToLine);
