@@ -5,8 +5,7 @@
 
 */
 
-#ifndef KPIMTEXTEDIT_INSERTTABLEDIALOG_H
-#define KPIMTEXTEDIT_INSERTTABLEDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -39,4 +38,3 @@ private:
 };
 }
 
-#endif // KPIMTEXTEDIT_INSERTTABLEDIALOG_H

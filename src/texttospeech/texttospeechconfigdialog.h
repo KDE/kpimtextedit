@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTTOSPEECHCONFIGDIALOG_H
-#define TEXTTOSPEECHCONFIGDIALOG_H
+#pragma once
 
 #include "kpimtextedit_private_export.h"
 #include <QDialog>
@@ -28,4 +27,3 @@ private:
 };
 }
 
-#endif // TEXTTOSPEECHCONFIGDIALOG_H

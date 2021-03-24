@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTTOSPEECHLANGUAGECOMBOBOX_H
-#define TEXTTOSPEECHLANGUAGECOMBOBOX_H
+#pragma once
 
 #include <QComboBox>
 #include <QLocale>
@@ -21,4 +20,3 @@ public:
     void updateAvailableLocales(const QVector<QLocale> &locales, const QLocale &current);
 };
 }
-#endif // TEXTTOSPEECHLANGUAGECOMBOBOX_H

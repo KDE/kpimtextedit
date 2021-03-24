@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef EMOTICONUNICODETAB_H
-#define EMOTICONUNICODETAB_H
+#pragma once
 
 #include <QTabWidget>
 
@@ -35,4 +34,3 @@ private:
 };
 }
 
-#endif // EMOTICONUNICODETAB_H

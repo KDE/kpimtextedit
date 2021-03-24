@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KPIMTEXTEDIT_EMOTICONTEXTEDITSELECTOR_H
-#define KPIMTEXTEDIT_EMOTICONTEXTEDITSELECTOR_H
+#pragma once
 
 #include <QWidget>
 namespace KPIMTextEdit
@@ -31,4 +30,3 @@ private:
 };
 }
 
-#endif /* KPIMTEXTEDIT_EMOTICONTEXTEDITSELECTOR_H */

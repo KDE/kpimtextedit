@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef RICHTEXTCOMPOSERIMAGESTEST_H
-#define RICHTEXTCOMPOSERIMAGESTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -17,4 +16,3 @@ public:
     ~RichTextComposerImagesTest();
 };
 
-#endif // RICHTEXTCOMPOSERIMAGESTEST_H

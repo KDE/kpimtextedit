@@ -5,8 +5,7 @@
 
 */
 
-#ifndef RICHTEXTCOMPOSER_INSERTHTMLDIALOG_H
-#define RICHTEXTCOMPOSER_INSERTHTMLDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -31,4 +30,3 @@ private:
 };
 }
 
-#endif

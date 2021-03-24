@@ -5,8 +5,7 @@
 
 */
 
-#ifndef KPIMTEXTEDIT_TABLECELLFORMATDIALOG_H
-#define KPIMTEXTEDIT_TABLECELLFORMATDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -57,4 +56,3 @@ private:
 };
 }
 
-#endif // KPIMTEXTEDIT_TABLECELLFORMATDIALOG_H

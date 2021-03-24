@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLAINTEXTEDITORWIDGET_H
-#define PLAINTEXTEDITORWIDGET_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 #include <QWidget>
@@ -51,4 +50,3 @@ private:
 };
 }
 
-#endif // PLAINTEXTEDITORWIDGET_H

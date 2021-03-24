@@ -5,8 +5,7 @@ SPDX-FileCopyrightText: 2011 Aurélien Gâteau <agateau@kde.org>
 SPDX-License-Identifier: GPL-2.0-or-later
 
 */
-#ifndef SLIDECONTAINERAUTOTEST_H
-#define SLIDECONTAINERAUTOTEST_H
+#pragma once
 
 // Local
 
@@ -26,4 +25,3 @@ private Q_SLOTS:
     void testHiddenContentResize();
 };
 
-#endif /* SLIDECONTAINERAUTOTEST_H */

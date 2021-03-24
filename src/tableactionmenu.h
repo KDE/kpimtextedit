@@ -5,8 +5,7 @@
 
 */
 
-#ifndef KPIMTEXTEDIT_TABLEACTIONMENU_H
-#define KPIMTEXTEDIT_TABLEACTIONMENU_H
+#pragma once
 
 #include <KActionMenu>
 #include <QTextEdit>
@@ -29,4 +28,3 @@ private:
 };
 }
 
-#endif // KPIMTEXTEDIT_TABLEACTIONMENU_H

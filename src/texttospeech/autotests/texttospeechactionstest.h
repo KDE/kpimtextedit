@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTTOSPEECHACTIONSTEST_H
-#define TEXTTOSPEECHACTIONSTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -23,4 +22,3 @@ private Q_SLOTS:
     void shouldEmitStateChanged();
 };
 
-#endif // TEXTTOSPEECHACTIONSTEST_H

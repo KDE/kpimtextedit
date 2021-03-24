@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTFINDREPLACEWIDGET_H
-#define TEXTFINDREPLACEWIDGET_H
+#pragma once
 
 #include <QTextDocument>
 #include <QWidget>
@@ -76,4 +75,3 @@ private:
     QPushButton *mReplaceAllBtn = nullptr;
 };
 }
-#endif // TEXTFINDREPLACEWIDGET_H

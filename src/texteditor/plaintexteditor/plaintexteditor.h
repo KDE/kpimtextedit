@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLAINTEXTEDITOR_H
-#define PLAINTEXTEDITOR_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 
@@ -116,4 +115,3 @@ private:
     PlainTextEditorPrivate *const d;
 };
 }
-#endif // PLAINTEXTEDITOR_H

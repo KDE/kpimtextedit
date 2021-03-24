@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef RICHTEXTEXTERNALCOMPOSERTEST_H
-#define RICHTEXTEXTERNALCOMPOSERTEST_H
+#pragma once
 #include <QObject>
 
 class RichTextExternalComposerTest : public QObject
@@ -19,4 +18,3 @@ private Q_SLOTS:
     void shouldChangeUseExternalComposer();
 };
 
-#endif // RICHTEXTEXTERNALCOMPOSERTEST_H

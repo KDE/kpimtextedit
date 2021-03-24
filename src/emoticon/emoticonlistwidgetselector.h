@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef EMOTICONLISTWIDGETSELECTOR_H
-#define EMOTICONLISTWIDGETSELECTOR_H
+#pragma once
 
 #include "kpimtextedit_private_export.h"
 #include <QListWidget>
@@ -40,4 +39,3 @@ private:
 };
 }
 
-#endif // EMOTICONLISTWIDGETSELECTOR_H

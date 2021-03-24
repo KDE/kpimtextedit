@@ -6,8 +6,7 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#ifndef KLINKDIALOG_H
-#define KLINKDIALOG_H
+#pragma once
 
 //@cond PRIVATE
 
@@ -80,4 +79,3 @@ private:
 }
 //@endcond
 
-#endif

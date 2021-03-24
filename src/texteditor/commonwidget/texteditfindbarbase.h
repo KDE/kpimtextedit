@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTEDITFINDBARBASE_H
-#define TEXTEDITFINDBARBASE_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 #include <QRegularExpression>
@@ -76,4 +75,3 @@ protected:
 };
 }
 
-#endif // TEXTEDITFINDBARBASE_H

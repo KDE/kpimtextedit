@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KPIMTEXTEDITRICHTEXTCOMPOSERACTIONS_H
-#define KPIMTEXTEDITRICHTEXTCOMPOSERACTIONS_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 #include "richtextcomposer.h"
@@ -50,4 +49,3 @@ private:
 };
 }
 
-#endif // RICHTEXTCOMPOSERACTIONS_H

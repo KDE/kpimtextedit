@@ -5,8 +5,7 @@
 
 */
 
-#ifndef RICHTEXTCOMPOSER_INSERTHTMLEDITOR_H
-#define RICHTEXTCOMPOSER_INSERTHTMLEDITOR_H
+#pragma once
 
 #include <QWidget>
 
@@ -32,4 +31,3 @@ private:
 };
 }
 
-#endif // INSERTHTMLEDITOR_H

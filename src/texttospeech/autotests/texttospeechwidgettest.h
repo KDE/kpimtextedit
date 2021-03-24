@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTTOSPEECHWIDGETTEST_H
-#define TEXTTOSPEECHWIDGETTEST_H
+#pragma once
 
 #include <QObject>
 namespace KPIMTextEdit
@@ -29,4 +28,3 @@ private Q_SLOTS:
     void shouldEmitStateChanged();
 };
 
-#endif // TEXTTOSPEECHWIDGETTEST_H

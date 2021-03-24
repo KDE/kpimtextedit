@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef RICHTEXTCOMPOSERWIDGET_H
-#define RICHTEXTCOMPOSERWIDGET_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 #include <QWidget>
@@ -32,4 +31,3 @@ private:
 };
 }
 
-#endif // RICHTEXTCOMPOSERWIDGET_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KPIMTEXTEDITRICHTEXTCOMPOSERCONTROLER_H
-#define KPIMTEXTEDITRICHTEXTCOMPOSERCONTROLER_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 #include "richtextcomposer.h"
@@ -98,4 +97,3 @@ private:
     RichTextComposerControlerPrivate *const d;
 };
 }
-#endif // RICHTEXTCOMPOSERCONTROLER_H

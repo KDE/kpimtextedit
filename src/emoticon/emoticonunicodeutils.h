@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef EMOTICONUNICODEUTILS_H
-#define EMOTICONUNICODEUTILS_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 #include <QString>
@@ -60,4 +59,3 @@ KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QVector<EmoticonStruct> unicodeAwardMedalE
 }
 }
 
-#endif // EMOTICONUNICODEUTILS_H

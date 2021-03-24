@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 
 */
-#ifndef KPIMTEXTEDIT_INSERTIMAGEWIDGET_H
-#define KPIMTEXTEDIT_INSERTIMAGEWIDGET_H
+#pragma once
 
 #include <QUrl>
 
@@ -42,4 +41,3 @@ private:
 };
 }
 
-#endif // KPIMTEXTEDIT_INSERTIMAGEWIDGET_H

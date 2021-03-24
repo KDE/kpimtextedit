@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef RICHTEXTEDITOR_H
-#define RICHTEXTEDITOR_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 #include <QTextEdit>
@@ -139,4 +138,3 @@ private:
 };
 }
 
-#endif // RICHTEXTEDITOR_H

@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KPIMTEXTEDITPRIVATE_EXPORT_H
-#define KPIMTEXTEDITPRIVATE_EXPORT_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 
@@ -18,4 +17,3 @@
 #define KPIMTEXTEDIT_TESTS_EXPORT
 #endif
 
-#endif

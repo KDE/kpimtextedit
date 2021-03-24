@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTTOSPEECHGUI_H
-#define TEXTTOSPEECHGUI_H
+#pragma once
 
 #include <QMainWindow>
 class QTextEdit;
@@ -23,4 +22,3 @@ private:
     QTextEdit *mEdit = nullptr;
 };
 
-#endif // TEXTTOSPEECHGUI_H

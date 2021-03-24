@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef FINDUTILS_H
-#define FINDUTILS_H
+#pragma once
 
 #include <qglobal.h>
 
@@ -28,4 +27,3 @@ Q_REQUIRED_RESULT int replaceAll(QTextDocument *document, const TextFindWidget *
 }
 } // namespace KPIMTextEdit
 
-#endif // FINDUTILS_H

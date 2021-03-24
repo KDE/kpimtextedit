@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KPIMTEXTEDITRICHTEXTCOMPOSERIMAGES_H
-#define KPIMTEXTEDITRICHTEXTCOMPOSERIMAGES_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 #include <QFileInfo>
@@ -107,4 +106,3 @@ private:
 };
 }
 
-#endif // RICHTEXTCOMPOSERIMAGES_H

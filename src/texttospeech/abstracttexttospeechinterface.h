@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef ABSTRACTTEXTTOSPEECHINTERFACE_H
-#define ABSTRACTTEXTTOSPEECHINTERFACE_H
+#pragma once
 #include "kpimtextedit_export.h"
 #include <QObject>
 namespace KPIMTextEdit
@@ -29,4 +28,3 @@ public:
 };
 }
 
-#endif // ABSTRACTTEXTTOSPEECHINTERFACE_H

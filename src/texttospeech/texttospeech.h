@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTTOSPEECH_H
-#define TEXTTOSPEECH_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 #include <QObject>
@@ -62,4 +61,3 @@ private:
 };
 }
 
-#endif // TEXTTOSPEECH_H

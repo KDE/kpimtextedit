@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTTOSPEECHCONFIGWIDGETTEST_H
-#define TEXTTOSPEECHCONFIGWIDGETTEST_H
+#pragma once
 
 #include <QObject>
 namespace KPIMTextEdit
@@ -27,4 +26,3 @@ private:
     void addInterface(KPIMTextEdit::TextToSpeechConfigWidget *widget);
 };
 
-#endif // TEXTTOSPEECHCONFIGWIDGETTEST_H

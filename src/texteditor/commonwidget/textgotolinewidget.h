@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTGOTOLINEWIDGET_H
-#define TEXTGOTOLINEWIDGET_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 #include <QWidget>
@@ -47,4 +46,3 @@ private:
     TextGoToLineWidgetPrivate *const d;
 };
 }
-#endif // TEXTGOTOLINEWIDGET_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef RICHTEXTCOMPOSERACTIONSTEST_H
-#define RICHTEXTCOMPOSERACTIONSTEST_H
+#pragma once
 #include <QObject>
 
 class RichTextComposerActionsTest : public QObject
@@ -20,4 +19,3 @@ private Q_SLOTS:
     void shouldChangeEnableState();
 };
 
-#endif // RICHTEXTCOMPOSERACTIONSTEST_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTTOSPEECHCONFIGINTERFACE_H
-#define TEXTTOSPEECHCONFIGINTERFACE_H
+#pragma once
 #include "abstracttexttospeechconfiginterface.h"
 #include "kpimtextedit_export.h"
 
@@ -33,4 +32,3 @@ public:
 };
 }
 
-#endif // TEXTTOSPEECHCONFIGINTERFACE_H

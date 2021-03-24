@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KPIMTEXTEDITRICHTEXTCOMPOSEREMAILQUOTEHIGHLIGHTER_H
-#define KPIMTEXTEDITRICHTEXTCOMPOSEREMAILQUOTEHIGHLIGHTER_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 #include <sonnet/highlighter.h>
@@ -85,4 +84,3 @@ private:
 };
 }
 
-#endif // RICHTEXTCOMPOSEREMAILQUOTEHIGHLIGHTER_H

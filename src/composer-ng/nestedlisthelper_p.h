@@ -6,8 +6,7 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#ifndef NESTEDLISTHELPER_H
-#define NESTEDLISTHELPER_H
+#pragma once
 
 //@cond PRIVATE
 #include <QObject>
@@ -125,4 +124,3 @@ private:
 }
 //@endcond
 
-#endif

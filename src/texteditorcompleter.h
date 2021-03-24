@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#ifndef TEXTEDITORCOMPLETER_H
-#define TEXTEDITORCOMPLETER_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 #include <QObject>
@@ -43,4 +42,3 @@ private:
 };
 }
 
-#endif // TEXTEDITORCOMPLETER_H

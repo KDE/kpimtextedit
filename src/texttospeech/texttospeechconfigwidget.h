@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTTOSPEECHCONFIGWIDGET_H
-#define TEXTTOSPEECHCONFIGWIDGET_H
+#pragma once
 #include "kpimtextedit_private_export.h"
 #include <QWidget>
 class QSlider;
@@ -51,4 +50,3 @@ private:
 };
 }
 
-#endif // TEXTTOSPEECHCONFIGWIDGET_H

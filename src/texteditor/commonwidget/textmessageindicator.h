@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTMESSAGEINDICATOR_H
-#define TEXTMESSAGEINDICATOR_H
+#pragma once
 
 #include <QWidget>
 class QTimer;
@@ -45,4 +44,3 @@ private:
 };
 }
 
-#endif // TEXTMESSAGEINDICATOR_H

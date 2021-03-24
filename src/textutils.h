@@ -7,8 +7,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KPIMTEXTEDIT_TEXTUTILS_H
-#define KPIMTEXTEDIT_TEXTUTILS_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 #include <qglobal.h>
@@ -46,4 +45,3 @@ KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QString flowText(QString &text, const QStr
 }
 }
 
-#endif

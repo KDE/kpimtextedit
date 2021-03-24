@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef RICHTEXTEDITFINDBAR_H
-#define RICHTEXTEDITFINDBAR_H
+#pragma once
 
 #include "kpimtextedit/texteditfindbarbase.h"
 #include "kpimtextedit_export.h"
@@ -45,4 +44,3 @@ private:
 };
 }
 
-#endif // RICHTEXTEDITFINDBAR_H

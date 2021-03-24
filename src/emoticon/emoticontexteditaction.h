@@ -5,8 +5,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KPIMTEXTEDIT_EMOTICONTEXTEDITACTION_H
-#define KPIMTEXTEDIT_EMOTICONTEXTEDITACTION_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 
@@ -30,4 +29,3 @@ private:
 };
 }
 
-#endif /* KPIMTEXTEDIT_EMOTICONTEXTEDITACTION_H */

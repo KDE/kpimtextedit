@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef RICHTEXTCOMPOSERTEST_H
-#define RICHTEXTCOMPOSERTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -36,4 +35,3 @@ private Q_SLOTS:
     void testEnableDisableActions();
 };
 
-#endif // RICHTEXTCOMPOSERTEST_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef RICHTEXTCOMPOSERCONTROLERTEST_H
-#define RICHTEXTCOMPOSERCONTROLERTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -43,4 +42,3 @@ private Q_SLOTS:
     void shouldAddQuote();
 };
 
-#endif // RICHTEXTCOMPOSERCONTROLERTEST_H

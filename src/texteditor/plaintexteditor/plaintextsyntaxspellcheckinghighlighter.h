@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLAINTEXTSYNTAXSPELLCHECKINGHIGHLIGHTER_H
-#define PLAINTEXTSYNTAXSPELLCHECKINGHIGHLIGHTER_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 
@@ -62,4 +61,3 @@ private:
     PlainTextSyntaxSpellCheckingHighlighterPrivate *const d;
 };
 }
-#endif // PLAINTEXTSYNTAXSPELLCHECKINGHIGHLIGHTER_H

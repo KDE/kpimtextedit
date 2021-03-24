@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTGOTOLINEWIDGETTEST_H
-#define TEXTGOTOLINEWIDGETTEST_H
+#pragma once
 #include <QObject>
 
 class TextGoToLineWidgetTest : public QObject
@@ -26,4 +25,3 @@ private Q_SLOTS:
     void shouldChangeMaximumValue();
 };
 
-#endif // TEXTGOTOLINEWIDGETTEST_H

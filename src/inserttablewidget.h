@@ -5,8 +5,7 @@
 
 */
 
-#ifndef INSERTTABLEWIDGET_H
-#define INSERTTABLEWIDGET_H
+#pragma once
 
 #include <QWidget>
 
@@ -41,4 +40,3 @@ private:
 };
 }
 
-#endif // INSERTTABLEWIDGET_H

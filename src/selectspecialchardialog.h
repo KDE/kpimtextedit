@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KPIMTEXTEDIT_SELECTSPECIAL_CHARDIALOG_H
-#define KPIMTEXTEDIT_SELECTSPECIAL_CHARDIALOG_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 
@@ -48,4 +47,3 @@ private:
 };
 }
 
-#endif // KPIMTEXTEDIT_SELECTSPECIAL_CHAR_H

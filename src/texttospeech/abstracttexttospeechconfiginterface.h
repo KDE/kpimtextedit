@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef ABSTRACTTEXTTOSPEECHCONFIGINTERFACE_H
-#define ABSTRACTTEXTTOSPEECHCONFIGINTERFACE_H
+#pragma once
 
 #include "kpimtextedit_export.h"
 #include <QLocale>
@@ -33,4 +32,3 @@ public:
 };
 }
 
-#endif // ABSTRACTTEXTTOSPEECHCONFIGINTERFACE_H

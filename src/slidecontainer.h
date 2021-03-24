@@ -5,8 +5,7 @@ SPDX-FileCopyrightText: 2007 Aurélien Gâteau <agateau@kde.org>
 SPDX-License-Identifier: GPL-2.0-or-later
 
 */
-#ifndef SLIDECONTAINER_H
-#define SLIDECONTAINER_H
+#pragma once
 
 // Qt
 #include <QFrame>
@@ -82,4 +81,3 @@ private:
 };
 } /* namespace */
 
-#endif /* SLIDECONTAINER_H */

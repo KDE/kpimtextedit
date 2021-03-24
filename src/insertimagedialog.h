@@ -5,8 +5,7 @@
 
 */
 
-#ifndef KPIMTEXTEDIT_INSERTIMAGEDIALOG_H
-#define KPIMTEXTEDIT_INSERTIMAGEDIALOG_H
+#pragma once
 
 #include <QDialog>
 #include <QUrl>
@@ -39,4 +38,3 @@ private:
 };
 }
 
-#endif // KPIMTEXTEDIT_INSERTIMAGEDIALOG_H

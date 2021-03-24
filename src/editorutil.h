@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KPIMTEXTEDIT_EDITORUTIL_H
-#define KPIMTEXTEDIT_EDITORUTIL_H
+#pragma once
 #include "kpimtextedit_export.h"
 
 #include <QTextCursor>
@@ -23,4 +22,3 @@ public:
 };
 }
 
-#endif // KPIMTEXTEDIT_EDITORUTIL_H

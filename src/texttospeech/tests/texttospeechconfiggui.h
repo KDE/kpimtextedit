@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTTOSPEECHConfigGUI_H
-#define TEXTTOSPEECHConfigGUI_H
+#pragma once
 
 #include <QWidget>
 class TextToSpeechConfigGui : public QWidget
@@ -16,4 +15,3 @@ public:
     ~TextToSpeechConfigGui();
 };
 
-#endif // TEXTTOSPEECHConfigGUI_H
