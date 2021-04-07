@@ -48,7 +48,7 @@ void TextToSpeechConfigDialog::slotRestoreDefaults()
 
 void TextToSpeechConfigDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "TextToSpeechConfigDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "TextToSpeechConfigDialog");
     const QSize sizeDialog = group.readEntry("Size", QSize(300, 200));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
@@ -57,7 +57,7 @@ void TextToSpeechConfigDialog::readConfig()
 
 void TextToSpeechConfigDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "TextToSpeechConfigDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "TextToSpeechConfigDialog");
     group.writeEntry("Size", size());
 }
 

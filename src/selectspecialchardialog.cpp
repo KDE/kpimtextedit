@@ -108,7 +108,7 @@ void SelectSpecialCharDialog::setOkButtonText(const QString &text)
 
 void SelectSpecialCharDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SelectSpecialCharDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectSpecialCharDialog");
     const QSize sizeDialog = group.readEntry("Size", QSize(300, 200));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
@@ -117,7 +117,7 @@ void SelectSpecialCharDialog::readConfig()
 
 void SelectSpecialCharDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SelectSpecialCharDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectSpecialCharDialog");
     group.writeEntry("Size", size());
 }
 }
