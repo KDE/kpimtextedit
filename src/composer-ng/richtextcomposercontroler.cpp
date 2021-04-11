@@ -853,7 +853,12 @@ void RichTextComposerControler::addQuotes(const QString &defaultQuote)
             lastCharacterIsAParagraphChar = true;
         }
     }
-    richTextComposer()->insertPlainText(d->addQuotesToText(selectedText, defaultQuote) + (lastCharacterIsAParagraphChar ? QChar::ParagraphSeparator : QChar()));
+    QString text = d->addQuotesToText(selectedText, defaultQuote);
+    if (lastCharacterIsAParagraphChar) {
+        text += QChar::ParagraphSeparator;
+    }
+    richTextComposer()->insertPlainText(text);
+
     cursor.endEditBlock();
 }
 
