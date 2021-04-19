@@ -11,6 +11,8 @@
 
 #include "texteditor/plaintexteditor/plaintexteditorwidget.h"
 
+#include <KConfigGroup>
+#include <KSharedConfig>
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QPushButton>
@@ -51,7 +53,6 @@ public:
             _k_slotTextChanged();
         });
         okButton->setEnabled(false);
-        q->resize(640, 480);
     }
 
     void _k_slotTextChanged();
@@ -69,10 +70,12 @@ InsertHtmlDialog::InsertHtmlDialog(QWidget *parent)
     : QDialog(parent)
     , d(new InsertHtmlDialogPrivate(this))
 {
+    readConfig();
 }
 
 InsertHtmlDialog::~InsertHtmlDialog()
 {
+    writeConfig();
     delete d;
 }
 
@@ -84,6 +87,21 @@ void InsertHtmlDialog::setSelectedText(const QString &str)
 QString InsertHtmlDialog::html() const
 {
     return d->editor->toPlainText();
+}
+
+void InsertHtmlDialog::readConfig()
+{
+    KConfigGroup group(KSharedConfig::openStateConfig(), "InsertHtmlDialog");
+    const QSize sizeDialog = group.readEntry("Size", QSize(640, 480));
+    if (sizeDialog.isValid()) {
+        resize(sizeDialog);
+    }
+}
+
+void InsertHtmlDialog::writeConfig()
+{
+    KConfigGroup group(KSharedConfig::openStateConfig(), "InsertHtmlDialog");
+    group.writeEntry("Size", size());
 }
 }
 

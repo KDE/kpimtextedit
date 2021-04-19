@@ -27,6 +27,8 @@ public:
 private:
     friend class InsertHtmlDialogPrivate;
     InsertHtmlDialogPrivate *const d;
+    void readConfig();
+    void writeConfig();
 };
 }
 
