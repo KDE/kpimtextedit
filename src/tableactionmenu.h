@@ -8,7 +8,7 @@
 #pragma once
 
 #include <KActionMenu>
-#include <QTextEdit>
+class QTextEdit;
 namespace KPIMTextEdit
 {
 class TableActionMenuPrivate;

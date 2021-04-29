@@ -15,6 +15,7 @@
 #include <QIcon>
 
 #include <QPointer>
+#include <QTextEdit>
 #include <QTextTable>
 
 namespace KPIMTextEdit
