@@ -91,7 +91,7 @@ QString PlainTextMarkupBuilderPrivate::getRomanString(int item)
                     numDigits = q;
                 }
 
-                romanNumeral.append(QStringView(romanSymbols).mid(startDigit, numDigits));
+                romanNumeral.append(QStringView(romanSymbols).mid(startDigit, numDigits).toString());
             }
         }
         result = romanNumeral;
