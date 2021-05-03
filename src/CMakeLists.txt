@@ -103,7 +103,7 @@ target_link_libraries(KF5PimTextEdit
     )
 
 set_target_properties(KF5PimTextEdit PROPERTIES
-    VERSION ${KPIMTEXTEDIT_VERSION_STRING}
+    VERSION ${KPIMTEXTEDIT_VERSION}
     SOVERSION ${KPIMTEXTEDIT_SOVERSION}
     EXPORT_NAME PimTextEdit
     )
