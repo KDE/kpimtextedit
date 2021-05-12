@@ -909,3 +909,22 @@ void TextHTMLBuilderTest::testBug421908_full()
     delete hb;
     delete doc;
 }
+
+void TextHTMLBuilderTest::testBug436880()
+{
+    auto doc = new QTextDocument();
+    doc->setHtml(QStringLiteral("<p dir='rtl'>test</ p>"));
+
+    auto hb = new KPIMTextEdit::TextHTMLBuilder();
+    auto md = new KPIMTextEdit::MarkupDirector(hb);
+    md->processDocument(doc);
+    auto result = hb->getResult();
+
+    qDebug() << " result " << result;
+    auto regex = QRegularExpression(QStringLiteral("^<p dir='rtl' style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\">test</p>\n"));
+
+    QVERIFY(regex.match(result).hasMatch());
+    delete md;
+    delete hb;
+    delete doc;
+}
