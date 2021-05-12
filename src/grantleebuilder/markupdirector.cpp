@@ -46,6 +46,7 @@ QTextFrame::iterator MarkupDirector::processBlockContents(QTextFrame::iterator f
 
     const auto blockFormat = block.blockFormat();
     const auto blockAlignment = blockFormat.alignment();
+    const bool leftToRightText = block.textDirection() == Qt::RightToLeft;
 
     // TODO: decide when to use <h1> etc.
 #ifdef ADD_HEADER_SUPPORT
@@ -86,7 +87,12 @@ QTextFrame::iterator MarkupDirector::processBlockContents(QTextFrame::iterator f
         // an action for them yet,
         // So users can't edit them. See bug
         // https://bugs.kde.org/show_bug.cgi?id=160600
-        m_builder->beginParagraph(blockAlignment, blockFormat.topMargin(), blockFormat.bottomMargin(), blockFormat.leftMargin(), blockFormat.rightMargin());
+        m_builder->beginParagraph(blockAlignment,
+                                  blockFormat.topMargin(),
+                                  blockFormat.bottomMargin(),
+                                  blockFormat.leftMargin(),
+                                  blockFormat.rightMargin(),
+                                  leftToRightText);
     }
 
     while (!it.atEnd()) {

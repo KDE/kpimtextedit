@@ -160,7 +160,7 @@ void TextHTMLBuilder::endFontPointSize()
     d->m_text.append(QStringLiteral("</span>"));
 }
 
-void TextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin, qreal bottomMargin, qreal leftMargin, qreal rightMargin)
+void TextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin, qreal bottomMargin, qreal leftMargin, qreal rightMargin, bool leftToRightText)
 {
     Q_D(TextHTMLBuilder);
     // Don't put paragraph tags inside li tags. Qt bug reported.
@@ -190,6 +190,9 @@ void TextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin, qreal bo
     // Bug in grantlee => style is not defined
     if (!styleString.isEmpty()) {
         d->m_text.append(QStringLiteral(" style=\"") + styleString + QLatin1Char('"'));
+    }
+    if (leftToRightText) {
+        d->m_text.append(QStringLiteral(" dir='rtl'"));
     }
     d->m_text.append(QLatin1Char('>'));
     //     }

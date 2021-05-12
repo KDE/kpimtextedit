@@ -121,7 +121,8 @@ public:
     @param left The left margin of the new paragraph.
     @param right The right margin of the new paragraph.
   */
-    virtual void beginParagraph(Qt::Alignment a = Qt::AlignLeft, qreal top = 0.0, qreal bottom = 0.0, qreal left = 0.0, qreal right = 0.0) = 0;
+    virtual void
+    beginParagraph(Qt::Alignment a = Qt::AlignLeft, qreal top = 0.0, qreal bottom = 0.0, qreal left = 0.0, qreal right = 0.0, bool leftToRightText = false) = 0;
 
     /** Close the paragraph in the markup. */
     virtual void endParagraph() = 0;

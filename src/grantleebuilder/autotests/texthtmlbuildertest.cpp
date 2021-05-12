@@ -920,8 +920,8 @@ void TextHTMLBuilderTest::testBug436880()
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    qDebug() << " result " << result;
-    auto regex = QRegularExpression(QStringLiteral("^<p dir='rtl' style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\">test</p>\n"));
+    // qDebug() << " result " << result;
+    auto regex = QRegularExpression(QStringLiteral("^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\" dir='rtl'>test</p>\n"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
