@@ -41,7 +41,8 @@ public:
 
     void endAnchor() override;
 
-    void beginParagraph(Qt::Alignment a = Qt::AlignLeft, qreal top = 0.0, qreal bottom = 0.0, qreal left = 0.0, qreal right = 0.0) override;
+    void beginParagraph(Qt::Alignment a = Qt::AlignLeft, qreal top = 0.0, qreal bottom = 0.0, qreal left = 0.0, qreal right = 0.0, bool leftToRightText = false)
+        override;
 
     void endParagraph() override;
     void addNewline() override;

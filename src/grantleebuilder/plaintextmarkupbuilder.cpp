@@ -361,9 +361,10 @@ QString PlainTextMarkupBuilder::getResult()
     return ret;
 }
 
-void PlainTextMarkupBuilder::beginParagraph(Qt::Alignment a, qreal top, qreal bottom, qreal left, qreal right)
+void PlainTextMarkupBuilder::beginParagraph(Qt::Alignment a, qreal top, qreal bottom, qreal left, qreal right, bool leftToRightText)
 {
     Q_UNUSED(a)
+    Q_UNUSED(leftToRightText)
     Q_D(PlainTextMarkupBuilder);
     if (isQuoteBlock(top, bottom, left, right)) {
         d->m_text.append(d->m_quoteprefix);
