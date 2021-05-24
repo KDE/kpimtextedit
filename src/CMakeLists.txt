@@ -1,6 +1,8 @@
+add_library(KF5PimTextEdit)
+add_library(KF5::PimTextEdit ALIAS KF5PimTextEdit)
 
 
-set(kpimtextedit_texteditor_SRCS
+target_sources(KF5PimTextEdit PRIVATE
     texteditor/plaintexteditor/plaintexteditfindbar.cpp
     texteditor/plaintexteditor/plaintexteditor.cpp
     texteditor/plaintexteditor/plaintexteditorwidget.cpp
@@ -15,7 +17,7 @@ set(kpimtextedit_texteditor_SRCS
     texteditor/richtexteditor/richtexteditorwidget.cpp
     )
 
-set(kpimtextedit_composerng_SRCS
+target_sources(KF5PimTextEdit PRIVATE
     composer-ng/richtextcomposer.cpp
     composer-ng/richtextcomposercontroler.cpp
     composer-ng/richtextcomposeractions.cpp
@@ -28,7 +30,7 @@ set(kpimtextedit_composerng_SRCS
     composer-ng/richtextcomposerwidget.cpp
     )
 
-set(kpimtextedit_texttospeech_SRCS
+target_sources(KF5PimTextEdit PRIVATE
     texttospeech/texttospeech.cpp
     texttospeech/texttospeechwidget.cpp
     texttospeech/texttospeechconfigwidget.cpp
@@ -41,13 +43,13 @@ set(kpimtextedit_texttospeech_SRCS
     texttospeech/texttospeechactions.cpp
     )
 
-set(kpimtextedit_grantlee_builder_SRCS
+target_sources(KF5PimTextEdit PRIVATE
     grantleebuilder/plaintextmarkupbuilder.cpp
     grantleebuilder/markupdirector.cpp
     grantleebuilder/texthtmlbuilder.cpp
     )
 
-set(kpimtextedit_emoticon_builder_SRCS
+target_sources(KF5PimTextEdit PRIVATE
     emoticon/emoticontexteditaction.cpp
     emoticon/emoticontexteditselector.cpp
     emoticon/emoticonunicodetab.cpp
@@ -55,8 +57,7 @@ set(kpimtextedit_emoticon_builder_SRCS
     emoticon/emoticonunicodeutils.cpp
     )
 
-set(kpimtextedit_SRCS
-    ${kpimtextedit_emoticon_builder_SRCS}
+target_sources(KF5PimTextEdit PRIVATE
     inserthtmldialog.cpp
     insertimagedialog.cpp
     insertimagewidget.cpp
@@ -73,17 +74,15 @@ set(kpimtextedit_SRCS
     editorutil.cpp
     )
 
-ecm_qt_declare_logging_category(kpimtextedit_SRCS HEADER kpimtextedit_debug.h IDENTIFIER KPIMTEXTEDIT_LOG CATEGORY_NAME org.kde.pim.kpimtextedit
+ecm_qt_declare_logging_category(KF5PimTextEdit HEADER kpimtextedit_debug.h IDENTIFIER KPIMTEXTEDIT_LOG CATEGORY_NAME org.kde.pim.kpimtextedit
         DESCRIPTION "kpimtextedit (kpimtextedit)" EXPORT KPIMTEXTEDIT)
 
 
-add_library(KF5PimTextEdit ${kpimtextedit_SRCS} ${kpimtextedit_texteditor_SRCS} ${kpimtextedit_texttospeech_SRCS} ${kpimtextedit_composerng_SRCS} ${kpimtextedit_grantlee_builder_SRCS})
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5PimTextEdit PROPERTIES UNITY_BUILD ON)
 endif()
 generate_export_header(KF5PimTextEdit BASE_NAME kpimtextedit)
 
-add_library(KF5::PimTextEdit ALIAS KF5PimTextEdit)
 
 target_include_directories(KF5PimTextEdit INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit;>")
 target_include_directories(KF5PimTextEdit PUBLIC "$<BUILD_INTERFACE:${KPimTextEdit_SOURCE_DIR}/src;${KPimTextEdit_BINARY_DIR}/src>")
