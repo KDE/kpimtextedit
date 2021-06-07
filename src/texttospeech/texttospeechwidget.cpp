@@ -51,9 +51,9 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
     hbox->addWidget(close);
     hbox->addStretch(0);
 
-    QLabel *volume = new QLabel(i18n("Volume:"), this);
+    auto volume = new QLabel(i18n("Volume:"), this);
     hbox->addWidget(volume);
-    d->mVolume = new QSlider;
+    d->mVolume = new QSlider(this);
     d->mVolume->setMinimumWidth(100);
     d->mVolume->setOrientation(Qt::Horizontal);
     d->mVolume->setObjectName(QStringLiteral("volumeslider"));

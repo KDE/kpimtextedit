@@ -218,7 +218,7 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
                 popup->addAction(autoSpellCheckAction);
 
                 if (checkSpellingEnabled() && d->activateLanguageMenu) {
-                    QMenu *languagesMenu = new QMenu(i18n("Spell Checking Language"), popup);
+                    auto languagesMenu = new QMenu(i18n("Spell Checking Language"), popup);
                     auto languagesGroup = new QActionGroup(languagesMenu);
                     languagesGroup->setExclusive(true);
 
@@ -722,9 +722,10 @@ bool RichTextEditor::event(QEvent *ev)
 void RichTextEditor::wheelEvent(QWheelEvent *event)
 {
     if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
-        if (event->angleDelta().y() > 0) {
+        const int angleDeltaY{event->angleDelta().y()};
+        if (angleDeltaY > 0) {
             zoomIn();
-        } else if (event->angleDelta().y() < 0) {
+        } else if (angleDeltaY < 0) {
             zoomOut();
         }
         event->accept();
@@ -938,7 +939,7 @@ void RichTextEditor::keyPressEvent(QKeyEvent *event)
 int RichTextEditor::zoomFactor() const
 {
     int pourcentage = 100;
-    QFont f = font();
+    const QFont f = font();
     if (d->mInitialFontSize != f.pointSize()) {
         pourcentage = (f.pointSize() * 100) / d->mInitialFontSize;
     }
