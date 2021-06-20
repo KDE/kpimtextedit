@@ -25,6 +25,9 @@
 #include <QTextDocumentFragment>
 #include <QTextList>
 #include <QTimer>
+#include <chrono>
+
+using namespace std::chrono_literals;
 
 using namespace KPIMTextEdit;
 
@@ -663,7 +666,7 @@ void RichTextComposerControler::ensureCursorVisible()
     //
     //       Delay the actual call to ensureCursorVisible() a bit to work around
     //       the problem.
-    QTimer::singleShot(500, richTextComposer()->composerControler(), &RichTextComposerControler::ensureCursorVisibleDelayed);
+    QTimer::singleShot(500ms, richTextComposer()->composerControler(), &RichTextComposerControler::ensureCursorVisibleDelayed);
 }
 
 void RichTextComposerControler::RichTextComposerControlerPrivate::fixupTextEditString(QString &text) const
