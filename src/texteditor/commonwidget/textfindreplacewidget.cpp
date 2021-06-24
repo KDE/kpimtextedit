@@ -127,7 +127,7 @@ void TextFindWidget::setFoundMatch(bool match)
 
         KStatefulBrush bgBrush(KColorScheme::View, bgColorScheme);
 
-        styleSheet = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch).color().name());
+        styleSheet = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch->palette()).color().name());
     }
 
     mSearch->setStyleSheet(styleSheet);
