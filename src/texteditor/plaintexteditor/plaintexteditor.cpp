@@ -339,7 +339,7 @@ void PlainTextEditor::slotCheckSpelling()
         backgroundSpellCheck->changeLanguage(d->spellCheckingLanguage);
     }
     if (!d->ignoreSpellCheckingWords.isEmpty()) {
-        for (const QString &word : qAsConst(d->ignoreSpellCheckingWords)) {
+        for (const QString &word : std::as_const(d->ignoreSpellCheckingWords)) {
             backgroundSpellCheck->speller().addToSession(word);
         }
     }
@@ -747,7 +747,7 @@ void PlainTextEditor::addIgnoreWordsToHighLighter()
     }
     if (d->richTextDecorator) {
         Sonnet::Highlighter *_highlighter = d->richTextDecorator->highlighter();
-        for (const QString &word : qAsConst(d->ignoreSpellCheckingWords)) {
+        for (const QString &word : std::as_const(d->ignoreSpellCheckingWords)) {
             _highlighter->ignoreWord(word);
         }
     }

@@ -469,7 +469,7 @@ void RichTextComposerActions::setListStyle(int _styleindex)
 
 void RichTextComposerActions::setActionsEnabled(bool enabled)
 {
-    for (QAction *action : qAsConst(d->richTextActionList)) {
+    for (QAction *action : std::as_const(d->richTextActionList)) {
         action->setEnabled(enabled);
     }
     d->richTextEnabled = enabled;

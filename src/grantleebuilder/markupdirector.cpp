@@ -853,7 +853,7 @@ QList<int> MarkupDirector::sortOpeningOrder(QSet<int> openingOrder, QTextBlock::
         } else {
             // End of block. Need to close all open elements.
             // Order irrelevant in this case.
-            for (int tag : qAsConst(openingOrder)) {
+            for (int tag : std::as_const(openingOrder)) {
                 sortedOpenedElements.prepend(tag);
             }
             break;
