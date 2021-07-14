@@ -21,7 +21,7 @@ void PlainTextMarkupBuilderTest::testPlainText_data()
 {
     QTest::addColumn<QString>("text");
     QTest::addColumn<QString>("regexpText");
-    QTest::newRow("text with espace at begin") << QString() << QString();
+    QTest::newRow("text with leading space") << QString() << QString();
     QTest::newRow("bold") << QStringLiteral("This <b>text</b> is bold.") << QStringLiteral("^This \\*text\\* is bold.\\n$");
     QTest::newRow("double format") << QStringLiteral("Some <b><i>formatted</i></b> text.") << QStringLiteral("^Some (\\*/|/\\*)formatted(\\*/|/\\*) text.\\n$");
     QTest::newRow("italic") << QStringLiteral("This <b>text is <i>italic</i> and</b> bold.") << QStringLiteral("^This \\*text is /italic/ and\\* bold.\\n$");
@@ -149,7 +149,7 @@ void PlainTextMarkupBuilderTest::testAdjacentAnchors()
     auto doc = new QTextDocument();
     doc->setHtml(
         QStringLiteral("Two <a href=\"http://www.kde.org\">links</a><a "
-                       "href=\"http://www.google.com\">next</a> to eachother."));
+                       "href=\"http://www.google.com\">next</a> to each other."));
 
     auto hb = new KPIMTextEdit::PlainTextMarkupBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
@@ -157,7 +157,7 @@ void PlainTextMarkupBuilderTest::testAdjacentAnchors()
     auto result = hb->getResult();
 
     QRegularExpression regex(
-        QStringLiteral("^Two links\\[1\\]next\\[2\\] to eachother.\\n\\n--------\\n\\[1\\] "
+        QStringLiteral("^Two links\\[1\\]next\\[2\\] to each other.\\n\\n--------\\n\\[1\\] "
                        "http://www.kde.org\\n\\[2\\] http://www.google.com\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());

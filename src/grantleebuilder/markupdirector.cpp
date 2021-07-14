@@ -42,7 +42,7 @@ MarkupDirector::~MarkupDirector()
 
 QTextFrame::iterator MarkupDirector::processBlockContents(QTextFrame::iterator frameIt, const QTextBlock &block)
 {
-    // Same code as grantlee  but interprete margin
+    // Same code as grantlee  but interpret margin
 
     const auto blockFormat = block.blockFormat();
     const auto blockAlignment = blockFormat.alignment();

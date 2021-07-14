@@ -96,7 +96,7 @@ public:
     virtual void endAnchor() = 0;
 
     /**
-    Begin a new font familiy element in the markup
+    Begin a new font family element in the markup
     @param family The name of the font family to begin.
   */
     virtual void beginFontFamily(const QString &family) = 0;

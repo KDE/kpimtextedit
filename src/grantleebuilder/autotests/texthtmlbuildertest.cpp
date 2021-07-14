@@ -53,14 +53,14 @@ void TextHTMLBuilderTest::testHtmlText_data()
         << QStringLiteral(
                "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">A <a href=\"http://www.kde.org\">link</a>&nbsp;to KDE.</p>\\n$")
         << true;
-    QTest::newRow("text with espace")
+    QTest::newRow("text with space")
         << QStringLiteral("         foo")
         << QStringLiteral(
                "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foo</p>\\n$")
         << false;
-    QTest::newRow("text with espace at begin") << QStringLiteral(" foo")
-                                               << QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">&nbsp;foo</p>\\n$")
-                                               << false;
+    QTest::newRow("text with leading space") << QStringLiteral(" foo")
+                                             << QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">&nbsp;foo</p>\\n$")
+                                             << false;
 }
 
 void TextHTMLBuilderTest::testHtmlText()
@@ -179,7 +179,7 @@ void TextHTMLBuilderTest::testAdjacentAnchors()
     auto doc = new QTextDocument();
     doc->setHtml(
         QStringLiteral("Two <a href=\"http://www.kde.org\">links</a><a "
-                       "href=\"http://www.google.com\">next</a> to eachother."));
+                       "href=\"http://www.google.com\">next</a> to each other."));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
     auto md = new KPIMTextEdit::MarkupDirector(hb);
@@ -188,7 +188,7 @@ void TextHTMLBuilderTest::testAdjacentAnchors()
 
     QRegularExpression regex(
         QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Two <a href=\"http://www.kde.org\">links</a><a "
-                       "href=\"http://www.google.com\">next</a>&nbsp;to eachother.</p>\\n$"));
+                       "href=\"http://www.google.com\">next</a>&nbsp;to each other.</p>\\n$"));
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;

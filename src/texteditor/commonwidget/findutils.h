@@ -18,7 +18,7 @@ class TextReplaceWidget;
 namespace FindUtils
 {
 /**
- * Replaces all occurences of a search string provided by @p findWidget
+ * Replaces all occurrences of a search string provided by @p findWidget
  * by a string provided by @p replaceWidget in a @p document
  *
  * @return number of replacements done

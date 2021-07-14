@@ -7,7 +7,7 @@
  *
  * @section desc Description
  *
- * KPIMTextedit is a library that provides an enchanced text edit class, see TextEdit.
+ * KPIMTextedit is a library that provides an enhanced text edit class, see TextEdit.
  * This text is highlighted with a EMailQuoteHighlighter.
  *
  * @authors
