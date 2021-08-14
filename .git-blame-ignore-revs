@@ -1,2 +1,4 @@
 # clang-format
 b152c6eeb730845dc03b934ad83bc3e257d85fa4
+# clang-tidy: one declaration per line; braces around statements
+983a74227138367f16dcba72cc93b9a994ac28d6

@@ -400,7 +400,8 @@ void RichTextComposerTest::testLoadImage()
     edit.createActions(new KActionCollection(this));
     QString image1Path = KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false);
     QString image2Path = KIconLoader::global()->iconPath(QStringLiteral("arrow-up"), KIconLoader::Small, false);
-    QImage image1, image2;
+    QImage image1;
+    QImage image2;
     QVERIFY(image1.load(image1Path));
     QVERIFY(image2.load(image2Path));
 

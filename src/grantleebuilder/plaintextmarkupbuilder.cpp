@@ -238,8 +238,9 @@ int PlainTextMarkupBuilder::addReference(const QString &reference)
 {
     Q_D(PlainTextMarkupBuilder);
 
-    if (!d->m_urls.contains(reference))
+    if (!d->m_urls.contains(reference)) {
         d->m_urls.append(reference);
+    }
     return d->m_urls.indexOf(reference) + 1;
 }
 

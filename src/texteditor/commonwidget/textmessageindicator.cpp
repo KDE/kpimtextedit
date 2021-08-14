@@ -99,7 +99,8 @@ void TextMessageIndicator::computeSizeAndResize()
 {
     // determine text rectangle
     const QRect textRect = computeTextRect(mMessage, mSymbol.width());
-    int width = textRect.width(), height = textRect.height();
+    int width = textRect.width();
+    int height = textRect.height();
 
     if (!mDetails.isEmpty()) {
         // determine details text rectangle

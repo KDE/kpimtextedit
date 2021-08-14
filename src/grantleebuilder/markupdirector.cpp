@@ -257,8 +257,9 @@ QTextFrame::iterator MarkupDirector::processFrame(QTextFrame::iterator it, QText
     if (frame) {
         processDocumentContents(frame->begin(), frame->end());
     }
-    if (!it.atEnd())
+    if (!it.atEnd()) {
         return ++it;
+    }
     return it;
 }
 
@@ -274,8 +275,9 @@ QTextFrame::iterator MarkupDirector::processBlock(QTextFrame::iterator it, const
         }
     }
 
-    if (!it.atEnd())
+    if (!it.atEnd()) {
         return ++it;
+    }
     return it;
 }
 
@@ -359,8 +361,9 @@ QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it, QText
     }
     m_builder->endTable();
 
-    if (!it.atEnd())
+    if (!it.atEnd()) {
         return ++it;
+    }
     return it;
 }
 
@@ -380,8 +383,9 @@ QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::processList(QTextFrame::
         processBlockContents(it, block);
         m_builder->endListItem();
 
-        if (!it.atEnd())
+        if (!it.atEnd()) {
             ++it;
+        }
         block = block.next();
         if (block.isValid()) {
             auto obj = block.document()->objectForFormat(block.blockFormat());
@@ -409,8 +413,9 @@ QTextFrame::iterator MarkupDirector::processObject(QTextFrame::iterator it, cons
     if (group) {
         return processBlockGroup(it, block, group).first;
     }
-    if (!it.atEnd())
+    if (!it.atEnd()) {
         return ++it;
+    }
     return it;
 }
 
@@ -422,24 +427,29 @@ QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::skipBlockGroup(QTextFram
     auto obj = block.document()->objectForFormat(block.blockFormat());
     QTextBlockGroup *nextGroup;
 
-    if (!obj)
+    if (!obj) {
         return qMakePair(lastIt, lastBlock);
+    }
 
     auto group = qobject_cast<QTextBlockGroup *>(obj);
-    if (!group)
+    if (!group) {
         return qMakePair(lastIt, lastBlock);
+    }
 
     while (block.isValid()) {
-        if (!group)
+        if (!group) {
             break;
+        }
 
         block = block.next();
-        if (!it.atEnd())
+        if (!it.atEnd()) {
             ++it;
+        }
 
         obj = block.document()->objectForFormat(block.blockFormat());
-        if (obj)
+        if (obj) {
             continue;
+        }
 
         nextGroup = qobject_cast<QTextBlockGroup *>(obj);
 
@@ -473,8 +483,9 @@ QTextBlock::iterator MarkupDirector::processCharTextObject(QTextBlock::iterator 
         const auto imageFormat = fragmentFormat.toImageFormat();
         return processImage(it, imageFormat, textObject->document());
     }
-    if (!it.atEnd())
+    if (!it.atEnd()) {
         return ++it;
+    }
     return it;
 }
 
@@ -483,8 +494,9 @@ QTextBlock::iterator MarkupDirector::processImage(QTextBlock::iterator it, const
     Q_UNUSED(doc)
     // TODO: Close any open format elements?
     m_builder->insertImage(imageFormat.name(), imageFormat.width(), imageFormat.height());
-    if (!it.atEnd())
+    if (!it.atEnd()) {
         return ++it;
+    }
     return it;
 }
 
@@ -497,8 +509,9 @@ void MarkupDirector::processClosingElements(const QTextBlock::iterator &it)
     // see testDifferentStartDoubleFinish and
     // testDifferentStartDoubleFinishReverseOrder
 
-    if (d->m_openElements.isEmpty())
+    if (d->m_openElements.isEmpty()) {
         return;
+    }
 
     auto elementsToClose = getElementsToClose(it);
 
@@ -569,8 +582,9 @@ void MarkupDirector::processOpeningElements(const QTextBlock::iterator &it)
     Q_D(MarkupDirector);
     auto fragment = it.fragment();
 
-    if (!fragment.isValid())
+    if (!fragment.isValid()) {
         return;
+    }
 
     const auto fragmentFormat = fragment.charFormat();
     const auto elementsToOpenList = getElementsToOpen(it);
@@ -658,8 +672,9 @@ QSet<int> MarkupDirector::getElementsToClose(const QTextBlock::iterator &it) con
 
     auto fragment = it.fragment();
 
-    if (!fragment.isValid())
+    if (!fragment.isValid()) {
         return closedElements;
+    }
 
     const auto fragmentFormat = fragment.charFormat();
 
