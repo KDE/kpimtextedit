@@ -34,7 +34,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KPIMTEXTEDIT
     SOVERSION 5
 )
 
-set(QT_REQUIRED_VERSION "5.15.0")
+set(QT_REQUIRED_VERSION "5.15.2")
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
 
 ########### Find packages ###########
@@ -62,7 +62,7 @@ add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Des
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
 
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f00)
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f02)
 add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055600)
 
 
