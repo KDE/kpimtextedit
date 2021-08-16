@@ -250,3 +250,35 @@ if(BUILD_DESIGNERPLUGIN)
 endif()
 
 ecm_qt_install_logging_categories(EXPORT KPIMTEXTEDIT FILE kpimtextedit.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
+
+if (BUILD_QCH)
+    ecm_add_qch(
+        KF5PimTextEdit_QCH
+        NAME KPimTextEdit
+        BASE_NAME KF5PimTextEdit
+        VERSION ${PIM_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+            ${kpimtextedit_HEADERS}
+            ${KPimTextEdit_texttospeechs_HEADERS}
+            ${PimCommon_richtexteditor_HEADERS}
+            ${PimCommon_texteditor_commonwidget_HEADERS}
+            ${PimCommon_plaintexteditor_HEADERS}
+            ${KPimTextEdit_composerng_HEADERS}
+            ${KPimTextEdit_emoticon_HEADERS}
+            ${KPimTextEdit_grantlee_HEADERS}
+        #MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
+        #IMAGE_DIRS "${CMAKE_SOURCE_DIR}/docs/pics"
+        LINK_QCHS
+            Qt5Core_QCH
+            Qt5Gui_QCH
+            Qt5Widgets_QCH
+        INCLUDE_DIRS
+            ${CMAKE_CURRENT_BINARY_DIR}
+        BLANK_MACROS
+            KPIMTEXTEDIT_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()
