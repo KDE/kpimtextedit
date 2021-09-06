@@ -4,5 +4,6 @@
 Dependencies:
 - 'on': ['@all']
   'require':
+    'frameworks/extra-cmake-modules': '@latest'
     'third-party/grantlee' : '@stable'
     'frameworks/kdesignerplugin' : '@latest'
