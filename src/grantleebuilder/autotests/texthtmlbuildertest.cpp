@@ -970,7 +970,26 @@ void TextHTMLBuilderTest::testBug442416Bis()
     auto regex = QRegularExpression(
         QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"background-color:#ffff00;\">Sss</span></p>\n<p "
                        "style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\"><span style=\"background-color:#ff0000;\">sss</span></p>\n"));
+    QVERIFY(regex.match(result).hasMatch());
+    delete md;
+    delete hb;
+    delete doc;
+}
 
+void TextHTMLBuilderTest::testBugTextColor()
+{
+    auto doc = new QTextDocument();
+    doc->setHtml(QStringLiteral("<p><span style=\"color:#ffff00;\">BBBB</span></p><p><span style=\"color:#ffff00;\">AAA</p>"));
+
+    auto hb = new KPIMTextEdit::TextHTMLBuilder();
+    auto md = new KPIMTextEdit::MarkupDirector(hb);
+    md->processDocument(doc);
+    auto result = hb->getResult();
+
+    // qDebug() << " result " << result;
+    auto regex = QRegularExpression(
+        QStringLiteral("^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\"><span style=\"color:#ffff00;\">BBBB</span></p>\n<p "
+                       "style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\"><span style=\"color:#ffff00;\">AAA</span></p>\n"));
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;

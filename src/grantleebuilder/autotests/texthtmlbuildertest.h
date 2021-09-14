@@ -50,6 +50,7 @@ private Q_SLOTS:
     void testBug436880();
     void testBug442416();
     void testBug442416Bis();
+    void testBugTextColor();
 };
 
 #endif // TEXTHTMLBUILDERTEST_H
