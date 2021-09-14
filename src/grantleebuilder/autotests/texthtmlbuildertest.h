@@ -48,6 +48,8 @@ private Q_SLOTS:
     void testBug421908_2();
     void testBug421908_full();
     void testBug436880();
+    void testBug442416();
+    void testBug442416Bis();
 };
 
 #endif // TEXTHTMLBUILDERTEST_H

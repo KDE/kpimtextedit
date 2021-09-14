@@ -541,6 +541,8 @@ void MarkupDirector::processClosingElements(const QTextBlock::iterator &it)
                 break;
             case SpanBackground:
                 m_builder->endBackground();
+                // Clear background otherwise if we select 2 lines with same color it will not applied. bug #442416
+                d->m_openBackground = {};
                 break;
             case SpanForeground:
                 m_builder->endForeground();
