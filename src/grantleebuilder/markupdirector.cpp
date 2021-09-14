@@ -608,20 +608,20 @@ void MarkupDirector::processOpeningElements(const QTextBlock::iterator &it)
             m_builder->beginStrikeout();
             break;
         case SpanFontPointSize:
-            m_builder->beginFontPointSize(fragmentFormat.font().pointSize());
             d->m_openFontPointSize = fragmentFormat.font().pointSize();
+            m_builder->beginFontPointSize(d->m_openFontPointSize);
             break;
         case SpanFontFamily:
-            m_builder->beginFontFamily(fragmentFormat.fontFamily());
             d->m_openFontFamily = fragmentFormat.fontFamily();
+            m_builder->beginFontFamily(d->m_openFontFamily);
             break;
         case SpanBackground:
-            m_builder->beginBackground(fragmentFormat.background());
             d->m_openBackground = fragmentFormat.background();
+            m_builder->beginBackground(d->m_openBackground);
             break;
         case SpanForeground:
-            m_builder->beginForeground(fragmentFormat.foreground());
             d->m_openForeground = fragmentFormat.foreground();
+            m_builder->beginForeground(d->m_openForeground);
             break;
         case Anchor: {
             // TODO: Multiple anchor names here.
