@@ -28,7 +28,6 @@ public:
     explicit EmoticonListWidgetSelector(QWidget *parent = nullptr);
     ~EmoticonListWidgetSelector() override;
 
-    void setEmoticons(const QList<uint> &lst);
     void setEmoticons(const QStringList &lst);
 Q_SIGNALS:
     void itemSelected(const QString &);
