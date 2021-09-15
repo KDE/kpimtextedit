@@ -1,27 +1,27 @@
 include(ECMAddQtDesignerPlugin)
 ecm_qtdesignerplugin_widget(KPIMTextEdit::RichTextEditorWidget
-    INCLUDE_FILE "kpimtextedit/richtexteditorwidget.h"
+    INCLUDE_FILE "KPIMTextEdit/RichTextEditorWidget"
     TOOLTIP "A RichTextEditor (KDE-PIM)"
     WHATSTHIS "A RichTextEditor."
     GROUP "Input (KDE-PIM)"
     )
 
 ecm_qtdesignerplugin_widget(KPIMTextEdit::PlainTextEditorWidget
-    INCLUDE_FILE "kpimtextedit/plaintexteditorwidget.h"
+    INCLUDE_FILE "KPIMTextEdit/PlainTextEditorWidget"
     TOOLTIP "A PlainTextEditor (KDE-PIM)"
     WHATSTHIS "A PlainTextEditor."
     GROUP "Input (KDE-PIM)"
     )
 
 ecm_qtdesignerplugin_widget(KPIMTextEdit::RichTextComposer
-    INCLUDE_FILE "kpimtextedit/richtextcomposer.h"
+    INCLUDE_FILE "KPIMTextEdit/RichTextComposer"
     TOOLTIP "A RichText Composer (KDE-PIM)"
     WHATSTHIS "A RichText Composer."
     GROUP "Input (KDE-PIM)"
     )
 
 ecm_qtdesignerplugin_widget(KPIMTextEdit::RichTextComposerWidget
-    INCLUDE_FILE "kpimtextedit/richtextcomposerwidget.h"
+    INCLUDE_FILE "KPIMTextEdit/RichTextComposerWidget"
     TOOLTIP "A RichText Composer Widget(KDE-PIM)"
     WHATSTHIS "A RichText Composer Widget."
     GROUP "Input (KDE-PIM)"
