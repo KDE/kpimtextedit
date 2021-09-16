@@ -16,8 +16,11 @@
 using namespace KPIMTextEdit;
 EmoticonUnicodeTab::EmoticonUnicodeTab(QWidget *parent)
     : QTabWidget(parent)
+    , mEmoticonUnicodeModel(new EmoticonUnicodeModel(this))
 {
+    mEmoticonUnicodeModel->setEmoticonList(EmoticonUnicodeUtils::allUnicode());
     setTabBarAutoHide(true);
+
     loadEmoticons();
     QFont f;
     f.setPointSize(22);
@@ -36,17 +39,15 @@ void EmoticonUnicodeTab::searchUnicode(const QString &str)
     if (searchVisible) {
         setCurrentIndex(mSearchTabIndex);
     }
-    mEmoticonUnicodeProxyModel->setFilterFixedString(str);
+    mEmoticonUnicodeSearchProxyModel->setFilterFixedString(str);
 }
 
 void EmoticonUnicodeTab::createSearchTab()
 {
     auto allEmojisView = new EmoticonListView(this);
-    auto emoticonModel = new EmoticonUnicodeModel(this);
-    mEmoticonUnicodeProxyModel = new EmoticonUnicodeProxyModel(this);
-    mEmoticonUnicodeProxyModel->setSourceModel(emoticonModel);
-    emoticonModel->setEmoticonList(EmoticonUnicodeUtils::allUnicode());
-    allEmojisView->setModel(mEmoticonUnicodeProxyModel);
+    mEmoticonUnicodeSearchProxyModel = new EmoticonUnicodeProxyModel(this);
+    mEmoticonUnicodeSearchProxyModel->setSourceModel(mEmoticonUnicodeModel);
+    allEmojisView->setModel(mEmoticonUnicodeSearchProxyModel);
     mSearchTabIndex = addTab(allEmojisView, i18n("Search"));
     connect(allEmojisView, &KPIMTextEdit::EmoticonListView::emojiItemSelected, this, &EmoticonUnicodeTab::itemSelected);
 }
