@@ -1989,3 +1989,18 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeAward
     };
     return lst;
 }
+
+QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::allUnicode()
+{
+    return EmoticonUnicodeUtils::unicodeFlagsEmoji() + EmoticonUnicodeUtils::unicodeFaceEmoji() + EmoticonUnicodeUtils::unicodeAnimalsEmoji()
+        + EmoticonUnicodeUtils::unicodePlantEmoji() + EmoticonUnicodeUtils::unicodeScienceEmoji() + EmoticonUnicodeUtils::unicodeComputerEmoji()
+        + EmoticonUnicodeUtils::unicodeBookPaperEmoji() + EmoticonUnicodeUtils::unicodeSoundMusicEmoji() + EmoticonUnicodeUtils::unicodeWeatherEmoji()
+        + EmoticonUnicodeUtils::unicodeTimeEmoji() + EmoticonUnicodeUtils::unicodeGameEmoji() + EmoticonUnicodeUtils::unicodeClothingEmoji()
+        + EmoticonUnicodeUtils::unicodeEventEmoji() + EmoticonUnicodeUtils::unicodeFoodEmoji() + EmoticonUnicodeUtils::unicodeTransportEmoji()
+        + EmoticonUnicodeUtils::unicodePersonEmoji() + EmoticonUnicodeUtils::unicodePlaceEmoji() + EmoticonUnicodeUtils::unicodeSymbolsEmoji()
+        + EmoticonUnicodeUtils::unicodeSportEmoji() + EmoticonUnicodeUtils::unicodeEmotionEmoji() + EmoticonUnicodeUtils::unicodeMoneyEmoji()
+        + EmoticonUnicodeUtils::unicodeBodyEmoji() + EmoticonUnicodeUtils::unicodeMailEmoji() + EmoticonUnicodeUtils::unicodeOfficeEmoji()
+        + EmoticonUnicodeUtils::unicodeToolsEmoji() + EmoticonUnicodeUtils::unicodePhoneEmoji() + EmoticonUnicodeUtils::unicodeLockEmoji()
+        + EmoticonUnicodeUtils::unicodeDrinkEmoji() + EmoticonUnicodeUtils::unicodeVideoEmoji() + EmoticonUnicodeUtils::unicodeHouseEmoji()
+        + EmoticonUnicodeUtils::unicodeDishwareEmoji() + EmoticonUnicodeUtils::unicodeHotelEmoji() + EmoticonUnicodeUtils::unicodeAwardMedalEmoji();
+}

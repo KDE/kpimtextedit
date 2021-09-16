@@ -58,6 +58,7 @@ KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QVector<EmoticonStruct> unicodeHouseEmoji(
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QVector<EmoticonStruct> unicodeDishwareEmoji();
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QVector<EmoticonStruct> unicodeHotelEmoji();
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QVector<EmoticonStruct> unicodeAwardMedalEmoji();
+KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QVector<EmoticonStruct> allUnicode();
 }
 }
 
