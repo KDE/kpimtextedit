@@ -9,7 +9,7 @@ using namespace KPIMTextEdit;
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeFlagsEmoji()
 {
-    const QString category{QStringLiteral("flags")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::FlagsEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":chequered_flag:"), QString::fromUtf16(u"\U0001F3C1"), category},
         {QStringLiteral(":triangular_flag:"), QString::fromUtf16(u"\U0001F6A9"), category},
@@ -284,7 +284,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeFlags
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeFaceEmoji()
 {
-    const QString category{QStringLiteral("face")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::FaceEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":grinning_face:"), QString::fromUtf16(u"\U0001F600"), category},
         {QStringLiteral(":grinning_face_with_big_eyes:"), QString::fromUtf16(u"\U0001F603"), category},
@@ -406,7 +406,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeFaceE
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeAnimalsEmoji()
 {
-    const QString category{QStringLiteral("animals")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::AnimalsEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{{QStringLiteral(":monkey_face:"), QString::fromUtf16(u"\U0001F435"), category},
                                                             {QStringLiteral(":monkey:"), QString::fromUtf16(u"\U0001F412"), category},
                                                             {QStringLiteral(":gorilla:"), QString::fromUtf16(u"\U0001F98D"), category},
@@ -517,7 +517,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeAnima
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePlantEmoji()
 {
-    const QString category{QStringLiteral("plant")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::PlantEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":bouquet:"), QString::fromUtf16(u"\U0001F490"), category},
         {QStringLiteral(":cherry_blossom:"), QString::fromUtf16(u"\U0001F338"), category},
@@ -547,7 +547,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePlant
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeScienceEmoji()
 {
-    const QString category{QStringLiteral("science")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::ScienceEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":alembic:"), QString::fromUtf16(u"\U00002697"), category},
         {QStringLiteral(":test_tube:"), QString::fromUtf16(u"\U0001F9EA"), category},
@@ -567,7 +567,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeScien
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeComputerEmoji()
 {
-    const QString category{QStringLiteral("computer")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::ComputerEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":battery:"), QString::fromUtf16(u"\U0001F50B"), category},
         {QStringLiteral(":electric_plug:"), QString::fromUtf16(u"\U0001F50C"), category},
@@ -588,7 +588,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeCompu
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeBookPaperEmoji()
 {
-    const QString category{QStringLiteral("bookpaper")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::BookPaperEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":notebook_with_decorative_cover:"), QString::fromUtf16(u"\U0001F4D4"), category},
         {QStringLiteral(":closed_book:"), QString::fromUtf16(u"\U0001F4D5"), category},
@@ -613,7 +613,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeBookP
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSoundMusicEmoji()
 {
-    const QString category{QStringLiteral("soundmusic")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::SoundMusicEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":muted_speaker:"), QString::fromUtf16(u"\U0001F507"), category},
         {QStringLiteral(":speaker_low_volume:"), QString::fromUtf16(u"\U0001F508"), category},
@@ -646,7 +646,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSound
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeWeatherEmoji()
 {
-    const QString category{QStringLiteral("weather")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::WeatherEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":new_moon:"), QString::fromUtf16(u"\U0001F311"), category},
         {QStringLiteral(":waxing_crescent_moon:"), QString::fromUtf16(u"\U0001F312"), category},
@@ -701,7 +701,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeWeath
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeTimeEmoji()
 {
-    const QString category{QStringLiteral("time")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::TimeEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":hourglass_done:"), QString::fromUtf16(u"\U0000231B"), category},
         {QStringLiteral(":hourglass_not_done:"), QString::fromUtf16(u"\U000023F3"), category},
@@ -740,7 +740,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeTimeE
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeGameEmoji()
 {
-    const QString category{QStringLiteral("game")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::GameEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":direct_hit:"), QString::fromUtf16(u"\U0001F3AF"), category},
         {QStringLiteral(":yo-yo:"), QString::fromUtf16(u"\U0001FA80"), category},
@@ -768,7 +768,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeGameE
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeClothingEmoji()
 {
-    const QString category{QStringLiteral("clothing")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::ClothingEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":glasses:"), QString::fromUtf16(u"\U0001F453"), category},
         {QStringLiteral(":sunglasses:"), QString::fromUtf16(u"\U0001F576"), category},
@@ -819,7 +819,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeCloth
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeEventEmoji()
 {
-    const QString category{QStringLiteral("event")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::EventEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":jack-o-lantern:"), QString::fromUtf16(u"\U0001F383"), category},
         {QStringLiteral(":Christmas_tree:"), QString::fromUtf16(u"\U0001F384"), category},
@@ -848,7 +848,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeEvent
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeFoodEmoji()
 {
-    const QString category{QStringLiteral("food")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::FoodEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":grapes:"), QString::fromUtf16(u"\U0001F347"), category},
         {QStringLiteral(":melon:"), QString::fromUtf16(u"\U0001F348"), category},
@@ -954,7 +954,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeFoodE
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeTransportEmoji()
 {
-    const QString category{QStringLiteral("transport")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::TransportEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":locomotive:"), QString::fromUtf16(u"\U0001F682"), category},
         {QStringLiteral(":railway_car:"), QString::fromUtf16(u"\U0001F683"), category},
@@ -1030,7 +1030,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeTrans
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePersonEmoji()
 {
-    const QString category{QStringLiteral("person")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::PersonEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":baby:"), QString::fromUtf16(u"\U0001F476"), category},
         {QStringLiteral(":child:"), QString::fromUtf16(u"\U0001F9D2"), category},
@@ -1313,7 +1313,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePerso
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePlaceEmoji()
 {
-    const QString category{QStringLiteral("place")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::PlaceEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":globe_showing_Europe-Africa:"), QString::fromUtf16(u"\U0001F30D"), category},
         {QStringLiteral(":globe_showing_Americas:"), QString::fromUtf16(u"\U0001F30E"), category},
@@ -1383,7 +1383,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePlace
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSymbolsEmoji()
 {
-    const QString category{QStringLiteral("symbols")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::SymbolsEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":ATM_sign:"), QString::fromUtf16(u"\U0001F3E7"), category},
         {QStringLiteral(":litter_in_bin_sign:"), QString::fromUtf16(u"\U0001F6AE"), category},
@@ -1608,7 +1608,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSymbo
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSportEmoji()
 {
-    const QString category{QStringLiteral("sport")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::SportEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":soccer_ball:"), QString::fromUtf16(u"\U000026BD"), category},
         {QStringLiteral(":baseball:"), QString::fromUtf16(u"\U000026BE"), category},
@@ -1643,7 +1643,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeSport
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeEmotionEmoji()
 {
-    const QString category{QStringLiteral("emotion")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::EmotionEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":kiss_mark:"), QString::fromUtf16(u"\U0001F48B"), category},
         {QStringLiteral(":love_letter:"), QString::fromUtf16(u"\U0001F48C"), category},
@@ -1686,7 +1686,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeEmoti
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeMoneyEmoji()
 {
-    const QString category{QStringLiteral("money")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::MoneyEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":money_bag:"), QString::fromUtf16(u"\U0001F4B0"), category},
         {QStringLiteral(":yen_banknote:"), QString::fromUtf16(u"\U0001F4B4"), category},
@@ -1705,7 +1705,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeMoney
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeBodyEmoji()
 {
-    const QString category{QStringLiteral("body")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::BodyEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":waving_hand:"), QString::fromUtf16(u"\U0001F44B"), category},
         {QStringLiteral(":raised_back_of_hand:"), QString::fromUtf16(u"\U0001F91A"), category},
@@ -1765,7 +1765,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeBodyE
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeMailEmoji()
 {
-    const QString category{QStringLiteral("mail")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::MailEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":envelope:"), QString::fromUtf16(u"\U00002709"), category},
         {QStringLiteral(":e-mail:"), QString::fromUtf16(u"\U0001F4E7"), category},
@@ -1786,7 +1786,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeMailE
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeOfficeEmoji()
 {
-    const QString category{QStringLiteral("office")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::OfficeEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":pencil:"), QString::fromUtf16(u"\U0000270F"), category},
         {QStringLiteral(":black_nib:"), QString::fromUtf16(u"\U00002712"), category},
@@ -1824,7 +1824,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeOffic
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeToolsEmoji()
 {
-    const QString category{QStringLiteral("tools")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::ToolsEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":hammer:"), QString::fromUtf16(u"\U0001F528"), category},
         {QStringLiteral(":axe:"), QString::fromUtf16(u"\U0001FA93"), category},
@@ -1852,7 +1852,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeTools
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePhoneEmoji()
 {
-    const QString category{QStringLiteral("phone")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::PhoneEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":mobile_phone:"), QString::fromUtf16(u"\U0001F4F1"), category},
         {QStringLiteral(":mobile_phone_with_arrow:"), QString::fromUtf16(u"\U0001F4F2"), category},
@@ -1866,7 +1866,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodePhone
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeLockEmoji()
 {
-    const QString category{QStringLiteral("lock")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::LockEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":locked:"), QString::fromUtf16(u"\U0001F512"), category},
         {QStringLiteral(":unlocked:"), QString::fromUtf16(u"\U0001F513"), category},
@@ -1880,7 +1880,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeLockE
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeDrinkEmoji()
 {
-    const QString category{QStringLiteral("drink")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::DrinkEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":baby_bottle:"), QString::fromUtf16(u"\U0001F37C"), category},
         {QStringLiteral(":glass_of_milk:"), QString::fromUtf16(u"\U0001F95B"), category},
@@ -1905,7 +1905,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeDrink
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeVideoEmoji()
 {
-    const QString category{QStringLiteral("video")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::VideoEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":movie_camera:"), QString::fromUtf16(u"\U0001F3A5"), category},
         {QStringLiteral(":film_frames:"), QString::fromUtf16(u"\U0001F39E"), category},
@@ -1929,7 +1929,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeVideo
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeHouseEmoji()
 {
-    const QString category{QStringLiteral("house")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::HouseEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":door:"), QString::fromUtf16(u"\U0001F6AA"), category},
         {QStringLiteral(":bed:"), QString::fromUtf16(u"\U0001F6CF"), category},
@@ -1954,7 +1954,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeHouse
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeDishwareEmoji()
 {
-    const QString category{QStringLiteral("dishware")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::DishwareEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":chopsticks:"), QString::fromUtf16(u"\U0001F962"), category},
         {QStringLiteral(":fork_and_knife_with_plate:"), QString::fromUtf16(u"\U0001F37D"), category},
@@ -1968,7 +1968,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeDishw
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeHotelEmoji()
 {
-    const QString category{QStringLiteral("hotel")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::HotelEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":bellhop_bell:"), QString::fromUtf16(u"\U0001F6CE"), category},
         {QStringLiteral(":luggage:"), QString::fromUtf16(u"\U0001F9F3"), category},
@@ -1978,7 +1978,7 @@ QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeHotel
 
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeAwardMedalEmoji()
 {
-    const QString category{QStringLiteral("awardmedal")};
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::AwardMedalEmoji;
     const QVector<EmoticonUnicodeUtils::EmoticonStruct> lst{
         {QStringLiteral(":military_medal:"), QString::fromUtf16(u"\U0001F396"), category},
         {QStringLiteral(":trophy:"), QString::fromUtf16(u"\U0001F3C6"), category},

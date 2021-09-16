@@ -7,6 +7,7 @@
 #pragma once
 
 #include "kpimtextedit_export.h"
+#include <QObject>
 #include <QString>
 #include <QVector>
 namespace KPIMTextEdit
@@ -14,7 +15,44 @@ namespace KPIMTextEdit
 namespace EmoticonUnicodeUtils
 {
 struct EmoticonStruct {
-    EmoticonStruct(const QString &name, const QString &code, const QString &category)
+    enum EmoticonType {
+        Unknown = 0,
+        FlagsEmoji,
+        FaceEmoji,
+        AnimalsEmoji,
+        PlantEmoji,
+        ScienceEmoji,
+        ComputerEmoji,
+        BookPaperEmoji,
+        SoundMusicEmoji,
+        WeatherEmoji,
+        TimeEmoji,
+        GameEmoji,
+        ClothingEmoji,
+        EventEmoji,
+        FoodEmoji,
+        TransportEmoji,
+        PersonEmoji,
+        PlaceEmoji,
+        SymbolsEmoji,
+        SportEmoji,
+        EmotionEmoji,
+        MoneyEmoji,
+        BodyEmoji,
+        MailEmoji,
+        OfficeEmoji,
+        ToolsEmoji,
+        PhoneEmoji,
+        LockEmoji,
+        DrinkEmoji,
+        VideoEmoji,
+        HouseEmoji,
+        DishwareEmoji,
+        HotelEmoji,
+        AwardMedalEmoji,
+    };
+
+    EmoticonStruct(const QString &name, const QString &code, EmoticonType category)
         : emoticonName(name)
         , emoticonCode(code)
         , emoticonCategory(category)
@@ -23,7 +61,7 @@ struct EmoticonStruct {
 
     QString emoticonName;
     QString emoticonCode;
-    QString emoticonCategory;
+    EmoticonType emoticonCategory = EmoticonType::Unknown;
 };
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QVector<EmoticonStruct> unicodeFlagsEmoji();
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QVector<EmoticonStruct> unicodeFaceEmoji();
@@ -62,3 +100,4 @@ KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QVector<EmoticonStruct> allUnicode();
 }
 }
 
+Q_DECLARE_METATYPE(KPIMTextEdit::EmoticonUnicodeUtils::EmoticonStruct::EmoticonType)

@@ -20,23 +20,24 @@ EmoticonUnicodeProxyModel::~EmoticonUnicodeProxyModel()
 
 bool EmoticonUnicodeProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
-    if (mCategories.isEmpty()) {
+    if (mCategories == EmoticonUnicodeUtils::EmoticonStruct::Unknown) {
         return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
     }
     const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
-    const QString category = sourceIndex.data(EmoticonUnicodeModel::Category).toString();
-    if (mCategories.contains(category)) {
+    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category =
+        sourceIndex.data(EmoticonUnicodeModel::Category).value<EmoticonUnicodeUtils::EmoticonStruct::EmoticonType>();
+    if (mCategories == category) {
         return true;
     }
     return false;
 }
 
-const QStringList &EmoticonUnicodeProxyModel::categories() const
+EmoticonUnicodeUtils::EmoticonStruct::EmoticonType EmoticonUnicodeProxyModel::categories() const
 {
     return mCategories;
 }
 
-void EmoticonUnicodeProxyModel::setCategories(const QStringList &newCategories)
+void EmoticonUnicodeProxyModel::setCategories(EmoticonUnicodeUtils::EmoticonStruct::EmoticonType newCategories)
 {
     mCategories = newCategories;
 }

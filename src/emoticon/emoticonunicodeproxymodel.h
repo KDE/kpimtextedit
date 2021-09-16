@@ -5,6 +5,7 @@
 */
 #pragma once
 
+#include "emoticonunicodeutils.h"
 #include "kpimtextedit_private_export.h"
 #include <QSortFilterProxyModel>
 namespace KPIMTextEdit
@@ -15,13 +16,13 @@ class KPIMTEXTEDIT_TESTS_EXPORT EmoticonUnicodeProxyModel : public QSortFilterPr
 public:
     explicit EmoticonUnicodeProxyModel(QObject *parent = nullptr);
     ~EmoticonUnicodeProxyModel() override;
-    const QStringList &categories() const;
-    void setCategories(const QStringList &newCategories);
+    EmoticonUnicodeUtils::EmoticonStruct::EmoticonType categories() const;
+    void setCategories(EmoticonUnicodeUtils::EmoticonStruct::EmoticonType newCategories);
 
 protected:
     bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
 
 private:
-    QStringList mCategories;
+    EmoticonUnicodeUtils::EmoticonStruct::EmoticonType mCategories = EmoticonUnicodeUtils::EmoticonStruct::Unknown;
 };
 }
