@@ -39,6 +39,8 @@ QVariant EmoticonUnicodeModel::data(const QModelIndex &index, int role) const
     case Identifier:
     case Qt::DisplayRole:
         return unicodeEmoti.emoticonCode;
+    case Qt::ToolTipRole:
+        return unicodeEmoti.emoticonName;
     }
     return {};
 }

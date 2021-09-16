@@ -47,10 +47,7 @@ void EmoticonUnicodeTab::createSearchTab()
     mEmoticonUnicodeProxyModel->setSourceModel(emoticonModel);
     emoticonModel->setEmoticonList(EmoticonUnicodeUtils::unicodeFaceEmoji() + EmoticonUnicodeUtils::unicodeAnimalsEmoji());
     allEmojisView->setModel(mEmoticonUnicodeProxyModel);
-    mSearchTabIndex = addTab(allEmojisView, i18n("full"));
-    //    if (!str.isEmpty()) {
-    //        setTabToolTip(index, str);
-    //    }
+    mSearchTabIndex = addTab(allEmojisView, i18n("Search"));
 }
 
 void EmoticonUnicodeTab::loadEmoticons()
