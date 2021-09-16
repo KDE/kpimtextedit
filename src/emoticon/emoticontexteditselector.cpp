@@ -9,6 +9,7 @@
 #include "emoticonunicodetab.h"
 #include "textutils.h"
 
+#include <QLineEdit>
 #include <QVBoxLayout>
 
 using namespace KPIMTextEdit;
@@ -16,13 +17,18 @@ using namespace KPIMTextEdit;
 EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     : QWidget(parent)
     , mUnicodeTab(new EmoticonUnicodeTab(this))
+    , mSearchUnicodeLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setSpacing(0);
     mainLayout->setContentsMargins({});
-    mainLayout->addWidget(mUnicodeTab);
     mUnicodeTab->setObjectName(QStringLiteral("mUnicodeTab"));
+    mSearchUnicodeLineEdit->setObjectName(QStringLiteral("mSearchUnicodeLineEdit"));
+    mSearchUnicodeLineEdit->setClearButtonEnabled(true);
+    mainLayout->addWidget(mSearchUnicodeLineEdit);
+
+    mainLayout->addWidget(mUnicodeTab);
     connect(mUnicodeTab, &EmoticonUnicodeTab::itemSelected, this, &EmoticonTextEditSelector::slotItemSelected);
 }
 

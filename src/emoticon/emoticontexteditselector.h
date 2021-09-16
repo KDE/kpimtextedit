@@ -9,6 +9,7 @@
 
 #include "kpimtextedit_private_export.h"
 #include <QWidget>
+class QLineEdit;
 namespace KPIMTextEdit
 {
 class EmoticonUnicodeTab;
@@ -28,6 +29,7 @@ Q_SIGNALS:
 private:
     void slotItemSelected(const QString &str);
     EmoticonUnicodeTab *const mUnicodeTab;
+    QLineEdit *const mSearchUnicodeLineEdit;
 };
 }
 

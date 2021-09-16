@@ -7,6 +7,7 @@
 #include "emoticontexteditselectortest.h"
 #include "emoticon/emoticontexteditselector.h"
 #include "emoticon/emoticonunicodetab.h"
+#include <QLineEdit>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(EmoticonTextEditSelectorTest)
@@ -25,4 +26,9 @@ void EmoticonTextEditSelectorTest::shouldHaveDefaultValues()
 
     auto mUnicodeTab = w.findChild<KPIMTextEdit::EmoticonUnicodeTab *>(QStringLiteral("mUnicodeTab"));
     QVERIFY(mUnicodeTab);
+
+    auto mSearchUnicodeLineEdit = w.findChild<QLineEdit *>(QStringLiteral("mSearchUnicodeLineEdit"));
+    QVERIFY(mSearchUnicodeLineEdit);
+    QVERIFY(mSearchUnicodeLineEdit->isClearButtonEnabled());
+    QVERIFY(mSearchUnicodeLineEdit->text().isEmpty());
 }
