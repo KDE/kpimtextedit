@@ -7,11 +7,12 @@
 
 #pragma once
 
+#include "kpimtextedit_private_export.h"
 #include <QWidget>
 namespace KPIMTextEdit
 {
 class EmoticonUnicodeTab;
-class EmoticonTextEditSelector : public QWidget
+class KPIMTEXTEDIT_TESTS_EXPORT EmoticonTextEditSelector : public QWidget
 {
     Q_OBJECT
 public:
@@ -26,7 +27,7 @@ Q_SIGNALS:
 
 private:
     void slotItemSelected(const QString &str);
-    EmoticonUnicodeTab *mUnicodeTab = nullptr;
+    EmoticonUnicodeTab *const mUnicodeTab;
 };
 }
 

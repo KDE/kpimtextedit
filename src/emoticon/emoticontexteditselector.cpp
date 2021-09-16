@@ -15,12 +15,14 @@ using namespace KPIMTextEdit;
 
 EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     : QWidget(parent)
+    , mUnicodeTab(new EmoticonUnicodeTab(this))
 {
-    auto lay = new QHBoxLayout(this);
-    lay->setSpacing(0);
-    lay->setContentsMargins({});
-    mUnicodeTab = new EmoticonUnicodeTab(this);
-    lay->addWidget(mUnicodeTab);
+    auto mainLayout = new QHBoxLayout(this);
+    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setSpacing(0);
+    mainLayout->setContentsMargins({});
+    mainLayout->addWidget(mUnicodeTab);
+    mUnicodeTab->setObjectName(QStringLiteral("mUnicodeTab"));
     connect(mUnicodeTab, &EmoticonUnicodeTab::itemSelected, this, &EmoticonTextEditSelector::slotItemSelected);
 }
 

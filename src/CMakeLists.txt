@@ -251,6 +251,10 @@ endif()
 
 ecm_qt_install_logging_categories(EXPORT KPIMTEXTEDIT FILE kpimtextedit.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 
+if(BUILD_TESTING)
+    add_subdirectory(emoticon/autotests)
+endif()	
+
 if (BUILD_QCH)
     ecm_add_qch(
         KF5PimTextEdit_QCH
