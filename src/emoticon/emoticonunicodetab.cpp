@@ -8,8 +8,10 @@
 #include "emoticonlistview.h"
 #include "emoticonlistwidgetselector.h"
 #include "emoticonunicodemodel.h"
+#include "emoticonunicodeproxymodel.h"
 #include "textutils.h"
 #include <KLocalizedString>
+#include <QDebug>
 
 using namespace KPIMTextEdit;
 EmoticonUnicodeTab::EmoticonUnicodeTab(QWidget *parent)
@@ -29,17 +31,19 @@ EmoticonUnicodeTab::~EmoticonUnicodeTab()
 
 void EmoticonUnicodeTab::searchUnicode(const QString &str)
 {
+    qDebug() << " str" << str;
+    mEmoticonUnicodeProxyModel->setFilterFixedString(str);
     // TODO show search page + update proxyfilter + switch to search page
 }
 
 void EmoticonUnicodeTab::createSearchTab()
 {
     auto allEmojisView = new EmoticonListView(this);
-    //    auto emoticonFilterProxyModel = new EmoticonModelFilterProxyModel(this);
-    //    emoticonFilterProxyModel->setSourceModel(account->emoticonModel());
-    auto m = new EmoticonUnicodeModel(this);
-    m->setEmoticonList(EmoticonUnicodeUtils::unicodeFaceEmoji() + EmoticonUnicodeUtils::unicodeAnimalsEmoji());
-    allEmojisView->setModel(m);
+    auto emoticonModel = new EmoticonUnicodeModel(this);
+    mEmoticonUnicodeProxyModel = new EmoticonUnicodeProxyModel(this);
+    mEmoticonUnicodeProxyModel->setSourceModel(emoticonModel);
+    emoticonModel->setEmoticonList(EmoticonUnicodeUtils::unicodeFaceEmoji() + EmoticonUnicodeUtils::unicodeAnimalsEmoji());
+    allEmojisView->setModel(emoticonModel);
     const int index = addTab(allEmojisView, i18n("full"));
     //    if (!str.isEmpty()) {
     //        setTabToolTip(index, str);

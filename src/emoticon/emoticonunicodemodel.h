@@ -15,7 +15,11 @@ class KPIMTEXTEDIT_TESTS_EXPORT EmoticonUnicodeModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
-    enum EmoticonsRoles { UnicodeEmoji = Qt::UserRole + 1, Identifier, Category };
+    enum EmoticonsRoles {
+        UnicodeEmoji = Qt::UserRole + 1,
+        Identifier,
+        Category,
+    };
     Q_ENUM(EmoticonsRoles)
 
     explicit EmoticonUnicodeModel(QObject *parent = nullptr);

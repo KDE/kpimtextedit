@@ -5,10 +5,13 @@
 */
 #include "emoticonunicodeproxymodel.h"
 #include "emoticonunicodemodel.h"
+#include <QDebug>
 using namespace KPIMTextEdit;
 EmoticonUnicodeProxyModel::EmoticonUnicodeProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
+    setFilterCaseSensitivity(Qt::CaseInsensitive);
+    setFilterRole(EmoticonUnicodeModel::UnicodeEmoji);
 }
 
 EmoticonUnicodeProxyModel::~EmoticonUnicodeProxyModel()
@@ -18,6 +21,10 @@ EmoticonUnicodeProxyModel::~EmoticonUnicodeProxyModel()
 bool EmoticonUnicodeProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
     if (mCategories.isEmpty()) {
+        const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
+        const QString identifier = sourceIndex.data(EmoticonUnicodeModel::UnicodeEmoji).toString();
+        qDebug() << " identifier " << identifier;
+
         return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
     }
     const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);

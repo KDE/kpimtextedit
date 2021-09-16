@@ -13,6 +13,7 @@
 
 namespace KPIMTextEdit
 {
+class EmoticonUnicodeProxyModel;
 /**
  * @brief The EmoticonUnicodeTab class
  * @author Laurent Montel <montel@kde.org>
@@ -33,6 +34,7 @@ Q_SIGNALS:
 private:
     void createPlainTextEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons);
     void createSearchTab();
+    EmoticonUnicodeProxyModel *mEmoticonUnicodeProxyModel = nullptr;
 };
 }
 
