@@ -9,10 +9,11 @@
 
 using namespace KPIMTextEdit;
 
-EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText, QListWidget *parent)
+EmoticonTextEditItem::EmoticonTextEditItem(const QString &emoticonText, const QString &tooltip, QListWidget *parent)
     : QListWidgetItem(emoticonText, parent)
     , mText(emoticonText)
 {
+    setToolTip(tooltip);
 }
 
 QString EmoticonTextEditItem::text() const
@@ -48,10 +49,10 @@ void EmoticonListWidgetSelector::slotMouseOverItem(QListWidgetItem *item)
     }
 }
 
-void EmoticonListWidgetSelector::setEmoticons(const QStringList &lst)
+void EmoticonListWidgetSelector::setEmoticons(const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons)
 {
-    for (const QString &emoji : lst) {
-        new KPIMTextEdit::EmoticonTextEditItem(emoji, this);
+    for (const auto &emoji : emoticons) {
+        new KPIMTextEdit::EmoticonTextEditItem(emoji.emoticonCode, emoji.emoticonName, this);
     }
 }
 

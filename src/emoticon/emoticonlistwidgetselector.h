@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include "emoticonunicodeutils.h"
 #include "kpimtextedit_private_export.h"
 #include <QListWidget>
 
@@ -14,7 +15,7 @@ namespace KPIMTextEdit
 class KPIMTEXTEDIT_TESTS_EXPORT EmoticonTextEditItem : public QListWidgetItem
 {
 public:
-    explicit EmoticonTextEditItem(const QString &emoticonText, QListWidget *parent);
+    explicit EmoticonTextEditItem(const QString &emoticonText, const QString &tooltip, QListWidget *parent);
     Q_REQUIRED_RESULT QString text() const;
 
 private:
@@ -28,7 +29,7 @@ public:
     explicit EmoticonListWidgetSelector(QWidget *parent = nullptr);
     ~EmoticonListWidgetSelector() override;
 
-    void setEmoticons(const QStringList &lst);
+    void setEmoticons(const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons);
 Q_SIGNALS:
     void itemSelected(const QString &);
 
