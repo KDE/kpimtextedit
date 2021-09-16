@@ -11,3 +11,4 @@ endmacro()
 
 emoticontest(emoticontexteditselectortest.cpp)
 emoticontest(emoticonlistviewtest.cpp)
+emoticontest(emoticonunicodeproxymodeltest.cpp)

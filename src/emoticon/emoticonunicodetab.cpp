@@ -5,6 +5,7 @@
 */
 
 #include "emoticonunicodetab.h"
+#include "emoticonlistview.h"
 #include "emoticonlistwidgetselector.h"
 #include "emoticonunicodemodel.h"
 #include "textutils.h"
@@ -31,11 +32,9 @@ void EmoticonUnicodeTab::searchUnicode(const QString &str)
     // TODO show search page + update proxyfilter + switch to search page
 }
 
-void EmoticonUnicodeTab::createFullTab()
+void EmoticonUnicodeTab::createSearchTab()
 {
-    auto allEmojisView = new QListView(this);
-    allEmojisView->setViewMode(QListView::IconMode);
-    allEmojisView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    auto allEmojisView = new EmoticonListView(this);
     //    auto emoticonFilterProxyModel = new EmoticonModelFilterProxyModel(this);
     //    emoticonFilterProxyModel->setSourceModel(account->emoticonModel());
     auto m = new EmoticonUnicodeModel(this);
@@ -49,7 +48,7 @@ void EmoticonUnicodeTab::createFullTab()
 
 void EmoticonUnicodeTab::loadEmoticons()
 {
-    createFullTab();
+    createSearchTab();
     createPlainTextEmoticonTab(i18n("Faces"), EmoticonUnicodeUtils::unicodeFaceEmoji());
     createPlainTextEmoticonTab(i18n("Animals"), EmoticonUnicodeUtils::unicodeAnimalsEmoji());
     createPlainTextEmoticonTab(i18n("Emotions"), EmoticonUnicodeUtils::unicodeEmotionEmoji());
