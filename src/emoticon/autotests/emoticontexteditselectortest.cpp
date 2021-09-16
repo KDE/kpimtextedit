@@ -7,8 +7,8 @@
 #include "emoticontexteditselectortest.h"
 #include "emoticon/emoticontexteditselector.h"
 #include "emoticon/emoticonunicodetab.h"
-#include <QHBoxLayout>
 #include <QTest>
+#include <QVBoxLayout>
 QTEST_MAIN(EmoticonTextEditSelectorTest)
 
 EmoticonTextEditSelectorTest::EmoticonTextEditSelectorTest(QObject *parent)
@@ -19,7 +19,7 @@ EmoticonTextEditSelectorTest::EmoticonTextEditSelectorTest(QObject *parent)
 void EmoticonTextEditSelectorTest::shouldHaveDefaultValues()
 {
     KPIMTextEdit::EmoticonTextEditSelector w;
-    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), {});
 

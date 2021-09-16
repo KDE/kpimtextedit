@@ -9,7 +9,7 @@
 #include "emoticonunicodetab.h"
 #include "textutils.h"
 
-#include <QHBoxLayout>
+#include <QVBoxLayout>
 
 using namespace KPIMTextEdit;
 
@@ -17,7 +17,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     : QWidget(parent)
     , mUnicodeTab(new EmoticonUnicodeTab(this))
 {
-    auto mainLayout = new QHBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setSpacing(0);
     mainLayout->setContentsMargins({});
