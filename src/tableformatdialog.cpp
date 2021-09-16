@@ -33,7 +33,7 @@ public:
 
         QWidget *page = new QWidget(q);
         auto lay = new QVBoxLayout(page);
-        lay->setContentsMargins(0, 0, 0, 0);
+        lay->setContentsMargins({});
         tableWidget = new InsertTableWidget;
         lay->addWidget(tableWidget);
 

@@ -18,7 +18,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
 {
     auto lay = new QHBoxLayout(this);
     lay->setSpacing(0);
-    lay->setContentsMargins(0, 0, 0, 0);
+    lay->setContentsMargins({});
     mUnicodeTab = new EmoticonUnicodeTab(this);
     lay->addWidget(mUnicodeTab);
     connect(mUnicodeTab, &EmoticonUnicodeTab::itemSelected, this, &EmoticonTextEditSelector::slotItemSelected);

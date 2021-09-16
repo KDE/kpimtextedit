@@ -35,7 +35,7 @@ public:
         : q(qq)
     {
         auto lay = new QVBoxLayout(q);
-        lay->setContentsMargins(0, 0, 0, 0);
+        lay->setContentsMargins({});
         auto hbox = new QHBoxLayout;
         QLabel *lab = new QLabel(i18n("Image Location:"));
         imageUrlRequester = new KUrlRequester;

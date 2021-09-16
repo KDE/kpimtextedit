@@ -26,7 +26,7 @@ RichTextComposerWidget::RichTextComposerWidget(QWidget *parent)
     , d(new KPIMTextEdit::RichTextComposerWidgetPrivate)
 {
     auto layout = new QHBoxLayout(this);
-    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setContentsMargins({});
     d->richTextComposer = new KPIMTextEdit::RichTextComposer(this);
     d->richTextComposer->setObjectName(QStringLiteral("richtextcomposer"));
     auto editorWidget = new RichTextEditorWidget(d->richTextComposer, this);

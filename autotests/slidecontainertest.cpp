@@ -29,7 +29,7 @@ struct TestWindow : public QWidget {
         mMainWidget = new QTextEdit();
         auto layout = new QVBoxLayout(this);
         layout->setSpacing(0);
-        layout->setContentsMargins(0, 0, 0, 0);
+        layout->setContentsMargins({});
         layout->addWidget(mMainWidget);
         layout->addWidget(mContainer);
     }

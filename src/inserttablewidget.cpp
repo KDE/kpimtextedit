@@ -36,7 +36,7 @@ public:
         mBorder->setSuffix(i18n(" px"));
 
         auto gridLayout = new QGridLayout;
-        gridLayout->setContentsMargins(0, 0, 0, 0);
+        gridLayout->setContentsMargins({});
         gridLayout->addWidget(new QLabel(i18n("Rows:")), 0, 0);
         gridLayout->addWidget(mRows, 0, 1);
 
