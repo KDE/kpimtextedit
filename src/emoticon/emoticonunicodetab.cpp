@@ -31,9 +31,12 @@ EmoticonUnicodeTab::~EmoticonUnicodeTab()
 
 void EmoticonUnicodeTab::searchUnicode(const QString &str)
 {
-    qDebug() << " str" << str;
+    bool searchVisible = !str.trimmed().isEmpty();
+    setTabVisible(mSearchTabIndex, searchVisible);
+    if (searchVisible) {
+        setCurrentIndex(mSearchTabIndex);
+    }
     mEmoticonUnicodeProxyModel->setFilterFixedString(str);
-    // TODO show search page + update proxyfilter + switch to search page
 }
 
 void EmoticonUnicodeTab::createSearchTab()
@@ -43,8 +46,8 @@ void EmoticonUnicodeTab::createSearchTab()
     mEmoticonUnicodeProxyModel = new EmoticonUnicodeProxyModel(this);
     mEmoticonUnicodeProxyModel->setSourceModel(emoticonModel);
     emoticonModel->setEmoticonList(EmoticonUnicodeUtils::unicodeFaceEmoji() + EmoticonUnicodeUtils::unicodeAnimalsEmoji());
-    allEmojisView->setModel(emoticonModel);
-    const int index = addTab(allEmojisView, i18n("full"));
+    allEmojisView->setModel(mEmoticonUnicodeProxyModel);
+    mSearchTabIndex = addTab(allEmojisView, i18n("full"));
     //    if (!str.isEmpty()) {
     //        setTabToolTip(index, str);
     //    }
@@ -86,6 +89,7 @@ void EmoticonUnicodeTab::loadEmoticons()
     createPlainTextEmoticonTab(i18n("Dishware"), EmoticonUnicodeUtils::unicodeDishwareEmoji());
     createPlainTextEmoticonTab(i18n("Hotel"), EmoticonUnicodeUtils::unicodeHotelEmoji());
     createPlainTextEmoticonTab(i18n("Award-Medal"), EmoticonUnicodeUtils::unicodeAwardMedalEmoji());
+    setTabVisible(mSearchTabIndex, false);
 }
 
 void EmoticonUnicodeTab::createPlainTextEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons)

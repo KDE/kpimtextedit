@@ -35,6 +35,7 @@ private:
     void createPlainTextEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons);
     void createSearchTab();
     EmoticonUnicodeProxyModel *mEmoticonUnicodeProxyModel = nullptr;
+    int mSearchTabIndex = -1;
 };
 }
 
