@@ -6,6 +6,7 @@
 
 #include "emoticonunicodetab.h"
 #include "emoticonlistwidgetselector.h"
+#include "emoticonunicodemodel.h"
 #include "textutils.h"
 #include <KLocalizedString>
 
@@ -30,8 +31,25 @@ void EmoticonUnicodeTab::searchUnicode(const QString &str)
     // TODO show search page + update proxyfilter + switch to search page
 }
 
+void EmoticonUnicodeTab::createFullTab()
+{
+    auto allEmojisView = new QListView(this);
+    allEmojisView->setViewMode(QListView::IconMode);
+    allEmojisView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    //    auto emoticonFilterProxyModel = new EmoticonModelFilterProxyModel(this);
+    //    emoticonFilterProxyModel->setSourceModel(account->emoticonModel());
+    auto m = new EmoticonUnicodeModel(this);
+    m->setEmoticonList(EmoticonUnicodeUtils::unicodeFaceEmoji() + EmoticonUnicodeUtils::unicodeAnimalsEmoji());
+    allEmojisView->setModel(m);
+    const int index = addTab(allEmojisView, i18n("full"));
+    //    if (!str.isEmpty()) {
+    //        setTabToolTip(index, str);
+    //    }
+}
+
 void EmoticonUnicodeTab::loadEmoticons()
 {
+    createFullTab();
     createPlainTextEmoticonTab(i18n("Faces"), EmoticonUnicodeUtils::unicodeFaceEmoji());
     createPlainTextEmoticonTab(i18n("Animals"), EmoticonUnicodeUtils::unicodeAnimalsEmoji());
     createPlainTextEmoticonTab(i18n("Emotions"), EmoticonUnicodeUtils::unicodeEmotionEmoji());

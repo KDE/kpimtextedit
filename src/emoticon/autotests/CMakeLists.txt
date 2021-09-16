@@ -10,3 +10,4 @@ macro( emoticontest _source )
 endmacro()
 
 emoticontest(emoticontexteditselectortest.cpp)
+emoticontest(emoticonlistviewtest.cpp)

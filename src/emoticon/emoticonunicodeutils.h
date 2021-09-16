@@ -14,14 +14,16 @@ namespace KPIMTextEdit
 namespace EmoticonUnicodeUtils
 {
 struct EmoticonStruct {
-    EmoticonStruct(const QString &name, const QString &code)
+    EmoticonStruct(const QString &name, const QString &code, const QString &category)
         : emoticonName(name)
         , emoticonCode(code)
+        , emoticonCategory(category)
     {
     }
 
     QString emoticonName;
     QString emoticonCode;
+    QString emoticonCategory;
 };
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QVector<EmoticonStruct> unicodeFlagsEmoji();
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QVector<EmoticonStruct> unicodeFaceEmoji();

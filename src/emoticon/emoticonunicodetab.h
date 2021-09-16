@@ -32,6 +32,7 @@ Q_SIGNALS:
 
 private:
     void createPlainTextEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons);
+    void createFullTab();
 };
 }
 
