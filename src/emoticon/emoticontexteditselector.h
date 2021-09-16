@@ -28,6 +28,7 @@ Q_SIGNALS:
 
 private:
     void slotItemSelected(const QString &str);
+    void slotSearchUnicode(const QString &str);
     EmoticonUnicodeTab *const mUnicodeTab;
     QLineEdit *const mSearchUnicodeLineEdit;
 };

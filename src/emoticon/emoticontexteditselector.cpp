@@ -30,6 +30,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
 
     mainLayout->addWidget(mUnicodeTab);
     connect(mUnicodeTab, &EmoticonUnicodeTab::itemSelected, this, &EmoticonTextEditSelector::slotItemSelected);
+    connect(mSearchUnicodeLineEdit, &QLineEdit::textChanged, this, &EmoticonTextEditSelector::slotSearchUnicode);
 }
 
 EmoticonTextEditSelector::~EmoticonTextEditSelector()
@@ -49,4 +50,9 @@ void EmoticonTextEditSelector::loadEmoticons()
     if (mUnicodeTab->count() == 0) {
         mUnicodeTab->loadEmoticons();
     }
+}
+
+void EmoticonTextEditSelector::slotSearchUnicode(const QString &str)
+{
+    mUnicodeTab->searchUnicode(str);
 }

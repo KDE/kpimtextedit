@@ -26,6 +26,7 @@ public:
 
     void loadEmoticons();
 
+    void searchUnicode(const QString &str);
 Q_SIGNALS:
     void itemSelected(const QString &);
 

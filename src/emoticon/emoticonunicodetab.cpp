@@ -25,6 +25,11 @@ EmoticonUnicodeTab::~EmoticonUnicodeTab()
 {
 }
 
+void EmoticonUnicodeTab::searchUnicode(const QString &str)
+{
+    // TODO show search page + update proxyfilter + switch to search page
+}
+
 void EmoticonUnicodeTab::loadEmoticons()
 {
     createPlainTextEmoticonTab(i18n("Faces"), EmoticonUnicodeUtils::unicodeFaceEmoji());
