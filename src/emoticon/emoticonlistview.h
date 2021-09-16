@@ -15,5 +15,7 @@ class KPIMTEXTEDIT_TESTS_EXPORT EmoticonListView : public QListView
 public:
     explicit EmoticonListView(QWidget *parent = nullptr);
     ~EmoticonListView() override;
+Q_SIGNALS:
+    void emojiItemSelected(const QString &str);
 };
 }

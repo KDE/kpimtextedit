@@ -48,6 +48,7 @@ void EmoticonUnicodeTab::createSearchTab()
     emoticonModel->setEmoticonList(EmoticonUnicodeUtils::unicodeFaceEmoji() + EmoticonUnicodeUtils::unicodeAnimalsEmoji());
     allEmojisView->setModel(mEmoticonUnicodeProxyModel);
     mSearchTabIndex = addTab(allEmojisView, i18n("Search"));
+    connect(allEmojisView, &KPIMTextEdit::EmoticonListView::emojiItemSelected, this, &EmoticonUnicodeTab::itemSelected);
 }
 
 void EmoticonUnicodeTab::loadEmoticons()

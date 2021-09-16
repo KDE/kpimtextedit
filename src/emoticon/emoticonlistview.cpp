@@ -11,6 +11,10 @@ EmoticonListView::EmoticonListView(QWidget *parent)
 {
     setViewMode(QListView::IconMode);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    connect(this, &QListView::activated, this, [this](const QModelIndex &index) {
+        const QString emojiStr = index.data().toString();
+        Q_EMIT emojiItemSelected(emojiStr);
+    });
 }
 
 EmoticonListView::~EmoticonListView()
