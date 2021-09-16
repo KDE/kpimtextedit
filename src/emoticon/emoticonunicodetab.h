@@ -33,7 +33,7 @@ Q_SIGNALS:
     void itemSelected(const QString &);
 
 private:
-    void createPlainTextEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons);
+    void createEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons);
     void createSearchTab();
     EmoticonUnicodeModel *const mEmoticonUnicodeModel;
     EmoticonUnicodeProxyModel *mEmoticonUnicodeSearchProxyModel = nullptr;
