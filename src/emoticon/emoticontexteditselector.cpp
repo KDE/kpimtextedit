@@ -9,6 +9,8 @@
 #include "emoticonunicodetab.h"
 #include "textutils.h"
 
+#include <KLocalizedString>
+
 #include <QLineEdit>
 #include <QVBoxLayout>
 
@@ -26,6 +28,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     mUnicodeTab->setObjectName(QStringLiteral("mUnicodeTab"));
     mSearchUnicodeLineEdit->setObjectName(QStringLiteral("mSearchUnicodeLineEdit"));
     mSearchUnicodeLineEdit->setClearButtonEnabled(true);
+    mSearchUnicodeLineEdit->setPlaceholderText(i18n("Search Emoticon..."));
     mainLayout->addWidget(mSearchUnicodeLineEdit);
 
     mainLayout->addWidget(mUnicodeTab);
