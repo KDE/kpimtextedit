@@ -6,7 +6,6 @@
 
 #include "emoticonunicodetab.h"
 #include "emoticonlistview.h"
-#include "emoticonlistwidgetselector.h"
 #include "emoticonunicodemodel.h"
 #include "emoticonunicodeproxymodel.h"
 #include "textutils.h"
