@@ -57,16 +57,16 @@ void EmoticonUnicodeTab::createEmoticonTab(const QString &str, const QVector<Emo
     if (!emoticons.isEmpty()) {
         auto emojisView = new EmoticonListView(this);
         EmoticonUnicodeProxyModel *emoticonUnicodeProxyModel = new EmoticonUnicodeProxyModel(this);
-        emoticonUnicodeProxyModel->setCategories(emoticons.constFirst().emoticonCategory);
+        const auto emoji = emoticons.constFirst();
+        emoticonUnicodeProxyModel->setCategories(emoji.emoticonCategory);
         emoticonUnicodeProxyModel->setSourceModel(mEmoticonUnicodeModel);
         emojisView->setModel(emoticonUnicodeProxyModel);
         addTab(emojisView, str);
-        const QString strTab = emoticons.constFirst().emoticonCode;
+        const QString strTab = emoji.emoticonCode;
         const int index = addTab(emojisView, strTab);
         if (!str.isEmpty()) {
             setTabToolTip(index, str);
         }
-
         connect(emojisView, &KPIMTextEdit::EmoticonListView::emojiItemSelected, this, &EmoticonUnicodeTab::itemSelected);
     }
 }
