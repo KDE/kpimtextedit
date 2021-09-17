@@ -32,12 +32,13 @@ EmoticonUnicodeTab::~EmoticonUnicodeTab()
 
 void EmoticonUnicodeTab::searchUnicode(const QString &str)
 {
-    bool searchVisible = !str.trimmed().isEmpty();
+    const QString trimmedStr{str.trimmed()};
+    bool searchVisible = !trimmedStr.isEmpty();
     setTabVisible(mSearchTabIndex, searchVisible);
     if (searchVisible) {
         setCurrentIndex(mSearchTabIndex);
     }
-    mEmoticonUnicodeSearchProxyModel->setFilterFixedString(str);
+    mEmoticonUnicodeSearchProxyModel->setFilterFixedString(trimmedStr);
 }
 
 void EmoticonUnicodeTab::createSearchTab()
