@@ -34,6 +34,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     mainLayout->addWidget(mUnicodeTab);
     connect(mUnicodeTab, &EmoticonUnicodeTab::itemSelected, this, &EmoticonTextEditSelector::slotItemSelected);
     connect(mSearchUnicodeLineEdit, &QLineEdit::textChanged, this, &EmoticonTextEditSelector::slotSearchUnicode);
+    setMinimumSize(400, 200);
 }
 
 EmoticonTextEditSelector::~EmoticonTextEditSelector()
