@@ -7,6 +7,7 @@
 #include "emoticonunicodetab.h"
 #include "emoticonlistview.h"
 #include "emoticonunicodemodel.h"
+#include "emoticonunicodemodelmanager.h"
 #include "emoticonunicodeproxymodel.h"
 #include "textutils.h"
 #include <KLocalizedString>
@@ -15,9 +16,7 @@
 using namespace KPIMTextEdit;
 EmoticonUnicodeTab::EmoticonUnicodeTab(QWidget *parent)
     : QTabWidget(parent)
-    , mEmoticonUnicodeModel(new EmoticonUnicodeModel(this))
 {
-    mEmoticonUnicodeModel->setEmoticonList(EmoticonUnicodeUtils::allUnicode());
     setTabBarAutoHide(true);
 
     loadEmoticons();
@@ -45,7 +44,7 @@ void EmoticonUnicodeTab::createSearchTab()
 {
     auto allEmojisView = new EmoticonListView(this);
     mEmoticonUnicodeSearchProxyModel = new EmoticonUnicodeProxyModel(this);
-    mEmoticonUnicodeSearchProxyModel->setSourceModel(mEmoticonUnicodeModel);
+    mEmoticonUnicodeSearchProxyModel->setSourceModel(EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
     allEmojisView->setModel(mEmoticonUnicodeSearchProxyModel);
     mSearchTabIndex = addTab(allEmojisView, QIcon::fromTheme(QStringLiteral("edit-find")), {});
     connect(allEmojisView, &KPIMTextEdit::EmoticonListView::emojiItemSelected, this, &EmoticonUnicodeTab::itemSelected);
@@ -58,7 +57,7 @@ void EmoticonUnicodeTab::createEmoticonTab(const QString &str, const QVector<Emo
         EmoticonUnicodeProxyModel *emoticonUnicodeProxyModel = new EmoticonUnicodeProxyModel(this);
         const auto emoji = emoticons.constFirst();
         emoticonUnicodeProxyModel->setCategories(emoji.emoticonCategory);
-        emoticonUnicodeProxyModel->setSourceModel(mEmoticonUnicodeModel);
+        emoticonUnicodeProxyModel->setSourceModel(EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
         emojisView->setModel(emoticonUnicodeProxyModel);
         addTab(emojisView, str);
         const QString strTab = emoji.emoticonCode;

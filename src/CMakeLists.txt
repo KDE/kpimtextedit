@@ -57,6 +57,7 @@ target_sources(KF5PimTextEdit PRIVATE
     emoticon/emoticonunicodemodel.cpp
     emoticon/emoticonlistview.cpp
     emoticon/emoticonunicodeproxymodel.cpp
+    emoticon/emoticonunicodemodelmanager.cpp
     )
 
 target_sources(KF5PimTextEdit PRIVATE
