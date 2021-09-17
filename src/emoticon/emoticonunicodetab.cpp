@@ -48,6 +48,7 @@ void EmoticonUnicodeTab::createSearchTab()
     mEmoticonUnicodeSearchProxyModel->setSourceModel(EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
     allEmojisView->setModel(mEmoticonUnicodeSearchProxyModel);
     mSearchTabIndex = addTab(allEmojisView, QIcon::fromTheme(QStringLiteral("edit-find")), {});
+    setTabToolTip(mSearchTabIndex, i18n("Result"));
     connect(allEmojisView, &KPIMTextEdit::EmoticonListView::emojiItemSelected, this, &EmoticonUnicodeTab::itemSelected);
 }
 
