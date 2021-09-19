@@ -5,12 +5,28 @@
 */
 
 #include "emoticonrecentlistview.h"
+
+#include <KLocalizedString>
+#include <QContextMenuEvent>
+#include <QMenu>
 using namespace KPIMTextEdit;
 EmoticonRecentListView::EmoticonRecentListView(QWidget *parent)
     : EmoticonListView(parent)
 {
+    setContextMenuPolicy(Qt::DefaultContextMenu);
 }
 
 EmoticonRecentListView::~EmoticonRecentListView()
 {
+}
+
+void EmoticonRecentListView::contextMenuEvent(QContextMenuEvent *event)
+{
+    if (model()->rowCount() > 0) {
+        QMenu menu(this);
+        auto clearRecent = new QAction(i18n("Clear Recents"), &menu);
+        connect(clearRecent, &QAction::triggered, this, &EmoticonRecentListView::clearAll);
+        menu.addAction(clearRecent);
+        menu.exec(event->globalPos());
+    }
 }

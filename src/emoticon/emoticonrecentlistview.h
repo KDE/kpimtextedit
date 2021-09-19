@@ -15,5 +15,11 @@ class KPIMTEXTEDIT_TESTS_EXPORT EmoticonRecentListView : public EmoticonListView
 public:
     explicit EmoticonRecentListView(QWidget *parent = nullptr);
     ~EmoticonRecentListView() override;
+
+protected:
+    void contextMenuEvent(QContextMenuEvent *event) override;
+
+Q_SIGNALS:
+    void clearAll();
 };
 }
