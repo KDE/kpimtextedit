@@ -58,6 +58,8 @@ target_sources(KF5PimTextEdit PRIVATE
     emoticon/emoticonlistview.cpp
     emoticon/emoticonunicodeproxymodel.cpp
     emoticon/emoticonunicodemodelmanager.cpp
+    emoticon/emoticonrecentusedfilterproxymodel.cpp
+    emoticon/emoticonrecentlistview.cpp
     )
 
 target_sources(KF5PimTextEdit PRIVATE
