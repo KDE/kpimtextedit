@@ -6,6 +6,7 @@
 
 #include "emoticonunicodetab.h"
 #include "emoticonlistview.h"
+#include "emoticonrecentusedfilterproxymodel.h"
 #include "emoticonunicodemodel.h"
 #include "emoticonunicodemodelmanager.h"
 #include "emoticonunicodeproxymodel.h"
@@ -17,6 +18,7 @@ using namespace KPIMTextEdit;
 EmoticonUnicodeTab::EmoticonUnicodeTab(QWidget *parent)
     : QTabWidget(parent)
     , mEmoticonUnicodeSearchProxyModel(new EmoticonUnicodeProxyModel(this))
+    , mEmoticonUnicodeRecentProxyModel(new EmoticonRecentUsedFilterProxyModel(this))
 {
     loadEmoticons();
     QFont f;
@@ -53,7 +55,14 @@ void EmoticonUnicodeTab::createSearchTab()
 
 void EmoticonUnicodeTab::createRecentTab()
 {
-    // TODO
+    auto recentEmojisView = new EmoticonListView(this);
+
+    mEmoticonUnicodeRecentProxyModel->setSourceModel(EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
+    recentEmojisView->setModel(mEmoticonUnicodeRecentProxyModel);
+    mRecentTabIndex = addTab(recentEmojisView, QIcon::fromTheme(QStringLiteral("edit-find")), {});
+    setTabToolTip(mSearchTabIndex, i18n("Recents"));
+    connect(recentEmojisView, &KPIMTextEdit::EmoticonListView::emojiItemSelected, this, &EmoticonUnicodeTab::itemSelected);
+    // TODO show or not recent tab
 }
 
 void EmoticonUnicodeTab::createEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons)
@@ -78,6 +87,7 @@ void EmoticonUnicodeTab::createEmoticonTab(const QString &str, const QVector<Emo
 void EmoticonUnicodeTab::loadEmoticons()
 {
     createSearchTab();
+    createRecentTab();
     createEmoticonTab(i18n("Faces"), EmoticonUnicodeUtils::unicodeFaceEmoji());
     createEmoticonTab(i18n("Animals"), EmoticonUnicodeUtils::unicodeAnimalsEmoji());
     createEmoticonTab(i18n("Emotions"), EmoticonUnicodeUtils::unicodeEmotionEmoji());
@@ -112,4 +122,5 @@ void EmoticonUnicodeTab::loadEmoticons()
     createEmoticonTab(i18n("Hotel"), EmoticonUnicodeUtils::unicodeHotelEmoji());
     createEmoticonTab(i18n("Award-Medal"), EmoticonUnicodeUtils::unicodeAwardMedalEmoji());
     setTabVisible(mSearchTabIndex, false);
+    setTabVisible(mRecentTabIndex, false);
 }

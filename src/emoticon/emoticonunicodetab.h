@@ -14,6 +14,7 @@
 namespace KPIMTextEdit
 {
 class EmoticonUnicodeProxyModel;
+class EmoticonRecentUsedFilterProxyModel;
 /**
  * @brief The EmoticonUnicodeTab class
  * @author Laurent Montel <montel@kde.org>
@@ -36,6 +37,7 @@ private:
     void createSearchTab();
     void createRecentTab();
     EmoticonUnicodeProxyModel *const mEmoticonUnicodeSearchProxyModel;
+    EmoticonRecentUsedFilterProxyModel *const mEmoticonUnicodeRecentProxyModel;
     int mSearchTabIndex = -1;
     int mRecentTabIndex = -1;
 };
