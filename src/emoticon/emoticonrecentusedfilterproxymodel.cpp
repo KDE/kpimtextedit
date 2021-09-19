@@ -52,6 +52,7 @@ void EmoticonRecentUsedFilterProxyModel::setUsedIdentifier(const QStringList &us
         writeRecentUsed();
         invalidateFilter();
     }
+    Q_EMIT usedIdentifierChanged(!mUsedIdentifier.isEmpty());
 }
 
 void EmoticonRecentUsedFilterProxyModel::addIdentifier(const QString &identifier)
@@ -61,6 +62,7 @@ void EmoticonRecentUsedFilterProxyModel::addIdentifier(const QString &identifier
         writeRecentUsed();
         invalidateFilter();
     }
+    Q_EMIT usedIdentifierChanged(!mUsedIdentifier.isEmpty());
 }
 
 bool EmoticonRecentUsedFilterProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const

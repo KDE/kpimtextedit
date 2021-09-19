@@ -36,6 +36,8 @@ private:
     void createEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons);
     void createSearchTab();
     void createRecentTab();
+    void slotInsertEmoticons(const QString &identifier);
+    void slotUsedIdentifierChanged(bool show);
     EmoticonUnicodeProxyModel *const mEmoticonUnicodeSearchProxyModel;
     EmoticonRecentUsedFilterProxyModel *const mEmoticonUnicodeRecentProxyModel;
     int mSearchTabIndex = -1;

@@ -6,6 +6,7 @@
 
 #include "emoticonunicodetab.h"
 #include "emoticonlistview.h"
+#include "emoticonrecentlistview.h"
 #include "emoticonrecentusedfilterproxymodel.h"
 #include "emoticonunicodemodel.h"
 #include "emoticonunicodemodelmanager.h"
@@ -25,6 +26,7 @@ EmoticonUnicodeTab::EmoticonUnicodeTab(QWidget *parent)
     f.setPointSize(22);
     f.setFamily(QStringLiteral("NotoColorEmoji"));
     setFont(f);
+    connect(mEmoticonUnicodeRecentProxyModel, &EmoticonRecentUsedFilterProxyModel::usedIdentifierChanged, this, &EmoticonUnicodeTab::slotUsedIdentifierChanged);
 }
 
 EmoticonUnicodeTab::~EmoticonUnicodeTab()
@@ -50,19 +52,22 @@ void EmoticonUnicodeTab::createSearchTab()
     allEmojisView->setModel(mEmoticonUnicodeSearchProxyModel);
     mSearchTabIndex = addTab(allEmojisView, QIcon::fromTheme(QStringLiteral("edit-find")), {});
     setTabToolTip(mSearchTabIndex, i18n("Result"));
-    connect(allEmojisView, &KPIMTextEdit::EmoticonListView::emojiItemSelected, this, &EmoticonUnicodeTab::itemSelected);
+    connect(allEmojisView, &KPIMTextEdit::EmoticonListView::emojiItemSelected, this, &EmoticonUnicodeTab::slotInsertEmoticons);
 }
 
 void EmoticonUnicodeTab::createRecentTab()
 {
-    auto recentEmojisView = new EmoticonListView(this);
+    auto recentEmojisView = new EmoticonRecentListView(this);
 
     mEmoticonUnicodeRecentProxyModel->setSourceModel(EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
     recentEmojisView->setModel(mEmoticonUnicodeRecentProxyModel);
-    mRecentTabIndex = addTab(recentEmojisView, QIcon::fromTheme(QStringLiteral("edit-find")), {});
-    setTabToolTip(mSearchTabIndex, i18n("Recents"));
-    connect(recentEmojisView, &KPIMTextEdit::EmoticonListView::emojiItemSelected, this, &EmoticonUnicodeTab::itemSelected);
-    // TODO show or not recent tab
+    mRecentTabIndex = addTab(recentEmojisView, QIcon::fromTheme(QStringLiteral("deep-history")), {});
+    setTabToolTip(mRecentTabIndex, i18n("Recents"));
+    connect(recentEmojisView, &EmoticonRecentListView::clearAll, this, [this]() {
+        mEmoticonUnicodeRecentProxyModel->setUsedIdentifier(QStringList());
+    });
+    // Recent tab => not add in mEmoticonUnicodeRecentProxyModel => use itemSelected directly
+    connect(recentEmojisView, &EmoticonRecentListView::emojiItemSelected, this, &EmoticonUnicodeTab::itemSelected);
 }
 
 void EmoticonUnicodeTab::createEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons)
@@ -80,7 +85,7 @@ void EmoticonUnicodeTab::createEmoticonTab(const QString &str, const QVector<Emo
         if (!str.isEmpty()) {
             setTabToolTip(index, str);
         }
-        connect(emojisView, &KPIMTextEdit::EmoticonListView::emojiItemSelected, this, &EmoticonUnicodeTab::itemSelected);
+        connect(emojisView, &KPIMTextEdit::EmoticonListView::emojiItemSelected, this, &EmoticonUnicodeTab::slotInsertEmoticons);
     }
 }
 
@@ -122,5 +127,16 @@ void EmoticonUnicodeTab::loadEmoticons()
     createEmoticonTab(i18n("Hotel"), EmoticonUnicodeUtils::unicodeHotelEmoji());
     createEmoticonTab(i18n("Award-Medal"), EmoticonUnicodeUtils::unicodeAwardMedalEmoji());
     setTabVisible(mSearchTabIndex, false);
-    setTabVisible(mRecentTabIndex, false);
+    setTabVisible(mRecentTabIndex, !mEmoticonUnicodeRecentProxyModel->usedIdentifier().isEmpty());
+}
+
+void EmoticonUnicodeTab::slotInsertEmoticons(const QString &identifier)
+{
+    mEmoticonUnicodeRecentProxyModel->addIdentifier(identifier);
+    Q_EMIT itemSelected(identifier);
+}
+
+void EmoticonUnicodeTab::slotUsedIdentifierChanged(bool show)
+{
+    setTabVisible(mRecentTabIndex, show);
 }
