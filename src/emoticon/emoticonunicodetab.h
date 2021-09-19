@@ -34,8 +34,10 @@ Q_SIGNALS:
 private:
     void createEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons);
     void createSearchTab();
-    EmoticonUnicodeProxyModel *mEmoticonUnicodeSearchProxyModel = nullptr;
+    void createRecentTab();
+    EmoticonUnicodeProxyModel *const mEmoticonUnicodeSearchProxyModel;
     int mSearchTabIndex = -1;
+    int mRecentTabIndex = -1;
 };
 }
 

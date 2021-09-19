@@ -18,5 +18,4 @@ void EmoticonUnicodeTabTest::shouldHaveDefaultValues()
 {
     KPIMTextEdit::EmoticonUnicodeTab w;
     QVERIFY(w.count() > 0);
-    QVERIFY(w.tabBarAutoHide());
 }
