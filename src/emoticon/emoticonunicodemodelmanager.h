@@ -19,7 +19,17 @@ public:
     static EmoticonUnicodeModelManager *self();
     Q_REQUIRED_RESULT EmoticonUnicodeModel *emoticonUnicodeModel() const;
 
+    Q_REQUIRED_RESULT const QStringList &recentIdentifier() const;
+    void setRecentIdentifier(const QStringList &newRecentIdentifier);
+    void addIdentifier(const QString &identifier);
+
+Q_SIGNALS:
+    void usedIdentifierChanged(const QStringList &lst);
+
 private:
     EmoticonUnicodeModel *const mEmoticonUnicodeModel;
+    QStringList mRecentIdentifier;
+    void loadRecentUsed();
+    void writeRecentUsed();
 };
 }

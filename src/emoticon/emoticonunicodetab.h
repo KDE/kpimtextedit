@@ -37,7 +37,7 @@ private:
     void createSearchTab();
     void createRecentTab();
     void slotInsertEmoticons(const QString &identifier);
-    void slotUsedIdentifierChanged(bool show);
+    void slotUsedIdentifierChanged(const QStringList &lst);
     EmoticonUnicodeProxyModel *const mEmoticonUnicodeSearchProxyModel;
     EmoticonRecentUsedFilterProxyModel *const mEmoticonUnicodeRecentProxyModel;
     int mSearchTabIndex = -1;

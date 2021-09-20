@@ -20,18 +20,10 @@ public:
     Q_REQUIRED_RESULT QStringList usedIdentifier() const;
     void setUsedIdentifier(const QStringList &usedIdentifier);
 
-    void addIdentifier(const QString &identifier);
-
-    void loadRecentUsed();
-
 protected:
     bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
 
-Q_SIGNALS:
-    void usedIdentifierChanged(bool isNotEmpty);
-
 private:
-    void writeRecentUsed();
     QStringList mUsedIdentifier;
 };
 }

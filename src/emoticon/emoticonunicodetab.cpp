@@ -26,7 +26,7 @@ EmoticonUnicodeTab::EmoticonUnicodeTab(QWidget *parent)
     f.setPointSize(22);
     f.setFamily(QStringLiteral("NotoColorEmoji"));
     setFont(f);
-    connect(mEmoticonUnicodeRecentProxyModel, &EmoticonRecentUsedFilterProxyModel::usedIdentifierChanged, this, &EmoticonUnicodeTab::slotUsedIdentifierChanged);
+    connect(EmoticonUnicodeModelManager::self(), &EmoticonUnicodeModelManager::usedIdentifierChanged, this, &EmoticonUnicodeTab::slotUsedIdentifierChanged);
 }
 
 EmoticonUnicodeTab::~EmoticonUnicodeTab()
@@ -126,17 +126,19 @@ void EmoticonUnicodeTab::loadEmoticons()
     createEmoticonTab(i18n("Dishware"), EmoticonUnicodeUtils::unicodeDishwareEmoji());
     createEmoticonTab(i18n("Hotel"), EmoticonUnicodeUtils::unicodeHotelEmoji());
     createEmoticonTab(i18n("Award-Medal"), EmoticonUnicodeUtils::unicodeAwardMedalEmoji());
+    mEmoticonUnicodeRecentProxyModel->setUsedIdentifier(EmoticonUnicodeModelManager::self()->recentIdentifier());
     setTabVisible(mSearchTabIndex, false);
     setTabVisible(mRecentTabIndex, !mEmoticonUnicodeRecentProxyModel->usedIdentifier().isEmpty());
 }
 
 void EmoticonUnicodeTab::slotInsertEmoticons(const QString &identifier)
 {
-    mEmoticonUnicodeRecentProxyModel->addIdentifier(identifier);
+    EmoticonUnicodeModelManager::self()->addIdentifier(identifier);
     Q_EMIT itemSelected(identifier);
 }
 
-void EmoticonUnicodeTab::slotUsedIdentifierChanged(bool show)
+void EmoticonUnicodeTab::slotUsedIdentifierChanged(const QStringList &lst)
 {
-    setTabVisible(mRecentTabIndex, show);
+    mEmoticonUnicodeRecentProxyModel->setUsedIdentifier(lst);
+    setTabVisible(mRecentTabIndex, !lst.empty());
 }
