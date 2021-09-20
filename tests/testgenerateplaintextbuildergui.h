@@ -4,9 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TestGeneratePlainTextBuilderGui_H
-#define TestGeneratePlainTextBuilderGui_H
-
+#pragma once
 #include <QWidget>
 
 class TestGeneratePlainTextBuilderGui : public QWidget
@@ -17,4 +15,3 @@ public:
     ~TestGeneratePlainTextBuilderGui();
 };
 
-#endif // TestGeneratePlainTextBuilderGui_H

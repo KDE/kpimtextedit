@@ -6,9 +6,7 @@
 
 */
 
-#ifndef GRANTLEE_ABSTRACTMARKUPBUILDER_H
-#define GRANTLEE_ABSTRACTMARKUPBUILDER_H
-
+#pragma once
 #include "kpimtextedit_export.h"
 
 #include <QtCore/QString>
@@ -253,4 +251,3 @@ public:
 };
 }
 
-#endif

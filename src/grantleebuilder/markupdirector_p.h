@@ -7,9 +7,7 @@
 
 */
 
-#ifndef GRANTLEE_MARKUPDIRECTOR_P_H
-#define GRANTLEE_MARKUPDIRECTOR_P_H
-
+#pragma once
 #include "markupdirector.h"
 
 #include <QSet>
@@ -54,5 +52,4 @@ class MarkupDirectorPrivate
 };
 }
 
-#endif
 //@endcond

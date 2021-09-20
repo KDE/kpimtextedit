@@ -1,14 +1,12 @@
 /*
-  SPDX-FileCopyrightText: 2019-2020 Montel Laurent <montel@kde.org>
+  SPDX-FileCopyrightText: 2019-2021 Montel Laurent <montel@kde.org>
   based on grantlee PlainTextMarkupBuilder
 
   SPDX-License-Identifier: LGPL-2.0-or-later
 
 */
 
-#ifndef PLAINTEXTMARKUPBUILDER_H
-#define PLAINTEXTMARKUPBUILDER_H
-
+#pragma once
 #include "abstractmarkupbuilder.h"
 #include "kpimtextedit_export.h"
 
@@ -114,4 +112,3 @@ private:
 };
 }
 
-#endif // PLAINTEXTMARKUPBUILDER_H

@@ -4,9 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTHTMLBUILDER_H
-#define TEXTHTMLBUILDER_H
-
+#pragma once
 #include "abstractmarkupbuilder.h"
 #include "kpimtextedit_export.h"
 
@@ -218,4 +216,3 @@ private:
 
 }
 
-#endif // TEXTHTMLBUILDER_H

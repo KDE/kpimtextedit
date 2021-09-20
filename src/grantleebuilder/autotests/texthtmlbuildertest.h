@@ -4,9 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TEXTHTMLBUILDERTEST_H
-#define TEXTHTMLBUILDERTEST_H
-
+#pragma once
 #include <QObject>
 
 class TextHTMLBuilderTest : public QObject
@@ -53,4 +51,3 @@ private Q_SLOTS:
     void testBugTextColor();
 };
 
-#endif // TEXTHTMLBUILDERTEST_H

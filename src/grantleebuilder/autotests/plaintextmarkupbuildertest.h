@@ -4,9 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PLAINTEXTMARKUPBUILDERTEST_H
-#define PLAINTEXTMARKUPBUILDERTEST_H
-
+#pragma once
 #include <QObject>
 
 class PlainTextMarkupBuilderTest : public QObject
@@ -48,4 +46,3 @@ private Q_SLOTS:
     void testBrInsideAnchor();
 };
 
-#endif // PLAINTEXTMARKUPBUILDERTEST_H

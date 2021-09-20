@@ -4,9 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef TESTGENERATEHTMLBUILDERGUI_H
-#define TESTGENERATEHTMLBUILDERGUI_H
-
+#pragma once
 #include <QWidget>
 
 class TestGenerateHTMLBuilderGui : public QWidget
@@ -17,4 +15,3 @@ public:
     ~TestGenerateHTMLBuilderGui();
 };
 
-#endif // TESTGENERATEHTMLBUILDERGUI_H
