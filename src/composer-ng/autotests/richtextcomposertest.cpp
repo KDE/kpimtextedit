@@ -6,7 +6,7 @@
 
 #include "richtextcomposertest.h"
 #include "../richtextcomposer.h"
-#include <KCodecs/KCodecs>
+#include <KCodecs>
 #include <QSignalSpy>
 #include <QTest>
 
