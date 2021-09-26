@@ -320,7 +320,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
         ac->addAction(QStringLiteral("format_list_style"), d->action_list_style);
     }
     connect(d->action_list_style, &KSelectAction::indexTriggered, this, &RichTextComposerActions::setListStyle);
-    connect(d->action_list_style, qOverload<bool>(&QAction::triggered), this, &RichTextComposerActions::slotUpdateMiscActions);
+    connect(d->action_list_style, &QAction::triggered, this, &RichTextComposerActions::slotUpdateMiscActions);
     d->action_paste_quotation = new QAction(i18n("Pa&ste as Quotation"), this);
     d->action_paste_quotation->setObjectName(QStringLiteral("paste_quoted"));
     if (ac) {

@@ -110,7 +110,7 @@ void RichTextExternalComposer::startExternalEditor()
             (*d->externalEditorProcess) << d->extEditorTempFile->fileName();
         }
 
-        connect(d->externalEditorProcess, qOverload<int, QProcess::ExitStatus>(&KProcess::finished), this, &RichTextExternalComposer::slotEditorFinished);
+        connect(d->externalEditorProcess, &KProcess::finished, this, &RichTextExternalComposer::slotEditorFinished);
         d->externalEditorProcess->start();
         if (!d->externalEditorProcess->waitForStarted()) {
             d->cannotStartProcess(commandLine);
