@@ -47,7 +47,7 @@ public:
         gridLayout->addWidget(mBorder, 2, 1);
 
         mTypeOfLength = new QComboBox;
-        q->connect(mTypeOfLength, qOverload<int>(&QComboBox::activated), q, &InsertTableWidget::slotTypeOfLengthChanged);
+        q->connect(mTypeOfLength, &QComboBox::activated, q, &InsertTableWidget::slotTypeOfLengthChanged);
         // xgettext: no-c-format
         mTypeOfLength->addItem(i18n("% of windows"), QTextLength::PercentageLength);
         mTypeOfLength->addItem(i18n("pixels"), QTextLength::FixedLength);
