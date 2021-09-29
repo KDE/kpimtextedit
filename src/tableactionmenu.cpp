@@ -281,16 +281,16 @@ void TableActionMenuPrivate::_k_slotTableFormat()
                 tableFormat.setCellSpacing(dialog->spacing());
                 tableFormat.setAlignment(dialog->alignment());
 
-                QVector<QTextLength> constrains;
-                constrains.reserve(newNumberOfColumns);
+                QVector<QTextLength> constrainsText;
+                constrainsText.reserve(newNumberOfColumns);
                 const QTextLength::Type type = dialog->typeOfLength();
                 const int length = dialog->length();
 
                 const QTextLength textlength(type, length / newNumberOfColumns);
                 for (int i = 0; i < newNumberOfColumns; ++i) {
-                    constrains.append(textlength);
+                    constrainsText.append(textlength);
                 }
-                tableFormat.setColumnWidthConstraints(constrains);
+                tableFormat.setColumnWidthConstraints(constrainsText);
                 const QColor tableBackgroundColor = dialog->tableBackgroundColor();
                 if (dialog->useBackgroundColor()) {
                     if (tableBackgroundColor.isValid()) {

@@ -31,7 +31,7 @@ static inline QString resolveAlias(const QString &name)
 class InsertImageWidgetPrivate
 {
 public:
-    InsertImageWidgetPrivate(InsertImageWidget *qq)
+    explicit InsertImageWidgetPrivate(InsertImageWidget *qq)
         : q(qq)
     {
         auto lay = new QVBoxLayout(q);

@@ -18,7 +18,7 @@ namespace KPIMTextEdit
 class SelectSpecialCharDialogPrivate
 {
 public:
-    SelectSpecialCharDialogPrivate(SelectSpecialCharDialog *qq)
+    explicit SelectSpecialCharDialogPrivate(SelectSpecialCharDialog *qq)
         : q(qq)
     {
         q->setWindowTitle(i18nc("@title:window", "Select Special Characters"));

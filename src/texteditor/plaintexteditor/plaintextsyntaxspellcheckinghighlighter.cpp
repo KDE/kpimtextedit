@@ -53,13 +53,12 @@ public:
 class PlainTextSyntaxSpellCheckingHighlighterPrivate
 {
 public:
-    PlainTextSyntaxSpellCheckingHighlighterPrivate(PlainTextEditor *plainText)
+    explicit PlainTextSyntaxSpellCheckingHighlighterPrivate(PlainTextEditor *plainText)
         : editor(plainText)
-        , spellCheckingEnabled(false)
     {
     }
 
-    PlainTextEditor *editor = nullptr;
+    PlainTextEditor *const editor;
     QColor misspelledColor;
     bool spellCheckingEnabled = false;
 

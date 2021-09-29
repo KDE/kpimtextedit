@@ -495,7 +495,6 @@ void RichTextComposerControler::RichTextComposerControlerPrivate::updateLink(con
     QTextCharFormat format = cursor.charFormat();
     // Save original format to create an extra space with the existing char
     // format for the block
-    const QTextCharFormat originalFormat = format;
     if (!linkUrl.isEmpty()) {
         // Add link details
         format.setAnchor(true);

@@ -20,7 +20,7 @@ using namespace KPIMTextEdit;
 class InsertTableDialog::InsertTableDialogPrivate
 {
 public:
-    InsertTableDialogPrivate(InsertTableDialog *qq)
+    explicit InsertTableDialogPrivate(InsertTableDialog *qq)
         : q(qq)
     {
         q->setWindowTitle(i18nc("@title:window", "Insert Table"));

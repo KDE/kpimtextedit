@@ -25,7 +25,7 @@ using namespace KPIMTextEdit;
 class TableFormatDialog::TableFormatDialogPrivate
 {
 public:
-    TableFormatDialogPrivate(TableFormatDialog *qq)
+    explicit TableFormatDialogPrivate(TableFormatDialog *qq)
         : q(qq)
     {
         q->setWindowTitle(i18nc("@title:window", "Table Format"));
