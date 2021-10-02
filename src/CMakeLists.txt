@@ -146,32 +146,32 @@ ecm_generate_headers(KPimTextEdit_CamelCasegrantlee_HEADERS
     RELATIVE grantleebuilder
     )
 
-ecm_generate_headers(PimCommon_CamelCasetextrichtexteditor_HEADERS
+ecm_generate_headers(KPimTextEdit_CamelCasetextrichtexteditor_HEADERS
     HEADER_NAMES
     RichTextEditorWidget
     RichTextEditor
     RichTextEditFindBar
-    REQUIRED_HEADERS PimCommon_richtexteditor_HEADERS
+    REQUIRED_HEADERS KPimTextEdit_richtexteditor_HEADERS
     PREFIX KPIMTextEdit
     RELATIVE texteditor/richtexteditor
     )
 
-ecm_generate_headers(PimCommon_CamelCaseplaintexteditor_HEADERS
+ecm_generate_headers(KPimTextEdit_CamelCaseplaintexteditor_HEADERS
     HEADER_NAMES
     PlainTextEditor
     PlainTextEditorWidget
     PlainTextEditFindBar
     PlainTextSyntaxSpellCheckingHighlighter
-    REQUIRED_HEADERS PimCommon_plaintexteditor_HEADERS
+    REQUIRED_HEADERS KPimTextEdit_plaintexteditor_HEADERS
     PREFIX KPIMTextEdit
     RELATIVE texteditor/plaintexteditor
     )
 
-ecm_generate_headers(PimCommon_CamelCasetexteditor_commonwidget_HEADERS
+ecm_generate_headers(KPimTextEdit_CamelCasetexteditor_commonwidget_HEADERS
     HEADER_NAMES
     TextGotoLineWidget
     TextEditFindBarBase
-    REQUIRED_HEADERS PimCommon_texteditor_commonwidget_HEADERS
+    REQUIRED_HEADERS KPimTextEdit_texteditor_commonwidget_HEADERS
     PREFIX KPIMTextEdit
     RELATIVE texteditor/commonwidget
     )
@@ -211,9 +211,9 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_export.h
     ${kpimtextedit_HEADERS}
     ${KPimTextEdit_texttospeechs_HEADERS}
-    ${PimCommon_richtexteditor_HEADERS}
-    ${PimCommon_texteditor_commonwidget_HEADERS}
-    ${PimCommon_plaintexteditor_HEADERS}
+    ${KPimTextEdit_richtexteditor_HEADERS}
+    ${KPimTextEdit_texteditor_commonwidget_HEADERS}
+    ${KPimTextEdit_plaintexteditor_HEADERS}
     ${KPimTextEdit_composerng_HEADERS}
     ${KPimTextEdit_emoticon_HEADERS}
     ${KPimTextEdit_grantlee_HEADERS}
@@ -223,10 +223,10 @@ install(FILES
 
 install(FILES
     ${KPimTextEdit_CamelCase_HEADERS}
-    ${PimCommon_CamelCasetextrichtexteditor_HEADERS}
-    ${PimCommon_CamelCaseplaintexteditor_HEADERS}
+    ${KPimTextEdit_CamelCasetextrichtexteditor_HEADERS}
+    ${KPimTextEdit_CamelCaseplaintexteditor_HEADERS}
     ${KPimTextEdit_CamelCasetexttospeechs_HEADERS}
-    ${PimCommon_CamelCasetexteditor_commonwidget_HEADERS}
+    ${KPimTextEdit_CamelCasetexteditor_commonwidget_HEADERS}
     ${KPimTextEdit_Camelcasecomposerng_HEADERS}
     ${KPimTextEdit_CamelCaseemoticon_HEADERS}
     ${KPimTextEdit_CamelCasegrantlee_HEADERS}
@@ -270,9 +270,9 @@ if (BUILD_QCH)
         SOURCES # using only public headers, to cover only public API
             ${kpimtextedit_HEADERS}
             ${KPimTextEdit_texttospeechs_HEADERS}
-            ${PimCommon_richtexteditor_HEADERS}
-            ${PimCommon_texteditor_commonwidget_HEADERS}
-            ${PimCommon_plaintexteditor_HEADERS}
+            ${KPimTextEdit_richtexteditor_HEADERS}
+            ${KPimTextEdit_texteditor_commonwidget_HEADERS}
+            ${KPimTextEdit_plaintexteditor_HEADERS}
             ${KPimTextEdit_composerng_HEADERS}
             ${KPimTextEdit_emoticon_HEADERS}
             ${KPimTextEdit_grantlee_HEADERS}
