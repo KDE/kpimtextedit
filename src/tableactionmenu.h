@@ -23,8 +23,8 @@ public:
     void setRichTextMode(bool richTextMode);
 
 private:
-    TableActionMenuPrivate *const d;
     friend class TableActionMenuPrivate;
+    std::unique_ptr<TableActionMenuPrivate> const d;
 };
 }
 

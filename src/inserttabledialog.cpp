@@ -52,10 +52,7 @@ InsertTableDialog::InsertTableDialog(QWidget *parent)
 {
 }
 
-InsertTableDialog::~InsertTableDialog()
-{
-    delete d;
-}
+InsertTableDialog::~InsertTableDialog() = default;
 
 int InsertTableDialog::columns() const
 {

@@ -74,7 +74,6 @@ SelectSpecialCharDialog::SelectSpecialCharDialog(QWidget *parent)
 SelectSpecialCharDialog::~SelectSpecialCharDialog()
 {
     writeConfig();
-    delete d;
 }
 
 void SelectSpecialCharDialog::showSelectButton(bool show)

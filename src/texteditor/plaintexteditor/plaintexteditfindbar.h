@@ -41,7 +41,7 @@ private Q_SLOTS:
     void slotReplaceAllText() override;
 
 private:
-    PlainTextEditFindBarPrivate *const d;
+    std::unique_ptr<PlainTextEditFindBarPrivate> const d;
 };
 }
 

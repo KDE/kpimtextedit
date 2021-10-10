@@ -139,10 +139,7 @@ TextEditorCompleter::TextEditorCompleter(QPlainTextEdit *editor, QObject *parent
 {
 }
 
-TextEditorCompleter::~TextEditorCompleter()
-{
-    delete d;
-}
+TextEditorCompleter::~TextEditorCompleter() = default;
 
 QCompleter *TextEditorCompleter::completer() const
 {

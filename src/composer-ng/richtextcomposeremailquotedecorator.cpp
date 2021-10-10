@@ -25,10 +25,7 @@ RichTextComposerEmailQuoteDecorator::RichTextComposerEmailQuoteDecorator(RichTex
 {
 }
 
-RichTextComposerEmailQuoteDecorator::~RichTextComposerEmailQuoteDecorator()
-{
-    delete d;
-}
+RichTextComposerEmailQuoteDecorator::~RichTextComposerEmailQuoteDecorator() = default;
 
 bool RichTextComposerEmailQuoteDecorator::isSpellCheckingEnabledForBlock(const QString &blockText) const
 {

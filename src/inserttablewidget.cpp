@@ -77,10 +77,7 @@ InsertTableWidget::InsertTableWidget(QWidget *parent)
 {
 }
 
-InsertTableWidget::~InsertTableWidget()
-{
-    delete d;
-}
+InsertTableWidget::~InsertTableWidget() = default;
 
 void InsertTableWidget::slotTypeOfLengthChanged(int index)
 {

@@ -115,10 +115,7 @@ RichTextEditor::RichTextEditor(QWidget *parent)
     d->mInitialFontSize = font().pointSize();
 }
 
-RichTextEditor::~RichTextEditor()
-{
-    delete d;
-}
+RichTextEditor::~RichTextEditor() = default;
 
 void RichTextEditor::setDefaultFontSize(int val)
 {

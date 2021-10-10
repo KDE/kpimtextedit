@@ -48,7 +48,4 @@ EmoticonTextEditAction::EmoticonTextEditAction(QObject *parent)
     connect(d->selector, &EmoticonTextEditSelector::itemSelected, this, &EmoticonTextEditAction::emoticonActivated);
 }
 
-EmoticonTextEditAction::~EmoticonTextEditAction()
-{
-    delete d;
-}
+EmoticonTextEditAction::~EmoticonTextEditAction() = default;

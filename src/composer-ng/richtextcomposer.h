@@ -136,6 +136,6 @@ private:
     void evaluateListSupport(QKeyEvent *event);
     void evaluateReturnKeySupport(QKeyEvent *event);
     class RichTextComposerPrivate;
-    RichTextComposerPrivate *const d;
+    std::unique_ptr<RichTextComposerPrivate> const d;
 };
 }

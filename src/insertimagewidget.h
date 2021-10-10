@@ -37,7 +37,7 @@ Q_SIGNALS:
 
 private:
     friend class InsertImageWidgetPrivate;
-    InsertImageWidgetPrivate *const d;
+    std::unique_ptr<InsertImageWidgetPrivate> const d;
 };
 }
 

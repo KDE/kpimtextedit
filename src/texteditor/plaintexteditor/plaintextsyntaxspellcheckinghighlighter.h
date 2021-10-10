@@ -58,6 +58,6 @@ protected:
     void applyFormat(int offset, int length, const KSyntaxHighlighting::Format &format) override;
 
 private:
-    PlainTextSyntaxSpellCheckingHighlighterPrivate *const d;
+    std::unique_ptr<PlainTextSyntaxSpellCheckingHighlighterPrivate> const d;
 };
 }

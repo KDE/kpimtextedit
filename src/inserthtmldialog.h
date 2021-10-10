@@ -26,7 +26,7 @@ public:
 
 private:
     friend class InsertHtmlDialogPrivate;
-    InsertHtmlDialogPrivate *const d;
+    std::unique_ptr<InsertHtmlDialogPrivate> const d;
     void readConfig();
     void writeConfig();
 };

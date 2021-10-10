@@ -529,10 +529,7 @@ TableActionMenu::TableActionMenu(QTextEdit *textEdit)
     d->_k_updateActions(true);
 }
 
-TableActionMenu::~TableActionMenu()
-{
-    delete d;
-}
+TableActionMenu::~TableActionMenu() = default;
 
 void TableActionMenu::setRichTextMode(bool richTextMode)
 {

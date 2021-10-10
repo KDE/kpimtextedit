@@ -40,10 +40,10 @@ Q_SIGNALS:
     void charSelected(QChar);
 
 private:
-    SelectSpecialCharDialogPrivate *const d;
-    friend class SelectSpecialCharDialogPrivate;
     void readConfig();
     void writeConfig();
+    friend class SelectSpecialCharDialogPrivate;
+    std::unique_ptr<SelectSpecialCharDialogPrivate> const d;
 };
 }
 

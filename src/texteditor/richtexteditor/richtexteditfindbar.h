@@ -40,7 +40,7 @@ private Q_SLOTS:
     void slotReplaceAllText() override;
 
 private:
-    RichTextEditFindBarPrivate *const d;
+    std::unique_ptr<RichTextEditFindBarPrivate> const d;
 };
 }
 

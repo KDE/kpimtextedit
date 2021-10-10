@@ -102,7 +102,7 @@ public:
 
 private:
     class RichTextComposerImagesPrivate;
-    RichTextComposerImagesPrivate *const d;
+    std::unique_ptr<RichTextComposerImagesPrivate> const d;
 };
 }
 

@@ -58,10 +58,7 @@ InsertImageDialog::InsertImageDialog(QWidget *parent)
 {
 }
 
-InsertImageDialog::~InsertImageDialog()
-{
-    delete d;
-}
+InsertImageDialog::~InsertImageDialog() = default;
 
 int InsertImageDialog::imageWidth() const
 {

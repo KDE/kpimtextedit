@@ -36,7 +36,7 @@ public:
 private:
     void slotTypeOfLengthChanged(int);
     class InsertTableWidgetPrivate;
-    InsertTableWidgetPrivate *const d;
+    std::unique_ptr<InsertTableWidgetPrivate> const d;
 };
 }
 

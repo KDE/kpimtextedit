@@ -25,7 +25,7 @@ Q_SIGNALS:
 
 private:
     class EmoticonTextEditActionPrivate;
-    EmoticonTextEditActionPrivate *const d;
+    std::unique_ptr<EmoticonTextEditActionPrivate> const d;
 };
 }
 

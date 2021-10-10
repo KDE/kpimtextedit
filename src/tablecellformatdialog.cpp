@@ -77,10 +77,7 @@ TableCellFormatDialog::TableCellFormatDialog(QWidget *parent)
 {
 }
 
-TableCellFormatDialog::~TableCellFormatDialog()
-{
-    delete d;
-}
+TableCellFormatDialog::~TableCellFormatDialog() = default;
 
 QColor TableCellFormatDialog::tableCellBackgroundColor() const
 {

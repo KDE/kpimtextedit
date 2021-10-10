@@ -184,10 +184,7 @@ InsertImageWidget::InsertImageWidget(QWidget *parent)
 {
 }
 
-InsertImageWidget::~InsertImageWidget()
-{
-    delete d;
-}
+InsertImageWidget::~InsertImageWidget() = default;
 
 int InsertImageWidget::imageWidth() const
 {

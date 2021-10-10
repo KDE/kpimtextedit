@@ -34,7 +34,7 @@ public:
 
 private:
     friend class InsertImageDialogPrivate;
-    InsertImageDialogPrivate *const d;
+    std::unique_ptr<InsertImageDialogPrivate> const d;
 };
 }
 

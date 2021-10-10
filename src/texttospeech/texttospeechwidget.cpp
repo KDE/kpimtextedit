@@ -84,10 +84,7 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
     hide();
 }
 
-TextToSpeechWidget::~TextToSpeechWidget()
-{
-    delete d;
-}
+TextToSpeechWidget::~TextToSpeechWidget() = default;
 
 void TextToSpeechWidget::slotCloseTextToSpeechWidget()
 {

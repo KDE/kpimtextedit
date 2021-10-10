@@ -87,10 +87,7 @@ PlainTextEditor::PlainTextEditor(QWidget *parent)
     d->mInitialFontSize = font().pointSize();
 }
 
-PlainTextEditor::~PlainTextEditor()
-{
-    delete d;
-}
+PlainTextEditor::~PlainTextEditor() = default;
 
 void PlainTextEditor::addIgnoreWords(const QStringList &lst)
 {

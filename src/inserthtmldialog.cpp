@@ -76,7 +76,6 @@ InsertHtmlDialog::InsertHtmlDialog(QWidget *parent)
 InsertHtmlDialog::~InsertHtmlDialog()
 {
     writeConfig();
-    delete d;
 }
 
 void InsertHtmlDialog::setSelectedText(const QString &str)

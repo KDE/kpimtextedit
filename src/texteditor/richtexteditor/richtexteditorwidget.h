@@ -54,7 +54,7 @@ public Q_SLOTS:
 private:
     void slotHideFindBar();
     void init(RichTextEditor *customEditor = nullptr);
-    RichTextEditorWidgetPrivate *const d;
+    std::unique_ptr<RichTextEditorWidgetPrivate> const d;
 };
 }
 

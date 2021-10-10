@@ -46,7 +46,7 @@ private Q_SLOTS:
 
 private:
     void init(PlainTextEditor *customEditor = nullptr);
-    PlainTextEditorWidgetPrivate *const d;
+    std::unique_ptr<PlainTextEditorWidgetPrivate> const d;
 };
 }
 

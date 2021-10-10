@@ -45,7 +45,7 @@ private:
     void setHeadingLevel(int level);
     void setListStyle(int _styleindex);
     class RichTextComposerActionsPrivate;
-    RichTextComposerActionsPrivate *const d;
+    std::unique_ptr<RichTextComposerActionsPrivate> const d;
 };
 }
 

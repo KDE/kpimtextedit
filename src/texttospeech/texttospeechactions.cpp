@@ -41,10 +41,7 @@ TextToSpeechActions::TextToSpeechActions(QObject *parent)
     d->updateButtonState();
 }
 
-TextToSpeechActions::~TextToSpeechActions()
-{
-    delete d;
-}
+TextToSpeechActions::~TextToSpeechActions() = default;
 
 QAction *TextToSpeechActions::stopAction() const
 {

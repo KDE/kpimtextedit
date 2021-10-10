@@ -43,10 +43,7 @@ RichTextEditorWidget::RichTextEditorWidget(QWidget *parent)
     init();
 }
 
-RichTextEditorWidget::~RichTextEditorWidget()
-{
-    delete d;
-}
+RichTextEditorWidget::~RichTextEditorWidget() = default;
 
 void RichTextEditorWidget::clear()
 {

@@ -38,10 +38,7 @@ RichTextExternalComposer::RichTextExternalComposer(RichTextComposer *composer, Q
 {
 }
 
-RichTextExternalComposer::~RichTextExternalComposer()
-{
-    delete d;
-}
+RichTextExternalComposer::~RichTextExternalComposer() = default;
 
 bool RichTextExternalComposer::useExternalEditor() const
 {

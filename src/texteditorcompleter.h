@@ -8,7 +8,7 @@
 
 #include "kpimtextedit_export.h"
 #include <QObject>
-
+#include <memory>
 class QCompleter;
 class QTextEdit;
 class QPlainTextEdit;
@@ -38,7 +38,7 @@ public:
 private:
     void slotCompletion(const QString &text);
     class TextEditorCompleterPrivate;
-    TextEditorCompleterPrivate *const d;
+    std::unique_ptr<TextEditorCompleterPrivate> const d;
 };
 }
 

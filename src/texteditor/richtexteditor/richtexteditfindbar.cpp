@@ -33,10 +33,7 @@ RichTextEditFindBar::RichTextEditFindBar(QTextEdit *view, QWidget *parent)
 {
 }
 
-RichTextEditFindBar::~RichTextEditFindBar()
-{
-    delete d;
-}
+RichTextEditFindBar::~RichTextEditFindBar() = default;
 
 void RichTextEditFindBar::slotSearchText(bool backward, bool isAutoSearch)
 {

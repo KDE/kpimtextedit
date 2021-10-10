@@ -80,10 +80,7 @@ PlainTextSyntaxSpellCheckingHighlighter::PlainTextSyntaxSpellCheckingHighlighter
     setAutomatic(false);
 }
 
-PlainTextSyntaxSpellCheckingHighlighter::~PlainTextSyntaxSpellCheckingHighlighter()
-{
-    delete d;
-}
+PlainTextSyntaxSpellCheckingHighlighter::~PlainTextSyntaxSpellCheckingHighlighter() = default;
 
 void PlainTextSyntaxSpellCheckingHighlighter::toggleSpellHighlighting(bool on)
 {

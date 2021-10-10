@@ -115,10 +115,7 @@ TableFormatDialog::TableFormatDialog(QWidget *parent)
 {
 }
 
-TableFormatDialog::~TableFormatDialog()
-{
-    delete d;
-}
+TableFormatDialog::~TableFormatDialog() = default;
 
 int TableFormatDialog::columns() const
 {

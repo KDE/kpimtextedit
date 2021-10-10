@@ -33,10 +33,7 @@ RichTextComposerWidget::RichTextComposerWidget(QWidget *parent)
     layout->addWidget(editorWidget);
 }
 
-RichTextComposerWidget::~RichTextComposerWidget()
-{
-    delete d;
-}
+RichTextComposerWidget::~RichTextComposerWidget() = default;
 
 KPIMTextEdit::RichTextComposer *RichTextComposerWidget::richTextComposer() const
 {

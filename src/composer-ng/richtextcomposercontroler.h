@@ -9,6 +9,7 @@
 #include "kpimtextedit_export.h"
 #include "richtextcomposer.h"
 #include <QObject>
+#include <memory>
 namespace KPIMTextEdit
 {
 class RichTextComposer;
@@ -94,6 +95,6 @@ public Q_SLOTS:
 
 private:
     class RichTextComposerControlerPrivate;
-    RichTextComposerControlerPrivate *const d;
+    std::unique_ptr<RichTextComposerControlerPrivate> const d;
 };
 }

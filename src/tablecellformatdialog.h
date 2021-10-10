@@ -52,7 +52,7 @@ public:
 
 private:
     class TableCellFormatDialogPrivate;
-    TableCellFormatDialogPrivate *const d;
+    std::unique_ptr<TableCellFormatDialogPrivate> const d;
 };
 }
 

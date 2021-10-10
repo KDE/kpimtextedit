@@ -32,10 +32,7 @@ TextToSpeechInterface::TextToSpeechInterface(TextToSpeechWidget *textToSpeechWid
             &KPIMTextEdit::TextToSpeechWidget::slotStateChanged);
 }
 
-TextToSpeechInterface::~TextToSpeechInterface()
-{
-    delete d;
-}
+TextToSpeechInterface::~TextToSpeechInterface() = default;
 
 bool TextToSpeechInterface::isReady() const
 {

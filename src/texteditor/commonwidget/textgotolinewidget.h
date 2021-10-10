@@ -43,6 +43,6 @@ private Q_SLOTS:
     void slotGoToLine();
 
 private:
-    TextGoToLineWidgetPrivate *const d;
+    std::unique_ptr<TextGoToLineWidgetPrivate> const d;
 };
 }

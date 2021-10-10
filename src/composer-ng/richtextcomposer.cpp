@@ -83,7 +83,6 @@ RichTextComposer::RichTextComposer(QWidget *parent)
 RichTextComposer::~RichTextComposer()
 {
     disconnect(d->mRichTextChangedConnection);
-    delete d;
 }
 
 KPIMTextEdit::RichTextExternalComposer *RichTextComposer::externalComposer() const

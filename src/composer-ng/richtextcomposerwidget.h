@@ -27,7 +27,7 @@ public:
     Q_REQUIRED_RESULT KPIMTextEdit::RichTextComposer *richTextComposer() const;
 
 private:
-    RichTextComposerWidgetPrivate *const d;
+    std::unique_ptr<RichTextComposerWidgetPrivate> const d;
 };
 }
 

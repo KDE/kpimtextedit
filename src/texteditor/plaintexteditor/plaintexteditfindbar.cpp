@@ -34,10 +34,7 @@ PlainTextEditFindBar::PlainTextEditFindBar(QPlainTextEdit *view, QWidget *parent
 {
 }
 
-PlainTextEditFindBar::~PlainTextEditFindBar()
-{
-    delete d;
-}
+PlainTextEditFindBar::~PlainTextEditFindBar() = default;
 
 void PlainTextEditFindBar::slotSearchText(bool backward, bool isAutoSearch)
 {

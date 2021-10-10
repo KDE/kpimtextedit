@@ -7,8 +7,8 @@
 #pragma once
 
 #include "kpimtextedit_export.h"
+#include <memory>
 #include <sonnet/spellcheckdecorator.h>
-
 namespace KPIMTextEdit
 {
 class RichTextComposer;
@@ -28,7 +28,7 @@ protected:
 
 private:
     class RichTextComposerEmailQuoteDecoratorPrivate;
-    RichTextComposerEmailQuoteDecoratorPrivate *const d;
+    std::unique_ptr<RichTextComposerEmailQuoteDecoratorPrivate> const d;
 };
 }
 

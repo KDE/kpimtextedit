@@ -112,6 +112,6 @@ private:
     void moveLineUpDown(bool moveUp);
     void moveCursorBeginUpDown(bool moveUp);
     class PlainTextEditorPrivate;
-    PlainTextEditorPrivate *const d;
+    std::unique_ptr<PlainTextEditorPrivate> const d;
 };
 }

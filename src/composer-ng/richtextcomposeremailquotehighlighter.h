@@ -7,6 +7,7 @@
 #pragma once
 
 #include "kpimtextedit_export.h"
+#include <memory>
 #include <sonnet/highlighter.h>
 namespace KPIMTextEdit
 {
@@ -80,7 +81,7 @@ protected:
 
 private:
     class RichTextComposerEmailQuoteHighlighterPrivate;
-    RichTextComposerEmailQuoteHighlighterPrivate *const d;
+    std::unique_ptr<RichTextComposerEmailQuoteHighlighterPrivate> const d;
 };
 }
 

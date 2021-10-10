@@ -50,6 +50,6 @@ public:
 
 private:
     class TableFormatDialogPrivate;
-    TableFormatDialogPrivate *const d;
+    std::unique_ptr<TableFormatDialogPrivate> const d;
 };
 }

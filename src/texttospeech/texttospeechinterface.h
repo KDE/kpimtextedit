@@ -33,7 +33,7 @@ public:
 
 private:
     void stateChanged(KPIMTextEdit::TextToSpeechWidget::State state);
-    TextToSpeechInterfacePrivate *const d;
+    std::unique_ptr<TextToSpeechInterfacePrivate> const d;
 };
 }
 

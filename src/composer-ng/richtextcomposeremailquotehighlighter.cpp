@@ -44,10 +44,7 @@ RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighter(Ric
     d->parent = textEdit;
 }
 
-RichTextComposerEmailQuoteHighlighter::~RichTextComposerEmailQuoteHighlighter()
-{
-    delete d;
-}
+RichTextComposerEmailQuoteHighlighter::~RichTextComposerEmailQuoteHighlighter() = default;
 
 void RichTextComposerEmailQuoteHighlighter::setQuoteColor(const QColor &normalColor,
                                                           const QColor &quoteDepth1,

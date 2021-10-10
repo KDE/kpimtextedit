@@ -9,6 +9,7 @@
 #include "kpimtextedit_export.h"
 #include <QObject>
 #include <QProcess>
+#include <memory>
 
 namespace KPIMTextEdit
 {
@@ -43,7 +44,7 @@ Q_SIGNALS:
 private:
     void slotEditorFinished(int codeError, QProcess::ExitStatus exitStatus);
     class RichTextExternalComposerPrivate;
-    RichTextExternalComposerPrivate *const d;
+    std::unique_ptr<RichTextExternalComposerPrivate> const d;
 };
 }
 

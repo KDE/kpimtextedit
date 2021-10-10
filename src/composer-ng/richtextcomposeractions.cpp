@@ -83,10 +83,7 @@ RichTextComposerActions::RichTextComposerActions(KPIMTextEdit::RichTextComposerC
 {
 }
 
-RichTextComposerActions::~RichTextComposerActions()
-{
-    delete d;
-}
+RichTextComposerActions::~RichTextComposerActions() = default;
 
 QVector<QAction *> RichTextComposerActions::richTextActionList() const
 {

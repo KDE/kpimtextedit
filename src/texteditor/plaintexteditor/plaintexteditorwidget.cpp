@@ -41,10 +41,7 @@ PlainTextEditorWidget::PlainTextEditorWidget(QWidget *parent)
     init();
 }
 
-PlainTextEditorWidget::~PlainTextEditorWidget()
-{
-    delete d;
-}
+PlainTextEditorWidget::~PlainTextEditorWidget() = default;
 
 PlainTextEditor *PlainTextEditorWidget::editor() const
 {

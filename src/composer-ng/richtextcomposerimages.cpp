@@ -41,10 +41,7 @@ RichTextComposerImages::RichTextComposerImages(RichTextComposer *composer, QObje
 {
 }
 
-RichTextComposerImages::~RichTextComposerImages()
-{
-    delete d;
-}
+RichTextComposerImages::~RichTextComposerImages() = default;
 
 void RichTextComposerImages::addImage(const QUrl &url, int width, int height)
 {

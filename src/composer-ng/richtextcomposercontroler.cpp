@@ -137,10 +137,7 @@ RichTextComposerControler::RichTextComposerControler(RichTextComposer *richtextC
 {
 }
 
-RichTextComposerControler::~RichTextComposerControler()
-{
-    delete d;
-}
+RichTextComposerControler::~RichTextComposerControler() = default;
 
 bool RichTextComposerControler::painterActive() const
 {

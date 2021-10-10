@@ -34,7 +34,7 @@ public:
 
 private:
     class InsertTableDialogPrivate;
-    InsertTableDialogPrivate *const d;
+    std::unique_ptr<InsertTableDialogPrivate> const d;
 };
 }
 

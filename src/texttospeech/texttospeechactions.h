@@ -39,7 +39,7 @@ Q_SIGNALS:
 
 private:
     void slotPlayPause();
-    TextToSpeechActionsPrivate *const d;
+    std::unique_ptr<TextToSpeechActionsPrivate> const d;
 };
 }
 

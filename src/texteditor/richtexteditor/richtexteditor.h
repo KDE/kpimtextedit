@@ -134,7 +134,7 @@ private:
     void moveLineUpDown(bool moveUp);
     void moveCursorBeginUpDown(bool moveUp);
     class RichTextEditorPrivate;
-    RichTextEditorPrivate *const d;
+    std::unique_ptr<RichTextEditorPrivate> const d;
 };
 }
 
