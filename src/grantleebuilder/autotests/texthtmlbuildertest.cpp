@@ -995,3 +995,29 @@ void TextHTMLBuilderTest::testBugTextColor()
     delete hb;
     delete doc;
 }
+
+void TextHTMLBuilderTest::testBugIndent443534()
+{
+    auto doc = new QTextDocument();
+    doc->setHtml(QStringLiteral(
+        "<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li style=\" margin-top:0px; margin-bottom:0px; "
+        "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; -qt-user-state:0;\">Test1</li>\n<li style=\" margin-top:0px; "
+        "margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; -qt-user-state:0;\">Test2</li>\n<ul style=\"margin-top: "
+        "0px; margin-bottom: 0px; margin-right: 0px; -qt-list-indent: 2;\"><li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; "
+        "-qt-block-indent:0; text-indent:0px; -qt-user-state:0;\">Indent1</li></ul>\n<li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+        "margin-right:0px; -qt-block-indent:0; text-indent:0px; -qt-user-state:0;\">deindent1</li></ul>"));
+
+    auto hb = new KPIMTextEdit::TextHTMLBuilder();
+    auto md = new KPIMTextEdit::MarkupDirector(hb);
+    md->processDocument(doc);
+    auto result = hb->getResult();
+
+    qDebug() << " result " << result;
+    auto regex = QRegularExpression(
+        QStringLiteral("^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\"><span style=\"color:#ffff00;\">BBBB</span></p>\n<p "
+                       "style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\"><span style=\"color:#ffff00;\">AAA</span></p>\n"));
+    QVERIFY(regex.match(result).hasMatch());
+    delete md;
+    delete hb;
+    delete doc;
+}
