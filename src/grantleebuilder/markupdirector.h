@@ -135,7 +135,7 @@ public:
     block. If calling this method directly, an invalid QTextFrame::iterator
     may be used.
   */
-    virtual Q_REQUIRED_RESULT QTextFrame::iterator processBlockContents(QTextFrame::iterator it, const QTextBlock &block);
+    virtual QTextFrame::iterator processBlockContents(QTextFrame::iterator it, const QTextBlock &block);
 
     /**
     Hook for instructing the builder to create output for the @p fragemnt with
