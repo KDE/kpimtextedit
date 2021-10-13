@@ -1017,7 +1017,7 @@ void TextHTMLBuilderTest::testBugIndent443534()
     auto regex = QRegularExpression(
         QStringLiteral("^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\"><span style=\"color:#ffff00;\">BBBB</span></p>\n<p "
                        "style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\"><span style=\"color:#ffff00;\">AAA</span></p>\n"));
-    QEXPECT_FAIL("", "problem with list", Continue);
+    QEXPECT_FAIL("", "Problem with list bug 443534", Continue);
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
