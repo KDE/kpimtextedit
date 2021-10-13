@@ -1002,10 +1002,10 @@ void TextHTMLBuilderTest::testBugIndent443534()
     auto doc = new QTextDocument();
     doc->setHtml(QStringLiteral(
         "<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-right: 0px; -qt-list-indent: 1;\"><li style=\" margin-top:0px; margin-bottom:0px; "
-        "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; -qt-user-state:0;\">Test1</li>\n<li style=\" margin-top:0px; "
-        "margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; -qt-user-state:0;\">Test2</li>\n<ul style=\"margin-top: "
+        "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; -qt-user-state:0;\">Test1</li><li style=\" margin-top:0px; "
+        "margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; -qt-user-state:0;\">Test2</li><ul style=\"margin-top: "
         "0px; margin-bottom: 0px; margin-right: 0px; -qt-list-indent: 2;\"><li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; "
-        "-qt-block-indent:0; text-indent:0px; -qt-user-state:0;\">Indent1</li></ul>\n<li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
+        "-qt-block-indent:0; text-indent:0px; -qt-user-state:0;\">Indent1</li></ul><li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; "
         "margin-right:0px; -qt-block-indent:0; text-indent:0px; -qt-user-state:0;\">deindent1</li></ul>"));
 
     auto hb = new KPIMTextEdit::TextHTMLBuilder();
