@@ -12,7 +12,7 @@ class RichTextComposerActionsTest : public QObject
     Q_OBJECT
 public:
     explicit RichTextComposerActionsTest(QObject *parent = nullptr);
-    ~RichTextComposerActionsTest();
+    ~RichTextComposerActionsTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldHaveActions();

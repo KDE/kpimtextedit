@@ -13,7 +13,7 @@ class TextToSpeechActionsTest : public QObject
     Q_OBJECT
 public:
     explicit TextToSpeechActionsTest(QObject *parent = nullptr);
-    ~TextToSpeechActionsTest();
+    ~TextToSpeechActionsTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldChangeButtonEnableStateWhenChangeState();

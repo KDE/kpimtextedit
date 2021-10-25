@@ -16,7 +16,7 @@ class TextToSpeechConfigWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit TextToSpeechConfigWidgetTest(QObject *parent = nullptr);
-    ~TextToSpeechConfigWidgetTest();
+    ~TextToSpeechConfigWidgetTest() override;
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();

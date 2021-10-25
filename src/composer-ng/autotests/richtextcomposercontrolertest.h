@@ -13,7 +13,7 @@ class RichTextComposerControlerTest : public QObject
     Q_OBJECT
 public:
     explicit RichTextComposerControlerTest(QObject *parent = nullptr);
-    ~RichTextComposerControlerTest();
+    ~RichTextComposerControlerTest() override;
 
 private Q_SLOTS:
     void shouldAlignCenter();

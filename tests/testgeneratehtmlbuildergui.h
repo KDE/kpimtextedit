@@ -12,6 +12,6 @@ class TestGenerateHTMLBuilderGui : public QWidget
     Q_OBJECT
 public:
     explicit TestGenerateHTMLBuilderGui(QWidget *parent = nullptr);
-    ~TestGenerateHTMLBuilderGui();
+    ~TestGenerateHTMLBuilderGui() override;
 };
 

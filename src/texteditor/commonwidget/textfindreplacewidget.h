@@ -58,7 +58,7 @@ class TextReplaceWidget : public QWidget
     Q_OBJECT
 public:
     explicit TextReplaceWidget(QWidget *parent = nullptr);
-    ~TextReplaceWidget();
+    ~TextReplaceWidget() override;
 
     QLineEdit *replaceLineEdit() const;
 

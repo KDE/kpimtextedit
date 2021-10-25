@@ -13,7 +13,7 @@ class RichTextComposerWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit RichTextComposerWidgetTest(QObject *parent = nullptr);
-    ~RichTextComposerWidgetTest();
+    ~RichTextComposerWidgetTest() override;
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();

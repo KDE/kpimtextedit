@@ -13,7 +13,7 @@ class RichTextEditorTest : public QObject
     Q_OBJECT
 public:
     explicit RichTextEditorTest(QObject *parent = nullptr);
-    ~RichTextEditorTest();
+    ~RichTextEditorTest() override;
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();

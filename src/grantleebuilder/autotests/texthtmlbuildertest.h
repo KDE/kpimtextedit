@@ -12,7 +12,7 @@ class TextHTMLBuilderTest : public QObject
     Q_OBJECT
 public:
     explicit TextHTMLBuilderTest(QObject *parent = nullptr);
-    ~TextHTMLBuilderTest() = default;
+    ~TextHTMLBuilderTest() override = default;
 private Q_SLOTS:
     void testHtmlText_data();
     void testHtmlText();

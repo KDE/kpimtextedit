@@ -13,7 +13,7 @@ class TextToSpeechGui : public QMainWindow
     Q_OBJECT
 public:
     explicit TextToSpeechGui(QWidget *parent = nullptr);
-    ~TextToSpeechGui();
+    ~TextToSpeechGui() override;
 
 private Q_SLOTS:
     void slotTextToSpeech();

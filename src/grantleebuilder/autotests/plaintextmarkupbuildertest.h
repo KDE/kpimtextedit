@@ -12,7 +12,7 @@ class PlainTextMarkupBuilderTest : public QObject
     Q_OBJECT
 public:
     explicit PlainTextMarkupBuilderTest(QObject *parent = nullptr);
-    ~PlainTextMarkupBuilderTest() = default;
+    ~PlainTextMarkupBuilderTest() override = default;
 
 private Q_SLOTS:
     void testPlainText();

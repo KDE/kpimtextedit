@@ -13,7 +13,7 @@ class EmoticonUnicodeTabTest : public QObject
     Q_OBJECT
 public:
     explicit EmoticonUnicodeTabTest(QObject *parent = nullptr);
-    ~EmoticonUnicodeTabTest() = default;
+    ~EmoticonUnicodeTabTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

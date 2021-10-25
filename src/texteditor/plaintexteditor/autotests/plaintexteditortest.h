@@ -13,7 +13,7 @@ class PlainTextEditorTest : public QObject
     Q_OBJECT
 public:
     explicit PlainTextEditorTest(QObject *parent = nullptr);
-    ~PlainTextEditorTest();
+    ~PlainTextEditorTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldChangeSpellCheckValue();

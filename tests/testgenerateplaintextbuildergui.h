@@ -12,6 +12,6 @@ class TestGeneratePlainTextBuilderGui : public QWidget
     Q_OBJECT
 public:
     explicit TestGeneratePlainTextBuilderGui(QWidget *parent = nullptr);
-    ~TestGeneratePlainTextBuilderGui();
+    ~TestGeneratePlainTextBuilderGui() override;
 };
 

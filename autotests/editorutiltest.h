@@ -12,7 +12,7 @@ class EditorUtilTest : public QObject
     Q_OBJECT
 public:
     explicit EditorUtilTest(QObject *parent = nullptr);
-    ~EditorUtilTest();
+    ~EditorUtilTest() override;
 private Q_SLOTS:
     void testUpperCase();
     void testUpperCase_data();

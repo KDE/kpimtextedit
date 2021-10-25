@@ -13,6 +13,6 @@ class RichTextComposerImagesTest : public QObject
     Q_OBJECT
 public:
     explicit RichTextComposerImagesTest(QObject *parent = nullptr);
-    ~RichTextComposerImagesTest();
+    ~RichTextComposerImagesTest() override;
 };
 

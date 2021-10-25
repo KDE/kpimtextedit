@@ -12,7 +12,7 @@ class RichTextExternalComposerTest : public QObject
     Q_OBJECT
 public:
     explicit RichTextExternalComposerTest(QObject *parent = nullptr);
-    ~RichTextExternalComposerTest();
+    ~RichTextExternalComposerTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldChangeUseExternalComposer();
