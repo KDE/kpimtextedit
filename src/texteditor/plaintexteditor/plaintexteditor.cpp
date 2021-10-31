@@ -106,7 +106,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
     if (popup) {
         const bool emptyDocument = document()->isEmpty();
         if (!isReadOnly()) {
-            QList<QAction *> actionList = popup->actions();
+            const QList<QAction *> actionList = popup->actions();
             enum { UndoAct, RedoAct, CutAct, CopyAct, PasteAct, ClearAct, SelectAllAct, NCountActs };
             QAction *separatorAction = nullptr;
             const int idx = actionList.indexOf(actionList[SelectAllAct]) + 1;
