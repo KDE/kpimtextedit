@@ -15,6 +15,18 @@ target_sources(KF5PimTextEdit PRIVATE
     texteditor/richtexteditor/richtexteditor.cpp
     texteditor/richtexteditor/richtexteditfindbar.cpp
     texteditor/richtexteditor/richtexteditorwidget.cpp
+    texteditor/plaintexteditor/plaintexteditfindbar.h
+    texteditor/plaintexteditor/plaintexteditor.h
+    texteditor/plaintexteditor/plaintexteditorwidget.h
+    texteditor/plaintexteditor/plaintextsyntaxspellcheckinghighlighter.h
+    texteditor/commonwidget/findutils.h
+    texteditor/commonwidget/textfindreplacewidget.h
+    texteditor/commonwidget/texteditfindbarbase.h
+    texteditor/commonwidget/textgotolinewidget.h
+    texteditor/commonwidget/textmessageindicator.h
+    texteditor/richtexteditor/richtexteditor.h
+    texteditor/richtexteditor/richtexteditfindbar.h
+    texteditor/richtexteditor/richtexteditorwidget.h
     )
 
 target_sources(KF5PimTextEdit PRIVATE
@@ -28,6 +40,16 @@ target_sources(KF5PimTextEdit PRIVATE
     composer-ng/richtextcomposeremailquotedecorator.cpp
     composer-ng/richtextcomposeremailquotehighlighter.cpp
     composer-ng/richtextcomposerwidget.cpp
+    composer-ng/richtextcomposer.h
+    composer-ng/richtextcomposercontroler.h
+    composer-ng/richtextcomposeractions.h
+    composer-ng/klinkdialog_p.h
+    composer-ng/nestedlisthelper_p.h
+    composer-ng/richtextexternalcomposer.h
+    composer-ng/richtextcomposerimages.h
+    composer-ng/richtextcomposeremailquotedecorator.h
+    composer-ng/richtextcomposeremailquotehighlighter.h
+    composer-ng/richtextcomposerwidget.h
     )
 
 target_sources(KF5PimTextEdit PRIVATE
@@ -41,12 +63,25 @@ target_sources(KF5PimTextEdit PRIVATE
     texttospeech/texttospeechconfigdialog.cpp
     texttospeech/texttospeechlanguagecombobox.cpp
     texttospeech/texttospeechactions.cpp
+    texttospeech/texttospeech.h
+    texttospeech/texttospeechwidget.h
+    texttospeech/texttospeechconfigwidget.h
+    texttospeech/texttospeechinterface.h
+    texttospeech/abstracttexttospeechinterface.h
+    texttospeech/abstracttexttospeechconfiginterface.h
+    texttospeech/texttospeechconfiginterface.h
+    texttospeech/texttospeechconfigdialog.h
+    texttospeech/texttospeechlanguagecombobox.h
+    texttospeech/texttospeechactions.h
     )
 
 target_sources(KF5PimTextEdit PRIVATE
     grantleebuilder/plaintextmarkupbuilder.cpp
     grantleebuilder/markupdirector.cpp
     grantleebuilder/texthtmlbuilder.cpp
+    grantleebuilder/plaintextmarkupbuilder.h
+    grantleebuilder/markupdirector.h
+    grantleebuilder/texthtmlbuilder.h
     )
 
 target_sources(KF5PimTextEdit PRIVATE
@@ -60,6 +95,17 @@ target_sources(KF5PimTextEdit PRIVATE
     emoticon/emoticonunicodemodelmanager.cpp
     emoticon/emoticonrecentusedfilterproxymodel.cpp
     emoticon/emoticonrecentlistview.cpp
+
+    emoticon/emoticontexteditaction.h
+    emoticon/emoticontexteditselector.h
+    emoticon/emoticonunicodetab.h
+    emoticon/emoticonunicodeutils.h
+    emoticon/emoticonunicodemodel.h
+    emoticon/emoticonlistview.h
+    emoticon/emoticonunicodeproxymodel.h
+    emoticon/emoticonunicodemodelmanager.h
+    emoticon/emoticonrecentusedfilterproxymodel.h
+    emoticon/emoticonrecentlistview.h
     )
 
 target_sources(KF5PimTextEdit PRIVATE
@@ -77,6 +123,21 @@ target_sources(KF5PimTextEdit PRIVATE
     inserthtmleditor.cpp
     slidecontainer.cpp
     editorutil.cpp
+
+    inserthtmldialog.h
+    insertimagedialog.h
+    insertimagewidget.h
+    inserttabledialog.h
+    selectspecialchardialog.h
+    tableactionmenu.h
+    tablecellformatdialog.h
+    tableformatdialog.h
+    textutils.h
+    inserttablewidget.h
+    texteditorcompleter.h
+    inserthtmleditor.h
+    slidecontainer.h
+    editorutil.h
     )
 
 ecm_qt_declare_logging_category(KF5PimTextEdit HEADER kpimtextedit_debug.h IDENTIFIER KPIMTEXTEDIT_LOG CATEGORY_NAME org.kde.pim.kpimtextedit
