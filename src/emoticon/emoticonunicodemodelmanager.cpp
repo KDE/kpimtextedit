@@ -51,10 +51,14 @@ void EmoticonUnicodeModelManager::setRecentIdentifier(const QStringList &newRece
 
 void EmoticonUnicodeModelManager::addIdentifier(const QString &identifier)
 {
-    if (!mRecentIdentifier.contains(identifier)) {
-        mRecentIdentifier.append(identifier);
-        writeRecentUsed();
+    if (int i = mRecentIdentifier.indexOf(identifier)) {
+        // Remove it for adding in top of list
+        if (i != -1) {
+            mRecentIdentifier.removeAt(i);
+        }
     }
+    mRecentIdentifier.prepend(identifier);
+    writeRecentUsed();
     Q_EMIT usedIdentifierChanged(mRecentIdentifier);
 }
 

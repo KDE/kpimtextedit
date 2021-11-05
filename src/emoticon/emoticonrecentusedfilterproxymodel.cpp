@@ -14,6 +14,7 @@ using namespace KPIMTextEdit;
 EmoticonRecentUsedFilterProxyModel::EmoticonRecentUsedFilterProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
+    sort(0);
 }
 
 EmoticonRecentUsedFilterProxyModel::~EmoticonRecentUsedFilterProxyModel()
@@ -42,4 +43,13 @@ bool EmoticonRecentUsedFilterProxyModel::filterAcceptsRow(int source_row, const 
         return true;
     }
     return false;
+}
+
+bool EmoticonRecentUsedFilterProxyModel::lessThan(const QModelIndex &source_left, const QModelIndex &source_right) const
+{
+    const QString identifierLeft = source_left.data(EmoticonUnicodeModel::Identifier).toString();
+    const QString identifierRight = source_right.data(EmoticonUnicodeModel::Identifier).toString();
+    const int indexLeft = mUsedIdentifier.indexOf(identifierLeft);
+    const int indexRight = mUsedIdentifier.indexOf(identifierRight);
+    return indexLeft < indexRight;
 }
