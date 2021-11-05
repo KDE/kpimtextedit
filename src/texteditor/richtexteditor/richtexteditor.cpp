@@ -436,7 +436,12 @@ void RichTextEditor::checkSpelling(bool force)
     auto backgroundSpellCheck = new Sonnet::BackgroundChecker;
     if (backgroundSpellCheck->speller().availableBackends().isEmpty()) {
         if (force) {
-            if (KMessageBox::Yes == KMessageBox::questionYesNo(this, i18n("No backend available for spell checking. Do you want to send the email anyways?"))) {
+            const int answer = KMessageBox::questionYesNo(this,
+                                                          i18n("No backend available for spell checking. Do you want to send the email anyways?"),
+                                                          QString(),
+                                                          KGuiItem(i18nc("@action:button", "Send"), QStringLiteral("mail-send")),
+                                                          KStandardGuiItem::cancel());
+            if (answer == KMessageBox::Yes) {
                 Q_EMIT spellCheckingFinished();
             }
         } else {
