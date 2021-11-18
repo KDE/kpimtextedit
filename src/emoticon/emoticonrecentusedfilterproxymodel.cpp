@@ -31,7 +31,7 @@ void EmoticonRecentUsedFilterProxyModel::setUsedIdentifier(const QStringList &us
 {
     if (mUsedIdentifier != usedIdentifier) {
         mUsedIdentifier = usedIdentifier;
-        invalidateFilter();
+        invalidate();
     }
 }
 
