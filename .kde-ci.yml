@@ -14,7 +14,7 @@ Dependencies:
     'frameworks/kiconthemes': '@latest'
     'frameworks/kio': '@latest'
     'frameworks/ksonnet': '@latest'
-    'frameworks/ksyntaxhighlighting': '@latest'
+    'frameworks/syntax-highlighting': '@latest'
     'frameworks/kwidgetsaddons': '@latest'
     'frameworks/kxmlgui': '@latest'
     'frameworks/ktextwidgets': '@latest'
