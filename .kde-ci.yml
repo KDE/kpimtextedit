@@ -12,7 +12,7 @@ Dependencies:
     'frameworks/kcoreaddons': '@latest'
     'frameworks/ki18n': '@latest'
     'frameworks/kiconthemes': '@latest'
-    'frameworks/kkio': '@latest'
+    'frameworks/kio': '@latest'
     'frameworks/ksonnet': '@latest'
     'frameworks/ksyntaxhighlighting': '@latest'
     'frameworks/kwidgetsaddons': '@latest'
