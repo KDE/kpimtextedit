@@ -753,7 +753,7 @@ QList<int> MarkupDirector::getElementsToOpen(const QTextBlock::iterator &it)
     Q_D(MarkupDirector);
     auto fragment = it.fragment();
     if (!fragment.isValid()) {
-        return QList<int>();
+        return {};
     }
     const auto fragmentFormat = fragment.charFormat();
 

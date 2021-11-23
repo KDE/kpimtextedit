@@ -154,7 +154,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
                 popup->addAction(autoSpellCheckAction);
 
                 if (checkSpellingEnabled() && d->activateLanguageMenu) {
-                    QMenu *languagesMenu = new QMenu(i18n("Spell Checking Language"), popup);
+                    auto languagesMenu = new QMenu(i18n("Spell Checking Language"), popup);
                     auto languagesGroup = new QActionGroup(languagesMenu);
                     languagesGroup->setExclusive(true);
 
@@ -814,7 +814,7 @@ void PlainTextEditor::clearDecorator()
 
 void PlainTextEditor::createHighlighter()
 {
-    Sonnet::Highlighter *highlighter = new Sonnet::Highlighter(this);
+    auto highlighter = new Sonnet::Highlighter(this);
     highlighter->setCurrentLanguage(spellCheckingLanguage());
     setHighlighter(highlighter);
 }

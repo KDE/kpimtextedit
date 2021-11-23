@@ -22,7 +22,7 @@ TextReplaceWidget::TextReplaceWidget(QWidget *parent)
     : QWidget(parent)
 {
     auto lay = new QHBoxLayout(this);
-    QLabel *label = new QLabel(i18nc("Replace text", "Replace:"), this);
+    auto label = new QLabel(i18nc("Replace text", "Replace:"), this);
     lay->addWidget(label);
     const int marg1 = lay->contentsMargins().left();
     const int marg2 = lay->contentsMargins().right();
@@ -41,9 +41,7 @@ TextReplaceWidget::TextReplaceWidget(QWidget *parent)
     lay->addWidget(mReplaceAllBtn);
 }
 
-TextReplaceWidget::~TextReplaceWidget()
-{
-}
+TextReplaceWidget::~TextReplaceWidget() = default;
 
 QLineEdit *TextReplaceWidget::replaceLineEdit() const
 {
@@ -63,7 +61,7 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     const int marg1 = lay->contentsMargins().left();
     const int marg2 = lay->contentsMargins().right();
     lay->setContentsMargins(marg1, 0, marg2, 0);
-    QLabel *label = new QLabel(i18nc("Find text", "F&ind:"), this);
+    auto label = new QLabel(i18nc("Find text", "F&ind:"), this);
     lay->addWidget(label);
 
     mSearch = new QLineEdit(this);
@@ -107,9 +105,7 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     connect(mSearch, &QLineEdit::returnPressed, this, &TextFindWidget::findNext);
 }
 
-TextFindWidget::~TextFindWidget()
-{
-}
+TextFindWidget::~TextFindWidget() = default;
 
 void TextFindWidget::setFoundMatch(bool match)
 {

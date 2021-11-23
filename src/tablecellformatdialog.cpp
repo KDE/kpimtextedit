@@ -30,7 +30,7 @@ public:
         q->setLayout(mainLayout);
 
         auto hbox = new QHBoxLayout;
-        QLabel *lab = new QLabel(i18n("Vertical Alignment:"));
+        auto lab = new QLabel(i18n("Vertical Alignment:"));
         hbox->addWidget(lab);
         verticalAlignment = new QComboBox;
         verticalAlignment->addItem(i18n("Top"), QTextCharFormat::AlignTop);
@@ -40,7 +40,7 @@ public:
         hbox->addWidget(verticalAlignment);
         mainLayout->addLayout(hbox);
 
-        KSeparator *sep = new KSeparator;
+        auto sep = new KSeparator;
         mainLayout->addWidget(sep);
 
         hbox = new QHBoxLayout;
@@ -56,7 +56,7 @@ public:
         backgroundColor->setEnabled(false);
         q->connect(useBackgroundColor, &QCheckBox::toggled, backgroundColor, &KColorButton::setEnabled);
 
-        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
+        auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
         buttonBox->button(QDialogButtonBox::Ok)->setShortcut(Qt::CTRL | Qt::Key_Return);
         q->connect(buttonBox, &QDialogButtonBox::accepted, q, &QDialog::accept);
         q->connect(buttonBox, &QDialogButtonBox::rejected, q, &QDialog::reject);

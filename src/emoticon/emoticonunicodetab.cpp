@@ -29,9 +29,7 @@ EmoticonUnicodeTab::EmoticonUnicodeTab(QWidget *parent)
     connect(EmoticonUnicodeModelManager::self(), &EmoticonUnicodeModelManager::usedIdentifierChanged, this, &EmoticonUnicodeTab::slotUsedIdentifierChanged);
 }
 
-EmoticonUnicodeTab::~EmoticonUnicodeTab()
-{
-}
+EmoticonUnicodeTab::~EmoticonUnicodeTab() = default;
 
 void EmoticonUnicodeTab::searchUnicode(const QString &str)
 {
@@ -74,7 +72,7 @@ void EmoticonUnicodeTab::createEmoticonTab(const QString &str, const QVector<Emo
 {
     if (!emoticons.isEmpty()) {
         auto emojisView = new EmoticonListView(this);
-        EmoticonUnicodeProxyModel *emoticonUnicodeProxyModel = new EmoticonUnicodeProxyModel(this);
+        auto emoticonUnicodeProxyModel = new EmoticonUnicodeProxyModel(this);
         const auto emoji = emoticons.constFirst();
         emoticonUnicodeProxyModel->setCategories(emoji.emoticonCategory);
         emoticonUnicodeProxyModel->setSourceModel(EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());

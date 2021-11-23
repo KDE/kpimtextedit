@@ -37,9 +37,7 @@ class KPIMTEXTEDIT_EXPORT AbstractMarkupBuilder
 {
 public:
     /** Destructor */
-    virtual ~AbstractMarkupBuilder()
-    {
-    }
+    virtual ~AbstractMarkupBuilder() = default;
 
     /** Begin a bold element in the markup */
     virtual void beginStrong() = 0;

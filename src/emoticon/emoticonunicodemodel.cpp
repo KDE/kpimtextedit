@@ -12,9 +12,7 @@ EmoticonUnicodeModel::EmoticonUnicodeModel(QObject *parent)
 {
 }
 
-EmoticonUnicodeModel::~EmoticonUnicodeModel()
-{
-}
+EmoticonUnicodeModel::~EmoticonUnicodeModel() = default;
 
 int EmoticonUnicodeModel::rowCount(const QModelIndex &parent) const
 {

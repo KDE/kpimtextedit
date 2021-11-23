@@ -24,12 +24,12 @@ void TextGoToLineWidgetTest::shouldHaveDefaultValuesOnCreation()
     KPIMTextEdit::TextGoToLineWidget edit;
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
-    auto *line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
+    auto line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
     QVERIFY(line);
     QCOMPARE(line->minimum(), 1);
-    auto *gotolinebutton = edit.findChild<QPushButton *>(QStringLiteral("gotoline"));
+    auto gotolinebutton = edit.findChild<QPushButton *>(QStringLiteral("gotoline"));
     QVERIFY(gotolinebutton);
-    auto *closebutton = edit.findChild<QToolButton *>(QStringLiteral("closebutton"));
+    auto closebutton = edit.findChild<QToolButton *>(QStringLiteral("closebutton"));
     QVERIFY(closebutton);
     QVERIFY(line->hasFocus());
 }
@@ -37,7 +37,7 @@ void TextGoToLineWidgetTest::shouldHaveDefaultValuesOnCreation()
 void TextGoToLineWidgetTest::shouldEmitGoToLineSignalWhenPressOnButton()
 {
     KPIMTextEdit::TextGoToLineWidget edit;
-    auto *gotolinebutton = edit.findChild<QPushButton *>(QStringLiteral("gotoline"));
+    auto gotolinebutton = edit.findChild<QPushButton *>(QStringLiteral("gotoline"));
     QSignalSpy spy(&edit, &KPIMTextEdit::TextGoToLineWidget::moveToLine);
     QTest::mouseClick(gotolinebutton, Qt::LeftButton);
     QCOMPARE(spy.count(), 1);
@@ -46,8 +46,8 @@ void TextGoToLineWidgetTest::shouldEmitGoToLineSignalWhenPressOnButton()
 void TextGoToLineWidgetTest::shouldEmitGoToLineSignalCorrectValueWhenPressOnButton()
 {
     KPIMTextEdit::TextGoToLineWidget edit;
-    auto *gotolinebutton = edit.findChild<QPushButton *>(QStringLiteral("gotoline"));
-    auto *line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
+    auto gotolinebutton = edit.findChild<QPushButton *>(QStringLiteral("gotoline"));
+    auto line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
     line->setValue(5);
     QCOMPARE(line->value(), 5);
     QSignalSpy spy(&edit, &KPIMTextEdit::TextGoToLineWidget::moveToLine);
@@ -62,7 +62,7 @@ void TextGoToLineWidgetTest::shouldHideWidgetWhenClickOnCloseButton()
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
     QVERIFY(edit.isVisible());
-    auto *closebutton = edit.findChild<QToolButton *>(QStringLiteral("closebutton"));
+    auto closebutton = edit.findChild<QToolButton *>(QStringLiteral("closebutton"));
     QTest::mouseClick(closebutton, Qt::LeftButton);
     QVERIFY(!edit.isVisible());
 }
@@ -81,7 +81,7 @@ void TextGoToLineWidgetTest::shouldEmitGoToLineSignalWhenSpinboxHasFocusAndWePre
     KPIMTextEdit::TextGoToLineWidget edit;
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
-    auto *line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
+    auto line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
     line->setFocus();
     QVERIFY(line->hasFocus());
     line->setValue(5);
@@ -96,7 +96,7 @@ void TextGoToLineWidgetTest::shouldHasFocusEachTimeThatItShown()
     KPIMTextEdit::TextGoToLineWidget edit;
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
-    auto *line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
+    auto line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
     QVERIFY(line);
     QVERIFY(line->hasFocus());
     edit.hide();
@@ -111,7 +111,7 @@ void TextGoToLineWidgetTest::shouldSetFocusWhenWeRecallGotToLine()
     KPIMTextEdit::TextGoToLineWidget edit;
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
-    auto *line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
+    auto line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
     QVERIFY(line->hasFocus());
     edit.setFocus();
     QVERIFY(!line->hasFocus());
@@ -124,7 +124,7 @@ void TextGoToLineWidgetTest::shouldChangeMaximumValue()
     KPIMTextEdit::TextGoToLineWidget edit;
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
-    auto *line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
+    auto line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
 
     QCOMPARE(line->value(), 1);
     QCOMPARE(line->minimum(), 1);

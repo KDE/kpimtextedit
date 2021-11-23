@@ -7,9 +7,7 @@
 #include "editorutil.h"
 
 using namespace KPIMTextEdit;
-EditorUtil::EditorUtil()
-{
-}
+EditorUtil::EditorUtil() = default;
 
 void EditorUtil::upperCase(QTextCursor &cursor) const
 {

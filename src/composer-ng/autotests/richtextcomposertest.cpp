@@ -33,9 +33,7 @@ RichTextComposerTest::RichTextComposerTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
-RichTextComposerTest::~RichTextComposerTest()
-{
-}
+RichTextComposerTest::~RichTextComposerTest() = default;
 
 void RichTextComposerTest::testFormattingUsed()
 {
@@ -462,7 +460,7 @@ void RichTextComposerTest::testWrappedPlainText()
 void RichTextComposerTest::testEnableDisableActions()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     bool enableAction = true;
     composer.setEnableActions(enableAction);
@@ -480,7 +478,7 @@ void RichTextComposerTest::testEnableDisableActions()
 void RichTextComposerTest::shouldHaveDefaultValue()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     QCOMPARE(composer.linePosition(), 0);
     QCOMPARE(composer.columnNumber(), 0);
@@ -492,7 +490,7 @@ void RichTextComposerTest::shouldHaveDefaultValue()
 void RichTextComposerTest::shouldChangeMode()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     QSignalSpy spy(&composer, &RichTextComposer::textModeChanged);
     composer.activateRichText();

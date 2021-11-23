@@ -29,10 +29,10 @@ public:
         insertTableWidget = new InsertTableWidget(q);
         mainLayout->addWidget(insertTableWidget);
 
-        KSeparator *sep = new KSeparator(q);
+        auto sep = new KSeparator(q);
         mainLayout->addWidget(sep);
 
-        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
+        auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
         QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
         okButton->setText(i18n("Insert"));
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);

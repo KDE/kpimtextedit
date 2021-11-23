@@ -459,9 +459,9 @@ void RichTextEditor::checkSpelling(bool force)
         }
     }
     auto spellDialog = new Sonnet::Dialog(backgroundSpellCheck, force ? this : nullptr);
-    auto *buttonBox = spellDialog->findChild<QDialogButtonBox *>();
+    auto buttonBox = spellDialog->findChild<QDialogButtonBox *>();
     if (buttonBox) {
-        QPushButton *skipButton = new QPushButton(i18n("Skip"));
+        auto skipButton = new QPushButton(i18n("Skip"));
         buttonBox->addButton(skipButton, QDialogButtonBox::ActionRole);
         connect(skipButton, &QPushButton::clicked, spellDialog, &Sonnet::Dialog::close);
         if (force) {
@@ -549,7 +549,7 @@ void RichTextEditor::highlightWord(int length, int pos)
 
 void RichTextEditor::createHighlighter()
 {
-    Sonnet::Highlighter *highlighter = new Sonnet::Highlighter(this);
+    auto highlighter = new Sonnet::Highlighter(this);
     highlighter->setCurrentLanguage(spellCheckingLanguage());
     setHighlighter(highlighter);
 }

@@ -14,9 +14,7 @@ EditorUtilTest::EditorUtilTest(QObject *parent)
 {
 }
 
-EditorUtilTest::~EditorUtilTest()
-{
-}
+EditorUtilTest::~EditorUtilTest() = default;
 
 void EditorUtilTest::testUpperCase_data()
 {

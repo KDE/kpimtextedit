@@ -37,9 +37,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     setMinimumSize(400, 200);
 }
 
-EmoticonTextEditSelector::~EmoticonTextEditSelector()
-{
-}
+EmoticonTextEditSelector::~EmoticonTextEditSelector() = default;
 
 void EmoticonTextEditSelector::slotItemSelected(const QString &str)
 {

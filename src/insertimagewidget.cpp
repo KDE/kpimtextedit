@@ -37,7 +37,7 @@ public:
         auto lay = new QVBoxLayout(q);
         lay->setContentsMargins({});
         auto hbox = new QHBoxLayout;
-        QLabel *lab = new QLabel(i18n("Image Location:"));
+        auto lab = new QLabel(i18n("Image Location:"));
         imageUrlRequester = new KUrlRequester;
 
         QStringList lstMimeTypes;
@@ -103,7 +103,7 @@ public:
         hbox->addWidget(height);
         lay->addLayout(hbox);
 
-        KSeparator *sep = new KSeparator;
+        auto sep = new KSeparator;
         lay->addWidget(sep);
 
         hbox = new QHBoxLayout;

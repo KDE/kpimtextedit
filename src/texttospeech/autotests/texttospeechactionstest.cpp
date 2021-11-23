@@ -19,9 +19,7 @@ TextToSpeechActionsTest::TextToSpeechActionsTest(QObject *parent)
     QIcon::setThemeName(QStringLiteral("breeze"));
 }
 
-TextToSpeechActionsTest::~TextToSpeechActionsTest()
-{
-}
+TextToSpeechActionsTest::~TextToSpeechActionsTest() = default;
 
 void TextToSpeechActionsTest::shouldHaveDefaultValue()
 {

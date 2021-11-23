@@ -28,7 +28,7 @@ public:
     {
         q->setWindowTitle(i18nc("@title:window", "Insert HTML"));
         auto lay = new QVBoxLayout(q);
-        QLabel *label = new QLabel(i18n("Insert HTML tags and texts:"));
+        auto label = new QLabel(i18n("Insert HTML tags and texts:"));
         lay->addWidget(label);
         editor = new InsertHtmlEditor;
         editor->setSpellCheckingSupport(false);
@@ -40,7 +40,7 @@ public:
         label->setFont(font);
         label->setTextFormat(Qt::PlainText);
         lay->addWidget(label);
-        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
+        auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
         okButton = buttonBox->button(QDialogButtonBox::Ok);
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
         okButton->setText(i18nc("@action:button", "Insert"));

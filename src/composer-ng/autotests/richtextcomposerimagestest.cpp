@@ -12,8 +12,6 @@ RichTextComposerImagesTest::RichTextComposerImagesTest(QObject *parent)
 {
 }
 
-RichTextComposerImagesTest::~RichTextComposerImagesTest()
-{
-}
+RichTextComposerImagesTest::~RichTextComposerImagesTest() = default;
 
 QTEST_MAIN(RichTextComposerImagesTest)

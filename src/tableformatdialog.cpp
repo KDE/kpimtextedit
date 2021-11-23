@@ -31,17 +31,17 @@ public:
         q->setWindowTitle(i18nc("@title:window", "Table Format"));
         auto mainLayout = new QVBoxLayout(q);
 
-        QWidget *page = new QWidget(q);
+        auto page = new QWidget(q);
         auto lay = new QVBoxLayout(page);
         lay->setContentsMargins({});
         tableWidget = new InsertTableWidget;
         lay->addWidget(tableWidget);
 
-        KSeparator *sep = new KSeparator;
+        auto sep = new KSeparator;
         lay->addWidget(sep);
 
         auto hbox = new QHBoxLayout;
-        QLabel *lab = new QLabel(i18n("Spacing:"));
+        auto lab = new QLabel(i18n("Spacing:"));
         hbox->addWidget(lab);
         spacing = new QSpinBox;
         spacing->setMinimum(0);
@@ -92,7 +92,7 @@ public:
         lay->addWidget(sep);
         backgroundColor->setEnabled(false);
         q->connect(useBackgroundColor, &QCheckBox::toggled, backgroundColor, &KColorButton::setEnabled);
-        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
+        auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
         connect(buttonBox, &QDialogButtonBox::accepted, q, &QDialog::accept);
         connect(buttonBox, &QDialogButtonBox::rejected, q, &QDialog::reject);
 

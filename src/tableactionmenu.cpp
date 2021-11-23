@@ -402,7 +402,7 @@ TableActionMenu::TableActionMenu(QTextEdit *textEdit)
     : KActionMenu(textEdit)
     , d(new TableActionMenuPrivate(textEdit, this))
 {
-    KActionMenu *insertMenu = new KActionMenu(i18n("Insert"), this);
+    auto insertMenu = new KActionMenu(i18n("Insert"), this);
     addAction(insertMenu);
 
     d->actionInsertTable = new QAction(QIcon::fromTheme(QStringLiteral("insert-table")), i18n("Table..."), this);
@@ -443,7 +443,7 @@ TableActionMenu::TableActionMenu(QTextEdit *textEdit)
         d->_k_slotInsertColumnAfter();
     });
 
-    KActionMenu *removeMenu = new KActionMenu(i18n("Delete"), this);
+    auto removeMenu = new KActionMenu(i18n("Delete"), this);
     addAction(removeMenu);
 
     d->actionRemoveRowBelow = new QAction(i18n("Row Below"), this);

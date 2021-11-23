@@ -13,9 +13,7 @@ PlainTextEditorTest::PlainTextEditorTest(QObject *parent)
 {
 }
 
-PlainTextEditorTest::~PlainTextEditorTest()
-{
-}
+PlainTextEditorTest::~PlainTextEditorTest() = default;
 
 void PlainTextEditorTest::shouldHaveDefaultValue()
 {

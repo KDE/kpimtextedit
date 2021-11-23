@@ -13,9 +13,7 @@ TextToSpeechLanguageComboBox::TextToSpeechLanguageComboBox(QWidget *parent)
     setSizeAdjustPolicy(QComboBox::AdjustToContents);
 }
 
-TextToSpeechLanguageComboBox::~TextToSpeechLanguageComboBox()
-{
-}
+TextToSpeechLanguageComboBox::~TextToSpeechLanguageComboBox() = default;
 
 void TextToSpeechLanguageComboBox::selectLocaleName(const QString &localeName)
 {

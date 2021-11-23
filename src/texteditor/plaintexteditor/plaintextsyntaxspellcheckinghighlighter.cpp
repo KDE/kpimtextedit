@@ -28,7 +28,7 @@ struct SpellCheckRange {
     {
     }
 
-    int end() const
+    Q_REQUIRED_RESULT int end() const
     {
         return offset + length;
     }
@@ -161,11 +161,11 @@ void PlainTextSyntaxSpellCheckingHighlighter::applyFormat(int offset, int length
 {
     if (format.spellCheck() && length > 0) {
         if (d->spellCheckRanges.empty()) {
-            d->spellCheckRanges.push_back({offset, length});
+            d->spellCheckRanges.emplace_back(offset, length);
         } else if (d->spellCheckRanges.back().end() + 1 == offset) {
             d->spellCheckRanges.back().length += length;
         } else {
-            d->spellCheckRanges.push_back({offset, length});
+            d->spellCheckRanges.emplace_back(offset, length);
         }
     }
 

@@ -59,9 +59,7 @@ TextEditFindBarBase::TextEditFindBarBase(QWidget *parent)
     hide();
 }
 
-TextEditFindBarBase::~TextEditFindBarBase()
-{
-}
+TextEditFindBarBase::~TextEditFindBarBase() = default;
 
 void TextEditFindBarBase::showFind()
 {

@@ -17,14 +17,14 @@ TestGeneratePlainTextBuilderGui::TestGeneratePlainTextBuilderGui(QWidget *parent
     : QWidget(parent)
 {
     auto mainLayout = new QVBoxLayout(this);
-    QLabel *lab = new QLabel(QStringLiteral("html text"), this);
+    auto lab = new QLabel(QStringLiteral("html text"), this);
     mainLayout->addWidget(lab);
 
     auto htmlEdit = new QTextEdit(this);
     htmlEdit->setAcceptRichText(false);
     mainLayout->addWidget(htmlEdit);
 
-    QPushButton *generateHtmlFromQTextEditButton = new QPushButton(QStringLiteral("Generate HTML"), this);
+    auto generateHtmlFromQTextEditButton = new QPushButton(QStringLiteral("Generate HTML"), this);
     mainLayout->addWidget(generateHtmlFromQTextEditButton);
 
     lab = new QLabel(QStringLiteral("Generate Html"), this);
@@ -56,9 +56,7 @@ TestGeneratePlainTextBuilderGui::TestGeneratePlainTextBuilderGui(QWidget *parent
     });
 }
 
-TestGeneratePlainTextBuilderGui::~TestGeneratePlainTextBuilderGui()
-{
-}
+TestGeneratePlainTextBuilderGui::~TestGeneratePlainTextBuilderGui() = default;
 
 int main(int argc, char *argv[])
 {

@@ -13,9 +13,7 @@ using namespace KPIMTextEdit;
 class Q_DECL_HIDDEN KPIMTextEdit::TextToSpeechActionsPrivate
 {
 public:
-    TextToSpeechActionsPrivate()
-    {
-    }
+    TextToSpeechActionsPrivate() = default;
 
     void updateButtonState();
     TextToSpeechWidget::State mState = TextToSpeechWidget::Stop;

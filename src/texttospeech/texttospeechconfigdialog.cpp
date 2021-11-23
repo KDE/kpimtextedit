@@ -24,7 +24,7 @@ TextToSpeechConfigDialog::TextToSpeechConfigDialog(QWidget *parent)
     mTextToSpeechConfigWidget = new TextToSpeechConfigWidget(parent);
     mainLayout->addWidget(mTextToSpeechConfigWidget);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults, this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);

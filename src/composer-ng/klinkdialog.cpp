@@ -54,9 +54,7 @@ KLinkDialog::KLinkDialog(QWidget *parent)
     connect(textLineEdit, &QLineEdit::textChanged, this, &KLinkDialog::slotTextChanged);
 }
 
-KLinkDialog::~KLinkDialog()
-{
-}
+KLinkDialog::~KLinkDialog() = default;
 
 void KLinkDialog::slotTextChanged(const QString &text)
 {

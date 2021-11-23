@@ -11,9 +11,7 @@ AbstractTextToSpeechInterface::AbstractTextToSpeechInterface(QObject *parent)
 {
 }
 
-AbstractTextToSpeechInterface::~AbstractTextToSpeechInterface()
-{
-}
+AbstractTextToSpeechInterface::~AbstractTextToSpeechInterface() = default;
 
 bool AbstractTextToSpeechInterface::isReady() const
 {

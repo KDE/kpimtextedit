@@ -15,14 +15,12 @@ RichTextComposerControlerTest::RichTextComposerControlerTest(QObject *parent)
 {
 }
 
-RichTextComposerControlerTest::~RichTextComposerControlerTest()
-{
-}
+RichTextComposerControlerTest::~RichTextComposerControlerTest() = default;
 
 void RichTextComposerControlerTest::shouldAlignLeft()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
@@ -36,7 +34,7 @@ void RichTextComposerControlerTest::shouldAlignLeft()
 void RichTextComposerControlerTest::shouldAlignRight()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
@@ -50,7 +48,7 @@ void RichTextComposerControlerTest::shouldAlignRight()
 void RichTextComposerControlerTest::shouldAlignJustify()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
@@ -64,7 +62,7 @@ void RichTextComposerControlerTest::shouldAlignJustify()
 void RichTextComposerControlerTest::shouldAlignCenter()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
@@ -86,7 +84,7 @@ void RichTextComposerControlerTest::shouldHaveDefaultValue()
 void RichTextComposerControlerTest::shouldBoldText()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
@@ -100,7 +98,7 @@ void RichTextComposerControlerTest::shouldBoldText()
 void RichTextComposerControlerTest::shouldItalicText()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
@@ -114,7 +112,7 @@ void RichTextComposerControlerTest::shouldItalicText()
 void RichTextComposerControlerTest::shouldTextUnderline()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
@@ -128,7 +126,7 @@ void RichTextComposerControlerTest::shouldTextUnderline()
 void RichTextComposerControlerTest::shouldTextStrikeOut()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
@@ -142,7 +140,7 @@ void RichTextComposerControlerTest::shouldTextStrikeOut()
 void RichTextComposerControlerTest::shouldFontFamily()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
@@ -153,7 +151,7 @@ void RichTextComposerControlerTest::shouldFontFamily()
 void RichTextComposerControlerTest::shouldFontSize()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
@@ -164,7 +162,7 @@ void RichTextComposerControlerTest::shouldFontSize()
 void RichTextComposerControlerTest::shouldFont()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
@@ -175,7 +173,7 @@ void RichTextComposerControlerTest::shouldFont()
 void RichTextComposerControlerTest::shouldTextSuperScript()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
@@ -189,7 +187,7 @@ void RichTextComposerControlerTest::shouldTextSuperScript()
 void RichTextComposerControlerTest::shouldTextSubScript()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
@@ -226,7 +224,7 @@ void RichTextComposerControlerTest::shouldRemoveQuote()
     QFETCH(QString, input);
     QFETCH(QString, output);
     KPIMTextEdit::RichTextComposer composer;
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();
@@ -256,7 +254,7 @@ void RichTextComposerControlerTest::shouldRemoveQuoteWithSpecificQuote()
     QFETCH(QString, quote);
     KPIMTextEdit::RichTextComposer composer;
     composer.setQuotePrefixName(quote);
-    KActionCollection *actionCollection = new KActionCollection(&composer);
+    auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     composer.show();

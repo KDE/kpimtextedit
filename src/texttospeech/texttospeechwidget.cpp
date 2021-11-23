@@ -20,9 +20,7 @@ using namespace KPIMTextEdit;
 class Q_DECL_HIDDEN KPIMTextEdit::TextToSpeechWidgetPrivate
 {
 public:
-    TextToSpeechWidgetPrivate()
-    {
-    }
+    TextToSpeechWidgetPrivate() = default;
 
     QPointer<KPIMTextEdit::TextToSpeechConfigDialog> mConfigDialog;
     QToolButton *mStopButton = nullptr;

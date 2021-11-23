@@ -16,9 +16,7 @@ EmoticonRecentListView::EmoticonRecentListView(QWidget *parent)
     setContextMenuPolicy(Qt::DefaultContextMenu);
 }
 
-EmoticonRecentListView::~EmoticonRecentListView()
-{
-}
+EmoticonRecentListView::~EmoticonRecentListView() = default;
 
 void EmoticonRecentListView::contextMenuEvent(QContextMenuEvent *event)
 {

@@ -68,9 +68,7 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     QTimer::singleShot(0, this, &TextToSpeechConfigWidget::slotUpdateSettings);
 }
 
-TextToSpeechConfigWidget::~TextToSpeechConfigWidget()
-{
-}
+TextToSpeechConfigWidget::~TextToSpeechConfigWidget() = default;
 
 void TextToSpeechConfigWidget::valueChanged()
 {

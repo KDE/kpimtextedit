@@ -36,9 +36,9 @@ struct ImageWithName {
     QString name; ///< The name of the image as it is available as a resource in the editor
 };
 
-typedef QSharedPointer<ImageWithName> ImageWithNamePtr;
-typedef QVector<ImageWithNamePtr> ImageWithNameList;
-typedef QVector<QSharedPointer<EmbeddedImage>> ImageList;
+using ImageWithNamePtr = QSharedPointer<ImageWithName>;
+using ImageWithNameList = QVector<ImageWithNamePtr>;
+using ImageList = QVector<QSharedPointer<EmbeddedImage>>;
 
 class KPIMTEXTEDIT_EXPORT RichTextComposerImages : public QObject
 {

@@ -17,10 +17,7 @@ EmoticonRecentUsedFilterProxyModel::EmoticonRecentUsedFilterProxyModel(QObject *
     sort(0);
 }
 
-EmoticonRecentUsedFilterProxyModel::~EmoticonRecentUsedFilterProxyModel()
-{
-}
-
+EmoticonRecentUsedFilterProxyModel::~EmoticonRecentUsedFilterProxyModel() = default;
 
 QStringList EmoticonRecentUsedFilterProxyModel::usedIdentifier() const
 {

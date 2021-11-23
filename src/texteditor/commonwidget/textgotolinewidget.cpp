@@ -21,9 +21,7 @@ using namespace KPIMTextEdit;
 class Q_DECL_HIDDEN KPIMTextEdit::TextGoToLineWidgetPrivate
 {
 public:
-    TextGoToLineWidgetPrivate()
-    {
-    }
+    TextGoToLineWidgetPrivate() = default;
 
     QSpinBox *mSpinbox = nullptr;
     QPushButton *mGoToLine = nullptr;
@@ -48,7 +46,7 @@ TextGoToLineWidget::TextGoToLineWidget(QWidget *parent)
     connect(closeBtn, &QToolButton::clicked, this, &TextGoToLineWidget::slotCloseBar);
     hbox->addWidget(closeBtn);
 
-    QLabel *lab = new QLabel(i18n("Go to Line:"));
+    auto lab = new QLabel(i18n("Go to Line:"));
     hbox->addWidget(lab);
     d->mSpinbox = new QSpinBox(this);
     d->mSpinbox->setMinimum(1);

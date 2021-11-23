@@ -17,9 +17,7 @@ RichTextComposerActionsTest::RichTextComposerActionsTest(QObject *parent)
 {
 }
 
-RichTextComposerActionsTest::~RichTextComposerActionsTest()
-{
-}
+RichTextComposerActionsTest::~RichTextComposerActionsTest() = default;
 
 void RichTextComposerActionsTest::shouldHaveDefaultValue()
 {
@@ -27,7 +25,7 @@ void RichTextComposerActionsTest::shouldHaveDefaultValue()
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     KPIMTextEdit::RichTextComposerActions composerActions(&controler);
 
-    KActionCollection *actionCollection = new KActionCollection(&composerActions);
+    auto actionCollection = new KActionCollection(&composerActions);
     QVERIFY(actionCollection->actions().isEmpty());
 
     composerActions.createActions(actionCollection);
@@ -42,7 +40,7 @@ void RichTextComposerActionsTest::shouldHaveActions()
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     KPIMTextEdit::RichTextComposerActions composerActions(&controler);
 
-    KActionCollection *actionCollection = new KActionCollection(&composerActions);
+    auto actionCollection = new KActionCollection(&composerActions);
     composerActions.createActions(actionCollection);
 
     QStringList lst;
@@ -80,7 +78,7 @@ void RichTextComposerActionsTest::shouldChangeEnableState()
     KPIMTextEdit::RichTextComposerControler controler(&composer);
     KPIMTextEdit::RichTextComposerActions composerActions(&controler);
 
-    KActionCollection *actionCollection = new KActionCollection(&composerActions);
+    auto actionCollection = new KActionCollection(&composerActions);
     composerActions.createActions(actionCollection);
 
     QStringList actionNoRichText;

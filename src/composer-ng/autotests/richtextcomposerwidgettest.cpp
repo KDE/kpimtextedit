@@ -14,14 +14,12 @@ RichTextComposerWidgetTest::RichTextComposerWidgetTest(QObject *parent)
 {
 }
 
-RichTextComposerWidgetTest::~RichTextComposerWidgetTest()
-{
-}
+RichTextComposerWidgetTest::~RichTextComposerWidgetTest() = default;
 
 void RichTextComposerWidgetTest::shouldHaveDefaultValue()
 {
     KPIMTextEdit::RichTextComposerWidget w;
-    auto *composer = w.findChild<KPIMTextEdit::RichTextComposer *>(QStringLiteral("richtextcomposer"));
+    auto composer = w.findChild<KPIMTextEdit::RichTextComposer *>(QStringLiteral("richtextcomposer"));
     QVERIFY(composer);
     QVERIFY(w.richTextComposer());
 }

@@ -14,9 +14,7 @@ TextToSpeechConfigInterface::TextToSpeechConfigInterface(QObject *parent)
 {
 }
 
-TextToSpeechConfigInterface::~TextToSpeechConfigInterface()
-{
-}
+TextToSpeechConfigInterface::~TextToSpeechConfigInterface() = default;
 
 QStringList TextToSpeechConfigInterface::availableVoices() const
 {

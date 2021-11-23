@@ -31,7 +31,7 @@ public:
         q->connect(imageWidget, &InsertImageWidget::enableButtonOk, q, [this](bool b) {
             _k_slotEnabledButtonChanged(b);
         });
-        QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
+        auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, q);
         okButton = buttonBox->button(QDialogButtonBox::Ok);
         okButton->setText(i18n("Insert"));
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);

@@ -24,7 +24,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
     auto richtextcomposerwidget = new KPIMTextEdit::RichTextComposer;
-    KActionCollection *ac = new KActionCollection(richtextcomposerwidget);
+    auto ac = new KActionCollection(richtextcomposerwidget);
     richtextcomposerwidget->createActions(ac);
     auto editor = new KPIMTextEdit::RichTextEditorWidget(richtextcomposerwidget);
     editor->resize(800, 600);

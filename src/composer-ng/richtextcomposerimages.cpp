@@ -148,7 +148,7 @@ ImageWithNameList RichTextComposerImages::imagesWithName() const
         const QString name = imageFormat.name();
         if (!seenImageNames.contains(name)) {
             QVariant resourceData = d->composer->document()->resource(QTextDocument::ImageResource, QUrl(name));
-            QImage image = qvariant_cast<QImage>(resourceData);
+            auto image = qvariant_cast<QImage>(resourceData);
 
             ImageWithNamePtr newImage(new ImageWithName);
             newImage->image = image;

@@ -14,9 +14,7 @@ RichTextExternalComposerTest::RichTextExternalComposerTest(QObject *parent)
 {
 }
 
-RichTextExternalComposerTest::~RichTextExternalComposerTest()
-{
-}
+RichTextExternalComposerTest::~RichTextExternalComposerTest() = default;
 
 void RichTextExternalComposerTest::shouldHaveDefaultValue()
 {

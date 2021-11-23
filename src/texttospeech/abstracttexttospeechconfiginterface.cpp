@@ -13,18 +13,16 @@ AbstractTextToSpeechConfigInterface::AbstractTextToSpeechConfigInterface(QObject
 {
 }
 
-AbstractTextToSpeechConfigInterface::~AbstractTextToSpeechConfigInterface()
-{
-}
+AbstractTextToSpeechConfigInterface::~AbstractTextToSpeechConfigInterface() = default;
 
 QVector<QLocale> AbstractTextToSpeechConfigInterface::availableLocales() const
 {
-    return QVector<QLocale>();
+    return {};
 }
 
 QLocale AbstractTextToSpeechConfigInterface::locale() const
 {
-    return QLocale();
+    return {};
 }
 
 void AbstractTextToSpeechConfigInterface::setLocale(const QLocale &locale)
@@ -34,12 +32,12 @@ void AbstractTextToSpeechConfigInterface::setLocale(const QLocale &locale)
 
 QStringList AbstractTextToSpeechConfigInterface::availableEngines() const
 {
-    return QStringList();
+    return {};
 }
 
 QStringList AbstractTextToSpeechConfigInterface::availableVoices() const
 {
-    return QStringList();
+    return {};
 }
 
 void AbstractTextToSpeechConfigInterface::setEngine(const QString &engineName)

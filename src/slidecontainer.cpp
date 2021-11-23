@@ -48,7 +48,7 @@ void SlideContainer::animTo(int newHeight)
         mAnim.data()->deleteLater();
         disconnect(mAnim.data(), &QPropertyAnimation::finished, this, &SlideContainer::slotAnimFinished);
     }
-    QPropertyAnimation *anim = new QPropertyAnimation(this, "slideHeight", this);
+    auto anim = new QPropertyAnimation(this, "slideHeight", this);
     anim->setDuration(SLIDE_DURATION);
     anim->setStartValue(slideHeight());
     anim->setEndValue(newHeight);
@@ -84,7 +84,7 @@ QSize SlideContainer::sizeHint() const
     if (mContent) {
         return mContent->sizeHint();
     } else {
-        return QSize();
+        return {};
     }
 }
 
@@ -93,7 +93,7 @@ QSize SlideContainer::minimumSizeHint() const
     if (mContent) {
         return mContent->minimumSizeHint();
     } else {
-        return QSize();
+        return {};
     }
 }
 

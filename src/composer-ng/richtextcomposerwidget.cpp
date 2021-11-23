@@ -14,9 +14,7 @@ using namespace KPIMTextEdit;
 class Q_DECL_HIDDEN KPIMTextEdit::RichTextComposerWidgetPrivate
 {
 public:
-    RichTextComposerWidgetPrivate()
-    {
-    }
+    RichTextComposerWidgetPrivate() = default;
 
     KPIMTextEdit::RichTextComposer *richTextComposer = nullptr;
 };

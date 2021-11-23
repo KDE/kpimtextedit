@@ -130,7 +130,7 @@ void RichTextComposer::clearDecorator()
 
 void RichTextComposer::createHighlighter()
 {
-    KPIMTextEdit::RichTextComposerEmailQuoteHighlighter *highlighter = new KPIMTextEdit::RichTextComposerEmailQuoteHighlighter(this);
+    auto highlighter = new KPIMTextEdit::RichTextComposerEmailQuoteHighlighter(this);
     highlighter->toggleSpellHighlighting(checkSpellingEnabled());
     setHighlighterColors(highlighter);
     setHighlighter(highlighter);
@@ -534,7 +534,7 @@ void RichTextComposer::insertFromMimeData(const QMimeData *source)
 {
     // Add an image if that is on the clipboard
     if (textMode() == RichTextComposer::Rich && source->hasImage()) {
-        const QImage image = qvariant_cast<QImage>(source->imageData());
+        const auto image = qvariant_cast<QImage>(source->imageData());
         QFileInfo fi;
         d->composerControler->composerImages()->insertImage(image, fi);
         return;

@@ -20,9 +20,7 @@ TextToSpeechConfigGui::TextToSpeechConfigGui(QWidget *parent)
     hbox->addWidget(widget);
 }
 
-TextToSpeechConfigGui::~TextToSpeechConfigGui()
-{
-}
+TextToSpeechConfigGui::~TextToSpeechConfigGui() = default;
 
 int main(int argc, char **argv)
 {

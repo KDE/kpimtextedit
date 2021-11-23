@@ -14,9 +14,7 @@ EmoticonUnicodeProxyModel::EmoticonUnicodeProxyModel(QObject *parent)
     setFilterRole(EmoticonUnicodeModel::UnicodeEmoji);
 }
 
-EmoticonUnicodeProxyModel::~EmoticonUnicodeProxyModel()
-{
-}
+EmoticonUnicodeProxyModel::~EmoticonUnicodeProxyModel() = default;
 
 bool EmoticonUnicodeProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
@@ -24,8 +22,7 @@ bool EmoticonUnicodeProxyModel::filterAcceptsRow(int source_row, const QModelInd
         return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
     }
     const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
-    const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category =
-        sourceIndex.data(EmoticonUnicodeModel::Category).value<EmoticonUnicodeUtils::EmoticonStruct::EmoticonType>();
+    const auto category = sourceIndex.data(EmoticonUnicodeModel::Category).value<EmoticonUnicodeUtils::EmoticonStruct::EmoticonType>();
     if (mCategories == category) {
         return true;
     }

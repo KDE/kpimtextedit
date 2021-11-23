@@ -19,9 +19,7 @@ using namespace KPIMTextEdit;
 class Q_DECL_HIDDEN KPIMTextEdit::RichTextEditorWidgetPrivate
 {
 public:
-    RichTextEditorWidgetPrivate()
-    {
-    }
+    RichTextEditorWidgetPrivate() = default;
 
     KPIMTextEdit::RichTextEditFindBar *mFindBar = nullptr;
     RichTextEditor *mEditor = nullptr;

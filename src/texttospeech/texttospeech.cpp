@@ -19,9 +19,7 @@ TextToSpeech::TextToSpeech(QObject *parent)
     reloadSettings();
 }
 
-TextToSpeech::~TextToSpeech()
-{
-}
+TextToSpeech::~TextToSpeech() = default;
 
 void TextToSpeech::reloadSettings()
 {

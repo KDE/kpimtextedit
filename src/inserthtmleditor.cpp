@@ -39,9 +39,7 @@ InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
     mTextEditorCompleter->setExcludeOfCharacters(QStringLiteral("~!@#$%^&*()+{}|,./;'[]\\-= "));
 }
 
-InsertHtmlEditor::~InsertHtmlEditor()
-{
-}
+InsertHtmlEditor::~InsertHtmlEditor() = default;
 
 void InsertHtmlEditor::keyPressEvent(QKeyEvent *e)
 {
