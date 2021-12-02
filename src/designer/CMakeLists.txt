@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: BSD-3-Clause
 include(ECMAddQtDesignerPlugin)
 ecm_qtdesignerplugin_widget(KPIMTextEdit::RichTextEditorWidget
     INCLUDE_FILE "KPIMTextEdit/RichTextEditorWidget"

@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: BSD-3-Clause
 macro(add_kpimtextedit_texttospeech_unittest _source)
     ecm_add_test(${_source}
         NAME_PREFIX "kpimtextedit-texttospeech-"

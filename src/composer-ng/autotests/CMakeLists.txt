@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: BSD-3-Clause
 macro(add_composer_ng_test _source)
     ecm_add_test(${_source}
         NAME_PREFIX "kpimtextedit-composerng-"

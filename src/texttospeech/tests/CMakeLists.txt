@@ -1,23 +1,21 @@
-set(texttospeechwidget_gui_SRCS texttospeechwidget_gui.cpp)
-add_executable(texttospeechwidget_gui ${texttospeechwidget_gui_SRCS})
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: BSD-3-Clause
+add_executable(texttospeechwidget_gui texttospeechwidget_gui.cpp)
 target_link_libraries(texttospeechwidget_gui
     KF5::PimTextEdit KF5::CoreAddons Qt::Widgets KF5::I18n
     )
 
-set(texttospeechgui_SRCS texttospeechgui.cpp)
-add_executable(texttospeechgui ${texttospeechgui_SRCS})
+add_executable(texttospeechgui texttospeechgui.cpp)
 target_link_libraries(texttospeechgui
     KF5::PimTextEdit KF5::CoreAddons Qt::Widgets KF5::I18n
     )
 
-set(texttospeechconfiggui_SRCS texttospeechconfiggui.cpp)
-add_executable(texttospeechconfiggui ${texttospeechconfiggui_SRCS})
+add_executable(texttospeechconfiggui texttospeechconfiggui.cpp)
 target_link_libraries(texttospeechconfiggui
     KF5::PimTextEdit KF5::CoreAddons Qt::Widgets KF5::I18n
     )
 
-set(texttospeechconfigdialoggui_SRCS texttospeechconfigdialoggui.cpp)
-add_executable(texttospeechconfigdialoggui ${texttospeechconfigdialoggui_SRCS})
+add_executable(texttospeechconfigdialoggui texttospeechconfigdialoggui.cpp)
 target_link_libraries(texttospeechconfigdialoggui
     KF5::PimTextEdit KF5::CoreAddons Qt::Widgets KF5::I18n
     )

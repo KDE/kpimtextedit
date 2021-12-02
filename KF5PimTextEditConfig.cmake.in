@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2014 Christophe Giboudeaux <cgiboudeaux@gmx.com>
+# SPDX-License-Identifier: BSD-3-Clause
+
 @PACKAGE_INIT@
 include(CMakeFindDependencyMacro)
 find_dependency(KF5TextWidgets "@KF5_MIN_VERSION@")

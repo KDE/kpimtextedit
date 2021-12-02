@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: BSD-3-Clause
 include(ECMAddTests)
 
 ecm_add_tests( textutilstest.cpp  editorutiltest.cpp emoticonunicodetabtest.cpp NAME_PREFIX "kpimtextedit-" LINK_LIBRARIES Qt::Test Qt::Widgets KF5::Codecs KF5PimTextEdit KF5::TextWidgets KF5::XmlGui)

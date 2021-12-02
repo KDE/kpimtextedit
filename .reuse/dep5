@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: kpimtextedit
+Upstream-Contact: Montel Laurent <montel@kde.org>
+Source: https://invent.kde.org/pim/kpimtextedit
+
+Files: Mainpage.dox src/grantleebuilder/autotests/data/object-fill.svg src/grantleebuilder/autotests/sourcehtml
+Copyright: none
+License: CC0-1.0
