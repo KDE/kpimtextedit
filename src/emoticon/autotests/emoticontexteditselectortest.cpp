@@ -22,7 +22,7 @@ void EmoticonTextEditSelectorTest::shouldHaveDefaultValues()
     KPIMTextEdit::EmoticonTextEditSelector w;
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
-    QCOMPARE(mainLayout->contentsMargins(), {});
+    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
     auto mUnicodeTab = w.findChild<KPIMTextEdit::EmoticonUnicodeTab *>(QStringLiteral("mUnicodeTab"));
     QVERIFY(mUnicodeTab);
