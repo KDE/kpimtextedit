@@ -15,6 +15,7 @@
 #include <KSharedConfig>
 #include <KStandardAction>
 #include <KStandardGuiItem>
+#include <QActionGroup>
 #include <QIcon>
 
 #include "texttospeech/texttospeech.h"
