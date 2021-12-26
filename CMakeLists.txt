@@ -45,7 +45,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KPIMTEXTEDIT
 )
 
 set(QT_REQUIRED_VERSION "5.15.2")
-find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
 
 ########### Find packages ###########
 find_package(KF5Config ${KF5_MIN_VERSION} CONFIG REQUIRED)
@@ -82,12 +82,16 @@ set_package_properties(Qt5TextToSpeech PROPERTIES DESCRIPTION
     TYPE OPTIONAL
 )
 if(TARGET Qt5::TextToSpeech)
-    set(HAVE_TEXT_TO_SPEECH_SUPPORT TRUE)
-    add_definitions(-DHAVE_TEXT_TO_SPEECH_SUPPORT)
+	set(HAVE_TEXT_TO_SPEECH_SUPPORT FALSE)
+	#add_definitions(-DHAVE_TEXT_TO_SPEECH_SUPPORT)
+endif()
+
+if (QT_MAJOR_VERSION STREQUAL "6")
+    find_package(Qt6Core5Compat)
 endif()
 
 if(BUILD_TESTING)
-   find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
+   find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
    add_definitions(-DBUILD_TESTING)
 endif()
 
@@ -124,7 +128,7 @@ install(EXPORT KF5PimTextEditTargets
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}
     COMPONENT Devel
     )
 

@@ -153,7 +153,7 @@ endif()
 generate_export_header(KF5PimTextEdit BASE_NAME kpimtextedit)
 
 
-target_include_directories(KF5PimTextEdit INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit;>")
+target_include_directories(KF5PimTextEdit INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit;>")
 target_include_directories(KF5PimTextEdit PUBLIC "$<BUILD_INTERFACE:${KPimTextEdit_SOURCE_DIR}/src;${KPimTextEdit_BINARY_DIR}/src>")
 
 
@@ -277,12 +277,12 @@ ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
 if (HAVE_TEXT_TO_SPEECH_SUPPORT)
     install(FILES
         ${KPimTextEdit_texttospeechs_HEADERS}
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit/kpimtextedit
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit/kpimtextedit
         COMPONENT Devel
         )
     install(FILES
         ${KPimTextEdit_CamelCasetexttospeechs_HEADERS}
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit/KPIMTextEdit/
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit/KPIMTextEdit/
         COMPONENT Devel
         )
 endif()
@@ -296,7 +296,7 @@ install(FILES
     ${KPimTextEdit_composerng_HEADERS}
     ${KPimTextEdit_emoticon_HEADERS}
     ${KPimTextEdit_grantlee_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit/kpimtextedit
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit/kpimtextedit
     COMPONENT Devel
     )
 
@@ -308,11 +308,11 @@ install(FILES
     ${KPimTextEdit_Camelcasecomposerng_HEADERS}
     ${KPimTextEdit_CamelCaseemoticon_HEADERS}
     ${KPimTextEdit_CamelCasegrantlee_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit/KPIMTextEdit/
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit/KPIMTextEdit/
     COMPONENT Devel
     )
 
-ecm_generate_pri_file(BASE_NAME KPIMTextEdit LIB_NAME KF5PimTextEdit DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit/)
+ecm_generate_pri_file(BASE_NAME KPIMTextEdit LIB_NAME KF5PimTextEdit DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit/)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 if (BUILD_TESTING)
