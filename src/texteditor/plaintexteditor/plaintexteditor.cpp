@@ -18,7 +18,9 @@
 #include <QActionGroup>
 #include <QIcon>
 
+#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
 #include "texttospeech/texttospeech.h"
+#endif
 #include <Sonnet/Dialog>
 #include <sonnet/backgroundchecker.h>
 
@@ -181,6 +183,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
             }
         }
         if (d->supportFeatures & TextToSpeech) {
+#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
             if (KPIMTextEdit::TextToSpeech::self()->isReady()) {
                 if (!emptyDocument) {
                     QAction *speakAction = popup->addAction(i18n("Speak Text"));
@@ -188,6 +191,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
                     connect(speakAction, &QAction::triggered, this, &PlainTextEditor::slotSpeakText);
                 }
             }
+#endif
         }
         if (webShortcutSupport() && textCursor().hasSelection()) {
             popup->addSeparator();

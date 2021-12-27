@@ -10,8 +10,9 @@
 
 #include <QTextCursor>
 #include <QVBoxLayout>
+#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
 #include <texttospeech/texttospeechwidget.h>
-
+#endif
 #include "slidecontainer.h"
 
 using namespace KPIMTextEdit;
@@ -23,7 +24,9 @@ public:
 
     KPIMTextEdit::RichTextEditFindBar *mFindBar = nullptr;
     RichTextEditor *mEditor = nullptr;
+#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
     KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
+#endif
     KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
 };
 
@@ -97,14 +100,18 @@ void RichTextEditorWidget::init(RichTextEditor *customEditor)
 {
     auto lay = new QVBoxLayout(this);
     lay->setContentsMargins({});
+#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
     d->mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
     lay->addWidget(d->mTextToSpeechWidget);
+#endif
     if (customEditor) {
         d->mEditor = customEditor;
     } else {
         d->mEditor = new RichTextEditor;
     }
+#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
     connect(d->mEditor, &RichTextEditor::say, d->mTextToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::say);
+#endif
     lay->addWidget(d->mEditor);
 
     d->mSliderContainer = new KPIMTextEdit::SlideContainer(this);

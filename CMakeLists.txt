@@ -76,7 +76,15 @@ add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f02)
 add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055A00)
 
 
-find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS TextToSpeech)
+find_package(Qt5TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
+set_package_properties(Qt5TextToSpeech PROPERTIES DESCRIPTION
+    "Add support for texttospeed"
+    TYPE OPTIONAL
+)
+if(TARGET Qt5::TextToSpeech)
+    set(HAVE_TEXT_TO_SPEECH_SUPPORT TRUE)
+    add_definitions(-DHAVE_TEXT_TO_SPEECH_SUPPORT)
+endif()
 
 if(BUILD_TESTING)
    find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)

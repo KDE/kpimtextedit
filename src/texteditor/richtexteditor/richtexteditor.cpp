@@ -26,7 +26,9 @@
 #include <sonnet/backgroundchecker.h>
 #include <sonnet/spellcheckdecorator.h>
 #include <sonnet/speller.h>
+#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
 #include <texttospeech/texttospeech.h>
+#endif
 
 #include <QApplication>
 #include <QClipboard>
@@ -247,7 +249,7 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
             allowTabAction->setChecked(!tabChangesFocus());
             connect(allowTabAction, &QAction::triggered, this, &RichTextEditor::slotAllowTab);
         }
-
+#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
         if (KPIMTextEdit::TextToSpeech::self()->isReady()) {
             if (!emptyDocument) {
                 QAction *speakAction = popup->addAction(i18n("Speak Text"));
@@ -255,6 +257,7 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
                 connect(speakAction, &QAction::triggered, this, &RichTextEditor::slotSpeakText);
             }
         }
+#endif
         if (webShortcutSupport() && textCursor().hasSelection()) {
             popup->addSeparator();
             const QString selectedText = textCursor().selectedText();

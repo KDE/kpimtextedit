@@ -53,7 +53,7 @@ target_sources(KF5PimTextEdit PRIVATE
     composer-ng/richtextcomposeremailquotehighlighter.h
     composer-ng/richtextcomposerwidget.h
     )
-
+if (HAVE_TEXT_TO_SPEECH_SUPPORT)
 target_sources(KF5PimTextEdit PRIVATE
     texttospeech/texttospeech.cpp
     texttospeech/texttospeechwidget.cpp
@@ -76,6 +76,7 @@ target_sources(KF5PimTextEdit PRIVATE
     texttospeech/texttospeechlanguagecombobox.h
     texttospeech/texttospeechactions.h
     )
+endif()
 
 target_sources(KF5PimTextEdit PRIVATE
     grantleebuilder/plaintextmarkupbuilder.cpp
@@ -168,7 +169,12 @@ target_link_libraries(KF5PimTextEdit
     KF5::SyntaxHighlighting
     Qt::TextToSpeech
     )
-
+if (HAVE_TEXT_TO_SPEECH_SUPPORT)
+    target_link_libraries(KF5PimTextEdit
+        PRIVATE
+        Qt::TextToSpeech
+        )
+endif()
 set_target_properties(KF5PimTextEdit PROPERTIES
     VERSION ${KPIMTEXTEDIT_VERSION}
     SOVERSION ${KPIMTEXTEDIT_SOVERSION}
@@ -240,7 +246,7 @@ ecm_generate_headers(KPimTextEdit_CamelCasetexteditor_commonwidget_HEADERS
     )
 
 
-
+if (HAVE_TEXT_TO_SPEECH_SUPPORT)
 ecm_generate_headers(KPimTextEdit_CamelCasetexttospeechs_HEADERS
     HEADER_NAMES
     TextToSpeech
@@ -252,7 +258,7 @@ ecm_generate_headers(KPimTextEdit_CamelCasetexttospeechs_HEADERS
     PREFIX KPIMTextEdit
     RELATIVE texttospeech
     )
-
+endif()
 ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
     HEADER_NAMES
     RichTextComposer
@@ -269,11 +275,22 @@ ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
 
 
 ########### install files ###############
+if (HAVE_TEXT_TO_SPEECH_SUPPORT)
+    install(FILES
+        ${KPimTextEdit_texttospeechs_HEADERS}
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit/kpimtextedit
+        COMPONENT Devel
+        )
+    install(FILES
+        ${KPimTextEdit_CamelCasetexttospeechs_HEADERS}
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KPIMTextEdit/KPIMTextEdit/
+        COMPONENT Devel
+        )
+endif()
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_export.h
     ${kpimtextedit_HEADERS}
-    ${KPimTextEdit_texttospeechs_HEADERS}
     ${KPimTextEdit_richtexteditor_HEADERS}
     ${KPimTextEdit_texteditor_commonwidget_HEADERS}
     ${KPimTextEdit_plaintexteditor_HEADERS}
@@ -288,7 +305,6 @@ install(FILES
     ${KPimTextEdit_CamelCase_HEADERS}
     ${KPimTextEdit_CamelCasetextrichtexteditor_HEADERS}
     ${KPimTextEdit_CamelCaseplaintexteditor_HEADERS}
-    ${KPimTextEdit_CamelCasetexttospeechs_HEADERS}
     ${KPimTextEdit_CamelCasetexteditor_commonwidget_HEADERS}
     ${KPimTextEdit_Camelcasecomposerng_HEADERS}
     ${KPimTextEdit_CamelCaseemoticon_HEADERS}
@@ -306,8 +322,10 @@ if (BUILD_TESTING)
     add_subdirectory(texteditor/commonwidget/autotests)
     add_subdirectory(texteditor/plaintexteditor/tests)
     add_subdirectory(texteditor/richtexteditor/tests)
-    add_subdirectory(texttospeech/autotests)
-    add_subdirectory(texttospeech/tests)
+    if (HAVE_TEXT_TO_SPEECH_SUPPORT)
+        add_subdirectory(texttospeech/autotests)
+        add_subdirectory(texttospeech/tests)
+    endif()
     add_subdirectory(composer-ng/autotests)
     add_subdirectory(composer-ng/tests)
     add_subdirectory(grantleebuilder/autotests)
