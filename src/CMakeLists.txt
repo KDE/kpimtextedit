@@ -167,7 +167,6 @@ target_link_libraries(KF5PimTextEdit
     KF5::XmlGui
     KF5::I18n
     KF5::SyntaxHighlighting
-    Qt::TextToSpeech
     )
 if (HAVE_TEXT_TO_SPEECH_SUPPORT)
     target_link_libraries(KF5PimTextEdit
