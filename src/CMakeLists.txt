@@ -54,27 +54,27 @@ target_sources(KF5PimTextEdit PRIVATE
     composer-ng/richtextcomposerwidget.h
     )
 if (HAVE_TEXT_TO_SPEECH_SUPPORT)
-target_sources(KF5PimTextEdit PRIVATE
-    texttospeech/texttospeech.cpp
-    texttospeech/texttospeechwidget.cpp
-    texttospeech/texttospeechconfigwidget.cpp
-    texttospeech/texttospeechinterface.cpp
-    texttospeech/abstracttexttospeechinterface.cpp
-    texttospeech/abstracttexttospeechconfiginterface.cpp
-    texttospeech/texttospeechconfiginterface.cpp
-    texttospeech/texttospeechconfigdialog.cpp
-    texttospeech/texttospeechlanguagecombobox.cpp
-    texttospeech/texttospeechactions.cpp
-    texttospeech/texttospeech.h
-    texttospeech/texttospeechwidget.h
-    texttospeech/texttospeechconfigwidget.h
-    texttospeech/texttospeechinterface.h
-    texttospeech/abstracttexttospeechinterface.h
-    texttospeech/abstracttexttospeechconfiginterface.h
-    texttospeech/texttospeechconfiginterface.h
-    texttospeech/texttospeechconfigdialog.h
-    texttospeech/texttospeechlanguagecombobox.h
-    texttospeech/texttospeechactions.h
+    target_sources(KF5PimTextEdit PRIVATE
+        texttospeech/texttospeech.cpp
+        texttospeech/texttospeechwidget.cpp
+        texttospeech/texttospeechconfigwidget.cpp
+        texttospeech/texttospeechinterface.cpp
+        texttospeech/abstracttexttospeechinterface.cpp
+        texttospeech/abstracttexttospeechconfiginterface.cpp
+        texttospeech/texttospeechconfiginterface.cpp
+        texttospeech/texttospeechconfigdialog.cpp
+        texttospeech/texttospeechlanguagecombobox.cpp
+        texttospeech/texttospeechactions.cpp
+        texttospeech/texttospeech.h
+        texttospeech/texttospeechwidget.h
+        texttospeech/texttospeechconfigwidget.h
+        texttospeech/texttospeechinterface.h
+        texttospeech/abstracttexttospeechinterface.h
+        texttospeech/abstracttexttospeechconfiginterface.h
+        texttospeech/texttospeechconfiginterface.h
+        texttospeech/texttospeechconfigdialog.h
+        texttospeech/texttospeechlanguagecombobox.h
+        texttospeech/texttospeechactions.h
     )
 endif()
 
@@ -246,16 +246,16 @@ ecm_generate_headers(KPimTextEdit_CamelCasetexteditor_commonwidget_HEADERS
 
 
 if (HAVE_TEXT_TO_SPEECH_SUPPORT)
-ecm_generate_headers(KPimTextEdit_CamelCasetexttospeechs_HEADERS
-    HEADER_NAMES
-    TextToSpeech
-    TextToSpeechActions
-    TextToSpeechInterface
-    TextToSpeechWidget
-    AbstractTextToSpeechInterface
-    REQUIRED_HEADERS KPimTextEdit_texttospeechs_HEADERS
-    PREFIX KPIMTextEdit
-    RELATIVE texttospeech
+    ecm_generate_headers(KPimTextEdit_CamelCasetexttospeechs_HEADERS
+        HEADER_NAMES
+        TextToSpeech
+        TextToSpeechActions
+        TextToSpeechInterface
+        TextToSpeechWidget
+        AbstractTextToSpeechInterface
+        REQUIRED_HEADERS KPimTextEdit_texttospeechs_HEADERS
+        PREFIX KPIMTextEdit
+        RELATIVE texttospeech
     )
 endif()
 ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
@@ -356,8 +356,6 @@ if (BUILD_QCH)
             ${KPimTextEdit_composerng_HEADERS}
             ${KPimTextEdit_emoticon_HEADERS}
             ${KPimTextEdit_grantlee_HEADERS}
-        #MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
-        #IMAGE_DIRS "${CMAKE_SOURCE_DIR}/docs/pics"
         LINK_QCHS
             Qt5Core_QCH
             Qt5Gui_QCH
