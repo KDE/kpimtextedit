@@ -82,8 +82,8 @@ set_package_properties(Qt5TextToSpeech PROPERTIES DESCRIPTION
     TYPE OPTIONAL
 )
 if(TARGET Qt5::TextToSpeech)
-	set(HAVE_TEXT_TO_SPEECH_SUPPORT FALSE)
-	#add_definitions(-DHAVE_TEXT_TO_SPEECH_SUPPORT)
+        set(HAVE_TEXT_TO_SPEECH_SUPPORT TRUE)
+	add_definitions(-DHAVE_TEXT_TO_SPEECH_SUPPORT)
 endif()
 
 if (QT_MAJOR_VERSION STREQUAL "6")
