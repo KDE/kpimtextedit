@@ -81,7 +81,7 @@ set_package_properties(Qt5TextToSpeech PROPERTIES DESCRIPTION
     "Add support for texttospeed"
     TYPE OPTIONAL
 )
-if(TARGET Qt5::TextToSpeech)
+if(TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
         set(HAVE_TEXT_TO_SPEECH_SUPPORT TRUE)
 	add_definitions(-DHAVE_TEXT_TO_SPEECH_SUPPORT)
 endif()
