@@ -128,7 +128,7 @@ install(EXPORT KF5PimTextEditTargets
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit
     COMPONENT Devel
     )
 
