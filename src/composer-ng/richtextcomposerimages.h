@@ -96,7 +96,7 @@ public:
      *
      * @return a modified HTML code, where the \<img\> tags got replaced
      */
-    static Q_REQUIRED_RESULT QByteArray imageNamesToContentIds(const QByteArray &htmlBody, const ImageList &imageList);
+    Q_REQUIRED_RESULT static QByteArray imageNamesToContentIds(const QByteArray &htmlBody, const ImageList &imageList);
 
     Q_REQUIRED_RESULT QSharedPointer<EmbeddedImage> createEmbeddedImage(const QImage &img, const QString &imageName) const;
 
