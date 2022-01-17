@@ -20,9 +20,9 @@ public:
     explicit AbstractTextToSpeechInterface(QObject *parent = nullptr);
     ~AbstractTextToSpeechInterface() override;
 
-    virtual Q_REQUIRED_RESULT bool isReady() const;
+    Q_REQUIRED_RESULT virtual bool isReady() const;
     virtual void say(const QString &text);
-    virtual Q_REQUIRED_RESULT int volume() const;
+    Q_REQUIRED_RESULT virtual int volume() const;
     virtual void setVolume(int value);
     virtual void reloadSettings();
 };
