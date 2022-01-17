@@ -20,7 +20,7 @@ namespace KPIMTextEdit
 class InsertImageDialogPrivate
 {
 public:
-    InsertImageDialogPrivate(InsertImageDialog *qq)
+    explicit InsertImageDialogPrivate(InsertImageDialog *qq)
         : q(qq)
     {
         auto vbox = new QVBoxLayout(q);

@@ -23,7 +23,7 @@ namespace KPIMTextEdit
 class TableActionMenuPrivate
 {
 public:
-    TableActionMenuPrivate(QTextEdit *edit, TableActionMenu *qq)
+    explicit TableActionMenuPrivate(QTextEdit *edit, TableActionMenu *qq)
         : textEdit(edit)
         , q(qq)
     {

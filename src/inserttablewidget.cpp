@@ -19,7 +19,7 @@ using namespace KPIMTextEdit;
 class InsertTableWidget::InsertTableWidgetPrivate
 {
 public:
-    InsertTableWidgetPrivate(InsertTableWidget *qq)
+    explicit InsertTableWidgetPrivate(InsertTableWidget *qq)
         : q(qq)
     {
         mRows = new QSpinBox;

@@ -22,7 +22,7 @@ using namespace KPIMTextEdit;
 class TableCellFormatDialog::TableCellFormatDialogPrivate
 {
 public:
-    TableCellFormatDialogPrivate(TableCellFormatDialog *qq)
+    explicit TableCellFormatDialogPrivate(TableCellFormatDialog *qq)
         : q(qq)
     {
         q->setWindowTitle(i18nc("@title:window", "Cell Format"));

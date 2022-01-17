@@ -23,7 +23,7 @@ namespace KPIMTextEdit
 class InsertHtmlDialogPrivate
 {
 public:
-    InsertHtmlDialogPrivate(InsertHtmlDialog *qq)
+    explicit InsertHtmlDialogPrivate(InsertHtmlDialog *qq)
         : q(qq)
     {
         q->setWindowTitle(i18nc("@title:window", "Insert HTML"));
