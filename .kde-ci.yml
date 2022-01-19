@@ -6,7 +6,6 @@ Dependencies:
   'require':
     'frameworks/extra-cmake-modules': '@latest'
     'third-party/grantlee' : '@stable'
-    'frameworks/kdesignerplugin' : '@latest'
     'frameworks/kconfig': '@latest'
     'frameworks/kconfigwidgets': '@latest'
     'frameworks/kcoreaddons': '@latest'
