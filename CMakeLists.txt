@@ -73,7 +73,7 @@ add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Des
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
 
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f02)
-add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055A00)
+add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055B00)
 
 
 find_package(Qt5TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
