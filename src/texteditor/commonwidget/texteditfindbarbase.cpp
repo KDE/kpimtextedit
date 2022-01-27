@@ -7,7 +7,6 @@
 #include "texteditfindbarbase.h"
 #include "kpimtextedit_debug.h"
 #include "texteditor/commonwidget/textfindreplacewidget.h"
-#include <KColorScheme>
 #include <KLocalizedString>
 #include <QEvent>
 #include <QHBoxLayout>
