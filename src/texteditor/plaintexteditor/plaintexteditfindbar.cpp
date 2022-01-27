@@ -8,7 +8,6 @@
 #include "texteditor/commonwidget/findutils.h"
 #include "texteditor/commonwidget/textfindreplacewidget.h"
 
-#include <KColorScheme>
 #include <KLocalizedString>
 
 #include <QLineEdit>
