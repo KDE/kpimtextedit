@@ -13,7 +13,6 @@
 #include "emoticonunicodeproxymodel.h"
 #include "textutils.h"
 #include <KLocalizedString>
-#include <QDebug>
 
 using namespace KPIMTextEdit;
 EmoticonUnicodeTab::EmoticonUnicodeTab(QWidget *parent)

@@ -5,7 +5,6 @@
 */
 #include "emoticonunicodeproxymodel.h"
 #include "emoticonunicodemodel.h"
-#include <QDebug>
 using namespace KPIMTextEdit;
 EmoticonUnicodeProxyModel::EmoticonUnicodeProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)

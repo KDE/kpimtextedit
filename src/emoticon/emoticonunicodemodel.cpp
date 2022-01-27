@@ -5,7 +5,6 @@
 */
 
 #include "emoticonunicodemodel.h"
-#include <KLocalizedString>
 using namespace KPIMTextEdit;
 EmoticonUnicodeModel::EmoticonUnicodeModel(QObject *parent)
     : QAbstractListModel(parent)
