@@ -12,7 +12,7 @@ Dependencies:
     'frameworks/ki18n': '@latest'
     'frameworks/kiconthemes': '@latest'
     'frameworks/kio': '@latest'
-    'frameworks/ksonnet': '@latest'
+    'frameworks/sonnet': '@latest'
     'frameworks/syntax-highlighting': '@latest'
     'frameworks/kwidgetsaddons': '@latest'
     'frameworks/kxmlgui': '@latest'
