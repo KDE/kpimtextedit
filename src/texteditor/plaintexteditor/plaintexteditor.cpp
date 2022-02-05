@@ -35,7 +35,7 @@
 
 #include <sonnet/spellcheckdecorator.h>
 
-#include <SonnetCore/sonnet/speller.h>
+#include <sonnet/speller.h>
 
 #include <Sonnet/Highlighter>
 
