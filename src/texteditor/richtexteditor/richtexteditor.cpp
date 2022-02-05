@@ -22,7 +22,6 @@
 #include <KIO/KUriFilterSearchProviderActions>
 #include <Sonnet/Dialog>
 #include <Sonnet/Highlighter>
-#include <SonnetCore/sonnet/backgroundchecker.h>
 #include <sonnet/backgroundchecker.h>
 #include <sonnet/spellcheckdecorator.h>
 #include <sonnet/speller.h>
