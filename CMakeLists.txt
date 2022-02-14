@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: none
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
-set(PIM_VERSION "5.19.40")
+set(PIM_VERSION "5.19.41")
 
 project(KPimTextEdit VERSION ${PIM_VERSION})
 
@@ -82,9 +82,12 @@ set_package_properties(Qt5TextToSpeech PROPERTIES DESCRIPTION
     TYPE OPTIONAL
 )
 if(TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
-        set(HAVE_TEXT_TO_SPEECH_SUPPORT TRUE)
-	add_definitions(-DHAVE_TEXT_TO_SPEECH_SUPPORT)
+    add_definitions(-DHAVE_TEXT_TO_SPEECH_SUPPORT)
+    set(KPIMTEXTEDIT_TEXT_TO_SPEECH TRUE)
 endif()
+
+configure_file(kpimtextedit-texttospeech.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit-texttospeech.h )
+
 
 if (QT_MAJOR_VERSION STREQUAL "6")
     find_package(Qt6Core5Compat)

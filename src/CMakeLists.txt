@@ -53,7 +53,7 @@ target_sources(KF5PimTextEdit PRIVATE
     composer-ng/richtextcomposeremailquotehighlighter.h
     composer-ng/richtextcomposerwidget.h
     )
-if (HAVE_TEXT_TO_SPEECH_SUPPORT)
+if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
     target_sources(KF5PimTextEdit PRIVATE
         texttospeech/texttospeech.cpp
         texttospeech/texttospeechwidget.cpp
@@ -168,7 +168,7 @@ target_link_libraries(KF5PimTextEdit
     KF5::I18n
     KF5::SyntaxHighlighting
     )
-if (HAVE_TEXT_TO_SPEECH_SUPPORT)
+if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
     target_link_libraries(KF5PimTextEdit
         PRIVATE
         Qt${QT_MAJOR_VERSION}::TextToSpeech
@@ -245,7 +245,7 @@ ecm_generate_headers(KPimTextEdit_CamelCasetexteditor_commonwidget_HEADERS
     )
 
 
-if (HAVE_TEXT_TO_SPEECH_SUPPORT)
+if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
     ecm_generate_headers(KPimTextEdit_CamelCasetexttospeechs_HEADERS
         HEADER_NAMES
         TextToSpeech
@@ -274,7 +274,7 @@ ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
 
 
 ########### install files ###############
-if (HAVE_TEXT_TO_SPEECH_SUPPORT)
+if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
     install(FILES
         ${KPimTextEdit_texttospeechs_HEADERS}
         DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit/kpimtextedit
@@ -289,6 +289,7 @@ endif()
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_export.h
+    ${CMAKE_CURRENT_BINARY_DIR}/../kpimtextedit-texttospeech.h
     ${kpimtextedit_HEADERS}
     ${KPimTextEdit_richtexteditor_HEADERS}
     ${KPimTextEdit_texteditor_commonwidget_HEADERS}
@@ -321,7 +322,7 @@ if (BUILD_TESTING)
     add_subdirectory(texteditor/commonwidget/autotests)
     add_subdirectory(texteditor/plaintexteditor/tests)
     add_subdirectory(texteditor/richtexteditor/tests)
-    if (HAVE_TEXT_TO_SPEECH_SUPPORT)
+    if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
         add_subdirectory(texttospeech/autotests)
         add_subdirectory(texttospeech/tests)
     endif()

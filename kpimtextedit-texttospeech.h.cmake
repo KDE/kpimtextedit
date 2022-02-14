@@ -1,0 +1,2 @@
+#cmakedefine01 KPIMTEXTEDIT_TEXT_TO_SPEECH 
+
