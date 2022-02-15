@@ -29,6 +29,7 @@ kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 
 include(ECMAddTests)
 include(ECMQtDeclareLoggingCategory)
+include(ECMDeprecationSettings)
 
 include(ECMAddQch)
 
@@ -72,8 +73,8 @@ add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Des
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
 
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f02)
-add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055B00)
+ecm_set_disabled_deprecation_versions(QT 5.15.2 KF 5.91.0)
+
 
 
 find_package(Qt5TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
