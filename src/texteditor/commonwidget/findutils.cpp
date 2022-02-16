@@ -36,3 +36,30 @@ int FindUtils::replaceAll(QTextDocument *document, const TextFindWidget *findWid
     c.endEditBlock();
     return count;
 }
+
+// code from kitinerary/src/lib/stringutil.cpp
+QChar FindUtils::normalize(QChar c)
+{
+    // case folding
+    const auto n = c.toCaseFolded();
+
+    // if the character has a canonical decomposition use that and skip the
+    // combining diacritic markers following it
+    // see https://en.wikipedia.org/wiki/Unicode_equivalence
+    // see https://en.wikipedia.org/wiki/Combining_character
+    if (n.decompositionTag() == QChar::Canonical) {
+        return n.decomposition().at(0);
+    }
+
+    return n;
+}
+
+QString FindUtils::normalize(QStringView str)
+{
+    QString out;
+    out.reserve(str.size());
+    for (const auto c : str) {
+        out.push_back(normalize(c));
+    }
+    return out;
+}

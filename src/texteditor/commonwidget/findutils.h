@@ -6,8 +6,9 @@
 
 #pragma once
 
+#include <QChar>
+#include <QStringView>
 #include <qglobal.h>
-
 class QTextDocument;
 
 namespace KPIMTextEdit
@@ -24,6 +25,8 @@ namespace FindUtils
  * @return number of replacements done
  */
 Q_REQUIRED_RESULT int replaceAll(QTextDocument *document, const TextFindWidget *findWidget, const TextReplaceWidget *replaceWidget);
+Q_REQUIRED_RESULT QString normalize(QStringView str);
+Q_REQUIRED_RESULT QChar normalize(QChar c);
 }
 } // namespace KPIMTextEdit
 
