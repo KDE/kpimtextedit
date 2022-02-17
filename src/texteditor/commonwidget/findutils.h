@@ -10,7 +10,7 @@
 #include <QStringView>
 #include <qglobal.h>
 class QTextDocument;
-
+class QPlainTextEdit;
 namespace KPIMTextEdit
 {
 class TextFindWidget;
@@ -28,7 +28,7 @@ Q_REQUIRED_RESULT int replaceAll(QTextDocument *document, const TextFindWidget *
 
 Q_REQUIRED_RESULT QString normalize(QStringView str);
 Q_REQUIRED_RESULT QChar normalize(QChar c);
-Q_REQUIRED_RESULT bool find(QTextDocument *document, const TextFindWidget *findWidget);
+Q_REQUIRED_RESULT bool find(QPlainTextEdit *view, const TextFindWidget *findWidget);
 }
 } // namespace KPIMTextEdit
 
