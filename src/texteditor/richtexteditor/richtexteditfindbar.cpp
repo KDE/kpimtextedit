@@ -15,6 +15,7 @@
 #include <QTextEdit>
 
 using namespace KPIMTextEdit;
+#define SEARCH_DIACRITIC_WORD 1
 class Q_DECL_HIDDEN KPIMTextEdit::RichTextEditFindBarPrivate
 {
 public:
@@ -52,7 +53,11 @@ bool RichTextEditFindBar::documentIsEmpty() const
 
 bool RichTextEditFindBar::searchInDocument(const QString &text, QTextDocument::FindFlags searchOptions)
 {
+#ifdef SEARCH_DIACRITIC_WORD
+    const bool found = FindUtils::find(d->mView, mFindWidget);
+#else
     const bool found = d->mView->find(text, searchOptions);
+#endif
     mFindWidget->setFoundMatch(found);
     return found;
 }

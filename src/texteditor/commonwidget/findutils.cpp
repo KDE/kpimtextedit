@@ -7,11 +7,13 @@
 #include "findutils.h"
 #include "textfindreplacewidget.h"
 
+#include <QDebug>
 #include <QLineEdit>
 #include <QPlainTextEdit>
 #include <QRegularExpression>
 #include <QTextCursor>
 #include <QTextDocument>
+#include <QTextEdit>
 
 using namespace KPIMTextEdit;
 
@@ -37,8 +39,33 @@ int FindUtils::replaceAll(QTextDocument *document, const TextFindWidget *findWid
     c.endEditBlock();
     return count;
 }
-#include <QDebug>
+
 bool FindUtils::find(QPlainTextEdit *view, const TextFindWidget *findWidget)
+{
+    const QString text = FindUtils::normalize(view->document()->toPlainText());
+    QTextDocument doc(text);
+    QTextCursor c(&doc);
+    QTextCursor docCusor(view->textCursor());
+    c.setPosition(docCusor.position());
+    qDebug() << " docCusor.position() " << docCusor.position();
+    QTextDocument::FindFlags flags = findWidget->searchOptions() & ~QTextDocument::FindBackward;
+    if (findWidget->isRegularExpression()) {
+        c = doc.find(FindUtils::normalize(findWidget->searchText()), c, flags);
+    } else {
+        c = doc.find(FindUtils::normalize(findWidget->searchText()), c, flags);
+    }
+    if (!c.isNull()) {
+        qDebug() << " c.selectionStart() " << c.selectionStart() << "c.selectionEnd() " << c.selectionEnd();
+        docCusor.setPosition(c.selectionStart());
+        docCusor.setPosition(c.selectionEnd(), QTextCursor::KeepAnchor);
+        view->setTextCursor(docCusor);
+        view->ensureCursorVisible();
+        return true;
+    }
+    return false;
+}
+
+bool FindUtils::find(QTextEdit *view, const TextFindWidget *findWidget)
 {
     const QString text = FindUtils::normalize(view->document()->toPlainText());
     QTextDocument doc(text);
