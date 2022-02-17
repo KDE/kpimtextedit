@@ -37,6 +37,29 @@ int FindUtils::replaceAll(QTextDocument *document, const TextFindWidget *findWid
     return count;
 }
 
+bool FindUtils::find(QTextDocument *document, const TextFindWidget *findWidget)
+{
+    // Step 1: search without modify text
+
+    // Step 2: use FindUtils::normalize
+    QTextCursor c(document);
+    // if (document->find())
+    const QString text = FindUtils::normalize(document->toPlainText());
+    QTextDocument doc(text);
+    QTextDocument::FindFlags flags = findWidget->searchOptions() & ~QTextDocument::FindBackward;
+    if (findWidget->isRegularExpression()) {
+        c = document->find(findWidget->searchRegularExpression(), c, flags);
+    } else {
+        c = document->find(findWidget->searchText(), c, flags);
+    }
+    doc.find(findWidget->searchText(), c, flags);
+    if (!c.isNull()) {
+        // setTextCursor(search);
+        return true;
+    }
+    return false;
+}
+
 // code from kitinerary/src/lib/stringutil.cpp
 QChar FindUtils::normalize(QChar c)
 {
