@@ -40,7 +40,7 @@ int FindUtils::replaceAll(QTextDocument *document, const TextFindWidget *findWid
     return count;
 }
 
-bool FindUtils::find(QPlainTextEdit *view, const TextFindWidget *findWidget)
+bool FindUtils::find(QPlainTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions)
 {
     const QString text = FindUtils::normalize(view->document()->toPlainText());
     QTextDocument doc(text);
@@ -48,12 +48,7 @@ bool FindUtils::find(QPlainTextEdit *view, const TextFindWidget *findWidget)
     QTextCursor docCusor(view->textCursor());
     c.setPosition(docCusor.position());
     qDebug() << " docCusor.position() " << docCusor.position();
-    QTextDocument::FindFlags flags = findWidget->searchOptions() & ~QTextDocument::FindBackward;
-    if (findWidget->isRegularExpression()) {
-        c = doc.find(FindUtils::normalize(findWidget->searchText()), c, flags);
-    } else {
-        c = doc.find(FindUtils::normalize(findWidget->searchText()), c, flags);
-    }
+    c = doc.find(FindUtils::normalize(searchText), c, searchOptions);
     if (!c.isNull()) {
         qDebug() << " c.selectionStart() " << c.selectionStart() << "c.selectionEnd() " << c.selectionEnd();
         docCusor.setPosition(c.selectionStart());
@@ -65,7 +60,7 @@ bool FindUtils::find(QPlainTextEdit *view, const TextFindWidget *findWidget)
     return false;
 }
 
-bool FindUtils::find(QTextEdit *view, const TextFindWidget *findWidget)
+bool FindUtils::find(QTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions)
 {
     const QString text = FindUtils::normalize(view->document()->toPlainText());
     QTextDocument doc(text);
@@ -73,12 +68,7 @@ bool FindUtils::find(QTextEdit *view, const TextFindWidget *findWidget)
     QTextCursor docCusor(view->textCursor());
     c.setPosition(docCusor.position());
     qDebug() << " docCusor.position() " << docCusor.position();
-    QTextDocument::FindFlags flags = findWidget->searchOptions() & ~QTextDocument::FindBackward;
-    if (findWidget->isRegularExpression()) {
-        c = doc.find(FindUtils::normalize(findWidget->searchText()), c, flags);
-    } else {
-        c = doc.find(FindUtils::normalize(findWidget->searchText()), c, flags);
-    }
+    c = doc.find(FindUtils::normalize(searchText), c, searchOptions);
     if (!c.isNull()) {
         qDebug() << " c.selectionStart() " << c.selectionStart() << "c.selectionEnd() " << c.selectionEnd();
         docCusor.setPosition(c.selectionStart());

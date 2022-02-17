@@ -8,8 +8,8 @@
 
 #include <QChar>
 #include <QStringView>
+#include <QTextDocument>
 #include <qglobal.h>
-class QTextDocument;
 class QPlainTextEdit;
 class QTextEdit;
 namespace KPIMTextEdit
@@ -29,8 +29,8 @@ Q_REQUIRED_RESULT int replaceAll(QTextDocument *document, const TextFindWidget *
 
 Q_REQUIRED_RESULT QString normalize(QStringView str);
 Q_REQUIRED_RESULT QChar normalize(QChar c);
-Q_REQUIRED_RESULT bool find(QPlainTextEdit *view, const TextFindWidget *findWidget);
-Q_REQUIRED_RESULT bool find(QTextEdit *view, const TextFindWidget *findWidget);
+Q_REQUIRED_RESULT bool find(QPlainTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions);
+Q_REQUIRED_RESULT bool find(QTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions);
 }
 } // namespace KPIMTextEdit
 

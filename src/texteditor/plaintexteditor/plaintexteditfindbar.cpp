@@ -54,7 +54,7 @@ bool PlainTextEditFindBar::documentIsEmpty() const
 bool PlainTextEditFindBar::searchInDocument(const QString &text, QTextDocument::FindFlags searchOptions)
 {
 #ifdef SEARCH_DIACRITIC_WORD
-    const bool found = FindUtils::find(d->mView, mFindWidget);
+    const bool found = FindUtils::find(d->mView, text, searchOptions);
 #else
     const bool found = d->mView->find(text, searchOptions);
 #endif
