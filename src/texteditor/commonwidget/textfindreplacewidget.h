@@ -28,7 +28,7 @@ public:
     void setFoundMatch(bool match);
 
     Q_REQUIRED_RESULT bool isRegularExpression() const;
-    Q_REQUIRED_RESULT QRegularExpression searchRegExp() const;
+    Q_REQUIRED_RESULT QRegularExpression searchRegularExpression() const;
 
     Q_REQUIRED_RESULT QString searchText() const;
 
@@ -44,7 +44,7 @@ Q_SIGNALS:
     void searchStringEmpty(bool);
 
 private:
-    QLineEdit *mSearch = nullptr;
+    QLineEdit *const mSearch;
     QAction *mCaseSensitiveAct = nullptr;
     QAction *mWholeWordAct = nullptr;
     QAction *mRegExpAct = nullptr;
@@ -70,8 +70,8 @@ Q_SIGNALS:
     void replaceAllText();
 
 private:
-    QLineEdit *mReplace = nullptr;
-    QPushButton *mReplaceBtn = nullptr;
-    QPushButton *mReplaceAllBtn = nullptr;
+    QLineEdit *const mReplace;
+    QPushButton *const mReplaceBtn;
+    QPushButton *const mReplaceAllBtn;
 };
 }

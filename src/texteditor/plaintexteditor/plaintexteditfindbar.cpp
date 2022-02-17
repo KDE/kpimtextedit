@@ -76,7 +76,7 @@ void PlainTextEditFindBar::slotReplaceText()
 {
     if (d->mView->textCursor().hasSelection()) {
         if (mFindWidget->isRegularExpression()) {
-            if (d->mView->textCursor().selectedText().contains(mFindWidget->searchRegExp())) {
+            if (d->mView->textCursor().selectedText().contains(mFindWidget->searchRegularExpression())) {
                 d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
                 // search next after replace text.
                 searchText(false, false);

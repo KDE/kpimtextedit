@@ -23,7 +23,7 @@ int FindUtils::replaceAll(QTextDocument *document, const TextFindWidget *findWid
         // Ignoring FindBackward when replacing all
         QTextDocument::FindFlags flags = findWidget->searchOptions() & ~QTextDocument::FindBackward;
         if (findWidget->isRegularExpression()) {
-            c = document->find(findWidget->searchRegExp(), c, flags);
+            c = document->find(findWidget->searchRegularExpression(), c, flags);
         } else {
             c = document->find(findWidget->searchText(), c, flags);
         }

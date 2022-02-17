@@ -20,6 +20,9 @@ using namespace KPIMTextEdit;
 
 TextReplaceWidget::TextReplaceWidget(QWidget *parent)
     : QWidget(parent)
+    , mReplace(new QLineEdit(this))
+    , mReplaceBtn(new QPushButton(i18n("Replace"), this))
+    , mReplaceAllBtn(new QPushButton(i18n("Replace All"), this))
 {
     auto lay = new QHBoxLayout(this);
     auto label = new QLabel(i18nc("Replace text", "Replace:"), this);
@@ -28,15 +31,12 @@ TextReplaceWidget::TextReplaceWidget(QWidget *parent)
     const int marg2 = lay->contentsMargins().right();
     lay->setContentsMargins(marg1, 0, marg2, 0);
 
-    mReplace = new QLineEdit(this);
     mReplace->setClearButtonEnabled(true);
     lay->addWidget(mReplace);
 
-    mReplaceBtn = new QPushButton(i18n("Replace"), this);
     connect(mReplaceBtn, &QPushButton::clicked, this, &TextReplaceWidget::replaceText);
     lay->addWidget(mReplaceBtn);
 
-    mReplaceAllBtn = new QPushButton(i18n("Replace All"), this);
     connect(mReplaceAllBtn, &QPushButton::clicked, this, &TextReplaceWidget::replaceAllText);
     lay->addWidget(mReplaceAllBtn);
 }
@@ -56,6 +56,7 @@ void TextReplaceWidget::slotSearchStringEmpty(bool isEmpty)
 
 TextFindWidget::TextFindWidget(QWidget *parent)
     : QWidget(parent)
+    , mSearch(new QLineEdit(this))
 {
     auto lay = new QHBoxLayout(this);
     const int marg1 = lay->contentsMargins().left();
@@ -64,7 +65,6 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     auto label = new QLabel(i18nc("Find text", "F&ind:"), this);
     lay->addWidget(label);
 
-    mSearch = new QLineEdit(this);
     mSearch->setToolTip(i18n("Text to search for"));
     mSearch->setClearButtonEnabled(true);
     label->setBuddy(mSearch);
@@ -157,7 +157,7 @@ QString TextFindWidget::searchText() const
     return mSearch->text();
 }
 
-QRegularExpression TextFindWidget::searchRegExp() const
+QRegularExpression TextFindWidget::searchRegularExpression() const
 {
     QRegularExpression reg;
     if (!mCaseSensitiveAct->isChecked()) {
