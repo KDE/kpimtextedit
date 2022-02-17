@@ -15,7 +15,7 @@
 #include <QRegularExpression>
 
 using namespace KPIMTextEdit;
-
+// #define SEARCH_DIACRITIC_WORD 1
 class KPIMTextEdit::PlainTextEditFindBarPrivate
 {
 public:
@@ -53,7 +53,11 @@ bool PlainTextEditFindBar::documentIsEmpty() const
 
 bool PlainTextEditFindBar::searchInDocument(const QString &text, QTextDocument::FindFlags searchOptions)
 {
+#ifdef SEARCH_DIACRITIC_WORD
+    const bool found = d->mView->find(FindUtils::normalize(text), searchOptions);
+#else
     const bool found = d->mView->find(text, searchOptions);
+#endif
     mFindWidget->setFoundMatch(found);
     return found;
 }
