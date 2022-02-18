@@ -51,8 +51,13 @@ bool FindUtils::find(QPlainTextEdit *view, const QString &searchText, QTextDocum
     c = doc.find(FindUtils::normalize(searchText), c, searchOptions);
     if (!c.isNull()) {
         qDebug() << " c.selectionStart() " << c.selectionStart() << "c.selectionEnd() " << c.selectionEnd();
-        docCusor.setPosition(c.selectionStart());
-        docCusor.setPosition(c.selectionEnd(), QTextCursor::KeepAnchor);
+        if (searchOptions & QTextDocument::FindBackward) {
+            docCusor.setPosition(c.selectionEnd());
+            docCusor.setPosition(c.selectionStart(), QTextCursor::KeepAnchor);
+        } else {
+            docCusor.setPosition(c.selectionStart());
+            docCusor.setPosition(c.selectionEnd(), QTextCursor::KeepAnchor);
+        }
         view->setTextCursor(docCusor);
         view->ensureCursorVisible();
         return true;
@@ -71,8 +76,13 @@ bool FindUtils::find(QTextEdit *view, const QString &searchText, QTextDocument::
     c = doc.find(FindUtils::normalize(searchText), c, searchOptions);
     if (!c.isNull()) {
         qDebug() << " c.selectionStart() " << c.selectionStart() << "c.selectionEnd() " << c.selectionEnd();
-        docCusor.setPosition(c.selectionStart());
-        docCusor.setPosition(c.selectionEnd(), QTextCursor::KeepAnchor);
+        if (searchOptions & QTextDocument::FindBackward) {
+            docCusor.setPosition(c.selectionEnd());
+            docCusor.setPosition(c.selectionStart(), QTextCursor::KeepAnchor);
+        } else {
+            docCusor.setPosition(c.selectionStart());
+            docCusor.setPosition(c.selectionEnd(), QTextCursor::KeepAnchor);
+        }
         view->setTextCursor(docCusor);
         view->ensureCursorVisible();
         return true;
