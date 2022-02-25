@@ -145,9 +145,9 @@ bool TextEditFindBarBase::searchText(bool backward, bool isAutoSearch)
 {
     mLastSearchStr = mFindWidget->searchText();
     mLastSearchRegExp = mFindWidget->searchRegularExpression();
-    QTextDocument::FindFlags searchOptions = mFindWidget->searchOptions();
+    TextEditFindBarBase::FindFlags searchOptions = mFindWidget->searchOptions();
     if (backward) {
-        searchOptions |= QTextDocument::FindBackward;
+        searchOptions |= TextEditFindBarBase::FindBackward;
     }
 
     if (isAutoSearch) {
@@ -181,7 +181,7 @@ void TextEditFindBarBase::findPrev()
 
 void TextEditFindBarBase::slotUpdateSearchOptions()
 {
-    const QTextDocument::FindFlags searchOptions = mFindWidget->searchOptions();
+    const TextEditFindBarBase::FindFlags searchOptions = mFindWidget->searchOptions();
     mLastSearchStr = mFindWidget->searchText();
     mLastSearchRegExp = mFindWidget->searchRegularExpression();
     if (mFindWidget->isRegularExpression()) {

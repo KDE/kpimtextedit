@@ -67,6 +67,7 @@ TextFindWidget::TextFindWidget(QWidget *parent)
 
     mSearch->setToolTip(i18n("Text to search for"));
     mSearch->setClearButtonEnabled(true);
+    mSearch->setObjectName(QStringLiteral("mSearch"));
     label->setBuddy(mSearch);
     lay->addWidget(mSearch);
 
@@ -74,15 +75,18 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     mFindNextBtn->setToolTip(i18n("Jump to next match"));
     lay->addWidget(mFindNextBtn);
     mFindNextBtn->setEnabled(false);
+    mFindNextBtn->setObjectName(QStringLiteral("mFindNextBtn"));
 
     mFindPrevBtn = new QPushButton(QIcon::fromTheme(QStringLiteral("go-up-search")), i18nc("Find and go to the previous search match", "Previous"), this);
     mFindPrevBtn->setToolTip(i18n("Jump to previous match"));
     lay->addWidget(mFindPrevBtn);
     mFindPrevBtn->setEnabled(false);
+    mFindPrevBtn->setObjectName(QStringLiteral("mFindPrevBtn"));
 
     auto optionsBtn = new QPushButton(this);
     optionsBtn->setText(i18n("Options"));
     optionsBtn->setToolTip(i18n("Modify search behavior"));
+    optionsBtn->setObjectName(QStringLiteral("optionsBtn"));
     auto optionsMenu = new QMenu(optionsBtn);
     mCaseSensitiveAct = optionsMenu->addAction(i18n("Case sensitive"));
     mCaseSensitiveAct->setCheckable(true);
@@ -93,6 +97,9 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     mRegExpAct = optionsMenu->addAction(i18n("Regular Expression"));
     mRegExpAct->setCheckable(true);
 
+    mRespectDiacriticAct = optionsMenu->addAction(i18n("Respect Diacritic and Accents"));
+    mRespectDiacriticAct->setCheckable(true);
+
     optionsBtn->setMenu(optionsMenu);
     lay->addWidget(optionsBtn);
 
@@ -100,6 +107,7 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     connect(mFindPrevBtn, &QPushButton::clicked, this, &TextFindWidget::findPrev);
     connect(mCaseSensitiveAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
     connect(mWholeWordAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
+    connect(mRespectDiacriticAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
     connect(mRegExpAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
     connect(mSearch, &QLineEdit::textChanged, this, &TextFindWidget::slotAutoSearch);
     connect(mSearch, &QLineEdit::returnPressed, this, &TextFindWidget::findNext);
@@ -171,14 +179,17 @@ QRegularExpression TextFindWidget::searchRegularExpression() const
     return reg;
 }
 
-QTextDocument::FindFlags TextFindWidget::searchOptions() const
+TextEditFindBarBase::FindFlags TextFindWidget::searchOptions() const
 {
-    QTextDocument::FindFlags opt = {};
+    TextEditFindBarBase::FindFlags opt = {};
     if (mCaseSensitiveAct->isChecked()) {
-        opt |= QTextDocument::FindCaseSensitively;
+        opt |= TextEditFindBarBase::FindCaseSensitively;
     }
     if (mWholeWordAct->isChecked()) {
-        opt |= QTextDocument::FindWholeWords;
+        opt |= TextEditFindBarBase::FindWholeWords;
+    }
+    if (mRespectDiacriticAct->isChecked()) {
+        opt |= TextEditFindBarBase::FindRespectDiacritics;
     }
     return opt;
 }

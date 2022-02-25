@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include "kpimtextedit/texteditfindbarbase.h"
+
 #include <QChar>
 #include <QStringView>
 #include <QTextDocument>
@@ -31,6 +33,7 @@ Q_REQUIRED_RESULT QString normalize(QStringView str);
 Q_REQUIRED_RESULT QChar normalize(QChar c);
 Q_REQUIRED_RESULT bool find(QPlainTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions);
 Q_REQUIRED_RESULT bool find(QTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions);
+Q_REQUIRED_RESULT QTextDocument::FindFlags convertTextEditFindFlags(TextEditFindBarBase::FindFlags textEditFlags);
 }
 } // namespace KPIMTextEdit
 

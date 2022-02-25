@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include "kpimtextedit_private_export.h"
+#include "texteditfindbarbase.h"
 #include <QTextDocument>
 #include <QWidget>
 
@@ -14,14 +16,14 @@ class QLineEdit;
 class QPushButton;
 namespace KPIMTextEdit
 {
-class TextFindWidget : public QWidget
+class KPIMTEXTEDIT_TESTS_EXPORT TextFindWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit TextFindWidget(QWidget *parent = nullptr);
     ~TextFindWidget() override;
 
-    Q_REQUIRED_RESULT QTextDocument::FindFlags searchOptions() const;
+    Q_REQUIRED_RESULT TextEditFindBarBase::FindFlags searchOptions() const;
 
     QLineEdit *searchLineEdit() const;
 
@@ -48,12 +50,13 @@ private:
     QAction *mCaseSensitiveAct = nullptr;
     QAction *mWholeWordAct = nullptr;
     QAction *mRegExpAct = nullptr;
+    QAction *mRespectDiacriticAct = nullptr;
 
     QPushButton *mFindPrevBtn = nullptr;
     QPushButton *mFindNextBtn = nullptr;
 };
 
-class TextReplaceWidget : public QWidget
+class KPIMTEXTEDIT_TESTS_EXPORT TextReplaceWidget : public QWidget
 {
     Q_OBJECT
 public:

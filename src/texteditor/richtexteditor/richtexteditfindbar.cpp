@@ -51,20 +51,21 @@ bool RichTextEditFindBar::documentIsEmpty() const
     return d->mView->document()->isEmpty();
 }
 
-bool RichTextEditFindBar::searchInDocument(const QString &text, QTextDocument::FindFlags searchOptions)
+bool RichTextEditFindBar::searchInDocument(const QString &text, TextEditFindBarBase::FindFlags searchOptions)
 {
-#ifdef SEARCH_DIACRITIC_WORD
-    const bool found = FindUtils::find(d->mView, text, searchOptions);
-#else
-    const bool found = d->mView->find(text, searchOptions);
-#endif
+    bool found = false;
+    if (searchOptions & TextEditFindBarBase::FindRespectDiacritics) {
+        found = d->mView->find(text, FindUtils::convertTextEditFindFlags(searchOptions));
+    } else {
+        found = FindUtils::find(d->mView, text, FindUtils::convertTextEditFindFlags(searchOptions));
+    }
     mFindWidget->setFoundMatch(found);
     return found;
 }
 
-bool RichTextEditFindBar::searchInDocument(const QRegularExpression &regExp, QTextDocument::FindFlags searchOptions)
+bool RichTextEditFindBar::searchInDocument(const QRegularExpression &regExp, TextEditFindBarBase::FindFlags searchOptions)
 {
-    const bool found = d->mView->find(regExp, searchOptions);
+    const bool found = d->mView->find(regExp, FindUtils::convertTextEditFindFlags(searchOptions));
     mFindWidget->setFoundMatch(found);
     return found;
 }

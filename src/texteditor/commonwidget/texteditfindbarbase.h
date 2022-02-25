@@ -23,6 +23,14 @@ class KPIMTEXTEDIT_EXPORT TextEditFindBarBase : public QWidget
     Q_OBJECT
 
 public:
+    enum FindFlag {
+        FindBackward = 0x00001,
+        FindCaseSensitively = 0x00002,
+        FindWholeWords = 0x00004,
+        FindRespectDiacritics = 0x00008,
+    };
+    Q_DECLARE_FLAGS(FindFlags, FindFlag)
+
     explicit TextEditFindBarBase(QWidget *parent = nullptr);
     ~TextEditFindBarBase() override;
 
@@ -42,8 +50,8 @@ Q_SIGNALS:
 protected:
     Q_REQUIRED_RESULT virtual bool viewIsReadOnly() const = 0;
     Q_REQUIRED_RESULT virtual bool documentIsEmpty() const = 0;
-    Q_REQUIRED_RESULT virtual bool searchInDocument(const QString &text, QTextDocument::FindFlags searchOptions) = 0;
-    Q_REQUIRED_RESULT virtual bool searchInDocument(const QRegularExpression &regExp, QTextDocument::FindFlags searchOptions) = 0;
+    virtual bool searchInDocument(const QString &text, TextEditFindBarBase::FindFlags searchOptions) = 0;
+    virtual bool searchInDocument(const QRegularExpression &regExp, TextEditFindBarBase::FindFlags searchOptions) = 0;
     virtual void autoSearchMoveCursor() = 0;
 
     bool event(QEvent *e) override;

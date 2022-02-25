@@ -16,15 +16,29 @@
 #include <QTextEdit>
 
 using namespace KPIMTextEdit;
+QTextDocument::FindFlags FindUtils::convertTextEditFindFlags(TextEditFindBarBase::FindFlags textEditFlags)
+{
+    QTextDocument::FindFlags flags;
+    if (textEditFlags & TextEditFindBarBase::FindBackward) {
+        flags |= QTextDocument::FindBackward;
+    }
+    if (textEditFlags & TextEditFindBarBase::FindCaseSensitively) {
+        flags |= QTextDocument::FindCaseSensitively;
+    }
+    if (textEditFlags & TextEditFindBarBase::FindWholeWords) {
+        flags |= QTextDocument::FindWholeWords;
+    }
+    return flags;
+}
 
 int FindUtils::replaceAll(QTextDocument *document, const TextFindWidget *findWidget, const TextReplaceWidget *replaceWidget)
 {
     QTextCursor c(document);
     c.beginEditBlock();
     int count = 0;
+    // Ignoring FindBackward when replacing all
+    const QTextDocument::FindFlags flags = FindUtils::convertTextEditFindFlags(findWidget->searchOptions()) & ~QTextDocument::FindBackward;
     while (!c.isNull()) {
-        // Ignoring FindBackward when replacing all
-        QTextDocument::FindFlags flags = findWidget->searchOptions() & ~QTextDocument::FindBackward;
         if (findWidget->isRegularExpression()) {
             c = document->find(findWidget->searchRegularExpression(), c, flags);
         } else {
