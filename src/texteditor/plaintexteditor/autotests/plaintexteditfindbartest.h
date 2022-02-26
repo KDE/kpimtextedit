@@ -16,4 +16,6 @@ public:
     ~PlainTextEditFindBarTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldSearchText_data();
+    void shouldSearchText();
 };
