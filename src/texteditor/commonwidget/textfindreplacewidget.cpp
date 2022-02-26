@@ -34,6 +34,10 @@ TextReplaceWidget::TextReplaceWidget(QWidget *parent)
     mReplace->setClearButtonEnabled(true);
     lay->addWidget(mReplace);
 
+    mReplace->setObjectName(QStringLiteral("mReplace"));
+    mReplaceBtn->setObjectName(QStringLiteral("mReplaceBtn"));
+    mReplaceAllBtn->setObjectName(QStringLiteral("mReplaceAllBtn"));
+
     connect(mReplaceBtn, &QPushButton::clicked, this, &TextReplaceWidget::replaceText);
     lay->addWidget(mReplaceBtn);
 
