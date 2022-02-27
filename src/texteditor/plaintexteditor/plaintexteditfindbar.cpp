@@ -80,6 +80,7 @@ void PlainTextEditFindBar::autoSearchMoveCursor()
 // TODO add support for FindRespectDiacritics
 void PlainTextEditFindBar::slotReplaceText()
 {
+    const TextEditFindBarBase::FindFlags searchOptions = mFindWidget->searchOptions();
     if (d->mView->textCursor().hasSelection()) {
         if (mFindWidget->isRegularExpression()) {
             if (d->mView->textCursor().selectedText().contains(mFindWidget->searchRegularExpression())) {
@@ -88,10 +89,18 @@ void PlainTextEditFindBar::slotReplaceText()
                 searchText(false, false);
             }
         } else {
-            if (d->mView->textCursor().selectedText() == mFindWidget->searchText()) {
-                d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
-                // search next after replace text.
-                searchText(false, false);
+            if (searchOptions & TextEditFindBarBase::FindRespectDiacritics) {
+                if (FindUtils::normalize(d->mView->textCursor().selectedText()) == FindUtils::normalize(mFindWidget->searchText())) {
+                    d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
+                    // search next after replace text.
+                    searchText(false, false);
+                } else {
+                    if (d->mView->textCursor().selectedText() == mFindWidget->searchText()) {
+                        d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
+                        // search next after replace text.
+                        searchText(false, false);
+                    }
+                }
             }
         }
     } else {
