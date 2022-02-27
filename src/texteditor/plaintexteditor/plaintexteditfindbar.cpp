@@ -77,6 +77,7 @@ void PlainTextEditFindBar::autoSearchMoveCursor()
     d->mView->setTextCursor(cursor);
 }
 
+// TODO add support for FindRespectDiacritics
 void PlainTextEditFindBar::slotReplaceText()
 {
     if (d->mView->textCursor().hasSelection()) {
