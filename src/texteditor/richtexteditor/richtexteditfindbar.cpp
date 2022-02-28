@@ -101,6 +101,6 @@ void RichTextEditFindBar::slotReplaceText()
 
 void RichTextEditFindBar::slotReplaceAllText()
 {
-    const int count = FindUtils::replaceAll(d->mView->document(), mFindWidget, mReplaceWidget);
+    const int count = FindUtils::replaceAll(d->mView->document(), mFindWidget, mReplaceWidget->replaceLineEdit()->text());
     Q_EMIT displayMessageIndicator(i18np("%1 replacement made", "%1 replacements made", count));
 }

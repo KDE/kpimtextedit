@@ -98,8 +98,8 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     mWholeWordAct = optionsMenu->addAction(i18n("Whole word"));
     mWholeWordAct->setCheckable(true);
 
-    mRegExpAct = optionsMenu->addAction(i18n("Regular Expression"));
-    mRegExpAct->setCheckable(true);
+    mRegularExpressionAct = optionsMenu->addAction(i18n("Regular Expression"));
+    mRegularExpressionAct->setCheckable(true);
 
     mRespectDiacriticAct = optionsMenu->addAction(i18n("Respect Diacritic and Accents"));
     mRespectDiacriticAct->setCheckable(true);
@@ -112,7 +112,7 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     connect(mCaseSensitiveAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
     connect(mWholeWordAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
     connect(mRespectDiacriticAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
-    connect(mRegExpAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
+    connect(mRegularExpressionAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
     connect(mSearch, &QLineEdit::textChanged, this, &TextFindWidget::slotAutoSearch);
     connect(mSearch, &QLineEdit::returnPressed, this, &TextFindWidget::findNext);
 }
@@ -161,7 +161,7 @@ QLineEdit *TextFindWidget::searchLineEdit() const
 
 bool TextFindWidget::isRegularExpression() const
 {
-    return mRegExpAct->isChecked();
+    return mRegularExpressionAct->isChecked();
 }
 
 QString TextFindWidget::searchText() const

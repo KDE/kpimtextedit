@@ -31,7 +31,7 @@ QTextDocument::FindFlags FindUtils::convertTextEditFindFlags(TextEditFindBarBase
     return flags;
 }
 
-int FindUtils::replaceAll(QTextDocument *document, const TextFindWidget *findWidget, const TextReplaceWidget *replaceWidget)
+int FindUtils::replaceAll(QTextDocument *document, const TextFindWidget *findWidget, const QString &replaceWidget)
 {
     QTextCursor c(document);
     c.beginEditBlock();
@@ -46,7 +46,7 @@ int FindUtils::replaceAll(QTextDocument *document, const TextFindWidget *findWid
         }
         if (!c.isNull()) {
             // find() selects found text, and insertText() replaces selection
-            c.insertText(replaceWidget->replaceLineEdit()->text());
+            c.insertText(replaceWidget);
             count++;
         }
     }

@@ -49,7 +49,7 @@ private:
     QLineEdit *const mSearch;
     QAction *mCaseSensitiveAct = nullptr;
     QAction *mWholeWordAct = nullptr;
-    QAction *mRegExpAct = nullptr;
+    QAction *mRegularExpressionAct = nullptr;
     QAction *mRespectDiacriticAct = nullptr;
 
     QPushButton *mFindPrevBtn = nullptr;
