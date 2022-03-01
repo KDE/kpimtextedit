@@ -65,6 +65,7 @@ bool PlainTextEditFindBar::searchInDocument(const QString &text, TextEditFindBar
 
 bool PlainTextEditFindBar::searchInDocument(const QRegularExpression &regExp, TextEditFindBarBase::FindFlags searchOptions)
 {
+    // TODO implement support for FindRespectDiacritics ?
     const bool found = d->mView->find(regExp, FindUtils::convertTextEditFindFlags(searchOptions));
     mFindWidget->setFoundMatch(found);
     return found;
