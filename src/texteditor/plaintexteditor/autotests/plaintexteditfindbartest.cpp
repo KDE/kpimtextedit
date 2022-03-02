@@ -101,6 +101,12 @@ void PlainTextEditFindBarTest::shouldReplaceAllText_data()
     QTest::addColumn<int>("nbElement");
 
     QTest::newRow("empty") << QString() << QStringLiteral("blabla") << QStringLiteral("replace") << QTextDocument::FindFlags() << 0;
+
+    {
+        QTextDocument::FindFlags flags;
+        flags |= QTextDocument::FindWholeWords;
+        QTest::newRow("bla") << QString() << QStringLiteral("bla bla") << QStringLiteral("replace") << flags << 2;
+    }
 }
 
 void PlainTextEditFindBarTest::shouldReplaceAllText()
