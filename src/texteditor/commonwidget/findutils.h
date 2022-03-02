@@ -7,7 +7,7 @@
 #pragma once
 
 #include "kpimtextedit/texteditfindbarbase.h"
-
+#include "kpimtextedit_private_export.h"
 #include <QChar>
 #include <QStringView>
 #include <QTextDocument>
@@ -27,9 +27,11 @@ namespace FindUtils
  *
  * @return number of replacements done
  */
-Q_REQUIRED_RESULT int replaceAll(QPlainTextEdit *view, const QString &str, const QString &replaceWidget, QTextDocument::FindFlags searchOptions);
-Q_REQUIRED_RESULT int replaceAll(QTextEdit *view, const QString &str, const QString &replaceWidget, QTextDocument::FindFlags searchOptions);
-Q_REQUIRED_RESULT int
+Q_REQUIRED_RESULT KPIMTEXTEDIT_TESTS_EXPORT int
+replaceAll(QPlainTextEdit *view, const QString &str, const QString &replaceWidget, QTextDocument::FindFlags searchOptions);
+Q_REQUIRED_RESULT KPIMTEXTEDIT_TESTS_EXPORT int
+replaceAll(QTextEdit *view, const QString &str, const QString &replaceWidget, QTextDocument::FindFlags searchOptions);
+Q_REQUIRED_RESULT KPIMTEXTEDIT_TESTS_EXPORT int
 replaceAll(QTextDocument *document, const QRegularExpression &regExp, const QString &replaceWidget, QTextDocument::FindFlags searchOptions);
 Q_REQUIRED_RESULT QString normalize(QStringView str);
 Q_REQUIRED_RESULT QChar normalize(QChar c);

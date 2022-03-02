@@ -5,12 +5,14 @@
 */
 
 #include "plaintexteditfindbartest.h"
+#include "texteditor/commonwidget/findutils.h"
 #include "texteditor/plaintexteditor/plaintexteditfindbar.h"
 #include <QPlainTextEdit>
 #include <QTest>
 
 QTEST_MAIN(PlainTextEditFindBarTest)
 Q_DECLARE_METATYPE(KPIMTextEdit::TextEditFindBarBase::FindFlags)
+Q_DECLARE_METATYPE(QTextDocument::FindFlags)
 PlainTextEditFindBarTest::PlainTextEditFindBarTest(QObject *parent)
     : QObject{parent}
 {
@@ -88,4 +90,30 @@ void PlainTextEditFindBarTest::shouldSearchText()
     edit.setPlainText(text);
 
     QCOMPARE(w.searchInDocument(searchText, flags), found);
+}
+
+void PlainTextEditFindBarTest::shouldReplaceAllText_data()
+{
+    QTest::addColumn<QString>("text");
+    QTest::addColumn<QString>("searchText");
+    QTest::addColumn<QString>("replaceText");
+    QTest::addColumn<QTextDocument::FindFlags>("flags");
+    QTest::addColumn<int>("nbElement");
+
+    QTest::newRow("empty") << QString() << QStringLiteral("blabla") << QStringLiteral("replace") << QTextDocument::FindFlags() << 0;
+}
+
+void PlainTextEditFindBarTest::shouldReplaceAllText()
+{
+    QFETCH(QString, text);
+    QFETCH(QString, searchText);
+    QFETCH(QString, replaceText);
+    QFETCH(QTextDocument::FindFlags, flags);
+    QFETCH(int, nbElement);
+
+    QPlainTextEdit edit;
+    PlainTextEditFindBarExample w(&edit);
+    edit.setPlainText(text);
+
+    QCOMPARE(KPIMTextEdit::FindUtils::replaceAll(&edit, searchText, replaceText, flags), nbElement);
 }

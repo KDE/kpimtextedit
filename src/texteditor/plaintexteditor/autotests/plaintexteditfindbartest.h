@@ -18,4 +18,6 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldSearchText_data();
     void shouldSearchText();
+    void shouldReplaceAllText_data();
+    void shouldReplaceAllText();
 };
