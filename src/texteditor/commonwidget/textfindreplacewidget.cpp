@@ -103,6 +103,7 @@ TextFindWidget::TextFindWidget(QWidget *parent)
 
     mRespectDiacriticAct = optionsMenu->addAction(i18n("Respect Diacritic and Accents"));
     mRespectDiacriticAct->setCheckable(true);
+    mRespectDiacriticAct->setChecked(true);
 
     optionsBtn->setMenu(optionsMenu);
     lay->addWidget(optionsBtn);
