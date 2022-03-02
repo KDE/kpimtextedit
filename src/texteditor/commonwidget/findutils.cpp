@@ -51,7 +51,7 @@ int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &re
     return count;
 }
 
-int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QString &replaceWidget, QTextDocument::FindFlags searchOptions)
+int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QString &replaceStr, QTextDocument::FindFlags searchOptions)
 {
     auto document = view->document();
     QTextCursor c(document);
@@ -63,7 +63,7 @@ int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QStrin
         c = document->find(str, c, flags);
         if (!c.isNull()) {
             // find() selects found text, and insertText() replaces selection
-            c.insertText(replaceWidget);
+            c.insertText(replaceStr);
             count++;
         }
     }
