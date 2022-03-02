@@ -31,8 +31,29 @@ QTextDocument::FindFlags FindUtils::convertTextEditFindFlags(TextEditFindBarBase
     return flags;
 }
 
-int FindUtils::replaceAll(QTextDocument *document, const QString &str, const QString &replaceWidget, QTextDocument::FindFlags searchOptions)
+int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &replaceWidget, QTextDocument::FindFlags searchOptions)
 {
+    auto document = view->document();
+    QTextCursor c(document);
+    c.beginEditBlock();
+    int count = 0;
+    // Ignoring FindBackward when replacing all
+    const QTextDocument::FindFlags flags = searchOptions & ~QTextDocument::FindBackward;
+    while (!c.isNull()) {
+        c = document->find(str, c, flags);
+        if (!c.isNull()) {
+            // find() selects found text, and insertText() replaces selection
+            c.insertText(replaceWidget);
+            count++;
+        }
+    }
+    c.endEditBlock();
+    return count;
+}
+
+int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QString &replaceWidget, QTextDocument::FindFlags searchOptions)
+{
+    auto document = view->document();
     QTextCursor c(document);
     c.beginEditBlock();
     int count = 0;

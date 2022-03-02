@@ -107,7 +107,7 @@ void RichTextEditFindBar::slotReplaceAllText()
     if (mFindWidget->isRegularExpression()) {
         count = FindUtils::replaceAll(d->mView->document(), mFindWidget->searchRegularExpression(), replaceStr, searchOptions);
     } else {
-        count = FindUtils::replaceAll(d->mView->document(), mFindWidget->searchText(), replaceStr, searchOptions);
+        count = FindUtils::replaceAll(d->mView, mFindWidget->searchText(), replaceStr, searchOptions);
     }
     Q_EMIT displayMessageIndicator(i18np("%1 replacement made", "%1 replacements made", count));
 }
