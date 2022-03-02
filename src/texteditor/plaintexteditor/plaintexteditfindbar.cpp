@@ -111,6 +111,13 @@ void PlainTextEditFindBar::slotReplaceText()
 
 void PlainTextEditFindBar::slotReplaceAllText()
 {
-    const int count = FindUtils::replaceAll(d->mView->document(), mFindWidget, mReplaceWidget->replaceLineEdit()->text());
+    int count = 0;
+    const QString replaceStr{mReplaceWidget->replaceLineEdit()->text()};
+    const QTextDocument::FindFlags searchOptions{FindUtils::convertTextEditFindFlags(mFindWidget->searchOptions())};
+    if (mFindWidget->isRegularExpression()) {
+        count = FindUtils::replaceAll(d->mView->document(), mFindWidget->searchRegularExpression(), replaceStr, searchOptions);
+    } else {
+        count = FindUtils::replaceAll(d->mView->document(), mFindWidget->searchText(), replaceStr, searchOptions);
+    }
     Q_EMIT displayMessageIndicator(i18np("%1 replacement made", "%1 replacements made", count));
 }

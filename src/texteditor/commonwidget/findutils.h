@@ -27,8 +27,9 @@ namespace FindUtils
  *
  * @return number of replacements done
  */
-Q_REQUIRED_RESULT int replaceAll(QTextDocument *document, const TextFindWidget *findWidget, const QString &replaceWidget);
-
+Q_REQUIRED_RESULT int replaceAll(QTextDocument *document, const QString &str, const QString &replaceWidget, QTextDocument::FindFlags searchOptions);
+Q_REQUIRED_RESULT int
+replaceAll(QTextDocument *document, const QRegularExpression &regExp, const QString &replaceWidget, QTextDocument::FindFlags searchOptions);
 Q_REQUIRED_RESULT QString normalize(QStringView str);
 Q_REQUIRED_RESULT QChar normalize(QChar c);
 Q_REQUIRED_RESULT bool find(QPlainTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions);
