@@ -33,7 +33,6 @@ QTextDocument::FindFlags FindUtils::convertTextEditFindFlags(TextEditFindBarBase
 
 int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &replaceWidget, QTextDocument::FindFlags searchOptions)
 {
-    qDebug() << " SSSSSSSSSSSSSSSSSSs";
     auto document = view->document();
     QTextCursor c(document);
     c.beginEditBlock();
@@ -45,7 +44,6 @@ int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &re
         if (!c.isNull()) {
             // find() selects found text, and insertText() replaces selection
             c.insertText(replaceWidget);
-            qDebug() << " replaceWidget " << replaceWidget;
             count++;
         } else {
             break;
