@@ -99,26 +99,29 @@ void PlainTextEditFindBarTest::shouldReplaceAllText_data()
     QTest::addColumn<QString>("replaceText");
     QTest::addColumn<KPIMTextEdit::TextEditFindBarBase::FindFlags>("flags");
     QTest::addColumn<int>("nbElement");
+    QTest::addColumn<QString>("resultStr");
 
-    QTest::newRow("empty") << QString() << QStringLiteral("blabla") << QStringLiteral("replace") << KPIMTextEdit::TextEditFindBarBase::FindFlags() << 0;
+    QTest::newRow("empty") << QString() << QStringLiteral("blabla") << QStringLiteral("replace") << KPIMTextEdit::TextEditFindBarBase::FindFlags() << 0
+                           << QString();
 
     {
         KPIMTextEdit::TextEditFindBarBase::FindFlags flags;
         flags |= KPIMTextEdit::TextEditFindBarBase::FindWholeWords;
-        QTest::newRow("wholewords") << QStringLiteral("bla bla") << QStringLiteral("bla") << QStringLiteral("replace") << flags << 2;
+        QTest::newRow("wholewords") << QStringLiteral("bla bla") << QStringLiteral("bla") << QStringLiteral("replace") << flags << 2
+                                    << QStringLiteral("replace replace");
     }
     {
         KPIMTextEdit::TextEditFindBarBase::FindFlags flags;
         flags |= KPIMTextEdit::TextEditFindBarBase::FindWholeWords;
         flags |= KPIMTextEdit::TextEditFindBarBase::FindRespectDiacritics;
         QTest::newRow("wholewords-diacritics") << QStringLiteral("réunion reunion réunion") << QStringLiteral("réunion") << QStringLiteral("replace") << flags
-                                               << 2;
+                                               << 2 << QStringLiteral("replace reunion replace");
     }
     {
         KPIMTextEdit::TextEditFindBarBase::FindFlags flags;
         flags |= KPIMTextEdit::TextEditFindBarBase::FindWholeWords;
         QTest::newRow("wholewords-no-diacritics") << QStringLiteral("réunion reunion réunion") << QStringLiteral("réunion") << QStringLiteral("replace")
-                                                  << flags << 3;
+                                                  << flags << 3 << QStringLiteral("replace replace replace");
     }
 }
 
@@ -129,6 +132,7 @@ void PlainTextEditFindBarTest::shouldReplaceAllText()
     QFETCH(QString, replaceText);
     QFETCH(KPIMTextEdit::TextEditFindBarBase::FindFlags, flags);
     QFETCH(int, nbElement);
+    QFETCH(QString, resultStr);
 
     QPlainTextEdit edit;
     edit.setPlainText(text);
