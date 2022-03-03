@@ -105,7 +105,7 @@ void PlainTextEditFindBarTest::shouldReplaceAllText_data()
     {
         QTextDocument::FindFlags flags;
         flags |= QTextDocument::FindWholeWords;
-        QTest::newRow("bla") << QString() << QStringLiteral("bla bla") << QStringLiteral("replace") << flags << 2;
+        QTest::newRow("bla") << QStringLiteral("bla bla") << QStringLiteral("bla") << QStringLiteral("replace") << flags << 2;
     }
 }
 
@@ -118,8 +118,8 @@ void PlainTextEditFindBarTest::shouldReplaceAllText()
     QFETCH(int, nbElement);
 
     QPlainTextEdit edit;
-    PlainTextEditFindBarExample w(&edit);
     edit.setPlainText(text);
+    PlainTextEditFindBarExample w(&edit);
 
     QCOMPARE(KPIMTextEdit::FindUtils::replaceAll(&edit, searchText, replaceText, flags), nbElement);
 }
