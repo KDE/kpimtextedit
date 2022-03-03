@@ -97,14 +97,14 @@ void PlainTextEditFindBarTest::shouldReplaceAllText_data()
     QTest::addColumn<QString>("text");
     QTest::addColumn<QString>("searchText");
     QTest::addColumn<QString>("replaceText");
-    QTest::addColumn<QTextDocument::FindFlags>("flags");
+    QTest::addColumn<KPIMTextEdit::TextEditFindBarBase::FindFlags>("flags");
     QTest::addColumn<int>("nbElement");
 
-    QTest::newRow("empty") << QString() << QStringLiteral("blabla") << QStringLiteral("replace") << QTextDocument::FindFlags() << 0;
+    QTest::newRow("empty") << QString() << QStringLiteral("blabla") << QStringLiteral("replace") << KPIMTextEdit::TextEditFindBarBase::FindFlags() << 0;
 
     {
-        QTextDocument::FindFlags flags;
-        flags |= QTextDocument::FindWholeWords;
+        KPIMTextEdit::TextEditFindBarBase::FindFlags flags;
+        flags |= KPIMTextEdit::TextEditFindBarBase::FindWholeWords;
         QTest::newRow("bla") << QStringLiteral("bla bla") << QStringLiteral("bla") << QStringLiteral("replace") << flags << 2;
     }
 }
@@ -114,7 +114,7 @@ void PlainTextEditFindBarTest::shouldReplaceAllText()
     QFETCH(QString, text);
     QFETCH(QString, searchText);
     QFETCH(QString, replaceText);
-    QFETCH(QTextDocument::FindFlags, flags);
+    QFETCH(KPIMTextEdit::TextEditFindBarBase::FindFlags, flags);
     QFETCH(int, nbElement);
 
     QPlainTextEdit edit;

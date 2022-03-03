@@ -31,14 +31,14 @@ QTextDocument::FindFlags FindUtils::convertTextEditFindFlags(TextEditFindBarBase
     return flags;
 }
 
-int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &replaceWidget, QTextDocument::FindFlags searchOptions)
+int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &replaceWidget, TextEditFindBarBase::FindFlags searchOptions)
 {
     auto document = view->document();
     QTextCursor c(document);
     c.beginEditBlock();
     int count = 0;
     // Ignoring FindBackward when replacing all
-    const QTextDocument::FindFlags flags = searchOptions & ~QTextDocument::FindBackward;
+    const QTextDocument::FindFlags flags = FindUtils::convertTextEditFindFlags(searchOptions) & ~QTextDocument::FindBackward;
     while (!c.isNull()) {
         c = document->find(str, c, flags);
         if (!c.isNull()) {
@@ -54,14 +54,14 @@ int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &re
     return count;
 }
 
-int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QString &replaceStr, QTextDocument::FindFlags searchOptions)
+int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QString &replaceStr, TextEditFindBarBase::FindFlags searchOptions)
 {
     auto document = view->document();
     view->textCursor().beginEditBlock();
     QTextCursor c(document);
     int count = 0;
     // Ignoring FindBackward when replacing all
-    const QTextDocument::FindFlags flags = searchOptions & ~QTextDocument::FindBackward;
+    const QTextDocument::FindFlags flags = FindUtils::convertTextEditFindFlags(searchOptions) & ~QTextDocument::FindBackward;
     while (!c.isNull()) {
         c = document->find(str, c, flags);
         if (!c.isNull()) {
@@ -76,13 +76,13 @@ int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QStrin
     return count;
 }
 
-int FindUtils::replaceAll(QTextDocument *document, const QRegularExpression &regExp, const QString &replaceWidget, QTextDocument::FindFlags searchOptions)
+int FindUtils::replaceAll(QTextDocument *document, const QRegularExpression &regExp, const QString &replaceWidget, TextEditFindBarBase::FindFlags searchOptions)
 {
     QTextCursor c(document);
     c.beginEditBlock();
     int count = 0;
     // Ignoring FindBackward when replacing all
-    const QTextDocument::FindFlags flags = searchOptions & ~QTextDocument::FindBackward;
+    const QTextDocument::FindFlags flags = FindUtils::convertTextEditFindFlags(searchOptions) & ~QTextDocument::FindBackward;
     while (!c.isNull()) {
         c = document->find(regExp, c, flags);
         if (!c.isNull()) {

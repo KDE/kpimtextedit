@@ -103,7 +103,7 @@ void RichTextEditFindBar::slotReplaceAllText()
 {
     int count = 0;
     const QString replaceStr{mReplaceWidget->replaceLineEdit()->text()};
-    const QTextDocument::FindFlags searchOptions{FindUtils::convertTextEditFindFlags(mFindWidget->searchOptions())};
+    const TextEditFindBarBase::FindFlags searchOptions{mFindWidget->searchOptions()};
     if (mFindWidget->isRegularExpression()) {
         count = FindUtils::replaceAll(d->mView->document(), mFindWidget->searchRegularExpression(), replaceStr, searchOptions);
     } else {
