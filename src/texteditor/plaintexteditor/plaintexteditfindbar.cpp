@@ -15,7 +15,6 @@
 #include <QRegularExpression>
 
 using namespace KPIMTextEdit;
-#define SEARCH_DIACRITIC_WORD 1
 class KPIMTextEdit::PlainTextEditFindBarPrivate
 {
 public:

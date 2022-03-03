@@ -15,7 +15,6 @@
 #include <QTextEdit>
 
 using namespace KPIMTextEdit;
-#define SEARCH_DIACRITIC_WORD 1
 class Q_DECL_HIDDEN KPIMTextEdit::RichTextEditFindBarPrivate
 {
 public:
