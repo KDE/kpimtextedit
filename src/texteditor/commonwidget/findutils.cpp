@@ -33,6 +33,7 @@ QTextDocument::FindFlags FindUtils::convertTextEditFindFlags(TextEditFindBarBase
 
 int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &replaceWidget, QTextDocument::FindFlags searchOptions)
 {
+    qDebug() << " SSSSSSSSSSSSSSSSSSs";
     auto document = view->document();
     QTextCursor c(document);
     c.beginEditBlock();
@@ -44,18 +45,22 @@ int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &re
         if (!c.isNull()) {
             // find() selects found text, and insertText() replaces selection
             c.insertText(replaceWidget);
+            qDebug() << " replaceWidget " << replaceWidget;
             count++;
+        } else {
+            break;
         }
     }
     c.endEditBlock();
+    view->setTextCursor(c);
     return count;
 }
 
 int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QString &replaceStr, QTextDocument::FindFlags searchOptions)
 {
     auto document = view->document();
+    view->textCursor().beginEditBlock();
     QTextCursor c(document);
-    c.beginEditBlock();
     int count = 0;
     // Ignoring FindBackward when replacing all
     const QTextDocument::FindFlags flags = searchOptions & ~QTextDocument::FindBackward;
@@ -65,9 +70,11 @@ int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QStrin
             // find() selects found text, and insertText() replaces selection
             c.insertText(replaceStr);
             count++;
+        } else {
+            break;
         }
     }
-    c.endEditBlock();
+    view->textCursor().endEditBlock();
     return count;
 }
 
@@ -84,6 +91,8 @@ int FindUtils::replaceAll(QTextDocument *document, const QRegularExpression &reg
             // find() selects found text, and insertText() replaces selection
             c.insertText(replaceWidget);
             count++;
+        } else {
+            break;
         }
     }
     c.endEditBlock();
