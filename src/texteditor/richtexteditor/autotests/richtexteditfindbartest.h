@@ -1,0 +1,23 @@
+/*
+   SPDX-FileCopyrightText: 2022 Laurent Montel <montel@kde.org>
+
+   SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+
+#pragma once
+
+#include <QObject>
+
+class RichTextEditFindBarTest : public QObject
+{
+    Q_OBJECT
+public:
+    explicit RichTextEditFindBarTest(QObject *parent = nullptr);
+    ~RichTextEditFindBarTest() override = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
+    void shouldSearchText_data();
+    void shouldSearchText();
+    void shouldReplaceAllText_data();
+    void shouldReplaceAllText();
+};
