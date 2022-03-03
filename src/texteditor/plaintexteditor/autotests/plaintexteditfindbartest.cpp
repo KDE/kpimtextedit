@@ -12,7 +12,6 @@
 
 QTEST_MAIN(PlainTextEditFindBarTest)
 Q_DECLARE_METATYPE(KPIMTextEdit::TextEditFindBarBase::FindFlags)
-Q_DECLARE_METATYPE(QTextDocument::FindFlags)
 PlainTextEditFindBarTest::PlainTextEditFindBarTest(QObject *parent)
     : QObject{parent}
 {
