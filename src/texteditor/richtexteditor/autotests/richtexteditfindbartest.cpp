@@ -136,6 +136,7 @@ void RichTextEditFindBarTest::shouldReplaceAllText()
     QTextEdit edit;
     edit.setPlainText(text);
     RichTextEditFindBarExample w(&edit);
-
-    QCOMPARE(KPIMTextEdit::FindUtils::replaceAll(&edit, searchText, replaceText, flags), nbElement);
+    const int nbElementResult = KPIMTextEdit::FindUtils::replaceAll(&edit, searchText, replaceText, flags);
+    QCOMPARE(edit.toPlainText(), resultStr);
+    QCOMPARE(nbElementResult, nbElement);
 }
