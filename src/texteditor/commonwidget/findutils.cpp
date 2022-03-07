@@ -31,26 +31,54 @@ QTextDocument::FindFlags FindUtils::convertTextEditFindFlags(TextEditFindBarBase
     return flags;
 }
 
-int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &replaceWidget, TextEditFindBarBase::FindFlags searchOptions)
+int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &replaceStr, TextEditFindBarBase::FindFlags searchOptions)
 {
     auto document = view->document();
-    QTextCursor c(document);
-    c.beginEditBlock();
     int count = 0;
     // Ignoring FindBackward when replacing all
     const QTextDocument::FindFlags flags = FindUtils::convertTextEditFindFlags(searchOptions) & ~QTextDocument::FindBackward;
-    while (!c.isNull()) {
-        c = document->find(str, c, flags);
-        if (!c.isNull()) {
-            // find() selects found text, and insertText() replaces selection
-            c.insertText(replaceWidget);
-            count++;
-        } else {
-            break;
+    if (searchOptions & TextEditFindBarBase::FindFlag::FindRespectDiacritics) {
+        view->textCursor().beginEditBlock();
+        QTextCursor c(document);
+        while (!c.isNull()) {
+            c = document->find(str, c, flags);
+            if (!c.isNull()) {
+                // find() selects found text, and insertText() replaces selection
+                c.insertText(replaceStr);
+                count++;
+            } else {
+                break;
+            }
         }
+        view->textCursor().endEditBlock();
+    } else {
+        const QString toPlainTextWithoutRespectDiacritics{FindUtils::normalize(view->toPlainText())};
+        const QString searchStrWithoutRespectDiacritics{FindUtils::normalize(str)};
+
+        QTextDocument documentWithoutRespectDiacritics(toPlainTextWithoutRespectDiacritics);
+        QTextCursor documentWithoutRespectDiacriticsTextCursor(&documentWithoutRespectDiacritics);
+        QTextCursor docCusor(view->textCursor());
+        documentWithoutRespectDiacriticsTextCursor.setPosition(0);
+
+        view->textCursor().beginEditBlock();
+        QTextCursor c(document);
+
+        while (!documentWithoutRespectDiacriticsTextCursor.isNull()) {
+            documentWithoutRespectDiacriticsTextCursor =
+                documentWithoutRespectDiacritics.find(searchStrWithoutRespectDiacritics, documentWithoutRespectDiacriticsTextCursor, flags);
+            if (!documentWithoutRespectDiacriticsTextCursor.isNull()) {
+                c.setPosition(documentWithoutRespectDiacriticsTextCursor.selectionStart());
+                c.setPosition(documentWithoutRespectDiacriticsTextCursor.selectionEnd(), QTextCursor::KeepAnchor);
+                // find() selects found text, and insertText() replaces selection
+                c.insertText(replaceStr);
+                documentWithoutRespectDiacriticsTextCursor.insertText(replaceStr);
+                count++;
+            } else {
+                break;
+            }
+        }
+        view->textCursor().endEditBlock();
     }
-    c.endEditBlock();
-    view->setTextCursor(c);
     return count;
 }
 
@@ -81,18 +109,20 @@ int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QStrin
         QTextDocument documentWithoutRespectDiacritics(toPlainTextWithoutRespectDiacritics);
         QTextCursor documentWithoutRespectDiacriticsTextCursor(&documentWithoutRespectDiacritics);
         QTextCursor docCusor(view->textCursor());
-        documentWithoutRespectDiacriticsTextCursor.setPosition(docCusor.position());
+        documentWithoutRespectDiacriticsTextCursor.setPosition(0);
 
         view->textCursor().beginEditBlock();
         QTextCursor c(document);
 
         while (!documentWithoutRespectDiacriticsTextCursor.isNull()) {
-            documentWithoutRespectDiacriticsTextCursor = document->find(searchStrWithoutRespectDiacritics, documentWithoutRespectDiacriticsTextCursor, flags);
+            documentWithoutRespectDiacriticsTextCursor =
+                documentWithoutRespectDiacritics.find(searchStrWithoutRespectDiacritics, documentWithoutRespectDiacriticsTextCursor, flags);
             if (!documentWithoutRespectDiacriticsTextCursor.isNull()) {
                 c.setPosition(documentWithoutRespectDiacriticsTextCursor.selectionStart());
                 c.setPosition(documentWithoutRespectDiacriticsTextCursor.selectionEnd(), QTextCursor::KeepAnchor);
                 // find() selects found text, and insertText() replaces selection
                 c.insertText(replaceStr);
+                documentWithoutRespectDiacriticsTextCursor.insertText(replaceStr);
                 count++;
             } else {
                 break;

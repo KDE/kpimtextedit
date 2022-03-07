@@ -122,6 +122,18 @@ void PlainTextEditFindBarTest::shouldReplaceAllText_data()
         QTest::newRow("wholewords-no-diacritics") << QStringLiteral("réunion reunion réunion") << QStringLiteral("réunion") << QStringLiteral("replace")
                                                   << flags << 3 << QStringLiteral("replace replace replace");
     }
+    {
+        KPIMTextEdit::TextEditFindBarBase::FindFlags flags;
+        flags |= KPIMTextEdit::TextEditFindBarBase::FindWholeWords;
+        QTest::newRow("wholewords-no-diacritics-2") << QStringLiteral("réunion réunion réunion") << QStringLiteral("réunion") << QStringLiteral("replace")
+                                                    << flags << 3 << QStringLiteral("replace replace replace");
+    }
+    {
+        KPIMTextEdit::TextEditFindBarBase::FindFlags flags;
+        flags |= KPIMTextEdit::TextEditFindBarBase::FindWholeWords;
+        QTest::newRow("wholewords-no-diacritics-2") << QStringLiteral("voiture voiture voiture") << QStringLiteral("réunion") << QStringLiteral("replace")
+                                                    << flags << 0 << QStringLiteral("voiture voiture voiture");
+    }
 }
 
 void PlainTextEditFindBarTest::shouldReplaceAllText()
