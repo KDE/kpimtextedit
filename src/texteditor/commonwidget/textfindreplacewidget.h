@@ -46,6 +46,7 @@ Q_SIGNALS:
     void searchStringEmpty(bool);
 
 private:
+    void slotRegularExpressionChanged(bool b);
     QLineEdit *const mSearch;
     QAction *mCaseSensitiveAct = nullptr;
     QAction *mWholeWordAct = nullptr;

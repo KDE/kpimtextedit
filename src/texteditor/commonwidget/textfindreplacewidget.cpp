@@ -113,12 +113,18 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     connect(mCaseSensitiveAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
     connect(mWholeWordAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
     connect(mRespectDiacriticAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
-    connect(mRegularExpressionAct, &QAction::toggled, this, &TextFindWidget::updateSearchOptions);
+    connect(mRegularExpressionAct, &QAction::toggled, this, &TextFindWidget::slotRegularExpressionChanged);
     connect(mSearch, &QLineEdit::textChanged, this, &TextFindWidget::slotAutoSearch);
     connect(mSearch, &QLineEdit::returnPressed, this, &TextFindWidget::findNext);
 }
 
 TextFindWidget::~TextFindWidget() = default;
+
+void TextFindWidget::slotRegularExpressionChanged(bool b)
+{
+    mRespectDiacriticAct->setEnabled(!b);
+    Q_EMIT updateSearchOptions();
+}
 
 void TextFindWidget::setFoundMatch(bool match)
 {
