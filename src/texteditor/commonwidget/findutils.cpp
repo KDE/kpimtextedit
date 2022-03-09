@@ -43,7 +43,6 @@ int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &re
         while (!c.isNull()) {
             c = document->find(str, c, flags);
             if (!c.isNull()) {
-                // find() selects found text, and insertText() replaces selection
                 c.insertText(replaceStr);
                 count++;
             } else {
@@ -69,7 +68,6 @@ int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &re
             if (!documentWithoutRespectDiacriticsTextCursor.isNull()) {
                 c.setPosition(documentWithoutRespectDiacriticsTextCursor.selectionStart());
                 c.setPosition(documentWithoutRespectDiacriticsTextCursor.selectionEnd(), QTextCursor::KeepAnchor);
-                // find() selects found text, and insertText() replaces selection
                 c.insertText(replaceStr);
                 documentWithoutRespectDiacriticsTextCursor.insertText(replaceStr);
                 count++;
@@ -94,7 +92,6 @@ int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QStrin
         while (!c.isNull()) {
             c = document->find(str, c, flags);
             if (!c.isNull()) {
-                // find() selects found text, and insertText() replaces selection
                 c.insertText(replaceStr);
                 count++;
             } else {
@@ -120,7 +117,6 @@ int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QStrin
             if (!documentWithoutRespectDiacriticsTextCursor.isNull()) {
                 c.setPosition(documentWithoutRespectDiacriticsTextCursor.selectionStart());
                 c.setPosition(documentWithoutRespectDiacriticsTextCursor.selectionEnd(), QTextCursor::KeepAnchor);
-                // find() selects found text, and insertText() replaces selection
                 c.insertText(replaceStr);
                 documentWithoutRespectDiacriticsTextCursor.insertText(replaceStr);
                 count++;

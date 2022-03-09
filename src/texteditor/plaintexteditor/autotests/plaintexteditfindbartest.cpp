@@ -74,6 +74,7 @@ void PlainTextEditFindBarTest::shouldSearchText_data()
         QTest::newRow("find-diacritics-1") << QStringLiteral("numéro numéro") << QStringLiteral("numero") << flags << false;
 
         QTest::newRow("find-diacritics-2") << QStringLiteral("numéro numéro") << QStringLiteral("numéro") << flags << true;
+        QTest::newRow("find-diacritics-3") << QStringLiteral("numéro numéro il est là. Numero numéro") << QStringLiteral("numero") << flags << true;
     }
 }
 
@@ -131,8 +132,20 @@ void PlainTextEditFindBarTest::shouldReplaceAllText_data()
     {
         KPIMTextEdit::TextEditFindBarBase::FindFlags flags;
         flags |= KPIMTextEdit::TextEditFindBarBase::FindWholeWords;
-        QTest::newRow("wholewords-no-diacritics-2") << QStringLiteral("voiture voiture voiture") << QStringLiteral("réunion") << QStringLiteral("replace")
+        QTest::newRow("wholewords-no-diacritics-3") << QStringLiteral("voiture voiture voiture") << QStringLiteral("réunion") << QStringLiteral("replace")
                                                     << flags << 0 << QStringLiteral("voiture voiture voiture");
+    }
+    {
+        KPIMTextEdit::TextEditFindBarBase::FindFlags flags;
+        flags |= KPIMTextEdit::TextEditFindBarBase::FindWholeWords;
+        QTest::newRow("wholewords-no-diacritics-3") << QStringLiteral("voiture voiture il est là. voiture") << QStringLiteral("voiture")
+                                                    << QStringLiteral("replace") << flags << 3 << QStringLiteral("replace replace il est là. replace");
+    }
+    {
+        KPIMTextEdit::TextEditFindBarBase::FindFlags flags;
+        flags |= KPIMTextEdit::TextEditFindBarBase::FindWholeWords;
+        QTest::newRow("wholewords-no-diacritics-4") << QStringLiteral("réunion réunion . Test... réunion") << QStringLiteral("réunion")
+                                                    << QStringLiteral("replace") << flags << 3 << QStringLiteral("replace replace . Test... replace");
     }
 }
 
