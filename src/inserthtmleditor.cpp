@@ -21,6 +21,7 @@ using namespace KPIMTextEdit;
 
 InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
     : KPIMTextEdit::PlainTextEditor(parent)
+    , mTextEditorCompleter(new KPIMTextEdit::TextEditorCompleter(this, this))
 {
     const KSyntaxHighlighting::Definition def = mRepo.definitionForName(QStringLiteral("HTML"));
     if (!def.isValid()) {
@@ -32,7 +33,6 @@ InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
                                                                      : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     hl->setDefinition(def);
     setFocus();
-    mTextEditorCompleter = new KPIMTextEdit::TextEditorCompleter(this, this);
     const QStringList completerList = {QStringLiteral("<b></b>"), QStringLiteral("<i></i>"), QStringLiteral("<u></u>")};
     // Add more
     mTextEditorCompleter->setCompleterStringList(completerList);

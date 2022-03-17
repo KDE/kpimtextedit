@@ -26,7 +26,7 @@ protected:
     void keyPressEvent(QKeyEvent *e) override;
 
 private:
-    KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter = nullptr;
+    KPIMTextEdit::TextEditorCompleter *const mTextEditorCompleter;
     KSyntaxHighlighting::Repository mRepo;
 };
 }
