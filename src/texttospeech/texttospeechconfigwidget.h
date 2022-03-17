@@ -43,10 +43,10 @@ private:
     QSlider *mVolume = nullptr;
     QSlider *mRate = nullptr;
     QSlider *mPitch = nullptr;
-    TextToSpeechLanguageComboBox *mLanguage = nullptr;
+    TextToSpeechLanguageComboBox *const mLanguage;
     AbstractTextToSpeechConfigInterface *mAbstractTextToSpeechConfigInterface = nullptr;
-    QComboBox *mAvailableEngine = nullptr;
-    QComboBox *mVoice = nullptr;
+    QComboBox *const mAvailableEngine;
+    QComboBox *const mVoice;
 };
 }
 

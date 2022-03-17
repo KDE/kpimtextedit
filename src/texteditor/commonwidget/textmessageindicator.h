@@ -24,7 +24,12 @@ class TextMessageIndicator : public QWidget
 public:
     explicit TextMessageIndicator(QWidget *parent = nullptr);
 
-    enum Icon { None, Info, Warning, Error };
+    enum Icon {
+        None,
+        Info,
+        Warning,
+        Error,
+    };
 
     void display(const QString &message, const QString &details = QString(), Icon icon = None, int durationMs = 4000);
 

@@ -20,7 +20,10 @@
 using namespace KPIMTextEdit;
 TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     : QWidget(parent)
+    , mLanguage(new KPIMTextEdit::TextToSpeechLanguageComboBox(this))
     , mAbstractTextToSpeechConfigInterface(new TextToSpeechConfigInterface(this))
+    , mAvailableEngine(new QComboBox(this))
+    , mVoice(new QComboBox(this))
 {
     auto layout = new QFormLayout(this);
     mVolume = new QSlider(this);
@@ -48,19 +51,16 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     mPitch->setOrientation(Qt::Horizontal);
     layout->addRow(i18n("Pitch:"), mPitch);
 
-    mAvailableEngine = new QComboBox(this);
     mAvailableEngine->setObjectName(QStringLiteral("engine"));
     layout->addRow(i18n("Engine:"), mAvailableEngine);
     connect(mAvailableEngine, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::slotEngineChanged);
     connect(mAvailableEngine, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::valueChanged);
 
-    mLanguage = new KPIMTextEdit::TextToSpeechLanguageComboBox(this);
     mLanguage->setObjectName(QStringLiteral("language"));
     layout->addRow(i18n("Language:"), mLanguage);
     connect(mAvailableEngine, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::slotLanguageChanged);
     connect(mLanguage, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::valueChanged);
 
-    mVoice = new QComboBox(this);
     mVoice->setObjectName(QStringLiteral("voice"));
     layout->addRow(i18n("Voice:"), mVoice);
     connect(mVoice, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::valueChanged);

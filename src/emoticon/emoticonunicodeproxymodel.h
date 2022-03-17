@@ -20,7 +20,7 @@ public:
     void setCategories(EmoticonUnicodeUtils::EmoticonStruct::EmoticonType newCategories);
 
 protected:
-    bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
+    Q_REQUIRED_RESULT bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
 
 private:
     EmoticonUnicodeUtils::EmoticonStruct::EmoticonType mCategories = EmoticonUnicodeUtils::EmoticonStruct::Unknown;

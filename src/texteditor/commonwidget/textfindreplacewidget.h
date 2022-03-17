@@ -53,8 +53,8 @@ private:
     QAction *mRegularExpressionAct = nullptr;
     QAction *mRespectDiacriticAct = nullptr;
 
-    QPushButton *mFindPrevBtn = nullptr;
-    QPushButton *mFindNextBtn = nullptr;
+    QPushButton *const mFindPrevBtn;
+    QPushButton *const mFindNextBtn;
 };
 
 class KPIMTEXTEDIT_TESTS_EXPORT TextReplaceWidget : public QWidget

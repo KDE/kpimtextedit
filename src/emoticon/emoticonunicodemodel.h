@@ -28,7 +28,7 @@ public:
     Q_REQUIRED_RESULT int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     Q_REQUIRED_RESULT QVariant data(const QModelIndex &index, int role) const override;
 
-    const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticonList() const;
+    Q_REQUIRED_RESULT const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticonList() const;
     void setEmoticonList(const QVector<EmoticonUnicodeUtils::EmoticonStruct> &newEmoticonList);
 
 private:
