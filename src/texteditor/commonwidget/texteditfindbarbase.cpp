@@ -21,6 +21,8 @@ using namespace KPIMTextEdit;
 
 TextEditFindBarBase::TextEditFindBarBase(QWidget *parent)
     : QWidget(parent)
+    , mFindWidget(new TextFindWidget(this))
+    , mReplaceWidget(new TextReplaceWidget(this))
 {
     auto topLayout = new QVBoxLayout(this);
     auto lay = new QHBoxLayout;
@@ -38,10 +40,8 @@ TextEditFindBarBase::TextEditFindBarBase(QWidget *parent)
     closeBtn->setAutoRaise(true);
     lay->addWidget(closeBtn);
 
-    mFindWidget = new TextFindWidget(this);
     lay->addWidget(mFindWidget);
 
-    mReplaceWidget = new TextReplaceWidget(this);
     topLayout->addWidget(mReplaceWidget);
     mReplaceWidget->hide();
 

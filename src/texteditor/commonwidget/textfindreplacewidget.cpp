@@ -61,6 +61,8 @@ void TextReplaceWidget::slotSearchStringEmpty(bool isEmpty)
 TextFindWidget::TextFindWidget(QWidget *parent)
     : QWidget(parent)
     , mSearch(new QLineEdit(this))
+    , mFindPrevBtn(new QPushButton(QIcon::fromTheme(QStringLiteral("go-up-search")), i18nc("Find and go to the previous search match", "Previous"), this))
+    , mFindNextBtn(new QPushButton(QIcon::fromTheme(QStringLiteral("go-down-search")), i18nc("Find and go to the next search match", "Next"), this))
 {
     auto lay = new QHBoxLayout(this);
     const int marg1 = lay->contentsMargins().left();
@@ -75,13 +77,11 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     label->setBuddy(mSearch);
     lay->addWidget(mSearch);
 
-    mFindNextBtn = new QPushButton(QIcon::fromTheme(QStringLiteral("go-down-search")), i18nc("Find and go to the next search match", "Next"), this);
     mFindNextBtn->setToolTip(i18n("Jump to next match"));
     lay->addWidget(mFindNextBtn);
     mFindNextBtn->setEnabled(false);
     mFindNextBtn->setObjectName(QStringLiteral("mFindNextBtn"));
 
-    mFindPrevBtn = new QPushButton(QIcon::fromTheme(QStringLiteral("go-up-search")), i18nc("Find and go to the previous search match", "Previous"), this);
     mFindPrevBtn->setToolTip(i18n("Jump to previous match"));
     lay->addWidget(mFindPrevBtn);
     mFindPrevBtn->setEnabled(false);
