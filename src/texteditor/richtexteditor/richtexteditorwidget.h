@@ -57,4 +57,3 @@ private:
     std::unique_ptr<RichTextEditorWidgetPrivate> const d;
 };
 }
-

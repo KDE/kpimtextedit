@@ -25,4 +25,3 @@ private Q_SLOTS:
 private:
     void addInterface(KPIMTextEdit::TextToSpeechConfigWidget *widget);
 };
-

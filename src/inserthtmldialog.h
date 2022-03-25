@@ -31,4 +31,3 @@ private:
     void writeConfig();
 };
 }
-

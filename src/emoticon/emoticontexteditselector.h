@@ -33,4 +33,3 @@ private:
     QLineEdit *const mSearchUnicodeLineEdit;
 };
 }
-

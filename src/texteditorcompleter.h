@@ -41,4 +41,3 @@ private:
     std::unique_ptr<TextEditorCompleterPrivate> const d;
 };
 }
-

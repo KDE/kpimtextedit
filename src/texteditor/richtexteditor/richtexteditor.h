@@ -137,4 +137,3 @@ private:
     std::unique_ptr<RichTextEditorPrivate> const d;
 };
 }
-

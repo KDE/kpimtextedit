@@ -31,4 +31,3 @@ public:
     QTextToSpeech *mTextToSpeech = nullptr;
 };
 }
-

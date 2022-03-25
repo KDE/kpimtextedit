@@ -248,4 +248,3 @@ public:
     virtual void addSingleBreakLine() = 0;
 };
 }
-

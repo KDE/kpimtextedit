@@ -28,4 +28,3 @@ private:
     std::unique_ptr<EmoticonTextEditActionPrivate> const d;
 };
 }
-

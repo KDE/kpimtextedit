@@ -31,4 +31,3 @@ public:
     virtual void setEngine(const QString &engineName);
 };
 }
-

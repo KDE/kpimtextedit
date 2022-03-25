@@ -47,4 +47,3 @@ private:
     std::unique_ptr<RichTextExternalComposerPrivate> const d;
 };
 }
-

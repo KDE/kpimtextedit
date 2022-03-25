@@ -44,4 +44,3 @@ private:
     int mRecentTabIndex = -1;
 };
 }
-

@@ -42,4 +42,3 @@ private:
     std::unique_ptr<TextToSpeechActionsPrivate> const d;
 };
 }
-

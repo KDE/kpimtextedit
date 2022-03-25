@@ -37,4 +37,3 @@ private:
     std::unique_ptr<InsertTableDialogPrivate> const d;
 };
 }
-

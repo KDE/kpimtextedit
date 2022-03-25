@@ -48,4 +48,3 @@ private:
     std::unique_ptr<RichTextComposerActionsPrivate> const d;
 };
 }
-

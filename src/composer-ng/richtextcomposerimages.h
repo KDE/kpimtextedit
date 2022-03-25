@@ -105,4 +105,3 @@ private:
     std::unique_ptr<RichTextComposerImagesPrivate> const d;
 };
 }
-

@@ -14,4 +14,3 @@ public:
     explicit TestGeneratePlainTextBuilderGui(QWidget *parent = nullptr);
     ~TestGeneratePlainTextBuilderGui() override;
 };
-

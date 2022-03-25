@@ -55,4 +55,3 @@ private:
     std::unique_ptr<TableCellFormatDialogPrivate> const d;
 };
 }
-

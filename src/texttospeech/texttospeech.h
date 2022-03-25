@@ -65,4 +65,3 @@ private:
     QTextToSpeech *mTextToSpeech = nullptr;
 };
 }
-

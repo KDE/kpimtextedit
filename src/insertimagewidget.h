@@ -40,4 +40,3 @@ private:
     std::unique_ptr<InsertImageWidgetPrivate> const d;
 };
 }
-

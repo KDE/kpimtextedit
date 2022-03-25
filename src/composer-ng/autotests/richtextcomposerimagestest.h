@@ -15,4 +15,3 @@ public:
     explicit RichTextComposerImagesTest(QObject *parent = nullptr);
     ~RichTextComposerImagesTest() override;
 };
-

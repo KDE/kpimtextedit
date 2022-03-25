@@ -30,4 +30,3 @@ private:
     KSyntaxHighlighting::Repository mRepo;
 };
 }
-

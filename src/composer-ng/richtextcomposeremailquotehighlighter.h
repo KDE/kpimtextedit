@@ -84,4 +84,3 @@ private:
     std::unique_ptr<RichTextComposerEmailQuoteHighlighterPrivate> const d;
 };
 }
-

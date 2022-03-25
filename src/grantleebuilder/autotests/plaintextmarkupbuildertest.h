@@ -45,4 +45,3 @@ private Q_SLOTS:
     void testLongDocument();
     void testBrInsideAnchor();
 };
-

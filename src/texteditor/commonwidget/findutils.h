@@ -39,4 +39,3 @@ Q_REQUIRED_RESULT bool find(QTextEdit *view, const QString &searchText, QTextDoc
 Q_REQUIRED_RESULT QTextDocument::FindFlags convertTextEditFindFlags(TextEditFindBarBase::FindFlags textEditFlags);
 }
 } // namespace KPIMTextEdit
-

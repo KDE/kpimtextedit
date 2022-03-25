@@ -26,4 +26,3 @@ private:
     KPIMTextEdit::TextToSpeechConfigWidget *mTextToSpeechConfigWidget = nullptr;
 };
 }
-

@@ -82,4 +82,3 @@ protected:
     bool mHideWhenClose = true;
 };
 }
-

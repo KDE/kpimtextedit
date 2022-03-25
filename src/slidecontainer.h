@@ -80,4 +80,3 @@ private:
     void animTo(int height);
 };
 } /* namespace */
-

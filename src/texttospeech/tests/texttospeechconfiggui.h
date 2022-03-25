@@ -14,4 +14,3 @@ public:
     explicit TextToSpeechConfigGui(QWidget *parent = nullptr);
     ~TextToSpeechConfigGui() override;
 };
-

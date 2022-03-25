@@ -16,4 +16,3 @@
 #else /* not compiling tests */
 #define KPIMTEXTEDIT_TESTS_EXPORT
 #endif
-

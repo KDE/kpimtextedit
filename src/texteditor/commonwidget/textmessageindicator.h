@@ -48,4 +48,3 @@ private:
     int mLineSpacing = 0;
 };
 }
-

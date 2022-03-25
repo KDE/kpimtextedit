@@ -44,4 +44,3 @@ KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT bool containsFormatting(const QTextDocumen
 KPIMTEXTEDIT_EXPORT Q_REQUIRED_RESULT QString flowText(QString &text, const QString &indent, int maxLength);
 }
 }
-

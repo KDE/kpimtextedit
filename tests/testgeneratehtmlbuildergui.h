@@ -14,4 +14,3 @@ public:
     explicit TestGenerateHTMLBuilderGui(QWidget *parent = nullptr);
     ~TestGenerateHTMLBuilderGui() override;
 };
-

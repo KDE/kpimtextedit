@@ -51,4 +51,3 @@ private Q_SLOTS:
     void testBugTextColor();
     void testBugIndent443534();
 };
-

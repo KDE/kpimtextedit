@@ -21,4 +21,3 @@ public:
     void reverseCase(QTextCursor &cursor) const;
 };
 }
-

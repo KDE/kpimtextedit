@@ -49,4 +49,3 @@ private:
     QComboBox *const mVoice;
 };
 }
-

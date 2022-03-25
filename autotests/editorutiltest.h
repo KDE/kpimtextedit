@@ -23,4 +23,3 @@ private Q_SLOTS:
     void testReverseCase();
     void testReverseCase_data();
 };
-

@@ -16,4 +16,3 @@ private Q_SLOTS:
     void test_flowText_data();
     void test_flowText();
 };
-

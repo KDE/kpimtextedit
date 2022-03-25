@@ -30,4 +30,3 @@ private:
     std::unique_ptr<RichTextComposerWidgetPrivate> const d;
 };
 }
-

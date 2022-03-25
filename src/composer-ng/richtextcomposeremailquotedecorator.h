@@ -31,4 +31,3 @@ private:
     std::unique_ptr<RichTextComposerEmailQuoteDecoratorPrivate> const d;
 };
 }
-
