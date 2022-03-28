@@ -40,9 +40,9 @@ private:
     void updateAvailableLocales();
     void updateAvailableEngine();
     void updateAvailableVoices();
-    QSlider *mVolume = nullptr;
-    QSlider *mRate = nullptr;
-    QSlider *mPitch = nullptr;
+    QSlider *const mVolume;
+    QSlider *const mRate;
+    QSlider *const mPitch;
     TextToSpeechLanguageComboBox *const mLanguage;
     AbstractTextToSpeechConfigInterface *mAbstractTextToSpeechConfigInterface = nullptr;
     QComboBox *const mAvailableEngine;

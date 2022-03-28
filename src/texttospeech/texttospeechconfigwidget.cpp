@@ -20,13 +20,15 @@
 using namespace KPIMTextEdit;
 TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     : QWidget(parent)
+    , mVolume(new QSlider(this))
+    , mRate(new QSlider(this))
+    , mPitch(new QSlider(this))
     , mLanguage(new KPIMTextEdit::TextToSpeechLanguageComboBox(this))
     , mAbstractTextToSpeechConfigInterface(new TextToSpeechConfigInterface(this))
     , mAvailableEngine(new QComboBox(this))
     , mVoice(new QComboBox(this))
 {
     auto layout = new QFormLayout(this);
-    mVolume = new QSlider(this);
     mVolume->setObjectName(QStringLiteral("volume"));
     mVolume->setRange(0, 100);
     mVolume->setOrientation(Qt::Horizontal);
@@ -35,7 +37,6 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
 
     layout->addRow(i18n("Volume:"), mVolume);
 
-    mRate = new QSlider(this);
     mRate->setTickPosition(QSlider::TicksBelow);
     mRate->setObjectName(QStringLiteral("rate"));
     mRate->setRange(-100, 100);
@@ -43,7 +44,6 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     layout->addRow(i18n("Rate:"), mRate);
     connect(mRate, &QSlider::valueChanged, this, &TextToSpeechConfigWidget::valueChanged);
 
-    mPitch = new QSlider(this);
     mPitch->setRange(-100, 100);
     mPitch->setTickPosition(QSlider::TicksBelow);
     connect(mPitch, &QSlider::valueChanged, this, &TextToSpeechConfigWidget::valueChanged);
