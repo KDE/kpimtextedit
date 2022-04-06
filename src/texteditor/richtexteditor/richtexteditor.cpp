@@ -738,6 +738,11 @@ bool RichTextEditor::event(QEvent *ev)
             return true;
         }
     }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    else if (ev->type() == QEvent::ApplicationPaletteChange) {
+        regenerateColorScheme();
+    }
+#endif
     return QTextEdit::event(ev);
 }
 
@@ -753,11 +758,6 @@ void RichTextEditor::wheelEvent(QWheelEvent *event)
         event->accept();
         return;
     }
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    else if (event->type() == QEvent::ApplicationPaletteChange) {
-        regenerateColorScheme();
-    }
-#endif
     QTextEdit::wheelEvent(event);
 }
 

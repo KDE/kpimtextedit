@@ -48,12 +48,18 @@ public:
         delete nestedListHelper;
     }
 
+    void regenerateColorScheme()
+    {
+        mLinkColor = KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::LinkText).color();
+        // TODO update existing link
+    }
+
     QColor linkColor()
     {
         if (mLinkColor.isValid()) {
             return mLinkColor;
         }
-        mLinkColor = KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::LinkText).color();
+        regenerateColorScheme();
         return mLinkColor;
     }
 
@@ -136,9 +142,17 @@ RichTextComposerControler::RichTextComposerControler(RichTextComposer *richtextC
     : QObject(parent)
     , d(new RichTextComposerControlerPrivate(richtextComposer, this))
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    connect(qApp, &QApplication::paletteChanged, this, &RichTextComposerControler::regenerateColorScheme);
+#endif
 }
 
 RichTextComposerControler::~RichTextComposerControler() = default;
+
+void RichTextComposerControler::regenerateColorScheme()
+{
+    d->regenerateColorScheme();
+}
 
 bool RichTextComposerControler::painterActive() const
 {
@@ -936,4 +950,15 @@ QString RichTextComposerControler::toWrappedPlainText(QTextDocument *doc) const
     }
     d->fixupTextEditString(temp);
     return temp;
+}
+
+bool RichTextComposerControler::event(QEvent *ev)
+{
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    if (ev->type() == QEvent::ApplicationPaletteChange) {
+        regenerateColorScheme();
+    }
+#endif
+
+    return QObject::event(ev);
 }
