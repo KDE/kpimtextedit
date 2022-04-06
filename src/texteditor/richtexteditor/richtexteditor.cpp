@@ -754,7 +754,7 @@ void RichTextEditor::wheelEvent(QWheelEvent *event)
         return;
     }
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    else if (e->type() == QEvent::ApplicationPaletteChange) {
+    else if (event->type() == QEvent::ApplicationPaletteChange) {
         regenerateColorScheme();
     }
 #endif

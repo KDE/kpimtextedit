@@ -449,7 +449,7 @@ bool PlainTextEditor::event(QEvent *ev)
         }
     }
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    else if (e->type() == QEvent::ApplicationPaletteChange) {
+    else if (ev->type() == QEvent::ApplicationPaletteChange) {
         regenerateColorScheme();
     }
 #endif
