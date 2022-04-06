@@ -29,6 +29,7 @@
 #include <texttospeech/texttospeech.h>
 #endif
 
+#include <KColorScheme>
 #include <QApplication>
 #include <QClipboard>
 #include <QContextMenuEvent>
@@ -100,6 +101,7 @@ public:
     Sonnet::Speller *speller = nullptr;
     KIO::KUriFilterSearchProviderActions *const webshortcutMenuManager;
     RichTextEditor::SupportFeatures supportFeatures;
+    QColor mReadOnlyBackgroundColor;
     int mInitialFontSize;
     bool customPalette = false;
     bool checkSpellingEnabled = false;
@@ -115,9 +117,19 @@ RichTextEditor::RichTextEditor(QWidget *parent)
     KCursor::setAutoHideCursor(this, true, false);
     setSpellCheckingConfigFileName(QString());
     d->mInitialFontSize = font().pointSize();
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    connect(qApp, &QApplication::paletteChanged, this, &RichTextEditor::regenerateColorScheme);
+#endif
+    regenerateColorScheme();
 }
 
 RichTextEditor::~RichTextEditor() = default;
+
+void RichTextEditor::regenerateColorScheme()
+{
+    d->mReadOnlyBackgroundColor = KColorScheme(QPalette::Disabled, KColorScheme::View).background().color();
+    updateReadOnlyColor();
+}
 
 void RichTextEditor::setDefaultFontSize(int val)
 {
@@ -393,6 +405,16 @@ void RichTextEditor::slotUndoableClear()
     cursor.endEditBlock();
 }
 
+void RichTextEditor::updateReadOnlyColor()
+{
+    if (isReadOnly()) {
+        QPalette p = palette();
+        p.setColor(QPalette::Base, d->mReadOnlyBackgroundColor);
+        p.setColor(QPalette::Window, d->mReadOnlyBackgroundColor);
+        setPalette(p);
+    }
+}
+
 void RichTextEditor::setReadOnly(bool readOnly)
 {
     if (!readOnly && hasFocus() && checkSpellingEnabled() && !d->richTextDecorator) {
@@ -405,13 +427,8 @@ void RichTextEditor::setReadOnly(bool readOnly)
 
     if (readOnly) {
         clearDecorator();
-
         d->customPalette = testAttribute(Qt::WA_SetPalette);
-        QPalette p = palette();
-        QColor color = p.color(QPalette::Disabled, QPalette::Window);
-        p.setColor(QPalette::Base, color);
-        p.setColor(QPalette::Window, color);
-        setPalette(p);
+        updateReadOnlyColor();
     } else {
         if (d->customPalette && testAttribute(Qt::WA_SetPalette)) {
             QPalette p = palette();
@@ -736,6 +753,11 @@ void RichTextEditor::wheelEvent(QWheelEvent *event)
         event->accept();
         return;
     }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    else if (e->type() == QEvent::ApplicationPaletteChange) {
+        regenerateColorScheme();
+    }
+#endif
     QTextEdit::wheelEvent(event);
 }
 
