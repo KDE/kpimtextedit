@@ -24,6 +24,7 @@
 #include <Sonnet/Dialog>
 #include <sonnet/backgroundchecker.h>
 
+#include <KColorScheme>
 #include <QApplication>
 #include <QClipboard>
 #include <QDBusConnection>
@@ -75,6 +76,7 @@ public:
     QString spellCheckingLanguage;
     QTextDocumentFragment originalDoc;
     PlainTextEditor::SupportFeatures supportFeatures;
+    QColor mReadOnlyBackgroundColor;
     int mInitialFontSize = 0;
     bool customPalette = false;
     bool activateLanguageMenu = true;
@@ -88,9 +90,19 @@ PlainTextEditor::PlainTextEditor(QWidget *parent)
     KCursor::setAutoHideCursor(this, true, false);
     setSpellCheckingConfigFileName(QString());
     d->mInitialFontSize = font().pointSize();
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    connect(qApp, &QApplication::paletteChanged, this, &PlainTextEditor::regenerateColorScheme);
+#endif
+    regenerateColorScheme();
 }
 
 PlainTextEditor::~PlainTextEditor() = default;
+
+void PlainTextEditor::regenerateColorScheme()
+{
+    d->mReadOnlyBackgroundColor = KColorScheme(QPalette::Disabled, KColorScheme::View).background().color();
+    updateReadOnlyColor();
+}
 
 void PlainTextEditor::addIgnoreWords(const QStringList &lst)
 {
@@ -291,6 +303,16 @@ bool PlainTextEditor::webShortcutSupport() const
     return d->supportFeatures & AllowWebShortcut;
 }
 
+void PlainTextEditor::updateReadOnlyColor()
+{
+    if (isReadOnly()) {
+        QPalette p = palette();
+        p.setColor(QPalette::Base, d->mReadOnlyBackgroundColor);
+        p.setColor(QPalette::Window, d->mReadOnlyBackgroundColor);
+        setPalette(p);
+    }
+}
+
 void PlainTextEditor::setReadOnly(bool readOnly)
 {
     if (!readOnly && hasFocus() && d->checkSpellingEnabled && !d->richTextDecorator) {
@@ -303,13 +325,8 @@ void PlainTextEditor::setReadOnly(bool readOnly)
 
     if (readOnly) {
         clearDecorator();
-
         d->customPalette = testAttribute(Qt::WA_SetPalette);
-        QPalette p = palette();
-        QColor color = p.color(QPalette::Disabled, QPalette::Window);
-        p.setColor(QPalette::Base, color);
-        p.setColor(QPalette::Window, color);
-        setPalette(p);
+        updateReadOnlyColor();
     } else {
         if (d->customPalette && testAttribute(Qt::WA_SetPalette)) {
             QPalette p = palette();
@@ -431,6 +448,12 @@ bool PlainTextEditor::event(QEvent *ev)
             return true;
         }
     }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    else if (e->type() == QEvent::ApplicationPaletteChange) {
+        regenerateColorScheme();
+    }
+#endif
+
     return QPlainTextEdit::event(ev);
 }
 

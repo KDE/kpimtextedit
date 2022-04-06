@@ -111,6 +111,8 @@ private:
     void deleteEndOfLine();
     void moveLineUpDown(bool moveUp);
     void moveCursorBeginUpDown(bool moveUp);
+    void regenerateColorScheme();
+    void updateReadOnlyColor();
     class PlainTextEditorPrivate;
     std::unique_ptr<PlainTextEditorPrivate> const d;
 };

@@ -133,6 +133,8 @@ private:
     void checkSpelling(bool force);
     void moveLineUpDown(bool moveUp);
     void moveCursorBeginUpDown(bool moveUp);
+    void regenerateColorScheme();
+    void updateReadOnlyColor();
     class RichTextEditorPrivate;
     std::unique_ptr<RichTextEditorPrivate> const d;
 };
