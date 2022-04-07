@@ -37,6 +37,8 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
     , d(new KPIMTextEdit::TextToSpeechWidgetPrivate)
 {
     auto hbox = new QHBoxLayout(this);
+    hbox->setObjectName(QStringLiteral("hbox"));
+    hbox->setContentsMargins(QMargins{});
 
     d->mTextToSpeechActions = new TextToSpeechActions(this);
     connect(d->mTextToSpeechActions, &TextToSpeechActions::stateChanged, this, &TextToSpeechWidget::stateChanged);

@@ -7,6 +7,7 @@
 #include "texttospeechwidgettest.h"
 #include "../abstracttexttospeechinterface.h"
 #include "texttospeech/texttospeechwidget.h"
+#include <QHBoxLayout>
 #include <QSignalSpy>
 #include <QSlider>
 #include <QTest>
@@ -32,6 +33,11 @@ void TextToSpeechWidgetTest::shouldHaveDefaultValue()
 {
     KPIMTextEdit::TextToSpeechWidget textToSpeechWidget;
     addInterface(&textToSpeechWidget);
+
+    auto hbox = textToSpeechWidget.findChild<QHBoxLayout *>(QStringLiteral("hbox"));
+    QVERIFY(hbox);
+    QCOMPARE(hbox->contentsMargins(), QMargins{});
+
     QCOMPARE(textToSpeechWidget.state(), KPIMTextEdit::TextToSpeechWidget::Stop);
 
     auto closeButton = textToSpeechWidget.findChild<QToolButton *>(QStringLiteral("close-button"));
