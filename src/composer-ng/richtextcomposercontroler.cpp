@@ -32,10 +32,10 @@ using namespace std::chrono_literals;
 
 using namespace KPIMTextEdit;
 
-class Q_DECL_HIDDEN RichTextComposerControler::RichTextComposerControlerPrivate
+class Q_DECL_HIDDEN RichTextComposerControler::RichTextComposerControllerPrivate
 {
 public:
-    RichTextComposerControlerPrivate(RichTextComposer *composer, RichTextComposerControler *qq)
+    RichTextComposerControllerPrivate(RichTextComposer *composer, RichTextComposerControler *qq)
         : richtextComposer(composer)
         , q(qq)
     {
@@ -43,7 +43,7 @@ public:
         richTextImages = new RichTextComposerImages(richtextComposer, q);
     }
 
-    ~RichTextComposerControlerPrivate()
+    ~RichTextComposerControllerPrivate()
     {
         delete nestedListHelper;
     }
@@ -78,7 +78,7 @@ public:
     bool painterActive = false;
 };
 
-void RichTextComposerControler::RichTextComposerControlerPrivate::selectLinkText(QTextCursor *cursor) const
+void RichTextComposerControler::RichTextComposerControllerPrivate::selectLinkText(QTextCursor *cursor) const
 {
     // If the cursor is on a link, select the text of the link.
     if (cursor->charFormat().isAnchor()) {
@@ -120,7 +120,7 @@ void RichTextComposerControler::RichTextComposerControlerPrivate::selectLinkText
     }
 }
 
-void RichTextComposerControler::RichTextComposerControlerPrivate::mergeFormatOnWordOrSelection(const QTextCharFormat &format)
+void RichTextComposerControler::RichTextComposerControllerPrivate::mergeFormatOnWordOrSelection(const QTextCharFormat &format)
 {
     QTextCursor cursor = richtextComposer->textCursor();
     QTextCursor wordStart(cursor);
@@ -140,7 +140,7 @@ void RichTextComposerControler::RichTextComposerControlerPrivate::mergeFormatOnW
 
 RichTextComposerControler::RichTextComposerControler(RichTextComposer *richtextComposer, QObject *parent)
     : QObject(parent)
-    , d(new RichTextComposerControlerPrivate(richtextComposer, this))
+    , d(new RichTextComposerControllerPrivate(richtextComposer, this))
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     connect(qApp, &QApplication::paletteChanged, this, &RichTextComposerControler::regenerateColorScheme);
@@ -493,7 +493,7 @@ void RichTextComposerControler::updateLink(const QString &linkUrl, const QString
     d->updateLink(linkUrl, linkText);
 }
 
-void RichTextComposerControler::RichTextComposerControlerPrivate::updateLink(const QString &linkUrl, const QString &linkText)
+void RichTextComposerControler::RichTextComposerControllerPrivate::updateLink(const QString &linkUrl, const QString &linkText)
 {
     q->selectLinkText();
 
@@ -680,7 +680,7 @@ void RichTextComposerControler::ensureCursorVisible()
     QTimer::singleShot(500ms, richTextComposer()->composerControler(), &RichTextComposerControler::ensureCursorVisibleDelayed);
 }
 
-void RichTextComposerControler::RichTextComposerControlerPrivate::fixupTextEditString(QString &text) const
+void RichTextComposerControler::RichTextComposerControllerPrivate::fixupTextEditString(QString &text) const
 {
     // Remove line separators. Normal \n chars are still there, so no linebreaks get lost here
     text.remove(QChar::LineSeparator);
@@ -876,7 +876,7 @@ void RichTextComposerControler::addQuotes(const QString &defaultQuote)
     cursor.endEditBlock();
 }
 
-QString RichTextComposerControler::RichTextComposerControlerPrivate::addQuotesToText(const QString &inputText, const QString &defaultQuoteSign)
+QString RichTextComposerControler::RichTextComposerControllerPrivate::addQuotesToText(const QString &inputText, const QString &defaultQuoteSign)
 {
     QString answer = inputText;
     answer.replace(QLatin1Char('\n'), QLatin1Char('\n') + defaultQuoteSign);

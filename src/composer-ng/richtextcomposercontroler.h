@@ -98,7 +98,7 @@ protected:
 
 private:
     void regenerateColorScheme();
-    class RichTextComposerControlerPrivate;
-    std::unique_ptr<RichTextComposerControlerPrivate> const d;
+    class RichTextComposerControllerPrivate;
+    std::unique_ptr<RichTextComposerControllerPrivate> const d;
 };
 }
