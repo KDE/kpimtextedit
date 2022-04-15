@@ -546,7 +546,7 @@ void MarkupDirector::processClosingElements(const QTextBlock::iterator &it)
                 break;
             case SpanForeground:
                 m_builder->endForeground();
-                // Clear forground text color otherwise if we select 2 lines with same text color it will not applied. bug #442416
+                // Clear foreground text color otherwise if we select 2 lines with same text color it will not applied. bug #442416
                 d->m_openForeground = {};
                 break;
             case Anchor:

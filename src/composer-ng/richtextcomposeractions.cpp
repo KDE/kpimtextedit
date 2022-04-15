@@ -22,8 +22,8 @@ using namespace KPIMTextEdit;
 class Q_DECL_HIDDEN RichTextComposerActions::RichTextComposerActionsPrivate
 {
 public:
-    RichTextComposerActionsPrivate(KPIMTextEdit::RichTextComposerControler *controler)
-        : composerControler(controler)
+    RichTextComposerActionsPrivate(KPIMTextEdit::RichTextComposerControler *controller)
+        : composerControler(controller)
     {
     }
 
@@ -78,9 +78,9 @@ public:
     bool richTextEnabled = false;
 };
 
-RichTextComposerActions::RichTextComposerActions(KPIMTextEdit::RichTextComposerControler *controler, QObject *parent)
+RichTextComposerActions::RichTextComposerActions(KPIMTextEdit::RichTextComposerControler *controller, QObject *parent)
     : QObject(parent)
-    , d(new RichTextComposerActions::RichTextComposerActionsPrivate(controler))
+    , d(new RichTextComposerActions::RichTextComposerActionsPrivate(controller))
 {
 }
 

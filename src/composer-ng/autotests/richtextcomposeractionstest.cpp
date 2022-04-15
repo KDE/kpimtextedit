@@ -22,8 +22,8 @@ RichTextComposerActionsTest::~RichTextComposerActionsTest() = default;
 void RichTextComposerActionsTest::shouldHaveDefaultValue()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
-    KPIMTextEdit::RichTextComposerActions composerActions(&controler);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
+    KPIMTextEdit::RichTextComposerActions composerActions(&controller);
 
     auto actionCollection = new KActionCollection(&composerActions);
     QVERIFY(actionCollection->actions().isEmpty());
@@ -37,8 +37,8 @@ void RichTextComposerActionsTest::shouldHaveDefaultValue()
 void RichTextComposerActionsTest::shouldHaveActions()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
-    KPIMTextEdit::RichTextComposerActions composerActions(&controler);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
+    KPIMTextEdit::RichTextComposerActions composerActions(&controller);
 
     auto actionCollection = new KActionCollection(&composerActions);
     composerActions.createActions(actionCollection);
@@ -75,8 +75,8 @@ void RichTextComposerActionsTest::shouldHaveActions()
 void RichTextComposerActionsTest::shouldChangeEnableState()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
-    KPIMTextEdit::RichTextComposerActions composerActions(&controler);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
+    KPIMTextEdit::RichTextComposerActions composerActions(&controller);
 
     auto actionCollection = new KActionCollection(&composerActions);
     composerActions.createActions(actionCollection);

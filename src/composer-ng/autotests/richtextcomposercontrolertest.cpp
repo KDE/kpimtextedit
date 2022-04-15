@@ -22,13 +22,13 @@ void RichTextComposerControlerTest::shouldAlignLeft()
     KPIMTextEdit::RichTextComposer composer;
     auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
-    controler.alignLeft();
-    // QVERIFY(controler.richTextComposer()->hasFocus());
-    QCOMPARE(controler.richTextComposer()->alignment(), Qt::AlignLeft);
-    QVERIFY(controler.richTextComposer()->acceptRichText());
+    controller.alignLeft();
+    // QVERIFY(controller.richTextComposer()->hasFocus());
+    QCOMPARE(controller.richTextComposer()->alignment(), Qt::AlignLeft);
+    QVERIFY(controller.richTextComposer()->acceptRichText());
 }
 
 void RichTextComposerControlerTest::shouldAlignRight()
@@ -36,13 +36,13 @@ void RichTextComposerControlerTest::shouldAlignRight()
     KPIMTextEdit::RichTextComposer composer;
     auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
-    controler.alignRight();
-    QVERIFY(controler.richTextComposer()->hasFocus());
-    QCOMPARE(controler.richTextComposer()->alignment(), Qt::AlignRight);
-    QVERIFY(controler.richTextComposer()->acceptRichText());
+    controller.alignRight();
+    QVERIFY(controller.richTextComposer()->hasFocus());
+    QCOMPARE(controller.richTextComposer()->alignment(), Qt::AlignRight);
+    QVERIFY(controller.richTextComposer()->acceptRichText());
 }
 
 void RichTextComposerControlerTest::shouldAlignJustify()
@@ -50,13 +50,13 @@ void RichTextComposerControlerTest::shouldAlignJustify()
     KPIMTextEdit::RichTextComposer composer;
     auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
-    controler.alignJustify();
-    // QVERIFY(controler.richTextComposer()->hasFocus());
-    QCOMPARE(controler.richTextComposer()->alignment(), Qt::AlignJustify);
-    QVERIFY(controler.richTextComposer()->acceptRichText());
+    controller.alignJustify();
+    // QVERIFY(controller.richTextComposer()->hasFocus());
+    QCOMPARE(controller.richTextComposer()->alignment(), Qt::AlignJustify);
+    QVERIFY(controller.richTextComposer()->acceptRichText());
 }
 
 void RichTextComposerControlerTest::shouldAlignCenter()
@@ -64,21 +64,21 @@ void RichTextComposerControlerTest::shouldAlignCenter()
     KPIMTextEdit::RichTextComposer composer;
     auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
-    controler.alignCenter();
-    // QVERIFY(controler.richTextComposer()->hasFocus());
-    QCOMPARE(controler.richTextComposer()->alignment(), Qt::AlignHCenter);
-    QVERIFY(controler.richTextComposer()->acceptRichText());
+    controller.alignCenter();
+    // QVERIFY(controller.richTextComposer()->hasFocus());
+    QCOMPARE(controller.richTextComposer()->alignment(), Qt::AlignHCenter);
+    QVERIFY(controller.richTextComposer()->acceptRichText());
 }
 
 void RichTextComposerControlerTest::shouldHaveDefaultValue()
 {
     KPIMTextEdit::RichTextComposer composer;
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
-    QVERIFY(!controler.painterActive());
-    QVERIFY(!controler.richTextComposer()->acceptRichText());
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
+    QVERIFY(!controller.painterActive());
+    QVERIFY(!controller.richTextComposer()->acceptRichText());
 }
 
 void RichTextComposerControlerTest::shouldBoldText()
@@ -86,12 +86,12 @@ void RichTextComposerControlerTest::shouldBoldText()
     KPIMTextEdit::RichTextComposer composer;
     auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
-    controler.setTextBold(true);
-    // QVERIFY(controler.richTextComposer()->hasFocus());
-    QVERIFY(controler.richTextComposer()->acceptRichText());
+    controller.setTextBold(true);
+    // QVERIFY(controller.richTextComposer()->hasFocus());
+    QVERIFY(controller.richTextComposer()->acceptRichText());
     // TODO text format.
 }
 
@@ -100,12 +100,12 @@ void RichTextComposerControlerTest::shouldItalicText()
     KPIMTextEdit::RichTextComposer composer;
     auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
-    controler.setTextItalic(true);
-    // QVERIFY(controler.richTextComposer()->hasFocus());
-    QVERIFY(controler.richTextComposer()->acceptRichText());
+    controller.setTextItalic(true);
+    // QVERIFY(controller.richTextComposer()->hasFocus());
+    QVERIFY(controller.richTextComposer()->acceptRichText());
     // TODO text format.
 }
 
@@ -114,12 +114,12 @@ void RichTextComposerControlerTest::shouldTextUnderline()
     KPIMTextEdit::RichTextComposer composer;
     auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
-    controler.setTextUnderline(true);
-    // QVERIFY(controler.richTextComposer()->hasFocus());
-    QVERIFY(controler.richTextComposer()->acceptRichText());
+    controller.setTextUnderline(true);
+    // QVERIFY(controller.richTextComposer()->hasFocus());
+    QVERIFY(controller.richTextComposer()->acceptRichText());
     // TODO text format.
 }
 
@@ -128,12 +128,12 @@ void RichTextComposerControlerTest::shouldTextStrikeOut()
     KPIMTextEdit::RichTextComposer composer;
     auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
-    controler.setTextStrikeOut(true);
-    // QVERIFY(controler.richTextComposer()->hasFocus());
-    QVERIFY(controler.richTextComposer()->acceptRichText());
+    controller.setTextStrikeOut(true);
+    // QVERIFY(controller.richTextComposer()->hasFocus());
+    QVERIFY(controller.richTextComposer()->acceptRichText());
     // TODO text format.
 }
 
@@ -142,7 +142,7 @@ void RichTextComposerControlerTest::shouldFontFamily()
     KPIMTextEdit::RichTextComposer composer;
     auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
     // TODO
@@ -153,7 +153,7 @@ void RichTextComposerControlerTest::shouldFontSize()
     KPIMTextEdit::RichTextComposer composer;
     auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
     // TODO
@@ -164,7 +164,7 @@ void RichTextComposerControlerTest::shouldFont()
     KPIMTextEdit::RichTextComposer composer;
     auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
     // TODO
@@ -175,12 +175,12 @@ void RichTextComposerControlerTest::shouldTextSuperScript()
     KPIMTextEdit::RichTextComposer composer;
     auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
-    controler.setTextSuperScript(true);
-    QVERIFY(controler.richTextComposer()->hasFocus());
-    QVERIFY(controler.richTextComposer()->acceptRichText());
+    controller.setTextSuperScript(true);
+    QVERIFY(controller.richTextComposer()->hasFocus());
+    QVERIFY(controller.richTextComposer()->acceptRichText());
     // TODO
 }
 
@@ -189,12 +189,12 @@ void RichTextComposerControlerTest::shouldTextSubScript()
     KPIMTextEdit::RichTextComposer composer;
     auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
-    controler.setTextSubScript(true);
-    QVERIFY(controler.richTextComposer()->hasFocus());
-    QVERIFY(controler.richTextComposer()->acceptRichText());
+    controller.setTextSubScript(true);
+    QVERIFY(controller.richTextComposer()->hasFocus());
+    QVERIFY(controller.richTextComposer()->acceptRichText());
 
     // TODO
 }
@@ -226,12 +226,12 @@ void RichTextComposerControlerTest::shouldRemoveQuote()
     KPIMTextEdit::RichTextComposer composer;
     auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
 
     composer.setPlainText(input);
-    controler.slotRemoveQuotes();
+    controller.slotRemoveQuotes();
     QCOMPARE(composer.toPlainText(), output);
 }
 
@@ -256,12 +256,12 @@ void RichTextComposerControlerTest::shouldRemoveQuoteWithSpecificQuote()
     composer.setQuotePrefixName(quote);
     auto actionCollection = new KActionCollection(&composer);
     composer.createActions(actionCollection);
-    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    KPIMTextEdit::RichTextComposerControler controller(&composer);
     composer.show();
     QVERIFY(QTest::qWaitForWindowExposed(&composer));
 
     composer.setPlainText(input);
-    controler.slotRemoveQuotes();
+    controller.slotRemoveQuotes();
     QCOMPARE(composer.toPlainText(), output);
 }
 
@@ -286,12 +286,12 @@ void RichTextComposerControlerTest::shouldAddQuote()
     //    composer.setQuotePrefixName(quote);
     //    KActionCollection *actionCollection = new KActionCollection(&composer);
     //    composer.createActions(actionCollection);
-    //    KPIMTextEdit::RichTextComposerControler controler(&composer);
+    //    KPIMTextEdit::RichTextComposerControler controller(&composer);
     //    composer.show();
     //    QVERIFY(QTest::qWaitForWindowExposed(&composer));
 
     //    composer.setPlainText(input);
-    //    controler.slotAddQuotes();
+    //    controller.slotAddQuotes();
     //    QCOMPARE(composer.toPlainText(), QString(output + QChar::ParagraphSeparator));
 }
 
