@@ -10,11 +10,13 @@
 #include "../richtextcomposercontroler.h"
 #include <KActionCollection>
 #include <QAction>
+#include <QStandardPaths>
 #include <QTest>
 
 RichTextComposerActionsTest::RichTextComposerActionsTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 RichTextComposerActionsTest::~RichTextComposerActionsTest() = default;

@@ -8,11 +8,13 @@
 #include "../richtextcomposer.h"
 #include "../richtextcomposercontroler.h"
 #include <KActionCollection>
+#include <QStandardPaths>
 #include <QTest>
 
 RichTextComposerControlerTest::RichTextComposerControlerTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 RichTextComposerControlerTest::~RichTextComposerControlerTest() = default;
