@@ -17,3 +17,5 @@ Dependencies:
     'frameworks/kwidgetsaddons': '@latest'
     'frameworks/kxmlgui': '@latest'
     'frameworks/ktextwidgets': '@latest'
+Options:
+  require-passing-tests-on: [ 'Linux', 'FreeBSD']
