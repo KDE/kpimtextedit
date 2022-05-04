@@ -12,7 +12,6 @@
 #include <QPlainTextEdit>
 #include <QRegularExpression>
 #include <QTextCursor>
-#include <QTextDocument>
 #include <QTextEdit>
 
 using namespace KPIMTextEdit;
