@@ -18,10 +18,10 @@ using namespace KPIMTextEdit;
 
 TextToSpeechConfigDialog::TextToSpeechConfigDialog(QWidget *parent)
     : QDialog(parent)
+    , mTextToSpeechConfigWidget(new TextToSpeechConfigWidget(parent))
 {
     setWindowTitle(i18nc("@title:window", "Configure Text-To-Speech"));
     auto mainLayout = new QVBoxLayout(this);
-    mTextToSpeechConfigWidget = new TextToSpeechConfigWidget(parent);
     mainLayout->addWidget(mTextToSpeechConfigWidget);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults, this);
