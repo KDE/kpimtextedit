@@ -70,11 +70,11 @@ public:
 
 private:
     void slotTextChanged(const QString &);
-    QLabel *textLabel = nullptr;
-    QLineEdit *textLineEdit = nullptr;
-    QLabel *linkUrlLabel = nullptr;
-    QLineEdit *linkUrlLineEdit = nullptr;
-    QDialogButtonBox *buttonBox = nullptr;
+    QLabel *const textLabel;
+    QLineEdit *const textLineEdit;
+    QLabel *const linkUrlLabel;
+    QLineEdit *const linkUrlLineEdit;
+    QDialogButtonBox *const buttonBox;
 };
 }
 //@endcond

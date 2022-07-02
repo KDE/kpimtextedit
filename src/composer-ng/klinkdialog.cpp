@@ -21,6 +21,11 @@ using namespace KPIMTextEdit;
 
 KLinkDialog::KLinkDialog(QWidget *parent)
     : QDialog(parent)
+    , textLabel(new QLabel(i18n("Link Text:"), this))
+    , textLineEdit(new QLineEdit(this))
+    , linkUrlLabel(new QLabel(i18n("Link URL:"), this))
+    , linkUrlLineEdit(new QLineEdit(this))
+    , buttonBox(new QDialogButtonBox(this))
 {
     setWindowTitle(i18nc("@title:window", "Manage Link"));
     setModal(true);
@@ -29,11 +34,7 @@ KLinkDialog::KLinkDialog(QWidget *parent)
 
     auto grid = new QGridLayout;
 
-    textLabel = new QLabel(i18n("Link Text:"), this);
-    textLineEdit = new QLineEdit(this);
     textLineEdit->setClearButtonEnabled(true);
-    linkUrlLabel = new QLabel(i18n("Link URL:"), this);
-    linkUrlLineEdit = new QLineEdit(this);
     linkUrlLineEdit->setClearButtonEnabled(true);
 
     grid->addWidget(textLabel, 0, 0);
@@ -43,7 +44,6 @@ KLinkDialog::KLinkDialog(QWidget *parent)
 
     layout->addLayout(grid);
 
-    buttonBox = new QDialogButtonBox(this);
     buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);

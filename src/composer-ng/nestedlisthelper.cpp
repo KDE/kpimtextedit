@@ -15,8 +15,8 @@
 #include <QTextList>
 using namespace KPIMTextEdit;
 NestedListHelper::NestedListHelper(QTextEdit *te)
+    : textEdit(te)
 {
-    textEdit = te;
     listBottomMargin = 12;
     listTopMargin = 12;
     listNoMargin = 0;
