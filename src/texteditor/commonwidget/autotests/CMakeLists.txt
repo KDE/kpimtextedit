@@ -5,7 +5,7 @@ macro(add_kpimtextedit_commonwidget_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} ${_name}.h TEST_NAME ${_name}
         NAME_PREFIX "kpimtextedit-plaintext-"
-        LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test KF5::PimTextEdit Qt${QT_MAJOR_VERSION}::Widgets
+        LINK_LIBRARIES Qt::Test KF5::PimTextEdit Qt::Widgets
         )
 endmacro()
 

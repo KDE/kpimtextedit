@@ -82,7 +82,7 @@ set_package_properties(Qt5TextToSpeech PROPERTIES DESCRIPTION
     "Add support for text to speech"
     TYPE OPTIONAL
 )
-if(TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
+if(TARGET Qt::TextToSpeech)
     add_definitions(-DHAVE_TEXT_TO_SPEECH_SUPPORT)
     set(KPIMTEXTEDIT_TEXT_TO_SPEECH TRUE)
 endif()

@@ -171,7 +171,7 @@ target_link_libraries(KF5PimTextEdit
 if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
     target_link_libraries(KF5PimTextEdit
         PRIVATE
-        Qt${QT_MAJOR_VERSION}::TextToSpeech
+        Qt::TextToSpeech
         )
 endif()
 set_target_properties(KF5PimTextEdit PROPERTIES

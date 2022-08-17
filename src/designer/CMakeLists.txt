@@ -39,7 +39,7 @@ ecm_add_qtdesignerplugin(kpimtexteditwidgets
     KPIMTextEdit::RichTextComposerWidget
     LINK_LIBRARIES
     KF5::PimTextEdit
-    Qt${QT_MAJOR_VERSION}::Widgets
+    Qt::Widgets
     INSTALL_DESTINATION "${KDE_INSTALL_QTPLUGINDIR}/designer"
     COMPONENT Devel
     )
