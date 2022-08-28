@@ -77,8 +77,8 @@ ecm_set_disabled_deprecation_versions(QT 5.15.2 KF 5.97.0)
 
 
 
-find_package(Qt5TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
-set_package_properties(Qt5TextToSpeech PROPERTIES DESCRIPTION
+find_package(Qt${QT_MAJOR_VERSION}TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
+set_package_properties(Qt${QT_MAJOR_VERSION}TextToSpeech PROPERTIES DESCRIPTION
     "Add support for text to speech"
     TYPE OPTIONAL
 )
