@@ -34,9 +34,6 @@ public:
 
     Q_REQUIRED_RESULT QString searchText() const;
 
-private Q_SLOTS:
-    void slotAutoSearch(const QString &str);
-
 Q_SIGNALS:
     void findNext();
     void findPrev();
@@ -46,6 +43,7 @@ Q_SIGNALS:
     void searchStringEmpty(bool);
 
 private:
+    void slotAutoSearch(const QString &str);
     void slotRegularExpressionChanged(bool b);
     QLineEdit *const mSearch;
     QAction *mCaseSensitiveAct = nullptr;

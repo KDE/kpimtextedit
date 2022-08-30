@@ -38,11 +38,9 @@ protected:
 public Q_SLOTS:
     void slotBlockCountChanged(int numberBlockCount);
 
-private Q_SLOTS:
+private:
     void slotCloseBar();
     void slotGoToLine();
-
-private:
     std::unique_ptr<TextGoToLineWidgetPrivate> const d;
 };
 }

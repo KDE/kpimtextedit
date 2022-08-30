@@ -66,7 +66,8 @@ public Q_SLOTS:
     void slotCheckSpelling();
     void slotSpeakText();
     void slotZoomReset();
-private Q_SLOTS:
+
+private:
     void slotUndoableClear();
     void slotSpellCheckerMisspelling(const QString &text, int pos);
     void slotSpellCheckerCorrected(const QString &, int, const QString &);

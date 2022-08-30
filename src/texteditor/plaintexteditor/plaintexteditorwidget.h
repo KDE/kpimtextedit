@@ -38,13 +38,12 @@ public:
     void setSpellCheckingConfigFileName(const QString &_fileName);
 
     Q_REQUIRED_RESULT bool isEmpty() const;
-private Q_SLOTS:
+
+private:
     void slotFind();
     void slotReplace();
 
     void slotHideFindBar();
-
-private:
     void init(PlainTextEditor *customEditor = nullptr);
     std::unique_ptr<PlainTextEditorWidgetPrivate> const d;
 };

@@ -67,10 +67,8 @@ protected:
     void resizeEvent(QResizeEvent *) override;
     bool eventFilter(QObject *, QEvent *event) override;
 
-private Q_SLOTS:
-    void slotAnimFinished();
-
 private:
+    void slotAnimFinished();
     QPointer<QWidget> mContent;
     QPointer<QPropertyAnimation> mAnim;
     bool mSlidingOut = false;
