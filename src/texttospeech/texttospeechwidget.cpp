@@ -13,7 +13,11 @@
 #include <QLabel>
 #include <QPointer>
 #include <QSlider>
+#include <QTimer>
 #include <QToolButton>
+
+using namespace std::chrono_literals;
+#include <chrono>
 
 using namespace KPIMTextEdit;
 
@@ -139,7 +143,7 @@ void TextToSpeechWidget::slotStateChanged(KPIMTextEdit::TextToSpeech::State stat
             if (d->mConfigDialog) {
                 d->mNeedToHide = true;
             } else {
-                hide();
+                QTimer::singleShot(2s, this, &TextToSpeechWidget::hide);
             }
         }
         break;
