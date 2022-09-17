@@ -109,36 +109,6 @@ bool NestedListHelper::handleAfterKeyPressEvent(QKeyEvent *event)
     return handled;
 }
 
-bool NestedListHelper::handleAfterDropEvent(QDropEvent *dropEvent)
-{
-    Q_UNUSED(dropEvent)
-    QTextCursor cursor = topOfSelection();
-
-    QTextBlock droppedBlock = cursor.block();
-    const int firstDroppedItemIndent = droppedBlock.textList()->format().indent();
-
-    const int minimumIndent = droppedBlock.previous().textList()->format().indent();
-
-    if (firstDroppedItemIndent < minimumIndent) {
-        cursor = QTextCursor(droppedBlock);
-        QTextListFormat fmt = droppedBlock.textList()->format();
-        fmt.setIndent(minimumIndent);
-        QTextList *list = cursor.createList(fmt);
-
-        int endOfDrop = bottomOfSelection().position();
-        while (droppedBlock.next().position() < endOfDrop) {
-            droppedBlock = droppedBlock.next();
-            if (droppedBlock.textList()->format().indent() != firstDroppedItemIndent) {
-                // new list?
-            }
-            list->add(droppedBlock);
-        }
-        //         list.add( droppedBlock );
-    }
-
-    return true;
-}
-
 void NestedListHelper::processList(QTextList *list)
 {
     QTextBlock block = list->item(0);

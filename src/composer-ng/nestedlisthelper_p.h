@@ -48,7 +48,7 @@ public:
      * @param event The event to be handled
      * @return Whether the event was completely handled by this method.
      */
-    bool handleBeforeKeyPressEvent(QKeyEvent *event);
+    Q_REQUIRED_RESULT bool handleBeforeKeyPressEvent(QKeyEvent *event);
 
     /**
      *
@@ -62,8 +62,6 @@ public:
      * @return Whether the event was completely handled by this method.
      */
     bool handleAfterKeyPressEvent(QKeyEvent *event);
-
-    bool handleAfterDropEvent(QDropEvent *event);
 
     /**
      * Increases the indent (nesting level) on the current list item or selection.
@@ -109,8 +107,8 @@ public:
     Q_REQUIRED_RESULT bool canDedent() const;
 
 private:
-    QTextCursor topOfSelection();
-    QTextCursor bottomOfSelection();
+    Q_REQUIRED_RESULT QTextCursor topOfSelection();
+    Q_REQUIRED_RESULT QTextCursor bottomOfSelection();
     void processList(QTextList *list);
     void reformatList(QTextBlock block);
     void reformatList();
