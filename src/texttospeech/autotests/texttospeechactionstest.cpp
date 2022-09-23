@@ -6,6 +6,7 @@
 
 #include "texttospeechactionstest.h"
 #include "../texttospeechactions.h"
+#include <QAction>
 #include <QSignalSpy>
 #include <QTest>
 
