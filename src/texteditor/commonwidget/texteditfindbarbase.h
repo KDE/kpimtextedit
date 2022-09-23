@@ -8,7 +8,6 @@
 
 #include "kpimtextedit_export.h"
 #include <QRegularExpression>
-#include <QTextDocument>
 #include <QWidget>
 namespace KPIMTextEdit
 {

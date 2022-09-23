@@ -8,7 +8,6 @@
 
 #include "kpimtextedit/texteditfindbarbase.h"
 #include "kpimtextedit_export.h"
-#include <QTextDocument>
 
 class QPlainTextEdit;
 namespace KPIMTextEdit

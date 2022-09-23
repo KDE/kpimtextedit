@@ -7,8 +7,8 @@
 #include "richtexteditfindbartest.h"
 #include "texteditor/commonwidget/findutils.h"
 #include "texteditor/richtexteditor/richtexteditfindbar.h"
-#include <QPlainTextEdit>
 #include <QTest>
+#include <QTextEdit>
 
 QTEST_MAIN(RichTextEditFindBarTest)
 Q_DECLARE_METATYPE(KPIMTextEdit::TextEditFindBarBase::FindFlags)

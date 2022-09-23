@@ -8,7 +8,6 @@
 
 #include "kpimtextedit_private_export.h"
 #include "texteditfindbarbase.h"
-#include <QTextDocument>
 #include <QWidget>
 
 class QAction;

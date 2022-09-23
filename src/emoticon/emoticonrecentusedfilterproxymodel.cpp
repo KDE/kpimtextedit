@@ -6,7 +6,6 @@
 
 #include "emoticonrecentusedfilterproxymodel.h"
 #include "emoticonunicodemodel.h"
-#include <KConfig>
 #include <KSharedConfig>
 
 using namespace KPIMTextEdit;

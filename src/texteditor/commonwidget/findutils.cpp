@@ -8,7 +8,6 @@
 #include "textfindreplacewidget.h"
 
 #include <QDebug>
-#include <QLineEdit>
 #include <QPlainTextEdit>
 #include <QRegularExpression>
 #include <QTextCursor>
