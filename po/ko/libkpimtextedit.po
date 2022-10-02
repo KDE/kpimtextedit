@@ -1,0 +1,1199 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Shinjo Park <kde@peremen.name>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-13 00:46+0000\n"
+"PO-Revision-Date: 2022-04-16 00:13+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 21.08.1\n"
+
+#: composer-ng/klinkdialog.cpp:24
+#, kde-format
+msgid "Link Text:"
+msgstr "링크 텍스트:"
+
+#: composer-ng/klinkdialog.cpp:26
+#, kde-format
+msgid "Link URL:"
+msgstr "링크 URL:"
+
+#: composer-ng/klinkdialog.cpp:30
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Link"
+msgstr "링크 관리"
+
+#: composer-ng/richtextcomposeractions.cpp:102
+#, kde-format
+msgctxt "@action"
+msgid "Align &Left"
+msgstr "왼쪽 정렬(&L)"
+
+#: composer-ng/richtextcomposeractions.cpp:103
+#, kde-format
+msgctxt "@label left justify"
+msgid "Left"
+msgstr "왼쪽"
+
+#: composer-ng/richtextcomposeractions.cpp:111
+#, kde-format
+msgctxt "@action"
+msgid "Align &Center"
+msgstr "가운데 정렬(&C)"
+
+#: composer-ng/richtextcomposeractions.cpp:112
+#, kde-format
+msgctxt "@label center justify"
+msgid "Center"
+msgstr "가운데"
+
+#: composer-ng/richtextcomposeractions.cpp:120
+#, kde-format
+msgctxt "@action"
+msgid "Align &Right"
+msgstr "오른쪽 정렬(&R)"
+
+#: composer-ng/richtextcomposeractions.cpp:121
+#, kde-format
+msgctxt "@label right justify"
+msgid "Right"
+msgstr "오른쪽"
+
+#: composer-ng/richtextcomposeractions.cpp:129
+#, kde-format
+msgctxt "@action"
+msgid "&Justify"
+msgstr "맞춤(&J)"
+
+#: composer-ng/richtextcomposeractions.cpp:130
+#, kde-format
+msgctxt "@label justify fill"
+msgid "Justify"
+msgstr "맞춤"
+
+#: composer-ng/richtextcomposeractions.cpp:145
+#, kde-format
+msgctxt "@action"
+msgid "Left-to-Right"
+msgstr "왼쪽에서 오른쪽으로"
+
+#: composer-ng/richtextcomposeractions.cpp:146
+#, kde-format
+msgctxt "@label left-to-right"
+msgid "Left-to-Right"
+msgstr "왼쪽에서 오른쪽"
+
+#: composer-ng/richtextcomposeractions.cpp:154
+#, kde-format
+msgctxt "@action"
+msgid "Right-to-Left"
+msgstr "오른쪽에서 왼쪽으로"
+
+#: composer-ng/richtextcomposeractions.cpp:155
+#, kde-format
+msgctxt "@label right-to-left"
+msgid "Right-to-Left"
+msgstr "오른쪽에서 왼쪽"
+
+#: composer-ng/richtextcomposeractions.cpp:168
+#, kde-format
+msgctxt "@action"
+msgid "Subscript"
+msgstr "아래 첨자"
+
+#: composer-ng/richtextcomposeractions.cpp:176
+#, kde-format
+msgctxt "@action"
+msgid "Superscript"
+msgstr "위 첨자"
+
+#: composer-ng/richtextcomposeractions.cpp:184
+#, kde-format
+msgctxt "@action boldify selected text"
+msgid "&Bold"
+msgstr "굵게(&B)"
+
+#: composer-ng/richtextcomposeractions.cpp:197
+#, kde-format
+msgctxt "@action italicize selected text"
+msgid "&Italic"
+msgstr "이탤릭(&I)"
+
+#: composer-ng/richtextcomposeractions.cpp:210
+#, kde-format
+msgctxt "@action underline selected text"
+msgid "&Underline"
+msgstr "밑줄(&U)"
+
+#: composer-ng/richtextcomposeractions.cpp:222
+#, kde-format
+msgctxt "@action"
+msgid "&Strike Out"
+msgstr "취소선(&S)"
+
+#: composer-ng/richtextcomposeractions.cpp:237
+#, kde-format
+msgctxt "@action"
+msgid "&Font"
+msgstr "글꼴(&F)"
+
+#: composer-ng/richtextcomposeractions.cpp:246
+#, kde-format
+msgctxt "@action"
+msgid "Font &Size"
+msgstr "글꼴 크기(&S)"
+
+#: composer-ng/richtextcomposeractions.cpp:254
+#, kde-format
+msgctxt "@action"
+msgid "Insert Rule Line"
+msgstr "규칙 줄 삽입"
+
+#: composer-ng/richtextcomposeractions.cpp:263
+#, kde-format
+msgctxt "@action"
+msgid "Text &Color..."
+msgstr "텍스트 색(&C)..."
+
+#: composer-ng/richtextcomposeractions.cpp:264
+#, kde-format
+msgctxt "@label stroke color"
+msgid "Color"
+msgstr "색"
+
+#: composer-ng/richtextcomposeractions.cpp:272
+#, kde-format
+msgctxt "@action"
+msgid "Text &Highlight..."
+msgstr "텍스트 강조(&H)..."
+
+#: composer-ng/richtextcomposeractions.cpp:280
+#, kde-format
+msgctxt "@action"
+msgid "Link"
+msgstr "링크"
+
+#: composer-ng/richtextcomposeractions.cpp:288
+#, kde-format
+msgctxt "@action"
+msgid "Increase List Level"
+msgstr "목록 단계 증가"
+
+#: composer-ng/richtextcomposeractions.cpp:296
+#, kde-format
+msgctxt "@action"
+msgid "Decrease List Level"
+msgstr "목록 단계 감소"
+
+#: composer-ng/richtextcomposeractions.cpp:305
+#, kde-format
+msgctxt "@title:menu"
+msgid "List Style"
+msgstr "목록 스타일"
+
+#: composer-ng/richtextcomposeractions.cpp:307
+#, kde-format
+msgctxt "@item:inmenu no list style"
+msgid "None"
+msgstr "없음"
+
+#: composer-ng/richtextcomposeractions.cpp:307
+#, kde-format
+msgctxt "@item:inmenu disc list style"
+msgid "Disc"
+msgstr "원형"
+
+#: composer-ng/richtextcomposeractions.cpp:308
+#, kde-format
+msgctxt "@item:inmenu circle list style"
+msgid "Circle"
+msgstr "빈 원형"
+
+#: composer-ng/richtextcomposeractions.cpp:308
+#, kde-format
+msgctxt "@item:inmenu square list style"
+msgid "Square"
+msgstr "사각형"
+
+#: composer-ng/richtextcomposeractions.cpp:309
+#, kde-format
+msgctxt "@item:inmenu numbered lists"
+msgid "123"
+msgstr "123"
+
+#: composer-ng/richtextcomposeractions.cpp:309
+#, kde-format
+msgctxt "@item:inmenu lowercase abc lists"
+msgid "abc"
+msgstr "abc"
+
+#: composer-ng/richtextcomposeractions.cpp:310
+#, kde-format
+msgctxt "@item:inmenu uppercase abc lists"
+msgid "ABC"
+msgstr "ABC"
+
+#: composer-ng/richtextcomposeractions.cpp:310
+#, kde-format
+msgctxt "@item:inmenu lower case roman numerals"
+msgid "i ii iii"
+msgstr "i ii iii"
+
+#: composer-ng/richtextcomposeractions.cpp:311
+#, kde-format
+msgctxt "@item:inmenu upper case roman numerals"
+msgid "I II III"
+msgstr "I II III"
+
+#: composer-ng/richtextcomposeractions.cpp:322
+#, kde-format
+msgid "Pa&ste as Quotation"
+msgstr "인용문으로 붙여넣기(&S)"
+
+#: composer-ng/richtextcomposeractions.cpp:330
+#, kde-format
+msgid "Add &Quote Characters"
+msgstr "인용 부호 추가하기(&Q)"
+
+#: composer-ng/richtextcomposeractions.cpp:337
+#, kde-format
+msgid "Re&move Quote Characters"
+msgstr "인용 부호 지우기(&M)"
+
+#: composer-ng/richtextcomposeractions.cpp:344
+#, kde-format
+msgid "Paste Without Formatting"
+msgstr "서식 없이 붙여넣기"
+
+#: composer-ng/richtextcomposeractions.cpp:352
+#, kde-format
+msgid "Add Image"
+msgstr "그림 추가"
+
+#: composer-ng/richtextcomposeractions.cpp:368
+#, kde-format
+msgid "Insert HTML"
+msgstr "HTML 삽입"
+
+#: composer-ng/richtextcomposeractions.cpp:378
+#, kde-format
+msgid "Table"
+msgstr "표"
+
+#: composer-ng/richtextcomposeractions.cpp:387
+#, kde-format
+msgid "Delete Line"
+msgstr "줄 삭제"
+
+#: composer-ng/richtextcomposeractions.cpp:398
+#, kde-format
+msgid "Reset Font Settings"
+msgstr "글꼴 설정 초기화"
+
+#: composer-ng/richtextcomposeractions.cpp:399
+#, kde-format
+msgid "Reset Font"
+msgstr "글꼴 초기화"
+
+#: composer-ng/richtextcomposeractions.cpp:407
+#, kde-format
+msgctxt "@action"
+msgid "Format Painter"
+msgstr "서식 복사기"
+
+#: composer-ng/richtextcomposeractions.cpp:415
+#, kde-format
+msgctxt "@title:menu"
+msgid "Heading Level"
+msgstr "머리글 단계"
+
+#: composer-ng/richtextcomposeractions.cpp:416
+#, kde-format
+msgctxt "@item:inmenu no heading"
+msgid "Basic text"
+msgstr "일반 텍스트"
+
+#: composer-ng/richtextcomposeractions.cpp:417
+#, kde-format
+msgctxt "@item:inmenu heading level 1 (largest)"
+msgid "Title"
+msgstr "제목"
+
+#: composer-ng/richtextcomposeractions.cpp:418
+#, kde-format
+msgctxt "@item:inmenu heading level 2"
+msgid "Subtitle"
+msgstr "부제목"
+
+#: composer-ng/richtextcomposeractions.cpp:419
+#, kde-format
+msgctxt "@item:inmenu heading level 3"
+msgid "Section"
+msgstr "장"
+
+#: composer-ng/richtextcomposeractions.cpp:420
+#, kde-format
+msgctxt "@item:inmenu heading level 4"
+msgid "Subsection"
+msgstr "절"
+
+#: composer-ng/richtextcomposeractions.cpp:421
+#, kde-format
+msgctxt "@item:inmenu heading level 5"
+msgid "Paragraph"
+msgstr "문단"
+
+#: composer-ng/richtextcomposeractions.cpp:422
+#, kde-format
+msgctxt "@item:inmenu heading level 6 (smallest)"
+msgid "Subparagraph"
+msgstr "하위 문단"
+
+#: composer-ng/richtextcomposeractions.cpp:433
+#, kde-format
+msgctxt "@action"
+msgid "Checkbox"
+msgstr "체크 상자"
+
+#: composer-ng/richtextcomposercontroler.cpp:733
+#, kde-format
+msgid "Only local files are supported."
+msgstr "로컬 파일만 지원합니다."
+
+#: composer-ng/richtextcomposerimages.cpp:55
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Unable to load image <filename>%1</filename>."
+msgstr "그림 <filename>%1</filename>을(를) 불러올 수 없습니다."
+
+#: composer-ng/richtextcomposerimages.cpp:214
+#, kde-format
+msgctxt "Start of the filename for an image"
+msgid "image"
+msgstr "그림"
+
+#: composer-ng/richtextexternalcomposer.cpp:69
+#, kde-format
+msgid "Command line is empty. Please verify settings."
+msgstr "명령행이 비어 있습니다. 설정을 확인하십시오."
+
+#: composer-ng/richtextexternalcomposer.cpp:69
+#, kde-format
+msgid "Empty command line"
+msgstr "빈 명령행"
+
+#: composer-ng/richtextexternalcomposer.cpp:122
+#, kde-format
+msgid "External editor cannot be started. Please verify command \"%1\""
+msgstr ""
+"외부 편집기를 시작할 수 없습니다. \"%1\" 명령이 존재하는 지 확인하십시오"
+
+#: composer-ng/richtextexternalcomposer.cpp:140
+#, kde-format
+msgid "Error was found when we started external editor."
+msgstr "외부 편집기를 시작하는 중 오류가 발생했습니다."
+
+#: composer-ng/richtextexternalcomposer.cpp:140
+#, kde-format
+msgid "External Editor Closed"
+msgstr "외부 편집기 종료됨"
+
+#: composer-ng/richtextexternalcomposer.cpp:157
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The external editor is still running.<nl/>Do you want to stop the editor or "
+"keep it running?<nl/><warning>Stopping the editor will cause all your "
+"unsaved changes to be lost.</warning>"
+msgstr ""
+"외부 편집기가 계속 실행 중입니다.<nl/>편집기를 종료하거나 계속 실행한 채로 두"
+"시겠습니까?<nl/><warning>편집기를 종료하면 저장하지 않은 모든 변경 사항이 손"
+"실됩니다.</warning>"
+
+#: composer-ng/richtextexternalcomposer.cpp:161
+#, kde-format
+msgctxt "@title:window"
+msgid "External Editor Running"
+msgstr "외부 편집기 실행 중"
+
+#: composer-ng/richtextexternalcomposer.cpp:162
+#, kde-format
+msgctxt "@action:button"
+msgid "Stop Editor"
+msgstr "편집기 종료"
+
+#: composer-ng/richtextexternalcomposer.cpp:163
+#, kde-format
+msgctxt "@action:button"
+msgid "Keep Editor Running"
+msgstr "편집기 계속 실행"
+
+#: emoticon/emoticonrecentlistview.cpp:25
+#, kde-format
+msgid "Clear Recents"
+msgstr "최근 항목 비우기"
+
+#: emoticon/emoticontexteditaction.cpp:41
+#, kde-format
+msgid "Add Smiley"
+msgstr "이모티콘 추가"
+
+#: emoticon/emoticontexteditselector.cpp:31
+#, kde-format
+msgid "Search Emoticon..."
+msgstr "이모티콘 검색..."
+
+#: emoticon/emoticonunicodetab.cpp:51
+#, kde-format
+msgid "Result"
+msgstr "결과"
+
+#: emoticon/emoticonunicodetab.cpp:62
+#, kde-format
+msgid "Recents"
+msgstr "최근"
+
+#: emoticon/emoticonunicodetab.cpp:93
+#, kde-format
+msgid "Faces"
+msgstr "얼굴"
+
+#: emoticon/emoticonunicodetab.cpp:94
+#, kde-format
+msgid "Animals"
+msgstr "동물"
+
+#: emoticon/emoticonunicodetab.cpp:95
+#, kde-format
+msgid "Emotions"
+msgstr "감정"
+
+#: emoticon/emoticonunicodetab.cpp:96
+#, kde-format
+msgid "Body"
+msgstr "신체"
+
+#: emoticon/emoticonunicodetab.cpp:97
+#, kde-format
+msgid "Transports"
+msgstr "운송 수단"
+
+#: emoticon/emoticonunicodetab.cpp:98
+#, kde-format
+msgid "Events"
+msgstr "이벤트"
+
+#: emoticon/emoticonunicodetab.cpp:99
+#, kde-format
+msgid "Flags"
+msgstr "깃발"
+
+#: emoticon/emoticonunicodetab.cpp:100
+#, kde-format
+msgid "Weather"
+msgstr "날씨"
+
+#: emoticon/emoticonunicodetab.cpp:101
+#, kde-format
+msgid "Foods"
+msgstr "음식"
+
+#: emoticon/emoticonunicodetab.cpp:102
+#, kde-format
+msgid "Sports"
+msgstr "스포츠"
+
+#: emoticon/emoticonunicodetab.cpp:103
+#, kde-format
+msgid "Time"
+msgstr "시간"
+
+#: emoticon/emoticonunicodetab.cpp:104
+#, kde-format
+msgid "Game"
+msgstr "게임"
+
+#: emoticon/emoticonunicodetab.cpp:105
+#, kde-format
+msgid "Clothing"
+msgstr "의류"
+
+#: emoticon/emoticonunicodetab.cpp:106
+#, kde-format
+msgid "Music"
+msgstr "음악"
+
+#: emoticon/emoticonunicodetab.cpp:107
+#, kde-format
+msgid "Computer"
+msgstr "컴퓨터"
+
+#: emoticon/emoticonunicodetab.cpp:108
+#, kde-format
+msgid "Symbols"
+msgstr "기호"
+
+#: emoticon/emoticonunicodetab.cpp:109
+#, kde-format
+msgid "Plant"
+msgstr "식물"
+
+#: emoticon/emoticonunicodetab.cpp:110
+#, kde-format
+msgid "Book"
+msgstr "책"
+
+#: emoticon/emoticonunicodetab.cpp:111
+#, kde-format
+msgid "Science"
+msgstr "과학"
+
+#: emoticon/emoticonunicodetab.cpp:112
+#, kde-format
+msgid "Person"
+msgstr "사람"
+
+#: emoticon/emoticonunicodetab.cpp:113
+#, kde-format
+msgid "Place"
+msgstr "장소"
+
+#: emoticon/emoticonunicodetab.cpp:114
+#, kde-format
+msgid "Money"
+msgstr "돈"
+
+#: emoticon/emoticonunicodetab.cpp:115
+#, kde-format
+msgid "Mail"
+msgstr "편지"
+
+#: emoticon/emoticonunicodetab.cpp:116
+#, kde-format
+msgid "Office"
+msgstr "사무실"
+
+#: emoticon/emoticonunicodetab.cpp:117
+#, kde-format
+msgid "Tools"
+msgstr "도구"
+
+#: emoticon/emoticonunicodetab.cpp:118
+#, kde-format
+msgid "Phone"
+msgstr "전화"
+
+#: emoticon/emoticonunicodetab.cpp:119
+#, kde-format
+msgid "Lock"
+msgstr "자물쇠"
+
+#: emoticon/emoticonunicodetab.cpp:120
+#, kde-format
+msgid "Drink"
+msgstr "음료"
+
+#: emoticon/emoticonunicodetab.cpp:121
+#, kde-format
+msgid "Video"
+msgstr "비디오"
+
+#: emoticon/emoticonunicodetab.cpp:122
+#, kde-format
+msgid "House"
+msgstr "집"
+
+#: emoticon/emoticonunicodetab.cpp:123
+#, kde-format
+msgid "Dishware"
+msgstr "식기"
+
+#: emoticon/emoticonunicodetab.cpp:124
+#, kde-format
+msgid "Hotel"
+msgstr "호텔"
+
+#: emoticon/emoticonunicodetab.cpp:125
+#, kde-format
+msgid "Award-Medal"
+msgstr "메달"
+
+#: inserthtmldialog.cpp:29
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert HTML"
+msgstr "HTML 삽입"
+
+#: inserthtmldialog.cpp:31
+#, kde-format
+msgid "Insert HTML tags and texts:"
+msgstr "HTML 태그와 텍스트 삽입:"
+
+#: inserthtmldialog.cpp:37
+#, kde-format
+msgid "Example: <i> Hello word </i>"
+msgstr "예: <i>안녕 세상아</i>"
+
+#: inserthtmldialog.cpp:46
+#, kde-format
+msgctxt "@action:button"
+msgid "Insert"
+msgstr "삽입"
+
+#: insertimagedialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert Image"
+msgstr "그림 삽입"
+
+#: insertimagedialog.cpp:36 inserttabledialog.cpp:37
+#: selectspecialchardialog.cpp:34 tableactionmenu.cpp:405
+#, kde-format
+msgid "Insert"
+msgstr "삽입"
+
+#: insertimagewidget.cpp:40
+#, kde-format
+msgid "Image Location:"
+msgstr "그림 위치:"
+
+#: insertimagewidget.cpp:53
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Image"
+msgstr "그림 추가"
+
+#: insertimagewidget.cpp:64
+#, kde-format
+msgid "Keep Original Size"
+msgstr "원본 크기 유지"
+
+#: insertimagewidget.cpp:71
+#, kde-format
+msgid "Keep Image Ratio"
+msgstr "원본 비율 유지"
+
+#: insertimagewidget.cpp:77 inserttablewidget.cpp:59
+#, kde-format
+msgid "Width:"
+msgstr "너비:"
+
+#: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
+#, kde-format
+msgid " px"
+msgstr " 픽셀"
+
+#: insertimagewidget.cpp:92
+#, kde-format
+msgid "Height:"
+msgstr "높이:"
+
+#: insertimagewidget.cpp:110
+#, kde-format
+msgid "Image Preview:"
+msgstr "그림 미리 보기:"
+
+#: inserttabledialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert Table"
+msgstr "표 삽입"
+
+#: inserttablewidget.cpp:40
+#, kde-format
+msgid "Rows:"
+msgstr "행:"
+
+#: inserttablewidget.cpp:43
+#, kde-format
+msgid "Columns:"
+msgstr "열:"
+
+#: inserttablewidget.cpp:46
+#, kde-format
+msgid "Border:"
+msgstr "경계선:"
+
+#: inserttablewidget.cpp:52
+#, no-c-format, kde-format
+msgid "% of windows"
+msgstr "창의 %"
+
+#: inserttablewidget.cpp:53
+#, kde-format
+msgid "pixels"
+msgstr "픽셀"
+
+#: selectspecialchardialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Special Characters"
+msgstr "특수 문자 선택"
+
+#: selectspecialchardialog.cpp:47
+#, kde-format
+msgid "Select"
+msgstr "선택"
+
+#: tableactionmenu.cpp:408
+#, kde-format
+msgid "Table..."
+msgstr "표..."
+
+#: tableactionmenu.cpp:416 tableactionmenu.cpp:449
+#, kde-format
+msgid "Row Below"
+msgstr "아래쪽 행"
+
+#: tableactionmenu.cpp:423 tableactionmenu.cpp:456
+#, kde-format
+msgid "Row Above"
+msgstr "위쪽 행"
+
+#: tableactionmenu.cpp:431 tableactionmenu.cpp:464
+#, kde-format
+msgid "Column Before"
+msgstr "이전 열"
+
+#: tableactionmenu.cpp:439 tableactionmenu.cpp:472
+#, kde-format
+msgid "Column After"
+msgstr "다음 열"
+
+#: tableactionmenu.cpp:446
+#, kde-format
+msgid "Delete"
+msgstr "삭제"
+
+#: tableactionmenu.cpp:480
+#, kde-format
+msgid "Cell Contents"
+msgstr "셀 내용"
+
+#: tableactionmenu.cpp:489
+#, kde-format
+msgid "Join With Cell to the Right"
+msgstr "오른쪽 셀과 병합"
+
+#: tableactionmenu.cpp:496
+#, kde-format
+msgid "Join Selected Cells"
+msgstr "선택한 셀 병합"
+
+#: tableactionmenu.cpp:503
+#, kde-format
+msgid "Split cells"
+msgstr "셀 분할"
+
+#: tableactionmenu.cpp:512
+#, kde-format
+msgid "Table Format..."
+msgstr "표 서식..."
+
+#: tableactionmenu.cpp:519
+#, kde-format
+msgid "Table Cell Format..."
+msgstr "표 셀 서식..."
+
+#: tablecellformatdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Cell Format"
+msgstr "셀 서식"
+
+#: tablecellformatdialog.cpp:33
+#, kde-format
+msgid "Vertical Alignment:"
+msgstr "수직 정렬:"
+
+#: tablecellformatdialog.cpp:36
+#, kde-format
+msgid "Top"
+msgstr "위"
+
+#: tablecellformatdialog.cpp:37
+#, kde-format
+msgid "Middle"
+msgstr "가운데"
+
+#: tablecellformatdialog.cpp:38
+#, kde-format
+msgid "Bottom"
+msgstr "아래"
+
+#: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
+#, kde-format
+msgid "Background Color:"
+msgstr "배경색:"
+
+#: tableformatdialog.cpp:31
+#, kde-format
+msgctxt "@title:window"
+msgid "Table Format"
+msgstr "표 서식"
+
+#: tableformatdialog.cpp:44
+#, kde-format
+msgid "Spacing:"
+msgstr "간격:"
+
+#: tableformatdialog.cpp:49
+#, kde-format
+msgid "pixels between cells"
+msgstr "셀 당 픽셀"
+
+#: tableformatdialog.cpp:54
+#, kde-format
+msgid "Padding:"
+msgstr "공백:"
+
+#: tableformatdialog.cpp:59
+#, kde-format
+msgid "pixels between cell border and content"
+msgstr "셀 경계와 내용당 픽셀"
+
+#: tableformatdialog.cpp:67
+#, kde-format
+msgid "Left"
+msgstr "왼쪽"
+
+#: tableformatdialog.cpp:68
+#, kde-format
+msgid "Right"
+msgstr "오른쪽"
+
+#: tableformatdialog.cpp:69
+#, kde-format
+msgid "Center"
+msgstr "가운데"
+
+#: tableformatdialog.cpp:70
+#, kde-format
+msgid "Justify"
+msgstr "맞춤"
+
+#: tableformatdialog.cpp:73
+#, kde-format
+msgid "Table Alignment:"
+msgstr "표 정렬:"
+
+#: texteditor/commonwidget/texteditfindbarbase.cpp:34
+#: texteditor/commonwidget/texteditfindbarbase.cpp:37
+#: texteditor/commonwidget/textgotolinewidget.cpp:39
+#: texteditor/commonwidget/textgotolinewidget.cpp:42
+#: texttospeech/texttospeechwidget.cpp:53
+#, kde-format
+msgid "Close"
+msgstr "닫기"
+
+#: texteditor/commonwidget/texteditfindbarbase.cpp:140
+#, kde-format
+msgid ""
+"End of message reached.\n"
+"Phrase '%1' could not be found."
+msgstr ""
+"메시지 끝에 도달했습니다.\n"
+"'%1'을(를) 찾을 수 없습니다."
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:25
+#, kde-format
+msgid "Replace"
+msgstr "바꾸기"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:26
+#, kde-format
+msgid "Replace All"
+msgstr "모두 바꾸기"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:29
+#, kde-format
+msgctxt "Replace text"
+msgid "Replace:"
+msgstr "바꾸기:"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:65
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "이전"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:66
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "다음"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:72
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "찾기(&I):"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:75
+#, kde-format
+msgid "Text to search for"
+msgstr "찾을 텍스트"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:81
+#, kde-format
+msgid "Jump to next match"
+msgstr "다음 일치로 이동"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:86
+#, kde-format
+msgid "Jump to previous match"
+msgstr "이전 일치로 이동"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:92
+#, kde-format
+msgid "Options"
+msgstr "옵션"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:93
+#, kde-format
+msgid "Modify search behavior"
+msgstr "검색 방식 변경"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:96
+#, kde-format
+msgid "Case sensitive"
+msgstr "대소문자 구분"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:99
+#, kde-format
+msgid "Whole word"
+msgstr "단어 단위로"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:102
+#, kde-format
+msgid "Regular Expression"
+msgstr "정규 표현식"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:105
+#, kde-format
+msgid "Respect Diacritic and Accents"
+msgstr "분음 기호와 강세 유지"
+
+#: texteditor/commonwidget/textgotolinewidget.cpp:49
+#, kde-format
+msgid "Go to Line:"
+msgstr "줄로 이동:"
+
+#: texteditor/commonwidget/textgotolinewidget.cpp:56
+#, kde-format
+msgid "Go"
+msgstr "이동"
+
+#: texteditor/plaintexteditor/plaintexteditfindbar.cpp:119
+#: texteditor/richtexteditor/richtexteditfindbar.cpp:119
+#, kde-format
+msgid "%1 replacement made"
+msgid_plural "%1 replacements made"
+msgstr[0] "항목 %1개 바꿈"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:146
+#: texteditor/richtexteditor/richtexteditor.cpp:203
+#, kde-format
+msgid "Replace..."
+msgstr "바꾸기..."
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:161
+#: texteditor/richtexteditor/richtexteditor.cpp:219
+#, kde-format
+msgid "Check Spelling..."
+msgstr "맞춤법 검사..."
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:166
+#: texteditor/richtexteditor/richtexteditor.cpp:226
+#, kde-format
+msgid "Auto Spell Check"
+msgstr "자동 맞춤법 검사"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:172
+#: texteditor/richtexteditor/richtexteditor.cpp:232
+#, kde-format
+msgid "Spell Checking Language"
+msgstr "맞춤법 검사 언어"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:201
+#: texteditor/richtexteditor/richtexteditor.cpp:266
+#, kde-format
+msgid "Speak Text"
+msgstr "텍스트 말하기"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:348
+#: texteditor/richtexteditor/richtexteditor.cpp:450
+#, kde-format
+msgid "Nothing to spell check."
+msgstr "맞춤법 검사할 항목이 없습니다."
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:353
+#: texteditor/richtexteditor/richtexteditor.cpp:468
+#, kde-format
+msgid "No backend available for spell checking."
+msgstr "맞춤법 검사 백엔드가 없습니다."
+
+#: texteditor/richtexteditor/richtexteditor.cpp:258
+#, kde-format
+msgid "Allow Tabulations"
+msgstr "탭 허용"
+
+#: texteditor/richtexteditor/richtexteditor.cpp:460
+#, kde-format
+msgid ""
+"No backend available for spell checking. Do you want to send the email "
+"anyways?"
+msgstr "맞춤법 검사 백엔드가 없습니다. 그래도 메일을 보내시겠습니까?"
+
+#: texteditor/richtexteditor/richtexteditor.cpp:462
+#, kde-format
+msgctxt "@action:button"
+msgid "Send"
+msgstr "보내기"
+
+#: texteditor/richtexteditor/richtexteditor.cpp:484
+#, kde-format
+msgid "Skip"
+msgstr "건너뛰기"
+
+#: texttospeech/texttospeechactions.cpp:28
+#: texttospeech/texttospeechactions.cpp:31
+#, kde-format
+msgid "Stop"
+msgstr "정지"
+
+#: texttospeech/texttospeechactions.cpp:72
+#, kde-format
+msgid "Pause"
+msgstr "일시 정지"
+
+#: texttospeech/texttospeechactions.cpp:72
+#, kde-format
+msgid "Play"
+msgstr "재생"
+
+#: texttospeech/texttospeechconfigdialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Text-To-Speech"
+msgstr "텍스트 말하기 설정"
+
+#: texttospeech/texttospeechconfigwidget.cpp:38
+#: texttospeech/texttospeechwidget.cpp:58
+#, kde-format
+msgid "Volume:"
+msgstr "음량:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:44
+#, kde-format
+msgid "Rate:"
+msgstr "속도:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:52
+#, kde-format
+msgid "Pitch:"
+msgstr "높이:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:55
+#, kde-format
+msgid "Engine:"
+msgstr "엔진:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:60
+#, kde-format
+msgid "Language:"
+msgstr "언어:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:65
+#, kde-format
+msgid "Voice:"
+msgstr "음성:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:137
+#, kde-format
+msgctxt "Default tts engine"
+msgid "Default"
+msgstr "기본값"
+
+#: texttospeech/texttospeechwidget.cpp:81
+#, kde-format
+msgid "Configure..."
+msgstr "설정..."
+
+#~ msgid "I've linked 1 file to this email:"
+#~ msgstr "이 메일에 파일 링크 1개를 첨부했습니다:"
+
+#~ msgid "Face"
+#~ msgstr "얼굴"
+
+#~ msgid "Fantasy"
+#~ msgstr "판타지"
+
+#~ msgid "Travel"
+#~ msgstr "여행"
+
+#~ msgctxt "@action"
+#~ msgid "Increase Indent"
+#~ msgstr "들여쓰기"
+
+#~ msgctxt "@action"
+#~ msgid "Decrease Indent"
+#~ msgstr "내어 쓰기"
+
+#~ msgid "RichTextComposerWidgetTest_Gui"
+#~ msgstr "RichTextComposerWidgetTest_Gui"
+
+#~ msgid "Test for richtextcomposertest widget"
+#~ msgstr "richtextcomposertest 위젯 테스트"
+
+#~ msgid "PlainTextEditorTest_Gui"
+#~ msgstr "PlainTextEditorTest_Gui"
+
+#~ msgid "Test for plaintexteditor widget"
+#~ msgstr "plaintexteditor 위젯 테스트"
+
+#~ msgid "RichTextEditorTest_Gui"
+#~ msgstr "RichTextEditorTest_Gui"
+
+#~ msgid "Test for richtexteditor widget"
+#~ msgstr "richtexteditor 위젯 테스트"
+
+#~ msgid "texttospeechconfigdialog_Gui"
+#~ msgstr "texttospeechconfigdialog_Gui"
+
+#~ msgid "Test for config dialog text to speech"
+#~ msgstr "텍스트 말하기 설정 대화 상자 테스트"
+
+#~ msgid "texttospeechconfig_Gui"
+#~ msgstr "texttospeechconfig_Gui"
+
+#~ msgid "Test for config text to speech"
+#~ msgstr "텍스트 말하기 설정 테스트"
+
+#~ msgid "Speech text"
+#~ msgstr "텍스트 말하기"
+
+#~ msgid "texttospeech_Gui"
+#~ msgstr "texttospeech_Gui"
+
+#~ msgid "Test for text to speech"
+#~ msgstr "텍스트 말하기 테스트"
+
+#~ msgid "texttospeechwidget_Gui"
+#~ msgstr "texttospeechwidget_Gui"
+
+#~ msgid "Test for text to speech widget"
+#~ msgstr "텍스트 말하기 위젯 테스트"
+
+#~ msgid "&Add"
+#~ msgstr "추가(&A)"

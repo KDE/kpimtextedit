@@ -1,0 +1,1134 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kpimtextedit package.
+#
+# Kheyyam Gojayev <xxmn77@gmail.com>, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kpimtextedit\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-13 00:46+0000\n"
+"PO-Revision-Date: 2022-03-24 15:20+0400\n"
+"Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
+"Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
+"Language: az\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: composer-ng/klinkdialog.cpp:24
+#, kde-format
+msgid "Link Text:"
+msgstr "Keçid mətni:"
+
+#: composer-ng/klinkdialog.cpp:26
+#, kde-format
+msgid "Link URL:"
+msgstr "URL keçidləri:"
+
+#: composer-ng/klinkdialog.cpp:30
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Link"
+msgstr "Keçidləri idarə edin"
+
+#: composer-ng/richtextcomposeractions.cpp:102
+#, kde-format
+msgctxt "@action"
+msgid "Align &Left"
+msgstr "So&l kənara görə düzləndirmək"
+
+#: composer-ng/richtextcomposeractions.cpp:103
+#, kde-format
+msgctxt "@label left justify"
+msgid "Left"
+msgstr "Sol"
+
+#: composer-ng/richtextcomposeractions.cpp:111
+#, kde-format
+msgctxt "@action"
+msgid "Align &Center"
+msgstr "&Mərkəzə görə düzləndirmək"
+
+#: composer-ng/richtextcomposeractions.cpp:112
+#, kde-format
+msgctxt "@label center justify"
+msgid "Center"
+msgstr "Mərkəz"
+
+#: composer-ng/richtextcomposeractions.cpp:120
+#, kde-format
+msgctxt "@action"
+msgid "Align &Right"
+msgstr "Sağ kənara gö&rə düzənləmək"
+
+#: composer-ng/richtextcomposeractions.cpp:121
+#, kde-format
+msgctxt "@label right justify"
+msgid "Right"
+msgstr "Sağ"
+
+#: composer-ng/richtextcomposeractions.cpp:129
+#, kde-format
+msgctxt "@action"
+msgid "&Justify"
+msgstr "&Eninə"
+
+#: composer-ng/richtextcomposeractions.cpp:130
+#, kde-format
+msgctxt "@label justify fill"
+msgid "Justify"
+msgstr "Eninə"
+
+#: composer-ng/richtextcomposeractions.cpp:145
+#, kde-format
+msgctxt "@action"
+msgid "Left-to-Right"
+msgstr "Soldan sağa"
+
+#: composer-ng/richtextcomposeractions.cpp:146
+#, kde-format
+msgctxt "@label left-to-right"
+msgid "Left-to-Right"
+msgstr "Soldan sağa"
+
+#: composer-ng/richtextcomposeractions.cpp:154
+#, kde-format
+msgctxt "@action"
+msgid "Right-to-Left"
+msgstr "Sağdan sola"
+
+#: composer-ng/richtextcomposeractions.cpp:155
+#, kde-format
+msgctxt "@label right-to-left"
+msgid "Right-to-Left"
+msgstr "Sağdan sola"
+
+#: composer-ng/richtextcomposeractions.cpp:168
+#, kde-format
+msgctxt "@action"
+msgid "Subscript"
+msgstr "Kiçik həriflərlə"
+
+#: composer-ng/richtextcomposeractions.cpp:176
+#, kde-format
+msgctxt "@action"
+msgid "Superscript"
+msgstr "Böyük həriflərlə"
+
+#: composer-ng/richtextcomposeractions.cpp:184
+#, kde-format
+msgctxt "@action boldify selected text"
+msgid "&Bold"
+msgstr "Qa&lın"
+
+#: composer-ng/richtextcomposeractions.cpp:197
+#, kde-format
+msgctxt "@action italicize selected text"
+msgid "&Italic"
+msgstr "&Kursiv"
+
+#: composer-ng/richtextcomposeractions.cpp:210
+#, kde-format
+msgctxt "@action underline selected text"
+msgid "&Underline"
+msgstr "&Alt cizgi"
+
+#: composer-ng/richtextcomposeractions.cpp:222
+#, kde-format
+msgctxt "@action"
+msgid "&Strike Out"
+msgstr "&Üzərində cizgi"
+
+#: composer-ng/richtextcomposeractions.cpp:237
+#, kde-format
+msgctxt "@action"
+msgid "&Font"
+msgstr "&Şrift"
+
+#: composer-ng/richtextcomposeractions.cpp:246
+#, kde-format
+msgctxt "@action"
+msgid "Font &Size"
+msgstr "Şrift ölçü&sü"
+
+#: composer-ng/richtextcomposeractions.cpp:254
+#, kde-format
+msgctxt "@action"
+msgid "Insert Rule Line"
+msgstr "Üfüqi xətt qoymaq"
+
+#: composer-ng/richtextcomposeractions.cpp:263
+#, kde-format
+msgctxt "@action"
+msgid "Text &Color..."
+msgstr "Mətnin &rəngi..."
+
+#: composer-ng/richtextcomposeractions.cpp:264
+#, kde-format
+msgctxt "@label stroke color"
+msgid "Color"
+msgstr "Rəng"
+
+#: composer-ng/richtextcomposeractions.cpp:272
+#, kde-format
+msgctxt "@action"
+msgid "Text &Highlight..."
+msgstr "Mətn &işıqlanması..."
+
+#: composer-ng/richtextcomposeractions.cpp:280
+#, kde-format
+msgctxt "@action"
+msgid "Link"
+msgstr "Keçid"
+
+#: composer-ng/richtextcomposeractions.cpp:288
+#, kde-format
+msgctxt "@action"
+msgid "Increase List Level"
+msgstr "Səviyyəni artıqrmaq"
+
+#: composer-ng/richtextcomposeractions.cpp:296
+#, kde-format
+msgctxt "@action"
+msgid "Decrease List Level"
+msgstr "Səviyyəni azaldın"
+
+#: composer-ng/richtextcomposeractions.cpp:305
+#, kde-format
+msgctxt "@title:menu"
+msgid "List Style"
+msgstr "Siyahı üslubu"
+
+#: composer-ng/richtextcomposeractions.cpp:307
+#, kde-format
+msgctxt "@item:inmenu no list style"
+msgid "None"
+msgstr "Heç biri"
+
+#: composer-ng/richtextcomposeractions.cpp:307
+#, kde-format
+msgctxt "@item:inmenu disc list style"
+msgid "Disc"
+msgstr "Disk"
+
+#: composer-ng/richtextcomposeractions.cpp:308
+#, kde-format
+msgctxt "@item:inmenu circle list style"
+msgid "Circle"
+msgstr "Dairə"
+
+#: composer-ng/richtextcomposeractions.cpp:308
+#, kde-format
+msgctxt "@item:inmenu square list style"
+msgid "Square"
+msgstr "Düzbucaqlı"
+
+#: composer-ng/richtextcomposeractions.cpp:309
+#, kde-format
+msgctxt "@item:inmenu numbered lists"
+msgid "123"
+msgstr "123"
+
+#: composer-ng/richtextcomposeractions.cpp:309
+#, kde-format
+msgctxt "@item:inmenu lowercase abc lists"
+msgid "abc"
+msgstr "abc"
+
+#: composer-ng/richtextcomposeractions.cpp:310
+#, kde-format
+msgctxt "@item:inmenu uppercase abc lists"
+msgid "ABC"
+msgstr "ABC"
+
+#: composer-ng/richtextcomposeractions.cpp:310
+#, kde-format
+msgctxt "@item:inmenu lower case roman numerals"
+msgid "i ii iii"
+msgstr "i ii iii"
+
+#: composer-ng/richtextcomposeractions.cpp:311
+#, kde-format
+msgctxt "@item:inmenu upper case roman numerals"
+msgid "I II III"
+msgstr "I II III"
+
+#: composer-ng/richtextcomposeractions.cpp:322
+#, kde-format
+msgid "Pa&ste as Quotation"
+msgstr "&Sitat kimi yerləşdirin"
+
+#: composer-ng/richtextcomposeractions.cpp:330
+#, kde-format
+msgid "Add &Quote Characters"
+msgstr "Sitat si&mvolları əlavə edin"
+
+#: composer-ng/richtextcomposeractions.cpp:337
+#, kde-format
+msgid "Re&move Quote Characters"
+msgstr "Sitat simvollarını sili&n"
+
+#: composer-ng/richtextcomposeractions.cpp:344
+#, kde-format
+msgid "Paste Without Formatting"
+msgstr "Formatlama olmadan yerləşdirin"
+
+#: composer-ng/richtextcomposeractions.cpp:352
+#, kde-format
+msgid "Add Image"
+msgstr "Şəkil əlavə edin"
+
+#: composer-ng/richtextcomposeractions.cpp:368
+#, kde-format
+msgid "Insert HTML"
+msgstr "HTML-kod daxil edin"
+
+#: composer-ng/richtextcomposeractions.cpp:378
+#, kde-format
+msgid "Table"
+msgstr "Cədvəl"
+
+#: composer-ng/richtextcomposeractions.cpp:387
+#, kde-format
+msgid "Delete Line"
+msgstr "Sətiri silin"
+
+#: composer-ng/richtextcomposeractions.cpp:398
+#, kde-format
+msgid "Reset Font Settings"
+msgstr "Şrift ayarlarını sıfırlayın"
+
+#: composer-ng/richtextcomposeractions.cpp:399
+#, kde-format
+msgid "Reset Font"
+msgstr "Şrifti sıfırlayın"
+
+#: composer-ng/richtextcomposeractions.cpp:407
+#, kde-format
+msgctxt "@action"
+msgid "Format Painter"
+msgstr "Mətn sahəsinin formatılanmasının əvəzlənməsi"
+
+#: composer-ng/richtextcomposeractions.cpp:415
+#, kde-format
+msgctxt "@title:menu"
+msgid "Heading Level"
+msgstr "Başlıq səviyyəsi"
+
+#: composer-ng/richtextcomposeractions.cpp:416
+#, kde-format
+msgctxt "@item:inmenu no heading"
+msgid "Basic text"
+msgstr "Əsas mətn"
+
+#: composer-ng/richtextcomposeractions.cpp:417
+#, kde-format
+msgctxt "@item:inmenu heading level 1 (largest)"
+msgid "Title"
+msgstr "Başlıq"
+
+#: composer-ng/richtextcomposeractions.cpp:418
+#, kde-format
+msgctxt "@item:inmenu heading level 2"
+msgid "Subtitle"
+msgstr "Alt yazı"
+
+#: composer-ng/richtextcomposeractions.cpp:419
+#, kde-format
+msgctxt "@item:inmenu heading level 3"
+msgid "Section"
+msgstr "Bölmə"
+
+#: composer-ng/richtextcomposeractions.cpp:420
+#, kde-format
+msgctxt "@item:inmenu heading level 4"
+msgid "Subsection"
+msgstr "Alt bölmə"
+
+#: composer-ng/richtextcomposeractions.cpp:421
+#, kde-format
+msgctxt "@item:inmenu heading level 5"
+msgid "Paragraph"
+msgstr "Paraqraf"
+
+#: composer-ng/richtextcomposeractions.cpp:422
+#, kde-format
+msgctxt "@item:inmenu heading level 6 (smallest)"
+msgid "Subparagraph"
+msgstr "Alt paraqraf"
+
+#: composer-ng/richtextcomposeractions.cpp:433
+#, kde-format
+msgctxt "@action"
+msgid "Checkbox"
+msgstr "İşarələmə qutusu"
+
+#: composer-ng/richtextcomposercontroler.cpp:733
+#, kde-format
+msgid "Only local files are supported."
+msgstr "Yalnız yerli fayllar dəstəklənir."
+
+#: composer-ng/richtextcomposerimages.cpp:55
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Unable to load image <filename>%1</filename>."
+msgstr "<filename>%1</filename> şəklinin yüklənməsi alınmadı."
+
+#: composer-ng/richtextcomposerimages.cpp:214
+#, kde-format
+msgctxt "Start of the filename for an image"
+msgid "image"
+msgstr "Şəkil"
+
+#: composer-ng/richtextexternalcomposer.cpp:69
+#, kde-format
+msgid "Command line is empty. Please verify settings."
+msgstr "Əmr sətri boşdur. Lütfən ayarları yoxlayın."
+
+#: composer-ng/richtextexternalcomposer.cpp:69
+#, kde-format
+msgid "Empty command line"
+msgstr "Əmr sətri boşdur"
+
+#: composer-ng/richtextexternalcomposer.cpp:122
+#, kde-format
+msgid "External editor cannot be started. Please verify command \"%1\""
+msgstr ""
+"Xarici redaktor başladıla bilmədi. \"%1\" əmrinin düzgünlüyünü yoxlayın"
+
+#: composer-ng/richtextexternalcomposer.cpp:140
+#, kde-format
+msgid "Error was found when we started external editor."
+msgstr "Xarici redaktor işə salınarkən xəta aşkarlandı."
+
+#: composer-ng/richtextexternalcomposer.cpp:140
+#, kde-format
+msgid "External Editor Closed"
+msgstr "Xarici redaktor bağlandı"
+
+#: composer-ng/richtextexternalcomposer.cpp:157
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The external editor is still running.<nl/>Do you want to stop the editor or "
+"keep it running?<nl/><warning>Stopping the editor will cause all your "
+"unsaved changes to be lost.</warning>"
+msgstr ""
+"Xarici redaktor hələ də işləyir.<nl/>Siz redaktoru dayandırmaq yoxsa onu "
+"işlək tutmaq istəyirsiniz?<nl/><warning>Redaktorun dayandırılması bütün "
+"saxlanılmamış dəyişikliklərin itirilməsinə gətirib çıxaracaq.</warning>"
+
+#: composer-ng/richtextexternalcomposer.cpp:161
+#, kde-format
+msgctxt "@title:window"
+msgid "External Editor Running"
+msgstr "Xarici redaktor işləyir"
+
+#: composer-ng/richtextexternalcomposer.cpp:162
+#, kde-format
+msgctxt "@action:button"
+msgid "Stop Editor"
+msgstr "Redaktoru dayandırın"
+
+#: composer-ng/richtextexternalcomposer.cpp:163
+#, kde-format
+msgctxt "@action:button"
+msgid "Keep Editor Running"
+msgstr "Redaktoru işlək tutn"
+
+#: emoticon/emoticonrecentlistview.cpp:25
+#, kde-format
+msgid "Clear Recents"
+msgstr "Az əvvəlkiləri təmizləyin"
+
+#: emoticon/emoticontexteditaction.cpp:41
+#, kde-format
+msgid "Add Smiley"
+msgstr "Üz ifadəsi əlavə edin"
+
+#: emoticon/emoticontexteditselector.cpp:31
+#, kde-format
+msgid "Search Emoticon..."
+msgstr "Üz ifadələrini axtarın..."
+
+#: emoticon/emoticonunicodetab.cpp:51
+#, kde-format
+msgid "Result"
+msgstr "Nəticə"
+
+#: emoticon/emoticonunicodetab.cpp:62
+#, kde-format
+msgid "Recents"
+msgstr "Bir az öncəkilər"
+
+#: emoticon/emoticonunicodetab.cpp:93
+#, kde-format
+msgid "Faces"
+msgstr "Üzlər"
+
+#: emoticon/emoticonunicodetab.cpp:94
+#, kde-format
+msgid "Animals"
+msgstr "Heyvanlar"
+
+#: emoticon/emoticonunicodetab.cpp:95
+#, kde-format
+msgid "Emotions"
+msgstr "Emosiyalar"
+
+#: emoticon/emoticonunicodetab.cpp:96
+#, kde-format
+msgid "Body"
+msgstr "Bədən"
+
+#: emoticon/emoticonunicodetab.cpp:97
+#, kde-format
+msgid "Transports"
+msgstr "Nəqliyyat"
+
+#: emoticon/emoticonunicodetab.cpp:98
+#, kde-format
+msgid "Events"
+msgstr "Hadisələr"
+
+#: emoticon/emoticonunicodetab.cpp:99
+#, kde-format
+msgid "Flags"
+msgstr "Bayraqlar"
+
+#: emoticon/emoticonunicodetab.cpp:100
+#, kde-format
+msgid "Weather"
+msgstr "Hava"
+
+#: emoticon/emoticonunicodetab.cpp:101
+#, kde-format
+msgid "Foods"
+msgstr "Yeməklər"
+
+#: emoticon/emoticonunicodetab.cpp:102
+#, kde-format
+msgid "Sports"
+msgstr "İdman"
+
+#: emoticon/emoticonunicodetab.cpp:103
+#, kde-format
+msgid "Time"
+msgstr "Vaxt"
+
+#: emoticon/emoticonunicodetab.cpp:104
+#, kde-format
+msgid "Game"
+msgstr "Oyun"
+
+#: emoticon/emoticonunicodetab.cpp:105
+#, kde-format
+msgid "Clothing"
+msgstr "Geyim"
+
+#: emoticon/emoticonunicodetab.cpp:106
+#, kde-format
+msgid "Music"
+msgstr "Musiqi"
+
+#: emoticon/emoticonunicodetab.cpp:107
+#, kde-format
+msgid "Computer"
+msgstr "Kompyuter"
+
+#: emoticon/emoticonunicodetab.cpp:108
+#, kde-format
+msgid "Symbols"
+msgstr "Simvollar"
+
+#: emoticon/emoticonunicodetab.cpp:109
+#, kde-format
+msgid "Plant"
+msgstr "Bitki"
+
+#: emoticon/emoticonunicodetab.cpp:110
+#, kde-format
+msgid "Book"
+msgstr "Kitab"
+
+#: emoticon/emoticonunicodetab.cpp:111
+#, kde-format
+msgid "Science"
+msgstr "Elm"
+
+#: emoticon/emoticonunicodetab.cpp:112
+#, kde-format
+msgid "Person"
+msgstr "Şəxs"
+
+#: emoticon/emoticonunicodetab.cpp:113
+#, kde-format
+msgid "Place"
+msgstr "Yer"
+
+#: emoticon/emoticonunicodetab.cpp:114
+#, kde-format
+msgid "Money"
+msgstr "Pul"
+
+#: emoticon/emoticonunicodetab.cpp:115
+#, kde-format
+msgid "Mail"
+msgstr "Poçt"
+
+#: emoticon/emoticonunicodetab.cpp:116
+#, kde-format
+msgid "Office"
+msgstr "Ofis"
+
+#: emoticon/emoticonunicodetab.cpp:117
+#, kde-format
+msgid "Tools"
+msgstr "Alətlər"
+
+#: emoticon/emoticonunicodetab.cpp:118
+#, kde-format
+msgid "Phone"
+msgstr "Telefon"
+
+#: emoticon/emoticonunicodetab.cpp:119
+#, kde-format
+msgid "Lock"
+msgstr "Kilid"
+
+#: emoticon/emoticonunicodetab.cpp:120
+#, kde-format
+msgid "Drink"
+msgstr "İçki"
+
+#: emoticon/emoticonunicodetab.cpp:121
+#, kde-format
+msgid "Video"
+msgstr "Video"
+
+#: emoticon/emoticonunicodetab.cpp:122
+#, kde-format
+msgid "House"
+msgstr "Ev"
+
+#: emoticon/emoticonunicodetab.cpp:123
+#, kde-format
+msgid "Dishware"
+msgstr "Qab-qacaq"
+
+#: emoticon/emoticonunicodetab.cpp:124
+#, kde-format
+msgid "Hotel"
+msgstr "Mehmanxana"
+
+#: emoticon/emoticonunicodetab.cpp:125
+#, kde-format
+msgid "Award-Medal"
+msgstr "Mükafat"
+
+#: inserthtmldialog.cpp:29
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert HTML"
+msgstr "HTML-kod daxil edin"
+
+#: inserthtmldialog.cpp:31
+#, kde-format
+msgid "Insert HTML tags and texts:"
+msgstr "HTML etiketləri olə mətnlər daxil edin:"
+
+#: inserthtmldialog.cpp:37
+#, kde-format
+msgid "Example: <i> Hello word </i>"
+msgstr "Nümunə: <i> Salam dünya </i>"
+
+#: inserthtmldialog.cpp:46
+#, kde-format
+msgctxt "@action:button"
+msgid "Insert"
+msgstr "Daxil edin"
+
+#: insertimagedialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert Image"
+msgstr "Şəkil daxil edin"
+
+#: insertimagedialog.cpp:36 inserttabledialog.cpp:37
+#: selectspecialchardialog.cpp:34 tableactionmenu.cpp:405
+#, kde-format
+msgid "Insert"
+msgstr "Daxil edin"
+
+#: insertimagewidget.cpp:40
+#, kde-format
+msgid "Image Location:"
+msgstr "Şəkilin yeri:"
+
+#: insertimagewidget.cpp:53
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Image"
+msgstr "Şəkil əlavə edin"
+
+#: insertimagewidget.cpp:64
+#, kde-format
+msgid "Keep Original Size"
+msgstr "İlkin ölçüsünü saxlayın"
+
+#: insertimagewidget.cpp:71
+#, kde-format
+msgid "Keep Image Ratio"
+msgstr "Tərəflərin nisbətini saxlayın"
+
+#: insertimagewidget.cpp:77 inserttablewidget.cpp:59
+#, kde-format
+msgid "Width:"
+msgstr "Eni:"
+
+#: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
+#, kde-format
+msgid " px"
+msgstr " piksel"
+
+#: insertimagewidget.cpp:92
+#, kde-format
+msgid "Height:"
+msgstr "Hündürlük:"
+
+#: insertimagewidget.cpp:110
+#, kde-format
+msgid "Image Preview:"
+msgstr "Şəkilə önbaxış:"
+
+#: inserttabledialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert Table"
+msgstr "Cədvəl daxil edin"
+
+#: inserttablewidget.cpp:40
+#, kde-format
+msgid "Rows:"
+msgstr "Sətirlər:"
+
+#: inserttablewidget.cpp:43
+#, kde-format
+msgid "Columns:"
+msgstr "Sütunlar:"
+
+#: inserttablewidget.cpp:46
+#, kde-format
+msgid "Border:"
+msgstr "Sərhəd:"
+
+#: inserttablewidget.cpp:52
+#, no-c-format, kde-format
+msgid "% of windows"
+msgstr "Pəncərələrin %-i"
+
+#: inserttablewidget.cpp:53
+#, kde-format
+msgid "pixels"
+msgstr "piksellər"
+
+#: selectspecialchardialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Special Characters"
+msgstr "Xüsusi simvollar seçin"
+
+#: selectspecialchardialog.cpp:47
+#, kde-format
+msgid "Select"
+msgstr "Seçim"
+
+#: tableactionmenu.cpp:408
+#, kde-format
+msgid "Table..."
+msgstr "Cədvəl..."
+
+#: tableactionmenu.cpp:416 tableactionmenu.cpp:449
+#, kde-format
+msgid "Row Below"
+msgstr "Sətir aşağı"
+
+#: tableactionmenu.cpp:423 tableactionmenu.cpp:456
+#, kde-format
+msgid "Row Above"
+msgstr "Sətir yuxarı"
+
+#: tableactionmenu.cpp:431 tableactionmenu.cpp:464
+#, kde-format
+msgid "Column Before"
+msgstr "Sütun əvvəlinə"
+
+#: tableactionmenu.cpp:439 tableactionmenu.cpp:472
+#, kde-format
+msgid "Column After"
+msgstr "Sütun sonrasına"
+
+#: tableactionmenu.cpp:446
+#, kde-format
+msgid "Delete"
+msgstr "Silin"
+
+#: tableactionmenu.cpp:480
+#, kde-format
+msgid "Cell Contents"
+msgstr "Xanaların tərkibi"
+
+#: tableactionmenu.cpp:489
+#, kde-format
+msgid "Join With Cell to the Right"
+msgstr "Sağdakı xanalar ilə birləşdirin"
+
+#: tableactionmenu.cpp:496
+#, kde-format
+msgid "Join Selected Cells"
+msgstr "Seçilmiş xanaları birləşdirin"
+
+#: tableactionmenu.cpp:503
+#, kde-format
+msgid "Split cells"
+msgstr "Xanaları ayırın"
+
+#: tableactionmenu.cpp:512
+#, kde-format
+msgid "Table Format..."
+msgstr "Cədvəl formatı..."
+
+#: tableactionmenu.cpp:519
+#, kde-format
+msgid "Table Cell Format..."
+msgstr "Cədvəl xanalarının formatı..."
+
+#: tablecellformatdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Cell Format"
+msgstr "Xananın formatı"
+
+#: tablecellformatdialog.cpp:33
+#, kde-format
+msgid "Vertical Alignment:"
+msgstr "Şaquli düzülüş:"
+
+#: tablecellformatdialog.cpp:36
+#, kde-format
+msgid "Top"
+msgstr "Yuxarı"
+
+#: tablecellformatdialog.cpp:37
+#, kde-format
+msgid "Middle"
+msgstr "Ortaya"
+
+#: tablecellformatdialog.cpp:38
+#, kde-format
+msgid "Bottom"
+msgstr "Aşağı"
+
+#: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
+#, kde-format
+msgid "Background Color:"
+msgstr "Fon rəngi"
+
+#: tableformatdialog.cpp:31
+#, kde-format
+msgctxt "@title:window"
+msgid "Table Format"
+msgstr "Cədvəl formatı"
+
+#: tableformatdialog.cpp:44
+#, kde-format
+msgid "Spacing:"
+msgstr "Aralıq:"
+
+#: tableformatdialog.cpp:49
+#, kde-format
+msgid "pixels between cells"
+msgstr "xanalar arası piksellər"
+
+#: tableformatdialog.cpp:54
+#, kde-format
+msgid "Padding:"
+msgstr "Doldurulma:"
+
+#: tableformatdialog.cpp:59
+#, kde-format
+msgid "pixels between cell border and content"
+msgstr "tərkiblər və xana sərhədləri arası piksellər"
+
+#: tableformatdialog.cpp:67
+#, kde-format
+msgid "Left"
+msgstr "Sol"
+
+#: tableformatdialog.cpp:68
+#, kde-format
+msgid "Right"
+msgstr "Sağ"
+
+#: tableformatdialog.cpp:69
+#, kde-format
+msgid "Center"
+msgstr "Mərkəz"
+
+#: tableformatdialog.cpp:70
+#, kde-format
+msgid "Justify"
+msgstr "Eninə"
+
+#: tableformatdialog.cpp:73
+#, kde-format
+msgid "Table Alignment:"
+msgstr "Cədvəlin düzülüşü:"
+
+#: texteditor/commonwidget/texteditfindbarbase.cpp:34
+#: texteditor/commonwidget/texteditfindbarbase.cpp:37
+#: texteditor/commonwidget/textgotolinewidget.cpp:39
+#: texteditor/commonwidget/textgotolinewidget.cpp:42
+#: texttospeech/texttospeechwidget.cpp:53
+#, kde-format
+msgid "Close"
+msgstr "Bağlamaq"
+
+#: texteditor/commonwidget/texteditfindbarbase.cpp:140
+#, kde-format
+msgid ""
+"End of message reached.\n"
+"Phrase '%1' could not be found."
+msgstr ""
+"Mətnin sonuna çatdı.\n"
+"'%1' ifadəsi tapılmadı."
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:25
+#, kde-format
+msgid "Replace"
+msgstr "Əvəzləmək"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:26
+#, kde-format
+msgid "Replace All"
+msgstr "Hamısını əvəzləyin"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:29
+#, kde-format
+msgctxt "Replace text"
+msgid "Replace:"
+msgstr "Əvəzləyin:"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:65
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "Öncəkilər"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:66
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "Sonrakı"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:72
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "Ax&tarın:"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:75
+#, kde-format
+msgid "Text to search for"
+msgstr "Axtarılacaq mətn"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:81
+#, kde-format
+msgid "Jump to next match"
+msgstr "Növbəti oxşarına keçin"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:86
+#, kde-format
+msgid "Jump to previous match"
+msgstr "Öncəki oxşarına keçin"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:92
+#, kde-format
+msgid "Options"
+msgstr "Seçimlər"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:93
+#, kde-format
+msgid "Modify search behavior"
+msgstr "Axtarış parametrlərini dəyişin"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:96
+#, kde-format
+msgid "Case sensitive"
+msgstr "Böyük/Kiçik hərflərə həssas"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:99
+#, kde-format
+msgid "Whole word"
+msgstr "Tam söz"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:102
+#, kde-format
+msgid "Regular Expression"
+msgstr "Müntəzəm ifadə"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:105
+#, kde-format
+msgid "Respect Diacritic and Accents"
+msgstr "Diakritik və vurğu işarələri qəbul edilir"
+
+#: texteditor/commonwidget/textgotolinewidget.cpp:49
+#, kde-format
+msgid "Go to Line:"
+msgstr "Sətrə keçin:"
+
+#: texteditor/commonwidget/textgotolinewidget.cpp:56
+#, kde-format
+msgid "Go"
+msgstr "Keçin"
+
+#: texteditor/plaintexteditor/plaintexteditfindbar.cpp:119
+#: texteditor/richtexteditor/richtexteditfindbar.cpp:119
+#, kde-format
+msgid "%1 replacement made"
+msgid_plural "%1 replacements made"
+msgstr[0] "%1 əvəzlənmə icra olundu"
+msgstr[1] "%1 əvəzlənmə icra olundu"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:146
+#: texteditor/richtexteditor/richtexteditor.cpp:203
+#, kde-format
+msgid "Replace..."
+msgstr "Əvəzləyin..."
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:161
+#: texteditor/richtexteditor/richtexteditor.cpp:219
+#, kde-format
+msgid "Check Spelling..."
+msgstr "Orfoqrafiya yoxlaması..."
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:166
+#: texteditor/richtexteditor/richtexteditor.cpp:226
+#, kde-format
+msgid "Auto Spell Check"
+msgstr "Avtomatik orfoqrafiya yoxlaması"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:172
+#: texteditor/richtexteditor/richtexteditor.cpp:232
+#, kde-format
+msgid "Spell Checking Language"
+msgstr "Orfoqrafiya yoxlaması üç. dil"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:201
+#: texteditor/richtexteditor/richtexteditor.cpp:266
+#, kde-format
+msgid "Speak Text"
+msgstr "Mətni səsləndirmək"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:348
+#: texteditor/richtexteditor/richtexteditor.cpp:450
+#, kde-format
+msgid "Nothing to spell check."
+msgstr "Yoxlanacaq heç nə yoxdur."
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:353
+#: texteditor/richtexteditor/richtexteditor.cpp:468
+#, kde-format
+msgid "No backend available for spell checking."
+msgstr "Orfoqrafiya yoxlaması üçün server tərəfi əlçatan deyil."
+
+#: texteditor/richtexteditor/richtexteditor.cpp:258
+#, kde-format
+msgid "Allow Tabulations"
+msgstr "Tabulyasiyaya icazə verin"
+
+#: texteditor/richtexteditor/richtexteditor.cpp:460
+#, kde-format
+msgid ""
+"No backend available for spell checking. Do you want to send the email "
+"anyways?"
+msgstr ""
+"Orfoqrafiya yoxlaması üçün server tərəfi əlçatan deyil. İstənilən halda e-"
+"poçt göndərmək istəyirsiniz?"
+
+#: texteditor/richtexteditor/richtexteditor.cpp:462
+#, kde-format
+msgctxt "@action:button"
+msgid "Send"
+msgstr "Göndərin"
+
+#: texteditor/richtexteditor/richtexteditor.cpp:484
+#, kde-format
+msgid "Skip"
+msgstr "Ötürün"
+
+#: texttospeech/texttospeechactions.cpp:28
+#: texttospeech/texttospeechactions.cpp:31
+#, kde-format
+msgid "Stop"
+msgstr "Dayandırın"
+
+#: texttospeech/texttospeechactions.cpp:72
+#, kde-format
+msgid "Pause"
+msgstr "Fasilə"
+
+#: texttospeech/texttospeechactions.cpp:72
+#, kde-format
+msgid "Play"
+msgstr "Səsləndirmək"
+
+#: texttospeech/texttospeechconfigdialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Text-To-Speech"
+msgstr "Mətnin nitqə çevrilməsini ayarlayın"
+
+#: texttospeech/texttospeechconfigwidget.cpp:38
+#: texttospeech/texttospeechwidget.cpp:58
+#, kde-format
+msgid "Volume:"
+msgstr "Səs səviyyəsi:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:44
+#, kde-format
+msgid "Rate:"
+msgstr "Tezlik:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:52
+#, kde-format
+msgid "Pitch:"
+msgstr "Səsin ucalığı:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:55
+#, kde-format
+msgid "Engine:"
+msgstr "Həyata keçirmə:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:60
+#, kde-format
+msgid "Language:"
+msgstr "Dil:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:65
+#, kde-format
+msgid "Voice:"
+msgstr "Səs:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:137
+#, kde-format
+msgctxt "Default tts engine"
+msgid "Default"
+msgstr "İlkin"
+
+#: texttospeech/texttospeechwidget.cpp:81
+#, kde-format
+msgid "Configure..."
+msgstr "Tənzimləyin..."

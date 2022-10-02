@@ -1,0 +1,1148 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014, 2018.
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-13 00:46+0000\n"
+"PO-Revision-Date: 2022-09-06 20:48+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: composer-ng/klinkdialog.cpp:24
+#, kde-format
+msgid "Link Text:"
+msgstr "نصّ الرّابط:"
+
+#: composer-ng/klinkdialog.cpp:26
+#, kde-format
+msgid "Link URL:"
+msgstr "مسار الرّابط:"
+
+#: composer-ng/klinkdialog.cpp:30
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Link"
+msgstr "أدر الوصلة"
+
+#: composer-ng/richtextcomposeractions.cpp:102
+#, kde-format
+msgctxt "@action"
+msgid "Align &Left"
+msgstr "حاذِ ي&سارًا"
+
+#: composer-ng/richtextcomposeractions.cpp:103
+#, kde-format
+msgctxt "@label left justify"
+msgid "Left"
+msgstr "اليسار"
+
+#: composer-ng/richtextcomposeractions.cpp:111
+#, kde-format
+msgctxt "@action"
+msgid "Align &Center"
+msgstr "حاذِ وس&طًا"
+
+#: composer-ng/richtextcomposeractions.cpp:112
+#, kde-format
+msgctxt "@label center justify"
+msgid "Center"
+msgstr "الوسط"
+
+#: composer-ng/richtextcomposeractions.cpp:120
+#, kde-format
+msgctxt "@action"
+msgid "Align &Right"
+msgstr "حاذِ يمي&نًا"
+
+#: composer-ng/richtextcomposeractions.cpp:121
+#, kde-format
+msgctxt "@label right justify"
+msgid "Right"
+msgstr "اليمين"
+
+#: composer-ng/richtextcomposeractions.cpp:129
+#, kde-format
+msgctxt "@action"
+msgid "&Justify"
+msgstr "&مساواة"
+
+#: composer-ng/richtextcomposeractions.cpp:130
+#, kde-format
+msgctxt "@label justify fill"
+msgid "Justify"
+msgstr "مساواة"
+
+#: composer-ng/richtextcomposeractions.cpp:145
+#, kde-format
+msgctxt "@action"
+msgid "Left-to-Right"
+msgstr "من اليسار إلى اليمين"
+
+#: composer-ng/richtextcomposeractions.cpp:146
+#, kde-format
+msgctxt "@label left-to-right"
+msgid "Left-to-Right"
+msgstr "من اليسار إلى اليمين"
+
+#: composer-ng/richtextcomposeractions.cpp:154
+#, kde-format
+msgctxt "@action"
+msgid "Right-to-Left"
+msgstr "من اليمين إلى اليسار"
+
+#: composer-ng/richtextcomposeractions.cpp:155
+#, kde-format
+msgctxt "@label right-to-left"
+msgid "Right-to-Left"
+msgstr "من اليمين إلى اليسار"
+
+#: composer-ng/richtextcomposeractions.cpp:168
+#, kde-format
+msgctxt "@action"
+msgid "Subscript"
+msgstr "منخفض"
+
+#: composer-ng/richtextcomposeractions.cpp:176
+#, kde-format
+msgctxt "@action"
+msgid "Superscript"
+msgstr "مرتفع"
+
+#: composer-ng/richtextcomposeractions.cpp:184
+#, kde-format
+msgctxt "@action boldify selected text"
+msgid "&Bold"
+msgstr "&ثخين"
+
+#: composer-ng/richtextcomposeractions.cpp:197
+#, kde-format
+msgctxt "@action italicize selected text"
+msgid "&Italic"
+msgstr "م&ائل"
+
+#: composer-ng/richtextcomposeractions.cpp:210
+#, kde-format
+msgctxt "@action underline selected text"
+msgid "&Underline"
+msgstr "م&سطّر"
+
+#: composer-ng/richtextcomposeractions.cpp:222
+#, kde-format
+msgctxt "@action"
+msgid "&Strike Out"
+msgstr "م&شطوب"
+
+#: composer-ng/richtextcomposeractions.cpp:237
+#, kde-format
+msgctxt "@action"
+msgid "&Font"
+msgstr "ال&خطّ"
+
+#: composer-ng/richtextcomposeractions.cpp:246
+#, kde-format
+msgctxt "@action"
+msgid "Font &Size"
+msgstr "&حجم الخطّ"
+
+#: composer-ng/richtextcomposeractions.cpp:254
+#, kde-format
+msgctxt "@action"
+msgid "Insert Rule Line"
+msgstr "أدرج سطر مسطرة"
+
+#: composer-ng/richtextcomposeractions.cpp:263
+#, kde-format
+msgctxt "@action"
+msgid "Text &Color..."
+msgstr "&لون النّصّ..."
+
+#: composer-ng/richtextcomposeractions.cpp:264
+#, kde-format
+msgctxt "@label stroke color"
+msgid "Color"
+msgstr "اللون"
+
+#: composer-ng/richtextcomposeractions.cpp:272
+#, kde-format
+msgctxt "@action"
+msgid "Text &Highlight..."
+msgstr "إ&براز النّصّ..."
+
+#: composer-ng/richtextcomposeractions.cpp:280
+#, kde-format
+msgctxt "@action"
+msgid "Link"
+msgstr "رابط"
+
+#: composer-ng/richtextcomposeractions.cpp:288
+#, kde-format
+msgctxt "@action"
+msgid "Increase List Level"
+msgstr "زد مستوى القائمة"
+
+#: composer-ng/richtextcomposeractions.cpp:296
+#, kde-format
+msgctxt "@action"
+msgid "Decrease List Level"
+msgstr "أنقص مستوى القائمة"
+
+#: composer-ng/richtextcomposeractions.cpp:305
+#, kde-format
+msgctxt "@title:menu"
+msgid "List Style"
+msgstr "نمط القائمة"
+
+#: composer-ng/richtextcomposeractions.cpp:307
+#, kde-format
+msgctxt "@item:inmenu no list style"
+msgid "None"
+msgstr "بلا"
+
+#: composer-ng/richtextcomposeractions.cpp:307
+#, kde-format
+msgctxt "@item:inmenu disc list style"
+msgid "Disc"
+msgstr "أسطوانة"
+
+#: composer-ng/richtextcomposeractions.cpp:308
+#, kde-format
+msgctxt "@item:inmenu circle list style"
+msgid "Circle"
+msgstr "دائرة"
+
+#: composer-ng/richtextcomposeractions.cpp:308
+#, kde-format
+msgctxt "@item:inmenu square list style"
+msgid "Square"
+msgstr "مربّع"
+
+#: composer-ng/richtextcomposeractions.cpp:309
+#, kde-format
+msgctxt "@item:inmenu numbered lists"
+msgid "123"
+msgstr "123"
+
+#: composer-ng/richtextcomposeractions.cpp:309
+#, kde-format
+msgctxt "@item:inmenu lowercase abc lists"
+msgid "abc"
+msgstr "abc"
+
+#: composer-ng/richtextcomposeractions.cpp:310
+#, kde-format
+msgctxt "@item:inmenu uppercase abc lists"
+msgid "ABC"
+msgstr "ABC"
+
+#: composer-ng/richtextcomposeractions.cpp:310
+#, kde-format
+msgctxt "@item:inmenu lower case roman numerals"
+msgid "i ii iii"
+msgstr "i ii iii"
+
+#: composer-ng/richtextcomposeractions.cpp:311
+#, kde-format
+msgctxt "@item:inmenu upper case roman numerals"
+msgid "I II III"
+msgstr "I II III"
+
+#: composer-ng/richtextcomposeractions.cpp:322
+#, kde-format
+msgid "Pa&ste as Quotation"
+msgstr "أل&صِق كاقتباس"
+
+#: composer-ng/richtextcomposeractions.cpp:330
+#, kde-format
+msgid "Add &Quote Characters"
+msgstr "أضف محارف الا&قتباس"
+
+#: composer-ng/richtextcomposeractions.cpp:337
+#, kde-format
+msgid "Re&move Quote Characters"
+msgstr "أ&زِل محارف الاقتباس"
+
+#: composer-ng/richtextcomposeractions.cpp:344
+#, kde-format
+msgid "Paste Without Formatting"
+msgstr "ألصِق دون تنسيق"
+
+#: composer-ng/richtextcomposeractions.cpp:352
+#, kde-format
+msgid "Add Image"
+msgstr "أضف صورة"
+
+#: composer-ng/richtextcomposeractions.cpp:368
+#, kde-format
+msgid "Insert HTML"
+msgstr "أدرج HTML"
+
+#: composer-ng/richtextcomposeractions.cpp:378
+#, kde-format
+msgid "Table"
+msgstr "جدول"
+
+#: composer-ng/richtextcomposeractions.cpp:387
+#, kde-format
+msgid "Delete Line"
+msgstr "احذف السّطر"
+
+#: composer-ng/richtextcomposeractions.cpp:398
+#, kde-format
+msgid "Reset Font Settings"
+msgstr "صفّر إعدادات الخطّ"
+
+#: composer-ng/richtextcomposeractions.cpp:399
+#, kde-format
+msgid "Reset Font"
+msgstr "صفّر الخطّ"
+
+#: composer-ng/richtextcomposeractions.cpp:407
+#, kde-format
+msgctxt "@action"
+msgid "Format Painter"
+msgstr "فرشاة التّنسيق"
+
+#: composer-ng/richtextcomposeractions.cpp:415
+#, kde-format
+msgctxt "@title:menu"
+msgid "Heading Level"
+msgstr "مستوى الترويسة"
+
+#: composer-ng/richtextcomposeractions.cpp:416
+#, kde-format
+msgctxt "@item:inmenu no heading"
+msgid "Basic text"
+msgstr "نص بسيط"
+
+#: composer-ng/richtextcomposeractions.cpp:417
+#, kde-format
+msgctxt "@item:inmenu heading level 1 (largest)"
+msgid "Title"
+msgstr "العنوان"
+
+#: composer-ng/richtextcomposeractions.cpp:418
+#, kde-format
+msgctxt "@item:inmenu heading level 2"
+msgid "Subtitle"
+msgstr "عنوان فرعيّ"
+
+#: composer-ng/richtextcomposeractions.cpp:419
+#, kde-format
+msgctxt "@item:inmenu heading level 3"
+msgid "Section"
+msgstr "القسم"
+
+#: composer-ng/richtextcomposeractions.cpp:420
+#, kde-format
+msgctxt "@item:inmenu heading level 4"
+msgid "Subsection"
+msgstr "القسم الفرعي"
+
+#: composer-ng/richtextcomposeractions.cpp:421
+#, kde-format
+msgctxt "@item:inmenu heading level 5"
+msgid "Paragraph"
+msgstr "الفقرة"
+
+#: composer-ng/richtextcomposeractions.cpp:422
+#, kde-format
+msgctxt "@item:inmenu heading level 6 (smallest)"
+msgid "Subparagraph"
+msgstr "الفقرة الفرعية"
+
+#: composer-ng/richtextcomposeractions.cpp:433
+#, kde-format
+msgctxt "@action"
+msgid "Checkbox"
+msgstr "خانة تأشير"
+
+#: composer-ng/richtextcomposercontroler.cpp:733
+#, kde-format
+msgid "Only local files are supported."
+msgstr "الملفّات المحليّة مدعومة فقط."
+
+#: composer-ng/richtextcomposerimages.cpp:55
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Unable to load image <filename>%1</filename>."
+msgstr "تعذّر تحميل الصّورة <filename>%1</filename>."
+
+#: composer-ng/richtextcomposerimages.cpp:214
+#, kde-format
+msgctxt "Start of the filename for an image"
+msgid "image"
+msgstr "صورة"
+
+#: composer-ng/richtextexternalcomposer.cpp:69
+#, kde-format
+msgid "Command line is empty. Please verify settings."
+msgstr "سطر الأوامر فارغ. رجاءً تحقّق من الإعدادات."
+
+#: composer-ng/richtextexternalcomposer.cpp:69
+#, kde-format
+msgid "Empty command line"
+msgstr "سطر الأوامر فارغ"
+
+#: composer-ng/richtextexternalcomposer.cpp:122
+#, kde-format
+msgid "External editor cannot be started. Please verify command \"%1\""
+msgstr "تعذّر بدء المحرّر الخارجيّ. رجاءً تحقّق من الأمر ”%1“"
+
+#: composer-ng/richtextexternalcomposer.cpp:140
+#, kde-format
+msgid "Error was found when we started external editor."
+msgstr "عُثر على خطأ عندما بُدأ المحرّر الخارجيّ."
+
+#: composer-ng/richtextexternalcomposer.cpp:140
+#, kde-format
+msgid "External Editor Closed"
+msgstr "أُغلق المحرّر الخارجيّ"
+
+#: composer-ng/richtextexternalcomposer.cpp:157
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The external editor is still running.<nl/>Do you want to stop the editor or "
+"keep it running?<nl/><warning>Stopping the editor will cause all your "
+"unsaved changes to be lost.</warning>"
+msgstr ""
+"ما زال المحرّر الخارجيّ يعمل.<nl/>أتريد إيقافه أم إبقائه يعمل؟<nl/"
+"><warning>إيقاف المحرّر سيُفقدك كلّ تغييراتك غير المحفوظة.</warning>"
+
+#: composer-ng/richtextexternalcomposer.cpp:161
+#, kde-format
+msgctxt "@title:window"
+msgid "External Editor Running"
+msgstr "المحرّر الدّاخليّ يعمل"
+
+#: composer-ng/richtextexternalcomposer.cpp:162
+#, kde-format
+msgctxt "@action:button"
+msgid "Stop Editor"
+msgstr "أوقف المحرّر"
+
+#: composer-ng/richtextexternalcomposer.cpp:163
+#, kde-format
+msgctxt "@action:button"
+msgid "Keep Editor Running"
+msgstr "أبقِ المحرّر يعمل"
+
+#: emoticon/emoticonrecentlistview.cpp:25
+#, kde-format
+msgid "Clear Recents"
+msgstr "امسح الحديثة"
+
+#: emoticon/emoticontexteditaction.cpp:41
+#, kde-format
+msgid "Add Smiley"
+msgstr "أضف وجهًا تعبيريًّا"
+
+#: emoticon/emoticontexteditselector.cpp:31
+#, kde-format
+msgid "Search Emoticon..."
+msgstr "ابحث عن مشاعر"
+
+#: emoticon/emoticonunicodetab.cpp:51
+#, kde-format
+msgid "Result"
+msgstr "النتيجة"
+
+#: emoticon/emoticonunicodetab.cpp:62
+#, kde-format
+msgid "Recents"
+msgstr "الحديثة"
+
+#: emoticon/emoticonunicodetab.cpp:93
+#, kde-format
+msgid "Faces"
+msgstr "وجوه"
+
+#: emoticon/emoticonunicodetab.cpp:94
+#, kde-format
+msgid "Animals"
+msgstr "حيوانات"
+
+#: emoticon/emoticonunicodetab.cpp:95
+#, kde-format
+msgid "Emotions"
+msgstr "مشاعر"
+
+#: emoticon/emoticonunicodetab.cpp:96
+#, kde-format
+msgid "Body"
+msgstr "الجسم"
+
+#: emoticon/emoticonunicodetab.cpp:97
+#, kde-format
+msgid "Transports"
+msgstr "النقل"
+
+#: emoticon/emoticonunicodetab.cpp:98
+#, kde-format
+msgid "Events"
+msgstr "الأحداث"
+
+#: emoticon/emoticonunicodetab.cpp:99
+#, kde-format
+msgid "Flags"
+msgstr "الأعلام"
+
+#: emoticon/emoticonunicodetab.cpp:100
+#, kde-format
+msgid "Weather"
+msgstr "الطقس"
+
+#: emoticon/emoticonunicodetab.cpp:101
+#, kde-format
+msgid "Foods"
+msgstr "الطعام"
+
+#: emoticon/emoticonunicodetab.cpp:102
+#, kde-format
+msgid "Sports"
+msgstr "رياضة"
+
+#: emoticon/emoticonunicodetab.cpp:103
+#, kde-format
+msgid "Time"
+msgstr "الوقت"
+
+#: emoticon/emoticonunicodetab.cpp:104
+#, kde-format
+msgid "Game"
+msgstr "اللعبة"
+
+#: emoticon/emoticonunicodetab.cpp:105
+#, kde-format
+msgid "Clothing"
+msgstr "اللباس"
+
+#: emoticon/emoticonunicodetab.cpp:106
+#, kde-format
+msgid "Music"
+msgstr "الموسيقى"
+
+#: emoticon/emoticonunicodetab.cpp:107
+#, kde-format
+msgid "Computer"
+msgstr "الحاسوب"
+
+#: emoticon/emoticonunicodetab.cpp:108
+#, kde-format
+msgid "Symbols"
+msgstr "رموز"
+
+#: emoticon/emoticonunicodetab.cpp:109
+#, kde-format
+msgid "Plant"
+msgstr "نبات"
+
+#: emoticon/emoticonunicodetab.cpp:110
+#, kde-format
+msgid "Book"
+msgstr "كتاب"
+
+#: emoticon/emoticonunicodetab.cpp:111
+#, kde-format
+msgid "Science"
+msgstr "علوم"
+
+#: emoticon/emoticonunicodetab.cpp:112
+#, kde-format
+msgid "Person"
+msgstr "شخص"
+
+#: emoticon/emoticonunicodetab.cpp:113
+#, kde-format
+msgid "Place"
+msgstr "مكان"
+
+#: emoticon/emoticonunicodetab.cpp:114
+#, kde-format
+msgid "Money"
+msgstr "مال"
+
+#: emoticon/emoticonunicodetab.cpp:115
+#, kde-format
+msgid "Mail"
+msgstr "بريد"
+
+#: emoticon/emoticonunicodetab.cpp:116
+#, kde-format
+msgid "Office"
+msgstr "مكتب"
+
+#: emoticon/emoticonunicodetab.cpp:117
+#, kde-format
+msgid "Tools"
+msgstr "أدوات"
+
+#: emoticon/emoticonunicodetab.cpp:118
+#, kde-format
+msgid "Phone"
+msgstr "هاتف"
+
+#: emoticon/emoticonunicodetab.cpp:119
+#, kde-format
+msgid "Lock"
+msgstr "قفل"
+
+#: emoticon/emoticonunicodetab.cpp:120
+#, kde-format
+msgid "Drink"
+msgstr "مشروبات"
+
+#: emoticon/emoticonunicodetab.cpp:121
+#, kde-format
+msgid "Video"
+msgstr "فيديو"
+
+#: emoticon/emoticonunicodetab.cpp:122
+#, kde-format
+msgid "House"
+msgstr "منزل"
+
+#: emoticon/emoticonunicodetab.cpp:123
+#, kde-format
+msgid "Dishware"
+msgstr "طبق"
+
+#: emoticon/emoticonunicodetab.cpp:124
+#, kde-format
+msgid "Hotel"
+msgstr "فندق"
+
+#: emoticon/emoticonunicodetab.cpp:125
+#, kde-format
+msgid "Award-Medal"
+msgstr "جوائز"
+
+#: inserthtmldialog.cpp:29
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert HTML"
+msgstr "أدرج HTML"
+
+#: inserthtmldialog.cpp:31
+#, kde-format
+msgid "Insert HTML tags and texts:"
+msgstr "أدرج وسوم HTML ونصوص:"
+
+#: inserthtmldialog.cpp:37
+#, kde-format
+msgid "Example: <i> Hello word </i>"
+msgstr "مثال: <i> أهلًا يا عالم </i>"
+
+#: inserthtmldialog.cpp:46
+#, kde-format
+msgctxt "@action:button"
+msgid "Insert"
+msgstr "أدرج"
+
+#: insertimagedialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert Image"
+msgstr "أدرج صورة"
+
+#: insertimagedialog.cpp:36 inserttabledialog.cpp:37
+#: selectspecialchardialog.cpp:34 tableactionmenu.cpp:405
+#, kde-format
+msgid "Insert"
+msgstr "أدرج"
+
+#: insertimagewidget.cpp:40
+#, kde-format
+msgid "Image Location:"
+msgstr "مكان الصّورة:"
+
+#: insertimagewidget.cpp:53
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Image"
+msgstr "أضف صورة"
+
+#: insertimagewidget.cpp:64
+#, kde-format
+msgid "Keep Original Size"
+msgstr "أبقِ الحجم الأصليّ"
+
+#: insertimagewidget.cpp:71
+#, kde-format
+msgid "Keep Image Ratio"
+msgstr "أبقِ نسبة الصّورة"
+
+#: insertimagewidget.cpp:77 inserttablewidget.cpp:59
+#, kde-format
+msgid "Width:"
+msgstr "العرض:"
+
+#: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
+#, kde-format
+msgid " px"
+msgstr " بكسل"
+
+#: insertimagewidget.cpp:92
+#, kde-format
+msgid "Height:"
+msgstr "الارتفاع:"
+
+#: insertimagewidget.cpp:110
+#, kde-format
+msgid "Image Preview:"
+msgstr "معاينة الصورة:"
+
+#: inserttabledialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert Table"
+msgstr "أدرِج جدول"
+
+#: inserttablewidget.cpp:40
+#, kde-format
+msgid "Rows:"
+msgstr "الصّفوف:"
+
+#: inserttablewidget.cpp:43
+#, kde-format
+msgid "Columns:"
+msgstr "الأعمدة:"
+
+#: inserttablewidget.cpp:46
+#, kde-format
+msgid "Border:"
+msgstr "الحدّ:"
+
+#: inserttablewidget.cpp:52
+#, no-c-format, kde-format
+msgid "% of windows"
+msgstr "٪ من النّوافذ"
+
+#: inserttablewidget.cpp:53
+#, kde-format
+msgid "pixels"
+msgstr "بكسل"
+
+#: selectspecialchardialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Special Characters"
+msgstr "اختر محارف خاصّة"
+
+#: selectspecialchardialog.cpp:47
+#, kde-format
+msgid "Select"
+msgstr "اختر"
+
+#: tableactionmenu.cpp:408
+#, kde-format
+msgid "Table..."
+msgstr "الجدول..."
+
+#: tableactionmenu.cpp:416 tableactionmenu.cpp:449
+#, kde-format
+msgid "Row Below"
+msgstr "صفًّا بعده"
+
+#: tableactionmenu.cpp:423 tableactionmenu.cpp:456
+#, kde-format
+msgid "Row Above"
+msgstr "صفًّا قبله"
+
+#: tableactionmenu.cpp:431 tableactionmenu.cpp:464
+#, kde-format
+msgid "Column Before"
+msgstr "عمودًا قبله"
+
+#: tableactionmenu.cpp:439 tableactionmenu.cpp:472
+#, kde-format
+msgid "Column After"
+msgstr "عمودًا بعده"
+
+#: tableactionmenu.cpp:446
+#, kde-format
+msgid "Delete"
+msgstr "احذف"
+
+#: tableactionmenu.cpp:480
+#, kde-format
+msgid "Cell Contents"
+msgstr "محتويات الخليّة"
+
+# في الكود هذا يعني الخلية التي بعد الخلية الحالية، وهذا يريحنا من عناء ثنائية الاتجاه
+#: tableactionmenu.cpp:489
+#, kde-format
+msgid "Join With Cell to the Right"
+msgstr "ادمجها بالخليّة التّالية"
+
+#: tableactionmenu.cpp:496
+#, kde-format
+msgid "Join Selected Cells"
+msgstr "ادمج الخلايا المحدّدة"
+
+#: tableactionmenu.cpp:503
+#, kde-format
+msgid "Split cells"
+msgstr "اقسم الخلايا"
+
+#: tableactionmenu.cpp:512
+#, kde-format
+msgid "Table Format..."
+msgstr "تنسيق الجدول..."
+
+#: tableactionmenu.cpp:519
+#, kde-format
+msgid "Table Cell Format..."
+msgstr "تنسيق خليّة الجدول..."
+
+#: tablecellformatdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Cell Format"
+msgstr "تنسيق الخلية"
+
+#: tablecellformatdialog.cpp:33
+#, kde-format
+msgid "Vertical Alignment:"
+msgstr "المحاذاة العموديّة:"
+
+#: tablecellformatdialog.cpp:36
+#, kde-format
+msgid "Top"
+msgstr "الأعلى"
+
+#: tablecellformatdialog.cpp:37
+#, kde-format
+msgid "Middle"
+msgstr "الوسط"
+
+#: tablecellformatdialog.cpp:38
+#, kde-format
+msgid "Bottom"
+msgstr "الأسفل"
+
+#: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
+#, kde-format
+msgid "Background Color:"
+msgstr "لون الخلفيّة:"
+
+#: tableformatdialog.cpp:31
+#, kde-format
+msgctxt "@title:window"
+msgid "Table Format"
+msgstr "نسق الجدول"
+
+#: tableformatdialog.cpp:44
+#, kde-format
+msgid "Spacing:"
+msgstr "التّباعد:"
+
+#: tableformatdialog.cpp:49
+#, kde-format
+msgid "pixels between cells"
+msgstr "البكسلات بين الخلايا"
+
+#: tableformatdialog.cpp:54
+#, kde-format
+msgid "Padding:"
+msgstr "الحشو:"
+
+#: tableformatdialog.cpp:59
+#, kde-format
+msgid "pixels between cell border and content"
+msgstr "البكسلات بين حدود الخليّة والمحتوى"
+
+#: tableformatdialog.cpp:67
+#, kde-format
+msgid "Left"
+msgstr "اليسار"
+
+#: tableformatdialog.cpp:68
+#, kde-format
+msgid "Right"
+msgstr "اليمين"
+
+#: tableformatdialog.cpp:69
+#, kde-format
+msgid "Center"
+msgstr "الوسط"
+
+#: tableformatdialog.cpp:70
+#, kde-format
+msgid "Justify"
+msgstr "مساواة"
+
+#: tableformatdialog.cpp:73
+#, kde-format
+msgid "Table Alignment:"
+msgstr "محاذاة الجدول:"
+
+#: texteditor/commonwidget/texteditfindbarbase.cpp:34
+#: texteditor/commonwidget/texteditfindbarbase.cpp:37
+#: texteditor/commonwidget/textgotolinewidget.cpp:39
+#: texteditor/commonwidget/textgotolinewidget.cpp:42
+#: texttospeech/texttospeechwidget.cpp:53
+#, kde-format
+msgid "Close"
+msgstr "أغلق"
+
+#: texteditor/commonwidget/texteditfindbarbase.cpp:140
+#, kde-format
+msgid ""
+"End of message reached.\n"
+"Phrase '%1' could not be found."
+msgstr ""
+"وصلتُ نهاية الرّسالة.\n"
+"تعذّر العثور على العبارة ’%1‘."
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:25
+#, kde-format
+msgid "Replace"
+msgstr "استبدل"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:26
+#, kde-format
+msgid "Replace All"
+msgstr "استبدل الكلّ"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:29
+#, kde-format
+msgctxt "Replace text"
+msgid "Replace:"
+msgstr "استبدل بِ‍:"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:65
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "السّابقة"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:66
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "التّالية"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:72
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "ابح&ث عن:"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:75
+#, kde-format
+msgid "Text to search for"
+msgstr "النّصّ للبحث عنه"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:81
+#, kde-format
+msgid "Jump to next match"
+msgstr "انتقل إلى المطابقة التّالية"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:86
+#, kde-format
+msgid "Jump to previous match"
+msgstr "انتقل إلى المطابقة السّابقة"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:92
+#, kde-format
+msgid "Options"
+msgstr "خيارات"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:93
+#, kde-format
+msgid "Modify search behavior"
+msgstr "عدّل سلوك البحث"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:96
+#, kde-format
+msgid "Case sensitive"
+msgstr "حسّاس لحالة الأحرف"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:99
+#, kde-format
+msgid "Whole word"
+msgstr "كلمات كاملة"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:102
+#, kde-format
+msgid "Regular Expression"
+msgstr "تعبير نمطيّ"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:105
+#, kde-format
+msgid "Respect Diacritic and Accents"
+msgstr "احترم اللهجات واللكنات"
+
+#: texteditor/commonwidget/textgotolinewidget.cpp:49
+#, kde-format
+msgid "Go to Line:"
+msgstr "انتقل إلى سطر:"
+
+#: texteditor/commonwidget/textgotolinewidget.cpp:56
+#, kde-format
+msgid "Go"
+msgstr "انتقل"
+
+#: texteditor/plaintexteditor/plaintexteditfindbar.cpp:119
+#: texteditor/richtexteditor/richtexteditfindbar.cpp:119
+#, kde-format
+msgid "%1 replacement made"
+msgid_plural "%1 replacements made"
+msgstr[0] "لا استبدالات"
+msgstr[1] "تمّ استبدال واحد"
+msgstr[2] "تمّ استبدالان"
+msgstr[3] "تمّت %1 استبدالات"
+msgstr[4] "تمّ %1 استبدالًا"
+msgstr[5] "تمّ %1 استبدال"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:146
+#: texteditor/richtexteditor/richtexteditor.cpp:203
+#, kde-format
+msgid "Replace..."
+msgstr "استبدل..."
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:161
+#: texteditor/richtexteditor/richtexteditor.cpp:219
+#, kde-format
+msgid "Check Spelling..."
+msgstr "دقّق الإملاء..."
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:166
+#: texteditor/richtexteditor/richtexteditor.cpp:226
+#, kde-format
+msgid "Auto Spell Check"
+msgstr "دقّق الإملاء آليًّا"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:172
+#: texteditor/richtexteditor/richtexteditor.cpp:232
+#, kde-format
+msgid "Spell Checking Language"
+msgstr "لغة تدقيق الإملاء"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:201
+#: texteditor/richtexteditor/richtexteditor.cpp:266
+#, kde-format
+msgid "Speak Text"
+msgstr "انطق النّصّ"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:348
+#: texteditor/richtexteditor/richtexteditor.cpp:450
+#, kde-format
+msgid "Nothing to spell check."
+msgstr "لا شيء لتدقيق إملائه."
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:353
+#: texteditor/richtexteditor/richtexteditor.cpp:468
+#, kde-format
+msgid "No backend available for spell checking."
+msgstr "لا سند متوفّر لتدقيق الإملاء."
+
+#: texteditor/richtexteditor/richtexteditor.cpp:258
+#, kde-format
+msgid "Allow Tabulations"
+msgstr "اسمح بالجدولات"
+
+#: texteditor/richtexteditor/richtexteditor.cpp:460
+#, kde-format
+msgid ""
+"No backend available for spell checking. Do you want to send the email "
+"anyways?"
+msgstr "لا سند متوفّر لتدقيق الإملاء. هل تريد إرسال البريد على أية حال؟"
+
+#: texteditor/richtexteditor/richtexteditor.cpp:462
+#, kde-format
+msgctxt "@action:button"
+msgid "Send"
+msgstr "أرسل"
+
+#: texteditor/richtexteditor/richtexteditor.cpp:484
+#, kde-format
+msgid "Skip"
+msgstr "تخطَّ"
+
+#: texttospeech/texttospeechactions.cpp:28
+#: texttospeech/texttospeechactions.cpp:31
+#, kde-format
+msgid "Stop"
+msgstr "توقّ"
+
+#: texttospeech/texttospeechactions.cpp:72
+#, kde-format
+msgid "Pause"
+msgstr "ألبث"
+
+#: texttospeech/texttospeechactions.cpp:72
+#, kde-format
+msgid "Play"
+msgstr "شغّل"
+
+#: texttospeech/texttospeechconfigdialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Text-To-Speech"
+msgstr "اضبط نطق النّصّ"
+
+#: texttospeech/texttospeechconfigwidget.cpp:38
+#: texttospeech/texttospeechwidget.cpp:58
+#, kde-format
+msgid "Volume:"
+msgstr "المستوى:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:44
+#, kde-format
+msgid "Rate:"
+msgstr "المعدّل:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:52
+#, kde-format
+msgid "Pitch:"
+msgstr "النغمة:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:55
+#, kde-format
+msgid "Engine:"
+msgstr "المحرّك:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:60
+#, kde-format
+msgid "Language:"
+msgstr "اللغة:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:65
+#, kde-format
+msgid "Voice:"
+msgstr "الصّوت:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:137
+#, kde-format
+msgctxt "Default tts engine"
+msgid "Default"
+msgstr "المبدئيّ"
+
+#: texttospeech/texttospeechwidget.cpp:81
+#, kde-format
+msgid "Configure..."
+msgstr "اضبط..."
+
+#~ msgid "I've linked 1 file to this email:"
+#~ msgstr "لقد ربطت ملفًّا واحدًا بهذا البريد:"
+
+#~ msgctxt "@action"
+#~ msgid "Increase Indent"
+#~ msgstr "زِد الإزاحة"
+
+#~ msgctxt "@action"
+#~ msgid "Decrease Indent"
+#~ msgstr "أنقص الإزاحة"

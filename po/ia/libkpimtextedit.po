@@ -1,0 +1,1157 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# g.sora <g.sora@tiscali.it>, 2011, 2012, 2013, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-13 00:46+0000\n"
+"PO-Revision-Date: 2022-02-28 22:30+0100\n"
+"Last-Translator: giovanni <g.sora@tiscali.it>\n"
+"Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
+"Language: ia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 21.12.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: composer-ng/klinkdialog.cpp:24
+#, kde-format
+msgid "Link Text:"
+msgstr "Connecte Texto:"
+
+#: composer-ng/klinkdialog.cpp:26
+#, kde-format
+msgid "Link URL:"
+msgstr "Connecte URL:"
+
+#: composer-ng/klinkdialog.cpp:30
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Link"
+msgstr "Administra Ligamine"
+
+#: composer-ng/richtextcomposeractions.cpp:102
+#, kde-format
+msgctxt "@action"
+msgid "Align &Left"
+msgstr "Alinea a &Sinistra"
+
+#: composer-ng/richtextcomposeractions.cpp:103
+#, kde-format
+msgctxt "@label left justify"
+msgid "Left"
+msgstr "Sinistra"
+
+#: composer-ng/richtextcomposeractions.cpp:111
+#, kde-format
+msgctxt "@action"
+msgid "Align &Center"
+msgstr "Alinea a &Centro"
+
+#: composer-ng/richtextcomposeractions.cpp:112
+#, kde-format
+msgctxt "@label center justify"
+msgid "Center"
+msgstr "Centro"
+
+#: composer-ng/richtextcomposeractions.cpp:120
+#, kde-format
+msgctxt "@action"
+msgid "Align &Right"
+msgstr "Alinea a  Dexte&ra"
+
+#: composer-ng/richtextcomposeractions.cpp:121
+#, kde-format
+msgctxt "@label right justify"
+msgid "Right"
+msgstr "Dextera"
+
+#: composer-ng/richtextcomposeractions.cpp:129
+#, kde-format
+msgctxt "@action"
+msgid "&Justify"
+msgstr "&Justifica"
+
+#: composer-ng/richtextcomposeractions.cpp:130
+#, kde-format
+msgctxt "@label justify fill"
+msgid "Justify"
+msgstr "Justifica"
+
+#: composer-ng/richtextcomposeractions.cpp:145
+#, kde-format
+msgctxt "@action"
+msgid "Left-to-Right"
+msgstr "Sinistra a dextera"
+
+#: composer-ng/richtextcomposeractions.cpp:146
+#, kde-format
+msgctxt "@label left-to-right"
+msgid "Left-to-Right"
+msgstr "Sinistra a dextera"
+
+#: composer-ng/richtextcomposeractions.cpp:154
+#, kde-format
+msgctxt "@action"
+msgid "Right-to-Left"
+msgstr "Dextera a Sinistra"
+
+#: composer-ng/richtextcomposeractions.cpp:155
+#, kde-format
+msgctxt "@label right-to-left"
+msgid "Right-to-Left"
+msgstr "Dextera a Sinistra"
+
+#: composer-ng/richtextcomposeractions.cpp:168
+#, kde-format
+msgctxt "@action"
+msgid "Subscript"
+msgstr "Subscribite"
+
+#: composer-ng/richtextcomposeractions.cpp:176
+#, kde-format
+msgctxt "@action"
+msgid "Superscript"
+msgstr "Super-scribite"
+
+#: composer-ng/richtextcomposeractions.cpp:184
+#, kde-format
+msgctxt "@action boldify selected text"
+msgid "&Bold"
+msgstr "&Bold"
+
+#: composer-ng/richtextcomposeractions.cpp:197
+#, kde-format
+msgctxt "@action italicize selected text"
+msgid "&Italic"
+msgstr "&Italic"
+
+#: composer-ng/richtextcomposeractions.cpp:210
+#, kde-format
+msgctxt "@action underline selected text"
+msgid "&Underline"
+msgstr "S&ublineate"
+
+#: composer-ng/richtextcomposeractions.cpp:222
+#, kde-format
+msgctxt "@action"
+msgid "&Strike Out"
+msgstr "&Strike Out"
+
+#: composer-ng/richtextcomposeractions.cpp:237
+#, kde-format
+msgctxt "@action"
+msgid "&Font"
+msgstr "&Font"
+
+#: composer-ng/richtextcomposeractions.cpp:246
+#, kde-format
+msgctxt "@action"
+msgid "Font &Size"
+msgstr "Dimen&sion de Font"
+
+#: composer-ng/richtextcomposeractions.cpp:254
+#, kde-format
+msgctxt "@action"
+msgid "Insert Rule Line"
+msgstr "Inserta Linea de Regula"
+
+#: composer-ng/richtextcomposeractions.cpp:263
+#, kde-format
+msgctxt "@action"
+msgid "Text &Color..."
+msgstr "&Color de texto ..."
+
+#: composer-ng/richtextcomposeractions.cpp:264
+#, kde-format
+msgctxt "@label stroke color"
+msgid "Color"
+msgstr "Color"
+
+#: composer-ng/richtextcomposeractions.cpp:272
+#, kde-format
+msgctxt "@action"
+msgid "Text &Highlight..."
+msgstr "&Evidentia texto ..."
+
+#: composer-ng/richtextcomposeractions.cpp:280
+#, kde-format
+msgctxt "@action"
+msgid "Link"
+msgstr "Ligamine"
+
+#: composer-ng/richtextcomposeractions.cpp:288
+#, kde-format
+msgctxt "@action"
+msgid "Increase List Level"
+msgstr "Augmenta nivello de lista"
+
+#: composer-ng/richtextcomposeractions.cpp:296
+#, kde-format
+msgctxt "@action"
+msgid "Decrease List Level"
+msgstr "Decrementa nivello de lista"
+
+#: composer-ng/richtextcomposeractions.cpp:305
+#, kde-format
+msgctxt "@title:menu"
+msgid "List Style"
+msgstr "Lista stilo"
+
+#: composer-ng/richtextcomposeractions.cpp:307
+#, kde-format
+msgctxt "@item:inmenu no list style"
+msgid "None"
+msgstr "Necun"
+
+#: composer-ng/richtextcomposeractions.cpp:307
+#, kde-format
+msgctxt "@item:inmenu disc list style"
+msgid "Disc"
+msgstr "Disco"
+
+#: composer-ng/richtextcomposeractions.cpp:308
+#, kde-format
+msgctxt "@item:inmenu circle list style"
+msgid "Circle"
+msgstr "Circulo"
+
+#: composer-ng/richtextcomposeractions.cpp:308
+#, kde-format
+msgctxt "@item:inmenu square list style"
+msgid "Square"
+msgstr "Quadrato"
+
+#: composer-ng/richtextcomposeractions.cpp:309
+#, kde-format
+msgctxt "@item:inmenu numbered lists"
+msgid "123"
+msgstr "123"
+
+#: composer-ng/richtextcomposeractions.cpp:309
+#, kde-format
+msgctxt "@item:inmenu lowercase abc lists"
+msgid "abc"
+msgstr "abc"
+
+#: composer-ng/richtextcomposeractions.cpp:310
+#, kde-format
+msgctxt "@item:inmenu uppercase abc lists"
+msgid "ABC"
+msgstr "ABC"
+
+#: composer-ng/richtextcomposeractions.cpp:310
+#, kde-format
+msgctxt "@item:inmenu lower case roman numerals"
+msgid "i ii iii"
+msgstr "i ii iii"
+
+#: composer-ng/richtextcomposeractions.cpp:311
+#, kde-format
+msgctxt "@item:inmenu upper case roman numerals"
+msgid "I II III"
+msgstr "I II III"
+
+#: composer-ng/richtextcomposeractions.cpp:322
+#, kde-format
+msgid "Pa&ste as Quotation"
+msgstr "Co&lla como citation"
+
+#: composer-ng/richtextcomposeractions.cpp:330
+#, kde-format
+msgid "Add &Quote Characters"
+msgstr "Adde Characteres de &Citar"
+
+#: composer-ng/richtextcomposeractions.cpp:337
+#, kde-format
+msgid "Re&move Quote Characters"
+msgstr "Re&move Characteres de Citar"
+
+#: composer-ng/richtextcomposeractions.cpp:344
+#, kde-format
+msgid "Paste Without Formatting"
+msgstr "Colla sin formattar"
+
+#: composer-ng/richtextcomposeractions.cpp:352
+#, kde-format
+msgid "Add Image"
+msgstr "Adde imagine"
+
+#: composer-ng/richtextcomposeractions.cpp:368
+#, kde-format
+msgid "Insert HTML"
+msgstr "Inserta HTML"
+
+#: composer-ng/richtextcomposeractions.cpp:378
+#, kde-format
+msgid "Table"
+msgstr "Tabula"
+
+#: composer-ng/richtextcomposeractions.cpp:387
+#, kde-format
+msgid "Delete Line"
+msgstr "Dele linea"
+
+#: composer-ng/richtextcomposeractions.cpp:398
+#, kde-format
+msgid "Reset Font Settings"
+msgstr "Refixa preferentias de font"
+
+#: composer-ng/richtextcomposeractions.cpp:399
+#, kde-format
+msgid "Reset Font"
+msgstr "Refixa Font"
+
+#: composer-ng/richtextcomposeractions.cpp:407
+#, kde-format
+msgctxt "@action"
+msgid "Format Painter"
+msgstr "Pictor de Formato"
+
+#: composer-ng/richtextcomposeractions.cpp:415
+#, kde-format
+msgctxt "@title:menu"
+msgid "Heading Level"
+msgstr "Nivello de Capite "
+
+#: composer-ng/richtextcomposeractions.cpp:416
+#, kde-format
+msgctxt "@item:inmenu no heading"
+msgid "Basic text"
+msgstr "Texto Basic"
+
+#: composer-ng/richtextcomposeractions.cpp:417
+#, kde-format
+msgctxt "@item:inmenu heading level 1 (largest)"
+msgid "Title"
+msgstr "Titulo"
+
+#: composer-ng/richtextcomposeractions.cpp:418
+#, kde-format
+msgctxt "@item:inmenu heading level 2"
+msgid "Subtitle"
+msgstr "Sub-Titulo"
+
+#: composer-ng/richtextcomposeractions.cpp:419
+#, kde-format
+msgctxt "@item:inmenu heading level 3"
+msgid "Section"
+msgstr "Section"
+
+#: composer-ng/richtextcomposeractions.cpp:420
+#, kde-format
+msgctxt "@item:inmenu heading level 4"
+msgid "Subsection"
+msgstr "Sub-section"
+
+#: composer-ng/richtextcomposeractions.cpp:421
+#, kde-format
+msgctxt "@item:inmenu heading level 5"
+msgid "Paragraph"
+msgstr "Paragrapho"
+
+#: composer-ng/richtextcomposeractions.cpp:422
+#, kde-format
+msgctxt "@item:inmenu heading level 6 (smallest)"
+msgid "Subparagraph"
+msgstr "Sub-paragrapho"
+
+#: composer-ng/richtextcomposeractions.cpp:433
+#, kde-format
+msgctxt "@action"
+msgid "Checkbox"
+msgstr "Quadrato de Selection"
+
+#: composer-ng/richtextcomposercontroler.cpp:733
+#, kde-format
+msgid "Only local files are supported."
+msgstr "Solmente le files local es supportate"
+
+#: composer-ng/richtextcomposerimages.cpp:55
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Unable to load image <filename>%1</filename>."
+msgstr "Inhabile de cargar image <filename>%1</filename>."
+
+#: composer-ng/richtextcomposerimages.cpp:214
+#, kde-format
+msgctxt "Start of the filename for an image"
+msgid "image"
+msgstr "imagine"
+
+#: composer-ng/richtextexternalcomposer.cpp:69
+#, kde-format
+msgid "Command line is empty. Please verify settings."
+msgstr "Linea de commando es vacue. Pro favor tu verifica le preferentias."
+
+#: composer-ng/richtextexternalcomposer.cpp:69
+#, kde-format
+msgid "Empty command line"
+msgstr "Linea de commando vacue"
+
+#: composer-ng/richtextexternalcomposer.cpp:122
+#, kde-format
+msgid "External editor cannot be started. Please verify command \"%1\""
+msgstr ""
+"Editor externe non pote esser initiate. Pro favor verifica commando  \"%1\""
+
+#: composer-ng/richtextexternalcomposer.cpp:140
+#, kde-format
+msgid "Error was found when we started external editor."
+msgstr "Un error esseva trovate quando on initiava le editor externe."
+
+#: composer-ng/richtextexternalcomposer.cpp:140
+#, kde-format
+msgid "External Editor Closed"
+msgstr "Editor externe claudite"
+
+#: composer-ng/richtextexternalcomposer.cpp:157
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The external editor is still running.<nl/>Do you want to stop the editor or "
+"keep it running?<nl/><warning>Stopping the editor will cause all your "
+"unsaved changes to be lost.</warning>"
+msgstr ""
+"Le editor externe es ancora executante.<nl/>Tu vole stoppar le editor o "
+"mantener lo executante?<nl/><warning>Stoppar le edito causara que omne tu "
+"modificationes non salveguardate essera perdite.</warning>"
+
+#: composer-ng/richtextexternalcomposer.cpp:161
+#, kde-format
+msgctxt "@title:window"
+msgid "External Editor Running"
+msgstr "Editor externe executante"
+
+#: composer-ng/richtextexternalcomposer.cpp:162
+#, kde-format
+msgctxt "@action:button"
+msgid "Stop Editor"
+msgstr "Stoppa editor"
+
+#: composer-ng/richtextexternalcomposer.cpp:163
+#, kde-format
+msgctxt "@action:button"
+msgid "Keep Editor Running"
+msgstr "Mantene editor executante"
+
+#: emoticon/emoticonrecentlistview.cpp:25
+#, kde-format
+msgid "Clear Recents"
+msgstr "Netta recentes"
+
+#: emoticon/emoticontexteditaction.cpp:41
+#, kde-format
+msgid "Add Smiley"
+msgstr "Adde smiley (emoticone)"
+
+#: emoticon/emoticontexteditselector.cpp:31
+#, kde-format
+msgid "Search Emoticon..."
+msgstr "Cerca Emoticon..."
+
+#: emoticon/emoticonunicodetab.cpp:51
+#, kde-format
+msgid "Result"
+msgstr "Resultato"
+
+#: emoticon/emoticonunicodetab.cpp:62
+#, kde-format
+msgid "Recents"
+msgstr "Recentes"
+
+#: emoticon/emoticonunicodetab.cpp:93
+#, kde-format
+msgid "Faces"
+msgstr "Faces"
+
+#: emoticon/emoticonunicodetab.cpp:94
+#, kde-format
+msgid "Animals"
+msgstr "Animales"
+
+#: emoticon/emoticonunicodetab.cpp:95
+#, kde-format
+msgid "Emotions"
+msgstr "Emotiones"
+
+#: emoticon/emoticonunicodetab.cpp:96
+#, kde-format
+msgid "Body"
+msgstr "Corpore"
+
+#: emoticon/emoticonunicodetab.cpp:97
+#, kde-format
+msgid "Transports"
+msgstr "Transportos"
+
+#: emoticon/emoticonunicodetab.cpp:98
+#, kde-format
+msgid "Events"
+msgstr "Eventos"
+
+#: emoticon/emoticonunicodetab.cpp:99
+#, kde-format
+msgid "Flags"
+msgstr "Bandieras (Flags)"
+
+#: emoticon/emoticonunicodetab.cpp:100
+#, kde-format
+msgid "Weather"
+msgstr "Tempore meteorologic"
+
+#: emoticon/emoticonunicodetab.cpp:101
+#, kde-format
+msgid "Foods"
+msgstr "Alimentos"
+
+#: emoticon/emoticonunicodetab.cpp:102
+#, kde-format
+msgid "Sports"
+msgstr "Sports"
+
+#: emoticon/emoticonunicodetab.cpp:103
+#, kde-format
+msgid "Time"
+msgstr "Tempore"
+
+#: emoticon/emoticonunicodetab.cpp:104
+#, kde-format
+msgid "Game"
+msgstr "Joco"
+
+#: emoticon/emoticonunicodetab.cpp:105
+#, kde-format
+msgid "Clothing"
+msgstr "Vestimentos"
+
+#: emoticon/emoticonunicodetab.cpp:106
+#, kde-format
+msgid "Music"
+msgstr "Musica"
+
+#: emoticon/emoticonunicodetab.cpp:107
+#, kde-format
+msgid "Computer"
+msgstr "Computator"
+
+#: emoticon/emoticonunicodetab.cpp:108
+#, kde-format
+msgid "Symbols"
+msgstr "Symbolos"
+
+#: emoticon/emoticonunicodetab.cpp:109
+#, kde-format
+msgid "Plant"
+msgstr "Plantas"
+
+#: emoticon/emoticonunicodetab.cpp:110
+#, kde-format
+msgid "Book"
+msgstr "Libro"
+
+#: emoticon/emoticonunicodetab.cpp:111
+#, kde-format
+msgid "Science"
+msgstr "Scientia"
+
+#: emoticon/emoticonunicodetab.cpp:112
+#, kde-format
+msgid "Person"
+msgstr "Persona"
+
+#: emoticon/emoticonunicodetab.cpp:113
+#, kde-format
+msgid "Place"
+msgstr "Placia"
+
+#: emoticon/emoticonunicodetab.cpp:114
+#, kde-format
+msgid "Money"
+msgstr "Moneta"
+
+#: emoticon/emoticonunicodetab.cpp:115
+#, kde-format
+msgid "Mail"
+msgstr "Posta"
+
+#: emoticon/emoticonunicodetab.cpp:116
+#, kde-format
+msgid "Office"
+msgstr "Officio"
+
+#: emoticon/emoticonunicodetab.cpp:117
+#, kde-format
+msgid "Tools"
+msgstr "Instrumentos"
+
+#: emoticon/emoticonunicodetab.cpp:118
+#, kde-format
+msgid "Phone"
+msgstr "Telephono"
+
+#: emoticon/emoticonunicodetab.cpp:119
+#, kde-format
+msgid "Lock"
+msgstr "Bloca"
+
+#: emoticon/emoticonunicodetab.cpp:120
+#, kde-format
+msgid "Drink"
+msgstr "Bibita"
+
+#: emoticon/emoticonunicodetab.cpp:121
+#, kde-format
+msgid "Video"
+msgstr "Video"
+
+#: emoticon/emoticonunicodetab.cpp:122
+#, kde-format
+msgid "House"
+msgstr "Domo"
+
+#: emoticon/emoticonunicodetab.cpp:123
+#, kde-format
+msgid "Dishware"
+msgstr "Vasculos (Dishware)"
+
+#: emoticon/emoticonunicodetab.cpp:124
+#, kde-format
+msgid "Hotel"
+msgstr "Hotel"
+
+#: emoticon/emoticonunicodetab.cpp:125
+#, kde-format
+msgid "Award-Medal"
+msgstr "Medalia de premio"
+
+#: inserthtmldialog.cpp:29
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert HTML"
+msgstr "Inserta HTML"
+
+#: inserthtmldialog.cpp:31
+#, kde-format
+msgid "Insert HTML tags and texts:"
+msgstr "Inserta etiquettas e textos HTML:"
+
+#: inserthtmldialog.cpp:37
+#, kde-format
+msgid "Example: <i> Hello word </i>"
+msgstr "Exemplo: <i> Salutes Mundo </i>"
+
+#: inserthtmldialog.cpp:46
+#, kde-format
+msgctxt "@action:button"
+msgid "Insert"
+msgstr "Inserta"
+
+#: insertimagedialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert Image"
+msgstr "Inserta imagine"
+
+#: insertimagedialog.cpp:36 inserttabledialog.cpp:37
+#: selectspecialchardialog.cpp:34 tableactionmenu.cpp:405
+#, kde-format
+msgid "Insert"
+msgstr "Inserta"
+
+#: insertimagewidget.cpp:40
+#, kde-format
+msgid "Image Location:"
+msgstr "Location de imagine"
+
+#: insertimagewidget.cpp:53
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Image"
+msgstr "Adde imagine"
+
+#: insertimagewidget.cpp:64
+#, kde-format
+msgid "Keep Original Size"
+msgstr "Mantene grandor original"
+
+#: insertimagewidget.cpp:71
+#, kde-format
+msgid "Keep Image Ratio"
+msgstr "Mantene rata de aspecto de Imagine"
+
+#: insertimagewidget.cpp:77 inserttablewidget.cpp:59
+#, kde-format
+msgid "Width:"
+msgstr "Largessa:"
+
+#: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
+#, kde-format
+msgid " px"
+msgstr "px"
+
+#: insertimagewidget.cpp:92
+#, kde-format
+msgid "Height:"
+msgstr "Altessa:"
+
+#: insertimagewidget.cpp:110
+#, kde-format
+msgid "Image Preview:"
+msgstr "Vista preliminari de Imagine:"
+
+#: inserttabledialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert Table"
+msgstr "Inserta tabella"
+
+#: inserttablewidget.cpp:40
+#, kde-format
+msgid "Rows:"
+msgstr "Lineas:"
+
+#: inserttablewidget.cpp:43
+#, kde-format
+msgid "Columns:"
+msgstr "Columnas"
+
+#: inserttablewidget.cpp:46
+#, kde-format
+msgid "Border:"
+msgstr "Bordo:"
+
+#: inserttablewidget.cpp:52
+#, no-c-format, kde-format
+msgid "% of windows"
+msgstr "% de fenestras"
+
+#: inserttablewidget.cpp:53
+#, kde-format
+msgid "pixels"
+msgstr "pixels"
+
+#: selectspecialchardialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Special Characters"
+msgstr "Selige characteres special"
+
+#: selectspecialchardialog.cpp:47
+#, kde-format
+msgid "Select"
+msgstr "Selige"
+
+#: tableactionmenu.cpp:408
+#, kde-format
+msgid "Table..."
+msgstr "Tabula..."
+
+#: tableactionmenu.cpp:416 tableactionmenu.cpp:449
+#, kde-format
+msgid "Row Below"
+msgstr "Linea a basso"
+
+#: tableactionmenu.cpp:423 tableactionmenu.cpp:456
+#, kde-format
+msgid "Row Above"
+msgstr "Linea in alto"
+
+#: tableactionmenu.cpp:431 tableactionmenu.cpp:464
+#, kde-format
+msgid "Column Before"
+msgstr "Columna ante"
+
+#: tableactionmenu.cpp:439 tableactionmenu.cpp:472
+#, kde-format
+msgid "Column After"
+msgstr "Columna post"
+
+#: tableactionmenu.cpp:446
+#, kde-format
+msgid "Delete"
+msgstr "Dele"
+
+#: tableactionmenu.cpp:480
+#, kde-format
+msgid "Cell Contents"
+msgstr "Contentos de cella"
+
+#: tableactionmenu.cpp:489
+#, kde-format
+msgid "Join With Cell to the Right"
+msgstr "Conjunge con cella a dextere"
+
+#: tableactionmenu.cpp:496
+#, kde-format
+msgid "Join Selected Cells"
+msgstr "Uni cellas seligite"
+
+#: tableactionmenu.cpp:503
+#, kde-format
+msgid "Split cells"
+msgstr "Divide cellas"
+
+#: tableactionmenu.cpp:512
+#, kde-format
+msgid "Table Format..."
+msgstr "Exeque formato de tabula..."
+
+#: tableactionmenu.cpp:519
+#, kde-format
+msgid "Table Cell Format..."
+msgstr "Exeque formato de tabula de cella"
+
+#: tablecellformatdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Cell Format"
+msgstr "Formato de cella"
+
+#: tablecellformatdialog.cpp:33
+#, kde-format
+msgid "Vertical Alignment:"
+msgstr "Alineamento vertical:"
+
+#: tablecellformatdialog.cpp:36
+#, kde-format
+msgid "Top"
+msgstr "Alto"
+
+#: tablecellformatdialog.cpp:37
+#, kde-format
+msgid "Middle"
+msgstr "Medie"
+
+#: tablecellformatdialog.cpp:38
+#, kde-format
+msgid "Bottom"
+msgstr "Basso"
+
+#: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
+#, kde-format
+msgid "Background Color:"
+msgstr "Color de fundo:"
+
+#: tableformatdialog.cpp:31
+#, kde-format
+msgctxt "@title:window"
+msgid "Table Format"
+msgstr "Formato de tabula"
+
+#: tableformatdialog.cpp:44
+#, kde-format
+msgid "Spacing:"
+msgstr "Spatiar:"
+
+#: tableformatdialog.cpp:49
+#, kde-format
+msgid "pixels between cells"
+msgstr "pixels inter cellas"
+
+#: tableformatdialog.cpp:54
+#, kde-format
+msgid "Padding:"
+msgstr "Borrar (Padding):"
+
+#: tableformatdialog.cpp:59
+#, kde-format
+msgid "pixels between cell border and content"
+msgstr "pixels intra bordo de cella e contento"
+
+#: tableformatdialog.cpp:67
+#, kde-format
+msgid "Left"
+msgstr "Sinistre"
+
+#: tableformatdialog.cpp:68
+#, kde-format
+msgid "Right"
+msgstr "Dextere"
+
+#: tableformatdialog.cpp:69
+#, kde-format
+msgid "Center"
+msgstr "Centro"
+
+#: tableformatdialog.cpp:70
+#, kde-format
+msgid "Justify"
+msgstr "Justifica"
+
+#: tableformatdialog.cpp:73
+#, kde-format
+msgid "Table Alignment:"
+msgstr "Alineamento de tabula:"
+
+#: texteditor/commonwidget/texteditfindbarbase.cpp:34
+#: texteditor/commonwidget/texteditfindbarbase.cpp:37
+#: texteditor/commonwidget/textgotolinewidget.cpp:39
+#: texteditor/commonwidget/textgotolinewidget.cpp:42
+#: texttospeech/texttospeechwidget.cpp:53
+#, kde-format
+msgid "Close"
+msgstr "Claude"
+
+#: texteditor/commonwidget/texteditfindbarbase.cpp:140
+#, kde-format
+msgid ""
+"End of message reached.\n"
+"Phrase '%1' could not be found."
+msgstr ""
+"Fin de message attingite.\n"
+"Phrase '%1' non poteva esser trovate."
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:25
+#, kde-format
+msgid "Replace"
+msgstr "Reimplacia"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:26
+#, kde-format
+msgid "Replace All"
+msgstr "Reimplacia Toto"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:29
+#, kde-format
+msgctxt "Replace text"
+msgid "Replace:"
+msgstr "Reimplacia:"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:65
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "Precedente"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:66
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "Proxime"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:72
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "T&rova:"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:75
+#, kde-format
+msgid "Text to search for"
+msgstr "Texto de cercar"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:81
+#, kde-format
+msgid "Jump to next match"
+msgstr "Salta al proxime objecto coincidente"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:86
+#, kde-format
+msgid "Jump to previous match"
+msgstr "Salta al previe objecto coincidente"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:92
+#, kde-format
+msgid "Options"
+msgstr "Optiones"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:93
+#, kde-format
+msgid "Modify search behavior"
+msgstr "Modificar comportamento de cerca"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:96
+#, kde-format
+msgid "Case sensitive"
+msgstr "Sensibile al differentia inter majusculas e minusculas"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:99
+#, kde-format
+msgid "Whole word"
+msgstr "Parola integre"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:102
+#, kde-format
+msgid "Regular Expression"
+msgstr "Expression Regular"
+
+#: texteditor/commonwidget/textfindreplacewidget.cpp:105
+#, kde-format
+msgid "Respect Diacritic and Accents"
+msgstr "Respecta Diacritic e Accentos"
+
+#: texteditor/commonwidget/textgotolinewidget.cpp:49
+#, kde-format
+msgid "Go to Line:"
+msgstr "Vade al Linea:"
+
+#: texteditor/commonwidget/textgotolinewidget.cpp:56
+#, kde-format
+msgid "Go"
+msgstr "Vade"
+
+#: texteditor/plaintexteditor/plaintexteditfindbar.cpp:119
+#: texteditor/richtexteditor/richtexteditfindbar.cpp:119
+#, kde-format
+msgid "%1 replacement made"
+msgid_plural "%1 replacements made"
+msgstr[0] "%1 reimplaciamento facite"
+msgstr[1] "%1 reimplaciamentos facite"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:146
+#: texteditor/richtexteditor/richtexteditor.cpp:203
+#, kde-format
+msgid "Replace..."
+msgstr "Reimplacia"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:161
+#: texteditor/richtexteditor/richtexteditor.cpp:219
+#, kde-format
+msgid "Check Spelling..."
+msgstr "Controlo Orthographic..."
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:166
+#: texteditor/richtexteditor/richtexteditor.cpp:226
+#, kde-format
+msgid "Auto Spell Check"
+msgstr "Auto Controlo Orthographic"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:172
+#: texteditor/richtexteditor/richtexteditor.cpp:232
+#, kde-format
+msgid "Spell Checking Language"
+msgstr "Linguage pro le controlo orthographic"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:201
+#: texteditor/richtexteditor/richtexteditor.cpp:266
+#, kde-format
+msgid "Speak Text"
+msgstr "Pronuncia texto"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:348
+#: texteditor/richtexteditor/richtexteditor.cpp:450
+#, kde-format
+msgid "Nothing to spell check."
+msgstr "Nihil de controlar orthographicamente"
+
+#: texteditor/plaintexteditor/plaintexteditor.cpp:353
+#: texteditor/richtexteditor/richtexteditor.cpp:468
+#, kde-format
+msgid "No backend available for spell checking."
+msgstr "Necun retro-administration disponibile per analysator syntactic"
+
+#: texteditor/richtexteditor/richtexteditor.cpp:258
+#, kde-format
+msgid "Allow Tabulations"
+msgstr "Permitte Tabulationes"
+
+#: texteditor/richtexteditor/richtexteditor.cpp:460
+#, kde-format
+msgid ""
+"No backend available for spell checking. Do you want to send the email "
+"anyways?"
+msgstr ""
+"Necun retro-administration disponibile per analysator syntactic. Tu vole "
+"inviar le message de eposta malgrado isto?"
+
+#: texteditor/richtexteditor/richtexteditor.cpp:462
+#, kde-format
+msgctxt "@action:button"
+msgid "Send"
+msgstr "Invia"
+
+#: texteditor/richtexteditor/richtexteditor.cpp:484
+#, kde-format
+msgid "Skip"
+msgstr "Salta"
+
+#: texttospeech/texttospeechactions.cpp:28
+#: texttospeech/texttospeechactions.cpp:31
+#, kde-format
+msgid "Stop"
+msgstr "Stoppa"
+
+#: texttospeech/texttospeechactions.cpp:72
+#, kde-format
+msgid "Pause"
+msgstr "Pausa"
+
+#: texttospeech/texttospeechactions.cpp:72
+#, kde-format
+msgid "Play"
+msgstr "Reproduce"
+
+#: texttospeech/texttospeechconfigdialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Text-To-Speech"
+msgstr "Configura Texto-a-Discurso (TextToSpeech)"
+
+#: texttospeech/texttospeechconfigwidget.cpp:38
+#: texttospeech/texttospeechwidget.cpp:58
+#, kde-format
+msgid "Volume:"
+msgstr "Tomo:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:44
+#, kde-format
+msgid "Rate:"
+msgstr "Frequentia:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:52
+#, kde-format
+msgid "Pitch:"
+msgstr "Accorda:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:55
+#, kde-format
+msgid "Engine:"
+msgstr "Motor:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:60
+#, kde-format
+msgid "Language:"
+msgstr "Linguage:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:65
+#, kde-format
+msgid "Voice:"
+msgstr "Voce:"
+
+#: texttospeech/texttospeechconfigwidget.cpp:137
+#, kde-format
+msgctxt "Default tts engine"
+msgid "Default"
+msgstr "Predefinite"
+
+#: texttospeech/texttospeechwidget.cpp:81
+#, kde-format
+msgid "Configure..."
+msgstr "Configura..."
+
+#~ msgid "I've linked 1 file to this email:"
+#~ msgstr "Io ha ligate 1 file a iste message de e-posta:"
+
+#~ msgid "&Add"
+#~ msgstr "&Adde"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Giovanni Sora"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "g.sora@tiscali.it"
+
+#~ msgctxt ""
+#~ "Beginning of the references section, which lists all external references"
+#~ msgid ""
+#~ "\n"
+#~ "---- References ----\n"
+#~ msgstr ""
+#~ "\n"
+#~ "---- referentias ----\n"
