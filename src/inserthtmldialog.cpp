@@ -13,11 +13,16 @@
 
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QPushButton>
 #include <QVBoxLayout>
-
+#include <QWindow>
+namespace
+{
+static const char myInsertHtmlDialogConfigGroupName[] = "InsertHtmlDialog";
+}
 namespace KPIMTextEdit
 {
 class InsertHtmlDialogPrivate
@@ -90,17 +95,17 @@ QString InsertHtmlDialog::html() const
 
 void InsertHtmlDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "InsertHtmlDialog");
-    const QSize sizeDialog = group.readEntry("Size", QSize(640, 480));
-    if (sizeDialog.isValid()) {
-        resize(sizeDialog);
-    }
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(640, 480));
+    KConfigGroup group(KSharedConfig::openStateConfig(), myInsertHtmlDialogConfigGroupName);
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void InsertHtmlDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "InsertHtmlDialog");
-    group.writeEntry("Size", size());
+    KConfigGroup group(KSharedConfig::openStateConfig(), myInsertHtmlDialogConfigGroupName);
+    KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 }
 

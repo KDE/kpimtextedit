@@ -10,10 +10,15 @@
 
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
-
+#include <QWindow>
+namespace
+{
+static const char myTextToSpeechConfigDialogConfigGroupName[] = "TextToSpeechConfigDialog";
+}
 using namespace KPIMTextEdit;
 
 TextToSpeechConfigDialog::TextToSpeechConfigDialog(QWidget *parent)
@@ -48,17 +53,17 @@ void TextToSpeechConfigDialog::slotRestoreDefaults()
 
 void TextToSpeechConfigDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "TextToSpeechConfigDialog");
-    const QSize sizeDialog = group.readEntry("Size", QSize(300, 200));
-    if (sizeDialog.isValid()) {
-        resize(sizeDialog);
-    }
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(300, 200));
+    KConfigGroup group(KSharedConfig::openStateConfig(), myTextToSpeechConfigDialogConfigGroupName);
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void TextToSpeechConfigDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "TextToSpeechConfigDialog");
-    group.writeEntry("Size", size());
+    KConfigGroup group(KSharedConfig::openStateConfig(), myTextToSpeechConfigDialogConfigGroupName);
+    KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 
 void TextToSpeechConfigDialog::slotAccepted()

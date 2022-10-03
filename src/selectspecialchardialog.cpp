@@ -9,9 +9,15 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QWindow>
+namespace
+{
+static const char mySelectSpecialCharDialogConfigGroupName[] = "ConfirmBeforeDeletingDialog";
+}
 
 namespace KPIMTextEdit
 {
@@ -107,17 +113,17 @@ void SelectSpecialCharDialog::setOkButtonText(const QString &text)
 
 void SelectSpecialCharDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectSpecialCharDialog");
-    const QSize sizeDialog = group.readEntry("Size", QSize(300, 200));
-    if (sizeDialog.isValid()) {
-        resize(sizeDialog);
-    }
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(300, 200));
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySelectSpecialCharDialogConfigGroupName);
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void SelectSpecialCharDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectSpecialCharDialog");
-    group.writeEntry("Size", size());
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySelectSpecialCharDialogConfigGroupName);
+    KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 }
 
