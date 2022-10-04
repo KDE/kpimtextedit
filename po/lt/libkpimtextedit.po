@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-13 00:46+0000\n"
+"POT-Creation-Date: 2022-10-04 00:45+0000\n"
 "PO-Revision-Date: 2015-08-30 16:02+0200\n"
 "Last-Translator: Liudas Ališauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -634,24 +634,24 @@ msgstr ""
 msgid "Award-Medal"
 msgstr ""
 
-#: inserthtmldialog.cpp:29
+#: inserthtmldialog.cpp:34
 #, fuzzy, kde-format
 #| msgid "Insert HTML"
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Įterpti HTML"
 
-#: inserthtmldialog.cpp:31
+#: inserthtmldialog.cpp:36
 #, kde-format
 msgid "Insert HTML tags and texts:"
 msgstr "Įterpti HTML žymes ir tekstą:"
 
-#: inserthtmldialog.cpp:37
+#: inserthtmldialog.cpp:42
 #, kde-format
 msgid "Example: <i> Hello word </i>"
 msgstr "Pavyzdys: <i> Sveikas pasauli</i>"
 
-#: inserthtmldialog.cpp:46
+#: inserthtmldialog.cpp:51
 #, fuzzy, kde-format
 #| msgid "Insert"
 msgctxt "@action:button"
@@ -666,7 +666,7 @@ msgid "Insert Image"
 msgstr "Įterpti paveikslą"
 
 #: insertimagedialog.cpp:36 inserttabledialog.cpp:37
-#: selectspecialchardialog.cpp:34 tableactionmenu.cpp:405
+#: selectspecialchardialog.cpp:40 tableactionmenu.cpp:405
 #, kde-format
 msgid "Insert"
 msgstr "Įterpti"
@@ -745,14 +745,14 @@ msgstr "% langų"
 msgid "pixels"
 msgstr "pikseliai"
 
-#: selectspecialchardialog.cpp:24
+#: selectspecialchardialog.cpp:30
 #, fuzzy, kde-format
 #| msgid "Select Special Characters"
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr "Pažymėti specialius simbolius"
 
-#: selectspecialchardialog.cpp:47
+#: selectspecialchardialog.cpp:53
 #, kde-format
 msgid "Select"
 msgstr "Žymėti"
@@ -1097,7 +1097,7 @@ msgstr ""
 msgid "Play"
 msgstr ""
 
-#: texttospeech/texttospeechconfigdialog.cpp:23
+#: texttospeech/texttospeechconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"

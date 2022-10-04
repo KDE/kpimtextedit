@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-13 00:46+0000\n"
+"POT-Creation-Date: 2022-10-04 00:45+0000\n"
 "PO-Revision-Date: 2019-11-13 22:18+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -639,23 +639,23 @@ msgstr "Hotel"
 msgid "Award-Medal"
 msgstr "Premio, medalla"
 
-#: inserthtmldialog.cpp:29
+#: inserthtmldialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Inserir HTML"
 
-#: inserthtmldialog.cpp:31
+#: inserthtmldialog.cpp:36
 #, kde-format
 msgid "Insert HTML tags and texts:"
 msgstr "Inserir etiquetas e textos HTML:"
 
-#: inserthtmldialog.cpp:37
+#: inserthtmldialog.cpp:42
 #, kde-format
 msgid "Example: <i> Hello word </i>"
 msgstr "Exemplo: <i> Ola, mundo! </i>"
 
-#: inserthtmldialog.cpp:46
+#: inserthtmldialog.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
@@ -669,7 +669,7 @@ msgid "Insert Image"
 msgstr "Inserir unha imaxe"
 
 #: insertimagedialog.cpp:36 inserttabledialog.cpp:37
-#: selectspecialchardialog.cpp:34 tableactionmenu.cpp:405
+#: selectspecialchardialog.cpp:40 tableactionmenu.cpp:405
 #, kde-format
 msgid "Insert"
 msgstr "Inserir"
@@ -748,14 +748,14 @@ msgstr "% de xanelas"
 msgid "pixels"
 msgstr "píxeles"
 
-#: selectspecialchardialog.cpp:24
+#: selectspecialchardialog.cpp:30
 #, fuzzy, kde-format
 #| msgid "Select Special Characters"
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr "Escoller os caracteres especiais"
 
-#: selectspecialchardialog.cpp:47
+#: selectspecialchardialog.cpp:53
 #, kde-format
 msgid "Select"
 msgstr "Escoller"
@@ -1102,7 +1102,7 @@ msgstr "Pausar"
 msgid "Play"
 msgstr "Reproducir"
 
-#: texttospeech/texttospeechconfigdialog.cpp:23
+#: texttospeech/texttospeechconfigdialog.cpp:28
 #, fuzzy, kde-format
 #| msgid "Configure Text-To-Speech"
 msgctxt "@title:window"

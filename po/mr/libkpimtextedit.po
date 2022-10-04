@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-13 00:46+0000\n"
+"POT-Creation-Date: 2022-10-04 00:45+0000\n"
 "PO-Revision-Date: 2013-03-07 18:25+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -630,24 +630,24 @@ msgstr ""
 msgid "Award-Medal"
 msgstr ""
 
-#: inserthtmldialog.cpp:29
+#: inserthtmldialog.cpp:34
 #, fuzzy, kde-format
 #| msgid "Insert"
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "अंतर्भूत करा"
 
-#: inserthtmldialog.cpp:31
+#: inserthtmldialog.cpp:36
 #, kde-format
 msgid "Insert HTML tags and texts:"
 msgstr ""
 
-#: inserthtmldialog.cpp:37
+#: inserthtmldialog.cpp:42
 #, kde-format
 msgid "Example: <i> Hello word </i>"
 msgstr ""
 
-#: inserthtmldialog.cpp:46
+#: inserthtmldialog.cpp:51
 #, fuzzy, kde-format
 #| msgid "Insert"
 msgctxt "@action:button"
@@ -662,7 +662,7 @@ msgid "Insert Image"
 msgstr "अंतर्भूत करा"
 
 #: insertimagedialog.cpp:36 inserttabledialog.cpp:37
-#: selectspecialchardialog.cpp:34 tableactionmenu.cpp:405
+#: selectspecialchardialog.cpp:40 tableactionmenu.cpp:405
 #, kde-format
 msgid "Insert"
 msgstr "अंतर्भूत करा"
@@ -741,13 +741,13 @@ msgstr ""
 msgid "pixels"
 msgstr "पिक्सेल्स"
 
-#: selectspecialchardialog.cpp:24
+#: selectspecialchardialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr ""
 
-#: selectspecialchardialog.cpp:47
+#: selectspecialchardialog.cpp:53
 #, kde-format
 msgid "Select"
 msgstr "निवडा"
@@ -1088,7 +1088,7 @@ msgstr ""
 msgid "Play"
 msgstr ""
 
-#: texttospeech/texttospeechconfigdialog.cpp:23
+#: texttospeech/texttospeechconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"

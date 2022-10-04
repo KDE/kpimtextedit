@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepimlibs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-13 00:46+0000\n"
+"POT-Creation-Date: 2022-10-04 00:45+0000\n"
 "PO-Revision-Date: 2015-02-04 15:38+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -635,24 +635,24 @@ msgstr ""
 msgid "Award-Medal"
 msgstr ""
 
-#: inserthtmldialog.cpp:29
+#: inserthtmldialog.cpp:34
 #, fuzzy, kde-format
 #| msgid "Insert HTML"
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Umetni HTML"
 
-#: inserthtmldialog.cpp:31
+#: inserthtmldialog.cpp:36
 #, kde-format
 msgid "Insert HTML tags and texts:"
 msgstr "Umetni HTML oznake i tekstove:"
 
-#: inserthtmldialog.cpp:37
+#: inserthtmldialog.cpp:42
 #, kde-format
 msgid "Example: <i> Hello word </i>"
 msgstr "Primjer: <i> Zdravo svijete </i>"
 
-#: inserthtmldialog.cpp:46
+#: inserthtmldialog.cpp:51
 #, fuzzy, kde-format
 #| msgid "Insert"
 msgctxt "@action:button"
@@ -667,7 +667,7 @@ msgid "Insert Image"
 msgstr "Dodaj Sliku"
 
 #: insertimagedialog.cpp:36 inserttabledialog.cpp:37
-#: selectspecialchardialog.cpp:34 tableactionmenu.cpp:405
+#: selectspecialchardialog.cpp:40 tableactionmenu.cpp:405
 #, kde-format
 msgid "Insert"
 msgstr "Umetni"
@@ -746,14 +746,14 @@ msgstr "% prozora"
 msgid "pixels"
 msgstr "pikseli"
 
-#: selectspecialchardialog.cpp:24
+#: selectspecialchardialog.cpp:30
 #, fuzzy, kde-format
 #| msgid "Select Special Characters"
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr "Izaberi specijalne znake"
 
-#: selectspecialchardialog.cpp:47
+#: selectspecialchardialog.cpp:53
 #, kde-format
 msgid "Select"
 msgstr "Izaberi"
@@ -1097,7 +1097,7 @@ msgstr ""
 msgid "Play"
 msgstr ""
 
-#: texttospeech/texttospeechconfigdialog.cpp:23
+#: texttospeech/texttospeechconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
