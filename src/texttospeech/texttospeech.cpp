@@ -62,8 +62,13 @@ void TextToSpeech::slotStateChanged()
     case QTextToSpeech::Paused:
         state = TextToSpeech::Paused;
         break;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     case QTextToSpeech::BackendError:
         state = TextToSpeech::BackendError;
+#else
+    case QTextToSpeech::Error:
+        state = TextToSpeech::BackendError;
+#endif
         break;
     }
     Q_EMIT stateChanged(state);
@@ -71,7 +76,11 @@ void TextToSpeech::slotStateChanged()
 
 bool TextToSpeech::isReady() const
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     return mTextToSpeech->state() != QTextToSpeech::BackendError;
+#else
+    return mTextToSpeech->state() != QTextToSpeech::Error;
+#endif
 }
 
 void TextToSpeech::say(const QString &text)
