@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-13 00:46+0000\n"
+"POT-Creation-Date: 2022-10-04 00:45+0000\n"
 "PO-Revision-Date: 2022-06-19 13:43+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -631,23 +631,23 @@ msgstr "Hotell"
 msgid "Award-Medal"
 msgstr "Medaljar"
 
-#: inserthtmldialog.cpp:29
+#: inserthtmldialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Set inn HTML"
 
-#: inserthtmldialog.cpp:31
+#: inserthtmldialog.cpp:36
 #, kde-format
 msgid "Insert HTML tags and texts:"
 msgstr "Set inn HTML-taggar og tekst:"
 
-#: inserthtmldialog.cpp:37
+#: inserthtmldialog.cpp:42
 #, kde-format
 msgid "Example: <i> Hello word </i>"
 msgstr "Eksempel: <i>Hei, alle saman!</i>"
 
-#: inserthtmldialog.cpp:46
+#: inserthtmldialog.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
@@ -660,7 +660,7 @@ msgid "Insert Image"
 msgstr "Set inn bilete"
 
 #: insertimagedialog.cpp:36 inserttabledialog.cpp:37
-#: selectspecialchardialog.cpp:34 tableactionmenu.cpp:405
+#: selectspecialchardialog.cpp:40 tableactionmenu.cpp:405
 #, kde-format
 msgid "Insert"
 msgstr "Set inn"
@@ -737,13 +737,13 @@ msgstr "% av vindauget"
 msgid "pixels"
 msgstr "pikslar"
 
-#: selectspecialchardialog.cpp:24
+#: selectspecialchardialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr "Vel spesialteikn"
 
-#: selectspecialchardialog.cpp:47
+#: selectspecialchardialog.cpp:53
 #, kde-format
 msgid "Select"
 msgstr "Vel"
@@ -1088,7 +1088,7 @@ msgstr "Pause"
 msgid "Play"
 msgstr "Spel av"
 
-#: texttospeech/texttospeechconfigdialog.cpp:23
+#: texttospeech/texttospeechconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
