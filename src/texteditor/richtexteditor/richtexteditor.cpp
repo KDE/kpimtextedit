@@ -41,6 +41,7 @@
 #include <QScrollBar>
 #include <QTextCursor>
 #include <QTextDocumentFragment>
+#include <kwidgetsaddons_version.h>
 
 using namespace KPIMTextEdit;
 class Q_DECL_HIDDEN RichTextEditor::RichTextEditorPrivate
@@ -456,12 +457,20 @@ void RichTextEditor::checkSpelling(bool force)
     auto backgroundSpellCheck = new Sonnet::BackgroundChecker;
     if (backgroundSpellCheck->speller().availableBackends().isEmpty()) {
         if (force) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            const int answer = KMessageBox::questionTwoActions(this,
+#else
             const int answer = KMessageBox::questionYesNo(this,
-                                                          i18n("No backend available for spell checking. Do you want to send the email anyways?"),
-                                                          QString(),
-                                                          KGuiItem(i18nc("@action:button", "Send"), QStringLiteral("mail-send")),
-                                                          KStandardGuiItem::cancel());
+#endif
+                                                               i18n("No backend available for spell checking. Do you want to send the email anyways?"),
+                                                               QString(),
+                                                               KGuiItem(i18nc("@action:button", "Send"), QStringLiteral("mail-send")),
+                                                               KStandardGuiItem::cancel());
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            if (answer == KMessageBox::ButtonCode::PrimaryAction) {
+#else
             if (answer == KMessageBox::Yes) {
+#endif
                 Q_EMIT spellCheckingFinished();
             }
         } else {
