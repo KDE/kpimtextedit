@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-04 00:45+0000\n"
+"POT-Creation-Date: 2022-10-16 00:47+0000\n"
 "PO-Revision-Date: 2022-02-26 12:33+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -387,32 +387,32 @@ msgctxt "Start of the filename for an image"
 msgid "image"
 msgstr "imatge"
 
-#: composer-ng/richtextexternalcomposer.cpp:69
+#: composer-ng/richtextexternalcomposer.cpp:70
 #, kde-format
 msgid "Command line is empty. Please verify settings."
 msgstr "La línia d'ordres està buida. Si us plau, verifiqueu els paràmetres."
 
-#: composer-ng/richtextexternalcomposer.cpp:69
+#: composer-ng/richtextexternalcomposer.cpp:70
 #, kde-format
 msgid "Empty command line"
 msgstr "Línia d'ordres buida"
 
-#: composer-ng/richtextexternalcomposer.cpp:122
+#: composer-ng/richtextexternalcomposer.cpp:123
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr "No s'ha pogut iniciar l'editor extern. Verifiqueu l'ordre «%1»"
 
-#: composer-ng/richtextexternalcomposer.cpp:140
+#: composer-ng/richtextexternalcomposer.cpp:141
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "S'ha trobat un error en iniciar l'editor extern."
 
-#: composer-ng/richtextexternalcomposer.cpp:140
+#: composer-ng/richtextexternalcomposer.cpp:141
 #, kde-format
 msgid "External Editor Closed"
 msgstr "S'ha tancat l'editor extern"
 
-#: composer-ng/richtextexternalcomposer.cpp:157
+#: composer-ng/richtextexternalcomposer.cpp:162
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -424,19 +424,19 @@ msgstr ""
 "mantenir-lo en execució?<nl/><warning>Aturar l'editor causarà que es perdin "
 "tots els canvis sense desar.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:161
+#: composer-ng/richtextexternalcomposer.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "Editor extern en execució"
 
-#: composer-ng/richtextexternalcomposer.cpp:162
+#: composer-ng/richtextexternalcomposer.cpp:167
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "Atura l'editor"
 
-#: composer-ng/richtextexternalcomposer.cpp:163
+#: composer-ng/richtextexternalcomposer.cpp:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -1007,53 +1007,53 @@ msgstr[0] "S'ha fet %1 substitució"
 msgstr[1] "S'han fet %1 substitucions"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:146
-#: texteditor/richtexteditor/richtexteditor.cpp:203
+#: texteditor/richtexteditor/richtexteditor.cpp:204
 #, kde-format
 msgid "Replace..."
 msgstr "Substitueix..."
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:161
-#: texteditor/richtexteditor/richtexteditor.cpp:219
+#: texteditor/richtexteditor/richtexteditor.cpp:220
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Verifica l'ortografia..."
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:166
-#: texteditor/richtexteditor/richtexteditor.cpp:226
+#: texteditor/richtexteditor/richtexteditor.cpp:227
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Verifica automàticament l'ortogràfica"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:172
-#: texteditor/richtexteditor/richtexteditor.cpp:232
+#: texteditor/richtexteditor/richtexteditor.cpp:233
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Idioma de la verificació ortogràfica"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:201
-#: texteditor/richtexteditor/richtexteditor.cpp:266
+#: texteditor/richtexteditor/richtexteditor.cpp:267
 #, kde-format
 msgid "Speak Text"
 msgstr "Pronuncia el text"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:348
-#: texteditor/richtexteditor/richtexteditor.cpp:450
+#: texteditor/richtexteditor/richtexteditor.cpp:451
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "No hi ha res a verificar ortogràficament."
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:353
-#: texteditor/richtexteditor/richtexteditor.cpp:468
+#: texteditor/richtexteditor/richtexteditor.cpp:477
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "No hi ha disponible cap dorsal per a la verificació ortogràfica."
 
-#: texteditor/richtexteditor/richtexteditor.cpp:258
+#: texteditor/richtexteditor/richtexteditor.cpp:259
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Permet les tabulacions"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:460
+#: texteditor/richtexteditor/richtexteditor.cpp:465
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -1062,13 +1062,13 @@ msgstr ""
 "No hi ha disponible cap dorsal per a la verificació ortogràfica. Voleu "
 "enviar el correu igualment?"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:462
+#: texteditor/richtexteditor/richtexteditor.cpp:467
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Envia"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:484
+#: texteditor/richtexteditor/richtexteditor.cpp:493
 #, kde-format
 msgid "Skip"
 msgstr "Salta"

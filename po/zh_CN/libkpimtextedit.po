@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-04 00:45+0000\n"
+"POT-Creation-Date: 2022-10-16 00:47+0000\n"
 "PO-Revision-Date: 2022-10-02 15:49\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -382,32 +382,32 @@ msgctxt "Start of the filename for an image"
 msgid "image"
 msgstr "图像"
 
-#: composer-ng/richtextexternalcomposer.cpp:69
+#: composer-ng/richtextexternalcomposer.cpp:70
 #, kde-format
 msgid "Command line is empty. Please verify settings."
 msgstr "命令行为空。请检查设置。"
 
-#: composer-ng/richtextexternalcomposer.cpp:69
+#: composer-ng/richtextexternalcomposer.cpp:70
 #, kde-format
 msgid "Empty command line"
 msgstr "空命令行"
 
-#: composer-ng/richtextexternalcomposer.cpp:122
+#: composer-ng/richtextexternalcomposer.cpp:123
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr "外部编辑器无法启动。请检查命令“%1”"
 
-#: composer-ng/richtextexternalcomposer.cpp:140
+#: composer-ng/richtextexternalcomposer.cpp:141
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "启动外部编辑器时发现错误"
 
-#: composer-ng/richtextexternalcomposer.cpp:140
+#: composer-ng/richtextexternalcomposer.cpp:141
 #, kde-format
 msgid "External Editor Closed"
 msgstr "外部编辑器已关闭"
 
-#: composer-ng/richtextexternalcomposer.cpp:157
+#: composer-ng/richtextexternalcomposer.cpp:162
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -418,19 +418,19 @@ msgstr ""
 "外部编辑器仍在运行。<nl/>您想要停止编辑器还是保持它运行？<nl/><warning>停止编"
 "辑器将导致未保存的修改丢失。</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:161
+#: composer-ng/richtextexternalcomposer.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "外部编辑器正在运行"
 
-#: composer-ng/richtextexternalcomposer.cpp:162
+#: composer-ng/richtextexternalcomposer.cpp:167
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "停止编辑器"
 
-#: composer-ng/richtextexternalcomposer.cpp:163
+#: composer-ng/richtextexternalcomposer.cpp:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -1000,66 +1000,66 @@ msgid_plural "%1 replacements made"
 msgstr[0] "完成 %1 处替换"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:146
-#: texteditor/richtexteditor/richtexteditor.cpp:203
+#: texteditor/richtexteditor/richtexteditor.cpp:204
 #, kde-format
 msgid "Replace..."
 msgstr "替换..."
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:161
-#: texteditor/richtexteditor/richtexteditor.cpp:219
+#: texteditor/richtexteditor/richtexteditor.cpp:220
 #, kde-format
 msgid "Check Spelling..."
 msgstr "检查拼写..."
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:166
-#: texteditor/richtexteditor/richtexteditor.cpp:226
+#: texteditor/richtexteditor/richtexteditor.cpp:227
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "自动拼写检查"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:172
-#: texteditor/richtexteditor/richtexteditor.cpp:232
+#: texteditor/richtexteditor/richtexteditor.cpp:233
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "拼写检查语言"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:201
-#: texteditor/richtexteditor/richtexteditor.cpp:266
+#: texteditor/richtexteditor/richtexteditor.cpp:267
 #, kde-format
 msgid "Speak Text"
 msgstr "朗读文本"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:348
-#: texteditor/richtexteditor/richtexteditor.cpp:450
+#: texteditor/richtexteditor/richtexteditor.cpp:451
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "没有可供检查拼写的内容。"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:353
-#: texteditor/richtexteditor/richtexteditor.cpp:468
+#: texteditor/richtexteditor/richtexteditor.cpp:477
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "没有可用的拼写检查后端。"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:258
+#: texteditor/richtexteditor/richtexteditor.cpp:259
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "允许制表符"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:460
+#: texteditor/richtexteditor/richtexteditor.cpp:465
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr "没有可用的拼写检查后端。请问您是否仍然想要发送电子邮件？"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:462
+#: texteditor/richtexteditor/richtexteditor.cpp:467
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "发送"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:484
+#: texteditor/richtexteditor/richtexteditor.cpp:493
 #, kde-format
 msgid "Skip"
 msgstr "跳过"

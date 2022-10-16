@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-04 00:45+0000\n"
+"POT-Creation-Date: 2022-10-16 00:47+0000\n"
 "PO-Revision-Date: 2022-02-26 02:54+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -381,34 +381,34 @@ msgctxt "Start of the filename for an image"
 msgid "image"
 msgstr "Bild"
 
-#: composer-ng/richtextexternalcomposer.cpp:69
+#: composer-ng/richtextexternalcomposer.cpp:70
 #, kde-format
 msgid "Command line is empty. Please verify settings."
 msgstr "Die Befehlszeile ist leer. Bitte überprüfen Sie die Einstellungen."
 
-#: composer-ng/richtextexternalcomposer.cpp:69
+#: composer-ng/richtextexternalcomposer.cpp:70
 #, kde-format
 msgid "Empty command line"
 msgstr "Leere Befehlszeile"
 
-#: composer-ng/richtextexternalcomposer.cpp:122
+#: composer-ng/richtextexternalcomposer.cpp:123
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr ""
 "Der externe Editor kann nicht gestartet werden. Bitte überprüfen Sie den "
 "Befehl „%1“"
 
-#: composer-ng/richtextexternalcomposer.cpp:140
+#: composer-ng/richtextexternalcomposer.cpp:141
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "Beim Starten des externen Editors ist ein Fehler aufgetreten."
 
-#: composer-ng/richtextexternalcomposer.cpp:140
+#: composer-ng/richtextexternalcomposer.cpp:141
 #, kde-format
 msgid "External Editor Closed"
 msgstr "Externer Editor wird geschlossen"
 
-#: composer-ng/richtextexternalcomposer.cpp:157
+#: composer-ng/richtextexternalcomposer.cpp:162
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -420,19 +420,19 @@ msgstr ""
 "lassen?<nl/><warning>Das Beenden des Editors kann zum Verlust der "
 "ungespeicherten Änderungen führen.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:161
+#: composer-ng/richtextexternalcomposer.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "Externer Editor wird ausgeführt"
 
-#: composer-ng/richtextexternalcomposer.cpp:162
+#: composer-ng/richtextexternalcomposer.cpp:167
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "Editor beenden"
 
-#: composer-ng/richtextexternalcomposer.cpp:163
+#: composer-ng/richtextexternalcomposer.cpp:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -1003,53 +1003,53 @@ msgstr[0] "%1 Ersetzung vorgenommen"
 msgstr[1] "%1 Ersetzungen vorgenommen"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:146
-#: texteditor/richtexteditor/richtexteditor.cpp:203
+#: texteditor/richtexteditor/richtexteditor.cpp:204
 #, kde-format
 msgid "Replace..."
 msgstr "Ersetzen ..."
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:161
-#: texteditor/richtexteditor/richtexteditor.cpp:219
+#: texteditor/richtexteditor/richtexteditor.cpp:220
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Rechtschreibprüfung ..."
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:166
-#: texteditor/richtexteditor/richtexteditor.cpp:226
+#: texteditor/richtexteditor/richtexteditor.cpp:227
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Automatische Rechtschreibprüfung"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:172
-#: texteditor/richtexteditor/richtexteditor.cpp:232
+#: texteditor/richtexteditor/richtexteditor.cpp:233
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Sprache für Rechtschreibprüfung"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:201
-#: texteditor/richtexteditor/richtexteditor.cpp:266
+#: texteditor/richtexteditor/richtexteditor.cpp:267
 #, kde-format
 msgid "Speak Text"
 msgstr "Text vorlesen"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:348
-#: texteditor/richtexteditor/richtexteditor.cpp:450
+#: texteditor/richtexteditor/richtexteditor.cpp:451
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Kein Text für Rechtschreibprüfung."
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:353
-#: texteditor/richtexteditor/richtexteditor.cpp:468
+#: texteditor/richtexteditor/richtexteditor.cpp:477
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Kein Backend für Rechtschreibprüfung verfügbar."
 
-#: texteditor/richtexteditor/richtexteditor.cpp:258
+#: texteditor/richtexteditor/richtexteditor.cpp:259
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Anordnung mit Tabulatoren erlauben"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:460
+#: texteditor/richtexteditor/richtexteditor.cpp:465
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -1058,13 +1058,13 @@ msgstr ""
 "Kein Backend für Rechtschreibprüfung verfügbar. Möchten Sie die E-Mail "
 "trotzdem versenden?"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:462
+#: texteditor/richtexteditor/richtexteditor.cpp:467
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Senden"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:484
+#: texteditor/richtexteditor/richtexteditor.cpp:493
 #, kde-format
 msgid "Skip"
 msgstr "Überspringen"
