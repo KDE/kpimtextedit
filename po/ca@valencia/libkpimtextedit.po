@@ -946,7 +946,7 @@ msgstr "Bu&sca:"
 #: texteditor/commonwidget/textfindreplacewidget.cpp:75
 #, kde-format
 msgid "Text to search for"
-msgstr "Text que cal buscar"
+msgstr "Text que s'ha de buscar"
 
 #: texteditor/commonwidget/textfindreplacewidget.cpp:81
 #, kde-format
