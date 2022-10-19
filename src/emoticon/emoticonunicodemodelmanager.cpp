@@ -8,7 +8,7 @@
 #include "emoticonunicodemodel.h"
 
 #include <KConfigGroup>
-#include <ksharedconfig.h>
+#include <KSharedConfig>
 using namespace KPIMTextEdit;
 namespace
 {
