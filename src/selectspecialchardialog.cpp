@@ -16,7 +16,7 @@
 #include <QWindow>
 namespace
 {
-static const char mySelectSpecialCharDialogConfigGroupName[] = "ConfirmBeforeDeletingDialog";
+static const char mySelectSpecialCharDialogConfigGroupName[] = "SelectSpecialCharDialog";
 }
 
 namespace KPIMTextEdit
