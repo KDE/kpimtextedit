@@ -1136,3 +1136,9 @@ msgstr "Omissió"
 #, kde-format
 msgid "Configure..."
 msgstr "Configura..."
+
+#~ msgid "Search"
+#~ msgstr "Cerca"
+
+#~ msgid "I've linked 1 file to this email:"
+#~ msgstr "He vinculat 1 fitxer a aquest correu electrònic:"
