@@ -13,7 +13,6 @@
 #include <KProcess>
 #include <KShell>
 #include <QTemporaryFile>
-#include <kwidgetsaddons_version.h>
 
 using namespace KPIMTextEdit;
 
@@ -153,11 +152,7 @@ bool RichTextExternalComposer::checkExternalEditorFinished()
         return true;
     }
 
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     const int ret = KMessageBox::warningTwoActionsCancel(d->richTextComposer,
-#else
-    const int ret = KMessageBox::warningYesNoCancel(d->richTextComposer,
-#endif
                                                          xi18nc("@info",
                                                                 "The external editor is still running.<nl/>"
                                                                 "Do you want to stop the editor or keep it running?<nl/>"
@@ -168,18 +163,10 @@ bool RichTextExternalComposer::checkExternalEditorFinished()
                                                          KGuiItem(i18nc("@action:button", "Keep Editor Running")));
 
     switch (ret) {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     case KMessageBox::ButtonCode::PrimaryAction:
-#else
-    case KMessageBox::Yes:
-#endif
         killExternalEditor();
         return true;
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     case KMessageBox::ButtonCode::SecondaryAction:
-#else
-    case KMessageBox::No:
-#endif
         return true;
     default:
         return false;
