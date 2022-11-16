@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:47+0000\n"
+"POT-Creation-Date: 2022-11-16 00:48+0000\n"
 "PO-Revision-Date: 2022-11-13 09:08+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -385,32 +385,32 @@ msgctxt "Start of the filename for an image"
 msgid "image"
 msgstr "Irudia"
 
-#: composer-ng/richtextexternalcomposer.cpp:70
+#: composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
 msgid "Command line is empty. Please verify settings."
 msgstr "Komando-lerroa hutsik dago. Mesedez, egiaztatu ezarpenak."
 
-#: composer-ng/richtextexternalcomposer.cpp:70
+#: composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
 msgid "Empty command line"
 msgstr "Komando-lerroa hutsik"
 
-#: composer-ng/richtextexternalcomposer.cpp:123
+#: composer-ng/richtextexternalcomposer.cpp:122
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr "Kanpoko editorea ezin da abiarazi. Mesedez, egiaztatu \"%1\" komandoa"
 
-#: composer-ng/richtextexternalcomposer.cpp:141
+#: composer-ng/richtextexternalcomposer.cpp:140
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "Errore bat aurkitu da kanpoko editorea abiatu dugunean."
 
-#: composer-ng/richtextexternalcomposer.cpp:141
+#: composer-ng/richtextexternalcomposer.cpp:140
 #, kde-format
 msgid "External Editor Closed"
 msgstr "Kanpoko editorea itxi egin da"
 
-#: composer-ng/richtextexternalcomposer.cpp:162
+#: composer-ng/richtextexternalcomposer.cpp:157
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -422,19 +422,19 @@ msgstr ""
 "jarraitzea nahi duzu?<nl/><warning>Editorea geldiarazteak gorde gabeko "
 "aldaketa guztiak galtzea eragingo du.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:166
+#: composer-ng/richtextexternalcomposer.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "Kanpoko editorea ibiltzen ari da"
 
-#: composer-ng/richtextexternalcomposer.cpp:167
+#: composer-ng/richtextexternalcomposer.cpp:162
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "Gelditu editorea"
 
-#: composer-ng/richtextexternalcomposer.cpp:168
+#: composer-ng/richtextexternalcomposer.cpp:163
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -1005,53 +1005,53 @@ msgstr[0] "Ordezkapen %1 egin da"
 msgstr[1] "%1 ordezkapen egin dira"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:146
-#: texteditor/richtexteditor/richtexteditor.cpp:204
+#: texteditor/richtexteditor/richtexteditor.cpp:203
 #, kde-format
 msgid "Replace..."
 msgstr "Ordeztu..."
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:161
-#: texteditor/richtexteditor/richtexteditor.cpp:220
+#: texteditor/richtexteditor/richtexteditor.cpp:219
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Egiaztatu ortografia..."
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:166
-#: texteditor/richtexteditor/richtexteditor.cpp:227
+#: texteditor/richtexteditor/richtexteditor.cpp:226
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Ortografia egiaztatze automatikoa"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:172
-#: texteditor/richtexteditor/richtexteditor.cpp:233
+#: texteditor/richtexteditor/richtexteditor.cpp:232
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Ortografia-egiaztatzeko hizkuntza"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:201
-#: texteditor/richtexteditor/richtexteditor.cpp:267
+#: texteditor/richtexteditor/richtexteditor.cpp:266
 #, kde-format
 msgid "Speak Text"
 msgstr "Esan testua"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:348
-#: texteditor/richtexteditor/richtexteditor.cpp:451
+#: texteditor/richtexteditor/richtexteditor.cpp:450
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Ortografia egiaztatzekorik ez."
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:353
-#: texteditor/richtexteditor/richtexteditor.cpp:477
+#: texteditor/richtexteditor/richtexteditor.cpp:468
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Ez dago ortografia-egiaztatzeko bizkarraldekorik."
 
-#: texteditor/richtexteditor/richtexteditor.cpp:259
+#: texteditor/richtexteditor/richtexteditor.cpp:258
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Baimendu tabulazioak"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:465
+#: texteditor/richtexteditor/richtexteditor.cpp:460
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -1060,13 +1060,13 @@ msgstr ""
 "Ez dago ortografia-egiaztatzeko bizkarraldekorik. Hala ere, e-posta bidali "
 "nahi duzu?"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:467
+#: texteditor/richtexteditor/richtexteditor.cpp:462
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Bidali"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:493
+#: texteditor/richtexteditor/richtexteditor.cpp:484
 #, kde-format
 msgid "Skip"
 msgstr "Saihestu"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:47+0000\n"
+"POT-Creation-Date: 2022-11-16 00:48+0000\n"
 "PO-Revision-Date: 2022-03-04 09:15-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -385,32 +385,32 @@ msgctxt "Start of the filename for an image"
 msgid "image"
 msgstr "imagem"
 
-#: composer-ng/richtextexternalcomposer.cpp:70
+#: composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
 msgid "Command line is empty. Please verify settings."
 msgstr "A linha de comando está vazia. Verifique as configurações."
 
-#: composer-ng/richtextexternalcomposer.cpp:70
+#: composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
 msgid "Empty command line"
 msgstr "Linha de comando vazia"
 
-#: composer-ng/richtextexternalcomposer.cpp:123
+#: composer-ng/richtextexternalcomposer.cpp:122
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr "O editor externo não pôde ser iniciado. Verifique o comando \"%1\""
 
-#: composer-ng/richtextexternalcomposer.cpp:141
+#: composer-ng/richtextexternalcomposer.cpp:140
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "Foi encontrado um erro ao iniciar o editor externo."
 
-#: composer-ng/richtextexternalcomposer.cpp:141
+#: composer-ng/richtextexternalcomposer.cpp:140
 #, kde-format
 msgid "External Editor Closed"
 msgstr "Editor externo fechado"
 
-#: composer-ng/richtextexternalcomposer.cpp:162
+#: composer-ng/richtextexternalcomposer.cpp:157
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -422,19 +422,19 @@ msgstr ""
 "lo em execução?<nl/><warning>Parar o editor fará com que todas as alterações "
 "não salvas sejam perdidas.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:166
+#: composer-ng/richtextexternalcomposer.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "Editor externo em execução"
 
-#: composer-ng/richtextexternalcomposer.cpp:167
+#: composer-ng/richtextexternalcomposer.cpp:162
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "Parar o editor"
 
-#: composer-ng/richtextexternalcomposer.cpp:168
+#: composer-ng/richtextexternalcomposer.cpp:163
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -1006,53 +1006,53 @@ msgstr[0] "%1 substituição efetuada"
 msgstr[1] "%1 substituições efetuadas"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:146
-#: texteditor/richtexteditor/richtexteditor.cpp:204
+#: texteditor/richtexteditor/richtexteditor.cpp:203
 #, kde-format
 msgid "Replace..."
 msgstr "Substituir..."
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:161
-#: texteditor/richtexteditor/richtexteditor.cpp:220
+#: texteditor/richtexteditor/richtexteditor.cpp:219
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Verificar ortografia..."
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:166
-#: texteditor/richtexteditor/richtexteditor.cpp:227
+#: texteditor/richtexteditor/richtexteditor.cpp:226
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Verificar ortografia automaticamente"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:172
-#: texteditor/richtexteditor/richtexteditor.cpp:233
+#: texteditor/richtexteditor/richtexteditor.cpp:232
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Idioma da verificação ortográfica"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:201
-#: texteditor/richtexteditor/richtexteditor.cpp:267
+#: texteditor/richtexteditor/richtexteditor.cpp:266
 #, kde-format
 msgid "Speak Text"
 msgstr "Falar o texto"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:348
-#: texteditor/richtexteditor/richtexteditor.cpp:451
+#: texteditor/richtexteditor/richtexteditor.cpp:450
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Nenhuma ortografia a ser verificada."
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:353
-#: texteditor/richtexteditor/richtexteditor.cpp:477
+#: texteditor/richtexteditor/richtexteditor.cpp:468
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Nenhuma infraestrutura de verificação ortográfica disponível."
 
-#: texteditor/richtexteditor/richtexteditor.cpp:259
+#: texteditor/richtexteditor/richtexteditor.cpp:258
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Permitir tabulações"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:465
+#: texteditor/richtexteditor/richtexteditor.cpp:460
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -1061,13 +1061,13 @@ msgstr ""
 "Nenhuma infraestrutura de verificação ortográfica disponível. Deseja enviar "
 "o e-mail mesmo assim?"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:467
+#: texteditor/richtexteditor/richtexteditor.cpp:462
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Enviar"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:493
+#: texteditor/richtexteditor/richtexteditor.cpp:484
 #, kde-format
 msgid "Skip"
 msgstr "Ignorar"
