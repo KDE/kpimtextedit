@@ -13,17 +13,17 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:47+0000\n"
-"PO-Revision-Date: 2022-03-02 19:38+0100\n"
+"PO-Revision-Date: 2022-11-16 13:52+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -698,7 +698,7 @@ msgstr "Širina:"
 #: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
-msgstr "sl. točk"
+msgstr " sl. točk"
 
 #: insertimagewidget.cpp:92
 #, kde-format
@@ -734,7 +734,7 @@ msgstr "Obroba:"
 #: inserttablewidget.cpp:52
 #, no-c-format, kde-format
 msgid "% of windows"
-msgstr " % oken"
+msgstr "% oken"
 
 #: inserttablewidget.cpp:53
 #, kde-format
