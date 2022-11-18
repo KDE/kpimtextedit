@@ -38,7 +38,7 @@ MarkupDirector::~MarkupDirector()
     delete d_ptr;
 }
 
-//#define ADD_HEADER_SUPPORT 1
+// #define ADD_HEADER_SUPPORT 1
 
 QTextFrame::iterator MarkupDirector::processBlockContents(QTextFrame::iterator frameIt, const QTextBlock &block)
 {

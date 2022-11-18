@@ -5,7 +5,7 @@
 */
 
 #include "editorutiltest.h"
-#include "../src/editorutil.h"
+#include "editorutil.h"
 #include <QTest>
 #include <QTextDocument>
 
