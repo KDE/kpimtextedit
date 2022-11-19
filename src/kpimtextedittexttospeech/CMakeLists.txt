@@ -27,6 +27,11 @@ target_link_libraries(KF5PimTextEditTextToSpeech
 
 install(TARGETS KF5PimTextEditTextToSpeech EXPORT KF5PimTextEditTextToSpeechTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+    add_subdirectory(tests)
+endif()
+
 #install(FILES
 #    ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedittexttospeech_export.h
 #    ${CMAKE_CURRENT_BINARY_DIR}/../../kpimtextedit-texttospeech.h
