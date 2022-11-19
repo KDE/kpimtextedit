@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-19 00:46+0000\n"
 "PO-Revision-Date: 2022-11-10 20:50+0100\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -17,399 +17,399 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.08.3\n"
 
-#: composer-ng/klinkdialog.cpp:24
+#: kpimtextedit/composer-ng/klinkdialog.cpp:24
 #, kde-format
 msgid "Link Text:"
 msgstr "Verknüpfungstext:"
 
-#: composer-ng/klinkdialog.cpp:26
+#: kpimtextedit/composer-ng/klinkdialog.cpp:26
 #, kde-format
 msgid "Link URL:"
 msgstr "Verknüpfungsziel:"
 
-#: composer-ng/klinkdialog.cpp:30
+#: kpimtextedit/composer-ng/klinkdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Link"
 msgstr "Verknüpfung bearbeiten"
 
-#: composer-ng/richtextcomposeractions.cpp:102
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
 msgstr "&Linksbündig"
 
-#: composer-ng/richtextcomposeractions.cpp:103
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:103
 #, kde-format
 msgctxt "@label left justify"
 msgid "Left"
 msgstr "Links"
 
-#: composer-ng/richtextcomposeractions.cpp:111
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Align &Center"
 msgstr "&Mittig ausrichten"
 
-#: composer-ng/richtextcomposeractions.cpp:112
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:112
 #, kde-format
 msgctxt "@label center justify"
 msgid "Center"
 msgstr "Mittig"
 
-#: composer-ng/richtextcomposeractions.cpp:120
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
 msgstr "&Rechtsbündig"
 
-#: composer-ng/richtextcomposeractions.cpp:121
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:121
 #, kde-format
 msgctxt "@label right justify"
 msgid "Right"
 msgstr "Rechts"
 
-#: composer-ng/richtextcomposeractions.cpp:129
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "&Justify"
 msgstr "&Blocksatz"
 
-#: composer-ng/richtextcomposeractions.cpp:130
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:130
 #, kde-format
 msgctxt "@label justify fill"
 msgid "Justify"
 msgstr "Blocksatz"
 
-#: composer-ng/richtextcomposeractions.cpp:145
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:145
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
 msgstr "Links nach rechts"
 
-#: composer-ng/richtextcomposeractions.cpp:146
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:146
 #, kde-format
 msgctxt "@label left-to-right"
 msgid "Left-to-Right"
 msgstr "Links nach rechts"
 
-#: composer-ng/richtextcomposeractions.cpp:154
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
 msgstr "Rechts nach links"
 
-#: composer-ng/richtextcomposeractions.cpp:155
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:155
 #, kde-format
 msgctxt "@label right-to-left"
 msgid "Right-to-Left"
 msgstr "Rechts nach links"
 
-#: composer-ng/richtextcomposeractions.cpp:168
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:168
 #, kde-format
 msgctxt "@action"
 msgid "Subscript"
 msgstr "Tiefstellen"
 
-#: composer-ng/richtextcomposeractions.cpp:176
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:176
 #, kde-format
 msgctxt "@action"
 msgid "Superscript"
 msgstr "Hochstellen"
 
-#: composer-ng/richtextcomposeractions.cpp:184
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:184
 #, kde-format
 msgctxt "@action boldify selected text"
 msgid "&Bold"
 msgstr "&Fett"
 
-#: composer-ng/richtextcomposeractions.cpp:197
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:197
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
 msgstr "&Kursiv"
 
-#: composer-ng/richtextcomposeractions.cpp:210
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:210
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
 msgstr "&Unterstrichen"
 
-#: composer-ng/richtextcomposeractions.cpp:222
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:222
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
 msgstr "&Durchgestrichen"
 
-#: composer-ng/richtextcomposeractions.cpp:237
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:237
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
 msgstr "&Schriftart"
 
-#: composer-ng/richtextcomposeractions.cpp:246
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:246
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
 msgstr "Schrift&größe"
 
-#: composer-ng/richtextcomposeractions.cpp:254
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:254
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
 msgstr "Linie einfügen"
 
-#: composer-ng/richtextcomposeractions.cpp:263
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:263
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color..."
 msgstr "Text&farbe ..."
 
-#: composer-ng/richtextcomposeractions.cpp:264
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
 msgstr "Farbe"
 
-#: composer-ng/richtextcomposeractions.cpp:272
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:272
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight..."
 msgstr "Text&hervorhebung ..."
 
-#: composer-ng/richtextcomposeractions.cpp:280
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:280
 #, kde-format
 msgctxt "@action"
 msgid "Link"
 msgstr "Verknüpfung"
 
-#: composer-ng/richtextcomposeractions.cpp:288
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
 msgstr "Listenebene vergrößern"
 
-#: composer-ng/richtextcomposeractions.cpp:296
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:296
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
 msgstr "Listenebene verringern"
 
-#: composer-ng/richtextcomposeractions.cpp:305
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:305
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
 msgstr "Listenstil"
 
-#: composer-ng/richtextcomposeractions.cpp:307
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
 msgstr "Kein"
 
-#: composer-ng/richtextcomposeractions.cpp:307
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
 msgstr "Scheibe"
 
-#: composer-ng/richtextcomposeractions.cpp:308
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
 msgstr "Kreis"
 
-#: composer-ng/richtextcomposeractions.cpp:308
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
 msgstr "Quadrat"
 
-#: composer-ng/richtextcomposeractions.cpp:309
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
 msgstr "123"
 
-#: composer-ng/richtextcomposeractions.cpp:309
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
 msgstr "abc"
 
-#: composer-ng/richtextcomposeractions.cpp:310
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
 msgstr "ABC"
 
-#: composer-ng/richtextcomposeractions.cpp:310
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
 msgstr "i ii iii"
 
-#: composer-ng/richtextcomposeractions.cpp:311
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:311
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
 msgstr "I II III"
 
-#: composer-ng/richtextcomposeractions.cpp:322
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:322
 #, kde-format
 msgid "Pa&ste as Quotation"
 msgstr "Als Zitat ei&nfügen"
 
-#: composer-ng/richtextcomposeractions.cpp:330
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:330
 #, kde-format
 msgid "Add &Quote Characters"
 msgstr "Z&itatzeichen einfügen"
 
-#: composer-ng/richtextcomposeractions.cpp:337
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:337
 #, kde-format
 msgid "Re&move Quote Characters"
 msgstr "Zi&tatzeichen entfernen"
 
-#: composer-ng/richtextcomposeractions.cpp:344
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:344
 #, kde-format
 msgid "Paste Without Formatting"
 msgstr "Ohne Formatierung einfügen"
 
-#: composer-ng/richtextcomposeractions.cpp:352
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:352
 #, kde-format
 msgid "Add Image"
 msgstr "Bild hinzufügen"
 
-#: composer-ng/richtextcomposeractions.cpp:368
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:368
 #, kde-format
 msgid "Insert HTML"
 msgstr "HTML einfügen"
 
-#: composer-ng/richtextcomposeractions.cpp:378
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:378
 #, kde-format
 msgid "Table"
 msgstr "Tabelle"
 
-#: composer-ng/richtextcomposeractions.cpp:387
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:387
 #, kde-format
 msgid "Delete Line"
 msgstr "Zeile löschen"
 
-#: composer-ng/richtextcomposeractions.cpp:398
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:398
 #, kde-format
 msgid "Reset Font Settings"
 msgstr "Zeichenformatierung zurücksetzen"
 
-#: composer-ng/richtextcomposeractions.cpp:399
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:399
 #, kde-format
 msgid "Reset Font"
 msgstr "Schriftart zurücksetzen"
 
-#: composer-ng/richtextcomposeractions.cpp:407
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:407
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
 msgstr "Format-Pinsel"
 
-#: composer-ng/richtextcomposeractions.cpp:415
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:415
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
 msgstr "Überschriftenebene"
 
-#: composer-ng/richtextcomposeractions.cpp:416
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:416
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
 msgstr "Grundschrift"
 
-#: composer-ng/richtextcomposeractions.cpp:417
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:417
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
 msgstr "Titel"
 
-#: composer-ng/richtextcomposeractions.cpp:418
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:418
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
 msgstr "Untertitel"
 
-#: composer-ng/richtextcomposeractions.cpp:419
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:419
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
 msgstr "Abschnitt"
 
-#: composer-ng/richtextcomposeractions.cpp:420
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:420
 #, kde-format
 msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
 msgstr "Unterabschnitt"
 
-#: composer-ng/richtextcomposeractions.cpp:421
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:421
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
 msgstr "Absatz"
 
-#: composer-ng/richtextcomposeractions.cpp:422
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:422
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
 msgstr "Unterabsatz"
 
-#: composer-ng/richtextcomposeractions.cpp:433
+#: kpimtextedit/composer-ng/richtextcomposeractions.cpp:433
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
 msgstr "Ankreuzfeld"
 
-#: composer-ng/richtextcomposercontroler.cpp:733
+#: kpimtextedit/composer-ng/richtextcomposercontroler.cpp:733
 #, kde-format
 msgid "Only local files are supported."
 msgstr "Es werden nur lokale Dateien unterstützt."
 
-#: composer-ng/richtextcomposerimages.cpp:55
+#: kpimtextedit/composer-ng/richtextcomposerimages.cpp:55
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "Das Bild <filename>%1</filename> kann nicht geladen werden."
 
-#: composer-ng/richtextcomposerimages.cpp:214
+#: kpimtextedit/composer-ng/richtextcomposerimages.cpp:214
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"
 msgstr "Bild"
 
-#: composer-ng/richtextexternalcomposer.cpp:69
+#: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
 msgid "Command line is empty. Please verify settings."
 msgstr "Die Befehlszeile ist leer. Bitte überprüfen Sie die Einstellungen."
 
-#: composer-ng/richtextexternalcomposer.cpp:69
+#: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
 msgid "Empty command line"
 msgstr "Leere Befehlszeile"
 
-#: composer-ng/richtextexternalcomposer.cpp:122
+#: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:122
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr ""
 "Der externe Editor kann nicht gestartet werden. Bitte überprüfen Sie den "
 "Befehl „%1“"
 
-#: composer-ng/richtextexternalcomposer.cpp:140
+#: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:140
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "Beim Starten des externen Editors ist ein Fehler aufgetreten."
 
-#: composer-ng/richtextexternalcomposer.cpp:140
+#: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:140
 #, kde-format
 msgid "External Editor Closed"
 msgstr "Externer Editor wird geschlossen"
 
-#: composer-ng/richtextexternalcomposer.cpp:157
+#: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:157
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -421,483 +421,486 @@ msgstr ""
 "lassen?<nl/><warning>Das Beenden des Editors kann zum Verlust der "
 "ungespeicherten Änderungen führen.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:161
+#: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "Externer Editor wird ausgeführt"
 
-#: composer-ng/richtextexternalcomposer.cpp:162
+#: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:162
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "Editor beenden"
 
-#: composer-ng/richtextexternalcomposer.cpp:163
+#: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:163
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr "Editor geöffnet lassen"
 
-#: emoticon/emoticonrecentlistview.cpp:25
+#: kpimtextedit/emoticon/emoticonrecentlistview.cpp:25
 #, kde-format
 msgid "Clear Recents"
 msgstr "„Kürzliche“ leeren"
 
-#: emoticon/emoticontexteditaction.cpp:41
+#: kpimtextedit/emoticon/emoticontexteditaction.cpp:41
 #, kde-format
 msgid "Add Smiley"
 msgstr "Smiley hinzufügen"
 
-#: emoticon/emoticontexteditselector.cpp:31
+#: kpimtextedit/emoticon/emoticontexteditselector.cpp:31
 #, kde-format
 msgid "Search Emoticon..."
 msgstr "Emoticon suchen ..."
 
-#: emoticon/emoticonunicodetab.cpp:51
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:51
 #, kde-format
 msgid "Result"
 msgstr "Ergebnis"
 
-#: emoticon/emoticonunicodetab.cpp:62
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:62
 #, kde-format
 msgid "Recents"
 msgstr "Kürzliche"
 
-#: emoticon/emoticonunicodetab.cpp:93
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:93
 #, kde-format
 msgid "Faces"
 msgstr "Gesichter"
 
-#: emoticon/emoticonunicodetab.cpp:94
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:94
 #, kde-format
 msgid "Animals"
 msgstr "Tiere"
 
-#: emoticon/emoticonunicodetab.cpp:95
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:95
 #, kde-format
 msgid "Emotions"
 msgstr "Emotions"
 
-#: emoticon/emoticonunicodetab.cpp:96
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:96
 #, kde-format
 msgid "Body"
 msgstr "Nachrichtentext"
 
-#: emoticon/emoticonunicodetab.cpp:97
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:97
 #, kde-format
 msgid "Transports"
 msgstr "Versandart"
 
-#: emoticon/emoticonunicodetab.cpp:98
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:98
 #, kde-format
 msgid "Events"
 msgstr "Termine"
 
-#: emoticon/emoticonunicodetab.cpp:99
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:99
 #, kde-format
 msgid "Flags"
 msgstr "Flaggen"
 
-#: emoticon/emoticonunicodetab.cpp:100
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:100
 #, kde-format
 msgid "Weather"
 msgstr "Wetter"
 
-#: emoticon/emoticonunicodetab.cpp:101
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:101
 #, kde-format
 msgid "Foods"
 msgstr "Nahrungsmittel"
 
-#: emoticon/emoticonunicodetab.cpp:102
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:102
 #, kde-format
 msgid "Sports"
 msgstr "Sport"
 
-#: emoticon/emoticonunicodetab.cpp:103
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:103
 #, kde-format
 msgid "Time"
 msgstr "Zeit"
 
-#: emoticon/emoticonunicodetab.cpp:104
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:104
 #, kde-format
 msgid "Game"
 msgstr "Spiel"
 
-#: emoticon/emoticonunicodetab.cpp:105
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:105
 #, kde-format
 msgid "Clothing"
 msgstr "Kleidung"
 
-#: emoticon/emoticonunicodetab.cpp:106
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:106
 #, kde-format
 msgid "Music"
 msgstr "Musik"
 
-#: emoticon/emoticonunicodetab.cpp:107
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:107
 #, kde-format
 msgid "Computer"
 msgstr "Rechner"
 
-#: emoticon/emoticonunicodetab.cpp:108
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:108
 #, kde-format
 msgid "Symbols"
 msgstr "Symbole"
 
-#: emoticon/emoticonunicodetab.cpp:109
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:109
 #, kde-format
 msgid "Plant"
 msgstr "Pflanze"
 
-#: emoticon/emoticonunicodetab.cpp:110
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:110
 #, kde-format
 msgid "Book"
 msgstr "Buch"
 
-#: emoticon/emoticonunicodetab.cpp:111
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:111
 #, kde-format
 msgid "Science"
 msgstr "Wissenschaft"
 
-#: emoticon/emoticonunicodetab.cpp:112
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:112
 #, kde-format
 msgid "Person"
 msgstr "Person"
 
-#: emoticon/emoticonunicodetab.cpp:113
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:113
 #, kde-format
 msgid "Place"
 msgstr "Ort"
 
-#: emoticon/emoticonunicodetab.cpp:114
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:114
 #, kde-format
 msgid "Money"
 msgstr "Währung"
 
-#: emoticon/emoticonunicodetab.cpp:115
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:115
 #, kde-format
 msgid "Mail"
 msgstr "E-Mail"
 
-#: emoticon/emoticonunicodetab.cpp:116
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:116
 #, kde-format
 msgid "Office"
 msgstr "Büro"
 
-#: emoticon/emoticonunicodetab.cpp:117
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:117
 #, kde-format
 msgid "Tools"
 msgstr "Extras"
 
-#: emoticon/emoticonunicodetab.cpp:118
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:118
 #, kde-format
 msgid "Phone"
 msgstr "Telefon"
 
-#: emoticon/emoticonunicodetab.cpp:119
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:119
 #, kde-format
 msgid "Lock"
 msgstr "Sperren"
 
-#: emoticon/emoticonunicodetab.cpp:120
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:120
 #, kde-format
 msgid "Drink"
 msgstr "Getränk"
 
-#: emoticon/emoticonunicodetab.cpp:121
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:121
 #, kde-format
 msgid "Video"
 msgstr "Video"
 
-#: emoticon/emoticonunicodetab.cpp:122
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:122
 #, kde-format
 msgid "House"
 msgstr "Haus"
 
-#: emoticon/emoticonunicodetab.cpp:123
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:123
 #, kde-format
 msgid "Dishware"
 msgstr "Geschirr"
 
-#: emoticon/emoticonunicodetab.cpp:124
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:124
 #, kde-format
 msgid "Hotel"
 msgstr "Hotel"
 
-#: emoticon/emoticonunicodetab.cpp:125
+#: kpimtextedit/emoticon/emoticonunicodetab.cpp:125
 #, kde-format
 msgid "Award-Medal"
 msgstr "Preis-Medaille"
 
-#: inserthtmldialog.cpp:34
+#: kpimtextedit/inserthtmldialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "HTML einfügen"
 
-#: inserthtmldialog.cpp:36
+#: kpimtextedit/inserthtmldialog.cpp:36
 #, kde-format
 msgid "Insert HTML tags and texts:"
 msgstr "HTML-Markierungen und Texte einfügen:"
 
-#: inserthtmldialog.cpp:42
+#: kpimtextedit/inserthtmldialog.cpp:42
 #, kde-format
 msgid "Example: <i> Hello word </i>"
 msgstr "Beispiel: <i> Hallo Welt </i>"
 
-#: inserthtmldialog.cpp:51
+#: kpimtextedit/inserthtmldialog.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Einfügen"
 
-#: insertimagedialog.cpp:27
+#: kpimtextedit/insertimagedialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Bild einfügen"
 
-#: insertimagedialog.cpp:36 inserttabledialog.cpp:37
-#: selectspecialchardialog.cpp:40 tableactionmenu.cpp:405
+#: kpimtextedit/insertimagedialog.cpp:36 kpimtextedit/inserttabledialog.cpp:37
+#: kpimtextedit/selectspecialchardialog.cpp:40
+#: kpimtextedit/tableactionmenu.cpp:405
 #, kde-format
 msgid "Insert"
 msgstr "Einfügen"
 
-#: insertimagewidget.cpp:40
+#: kpimtextedit/insertimagewidget.cpp:40
 #, kde-format
 msgid "Image Location:"
 msgstr "Bildadresse:"
 
-#: insertimagewidget.cpp:53
+#: kpimtextedit/insertimagewidget.cpp:53
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "Bild hinzufügen"
 
-#: insertimagewidget.cpp:64
+#: kpimtextedit/insertimagewidget.cpp:64
 #, kde-format
 msgid "Keep Original Size"
 msgstr "Originalgröße beibehalten"
 
-#: insertimagewidget.cpp:71
+#: kpimtextedit/insertimagewidget.cpp:71
 #, kde-format
 msgid "Keep Image Ratio"
 msgstr "Größenverhältnis beibehalten"
 
-#: insertimagewidget.cpp:77 inserttablewidget.cpp:59
+#: kpimtextedit/insertimagewidget.cpp:77 kpimtextedit/inserttablewidget.cpp:59
 #, kde-format
 msgid "Width:"
 msgstr "Breite:"
 
-#: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
+#: kpimtextedit/insertimagewidget.cpp:82 kpimtextedit/insertimagewidget.cpp:97
+#: kpimtextedit/inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
 msgstr " px"
 
-#: insertimagewidget.cpp:92
+#: kpimtextedit/insertimagewidget.cpp:92
 #, kde-format
 msgid "Height:"
 msgstr "Höhe:"
 
-#: insertimagewidget.cpp:110
+#: kpimtextedit/insertimagewidget.cpp:110
 #, kde-format
 msgid "Image Preview:"
 msgstr "Bildvorschau:"
 
-#: inserttabledialog.cpp:26
+#: kpimtextedit/inserttabledialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Table"
 msgstr "Tabelle einfügen"
 
-#: inserttablewidget.cpp:40
+#: kpimtextedit/inserttablewidget.cpp:40
 #, kde-format
 msgid "Rows:"
 msgstr "Zeilen:"
 
-#: inserttablewidget.cpp:43
+#: kpimtextedit/inserttablewidget.cpp:43
 #, kde-format
 msgid "Columns:"
 msgstr "Spalten:"
 
-#: inserttablewidget.cpp:46
+#: kpimtextedit/inserttablewidget.cpp:46
 #, kde-format
 msgid "Border:"
 msgstr "Umrandung:"
 
-#: inserttablewidget.cpp:52
+#: kpimtextedit/inserttablewidget.cpp:52
 #, no-c-format, kde-format
 msgid "% of windows"
 msgstr "% des Fensters"
 
-#: inserttablewidget.cpp:53
+#: kpimtextedit/inserttablewidget.cpp:53
 #, kde-format
 msgid "pixels"
 msgstr "Pixel"
 
-#: selectspecialchardialog.cpp:30
+#: kpimtextedit/selectspecialchardialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr "Sonderzeichen auswählen"
 
-#: selectspecialchardialog.cpp:53
+#: kpimtextedit/selectspecialchardialog.cpp:53
 #, kde-format
 msgid "Select"
 msgstr "Auswählen"
 
-#: tableactionmenu.cpp:408
+#: kpimtextedit/tableactionmenu.cpp:408
 #, kde-format
 msgid "Table..."
 msgstr "Tabelle ..."
 
-#: tableactionmenu.cpp:416 tableactionmenu.cpp:449
+#: kpimtextedit/tableactionmenu.cpp:416 kpimtextedit/tableactionmenu.cpp:449
 #, kde-format
 msgid "Row Below"
 msgstr "Zeile unterhalb"
 
-#: tableactionmenu.cpp:423 tableactionmenu.cpp:456
+#: kpimtextedit/tableactionmenu.cpp:423 kpimtextedit/tableactionmenu.cpp:456
 #, kde-format
 msgid "Row Above"
 msgstr "Zeile oberhalb"
 
-#: tableactionmenu.cpp:431 tableactionmenu.cpp:464
+#: kpimtextedit/tableactionmenu.cpp:431 kpimtextedit/tableactionmenu.cpp:464
 #, kde-format
 msgid "Column Before"
 msgstr "Spalte vor"
 
-#: tableactionmenu.cpp:439 tableactionmenu.cpp:472
+#: kpimtextedit/tableactionmenu.cpp:439 kpimtextedit/tableactionmenu.cpp:472
 #, kde-format
 msgid "Column After"
 msgstr "Spalte nach"
 
-#: tableactionmenu.cpp:446
+#: kpimtextedit/tableactionmenu.cpp:446
 #, kde-format
 msgid "Delete"
 msgstr "Löschen"
 
-#: tableactionmenu.cpp:480
+#: kpimtextedit/tableactionmenu.cpp:480
 #, kde-format
 msgid "Cell Contents"
 msgstr "Zelleninhalte"
 
-#: tableactionmenu.cpp:489
+#: kpimtextedit/tableactionmenu.cpp:489
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "Mit der  rechten Zellen verschmelzen"
 
-#: tableactionmenu.cpp:496
+#: kpimtextedit/tableactionmenu.cpp:496
 #, kde-format
 msgid "Join Selected Cells"
 msgstr "Ausgewählte Zellen verschmelzen"
 
-#: tableactionmenu.cpp:503
+#: kpimtextedit/tableactionmenu.cpp:503
 #, kde-format
 msgid "Split cells"
 msgstr "Zellen teilen"
 
-#: tableactionmenu.cpp:512
+#: kpimtextedit/tableactionmenu.cpp:512
 #, kde-format
 msgid "Table Format..."
 msgstr "Tabellenformat ..."
 
-#: tableactionmenu.cpp:519
+#: kpimtextedit/tableactionmenu.cpp:519
 #, kde-format
 msgid "Table Cell Format..."
 msgstr "Tabellenzellformat ..."
 
-#: tablecellformatdialog.cpp:28
+#: kpimtextedit/tablecellformatdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Cell Format"
 msgstr "Zellenformat"
 
-#: tablecellformatdialog.cpp:33
+#: kpimtextedit/tablecellformatdialog.cpp:33
 #, kde-format
 msgid "Vertical Alignment:"
 msgstr "Senkrechte Ausrichtung:"
 
-#: tablecellformatdialog.cpp:36
+#: kpimtextedit/tablecellformatdialog.cpp:36
 #, kde-format
 msgid "Top"
 msgstr "Oben"
 
-#: tablecellformatdialog.cpp:37
+#: kpimtextedit/tablecellformatdialog.cpp:37
 #, kde-format
 msgid "Middle"
 msgstr "Mittig"
 
-#: tablecellformatdialog.cpp:38
+#: kpimtextedit/tablecellformatdialog.cpp:38
 #, kde-format
 msgid "Bottom"
 msgstr "Unten"
 
-#: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
+#: kpimtextedit/tablecellformatdialog.cpp:47
+#: kpimtextedit/tableformatdialog.cpp:83
 #, kde-format
 msgid "Background Color:"
 msgstr "Hintergrundfarbe:"
 
-#: tableformatdialog.cpp:31
+#: kpimtextedit/tableformatdialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Table Format"
 msgstr "Tabellenformat"
 
-#: tableformatdialog.cpp:44
+#: kpimtextedit/tableformatdialog.cpp:44
 #, kde-format
 msgid "Spacing:"
 msgstr "Abstand:"
 
-#: tableformatdialog.cpp:49
+#: kpimtextedit/tableformatdialog.cpp:49
 #, kde-format
 msgid "pixels between cells"
 msgstr "Pixel zwischen Zellen"
 
-#: tableformatdialog.cpp:54
+#: kpimtextedit/tableformatdialog.cpp:54
 #, kde-format
 msgid "Padding:"
 msgstr "Zwischenraum:"
 
-#: tableformatdialog.cpp:59
+#: kpimtextedit/tableformatdialog.cpp:59
 #, kde-format
 msgid "pixels between cell border and content"
 msgstr "Pixel zwischen Zellenrand und -inhalt"
 
-#: tableformatdialog.cpp:67
+#: kpimtextedit/tableformatdialog.cpp:67
 #, kde-format
 msgid "Left"
 msgstr "Links"
 
-#: tableformatdialog.cpp:68
+#: kpimtextedit/tableformatdialog.cpp:68
 #, kde-format
 msgid "Right"
 msgstr "Rechts"
 
-#: tableformatdialog.cpp:69
+#: kpimtextedit/tableformatdialog.cpp:69
 #, kde-format
 msgid "Center"
 msgstr "Mittig"
 
-#: tableformatdialog.cpp:70
+#: kpimtextedit/tableformatdialog.cpp:70
 #, kde-format
 msgid "Justify"
 msgstr "Bündig"
 
-#: tableformatdialog.cpp:73
+#: kpimtextedit/tableformatdialog.cpp:73
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Tabellenausrichtung"
 
-#: texteditor/commonwidget/texteditfindbarbase.cpp:34
-#: texteditor/commonwidget/texteditfindbarbase.cpp:37
-#: texteditor/commonwidget/textgotolinewidget.cpp:39
-#: texteditor/commonwidget/textgotolinewidget.cpp:42
-#: texttospeech/texttospeechwidget.cpp:53
+#: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:34
+#: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:37
+#: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:39
+#: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:42
+#: kpimtextedit/texttospeech/texttospeechwidget.cpp:53
 #, kde-format
 msgid "Close"
 msgstr "Schließen"
 
-#: texteditor/commonwidget/texteditfindbarbase.cpp:140
+#: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:140
 #, kde-format
 msgid ""
 "End of message reached.\n"
@@ -906,151 +909,151 @@ msgstr ""
 "Ende der Nachricht erreicht.\n"
 "Ausdruck „%1“ wurde nicht gefunden."
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:25
+#: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:25
 #, kde-format
 msgid "Replace"
 msgstr "Ersetzen"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:26
+#: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:26
 #, kde-format
 msgid "Replace All"
 msgstr "Alle ersetzen"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:29
+#: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:29
 #, kde-format
 msgctxt "Replace text"
 msgid "Replace:"
 msgstr "Ersetzen:"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:65
+#: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:65
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "Zurück"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:66
+#: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:66
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Weiter"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:72
+#: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:72
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "&Suchen:"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:75
+#: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:75
 #, kde-format
 msgid "Text to search for"
 msgstr "Suchtext"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:81
+#: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:81
 #, kde-format
 msgid "Jump to next match"
 msgstr "Zur nächsten Übereinstimmung springen"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:86
+#: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:86
 #, kde-format
 msgid "Jump to previous match"
 msgstr "Zur vorherigen Übereinstimmung springen"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:92
+#: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:92
 #, kde-format
 msgid "Options"
 msgstr "Optionen"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:93
+#: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:93
 #, kde-format
 msgid "Modify search behavior"
 msgstr "Suchverhalten ändern"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:96
+#: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:96
 #, kde-format
 msgid "Case sensitive"
 msgstr "Groß-/Kleinschreibung beachten"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:99
+#: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:99
 #, kde-format
 msgid "Whole word"
 msgstr "Ganzes Wort"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:102
+#: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:102
 #, kde-format
 msgid "Regular Expression"
 msgstr "Regulärer Ausdruck"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:105
+#: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:105
 #, kde-format
 msgid "Respect Diacritic and Accents"
 msgstr "Diakritische und Akzentzeichen berücksichtigen"
 
-#: texteditor/commonwidget/textgotolinewidget.cpp:49
+#: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:49
 #, kde-format
 msgid "Go to Line:"
 msgstr "Gehe zu Zeile:"
 
-#: texteditor/commonwidget/textgotolinewidget.cpp:56
+#: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:56
 #, kde-format
 msgid "Go"
 msgstr "Gehe zu"
 
-#: texteditor/plaintexteditor/plaintexteditfindbar.cpp:119
-#: texteditor/richtexteditor/richtexteditfindbar.cpp:119
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditfindbar.cpp:119
+#: kpimtextedit/texteditor/richtexteditor/richtexteditfindbar.cpp:119
 #, kde-format
 msgid "%1 replacement made"
 msgid_plural "%1 replacements made"
 msgstr[0] "%1 Ersetzung vorgenommen"
 msgstr[1] "%1 Ersetzungen vorgenommen"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:146
-#: texteditor/richtexteditor/richtexteditor.cpp:203
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:146
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:203
 #, kde-format
 msgid "Replace..."
 msgstr "Ersetzen ..."
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:161
-#: texteditor/richtexteditor/richtexteditor.cpp:219
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:161
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:219
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Rechtschreibprüfung ..."
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:166
-#: texteditor/richtexteditor/richtexteditor.cpp:226
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:166
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:226
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Automatische Rechtschreibprüfung"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:172
-#: texteditor/richtexteditor/richtexteditor.cpp:232
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:172
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:232
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Sprache für Rechtschreibprüfung"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:201
-#: texteditor/richtexteditor/richtexteditor.cpp:266
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:201
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:266
 #, kde-format
 msgid "Speak Text"
 msgstr "Text vorlesen"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:348
-#: texteditor/richtexteditor/richtexteditor.cpp:450
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:348
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:450
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Kein Text für Rechtschreibprüfung."
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:353
-#: texteditor/richtexteditor/richtexteditor.cpp:468
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:353
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:468
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Kein Backend für Rechtschreibprüfung verfügbar."
 
-#: texteditor/richtexteditor/richtexteditor.cpp:258
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:258
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Anordnung mit Tabulatoren erlauben"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:460
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:460
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -1059,77 +1062,77 @@ msgstr ""
 "Kein Backend für Rechtschreibprüfung verfügbar. Möchten Sie die E-Mail "
 "trotzdem versenden?"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:462
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:462
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Senden"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:484
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:484
 #, kde-format
 msgid "Skip"
 msgstr "Überspringen"
 
-#: texttospeech/texttospeechactions.cpp:28
-#: texttospeech/texttospeechactions.cpp:31
+#: kpimtextedit/texttospeech/texttospeechactions.cpp:28
+#: kpimtextedit/texttospeech/texttospeechactions.cpp:31
 #, kde-format
 msgid "Stop"
 msgstr "Anhalten"
 
-#: texttospeech/texttospeechactions.cpp:72
+#: kpimtextedit/texttospeech/texttospeechactions.cpp:72
 #, kde-format
 msgid "Pause"
 msgstr "Pause"
 
-#: texttospeech/texttospeechactions.cpp:72
+#: kpimtextedit/texttospeech/texttospeechactions.cpp:72
 #, kde-format
 msgid "Play"
 msgstr "Wiedergabe"
 
-#: texttospeech/texttospeechconfigdialog.cpp:28
+#: kpimtextedit/texttospeech/texttospeechconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "Sprachausgabe einrichten"
 
-#: texttospeech/texttospeechconfigwidget.cpp:38
-#: texttospeech/texttospeechwidget.cpp:58
+#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:38
+#: kpimtextedit/texttospeech/texttospeechwidget.cpp:58
 #, kde-format
 msgid "Volume:"
 msgstr "Lautstärke:"
 
-#: texttospeech/texttospeechconfigwidget.cpp:44
+#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:44
 #, kde-format
 msgid "Rate:"
 msgstr "Frequenz:"
 
-#: texttospeech/texttospeechconfigwidget.cpp:52
+#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:52
 #, kde-format
 msgid "Pitch:"
 msgstr "Tonhöhe:"
 
-#: texttospeech/texttospeechconfigwidget.cpp:55
+#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:55
 #, kde-format
 msgid "Engine:"
 msgstr "Modul:"
 
-#: texttospeech/texttospeechconfigwidget.cpp:60
+#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:60
 #, kde-format
 msgid "Language:"
 msgstr "Sprache:"
 
-#: texttospeech/texttospeechconfigwidget.cpp:65
+#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:65
 #, kde-format
 msgid "Voice:"
 msgstr "Stimme:"
 
-#: texttospeech/texttospeechconfigwidget.cpp:137
+#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:137
 #, kde-format
 msgctxt "Default tts engine"
 msgid "Default"
 msgstr "Standard"
 
-#: texttospeech/texttospeechwidget.cpp:81
+#: kpimtextedit/texttospeech/texttospeechwidget.cpp:81
 #, kde-format
 msgid "Configure..."
 msgstr "Einrichten ..."
