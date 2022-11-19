@@ -1,6 +1,5 @@
 # SPDX-FileCopyrightText: none
 # SPDX-License-Identifier: BSD-3-Clause
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src ${CMAKE_CURRENT_BINARY_DIR}/../src)
 #####
 add_executable(inserthtmldialog_demo inserthtmldialog_demo.cpp)
 set(inserthtmldialog_demo_LIBS KF5PimTextEdit Qt::Widgets KF5::SyntaxHighlighting)

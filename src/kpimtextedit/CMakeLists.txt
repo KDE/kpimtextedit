@@ -1,5 +1,13 @@
 # SPDX-FileCopyrightText: none
 # SPDX-License-Identifier: BSD-3-Clause
+
+if(BUILD_TESTING)
+    find_package(KF5TextWidgets ${KF5_MIN_VERSION} CONFIG REQUIRED)
+    add_subdirectory(autotests)
+    add_subdirectory(tests)
+endif()
+
+
 add_library(KF5PimTextEdit)
 add_library(KF5::PimTextEdit ALIAS KF5PimTextEdit)
 

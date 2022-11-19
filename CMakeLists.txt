@@ -105,12 +105,6 @@ endif()
 ########### Targets ###########
 add_subdirectory(src)
 
-if(BUILD_TESTING)
-    find_package(KF5TextWidgets ${KF5_MIN_VERSION} CONFIG REQUIRED)
-    add_subdirectory(autotests)
-    add_subdirectory(tests)
-endif()
-
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5PimTextEdit")
 
