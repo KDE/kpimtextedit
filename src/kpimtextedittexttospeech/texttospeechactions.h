@@ -7,7 +7,7 @@
 #pragma once
 
 #include "kpimtextedittexttospeech_export.h"
-#include "texttospeechwidget.h"
+#include <KPIMTextEditTextToSpeech/TextToSpeechWidget>
 #include <QObject>
 class QAction;
 namespace KPIMTextEditTextToSpeech

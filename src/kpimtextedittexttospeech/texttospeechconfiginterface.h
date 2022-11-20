@@ -5,8 +5,8 @@
 */
 
 #pragma once
-#include "abstracttexttospeechconfiginterface.h"
 #include "kpimtextedittexttospeech_export.h"
+#include <KPIMTextEditTextToSpeech/AbstractTextToSpeechConfigInterface>
 
 class QTextToSpeech;
 namespace KPIMTextEditTextToSpeech

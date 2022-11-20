@@ -6,9 +6,9 @@
 
 #pragma once
 
-#include "abstracttexttospeechinterface.h"
 #include "kpimtextedittexttospeech_export.h"
-#include "texttospeechwidget.h"
+#include <KPIMTextEditTextToSpeech/AbstractTextToSpeechInterface>
+#include <KPIMTextEditTextToSpeech/TextToSpeechWidget>
 #include <QObject>
 namespace KPIMTextEditTextToSpeech
 {
