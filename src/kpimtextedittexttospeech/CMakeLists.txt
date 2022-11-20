@@ -88,6 +88,7 @@ if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
         TextToSpeechInterface
         TextToSpeechWidget
         AbstractTextToSpeechInterface
+        AbstractTextToSpeechConfigInterface
         REQUIRED_HEADERS KPimTextEdit_texttospeechs_HEADERS
         PREFIX KPIMTextEditTextToSpeech
     )
