@@ -19,7 +19,7 @@
 #include <QIcon>
 
 #ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
-#include "texttospeech/texttospeech.h"
+#include <KPIMTextEditTextToSpeech/TextToSpeech>
 #endif
 #include <Sonnet/Dialog>
 #include <sonnet/backgroundchecker.h>
@@ -196,7 +196,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
         }
         if (d->supportFeatures & TextToSpeech) {
 #ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
-            if (KPIMTextEdit::TextToSpeech::self()->isReady()) {
+            if (KPIMTextEditTextToSpeech::TextToSpeech::self()->isReady()) {
                 if (!emptyDocument) {
                     QAction *speakAction = popup->addAction(i18n("Speak Text"));
                     speakAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));

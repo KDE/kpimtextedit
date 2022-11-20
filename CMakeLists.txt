@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: none
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
-set(PIM_VERSION "5.22.40")
+set(PIM_VERSION "5.22.41")
 
 project(KPimTextEdit VERSION ${PIM_VERSION})
 
@@ -38,12 +38,6 @@ option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, 
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
 set(KPIMTEXTEDIT_LIB_VERSION ${PIM_VERSION})
-
-ecm_setup_version(PROJECT VARIABLE_PREFIX KPIMTEXTEDIT
-    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfigVersion.cmake"
-    SOVERSION 5
-)
 
 set(QT_REQUIRED_VERSION "5.15.2")
 if (QT_MAJOR_VERSION STREQUAL "6")
@@ -104,35 +98,6 @@ endif()
 
 ########### Targets ###########
 add_subdirectory(src)
-
-########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5PimTextEdit")
-
-configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/KF5PimTextEditConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfig.cmake"
-    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
-    )
-
-install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfigVersion.cmake"
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    COMPONENT Devel
-    )
-
-install(EXPORT KF5PimTextEditTargets
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    FILE KF5PimTextEditTargets.cmake
-    NAMESPACE KF5::
-    )
-
-install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit
-    COMPONENT Devel
-    )
-
 
 if (BUILD_QCH)
     ecm_install_qch_export(

@@ -1,6 +1,16 @@
 # SPDX-FileCopyrightText: none
 # SPDX-License-Identifier: BSD-3-Clause
 
+########### CMake Config Files ###########
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5PimTextEdit")
+
+ecm_setup_version(PROJECT VARIABLE_PREFIX KPIMTEXTEDIT
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfigVersion.cmake"
+    SOVERSION 5
+)
+
+
 if(BUILD_TESTING)
     find_package(KF5TextWidgets ${KF5_MIN_VERSION} CONFIG REQUIRED)
     add_subdirectory(autotests)
@@ -61,30 +71,6 @@ target_sources(KF5PimTextEdit PRIVATE
     composer-ng/richtextcomposeremailquotehighlighter.h
     composer-ng/richtextcomposerwidget.h
     )
-if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
-    target_sources(KF5PimTextEdit PRIVATE
-        texttospeech/texttospeech.cpp
-        texttospeech/texttospeechwidget.cpp
-        texttospeech/texttospeechconfigwidget.cpp
-        texttospeech/texttospeechinterface.cpp
-        texttospeech/abstracttexttospeechinterface.cpp
-        texttospeech/abstracttexttospeechconfiginterface.cpp
-        texttospeech/texttospeechconfiginterface.cpp
-        texttospeech/texttospeechconfigdialog.cpp
-        texttospeech/texttospeechlanguagecombobox.cpp
-        texttospeech/texttospeechactions.cpp
-        texttospeech/texttospeech.h
-        texttospeech/texttospeechwidget.h
-        texttospeech/texttospeechconfigwidget.h
-        texttospeech/texttospeechinterface.h
-        texttospeech/abstracttexttospeechinterface.h
-        texttospeech/abstracttexttospeechconfiginterface.h
-        texttospeech/texttospeechconfiginterface.h
-        texttospeech/texttospeechconfigdialog.h
-        texttospeech/texttospeechlanguagecombobox.h
-        texttospeech/texttospeechactions.h
-    )
-endif()
 
 target_sources(KF5PimTextEdit PRIVATE
     grantleebuilder/plaintextmarkupbuilder.cpp
@@ -166,6 +152,8 @@ target_include_directories(KF5PimTextEdit PUBLIC "$<BUILD_INTERFACE:${KPimTextEd
 
 
 target_link_libraries(KF5PimTextEdit
+    PUBLIC
+    KF5::PimTextEditTextToSpeech
     PRIVATE
     KF5::SonnetUi
     KF5::SonnetCore
@@ -176,12 +164,7 @@ target_link_libraries(KF5PimTextEdit
     KF5::I18n
     KF5::SyntaxHighlighting
     )
-if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
-    target_link_libraries(KF5PimTextEdit
-        PRIVATE
-        Qt::TextToSpeech
-        )
-endif()
+
 set_target_properties(KF5PimTextEdit PROPERTIES
     VERSION ${KPIMTEXTEDIT_VERSION}
     SOVERSION ${KPIMTEXTEDIT_SOVERSION}
@@ -253,19 +236,7 @@ ecm_generate_headers(KPimTextEdit_CamelCasetexteditor_commonwidget_HEADERS
     )
 
 
-if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
-    ecm_generate_headers(KPimTextEdit_CamelCasetexttospeechs_HEADERS
-        HEADER_NAMES
-        TextToSpeech
-        TextToSpeechActions
-        TextToSpeechInterface
-        TextToSpeechWidget
-        AbstractTextToSpeechInterface
-        REQUIRED_HEADERS KPimTextEdit_texttospeechs_HEADERS
-        PREFIX KPIMTextEdit
-        RELATIVE texttospeech
-    )
-endif()
+
 ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
     HEADER_NAMES
     RichTextComposer
@@ -330,10 +301,6 @@ if (BUILD_TESTING)
     add_subdirectory(texteditor/commonwidget/autotests)
     add_subdirectory(texteditor/plaintexteditor/tests)
     add_subdirectory(texteditor/richtexteditor/tests)
-    if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
-        add_subdirectory(texttospeech/autotests)
-        add_subdirectory(texttospeech/tests)
-    endif()
     add_subdirectory(composer-ng/autotests)
     add_subdirectory(composer-ng/tests)
     add_subdirectory(grantleebuilder/autotests)
@@ -378,3 +345,29 @@ if (BUILD_QCH)
         COMPONENT Devel
     )
 endif()
+
+
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/KF5PimTextEditConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfig.cmake"
+    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
+    )
+
+install(FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfigVersion.cmake"
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    COMPONENT Devel
+    )
+
+install(EXPORT KF5PimTextEditTargets
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    FILE KF5PimTextEditTargets.cmake
+    NAMESPACE KF5::
+    )
+
+install(FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit
+    COMPONENT Devel
+    )

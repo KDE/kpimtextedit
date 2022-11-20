@@ -26,7 +26,7 @@
 #include <sonnet/spellcheckdecorator.h>
 #include <sonnet/speller.h>
 #ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
-#include <texttospeech/texttospeech.h>
+#include <KPIMTextEditTextToSpeech/TextToSpeech>
 #endif
 
 #include <KColorScheme>
@@ -261,7 +261,7 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
             connect(allowTabAction, &QAction::triggered, this, &RichTextEditor::slotAllowTab);
         }
 #ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
-        if (KPIMTextEdit::TextToSpeech::self()->isReady()) {
+        if (KPIMTextEditTextToSpeech::TextToSpeech::self()->isReady()) {
             if (!emptyDocument) {
                 QAction *speakAction = popup->addAction(i18n("Speak Text"));
                 speakAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));

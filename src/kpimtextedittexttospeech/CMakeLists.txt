@@ -1,11 +1,53 @@
 # SPDX-FileCopyrightText: none
 # SPDX-License-Identifier: BSD-3-Clause
+########### CMake Config Files ###########
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5PimTextEditTextToSpeech")
+
+ecm_setup_version(PROJECT VARIABLE_PREFIX KPIMTEXTEDITTEXTTOSPEECH
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kpimtextedittexttospeech_version.h"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditTextToSpeechConfigVersion.cmake"
+    SOVERSION 5
+)
+
 add_library(KF5PimTextEditTextToSpeech)
 add_library(KF5::PimTextEditTextToSpeech ALIAS KF5PimTextEditTextToSpeech)
 
+if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
+    target_sources(KF5PimTextEditTextToSpeech PRIVATE
+        texttospeech.cpp
+        texttospeechwidget.cpp
+        texttospeechconfigwidget.cpp
+        texttospeechinterface.cpp
+        abstracttexttospeechinterface.cpp
+        abstracttexttospeechconfiginterface.cpp
+        texttospeechconfiginterface.cpp
+        texttospeechconfigdialog.cpp
+        texttospeechlanguagecombobox.cpp
+        texttospeechactions.cpp
+        texttospeech.h
+        texttospeechwidget.h
+        texttospeechconfigwidget.h
+        texttospeechinterface.h
+        abstracttexttospeechinterface.h
+        abstracttexttospeechconfiginterface.h
+        texttospeechconfiginterface.h
+        texttospeechconfigdialog.h
+        texttospeechlanguagecombobox.h
+        texttospeechactions.h
+    )
+endif()
 
-target_sources(KF5PimTextEditTextToSpeech PRIVATE
-)
+if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
+    target_link_libraries(KF5PimTextEditTextToSpeech
+        PRIVATE
+        KF5::WidgetsAddons
+        KF5::KIOWidgets
+        KF5::ConfigWidgets
+        KF5::XmlGui
+        KF5::I18n
+        Qt::TextToSpeech
+        )
+endif()
 
 ecm_qt_declare_logging_category(KF5PimTextEditTextToSpeech HEADER kpimtextedittexttospeech_debug.h
     IDENTIFIER KPIMTEXTEDITTEXTTOSPEECH_LOG CATEGORY_NAME org.kde.pim.kpimtextedit.texttospeech
@@ -25,6 +67,12 @@ target_link_libraries(KF5PimTextEditTextToSpeech
     KF5::I18n
     )
 
+set_target_properties(KF5PimTextEditTextToSpeech PROPERTIES
+    VERSION ${KPIMTEXTEDITTEXTTOSPEECH_VERSION}
+    SOVERSION ${KPIMTEXTEDITTEXTTOSPEECH_VERSION}
+    EXPORT_NAME PimTextEditTextToSpeech
+    )
+
 install(TARGETS KF5PimTextEditTextToSpeech EXPORT KF5PimTextEditTextToSpeechTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 if(BUILD_TESTING)
@@ -32,31 +80,58 @@ if(BUILD_TESTING)
     add_subdirectory(tests)
 endif()
 
-#install(FILES
-#    ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedittexttospeech_export.h
-#    ${CMAKE_CURRENT_BINARY_DIR}/../../kpimtextedit-texttospeech.h
-#    ${kpimtextedit_HEADERS}
-#    ${KPimTextEdit_richtexteditor_HEADERS}
-#    ${KPimTextEdit_texteditor_commonwidget_HEADERS}
-#    ${KPimTextEdit_plaintexteditor_HEADERS}
-#    ${KPimTextEdit_composerng_HEADERS}
-#    ${KPimTextEdit_emoticon_HEADERS}
-#    ${KPimTextEdit_grantlee_HEADERS}
-#    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEditTextToSpeech/kpimtextedittexttospeech
-#    COMPONENT Devel
-#    )
+if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
+    ecm_generate_headers(KPimTextEdit_CamelCasetexttospeechs_HEADERS
+        HEADER_NAMES
+        TextToSpeech
+        TextToSpeechActions
+        TextToSpeechInterface
+        TextToSpeechWidget
+        AbstractTextToSpeechInterface
+        REQUIRED_HEADERS KPimTextEdit_texttospeechs_HEADERS
+        PREFIX KPIMTextEditTextToSpeech
+    )
+endif()
 
-#install(FILES
-#    ${KPimTextEdit_CamelCase_HEADERS}
-#    ${KPimTextEdit_CamelCasetextrichtexteditor_HEADERS}
-#    ${KPimTextEdit_CamelCaseplaintexteditor_HEADERS}
-#    ${KPimTextEdit_CamelCasetexteditor_commonwidget_HEADERS}
-#    ${KPimTextEdit_Camelcasecomposerng_HEADERS}
-#    ${KPimTextEdit_CamelCaseemoticon_HEADERS}
-#    ${KPimTextEdit_CamelCasegrantlee_HEADERS}
-#    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit/KPIMTextEdit/
-#    COMPONENT Devel
-#    )
+if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
+    install(FILES
+        ${KPimTextEdit_texttospeechs_HEADERS}
+        ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedittexttospeech_export.h
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEditTextToSpeech/kpimtextedittexttospeech
+        COMPONENT Devel
+        )
+    install(FILES
+        ${KPimTextEdit_CamelCasetexttospeechs_HEADERS}
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEditTextToSpeech/KPIMTextEditTextToSpeech/
+        COMPONENT Devel
+        )
+endif()
 
-#ecm_generate_pri_file(BASE_NAME KPIMTextEdit LIB_NAME KF5PimTextEdit DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit/)
-#install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/KF5PimTextEditTextToSpeechConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditTextToSpeechConfig.cmake"
+    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
+    )
+
+install(FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditTextToSpeechConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditTextToSpeechConfigVersion.cmake"
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    COMPONENT Devel
+    )
+
+install(EXPORT KF5PimTextEditTextToSpeechTargets
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    FILE KF5PimTextEditTextToSpeechTargets.cmake
+    NAMESPACE KF5::
+    )
+
+install(FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedittexttospeech_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEditTextToSpeech
+    COMPONENT Devel
+    )
+
+
+ecm_generate_pri_file(BASE_NAME KPIMTextEditTextToSpeech LIB_NAME KPIMTextEditTextToSpeech DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit/)
+install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
