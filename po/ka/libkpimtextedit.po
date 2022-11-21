@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-19 00:46+0000\n"
+"POT-Creation-Date: 2022-11-21 00:47+0000\n"
 "PO-Revision-Date: 2022-10-10 05:08+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -891,7 +891,7 @@ msgstr ""
 #: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:37
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:39
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:42
-#: kpimtextedit/texttospeech/texttospeechwidget.cpp:53
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:53
 #, kde-format
 msgid "Close"
 msgstr "დახურვა"
@@ -1065,66 +1065,66 @@ msgstr "გაგზავნა"
 msgid "Skip"
 msgstr "გამოტოვება"
 
-#: kpimtextedit/texttospeech/texttospeechactions.cpp:28
-#: kpimtextedit/texttospeech/texttospeechactions.cpp:31
+#: kpimtextedittexttospeech/texttospeechactions.cpp:28
+#: kpimtextedittexttospeech/texttospeechactions.cpp:31
 #, kde-format
 msgid "Stop"
 msgstr "შეჩერება"
 
-#: kpimtextedit/texttospeech/texttospeechactions.cpp:72
+#: kpimtextedittexttospeech/texttospeechactions.cpp:72
 #, kde-format
 msgid "Pause"
 msgstr "პაუზა"
 
-#: kpimtextedit/texttospeech/texttospeechactions.cpp:72
+#: kpimtextedittexttospeech/texttospeechactions.cpp:72
 #, kde-format
 msgid "Play"
 msgstr "დაკვრა"
 
-#: kpimtextedit/texttospeech/texttospeechconfigdialog.cpp:28
+#: kpimtextedittexttospeech/texttospeechconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr ""
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:38
-#: kpimtextedit/texttospeech/texttospeechwidget.cpp:58
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:38
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:58
 #, kde-format
 msgid "Volume:"
 msgstr "ტომი:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:44
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:44
 #, kde-format
 msgid "Rate:"
 msgstr "შეაფასეთ:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:52
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:52
 #, kde-format
 msgid "Pitch:"
 msgstr ""
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:55
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:55
 #, kde-format
 msgid "Engine:"
 msgstr "ძრავი:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:60
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:60
 #, kde-format
 msgid "Language:"
 msgstr "ენა:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:65
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:65
 #, kde-format
 msgid "Voice:"
 msgstr ""
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:137
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:137
 #, kde-format
 msgctxt "Default tts engine"
 msgid "Default"
 msgstr ""
 
-#: kpimtextedit/texttospeech/texttospeechwidget.cpp:81
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:81
 #, kde-format
 msgid "Configure..."
 msgstr "მორგება..."

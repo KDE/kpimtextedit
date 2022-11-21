@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-19 00:46+0000\n"
+"POT-Creation-Date: 2022-11-21 00:47+0000\n"
 "PO-Revision-Date: 2020-06-05 19:58+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -895,7 +895,7 @@ msgstr "Tabeli joondus:"
 #: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:37
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:39
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:42
-#: kpimtextedit/texttospeech/texttospeechwidget.cpp:53
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:53
 #, kde-format
 msgid "Close"
 msgstr "Sulge"
@@ -1072,66 +1072,66 @@ msgstr ""
 msgid "Skip"
 msgstr "Jäta vahele"
 
-#: kpimtextedit/texttospeech/texttospeechactions.cpp:28
-#: kpimtextedit/texttospeech/texttospeechactions.cpp:31
+#: kpimtextedittexttospeech/texttospeechactions.cpp:28
+#: kpimtextedittexttospeech/texttospeechactions.cpp:31
 #, kde-format
 msgid "Stop"
 msgstr "Peata"
 
-#: kpimtextedit/texttospeech/texttospeechactions.cpp:72
+#: kpimtextedittexttospeech/texttospeechactions.cpp:72
 #, kde-format
 msgid "Pause"
 msgstr "Paus"
 
-#: kpimtextedit/texttospeech/texttospeechactions.cpp:72
+#: kpimtextedittexttospeech/texttospeechactions.cpp:72
 #, kde-format
 msgid "Play"
 msgstr "Esita"
 
-#: kpimtextedit/texttospeech/texttospeechconfigdialog.cpp:28
+#: kpimtextedittexttospeech/texttospeechconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "Teksti ettelugemise seadistamine"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:38
-#: kpimtextedit/texttospeech/texttospeechwidget.cpp:58
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:38
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:58
 #, kde-format
 msgid "Volume:"
 msgstr "Helitugevus:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:44
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:44
 #, kde-format
 msgid "Rate:"
 msgstr "Kiirus:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:52
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:52
 #, kde-format
 msgid "Pitch:"
 msgstr "Helikõrgus:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:55
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:55
 #, kde-format
 msgid "Engine:"
 msgstr "Mootor:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:60
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:60
 #, kde-format
 msgid "Language:"
 msgstr "Keel:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:65
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:65
 #, kde-format
 msgid "Voice:"
 msgstr "Hääl:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:137
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:137
 #, kde-format
 msgctxt "Default tts engine"
 msgid "Default"
 msgstr "Vaikimisi"
 
-#: kpimtextedit/texttospeech/texttospeechwidget.cpp:81
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:81
 #, kde-format
 msgid "Configure..."
 msgstr "Seadista..."
