@@ -158,4 +158,11 @@ if (BUILD_QCH)
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
     )
+    ecm_install_qch_export(
+        TARGETS KF5PimTextEditTextToSpeech_QCH
+        FILE KF5PimTextEditTextToSpeechQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5PimTextEditQchTargets.cmake\")")
 endif()

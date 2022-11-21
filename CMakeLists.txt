@@ -99,16 +99,6 @@ endif()
 ########### Targets ###########
 add_subdirectory(src)
 
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF5PimTextEdit_QCH
-        FILE KF5PimTextEditQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5PimTextEditQchTargets.cmake\")")
-endif()
-
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 ki18n_install(po)
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
