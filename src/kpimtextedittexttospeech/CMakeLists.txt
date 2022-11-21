@@ -75,9 +75,11 @@ set_target_properties(KF5PimTextEditTextToSpeech PROPERTIES
 
 install(TARGETS KF5PimTextEditTextToSpeech EXPORT KF5PimTextEditTextToSpeechTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
-if(BUILD_TESTING)
-    add_subdirectory(autotests)
-    add_subdirectory(tests)
+if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
+    if(BUILD_TESTING)
+        add_subdirectory(autotests)
+        add_subdirectory(tests)
+    endif()
 endif()
 
 if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
