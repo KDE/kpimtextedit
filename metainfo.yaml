@@ -20,5 +20,5 @@ public_lib: true
 group: kdepim
 
 public_source_dirs:
-  - kpimtextedit
-  - kpimtextedittexttospeech
+  - src/kpimtextedit
+  - src/kpimtextedittexttospeech
