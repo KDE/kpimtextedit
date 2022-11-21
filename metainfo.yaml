@@ -4,13 +4,21 @@ tier: 3
 type: functional
 platforms:
     - name: All
+irc: akonadi
 portingAid: false
 deprecated: false
 release: false
 libraries:
  - qmake: KPIMTextEdit
    cmake: "KF5::PIMTextEdit"
+ - qmake: KPIMTextEditTextToSpeech
+   cmake: "KF5::PimTextEditTextToSpeech"
+
 cmakename: KF5PIMTextEdit 
 
 public_lib: true
 group: kdepim
+
+public_source_dirs:
+  - kpimtextedit
+  - kpimtextedittexttospeech
