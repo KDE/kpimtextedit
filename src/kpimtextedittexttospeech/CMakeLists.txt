@@ -136,3 +136,26 @@ install(FILES
 
 ecm_generate_pri_file(BASE_NAME KPIMTextEditTextToSpeech LIB_NAME KPIMTextEditTextToSpeech DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit/)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
+
+if (BUILD_QCH)
+    ecm_add_qch(
+        KF5PimTextEditTextToSpeech_QCH
+        NAME KPimTextEditTextToSpeech
+        BASE_NAME KF5PimTextEditTextToSpeech
+        VERSION ${PIM_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+            ${KPimTextEdit_texttospeechs_HEADERS}
+        LINK_QCHS
+            Qt5Core_QCH
+            Qt5Gui_QCH
+            Qt5Widgets_QCH
+        INCLUDE_DIRS
+            ${CMAKE_CURRENT_BINARY_DIR}
+        BLANK_MACROS
+            KPIMTEXTEDIT_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()
