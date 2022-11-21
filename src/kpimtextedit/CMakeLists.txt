@@ -253,18 +253,6 @@ ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
 
 
 ########### install files ###############
-if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
-    install(FILES
-        ${KPimTextEdit_texttospeechs_HEADERS}
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit/kpimtextedit
-        COMPONENT Devel
-        )
-    install(FILES
-        ${KPimTextEdit_CamelCasetexttospeechs_HEADERS}
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEdit/KPIMTextEdit/
-        COMPONENT Devel
-        )
-endif()
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_export.h
@@ -325,7 +313,6 @@ if (BUILD_QCH)
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
             ${kpimtextedit_HEADERS}
-            ${KPimTextEdit_texttospeechs_HEADERS}
             ${KPimTextEdit_richtexteditor_HEADERS}
             ${KPimTextEdit_texteditor_commonwidget_HEADERS}
             ${KPimTextEdit_plaintexteditor_HEADERS}
