@@ -152,8 +152,6 @@ target_include_directories(KF5PimTextEdit PUBLIC "$<BUILD_INTERFACE:${KPimTextEd
 
 
 target_link_libraries(KF5PimTextEdit
-    PUBLIC
-    KF5::PimTextEditTextToSpeech
     PRIVATE
     KF5::SonnetUi
     KF5::SonnetCore
@@ -164,6 +162,13 @@ target_link_libraries(KF5PimTextEdit
     KF5::I18n
     KF5::SyntaxHighlighting
     )
+
+if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
+    target_link_libraries(KF5PimTextEdit
+        PUBLIC
+        KF5::PimTextEditTextToSpeech
+    )
+endif()
 
 set_target_properties(KF5PimTextEdit PROPERTIES
     VERSION ${KPIMTEXTEDIT_VERSION}
