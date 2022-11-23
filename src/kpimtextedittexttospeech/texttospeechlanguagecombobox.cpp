@@ -36,4 +36,5 @@ void TextToSpeechLanguageComboBox::updateAvailableLocales(const QVector<QLocale>
             setCurrentIndex(count() - 1);
         }
     }
+    setSizeAdjustPolicy(QComboBox::AdjustToContents);
 }

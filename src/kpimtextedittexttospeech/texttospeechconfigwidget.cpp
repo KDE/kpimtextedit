@@ -139,6 +139,7 @@ void TextToSpeechConfigWidget::updateAvailableEngine()
     for (const QString &engine : lst) {
         mAvailableEngine->addItem(engine, engine);
     }
+    mAvailableEngine->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     updateEngine();
 }
 
@@ -149,6 +150,7 @@ void TextToSpeechConfigWidget::updateAvailableVoices()
     for (const QString &voice : lst) {
         mVoice->addItem(voice, voice);
     }
+    mVoice->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     updateVoice();
 }
 
