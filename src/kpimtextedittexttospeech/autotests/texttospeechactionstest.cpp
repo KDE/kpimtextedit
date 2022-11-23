@@ -11,7 +11,7 @@
 #include <QTest>
 
 Q_DECLARE_METATYPE(KPIMTextEditTextToSpeech::TextToSpeechWidget::State)
-
+QTEST_MAIN(TextToSpeechActionsTest)
 TextToSpeechActionsTest::TextToSpeechActionsTest(QObject *parent)
     : QObject(parent)
 {
@@ -96,5 +96,3 @@ void TextToSpeechActionsTest::shouldEmitStateChanged()
     QCOMPARE(spy.count(), 4);
     QCOMPARE(spy.at(3).at(0).value<KPIMTextEditTextToSpeech::TextToSpeechWidget::State>(), KPIMTextEditTextToSpeech::TextToSpeechWidget::Stop);
 }
-
-QTEST_MAIN(TextToSpeechActionsTest)

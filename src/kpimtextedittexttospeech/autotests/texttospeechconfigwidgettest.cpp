@@ -13,6 +13,8 @@
 #include <QSlider>
 #include <QTest>
 
+QTEST_MAIN(TextToSpeechConfigWidgetTest)
+
 TextToSpeechConfigWidgetTest::TextToSpeechConfigWidgetTest(QObject *parent)
     : QObject(parent)
 {
@@ -80,5 +82,3 @@ void TextToSpeechConfigWidgetTest::shouldEmitConfigChangedWhenChangeConfigValue(
     language->setCurrentIndex(3);
     QCOMPARE(spy.count(), 4);
 }
-
-QTEST_MAIN(TextToSpeechConfigWidgetTest)
