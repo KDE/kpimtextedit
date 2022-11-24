@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-19 00:46+0000\n"
+"POT-Creation-Date: 2022-11-21 00:47+0000\n"
 "PO-Revision-Date: 2022-06-19 13:43+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -897,7 +897,7 @@ msgstr "Tabelljustering:"
 #: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:37
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:39
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:42
-#: kpimtextedit/texttospeech/texttospeechwidget.cpp:53
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:53
 #, kde-format
 msgid "Close"
 msgstr "Lukk"
@@ -1075,66 +1075,66 @@ msgstr "Send"
 msgid "Skip"
 msgstr "Hopp over"
 
-#: kpimtextedit/texttospeech/texttospeechactions.cpp:28
-#: kpimtextedit/texttospeech/texttospeechactions.cpp:31
+#: kpimtextedittexttospeech/texttospeechactions.cpp:28
+#: kpimtextedittexttospeech/texttospeechactions.cpp:31
 #, kde-format
 msgid "Stop"
 msgstr "Stopp"
 
-#: kpimtextedit/texttospeech/texttospeechactions.cpp:72
+#: kpimtextedittexttospeech/texttospeechactions.cpp:72
 #, kde-format
 msgid "Pause"
 msgstr "Pause"
 
-#: kpimtextedit/texttospeech/texttospeechactions.cpp:72
+#: kpimtextedittexttospeech/texttospeechactions.cpp:72
 #, kde-format
 msgid "Play"
 msgstr "Spel av"
 
-#: kpimtextedit/texttospeech/texttospeechconfigdialog.cpp:28
+#: kpimtextedittexttospeech/texttospeechconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "Set opp tekst-til-tale"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:38
-#: kpimtextedit/texttospeech/texttospeechwidget.cpp:58
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:38
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:58
 #, kde-format
 msgid "Volume:"
 msgstr "Lydstyrke:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:44
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:44
 #, kde-format
 msgid "Rate:"
 msgstr "Frekvens:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:52
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:52
 #, kde-format
 msgid "Pitch:"
 msgstr "Tonehøgd:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:55
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:55
 #, kde-format
 msgid "Engine:"
 msgstr "Motor:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:60
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:60
 #, kde-format
 msgid "Language:"
 msgstr "Språk:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:65
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:65
 #, kde-format
 msgid "Voice:"
 msgstr "Stemme:"
 
-#: kpimtextedit/texttospeech/texttospeechconfigwidget.cpp:137
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:137
 #, kde-format
 msgctxt "Default tts engine"
 msgid "Default"
 msgstr "Standard"
 
-#: kpimtextedit/texttospeech/texttospeechwidget.cpp:81
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:81
 #, kde-format
 msgid "Configure..."
 msgstr "Set opp …"
