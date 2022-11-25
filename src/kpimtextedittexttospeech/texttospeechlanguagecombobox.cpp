@@ -10,7 +10,6 @@ using namespace KPIMTextEditTextToSpeech;
 TextToSpeechLanguageComboBox::TextToSpeechLanguageComboBox(QWidget *parent)
     : QComboBox(parent)
 {
-    setSizeAdjustPolicy(QComboBox::AdjustToContents);
 }
 
 TextToSpeechLanguageComboBox::~TextToSpeechLanguageComboBox() = default;
