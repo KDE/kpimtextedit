@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "kpimtextedittexttospeech_private_export.h"
+#include "kpimtextedittexttospeech_export.h"
 #include <QWidget>
 class QSlider;
 class QComboBox;
@@ -13,7 +13,7 @@ namespace KPIMTextEditTextToSpeech
 {
 class TextToSpeechLanguageComboBox;
 class AbstractTextToSpeechConfigInterface;
-class KPIMTEXTEDITTEXTTOSPEECH_TESTS_EXPORT TextToSpeechConfigWidget : public QWidget
+class KPIMTEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigWidget : public QWidget
 {
     Q_OBJECT
 public:

@@ -8,11 +8,13 @@
 
 #include "kpimtextedittexttospeech_export.h"
 #include <QObject>
+#include <memory>
 
 class QTextToSpeech;
 
 namespace KPIMTextEditTextToSpeech
 {
+class TextToSpeechPrivate;
 /**
  * @brief The TextToSpeech class
  * @author Laurent Montel <montel@kde.org>
@@ -59,9 +61,7 @@ Q_SIGNALS:
 private:
     void slotStateChanged();
     explicit TextToSpeech(QObject *parent = nullptr);
-    friend class TextToSpeechPrivate;
 
-    QString mDefaultEngine;
-    QTextToSpeech *mTextToSpeech = nullptr;
+    std::unique_ptr<TextToSpeechPrivate> const d;
 };
 }

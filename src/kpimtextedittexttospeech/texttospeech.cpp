@@ -12,9 +12,17 @@
 #include <QTextToSpeech>
 #include <QVector>
 
+class KPIMTextEditTextToSpeech::TextToSpeechPrivate
+{
+public:
+    QString mDefaultEngine;
+    QTextToSpeech *mTextToSpeech = nullptr;
+};
+
 using namespace KPIMTextEditTextToSpeech;
 TextToSpeech::TextToSpeech(QObject *parent)
     : QObject(parent)
+    , d(new KPIMTextEditTextToSpeech::TextToSpeechPrivate)
 {
     reloadSettings();
 }
@@ -26,23 +34,23 @@ void TextToSpeech::reloadSettings()
     KConfig config(QStringLiteral("texttospeechrc"));
     KConfigGroup grp = config.group("Settings");
     const QString engineName = grp.readEntry("engine");
-    if (mDefaultEngine != engineName) {
-        if (mTextToSpeech) {
-            disconnect(mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
-            delete mTextToSpeech;
-            mTextToSpeech = nullptr;
+    if (d->mDefaultEngine != engineName) {
+        if (d->mTextToSpeech) {
+            disconnect(d->mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
+            delete d->mTextToSpeech;
+            d->mTextToSpeech = nullptr;
         }
     }
-    if (!mTextToSpeech) {
-        mTextToSpeech = new QTextToSpeech(engineName, this);
-        connect(mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
+    if (!d->mTextToSpeech) {
+        d->mTextToSpeech = new QTextToSpeech(engineName, this);
+        connect(d->mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
     }
-    mDefaultEngine = engineName;
-    mTextToSpeech->setRate(grp.readEntry("rate", 0.0));
-    mTextToSpeech->setPitch(grp.readEntry("pitch", 0.0));
-    mTextToSpeech->setVolume(grp.readEntry("volume", 0));
-    mTextToSpeech->setLocale(QLocale(grp.readEntry("localeName")));
-    // It doesn't have api for it mTextToSpeech->setVoice(grp.readEntry("voice"));
+    d->mDefaultEngine = engineName;
+    d->mTextToSpeech->setRate(grp.readEntry("rate", 0.0));
+    d->mTextToSpeech->setPitch(grp.readEntry("pitch", 0.0));
+    d->mTextToSpeech->setVolume(grp.readEntry("volume", 0));
+    d->mTextToSpeech->setLocale(QLocale(grp.readEntry("localeName")));
+    // It doesn't have api for it d->mTextToSpeech->setVoice(grp.readEntry("voice"));
 }
 
 TextToSpeech *TextToSpeech::self()
@@ -54,7 +62,7 @@ TextToSpeech *TextToSpeech::self()
 void TextToSpeech::slotStateChanged()
 {
     TextToSpeech::State state;
-    switch (mTextToSpeech->state()) {
+    switch (d->mTextToSpeech->state()) {
     case QTextToSpeech::Ready:
         state = TextToSpeech::Ready;
         break;
@@ -79,61 +87,61 @@ void TextToSpeech::slotStateChanged()
 bool TextToSpeech::isReady() const
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    return mTextToSpeech->state() != QTextToSpeech::BackendError;
+    return d->mTextToSpeech->state() != QTextToSpeech::BackendError;
 #else
-    return mTextToSpeech->state() != QTextToSpeech::Error;
+    return d->mTextToSpeech->state() != QTextToSpeech::Error;
 #endif
 }
 
 void TextToSpeech::say(const QString &text)
 {
-    mTextToSpeech->say(text);
+    d->mTextToSpeech->say(text);
 }
 
 void TextToSpeech::stop()
 {
-    mTextToSpeech->stop();
+    d->mTextToSpeech->stop();
 }
 
 void TextToSpeech::pause()
 {
-    mTextToSpeech->pause();
+    d->mTextToSpeech->pause();
 }
 
 void TextToSpeech::resume()
 {
-    mTextToSpeech->resume();
+    d->mTextToSpeech->resume();
 }
 
 void TextToSpeech::setRate(double rate)
 {
-    mTextToSpeech->setRate(rate);
+    d->mTextToSpeech->setRate(rate);
 }
 
 void TextToSpeech::setPitch(double pitch)
 {
-    mTextToSpeech->setPitch(pitch);
+    d->mTextToSpeech->setPitch(pitch);
 }
 
 void TextToSpeech::setVolume(double volume)
 {
-    mTextToSpeech->setVolume(volume);
+    d->mTextToSpeech->setVolume(volume);
 }
 
 double TextToSpeech::volume() const
 {
-    return mTextToSpeech->volume();
+    return d->mTextToSpeech->volume();
 }
 
 QVector<QLocale> TextToSpeech::availableLocales() const
 {
-    return mTextToSpeech->availableLocales();
+    return d->mTextToSpeech->availableLocales();
 }
 
 QStringList TextToSpeech::availableVoices() const
 {
     QStringList lst;
-    const QVector<QVoice> voices = mTextToSpeech->availableVoices();
+    const QVector<QVoice> voices = d->mTextToSpeech->availableVoices();
     lst.reserve(voices.count());
     for (const QVoice &voice : voices) {
         lst << voice.name();
@@ -148,10 +156,10 @@ QStringList TextToSpeech::availableEngines() const
 
 void TextToSpeech::setLocale(const QLocale &locale) const
 {
-    mTextToSpeech->setLocale(locale);
+    d->mTextToSpeech->setLocale(locale);
 }
 
 QLocale TextToSpeech::locale() const
 {
-    return mTextToSpeech->locale();
+    return d->mTextToSpeech->locale();
 }

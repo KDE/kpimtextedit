@@ -6,12 +6,12 @@
 
 #pragma once
 
-#include "kpimtextedittexttospeech_private_export.h"
+#include "kpimtextedittexttospeech_export.h"
 #include <QDialog>
 namespace KPIMTextEditTextToSpeech
 {
 class TextToSpeechConfigWidget;
-class KPIMTEXTEDITTEXTTOSPEECH_TESTS_EXPORT TextToSpeechConfigDialog : public QDialog
+class KPIMTEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigDialog : public QDialog
 {
     Q_OBJECT
 public:
