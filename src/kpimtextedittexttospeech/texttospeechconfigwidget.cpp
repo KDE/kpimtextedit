@@ -90,8 +90,10 @@ void TextToSpeechConfigWidget::readConfig()
 {
     KConfig config(QStringLiteral("texttospeechrc"));
     KConfigGroup grp = config.group("Settings");
-    mRate->setValue(static_cast<int>(grp.readEntry("rate", 0.0) * 100));
-    mPitch->setValue(static_cast<int>(grp.readEntry("pitch", 0.0) * 100));
+    const auto rate = grp.readEntry("rate", 0);
+    mRate->setValue(rate);
+    const auto pitch = grp.readEntry("pitch", 0);
+    mPitch->setValue(pitch);
     mVolume->setValue(static_cast<int>(grp.readEntry("volume", 50)));
     updateLocale();
 }
@@ -101,8 +103,8 @@ void TextToSpeechConfigWidget::writeConfig()
     KConfig config(QStringLiteral("texttospeechrc"));
     KConfigGroup grp = config.group("Settings");
     grp.writeEntry("volume", mVolume->value());
-    grp.writeEntry("rate", (static_cast<int>((static_cast<double>(mRate->value()) / 100.0))));
-    grp.writeEntry("pitch", (static_cast<int>((static_cast<double>(mPitch->value()) / 100.0))));
+    grp.writeEntry("rate", mRate->value());
+    grp.writeEntry("pitch", mPitch->value());
     grp.writeEntry("localeName", mLanguage->currentData().toLocale().name());
     grp.writeEntry("engine", mAvailableEngine->currentData().toString());
     grp.writeEntry("voice", mVoice->currentData().toString());
