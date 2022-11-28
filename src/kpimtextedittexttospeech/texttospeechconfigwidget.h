@@ -31,6 +31,7 @@ Q_SIGNALS:
 
 private:
     void valueChanged();
+    void slotLocalesAndVoices();
     void slotUpdateSettings();
     void slotEngineChanged();
     void slotLanguageChanged();

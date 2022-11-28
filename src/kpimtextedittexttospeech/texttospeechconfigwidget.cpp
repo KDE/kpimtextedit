@@ -13,6 +13,7 @@
 #include <KConfig>
 #include <KConfigGroup>
 #include <QComboBox>
+#include <QDebug>
 #include <QFormLayout>
 #include <QSlider>
 #include <QTimer>
@@ -95,7 +96,6 @@ void TextToSpeechConfigWidget::readConfig()
     const auto pitch = grp.readEntry("pitch", 0);
     mPitch->setValue(pitch);
     mVolume->setValue(static_cast<int>(grp.readEntry("volume", 50)));
-    updateLocale();
 }
 
 void TextToSpeechConfigWidget::writeConfig()
@@ -110,18 +110,23 @@ void TextToSpeechConfigWidget::writeConfig()
     grp.writeEntry("voice", mVoice->currentData().toString());
 }
 
-void TextToSpeechConfigWidget::slotUpdateSettings()
+void TextToSpeechConfigWidget::slotLocalesAndVoices()
 {
     updateAvailableLocales();
-    updateAvailableEngine();
     updateAvailableVoices();
+}
+
+void TextToSpeechConfigWidget::slotUpdateSettings()
+{
+    updateAvailableEngine();
+    slotLocalesAndVoices();
 }
 
 void TextToSpeechConfigWidget::setTextToSpeechConfigInterface(AbstractTextToSpeechConfigInterface *interface)
 {
     delete mAbstractTextToSpeechConfigInterface;
     mAbstractTextToSpeechConfigInterface = interface;
-    slotUpdateSettings();
+    slotLocalesAndVoices();
 }
 
 void TextToSpeechConfigWidget::restoreDefaults()
@@ -191,7 +196,6 @@ void TextToSpeechConfigWidget::updateAvailableLocales()
 void TextToSpeechConfigWidget::slotEngineChanged()
 {
     mAbstractTextToSpeechConfigInterface->setEngine(mAvailableEngine->currentData().toString());
-    updateAvailableLocales();
 }
 
 void TextToSpeechConfigWidget::slotLanguageChanged()
