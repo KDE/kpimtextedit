@@ -5,12 +5,12 @@
 */
 
 #include "texttospeechconfiginterface.h"
+#include <QDebug>
 #include <QTextToSpeech>
 using namespace KPIMTextEditTextToSpeech;
 
 TextToSpeechConfigInterface::TextToSpeechConfigInterface(QObject *parent)
     : AbstractTextToSpeechConfigInterface(parent)
-    , mTextToSpeech(new QTextToSpeech(this))
 {
 }
 
