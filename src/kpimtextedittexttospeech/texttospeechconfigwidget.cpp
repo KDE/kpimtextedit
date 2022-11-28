@@ -15,6 +15,7 @@
 #include <QComboBox>
 #include <QDebug>
 #include <QFormLayout>
+#include <QPushButton>
 #include <QSlider>
 #include <QTimer>
 
@@ -28,6 +29,7 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     , mAbstractTextToSpeechConfigInterface(new TextToSpeechConfigInterface(this))
     , mAvailableEngine(new QComboBox(this))
     , mVoice(new QComboBox(this))
+    , mTestButton(new QPushButton(i18n("Test"), this))
 {
     auto layout = new QFormLayout(this);
     mVolume->setObjectName(QStringLiteral("volume"));
@@ -65,6 +67,11 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     mVoice->setObjectName(QStringLiteral("voice"));
     layout->addRow(i18n("Voice:"), mVoice);
     connect(mVoice, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::valueChanged);
+
+    mTestButton->setObjectName(QStringLiteral("mTestButton"));
+    // TODO add icon ?
+    layout->addWidget(mTestButton);
+    connect(mTestButton, &QPushButton::clicked, this, &TextToSpeechConfigWidget::slotTestTextToSpeech);
 
     QTimer::singleShot(0, this, &TextToSpeechConfigWidget::slotUpdateSettings);
 }
@@ -135,6 +142,11 @@ void TextToSpeechConfigWidget::restoreDefaults()
     mPitch->setValue(0);
     mVolume->setValue(50);
 
+    // TODO
+}
+
+void TextToSpeechConfigWidget::slotTestTextToSpeech()
+{
     // TODO
 }
 

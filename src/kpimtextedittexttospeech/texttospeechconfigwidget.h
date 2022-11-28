@@ -9,6 +9,7 @@
 #include <QWidget>
 class QSlider;
 class QComboBox;
+class QPushButton;
 namespace KPIMTextEditTextToSpeech
 {
 class TextToSpeechLanguageComboBox;
@@ -30,6 +31,7 @@ Q_SIGNALS:
     void configChanged(bool state);
 
 private:
+    void slotTestTextToSpeech();
     void valueChanged();
     void slotLocalesAndVoices();
     void slotUpdateSettings();
@@ -48,5 +50,6 @@ private:
     AbstractTextToSpeechConfigInterface *mAbstractTextToSpeechConfigInterface = nullptr;
     QComboBox *const mAvailableEngine;
     QComboBox *const mVoice;
+    QPushButton *const mTestButton;
 };
 }
