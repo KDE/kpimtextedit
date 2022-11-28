@@ -55,10 +55,10 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     layout->addRow(i18n("Engine:"), mAvailableEngine);
     connect(mAvailableEngine, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::slotEngineChanged);
     connect(mAvailableEngine, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::valueChanged);
+    connect(mAvailableEngine, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::slotLanguageChanged);
 
     mLanguage->setObjectName(QStringLiteral("language"));
     layout->addRow(i18n("Language:"), mLanguage);
-    connect(mAvailableEngine, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::slotLanguageChanged);
     connect(mLanguage, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::valueChanged);
 
     mVoice->setObjectName(QStringLiteral("voice"));
@@ -184,7 +184,7 @@ void TextToSpeechConfigWidget::updateAvailableLocales()
 {
     mLanguage->clear();
     const QVector<QLocale> locales = mAbstractTextToSpeechConfigInterface->availableLocales();
-    QLocale current = mAbstractTextToSpeechConfigInterface->locale();
+    const QLocale current = mAbstractTextToSpeechConfigInterface->locale();
     mLanguage->updateAvailableLocales(locales, current);
     updateLocale();
 }
