@@ -44,6 +44,11 @@ QLocale TextToSpeechConfigInterface::locale() const
 
 void TextToSpeechConfigInterface::setEngine(const QString &engineName)
 {
-    delete mTextToSpeech;
-    mTextToSpeech = new QTextToSpeech(engineName, this);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
+    if (mTextToSpeech && (mTextToSpeech->engine() != engineName))
+#endif
+    {
+        delete mTextToSpeech;
+        mTextToSpeech = new QTextToSpeech(engineName, this);
+    }
 }
