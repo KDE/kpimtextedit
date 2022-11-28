@@ -136,7 +136,6 @@ void TextToSpeechConfigWidget::restoreDefaults()
 void TextToSpeechConfigWidget::updateAvailableEngine()
 {
     mAvailableEngine->clear();
-    mAvailableEngine->addItem(i18nc("Default tts engine", "Default"), QString());
     const QStringList lst = mAbstractTextToSpeechConfigInterface->availableEngines();
     for (const QString &engine : lst) {
         mAvailableEngine->addItem(engine, engine);
