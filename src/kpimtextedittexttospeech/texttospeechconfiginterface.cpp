@@ -52,3 +52,8 @@ void TextToSpeechConfigInterface::setEngine(const QString &engineName)
         mTextToSpeech = new QTextToSpeech(engineName, this);
     }
 }
+
+void TextToSpeechConfigInterface::testEngine(const EngineSettings &engineSettings)
+{
+    // TODO
+}
