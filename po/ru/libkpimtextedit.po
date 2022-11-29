@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-21 00:47+0000\n"
+"POT-Creation-Date: 2022-11-29 00:47+0000\n"
 "PO-Revision-Date: 2022-10-11 11:41+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1102,47 +1102,50 @@ msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "Настройка синтеза речи"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:38
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:32
+#, kde-format
+msgid "Test"
+msgstr ""
+
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:41
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:58
 #, kde-format
 msgid "Volume:"
 msgstr "Громкость:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:44
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:47
 #, kde-format
 msgid "Rate:"
 msgstr "Скорость:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:52
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:55
 #, kde-format
 msgid "Pitch:"
 msgstr "Высота голоса:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:55
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:58
 #, kde-format
 msgid "Engine:"
 msgstr "Реализация:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:60
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:64
 #, kde-format
 msgid "Language:"
 msgstr "Язык:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:65
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:68
 #, kde-format
 msgid "Voice:"
 msgstr "Голос:"
-
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:137
-#, kde-format
-msgctxt "Default tts engine"
-msgid "Default"
-msgstr "По умолчанию"
 
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:81
 #, kde-format
 msgid "Configure..."
 msgstr "Настроить..."
+
+#~ msgctxt "Default tts engine"
+#~ msgid "Default"
+#~ msgstr "По умолчанию"
 
 # Эта строка будет вставлена в текст письма. --aspotashev
 #~ msgid "I've linked 1 file to this email:"

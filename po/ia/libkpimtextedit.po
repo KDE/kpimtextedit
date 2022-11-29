@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-21 00:47+0000\n"
+"POT-Creation-Date: 2022-11-29 00:47+0000\n"
 "PO-Revision-Date: 2022-02-28 22:30+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1094,47 +1094,50 @@ msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "Configura Texto-a-Discurso (TextToSpeech)"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:38
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:32
+#, kde-format
+msgid "Test"
+msgstr ""
+
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:41
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:58
 #, kde-format
 msgid "Volume:"
 msgstr "Tomo:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:44
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:47
 #, kde-format
 msgid "Rate:"
 msgstr "Frequentia:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:52
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:55
 #, kde-format
 msgid "Pitch:"
 msgstr "Accorda:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:55
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:58
 #, kde-format
 msgid "Engine:"
 msgstr "Motor:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:60
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:64
 #, kde-format
 msgid "Language:"
 msgstr "Linguage:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:65
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:68
 #, kde-format
 msgid "Voice:"
 msgstr "Voce:"
-
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:137
-#, kde-format
-msgctxt "Default tts engine"
-msgid "Default"
-msgstr "Predefinite"
 
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:81
 #, kde-format
 msgid "Configure..."
 msgstr "Configura..."
+
+#~ msgctxt "Default tts engine"
+#~ msgid "Default"
+#~ msgstr "Predefinite"
 
 #~ msgid "I've linked 1 file to this email:"
 #~ msgstr "Io ha ligate 1 file a iste message de e-posta:"

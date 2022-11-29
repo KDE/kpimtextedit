@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-21 00:47+0000\n"
+"POT-Creation-Date: 2022-11-29 00:47+0000\n"
 "PO-Revision-Date: 2022-02-26 12:33+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1098,44 +1098,47 @@ msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "Configuració del text a veu"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:38
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:32
+#, kde-format
+msgid "Test"
+msgstr ""
+
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:41
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:58
 #, kde-format
 msgid "Volume:"
 msgstr "Volum:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:44
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:47
 #, kde-format
 msgid "Rate:"
 msgstr "Velocitat:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:52
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:55
 #, kde-format
 msgid "Pitch:"
 msgstr "To:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:55
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:58
 #, kde-format
 msgid "Engine:"
 msgstr "Motor:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:60
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:64
 #, kde-format
 msgid "Language:"
 msgstr "Idioma:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:65
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:68
 #, kde-format
 msgid "Voice:"
 msgstr "Veu:"
-
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:137
-#, kde-format
-msgctxt "Default tts engine"
-msgid "Default"
-msgstr "Predeterminat"
 
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:81
 #, kde-format
 msgid "Configure..."
 msgstr "Configura..."
+
+#~ msgctxt "Default tts engine"
+#~ msgid "Default"
+#~ msgstr "Predeterminat"
