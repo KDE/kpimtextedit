@@ -29,7 +29,7 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     , mAbstractTextToSpeechConfigInterface(new TextToSpeechConfigInterface(this))
     , mAvailableEngine(new QComboBox(this))
     , mVoice(new QComboBox(this))
-    , mTestButton(new QPushButton(i18n("Test"), this))
+    , mTestButton(new QPushButton(QIcon::fromTheme(QStringLiteral("player-volume")), i18n("Test"), this))
 {
     auto layout = new QFormLayout(this);
     mVolume->setObjectName(QStringLiteral("volume"));
