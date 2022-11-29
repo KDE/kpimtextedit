@@ -5,6 +5,7 @@
 */
 
 #include "texttospeechconfiginterface.h"
+#include <KLocalizedString>
 #include <QDebug>
 #include <QTextToSpeech>
 using namespace KPIMTextEditTextToSpeech;
@@ -55,5 +56,14 @@ void TextToSpeechConfigInterface::setEngine(const QString &engineName)
 
 void TextToSpeechConfigInterface::testEngine(const EngineSettings &engineSettings)
 {
-    // TODO
+    const int rate = engineSettings.rate;
+    const double rateDouble = rate / 100.0;
+    mTextToSpeech->setRate(rateDouble);
+    const int pitch = engineSettings.pitch;
+    const double pitchDouble = pitch / 100.0;
+    mTextToSpeech->setPitch(pitchDouble);
+    mTextToSpeech->setVolume(engineSettings.volume);
+    mTextToSpeech->setLocale(QLocale(engineSettings.localeName));
+
+    mTextToSpeech->say(i18n("Morning, this is the test for testing settings."));
 }

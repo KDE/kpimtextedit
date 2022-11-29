@@ -19,14 +19,6 @@ class KPIMTEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigInterface : public Abstr
 {
     Q_OBJECT
 public:
-    struct EngineSettings {
-        double rate = 0.0;
-        double pitch = 0.0;
-        double volume = 0.0;
-        QString voice;
-        QString localeName;
-    };
-
     explicit TextToSpeechConfigInterface(QObject *parent = nullptr);
     ~TextToSpeechConfigInterface() override;
 
@@ -36,7 +28,7 @@ public:
     Q_REQUIRED_RESULT QStringList availableEngines() const override;
     Q_REQUIRED_RESULT QStringList availableVoices() const override;
     void setEngine(const QString &engineName) override;
+    void testEngine(const EngineSettings &engineSettings) override;
     QTextToSpeech *mTextToSpeech = nullptr;
-    void testEngine(const EngineSettings &engineSettings);
 };
 }

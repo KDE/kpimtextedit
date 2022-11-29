@@ -147,7 +147,13 @@ void TextToSpeechConfigWidget::restoreDefaults()
 
 void TextToSpeechConfigWidget::slotTestTextToSpeech()
 {
-    // TODO
+    TextToSpeechConfigInterface::EngineSettings settings;
+    settings.rate = mRate->value();
+    settings.pitch = mPitch->value();
+    settings.volume = mVolume->value();
+    settings.localeName = mLanguage->currentData().toLocale().name();
+    settings.voice = mVoice->currentData().toString();
+    mAbstractTextToSpeechConfigInterface->testEngine(settings);
 }
 
 void TextToSpeechConfigWidget::updateAvailableEngine()
