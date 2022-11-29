@@ -5,6 +5,10 @@
 */
 
 #include "texttospeechsliderwidgettest.h"
+#include "texttospeechsliderwidget.h"
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QSlider>
 #include <QTest>
 QTEST_MAIN(TextToSpeechSliderWidgetTest)
 TextToSpeechSliderWidgetTest::TextToSpeechSliderWidgetTest(QObject *parent)
@@ -14,5 +18,14 @@ TextToSpeechSliderWidgetTest::TextToSpeechSliderWidgetTest(QObject *parent)
 
 void TextToSpeechSliderWidgetTest::shouldHaveDefaultValues()
 {
-    // TODO
+    KPIMTextEditTextToSpeech::TextToSpeechSliderWidget w;
+    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
+
+    auto mLabel = w.findChild<QLabel *>(QStringLiteral("mLabel"));
+    QVERIFY(mLabel);
+
+    auto mSlider = w.findChild<QSlider *>(QStringLiteral("mSlider"));
+    QVERIFY(mSlider);
 }

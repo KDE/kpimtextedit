@@ -17,11 +17,13 @@ TextToSpeechSliderWidget::TextToSpeechSliderWidget(QWidget *parent)
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setContentsMargins({});
+    mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mSlider->setObjectName(QStringLiteral("mSlider"));
     mLabel->setObjectName(QStringLiteral("mLabel"));
-    connect(mSlider, &QSlider::valueChanged, this, &TextToSpeechSliderWidget::slotValueChanged);
     mainLayout->addWidget(mSlider);
     mainLayout->addWidget(mLabel);
+
+    connect(mSlider, &QSlider::valueChanged, this, &TextToSpeechSliderWidget::slotValueChanged);
 }
 
 TextToSpeechSliderWidget::~TextToSpeechSliderWidget() = default;
