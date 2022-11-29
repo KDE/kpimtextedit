@@ -19,6 +19,11 @@ public:
     ~TextToSpeechSliderWidget() override;
 
     void setValue(int value);
+    void setRange(int min, int max);
+    Q_REQUIRED_RESULT int value() const;
+
+Q_SIGNALS:
+    void valueChanged();
 
 private:
     void slotValueChanged(int value);

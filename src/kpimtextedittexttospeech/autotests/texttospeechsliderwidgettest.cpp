@@ -28,4 +28,5 @@ void TextToSpeechSliderWidgetTest::shouldHaveDefaultValues()
 
     auto mSlider = w.findChild<QSlider *>(QStringLiteral("mSlider"));
     QVERIFY(mSlider);
+    QCOMPARE(mSlider->orientation(), Qt::Horizontal);
 }
