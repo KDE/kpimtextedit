@@ -18,7 +18,7 @@ TextToSpeechSliderWidgetTest::TextToSpeechSliderWidgetTest(QObject *parent)
 
 void TextToSpeechSliderWidgetTest::shouldHaveDefaultValues()
 {
-    KPIMTextEditTextToSpeech::TextToSpeechSliderWidget w;
+    KPIMTextEditTextToSpeech::TextToSpeechSliderWidget w({});
     auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});

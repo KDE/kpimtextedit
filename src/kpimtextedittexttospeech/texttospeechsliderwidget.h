@@ -15,13 +15,14 @@ class KPIMTEXTEDITTEXTTOSPEECH_TESTS_EXPORT TextToSpeechSliderWidget : public QW
 {
     Q_OBJECT
 public:
-    explicit TextToSpeechSliderWidget(QWidget *parent = nullptr);
+    explicit TextToSpeechSliderWidget(const QString &labelInfo, QWidget *parent = nullptr);
     ~TextToSpeechSliderWidget() override;
 
     void setValue(int value);
 
 private:
     void slotValueChanged(int value);
+    QString mLabelInfo;
     QLabel *const mLabel;
     QSlider *const mSlider;
 };

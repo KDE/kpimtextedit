@@ -10,8 +10,9 @@
 #include <QSlider>
 
 using namespace KPIMTextEditTextToSpeech;
-TextToSpeechSliderWidget::TextToSpeechSliderWidget(QWidget *parent)
+TextToSpeechSliderWidget::TextToSpeechSliderWidget(const QString &labelInfo, QWidget *parent)
     : QWidget{parent}
+    , mLabelInfo(labelInfo)
     , mLabel(new QLabel(this))
     , mSlider(new QSlider(this))
 {
@@ -31,9 +32,9 @@ TextToSpeechSliderWidget::~TextToSpeechSliderWidget() = default;
 void TextToSpeechSliderWidget::setValue(int value)
 {
     mSlider->setValue(value);
-    // TODO
 }
 
 void TextToSpeechSliderWidget::slotValueChanged(int value)
 {
+    mLabel->setText(mLabelInfo.arg(QString::number(value)));
 }
