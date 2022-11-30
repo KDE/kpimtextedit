@@ -82,7 +82,8 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
     connect(d->mConfigureButton, &QToolButton::clicked, this, &TextToSpeechWidget::slotConfigure);
     hbox->addWidget(d->mConfigureButton);
 
-    setTextToSpeechInterface(new TextToSpeechInterface(this, this));
+    auto interface = new TextToSpeechInterface(this, this);
+    setTextToSpeechInterface(interface);
     setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
     hide();
 }
@@ -164,6 +165,8 @@ void TextToSpeechWidget::setTextToSpeechInterface(AbstractTextToSpeechInterface 
     // Update volume value
     if (d->mTextToSpeechInterface) {
         d->mTextToSpeechInterface->reloadSettings();
-        d->mVolume->setValue(interface->volume());
+        // Api return volume between 0.0 -> 1.0
+        // We want display between 0 -> 100
+        d->mVolume->setValue(interface->volume() * 100);
     }
 }
