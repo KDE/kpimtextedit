@@ -60,6 +60,7 @@ void TextToSpeech::reloadSettings()
     d->mTextToSpeech->setPitch(pitchDouble);
     const int volume = grp.readEntry("volume", 0);
     const double volumeDouble = volume / 100.0;
+    qDebug() << " volumeDouble " << volumeDouble;
     d->mTextToSpeech->setVolume(volumeDouble);
     d->mTextToSpeech->setLocale(QLocale(grp.readEntry("localeName")));
     // It doesn't have api for it d->mTextToSpeech->setVoice(grp.readEntry("voice"));
