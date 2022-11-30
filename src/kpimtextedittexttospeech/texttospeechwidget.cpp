@@ -114,7 +114,7 @@ void TextToSpeechWidget::slotConfigure()
 
 void TextToSpeechWidget::slotVolumeChanged(int value)
 {
-    d->mTextToSpeechInterface->setVolume(value);
+    d->mTextToSpeechInterface->setVolume(value / 100.0);
 }
 
 bool TextToSpeechWidget::isReady() const
