@@ -26,8 +26,7 @@ TextToSpeechSliderWidget::TextToSpeechSliderWidget(const QString &labelInfo, QWi
     mainLayout->addWidget(mSlider);
     mainLayout->addWidget(mLabel);
 
-    QFontMetrics f(mLabel->font());
-
+    const QFontMetrics f(mLabel->font());
     mLabel->setMinimumWidth(f.horizontalAdvance(QStringLiteral("MMMM")));
     connect(mSlider, &QSlider::valueChanged, this, &TextToSpeechSliderWidget::slotValueChanged);
 }
