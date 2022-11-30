@@ -104,6 +104,7 @@ void TextToSpeechWidget::slotConfigure()
         d->mConfigDialog = new TextToSpeechConfigDialog(this);
         if (d->mConfigDialog->exec()) {
             d->mTextToSpeechInterface->reloadSettings();
+            applyVolume();
         }
         delete d->mConfigDialog;
         if (d->mNeedToHide) {

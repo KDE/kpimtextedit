@@ -52,5 +52,6 @@ int TextToSpeechSliderWidget::value() const
 
 void TextToSpeechSliderWidget::slotValueChanged(int value)
 {
+    Q_EMIT valueChanged(value);
     mLabel->setText(mLabelInfo.arg(QString::number(value)));
 }
