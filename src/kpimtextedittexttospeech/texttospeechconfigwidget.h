@@ -44,6 +44,7 @@ private:
     void updateAvailableLocales();
     void updateAvailableEngine();
     void updateAvailableVoices();
+    void slotAvailableEngineChanged();
     TextToSpeechSliderWidget *const mVolume;
     TextToSpeechSliderWidget *const mRate;
     TextToSpeechSliderWidget *const mPitch;

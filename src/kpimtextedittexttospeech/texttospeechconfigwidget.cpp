@@ -52,9 +52,7 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
 
     mAvailableEngine->setObjectName(QStringLiteral("engine"));
     layout->addRow(i18n("Engine:"), mAvailableEngine);
-    connect(mAvailableEngine, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::slotEngineChanged);
-    connect(mAvailableEngine, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::valueChanged);
-    connect(mAvailableEngine, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::slotLanguageChanged);
+    connect(mAvailableEngine, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::slotAvailableEngineChanged);
 
     mLanguage->setObjectName(QStringLiteral("language"));
     layout->addRow(i18n("Language:"), mLanguage);
@@ -73,6 +71,13 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
 }
 
 TextToSpeechConfigWidget::~TextToSpeechConfigWidget() = default;
+
+void TextToSpeechConfigWidget::slotAvailableEngineChanged()
+{
+    slotEngineChanged();
+    slotLanguageChanged();
+    valueChanged();
+}
 
 void TextToSpeechConfigWidget::valueChanged()
 {
