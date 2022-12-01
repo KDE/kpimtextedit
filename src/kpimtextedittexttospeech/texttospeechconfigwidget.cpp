@@ -63,7 +63,6 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     connect(mVoice, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::valueChanged);
 
     mTestButton->setObjectName(QStringLiteral("mTestButton"));
-    // TODO add icon ?
     layout->addWidget(mTestButton);
     connect(mTestButton, &QPushButton::clicked, this, &TextToSpeechConfigWidget::slotTestTextToSpeech);
 
