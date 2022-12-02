@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-01 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:47+0000\n"
 "PO-Revision-Date: 2022-02-28 22:30+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1125,12 +1125,12 @@ msgstr "Accorda:"
 msgid "Engine:"
 msgstr "Motor:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:60
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:58
 #, kde-format
 msgid "Language:"
 msgstr "Linguage:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:64
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:62
 #, kde-format
 msgid "Voice:"
 msgstr "Voce:"

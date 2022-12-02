@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-01 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:47+0000\n"
 "PO-Revision-Date: 2009-12-24 06:59-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1130,12 +1130,12 @@ msgstr ""
 msgid "Engine:"
 msgstr ""
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:60
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:58
 #, kde-format
 msgid "Language:"
 msgstr ""
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:64
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:62
 #, kde-format
 msgid "Voice:"
 msgstr ""

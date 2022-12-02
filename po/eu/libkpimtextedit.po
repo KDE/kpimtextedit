@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-01 00:47+0000\n"
-"PO-Revision-Date: 2022-11-29 05:25+0100\n"
+"POT-Creation-Date: 2022-12-02 00:47+0000\n"
+"PO-Revision-Date: 2022-12-01 22:02+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1099,7 +1099,7 @@ msgstr "Konfiguratu Testutik-hizketara"
 #: kpimtextedittexttospeech/texttospeechconfiginterface.cpp:71
 #, kde-format
 msgid "Morning, this is the test for testing settings."
-msgstr ""
+msgstr "Egun on, hau da ezarpenak probatzeko proba."
 
 #: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:34
 #, kde-format
@@ -1127,12 +1127,12 @@ msgstr "Tonua:"
 msgid "Engine:"
 msgstr "Motorra:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:60
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:58
 #, kde-format
 msgid "Language:"
 msgstr "Hizkuntza:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:64
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:62
 #, kde-format
 msgid "Voice:"
 msgstr "Ahotsa:"

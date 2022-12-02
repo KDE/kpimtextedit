@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-01 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:47+0000\n"
 "PO-Revision-Date: 2022-03-24 15:20+0400\n"
 "Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -1125,12 +1125,12 @@ msgstr "Səsin ucalığı:"
 msgid "Engine:"
 msgstr "Həyata keçirmə:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:60
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:58
 #, kde-format
 msgid "Language:"
 msgstr "Dil:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:64
+#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:62
 #, kde-format
 msgid "Voice:"
 msgstr "Səs:"
