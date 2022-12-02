@@ -6,8 +6,7 @@
 
 #pragma once
 #include "kpimtextedittexttospeech_private_export.h"
-#include <KConfigGroup>
-
+#include <QObject>
 namespace KPIMTextEditTextToSpeech
 {
 namespace TextToSpeechUtil
