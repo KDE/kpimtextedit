@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-02 00:47+0000\n"
-"PO-Revision-Date: 2022-10-10 05:08+0200\n"
+"PO-Revision-Date: 2022-12-13 02:51+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: kpimtextedit/composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -140,7 +140,7 @@ msgstr "&ხაზგასმა"
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
-msgstr ""
+msgstr "&ხაზგადასმული"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:237
 #, kde-format
@@ -158,7 +158,7 @@ msgstr "ფონტის &ზომა"
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
-msgstr ""
+msgstr "ჰორიზონტალური ხაზის ჩასმა"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:263
 #, kde-format
@@ -188,13 +188,13 @@ msgstr "ბმული"
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
-msgstr ""
+msgstr "დონის გაზრდა"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:296
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
-msgstr ""
+msgstr "დონის შემცირება"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:305
 #, kde-format
@@ -259,17 +259,17 @@ msgstr "I II III"
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:322
 #, kde-format
 msgid "Pa&ste as Quotation"
-msgstr ""
+msgstr "ციტატის სახით ჩასმა"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:330
 #, kde-format
 msgid "Add &Quote Characters"
-msgstr ""
+msgstr "&ბრჭყალების სიმბოლოების დამატება"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:337
 #, kde-format
 msgid "Re&move Quote Characters"
-msgstr ""
+msgstr "ბრჭყალების სიმბოლოების &წაშლა"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:344
 #, kde-format
@@ -299,24 +299,24 @@ msgstr "ხაზის წაშლა"
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:398
 #, kde-format
 msgid "Reset Font Settings"
-msgstr ""
+msgstr "ფონტის პარამეტრების საწყის მნიშვნელობებზე დაბრუნება"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:399
 #, kde-format
 msgid "Reset Font"
-msgstr ""
+msgstr "ფონტის საწყის მნიშვნელობაზე დაბრუნება"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:407
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
-msgstr ""
+msgstr "ტექსტის ნაწილის ფორმატირების შეცვლა"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:415
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
-msgstr ""
+msgstr "თავსართის დონე"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:416
 #, kde-format
@@ -369,13 +369,13 @@ msgstr "ჩასართავი"
 #: kpimtextedit/composer-ng/richtextcomposercontroler.cpp:733
 #, kde-format
 msgid "Only local files are supported."
-msgstr ""
+msgstr "მხარდაჭერილია მხოლოდ ლოკალური ფაილები."
 
 #: kpimtextedit/composer-ng/richtextcomposerimages.cpp:55
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
-msgstr ""
+msgstr "ფაილის ჩატვირთვის შეცდომა <filename>%1</filename>."
 
 #: kpimtextedit/composer-ng/richtextcomposerimages.cpp:214
 #, kde-format
@@ -386,27 +386,27 @@ msgstr "ნახატი"
 #: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
 msgid "Command line is empty. Please verify settings."
-msgstr ""
+msgstr "ბრძანების სტრიქონი ცარიელია. გადაამოწმეთ პარამეტრები."
 
 #: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
 msgid "Empty command line"
-msgstr ""
+msgstr "ბრძანების სტრიქონი ცარიელია"
 
 #: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:122
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
-msgstr ""
+msgstr "გარე რედაქტორის გაშვების შეცდომა. გადაამოწმეთ ბრძანება \"%1\""
 
 #: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:140
 #, kde-format
 msgid "Error was found when we started external editor."
-msgstr ""
+msgstr "შეცდომა გარე რედაქტორის გაშვებისას."
 
 #: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:140
 #, kde-format
 msgid "External Editor Closed"
-msgstr ""
+msgstr "გარე რედაქტორი დაიხურა"
 
 #: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:157
 #, kde-kuit-format
@@ -416,39 +416,42 @@ msgid ""
 "keep it running?<nl/><warning>Stopping the editor will cause all your "
 "unsaved changes to be lost.</warning>"
 msgstr ""
+"გარე რედაქტორი ჯერ კიდევ გაშვებულია.<nl/>გნებავთ რედაქტორის გაჩერება, თუ "
+"დავტოვო გაშვებული?<nl/><warning>რედაქტორის გაჩერება თქვენს ყველა ცვლილებას "
+"გააუქმებს.</warning>"
 
 #: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
-msgstr ""
+msgstr "გარე რედაქტორი გაშვებულია"
 
 #: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:162
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
-msgstr ""
+msgstr "რედაქტორის შეჩერება"
 
 #: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:163
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
-msgstr ""
+msgstr "გაშვებულად დატოვება"
 
 #: kpimtextedit/emoticon/emoticonrecentlistview.cpp:25
 #, kde-format
 msgid "Clear Recents"
-msgstr ""
+msgstr "უახლესების გასუფთავება"
 
 #: kpimtextedit/emoticon/emoticontexteditaction.cpp:41
 #, kde-format
 msgid "Add Smiley"
-msgstr ""
+msgstr "სიცილაკის დამატება"
 
 #: kpimtextedit/emoticon/emoticontexteditselector.cpp:31
 #, kde-format
 msgid "Search Emoticon..."
-msgstr ""
+msgstr "ემოციის მოძებნა..."
 
 #: kpimtextedit/emoticon/emoticonunicodetab.cpp:51
 #, kde-format
@@ -634,12 +637,12 @@ msgstr "HTML_ის ჩასმა"
 #: kpimtextedit/inserthtmldialog.cpp:36
 #, kde-format
 msgid "Insert HTML tags and texts:"
-msgstr ""
+msgstr "ჩასვით HTML ჭდეები და ტექსტები:"
 
 #: kpimtextedit/inserthtmldialog.cpp:42
 #, kde-format
 msgid "Example: <i> Hello word </i>"
-msgstr ""
+msgstr "მაგალითად: <i> გამარჯობა კინო </i>"
 
 #: kpimtextedit/inserthtmldialog.cpp:51
 #, kde-format
@@ -663,7 +666,7 @@ msgstr "Insert"
 #: kpimtextedit/insertimagewidget.cpp:40
 #, kde-format
 msgid "Image Location:"
-msgstr ""
+msgstr "გამოსახულების მდებარეობა:"
 
 #: kpimtextedit/insertimagewidget.cpp:53
 #, kde-format
@@ -674,12 +677,12 @@ msgstr "გამოსახულების დამატება"
 #: kpimtextedit/insertimagewidget.cpp:64
 #, kde-format
 msgid "Keep Original Size"
-msgstr ""
+msgstr "გამოსახულების საწყისი ზომის შენარჩუნება"
 
 #: kpimtextedit/insertimagewidget.cpp:71
 #, kde-format
 msgid "Keep Image Ratio"
-msgstr ""
+msgstr "გამოსახულების ფარდობის შენარჩუნება"
 
 #: kpimtextedit/insertimagewidget.cpp:77 kpimtextedit/inserttablewidget.cpp:59
 #, kde-format
@@ -700,7 +703,7 @@ msgstr "სიმაღლე:"
 #: kpimtextedit/insertimagewidget.cpp:110
 #, kde-format
 msgid "Image Preview:"
-msgstr ""
+msgstr "გამოსახულების მინიატურა:"
 
 #: kpimtextedit/inserttabledialog.cpp:26
 #, kde-format
@@ -726,7 +729,7 @@ msgstr "საზღვარი:"
 #: kpimtextedit/inserttablewidget.cpp:52
 #, no-c-format, kde-format
 msgid "% of windows"
-msgstr ""
+msgstr "% ფანჯარა"
 
 #: kpimtextedit/inserttablewidget.cpp:53
 #, kde-format
@@ -737,7 +740,7 @@ msgstr "პიქსელი"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
-msgstr ""
+msgstr "აირჩიეთ სპეციალური სიმბოლოები"
 
 #: kpimtextedit/selectspecialchardialog.cpp:53
 #, kde-format
@@ -782,27 +785,27 @@ msgstr "უჯრედის შემცველობა"
 #: kpimtextedit/tableactionmenu.cpp:489
 #, kde-format
 msgid "Join With Cell to the Right"
-msgstr ""
+msgstr "მარჯვენა უჯრედთან შერწყმა"
 
 #: kpimtextedit/tableactionmenu.cpp:496
 #, kde-format
 msgid "Join Selected Cells"
-msgstr ""
+msgstr "მონიშნული უჯრედების შერწყმა"
 
 #: kpimtextedit/tableactionmenu.cpp:503
 #, kde-format
 msgid "Split cells"
-msgstr ""
+msgstr "უჯრედების დაყოფა"
 
 #: kpimtextedit/tableactionmenu.cpp:512
 #, kde-format
 msgid "Table Format..."
-msgstr ""
+msgstr "ცხრილის ფორმატი..."
 
 #: kpimtextedit/tableactionmenu.cpp:519
 #, kde-format
 msgid "Table Cell Format..."
-msgstr ""
+msgstr "ცხრილის უჯრედის ფორმატი..."
 
 #: kpimtextedit/tablecellformatdialog.cpp:28
 #, kde-format
@@ -845,22 +848,22 @@ msgstr "ცხრილის ფორმატი"
 #: kpimtextedit/tableformatdialog.cpp:44
 #, kde-format
 msgid "Spacing:"
-msgstr ""
+msgstr "დაშორება:"
 
 #: kpimtextedit/tableformatdialog.cpp:49
 #, kde-format
 msgid "pixels between cells"
-msgstr ""
+msgstr "პიქსელები უჯრედებს შორის"
 
 #: kpimtextedit/tableformatdialog.cpp:54
 #, kde-format
 msgid "Padding:"
-msgstr ""
+msgstr "შევსება:"
 
 #: kpimtextedit/tableformatdialog.cpp:59
 #, kde-format
 msgid "pixels between cell border and content"
-msgstr ""
+msgstr "პიქსელი უჯრედის საზღვარსა და შემცველობას შორის"
 
 #: kpimtextedit/tableformatdialog.cpp:67
 #, kde-format
@@ -885,7 +888,7 @@ msgstr "გადამრთეველი"
 #: kpimtextedit/tableformatdialog.cpp:73
 #, kde-format
 msgid "Table Alignment:"
-msgstr ""
+msgstr "ცხრილის სწორება:"
 
 #: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:34
 #: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:37
@@ -902,6 +905,8 @@ msgid ""
 "End of message reached.\n"
 "Phrase '%1' could not be found."
 msgstr ""
+"მიღწეულია შეტყობინების ბოლო.\n"
+"ფრაზა '%1' აღმოჩენილი არაა."
 
 #: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:25
 #, kde-format
@@ -980,7 +985,7 @@ msgstr "რეგულარული ექსპრესია"
 #: kpimtextedit/texteditor/commonwidget/textfindreplacewidget.cpp:105
 #, kde-format
 msgid "Respect Diacritic and Accents"
-msgstr ""
+msgstr "დიაკრიტიკული ნიშნების და აქცენტების მხედველობაში მიღება"
 
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:49
 #, kde-format
@@ -997,8 +1002,8 @@ msgstr "Go"
 #, kde-format
 msgid "%1 replacement made"
 msgid_plural "%1 replacements made"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 ჩანაცვლება"
+msgstr[1] "%1 ჩანაცვლება"
 
 #: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:146
 #: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:203
@@ -1034,13 +1039,13 @@ msgstr "ტექსტის წაკითხვა"
 #: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:450
 #, kde-format
 msgid "Nothing to spell check."
-msgstr ""
+msgstr "შესამოწმებელი არაფერია."
 
 #: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:353
 #: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:468
 #, kde-format
 msgid "No backend available for spell checking."
-msgstr ""
+msgstr "მართლწერის შემოწმების უკანაბოლო ნაპოვნი არაა."
 
 #: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:258
 #, kde-format
@@ -1053,6 +1058,8 @@ msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr ""
+"მართლწერის შემოწმების უკანაბოლო ნაპოვნი არაა. გნებავთ ელფოსტა მაინც "
+"გავაგზავნო?"
 
 #: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:462
 #, kde-format
@@ -1085,17 +1092,17 @@ msgstr "დაკვრა"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
-msgstr ""
+msgstr "ტექსტის-ხმამაღლა-წაკითხვის მორგება"
 
 #: kpimtextedittexttospeech/texttospeechconfiginterface.cpp:71
 #, kde-format
 msgid "Morning, this is the test for testing settings."
-msgstr ""
+msgstr "დილა მშვიდობა. ეს ტესტირების პარამეტრების ტესტია."
 
 #: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:34
 #, kde-format
 msgid "Test"
-msgstr ""
+msgstr "შემოწმება"
 
 #: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:41
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:59
@@ -1111,7 +1118,7 @@ msgstr "შეაფასეთ:"
 #: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:51
 #, kde-format
 msgid "Pitch:"
-msgstr ""
+msgstr "ხმის სიმაღლე:"
 
 #: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:54
 #, kde-format
@@ -1126,7 +1133,7 @@ msgstr "ენა:"
 #: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:62
 #, kde-format
 msgid "Voice:"
-msgstr ""
+msgstr "ხმა:"
 
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:80
 #, kde-format
