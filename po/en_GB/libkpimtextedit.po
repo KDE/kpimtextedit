@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-02 00:47+0000\n"
-"PO-Revision-Date: 2022-04-02 16:42+0100\n"
+"PO-Revision-Date: 2022-12-31 15:25+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
-"Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
+"Language-Team: English <kde-i18n-doc@kde.org>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1097,12 +1097,12 @@ msgstr "Configure Text-To-Speech"
 #: kpimtextedittexttospeech/texttospeechconfiginterface.cpp:71
 #, kde-format
 msgid "Morning, this is the test for testing settings."
-msgstr ""
+msgstr "Morning, this is the test for testing settings."
 
 #: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:34
 #, kde-format
 msgid "Test"
-msgstr ""
+msgstr "Test"
 
 #: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:41
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:59
