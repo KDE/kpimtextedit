@@ -1,13 +1,16 @@
 # Translation of libkpimtextedit into esperanto.
+# Esperantaj mesaĝoj por "kpimtextedit"
+# Copyright (C) 2009 Free Software Foundation, Inc.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-02 00:47+0000\n"
-"PO-Revision-Date: 2009-11-15 12:06+0100\n"
-"Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
+"PO-Revision-Date: 2023-01-06 22:00+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -19,120 +22,120 @@ msgstr ""
 #: kpimtextedit/composer-ng/klinkdialog.cpp:24
 #, kde-format
 msgid "Link Text:"
-msgstr ""
+msgstr "Ligilteksto:"
 
 #: kpimtextedit/composer-ng/klinkdialog.cpp:26
 #, kde-format
 msgid "Link URL:"
-msgstr ""
+msgstr "Ligila URLo:"
 
 #: kpimtextedit/composer-ng/klinkdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Link"
-msgstr ""
+msgstr "Mastrumi Ligilon"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
-msgstr ""
+msgstr "Vicigi Ma&ldesktre"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:103
 #, kde-format
 msgctxt "@label left justify"
 msgid "Left"
-msgstr ""
+msgstr "Maldesktre"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Align &Center"
-msgstr ""
+msgstr "Vicigi &Centre"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:112
 #, kde-format
 msgctxt "@label center justify"
 msgid "Center"
-msgstr ""
+msgstr "Centre"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
-msgstr ""
+msgstr "Vicigi Dekst&re"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:121
 #, kde-format
 msgctxt "@label right justify"
 msgid "Right"
-msgstr ""
+msgstr "Dekstre"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "&Justify"
-msgstr ""
+msgstr "Ĝis&randigi"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:130
 #, kde-format
 msgctxt "@label justify fill"
 msgid "Justify"
-msgstr ""
+msgstr "Ĝisrandigi"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:145
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
-msgstr ""
+msgstr "Maldekstre-al-Dekstre"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:146
 #, kde-format
 msgctxt "@label left-to-right"
 msgid "Left-to-Right"
-msgstr ""
+msgstr "Maldekstre-al-Dekstre"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
-msgstr ""
+msgstr "Dekstre-al-Maldekstre"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:155
 #, kde-format
 msgctxt "@label right-to-left"
 msgid "Right-to-Left"
-msgstr ""
+msgstr "Dekstre-al-Maldekstre"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:168
 #, kde-format
 msgctxt "@action"
 msgid "Subscript"
-msgstr ""
+msgstr "Suba indico"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:176
 #, kde-format
 msgctxt "@action"
 msgid "Superscript"
-msgstr ""
+msgstr "Supra indico"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:184
 #, kde-format
 msgctxt "@action boldify selected text"
 msgid "&Bold"
-msgstr ""
+msgstr "&Grasa"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:197
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
-msgstr ""
+msgstr "Kurs&iva"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:210
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
-msgstr ""
+msgstr "S&ubstrekita"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:222
 #, kde-format
@@ -144,115 +147,115 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
-msgstr ""
+msgstr "&Tiparo"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:246
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
-msgstr ""
+msgstr "Tipargrande&co"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:254
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
-msgstr ""
+msgstr "Enmeti Streklinion"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:263
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color..."
-msgstr ""
+msgstr "Tekst&koloro..."
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
-msgstr ""
+msgstr "Koloro"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:272
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight..."
-msgstr ""
+msgstr "Tekst&emfazo..."
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:280
 #, kde-format
 msgctxt "@action"
 msgid "Link"
-msgstr ""
+msgstr "Ligilo"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
-msgstr ""
+msgstr "Aŭmenti Listonivelon"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:296
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
-msgstr ""
+msgstr "Malpliigi Listonivelon"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:305
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
-msgstr ""
+msgstr "Listostilo"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
-msgstr ""
+msgstr "Neniu"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
-msgstr ""
+msgstr "Disko"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
-msgstr ""
+msgstr "Cirklo"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
-msgstr ""
+msgstr "Kvadrato"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
-msgstr ""
+msgstr "123"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
-msgstr ""
+msgstr "abc"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
-msgstr ""
+msgstr "ABC"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
-msgstr ""
+msgstr "i ii iii"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:311
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
-msgstr ""
+msgstr "I II III"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:322
 #, kde-format
@@ -277,92 +280,92 @@ msgstr ""
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:352
 #, kde-format
 msgid "Add Image"
-msgstr ""
+msgstr "Aldoni Bildon"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:368
 #, kde-format
 msgid "Insert HTML"
-msgstr ""
+msgstr "Enmeti HTML"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:378
 #, kde-format
 msgid "Table"
-msgstr ""
+msgstr "Tabelo"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:387
 #, kde-format
 msgid "Delete Line"
-msgstr "Forigi linion"
+msgstr "Forigi Linion"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:398
 #, kde-format
 msgid "Reset Font Settings"
-msgstr ""
+msgstr "Restarigi Tiparagordon"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:399
 #, kde-format
 msgid "Reset Font"
-msgstr ""
+msgstr "Restarigi Tiparon"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:407
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
-msgstr ""
+msgstr "Formati Pentrilon"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:415
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
-msgstr ""
+msgstr "Titolnivelo"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:416
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
-msgstr ""
+msgstr "Baza teksto"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:417
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
-msgstr ""
+msgstr "Titolo"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:418
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
-msgstr ""
+msgstr "Subtitolo"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:419
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
-msgstr ""
+msgstr "Sekcio"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:420
 #, kde-format
 msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
-msgstr ""
+msgstr "Subsekcio"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:421
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
-msgstr ""
+msgstr "Paragrafo"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:422
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
-msgstr ""
+msgstr "Subparagrafo"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:433
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
-msgstr ""
+msgstr "Elektobutono"
 
 #: kpimtextedit/composer-ng/richtextcomposercontroler.cpp:733
 #, kde-format
@@ -370,17 +373,16 @@ msgid "Only local files are supported."
 msgstr ""
 
 #: kpimtextedit/composer-ng/richtextcomposerimages.cpp:55
-#, fuzzy, kde-kuit-format
-#| msgid "<qt>Do you really want to execute <b>%1</b>?</qt>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
-msgstr "<qt>Ĉu vi vere volas lanĉi <b>%1</b>?</qt>"
+msgstr "Ne eblas ŝargi bildon <filename>%1</filename>."
 
 #: kpimtextedit/composer-ng/richtextcomposerimages.cpp:214
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"
-msgstr ""
+msgstr "bildo"
 
 #: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
@@ -390,7 +392,7 @@ msgstr ""
 #: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
 msgid "Empty command line"
-msgstr ""
+msgstr "Malplena komandolinio"
 
 #: kpimtextedit/composer-ng/richtextexternalcomposer.cpp:122
 #, kde-format
@@ -769,10 +771,9 @@ msgid "Column After"
 msgstr ""
 
 #: kpimtextedit/tableactionmenu.cpp:446
-#, fuzzy, kde-format
-#| msgid "Delete Line"
+#, kde-format
 msgid "Delete"
-msgstr "Forigi linion"
+msgstr "Forigi"
 
 #: kpimtextedit/tableactionmenu.cpp:480
 #, kde-format
@@ -1132,14 +1133,3 @@ msgstr ""
 #, kde-format
 msgid "Configure..."
 msgstr ""
-
-#~ msgid "&Add"
-#~ msgstr "&Aldoni"
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Axel Rousseau"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "axel@esperanto-jeunes.org"
