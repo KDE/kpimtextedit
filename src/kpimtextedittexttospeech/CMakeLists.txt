@@ -38,6 +38,8 @@ if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
         texttospeechsliderwidget.cpp
         texttospeechutil.h
         texttospeechutil.cpp
+	texttospeechcontainerwidget.h
+	texttospeechcontainerwidget.cpp
     )
 endif()
 
@@ -96,6 +98,7 @@ if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
         TextToSpeechConfigDialog
         AbstractTextToSpeechInterface
         AbstractTextToSpeechConfigInterface
+	TextToSpeechContainerWidget
         REQUIRED_HEADERS KPimTextEdit_texttospeechs_HEADERS
         PREFIX KPIMTextEditTextToSpeech
     )

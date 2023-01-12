@@ -20,3 +20,9 @@ target_link_libraries(texttospeechconfigdialoggui
     KF5::PimTextEditTextToSpeech KF5::CoreAddons Qt::Widgets KF5::I18n
     )
 
+#####
+add_executable(texttospeechcontainergui texttospeechcontainergui.cpp texttospeechcontainergui.h)
+target_link_libraries(texttospeechcontainergui
+    KF5::PimTextEditTextToSpeech KF5::CoreAddons Qt::Widgets KF5::I18n
+    )
+
