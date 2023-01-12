@@ -31,12 +31,23 @@ TextToSpeechContainerWidget::TextToSpeechContainerWidget(QWidget *parent)
 
 TextToSpeechContainerWidget::~TextToSpeechContainerWidget() = default;
 
-void TextToSpeechContainerWidget::say(const QString &text)
+void TextToSpeechContainerWidget::initializeWidget()
 {
     if (!d->textToSpeechWidget) {
         d->textToSpeechWidget = new TextToSpeechWidget(this);
         connect(d->textToSpeechWidget, &TextToSpeechWidget::changeVisibility, this, &TextToSpeechContainerWidget::setVisible);
         d->mainLayout->addWidget(d->textToSpeechWidget);
     }
+}
+
+void TextToSpeechContainerWidget::say(const QString &text)
+{
+    initializeWidget();
     d->textToSpeechWidget->say(text);
+}
+
+bool TextToSpeechContainerWidget::isReady()
+{
+    initializeWidget();
+    return d->textToSpeechWidget->isReady();
 }

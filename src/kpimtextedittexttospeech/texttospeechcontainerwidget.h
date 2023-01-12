@@ -22,8 +22,10 @@ public:
     ~TextToSpeechContainerWidget() override;
 
     void say(const QString &text);
+    Q_REQUIRED_RESULT bool isReady();
 
 private:
+    void initializeWidget();
     std::unique_ptr<TextToSpeechContainerWidgetPrivate> const d;
 };
 }
