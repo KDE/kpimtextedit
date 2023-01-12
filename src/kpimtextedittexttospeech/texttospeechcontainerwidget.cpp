@@ -26,6 +26,7 @@ TextToSpeechContainerWidget::TextToSpeechContainerWidget(QWidget *parent)
     : QWidget{parent}
     , d(new KPIMTextEditTextToSpeech::TextToSpeechContainerWidgetPrivate(this))
 {
+    setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
     hide();
 }
 
