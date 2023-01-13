@@ -196,12 +196,10 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
         }
         if (d->supportFeatures & TextToSpeech) {
 #ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
-            if (KPIMTextEditTextToSpeech::TextToSpeech::self()->isReady()) {
-                if (!emptyDocument) {
-                    QAction *speakAction = popup->addAction(i18n("Speak Text"));
-                    speakAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
-                    connect(speakAction, &QAction::triggered, this, &PlainTextEditor::slotSpeakText);
-                }
+            if (!emptyDocument) {
+                QAction *speakAction = popup->addAction(i18n("Speak Text"));
+                speakAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
+                connect(speakAction, &QAction::triggered, this, &PlainTextEditor::slotSpeakText);
             }
 #endif
         }
