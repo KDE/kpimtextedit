@@ -10,6 +10,7 @@
 #include "texttospeechinterface.h"
 #include "texttospeechsliderwidget.h"
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPointer>
@@ -127,6 +128,8 @@ void TextToSpeechWidget::say(const QString &text)
 {
     if (d->mTextToSpeechInterface->isReady()) {
         d->mTextToSpeechInterface->say(text);
+    } else {
+        KMessageBox::error(this, i18n("Engine has a problem."), i18n("Text To Speech"));
     }
 }
 
