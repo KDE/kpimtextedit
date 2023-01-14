@@ -56,6 +56,7 @@ find_package(KF5Sonnet ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5SyntaxHighlighting ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5WidgetsAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5XmlGui ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5Codecs ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 

@@ -6,7 +6,7 @@ macro(add_composer_ng_test _source)
     ecm_add_test(${_source} ${_name}.h
         TEST_NAME ${_name}
         NAME_PREFIX "kpimtextedit-composerng-"
-        LINK_LIBRARIES Qt::Test KF5::PimTextEdit KF5::XmlGui KF5::IconThemes
+        LINK_LIBRARIES Qt::Test KF5::PimTextEdit KF5::XmlGui KF5::IconThemes KF5::Codecs
     )
 endmacro()
 

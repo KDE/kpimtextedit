@@ -16,6 +16,7 @@ Dependencies:
     'frameworks/kwidgetsaddons': '@latest'
     'frameworks/kxmlgui': '@latest'
     'frameworks/ktextwidgets': '@latest'
+    'frameworks/kcodecs': '@latest'
 
 - 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
   'require':

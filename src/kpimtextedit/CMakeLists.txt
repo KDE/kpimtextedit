@@ -161,6 +161,7 @@ target_link_libraries(KF5PimTextEdit
     KF5::XmlGui
     KF5::I18n
     KF5::SyntaxHighlighting
+    KF5::Codecs
     )
 
 if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
