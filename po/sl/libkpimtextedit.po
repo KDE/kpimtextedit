@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:47+0000\n"
+"POT-Creation-Date: 2023-01-14 00:57+0000\n"
 "PO-Revision-Date: 2022-11-30 07:38+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -901,7 +901,7 @@ msgstr "Poravnava razpredelnice:"
 #: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:37
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:39
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:42
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:54
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:55
 #, kde-format
 msgid "Close"
 msgstr "Zapri"
@@ -1038,20 +1038,20 @@ msgstr "Samodejno preverjanje črkovanja"
 msgid "Spell Checking Language"
 msgstr "Jezik preverjanja črkovanja"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:201
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:266
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:200
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:265
 #, kde-format
 msgid "Speak Text"
 msgstr "Izgovori besedilo"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:348
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:450
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:346
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:448
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Za preverjanje črkovanja ni ničesar."
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:353
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:468
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:351
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:466
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Ni razpoložljivega zaledja za preverjanje črkovanja."
@@ -1061,7 +1061,7 @@ msgstr "Ni razpoložljivega zaledja za preverjanje črkovanja."
 msgid "Allow Tabulations"
 msgstr "Dovoli tabulacije"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:460
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:458
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -1070,13 +1070,13 @@ msgstr ""
 "Ni razpoložljivega zaledja za preverjanje črkovanja. Ali kljub temu želite "
 "poslati pošto?"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:462
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:460
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Pošlji"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:484
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:482
 #, kde-format
 msgid "Skip"
 msgstr "Preskoči"
@@ -1114,7 +1114,7 @@ msgid "Test"
 msgstr "Test"
 
 #: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:41
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:59
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:60
 #, kde-format
 msgid "Volume:"
 msgstr "Glasnost:"
@@ -1144,10 +1144,22 @@ msgstr "Jezik:"
 msgid "Voice:"
 msgstr "Glas:"
 
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:80
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:81
 #, kde-format
 msgid "Configure..."
 msgstr "Prilagodi ..."
+
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
+#, kde-format
+msgid "Engine has a problem."
+msgstr ""
+
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Text-To-Speech"
+msgid "Text To Speech"
+msgstr "Nastavi besedilo-v-govor"
 
 #~ msgctxt "Default tts engine"
 #~ msgid "Default"

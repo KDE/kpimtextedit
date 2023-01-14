@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:47+0000\n"
+"POT-Creation-Date: 2023-01-14 00:57+0000\n"
 "PO-Revision-Date: 2022-12-01 00:07+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -899,7 +899,7 @@ msgstr "Alineamiento de tabla:"
 #: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:37
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:39
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:42
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:54
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:55
 #, kde-format
 msgid "Close"
 msgstr "Cerrar"
@@ -1034,20 +1034,20 @@ msgstr "Autorevisión ortográfica"
 msgid "Spell Checking Language"
 msgstr "Corrector ortográfico del idioma"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:201
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:266
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:200
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:265
 #, kde-format
 msgid "Speak Text"
 msgstr "Leer texto"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:348
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:450
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:346
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:448
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Nada para revisar ortografía."
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:353
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:468
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:351
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:466
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "No hay motores disponibles para revisión ortográfica."
@@ -1057,7 +1057,7 @@ msgstr "No hay motores disponibles para revisión ortográfica."
 msgid "Allow Tabulations"
 msgstr "Permitir tabulaciones"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:460
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:458
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -1066,13 +1066,13 @@ msgstr ""
 "No hay motores disponibles para revisión ortográfica. ¿Quiere usted enviar "
 "el correo de todos modos?"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:462
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:460
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Enviar"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:484
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:482
 #, kde-format
 msgid "Skip"
 msgstr "Saltar"
@@ -1110,7 +1110,7 @@ msgid "Test"
 msgstr "Prueba"
 
 #: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:41
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:59
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:60
 #, kde-format
 msgid "Volume:"
 msgstr "Volumen:"
@@ -1140,10 +1140,22 @@ msgstr "Idioma:"
 msgid "Voice:"
 msgstr "Voz:"
 
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:80
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:81
 #, kde-format
 msgid "Configure..."
 msgstr "Configurar..."
+
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
+#, kde-format
+msgid "Engine has a problem."
+msgstr ""
+
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Text-To-Speech"
+msgid "Text To Speech"
+msgstr "Configurar texto a voz"
 
 #~ msgctxt "Default tts engine"
 #~ msgid "Default"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepimlibs-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:47+0000\n"
+"POT-Creation-Date: 2023-01-14 00:57+0000\n"
 "PO-Revision-Date: 2022-11-30 17:15+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -897,7 +897,7 @@ msgstr "Tablo Hizalaması:"
 #: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:37
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:39
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:42
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:54
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:55
 #, kde-format
 msgid "Close"
 msgstr "Kapat"
@@ -1032,20 +1032,20 @@ msgstr "Otomatik Yazım Denetimi"
 msgid "Spell Checking Language"
 msgstr "Yazım Denetimi Dili"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:201
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:266
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:200
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:265
 #, kde-format
 msgid "Speak Text"
 msgstr "Metni Seslendir"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:348
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:450
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:346
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:448
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Yazım denetimi yapılacak bir şey yok."
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:353
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:468
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:351
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:466
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Yazım denetimi için bir arka yüz yok."
@@ -1055,7 +1055,7 @@ msgstr "Yazım denetimi için bir arka yüz yok."
 msgid "Allow Tabulations"
 msgstr "Sekmelere İzin Ver"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:460
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:458
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -1064,13 +1064,13 @@ msgstr ""
 "Yazım denetimi için bir arka yüz yok. E-postayi yine de göndermek istiyor "
 "musunuz?"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:462
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:460
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Gönder"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:484
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:482
 #, kde-format
 msgid "Skip"
 msgstr "Atla"
@@ -1108,7 +1108,7 @@ msgid "Test"
 msgstr "Sına"
 
 #: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:41
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:59
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:60
 #, kde-format
 msgid "Volume:"
 msgstr "Ses Düzeyi:"
@@ -1138,10 +1138,22 @@ msgstr "Dil:"
 msgid "Voice:"
 msgstr "Ses:"
 
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:80
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:81
 #, kde-format
 msgid "Configure..."
 msgstr "Yapılandır..."
+
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
+#, kde-format
+msgid "Engine has a problem."
+msgstr ""
+
+#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Text-To-Speech"
+msgid "Text To Speech"
+msgstr "Metin Okumayı Yapılandır"
 
 #~ msgctxt "Default tts engine"
 #~ msgid "Default"
