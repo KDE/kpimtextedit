@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014, 2018.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2022.
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:57+0000\n"
-"PO-Revision-Date: 2022-12-22 09:28+0400\n"
+"PO-Revision-Date: 2023-01-14 13:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1146,14 +1146,12 @@ msgstr "اضبط..."
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:132
 #, kde-format
 msgid "Engine has a problem."
-msgstr ""
+msgstr "المحرك لديه مشكلة."
 
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Text-To-Speech"
+#, kde-format
 msgid "Text To Speech"
-msgstr "اضبط نطق النّصّ"
+msgstr "نطق النّصّ"
 
 #~ msgctxt "Default tts engine"
 #~ msgid "Default"

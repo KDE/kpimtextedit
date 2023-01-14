@@ -1153,7 +1153,6 @@ msgstr "Проблема у рушії."
 
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:132
 #, kde-format
-#| msgid "Test for text to speech"
 msgid "Text To Speech"
 msgstr "Синтез мовлення з тексту"
 
