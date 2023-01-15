@@ -1,16 +1,16 @@
 # Translation for libkpimtexedit.po to Euskara/Basque (eu).
-# Copyright (C) 2022 This file is copyright:
+# Copyright (C) 2022-2023 This file is copyright:
 # This file is distributed under the same license as the kpimtextedit package.
 # KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:57+0000\n"
-"PO-Revision-Date: 2022-12-01 22:02+0100\n"
+"PO-Revision-Date: 2023-01-14 23:57+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: kpimtextedit/composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -1145,14 +1145,12 @@ msgstr "Konfiguratu..."
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:132
 #, kde-format
 msgid "Engine has a problem."
-msgstr ""
+msgstr "Motorrak arazo bat du."
 
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Text-To-Speech"
+#, kde-format
 msgid "Text To Speech"
-msgstr "Konfiguratu Testutik-hizketara"
+msgstr "Testutik hizketara"
 
 #~ msgctxt "Default tts engine"
 #~ msgid "Default"
