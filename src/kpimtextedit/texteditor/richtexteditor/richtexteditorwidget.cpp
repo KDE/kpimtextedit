@@ -123,7 +123,7 @@ void RichTextEditorWidget::init(RichTextEditor *customEditor)
     connect(d->mEditor, &RichTextEditor::say, d->mTextToSpeechWidget, &KPIMTextEditTextToSpeech::TextToSpeechContainerWidget::say);
 #endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-    connect(d->mEditor, &PlainTextEditor::say, d->mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
+    connect(d->mEditor, &RichTextEditor::say, d->mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
 #endif
     lay->addWidget(d->mEditor);
 
