@@ -13,6 +13,9 @@
 #ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
 #include <KPIMTextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#include <TextEditTextToSpeech/TextToSpeechContainerWidget>
+#endif
 #include "slidecontainer.h"
 
 using namespace KPIMTextEdit;
@@ -26,6 +29,9 @@ public:
     RichTextEditor *mEditor = nullptr;
 #ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
     KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
 #endif
     KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
 };
@@ -104,6 +110,10 @@ void RichTextEditorWidget::init(RichTextEditor *customEditor)
     d->mTextToSpeechWidget = new KPIMTextEditTextToSpeech::TextToSpeechContainerWidget(this);
     lay->addWidget(d->mTextToSpeechWidget);
 #endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    d->mTextToSpeechWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(this);
+    lay->addWidget(d->mTextToSpeechWidget);
+#endif
     if (customEditor) {
         d->mEditor = customEditor;
     } else {
@@ -111,6 +121,9 @@ void RichTextEditorWidget::init(RichTextEditor *customEditor)
     }
 #ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
     connect(d->mEditor, &RichTextEditor::say, d->mTextToSpeechWidget, &KPIMTextEditTextToSpeech::TextToSpeechContainerWidget::say);
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    connect(d->mEditor, &PlainTextEditor::say, d->mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
 #endif
     lay->addWidget(d->mEditor);
 

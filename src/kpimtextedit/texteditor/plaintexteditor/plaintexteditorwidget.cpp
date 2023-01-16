@@ -11,6 +11,9 @@
 #ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
 #include <KPIMTextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#include <TextEditTextToSpeech/TextToSpeechContainerWidget>
+#endif
 #include <QTextCursor>
 #include <QVBoxLayout>
 
@@ -24,6 +27,9 @@ public:
     PlainTextEditor *mEditor = nullptr;
 #ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
     KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
 #endif
     KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
 };
@@ -82,6 +88,10 @@ void PlainTextEditorWidget::init(PlainTextEditor *customEditor)
     d->mTextToSpeechWidget = new KPIMTextEditTextToSpeech::TextToSpeechContainerWidget(this);
     lay->addWidget(d->mTextToSpeechWidget);
 #endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    d->mTextToSpeechWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(this);
+    lay->addWidget(d->mTextToSpeechWidget);
+#endif
     if (customEditor) {
         d->mEditor = customEditor;
     } else {
@@ -90,6 +100,9 @@ void PlainTextEditorWidget::init(PlainTextEditor *customEditor)
     lay->addWidget(d->mEditor);
 #ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
     connect(d->mEditor, &PlainTextEditor::say, d->mTextToSpeechWidget, &KPIMTextEditTextToSpeech::TextToSpeechContainerWidget::say);
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    connect(d->mEditor, &PlainTextEditor::say, d->mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
 #endif
     d->mSliderContainer = new KPIMTextEdit::SlideContainer(this);
 

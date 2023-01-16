@@ -28,6 +28,9 @@
 #ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
 #include <KPIMTextEditTextToSpeech/TextToSpeech>
 #endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#include <TextEditTextToSpeech/TextToSpeech>
+#endif
 
 #include <KColorScheme>
 #include <QApplication>
@@ -261,6 +264,13 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
             connect(allowTabAction, &QAction::triggered, this, &RichTextEditor::slotAllowTab);
         }
 #ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
+        if (!emptyDocument) {
+            QAction *speakAction = popup->addAction(i18n("Speak Text"));
+            speakAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
+            connect(speakAction, &QAction::triggered, this, &RichTextEditor::slotSpeakText);
+        }
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
         if (!emptyDocument) {
             QAction *speakAction = popup->addAction(i18n("Speak Text"));
             speakAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
