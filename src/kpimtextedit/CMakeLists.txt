@@ -165,10 +165,17 @@ target_link_libraries(KF5PimTextEdit
     )
 
 if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
-    target_link_libraries(KF5PimTextEdit
-        PUBLIC
-        KF5::PimTextEditTextToSpeech
-    )
+    if (USE_KTEXTADDONS_LIB)
+        target_link_libraries(KF5PimTextEdit
+            PUBLIC
+            KF5::TextEditTextToSpeech
+        )
+    else()
+        target_link_libraries(KF5PimTextEdit
+            PUBLIC
+            KF5::PimTextEditTextToSpeech
+        )
+    endif()
 endif()
 
 set_target_properties(KF5PimTextEdit PROPERTIES
