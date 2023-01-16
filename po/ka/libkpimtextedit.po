@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:57+0000\n"
-"PO-Revision-Date: 2022-12-13 02:51+0100\n"
+"PO-Revision-Date: 2023-01-15 04:00+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -284,7 +284,7 @@ msgstr "გამოსახულების დამატება"
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:368
 #, kde-format
 msgid "Insert HTML"
-msgstr "HTML_ის ჩასმა"
+msgstr "HTML-ის ჩასმა"
 
 #: kpimtextedit/composer-ng/richtextcomposeractions.cpp:378
 #, kde-format
@@ -632,7 +632,7 @@ msgstr "ჯილდოს-მედალი"
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
-msgstr "HTML_ის ჩასმა"
+msgstr "HTML-ის ჩასმა"
 
 #: kpimtextedit/inserthtmldialog.cpp:36
 #, kde-format
@@ -648,7 +648,7 @@ msgstr "მაგალითად: <i> გამარჯობა კინ�
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
-msgstr "Insert"
+msgstr "ჩასმა"
 
 #: kpimtextedit/insertimagedialog.cpp:27
 #, kde-format
@@ -661,7 +661,7 @@ msgstr "გამოსახულების დამატება"
 #: kpimtextedit/tableactionmenu.cpp:405
 #, kde-format
 msgid "Insert"
-msgstr "Insert"
+msgstr "ჩასმა"
 
 #: kpimtextedit/insertimagewidget.cpp:40
 #, kde-format
@@ -1108,7 +1108,7 @@ msgstr "შემოწმება"
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:60
 #, kde-format
 msgid "Volume:"
-msgstr "ტომი:"
+msgstr "ხმა:"
 
 #: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:45
 #, kde-format
@@ -1143,11 +1143,9 @@ msgstr "მორგება..."
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:132
 #, kde-format
 msgid "Engine has a problem."
-msgstr ""
+msgstr "ძრავის პრობლემა."
 
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Text-To-Speech"
+#, kde-format
 msgid "Text To Speech"
-msgstr "ტექსტის-ხმამაღლა-წაკითხვის მორგება"
+msgstr "ტექსტის-ხმამაღლა-წაკითხვა"
