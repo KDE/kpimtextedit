@@ -2,7 +2,7 @@
 # Copyright (C) 2009-2018 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2009, 2012, 2019, 2020, 2021, 2022.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2009, 2012, 2019, 2020, 2021, 2022, 2023.
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2009, 2012, 2013, 2015, 2018.
 # Marcus Gama <marcus.gama@gmail.com>, 2012.
 msgid ""
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:47+0000\n"
-"PO-Revision-Date: 2022-03-04 09:15-0300\n"
+"PO-Revision-Date: 2023-01-16 23:01-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -1092,7 +1092,7 @@ msgstr "Reproduzir"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
-msgstr "Configurar o Texto-para-fala"
+msgstr "Configurar o sintetizador de voz"
 
 #: texttospeech/texttospeechconfigwidget.cpp:38
 #: texttospeech/texttospeechwidget.cpp:58

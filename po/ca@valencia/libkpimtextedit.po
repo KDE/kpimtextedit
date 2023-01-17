@@ -1093,7 +1093,7 @@ msgstr "Reproduïx"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
-msgstr "Configuració del text a veu"
+msgstr "Configureu el text a veu"
 
 #: texttospeech/texttospeechconfigwidget.cpp:38
 #: texttospeech/texttospeechwidget.cpp:58
