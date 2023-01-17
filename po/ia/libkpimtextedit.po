@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:57+0000\n"
+"POT-Creation-Date: 2023-01-17 00:59+0000\n"
 "PO-Revision-Date: 2023-01-10 16:35+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1005,54 +1005,56 @@ msgid_plural "%1 replacements made"
 msgstr[0] "%1 reimplaciamento facite"
 msgstr[1] "%1 reimplaciamentos facite"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:146
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:203
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:149
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:206
 #, kde-format
 msgid "Replace..."
 msgstr "Reimplacia"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:161
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:219
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:164
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:222
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Controlo Orthographic..."
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:166
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:226
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:169
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:229
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Auto Controlo Orthographic"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:172
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:232
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:175
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:235
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Linguage pro le controlo orthographic"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:200
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:265
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:203
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:210
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:268
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:275
 #, kde-format
 msgid "Speak Text"
 msgstr "Pronuncia texto"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:346
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:448
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:356
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:458
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Nihil de controlar orthographicamente"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:351
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:466
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:361
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:476
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Necun retro-administration disponibile per analysator syntactic"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:258
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:261
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Permitte Tabulationes"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:458
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:468
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -1061,13 +1063,13 @@ msgstr ""
 "Necun retro-administration disponibile per analysator syntactic. Tu vole "
 "inviar le message de eposta malgrado isto?"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:460
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:470
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Invia"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:482
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:492
 #, kde-format
 msgid "Skip"
 msgstr "Salta"

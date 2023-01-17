@@ -1,17 +1,17 @@
 # Translation of libkpimtextedit.po to Catalan (Valencian)
-# Copyright (C) 2009-2022 This_file_is_part_of_KDE
+# Copyright (C) 2009-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2009, 2012, 2013, 2014, 2017, 2019, 2020, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2009, 2012, 2013, 2014, 2017, 2019, 2020, 2021, 2022, 2023.
 # Manuel Tortosa Moreno <manutortosa@gmail.com>, 2009.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:57+0000\n"
-"PO-Revision-Date: 2022-11-30 09:43+0100\n"
+"POT-Creation-Date: 2023-01-17 00:59+0000\n"
+"PO-Revision-Date: 2023-01-14 12:07+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1009,54 +1009,56 @@ msgid_plural "%1 replacements made"
 msgstr[0] "S'ha fet %1 substitució"
 msgstr[1] "S'han fet %1 substitucions"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:146
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:203
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:149
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:206
 #, kde-format
 msgid "Replace..."
 msgstr "Substituïx..."
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:161
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:219
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:164
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:222
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Verifica l'ortografia..."
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:166
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:226
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:169
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:229
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Verifica automàticament l'ortogràfica"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:172
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:232
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:175
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:235
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Idioma de la verificació ortogràfica"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:200
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:265
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:203
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:210
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:268
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:275
 #, kde-format
 msgid "Speak Text"
 msgstr "Llig el text"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:346
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:448
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:356
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:458
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "No hi ha res que s'haja de verificar ortogràficament."
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:351
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:466
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:361
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:476
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "No hi ha disponible cap dorsal per a la verificació ortogràfica."
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:258
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:261
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Permet les tabulacions"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:458
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:468
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -1065,13 +1067,13 @@ msgstr ""
 "No hi ha disponible cap dorsal per a la verificació ortogràfica. Voleu "
 "enviar el correu igualment?"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:460
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:470
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Envia"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:482
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:492
 #, kde-format
 msgid "Skip"
 msgstr "Salta"
@@ -1096,7 +1098,7 @@ msgstr "Reproduïx"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
-msgstr "Configuració del text a veu"
+msgstr "Configureu el text a veu"
 
 #: kpimtextedittexttospeech/texttospeechconfiginterface.cpp:71
 #, kde-format
@@ -1147,11 +1149,9 @@ msgstr "Configura..."
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:132
 #, kde-format
 msgid "Engine has a problem."
-msgstr ""
+msgstr "El motor té un problema."
 
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Text-To-Speech"
+#, kde-format
 msgid "Text To Speech"
-msgstr "Configuració del text a veu"
+msgstr "Text a veu"

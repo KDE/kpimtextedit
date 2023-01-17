@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:57+0000\n"
+"POT-Creation-Date: 2023-01-17 00:59+0000\n"
 "PO-Revision-Date: 2023-01-14 23:57+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1007,54 +1007,56 @@ msgid_plural "%1 replacements made"
 msgstr[0] "Ordezkapen %1 egin da"
 msgstr[1] "%1 ordezkapen egin dira"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:146
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:203
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:149
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:206
 #, kde-format
 msgid "Replace..."
 msgstr "Ordeztu..."
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:161
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:219
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:164
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:222
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Egiaztatu ortografia..."
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:166
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:226
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:169
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:229
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Ortografia egiaztatze automatikoa"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:172
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:232
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:175
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:235
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Ortografia-egiaztatzeko hizkuntza"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:200
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:265
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:203
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:210
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:268
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:275
 #, kde-format
 msgid "Speak Text"
 msgstr "Esan testua"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:346
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:448
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:356
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:458
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Ortografia egiaztatzekorik ez."
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:351
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:466
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:361
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:476
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Ez dago ortografia-egiaztatzeko bizkarraldekorik."
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:258
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:261
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Baimendu tabulazioak"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:458
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:468
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -1063,13 +1065,13 @@ msgstr ""
 "Ez dago ortografia-egiaztatzeko bizkarraldekorik. Hala ere, e-posta bidali "
 "nahi duzu?"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:460
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:470
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Bidali"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:482
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:492
 #, kde-format
 msgid "Skip"
 msgstr "Saihestu"
