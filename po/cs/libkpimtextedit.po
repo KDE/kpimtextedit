@@ -1144,8 +1144,6 @@ msgid "Engine has a problem."
 msgstr ""
 
 #: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Text-To-Speech"
+#, kde-format
 msgid "Text To Speech"
-msgstr "Nastavení hlasové syntézy"
+msgstr ""
