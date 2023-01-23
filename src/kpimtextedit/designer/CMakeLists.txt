@@ -31,7 +31,7 @@ ecm_qtdesignerplugin_widget(KPIMTextEdit::RichTextComposerWidget
 
 ecm_add_qtdesignerplugin(kpimtexteditwidgets
     NAME KPimTextEditWidgets
-    OUTPUT_NAME kpimtexteditwidgets
+    OUTPUT_NAME kpimtextedit${QT_MAJOR_VERSION}widgets
     WIDGETS
     KPIMTextEdit::RichTextEditorWidget
     KPIMTextEdit::PlainTextEditorWidget
