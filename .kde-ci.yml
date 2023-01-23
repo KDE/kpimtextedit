@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['@all']
+- 'on': ['Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5']
   'require':
     'frameworks/extra-cmake-modules': '@latest'
     'frameworks/kconfig': '@latest'
@@ -18,6 +18,23 @@ Dependencies:
     'frameworks/ktextwidgets': '@latest'
     'frameworks/kcodecs': '@latest'
     'libraries/ktextaddons': '@stable'
+
+- 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
+  'require':
+    'frameworks/extra-cmake-modules': '@latest-kf6'
+    'frameworks/kconfig': '@latest-kf6'
+    'frameworks/kconfigwidgets': '@latest-kf6'
+    'frameworks/kcoreaddons': '@latest-kf6'
+    'frameworks/ki18n': '@latest-kf6'
+    'frameworks/kiconthemes': '@latest-kf6'
+    'frameworks/kio': '@latest-kf6'
+    'frameworks/sonnet': '@latest-kf6'
+    'frameworks/syntax-highlighting': '@latest-kf6'
+    'frameworks/kwidgetsaddons': '@latest-kf6'
+    'frameworks/kxmlgui': '@latest-kf6'
+    'frameworks/ktextwidgets': '@latest-kf6'
+    'frameworks/kcodecs': '@latest-kf6'
+    'libraries/ktextaddons': '@latest-kf6'
 
 - 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
   'require':

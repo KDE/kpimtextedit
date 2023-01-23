@@ -46,10 +46,10 @@ endif()
 if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
     target_link_libraries(KF5PimTextEditTextToSpeech
         PRIVATE
-        KF5::WidgetsAddons
-        KF5::ConfigWidgets
-        KF5::XmlGui
-        KF5::I18n
+        KF${KF_MAJOR_VERSION}::WidgetsAddons
+        KF${KF_MAJOR_VERSION}::ConfigWidgets
+        KF${KF_MAJOR_VERSION}::XmlGui
+        KF${KF_MAJOR_VERSION}::I18n
         Qt::TextToSpeech
         )
 endif()
@@ -69,7 +69,7 @@ target_include_directories(KF5PimTextEditTextToSpeech PUBLIC "$<BUILD_INTERFACE:
 
 target_link_libraries(KF5PimTextEditTextToSpeech
     PRIVATE
-    KF5::I18n
+    KF${KF_MAJOR_VERSION}::I18n
     )
 
 set_target_properties(KF5PimTextEditTextToSpeech PROPERTIES

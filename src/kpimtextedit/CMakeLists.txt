@@ -12,7 +12,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KPIMTEXTEDIT
 
 
 if(BUILD_TESTING)
-    find_package(KF5TextWidgets ${KF_MIN_VERSION} CONFIG REQUIRED)
+    find_package(KF${KF_MAJOR_VERSION}TextWidgets ${KF_MIN_VERSION} CONFIG REQUIRED)
     add_subdirectory(autotests)
     add_subdirectory(tests)
 endif()
@@ -153,15 +153,15 @@ target_include_directories(KF5PimTextEdit PUBLIC "$<BUILD_INTERFACE:${KPimTextEd
 
 target_link_libraries(KF5PimTextEdit
     PRIVATE
-    KF5::SonnetUi
-    KF5::SonnetCore
-    KF5::WidgetsAddons
-    KF5::KIOWidgets
-    KF5::ConfigWidgets
-    KF5::XmlGui
-    KF5::I18n
-    KF5::SyntaxHighlighting
-    KF5::Codecs
+    KF${KF_MAJOR_VERSION}::SonnetUi
+    KF${KF_MAJOR_VERSION}::SonnetCore
+    KF${KF_MAJOR_VERSION}::WidgetsAddons
+    KF${KF_MAJOR_VERSION}::KIOWidgets
+    KF${KF_MAJOR_VERSION}::ConfigWidgets
+    KF${KF_MAJOR_VERSION}::XmlGui
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::SyntaxHighlighting
+    KF${KF_MAJOR_VERSION}::Codecs
     )
 
 if (KPIMTEXTEDIT_TEXT_TO_SPEECH)

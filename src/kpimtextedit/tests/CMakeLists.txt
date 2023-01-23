@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #####
 add_executable(inserthtmldialog_demo inserthtmldialog_demo.cpp)
-set(inserthtmldialog_demo_LIBS KF5PimTextEdit Qt::Widgets KF5::SyntaxHighlighting)
+set(inserthtmldialog_demo_LIBS KF5PimTextEdit Qt::Widgets KF${KF_MAJOR_VERSION}::SyntaxHighlighting)
 target_link_libraries(inserthtmldialog_demo ${inserthtmldialog_demo_LIBS})
 #####
 add_executable(slidecontainer_gui slidecontainer_gui.cpp)
