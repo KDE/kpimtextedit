@@ -342,7 +342,11 @@ void RichTextComposerControler::setTextBackgroundColor(const QColor &color)
 void RichTextComposerControler::setFontFamily(const QString &fontFamily)
 {
     QTextCharFormat fmt;
+#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
     fmt.setFontFamily(fontFamily);
+#else
+    fmt.setFontFamilies(QStringList() << fontFamily);
+#endif
     d->mergeFormatOnWordOrSelection(fmt);
     richTextComposer()->setFocus();
     richTextComposer()->activateRichText();

@@ -141,12 +141,20 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
         if (d->supportFeatures & Search) {
             popup->addSeparator();
             if (!emptyDocument) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
                 popup->addAction(KStandardGuiItem::find().icon(), KStandardGuiItem::find().text(), this, &PlainTextEditor::findText, Qt::Key_F | Qt::CTRL);
+#else
+                popup->addAction(KStandardGuiItem::find().icon(), KStandardGuiItem::find().text(), Qt::Key_F | Qt::CTRL, this, &PlainTextEditor::findText);
+#endif
                 popup->addSeparator();
             }
             if (!isReadOnly()) {
                 if (!emptyDocument) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
                     popup->addAction(i18n("Replace..."), this, &PlainTextEditor::replaceText, Qt::Key_R | Qt::CTRL);
+#else
+                    popup->addAction(i18n("Replace..."), Qt::Key_R | Qt::CTRL, this, &PlainTextEditor::replaceText);
+#endif
                     popup->addSeparator();
                 }
             }

@@ -29,7 +29,7 @@ void EditorUtil::sentenceCase(QTextCursor &cursor) const
 {
     if (cursor.hasSelection()) {
         QString newText = cursor.selectedText();
-        const int nbChar(newText.count());
+        const int nbChar(newText.length());
         for (int i = 0; i < nbChar; ++i) {
             if (i == 0 && newText.at(0).isLetter()) {
                 newText.replace(0, 1, newText.at(0).toUpper());
@@ -51,7 +51,7 @@ void EditorUtil::reverseCase(QTextCursor &cursor) const
     if (cursor.hasSelection()) {
         const QString newText = cursor.selectedText();
         QString reverseCaseText;
-        const int nbChar(newText.count());
+        const int nbChar(newText.length());
         for (int i = 0; i < nbChar; ++i) {
             QChar charVal = newText.at(i);
             if (charVal.isLetter()) {

@@ -612,7 +612,12 @@ void MarkupDirector::processOpeningElements(const QTextBlock::iterator &it)
             m_builder->beginFontPointSize(d->m_openFontPointSize);
             break;
         case SpanFontFamily:
+#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
             d->m_openFontFamily = fragmentFormat.fontFamily();
+#else
+            d->m_openFontFamily =
+                fragmentFormat.fontFamilies().toStringList().isEmpty() ? QString() : fragmentFormat.fontFamilies().toStringList().constFirst();
+#endif
             m_builder->beginFontFamily(d->m_openFontFamily);
             break;
         case SpanBackground:

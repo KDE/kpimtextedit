@@ -433,14 +433,14 @@ void TextHTMLBuilder::appendLiteralText(const QString &text)
     Q_D(TextHTMLBuilder);
     const QString textEscaped = text.toHtmlEscaped();
     QString textEscapedResult;
-    for (int i = 0, total = textEscaped.count(); i < total; ++i) {
+    for (int i = 0, total = textEscaped.length(); i < total; ++i) {
         const QChar c = textEscaped.at(i);
 
         if (c == QLatin1Char(' ')) {
             if (i == 0) {
                 textEscapedResult += QStringLiteral("&nbsp;");
             } else {
-                if (i + 1 < textEscaped.count() && (textEscaped.at(i + 1) == QLatin1Char(' '))) {
+                if (i + 1 < textEscaped.length() && (textEscaped.at(i + 1) == QLatin1Char(' '))) {
                     textEscapedResult += QStringLiteral("&nbsp;");
                 } else {
                     textEscapedResult += c;
