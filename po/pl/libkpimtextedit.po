@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-17 00:59+0000\n"
+"POT-Creation-Date: 2023-01-24 00:59+0000\n"
 "PO-Revision-Date: 2022-12-10 11:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -367,7 +367,7 @@ msgctxt "@action"
 msgid "Checkbox"
 msgstr "Pole zaznaczane"
 
-#: kpimtextedit/composer-ng/richtextcomposercontroler.cpp:733
+#: kpimtextedit/composer-ng/richtextcomposercontroler.cpp:737
 #, kde-format
 msgid "Only local files are supported."
 msgstr "Obsługiwane są tylko pliki lokalne."
@@ -1008,56 +1008,58 @@ msgstr[0] "Wykonano %1 zastąpienie"
 msgstr[1] "Wykonano %1 zastąpienia"
 msgstr[2] "Wykonano %1 zastąpień"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:149
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:206
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:154
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:156
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:212
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:214
 #, kde-format
 msgid "Replace..."
 msgstr "Zastąp..."
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:164
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:222
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:172
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:231
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Sprawdź pisownię..."
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:169
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:229
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:177
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:238
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Samoczynne sprawdzanie pisowni"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:175
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:235
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:183
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:244
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Język sprawdzania pisowni"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:203
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:210
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:268
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:275
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:211
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:218
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:277
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:284
 #, kde-format
 msgid "Speak Text"
 msgstr "Wypowiedz tekst"
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:356
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:458
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:364
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:467
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Nic do sprawdzenia pisowni."
 
-#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:361
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:476
+#: kpimtextedit/texteditor/plaintexteditor/plaintexteditor.cpp:369
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:485
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Brak silnika do sprawdzania pisowni."
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:261
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:270
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Dopuść tabulację"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:468
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:477
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -1065,13 +1067,13 @@ msgid ""
 msgstr ""
 "Brak silnika do sprawdzania pisowni. Czy mimo tego chcesz wysłać wiadomość?"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:470
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:479
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Wyślij"
 
-#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:492
+#: kpimtextedit/texteditor/richtexteditor/richtexteditor.cpp:501
 #, kde-format
 msgid "Skip"
 msgstr "Pomiń"
