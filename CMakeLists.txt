@@ -70,7 +70,7 @@ if (USE_UNITY_CMAKE_SUPPORT)
     set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
 endif()
 
-option(USE_KTEXTADDONS_LIB "Use ktextaddons lib (experimental)" OFF)
+option(USE_KTEXTADDONS_LIB "Use ktextaddons lib (experimental)" ON)
 option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ON)
 add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Designer")
 
