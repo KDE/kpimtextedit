@@ -168,7 +168,7 @@ if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
     if (USE_KTEXTADDONS_LIB)
         target_link_libraries(KF5PimTextEdit
             PUBLIC
-            KF5::TextEditTextToSpeech
+            KF${KF_MAJOR_VERSION}::TextEditTextToSpeech
         )
     else()
         target_link_libraries(KF5PimTextEdit
