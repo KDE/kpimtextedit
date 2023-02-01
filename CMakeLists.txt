@@ -72,7 +72,6 @@ if (USE_UNITY_CMAKE_SUPPORT)
     set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
 endif()
 
-option(USE_KTEXTADDONS_LIB "Use ktextaddons lib (experimental)" ON)
 option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ON)
 add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Designer")
 
@@ -81,22 +80,10 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
 ecm_set_disabled_deprecation_versions(QT 6.4   KF 5.102.0)
 
 
-if (USE_KTEXTADDONS_LIB)
-    find_package(KF${KF_MAJOR_VERSION}TextEditTextToSpeech ${KTEXTADDONS_MIN_VERSION} CONFIG)
-    if (TARGET KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
-        add_definitions(-DHAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
-        set(KPIMTEXTEDIT_TEXT_TO_SPEECH TRUE)
-    endif()
-else()
-    find_package(Qt${QT_MAJOR_VERSION}TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
-    set_package_properties(Qt${QT_MAJOR_VERSION}TextToSpeech PROPERTIES DESCRIPTION
-        "Add support for text to speech"
-        TYPE OPTIONAL
-    )
-    if(TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
-        add_definitions(-DHAVE_TEXT_TO_SPEECH_SUPPORT)
-        set(KPIMTEXTEDIT_TEXT_TO_SPEECH TRUE)
-    endif()
+find_package(KF${KF_MAJOR_VERSION}TextEditTextToSpeech ${KTEXTADDONS_MIN_VERSION} CONFIG)
+if (TARGET KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
+    add_definitions(-DHAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
+    set(KPIMTEXTEDIT_TEXT_TO_SPEECH TRUE)
 endif()
 
 
