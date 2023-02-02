@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-24 00:59+0000\n"
+"POT-Creation-Date: 2023-02-02 00:59+0000\n"
 "PO-Revision-Date: 2022-04-16 00:13+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -894,7 +894,6 @@ msgstr "표 정렬:"
 #: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:37
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:39
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:42
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:55
 #, kde-format
 msgid "Close"
 msgstr "닫기"
@@ -1073,84 +1072,44 @@ msgstr "보내기"
 msgid "Skip"
 msgstr "건너뛰기"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:28
-#: kpimtextedittexttospeech/texttospeechactions.cpp:31
-#, kde-format
-msgid "Stop"
-msgstr "정지"
+#~ msgid "Stop"
+#~ msgstr "정지"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:72
-#, kde-format
-msgid "Pause"
-msgstr "일시 정지"
+#~ msgid "Pause"
+#~ msgstr "일시 정지"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:72
-#, kde-format
-msgid "Play"
-msgstr "재생"
+#~ msgid "Play"
+#~ msgstr "재생"
 
-#: kpimtextedittexttospeech/texttospeechconfigdialog.cpp:28
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure Text-To-Speech"
-msgstr "텍스트 말하기 설정"
+#~ msgctxt "@title:window"
+#~ msgid "Configure Text-To-Speech"
+#~ msgstr "텍스트 말하기 설정"
 
-#: kpimtextedittexttospeech/texttospeechconfiginterface.cpp:71
-#, kde-format
-msgid "Morning, this is the test for testing settings."
-msgstr ""
+#~ msgid "Volume:"
+#~ msgstr "음량:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:34
-#, kde-format
-msgid "Test"
-msgstr ""
+#~ msgid "Rate:"
+#~ msgstr "속도:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:41
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:60
-#, kde-format
-msgid "Volume:"
-msgstr "음량:"
+#~ msgid "Pitch:"
+#~ msgstr "높이:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:45
-#, kde-format
-msgid "Rate:"
-msgstr "속도:"
+#~ msgid "Engine:"
+#~ msgstr "엔진:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:51
-#, kde-format
-msgid "Pitch:"
-msgstr "높이:"
+#~ msgid "Language:"
+#~ msgstr "언어:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:54
-#, kde-format
-msgid "Engine:"
-msgstr "엔진:"
+#~ msgid "Voice:"
+#~ msgstr "음성:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:58
-#, kde-format
-msgid "Language:"
-msgstr "언어:"
+#~ msgid "Configure..."
+#~ msgstr "설정..."
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:62
-#, kde-format
-msgid "Voice:"
-msgstr "음성:"
-
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:81
-#, kde-format
-msgid "Configure..."
-msgstr "설정..."
-
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, kde-format
-msgid "Engine has a problem."
-msgstr ""
-
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Test for text to speech"
-msgid "Text To Speech"
-msgstr "텍스트 말하기 테스트"
+#, fuzzy
+#~| msgid "Test for text to speech"
+#~ msgid "Text To Speech"
+#~ msgstr "텍스트 말하기 테스트"
 
 #~ msgctxt "Default tts engine"
 #~ msgid "Default"

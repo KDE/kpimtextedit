@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-24 00:59+0000\n"
+"POT-Creation-Date: 2023-02-02 00:59+0000\n"
 "PO-Revision-Date: 2023-01-15 09:42+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -901,7 +901,6 @@ msgstr "Poravnava razpredelnice:"
 #: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:37
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:39
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:42
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:55
 #, kde-format
 msgid "Close"
 msgstr "Zapri"
@@ -1085,83 +1084,51 @@ msgstr "Pošlji"
 msgid "Skip"
 msgstr "Preskoči"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:28
-#: kpimtextedittexttospeech/texttospeechactions.cpp:31
-#, kde-format
-msgid "Stop"
-msgstr "Zaustavi"
+#~ msgid "Stop"
+#~ msgstr "Zaustavi"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:72
-#, kde-format
-msgid "Pause"
-msgstr "Premor"
+#~ msgid "Pause"
+#~ msgstr "Premor"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:72
-#, kde-format
-msgid "Play"
-msgstr "Predvajaj"
+#~ msgid "Play"
+#~ msgstr "Predvajaj"
 
-#: kpimtextedittexttospeech/texttospeechconfigdialog.cpp:28
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure Text-To-Speech"
-msgstr "Nastavi besedilo-v-govor"
+#~ msgctxt "@title:window"
+#~ msgid "Configure Text-To-Speech"
+#~ msgstr "Nastavi besedilo-v-govor"
 
-#: kpimtextedittexttospeech/texttospeechconfiginterface.cpp:71
-#, kde-format
-msgid "Morning, this is the test for testing settings."
-msgstr "Dobro jutro, to je test za nastavitve testiranja."
+#~ msgid "Morning, this is the test for testing settings."
+#~ msgstr "Dobro jutro, to je test za nastavitve testiranja."
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:34
-#, kde-format
-msgid "Test"
-msgstr "Test"
+#~ msgid "Test"
+#~ msgstr "Test"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:41
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:60
-#, kde-format
-msgid "Volume:"
-msgstr "Glasnost:"
+#~ msgid "Volume:"
+#~ msgstr "Glasnost:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:45
-#, kde-format
-msgid "Rate:"
-msgstr "Hitrost:"
+#~ msgid "Rate:"
+#~ msgstr "Hitrost:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:51
-#, kde-format
-msgid "Pitch:"
-msgstr "Višina tona:"
+#~ msgid "Pitch:"
+#~ msgstr "Višina tona:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:54
-#, kde-format
-msgid "Engine:"
-msgstr "Pogon:"
+#~ msgid "Engine:"
+#~ msgstr "Pogon:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:58
-#, kde-format
-msgid "Language:"
-msgstr "Jezik:"
+#~ msgid "Language:"
+#~ msgstr "Jezik:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:62
-#, kde-format
-msgid "Voice:"
-msgstr "Glas:"
+#~ msgid "Voice:"
+#~ msgstr "Glas:"
 
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:81
-#, kde-format
-msgid "Configure..."
-msgstr "Prilagodi ..."
+#~ msgid "Configure..."
+#~ msgstr "Prilagodi ..."
 
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, kde-format
-msgid "Engine has a problem."
-msgstr "Stroj ima problem."
+#~ msgid "Engine has a problem."
+#~ msgstr "Stroj ima problem."
 
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, kde-format
-msgid "Text To Speech"
-msgstr "besedilo v govor"
+#~ msgid "Text To Speech"
+#~ msgstr "besedilo v govor"
 
 #~ msgctxt "Default tts engine"
 #~ msgid "Default"

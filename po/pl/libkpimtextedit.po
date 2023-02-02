@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-24 00:59+0000\n"
+"POT-Creation-Date: 2023-02-02 00:59+0000\n"
 "PO-Revision-Date: 2022-12-10 11:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -896,7 +896,6 @@ msgstr "Wyrównanie tabeli:"
 #: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:37
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:39
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:42
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:55
 #, kde-format
 msgid "Close"
 msgstr "Zamknij"
@@ -1078,84 +1077,50 @@ msgstr "Wyślij"
 msgid "Skip"
 msgstr "Pomiń"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:28
-#: kpimtextedittexttospeech/texttospeechactions.cpp:31
-#, kde-format
-msgid "Stop"
-msgstr "Zatrzymaj"
+#~ msgid "Stop"
+#~ msgstr "Zatrzymaj"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:72
-#, kde-format
-msgid "Pause"
-msgstr "Wstrzymaj"
+#~ msgid "Pause"
+#~ msgstr "Wstrzymaj"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:72
-#, kde-format
-msgid "Play"
-msgstr "Odtwórz"
+#~ msgid "Play"
+#~ msgstr "Odtwórz"
 
-#: kpimtextedittexttospeech/texttospeechconfigdialog.cpp:28
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure Text-To-Speech"
-msgstr "Ustawienia Tekstu-na-mowę"
+#~ msgctxt "@title:window"
+#~ msgid "Configure Text-To-Speech"
+#~ msgstr "Ustawienia Tekstu-na-mowę"
 
-#: kpimtextedittexttospeech/texttospeechconfiginterface.cpp:71
-#, kde-format
-msgid "Morning, this is the test for testing settings."
-msgstr "Dzień dobry, oto próbka do wypróbowania ustawień."
+#~ msgid "Morning, this is the test for testing settings."
+#~ msgstr "Dzień dobry, oto próbka do wypróbowania ustawień."
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:34
-#, kde-format
-msgid "Test"
-msgstr "Próba"
+#~ msgid "Test"
+#~ msgstr "Próba"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:41
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:60
-#, kde-format
-msgid "Volume:"
-msgstr "Głośność:"
+#~ msgid "Volume:"
+#~ msgstr "Głośność:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:45
-#, kde-format
-msgid "Rate:"
-msgstr "Szybkość:"
+#~ msgid "Rate:"
+#~ msgstr "Szybkość:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:51
-#, kde-format
-msgid "Pitch:"
-msgstr "Ton:"
+#~ msgid "Pitch:"
+#~ msgstr "Ton:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:54
-#, kde-format
-msgid "Engine:"
-msgstr "Silnik:"
+#~ msgid "Engine:"
+#~ msgstr "Silnik:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:58
-#, kde-format
-msgid "Language:"
-msgstr "Język:"
+#~ msgid "Language:"
+#~ msgstr "Język:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:62
-#, kde-format
-msgid "Voice:"
-msgstr "Głos:"
+#~ msgid "Voice:"
+#~ msgstr "Głos:"
 
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:81
-#, kde-format
-msgid "Configure..."
-msgstr "Ustawienia..."
+#~ msgid "Configure..."
+#~ msgstr "Ustawienia..."
 
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, kde-format
-msgid "Engine has a problem."
-msgstr ""
-
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Test for text to speech"
-msgid "Text To Speech"
-msgstr "Próba tekstu-na-mowę"
+#, fuzzy
+#~| msgid "Test for text to speech"
+#~ msgid "Text To Speech"
+#~ msgstr "Próba tekstu-na-mowę"
 
 #~ msgctxt "Default tts engine"
 #~ msgid "Default"

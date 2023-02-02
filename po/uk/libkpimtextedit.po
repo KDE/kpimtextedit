@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-24 00:59+0000\n"
+"POT-Creation-Date: 2023-02-02 00:59+0000\n"
 "PO-Revision-Date: 2023-01-14 09:16+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -898,7 +898,6 @@ msgstr "Вирівнювання таблиці:"
 #: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:37
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:39
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:42
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:55
 #, kde-format
 msgid "Close"
 msgstr "Закрити"
@@ -1082,83 +1081,51 @@ msgstr "Надіслати"
 msgid "Skip"
 msgstr "Пропустити"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:28
-#: kpimtextedittexttospeech/texttospeechactions.cpp:31
-#, kde-format
-msgid "Stop"
-msgstr "Стоп"
+#~ msgid "Stop"
+#~ msgstr "Стоп"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:72
-#, kde-format
-msgid "Pause"
-msgstr "Пауза"
+#~ msgid "Pause"
+#~ msgstr "Пауза"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:72
-#, kde-format
-msgid "Play"
-msgstr "Пуск"
+#~ msgid "Play"
+#~ msgstr "Пуск"
 
-#: kpimtextedittexttospeech/texttospeechconfigdialog.cpp:28
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure Text-To-Speech"
-msgstr "Налаштовування синтезу мовлення"
+#~ msgctxt "@title:window"
+#~ msgid "Configure Text-To-Speech"
+#~ msgstr "Налаштовування синтезу мовлення"
 
-#: kpimtextedittexttospeech/texttospeechconfiginterface.cpp:71
-#, kde-format
-msgid "Morning, this is the test for testing settings."
-msgstr "Вітаємо, це перевірка тестових параметрів."
+#~ msgid "Morning, this is the test for testing settings."
+#~ msgstr "Вітаємо, це перевірка тестових параметрів."
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:34
-#, kde-format
-msgid "Test"
-msgstr "Тест"
+#~ msgid "Test"
+#~ msgstr "Тест"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:41
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:60
-#, kde-format
-msgid "Volume:"
-msgstr "Том:"
+#~ msgid "Volume:"
+#~ msgstr "Том:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:45
-#, kde-format
-msgid "Rate:"
-msgstr "Частота:"
+#~ msgid "Rate:"
+#~ msgstr "Частота:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:51
-#, kde-format
-msgid "Pitch:"
-msgstr "Тон:"
+#~ msgid "Pitch:"
+#~ msgstr "Тон:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:54
-#, kde-format
-msgid "Engine:"
-msgstr "Рушій:"
+#~ msgid "Engine:"
+#~ msgstr "Рушій:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:58
-#, kde-format
-msgid "Language:"
-msgstr "Мова:"
+#~ msgid "Language:"
+#~ msgstr "Мова:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:62
-#, kde-format
-msgid "Voice:"
-msgstr "Голос:"
+#~ msgid "Voice:"
+#~ msgstr "Голос:"
 
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:81
-#, kde-format
-msgid "Configure..."
-msgstr "Налаштувати…"
+#~ msgid "Configure..."
+#~ msgstr "Налаштувати…"
 
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, kde-format
-msgid "Engine has a problem."
-msgstr "Проблема у рушії."
+#~ msgid "Engine has a problem."
+#~ msgstr "Проблема у рушії."
 
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, kde-format
-msgid "Text To Speech"
-msgstr "Синтез мовлення з тексту"
+#~ msgid "Text To Speech"
+#~ msgstr "Синтез мовлення з тексту"
 
 #~ msgctxt "Default tts engine"
 #~ msgid "Default"

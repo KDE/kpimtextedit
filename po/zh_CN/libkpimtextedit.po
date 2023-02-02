@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-24 00:59+0000\n"
+"POT-Creation-Date: 2023-02-02 00:59+0000\n"
 "PO-Revision-Date: 2023-01-12 10:30\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -892,7 +892,6 @@ msgstr "表格对齐："
 #: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:37
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:39
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:42
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:55
 #, kde-format
 msgid "Close"
 msgstr "关闭"
@@ -1071,82 +1070,42 @@ msgstr "发送"
 msgid "Skip"
 msgstr "跳过"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:28
-#: kpimtextedittexttospeech/texttospeechactions.cpp:31
-#, kde-format
-msgid "Stop"
-msgstr "停止"
+#~ msgid "Stop"
+#~ msgstr "停止"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:72
-#, kde-format
-msgid "Pause"
-msgstr "暂停"
+#~ msgid "Pause"
+#~ msgstr "暂停"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:72
-#, kde-format
-msgid "Play"
-msgstr "播放"
+#~ msgid "Play"
+#~ msgstr "播放"
 
-#: kpimtextedittexttospeech/texttospeechconfigdialog.cpp:28
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure Text-To-Speech"
-msgstr "配置文本到语音"
+#~ msgctxt "@title:window"
+#~ msgid "Configure Text-To-Speech"
+#~ msgstr "配置文本到语音"
 
-#: kpimtextedittexttospeech/texttospeechconfiginterface.cpp:71
-#, kde-format
-msgid "Morning, this is the test for testing settings."
-msgstr ""
+#~ msgid "Volume:"
+#~ msgstr "音量："
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:34
-#, kde-format
-msgid "Test"
-msgstr ""
+#~ msgid "Rate:"
+#~ msgstr "频率："
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:41
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:60
-#, kde-format
-msgid "Volume:"
-msgstr "音量："
+#~ msgid "Pitch:"
+#~ msgstr "音高："
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:45
-#, kde-format
-msgid "Rate:"
-msgstr "频率："
+#~ msgid "Engine:"
+#~ msgstr "引擎："
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:51
-#, kde-format
-msgid "Pitch:"
-msgstr "音高："
+#~ msgid "Language:"
+#~ msgstr "语言："
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:54
-#, kde-format
-msgid "Engine:"
-msgstr "引擎："
+#~ msgid "Voice:"
+#~ msgstr "语音："
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:58
-#, kde-format
-msgid "Language:"
-msgstr "语言："
+#~ msgid "Configure..."
+#~ msgstr "配置..."
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:62
-#, kde-format
-msgid "Voice:"
-msgstr "语音："
-
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:81
-#, kde-format
-msgid "Configure..."
-msgstr "配置..."
-
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, kde-format
-msgid "Engine has a problem."
-msgstr ""
-
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Text-To-Speech"
-msgid "Text To Speech"
-msgstr "配置文本到语音"
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Configure Text-To-Speech"
+#~ msgid "Text To Speech"
+#~ msgstr "配置文本到语音"

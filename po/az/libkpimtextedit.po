@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-24 00:59+0000\n"
+"POT-Creation-Date: 2023-02-02 00:59+0000\n"
 "PO-Revision-Date: 2022-03-24 15:20+0400\n"
 "Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -894,7 +894,6 @@ msgstr "Cədvəlin düzülüşü:"
 #: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:37
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:39
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:42
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:55
 #, kde-format
 msgid "Close"
 msgstr "Bağlamaq"
@@ -1076,85 +1075,45 @@ msgstr "Göndərin"
 msgid "Skip"
 msgstr "Ötürün"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:28
-#: kpimtextedittexttospeech/texttospeechactions.cpp:31
-#, kde-format
-msgid "Stop"
-msgstr "Dayandırın"
+#~ msgid "Stop"
+#~ msgstr "Dayandırın"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:72
-#, kde-format
-msgid "Pause"
-msgstr "Fasilə"
+#~ msgid "Pause"
+#~ msgstr "Fasilə"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:72
-#, kde-format
-msgid "Play"
-msgstr "Səsləndirmək"
+#~ msgid "Play"
+#~ msgstr "Səsləndirmək"
 
-#: kpimtextedittexttospeech/texttospeechconfigdialog.cpp:28
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure Text-To-Speech"
-msgstr "Mətnin nitqə çevrilməsini ayarlayın"
+#~ msgctxt "@title:window"
+#~ msgid "Configure Text-To-Speech"
+#~ msgstr "Mətnin nitqə çevrilməsini ayarlayın"
 
-#: kpimtextedittexttospeech/texttospeechconfiginterface.cpp:71
-#, kde-format
-msgid "Morning, this is the test for testing settings."
-msgstr ""
+#~ msgid "Volume:"
+#~ msgstr "Səs səviyyəsi:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:34
-#, kde-format
-msgid "Test"
-msgstr ""
+#~ msgid "Rate:"
+#~ msgstr "Tezlik:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:41
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:60
-#, kde-format
-msgid "Volume:"
-msgstr "Səs səviyyəsi:"
+#~ msgid "Pitch:"
+#~ msgstr "Səsin ucalığı:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:45
-#, kde-format
-msgid "Rate:"
-msgstr "Tezlik:"
+#~ msgid "Engine:"
+#~ msgstr "Həyata keçirmə:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:51
-#, kde-format
-msgid "Pitch:"
-msgstr "Səsin ucalığı:"
+#~ msgid "Language:"
+#~ msgstr "Dil:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:54
-#, kde-format
-msgid "Engine:"
-msgstr "Həyata keçirmə:"
+#~ msgid "Voice:"
+#~ msgstr "Səs:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:58
-#, kde-format
-msgid "Language:"
-msgstr "Dil:"
+#~ msgid "Configure..."
+#~ msgstr "Tənzimləyin..."
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:62
-#, kde-format
-msgid "Voice:"
-msgstr "Səs:"
-
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:81
-#, kde-format
-msgid "Configure..."
-msgstr "Tənzimləyin..."
-
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, kde-format
-msgid "Engine has a problem."
-msgstr ""
-
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Text-To-Speech"
-msgid "Text To Speech"
-msgstr "Mətnin nitqə çevrilməsini ayarlayın"
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Configure Text-To-Speech"
+#~ msgid "Text To Speech"
+#~ msgstr "Mətnin nitqə çevrilməsini ayarlayın"
 
 #~ msgctxt "Default tts engine"
 #~ msgid "Default"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-24 00:59+0000\n"
+"POT-Creation-Date: 2023-02-02 00:59+0000\n"
 "PO-Revision-Date: 2023-01-14 23:57+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -896,7 +896,6 @@ msgstr "Taularen lerrokadura:"
 #: kpimtextedit/texteditor/commonwidget/texteditfindbarbase.cpp:37
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:39
 #: kpimtextedit/texteditor/commonwidget/textgotolinewidget.cpp:42
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:55
 #, kde-format
 msgid "Close"
 msgstr "Itxi"
@@ -1078,83 +1077,51 @@ msgstr "Bidali"
 msgid "Skip"
 msgstr "Saihestu"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:28
-#: kpimtextedittexttospeech/texttospeechactions.cpp:31
-#, kde-format
-msgid "Stop"
-msgstr "Gelditu"
+#~ msgid "Stop"
+#~ msgstr "Gelditu"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:72
-#, kde-format
-msgid "Pause"
-msgstr "Eten"
+#~ msgid "Pause"
+#~ msgstr "Eten"
 
-#: kpimtextedittexttospeech/texttospeechactions.cpp:72
-#, kde-format
-msgid "Play"
-msgstr "Jo"
+#~ msgid "Play"
+#~ msgstr "Jo"
 
-#: kpimtextedittexttospeech/texttospeechconfigdialog.cpp:28
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure Text-To-Speech"
-msgstr "Konfiguratu Testutik-hizketara"
+#~ msgctxt "@title:window"
+#~ msgid "Configure Text-To-Speech"
+#~ msgstr "Konfiguratu Testutik-hizketara"
 
-#: kpimtextedittexttospeech/texttospeechconfiginterface.cpp:71
-#, kde-format
-msgid "Morning, this is the test for testing settings."
-msgstr "Egun on, hau da ezarpenak probatzeko proba."
+#~ msgid "Morning, this is the test for testing settings."
+#~ msgstr "Egun on, hau da ezarpenak probatzeko proba."
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:34
-#, kde-format
-msgid "Test"
-msgstr "Proba"
+#~ msgid "Test"
+#~ msgstr "Proba"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:41
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:60
-#, kde-format
-msgid "Volume:"
-msgstr "Bolumena:"
+#~ msgid "Volume:"
+#~ msgstr "Bolumena:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:45
-#, kde-format
-msgid "Rate:"
-msgstr "Emaria:"
+#~ msgid "Rate:"
+#~ msgstr "Emaria:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:51
-#, kde-format
-msgid "Pitch:"
-msgstr "Tonua:"
+#~ msgid "Pitch:"
+#~ msgstr "Tonua:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:54
-#, kde-format
-msgid "Engine:"
-msgstr "Motorra:"
+#~ msgid "Engine:"
+#~ msgstr "Motorra:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:58
-#, kde-format
-msgid "Language:"
-msgstr "Hizkuntza:"
+#~ msgid "Language:"
+#~ msgstr "Hizkuntza:"
 
-#: kpimtextedittexttospeech/texttospeechconfigwidget.cpp:62
-#, kde-format
-msgid "Voice:"
-msgstr "Ahotsa:"
+#~ msgid "Voice:"
+#~ msgstr "Ahotsa:"
 
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:81
-#, kde-format
-msgid "Configure..."
-msgstr "Konfiguratu..."
+#~ msgid "Configure..."
+#~ msgstr "Konfiguratu..."
 
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, kde-format
-msgid "Engine has a problem."
-msgstr "Motorrak arazo bat du."
+#~ msgid "Engine has a problem."
+#~ msgstr "Motorrak arazo bat du."
 
-#: kpimtextedittexttospeech/texttospeechwidget.cpp:132
-#, kde-format
-msgid "Text To Speech"
-msgstr "Testutik hizketara"
+#~ msgid "Text To Speech"
+#~ msgstr "Testutik hizketara"
 
 #~ msgctxt "Default tts engine"
 #~ msgid "Default"
