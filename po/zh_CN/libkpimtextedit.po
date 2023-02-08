@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-02 00:59+0000\n"
-"PO-Revision-Date: 2023-01-12 10:30\n"
+"PO-Revision-Date: 2023-02-07 11:02\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -1069,43 +1069,3 @@ msgstr "发送"
 #, kde-format
 msgid "Skip"
 msgstr "跳过"
-
-#~ msgid "Stop"
-#~ msgstr "停止"
-
-#~ msgid "Pause"
-#~ msgstr "暂停"
-
-#~ msgid "Play"
-#~ msgstr "播放"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Text-To-Speech"
-#~ msgstr "配置文本到语音"
-
-#~ msgid "Volume:"
-#~ msgstr "音量："
-
-#~ msgid "Rate:"
-#~ msgstr "频率："
-
-#~ msgid "Pitch:"
-#~ msgstr "音高："
-
-#~ msgid "Engine:"
-#~ msgstr "引擎："
-
-#~ msgid "Language:"
-#~ msgstr "语言："
-
-#~ msgid "Voice:"
-#~ msgstr "语音："
-
-#~ msgid "Configure..."
-#~ msgstr "配置..."
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Configure Text-To-Speech"
-#~ msgid "Text To Speech"
-#~ msgstr "配置文本到语音"
