@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:47+0000\n"
-"PO-Revision-Date: 2022-12-13 06:18+0100\n"
+"PO-Revision-Date: 2023-02-08 11:54+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -284,7 +284,7 @@ msgstr "გამოსახულების დამატება"
 #: composer-ng/richtextcomposeractions.cpp:368
 #, kde-format
 msgid "Insert HTML"
-msgstr "HTML_ის ჩასმა"
+msgstr "HTML-ის ჩასმა"
 
 #: composer-ng/richtextcomposeractions.cpp:378
 #, kde-format
@@ -632,7 +632,7 @@ msgstr "ჯილდოს-მედალი"
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
-msgstr "HTML_ის ჩასმა"
+msgstr "HTML-ის ჩასმა"
 
 #: inserthtmldialog.cpp:36
 #, kde-format
