@@ -83,11 +83,7 @@ ecm_set_disabled_deprecation_versions(QT 6.4   KF 5.103.0)
 find_package(KF${KF_MAJOR_VERSION}TextEditTextToSpeech ${KTEXTADDONS_MIN_VERSION} CONFIG)
 if (TARGET KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
     add_definitions(-DHAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
-    set(KPIMTEXTEDIT_TEXT_TO_SPEECH TRUE)
 endif()
-
-
-configure_file(kpimtextedit-texttospeech.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit-texttospeech.h )
 
 
 if (QT_MAJOR_VERSION STREQUAL "6")
