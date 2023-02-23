@@ -8,7 +8,7 @@ macro( emoticontest _source )
   add_test(NAME ${_name} COMMAND ${_name} )
   ecm_mark_as_test(kpimtextedit-${_name})
 
-  target_link_libraries( ${_name} Qt::Test Qt::Widgets KF${KF_MAJOR_VERSION}::Codecs KF5PimTextEdit)
+  target_link_libraries( ${_name} Qt::Test Qt::Widgets KF${KF_MAJOR_VERSION}::Codecs KPim${KF_MAJOR_VERSION}::TextEdit)
 endmacro()
 
 emoticontest(emoticontexteditselectortest.cpp)
