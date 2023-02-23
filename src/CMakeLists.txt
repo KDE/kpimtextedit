@@ -174,7 +174,7 @@ endif()
 set_target_properties(KPim${KF_MAJOR_VERSION}TextEdit PROPERTIES
     VERSION ${KPIMTEXTEDIT_VERSION}
     SOVERSION ${KPIMTEXTEDIT_SOVERSION}
-    EXPORT_NAME PimTextEdit
+    EXPORT_NAME TextEdit
     )
 
 install(TARGETS KPim${KF_MAJOR_VERSION}TextEdit EXPORT KPim${KF_MAJOR_VERSION}TextEditTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
@@ -337,8 +337,8 @@ if (BUILD_QCH)
         COMPONENT Devel
     )
     ecm_install_qch_export(
-        TARGETS KF5PimTextEdit_QCH
-        FILE KF5PimTextEditQchTargets.cmake
+        TARGETS KPim${KF_MAJOR_VERSION}PimTextEdit_QCH
+        FILE KPim${KF_MAJOR_VERSION}TextEditQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
@@ -361,7 +361,7 @@ install(FILES
 
 install(EXPORT KPim${KF_MAJOR_VERSION}TextEditTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    FILE KF5PimTextEditTargets.cmake
+    FILE KPim${KF_MAJOR_VERSION}TextEditTargets.cmake
     NAMESPACE KPim${KF_MAJOR_VERSION}::
     )
 
