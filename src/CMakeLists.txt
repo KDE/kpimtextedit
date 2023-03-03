@@ -371,6 +371,7 @@ install(FILES
     COMPONENT Devel
     )
 
+if (BUILD_WITH_COMPAT_LIBS)
 if (QT_MAJOR_VERSION STREQUAL "5")
 ##
 # TODO: Backwards compatiblity. Remove in next major version
@@ -399,4 +400,5 @@ install(EXPORT KPim${KF_MAJOR_VERSION}TextEditTargets
     FILE KPim${KF_MAJOR_VERSION}TextEditTargets.cmake
     NAMESPACE KF5::
 )
+endif()
 endif()
