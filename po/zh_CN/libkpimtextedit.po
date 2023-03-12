@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-21 01:00+0000\n"
-"PO-Revision-Date: 2023-02-24 12:43\n"
+"PO-Revision-Date: 2023-03-11 04:54\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/kpimtextedit/libkpimtextedit.pot\n"
-"X-Crowdin-File-ID: 3757\n"
+"X-Crowdin-File: /kf5-stable/messages/kpimtextedit/libkpimtextedit.pot\n"
+"X-Crowdin-File-ID: 3210\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -1066,3 +1066,41 @@ msgstr "发送"
 #, kde-format
 msgid "Skip"
 msgstr "跳过"
+
+#~ msgid "Stop"
+#~ msgstr "停止"
+
+#~ msgid "Pause"
+#~ msgstr "暂停"
+
+#~ msgid "Play"
+#~ msgstr "播放"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Text-To-Speech"
+#~ msgstr "配置文字转语音"
+
+#~ msgid "Volume:"
+#~ msgstr "音量："
+
+#~ msgid "Rate:"
+#~ msgstr "频率："
+
+#~ msgid "Pitch:"
+#~ msgstr "音高："
+
+#~ msgid "Engine:"
+#~ msgstr "引擎："
+
+#~ msgid "Language:"
+#~ msgstr "语言："
+
+#~ msgid "Voice:"
+#~ msgstr "语音："
+
+#~ msgctxt "Default tts engine"
+#~ msgid "Default"
+#~ msgstr "默认"
+
+#~ msgid "Configure..."
+#~ msgstr "配置..."
