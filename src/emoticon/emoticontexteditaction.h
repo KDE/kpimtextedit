@@ -7,8 +7,6 @@
 
 #pragma once
 
-#include "kpimtextedit_export.h"
-
 #include <KActionMenu>
 
 namespace KPIMTextEdit
