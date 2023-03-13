@@ -54,7 +54,6 @@ int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &re
 
         QTextDocument documentWithoutRespectDiacritics(toPlainTextWithoutRespectDiacritics);
         QTextCursor documentWithoutRespectDiacriticsTextCursor(&documentWithoutRespectDiacritics);
-        QTextCursor docCusor(view->textCursor());
         documentWithoutRespectDiacriticsTextCursor.setPosition(0);
 
         view->textCursor().beginEditBlock();
@@ -103,7 +102,6 @@ int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QStrin
 
         QTextDocument documentWithoutRespectDiacritics(toPlainTextWithoutRespectDiacritics);
         QTextCursor documentWithoutRespectDiacriticsTextCursor(&documentWithoutRespectDiacritics);
-        QTextCursor docCusor(view->textCursor());
         documentWithoutRespectDiacriticsTextCursor.setPosition(0);
 
         view->textCursor().beginEditBlock();
