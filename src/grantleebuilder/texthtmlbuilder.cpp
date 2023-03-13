@@ -22,7 +22,7 @@ public:
     }
 
     QList<QTextListFormat::Style> currentListItemStyles;
-    QString m_text;
+    QString mText;
 
     TextHTMLBuilder *const q_ptr;
 
@@ -45,73 +45,73 @@ TextHTMLBuilder::~TextHTMLBuilder()
 void TextHTMLBuilder::beginStrong()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<strong>"));
+    d->mText.append(QStringLiteral("<strong>"));
 }
 
 void TextHTMLBuilder::endStrong()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</strong>"));
+    d->mText.append(QStringLiteral("</strong>"));
 }
 
 void TextHTMLBuilder::beginEmph()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<em>"));
+    d->mText.append(QStringLiteral("<em>"));
 }
 
 void TextHTMLBuilder::endEmph()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</em>"));
+    d->mText.append(QStringLiteral("</em>"));
 }
 
 void TextHTMLBuilder::beginUnderline()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<u>"));
+    d->mText.append(QStringLiteral("<u>"));
 }
 
 void TextHTMLBuilder::endUnderline()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</u>"));
+    d->mText.append(QStringLiteral("</u>"));
 }
 
 void TextHTMLBuilder::beginStrikeout()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<s>"));
+    d->mText.append(QStringLiteral("<s>"));
 }
 
 void TextHTMLBuilder::endStrikeout()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</s>"));
+    d->mText.append(QStringLiteral("</s>"));
 }
 
 void TextHTMLBuilder::beginForeground(const QBrush &brush)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<span style=\"color:%1;\">").arg(brush.color().name()));
+    d->mText.append(QStringLiteral("<span style=\"color:%1;\">").arg(brush.color().name()));
 }
 
 void TextHTMLBuilder::endForeground()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</span>"));
+    d->mText.append(QStringLiteral("</span>"));
 }
 
 void TextHTMLBuilder::beginBackground(const QBrush &brush)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<span style=\"background-color:%1;\">").arg(brush.color().name()));
+    d->mText.append(QStringLiteral("<span style=\"background-color:%1;\">").arg(brush.color().name()));
 }
 
 void TextHTMLBuilder::endBackground()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</span>"));
+    d->mText.append(QStringLiteral("</span>"));
 }
 
 void TextHTMLBuilder::beginAnchor(const QString &href, const QString &name)
@@ -119,13 +119,13 @@ void TextHTMLBuilder::beginAnchor(const QString &href, const QString &name)
     Q_D(TextHTMLBuilder);
     if (!href.isEmpty()) {
         if (!name.isEmpty()) {
-            d->m_text.append(QStringLiteral("<a href=\"%1\" name=\"%2\">").arg(href, name));
+            d->mText.append(QStringLiteral("<a href=\"%1\" name=\"%2\">").arg(href, name));
         } else {
-            d->m_text.append(QStringLiteral("<a href=\"%1\">").arg(href));
+            d->mText.append(QStringLiteral("<a href=\"%1\">").arg(href));
         }
     } else {
         if (!name.isEmpty()) {
-            d->m_text.append(QStringLiteral("<a name=\"%1\">").arg(name));
+            d->mText.append(QStringLiteral("<a name=\"%1\">").arg(name));
         }
     }
 }
@@ -133,31 +133,31 @@ void TextHTMLBuilder::beginAnchor(const QString &href, const QString &name)
 void TextHTMLBuilder::endAnchor()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</a>"));
+    d->mText.append(QStringLiteral("</a>"));
 }
 
 void TextHTMLBuilder::beginFontFamily(const QString &family)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<span style=\"font-family:%1;\">").arg(family));
+    d->mText.append(QStringLiteral("<span style=\"font-family:%1;\">").arg(family));
 }
 
 void TextHTMLBuilder::endFontFamily()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</span>"));
+    d->mText.append(QStringLiteral("</span>"));
 }
 
 void TextHTMLBuilder::beginFontPointSize(int size)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<span style=\"font-size:%1pt;\">").arg(QString::number(size)));
+    d->mText.append(QStringLiteral("<span style=\"font-size:%1pt;\">").arg(QString::number(size)));
 }
 
 void TextHTMLBuilder::endFontPointSize()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</span>"));
+    d->mText.append(QStringLiteral("</span>"));
 }
 
 void TextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin, qreal bottomMargin, qreal leftMargin, qreal rightMargin, bool leftToRightText)
@@ -177,24 +177,24 @@ void TextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin, qreal bo
     // a
     // horizontal part.
     if (al & Qt::AlignRight) {
-        d->m_text.append(QStringLiteral("<p align=\"right\" "));
+        d->mText.append(QStringLiteral("<p align=\"right\" "));
     } else if (al & Qt::AlignHCenter) {
-        d->m_text.append(QStringLiteral("<p align=\"center\" "));
+        d->mText.append(QStringLiteral("<p align=\"center\" "));
     } else if (al & Qt::AlignJustify) {
-        d->m_text.append(QStringLiteral("<p align=\"justify\" "));
+        d->mText.append(QStringLiteral("<p align=\"justify\" "));
     } else if (al & Qt::AlignLeft) {
-        d->m_text.append(QStringLiteral("<p"));
+        d->mText.append(QStringLiteral("<p"));
     } else {
-        d->m_text.append(QStringLiteral("<p"));
+        d->mText.append(QStringLiteral("<p"));
     }
     // Bug in grantlee => style is not defined
     if (!styleString.isEmpty()) {
-        d->m_text.append(QStringLiteral(" style=\"") + styleString + QLatin1Char('"'));
+        d->mText.append(QStringLiteral(" style=\"") + styleString + QLatin1Char('"'));
     }
     if (leftToRightText) {
-        d->m_text.append(QStringLiteral(" dir='rtl'"));
+        d->mText.append(QStringLiteral(" dir='rtl'"));
     }
-    d->m_text.append(QLatin1Char('>'));
+    d->mText.append(QLatin1Char('>'));
     //     }
 }
 
@@ -203,22 +203,22 @@ void TextHTMLBuilder::beginHeader(int level)
     Q_D(TextHTMLBuilder);
     switch (level) {
     case 1:
-        d->m_text.append(QStringLiteral("<h1>"));
+        d->mText.append(QStringLiteral("<h1>"));
         break;
     case 2:
-        d->m_text.append(QStringLiteral("<h2>"));
+        d->mText.append(QStringLiteral("<h2>"));
         break;
     case 3:
-        d->m_text.append(QStringLiteral("<h3>"));
+        d->mText.append(QStringLiteral("<h3>"));
         break;
     case 4:
-        d->m_text.append(QStringLiteral("<h4>"));
+        d->mText.append(QStringLiteral("<h4>"));
         break;
     case 5:
-        d->m_text.append(QStringLiteral("<h5>"));
+        d->mText.append(QStringLiteral("<h5>"));
         break;
     case 6:
-        d->m_text.append(QStringLiteral("<h6>"));
+        d->mText.append(QStringLiteral("<h6>"));
         break;
     default:
         break;
@@ -230,22 +230,22 @@ void TextHTMLBuilder::endHeader(int level)
     Q_D(TextHTMLBuilder);
     switch (level) {
     case 1:
-        d->m_text.append(QStringLiteral("</h1>"));
+        d->mText.append(QStringLiteral("</h1>"));
         break;
     case 2:
-        d->m_text.append(QStringLiteral("</h2>"));
+        d->mText.append(QStringLiteral("</h2>"));
         break;
     case 3:
-        d->m_text.append(QStringLiteral("</h3>"));
+        d->mText.append(QStringLiteral("</h3>"));
         break;
     case 4:
-        d->m_text.append(QStringLiteral("</h4>"));
+        d->mText.append(QStringLiteral("</h4>"));
         break;
     case 5:
-        d->m_text.append(QStringLiteral("</h5>"));
+        d->mText.append(QStringLiteral("</h5>"));
         break;
     case 6:
-        d->m_text.append(QStringLiteral("</h6>"));
+        d->mText.append(QStringLiteral("</h6>"));
         break;
     default:
         break;
@@ -255,35 +255,35 @@ void TextHTMLBuilder::endHeader(int level)
 void TextHTMLBuilder::endParagraph()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</p>\n"));
+    d->mText.append(QStringLiteral("</p>\n"));
 }
 
 void TextHTMLBuilder::addNewline()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<p>&nbsp;"));
+    d->mText.append(QStringLiteral("<p>&nbsp;"));
 }
 
 void TextHTMLBuilder::insertHorizontalRule(int width)
 {
     Q_D(TextHTMLBuilder);
     if (width != -1) {
-        d->m_text.append(QStringLiteral("<hr width=\"%1\" />\n").arg(width));
+        d->mText.append(QStringLiteral("<hr width=\"%1\" />\n").arg(width));
     }
-    d->m_text.append(QStringLiteral("<hr />\n"));
+    d->mText.append(QStringLiteral("<hr />\n"));
 }
 
 void TextHTMLBuilder::insertImage(const QString &src, qreal width, qreal height)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<img src=\"%1\" ").arg(src));
+    d->mText.append(QStringLiteral("<img src=\"%1\" ").arg(src));
     if (width != 0) {
-        d->m_text.append(QStringLiteral("width=\"%2\" ").arg(width));
+        d->mText.append(QStringLiteral("width=\"%2\" ").arg(width));
     }
     if (height != 0) {
-        d->m_text.append(QStringLiteral("height=\"%2\" ").arg(height));
+        d->mText.append(QStringLiteral("height=\"%2\" ").arg(height));
     }
-    d->m_text.append(QStringLiteral("/>"));
+    d->mText.append(QStringLiteral("/>"));
 }
 
 void TextHTMLBuilder::beginList(QTextListFormat::Style type)
@@ -292,28 +292,28 @@ void TextHTMLBuilder::beginList(QTextListFormat::Style type)
     d->currentListItemStyles.append(type);
     switch (type) {
     case QTextListFormat::ListDisc:
-        d->m_text.append(QStringLiteral("<ul type=\"disc\">\n"));
+        d->mText.append(QStringLiteral("<ul type=\"disc\">\n"));
         break;
     case QTextListFormat::ListCircle:
-        d->m_text.append(QStringLiteral("\n<ul type=\"circle\">\n"));
+        d->mText.append(QStringLiteral("\n<ul type=\"circle\">\n"));
         break;
     case QTextListFormat::ListSquare:
-        d->m_text.append(QStringLiteral("\n<ul type=\"square\">\n"));
+        d->mText.append(QStringLiteral("\n<ul type=\"square\">\n"));
         break;
     case QTextListFormat::ListDecimal:
-        d->m_text.append(QStringLiteral("\n<ol type=\"1\">\n"));
+        d->mText.append(QStringLiteral("\n<ol type=\"1\">\n"));
         break;
     case QTextListFormat::ListLowerAlpha:
-        d->m_text.append(QStringLiteral("\n<ol type=\"a\">\n"));
+        d->mText.append(QStringLiteral("\n<ol type=\"a\">\n"));
         break;
     case QTextListFormat::ListUpperAlpha:
-        d->m_text.append(QStringLiteral("\n<ol type=\"A\">\n"));
+        d->mText.append(QStringLiteral("\n<ol type=\"A\">\n"));
         break;
     case QTextListFormat::ListLowerRoman:
-        d->m_text.append(QStringLiteral("\n<ol type=\"i\">\n"));
+        d->mText.append(QStringLiteral("\n<ol type=\"i\">\n"));
         break;
     case QTextListFormat::ListUpperRoman:
-        d->m_text.append(QStringLiteral("\n<ol type=\"I\">\n"));
+        d->mText.append(QStringLiteral("\n<ol type=\"I\">\n"));
         break;
     default:
         break;
@@ -326,14 +326,14 @@ void TextHTMLBuilder::endList()
     case QTextListFormat::ListDisc:
     case QTextListFormat::ListCircle:
     case QTextListFormat::ListSquare:
-        d->m_text.append(QStringLiteral("</ul>\n"));
+        d->mText.append(QStringLiteral("</ul>\n"));
         break;
     case QTextListFormat::ListDecimal:
     case QTextListFormat::ListLowerAlpha:
     case QTextListFormat::ListUpperAlpha:
     case QTextListFormat::ListLowerRoman:
     case QTextListFormat::ListUpperRoman:
-        d->m_text.append(QStringLiteral("</ol>\n"));
+        d->mText.append(QStringLiteral("</ol>\n"));
         break;
     default:
         break;
@@ -343,89 +343,89 @@ void TextHTMLBuilder::endList()
 void TextHTMLBuilder::beginListItem()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<li>"));
+    d->mText.append(QStringLiteral("<li>"));
 }
 
 void TextHTMLBuilder::endListItem()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</li>\n"));
+    d->mText.append(QStringLiteral("</li>\n"));
 }
 
 void TextHTMLBuilder::beginSuperscript()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<sup>"));
+    d->mText.append(QStringLiteral("<sup>"));
 }
 
 void TextHTMLBuilder::endSuperscript()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</sup>"));
+    d->mText.append(QStringLiteral("</sup>"));
 }
 
 void TextHTMLBuilder::beginSubscript()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<sub>"));
+    d->mText.append(QStringLiteral("<sub>"));
 }
 
 void TextHTMLBuilder::endSubscript()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</sub>"));
+    d->mText.append(QStringLiteral("</sub>"));
 }
 
 void TextHTMLBuilder::beginTable(qreal cellpadding, qreal cellspacing, const QString &width)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<table cellpadding=\"%1\" cellspacing=\"%2\" "
-                                    "width=\"%3\" border=\"1\">")
-                         .arg(cellpadding)
-                         .arg(cellspacing)
-                         .arg(width));
+    d->mText.append(QStringLiteral("<table cellpadding=\"%1\" cellspacing=\"%2\" "
+                                   "width=\"%3\" border=\"1\">")
+                        .arg(cellpadding)
+                        .arg(cellspacing)
+                        .arg(width));
 }
 
 void TextHTMLBuilder::beginTableRow()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<tr>"));
+    d->mText.append(QStringLiteral("<tr>"));
 }
 
 void TextHTMLBuilder::beginTableHeaderCell(const QString &width, int colspan, int rowspan)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<th width=\"%1\" colspan=\"%2\" rowspan=\"%3\">").arg(width).arg(colspan).arg(rowspan));
+    d->mText.append(QStringLiteral("<th width=\"%1\" colspan=\"%2\" rowspan=\"%3\">").arg(width).arg(colspan).arg(rowspan));
 }
 
 void TextHTMLBuilder::beginTableCell(const QString &width, int colspan, int rowspan)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("<td width=\"%1\" colspan=\"%2\" rowspan=\"%3\">").arg(width).arg(colspan).arg(rowspan));
+    d->mText.append(QStringLiteral("<td width=\"%1\" colspan=\"%2\" rowspan=\"%3\">").arg(width).arg(colspan).arg(rowspan));
 }
 
 void TextHTMLBuilder::endTable()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</table>"));
+    d->mText.append(QStringLiteral("</table>"));
 }
 
 void TextHTMLBuilder::endTableRow()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</tr>"));
+    d->mText.append(QStringLiteral("</tr>"));
 }
 
 void TextHTMLBuilder::endTableHeaderCell()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</th>"));
+    d->mText.append(QStringLiteral("</th>"));
 }
 
 void TextHTMLBuilder::endTableCell()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QStringLiteral("</td>"));
+    d->mText.append(QStringLiteral("</td>"));
 }
 
 void TextHTMLBuilder::appendLiteralText(const QString &text)
@@ -452,25 +452,25 @@ void TextHTMLBuilder::appendLiteralText(const QString &text)
             textEscapedResult += c;
         }
     }
-    d->m_text.append(textEscapedResult);
+    d->mText.append(textEscapedResult);
 }
 
 void TextHTMLBuilder::appendRawText(const QString &text)
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(text);
+    d->mText.append(text);
 }
 
 QString TextHTMLBuilder::getResult()
 {
     Q_D(TextHTMLBuilder);
-    auto ret = d->m_text;
-    d->m_text.clear();
+    auto ret = d->mText;
+    d->mText.clear();
     return ret;
 }
 
 void KPIMTextEdit::TextHTMLBuilder::addSingleBreakLine()
 {
     Q_D(TextHTMLBuilder);
-    d->m_text.append(QLatin1String("<br />"));
+    d->mText.append(QLatin1String("<br />"));
 }

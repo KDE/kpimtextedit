@@ -37,15 +37,15 @@ public:
   */
     Q_REQUIRED_RESULT QString getReferences();
 
-    QStringList m_urls;
+    QStringList mUrls;
     QList<QTextListFormat::Style> currentListItemStyles;
     QList<int> currentListItemNumbers;
 
     QString activeLink;
 
-    QString m_text;
+    QString mText;
 
-    QString m_quoteprefix;
+    QString mQuoteprefix;
 
     PlainTextMarkupBuilder *const q_ptr;
 
@@ -128,12 +128,12 @@ QString PlainTextMarkupBuilderPrivate::getLetterString(int itemNumber)
 QString PlainTextMarkupBuilderPrivate::getReferences()
 {
     QString refs;
-    if (!m_urls.isEmpty()) {
+    if (!mUrls.isEmpty()) {
         refs.append(QStringLiteral("\n--------\n"));
 
         int index = 1;
-        while (!m_urls.isEmpty()) {
-            refs.append(QStringLiteral("[%1] %2\n").arg(index++).arg(m_urls.takeFirst()));
+        while (!mUrls.isEmpty()) {
+            refs.append(QStringLiteral("[%1] %2\n").arg(index++).arg(mUrls.takeFirst()));
         }
     }
     return refs;
@@ -147,63 +147,63 @@ PlainTextMarkupBuilder::~PlainTextMarkupBuilder()
 void PlainTextMarkupBuilder::setQuotePrefix(const QString &prefix)
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_quoteprefix = prefix;
+    d->mQuoteprefix = prefix;
 }
 
 void PlainTextMarkupBuilder::beginStrong()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QLatin1Char('*'));
+    d->mText.append(QLatin1Char('*'));
 }
 
 void PlainTextMarkupBuilder::endStrong()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QLatin1Char('*'));
+    d->mText.append(QLatin1Char('*'));
 }
 
 void PlainTextMarkupBuilder::beginEmph()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QLatin1Char('/'));
+    d->mText.append(QLatin1Char('/'));
 }
 
 void PlainTextMarkupBuilder::endEmph()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QLatin1Char('/'));
+    d->mText.append(QLatin1Char('/'));
 }
 
 void PlainTextMarkupBuilder::beginUnderline()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QLatin1Char('_'));
+    d->mText.append(QLatin1Char('_'));
 }
 
 void PlainTextMarkupBuilder::endUnderline()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QLatin1Char('_'));
+    d->mText.append(QLatin1Char('_'));
 }
 
 void PlainTextMarkupBuilder::beginStrikeout()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QLatin1Char('-'));
+    d->mText.append(QLatin1Char('-'));
 }
 
 void PlainTextMarkupBuilder::endStrikeout()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QLatin1Char('-'));
+    d->mText.append(QLatin1Char('-'));
 }
 
 void PlainTextMarkupBuilder::beginAnchor(const QString &href, const QString &name)
 {
     Q_D(PlainTextMarkupBuilder);
     Q_UNUSED(name)
-    if (!d->m_urls.contains(href)) {
-        d->m_urls.append(href);
+    if (!d->mUrls.contains(href)) {
+        d->mUrls.append(href);
     }
     d->activeLink = href;
 }
@@ -211,19 +211,19 @@ void PlainTextMarkupBuilder::beginAnchor(const QString &href, const QString &nam
 void PlainTextMarkupBuilder::endAnchor()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QStringLiteral("[%1]").arg(d->m_urls.indexOf(d->activeLink) + 1));
+    d->mText.append(QStringLiteral("[%1]").arg(d->mUrls.indexOf(d->activeLink) + 1));
 }
 
 void PlainTextMarkupBuilder::endParagraph()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QLatin1Char('\n'));
+    d->mText.append(QLatin1Char('\n'));
 }
 
 void PlainTextMarkupBuilder::addNewline()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QLatin1Char('\n'));
+    d->mText.append(QLatin1Char('\n'));
 }
 
 void PlainTextMarkupBuilder::insertHorizontalRule(int width)
@@ -231,17 +231,17 @@ void PlainTextMarkupBuilder::insertHorizontalRule(int width)
     Q_UNUSED(width)
     Q_D(PlainTextMarkupBuilder);
 
-    d->m_text.append(QStringLiteral("--------------------\n"));
+    d->mText.append(QStringLiteral("--------------------\n"));
 }
 
 int PlainTextMarkupBuilder::addReference(const QString &reference)
 {
     Q_D(PlainTextMarkupBuilder);
 
-    if (!d->m_urls.contains(reference)) {
-        d->m_urls.append(reference);
+    if (!d->mUrls.contains(reference)) {
+        d->mUrls.append(reference);
     }
-    return d->m_urls.indexOf(reference) + 1;
+    return d->mUrls.indexOf(reference) + 1;
 }
 
 void PlainTextMarkupBuilder::insertImage(const QString &src, qreal width, qreal height)
@@ -252,7 +252,7 @@ void PlainTextMarkupBuilder::insertImage(const QString &src, qreal width, qreal 
 
     const auto ref = addReference(src);
 
-    d->m_text.append(QStringLiteral("[%1]").arg(ref));
+    d->mText.append(QStringLiteral("[%1]").arg(ref));
 }
 
 void PlainTextMarkupBuilder::beginList(QTextListFormat::Style style)
@@ -275,35 +275,35 @@ void PlainTextMarkupBuilder::beginListItem()
 {
     Q_D(PlainTextMarkupBuilder);
     for (int i = 0, total = d->currentListItemNumbers.size(); i < total; ++i) {
-        d->m_text.append(QStringLiteral("    "));
+        d->mText.append(QStringLiteral("    "));
     }
 
     auto itemNumber = d->currentListItemNumbers.last();
 
     switch (d->currentListItemStyles.last()) {
     case QTextListFormat::ListDisc:
-        d->m_text.append(QStringLiteral(" *  "));
+        d->mText.append(QStringLiteral(" *  "));
         break;
     case QTextListFormat::ListCircle:
-        d->m_text.append(QStringLiteral(" o  "));
+        d->mText.append(QStringLiteral(" o  "));
         break;
     case QTextListFormat::ListSquare:
-        d->m_text.append(QStringLiteral(" -  "));
+        d->mText.append(QStringLiteral(" -  "));
         break;
     case QTextListFormat::ListDecimal:
-        d->m_text.append(QStringLiteral(" %1. ").arg(itemNumber + 1));
+        d->mText.append(QStringLiteral(" %1. ").arg(itemNumber + 1));
         break;
     case QTextListFormat::ListLowerAlpha:
-        d->m_text.append(QStringLiteral(" %1. ").arg(d->getLetterString(itemNumber)));
+        d->mText.append(QStringLiteral(" %1. ").arg(d->getLetterString(itemNumber)));
         break;
     case QTextListFormat::ListUpperAlpha:
-        d->m_text.append(QStringLiteral(" %1. ").arg(d->getLetterString(itemNumber).toUpper()));
+        d->mText.append(QStringLiteral(" %1. ").arg(d->getLetterString(itemNumber).toUpper()));
         break;
     case QTextListFormat::ListLowerRoman:
-        d->m_text.append(QStringLiteral(" %1. ").arg(d->getRomanString(itemNumber + 1)));
+        d->mText.append(QStringLiteral(" %1. ").arg(d->getRomanString(itemNumber + 1)));
         break;
     case QTextListFormat::ListUpperRoman:
-        d->m_text.append(QStringLiteral(" %1. ").arg(d->getRomanString(itemNumber + 1).toUpper()));
+        d->mText.append(QStringLiteral(" %1. ").arg(d->getRomanString(itemNumber + 1).toUpper()));
         break;
     default:
         break;
@@ -314,51 +314,51 @@ void PlainTextMarkupBuilder::endListItem()
 {
     Q_D(PlainTextMarkupBuilder);
     d->currentListItemNumbers.last() = d->currentListItemNumbers.last() + 1;
-    d->m_text.append(QLatin1Char('\n'));
+    d->mText.append(QLatin1Char('\n'));
 }
 
 void PlainTextMarkupBuilder::beginSuperscript()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QStringLiteral("^{"));
+    d->mText.append(QStringLiteral("^{"));
 }
 
 void PlainTextMarkupBuilder::endSuperscript()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QLatin1Char('}'));
+    d->mText.append(QLatin1Char('}'));
 }
 
 void PlainTextMarkupBuilder::beginSubscript()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QStringLiteral("_{"));
+    d->mText.append(QStringLiteral("_{"));
 }
 
 void PlainTextMarkupBuilder::endSubscript()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QLatin1Char('}'));
+    d->mText.append(QLatin1Char('}'));
 }
 
 void PlainTextMarkupBuilder::appendLiteralText(const QString &text)
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(text);
+    d->mText.append(text);
 }
 
 void PlainTextMarkupBuilder::appendRawText(const QString &text)
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(text);
+    d->mText.append(text);
 }
 
 QString PlainTextMarkupBuilder::getResult()
 {
     Q_D(PlainTextMarkupBuilder);
-    auto ret = d->m_text;
+    auto ret = d->mText;
     ret.append(d->getReferences());
-    d->m_text.clear();
+    d->mText.clear();
     return ret;
 }
 
@@ -368,7 +368,7 @@ void PlainTextMarkupBuilder::beginParagraph(Qt::Alignment a, qreal top, qreal bo
     Q_UNUSED(leftToRightText)
     Q_D(PlainTextMarkupBuilder);
     if (isQuoteBlock(top, bottom, left, right)) {
-        d->m_text.append(d->m_quoteprefix);
+        d->mText.append(d->mQuoteprefix);
     }
 }
 
@@ -404,22 +404,22 @@ void PlainTextMarkupBuilder::beginHeader(int level)
     Q_D(PlainTextMarkupBuilder);
     switch (level) {
     case 1:
-        d->m_text.append(QStringLiteral("# "));
+        d->mText.append(QStringLiteral("# "));
         break;
     case 2:
-        d->m_text.append(QStringLiteral("## "));
+        d->mText.append(QStringLiteral("## "));
         break;
     case 3:
-        d->m_text.append(QStringLiteral("### "));
+        d->mText.append(QStringLiteral("### "));
         break;
     case 4:
-        d->m_text.append(QStringLiteral("#### "));
+        d->mText.append(QStringLiteral("#### "));
         break;
     case 5:
-        d->m_text.append(QStringLiteral("##### "));
+        d->mText.append(QStringLiteral("##### "));
         break;
     case 6:
-        d->m_text.append(QStringLiteral("###### "));
+        d->mText.append(QStringLiteral("###### "));
         break;
     default:
         break;
@@ -473,22 +473,22 @@ void PlainTextMarkupBuilder::endHeader(int level)
     qDebug() << " void PlainTextMarkupBuilder::endHeader(int level)" << level;
     switch (level) {
     case 1:
-        d->m_text.append(QStringLiteral(" #\n"));
+        d->mText.append(QStringLiteral(" #\n"));
         break;
     case 2:
-        d->m_text.append(QStringLiteral(" ##\n"));
+        d->mText.append(QStringLiteral(" ##\n"));
         break;
     case 3:
-        d->m_text.append(QStringLiteral(" ###\n"));
+        d->mText.append(QStringLiteral(" ###\n"));
         break;
     case 4:
-        d->m_text.append(QStringLiteral(" ####\n"));
+        d->mText.append(QStringLiteral(" ####\n"));
         break;
     case 5:
-        d->m_text.append(QStringLiteral(" #####\n"));
+        d->mText.append(QStringLiteral(" #####\n"));
         break;
     case 6:
-        d->m_text.append(QStringLiteral(" ######\n"));
+        d->mText.append(QStringLiteral(" ######\n"));
         break;
     default:
         break;
@@ -514,5 +514,5 @@ void PlainTextMarkupBuilder::endTableRow()
 void PlainTextMarkupBuilder::addSingleBreakLine()
 {
     Q_D(PlainTextMarkupBuilder);
-    d->m_text.append(QLatin1Char('\n'));
+    d->mText.append(QLatin1Char('\n'));
 }
