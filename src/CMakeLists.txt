@@ -20,7 +20,6 @@ endif()
 
 add_library(KPim${KF_MAJOR_VERSION}TextEdit)
 add_library(KPim${KF_MAJOR_VERSION}::TextEdit ALIAS KPim${KF_MAJOR_VERSION}TextEdit)
-add_library(KF5::PimTextEdit ALIAS KPim${KF_MAJOR_VERSION}TextEdit)
 
 target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
     texteditor/plaintexteditor/plaintexteditfindbar.cpp
