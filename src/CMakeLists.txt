@@ -176,7 +176,7 @@ set_target_properties(KPim${KF_MAJOR_VERSION}TextEdit PROPERTIES
     EXPORT_NAME PimTextEdit
     )
 
-install(TARGETS KPim${KF_MAJOR_VERSION}TextEdit EXPORT KPim${KF_MAJOR_VERSION}TextEditTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KPim${KF_MAJOR_VERSION}TextEdit EXPORT KPim${KF_MAJOR_VERSION}TextEditTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### Generate Headers ###############
 ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
