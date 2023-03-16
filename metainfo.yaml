@@ -11,8 +11,6 @@ release: false
 libraries:
  - qmake: KPIMTextEdit
    cmake: "KF5::PIMTextEdit"
- - qmake: KPIMTextEditTextToSpeech
-   cmake: "KF5::PimTextEditTextToSpeech"
 
 cmakename: KF5PIMTextEdit 
 
@@ -20,5 +18,4 @@ public_lib: true
 group: kdepim
 
 public_source_dirs:
-  - src/kpimtextedit
-  - src/kpimtextedittexttospeech
+  - src
