@@ -6,7 +6,6 @@ Dependencies:
   'require':
     'frameworks/extra-cmake-modules': '@latest'
     'frameworks/kconfig': '@latest'
-    'frameworks/kconfigwidgets': '@latest'
     'frameworks/kcoreaddons': '@latest'
     'frameworks/ki18n': '@latest'
     'frameworks/kiconthemes': '@latest'
@@ -23,7 +22,6 @@ Dependencies:
   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
     'frameworks/kconfig': '@latest-kf6'
-    'frameworks/kconfigwidgets': '@latest-kf6'
     'frameworks/kcoreaddons': '@latest-kf6'
     'frameworks/ki18n': '@latest-kf6'
     'frameworks/kiconthemes': '@latest-kf6'
