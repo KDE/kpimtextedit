@@ -611,6 +611,7 @@ void RichTextEditor::addIgnoreWordsToHighLighter()
 
 void RichTextEditor::setHighlighter(Sonnet::Highlighter *_highLighter)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Sonnet::SpellCheckDecorator *decorator = createSpellCheckDecorator();
     delete decorator->highlighter();
     decorator->setHighlighter(_highLighter);
@@ -620,6 +621,10 @@ void RichTextEditor::setHighlighter(Sonnet::Highlighter *_highLighter)
     _highLighter->setParent(decorator);
     d->richTextDecorator = decorator;
     addIgnoreWordsToHighLighter();
+#else
+#pragma "NEED TO FIX IN QT6"
+
+#endif
 }
 
 void RichTextEditor::focusInEvent(QFocusEvent *event)
