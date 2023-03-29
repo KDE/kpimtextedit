@@ -132,9 +132,9 @@ protected:
     bool processKeyEvent(QKeyEvent *e);
 
 private:
-    void slotTextModeChanged(KPIMTextEdit::RichTextComposer::Mode mode);
-    void evaluateListSupport(QKeyEvent *event);
-    void evaluateReturnKeySupport(QKeyEvent *event);
+    KPIMTEXTEDIT_NO_EXPORT void slotTextModeChanged(KPIMTextEdit::RichTextComposer::Mode mode);
+    KPIMTEXTEDIT_NO_EXPORT void evaluateListSupport(QKeyEvent *event);
+    KPIMTEXTEDIT_NO_EXPORT void evaluateReturnKeySupport(QKeyEvent *event);
     class RichTextComposerPrivate;
     std::unique_ptr<RichTextComposerPrivate> const d;
 };

@@ -36,7 +36,7 @@ public:
     void setExcludeOfCharacters(const QString &excludes);
 
 private:
-    void slotCompletion(const QString &text);
+    KPIMTEXTEDIT_NO_EXPORT void slotCompletion(const QString &text);
     class TextEditorCompleterPrivate;
     std::unique_ptr<TextEditorCompleterPrivate> const d;
 };

@@ -42,7 +42,7 @@ Q_SIGNALS:
     void externalEditorStarted();
 
 private:
-    void slotEditorFinished(int codeError, QProcess::ExitStatus exitStatus);
+    KPIMTEXTEDIT_NO_EXPORT void slotEditorFinished(int codeError, QProcess::ExitStatus exitStatus);
     class RichTextExternalComposerPrivate;
     std::unique_ptr<RichTextExternalComposerPrivate> const d;
 };

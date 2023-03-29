@@ -40,11 +40,11 @@ public:
     Q_REQUIRED_RESULT bool isEmpty() const;
 
 private:
-    void slotFind();
-    void slotReplace();
+    KPIMTEXTEDIT_NO_EXPORT void slotFind();
+    KPIMTEXTEDIT_NO_EXPORT void slotReplace();
 
-    void slotHideFindBar();
-    void init(PlainTextEditor *customEditor = nullptr);
+    KPIMTEXTEDIT_NO_EXPORT void slotHideFindBar();
+    KPIMTEXTEDIT_NO_EXPORT void init(PlainTextEditor *customEditor = nullptr);
     std::unique_ptr<PlainTextEditorWidgetPrivate> const d;
 };
 }

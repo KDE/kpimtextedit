@@ -52,8 +52,8 @@ public Q_SLOTS:
     void slotReplace();
 
 private:
-    void slotHideFindBar();
-    void init(RichTextEditor *customEditor = nullptr);
+    KPIMTEXTEDIT_NO_EXPORT void slotHideFindBar();
+    KPIMTEXTEDIT_NO_EXPORT void init(RichTextEditor *customEditor = nullptr);
     std::unique_ptr<RichTextEditorWidgetPrivate> const d;
 };
 }

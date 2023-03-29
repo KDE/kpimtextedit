@@ -97,7 +97,7 @@ protected:
     bool event(QEvent *ev) override;
 
 private:
-    void regenerateColorScheme();
+    KPIMTEXTEDIT_NO_EXPORT void regenerateColorScheme();
     class RichTextComposerControllerPrivate;
     std::unique_ptr<RichTextComposerControllerPrivate> const d;
 };

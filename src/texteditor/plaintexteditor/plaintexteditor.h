@@ -68,15 +68,15 @@ public Q_SLOTS:
     void slotZoomReset();
 
 private:
-    void slotUndoableClear();
-    void slotSpellCheckerMisspelling(const QString &text, int pos);
-    void slotSpellCheckerCorrected(const QString &, int, const QString &);
-    void slotSpellCheckerAutoCorrect(const QString &, const QString &);
-    void slotSpellCheckerCanceled();
-    void slotSpellCheckerFinished();
+    KPIMTEXTEDIT_NO_EXPORT void slotUndoableClear();
+    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerMisspelling(const QString &text, int pos);
+    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerCorrected(const QString &, int, const QString &);
+    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerAutoCorrect(const QString &, const QString &);
+    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerCanceled();
+    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerFinished();
 
-    void slotLanguageSelected();
-    void slotToggleAutoSpellCheck();
+    KPIMTEXTEDIT_NO_EXPORT void slotLanguageSelected();
+    KPIMTEXTEDIT_NO_EXPORT void slotToggleAutoSpellCheck();
 
 protected:
     virtual void addExtraMenuEntry(QMenu *menu, QPoint pos);
@@ -105,15 +105,15 @@ Q_SIGNALS:
     void say(const QString &text);
 
 private:
-    void addIgnoreWordsToHighLighter();
-    void deleteWordBack();
-    void deleteWordForward();
-    void highlightWord(int length, int pos);
-    void deleteEndOfLine();
-    void moveLineUpDown(bool moveUp);
-    void moveCursorBeginUpDown(bool moveUp);
-    void regenerateColorScheme();
-    void updateReadOnlyColor();
+    KPIMTEXTEDIT_NO_EXPORT void addIgnoreWordsToHighLighter();
+    KPIMTEXTEDIT_NO_EXPORT void deleteWordBack();
+    KPIMTEXTEDIT_NO_EXPORT void deleteWordForward();
+    KPIMTEXTEDIT_NO_EXPORT void highlightWord(int length, int pos);
+    KPIMTEXTEDIT_NO_EXPORT void deleteEndOfLine();
+    KPIMTEXTEDIT_NO_EXPORT void moveLineUpDown(bool moveUp);
+    KPIMTEXTEDIT_NO_EXPORT void moveCursorBeginUpDown(bool moveUp);
+    KPIMTEXTEDIT_NO_EXPORT void regenerateColorScheme();
+    KPIMTEXTEDIT_NO_EXPORT void updateReadOnlyColor();
     class PlainTextEditorPrivate;
     std::unique_ptr<PlainTextEditorPrivate> const d;
 };

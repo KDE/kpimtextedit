@@ -68,8 +68,8 @@ public Q_SLOTS:
     void closeBar();
 
 private Q_SLOTS:
-    void slotClearSearch();
-    void slotUpdateSearchOptions();
+    KPIMTEXTEDIT_NO_EXPORT void slotClearSearch();
+    KPIMTEXTEDIT_NO_EXPORT void slotUpdateSearchOptions();
     virtual void slotReplaceText() = 0;
     virtual void slotReplaceAllText() = 0;
 

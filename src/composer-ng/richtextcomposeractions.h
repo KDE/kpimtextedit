@@ -39,11 +39,11 @@ public Q_SLOTS:
     void setActionsEnabled(bool enabled);
 
 private:
-    void slotUpdateCharFormatActions(const QTextCharFormat &format);
-    void slotUpdateMiscActions();
+    KPIMTEXTEDIT_NO_EXPORT void slotUpdateCharFormatActions(const QTextCharFormat &format);
+    KPIMTEXTEDIT_NO_EXPORT void slotUpdateMiscActions();
 
-    void setHeadingLevel(int level);
-    void setListStyle(int _styleindex);
+    KPIMTEXTEDIT_NO_EXPORT void setHeadingLevel(int level);
+    KPIMTEXTEDIT_NO_EXPORT void setListStyle(int _styleindex);
     class RichTextComposerActionsPrivate;
     std::unique_ptr<RichTextComposerActionsPrivate> const d;
 };

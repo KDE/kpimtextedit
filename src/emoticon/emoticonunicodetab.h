@@ -33,11 +33,11 @@ Q_SIGNALS:
     void itemSelected(const QString &);
 
 private:
-    void createEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons);
-    void createSearchTab();
-    void createRecentTab();
-    void slotInsertEmoticons(const QString &identifier);
-    void slotUsedIdentifierChanged(const QStringList &lst);
+    KPIMTEXTEDIT_NO_EXPORT void createEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons);
+    KPIMTEXTEDIT_NO_EXPORT void createSearchTab();
+    KPIMTEXTEDIT_NO_EXPORT void createRecentTab();
+    KPIMTEXTEDIT_NO_EXPORT void slotInsertEmoticons(const QString &identifier);
+    KPIMTEXTEDIT_NO_EXPORT void slotUsedIdentifierChanged(const QStringList &lst);
     EmoticonUnicodeProxyModel *const mEmoticonUnicodeSearchProxyModel;
     EmoticonRecentUsedFilterProxyModel *const mEmoticonUnicodeRecentProxyModel;
     int mSearchTabIndex = -1;

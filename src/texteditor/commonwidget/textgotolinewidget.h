@@ -39,8 +39,8 @@ public Q_SLOTS:
     void slotBlockCountChanged(int numberBlockCount);
 
 private:
-    void slotCloseBar();
-    void slotGoToLine();
+    KPIMTEXTEDIT_NO_EXPORT void slotCloseBar();
+    KPIMTEXTEDIT_NO_EXPORT void slotGoToLine();
     std::unique_ptr<TextGoToLineWidgetPrivate> const d;
 };
 }

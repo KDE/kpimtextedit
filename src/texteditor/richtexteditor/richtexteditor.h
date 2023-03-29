@@ -114,27 +114,27 @@ Q_SIGNALS:
     void spellCheckingCanceled();
 
 private:
-    void slotUndoableClear();
-    void slotSpellCheckerMisspelling(const QString &text, int pos);
-    void slotSpellCheckerCorrected(const QString &, int, const QString &);
-    void slotSpellCheckerAutoCorrect(const QString &, const QString &);
-    void slotSpellCheckerCanceled();
-    void slotSpellCheckerFinished();
-    void slotToggleAutoSpellCheck();
-    void slotLanguageSelected();
-    void slotAllowTab();
+    KPIMTEXTEDIT_NO_EXPORT void slotUndoableClear();
+    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerMisspelling(const QString &text, int pos);
+    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerCorrected(const QString &, int, const QString &);
+    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerAutoCorrect(const QString &, const QString &);
+    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerCanceled();
+    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerFinished();
+    KPIMTEXTEDIT_NO_EXPORT void slotToggleAutoSpellCheck();
+    KPIMTEXTEDIT_NO_EXPORT void slotLanguageSelected();
+    KPIMTEXTEDIT_NO_EXPORT void slotAllowTab();
 
-    void addIgnoreWordsToHighLighter();
-    bool handleShortcut(QKeyEvent *event);
-    bool overrideShortcut(QKeyEvent *event);
-    void deleteWordBack();
-    void deleteWordForward();
-    void highlightWord(int length, int pos);
-    void checkSpelling(bool force);
-    void moveLineUpDown(bool moveUp);
-    void moveCursorBeginUpDown(bool moveUp);
-    void regenerateColorScheme();
-    void updateReadOnlyColor();
+    KPIMTEXTEDIT_NO_EXPORT void addIgnoreWordsToHighLighter();
+    KPIMTEXTEDIT_NO_EXPORT bool handleShortcut(QKeyEvent *event);
+    KPIMTEXTEDIT_NO_EXPORT bool overrideShortcut(QKeyEvent *event);
+    KPIMTEXTEDIT_NO_EXPORT void deleteWordBack();
+    KPIMTEXTEDIT_NO_EXPORT void deleteWordForward();
+    KPIMTEXTEDIT_NO_EXPORT void highlightWord(int length, int pos);
+    KPIMTEXTEDIT_NO_EXPORT void checkSpelling(bool force);
+    KPIMTEXTEDIT_NO_EXPORT void moveLineUpDown(bool moveUp);
+    KPIMTEXTEDIT_NO_EXPORT void moveCursorBeginUpDown(bool moveUp);
+    KPIMTEXTEDIT_NO_EXPORT void regenerateColorScheme();
+    KPIMTEXTEDIT_NO_EXPORT void updateReadOnlyColor();
     class RichTextEditorPrivate;
     std::unique_ptr<RichTextEditorPrivate> const d;
 };

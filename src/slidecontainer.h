@@ -68,13 +68,13 @@ protected:
     bool eventFilter(QObject *, QEvent *event) override;
 
 private:
-    void slotAnimFinished();
+    KPIMTEXTEDIT_NO_EXPORT void slotAnimFinished();
     QPointer<QWidget> mContent;
     QPointer<QPropertyAnimation> mAnim;
     bool mSlidingOut = false;
 
-    void adjustContentGeometry();
+    KPIMTEXTEDIT_NO_EXPORT void adjustContentGeometry();
 
-    void animTo(int height);
+    KPIMTEXTEDIT_NO_EXPORT void animTo(int height);
 };
 } /* namespace */
