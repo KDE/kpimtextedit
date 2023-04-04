@@ -369,34 +369,3 @@ install(FILES
     COMPONENT Devel
     )
 
-if (BUILD_WITH_COMPAT_LIBS)
-if (QT_MAJOR_VERSION STREQUAL "5")
-##
-# TODO: Backwards compatiblity. Remove in next major version
-##
-set(CMAKECONFIG_INSTALL_DIR_KF6 "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6PimTextEdit")
-set(KPIMTEXTEDIT_KF6_COMPAT TRUE)
-configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/KPimTextEditConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF6PimTextEditConfig.cmake"
-    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR_KF6}
-)
-
-install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF6PimTextEditConfig.cmake"
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR_KF6}"
-    COMPONENT Devel
-)
-install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6TextEditConfigVersion.cmake"
-    RENAME "KF6PimTextEditConfigVersion.cmake"
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR_KF6}"
-    COMPONENT Devel
-)
-install(EXPORT KPim6TextEditTargets
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR_KF6}"
-    FILE KPim6TextEditTargets.cmake
-    NAMESPACE KF6::
-)
-endif()
-endif()
