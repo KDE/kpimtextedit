@@ -76,9 +76,7 @@ if (TARGET KF6::TextEditTextToSpeech)
 endif()
 
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    find_package(Qt6Core5Compat)
-endif()
+find_package(Qt6Core5Compat)
 
 if(BUILD_TESTING)
    find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
