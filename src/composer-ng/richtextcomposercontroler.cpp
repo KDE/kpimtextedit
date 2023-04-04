@@ -142,9 +142,6 @@ RichTextComposerControler::RichTextComposerControler(RichTextComposer *richtextC
     : QObject(parent)
     , d(new RichTextComposerControllerPrivate(richtextComposer, this))
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    connect(qApp, &QApplication::paletteChanged, this, &RichTextComposerControler::regenerateColorScheme);
-#endif
 }
 
 RichTextComposerControler::~RichTextComposerControler() = default;
@@ -342,11 +339,7 @@ void RichTextComposerControler::setTextBackgroundColor(const QColor &color)
 void RichTextComposerControler::setFontFamily(const QString &fontFamily)
 {
     QTextCharFormat fmt;
-#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
-    fmt.setFontFamily(fontFamily);
-#else
     fmt.setFontFamilies(QStringList() << fontFamily);
-#endif
     d->mergeFormatOnWordOrSelection(fmt);
     richTextComposer()->setFocus();
     richTextComposer()->activateRichText();
@@ -947,11 +940,9 @@ QString RichTextComposerControler::toWrappedPlainText(QTextDocument *doc) const
 
 bool RichTextComposerControler::event(QEvent *ev)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     if (ev->type() == QEvent::ApplicationPaletteChange) {
         regenerateColorScheme();
     }
-#endif
 
     return QObject::event(ev);
 }

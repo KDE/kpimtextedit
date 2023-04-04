@@ -93,9 +93,6 @@ PlainTextEditor::PlainTextEditor(QWidget *parent)
     KCursor::setAutoHideCursor(this, true, false);
     setSpellCheckingConfigFileName(QString());
     d->mInitialFontSize = font().pointSize();
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    connect(qApp, &QApplication::paletteChanged, this, &PlainTextEditor::regenerateColorScheme);
-#endif
     regenerateColorScheme();
 }
 
@@ -141,20 +138,12 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
         if (d->supportFeatures & Search) {
             popup->addSeparator();
             if (!emptyDocument) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
-                popup->addAction(KStandardGuiItem::find().icon(), KStandardGuiItem::find().text(), this, &PlainTextEditor::findText, Qt::Key_F | Qt::CTRL);
-#else
                 popup->addAction(KStandardGuiItem::find().icon(), KStandardGuiItem::find().text(), Qt::Key_F | Qt::CTRL, this, &PlainTextEditor::findText);
-#endif
                 popup->addSeparator();
             }
             if (!isReadOnly()) {
                 if (!emptyDocument) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
-                    popup->addAction(i18n("Replace..."), this, &PlainTextEditor::replaceText, Qt::Key_R | Qt::CTRL);
-#else
                     popup->addAction(i18n("Replace..."), Qt::Key_R | Qt::CTRL, this, &PlainTextEditor::replaceText);
-#endif
                     popup->addSeparator();
                 }
             }
@@ -463,12 +452,9 @@ bool PlainTextEditor::event(QEvent *ev)
             e->accept();
             return true;
         }
-    }
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    else if (ev->type() == QEvent::ApplicationPaletteChange) {
+    } else if (ev->type() == QEvent::ApplicationPaletteChange) {
         regenerateColorScheme();
     }
-#endif
 
     return QPlainTextEdit::event(ev);
 }
