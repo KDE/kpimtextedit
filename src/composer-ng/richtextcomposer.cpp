@@ -100,7 +100,7 @@ KPIMTextEdit::RichTextComposerActions *RichTextComposer::composerActions() const
     return d->richTextComposerActions;
 }
 
-QVector<QAction *> RichTextComposer::richTextActionList() const
+QList<QAction *> RichTextComposer::richTextActionList() const
 {
     return d->richTextComposerActions->richTextActionList();
 }

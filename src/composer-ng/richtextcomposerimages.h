@@ -37,8 +37,8 @@ struct ImageWithName {
 };
 
 using ImageWithNamePtr = QSharedPointer<ImageWithName>;
-using ImageWithNameList = QVector<ImageWithNamePtr>;
-using ImageList = QVector<QSharedPointer<EmbeddedImage>>;
+using ImageWithNameList = QList<ImageWithNamePtr>;
+using ImageList = QList<QSharedPointer<EmbeddedImage>>;
 
 class KPIMTEXTEDIT_EXPORT RichTextComposerImages : public QObject
 {
@@ -74,8 +74,8 @@ public:
 
     void addImageHelper(const QString &imageName, const QImage &image, int width = -1, int height = -1);
     Q_REQUIRED_RESULT ImageWithNameList imagesWithName() const;
-    Q_REQUIRED_RESULT QVector<QSharedPointer<EmbeddedImage>> embeddedImages() const;
-    Q_REQUIRED_RESULT QVector<QTextImageFormat> embeddedImageFormats() const;
+    Q_REQUIRED_RESULT QList<QSharedPointer<EmbeddedImage>> embeddedImages() const;
+    Q_REQUIRED_RESULT QList<QTextImageFormat> embeddedImageFormats() const;
     void addImageHelper(const QUrl &url, int width = -1, int height = -1);
     void insertImage(const QImage &image, const QFileInfo &fileInfo);
 

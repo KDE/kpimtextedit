@@ -33,7 +33,7 @@ Q_SIGNALS:
     void itemSelected(const QString &);
 
 private:
-    KPIMTEXTEDIT_NO_EXPORT void createEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons);
+    KPIMTEXTEDIT_NO_EXPORT void createEmoticonTab(const QString &str, const QList<EmoticonUnicodeUtils::EmoticonStruct> &emoticons);
     KPIMTEXTEDIT_NO_EXPORT void createSearchTab();
     KPIMTEXTEDIT_NO_EXPORT void createRecentTab();
     KPIMTEXTEDIT_NO_EXPORT void slotInsertEmoticons(const QString &identifier);

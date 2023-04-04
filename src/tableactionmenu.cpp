@@ -208,7 +208,7 @@ void TableActionMenuPrivate::_k_slotInsertTable()
             QTextTableFormat tableFormat;
             tableFormat.setBorder(dialog->border());
             const int numberOfColumns(dialog->columns());
-            QVector<QTextLength> constrains;
+            QList<QTextLength> constrains;
             constrains.reserve(numberOfColumns);
             const QTextLength::Type type = dialog->typeOfLength();
             const int length = dialog->length();
@@ -265,7 +265,7 @@ void TableActionMenuPrivate::_k_slotTableFormat()
             if (tableFormat.hasProperty(QTextFormat::BackgroundBrush)) {
                 dialog->setTableBackgroundColor(tableFormat.background().color());
             }
-            QVector<QTextLength> constrains = tableFormat.columnWidthConstraints();
+            QList<QTextLength> constrains = tableFormat.columnWidthConstraints();
             if (!constrains.isEmpty()) {
                 dialog->setTypeOfLength(constrains.at(0).type());
                 dialog->setLength(constrains.at(0).rawValue() * numberOfColumn);
@@ -281,7 +281,7 @@ void TableActionMenuPrivate::_k_slotTableFormat()
                 tableFormat.setCellSpacing(dialog->spacing());
                 tableFormat.setAlignment(dialog->alignment());
 
-                QVector<QTextLength> constrainsText;
+                QList<QTextLength> constrainsText;
                 constrainsText.reserve(newNumberOfColumns);
                 const QTextLength::Type type = dialog->typeOfLength();
                 const int length = dialog->length();

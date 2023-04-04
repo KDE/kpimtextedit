@@ -28,11 +28,11 @@ public:
     Q_REQUIRED_RESULT int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     Q_REQUIRED_RESULT QVariant data(const QModelIndex &index, int role) const override;
 
-    Q_REQUIRED_RESULT const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticonList() const;
-    void setEmoticonList(const QVector<EmoticonUnicodeUtils::EmoticonStruct> &newEmoticonList);
+    Q_REQUIRED_RESULT const QList<EmoticonUnicodeUtils::EmoticonStruct> &emoticonList() const;
+    void setEmoticonList(const QList<EmoticonUnicodeUtils::EmoticonStruct> &newEmoticonList);
 
 private:
     Q_DISABLE_COPY(EmoticonUnicodeModel)
-    QVector<EmoticonUnicodeUtils::EmoticonStruct> mEmoticonList;
+    QList<EmoticonUnicodeUtils::EmoticonStruct> mEmoticonList;
 };
 }

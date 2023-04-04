@@ -42,12 +42,12 @@ QVariant EmoticonUnicodeModel::data(const QModelIndex &index, int role) const
     return {};
 }
 
-const QVector<EmoticonUnicodeUtils::EmoticonStruct> &EmoticonUnicodeModel::emoticonList() const
+const QList<EmoticonUnicodeUtils::EmoticonStruct> &EmoticonUnicodeModel::emoticonList() const
 {
     return mEmoticonList;
 }
 
-void EmoticonUnicodeModel::setEmoticonList(const QVector<EmoticonUnicodeUtils::EmoticonStruct> &newEmoticonList)
+void EmoticonUnicodeModel::setEmoticonList(const QList<EmoticonUnicodeUtils::EmoticonStruct> &newEmoticonList)
 {
     beginResetModel();
     mEmoticonList = newEmoticonList;

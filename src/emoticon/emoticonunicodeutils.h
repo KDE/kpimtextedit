@@ -7,9 +7,9 @@
 #pragma once
 
 #include "kpimtextedit_export.h"
+#include <QList>
 #include <QObject>
 #include <QString>
-#include <QVector>
 namespace KPIMTextEdit
 {
 namespace EmoticonUnicodeUtils
@@ -63,40 +63,40 @@ struct EmoticonStruct {
     QString emoticonCode;
     EmoticonType emoticonCategory = EmoticonType::Unknown;
 };
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeFlagsEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeFaceEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeAnimalsEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodePlantEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeScienceEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeComputerEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeBookPaperEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeSoundMusicEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeWeatherEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeTimeEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeGameEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeClothingEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeEventEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeFoodEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeTransportEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodePersonEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodePlaceEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeSymbolsEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeSportEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeEmotionEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeMoneyEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeBodyEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeMailEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeOfficeEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeToolsEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodePhoneEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeLockEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeDrinkEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeVideoEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeHouseEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeDishwareEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeHotelEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> unicodeAwardMedalEmoji();
-Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QVector<EmoticonStruct> allUnicode();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeFlagsEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeFaceEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeAnimalsEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodePlantEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeScienceEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeComputerEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeBookPaperEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeSoundMusicEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeWeatherEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeTimeEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeGameEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeClothingEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeEventEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeFoodEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeTransportEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodePersonEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodePlaceEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeSymbolsEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeSportEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeEmotionEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeMoneyEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeBodyEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeMailEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeOfficeEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeToolsEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodePhoneEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeLockEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeDrinkEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeVideoEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeHouseEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeDishwareEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeHotelEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> unicodeAwardMedalEmoji();
+Q_REQUIRED_RESULT KPIMTEXTEDIT_EXPORT QList<EmoticonStruct> allUnicode();
 }
 }
 

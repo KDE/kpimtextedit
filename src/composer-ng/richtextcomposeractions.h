@@ -29,7 +29,7 @@ public:
     void createActions(KActionCollection *ac);
     Q_REQUIRED_RESULT int numberOfActions() const;
 
-    Q_REQUIRED_RESULT QVector<QAction *> richTextActionList() const;
+    Q_REQUIRED_RESULT QList<QAction *> richTextActionList() const;
 
     void uncheckActionFormatPainter();
     void updateActionStates();

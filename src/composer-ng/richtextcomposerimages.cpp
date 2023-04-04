@@ -143,7 +143,7 @@ ImageWithNameList RichTextComposerImages::imagesWithName() const
 {
     ImageWithNameList retImages;
     QStringList seenImageNames;
-    const QVector<QTextImageFormat> imageFormats = embeddedImageFormats();
+    const QList<QTextImageFormat> imageFormats = embeddedImageFormats();
     for (const QTextImageFormat &imageFormat : imageFormats) {
         const QString name = imageFormat.name();
         if (!seenImageNames.contains(name)) {
@@ -160,10 +160,10 @@ ImageWithNameList RichTextComposerImages::imagesWithName() const
     return retImages;
 }
 
-QVector<QSharedPointer<EmbeddedImage>> RichTextComposerImages::embeddedImages() const
+QList<QSharedPointer<EmbeddedImage>> RichTextComposerImages::embeddedImages() const
 {
     const ImageWithNameList normalImages = imagesWithName();
-    QVector<QSharedPointer<EmbeddedImage>> retImages;
+    QList<QSharedPointer<EmbeddedImage>> retImages;
     retImages.reserve(normalImages.count());
     for (const ImageWithNamePtr &normalImage : normalImages) {
         retImages.append(createEmbeddedImage(normalImage->image, normalImage->name));
@@ -184,10 +184,10 @@ QSharedPointer<EmbeddedImage> RichTextComposerImages::createEmbeddedImage(const 
     return embeddedImage;
 }
 
-QVector<QTextImageFormat> RichTextComposerImages::embeddedImageFormats() const
+QList<QTextImageFormat> RichTextComposerImages::embeddedImageFormats() const
 {
     QTextDocument *doc = d->composer->document();
-    QVector<QTextImageFormat> retList;
+    QList<QTextImageFormat> retList;
 
     QTextBlock currentBlock = doc->begin();
     while (currentBlock.isValid()) {

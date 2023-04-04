@@ -67,7 +67,7 @@ void EmoticonUnicodeTab::createRecentTab()
     connect(recentEmojisView, &EmoticonRecentListView::emojiItemSelected, this, &EmoticonUnicodeTab::itemSelected);
 }
 
-void EmoticonUnicodeTab::createEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons)
+void EmoticonUnicodeTab::createEmoticonTab(const QString &str, const QList<EmoticonUnicodeUtils::EmoticonStruct> &emoticons)
 {
     if (!emoticons.isEmpty()) {
         auto emojisView = new EmoticonListView(this);
