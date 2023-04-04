@@ -10,9 +10,9 @@ deprecated: false
 release: false
 libraries:
  - qmake: KPIMTextEdit
-   cmake: "KF5::PIMTextEdit"
+   cmake: "KPim6::PIMTextEdit"
 
-cmakename: KF5PIMTextEdit 
+cmakename: KPim6PIMTextEdit 
 
 public_lib: true
 group: kdepim

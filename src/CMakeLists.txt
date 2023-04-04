@@ -2,26 +2,26 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim${KF_MAJOR_VERSION}TextEdit")
-set(KPIMTEXTEDIT_KF5_COMPAT FALSE)
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6TextEdit")
+set(KPIMTEXTEDIT_KF6_COMPAT FALSE)
 ecm_setup_version(PROJECT VARIABLE_PREFIX KPIMTEXTEDIT
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}TextEditConfigVersion.cmake"
-    SOVERSION 5
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6TextEditConfigVersion.cmake"
+    SOVERSION 6
 )
 
 
 if(BUILD_TESTING)
-    find_package(KF${KF_MAJOR_VERSION}TextWidgets ${KF_MIN_VERSION} CONFIG REQUIRED)
+    find_package(KF6TextWidgets ${KF_MIN_VERSION} CONFIG REQUIRED)
     add_subdirectory(autotests)
     add_subdirectory(tests)
 endif()
 
 
-add_library(KPim${KF_MAJOR_VERSION}TextEdit)
-add_library(KPim${KF_MAJOR_VERSION}::TextEdit ALIAS KPim${KF_MAJOR_VERSION}TextEdit)
+add_library(KPim6TextEdit)
+add_library(KPim6::TextEdit ALIAS KPim6TextEdit)
 
-target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
+target_sources(KPim6TextEdit PRIVATE
     texteditor/plaintexteditor/plaintexteditfindbar.cpp
     texteditor/plaintexteditor/plaintexteditor.cpp
     texteditor/plaintexteditor/plaintexteditorwidget.cpp
@@ -48,7 +48,7 @@ target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
     texteditor/richtexteditor/richtexteditorwidget.h
     )
 
-target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
+target_sources(KPim6TextEdit PRIVATE
     composer-ng/richtextcomposer.cpp
     composer-ng/richtextcomposercontroler.cpp
     composer-ng/richtextcomposeractions.cpp
@@ -71,7 +71,7 @@ target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
     composer-ng/richtextcomposerwidget.h
     )
 
-target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
+target_sources(KPim6TextEdit PRIVATE
     grantleebuilder/plaintextmarkupbuilder.cpp
     grantleebuilder/markupdirector.cpp
     grantleebuilder/texthtmlbuilder.cpp
@@ -80,7 +80,7 @@ target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
     grantleebuilder/texthtmlbuilder.h
     )
 
-target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
+target_sources(KPim6TextEdit PRIVATE
     emoticon/emoticontexteditaction.cpp
     emoticon/emoticontexteditselector.cpp
     emoticon/emoticonunicodetab.cpp
@@ -104,7 +104,7 @@ target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
     emoticon/emoticonrecentlistview.h
     )
 
-target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
+target_sources(KPim6TextEdit PRIVATE
     inserthtmldialog.cpp
     insertimagedialog.cpp
     insertimagewidget.cpp
@@ -136,46 +136,46 @@ target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
     editorutil.h
     )
 
-ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}TextEdit HEADER kpimtextedit_debug.h IDENTIFIER KPIMTEXTEDIT_LOG CATEGORY_NAME org.kde.pim.kpimtextedit
+ecm_qt_declare_logging_category(KPim6TextEdit HEADER kpimtextedit_debug.h IDENTIFIER KPIMTEXTEDIT_LOG CATEGORY_NAME org.kde.pim.kpimtextedit
         DESCRIPTION "kpimtextedit (kpimtextedit)" EXPORT KPIMTEXTEDIT)
 
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim${KF_MAJOR_VERSION}TextEdit PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim6TextEdit PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KPim${KF_MAJOR_VERSION}TextEdit BASE_NAME kpimtextedit)
+generate_export_header(KPim6TextEdit BASE_NAME kpimtextedit)
 
 
-target_include_directories(KPim${KF_MAJOR_VERSION}TextEdit INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/KPIMTextEdit;>")
-target_include_directories(KPim${KF_MAJOR_VERSION}TextEdit PUBLIC "$<BUILD_INTERFACE:${KPimTextEdit_SOURCE_DIR}/src;${KPimTextEdit_BINARY_DIR}/src>")
+target_include_directories(KPim6TextEdit INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit;>")
+target_include_directories(KPim6TextEdit PUBLIC "$<BUILD_INTERFACE:${KPimTextEdit_SOURCE_DIR}/src;${KPimTextEdit_BINARY_DIR}/src>")
 
 
-target_link_libraries(KPim${KF_MAJOR_VERSION}TextEdit
+target_link_libraries(KPim6TextEdit
     PRIVATE
-    KF${KF_MAJOR_VERSION}::SonnetUi
-    KF${KF_MAJOR_VERSION}::SonnetCore
-    KF${KF_MAJOR_VERSION}::WidgetsAddons
-    KF${KF_MAJOR_VERSION}::KIOWidgets
-    KF${KF_MAJOR_VERSION}::XmlGui
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::SyntaxHighlighting
-    KF${KF_MAJOR_VERSION}::Codecs
+    KF6::SonnetUi
+    KF6::SonnetCore
+    KF6::WidgetsAddons
+    KF6::KIOWidgets
+    KF6::XmlGui
+    KF6::I18n
+    KF6::SyntaxHighlighting
+    KF6::Codecs
     )
 
-if (TARGET KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
-    target_link_libraries(KPim${KF_MAJOR_VERSION}TextEdit
+if (TARGET KF6::TextEditTextToSpeech)
+    target_link_libraries(KPim6TextEdit
         PUBLIC
-        KF${KF_MAJOR_VERSION}::TextEditTextToSpeech
+        KF6::TextEditTextToSpeech
     )
 endif()
 
-set_target_properties(KPim${KF_MAJOR_VERSION}TextEdit PROPERTIES
+set_target_properties(KPim6TextEdit PROPERTIES
     VERSION ${KPIMTEXTEDIT_VERSION}
     SOVERSION ${KPIMTEXTEDIT_SOVERSION}
     EXPORT_NAME PimTextEdit
     )
 
-install(TARGETS KPim${KF_MAJOR_VERSION}TextEdit EXPORT KPim${KF_MAJOR_VERSION}TextEditTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KPim6TextEdit EXPORT KPim6TextEditTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### Generate Headers ###############
 ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
@@ -267,7 +267,7 @@ install(FILES
     ${KPimTextEdit_composerng_HEADERS}
     ${KPimTextEdit_emoticon_HEADERS}
     ${KPimTextEdit_grantlee_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/KPIMTextEdit/kpimtextedit
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit/kpimtextedit
     COMPONENT Devel
     )
 
@@ -279,11 +279,11 @@ install(FILES
     ${KPimTextEdit_Camelcasecomposerng_HEADERS}
     ${KPimTextEdit_CamelCaseemoticon_HEADERS}
     ${KPimTextEdit_CamelCasegrantlee_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/KPIMTextEdit/KPIMTextEdit/
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit/KPIMTextEdit/
     COMPONENT Devel
     )
 
-ecm_generate_pri_file(BASE_NAME KPIMTextEdit LIB_NAME KPim${KF_MAJOR_VERSION}TextEdit DEPS "KPIMTextEditTextToSpeech" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/KPIMTextEdit/)
+ecm_generate_pri_file(BASE_NAME KPIMTextEdit LIB_NAME KPim6TextEdit DEPS "KPIMTextEditTextToSpeech" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit/)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 if (BUILD_TESTING)
@@ -309,9 +309,9 @@ endif()
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KPim${KF_MAJOR_VERSION}TextEdit_QCH
+        KPim6TextEdit_QCH
         NAME KPimTextEdit
-        BASE_NAME KPim${KF_MAJOR_VERSION}TextEdit
+        BASE_NAME KPim6TextEdit
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -323,9 +323,9 @@ if (BUILD_QCH)
             ${KPimTextEdit_emoticon_HEADERS}
             ${KPimTextEdit_grantlee_HEADERS}
         LINK_QCHS
-            Qt${QT_MAJOR_VERSION}Core_QCH
-            Qt${QT_MAJOR_VERSION}Gui_QCH
-            Qt${QT_MAJOR_VERSION}Widgets_QCH
+            Qt6Core_QCH
+            Qt6Gui_QCH
+            Qt6Widgets_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
@@ -335,37 +335,37 @@ if (BUILD_QCH)
         COMPONENT Devel
     )
     ecm_install_qch_export(
-        TARGETS KPim${KF_MAJOR_VERSION}PimTextEdit_QCH
-        FILE KPim${KF_MAJOR_VERSION}TextEditQchTargets.cmake
+        TARGETS KPim6PimTextEdit_QCH
+        FILE KPim6TextEditQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}TextEditQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6TextEditQchTargets.cmake\")")
 endif()
 
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimTextEditConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}TextEditConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6TextEditConfig.cmake"
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
     )
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}TextEditConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}TextEditConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6TextEditConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6TextEditConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
     )
 
-install(EXPORT KPim${KF_MAJOR_VERSION}TextEditTargets
+install(EXPORT KPim6TextEditTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    FILE KPim${KF_MAJOR_VERSION}TextEditTargets.cmake
-    NAMESPACE KPim${KF_MAJOR_VERSION}::
+    FILE KPim6TextEditTargets.cmake
+    NAMESPACE KPim6::
     )
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/KPIMTextEdit
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit
     COMPONENT Devel
     )
 
@@ -374,29 +374,29 @@ if (QT_MAJOR_VERSION STREQUAL "5")
 ##
 # TODO: Backwards compatiblity. Remove in next major version
 ##
-set(CMAKECONFIG_INSTALL_DIR_KF5 "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5PimTextEdit")
-set(KPIMTEXTEDIT_KF5_COMPAT TRUE)
+set(CMAKECONFIG_INSTALL_DIR_KF6 "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6PimTextEdit")
+set(KPIMTEXTEDIT_KF6_COMPAT TRUE)
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimTextEditConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfig.cmake"
-    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR_KF5}
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6PimTextEditConfig.cmake"
+    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR_KF6}
 )
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF5PimTextEditConfig.cmake"
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR_KF5}"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6PimTextEditConfig.cmake"
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR_KF6}"
     COMPONENT Devel
 )
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}TextEditConfigVersion.cmake"
-    RENAME "KF5PimTextEditConfigVersion.cmake"
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR_KF5}"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6TextEditConfigVersion.cmake"
+    RENAME "KF6PimTextEditConfigVersion.cmake"
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR_KF6}"
     COMPONENT Devel
 )
-install(EXPORT KPim${KF_MAJOR_VERSION}TextEditTargets
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR_KF5}"
-    FILE KPim${KF_MAJOR_VERSION}TextEditTargets.cmake
-    NAMESPACE KF5::
+install(EXPORT KPim6TextEditTargets
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR_KF6}"
+    FILE KPim6TextEditTargets.cmake
+    NAMESPACE KF6::
 )
 endif()
 endif()
