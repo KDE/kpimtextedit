@@ -112,6 +112,8 @@ target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
     emoticon/unicodeemoticonmanager.h
     emoticon/unicodeemoticonparser.cpp
     emoticon/unicodeemoticonparser.h
+    emoticon/emoticoncategorymodelfilterproxymodel.cpp
+    emoticon/emoticoncategorymodelfilterproxymodel.h
     emoticon/emoji.qrc
     )
 

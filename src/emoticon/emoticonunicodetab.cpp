@@ -5,6 +5,7 @@
 */
 
 #include "emoticonunicodetab.h"
+#include "emoticoncategorymodelfilterproxymodel.h"
 #include "emoticonlistview.h"
 #include "emoticonrecentlistview.h"
 #include "emoticonrecentusedfilterproxymodel.h"
@@ -12,6 +13,7 @@
 #include "emoticonunicodemodelmanager.h"
 #include "emoticonunicodeproxymodel.h"
 #include "emoticonunicodeutils.h"
+#include "unicodeemoticonmanager.h"
 #include <KLocalizedString>
 
 using namespace KPIMTextEdit;
@@ -90,39 +92,21 @@ void EmoticonUnicodeTab::loadEmoticons()
 {
     createSearchTab();
     createRecentTab();
-    createEmoticonTab(i18n("Faces"), EmoticonUnicodeUtils::unicodeFaceEmoji());
-    createEmoticonTab(i18n("Animals"), EmoticonUnicodeUtils::unicodeAnimalsEmoji());
-    createEmoticonTab(i18n("Emotions"), EmoticonUnicodeUtils::unicodeEmotionEmoji());
-    createEmoticonTab(i18n("Body"), EmoticonUnicodeUtils::unicodeBodyEmoji());
-    createEmoticonTab(i18n("Transports"), EmoticonUnicodeUtils::unicodeTransportEmoji());
-    createEmoticonTab(i18n("Events"), EmoticonUnicodeUtils::unicodeEventEmoji());
-    createEmoticonTab(i18n("Flags"), EmoticonUnicodeUtils::unicodeFlagsEmoji());
-    createEmoticonTab(i18n("Weather"), EmoticonUnicodeUtils::unicodeWeatherEmoji());
-    createEmoticonTab(i18n("Foods"), EmoticonUnicodeUtils::unicodeFoodEmoji());
-    createEmoticonTab(i18n("Sports"), EmoticonUnicodeUtils::unicodeSportEmoji());
-    createEmoticonTab(i18n("Time"), EmoticonUnicodeUtils::unicodeTimeEmoji());
-    createEmoticonTab(i18n("Game"), EmoticonUnicodeUtils::unicodeGameEmoji());
-    createEmoticonTab(i18n("Clothing"), EmoticonUnicodeUtils::unicodeClothingEmoji());
-    createEmoticonTab(i18n("Music"), EmoticonUnicodeUtils::unicodeSoundMusicEmoji());
-    createEmoticonTab(i18n("Computer"), EmoticonUnicodeUtils::unicodeComputerEmoji());
-    createEmoticonTab(i18n("Symbols"), EmoticonUnicodeUtils::unicodeSymbolsEmoji());
-    createEmoticonTab(i18n("Plant"), EmoticonUnicodeUtils::unicodePlantEmoji());
-    createEmoticonTab(i18n("Book"), EmoticonUnicodeUtils::unicodeBookPaperEmoji());
-    createEmoticonTab(i18n("Science"), EmoticonUnicodeUtils::unicodeScienceEmoji());
-    createEmoticonTab(i18n("Person"), EmoticonUnicodeUtils::unicodePersonEmoji());
-    createEmoticonTab(i18n("Place"), EmoticonUnicodeUtils::unicodePlaceEmoji());
-    createEmoticonTab(i18n("Money"), EmoticonUnicodeUtils::unicodeMoneyEmoji());
-    createEmoticonTab(i18n("Mail"), EmoticonUnicodeUtils::unicodeMailEmoji());
-    createEmoticonTab(i18n("Office"), EmoticonUnicodeUtils::unicodeOfficeEmoji());
-    createEmoticonTab(i18n("Tools"), EmoticonUnicodeUtils::unicodeToolsEmoji());
-    createEmoticonTab(i18n("Phone"), EmoticonUnicodeUtils::unicodePhoneEmoji());
-    createEmoticonTab(i18n("Lock"), EmoticonUnicodeUtils::unicodeLockEmoji());
-    createEmoticonTab(i18n("Drink"), EmoticonUnicodeUtils::unicodeDrinkEmoji());
-    createEmoticonTab(i18n("Video"), EmoticonUnicodeUtils::unicodeVideoEmoji());
-    createEmoticonTab(i18n("House"), EmoticonUnicodeUtils::unicodeHouseEmoji());
-    createEmoticonTab(i18n("Dishware"), EmoticonUnicodeUtils::unicodeDishwareEmoji());
-    createEmoticonTab(i18n("Hotel"), EmoticonUnicodeUtils::unicodeHotelEmoji());
-    createEmoticonTab(i18n("Award-Medal"), EmoticonUnicodeUtils::unicodeAwardMedalEmoji());
+
+    // Default Emoji
+    UnicodeEmoticonManager *emojiManager = UnicodeEmoticonManager::self();
+    const QVector<EmoticonCategory> categories = emojiManager->categories();
+    for (const EmoticonCategory &category : categories) {
+        auto emojisView = new KPIMTextEdit::EmoticonListView(this);
+        auto categoryProxyModel = new EmoticonCategoryModelFilterProxyModel(emojisView);
+        categoryProxyModel->setSourceModel(EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
+        categoryProxyModel->setCategory(category.category());
+        emojisView->setModel(categoryProxyModel);
+        const int index = addTab(emojisView, category.name());
+        setTabToolTip(index, category.i18nName());
+        connect(emojisView, &KPIMTextEdit::EmoticonListView::emojiItemSelected, this, &EmoticonUnicodeTab::slotInsertEmoticons);
+    }
+
     mEmoticonUnicodeRecentProxyModel->setUsedIdentifier(EmoticonUnicodeModelManager::self()->recentIdentifier());
     setTabVisible(mSearchTabIndex, false);
     setTabVisible(mRecentTabIndex, !mEmoticonUnicodeRecentProxyModel->usedIdentifier().isEmpty());
