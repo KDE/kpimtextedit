@@ -6,7 +6,6 @@
 
 #include "unicodeemoticon.h"
 #include "emoticonunicodeutils.h"
-#include "utils.h"
 #include <sstream>
 
 using namespace KPIMTextEdit;
