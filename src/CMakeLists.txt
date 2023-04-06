@@ -177,7 +177,7 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}TextEdit
 
 if (TARGET KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
     target_link_libraries(KPim${KF_MAJOR_VERSION}TextEdit
-        PUBLIC
+        PRIVATE
         KF${KF_MAJOR_VERSION}::TextEditTextToSpeech
     )
 endif()
