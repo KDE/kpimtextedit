@@ -11,6 +11,7 @@
 #include "emoticonunicodemodel.h"
 #include "emoticonunicodemodelmanager.h"
 #include "emoticonunicodeproxymodel.h"
+#include "emoticonunicodeutils.h"
 #include <KLocalizedString>
 
 using namespace KPIMTextEdit;
@@ -22,7 +23,7 @@ EmoticonUnicodeTab::EmoticonUnicodeTab(QWidget *parent)
     loadEmoticons();
     QFont f;
     f.setPointSize(22);
-    f.setFamily(QStringLiteral("NotoColorEmoji"));
+    f.setFamily(EmoticonUnicodeUtils::emojiFontName());
     setFont(f);
     connect(EmoticonUnicodeModelManager::self(), &EmoticonUnicodeModelManager::usedIdentifierChanged, this, &EmoticonUnicodeTab::slotUsedIdentifierChanged);
 }

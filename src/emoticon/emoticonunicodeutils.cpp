@@ -7,6 +7,15 @@
 #include "emoticonunicodeutils.h"
 using namespace KPIMTextEdit;
 
+QString EmoticonUnicodeUtils::emojiFontName()
+{
+#ifdef Q_OS_WIN
+    return QStringLiteral("Segoe UI Emoji");
+#else
+    return QStringLiteral("NotoColorEmoji");
+#endif
+}
+
 QVector<EmoticonUnicodeUtils::EmoticonStruct> EmoticonUnicodeUtils::unicodeFlagsEmoji()
 {
     const EmoticonUnicodeUtils::EmoticonStruct::EmoticonType category = EmoticonUnicodeUtils::EmoticonStruct::FlagsEmoji;

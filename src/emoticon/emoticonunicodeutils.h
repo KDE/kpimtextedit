@@ -14,6 +14,8 @@ namespace KPIMTextEdit
 {
 namespace EmoticonUnicodeUtils
 {
+Q_REQUIRED_RESULT QString emojiFontName();
+
 struct EmoticonStruct {
     enum EmoticonType {
         Unknown = 0,
