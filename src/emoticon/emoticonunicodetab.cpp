@@ -11,7 +11,6 @@
 #include "emoticonunicodemodel.h"
 #include "emoticonunicodemodelmanager.h"
 #include "emoticonunicodeproxymodel.h"
-#include "textutils.h"
 #include <KLocalizedString>
 
 using namespace KPIMTextEdit;
