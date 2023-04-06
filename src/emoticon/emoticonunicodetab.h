@@ -30,13 +30,12 @@ public:
 
     void searchUnicode(const QString &str);
 Q_SIGNALS:
-    void itemSelected(const QString &);
+    void itemSelected(const QString &str);
 
 private:
-    KPIMTEXTEDIT_NO_EXPORT void createEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons);
     KPIMTEXTEDIT_NO_EXPORT void createSearchTab();
     KPIMTEXTEDIT_NO_EXPORT void createRecentTab();
-    KPIMTEXTEDIT_NO_EXPORT void slotInsertEmoticons(const QString &identifier);
+    KPIMTEXTEDIT_NO_EXPORT void slotInsertEmoticons(const QString &str, const QString &identifier);
     KPIMTEXTEDIT_NO_EXPORT void slotUsedIdentifierChanged(const QStringList &lst);
     EmoticonUnicodeProxyModel *const mEmoticonUnicodeSearchProxyModel;
     EmoticonRecentUsedFilterProxyModel *const mEmoticonUnicodeRecentProxyModel;

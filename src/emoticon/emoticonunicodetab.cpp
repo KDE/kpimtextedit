@@ -69,25 +69,6 @@ void EmoticonUnicodeTab::createRecentTab()
     connect(recentEmojisView, &EmoticonRecentListView::emojiItemSelected, this, &EmoticonUnicodeTab::itemSelected);
 }
 
-void EmoticonUnicodeTab::createEmoticonTab(const QString &str, const QVector<EmoticonUnicodeUtils::EmoticonStruct> &emoticons)
-{
-    if (!emoticons.isEmpty()) {
-        auto emojisView = new EmoticonListView(this);
-        auto emoticonUnicodeProxyModel = new EmoticonUnicodeProxyModel(this);
-        const auto emoji = emoticons.constFirst();
-        emoticonUnicodeProxyModel->setCategories(emoji.emoticonCategory);
-        emoticonUnicodeProxyModel->setSourceModel(EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
-        emojisView->setModel(emoticonUnicodeProxyModel);
-        addTab(emojisView, str);
-        const QString strTab = emoji.emoticonCode;
-        const int index = addTab(emojisView, strTab);
-        if (!str.isEmpty()) {
-            setTabToolTip(index, str);
-        }
-        connect(emojisView, &KPIMTextEdit::EmoticonListView::emojiItemSelected, this, &EmoticonUnicodeTab::slotInsertEmoticons);
-    }
-}
-
 void EmoticonUnicodeTab::loadEmoticons()
 {
     createSearchTab();
@@ -98,9 +79,9 @@ void EmoticonUnicodeTab::loadEmoticons()
     const QVector<EmoticonCategory> categories = emojiManager->categories();
     for (const EmoticonCategory &category : categories) {
         auto emojisView = new KPIMTextEdit::EmoticonListView(this);
-        auto categoryProxyModel = new EmoticonCategoryModelFilterProxyModel(emojisView);
-        categoryProxyModel->setSourceModel(EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
+        auto categoryProxyModel = new EmoticonCategoryModelFilterProxyModel(this);
         categoryProxyModel->setCategory(category.category());
+        categoryProxyModel->setSourceModel(EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
         emojisView->setModel(categoryProxyModel);
         const int index = addTab(emojisView, category.name());
         setTabToolTip(index, category.i18nName());
@@ -112,10 +93,10 @@ void EmoticonUnicodeTab::loadEmoticons()
     setTabVisible(mRecentTabIndex, !mEmoticonUnicodeRecentProxyModel->usedIdentifier().isEmpty());
 }
 
-void EmoticonUnicodeTab::slotInsertEmoticons(const QString &identifier)
+void EmoticonUnicodeTab::slotInsertEmoticons(const QString &str, const QString &identifier)
 {
     EmoticonUnicodeModelManager::self()->addIdentifier(identifier);
-    Q_EMIT itemSelected(identifier);
+    Q_EMIT itemSelected(str);
 }
 
 void EmoticonUnicodeTab::slotUsedIdentifierChanged(const QStringList &lst)

@@ -5,6 +5,7 @@
 */
 
 #include "emoticonlistview.h"
+#include "emoticonunicodemodel.h"
 using namespace KPIMTextEdit;
 EmoticonListView::EmoticonListView(QWidget *parent)
     : QListView(parent)
@@ -12,8 +13,9 @@ EmoticonListView::EmoticonListView(QWidget *parent)
     setViewMode(QListView::IconMode);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     connect(this, &QListView::activated, this, [this](const QModelIndex &index) {
+        const QString emojiIdentifier = index.data(EmoticonUnicodeModel::Identifier).toString();
         const QString emojiStr = index.data().toString();
-        Q_EMIT emojiItemSelected(emojiStr);
+        Q_EMIT emojiItemSelected(emojiStr, emojiIdentifier);
     });
 }
 
