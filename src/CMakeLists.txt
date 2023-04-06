@@ -102,6 +102,19 @@ target_sources(KPim6TextEdit PRIVATE
     emoticon/emoticonunicodemodelmanager.h
     emoticon/emoticonrecentusedfilterproxymodel.h
     emoticon/emoticonrecentlistview.h
+
+
+    emoticon/emoticoncategory.cpp
+    emoticon/emoticoncategory.h
+    emoticon/unicodeemoticon.cpp
+    emoticon/unicodeemoticon.h
+    emoticon/unicodeemoticonmanager.cpp
+    emoticon/unicodeemoticonmanager.h
+    emoticon/unicodeemoticonparser.cpp
+    emoticon/unicodeemoticonparser.h
+    emoticon/emoticoncategorymodelfilterproxymodel.cpp
+    emoticon/emoticoncategorymodelfilterproxymodel.h
+    emoticon/emoji.qrc
     )
 
 target_sources(KPim6TextEdit PRIVATE

@@ -15,5 +15,5 @@ EmoticonUnicodeProxyModelTest::EmoticonUnicodeProxyModelTest(QObject *parent)
 void EmoticonUnicodeProxyModelTest::shouldHaveDefaultValues()
 {
     KPIMTextEdit::EmoticonUnicodeProxyModel m;
-    QCOMPARE(m.categories(), KPIMTextEdit::EmoticonUnicodeUtils::EmoticonStruct::Unknown);
+    QVERIFY(m.category().isEmpty());
 }

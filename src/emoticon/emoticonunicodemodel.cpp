@@ -29,25 +29,24 @@ QVariant EmoticonUnicodeModel::data(const QModelIndex &index, int role) const
 
     const auto &unicodeEmoti = mEmoticonList.at(index.row());
     switch (role) {
-    case UnicodeEmoji:
-        return unicodeEmoti.emoticonName;
-    case Category:
-        return unicodeEmoti.emoticonCategory;
-    case Identifier:
     case Qt::DisplayRole:
-        return unicodeEmoti.emoticonCode;
+    case UnicodeEmoji:
+        return unicodeEmoti.unicode();
+    case Category:
+        return unicodeEmoti.category();
+    case Identifier:
     case Qt::ToolTipRole:
-        return unicodeEmoti.emoticonName;
+        return unicodeEmoti.identifier();
     }
     return {};
 }
 
-const QList<EmoticonUnicodeUtils::EmoticonStruct> &EmoticonUnicodeModel::emoticonList() const
+const QList<UnicodeEmoticon> &EmoticonUnicodeModel::emoticonList() const
 {
     return mEmoticonList;
 }
 
-void EmoticonUnicodeModel::setEmoticonList(const QList<EmoticonUnicodeUtils::EmoticonStruct> &newEmoticonList)
+void EmoticonUnicodeModel::setEmoticonList(const QList<UnicodeEmoticon> &newEmoticonList)
 {
     beginResetModel();
     mEmoticonList = newEmoticonList;

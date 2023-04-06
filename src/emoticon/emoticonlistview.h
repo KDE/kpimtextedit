@@ -16,6 +16,6 @@ public:
     explicit EmoticonListView(QWidget *parent = nullptr);
     ~EmoticonListView() override;
 Q_SIGNALS:
-    void emojiItemSelected(const QString &str);
+    void emojiItemSelected(const QString &str, const QString &identifier);
 };
 }

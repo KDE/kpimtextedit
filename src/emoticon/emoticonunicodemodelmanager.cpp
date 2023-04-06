@@ -6,6 +6,7 @@
 
 #include "emoticonunicodemodelmanager.h"
 #include "emoticonunicodemodel.h"
+#include "unicodeemoticonmanager.h"
 
 #include <KConfigGroup>
 #include <KSharedConfig>
@@ -18,7 +19,7 @@ EmoticonUnicodeModelManager::EmoticonUnicodeModelManager(QObject *parent)
     : QObject(parent)
     , mEmoticonUnicodeModel(new EmoticonUnicodeModel(this))
 {
-    mEmoticonUnicodeModel->setEmoticonList(EmoticonUnicodeUtils::allUnicode());
+    mEmoticonUnicodeModel->setEmoticonList(UnicodeEmoticonManager::self()->unicodeEmojiList());
     loadRecentUsed();
 }
 

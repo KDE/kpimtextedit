@@ -10,30 +10,30 @@ EmoticonUnicodeProxyModel::EmoticonUnicodeProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
-    setFilterRole(EmoticonUnicodeModel::UnicodeEmoji);
+    setFilterRole(EmoticonUnicodeModel::Identifier);
 }
 
 EmoticonUnicodeProxyModel::~EmoticonUnicodeProxyModel() = default;
 
 bool EmoticonUnicodeProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
-    if (mCategories == EmoticonUnicodeUtils::EmoticonStruct::Unknown) {
+    if (mCategorie.isEmpty()) {
         return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
     }
     const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
-    const auto category = sourceIndex.data(EmoticonUnicodeModel::Category).value<EmoticonUnicodeUtils::EmoticonStruct::EmoticonType>();
-    if (mCategories == category) {
+    const auto category = sourceIndex.data(EmoticonUnicodeModel::Category).toString();
+    if (mCategorie == category) {
         return true;
     }
     return false;
 }
 
-EmoticonUnicodeUtils::EmoticonStruct::EmoticonType EmoticonUnicodeProxyModel::categories() const
+QString EmoticonUnicodeProxyModel::category() const
 {
-    return mCategories;
+    return mCategorie;
 }
 
-void EmoticonUnicodeProxyModel::setCategories(EmoticonUnicodeUtils::EmoticonStruct::EmoticonType newCategories)
+void EmoticonUnicodeProxyModel::setCategory(const QString &newCategorie)
 {
-    mCategories = newCategories;
+    mCategorie = newCategorie;
 }

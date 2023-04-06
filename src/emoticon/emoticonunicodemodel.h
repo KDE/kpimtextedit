@@ -6,8 +6,8 @@
 
 #pragma once
 
-#include "emoticonunicodeutils.h"
 #include "kpimtextedit_private_export.h"
+#include "unicodeemoticon.h"
 #include <QAbstractListModel>
 namespace KPIMTextEdit
 {
@@ -28,11 +28,11 @@ public:
     Q_REQUIRED_RESULT int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     Q_REQUIRED_RESULT QVariant data(const QModelIndex &index, int role) const override;
 
-    Q_REQUIRED_RESULT const QList<EmoticonUnicodeUtils::EmoticonStruct> &emoticonList() const;
-    void setEmoticonList(const QList<EmoticonUnicodeUtils::EmoticonStruct> &newEmoticonList);
+    Q_REQUIRED_RESULT const QList<UnicodeEmoticon> &emoticonList() const;
+    void setEmoticonList(const QList<UnicodeEmoticon> &newEmoticonList);
 
 private:
     Q_DISABLE_COPY(EmoticonUnicodeModel)
-    QList<EmoticonUnicodeUtils::EmoticonStruct> mEmoticonList;
+    QList<UnicodeEmoticon> mEmoticonList;
 };
 }
