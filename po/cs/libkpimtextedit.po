@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 01:00+0000\n"
+"POT-Creation-Date: 2023-04-07 00:48+0000\n"
 "PO-Revision-Date: 2023-01-24 15:32+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -445,185 +445,66 @@ msgstr "Vyprázdnit nedávné"
 msgid "Add Smiley"
 msgstr "Přidat emotikon"
 
-#: emoticon/emoticontexteditselector.cpp:31
+#: emoticon/emoticontexteditselector.cpp:30
 #, kde-format
 msgid "Search Emoticon..."
 msgstr "Hledat emotikon..."
 
-#: emoticon/emoticonunicodetab.cpp:51
+#: emoticon/emoticonunicodetab.cpp:53
 #, kde-format
 msgid "Result"
 msgstr "Výsledek"
 
-#: emoticon/emoticonunicodetab.cpp:62
+#: emoticon/emoticonunicodetab.cpp:64
 #, kde-format
 msgid "Recents"
 msgstr "Nedávné"
 
-#: emoticon/emoticonunicodetab.cpp:93
-#, kde-format
-msgid "Faces"
-msgstr "Obličeje"
-
-#: emoticon/emoticonunicodetab.cpp:94
-#, kde-format
-msgid "Animals"
-msgstr "Zvířata"
-
-#: emoticon/emoticonunicodetab.cpp:95
-#, kde-format
-msgid "Emotions"
-msgstr "Emoce"
-
-#: emoticon/emoticonunicodetab.cpp:96
-#, kde-format
-msgid "Body"
-msgstr "Tělo"
-
-#: emoticon/emoticonunicodetab.cpp:97
-#, kde-format
-msgid "Transports"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:98
-#, kde-format
-msgid "Events"
-msgstr "Události"
-
-#: emoticon/emoticonunicodetab.cpp:99
-#, kde-format
-msgid "Flags"
-msgstr "Příznaky"
-
-#: emoticon/emoticonunicodetab.cpp:100
-#, kde-format
-msgid "Weather"
-msgstr "Počasí"
-
-#: emoticon/emoticonunicodetab.cpp:101
-#, kde-format
-msgid "Foods"
-msgstr "Jídlo"
-
-#: emoticon/emoticonunicodetab.cpp:102
-#, kde-format
-msgid "Sports"
-msgstr "Sporty"
-
-#: emoticon/emoticonunicodetab.cpp:103
-#, kde-format
-msgid "Time"
-msgstr "Čas"
-
-#: emoticon/emoticonunicodetab.cpp:104
-#, kde-format
-msgid "Game"
-msgstr "Hra"
-
-#: emoticon/emoticonunicodetab.cpp:105
-#, kde-format
-msgid "Clothing"
-msgstr "Oblékání"
-
-#: emoticon/emoticonunicodetab.cpp:106
-#, kde-format
-msgid "Music"
-msgstr "Hudba"
-
-#: emoticon/emoticonunicodetab.cpp:107
-#, kde-format
-msgid "Computer"
-msgstr "Počítač"
-
-#: emoticon/emoticonunicodetab.cpp:108
+#: emoticon/unicodeemoticonmanager.cpp:58
 #, kde-format
 msgid "Symbols"
 msgstr "Symboly"
 
-#: emoticon/emoticonunicodetab.cpp:109
+#: emoticon/unicodeemoticonmanager.cpp:60
 #, kde-format
-msgid "Plant"
-msgstr "Planeta"
-
-#: emoticon/emoticonunicodetab.cpp:110
-#, kde-format
-msgid "Book"
-msgstr "Kniha"
-
-#: emoticon/emoticonunicodetab.cpp:111
-#, kde-format
-msgid "Science"
-msgstr "Věda"
-
-#: emoticon/emoticonunicodetab.cpp:112
-#, kde-format
-msgid "Person"
-msgstr "Osoba"
-
-#: emoticon/emoticonunicodetab.cpp:113
-#, kde-format
-msgid "Place"
-msgstr "Místo"
-
-#: emoticon/emoticonunicodetab.cpp:114
-#, kde-format
-msgid "Money"
-msgstr "Měna"
-
-#: emoticon/emoticonunicodetab.cpp:115
-#, kde-format
-msgid "Mail"
-msgstr "Pošta"
-
-#: emoticon/emoticonunicodetab.cpp:116
-#, kde-format
-msgid "Office"
-msgstr "Kancelář"
-
-#: emoticon/emoticonunicodetab.cpp:117
-#, kde-format
-msgid "Tools"
-msgstr "Nástroje"
-
-#: emoticon/emoticonunicodetab.cpp:118
-#, kde-format
-msgid "Phone"
-msgstr "Telefon"
-
-#: emoticon/emoticonunicodetab.cpp:119
-#, kde-format
-msgid "Lock"
-msgstr "Uzamknout"
-
-#: emoticon/emoticonunicodetab.cpp:120
-#, kde-format
-msgid "Drink"
-msgstr "Pití"
-
-#: emoticon/emoticonunicodetab.cpp:121
-#, kde-format
-msgid "Video"
-msgstr "Video"
-
-#: emoticon/emoticonunicodetab.cpp:122
-#, kde-format
-msgid "House"
-msgstr "Dům"
-
-#: emoticon/emoticonunicodetab.cpp:123
-#, kde-format
-msgid "Dishware"
-msgstr "Nádobí"
-
-#: emoticon/emoticonunicodetab.cpp:124
-#, kde-format
-msgid "Hotel"
-msgstr "Hotel"
-
-#: emoticon/emoticonunicodetab.cpp:125
-#, kde-format
-msgid "Award-Medal"
+msgid "Activity"
 msgstr ""
+
+#: emoticon/unicodeemoticonmanager.cpp:62
+#, kde-format
+msgid "Objects"
+msgstr ""
+
+#: emoticon/unicodeemoticonmanager.cpp:64
+#, kde-format
+msgid "Nature"
+msgstr ""
+
+#: emoticon/unicodeemoticonmanager.cpp:66
+#, fuzzy, kde-format
+#| msgid "Foods"
+msgid "Food"
+msgstr "Jídlo"
+
+#: emoticon/unicodeemoticonmanager.cpp:68
+#, kde-format
+msgid "People"
+msgstr ""
+
+#: emoticon/unicodeemoticonmanager.cpp:70
+#, kde-format
+msgid "Travel"
+msgstr ""
+
+#: emoticon/unicodeemoticonmanager.cpp:72
+#, kde-format
+msgid "Regional"
+msgstr ""
+
+#: emoticon/unicodeemoticonmanager.cpp:74
+#, kde-format
+msgid "Flags"
+msgstr "Příznaky"
 
 #: inserthtmldialog.cpp:34
 #, kde-format
@@ -1067,3 +948,87 @@ msgstr "Odeslat"
 #, kde-format
 msgid "Skip"
 msgstr "Přeskočit"
+
+#~ msgid "Faces"
+#~ msgstr "Obličeje"
+
+#~ msgid "Animals"
+#~ msgstr "Zvířata"
+
+#~ msgid "Emotions"
+#~ msgstr "Emoce"
+
+#~ msgid "Body"
+#~ msgstr "Tělo"
+
+#~ msgid "Events"
+#~ msgstr "Události"
+
+#~ msgid "Weather"
+#~ msgstr "Počasí"
+
+#~ msgid "Sports"
+#~ msgstr "Sporty"
+
+#~ msgid "Time"
+#~ msgstr "Čas"
+
+#~ msgid "Game"
+#~ msgstr "Hra"
+
+#~ msgid "Clothing"
+#~ msgstr "Oblékání"
+
+#~ msgid "Music"
+#~ msgstr "Hudba"
+
+#~ msgid "Computer"
+#~ msgstr "Počítač"
+
+#~ msgid "Plant"
+#~ msgstr "Planeta"
+
+#~ msgid "Book"
+#~ msgstr "Kniha"
+
+#~ msgid "Science"
+#~ msgstr "Věda"
+
+#~ msgid "Person"
+#~ msgstr "Osoba"
+
+#~ msgid "Place"
+#~ msgstr "Místo"
+
+#~ msgid "Money"
+#~ msgstr "Měna"
+
+#~ msgid "Mail"
+#~ msgstr "Pošta"
+
+#~ msgid "Office"
+#~ msgstr "Kancelář"
+
+#~ msgid "Tools"
+#~ msgstr "Nástroje"
+
+#~ msgid "Phone"
+#~ msgstr "Telefon"
+
+#~ msgid "Lock"
+#~ msgstr "Uzamknout"
+
+#~ msgid "Drink"
+#~ msgstr "Pití"
+
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#~ msgid "House"
+#~ msgstr "Dům"
+
+#~ msgid "Dishware"
+#~ msgstr "Nádobí"
+
+#~ msgid "Hotel"
+#~ msgstr "Hotel"

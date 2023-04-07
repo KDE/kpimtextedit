@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 01:00+0000\n"
+"POT-Creation-Date: 2023-04-07 00:48+0000\n"
 "PO-Revision-Date: 2023-01-14 23:57+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -450,185 +450,66 @@ msgstr "Garbitu oraintsukoak"
 msgid "Add Smiley"
 msgstr "Gehitu aurpegiera"
 
-#: emoticon/emoticontexteditselector.cpp:31
+#: emoticon/emoticontexteditselector.cpp:30
 #, kde-format
 msgid "Search Emoticon..."
 msgstr "Bilatu emotikonoa..."
 
-#: emoticon/emoticonunicodetab.cpp:51
+#: emoticon/emoticonunicodetab.cpp:53
 #, kde-format
 msgid "Result"
 msgstr "Emaitza"
 
-#: emoticon/emoticonunicodetab.cpp:62
+#: emoticon/emoticonunicodetab.cpp:64
 #, kde-format
 msgid "Recents"
 msgstr "Oraintsukoak"
 
-#: emoticon/emoticonunicodetab.cpp:93
-#, kde-format
-msgid "Faces"
-msgstr "Aurpegiak"
-
-#: emoticon/emoticonunicodetab.cpp:94
-#, kde-format
-msgid "Animals"
-msgstr "Animaliak"
-
-#: emoticon/emoticonunicodetab.cpp:95
-#, kde-format
-msgid "Emotions"
-msgstr "Emotikonoak"
-
-#: emoticon/emoticonunicodetab.cpp:96
-#, kde-format
-msgid "Body"
-msgstr "Gorputza"
-
-#: emoticon/emoticonunicodetab.cpp:97
-#, kde-format
-msgid "Transports"
-msgstr "Garraioa"
-
-#: emoticon/emoticonunicodetab.cpp:98
-#, kde-format
-msgid "Events"
-msgstr "Ekitaldiak"
-
-#: emoticon/emoticonunicodetab.cpp:99
-#, kde-format
-msgid "Flags"
-msgstr "Banderak"
-
-#: emoticon/emoticonunicodetab.cpp:100
-#, kde-format
-msgid "Weather"
-msgstr "Eguraldia"
-
-#: emoticon/emoticonunicodetab.cpp:101
-#, kde-format
-msgid "Foods"
-msgstr "Janaria"
-
-#: emoticon/emoticonunicodetab.cpp:102
-#, kde-format
-msgid "Sports"
-msgstr "Kirolak"
-
-#: emoticon/emoticonunicodetab.cpp:103
-#, kde-format
-msgid "Time"
-msgstr "Denbora"
-
-#: emoticon/emoticonunicodetab.cpp:104
-#, kde-format
-msgid "Game"
-msgstr "Jokoa"
-
-#: emoticon/emoticonunicodetab.cpp:105
-#, kde-format
-msgid "Clothing"
-msgstr "Jantziak"
-
-#: emoticon/emoticonunicodetab.cpp:106
-#, kde-format
-msgid "Music"
-msgstr "Musika"
-
-#: emoticon/emoticonunicodetab.cpp:107
-#, kde-format
-msgid "Computer"
-msgstr "Ordenagailua"
-
-#: emoticon/emoticonunicodetab.cpp:108
+#: emoticon/unicodeemoticonmanager.cpp:58
 #, kde-format
 msgid "Symbols"
 msgstr "Ikurrak"
 
-#: emoticon/emoticonunicodetab.cpp:109
+#: emoticon/unicodeemoticonmanager.cpp:60
 #, kde-format
-msgid "Plant"
-msgstr "Landarea"
+msgid "Activity"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:110
+#: emoticon/unicodeemoticonmanager.cpp:62
 #, kde-format
-msgid "Book"
-msgstr "Liburua"
+msgid "Objects"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:111
+#: emoticon/unicodeemoticonmanager.cpp:64
 #, kde-format
-msgid "Science"
-msgstr "Zientzia"
+msgid "Nature"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:112
-#, kde-format
-msgid "Person"
-msgstr "Pertsona"
+#: emoticon/unicodeemoticonmanager.cpp:66
+#, fuzzy, kde-format
+#| msgid "Foods"
+msgid "Food"
+msgstr "Janaria"
 
-#: emoticon/emoticonunicodetab.cpp:113
+#: emoticon/unicodeemoticonmanager.cpp:68
 #, kde-format
-msgid "Place"
-msgstr "Lekua"
+msgid "People"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:114
+#: emoticon/unicodeemoticonmanager.cpp:70
 #, kde-format
-msgid "Money"
-msgstr "Dirua"
+msgid "Travel"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:115
+#: emoticon/unicodeemoticonmanager.cpp:72
 #, kde-format
-msgid "Mail"
-msgstr "Posta"
+msgid "Regional"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:116
+#: emoticon/unicodeemoticonmanager.cpp:74
 #, kde-format
-msgid "Office"
-msgstr "Bulegoa"
-
-#: emoticon/emoticonunicodetab.cpp:117
-#, kde-format
-msgid "Tools"
-msgstr "Tresnak"
-
-#: emoticon/emoticonunicodetab.cpp:118
-#, kde-format
-msgid "Phone"
-msgstr "Telefonoa"
-
-#: emoticon/emoticonunicodetab.cpp:119
-#, kde-format
-msgid "Lock"
-msgstr "Giltzatzea"
-
-#: emoticon/emoticonunicodetab.cpp:120
-#, kde-format
-msgid "Drink"
-msgstr "Edaria"
-
-#: emoticon/emoticonunicodetab.cpp:121
-#, kde-format
-msgid "Video"
-msgstr "Bideoa"
-
-#: emoticon/emoticonunicodetab.cpp:122
-#, kde-format
-msgid "House"
-msgstr "Etxea"
-
-#: emoticon/emoticonunicodetab.cpp:123
-#, kde-format
-msgid "Dishware"
-msgstr "Baxera"
-
-#: emoticon/emoticonunicodetab.cpp:124
-#, kde-format
-msgid "Hotel"
-msgstr "Hotela"
-
-#: emoticon/emoticonunicodetab.cpp:125
-#, kde-format
-msgid "Award-Medal"
-msgstr "Domina"
+msgid "Flags"
+msgstr "Banderak"
 
 #: inserthtmldialog.cpp:34
 #, kde-format
@@ -1073,6 +954,96 @@ msgstr "Bidali"
 #, kde-format
 msgid "Skip"
 msgstr "Saihestu"
+
+#~ msgid "Faces"
+#~ msgstr "Aurpegiak"
+
+#~ msgid "Animals"
+#~ msgstr "Animaliak"
+
+#~ msgid "Emotions"
+#~ msgstr "Emotikonoak"
+
+#~ msgid "Body"
+#~ msgstr "Gorputza"
+
+#~ msgid "Transports"
+#~ msgstr "Garraioa"
+
+#~ msgid "Events"
+#~ msgstr "Ekitaldiak"
+
+#~ msgid "Weather"
+#~ msgstr "Eguraldia"
+
+#~ msgid "Sports"
+#~ msgstr "Kirolak"
+
+#~ msgid "Time"
+#~ msgstr "Denbora"
+
+#~ msgid "Game"
+#~ msgstr "Jokoa"
+
+#~ msgid "Clothing"
+#~ msgstr "Jantziak"
+
+#~ msgid "Music"
+#~ msgstr "Musika"
+
+#~ msgid "Computer"
+#~ msgstr "Ordenagailua"
+
+#~ msgid "Plant"
+#~ msgstr "Landarea"
+
+#~ msgid "Book"
+#~ msgstr "Liburua"
+
+#~ msgid "Science"
+#~ msgstr "Zientzia"
+
+#~ msgid "Person"
+#~ msgstr "Pertsona"
+
+#~ msgid "Place"
+#~ msgstr "Lekua"
+
+#~ msgid "Money"
+#~ msgstr "Dirua"
+
+#~ msgid "Mail"
+#~ msgstr "Posta"
+
+#~ msgid "Office"
+#~ msgstr "Bulegoa"
+
+#~ msgid "Tools"
+#~ msgstr "Tresnak"
+
+#~ msgid "Phone"
+#~ msgstr "Telefonoa"
+
+#~ msgid "Lock"
+#~ msgstr "Giltzatzea"
+
+#~ msgid "Drink"
+#~ msgstr "Edaria"
+
+#~ msgid "Video"
+#~ msgstr "Bideoa"
+
+#~ msgid "House"
+#~ msgstr "Etxea"
+
+#~ msgid "Dishware"
+#~ msgstr "Baxera"
+
+#~ msgid "Hotel"
+#~ msgstr "Hotela"
+
+#~ msgid "Award-Medal"
+#~ msgstr "Domina"
 
 #~ msgid "Stop"
 #~ msgstr "Gelditu"
