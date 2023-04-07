@@ -3,7 +3,6 @@
 
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6TextEdit")
-set(KPIMTEXTEDIT_KF6_COMPAT FALSE)
 ecm_setup_version(PROJECT VARIABLE_PREFIX KPIMTEXTEDIT
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6TextEditConfigVersion.cmake"
@@ -156,8 +155,12 @@ ecm_qt_declare_logging_category(KPim6TextEdit HEADER kpimtextedit_debug.h IDENTI
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6TextEdit PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KPim6TextEdit BASE_NAME kpimtextedit)
-
+ecm_generate_export_header(KPim6TextEdit
+    BASE_NAME kpimtextedit
+    VERSION ${KPIMTEXTEDIT_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    USE_VERSION_HEADER
+)
 
 target_include_directories(KPim6TextEdit INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit;>")
 target_include_directories(KPim6TextEdit PUBLIC "$<BUILD_INTERFACE:${KPimTextEdit_SOURCE_DIR}/src;${KPimTextEdit_BINARY_DIR}/src>")
