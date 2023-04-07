@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 01:00+0000\n"
+"POT-Creation-Date: 2023-04-07 00:48+0000\n"
 "PO-Revision-Date: 2022-04-16 00:13+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -448,185 +448,66 @@ msgstr "최근 항목 비우기"
 msgid "Add Smiley"
 msgstr "이모티콘 추가"
 
-#: emoticon/emoticontexteditselector.cpp:31
+#: emoticon/emoticontexteditselector.cpp:30
 #, kde-format
 msgid "Search Emoticon..."
 msgstr "이모티콘 검색..."
 
-#: emoticon/emoticonunicodetab.cpp:51
+#: emoticon/emoticonunicodetab.cpp:53
 #, kde-format
 msgid "Result"
 msgstr "결과"
 
-#: emoticon/emoticonunicodetab.cpp:62
+#: emoticon/emoticonunicodetab.cpp:64
 #, kde-format
 msgid "Recents"
 msgstr "최근"
 
-#: emoticon/emoticonunicodetab.cpp:93
-#, kde-format
-msgid "Faces"
-msgstr "얼굴"
-
-#: emoticon/emoticonunicodetab.cpp:94
-#, kde-format
-msgid "Animals"
-msgstr "동물"
-
-#: emoticon/emoticonunicodetab.cpp:95
-#, kde-format
-msgid "Emotions"
-msgstr "감정"
-
-#: emoticon/emoticonunicodetab.cpp:96
-#, kde-format
-msgid "Body"
-msgstr "신체"
-
-#: emoticon/emoticonunicodetab.cpp:97
-#, kde-format
-msgid "Transports"
-msgstr "운송 수단"
-
-#: emoticon/emoticonunicodetab.cpp:98
-#, kde-format
-msgid "Events"
-msgstr "이벤트"
-
-#: emoticon/emoticonunicodetab.cpp:99
-#, kde-format
-msgid "Flags"
-msgstr "깃발"
-
-#: emoticon/emoticonunicodetab.cpp:100
-#, kde-format
-msgid "Weather"
-msgstr "날씨"
-
-#: emoticon/emoticonunicodetab.cpp:101
-#, kde-format
-msgid "Foods"
-msgstr "음식"
-
-#: emoticon/emoticonunicodetab.cpp:102
-#, kde-format
-msgid "Sports"
-msgstr "스포츠"
-
-#: emoticon/emoticonunicodetab.cpp:103
-#, kde-format
-msgid "Time"
-msgstr "시간"
-
-#: emoticon/emoticonunicodetab.cpp:104
-#, kde-format
-msgid "Game"
-msgstr "게임"
-
-#: emoticon/emoticonunicodetab.cpp:105
-#, kde-format
-msgid "Clothing"
-msgstr "의류"
-
-#: emoticon/emoticonunicodetab.cpp:106
-#, kde-format
-msgid "Music"
-msgstr "음악"
-
-#: emoticon/emoticonunicodetab.cpp:107
-#, kde-format
-msgid "Computer"
-msgstr "컴퓨터"
-
-#: emoticon/emoticonunicodetab.cpp:108
+#: emoticon/unicodeemoticonmanager.cpp:58
 #, kde-format
 msgid "Symbols"
 msgstr "기호"
 
-#: emoticon/emoticonunicodetab.cpp:109
+#: emoticon/unicodeemoticonmanager.cpp:60
 #, kde-format
-msgid "Plant"
-msgstr "식물"
+msgid "Activity"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:110
+#: emoticon/unicodeemoticonmanager.cpp:62
 #, kde-format
-msgid "Book"
-msgstr "책"
+msgid "Objects"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:111
+#: emoticon/unicodeemoticonmanager.cpp:64
 #, kde-format
-msgid "Science"
-msgstr "과학"
+msgid "Nature"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:112
-#, kde-format
-msgid "Person"
-msgstr "사람"
+#: emoticon/unicodeemoticonmanager.cpp:66
+#, fuzzy, kde-format
+#| msgid "Foods"
+msgid "Food"
+msgstr "음식"
 
-#: emoticon/emoticonunicodetab.cpp:113
+#: emoticon/unicodeemoticonmanager.cpp:68
 #, kde-format
-msgid "Place"
-msgstr "장소"
+msgid "People"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:114
+#: emoticon/unicodeemoticonmanager.cpp:70
 #, kde-format
-msgid "Money"
-msgstr "돈"
+msgid "Travel"
+msgstr "여행"
 
-#: emoticon/emoticonunicodetab.cpp:115
+#: emoticon/unicodeemoticonmanager.cpp:72
 #, kde-format
-msgid "Mail"
-msgstr "편지"
+msgid "Regional"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:116
+#: emoticon/unicodeemoticonmanager.cpp:74
 #, kde-format
-msgid "Office"
-msgstr "사무실"
-
-#: emoticon/emoticonunicodetab.cpp:117
-#, kde-format
-msgid "Tools"
-msgstr "도구"
-
-#: emoticon/emoticonunicodetab.cpp:118
-#, kde-format
-msgid "Phone"
-msgstr "전화"
-
-#: emoticon/emoticonunicodetab.cpp:119
-#, kde-format
-msgid "Lock"
-msgstr "자물쇠"
-
-#: emoticon/emoticonunicodetab.cpp:120
-#, kde-format
-msgid "Drink"
-msgstr "음료"
-
-#: emoticon/emoticonunicodetab.cpp:121
-#, kde-format
-msgid "Video"
-msgstr "비디오"
-
-#: emoticon/emoticonunicodetab.cpp:122
-#, kde-format
-msgid "House"
-msgstr "집"
-
-#: emoticon/emoticonunicodetab.cpp:123
-#, kde-format
-msgid "Dishware"
-msgstr "식기"
-
-#: emoticon/emoticonunicodetab.cpp:124
-#, kde-format
-msgid "Hotel"
-msgstr "호텔"
-
-#: emoticon/emoticonunicodetab.cpp:125
-#, kde-format
-msgid "Award-Medal"
-msgstr "메달"
+msgid "Flags"
+msgstr "깃발"
 
 #: inserthtmldialog.cpp:34
 #, kde-format
@@ -1069,6 +950,96 @@ msgstr "보내기"
 msgid "Skip"
 msgstr "건너뛰기"
 
+#~ msgid "Faces"
+#~ msgstr "얼굴"
+
+#~ msgid "Animals"
+#~ msgstr "동물"
+
+#~ msgid "Emotions"
+#~ msgstr "감정"
+
+#~ msgid "Body"
+#~ msgstr "신체"
+
+#~ msgid "Transports"
+#~ msgstr "운송 수단"
+
+#~ msgid "Events"
+#~ msgstr "이벤트"
+
+#~ msgid "Weather"
+#~ msgstr "날씨"
+
+#~ msgid "Sports"
+#~ msgstr "스포츠"
+
+#~ msgid "Time"
+#~ msgstr "시간"
+
+#~ msgid "Game"
+#~ msgstr "게임"
+
+#~ msgid "Clothing"
+#~ msgstr "의류"
+
+#~ msgid "Music"
+#~ msgstr "음악"
+
+#~ msgid "Computer"
+#~ msgstr "컴퓨터"
+
+#~ msgid "Plant"
+#~ msgstr "식물"
+
+#~ msgid "Book"
+#~ msgstr "책"
+
+#~ msgid "Science"
+#~ msgstr "과학"
+
+#~ msgid "Person"
+#~ msgstr "사람"
+
+#~ msgid "Place"
+#~ msgstr "장소"
+
+#~ msgid "Money"
+#~ msgstr "돈"
+
+#~ msgid "Mail"
+#~ msgstr "편지"
+
+#~ msgid "Office"
+#~ msgstr "사무실"
+
+#~ msgid "Tools"
+#~ msgstr "도구"
+
+#~ msgid "Phone"
+#~ msgstr "전화"
+
+#~ msgid "Lock"
+#~ msgstr "자물쇠"
+
+#~ msgid "Drink"
+#~ msgstr "음료"
+
+#~ msgid "Video"
+#~ msgstr "비디오"
+
+#~ msgid "House"
+#~ msgstr "집"
+
+#~ msgid "Dishware"
+#~ msgstr "식기"
+
+#~ msgid "Hotel"
+#~ msgstr "호텔"
+
+#~ msgid "Award-Medal"
+#~ msgstr "메달"
+
 #~ msgid "Stop"
 #~ msgstr "정지"
 
@@ -1120,9 +1091,6 @@ msgstr "건너뛰기"
 
 #~ msgid "Fantasy"
 #~ msgstr "판타지"
-
-#~ msgid "Travel"
-#~ msgstr "여행"
 
 #~ msgctxt "@action"
 #~ msgid "Increase Indent"

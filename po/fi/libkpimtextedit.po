@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 01:00+0000\n"
+"POT-Creation-Date: 2023-04-07 00:48+0000\n"
 "PO-Revision-Date: 2022-03-18 23:19+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -451,185 +451,66 @@ msgstr "Tyhjennä viimeaikaiset"
 msgid "Add Smiley"
 msgstr "Lisää hymiö"
 
-#: emoticon/emoticontexteditselector.cpp:31
+#: emoticon/emoticontexteditselector.cpp:30
 #, kde-format
 msgid "Search Emoticon..."
 msgstr "Etsi emojia…"
 
-#: emoticon/emoticonunicodetab.cpp:51
+#: emoticon/emoticonunicodetab.cpp:53
 #, kde-format
 msgid "Result"
 msgstr "Tulos"
 
-#: emoticon/emoticonunicodetab.cpp:62
+#: emoticon/emoticonunicodetab.cpp:64
 #, kde-format
 msgid "Recents"
 msgstr "Viimeaikaiset"
 
-#: emoticon/emoticonunicodetab.cpp:93
-#, kde-format
-msgid "Faces"
-msgstr "Kasvot"
-
-#: emoticon/emoticonunicodetab.cpp:94
-#, kde-format
-msgid "Animals"
-msgstr "Eläimet"
-
-#: emoticon/emoticonunicodetab.cpp:95
-#, kde-format
-msgid "Emotions"
-msgstr "Tunteet"
-
-#: emoticon/emoticonunicodetab.cpp:96
-#, kde-format
-msgid "Body"
-msgstr "Vartalo"
-
-#: emoticon/emoticonunicodetab.cpp:97
-#, kde-format
-msgid "Transports"
-msgstr "Liikenne"
-
-#: emoticon/emoticonunicodetab.cpp:98
-#, kde-format
-msgid "Events"
-msgstr "Tapahtumat"
-
-#: emoticon/emoticonunicodetab.cpp:99
-#, kde-format
-msgid "Flags"
-msgstr "Liput"
-
-#: emoticon/emoticonunicodetab.cpp:100
-#, kde-format
-msgid "Weather"
-msgstr "Sää"
-
-#: emoticon/emoticonunicodetab.cpp:101
-#, kde-format
-msgid "Foods"
-msgstr "Ruoka"
-
-#: emoticon/emoticonunicodetab.cpp:102
-#, kde-format
-msgid "Sports"
-msgstr "Urheilu"
-
-#: emoticon/emoticonunicodetab.cpp:103
-#, kde-format
-msgid "Time"
-msgstr "Aika"
-
-#: emoticon/emoticonunicodetab.cpp:104
-#, kde-format
-msgid "Game"
-msgstr "Peli"
-
-#: emoticon/emoticonunicodetab.cpp:105
-#, kde-format
-msgid "Clothing"
-msgstr "Pukeutuminen"
-
-#: emoticon/emoticonunicodetab.cpp:106
-#, kde-format
-msgid "Music"
-msgstr "Musiikki"
-
-#: emoticon/emoticonunicodetab.cpp:107
-#, kde-format
-msgid "Computer"
-msgstr "Tietokone"
-
-#: emoticon/emoticonunicodetab.cpp:108
+#: emoticon/unicodeemoticonmanager.cpp:58
 #, kde-format
 msgid "Symbols"
 msgstr "Symbolit"
 
-#: emoticon/emoticonunicodetab.cpp:109
+#: emoticon/unicodeemoticonmanager.cpp:60
 #, kde-format
-msgid "Plant"
-msgstr "Kasvot"
+msgid "Activity"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:110
+#: emoticon/unicodeemoticonmanager.cpp:62
 #, kde-format
-msgid "Book"
-msgstr "Kirja"
+msgid "Objects"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:111
+#: emoticon/unicodeemoticonmanager.cpp:64
 #, kde-format
-msgid "Science"
-msgstr "Tiede"
+msgid "Nature"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:112
-#, kde-format
-msgid "Person"
-msgstr "Henkilö"
+#: emoticon/unicodeemoticonmanager.cpp:66
+#, fuzzy, kde-format
+#| msgid "Foods"
+msgid "Food"
+msgstr "Ruoka"
 
-#: emoticon/emoticonunicodetab.cpp:113
+#: emoticon/unicodeemoticonmanager.cpp:68
 #, kde-format
-msgid "Place"
-msgstr "Paikka"
+msgid "People"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:114
+#: emoticon/unicodeemoticonmanager.cpp:70
 #, kde-format
-msgid "Money"
-msgstr "Raha"
+msgid "Travel"
+msgstr "Matkailu"
 
-#: emoticon/emoticonunicodetab.cpp:115
+#: emoticon/unicodeemoticonmanager.cpp:72
 #, kde-format
-msgid "Mail"
-msgstr "Posti"
+msgid "Regional"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:116
+#: emoticon/unicodeemoticonmanager.cpp:74
 #, kde-format
-msgid "Office"
-msgstr "Toimisto"
-
-#: emoticon/emoticonunicodetab.cpp:117
-#, kde-format
-msgid "Tools"
-msgstr "Työkalut"
-
-#: emoticon/emoticonunicodetab.cpp:118
-#, kde-format
-msgid "Phone"
-msgstr "Puhelin"
-
-#: emoticon/emoticonunicodetab.cpp:119
-#, kde-format
-msgid "Lock"
-msgstr "Lukko"
-
-#: emoticon/emoticonunicodetab.cpp:120
-#, kde-format
-msgid "Drink"
-msgstr "Juoma"
-
-#: emoticon/emoticonunicodetab.cpp:121
-#, kde-format
-msgid "Video"
-msgstr "Video"
-
-#: emoticon/emoticonunicodetab.cpp:122
-#, kde-format
-msgid "House"
-msgstr "Rakennus"
-
-#: emoticon/emoticonunicodetab.cpp:123
-#, kde-format
-msgid "Dishware"
-msgstr "Astia"
-
-#: emoticon/emoticonunicodetab.cpp:124
-#, kde-format
-msgid "Hotel"
-msgstr "Hotelli"
-
-#: emoticon/emoticonunicodetab.cpp:125
-#, kde-format
-msgid "Award-Medal"
-msgstr "Palkintomitali"
+msgid "Flags"
+msgstr "Liput"
 
 #: inserthtmldialog.cpp:34
 #, kde-format
@@ -1075,6 +956,96 @@ msgstr "Lähetä"
 msgid "Skip"
 msgstr "Ohita"
 
+#~ msgid "Faces"
+#~ msgstr "Kasvot"
+
+#~ msgid "Animals"
+#~ msgstr "Eläimet"
+
+#~ msgid "Emotions"
+#~ msgstr "Tunteet"
+
+#~ msgid "Body"
+#~ msgstr "Vartalo"
+
+#~ msgid "Transports"
+#~ msgstr "Liikenne"
+
+#~ msgid "Events"
+#~ msgstr "Tapahtumat"
+
+#~ msgid "Weather"
+#~ msgstr "Sää"
+
+#~ msgid "Sports"
+#~ msgstr "Urheilu"
+
+#~ msgid "Time"
+#~ msgstr "Aika"
+
+#~ msgid "Game"
+#~ msgstr "Peli"
+
+#~ msgid "Clothing"
+#~ msgstr "Pukeutuminen"
+
+#~ msgid "Music"
+#~ msgstr "Musiikki"
+
+#~ msgid "Computer"
+#~ msgstr "Tietokone"
+
+#~ msgid "Plant"
+#~ msgstr "Kasvot"
+
+#~ msgid "Book"
+#~ msgstr "Kirja"
+
+#~ msgid "Science"
+#~ msgstr "Tiede"
+
+#~ msgid "Person"
+#~ msgstr "Henkilö"
+
+#~ msgid "Place"
+#~ msgstr "Paikka"
+
+#~ msgid "Money"
+#~ msgstr "Raha"
+
+#~ msgid "Mail"
+#~ msgstr "Posti"
+
+#~ msgid "Office"
+#~ msgstr "Toimisto"
+
+#~ msgid "Tools"
+#~ msgstr "Työkalut"
+
+#~ msgid "Phone"
+#~ msgstr "Puhelin"
+
+#~ msgid "Lock"
+#~ msgstr "Lukko"
+
+#~ msgid "Drink"
+#~ msgstr "Juoma"
+
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#~ msgid "House"
+#~ msgstr "Rakennus"
+
+#~ msgid "Dishware"
+#~ msgstr "Astia"
+
+#~ msgid "Hotel"
+#~ msgstr "Hotelli"
+
+#~ msgid "Award-Medal"
+#~ msgstr "Palkintomitali"
+
 #~ msgid "Stop"
 #~ msgstr "Pysäytä"
 
@@ -1123,9 +1094,6 @@ msgstr "Ohita"
 
 #~ msgid "Fantasy"
 #~ msgstr "Fantasia"
-
-#~ msgid "Travel"
-#~ msgstr "Matkailu"
 
 #~ msgctxt "@action"
 #~ msgid "Increase Indent"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 01:00+0000\n"
+"POT-Creation-Date: 2023-04-07 00:48+0000\n"
 "PO-Revision-Date: 2023-01-15 00:23+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -453,185 +453,66 @@ msgstr "Borrar recientes"
 msgid "Add Smiley"
 msgstr "Añadir emoticono"
 
-#: emoticon/emoticontexteditselector.cpp:31
+#: emoticon/emoticontexteditselector.cpp:30
 #, kde-format
 msgid "Search Emoticon..."
 msgstr "Buscar emoticono..."
 
-#: emoticon/emoticonunicodetab.cpp:51
+#: emoticon/emoticonunicodetab.cpp:53
 #, kde-format
 msgid "Result"
 msgstr "Resultado"
 
-#: emoticon/emoticonunicodetab.cpp:62
+#: emoticon/emoticonunicodetab.cpp:64
 #, kde-format
 msgid "Recents"
 msgstr "Recientes"
 
-#: emoticon/emoticonunicodetab.cpp:93
-#, kde-format
-msgid "Faces"
-msgstr "Caras"
-
-#: emoticon/emoticonunicodetab.cpp:94
-#, kde-format
-msgid "Animals"
-msgstr "Animales"
-
-#: emoticon/emoticonunicodetab.cpp:95
-#, kde-format
-msgid "Emotions"
-msgstr "Emociones"
-
-#: emoticon/emoticonunicodetab.cpp:96
-#, kde-format
-msgid "Body"
-msgstr "Cuerpo"
-
-#: emoticon/emoticonunicodetab.cpp:97
-#, kde-format
-msgid "Transports"
-msgstr "Transportes"
-
-#: emoticon/emoticonunicodetab.cpp:98
-#, kde-format
-msgid "Events"
-msgstr "Eventos"
-
-#: emoticon/emoticonunicodetab.cpp:99
-#, kde-format
-msgid "Flags"
-msgstr "Indicadores"
-
-#: emoticon/emoticonunicodetab.cpp:100
-#, kde-format
-msgid "Weather"
-msgstr "Clima"
-
-#: emoticon/emoticonunicodetab.cpp:101
-#, kde-format
-msgid "Foods"
-msgstr "Comida"
-
-#: emoticon/emoticonunicodetab.cpp:102
-#, kde-format
-msgid "Sports"
-msgstr "Deportes"
-
-#: emoticon/emoticonunicodetab.cpp:103
-#, kde-format
-msgid "Time"
-msgstr "Hora"
-
-#: emoticon/emoticonunicodetab.cpp:104
-#, kde-format
-msgid "Game"
-msgstr "Juego"
-
-#: emoticon/emoticonunicodetab.cpp:105
-#, kde-format
-msgid "Clothing"
-msgstr "Vestidura"
-
-#: emoticon/emoticonunicodetab.cpp:106
-#, kde-format
-msgid "Music"
-msgstr "Música"
-
-#: emoticon/emoticonunicodetab.cpp:107
-#, kde-format
-msgid "Computer"
-msgstr "Equipo"
-
-#: emoticon/emoticonunicodetab.cpp:108
+#: emoticon/unicodeemoticonmanager.cpp:58
 #, kde-format
 msgid "Symbols"
 msgstr "Símbolos"
 
-#: emoticon/emoticonunicodetab.cpp:109
+#: emoticon/unicodeemoticonmanager.cpp:60
 #, kde-format
-msgid "Plant"
-msgstr "Planta"
+msgid "Activity"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:110
+#: emoticon/unicodeemoticonmanager.cpp:62
 #, kde-format
-msgid "Book"
-msgstr "Libro"
+msgid "Objects"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:111
+#: emoticon/unicodeemoticonmanager.cpp:64
 #, kde-format
-msgid "Science"
-msgstr "Ciencia"
+msgid "Nature"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:112
-#, kde-format
-msgid "Person"
-msgstr "Persona"
+#: emoticon/unicodeemoticonmanager.cpp:66
+#, fuzzy, kde-format
+#| msgid "Foods"
+msgid "Food"
+msgstr "Comida"
 
-#: emoticon/emoticonunicodetab.cpp:113
+#: emoticon/unicodeemoticonmanager.cpp:68
 #, kde-format
-msgid "Place"
-msgstr "Lugar"
+msgid "People"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:114
+#: emoticon/unicodeemoticonmanager.cpp:70
 #, kde-format
-msgid "Money"
-msgstr "Dinero"
+msgid "Travel"
+msgstr "Viaje"
 
-#: emoticon/emoticonunicodetab.cpp:115
+#: emoticon/unicodeemoticonmanager.cpp:72
 #, kde-format
-msgid "Mail"
-msgstr "Correo"
+msgid "Regional"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:116
+#: emoticon/unicodeemoticonmanager.cpp:74
 #, kde-format
-msgid "Office"
-msgstr "Oficina"
-
-#: emoticon/emoticonunicodetab.cpp:117
-#, kde-format
-msgid "Tools"
-msgstr "Herramientas"
-
-#: emoticon/emoticonunicodetab.cpp:118
-#, kde-format
-msgid "Phone"
-msgstr "Teléfono"
-
-#: emoticon/emoticonunicodetab.cpp:119
-#, kde-format
-msgid "Lock"
-msgstr "Candado"
-
-#: emoticon/emoticonunicodetab.cpp:120
-#, kde-format
-msgid "Drink"
-msgstr "Bebida"
-
-#: emoticon/emoticonunicodetab.cpp:121
-#, kde-format
-msgid "Video"
-msgstr "Vídeo"
-
-#: emoticon/emoticonunicodetab.cpp:122
-#, kde-format
-msgid "House"
-msgstr "Casa"
-
-#: emoticon/emoticonunicodetab.cpp:123
-#, kde-format
-msgid "Dishware"
-msgstr "Vajilla"
-
-#: emoticon/emoticonunicodetab.cpp:124
-#, kde-format
-msgid "Hotel"
-msgstr "Hotel"
-
-#: emoticon/emoticonunicodetab.cpp:125
-#, kde-format
-msgid "Award-Medal"
-msgstr "Medalla"
+msgid "Flags"
+msgstr "Indicadores"
 
 #: inserthtmldialog.cpp:34
 #, kde-format
@@ -1077,6 +958,96 @@ msgstr "Enviar"
 msgid "Skip"
 msgstr "Saltar"
 
+#~ msgid "Faces"
+#~ msgstr "Caras"
+
+#~ msgid "Animals"
+#~ msgstr "Animales"
+
+#~ msgid "Emotions"
+#~ msgstr "Emociones"
+
+#~ msgid "Body"
+#~ msgstr "Cuerpo"
+
+#~ msgid "Transports"
+#~ msgstr "Transportes"
+
+#~ msgid "Events"
+#~ msgstr "Eventos"
+
+#~ msgid "Weather"
+#~ msgstr "Clima"
+
+#~ msgid "Sports"
+#~ msgstr "Deportes"
+
+#~ msgid "Time"
+#~ msgstr "Hora"
+
+#~ msgid "Game"
+#~ msgstr "Juego"
+
+#~ msgid "Clothing"
+#~ msgstr "Vestidura"
+
+#~ msgid "Music"
+#~ msgstr "Música"
+
+#~ msgid "Computer"
+#~ msgstr "Equipo"
+
+#~ msgid "Plant"
+#~ msgstr "Planta"
+
+#~ msgid "Book"
+#~ msgstr "Libro"
+
+#~ msgid "Science"
+#~ msgstr "Ciencia"
+
+#~ msgid "Person"
+#~ msgstr "Persona"
+
+#~ msgid "Place"
+#~ msgstr "Lugar"
+
+#~ msgid "Money"
+#~ msgstr "Dinero"
+
+#~ msgid "Mail"
+#~ msgstr "Correo"
+
+#~ msgid "Office"
+#~ msgstr "Oficina"
+
+#~ msgid "Tools"
+#~ msgstr "Herramientas"
+
+#~ msgid "Phone"
+#~ msgstr "Teléfono"
+
+#~ msgid "Lock"
+#~ msgstr "Candado"
+
+#~ msgid "Drink"
+#~ msgstr "Bebida"
+
+#~ msgid "Video"
+#~ msgstr "Vídeo"
+
+#~ msgid "House"
+#~ msgstr "Casa"
+
+#~ msgid "Dishware"
+#~ msgstr "Vajilla"
+
+#~ msgid "Hotel"
+#~ msgstr "Hotel"
+
+#~ msgid "Award-Medal"
+#~ msgstr "Medalla"
+
 #~ msgid "Stop"
 #~ msgstr "Detener"
 
@@ -1138,9 +1109,6 @@ msgstr "Saltar"
 
 #~ msgid "Fantasy"
 #~ msgstr "Fantasía"
-
-#~ msgid "Travel"
-#~ msgstr "Viaje"
 
 #~ msgctxt "@action"
 #~ msgid "Increase Indent"

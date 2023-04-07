@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 01:00+0000\n"
+"POT-Creation-Date: 2023-04-07 00:48+0000\n"
 "PO-Revision-Date: 2023-01-15 04:00+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -448,185 +448,66 @@ msgstr "უახლესების გასუფთავება"
 msgid "Add Smiley"
 msgstr "სიცილაკის დამატება"
 
-#: emoticon/emoticontexteditselector.cpp:31
+#: emoticon/emoticontexteditselector.cpp:30
 #, kde-format
 msgid "Search Emoticon..."
 msgstr "ემოციის მოძებნა..."
 
-#: emoticon/emoticonunicodetab.cpp:51
+#: emoticon/emoticonunicodetab.cpp:53
 #, kde-format
 msgid "Result"
 msgstr "შედეგი"
 
-#: emoticon/emoticonunicodetab.cpp:62
+#: emoticon/emoticonunicodetab.cpp:64
 #, kde-format
 msgid "Recents"
 msgstr "უახლესები"
 
-#: emoticon/emoticonunicodetab.cpp:93
-#, kde-format
-msgid "Faces"
-msgstr "სახეები"
-
-#: emoticon/emoticonunicodetab.cpp:94
-#, kde-format
-msgid "Animals"
-msgstr "ცხოველები"
-
-#: emoticon/emoticonunicodetab.cpp:95
-#, kde-format
-msgid "Emotions"
-msgstr "ემოციები"
-
-#: emoticon/emoticonunicodetab.cpp:96
-#, kde-format
-msgid "Body"
-msgstr "სხეული"
-
-#: emoticon/emoticonunicodetab.cpp:97
-#, kde-format
-msgid "Transports"
-msgstr "ტრანსპორტი"
-
-#: emoticon/emoticonunicodetab.cpp:98
-#, kde-format
-msgid "Events"
-msgstr "მოვლენები"
-
-#: emoticon/emoticonunicodetab.cpp:99
-#, kde-format
-msgid "Flags"
-msgstr "ალმები"
-
-#: emoticon/emoticonunicodetab.cpp:100
-#, kde-format
-msgid "Weather"
-msgstr "ამინდი"
-
-#: emoticon/emoticonunicodetab.cpp:101
-#, kde-format
-msgid "Foods"
-msgstr "საჭმელი"
-
-#: emoticon/emoticonunicodetab.cpp:102
-#, kde-format
-msgid "Sports"
-msgstr "სპორტი"
-
-#: emoticon/emoticonunicodetab.cpp:103
-#, kde-format
-msgid "Time"
-msgstr "დრო"
-
-#: emoticon/emoticonunicodetab.cpp:104
-#, kde-format
-msgid "Game"
-msgstr "თამაში"
-
-#: emoticon/emoticonunicodetab.cpp:105
-#, kde-format
-msgid "Clothing"
-msgstr "ტანსაცმელი"
-
-#: emoticon/emoticonunicodetab.cpp:106
-#, kde-format
-msgid "Music"
-msgstr "მუსიკა"
-
-#: emoticon/emoticonunicodetab.cpp:107
-#, kde-format
-msgid "Computer"
-msgstr "ჩემი კომპიუტერი"
-
-#: emoticon/emoticonunicodetab.cpp:108
+#: emoticon/unicodeemoticonmanager.cpp:58
 #, kde-format
 msgid "Symbols"
 msgstr "სიმბოლოები"
 
-#: emoticon/emoticonunicodetab.cpp:109
+#: emoticon/unicodeemoticonmanager.cpp:60
 #, kde-format
-msgid "Plant"
-msgstr "მცენარე"
+msgid "Activity"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:110
+#: emoticon/unicodeemoticonmanager.cpp:62
 #, kde-format
-msgid "Book"
-msgstr "წიგნი"
+msgid "Objects"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:111
+#: emoticon/unicodeemoticonmanager.cpp:64
 #, kde-format
-msgid "Science"
-msgstr "მეცნიერება"
+msgid "Nature"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:112
-#, kde-format
-msgid "Person"
-msgstr "პიროვნება"
+#: emoticon/unicodeemoticonmanager.cpp:66
+#, fuzzy, kde-format
+#| msgid "Foods"
+msgid "Food"
+msgstr "საჭმელი"
 
-#: emoticon/emoticonunicodetab.cpp:113
+#: emoticon/unicodeemoticonmanager.cpp:68
 #, kde-format
-msgid "Place"
-msgstr "ადგილი"
+msgid "People"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:114
+#: emoticon/unicodeemoticonmanager.cpp:70
 #, kde-format
-msgid "Money"
-msgstr "ფული"
+msgid "Travel"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:115
+#: emoticon/unicodeemoticonmanager.cpp:72
 #, kde-format
-msgid "Mail"
-msgstr "წერილი"
+msgid "Regional"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:116
+#: emoticon/unicodeemoticonmanager.cpp:74
 #, kde-format
-msgid "Office"
-msgstr "ოფისი"
-
-#: emoticon/emoticonunicodetab.cpp:117
-#, kde-format
-msgid "Tools"
-msgstr "ხელსაწყოები"
-
-#: emoticon/emoticonunicodetab.cpp:118
-#, kde-format
-msgid "Phone"
-msgstr "ტელეფონი"
-
-#: emoticon/emoticonunicodetab.cpp:119
-#, kde-format
-msgid "Lock"
-msgstr "ჩაკეტვა"
-
-#: emoticon/emoticonunicodetab.cpp:120
-#, kde-format
-msgid "Drink"
-msgstr "სასმელი"
-
-#: emoticon/emoticonunicodetab.cpp:121
-#, kde-format
-msgid "Video"
-msgstr "ვიდეო"
-
-#: emoticon/emoticonunicodetab.cpp:122
-#, kde-format
-msgid "House"
-msgstr "ჰაუსი"
-
-#: emoticon/emoticonunicodetab.cpp:123
-#, kde-format
-msgid "Dishware"
-msgstr "ჭურჭელი"
-
-#: emoticon/emoticonunicodetab.cpp:124
-#, kde-format
-msgid "Hotel"
-msgstr "სასტუმრო"
-
-#: emoticon/emoticonunicodetab.cpp:125
-#, kde-format
-msgid "Award-Medal"
-msgstr "ჯილდოს-მედალი"
+msgid "Flags"
+msgstr "ალმები"
 
 #: inserthtmldialog.cpp:34
 #, kde-format
@@ -1071,6 +952,96 @@ msgstr "გაგზავნა"
 #, kde-format
 msgid "Skip"
 msgstr "გამოტოვება"
+
+#~ msgid "Faces"
+#~ msgstr "სახეები"
+
+#~ msgid "Animals"
+#~ msgstr "ცხოველები"
+
+#~ msgid "Emotions"
+#~ msgstr "ემოციები"
+
+#~ msgid "Body"
+#~ msgstr "სხეული"
+
+#~ msgid "Transports"
+#~ msgstr "ტრანსპორტი"
+
+#~ msgid "Events"
+#~ msgstr "მოვლენები"
+
+#~ msgid "Weather"
+#~ msgstr "ამინდი"
+
+#~ msgid "Sports"
+#~ msgstr "სპორტი"
+
+#~ msgid "Time"
+#~ msgstr "დრო"
+
+#~ msgid "Game"
+#~ msgstr "თამაში"
+
+#~ msgid "Clothing"
+#~ msgstr "ტანსაცმელი"
+
+#~ msgid "Music"
+#~ msgstr "მუსიკა"
+
+#~ msgid "Computer"
+#~ msgstr "ჩემი კომპიუტერი"
+
+#~ msgid "Plant"
+#~ msgstr "მცენარე"
+
+#~ msgid "Book"
+#~ msgstr "წიგნი"
+
+#~ msgid "Science"
+#~ msgstr "მეცნიერება"
+
+#~ msgid "Person"
+#~ msgstr "პიროვნება"
+
+#~ msgid "Place"
+#~ msgstr "ადგილი"
+
+#~ msgid "Money"
+#~ msgstr "ფული"
+
+#~ msgid "Mail"
+#~ msgstr "წერილი"
+
+#~ msgid "Office"
+#~ msgstr "ოფისი"
+
+#~ msgid "Tools"
+#~ msgstr "ხელსაწყოები"
+
+#~ msgid "Phone"
+#~ msgstr "ტელეფონი"
+
+#~ msgid "Lock"
+#~ msgstr "ჩაკეტვა"
+
+#~ msgid "Drink"
+#~ msgstr "სასმელი"
+
+#~ msgid "Video"
+#~ msgstr "ვიდეო"
+
+#~ msgid "House"
+#~ msgstr "ჰაუსი"
+
+#~ msgid "Dishware"
+#~ msgstr "ჭურჭელი"
+
+#~ msgid "Hotel"
+#~ msgstr "სასტუმრო"
+
+#~ msgid "Award-Medal"
+#~ msgstr "ჯილდოს-მედალი"
 
 #~ msgid "Stop"
 #~ msgstr "შეჩერება"
