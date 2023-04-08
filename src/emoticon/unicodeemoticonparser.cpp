@@ -15,7 +15,7 @@ UnicodeEmoticonParser::UnicodeEmoticonParser() = default;
 
 UnicodeEmoticonParser::~UnicodeEmoticonParser() = default;
 
-QVector<UnicodeEmoticon> UnicodeEmoticonParser::parse(const QJsonObject &o) const
+QList<UnicodeEmoticon> UnicodeEmoticonParser::parse(const QJsonObject &o) const
 {
     auto aliases = [](const QJsonArray &alternates, const QJsonArray &ascii) {
         QStringList ret;
@@ -31,7 +31,7 @@ QVector<UnicodeEmoticon> UnicodeEmoticonParser::parse(const QJsonObject &o) cons
         return ret;
     };
 
-    QVector<UnicodeEmoticon> lstEmoticons;
+    QList<UnicodeEmoticon> lstEmoticons;
     const QStringList keys = o.keys();
     for (const QString &key : keys) {
         UnicodeEmoticon emoticon;

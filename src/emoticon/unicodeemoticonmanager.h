@@ -20,16 +20,16 @@ public:
 
     static UnicodeEmoticonManager *self();
 
-    Q_REQUIRED_RESULT QVector<UnicodeEmoticon> unicodeEmojiList() const;
+    Q_REQUIRED_RESULT QList<UnicodeEmoticon> unicodeEmojiList() const;
 
-    Q_REQUIRED_RESULT QVector<UnicodeEmoticon> emojisForCategory(const QString &category) const;
-    Q_REQUIRED_RESULT QVector<EmoticonCategory> categories() const;
+    Q_REQUIRED_RESULT QList<UnicodeEmoticon> emojisForCategory(const QString &category) const;
+    Q_REQUIRED_RESULT QList<EmoticonCategory> categories() const;
     Q_REQUIRED_RESULT UnicodeEmoticon unicodeEmoticonForEmoji(const QString &emojiIdentifier) const;
     Q_REQUIRED_RESULT int count() const;
 
 private:
     Q_REQUIRED_RESULT QString i18nUnicodeCategory(const QString &name) const;
     void loadUnicodeEmoji();
-    QVector<UnicodeEmoticon> mUnicodeEmojiList;
+    QList<UnicodeEmoticon> mUnicodeEmojiList;
 };
 }

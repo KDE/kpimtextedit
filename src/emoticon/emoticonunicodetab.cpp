@@ -76,7 +76,7 @@ void EmoticonUnicodeTab::loadEmoticons()
 
     // Default Emoji
     UnicodeEmoticonManager *emojiManager = UnicodeEmoticonManager::self();
-    const QVector<EmoticonCategory> categories = emojiManager->categories();
+    const QList<EmoticonCategory> categories = emojiManager->categories();
     for (const EmoticonCategory &category : categories) {
         auto emojisView = new KPIMTextEdit::EmoticonListView(this);
         auto categoryProxyModel = new EmoticonCategoryModelFilterProxyModel(this);
