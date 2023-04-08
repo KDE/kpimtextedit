@@ -8,8 +8,7 @@
 
 #include <QTabWidget>
 
-#include "emoticonunicodeutils.h"
-#include "kpimtextedit_export.h"
+#include "kpimtextedit_private_export.h"
 
 namespace KPIMTextEdit
 {
@@ -19,7 +18,7 @@ class EmoticonRecentUsedFilterProxyModel;
  * @brief The EmoticonUnicodeTab class
  * @author Laurent Montel <montel@kde.org>
  */
-class KPIMTEXTEDIT_EXPORT EmoticonUnicodeTab : public QTabWidget
+class KPIMTEXTEDIT_TESTS_EXPORT EmoticonUnicodeTab : public QTabWidget
 {
     Q_OBJECT
 public:

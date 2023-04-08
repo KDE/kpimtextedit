@@ -180,7 +180,7 @@ target_link_libraries(KPim6TextEdit
 
 if (TARGET KF6::TextEditTextToSpeech)
     target_link_libraries(KPim6TextEdit
-        PUBLIC
+        PRIVATE
         KF6::TextEditTextToSpeech
     )
 endif()
@@ -204,14 +204,6 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
 
     PREFIX KPIMTextEdit
     REQUIRED_HEADERS kpimtextedit_HEADERS
-    )
-
-ecm_generate_headers(KPimTextEdit_CamelCaseemoticon_HEADERS
-    HEADER_NAMES
-    EmoticonUnicodeTab
-    PREFIX KPIMTextEdit
-    REQUIRED_HEADERS kpimtextedit_HEADERS
-    RELATIVE emoticon
     )
 
 ecm_generate_headers(KPimTextEdit_CamelCasegrantlee_HEADERS
@@ -281,7 +273,6 @@ install(FILES
     ${KPimTextEdit_texteditor_commonwidget_HEADERS}
     ${KPimTextEdit_plaintexteditor_HEADERS}
     ${KPimTextEdit_composerng_HEADERS}
-    ${KPimTextEdit_emoticon_HEADERS}
     ${KPimTextEdit_grantlee_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit/kpimtextedit
     COMPONENT Devel
@@ -293,7 +284,6 @@ install(FILES
     ${KPimTextEdit_CamelCaseplaintexteditor_HEADERS}
     ${KPimTextEdit_CamelCasetexteditor_commonwidget_HEADERS}
     ${KPimTextEdit_Camelcasecomposerng_HEADERS}
-    ${KPimTextEdit_CamelCaseemoticon_HEADERS}
     ${KPimTextEdit_CamelCasegrantlee_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit/KPIMTextEdit/
     COMPONENT Devel
