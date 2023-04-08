@@ -496,7 +496,8 @@ msgid "People"
 msgstr ""
 
 #: emoticon/unicodeemoticonmanager.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Travel"
 msgid "Travel"
 msgstr "Reise"
 

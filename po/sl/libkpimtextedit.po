@@ -13,17 +13,17 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-07 00:48+0000\n"
-"PO-Revision-Date: 2023-01-15 09:42+0100\n"
+"PO-Revision-Date: 2023-04-07 08:20+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -57,7 +57,7 @@ msgstr "Levo"
 #, kde-format
 msgctxt "@action"
 msgid "Align &Center"
-msgstr "Poravnaj &sredinsko"
+msgstr "Poravnaj sredinsko"
 
 #: composer-ng/richtextcomposeractions.cpp:112
 #, kde-format
@@ -69,7 +69,7 @@ msgstr "Sredinsko"
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
-msgstr "Poravnaj &desno"
+msgstr "Poravnaj desno"
 
 #: composer-ng/richtextcomposeractions.cpp:121
 #, kde-format
@@ -129,37 +129,37 @@ msgstr "Nadpisano"
 #, kde-format
 msgctxt "@action boldify selected text"
 msgid "&Bold"
-msgstr "&Krepko"
+msgstr "Krepko"
 
 #: composer-ng/richtextcomposeractions.cpp:197
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
-msgstr "&Ležeče"
+msgstr "Ležeče"
 
 #: composer-ng/richtextcomposeractions.cpp:210
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
-msgstr "Po&dčrtano"
+msgstr "Podčrtano"
 
 #: composer-ng/richtextcomposeractions.cpp:222
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
-msgstr "P&rečrtano"
+msgstr "Prečrtano"
 
 #: composer-ng/richtextcomposeractions.cpp:237
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
-msgstr "Pi&sava"
+msgstr "Pisava"
 
 #: composer-ng/richtextcomposeractions.cpp:246
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
-msgstr "&Velikost pisave"
+msgstr "Velikost pi&save"
 
 #: composer-ng/richtextcomposeractions.cpp:254
 #, kde-format
@@ -171,7 +171,7 @@ msgstr "Vstavi črto"
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color..."
-msgstr "&Barva besedila ..."
+msgstr "Barva besedila..."
 
 #: composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
@@ -478,38 +478,37 @@ msgstr "Simboli"
 #: emoticon/unicodeemoticonmanager.cpp:60
 #, kde-format
 msgid "Activity"
-msgstr ""
+msgstr "Dejavnost"
 
 #: emoticon/unicodeemoticonmanager.cpp:62
 #, kde-format
 msgid "Objects"
-msgstr ""
+msgstr "Objekti"
 
 #: emoticon/unicodeemoticonmanager.cpp:64
 #, kde-format
 msgid "Nature"
-msgstr ""
+msgstr "Narava"
 
 #: emoticon/unicodeemoticonmanager.cpp:66
-#, fuzzy, kde-format
-#| msgid "Foods"
+#, kde-format
 msgid "Food"
 msgstr "Hrana"
 
 #: emoticon/unicodeemoticonmanager.cpp:68
 #, kde-format
 msgid "People"
-msgstr ""
+msgstr "Ljudje"
 
 #: emoticon/unicodeemoticonmanager.cpp:70
 #, kde-format
 msgid "Travel"
-msgstr ""
+msgstr "Potovanja"
 
 #: emoticon/unicodeemoticonmanager.cpp:72
 #, kde-format
 msgid "Regional"
-msgstr ""
+msgstr "Regionalno"
 
 #: emoticon/unicodeemoticonmanager.cpp:74
 #, kde-format
