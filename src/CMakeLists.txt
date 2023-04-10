@@ -79,43 +79,44 @@ target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
     grantleebuilder/markupdirector.h
     grantleebuilder/texthtmlbuilder.h
     )
+if (NOT HAVE_TEXTEMOTICON)
+    target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
+        emoticon/emoticontexteditaction.cpp
+        emoticon/emoticontexteditselector.cpp
+        emoticon/emoticonunicodetab.cpp
+        emoticon/emoticonunicodeutils.cpp
+        emoticon/emoticonunicodemodel.cpp
+        emoticon/emoticonlistview.cpp
+        emoticon/emoticonunicodeproxymodel.cpp
+        emoticon/emoticonunicodemodelmanager.cpp
+        emoticon/emoticonrecentusedfilterproxymodel.cpp
+        emoticon/emoticonrecentlistview.cpp
 
-target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
-    emoticon/emoticontexteditaction.cpp
-    emoticon/emoticontexteditselector.cpp
-    emoticon/emoticonunicodetab.cpp
-    emoticon/emoticonunicodeutils.cpp
-    emoticon/emoticonunicodemodel.cpp
-    emoticon/emoticonlistview.cpp
-    emoticon/emoticonunicodeproxymodel.cpp
-    emoticon/emoticonunicodemodelmanager.cpp
-    emoticon/emoticonrecentusedfilterproxymodel.cpp
-    emoticon/emoticonrecentlistview.cpp
-
-    emoticon/emoticontexteditaction.h
-    emoticon/emoticontexteditselector.h
-    emoticon/emoticonunicodetab.h
-    emoticon/emoticonunicodeutils.h
-    emoticon/emoticonunicodemodel.h
-    emoticon/emoticonlistview.h
-    emoticon/emoticonunicodeproxymodel.h
-    emoticon/emoticonunicodemodelmanager.h
-    emoticon/emoticonrecentusedfilterproxymodel.h
-    emoticon/emoticonrecentlistview.h
+        emoticon/emoticontexteditaction.h
+        emoticon/emoticontexteditselector.h
+        emoticon/emoticonunicodetab.h
+        emoticon/emoticonunicodeutils.h
+        emoticon/emoticonunicodemodel.h
+        emoticon/emoticonlistview.h
+        emoticon/emoticonunicodeproxymodel.h
+        emoticon/emoticonunicodemodelmanager.h
+        emoticon/emoticonrecentusedfilterproxymodel.h
+        emoticon/emoticonrecentlistview.h
 
 
-    emoticon/emoticoncategory.cpp
-    emoticon/emoticoncategory.h
-    emoticon/unicodeemoticon.cpp
-    emoticon/unicodeemoticon.h
-    emoticon/unicodeemoticonmanager.cpp
-    emoticon/unicodeemoticonmanager.h
-    emoticon/unicodeemoticonparser.cpp
-    emoticon/unicodeemoticonparser.h
-    emoticon/emoticoncategorymodelfilterproxymodel.cpp
-    emoticon/emoticoncategorymodelfilterproxymodel.h
-    emoticon/emoji.qrc
+        emoticon/emoticoncategory.cpp
+        emoticon/emoticoncategory.h
+        emoticon/unicodeemoticon.cpp
+        emoticon/unicodeemoticon.h
+        emoticon/unicodeemoticonmanager.cpp
+        emoticon/unicodeemoticonmanager.h
+        emoticon/unicodeemoticonparser.cpp
+        emoticon/unicodeemoticonparser.h
+        emoticon/emoticoncategorymodelfilterproxymodel.cpp
+        emoticon/emoticoncategorymodelfilterproxymodel.h
+        emoticon/emoji.qrc
     )
+endif()
 
 target_sources(KPim${KF_MAJOR_VERSION}TextEdit PRIVATE
     inserthtmldialog.cpp
@@ -179,6 +180,13 @@ if (TARGET KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
     target_link_libraries(KPim${KF_MAJOR_VERSION}TextEdit
         PRIVATE
         KF${KF_MAJOR_VERSION}::TextEditTextToSpeech
+    )
+endif()
+
+if (TARGET KF${KF_MAJOR_VERSION}::TextEmoticonsWidgets)
+    target_link_libraries(KPim${KF_MAJOR_VERSION}TextEdit
+        PRIVATE
+        KF${KF_MAJOR_VERSION}::TextEmoticonsWidgets
     )
 endif()
 
@@ -307,7 +315,9 @@ endif()
 ecm_qt_install_logging_categories(EXPORT KPIMTEXTEDIT FILE kpimtextedit.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 
 if(BUILD_TESTING)
-    add_subdirectory(emoticon/autotests)
+    if (NOT HAVE_TEXTADDONS_TEXTEMOTICON)
+        add_subdirectory(emoticon/autotests)
+    endif()
 endif()	
 
 if (BUILD_QCH)

@@ -86,6 +86,12 @@ if (TARGET KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
     set(HAVE_TEXTTOSPEECH TRUE)
 endif()
 
+find_package(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG)
+if (TARGET KF${KF_MAJOR_VERSION}::TextEmoticonsWidgets)
+    add_definitions(-DHAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT)
+    set(HAVE_TEXTADDONS_TEXTEMOTICON TRUE)
+endif()
+
 
 if (QT_MAJOR_VERSION STREQUAL "6")
     find_package(Qt6Core5Compat)
