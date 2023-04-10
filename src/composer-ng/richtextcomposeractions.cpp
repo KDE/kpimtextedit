@@ -363,7 +363,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
         ac->addAction(QStringLiteral("add_emoticon"), d->action_add_emoticon);
     }
     // Don't add to d->richTextActionList as we want to use it when we use plain text email too
-    connect(d->action_add_emoticon, &EmoticonTextEditAction::emoticonActivated, d->composerControler->richTextComposer(), &RichTextComposer::insertEmoticon);
+    connect(d->action_add_emoticon, &EmoticonTextEditAction::insertEmoticon, d->composerControler->richTextComposer(), &RichTextComposer::insertEmoticon);
 
     d->action_insert_html = new QAction(i18n("Insert HTML"), this);
     d->action_insert_html->setObjectName(QStringLiteral("insert_html"));

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-07 00:48+0000\n"
-"PO-Revision-Date: 2023-01-15 04:00+0100\n"
+"PO-Revision-Date: 2023-04-08 06:11+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -471,38 +471,37 @@ msgstr "სიმბოლოები"
 #: emoticon/unicodeemoticonmanager.cpp:60
 #, kde-format
 msgid "Activity"
-msgstr ""
+msgstr "აქტივობა"
 
 #: emoticon/unicodeemoticonmanager.cpp:62
 #, kde-format
 msgid "Objects"
-msgstr ""
+msgstr "ობიექტები"
 
 #: emoticon/unicodeemoticonmanager.cpp:64
 #, kde-format
 msgid "Nature"
-msgstr ""
+msgstr "ბუნება"
 
 #: emoticon/unicodeemoticonmanager.cpp:66
-#, fuzzy, kde-format
-#| msgid "Foods"
+#, kde-format
 msgid "Food"
 msgstr "საჭმელი"
 
 #: emoticon/unicodeemoticonmanager.cpp:68
 #, kde-format
 msgid "People"
-msgstr ""
+msgstr "ხალხი"
 
 #: emoticon/unicodeemoticonmanager.cpp:70
 #, kde-format
 msgid "Travel"
-msgstr ""
+msgstr "მოგზაურობა"
 
 #: emoticon/unicodeemoticonmanager.cpp:72
 #, kde-format
 msgid "Regional"
-msgstr ""
+msgstr "რეგიონალური"
 
 #: emoticon/unicodeemoticonmanager.cpp:74
 #, kde-format

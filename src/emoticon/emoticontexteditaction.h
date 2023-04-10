@@ -19,7 +19,7 @@ public:
     ~EmoticonTextEditAction() override;
 
 Q_SIGNALS:
-    void emoticonActivated(const QString &);
+    void insertEmoticon(const QString &);
 
 private:
     class EmoticonTextEditActionPrivate;
