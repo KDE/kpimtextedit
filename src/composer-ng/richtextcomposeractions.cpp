@@ -5,7 +5,11 @@
 */
 
 #include "richtextcomposeractions.h"
+#ifdef HAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT
+#include <TextEmoticonsWidgets/EmoticonTextEditAction>
+#else
 #include "emoticon/emoticontexteditaction.h"
+#endif
 #include "richtextcomposercontroler.h"
 #include "tableactionmenu.h"
 #include <KActionCollection>
@@ -65,7 +69,11 @@ public:
     QAction *action_paste_without_formatting = nullptr;
 
     QAction *action_add_image = nullptr;
+#ifdef HAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT
+    TextEmoticonsWidgets::EmoticonTextEditAction *action_add_emoticon = nullptr;
+#else
     KPIMTextEdit::EmoticonTextEditAction *action_add_emoticon = nullptr;
+#endif
     QAction *action_insert_html = nullptr;
     KPIMTextEdit::TableActionMenu *action_add_table = nullptr;
     QAction *action_delete_line = nullptr;
@@ -357,13 +365,25 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     connect(d->action_add_image, &QAction::triggered, d->composerControler, &RichTextComposerControler::slotAddImage);
     d->richTextActionList.append(d->action_add_image);
 
+#ifdef HAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT
+    d->action_add_emoticon = new TextEmoticonsWidgets::EmoticonTextEditAction(this);
+#else
     d->action_add_emoticon = new KPIMTextEdit::EmoticonTextEditAction(this);
+#endif
     d->action_add_emoticon->setObjectName(QStringLiteral("add_emoticon"));
     if (ac) {
         ac->addAction(QStringLiteral("add_emoticon"), d->action_add_emoticon);
     }
+#ifdef HAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT
+    // Don't add to d->richTextActionList as we want to use it when we use plain text email too
+    connect(d->action_add_emoticon,
+            &TextEmoticonsWidgets::EmoticonTextEditAction::insertEmoticon,
+            d->composerControler->richTextComposer(),
+            &RichTextComposer::insertEmoticon);
+#else
     // Don't add to d->richTextActionList as we want to use it when we use plain text email too
     connect(d->action_add_emoticon, &EmoticonTextEditAction::insertEmoticon, d->composerControler->richTextComposer(), &RichTextComposer::insertEmoticon);
+#endif
 
     d->action_insert_html = new QAction(i18n("Insert HTML"), this);
     d->action_insert_html->setObjectName(QStringLiteral("insert_html"));
