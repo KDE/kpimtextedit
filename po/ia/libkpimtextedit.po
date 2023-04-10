@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-07 00:48+0000\n"
-"PO-Revision-Date: 2023-02-01 17:56+0100\n"
+"PO-Revision-Date: 2023-04-09 22:30+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.03.90\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: composer-ng/klinkdialog.cpp:24
@@ -471,38 +471,37 @@ msgstr "Symbolos"
 #: emoticon/unicodeemoticonmanager.cpp:60
 #, kde-format
 msgid "Activity"
-msgstr ""
+msgstr "Activitate"
 
 #: emoticon/unicodeemoticonmanager.cpp:62
 #, kde-format
 msgid "Objects"
-msgstr ""
+msgstr "Objectos"
 
 #: emoticon/unicodeemoticonmanager.cpp:64
 #, kde-format
 msgid "Nature"
-msgstr ""
+msgstr "Natura"
 
 #: emoticon/unicodeemoticonmanager.cpp:66
-#, fuzzy, kde-format
-#| msgid "Foods"
+#, kde-format
 msgid "Food"
-msgstr "Alimentos"
+msgstr "Alimento"
 
 #: emoticon/unicodeemoticonmanager.cpp:68
 #, kde-format
 msgid "People"
-msgstr ""
+msgstr "Gente"
 
 #: emoticon/unicodeemoticonmanager.cpp:70
 #, kde-format
 msgid "Travel"
-msgstr ""
+msgstr "Viage"
 
 #: emoticon/unicodeemoticonmanager.cpp:72
 #, kde-format
 msgid "Regional"
-msgstr ""
+msgstr "Regional"
 
 #: emoticon/unicodeemoticonmanager.cpp:74
 #, kde-format
