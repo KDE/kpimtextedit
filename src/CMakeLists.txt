@@ -292,7 +292,6 @@ if (BUILD_QCH)
             ${KPimTextEdit_texteditor_commonwidget_HEADERS}
             ${KPimTextEdit_plaintexteditor_HEADERS}
             ${KPimTextEdit_composerng_HEADERS}
-            ${KPimTextEdit_emoticon_HEADERS}
             ${KPimTextEdit_grantlee_HEADERS}
         LINK_QCHS
             Qt6Core_QCH
