@@ -38,7 +38,7 @@ add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt 
 
 set(KPIMTEXTEDIT_LIB_VERSION ${PIM_VERSION})
 
-set(KTEXTADDONS_MIN_VERSION "1.1.0")
+set(KTEXTADDONS_MIN_VERSION "1.1.48")
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
 
@@ -75,12 +75,7 @@ if (TARGET KF6::TextEditTextToSpeech)
     set(HAVE_TEXTTOSPEECH TRUE)
 endif()
 
-find_package(KF6TextEmoticonsWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG)
-if (TARGET KF6::TextEmoticonsWidgets)
-    add_definitions(-DHAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT)
-    set(HAVE_TEXTADDONS_TEXTEMOTICON TRUE)
-endif()
-
+find_package(KF6TextEmoticonsWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 
 find_package(Qt6Core5Compat)
 

@@ -14,10 +14,6 @@ target_link_libraries(slidecontainer_gui
     )
 
 #####
-add_executable(showemoticonunicodetab_gui showemoticonunicodetab_gui.cpp)
-set(showemoticonunicodetab_gui_LIBS KPim6::TextEdit Qt::Widgets)
-target_link_libraries(showemoticonunicodetab_gui ${showemoticonunicodetab_gui_LIBS})
-#####
 add_executable(testgeneratehtmlbuildergui_gui testgeneratehtmlbuildergui.cpp testgeneratehtmlbuildergui.h)
 set(testgeneratehtmlbuildergui_gui_LIBS KPim6::TextEdit Qt::Widgets )
 target_link_libraries(testgeneratehtmlbuildergui_gui ${testgeneratehtmlbuildergui_gui_LIBS})
