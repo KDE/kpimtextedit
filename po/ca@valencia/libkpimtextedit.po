@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-11 00:49+0000\n"
-"PO-Revision-Date: 2023-04-07 08:41+0100\n"
+"PO-Revision-Date: 2023-04-12 16:58+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -450,7 +450,7 @@ msgstr "Neteja els recents"
 #: emoticon/emoticontexteditaction.cpp:41
 #, kde-format
 msgid "Add Smiley"
-msgstr "Afig una cara"
+msgstr "Afig una emoticona"
 
 #: emoticon/emoticontexteditselector.cpp:30
 #, kde-format
