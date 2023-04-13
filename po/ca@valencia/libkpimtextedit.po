@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-21 01:00+0000\n"
-"PO-Revision-Date: 2023-01-14 12:07+0100\n"
+"PO-Revision-Date: 2023-04-12 16:58+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -450,7 +450,7 @@ msgstr "Neteja els recents"
 #: emoticon/emoticontexteditaction.cpp:41
 #, kde-format
 msgid "Add Smiley"
-msgstr "Afig una cara"
+msgstr "Afig una emoticona"
 
 #: emoticon/emoticontexteditselector.cpp:31
 #, kde-format
@@ -1075,49 +1075,3 @@ msgstr "Envia"
 #, kde-format
 msgid "Skip"
 msgstr "Salta"
-
-#~ msgid "Stop"
-#~ msgstr "Para"
-
-#~ msgid "Pause"
-#~ msgstr "Pausa"
-
-#~ msgid "Play"
-#~ msgstr "Reproduïx"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Text-To-Speech"
-#~ msgstr "Configureu el text a veu"
-
-#~ msgid "Morning, this is the test for testing settings."
-#~ msgstr "Hola, esta és la prova per a provar la configuració."
-
-#~ msgid "Test"
-#~ msgstr "Prova"
-
-#~ msgid "Volume:"
-#~ msgstr "Volum:"
-
-#~ msgid "Rate:"
-#~ msgstr "Velocitat:"
-
-#~ msgid "Pitch:"
-#~ msgstr "To:"
-
-#~ msgid "Engine:"
-#~ msgstr "Motor:"
-
-#~ msgid "Language:"
-#~ msgstr "Idioma:"
-
-#~ msgid "Voice:"
-#~ msgstr "Veu:"
-
-#~ msgid "Configure..."
-#~ msgstr "Configura..."
-
-#~ msgid "Engine has a problem."
-#~ msgstr "El motor té un problema."
-
-#~ msgid "Text To Speech"
-#~ msgstr "Text a veu"
