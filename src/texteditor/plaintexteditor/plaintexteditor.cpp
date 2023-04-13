@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "plaintexteditor.h"
-#include "kpimtextedit_debug.h"
 
 #include "texteditor/commonwidget/textmessageindicator.h"
 #include <KConfig>
