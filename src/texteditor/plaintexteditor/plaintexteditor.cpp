@@ -20,10 +20,8 @@
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeech>
 #endif
-#ifdef HAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT
-#include <TextEmoticonsWidgets/EmoticonTextEditAction>
-#endif
 #include <Sonnet/Dialog>
+#include <TextEmoticonsWidgets/EmoticonTextEditAction>
 #include <sonnet/backgroundchecker.h>
 
 #include <KColorScheme>
@@ -208,14 +206,12 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
             d->webshortcutMenuManager->setSelectedText(selectedText);
             d->webshortcutMenuManager->addWebShortcutsToMenu(popup);
         }
-#ifdef HAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT
         if (emojiSupport()) {
             popup->addSeparator();
             auto action = new TextEmoticonsWidgets::EmoticonTextEditAction(this);
             popup->addAction(action);
             connect(action, &TextEmoticonsWidgets::EmoticonTextEditAction::insertEmoticon, this, &PlainTextEditor::slotInsertEmoticon);
         }
-#endif
         addExtraMenuEntry(popup, event->pos());
         popup->exec(event->globalPos());
 

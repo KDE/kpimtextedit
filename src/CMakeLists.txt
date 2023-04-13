@@ -148,12 +148,10 @@ if (TARGET KF6::TextEditTextToSpeech)
     )
 endif()
 
-if (TARGET KF6::TextEmoticonsWidgets)
-    target_link_libraries(KPim6TextEdit
-        PRIVATE
-        KF6::TextEmoticonsWidgets
-    )
-endif()
+target_link_libraries(KPim6TextEdit
+    PRIVATE
+    KF6::TextEmoticonsWidgets
+)
 
 set_target_properties(KPim6TextEdit PROPERTIES
     VERSION ${KPIMTEXTEDIT_VERSION}

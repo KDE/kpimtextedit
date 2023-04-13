@@ -28,9 +28,7 @@
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeech>
 #endif
-#ifdef HAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT
 #include <TextEmoticonsWidgets/EmoticonTextEditAction>
-#endif
 
 #include <KColorScheme>
 #include <QApplication>
@@ -273,14 +271,12 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
             d->webshortcutMenuManager->setSelectedText(selectedText);
             d->webshortcutMenuManager->addWebShortcutsToMenu(popup);
         }
-#ifdef HAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT
         if (emojiSupport()) {
             popup->addSeparator();
             auto action = new TextEmoticonsWidgets::EmoticonTextEditAction(this);
             popup->addAction(action);
             connect(action, &TextEmoticonsWidgets::EmoticonTextEditAction::insertEmoticon, this, &RichTextEditor::slotInsertEmoticon);
         }
-#endif
         addExtraMenuEntry(popup, pos);
         return popup;
     }
