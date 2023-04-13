@@ -21,6 +21,9 @@
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeech>
 #endif
+#ifdef HAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT
+#include <TextEmoticonsWidgets/EmoticonTextEditAction>
+#endif
 #include <Sonnet/Dialog>
 #include <sonnet/backgroundchecker.h>
 
@@ -217,7 +220,14 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
             d->webshortcutMenuManager->setSelectedText(selectedText);
             d->webshortcutMenuManager->addWebShortcutsToMenu(popup);
         }
-
+#ifdef HAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT
+        if (emojiSupport()) {
+            popup->addSeparator();
+            auto action = new TextEmoticonsWidgets::EmoticonTextEditAction(this);
+            popup->addAction(action);
+            connect(action, &TextEmoticonsWidgets::EmoticonTextEditAction::insertEmoticon, this, &PlainTextEditor::slotInsertEmoticon);
+        }
+#endif
         addExtraMenuEntry(popup, event->pos());
         popup->exec(event->globalPos());
 
@@ -225,6 +235,23 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
     }
 }
 
+void PlainTextEditor::slotInsertEmoticon(const QString &str)
+{
+    insertPlainText(str);
+}
+void PlainTextEditor::setEmojiSupport(bool b)
+{
+    if (b) {
+        d->supportFeatures |= Emoji;
+    } else {
+        d->supportFeatures = (d->supportFeatures & ~Emoji);
+    }
+}
+
+bool PlainTextEditor::emojiSupport() const
+{
+    return d->supportFeatures & Emoji;
+}
 void PlainTextEditor::addExtraMenuEntry(QMenu *menu, QPoint pos)
 {
     Q_UNUSED(menu)

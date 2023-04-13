@@ -31,10 +31,19 @@ class KPIMTEXTEDIT_EXPORT RichTextEditor : public QTextEdit
     Q_PROPERTY(bool activateLanguageMenu READ activateLanguageMenu WRITE setActivateLanguageMenu)
     Q_PROPERTY(bool tabSupport READ allowTabSupport WRITE setAllowTabSupport)
     Q_PROPERTY(bool webShortcutSupport READ webShortcutSupport WRITE setWebShortcutSupport)
+    Q_PROPERTY(bool emojiSupport READ emojiSupport WRITE setEmojiSupport)
 public:
     explicit RichTextEditor(QWidget *parent = nullptr);
     ~RichTextEditor() override;
-    enum SupportFeature { None = 0, Search = 1, SpellChecking = 2, TextToSpeech = 4, AllowTab = 8, AllowWebShortcut = 16 };
+    enum SupportFeature {
+        None = 0,
+        Search = 1,
+        SpellChecking = 2,
+        TextToSpeech = 4,
+        AllowTab = 8,
+        AllowWebShortcut = 16,
+        Emoji = 32,
+    };
     Q_DECLARE_FLAGS(SupportFeatures, SupportFeature)
 
     void setSearchSupport(bool b);
@@ -103,7 +112,9 @@ protected:
 
     virtual void updateHighLighter();
     virtual void clearDecorator();
+
 Q_SIGNALS:
+    void say(const QString &text);
     void findText();
     void replaceText();
     void spellCheckerAutoCorrect(const QString &currentWord, const QString &autoCorrectWord);
@@ -135,6 +146,7 @@ private:
     KPIMTEXTEDIT_NO_EXPORT void moveCursorBeginUpDown(bool moveUp);
     KPIMTEXTEDIT_NO_EXPORT void regenerateColorScheme();
     KPIMTEXTEDIT_NO_EXPORT void updateReadOnlyColor();
+    KPIMTEXTEDIT_NO_EXPORT void slotInsertEmoticon(const QString &str);
     class RichTextEditorPrivate;
     std::unique_ptr<RichTextEditorPrivate> const d;
 };

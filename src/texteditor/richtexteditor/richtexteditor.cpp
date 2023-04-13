@@ -28,6 +28,9 @@
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeech>
 #endif
+#ifdef HAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT
+#include <TextEmoticonsWidgets/EmoticonTextEditAction>
+#endif
 
 #include <KColorScheme>
 #include <QApplication>
@@ -282,10 +285,23 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
             d->webshortcutMenuManager->setSelectedText(selectedText);
             d->webshortcutMenuManager->addWebShortcutsToMenu(popup);
         }
+#ifdef HAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT
+        if (emojiSupport()) {
+            popup->addSeparator();
+            auto action = new TextEmoticonsWidgets::EmoticonTextEditAction(this);
+            popup->addAction(action);
+            connect(action, &TextEmoticonsWidgets::EmoticonTextEditAction::insertEmoticon, this, &RichTextEditor::slotInsertEmoticon);
+        }
+#endif
         addExtraMenuEntry(popup, pos);
         return popup;
     }
     return nullptr;
+}
+
+void RichTextEditor::slotInsertEmoticon(const QString &str)
+{
+    insertPlainText(str);
 }
 
 void RichTextEditor::slotSpeakText()
@@ -311,6 +327,20 @@ void RichTextEditor::setWebShortcutSupport(bool b)
 bool RichTextEditor::webShortcutSupport() const
 {
     return d->supportFeatures & AllowWebShortcut;
+}
+
+void RichTextEditor::setEmojiSupport(bool b)
+{
+    if (b) {
+        d->supportFeatures |= Emoji;
+    } else {
+        d->supportFeatures = (d->supportFeatures & ~Emoji);
+    }
+}
+
+bool RichTextEditor::emojiSupport() const
+{
+    return d->supportFeatures & Emoji;
 }
 
 void RichTextEditor::addIgnoreWords(const QStringList &lst)
