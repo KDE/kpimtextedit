@@ -8,9 +8,6 @@
 #include "plaintexteditfindbar.h"
 #include "plaintexteditor.h"
 #include "slidecontainer.h"
-#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
-#include <KPIMTextEditTextToSpeech/TextToSpeechContainerWidget>
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
@@ -25,9 +22,6 @@ public:
 
     KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;
     PlainTextEditor *mEditor = nullptr;
-#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
-    KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
 #endif
@@ -84,10 +78,6 @@ void PlainTextEditorWidget::init(PlainTextEditor *customEditor)
 {
     auto lay = new QVBoxLayout(this);
     lay->setContentsMargins({});
-#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
-    d->mTextToSpeechWidget = new KPIMTextEditTextToSpeech::TextToSpeechContainerWidget(this);
-    lay->addWidget(d->mTextToSpeechWidget);
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     d->mTextToSpeechWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(this);
     lay->addWidget(d->mTextToSpeechWidget);
@@ -98,9 +88,6 @@ void PlainTextEditorWidget::init(PlainTextEditor *customEditor)
         d->mEditor = new PlainTextEditor;
     }
     lay->addWidget(d->mEditor);
-#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
-    connect(d->mEditor, &PlainTextEditor::say, d->mTextToSpeechWidget, &KPIMTextEditTextToSpeech::TextToSpeechContainerWidget::say);
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     connect(d->mEditor, &PlainTextEditor::say, d->mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
 #endif

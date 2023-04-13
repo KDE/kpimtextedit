@@ -18,9 +18,6 @@
 #include <QActionGroup>
 #include <QIcon>
 
-#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
-#include <KPIMTextEditTextToSpeech/TextToSpeech>
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeech>
 #endif
@@ -206,13 +203,6 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
             }
         }
         if (d->supportFeatures & TextToSpeech) {
-#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
-            if (!emptyDocument) {
-                QAction *speakAction = popup->addAction(i18n("Speak Text"));
-                speakAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
-                connect(speakAction, &QAction::triggered, this, &PlainTextEditor::slotSpeakText);
-            }
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
             if (!emptyDocument) {
                 QAction *speakAction = popup->addAction(i18n("Speak Text"));
