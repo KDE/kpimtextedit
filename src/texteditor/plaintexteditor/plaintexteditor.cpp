@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "plaintexteditor.h"
-#include "kpimtextedit_debug.h"
 
 #include "texteditor/commonwidget/textmessageindicator.h"
 #include <KConfig>
@@ -18,11 +17,11 @@
 #include <QActionGroup>
 #include <QIcon>
 
-#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
-#include <KPIMTextEditTextToSpeech/TextToSpeech>
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeech>
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT
+#include <TextEmoticonsWidgets/EmoticonTextEditAction>
 #endif
 #include <Sonnet/Dialog>
 #include <sonnet/backgroundchecker.h>
@@ -195,13 +194,6 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
             }
         }
         if (d->supportFeatures & TextToSpeech) {
-#ifdef HAVE_TEXT_TO_SPEECH_SUPPORT
-            if (!emptyDocument) {
-                QAction *speakAction = popup->addAction(i18n("Speak Text"));
-                speakAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
-                connect(speakAction, &QAction::triggered, this, &PlainTextEditor::slotSpeakText);
-            }
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
             if (!emptyDocument) {
                 QAction *speakAction = popup->addAction(i18n("Speak Text"));
@@ -216,7 +208,14 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
             d->webshortcutMenuManager->setSelectedText(selectedText);
             d->webshortcutMenuManager->addWebShortcutsToMenu(popup);
         }
-
+#ifdef HAVE_KTEXTADDONS_TEXT_EMOTICONS_SUPPORT
+        if (emojiSupport()) {
+            popup->addSeparator();
+            auto action = new TextEmoticonsWidgets::EmoticonTextEditAction(this);
+            popup->addAction(action);
+            connect(action, &TextEmoticonsWidgets::EmoticonTextEditAction::insertEmoticon, this, &PlainTextEditor::slotInsertEmoticon);
+        }
+#endif
         addExtraMenuEntry(popup, event->pos());
         popup->exec(event->globalPos());
 
@@ -224,6 +223,23 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
     }
 }
 
+void PlainTextEditor::slotInsertEmoticon(const QString &str)
+{
+    insertPlainText(str);
+}
+void PlainTextEditor::setEmojiSupport(bool b)
+{
+    if (b) {
+        d->supportFeatures |= Emoji;
+    } else {
+        d->supportFeatures = (d->supportFeatures & ~Emoji);
+    }
+}
+
+bool PlainTextEditor::emojiSupport() const
+{
+    return d->supportFeatures & Emoji;
+}
 void PlainTextEditor::addExtraMenuEntry(QMenu *menu, QPoint pos)
 {
     Q_UNUSED(menu)

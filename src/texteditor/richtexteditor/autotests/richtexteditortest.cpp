@@ -25,6 +25,7 @@ void RichTextEditorTest::shouldHaveDefaultValue()
     QCOMPARE(editor.showAutoCorrectButton(), false);
     QCOMPARE(editor.allowTabSupport(), true);
     QCOMPARE(editor.webShortcutSupport(), true);
+    QCOMPARE(editor.emojiSupport(), false);
 }
 
 void RichTextEditorTest::shouldChangeSpellCheckValue()

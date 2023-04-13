@@ -28,11 +28,19 @@ class KPIMTEXTEDIT_EXPORT PlainTextEditor : public QPlainTextEdit
     Q_PROPERTY(bool spellCheckingSupport READ spellCheckingSupport WRITE setSpellCheckingSupport)
     Q_PROPERTY(bool textToSpeechSupport READ textToSpeechSupport WRITE setTextToSpeechSupport)
     Q_PROPERTY(bool webShortcutSupport READ webShortcutSupport WRITE setWebShortcutSupport)
+    Q_PROPERTY(bool emojiSupport READ emojiSupport WRITE setEmojiSupport)
 public:
     explicit PlainTextEditor(QWidget *parent = nullptr);
     ~PlainTextEditor() override;
 
-    enum SupportFeature { None = 0, Search = 1, SpellChecking = 2, TextToSpeech = 4, AllowWebShortcut = 8 };
+    enum SupportFeature {
+        None = 0,
+        Search = 1,
+        SpellChecking = 2,
+        TextToSpeech = 4,
+        AllowWebShortcut = 8,
+        Emoji = 16,
+    };
     Q_DECLARE_FLAGS(SupportFeatures, SupportFeature)
 
     void setSearchSupport(bool b);
@@ -55,33 +63,24 @@ public:
     Q_REQUIRED_RESULT bool activateLanguageMenu() const;
     void setActivateLanguageMenu(bool activate);
     Q_REQUIRED_RESULT Sonnet::Highlighter *highlighter() const;
-    bool checkSpellingEnabled() const;
+    Q_REQUIRED_RESULT bool checkSpellingEnabled() const;
     void setCheckSpellingEnabled(bool check);
     void setSpellCheckingConfigFileName(const QString &_fileName);
     Q_REQUIRED_RESULT QString spellCheckingConfigFileName() const;
-    const QString &spellCheckingLanguage() const;
+    Q_REQUIRED_RESULT const QString &spellCheckingLanguage() const;
     void setSpellCheckingLanguage(const QString &_language);
+
+    void setEmojiSupport(bool b);
+    Q_REQUIRED_RESULT bool emojiSupport() const;
+
 public Q_SLOTS:
     void slotDisplayMessageIndicator(const QString &message);
     void slotCheckSpelling();
     void slotSpeakText();
     void slotZoomReset();
 
-private:
-    KPIMTEXTEDIT_NO_EXPORT void slotUndoableClear();
-    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerMisspelling(const QString &text, int pos);
-    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerCorrected(const QString &, int, const QString &);
-    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerAutoCorrect(const QString &, const QString &);
-    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerCanceled();
-    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerFinished();
-
-    KPIMTEXTEDIT_NO_EXPORT void slotLanguageSelected();
-    KPIMTEXTEDIT_NO_EXPORT void slotToggleAutoSpellCheck();
-
 protected:
     virtual void addExtraMenuEntry(QMenu *menu, QPoint pos);
-
-protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
     Q_REQUIRED_RESULT bool event(QEvent *ev) override;
     void keyPressEvent(QKeyEvent *event) override;
@@ -105,6 +104,15 @@ Q_SIGNALS:
     void say(const QString &text);
 
 private:
+    KPIMTEXTEDIT_NO_EXPORT void slotUndoableClear();
+    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerMisspelling(const QString &text, int pos);
+    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerCorrected(const QString &, int, const QString &);
+    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerAutoCorrect(const QString &, const QString &);
+    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerCanceled();
+    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerFinished();
+
+    KPIMTEXTEDIT_NO_EXPORT void slotLanguageSelected();
+    KPIMTEXTEDIT_NO_EXPORT void slotToggleAutoSpellCheck();
     KPIMTEXTEDIT_NO_EXPORT void addIgnoreWordsToHighLighter();
     KPIMTEXTEDIT_NO_EXPORT void deleteWordBack();
     KPIMTEXTEDIT_NO_EXPORT void deleteWordForward();
@@ -114,6 +122,7 @@ private:
     KPIMTEXTEDIT_NO_EXPORT void moveCursorBeginUpDown(bool moveUp);
     KPIMTEXTEDIT_NO_EXPORT void regenerateColorScheme();
     KPIMTEXTEDIT_NO_EXPORT void updateReadOnlyColor();
+    KPIMTEXTEDIT_NO_EXPORT void slotInsertEmoticon(const QString &str);
     class PlainTextEditorPrivate;
     std::unique_ptr<PlainTextEditorPrivate> const d;
 };
