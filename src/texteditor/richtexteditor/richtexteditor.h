@@ -49,7 +49,7 @@ public:
     void setCheckSpellingEnabled(bool check);
 
     void setSpellCheckingLanguage(const QString &_language);
-    const QString &spellCheckingLanguage() const;
+    Q_REQUIRED_RESULT const QString &spellCheckingLanguage() const;
 
     virtual void setReadOnly(bool readOnly);
     virtual void createHighlighter();
@@ -79,9 +79,9 @@ public:
     virtual void forceAutoCorrection(bool selectedText = false);
 
     void setDefaultFontSize(int val);
-    int zoomFactor() const;
-Q_SIGNALS:
-    void say(const QString &text);
+    Q_REQUIRED_RESULT int zoomFactor() const;
+    void setEmojiSupport(bool b);
+    Q_REQUIRED_RESULT bool emojiSupport() const;
 
 public Q_SLOTS:
     void slotDisplayMessageIndicator(const QString &message);

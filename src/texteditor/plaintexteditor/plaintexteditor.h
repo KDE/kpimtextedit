@@ -55,11 +55,11 @@ public:
     Q_REQUIRED_RESULT bool activateLanguageMenu() const;
     void setActivateLanguageMenu(bool activate);
     Q_REQUIRED_RESULT Sonnet::Highlighter *highlighter() const;
-    bool checkSpellingEnabled() const;
+    Q_REQUIRED_RESULT bool checkSpellingEnabled() const;
     void setCheckSpellingEnabled(bool check);
     void setSpellCheckingConfigFileName(const QString &_fileName);
     Q_REQUIRED_RESULT QString spellCheckingConfigFileName() const;
-    const QString &spellCheckingLanguage() const;
+    Q_REQUIRED_RESULT const QString &spellCheckingLanguage() const;
     void setSpellCheckingLanguage(const QString &_language);
 public Q_SLOTS:
     void slotDisplayMessageIndicator(const QString &message);
