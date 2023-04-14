@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-11 00:49+0000\n"
+"POT-Creation-Date: 2023-04-14 00:47+0000\n"
 "PO-Revision-Date: 2022-08-08 17:22+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -881,48 +881,46 @@ msgid_plural "%1 replacements made"
 msgstr[0] "%1 erstatning foretaget"
 msgstr[1] "%1 erstatninger foretaget"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:154
-#: texteditor/plaintexteditor/plaintexteditor.cpp:156
+#: texteditor/plaintexteditor/plaintexteditor.cpp:153
+#: texteditor/plaintexteditor/plaintexteditor.cpp:155
 #: texteditor/richtexteditor/richtexteditor.cpp:212
 #: texteditor/richtexteditor/richtexteditor.cpp:214
 #, kde-format
 msgid "Replace..."
 msgstr "Erstat..."
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:172
+#: texteditor/plaintexteditor/plaintexteditor.cpp:171
 #: texteditor/richtexteditor/richtexteditor.cpp:231
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Stavekontrol..."
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:177
+#: texteditor/plaintexteditor/plaintexteditor.cpp:176
 #: texteditor/richtexteditor/richtexteditor.cpp:238
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Automatisk stavekontrol"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:183
+#: texteditor/plaintexteditor/plaintexteditor.cpp:182
 #: texteditor/richtexteditor/richtexteditor.cpp:244
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Sprog til stavekontrol"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:211
-#: texteditor/plaintexteditor/plaintexteditor.cpp:218
+#: texteditor/plaintexteditor/plaintexteditor.cpp:210
 #: texteditor/richtexteditor/richtexteditor.cpp:277
-#: texteditor/richtexteditor/richtexteditor.cpp:284
 #, kde-format
 msgid "Speak Text"
 msgstr "Udtal tekst"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:364
-#: texteditor/richtexteditor/richtexteditor.cpp:467
+#: texteditor/plaintexteditor/plaintexteditor.cpp:380
+#: texteditor/richtexteditor/richtexteditor.cpp:487
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Intet at stavekontrollere."
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:369
-#: texteditor/richtexteditor/richtexteditor.cpp:485
+#: texteditor/plaintexteditor/plaintexteditor.cpp:385
+#: texteditor/richtexteditor/richtexteditor.cpp:505
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Ingen tilgængelig motor til stavekontrol."
@@ -932,7 +930,7 @@ msgstr "Ingen tilgængelig motor til stavekontrol."
 msgid "Allow Tabulations"
 msgstr "Tillad tabuleringer"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:477
+#: texteditor/richtexteditor/richtexteditor.cpp:497
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -940,13 +938,13 @@ msgid ""
 msgstr ""
 "Ingen motor tilgængelig til stavekontrol. Vil du sende e-mailen alligevel?"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:479
+#: texteditor/richtexteditor/richtexteditor.cpp:499
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Send"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:501
+#: texteditor/richtexteditor/richtexteditor.cpp:521
 #, kde-format
 msgid "Skip"
 msgstr "Spring over"
