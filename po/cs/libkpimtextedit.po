@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-11 00:49+0000\n"
+"POT-Creation-Date: 2023-04-14 00:47+0000\n"
 "PO-Revision-Date: 2023-01-24 15:32+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -880,48 +880,46 @@ msgstr[0] "Provedena %1 náhrada"
 msgstr[1] "Provedeny %1 náhrady"
 msgstr[2] "Provedeno %1 náhrad"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:154
-#: texteditor/plaintexteditor/plaintexteditor.cpp:156
+#: texteditor/plaintexteditor/plaintexteditor.cpp:153
+#: texteditor/plaintexteditor/plaintexteditor.cpp:155
 #: texteditor/richtexteditor/richtexteditor.cpp:212
 #: texteditor/richtexteditor/richtexteditor.cpp:214
 #, kde-format
 msgid "Replace..."
 msgstr "Nahradit..."
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:172
+#: texteditor/plaintexteditor/plaintexteditor.cpp:171
 #: texteditor/richtexteditor/richtexteditor.cpp:231
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Zkontrolovat pravopis..."
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:177
+#: texteditor/plaintexteditor/plaintexteditor.cpp:176
 #: texteditor/richtexteditor/richtexteditor.cpp:238
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Automatická kontrola pravopisu"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:183
+#: texteditor/plaintexteditor/plaintexteditor.cpp:182
 #: texteditor/richtexteditor/richtexteditor.cpp:244
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Jazyk kontroly pravopisu"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:211
-#: texteditor/plaintexteditor/plaintexteditor.cpp:218
+#: texteditor/plaintexteditor/plaintexteditor.cpp:210
 #: texteditor/richtexteditor/richtexteditor.cpp:277
-#: texteditor/richtexteditor/richtexteditor.cpp:284
 #, kde-format
 msgid "Speak Text"
 msgstr "Přečíst text"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:364
-#: texteditor/richtexteditor/richtexteditor.cpp:467
+#: texteditor/plaintexteditor/plaintexteditor.cpp:380
+#: texteditor/richtexteditor/richtexteditor.cpp:487
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Nic ke kontrole pravopisu."
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:369
-#: texteditor/richtexteditor/richtexteditor.cpp:485
+#: texteditor/plaintexteditor/plaintexteditor.cpp:385
+#: texteditor/richtexteditor/richtexteditor.cpp:505
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr ""
@@ -931,20 +929,20 @@ msgstr ""
 msgid "Allow Tabulations"
 msgstr "Povolit tabulátory"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:477
+#: texteditor/richtexteditor/richtexteditor.cpp:497
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr ""
 
-#: texteditor/richtexteditor/richtexteditor.cpp:479
+#: texteditor/richtexteditor/richtexteditor.cpp:499
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Odeslat"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:501
+#: texteditor/richtexteditor/richtexteditor.cpp:521
 #, kde-format
 msgid "Skip"
 msgstr "Přeskočit"
