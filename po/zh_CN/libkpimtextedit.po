@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 01:00+0000\n"
+"POT-Creation-Date: 2023-04-14 02:32+0000\n"
 "PO-Revision-Date: 2023-04-10 14:12\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -998,71 +998,69 @@ msgid "%1 replacement made"
 msgid_plural "%1 replacements made"
 msgstr[0] "完成 %1 处替换"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:154
-#: texteditor/plaintexteditor/plaintexteditor.cpp:156
-#: texteditor/richtexteditor/richtexteditor.cpp:212
-#: texteditor/richtexteditor/richtexteditor.cpp:214
+#: texteditor/plaintexteditor/plaintexteditor.cpp:151
+#: texteditor/plaintexteditor/plaintexteditor.cpp:153
+#: texteditor/richtexteditor/richtexteditor.cpp:209
+#: texteditor/richtexteditor/richtexteditor.cpp:211
 #, kde-format
 msgid "Replace..."
 msgstr "替换..."
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:172
-#: texteditor/richtexteditor/richtexteditor.cpp:231
+#: texteditor/plaintexteditor/plaintexteditor.cpp:169
+#: texteditor/richtexteditor/richtexteditor.cpp:228
 #, kde-format
 msgid "Check Spelling..."
 msgstr "检查拼写..."
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:177
-#: texteditor/richtexteditor/richtexteditor.cpp:238
+#: texteditor/plaintexteditor/plaintexteditor.cpp:174
+#: texteditor/richtexteditor/richtexteditor.cpp:235
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "自动拼写检查"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:183
-#: texteditor/richtexteditor/richtexteditor.cpp:244
+#: texteditor/plaintexteditor/plaintexteditor.cpp:180
+#: texteditor/richtexteditor/richtexteditor.cpp:241
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "拼写检查语言"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:211
-#: texteditor/plaintexteditor/plaintexteditor.cpp:218
-#: texteditor/richtexteditor/richtexteditor.cpp:277
-#: texteditor/richtexteditor/richtexteditor.cpp:284
+#: texteditor/plaintexteditor/plaintexteditor.cpp:208
+#: texteditor/richtexteditor/richtexteditor.cpp:274
 #, kde-format
 msgid "Speak Text"
 msgstr "朗读文本"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:364
-#: texteditor/richtexteditor/richtexteditor.cpp:467
+#: texteditor/plaintexteditor/plaintexteditor.cpp:354
+#: texteditor/richtexteditor/richtexteditor.cpp:457
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "没有可供检查拼写的内容。"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:369
-#: texteditor/richtexteditor/richtexteditor.cpp:485
+#: texteditor/plaintexteditor/plaintexteditor.cpp:359
+#: texteditor/richtexteditor/richtexteditor.cpp:475
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "没有可用的拼写检查后端。"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:270
+#: texteditor/richtexteditor/richtexteditor.cpp:267
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "允许制表符"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:477
+#: texteditor/richtexteditor/richtexteditor.cpp:467
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr "没有可用的拼写检查后端。请问您是否仍然想要发送电子邮件？"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:479
+#: texteditor/richtexteditor/richtexteditor.cpp:469
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "发送"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:501
+#: texteditor/richtexteditor/richtexteditor.cpp:491
 #, kde-format
 msgid "Skip"
 msgstr "跳过"
