@@ -468,38 +468,37 @@ msgstr "Symboly"
 #: emoticon/unicodeemoticonmanager.cpp:60
 #, kde-format
 msgid "Activity"
-msgstr ""
+msgstr "Aktivita"
 
 #: emoticon/unicodeemoticonmanager.cpp:62
 #, kde-format
 msgid "Objects"
-msgstr ""
+msgstr "Objekty"
 
 #: emoticon/unicodeemoticonmanager.cpp:64
 #, kde-format
 msgid "Nature"
-msgstr ""
+msgstr "Příroda"
 
 #: emoticon/unicodeemoticonmanager.cpp:66
-#, fuzzy, kde-format
-#| msgid "Foods"
+#, kde-format
 msgid "Food"
 msgstr "Jídlo"
 
 #: emoticon/unicodeemoticonmanager.cpp:68
 #, kde-format
 msgid "People"
-msgstr ""
+msgstr "Lidé"
 
 #: emoticon/unicodeemoticonmanager.cpp:70
 #, kde-format
 msgid "Travel"
-msgstr ""
+msgstr "Cestování"
 
 #: emoticon/unicodeemoticonmanager.cpp:72
 #, kde-format
 msgid "Regional"
-msgstr ""
+msgstr "Místní"
 
 #: emoticon/unicodeemoticonmanager.cpp:74
 #, kde-format
@@ -946,87 +945,3 @@ msgstr "Odeslat"
 #, kde-format
 msgid "Skip"
 msgstr "Přeskočit"
-
-#~ msgid "Faces"
-#~ msgstr "Obličeje"
-
-#~ msgid "Animals"
-#~ msgstr "Zvířata"
-
-#~ msgid "Emotions"
-#~ msgstr "Emoce"
-
-#~ msgid "Body"
-#~ msgstr "Tělo"
-
-#~ msgid "Events"
-#~ msgstr "Události"
-
-#~ msgid "Weather"
-#~ msgstr "Počasí"
-
-#~ msgid "Sports"
-#~ msgstr "Sporty"
-
-#~ msgid "Time"
-#~ msgstr "Čas"
-
-#~ msgid "Game"
-#~ msgstr "Hra"
-
-#~ msgid "Clothing"
-#~ msgstr "Oblékání"
-
-#~ msgid "Music"
-#~ msgstr "Hudba"
-
-#~ msgid "Computer"
-#~ msgstr "Počítač"
-
-#~ msgid "Plant"
-#~ msgstr "Planeta"
-
-#~ msgid "Book"
-#~ msgstr "Kniha"
-
-#~ msgid "Science"
-#~ msgstr "Věda"
-
-#~ msgid "Person"
-#~ msgstr "Osoba"
-
-#~ msgid "Place"
-#~ msgstr "Místo"
-
-#~ msgid "Money"
-#~ msgstr "Měna"
-
-#~ msgid "Mail"
-#~ msgstr "Pošta"
-
-#~ msgid "Office"
-#~ msgstr "Kancelář"
-
-#~ msgid "Tools"
-#~ msgstr "Nástroje"
-
-#~ msgid "Phone"
-#~ msgstr "Telefon"
-
-#~ msgid "Lock"
-#~ msgstr "Uzamknout"
-
-#~ msgid "Drink"
-#~ msgstr "Pití"
-
-#~ msgid "Video"
-#~ msgstr "Video"
-
-#~ msgid "House"
-#~ msgstr "Dům"
-
-#~ msgid "Dishware"
-#~ msgstr "Nádobí"
-
-#~ msgid "Hotel"
-#~ msgstr "Hotel"
