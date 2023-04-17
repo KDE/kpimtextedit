@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-21 01:00+0000\n"
+"POT-Creation-Date: 2023-04-14 00:47+0000\n"
 "PO-Revision-Date: 2023-01-15 12:17+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -36,333 +36,333 @@ msgctxt "@title:window"
 msgid "Manage Link"
 msgstr "Handsam lenkje"
 
-#: composer-ng/richtextcomposeractions.cpp:102
+#: composer-ng/richtextcomposeractions.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
 msgstr "&Venstrejuster"
 
-#: composer-ng/richtextcomposeractions.cpp:103
+#: composer-ng/richtextcomposeractions.cpp:111
 #, kde-format
 msgctxt "@label left justify"
 msgid "Left"
 msgstr "Venstre"
 
-#: composer-ng/richtextcomposeractions.cpp:111
+#: composer-ng/richtextcomposeractions.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "Align &Center"
 msgstr "&Midtstill"
 
-#: composer-ng/richtextcomposeractions.cpp:112
+#: composer-ng/richtextcomposeractions.cpp:120
 #, kde-format
 msgctxt "@label center justify"
 msgid "Center"
 msgstr "Midtstill"
 
-#: composer-ng/richtextcomposeractions.cpp:120
+#: composer-ng/richtextcomposeractions.cpp:128
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
 msgstr "&Høgrejuster"
 
-#: composer-ng/richtextcomposeractions.cpp:121
+#: composer-ng/richtextcomposeractions.cpp:129
 #, kde-format
 msgctxt "@label right justify"
 msgid "Right"
 msgstr "Høgre"
 
-#: composer-ng/richtextcomposeractions.cpp:129
+#: composer-ng/richtextcomposeractions.cpp:137
 #, kde-format
 msgctxt "@action"
 msgid "&Justify"
 msgstr "&Blokkjuster"
 
-#: composer-ng/richtextcomposeractions.cpp:130
+#: composer-ng/richtextcomposeractions.cpp:138
 #, kde-format
 msgctxt "@label justify fill"
 msgid "Justify"
 msgstr "Blokk"
 
-#: composer-ng/richtextcomposeractions.cpp:145
+#: composer-ng/richtextcomposeractions.cpp:153
 #, kde-format
 msgctxt "@action"
-msgid "Left-to-Right"
-msgstr "Venstre til høgre"
-
-#: composer-ng/richtextcomposeractions.cpp:146
-#, kde-format
-msgctxt "@label left-to-right"
 msgid "Left-to-Right"
 msgstr "Venstre til høgre"
 
 #: composer-ng/richtextcomposeractions.cpp:154
 #, kde-format
+msgctxt "@label left-to-right"
+msgid "Left-to-Right"
+msgstr "Venstre til høgre"
+
+#: composer-ng/richtextcomposeractions.cpp:162
+#, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
 msgstr "Høgre til venstre"
 
-#: composer-ng/richtextcomposeractions.cpp:155
+#: composer-ng/richtextcomposeractions.cpp:163
 #, kde-format
 msgctxt "@label right-to-left"
 msgid "Right-to-Left"
 msgstr "Høgre til venstre"
 
-#: composer-ng/richtextcomposeractions.cpp:168
+#: composer-ng/richtextcomposeractions.cpp:176
 #, kde-format
 msgctxt "@action"
 msgid "Subscript"
 msgstr "Senka skrift"
 
-#: composer-ng/richtextcomposeractions.cpp:176
+#: composer-ng/richtextcomposeractions.cpp:184
 #, kde-format
 msgctxt "@action"
 msgid "Superscript"
 msgstr "Heva skrift"
 
-#: composer-ng/richtextcomposeractions.cpp:184
+#: composer-ng/richtextcomposeractions.cpp:192
 #, kde-format
 msgctxt "@action boldify selected text"
 msgid "&Bold"
 msgstr "&Halvfeit"
 
-#: composer-ng/richtextcomposeractions.cpp:197
+#: composer-ng/richtextcomposeractions.cpp:205
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
 msgstr "&Kursiv"
 
-#: composer-ng/richtextcomposeractions.cpp:210
+#: composer-ng/richtextcomposeractions.cpp:218
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
 msgstr "&Understreking"
 
-#: composer-ng/richtextcomposeractions.cpp:222
+#: composer-ng/richtextcomposeractions.cpp:230
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
 msgstr "&Overstreking"
 
-#: composer-ng/richtextcomposeractions.cpp:237
+#: composer-ng/richtextcomposeractions.cpp:245
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
 msgstr "&Skrift"
 
-#: composer-ng/richtextcomposeractions.cpp:246
+#: composer-ng/richtextcomposeractions.cpp:254
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
 msgstr "Skrift&storleik"
 
-#: composer-ng/richtextcomposeractions.cpp:254
+#: composer-ng/richtextcomposeractions.cpp:262
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
 msgstr "Sett inn bord"
 
-#: composer-ng/richtextcomposeractions.cpp:263
+#: composer-ng/richtextcomposeractions.cpp:271
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color..."
 msgstr "Tekst&farge …"
 
-#: composer-ng/richtextcomposeractions.cpp:264
+#: composer-ng/richtextcomposeractions.cpp:272
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
 msgstr "Farge"
 
-#: composer-ng/richtextcomposeractions.cpp:272
+#: composer-ng/richtextcomposeractions.cpp:280
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight..."
 msgstr "&Framhevingsfarge …"
 
-#: composer-ng/richtextcomposeractions.cpp:280
+#: composer-ng/richtextcomposeractions.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Link"
 msgstr "Lenkje"
 
-#: composer-ng/richtextcomposeractions.cpp:288
+#: composer-ng/richtextcomposeractions.cpp:296
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
 msgstr "Rykk inn listenivå"
 
-#: composer-ng/richtextcomposeractions.cpp:296
+#: composer-ng/richtextcomposeractions.cpp:304
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
 msgstr "Rykk ut listenivå"
 
-#: composer-ng/richtextcomposeractions.cpp:305
+#: composer-ng/richtextcomposeractions.cpp:313
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
 msgstr "Listestil"
 
-#: composer-ng/richtextcomposeractions.cpp:307
+#: composer-ng/richtextcomposeractions.cpp:315
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
 msgstr "Ingen"
 
-#: composer-ng/richtextcomposeractions.cpp:307
+#: composer-ng/richtextcomposeractions.cpp:315
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
 msgstr "Skive"
 
-#: composer-ng/richtextcomposeractions.cpp:308
+#: composer-ng/richtextcomposeractions.cpp:316
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
 msgstr "Sirkel"
 
-#: composer-ng/richtextcomposeractions.cpp:308
+#: composer-ng/richtextcomposeractions.cpp:316
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
 msgstr "Kvadrat"
 
-#: composer-ng/richtextcomposeractions.cpp:309
+#: composer-ng/richtextcomposeractions.cpp:317
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
 msgstr "123"
 
-#: composer-ng/richtextcomposeractions.cpp:309
+#: composer-ng/richtextcomposeractions.cpp:317
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
 msgstr "abc"
 
-#: composer-ng/richtextcomposeractions.cpp:310
+#: composer-ng/richtextcomposeractions.cpp:318
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
 msgstr "ABC"
 
-#: composer-ng/richtextcomposeractions.cpp:310
+#: composer-ng/richtextcomposeractions.cpp:318
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
 msgstr "i ii iii"
 
-#: composer-ng/richtextcomposeractions.cpp:311
+#: composer-ng/richtextcomposeractions.cpp:319
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
 msgstr "I II III"
 
-#: composer-ng/richtextcomposeractions.cpp:322
+#: composer-ng/richtextcomposeractions.cpp:330
 #, kde-format
 msgid "Pa&ste as Quotation"
 msgstr "&Lim inn som sitering"
 
-#: composer-ng/richtextcomposeractions.cpp:330
+#: composer-ng/richtextcomposeractions.cpp:338
 #, kde-format
 msgid "Add &Quote Characters"
 msgstr "Legg til &sitatteikn"
 
-#: composer-ng/richtextcomposeractions.cpp:337
+#: composer-ng/richtextcomposeractions.cpp:345
 #, kde-format
 msgid "Re&move Quote Characters"
 msgstr "&Fjern sitatteikn"
 
-#: composer-ng/richtextcomposeractions.cpp:344
+#: composer-ng/richtextcomposeractions.cpp:352
 #, kde-format
 msgid "Paste Without Formatting"
 msgstr "Lim inn utan formatering"
 
-#: composer-ng/richtextcomposeractions.cpp:352
+#: composer-ng/richtextcomposeractions.cpp:360
 #, kde-format
 msgid "Add Image"
 msgstr "Legg til bilete"
 
-#: composer-ng/richtextcomposeractions.cpp:368
+#: composer-ng/richtextcomposeractions.cpp:388
 #, kde-format
 msgid "Insert HTML"
 msgstr "Set inn HTML"
 
-#: composer-ng/richtextcomposeractions.cpp:378
+#: composer-ng/richtextcomposeractions.cpp:398
 #, kde-format
 msgid "Table"
 msgstr "Tabell"
 
-#: composer-ng/richtextcomposeractions.cpp:387
+#: composer-ng/richtextcomposeractions.cpp:407
 #, kde-format
 msgid "Delete Line"
 msgstr "Slett linja"
 
-#: composer-ng/richtextcomposeractions.cpp:398
+#: composer-ng/richtextcomposeractions.cpp:418
 #, kde-format
 msgid "Reset Font Settings"
 msgstr "Tilbakestill skriftinstillingane"
 
-#: composer-ng/richtextcomposeractions.cpp:399
+#: composer-ng/richtextcomposeractions.cpp:419
 #, kde-format
 msgid "Reset Font"
 msgstr "Tilbakestill skrift"
 
-#: composer-ng/richtextcomposeractions.cpp:407
+#: composer-ng/richtextcomposeractions.cpp:427
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
 msgstr "Formateringsmålar"
 
-#: composer-ng/richtextcomposeractions.cpp:415
+#: composer-ng/richtextcomposeractions.cpp:435
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
 msgstr "Overskriftsnivå"
 
-#: composer-ng/richtextcomposeractions.cpp:416
+#: composer-ng/richtextcomposeractions.cpp:436
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
 msgstr "Enkel tekst"
 
-#: composer-ng/richtextcomposeractions.cpp:417
+#: composer-ng/richtextcomposeractions.cpp:437
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
 msgstr "Tittel"
 
-#: composer-ng/richtextcomposeractions.cpp:418
+#: composer-ng/richtextcomposeractions.cpp:438
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
 msgstr "Undertittel"
 
-#: composer-ng/richtextcomposeractions.cpp:419
+#: composer-ng/richtextcomposeractions.cpp:439
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
 msgstr "Overskrift 1"
 
-#: composer-ng/richtextcomposeractions.cpp:420
+#: composer-ng/richtextcomposeractions.cpp:440
 #, kde-format
 msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
 msgstr "Overskrift 2"
 
-#: composer-ng/richtextcomposeractions.cpp:421
+#: composer-ng/richtextcomposeractions.cpp:441
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
 msgstr "Avsnitt"
 
-#: composer-ng/richtextcomposeractions.cpp:422
+#: composer-ng/richtextcomposeractions.cpp:442
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
 msgstr "Underavsnitt"
 
-#: composer-ng/richtextcomposeractions.cpp:433
+#: composer-ng/richtextcomposeractions.cpp:453
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
@@ -450,186 +450,65 @@ msgstr "Tøm nyleg brukte"
 msgid "Add Smiley"
 msgstr "Legg til fjesing"
 
-#: emoticon/emoticontexteditselector.cpp:31
+#: emoticon/emoticontexteditselector.cpp:30
 #, kde-format
 msgid "Search Emoticon..."
 msgstr "Vel fjesing …"
 
-#: emoticon/emoticonunicodetab.cpp:51
+#: emoticon/emoticonunicodetab.cpp:53
 #, kde-format
 msgid "Result"
 msgstr "Resultat"
 
-#: emoticon/emoticonunicodetab.cpp:62
+#: emoticon/emoticonunicodetab.cpp:64
 #, kde-format
 msgid "Recents"
 msgstr "Nyleg brukte"
 
-#: emoticon/emoticonunicodetab.cpp:93
-#, kde-format
-msgid "Faces"
-msgstr "Ansikt"
-
-#: emoticon/emoticonunicodetab.cpp:94
-#, kde-format
-msgid "Animals"
-msgstr "Dyr"
-
-#: emoticon/emoticonunicodetab.cpp:95
-#, kde-format
-msgid "Emotions"
-msgstr "Kjensler"
-
-#: emoticon/emoticonunicodetab.cpp:96
-#, kde-format
-msgid "Body"
-msgstr "Kropp"
-
-#: emoticon/emoticonunicodetab.cpp:97
-#, kde-format
-msgid "Transports"
-msgstr "Samferdsel"
-
-# Emoji-teikn for halloween, jul, nyttår, fødselsdag osv.
-#: emoticon/emoticonunicodetab.cpp:98
-#, kde-format
-msgid "Events"
-msgstr "Fest og høgtider"
-
-#: emoticon/emoticonunicodetab.cpp:99
-#, kde-format
-msgid "Flags"
-msgstr "Flagg"
-
-#: emoticon/emoticonunicodetab.cpp:100
-#, kde-format
-msgid "Weather"
-msgstr "Vêr"
-
-#: emoticon/emoticonunicodetab.cpp:101
-#, kde-format
-msgid "Foods"
-msgstr "Mat"
-
-#: emoticon/emoticonunicodetab.cpp:102
-#, kde-format
-msgid "Sports"
-msgstr "Sport"
-
-#: emoticon/emoticonunicodetab.cpp:103
-#, kde-format
-msgid "Time"
-msgstr "Tid"
-
-#: emoticon/emoticonunicodetab.cpp:104
-#, kde-format
-msgid "Game"
-msgstr "Spel og leik"
-
-#: emoticon/emoticonunicodetab.cpp:105
-#, kde-format
-msgid "Clothing"
-msgstr "Klede"
-
-#: emoticon/emoticonunicodetab.cpp:106
-#, kde-format
-msgid "Music"
-msgstr "Musikk"
-
-#: emoticon/emoticonunicodetab.cpp:107
-#, kde-format
-msgid "Computer"
-msgstr "Datamaskin"
-
-#: emoticon/emoticonunicodetab.cpp:108
+#: emoticon/unicodeemoticonmanager.cpp:58
 #, kde-format
 msgid "Symbols"
 msgstr "Symbol"
 
-#: emoticon/emoticonunicodetab.cpp:109
+#: emoticon/unicodeemoticonmanager.cpp:60
 #, kde-format
-msgid "Plant"
-msgstr "Planter"
+msgid "Activity"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:110
+#: emoticon/unicodeemoticonmanager.cpp:62
 #, kde-format
-msgid "Book"
-msgstr "Bøker"
+msgid "Objects"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:111
+#: emoticon/unicodeemoticonmanager.cpp:64
 #, kde-format
-msgid "Science"
-msgstr "Vitskap"
+msgid "Nature"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:112
+#: emoticon/unicodeemoticonmanager.cpp:66
 #, kde-format
-msgid "Person"
-msgstr "Folk"
+msgid "Food"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:113
+#: emoticon/unicodeemoticonmanager.cpp:68
 #, kde-format
-msgid "Place"
-msgstr "Stadar"
+msgid "People"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:114
+#: emoticon/unicodeemoticonmanager.cpp:70
 #, kde-format
-msgid "Money"
-msgstr "Pengar"
+msgid "Travel"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:115
+#: emoticon/unicodeemoticonmanager.cpp:72
 #, kde-format
-msgid "Mail"
-msgstr "E-post"
+msgid "Regional"
+msgstr ""
 
-#: emoticon/emoticonunicodetab.cpp:116
+#: emoticon/unicodeemoticonmanager.cpp:74
 #, kde-format
-msgid "Office"
-msgstr "Kontor"
-
-#: emoticon/emoticonunicodetab.cpp:117
-#, kde-format
-msgid "Tools"
-msgstr "Verktøy"
-
-#: emoticon/emoticonunicodetab.cpp:118
-#, kde-format
-msgid "Phone"
-msgstr "Telefon"
-
-#: emoticon/emoticonunicodetab.cpp:119
-#, kde-format
-msgid "Lock"
-msgstr "Lås"
-
-#: emoticon/emoticonunicodetab.cpp:120
-#, kde-format
-msgid "Drink"
-msgstr "Drikke"
-
-#: emoticon/emoticonunicodetab.cpp:121
-#, kde-format
-msgid "Video"
-msgstr "Film"
-
-#: emoticon/emoticonunicodetab.cpp:122
-#, kde-format
-msgid "House"
-msgstr "Hus og heim"
-
-#: emoticon/emoticonunicodetab.cpp:123
-#, kde-format
-msgid "Dishware"
-msgstr "Tallerkar og bestikk"
-
-#: emoticon/emoticonunicodetab.cpp:124
-#, kde-format
-msgid "Hotel"
-msgstr "Hotell"
-
-#: emoticon/emoticonunicodetab.cpp:125
-#, kde-format
-msgid "Award-Medal"
-msgstr "Medaljar"
+msgid "Flags"
+msgstr "Flagg"
 
 #: inserthtmldialog.cpp:34
 #, kde-format
@@ -1004,48 +883,46 @@ msgid_plural "%1 replacements made"
 msgstr[0] "%1 utbyting vart gjord"
 msgstr[1] "%1 utbytingar vart gjorde"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:154
-#: texteditor/plaintexteditor/plaintexteditor.cpp:156
+#: texteditor/plaintexteditor/plaintexteditor.cpp:153
+#: texteditor/plaintexteditor/plaintexteditor.cpp:155
 #: texteditor/richtexteditor/richtexteditor.cpp:212
 #: texteditor/richtexteditor/richtexteditor.cpp:214
 #, kde-format
 msgid "Replace..."
 msgstr "Byt ut …"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:172
+#: texteditor/plaintexteditor/plaintexteditor.cpp:171
 #: texteditor/richtexteditor/richtexteditor.cpp:231
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Køyr stavekontroll …"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:177
+#: texteditor/plaintexteditor/plaintexteditor.cpp:176
 #: texteditor/richtexteditor/richtexteditor.cpp:238
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Automatisk stavekontroll"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:183
+#: texteditor/plaintexteditor/plaintexteditor.cpp:182
 #: texteditor/richtexteditor/richtexteditor.cpp:244
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Språk for stavekontroll"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:211
-#: texteditor/plaintexteditor/plaintexteditor.cpp:218
+#: texteditor/plaintexteditor/plaintexteditor.cpp:210
 #: texteditor/richtexteditor/richtexteditor.cpp:277
-#: texteditor/richtexteditor/richtexteditor.cpp:284
 #, kde-format
 msgid "Speak Text"
 msgstr "Les opp teksten"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:364
-#: texteditor/richtexteditor/richtexteditor.cpp:467
+#: texteditor/plaintexteditor/plaintexteditor.cpp:380
+#: texteditor/richtexteditor/richtexteditor.cpp:487
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Ingenting å stavekontrollera."
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:369
-#: texteditor/richtexteditor/richtexteditor.cpp:485
+#: texteditor/plaintexteditor/plaintexteditor.cpp:385
+#: texteditor/richtexteditor/richtexteditor.cpp:505
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Manglar stsavekontroll­motor."
@@ -1055,7 +932,7 @@ msgstr "Manglar stsavekontroll­motor."
 msgid "Allow Tabulations"
 msgstr "Tillat tabulatorar"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:477
+#: texteditor/richtexteditor/richtexteditor.cpp:497
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -1064,13 +941,13 @@ msgstr ""
 "Kunne ikkje kontrollera stavinga, grunna manglande stavekontroll­motor. Vil "
 "du likevel senda e-posten?"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:479
+#: texteditor/richtexteditor/richtexteditor.cpp:499
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Send"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:501
+#: texteditor/richtexteditor/richtexteditor.cpp:521
 #, kde-format
 msgid "Skip"
 msgstr "Hopp over"
