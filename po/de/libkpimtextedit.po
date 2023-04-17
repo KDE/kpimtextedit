@@ -1,5 +1,5 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2009, 2012, 2013, 2015, 2017, 2018, 2019, 2020, 2021.
-# Frederik Schwarzer <schwarzer@kde.org>, 2009, 2015, 2016, 2022.
+# Frederik Schwarzer <schwarzer@kde.org>, 2009, 2015, 2016, 2022, 2023.
 # Thomas Reitelbach <tr@erdfunkstelle.de>, 2009.
 # Frank Steinmetzger <dev-kde@felsenfleischer.de>, 2022.
 msgid ""
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.07.70\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
