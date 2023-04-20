@@ -701,7 +701,7 @@ msgstr "Altessa:"
 #: insertimagewidget.cpp:110
 #, kde-format
 msgid "Image Preview:"
-msgstr "Vista preliminari de Imagine:"
+msgstr "Vista preliminar de Imagine:"
 
 #: inserttabledialog.cpp:26
 #, kde-format
