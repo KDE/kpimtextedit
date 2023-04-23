@@ -66,7 +66,7 @@ add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Des
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
 
-ecm_set_disabled_deprecation_versions(QT 6.4   KF 5.240.0)
+ecm_set_disabled_deprecation_versions(QT 6.5   KF 5.240.0)
 
 
 find_package(KF6TextEditTextToSpeech ${KTEXTADDONS_MIN_VERSION} CONFIG)
