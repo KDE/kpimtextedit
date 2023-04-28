@@ -84,7 +84,6 @@ target_sources(KPim6TextEdit PRIVATE
     insertimagedialog.cpp
     insertimagewidget.cpp
     inserttabledialog.cpp
-    selectspecialchardialog.cpp
     tableactionmenu.cpp
     tablecellformatdialog.cpp
     tableformatdialog.cpp
@@ -99,7 +98,6 @@ target_sources(KPim6TextEdit PRIVATE
     insertimagedialog.h
     insertimagewidget.h
     inserttabledialog.h
-    selectspecialchardialog.h
     tableactionmenu.h
     tablecellformatdialog.h
     tableformatdialog.h
@@ -165,7 +163,6 @@ install(TARGETS KPim6TextEdit EXPORT KPim6TextEditTargets ${KDE_INSTALL_TARGETS_
 ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
     HEADER_NAMES
     EditorUtil
-    SelectSpecialCharDialog
     SlideContainer
     TextEditorCompleter
     TextUtils
