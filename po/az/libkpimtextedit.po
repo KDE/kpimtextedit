@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kpimtextedit package.
 #
-# Kheyyam Gojayev <xxmn77@gmail.com>, 2021, 2022.
+# Kheyyam Gojayev <xxmn77@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-14 00:47+0000\n"
-"PO-Revision-Date: 2022-03-24 15:20+0400\n"
-"Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
+"PO-Revision-Date: 2023-04-22 12:21+0400\n"
+"Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -471,38 +471,37 @@ msgstr "Simvollar"
 #: emoticon/unicodeemoticonmanager.cpp:60
 #, kde-format
 msgid "Activity"
-msgstr ""
+msgstr "Fəaliyyət"
 
 #: emoticon/unicodeemoticonmanager.cpp:62
 #, kde-format
 msgid "Objects"
-msgstr ""
+msgstr "Obyektlər"
 
 #: emoticon/unicodeemoticonmanager.cpp:64
 #, kde-format
 msgid "Nature"
-msgstr ""
+msgstr "Təbiət"
 
 #: emoticon/unicodeemoticonmanager.cpp:66
-#, fuzzy, kde-format
-#| msgid "Foods"
+#, kde-format
 msgid "Food"
 msgstr "Yeməklər"
 
 #: emoticon/unicodeemoticonmanager.cpp:68
 #, kde-format
 msgid "People"
-msgstr ""
+msgstr "Adamlar"
 
 #: emoticon/unicodeemoticonmanager.cpp:70
 #, kde-format
 msgid "Travel"
-msgstr ""
+msgstr "Səyahət"
 
 #: emoticon/unicodeemoticonmanager.cpp:72
 #, kde-format
 msgid "Regional"
-msgstr ""
+msgstr "Bölgə"
 
 #: emoticon/unicodeemoticonmanager.cpp:74
 #, kde-format

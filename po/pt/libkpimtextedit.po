@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-14 00:47+0000\n"
-"PO-Revision-Date: 2023-01-18 13:42+0000\n"
+"PO-Revision-Date: 2023-04-17 14:19+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -516,38 +516,37 @@ msgstr "Símbolos"
 #: emoticon/unicodeemoticonmanager.cpp:60
 #, kde-format
 msgid "Activity"
-msgstr ""
+msgstr "Actividade"
 
 #: emoticon/unicodeemoticonmanager.cpp:62
 #, kde-format
 msgid "Objects"
-msgstr ""
+msgstr "Objectos"
 
 #: emoticon/unicodeemoticonmanager.cpp:64
 #, kde-format
 msgid "Nature"
-msgstr ""
+msgstr "Natureza"
 
 #: emoticon/unicodeemoticonmanager.cpp:66
-#, fuzzy, kde-format
-#| msgid "Foods"
+#, kde-format
 msgid "Food"
 msgstr "Comida"
 
 #: emoticon/unicodeemoticonmanager.cpp:68
 #, kde-format
 msgid "People"
-msgstr ""
+msgstr "Pessoas"
 
 #: emoticon/unicodeemoticonmanager.cpp:70
 #, kde-format
 msgid "Travel"
-msgstr ""
+msgstr "Viagem"
 
 #: emoticon/unicodeemoticonmanager.cpp:72
 #, kde-format
 msgid "Regional"
-msgstr ""
+msgstr "Regional"
 
 #: emoticon/unicodeemoticonmanager.cpp:74
 #, kde-format
@@ -996,139 +995,3 @@ msgstr "Enviar"
 #, kde-format
 msgid "Skip"
 msgstr "Ignorar"
-
-#~ msgid "Faces"
-#~ msgstr "Caras"
-
-#~ msgid "Animals"
-#~ msgstr "Animais"
-
-#~ msgid "Emotions"
-#~ msgstr "Emoções"
-
-#~ msgid "Body"
-#~ msgstr "Conteúdo"
-
-#~ msgid "Transports"
-#~ msgstr "Transportes"
-
-#~ msgid "Events"
-#~ msgstr "Eventos"
-
-#~ msgid "Weather"
-#~ msgstr "Tempo"
-
-#~ msgid "Sports"
-#~ msgstr "Desporto"
-
-#~ msgid "Time"
-#~ msgstr "Tempo"
-
-#~ msgid "Game"
-#~ msgstr "Jogo"
-
-#~ msgid "Clothing"
-#~ msgstr "Roupas"
-
-#~ msgid "Music"
-#~ msgstr "Música"
-
-#~ msgid "Computer"
-#~ msgstr "Computador"
-
-#~ msgid "Plant"
-#~ msgstr "Planta"
-
-#~ msgid "Book"
-#~ msgstr "Livro"
-
-#~ msgid "Science"
-#~ msgstr "Ciência"
-
-#~ msgid "Person"
-#~ msgstr "Pessoa"
-
-#~ msgid "Place"
-#~ msgstr "Local"
-
-#~ msgid "Money"
-#~ msgstr "Monetário"
-
-#~ msgid "Mail"
-#~ msgstr "E-mail"
-
-#~ msgid "Office"
-#~ msgstr "Escritório"
-
-#~ msgid "Tools"
-#~ msgstr "Ferramentas"
-
-#~ msgid "Phone"
-#~ msgstr "Telefone"
-
-#~ msgid "Lock"
-#~ msgstr "Cadeado"
-
-#~ msgid "Drink"
-#~ msgstr "Bebida"
-
-#~ msgid "Video"
-#~ msgstr "Vídeo"
-
-#~ msgid "House"
-#~ msgstr "Casa"
-
-#~ msgid "Dishware"
-#~ msgstr "Pratos"
-
-#~ msgid "Hotel"
-#~ msgstr "Hotel"
-
-#~ msgid "Award-Medal"
-#~ msgstr "Medalha"
-
-#~ msgid "Stop"
-#~ msgstr "Parar"
-
-#~ msgid "Pause"
-#~ msgstr "Pausa"
-
-#~ msgid "Play"
-#~ msgstr "Tocar"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Text-To-Speech"
-#~ msgstr "Configurar o Texto-para-Fala"
-
-#~ msgid "Morning, this is the test for testing settings."
-#~ msgstr "Bom dia, este é o teste das definições de testes."
-
-#~ msgid "Test"
-#~ msgstr "Testar"
-
-#~ msgid "Volume:"
-#~ msgstr "Volume:"
-
-#~ msgid "Rate:"
-#~ msgstr "Taxa:"
-
-#~ msgid "Pitch:"
-#~ msgstr "Timbre:"
-
-#~ msgid "Engine:"
-#~ msgstr "Motor:"
-
-#~ msgid "Language:"
-#~ msgstr "Língua:"
-
-#~ msgid "Voice:"
-#~ msgstr "Voz:"
-
-#~ msgid "Configure..."
-#~ msgstr "Configurar..."
-
-#~ msgid "Engine has a problem."
-#~ msgstr "O motor está com problemas."
-
-#~ msgid "Text To Speech"
-#~ msgstr "Texto-para-Fala"
