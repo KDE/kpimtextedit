@@ -1,19 +1,19 @@
 # translation of libkpimtextedit.po to galician
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Marce Villarino <mvillarino@users.sourceforge.net>, 2009.
 # marce villarino <mvillarino@users.sourceforge.net>, 2009.
 # Xosé <xosecalvo@gmail.com>, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2012, 2013.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2015, 2017.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-14 02:32+0000\n"
-"PO-Revision-Date: 2019-11-13 22:18+0100\n"
+"PO-Revision-Date: 2023-05-02 21:31+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.08.2\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -34,8 +34,7 @@ msgid "Link URL:"
 msgstr "URL co cal ligar:"
 
 #: composer-ng/klinkdialog.cpp:30
-#, fuzzy, kde-format
-#| msgid "Manage Link"
+#, kde-format
 msgctxt "@title:window"
 msgid "Manage Link"
 msgstr "Xestionar a ligazón"
@@ -316,63 +315,61 @@ msgstr "Restablecer a fonte"
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
-msgstr "Formatar o debuxador"
+msgstr "Formatar o pintor"
 
 #: composer-ng/richtextcomposeractions.cpp:415
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
-msgstr ""
+msgstr "Nivel de cabeceira"
 
 #: composer-ng/richtextcomposeractions.cpp:416
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
-msgstr ""
+msgstr "Texto básico"
 
 #: composer-ng/richtextcomposeractions.cpp:417
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 #: composer-ng/richtextcomposeractions.cpp:418
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
-msgstr ""
+msgstr "Subtítulo"
 
 #: composer-ng/richtextcomposeractions.cpp:419
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
-msgstr ""
+msgstr "Sección"
 
 #: composer-ng/richtextcomposeractions.cpp:420
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Subscript"
+#, kde-format
 msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
-msgstr "Subíndice"
+msgstr "Subsección"
 
 #: composer-ng/richtextcomposeractions.cpp:421
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
-msgstr ""
+msgstr "Parágrafo"
 
 #: composer-ng/richtextcomposeractions.cpp:422
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
-msgstr ""
+msgstr "Subparágrafo"
 
 #: composer-ng/richtextcomposeractions.cpp:433
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
-msgstr ""
+msgstr "Caixa para marcar"
 
 #: composer-ng/richtextcomposercontroler.cpp:737
 #, kde-format
@@ -451,7 +448,7 @@ msgstr "Deixar o editor aberto"
 #: emoticon/emoticonrecentlistview.cpp:25
 #, kde-format
 msgid "Clear Recents"
-msgstr ""
+msgstr "Borrar a lista de recentes"
 
 #: emoticon/emoticontexteditaction.cpp:41
 #, kde-format
@@ -461,18 +458,17 @@ msgstr "Engadir unha emoticona"
 #: emoticon/emoticontexteditselector.cpp:31
 #, kde-format
 msgid "Search Emoticon..."
-msgstr ""
+msgstr "Buscar unha emoticona…"
 
 #: emoticon/emoticonunicodetab.cpp:51
 #, kde-format
 msgid "Result"
-msgstr ""
+msgstr "Resultado"
 
 #: emoticon/emoticonunicodetab.cpp:62
-#, fuzzy, kde-format
-#| msgid "Events"
+#, kde-format
 msgid "Recents"
-msgstr "Eventos"
+msgstr "Recentes"
 
 #: emoticon/emoticonunicodetab.cpp:93
 #, kde-format
@@ -662,8 +658,7 @@ msgid "Insert"
 msgstr "Inserir"
 
 #: insertimagedialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Insert Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Inserir unha imaxe"
@@ -680,8 +675,7 @@ msgid "Image Location:"
 msgstr "Lugar da imaxe:"
 
 #: insertimagewidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "Add Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "Engadir unha imaxe"
@@ -717,8 +711,7 @@ msgid "Image Preview:"
 msgstr "Vista previa da imaxe:"
 
 #: inserttabledialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Insert Table"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Table"
 msgstr "Inserir unha táboa"
@@ -749,11 +742,10 @@ msgid "pixels"
 msgstr "píxeles"
 
 #: selectspecialchardialog.cpp:30
-#, fuzzy, kde-format
-#| msgid "Select Special Characters"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
-msgstr "Escoller os caracteres especiais"
+msgstr "Seleccionar caracteres especiais"
 
 #: selectspecialchardialog.cpp:53
 #, kde-format
@@ -821,8 +813,7 @@ msgid "Table Cell Format..."
 msgstr "Formato da cela da táboa…"
 
 #: tablecellformatdialog.cpp:28
-#, fuzzy, kde-format
-#| msgid "Cell Format"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cell Format"
 msgstr "Formato da cela"
@@ -853,8 +844,7 @@ msgid "Background Color:"
 msgstr "Cor de fondo:"
 
 #: tableformatdialog.cpp:31
-#, fuzzy, kde-format
-#| msgid "Table Format"
+#, kde-format
 msgctxt "@title:window"
 msgid "Table Format"
 msgstr "Formato da táboa"
@@ -998,7 +988,7 @@ msgstr "Expresión regular"
 #: texteditor/commonwidget/textfindreplacewidget.cpp:105
 #, kde-format
 msgid "Respect Diacritic and Accents"
-msgstr ""
+msgstr "Respectar os diacríticos e a acentuación"
 
 #: texteditor/commonwidget/textgotolinewidget.cpp:49
 #, kde-format
@@ -1015,8 +1005,8 @@ msgstr "Ir"
 #, kde-format
 msgid "%1 replacement made"
 msgid_plural "%1 replacements made"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Fíxose %1 substitución"
+msgstr[1] "Fixéronse %1 substitucións"
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:151
 #: texteditor/plaintexteditor/plaintexteditor.cpp:153
@@ -1080,7 +1070,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
-msgstr ""
+msgstr "Enviar"
 
 #: texteditor/richtexteditor/richtexteditor.cpp:491
 #, kde-format
