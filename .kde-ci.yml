@@ -17,7 +17,7 @@ Dependencies:
     'frameworks/kxmlgui': '@latest'
     'frameworks/ktextwidgets': '@latest'
     'frameworks/kcodecs': '@latest'
-    'libraries/ktextaddons': '1.2'
+    'libraries/ktextaddons': '@stable'
 
 - 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
   'require':
