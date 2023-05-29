@@ -17,7 +17,4 @@ Dependencies:
     'frameworks/ktextwidgets': '@latest-kf6'
     'frameworks/kcodecs': '@latest-kf6'
     'libraries/ktextaddons': '@latest-kf6'
-
-- 'on': ['Linux', 'FreeBSD', 'Windows']
-  'require':
-    'libraries/ktexttemplate': '@stable'
+    'frameworks/ktexttemplate': '@latest-kf6'
