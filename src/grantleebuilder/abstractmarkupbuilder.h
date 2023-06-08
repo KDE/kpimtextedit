@@ -9,8 +9,8 @@
 #pragma once
 #include "kpimtextedit_export.h"
 
-#include <QtCore/QString>
-#include <QtGui/QTextListFormat>
+#include <QString>
+#include <QTextListFormat>
 
 class QBrush;
 
