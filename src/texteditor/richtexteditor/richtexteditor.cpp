@@ -615,20 +615,12 @@ void RichTextEditor::addIgnoreWordsToHighLighter()
 
 void RichTextEditor::setHighlighter(Sonnet::Highlighter *_highLighter)
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Sonnet::SpellCheckDecorator *decorator = createSpellCheckDecorator();
     delete decorator->highlighter();
     decorator->setHighlighter(_highLighter);
 
-    // KTextEdit used to take ownership of the highlighter, Sonnet::SpellCheckDecorator does not.
-    // so we reparent the highlighter so it will be deleted when the decorator is destroyed
-    _highLighter->setParent(decorator);
     d->richTextDecorator = decorator;
     addIgnoreWordsToHighLighter();
-#else
-#pragma "NEED TO FIX IN QT6"
-
-#endif
 }
 
 void RichTextEditor::focusInEvent(QFocusEvent *event)
