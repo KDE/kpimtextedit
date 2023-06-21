@@ -103,3 +103,5 @@ void RichTextComposerEmailQuoteHighlighter::setMisspelled(int start, int count)
     setMisspelledColor(d->misspelledColor);
     Sonnet::Highlighter::setMisspelled(start, count);
 }
+
+#include "moc_richtextcomposeremailquotehighlighter.cpp"

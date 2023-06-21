@@ -139,3 +139,5 @@ void EditorUtilTest::testReverseCase()
 }
 
 QTEST_MAIN(EditorUtilTest)
+
+#include "moc_editorutiltest.cpp"

@@ -118,3 +118,5 @@ void PlainTextEditFindBar::slotReplaceAllText()
     }
     Q_EMIT displayMessageIndicator(i18np("%1 replacement made", "%1 replacements made", count));
 }
+
+#include "moc_plaintexteditfindbar.cpp"

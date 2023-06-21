@@ -141,3 +141,5 @@ void TextGoToLineWidgetTest::shouldChangeMaximumValue()
 }
 
 QTEST_MAIN(TextGoToLineWidgetTest)
+
+#include "moc_textgotolinewidgettest.cpp"

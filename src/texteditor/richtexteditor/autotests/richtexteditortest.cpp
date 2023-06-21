@@ -63,3 +63,5 @@ void RichTextEditorTest::shouldChangeSpellCheckValue()
 }
 
 QTEST_MAIN(RichTextEditorTest)
+
+#include "moc_richtexteditortest.cpp"

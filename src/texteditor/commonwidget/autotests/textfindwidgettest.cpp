@@ -39,3 +39,5 @@ void TextFindWidgetTest::shouldHaveDefaultValues()
     QVERIFY(!optionsBtn->toolTip().isEmpty());
     QVERIFY(optionsBtn->isEnabled());
 }
+
+#include "moc_textfindwidgettest.cpp"

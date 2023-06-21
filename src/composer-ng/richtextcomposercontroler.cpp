@@ -946,3 +946,5 @@ bool RichTextComposerControler::event(QEvent *ev)
 
     return QObject::event(ev);
 }
+
+#include "moc_richtextcomposercontroler.cpp"

@@ -298,3 +298,5 @@ void RichTextComposerControlerTest::shouldAddQuote()
 }
 
 QTEST_MAIN(RichTextComposerControlerTest)
+
+#include "moc_richtextcomposercontrolertest.cpp"

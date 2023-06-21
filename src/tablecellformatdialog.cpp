@@ -104,3 +104,5 @@ bool TableCellFormatDialog::useBackgroundColor() const
 {
     return d->useBackgroundColor->isChecked();
 }
+
+#include "moc_tablecellformatdialog.cpp"

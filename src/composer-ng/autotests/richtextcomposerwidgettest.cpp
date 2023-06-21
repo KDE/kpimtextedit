@@ -25,3 +25,5 @@ void RichTextComposerWidgetTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(RichTextComposerWidgetTest)
+
+#include "moc_richtextcomposerwidgettest.cpp"

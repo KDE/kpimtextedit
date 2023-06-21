@@ -500,3 +500,5 @@ void RichTextComposerTest::shouldChangeMode()
 }
 
 QTEST_MAIN(RichTextComposerTest)
+
+#include "moc_richtextcomposertest.cpp"

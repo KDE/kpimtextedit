@@ -598,3 +598,5 @@ void RichTextComposer::slotTextModeChanged(KPIMTextEdit::RichTextComposer::Mode 
     d->composerControler->textModeChanged(mode);
     d->richTextComposerActions->textModeChanged(mode);
 }
+
+#include "moc_richtextcomposer.cpp"

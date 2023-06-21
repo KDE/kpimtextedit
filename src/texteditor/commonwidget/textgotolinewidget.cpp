@@ -139,3 +139,5 @@ bool TextGoToLineWidget::event(QEvent *e)
     }
     return QWidget::event(e);
 }
+
+#include "moc_textgotolinewidget.cpp"

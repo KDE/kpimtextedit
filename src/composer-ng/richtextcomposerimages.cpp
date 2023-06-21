@@ -225,3 +225,5 @@ QByteArray RichTextComposerImages::imageNamesToContentIds(const QByteArray &html
     }
     return result;
 }
+
+#include "moc_richtextcomposerimages.cpp"

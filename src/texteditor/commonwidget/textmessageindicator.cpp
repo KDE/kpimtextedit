@@ -214,3 +214,5 @@ void TextMessageIndicator::mousePressEvent(QMouseEvent * /*e*/)
     }
     hide();
 }
+
+#include "moc_textmessageindicator.cpp"

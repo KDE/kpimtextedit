@@ -205,3 +205,5 @@ TextEditFindBarBase::FindFlags TextFindWidget::searchOptions() const
     }
     return opt;
 }
+
+#include "moc_textfindreplacewidget.cpp"

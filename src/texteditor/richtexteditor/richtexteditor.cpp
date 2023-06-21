@@ -1061,3 +1061,5 @@ void RichTextEditor::moveLineUpDown(bool moveUp)
 
     setTextCursor(move);
 }
+
+#include "moc_richtexteditor.cpp"

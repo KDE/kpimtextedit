@@ -152,3 +152,5 @@ void RichTextEditFindBarTest::shouldReplaceAllText()
     QCOMPARE(edit.toPlainText(), resultStr);
     QCOMPARE(nbElementResult, nbElement);
 }
+
+#include "moc_richtexteditfindbartest.cpp"

@@ -102,3 +102,5 @@ void RichTextComposerActionsTest::shouldChangeEnableState()
 }
 
 QTEST_MAIN(RichTextComposerActionsTest)
+
+#include "moc_richtextcomposeractionstest.cpp"

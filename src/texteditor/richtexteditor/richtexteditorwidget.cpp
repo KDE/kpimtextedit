@@ -180,3 +180,5 @@ void RichTextEditorWidget::slotFind()
         d->mFindBar->focusAndSetCursor();
     }
 }
+
+#include "moc_richtexteditorwidget.cpp"

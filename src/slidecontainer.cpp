@@ -144,3 +144,5 @@ void SlideContainer::slotAnimFinished()
         Q_EMIT slidedIn();
     }
 }
+
+#include "moc_slidecontainer.cpp"

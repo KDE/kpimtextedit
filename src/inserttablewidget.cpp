@@ -146,3 +146,5 @@ int InsertTableWidget::border() const
 {
     return d->mBorder->value();
 }
+
+#include "moc_inserttablewidget.cpp"

@@ -187,3 +187,5 @@ bool RichTextExternalComposer::isInProgress() const
 {
     return d->externalEditorProcess;
 }
+
+#include "moc_richtextexternalcomposer.cpp"

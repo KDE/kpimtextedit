@@ -36,3 +36,5 @@ void RichTextExternalComposerTest::shouldChangeUseExternalComposer()
 }
 
 QTEST_MAIN(RichTextExternalComposerTest)
+
+#include "moc_richtextexternalcomposertest.cpp"

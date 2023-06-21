@@ -103,3 +103,5 @@ void InsertTableDialog::setTypeOfLength(QTextLength::Type type)
 {
     d->insertTableWidget->setTypeOfLength(type);
 }
+
+#include "moc_inserttabledialog.cpp"

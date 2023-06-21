@@ -53,3 +53,5 @@ void PlainTextEditorTest::shouldChangeSpellCheckValue()
 }
 
 QTEST_MAIN(PlainTextEditorTest)
+
+#include "moc_plaintexteditortest.cpp"

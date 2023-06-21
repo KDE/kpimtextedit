@@ -1023,3 +1023,5 @@ void TextHTMLBuilderTest::testBugIndent443534()
     delete hb;
     delete doc;
 }
+
+#include "moc_texthtmlbuildertest.cpp"

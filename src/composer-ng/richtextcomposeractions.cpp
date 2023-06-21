@@ -540,3 +540,5 @@ void RichTextComposerActions::textModeChanged(KPIMTextEdit::RichTextComposer::Mo
         d->action_add_table->setRichTextMode(mode == KPIMTextEdit::RichTextComposer::Rich);
     }
 }
+
+#include "moc_richtextcomposeractions.cpp"

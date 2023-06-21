@@ -212,3 +212,5 @@ bool TableFormatDialog::useBackgroundColor() const
 {
     return d->useBackgroundColor->isChecked();
 }
+
+#include "moc_tableformatdialog.cpp"

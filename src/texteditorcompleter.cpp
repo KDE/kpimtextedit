@@ -165,3 +165,5 @@ void TextEditorCompleter::setExcludeOfCharacters(const QString &excludes)
 {
     d->excludeOfCharacters = excludes;
 }
+
+#include "moc_texteditorcompleter.cpp"

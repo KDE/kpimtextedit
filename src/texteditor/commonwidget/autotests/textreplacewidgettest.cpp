@@ -33,3 +33,5 @@ void TextReplaceWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mReplaceAllBtn);
     QVERIFY(!mReplaceAllBtn->text().isEmpty());
 }
+
+#include "moc_textreplacewidgettest.cpp"

@@ -31,3 +31,5 @@ bool RichTextComposerEmailQuoteDecorator::isSpellCheckingEnabledForBlock(const Q
 {
     return !d->composerEditor->isLineQuoted(blockText) && d->composerEditor->checkSpellingEnabled();
 }
+
+#include "moc_richtextcomposeremailquotedecorator.cpp"

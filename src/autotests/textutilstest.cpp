@@ -64,3 +64,5 @@ void TextUtilsTest::test_flowText_data()
                                            "border"
                                         << "";
 }
+
+#include "moc_textutilstest.cpp"

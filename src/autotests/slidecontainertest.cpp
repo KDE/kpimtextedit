@@ -126,3 +126,5 @@ void SlideContainerAutoTest::testHiddenContentResize()
 }
 
 QTEST_MAIN(SlideContainerAutoTest)
+
+#include "moc_slidecontainertest.cpp"

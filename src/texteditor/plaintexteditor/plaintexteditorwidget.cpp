@@ -146,3 +146,5 @@ void PlainTextEditorWidget::slotFind()
         d->mFindBar->focusAndSetCursor();
     }
 }
+
+#include "moc_plaintexteditorwidget.cpp"

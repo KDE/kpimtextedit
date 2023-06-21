@@ -37,3 +37,5 @@ KPIMTextEdit::RichTextComposer *RichTextComposerWidget::richTextComposer() const
 {
     return d->richTextComposer;
 }
+
+#include "moc_richtextcomposerwidget.cpp"

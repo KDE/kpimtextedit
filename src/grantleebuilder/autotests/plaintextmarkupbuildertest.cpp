@@ -732,3 +732,5 @@ void PlainTextMarkupBuilderTest::testBrInsideAnchor()
     delete hb;
     delete doc;
 }
+
+#include "moc_plaintextmarkupbuildertest.cpp"

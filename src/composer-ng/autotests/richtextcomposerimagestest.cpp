@@ -15,3 +15,5 @@ RichTextComposerImagesTest::RichTextComposerImagesTest(QObject *parent)
 RichTextComposerImagesTest::~RichTextComposerImagesTest() = default;
 
 QTEST_MAIN(RichTextComposerImagesTest)
+
+#include "moc_richtextcomposerimagestest.cpp"

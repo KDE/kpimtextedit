@@ -925,3 +925,5 @@ void PlainTextEditor::slotZoomReset()
         setFont(f);
     }
 }
+
+#include "moc_plaintexteditor.cpp"
