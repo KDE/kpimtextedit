@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kdepimlibs-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-14 00:47+0000\n"
-"PO-Revision-Date: 2023-04-07 11:32+0300\n"
+"PO-Revision-Date: 2023-07-12 12:26+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.07.70\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -262,7 +262,7 @@ msgstr "I II III"
 #: composer-ng/richtextcomposeractions.cpp:330
 #, kde-format
 msgid "Pa&ste as Quotation"
-msgstr "Alıntılama Olarak &Yapıştır"
+msgstr "Alıntı Olarak &Yapıştır"
 
 #: composer-ng/richtextcomposeractions.cpp:338
 #, kde-format
@@ -277,7 +277,7 @@ msgstr "Alıntı Karakterlerini Kal&dır"
 #: composer-ng/richtextcomposeractions.cpp:352
 #, kde-format
 msgid "Paste Without Formatting"
-msgstr "Biçimlendirmeden Yapıştır"
+msgstr "Biçimlendirmesiz Yapıştır"
 
 #: composer-ng/richtextcomposeractions.cpp:360
 #, kde-format
@@ -287,7 +287,7 @@ msgstr "Görsel Ekle"
 #: composer-ng/richtextcomposeractions.cpp:388
 #, kde-format
 msgid "Insert HTML"
-msgstr "HTML ekle"
+msgstr "HTML Ekle"
 
 #: composer-ng/richtextcomposeractions.cpp:398
 #, kde-format
@@ -337,7 +337,7 @@ msgstr "Başlık"
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
-msgstr "Altyazı"
+msgstr "Alt Başlık"
 
 #: composer-ng/richtextcomposeractions.cpp:439
 #, kde-format
@@ -372,7 +372,7 @@ msgstr "Metin Kutusu"
 #: composer-ng/richtextcomposercontroler.cpp:737
 #, kde-format
 msgid "Only local files are supported."
-msgstr "Yalnızca yerel dosyalar destekleniyor."
+msgstr "Yalnızca yerel dosyalar desteklenir."
 
 #: composer-ng/richtextcomposerimages.cpp:55
 #, kde-kuit-format
@@ -515,7 +515,7 @@ msgstr "Bayraklar"
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
-msgstr "HTML ekle"
+msgstr "HTML Ekle"
 
 #: inserthtmldialog.cpp:36
 #, kde-format
