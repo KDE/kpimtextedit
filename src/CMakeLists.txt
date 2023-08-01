@@ -137,6 +137,7 @@ target_link_libraries(KPim6TextEdit
     KF6::I18n
     KF6::SyntaxHighlighting
     KF6::Codecs
+    KF6::TextUtils
     )
 
 if (TARGET KF6::TextEditTextToSpeech)

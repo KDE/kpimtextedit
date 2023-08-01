@@ -33,7 +33,6 @@ Q_REQUIRED_RESULT KPIMTEXTEDIT_TESTS_EXPORT int
 replaceAll(QTextEdit *view, const QString &str, const QString &replaceWidget, TextEditFindBarBase::FindFlags searchOptions);
 Q_REQUIRED_RESULT KPIMTEXTEDIT_TESTS_EXPORT int
 replaceAll(QTextDocument *document, const QRegularExpression &regExp, const QString &replaceWidget, TextEditFindBarBase::FindFlags searchOptions);
-Q_REQUIRED_RESULT QString normalize(QStringView str);
 Q_REQUIRED_RESULT bool find(QPlainTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions);
 Q_REQUIRED_RESULT bool find(QTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions);
 Q_REQUIRED_RESULT QTextDocument::FindFlags convertTextEditFindFlags(TextEditFindBarBase::FindFlags textEditFlags);

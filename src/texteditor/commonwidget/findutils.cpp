@@ -6,6 +6,7 @@
 
 #include "findutils.h"
 #include "textfindreplacewidget.h"
+#include <TextUtils/ConvertText>
 
 #include <QDebug>
 #include <QPlainTextEdit>
@@ -49,8 +50,8 @@ int FindUtils::replaceAll(QTextEdit *view, const QString &str, const QString &re
         }
         view->textCursor().endEditBlock();
     } else {
-        const QString toPlainTextWithoutRespectDiacritics{FindUtils::normalize(view->toPlainText())};
-        const QString searchStrWithoutRespectDiacritics{FindUtils::normalize(str)};
+        const QString toPlainTextWithoutRespectDiacritics{TextUtils::ConvertText::normalize(view->toPlainText())};
+        const QString searchStrWithoutRespectDiacritics{TextUtils::ConvertText::normalize(str)};
 
         QTextDocument documentWithoutRespectDiacritics(toPlainTextWithoutRespectDiacritics);
         QTextCursor documentWithoutRespectDiacriticsTextCursor(&documentWithoutRespectDiacritics);
@@ -97,8 +98,8 @@ int FindUtils::replaceAll(QPlainTextEdit *view, const QString &str, const QStrin
         }
         view->textCursor().endEditBlock();
     } else {
-        const QString toPlainTextWithoutRespectDiacritics{FindUtils::normalize(view->toPlainText())};
-        const QString searchStrWithoutRespectDiacritics{FindUtils::normalize(str)};
+        const QString toPlainTextWithoutRespectDiacritics{TextUtils::ConvertText::normalize(view->toPlainText())};
+        const QString searchStrWithoutRespectDiacritics{TextUtils::ConvertText::normalize(str)};
 
         QTextDocument documentWithoutRespectDiacritics(toPlainTextWithoutRespectDiacritics);
         QTextCursor documentWithoutRespectDiacriticsTextCursor(&documentWithoutRespectDiacritics);
@@ -148,13 +149,13 @@ int FindUtils::replaceAll(QTextDocument *document, const QRegularExpression &reg
 
 bool FindUtils::find(QPlainTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions)
 {
-    const QString text = FindUtils::normalize(view->document()->toPlainText());
+    const QString text = TextUtils::ConvertText::normalize(view->document()->toPlainText());
     QTextDocument doc(text);
     QTextCursor c(&doc);
     QTextCursor docCusor(view->textCursor());
     c.setPosition(docCusor.position());
     // qDebug() << " docCusor.position() " << docCusor.position();
-    c = doc.find(FindUtils::normalize(searchText), c, searchOptions);
+    c = doc.find(TextUtils::ConvertText::normalize(searchText), c, searchOptions);
     if (!c.isNull()) {
         // qDebug() << " c.selectionStart() " << c.selectionStart() << "c.selectionEnd() " << c.selectionEnd();
         if (searchOptions & QTextDocument::FindBackward) {
@@ -173,13 +174,13 @@ bool FindUtils::find(QPlainTextEdit *view, const QString &searchText, QTextDocum
 
 bool FindUtils::find(QTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions)
 {
-    const QString text = FindUtils::normalize(view->document()->toPlainText());
+    const QString text = TextUtils::ConvertText::normalize(view->document()->toPlainText());
     QTextDocument doc(text);
     QTextCursor c(&doc);
     QTextCursor docCusor(view->textCursor());
     c.setPosition(docCusor.position());
     // qDebug() << " docCusor.position() " << docCusor.position();
-    c = doc.find(FindUtils::normalize(searchText), c, searchOptions);
+    c = doc.find(TextUtils::ConvertText::normalize(searchText), c, searchOptions);
     if (!c.isNull()) {
         // qDebug() << " c.selectionStart() " << c.selectionStart() << "c.selectionEnd() " << c.selectionEnd();
         if (searchOptions & QTextDocument::FindBackward) {
@@ -194,31 +195,4 @@ bool FindUtils::find(QTextEdit *view, const QString &searchText, QTextDocument::
         return true;
     }
     return false;
-}
-
-// code from kitinerary/src/lib/stringutil.cpp
-QString FindUtils::normalize(QStringView str)
-{
-    QString out;
-    out.reserve(str.size());
-    for (const auto c : str) {
-        // case folding
-        const auto n = c.toCaseFolded();
-
-        // if the character has a canonical decomposition use that and skip the
-        // combining diacritic markers following it
-        // see https://en.wikipedia.org/wiki/Unicode_equivalence
-        // see https://en.wikipedia.org/wiki/Combining_character
-        if (n.decompositionTag() == QChar::Canonical) {
-            out.push_back(n.decomposition().at(0));
-        }
-        // handle compatibility compositions such as ligatures
-        // see https://en.wikipedia.org/wiki/Unicode_compatibility_characters
-        else if (n.decompositionTag() == QChar::Compat && n.isLetter() && n.script() == QChar::Script_Latin) {
-            out.append(n.decomposition());
-        } else {
-            out.push_back(n);
-        }
-    }
-    return out;
 }

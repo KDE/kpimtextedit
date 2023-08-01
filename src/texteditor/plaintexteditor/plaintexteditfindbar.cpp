@@ -9,6 +9,7 @@
 #include "texteditor/commonwidget/textfindreplacewidget.h"
 
 #include <KLocalizedString>
+#include <TextUtils/ConvertText>
 
 #include <QLineEdit>
 #include <QPlainTextEdit>
@@ -88,7 +89,7 @@ void PlainTextEditFindBar::slotReplaceText()
             }
         } else {
             if (searchOptions & TextEditFindBarBase::FindRespectDiacritics) {
-                if (FindUtils::normalize(d->mView->textCursor().selectedText()) == FindUtils::normalize(mFindWidget->searchText())) {
+                if (TextUtils::ConvertText::normalize(d->mView->textCursor().selectedText()) == TextUtils::ConvertText::normalize(mFindWidget->searchText())) {
                     d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
                     // search next after replace text.
                     searchText(false, false);
