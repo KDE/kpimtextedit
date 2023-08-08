@@ -740,50 +740,6 @@ void RichTextComposerControler::slotFormatReset()
     richTextComposer()->setFont(d->saveFont);
 }
 
-void RichTextComposerControler::slotDeleteLine()
-{
-    if (richTextComposer()->hasFocus()) {
-        QTextCursor cursor = richTextComposer()->textCursor();
-        QTextBlock block = cursor.block();
-        const QTextLayout *layout = block.layout();
-
-        // The current text block can have several lines due to word wrapping.
-        // Search the line the cursor is in, and then delete it.
-        for (int lineNumber = 0; lineNumber < layout->lineCount(); ++lineNumber) {
-            QTextLine line = layout->lineAt(lineNumber);
-            const bool lastLineInBlock = (line.textStart() + line.textLength() == block.length() - 1);
-            const bool oneLineBlock = (layout->lineCount() == 1);
-            const int startOfLine = block.position() + line.textStart();
-            int endOfLine = block.position() + line.textStart() + line.textLength();
-            if (!lastLineInBlock) {
-                endOfLine -= 1;
-            }
-
-            // Found the line where the cursor is in
-            if (cursor.position() >= startOfLine && cursor.position() <= endOfLine) {
-                int deleteStart = startOfLine;
-                int deleteLength = line.textLength();
-                if (oneLineBlock) {
-                    deleteLength++; // The trailing newline
-                }
-
-                // When deleting the last line in the document,
-                // remove the newline of the line before the last line instead
-                if (deleteStart + deleteLength >= richTextComposer()->document()->characterCount() && deleteStart > 0) {
-                    deleteStart--;
-                }
-
-                cursor.beginEditBlock();
-                cursor.setPosition(deleteStart);
-                cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, deleteLength);
-                cursor.removeSelectedText();
-                cursor.endEditBlock();
-                return;
-            }
-        }
-    }
-}
-
 void RichTextComposerControler::slotPasteAsQuotation()
 {
 #ifndef QT_NO_CLIPBOARD

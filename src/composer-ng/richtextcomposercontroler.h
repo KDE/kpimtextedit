@@ -84,7 +84,6 @@ public Q_SLOTS:
     void slotAddEmoticon(const QString &text);
     void slotInsertHtml();
     void slotFormatReset();
-    void slotDeleteLine();
     void slotPasteWithoutFormatting();
     void slotPasteAsQuotation();
     void slotRemoveQuotes();

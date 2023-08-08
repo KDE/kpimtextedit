@@ -68,7 +68,6 @@ public:
     TextEmoticonsWidgets::EmoticonTextEditAction *action_add_emoticon = nullptr;
     QAction *action_insert_html = nullptr;
     KPIMTextEdit::TableActionMenu *action_add_table = nullptr;
-    QAction *action_delete_line = nullptr;
     QAction *action_format_reset = nullptr;
 
     KToggleAction *action_format_painter = nullptr;
@@ -386,17 +385,6 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     if (ac) {
         ac->addAction(QStringLiteral("insert_table"), d->action_add_table);
     }
-
-    d->action_delete_line = new QAction(i18n("Delete Line"), this);
-    if (ac) {
-        ac->setDefaultShortcut(d->action_delete_line, QKeySequence(Qt::CTRL | Qt::Key_K));
-    }
-    d->action_delete_line->setObjectName(QStringLiteral("delete_line"));
-    if (ac) {
-        ac->addAction(QStringLiteral("delete_line"), d->action_delete_line);
-    }
-    connect(d->action_delete_line, &QAction::triggered, d->composerControler, &RichTextComposerControler::slotDeleteLine);
-    d->richTextActionList.append(d->action_delete_line);
 
     d->action_format_reset = new QAction(QIcon::fromTheme(QStringLiteral("draw-eraser")), i18n("Reset Font Settings"), this);
     d->action_format_reset->setIconText(i18n("Reset Font"));
