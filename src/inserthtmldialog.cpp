@@ -9,7 +9,7 @@
 #include "inserthtmleditor.h"
 #include <KLocalizedString>
 
-#include "texteditor/plaintexteditor/plaintexteditorwidget.h"
+#include <TextCustomEditor/PlainTextEditorWidget>
 
 #include <KConfigGroup>
 #include <KSharedConfig>
@@ -37,7 +37,7 @@ public:
         lay->addWidget(label);
         editor = new InsertHtmlEditor;
         editor->setSpellCheckingSupport(false);
-        auto editorWidget = new KPIMTextEdit::PlainTextEditorWidget(editor);
+        auto editorWidget = new TextCustomEditor::PlainTextEditorWidget(editor);
         lay->addWidget(editorWidget);
         label = new QLabel(i18n("Example: <i> Hello word </i>"));
         QFont font = label->font();

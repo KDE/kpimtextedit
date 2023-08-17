@@ -20,7 +20,7 @@
 using namespace KPIMTextEdit;
 
 InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
-    : KPIMTextEdit::PlainTextEditor(parent)
+    : TextCustomEditor::PlainTextEditor(parent)
     , mTextEditorCompleter(new KPIMTextEdit::TextEditorCompleter(this, this))
 {
     const KSyntaxHighlighting::Definition def = mRepo.definitionForName(QStringLiteral("HTML"));
@@ -56,7 +56,7 @@ void InsertHtmlEditor::keyPressEvent(QKeyEvent *e)
             break;
         }
     }
-    KPIMTextEdit::PlainTextEditor::keyPressEvent(e);
+    TextCustomEditor::PlainTextEditor::keyPressEvent(e);
     mTextEditorCompleter->completeText();
 }
 

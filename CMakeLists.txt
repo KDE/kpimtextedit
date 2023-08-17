@@ -38,7 +38,7 @@ add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt 
 
 set(KPIMTEXTEDIT_LIB_VERSION ${PIM_VERSION})
 
-set(KTEXTADDONS_MIN_VERSION "1.4.0")
+set(KTEXTADDONS_MIN_VERSION "1.4.42")
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
 
@@ -61,9 +61,6 @@ if (USE_UNITY_CMAKE_SUPPORT)
     set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
 endif()
 
-option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ON)
-add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Designer")
-
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit\")
 
 ecm_set_disabled_deprecation_versions(QT 6.5   KF 5.240.0)
@@ -77,7 +74,8 @@ endif()
 
 find_package(KF6TextEmoticonsWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 
-find_package(KF6TextUtils ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6TextCustomEditor ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6TextAddonsWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 
 find_package(Qt6Core5Compat)
 

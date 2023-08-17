@@ -8,7 +8,7 @@
 
 #include "kpimtextedit_export.h"
 
-#include <kpimtextedit/richtexteditor.h>
+#include <TextCustomEditor/RichTextEditor>
 class KActionCollection;
 
 namespace KPIMTextEdit
@@ -21,7 +21,7 @@ class RichTextComposerEmailQuoteHighlighter;
  * @brief The RichTextComposer class
  * @author Laurent Montel <montel@kde.org>
  */
-class KPIMTEXTEDIT_EXPORT RichTextComposer : public KPIMTextEdit::RichTextEditor
+class KPIMTEXTEDIT_EXPORT RichTextComposer : public TextCustomEditor::RichTextEditor
 {
     Q_OBJECT
 public:

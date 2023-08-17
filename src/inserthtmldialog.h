@@ -7,10 +7,8 @@
 
 #pragma once
 
-#include <QDialog>
-
-#include "kpimtextedit/plaintexteditor.h"
 #include "kpimtextedit_private_export.h"
+#include <QDialog>
 
 namespace KPIMTextEdit
 {

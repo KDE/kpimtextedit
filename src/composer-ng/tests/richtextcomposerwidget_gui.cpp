@@ -12,7 +12,7 @@
 
 #include <../richtextcomposer.h>
 
-#include <kpimtextedit/richtexteditorwidget.h>
+#include <TextCustomEditor/RichTextEditorWidget>
 
 int main(int argc, char **argv)
 {
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
     auto richtextcomposerwidget = new KPIMTextEdit::RichTextComposer;
     auto ac = new KActionCollection(richtextcomposerwidget);
     richtextcomposerwidget->createActions(ac);
-    auto editor = new KPIMTextEdit::RichTextEditorWidget(richtextcomposerwidget);
+    auto editor = new TextCustomEditor::RichTextEditorWidget(richtextcomposerwidget);
     editor->resize(800, 600);
     editor->show();
 

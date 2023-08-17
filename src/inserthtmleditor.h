@@ -9,13 +9,13 @@
 
 #include <QWidget>
 
-#include "kpimtextedit/plaintexteditor.h"
 #include <KSyntaxHighlighting/Repository>
+#include <TextCustomEditor/PlainTextEditor>
 
 namespace KPIMTextEdit
 {
 class TextEditorCompleter;
-class InsertHtmlEditor : public KPIMTextEdit::PlainTextEditor
+class InsertHtmlEditor : public TextCustomEditor::PlainTextEditor
 {
     Q_OBJECT
 public:

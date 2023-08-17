@@ -21,33 +21,6 @@ add_library(KPim6TextEdit)
 add_library(KPim6::TextEdit ALIAS KPim6TextEdit)
 
 target_sources(KPim6TextEdit PRIVATE
-    texteditor/plaintexteditor/plaintexteditfindbar.cpp
-    texteditor/plaintexteditor/plaintexteditor.cpp
-    texteditor/plaintexteditor/plaintexteditorwidget.cpp
-    texteditor/plaintexteditor/plaintextsyntaxspellcheckinghighlighter.cpp
-    texteditor/commonwidget/findutils.cpp
-    texteditor/commonwidget/textfindreplacewidget.cpp
-    texteditor/commonwidget/texteditfindbarbase.cpp
-    texteditor/commonwidget/textgotolinewidget.cpp
-    texteditor/commonwidget/textmessageindicator.cpp
-    texteditor/richtexteditor/richtexteditor.cpp
-    texteditor/richtexteditor/richtexteditfindbar.cpp
-    texteditor/richtexteditor/richtexteditorwidget.cpp
-    texteditor/plaintexteditor/plaintexteditfindbar.h
-    texteditor/plaintexteditor/plaintexteditor.h
-    texteditor/plaintexteditor/plaintexteditorwidget.h
-    texteditor/plaintexteditor/plaintextsyntaxspellcheckinghighlighter.h
-    texteditor/commonwidget/findutils.h
-    texteditor/commonwidget/textfindreplacewidget.h
-    texteditor/commonwidget/texteditfindbarbase.h
-    texteditor/commonwidget/textgotolinewidget.h
-    texteditor/commonwidget/textmessageindicator.h
-    texteditor/richtexteditor/richtexteditor.h
-    texteditor/richtexteditor/richtexteditfindbar.h
-    texteditor/richtexteditor/richtexteditorwidget.h
-    )
-
-target_sources(KPim6TextEdit PRIVATE
     composer-ng/richtextcomposer.cpp
     composer-ng/richtextcomposercontroler.cpp
     composer-ng/richtextcomposeractions.cpp
@@ -91,7 +64,6 @@ target_sources(KPim6TextEdit PRIVATE
     inserttablewidget.cpp
     texteditorcompleter.cpp
     inserthtmleditor.cpp
-    slidecontainer.cpp
     editorutil.cpp
 
     inserthtmldialog.h
@@ -105,7 +77,6 @@ target_sources(KPim6TextEdit PRIVATE
     inserttablewidget.h
     texteditorcompleter.h
     inserthtmleditor.h
-    slidecontainer.h
     editorutil.h
     )
 
@@ -128,6 +99,8 @@ target_include_directories(KPim6TextEdit PUBLIC "$<BUILD_INTERFACE:${KPimTextEdi
 
 
 target_link_libraries(KPim6TextEdit
+    PUBLIC
+    KF6::TextCustomEditor
     PRIVATE
     KF6::SonnetUi
     KF6::SonnetCore
@@ -137,7 +110,6 @@ target_link_libraries(KPim6TextEdit
     KF6::I18n
     KF6::SyntaxHighlighting
     KF6::Codecs
-    KF6::TextUtils
     )
 
 if (TARGET KF6::TextEditTextToSpeech)
@@ -164,7 +136,6 @@ install(TARGETS KPim6TextEdit EXPORT KPim6TextEditTargets ${KDE_INSTALL_TARGETS_
 ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
     HEADER_NAMES
     EditorUtil
-    SlideContainer
     TextEditorCompleter
     TextUtils
 
@@ -182,38 +153,6 @@ ecm_generate_headers(KPimTextEdit_CamelCasegrantlee_HEADERS
     REQUIRED_HEADERS kpimtextedit_HEADERS
     RELATIVE grantleebuilder
     )
-
-ecm_generate_headers(KPimTextEdit_CamelCasetextrichtexteditor_HEADERS
-    HEADER_NAMES
-    RichTextEditorWidget
-    RichTextEditor
-    RichTextEditFindBar
-    REQUIRED_HEADERS KPimTextEdit_richtexteditor_HEADERS
-    PREFIX KPIMTextEdit
-    RELATIVE texteditor/richtexteditor
-    )
-
-ecm_generate_headers(KPimTextEdit_CamelCaseplaintexteditor_HEADERS
-    HEADER_NAMES
-    PlainTextEditor
-    PlainTextEditorWidget
-    PlainTextEditFindBar
-    PlainTextSyntaxSpellCheckingHighlighter
-    REQUIRED_HEADERS KPimTextEdit_plaintexteditor_HEADERS
-    PREFIX KPIMTextEdit
-    RELATIVE texteditor/plaintexteditor
-    )
-
-ecm_generate_headers(KPimTextEdit_CamelCasetexteditor_commonwidget_HEADERS
-    HEADER_NAMES
-    TextGotoLineWidget
-    TextEditFindBarBase
-    REQUIRED_HEADERS KPimTextEdit_texteditor_commonwidget_HEADERS
-    PREFIX KPIMTextEdit
-    RELATIVE texteditor/commonwidget
-    )
-
-
 
 ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
     HEADER_NAMES
@@ -235,9 +174,6 @@ ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_export.h
     ${kpimtextedit_HEADERS}
-    ${KPimTextEdit_richtexteditor_HEADERS}
-    ${KPimTextEdit_texteditor_commonwidget_HEADERS}
-    ${KPimTextEdit_plaintexteditor_HEADERS}
     ${KPimTextEdit_composerng_HEADERS}
     ${KPimTextEdit_grantlee_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit/kpimtextedit
@@ -246,9 +182,6 @@ install(FILES
 
 install(FILES
     ${KPimTextEdit_CamelCase_HEADERS}
-    ${KPimTextEdit_CamelCasetextrichtexteditor_HEADERS}
-    ${KPimTextEdit_CamelCaseplaintexteditor_HEADERS}
-    ${KPimTextEdit_CamelCasetexteditor_commonwidget_HEADERS}
     ${KPimTextEdit_Camelcasecomposerng_HEADERS}
     ${KPimTextEdit_CamelCasegrantlee_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit/KPIMTextEdit/
@@ -259,18 +192,9 @@ ecm_generate_pri_file(BASE_NAME KPIMTextEdit LIB_NAME KPim6TextEdit DEPS "KPIMTe
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 if (BUILD_TESTING)
-    add_subdirectory(texteditor/plaintexteditor/autotests)
-    add_subdirectory(texteditor/richtexteditor/autotests)
-    add_subdirectory(texteditor/commonwidget/autotests)
-    add_subdirectory(texteditor/plaintexteditor/tests)
-    add_subdirectory(texteditor/richtexteditor/tests)
     add_subdirectory(composer-ng/autotests)
     add_subdirectory(composer-ng/tests)
     add_subdirectory(grantleebuilder/autotests)
-endif()
-
-if(BUILD_DESIGNERPLUGIN)
-    add_subdirectory(designer)
 endif()
 
 ecm_qt_install_logging_categories(EXPORT KPIMTEXTEDIT FILE kpimtextedit.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
@@ -284,9 +208,6 @@ if (BUILD_QCH)
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
             ${kpimtextedit_HEADERS}
-            ${KPimTextEdit_richtexteditor_HEADERS}
-            ${KPimTextEdit_texteditor_commonwidget_HEADERS}
-            ${KPimTextEdit_plaintexteditor_HEADERS}
             ${KPimTextEdit_composerng_HEADERS}
             ${KPimTextEdit_grantlee_HEADERS}
         LINK_QCHS

@@ -67,7 +67,7 @@ public:
 };
 
 RichTextComposer::RichTextComposer(QWidget *parent)
-    : KPIMTextEdit::RichTextEditor(parent)
+    : TextCustomEditor::RichTextEditor(parent)
     , d(new RichTextComposerPrivate(this))
 {
     setAcceptRichText(false);
@@ -398,7 +398,7 @@ void RichTextComposer::evaluateListSupport(QKeyEvent *event)
     }
 
     if (!handled) {
-        KPIMTextEdit::RichTextEditor::keyPressEvent(event);
+        TextCustomEditor::RichTextEditor::keyPressEvent(event);
     }
 
     // Match the behavior of office suites: newline after header switches to normal text
@@ -564,7 +564,7 @@ void RichTextComposer::insertFromMimeData(const QMimeData *source)
         }
     }
 
-    KPIMTextEdit::RichTextEditor::insertFromMimeData(source);
+    TextCustomEditor::RichTextEditor::insertFromMimeData(source);
 }
 
 bool RichTextComposer::canInsertFromMimeData(const QMimeData *source) const
@@ -581,7 +581,7 @@ bool RichTextComposer::canInsertFromMimeData(const QMimeData *source) const
         return true;
     }
 
-    return KPIMTextEdit::RichTextEditor::canInsertFromMimeData(source);
+    return TextCustomEditor::RichTextEditor::canInsertFromMimeData(source);
 }
 
 void RichTextComposer::mouseReleaseEvent(QMouseEvent *event)
@@ -590,7 +590,7 @@ void RichTextComposer::mouseReleaseEvent(QMouseEvent *event)
         d->composerControler->disablePainter();
         d->richTextComposerActions->uncheckActionFormatPainter();
     }
-    KPIMTextEdit::RichTextEditor::mouseReleaseEvent(event);
+    TextCustomEditor::RichTextEditor::mouseReleaseEvent(event);
 }
 
 void RichTextComposer::slotTextModeChanged(KPIMTextEdit::RichTextComposer::Mode mode)

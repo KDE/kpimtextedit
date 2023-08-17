@@ -8,5 +8,7 @@ if (@HAVE_TEXTTOSPEECH@)
 	find_dependency(KF6TextEditTextToSpeech "@KTEXTADDONS_MIN_VERSION@")
 endif()
 
+find_dependency(KF6TextCustomEditor "@KTEXTADDONS_MIN_VERSION@")
+
 include("${CMAKE_CURRENT_LIST_DIR}/KPim6TextEditTargets.cmake")
 @PACKAGE_INCLUDE_QCHTARGETS@
