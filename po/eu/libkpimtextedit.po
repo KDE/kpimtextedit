@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-14 00:47+0000\n"
-"PO-Revision-Date: 2023-07-22 16:24+0200\n"
+"PO-Revision-Date: 2023-08-19 10:24+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -919,7 +919,7 @@ msgstr "Esan testua"
 #: texteditor/richtexteditor/richtexteditor.cpp:487
 #, kde-format
 msgid "Nothing to spell check."
-msgstr "Ortografia egiaztatzekorik ez."
+msgstr "Ez dago ortografia egiaztatzeko ezer."
 
 #: texteditor/plaintexteditor/plaintexteditor.cpp:385
 #: texteditor/richtexteditor/richtexteditor.cpp:505
