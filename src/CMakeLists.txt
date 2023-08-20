@@ -63,7 +63,6 @@ target_sources(KPim6TextEdit PRIVATE
     textutils.cpp
     inserttablewidget.cpp
     inserthtmleditor.cpp
-    editorutil.cpp
 
     inserthtmldialog.h
     insertimagedialog.h
@@ -75,7 +74,6 @@ target_sources(KPim6TextEdit PRIVATE
     textutils.h
     inserttablewidget.h
     inserthtmleditor.h
-    editorutil.h
     )
 
 ecm_qt_declare_logging_category(KPim6TextEdit HEADER kpimtextedit_debug.h IDENTIFIER KPIMTEXTEDIT_LOG CATEGORY_NAME org.kde.pim.kpimtextedit
@@ -133,7 +131,6 @@ install(TARGETS KPim6TextEdit EXPORT KPim6TextEditTargets ${KDE_INSTALL_TARGETS_
 ########### Generate Headers ###############
 ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
     HEADER_NAMES
-    EditorUtil
     TextUtils
 
     PREFIX KPIMTextEdit
