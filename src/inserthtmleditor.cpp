@@ -7,7 +7,7 @@
 
 #include "inserthtmleditor.h"
 #include "kpimtextedit_debug.h"
-#include "texteditorcompleter.h"
+#include <TextCustomEditor/TextEditorCompleter>
 
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/SyntaxHighlighter>
@@ -21,7 +21,7 @@ using namespace KPIMTextEdit;
 
 InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
     : TextCustomEditor::PlainTextEditor(parent)
-    , mTextEditorCompleter(new KPIMTextEdit::TextEditorCompleter(this, this))
+    , mTextEditorCompleter(new TextCustomEditor::TextEditorCompleter(this, this))
 {
     const KSyntaxHighlighting::Definition def = mRepo.definitionForName(QStringLiteral("HTML"));
     if (!def.isValid()) {

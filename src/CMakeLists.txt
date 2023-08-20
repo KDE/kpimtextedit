@@ -62,7 +62,6 @@ target_sources(KPim6TextEdit PRIVATE
     tableformatdialog.cpp
     textutils.cpp
     inserttablewidget.cpp
-    texteditorcompleter.cpp
     inserthtmleditor.cpp
     editorutil.cpp
 
@@ -75,7 +74,6 @@ target_sources(KPim6TextEdit PRIVATE
     tableformatdialog.h
     textutils.h
     inserttablewidget.h
-    texteditorcompleter.h
     inserthtmleditor.h
     editorutil.h
     )
@@ -136,7 +134,6 @@ install(TARGETS KPim6TextEdit EXPORT KPim6TextEditTargets ${KDE_INSTALL_TARGETS_
 ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
     HEADER_NAMES
     EditorUtil
-    TextEditorCompleter
     TextUtils
 
     PREFIX KPIMTextEdit

@@ -12,9 +12,12 @@
 #include <KSyntaxHighlighting/Repository>
 #include <TextCustomEditor/PlainTextEditor>
 
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class TextEditorCompleter;
+}
+namespace KPIMTextEdit
+{
 class InsertHtmlEditor : public TextCustomEditor::PlainTextEditor
 {
     Q_OBJECT
@@ -26,7 +29,7 @@ protected:
     void keyPressEvent(QKeyEvent *e) override;
 
 private:
-    KPIMTextEdit::TextEditorCompleter *const mTextEditorCompleter;
+    TextCustomEditor::TextEditorCompleter *const mTextEditorCompleter;
     KSyntaxHighlighting::Repository mRepo;
 };
 }
