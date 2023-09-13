@@ -830,12 +830,12 @@ msgstr "Text que s'ha de buscar"
 #: texteditor/commonwidget/textfindreplacewidget.cpp:81
 #, kde-format
 msgid "Jump to next match"
-msgstr "Salta a la coincidència següent"
+msgstr "Salta fins a la coincidència següent"
 
 #: texteditor/commonwidget/textfindreplacewidget.cpp:86
 #, kde-format
 msgid "Jump to previous match"
-msgstr "Salta a la coincidència anterior"
+msgstr "Salta fins a la coincidència anterior"
 
 #: texteditor/commonwidget/textfindreplacewidget.cpp:92
 #, kde-format
