@@ -830,12 +830,12 @@ msgstr "Text que s'ha de buscar"
 #: texteditor/commonwidget/textfindreplacewidget.cpp:81
 #, kde-format
 msgid "Jump to next match"
-msgstr "Salta a la coincidència següent"
+msgstr "Salta fins a la coincidència següent"
 
 #: texteditor/commonwidget/textfindreplacewidget.cpp:86
 #, kde-format
 msgid "Jump to previous match"
-msgstr "Salta a la coincidència anterior"
+msgstr "Salta fins a la coincidència anterior"
 
 #: texteditor/commonwidget/textfindreplacewidget.cpp:92
 #, kde-format
@@ -932,7 +932,7 @@ msgstr "No hi ha disponible cap dorsal per a la verificació ortogràfica."
 #: texteditor/richtexteditor/richtexteditor.cpp:270
 #, kde-format
 msgid "Allow Tabulations"
-msgstr "Permet tabulacions"
+msgstr "Permet les tabulacions"
 
 #: texteditor/richtexteditor/richtexteditor.cpp:497
 #, kde-format
