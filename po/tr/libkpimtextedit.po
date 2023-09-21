@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepimlibs-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-14 00:47+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2023-08-02 00:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -37,339 +37,334 @@ msgctxt "@title:window"
 msgid "Manage Link"
 msgstr "Bağlantıyı Yönet"
 
-#: composer-ng/richtextcomposeractions.cpp:110
+#: composer-ng/richtextcomposeractions.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
 msgstr "&Sola Hizala"
 
-#: composer-ng/richtextcomposeractions.cpp:111
+#: composer-ng/richtextcomposeractions.cpp:102
 #, kde-format
 msgctxt "@label left justify"
 msgid "Left"
 msgstr "Sol"
 
-#: composer-ng/richtextcomposeractions.cpp:119
+#: composer-ng/richtextcomposeractions.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Align &Center"
 msgstr "&Ortaya Hizala"
 
-#: composer-ng/richtextcomposeractions.cpp:120
+#: composer-ng/richtextcomposeractions.cpp:111
 #, kde-format
 msgctxt "@label center justify"
 msgid "Center"
 msgstr "Orta"
 
-#: composer-ng/richtextcomposeractions.cpp:128
+#: composer-ng/richtextcomposeractions.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
 msgstr "S&ağa Hizala"
 
-#: composer-ng/richtextcomposeractions.cpp:129
+#: composer-ng/richtextcomposeractions.cpp:120
 #, kde-format
 msgctxt "@label right justify"
 msgid "Right"
 msgstr "Sağ"
 
-#: composer-ng/richtextcomposeractions.cpp:137
+#: composer-ng/richtextcomposeractions.cpp:128
 #, kde-format
 msgctxt "@action"
 msgid "&Justify"
 msgstr "&İki Yana Hizala"
 
-#: composer-ng/richtextcomposeractions.cpp:138
+#: composer-ng/richtextcomposeractions.cpp:129
 #, kde-format
 msgctxt "@label justify fill"
 msgid "Justify"
 msgstr "İki Yana Hizala"
 
-#: composer-ng/richtextcomposeractions.cpp:153
+#: composer-ng/richtextcomposeractions.cpp:144
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
 msgstr "Soldan Sağa"
 
-#: composer-ng/richtextcomposeractions.cpp:154
+#: composer-ng/richtextcomposeractions.cpp:145
 #, kde-format
 msgctxt "@label left-to-right"
 msgid "Left-to-Right"
 msgstr "Soldan Sağa"
 
-#: composer-ng/richtextcomposeractions.cpp:162
+#: composer-ng/richtextcomposeractions.cpp:153
 #, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
 msgstr "Sağdan Sola"
 
-#: composer-ng/richtextcomposeractions.cpp:163
+#: composer-ng/richtextcomposeractions.cpp:154
 #, kde-format
 msgctxt "@label right-to-left"
 msgid "Right-to-Left"
 msgstr "Sağdan Sola"
 
-#: composer-ng/richtextcomposeractions.cpp:176
+#: composer-ng/richtextcomposeractions.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Subscript"
 msgstr "Alt Simge"
 
-#: composer-ng/richtextcomposeractions.cpp:184
+#: composer-ng/richtextcomposeractions.cpp:175
 #, kde-format
 msgctxt "@action"
 msgid "Superscript"
 msgstr "Üst Simge"
 
-#: composer-ng/richtextcomposeractions.cpp:192
+#: composer-ng/richtextcomposeractions.cpp:183
 #, kde-format
 msgctxt "@action boldify selected text"
 msgid "&Bold"
 msgstr "&Kalın"
 
-#: composer-ng/richtextcomposeractions.cpp:205
+#: composer-ng/richtextcomposeractions.cpp:196
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
 msgstr "&Yatık"
 
-#: composer-ng/richtextcomposeractions.cpp:218
+#: composer-ng/richtextcomposeractions.cpp:209
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
 msgstr "&Altı Çizili"
 
-#: composer-ng/richtextcomposeractions.cpp:230
+#: composer-ng/richtextcomposeractions.cpp:221
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
 msgstr "&Üstü Çizili"
 
-#: composer-ng/richtextcomposeractions.cpp:245
+#: composer-ng/richtextcomposeractions.cpp:236
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
 msgstr "&Yazıtipi"
 
-#: composer-ng/richtextcomposeractions.cpp:254
+#: composer-ng/richtextcomposeractions.cpp:245
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
 msgstr "Yazıtipi &Boyutu"
 
-#: composer-ng/richtextcomposeractions.cpp:262
+#: composer-ng/richtextcomposeractions.cpp:253
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
 msgstr "Cetvel Satırı Ekle"
 
-#: composer-ng/richtextcomposeractions.cpp:271
+#: composer-ng/richtextcomposeractions.cpp:262
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color..."
 msgstr "Metin &Rengi..."
 
-#: composer-ng/richtextcomposeractions.cpp:272
+#: composer-ng/richtextcomposeractions.cpp:263
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
 msgstr "Renk"
 
-#: composer-ng/richtextcomposeractions.cpp:280
+#: composer-ng/richtextcomposeractions.cpp:271
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight..."
 msgstr "Metin &Vurgula..."
 
-#: composer-ng/richtextcomposeractions.cpp:288
+#: composer-ng/richtextcomposeractions.cpp:279
 #, kde-format
 msgctxt "@action"
 msgid "Link"
 msgstr "Bağlantı"
 
-#: composer-ng/richtextcomposeractions.cpp:296
+#: composer-ng/richtextcomposeractions.cpp:287
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
 msgstr "Liste Düzeyini Artır"
 
-#: composer-ng/richtextcomposeractions.cpp:304
+#: composer-ng/richtextcomposeractions.cpp:295
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
 msgstr "Liste Düzeyini Azalt"
 
-#: composer-ng/richtextcomposeractions.cpp:313
+#: composer-ng/richtextcomposeractions.cpp:304
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
 msgstr "Listeleme Biçimi"
 
-#: composer-ng/richtextcomposeractions.cpp:315
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
 msgstr "Hiçbiri"
 
-#: composer-ng/richtextcomposeractions.cpp:315
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
 msgstr "Disk"
 
-#: composer-ng/richtextcomposeractions.cpp:316
+#: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
 msgstr "Daire"
 
-#: composer-ng/richtextcomposeractions.cpp:316
+#: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
 msgstr "Kare"
 
-#: composer-ng/richtextcomposeractions.cpp:317
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
 msgstr "123"
 
-#: composer-ng/richtextcomposeractions.cpp:317
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
 msgstr "abc"
 
-#: composer-ng/richtextcomposeractions.cpp:318
+#: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
 msgstr "ABC"
 
-#: composer-ng/richtextcomposeractions.cpp:318
+#: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
 msgstr "i ii iii"
 
-#: composer-ng/richtextcomposeractions.cpp:319
+#: composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
 msgstr "I II III"
 
-#: composer-ng/richtextcomposeractions.cpp:330
+#: composer-ng/richtextcomposeractions.cpp:321
 #, kde-format
 msgid "Pa&ste as Quotation"
 msgstr "Alıntı Olarak &Yapıştır"
 
-#: composer-ng/richtextcomposeractions.cpp:338
+#: composer-ng/richtextcomposeractions.cpp:329
 #, kde-format
 msgid "Add &Quote Characters"
 msgstr "&Alıntı Karakterleri Ekle"
 
-#: composer-ng/richtextcomposeractions.cpp:345
+#: composer-ng/richtextcomposeractions.cpp:336
 #, kde-format
 msgid "Re&move Quote Characters"
 msgstr "Alıntı Karakterlerini Kal&dır"
 
-#: composer-ng/richtextcomposeractions.cpp:352
+#: composer-ng/richtextcomposeractions.cpp:343
 #, kde-format
 msgid "Paste Without Formatting"
 msgstr "Biçimlendirmesiz Yapıştır"
 
-#: composer-ng/richtextcomposeractions.cpp:360
+#: composer-ng/richtextcomposeractions.cpp:351
 #, kde-format
 msgid "Add Image"
 msgstr "Görsel Ekle"
 
-#: composer-ng/richtextcomposeractions.cpp:388
+#: composer-ng/richtextcomposeractions.cpp:370
 #, kde-format
 msgid "Insert HTML"
 msgstr "HTML Ekle"
 
-#: composer-ng/richtextcomposeractions.cpp:398
+#: composer-ng/richtextcomposeractions.cpp:380
 #, kde-format
 msgid "Table"
 msgstr "Tablo"
 
-#: composer-ng/richtextcomposeractions.cpp:407
-#, kde-format
-msgid "Delete Line"
-msgstr "Satırı Sil"
-
-#: composer-ng/richtextcomposeractions.cpp:418
+#: composer-ng/richtextcomposeractions.cpp:389
 #, kde-format
 msgid "Reset Font Settings"
 msgstr "Yazıtipi Ayarlarını Sıfırla"
 
-#: composer-ng/richtextcomposeractions.cpp:419
+#: composer-ng/richtextcomposeractions.cpp:390
 #, kde-format
 msgid "Reset Font"
 msgstr "Yazıtipini Sıfırla"
 
-#: composer-ng/richtextcomposeractions.cpp:427
+#: composer-ng/richtextcomposeractions.cpp:398
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
 msgstr "Biçim Boyacısı"
 
-#: composer-ng/richtextcomposeractions.cpp:435
+#: composer-ng/richtextcomposeractions.cpp:406
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
 msgstr "Başlık Düzeyi"
 
-#: composer-ng/richtextcomposeractions.cpp:436
+#: composer-ng/richtextcomposeractions.cpp:407
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
 msgstr "Yalın metin"
 
-#: composer-ng/richtextcomposeractions.cpp:437
+#: composer-ng/richtextcomposeractions.cpp:408
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
 msgstr "Başlık"
 
-#: composer-ng/richtextcomposeractions.cpp:438
+#: composer-ng/richtextcomposeractions.cpp:409
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
 msgstr "Alt Başlık"
 
-#: composer-ng/richtextcomposeractions.cpp:439
+#: composer-ng/richtextcomposeractions.cpp:410
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
 msgstr "Bölüm"
 
-#: composer-ng/richtextcomposeractions.cpp:440
+#: composer-ng/richtextcomposeractions.cpp:411
 #, kde-format
 msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
 msgstr "Alt Bölüm"
 
-#: composer-ng/richtextcomposeractions.cpp:441
+#: composer-ng/richtextcomposeractions.cpp:412
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
 msgstr "Paragraf"
 
-#: composer-ng/richtextcomposeractions.cpp:442
+#: composer-ng/richtextcomposeractions.cpp:413
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
 msgstr "Alt Paragraf"
 
-#: composer-ng/richtextcomposeractions.cpp:453
+#: composer-ng/richtextcomposeractions.cpp:424
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
 msgstr "Metin Kutusu"
 
-#: composer-ng/richtextcomposercontroler.cpp:737
+#: composer-ng/richtextcomposercontroler.cpp:730
 #, kde-format
 msgid "Only local files are supported."
 msgstr "Yalnızca yerel dosyalar desteklenir."
@@ -441,76 +436,6 @@ msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr "Düzenleyici Açık Kalsın"
 
-#: emoticon/emoticonrecentlistview.cpp:25
-#, kde-format
-msgid "Clear Recents"
-msgstr "Son Kullanılanları Temizle"
-
-#: emoticon/emoticontexteditaction.cpp:41
-#, kde-format
-msgid "Add Smiley"
-msgstr "Gülümseme Ekle"
-
-#: emoticon/emoticontexteditselector.cpp:30
-#, kde-format
-msgid "Search Emoticon..."
-msgstr "Duygu Ara..."
-
-#: emoticon/emoticonunicodetab.cpp:53
-#, kde-format
-msgid "Result"
-msgstr "Sonuç"
-
-#: emoticon/emoticonunicodetab.cpp:64
-#, kde-format
-msgid "Recents"
-msgstr "Son Kullanılanlar"
-
-#: emoticon/unicodeemoticonmanager.cpp:58
-#, kde-format
-msgid "Symbols"
-msgstr "Semboller"
-
-#: emoticon/unicodeemoticonmanager.cpp:60
-#, kde-format
-msgid "Activity"
-msgstr "Etkinlik"
-
-#: emoticon/unicodeemoticonmanager.cpp:62
-#, kde-format
-msgid "Objects"
-msgstr "Nesneler"
-
-#: emoticon/unicodeemoticonmanager.cpp:64
-#, kde-format
-msgid "Nature"
-msgstr "Doğa"
-
-#: emoticon/unicodeemoticonmanager.cpp:66
-#, kde-format
-msgid "Food"
-msgstr "Yemek"
-
-#: emoticon/unicodeemoticonmanager.cpp:68
-#, kde-format
-msgid "People"
-msgstr "Kişiler"
-
-#: emoticon/unicodeemoticonmanager.cpp:70
-#, kde-format
-msgid "Travel"
-msgstr "Yolculuk"
-
-#: emoticon/unicodeemoticonmanager.cpp:72
-#, kde-format
-msgid "Regional"
-msgstr "Bölgesel"
-
-#: emoticon/unicodeemoticonmanager.cpp:74
-#, kde-format
-msgid "Flags"
-msgstr "Bayraklar"
-
 #: inserthtmldialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
@@ -539,8 +464,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Görsel Ekle"
 
-#: insertimagedialog.cpp:36 inserttabledialog.cpp:37
-#: selectspecialchardialog.cpp:40 tableactionmenu.cpp:405
+#: insertimagedialog.cpp:36 inserttabledialog.cpp:37 tableactionmenu.cpp:405
 #, kde-format
 msgid "Insert"
 msgstr "Ekle"
@@ -616,17 +540,6 @@ msgstr "pencerelerin yüzdesi"
 #, kde-format
 msgid "pixels"
 msgstr "piksel"
-
-#: selectspecialchardialog.cpp:30
-#, kde-format
-msgctxt "@title:window"
-msgid "Select Special Characters"
-msgstr "Özel Karakter Seç"
-
-#: selectspecialchardialog.cpp:53
-#, kde-format
-msgid "Select"
-msgstr "Seç"
 
 #: tableactionmenu.cpp:408
 #, kde-format
@@ -770,188 +683,165 @@ msgstr "İki Yana Hizala"
 msgid "Table Alignment:"
 msgstr "Tablo Hizalaması:"
 
-#: texteditor/commonwidget/texteditfindbarbase.cpp:34
-#: texteditor/commonwidget/texteditfindbarbase.cpp:37
-#: texteditor/commonwidget/textgotolinewidget.cpp:39
-#: texteditor/commonwidget/textgotolinewidget.cpp:42
-#, kde-format
-msgid "Close"
-msgstr "Kapat"
+#~ msgid "Delete Line"
+#~ msgstr "Satırı Sil"
 
-#: texteditor/commonwidget/texteditfindbarbase.cpp:140
-#, kde-format
-msgid ""
-"End of message reached.\n"
-"Phrase '%1' could not be found."
-msgstr ""
-"İletinin sonuna ulaşıldı.\n"
-"'%1' ifadesi bulunamadı."
+#~ msgid "Clear Recents"
+#~ msgstr "Son Kullanılanları Temizle"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:25
-#, kde-format
-msgid "Replace"
-msgstr "Değiştir"
+#~ msgid "Add Smiley"
+#~ msgstr "Gülümseme Ekle"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:26
-#, kde-format
-msgid "Replace All"
-msgstr "Hepsini Değiştir"
+#~ msgid "Search Emoticon..."
+#~ msgstr "Duygu Ara..."
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:29
-#, kde-format
-msgctxt "Replace text"
-msgid "Replace:"
-msgstr "Değiştir:"
+#~ msgid "Result"
+#~ msgstr "Sonuç"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:65
-#, kde-format
-msgctxt "Find and go to the previous search match"
-msgid "Previous"
-msgstr "Önceki"
+#~ msgid "Recents"
+#~ msgstr "Son Kullanılanlar"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:66
-#, kde-format
-msgctxt "Find and go to the next search match"
-msgid "Next"
-msgstr "Sonraki"
+#~ msgid "Symbols"
+#~ msgstr "Semboller"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:72
-#, kde-format
-msgctxt "Find text"
-msgid "F&ind:"
-msgstr "&Bul:"
+#~ msgid "Activity"
+#~ msgstr "Etkinlik"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:75
-#, kde-format
-msgid "Text to search for"
-msgstr "Aranacak metin"
+#~ msgid "Objects"
+#~ msgstr "Nesneler"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:81
-#, kde-format
-msgid "Jump to next match"
-msgstr "Sonraki eşleşmeye git"
+#~ msgid "Nature"
+#~ msgstr "Doğa"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:86
-#, kde-format
-msgid "Jump to previous match"
-msgstr "Önceki eşleşmeye git"
+#~ msgid "Food"
+#~ msgstr "Yemek"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:92
-#, kde-format
-msgid "Options"
-msgstr "Seçenekler"
+#~ msgid "People"
+#~ msgstr "Kişiler"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:93
-#, kde-format
-msgid "Modify search behavior"
-msgstr "Arama davranışını değiştir"
+#~ msgid "Travel"
+#~ msgstr "Yolculuk"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:96
-#, kde-format
-msgid "Case sensitive"
-msgstr "BÜYÜK/küçük harf duyarlı"
+#~ msgid "Regional"
+#~ msgstr "Bölgesel"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:99
-#, kde-format
-msgid "Whole word"
-msgstr "Tam sözcük"
+#~ msgid "Flags"
+#~ msgstr "Bayraklar"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:102
-#, kde-format
-msgid "Regular Expression"
-msgstr "Düzenli İfade"
+#~ msgctxt "@title:window"
+#~ msgid "Select Special Characters"
+#~ msgstr "Özel Karakter Seç"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:105
-#, kde-format
-msgid "Respect Diacritic and Accents"
-msgstr "Aksanlara ve Vurgulara Dikkat Et"
+#~ msgid "Select"
+#~ msgstr "Seç"
 
-#: texteditor/commonwidget/textgotolinewidget.cpp:49
-#, kde-format
-msgid "Go to Line:"
-msgstr "Satıra git:"
+#~ msgid "Close"
+#~ msgstr "Kapat"
 
-#: texteditor/commonwidget/textgotolinewidget.cpp:56
-#, kde-format
-msgid "Go"
-msgstr "Git"
+#~ msgid ""
+#~ "End of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "İletinin sonuna ulaşıldı.\n"
+#~ "'%1' ifadesi bulunamadı."
 
-#: texteditor/plaintexteditor/plaintexteditfindbar.cpp:119
-#: texteditor/richtexteditor/richtexteditfindbar.cpp:119
-#, kde-format
-msgid "%1 replacement made"
-msgid_plural "%1 replacements made"
-msgstr[0] "%1 değiştirme yapıldı"
-msgstr[1] "%1 değiştirme yapıldı"
+#~ msgid "Replace"
+#~ msgstr "Değiştir"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:153
-#: texteditor/plaintexteditor/plaintexteditor.cpp:155
-#: texteditor/richtexteditor/richtexteditor.cpp:212
-#: texteditor/richtexteditor/richtexteditor.cpp:214
-#, kde-format
-msgid "Replace..."
-msgstr "Değiştir..."
+#~ msgid "Replace All"
+#~ msgstr "Hepsini Değiştir"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:171
-#: texteditor/richtexteditor/richtexteditor.cpp:231
-#, kde-format
-msgid "Check Spelling..."
-msgstr "Yazım Denetimi Yap..."
+#~ msgctxt "Replace text"
+#~ msgid "Replace:"
+#~ msgstr "Değiştir:"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:176
-#: texteditor/richtexteditor/richtexteditor.cpp:238
-#, kde-format
-msgid "Auto Spell Check"
-msgstr "Otomatik Yazım Denetimi"
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "Önceki"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:182
-#: texteditor/richtexteditor/richtexteditor.cpp:244
-#, kde-format
-msgid "Spell Checking Language"
-msgstr "Yazım Denetimi Dili"
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "Sonraki"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:210
-#: texteditor/richtexteditor/richtexteditor.cpp:277
-#, kde-format
-msgid "Speak Text"
-msgstr "Metni Seslendir"
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "&Bul:"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:380
-#: texteditor/richtexteditor/richtexteditor.cpp:487
-#, kde-format
-msgid "Nothing to spell check."
-msgstr "Yazım denetimi yapılacak bir şey yok."
+#~ msgid "Text to search for"
+#~ msgstr "Aranacak metin"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:385
-#: texteditor/richtexteditor/richtexteditor.cpp:505
-#, kde-format
-msgid "No backend available for spell checking."
-msgstr "Yazım denetimi için bir arka yüz yok."
+#~ msgid "Jump to next match"
+#~ msgstr "Sonraki eşleşmeye git"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:270
-#, kde-format
-msgid "Allow Tabulations"
-msgstr "Sekmelere İzin Ver"
+#~ msgid "Jump to previous match"
+#~ msgstr "Önceki eşleşmeye git"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:497
-#, kde-format
-msgid ""
-"No backend available for spell checking. Do you want to send the email "
-"anyways?"
-msgstr ""
-"Yazım denetimi için bir arka yüz yok. E-postayi yine de göndermek istiyor "
-"musunuz?"
+#~ msgid "Options"
+#~ msgstr "Seçenekler"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:499
-#, kde-format
-msgctxt "@action:button"
-msgid "Send"
-msgstr "Gönder"
+#~ msgid "Modify search behavior"
+#~ msgstr "Arama davranışını değiştir"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:521
-#, kde-format
-msgid "Skip"
-msgstr "Atla"
+#~ msgid "Case sensitive"
+#~ msgstr "BÜYÜK/küçük harf duyarlı"
+
+#~ msgid "Whole word"
+#~ msgstr "Tam sözcük"
+
+#~ msgid "Regular Expression"
+#~ msgstr "Düzenli İfade"
+
+#~ msgid "Respect Diacritic and Accents"
+#~ msgstr "Aksanlara ve Vurgulara Dikkat Et"
+
+#~ msgid "Go to Line:"
+#~ msgstr "Satıra git:"
+
+#~ msgid "Go"
+#~ msgstr "Git"
+
+#~ msgid "%1 replacement made"
+#~ msgid_plural "%1 replacements made"
+#~ msgstr[0] "%1 değiştirme yapıldı"
+#~ msgstr[1] "%1 değiştirme yapıldı"
+
+#~ msgid "Replace..."
+#~ msgstr "Değiştir..."
+
+#~ msgid "Check Spelling..."
+#~ msgstr "Yazım Denetimi Yap..."
+
+#~ msgid "Auto Spell Check"
+#~ msgstr "Otomatik Yazım Denetimi"
+
+#~ msgid "Spell Checking Language"
+#~ msgstr "Yazım Denetimi Dili"
+
+#~ msgid "Speak Text"
+#~ msgstr "Metni Seslendir"
+
+#~ msgid "Nothing to spell check."
+#~ msgstr "Yazım denetimi yapılacak bir şey yok."
+
+#~ msgid "No backend available for spell checking."
+#~ msgstr "Yazım denetimi için bir arka yüz yok."
+
+#~ msgid "Allow Tabulations"
+#~ msgstr "Sekmelere İzin Ver"
+
+#~ msgid ""
+#~ "No backend available for spell checking. Do you want to send the email "
+#~ "anyways?"
+#~ msgstr ""
+#~ "Yazım denetimi için bir arka yüz yok. E-postayi yine de göndermek istiyor "
+#~ "musunuz?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Send"
+#~ msgstr "Gönder"
+
+#~ msgid "Skip"
+#~ msgstr "Atla"
 
 #~ msgid "Faces"
 #~ msgstr "Yüzler"

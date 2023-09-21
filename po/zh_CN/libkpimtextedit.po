@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-14 00:47+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2023-09-16 10:08\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -33,339 +33,334 @@ msgctxt "@title:window"
 msgid "Manage Link"
 msgstr "管理链接"
 
-#: composer-ng/richtextcomposeractions.cpp:110
+#: composer-ng/richtextcomposeractions.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
 msgstr "左对齐(&L)"
 
-#: composer-ng/richtextcomposeractions.cpp:111
+#: composer-ng/richtextcomposeractions.cpp:102
 #, kde-format
 msgctxt "@label left justify"
 msgid "Left"
 msgstr "左对齐"
 
-#: composer-ng/richtextcomposeractions.cpp:119
+#: composer-ng/richtextcomposeractions.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Align &Center"
 msgstr "居中对齐(&C)"
 
-#: composer-ng/richtextcomposeractions.cpp:120
+#: composer-ng/richtextcomposeractions.cpp:111
 #, kde-format
 msgctxt "@label center justify"
 msgid "Center"
 msgstr "居中对齐"
 
-#: composer-ng/richtextcomposeractions.cpp:128
+#: composer-ng/richtextcomposeractions.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
 msgstr "右对齐(&R)"
 
-#: composer-ng/richtextcomposeractions.cpp:129
+#: composer-ng/richtextcomposeractions.cpp:120
 #, kde-format
 msgctxt "@label right justify"
 msgid "Right"
 msgstr "右对齐"
 
-#: composer-ng/richtextcomposeractions.cpp:137
+#: composer-ng/richtextcomposeractions.cpp:128
 #, kde-format
 msgctxt "@action"
 msgid "&Justify"
 msgstr "两端对齐(&J)"
 
-#: composer-ng/richtextcomposeractions.cpp:138
+#: composer-ng/richtextcomposeractions.cpp:129
 #, kde-format
 msgctxt "@label justify fill"
 msgid "Justify"
 msgstr "两端对齐"
 
-#: composer-ng/richtextcomposeractions.cpp:153
+#: composer-ng/richtextcomposeractions.cpp:144
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
 msgstr "从左到右"
 
-#: composer-ng/richtextcomposeractions.cpp:154
+#: composer-ng/richtextcomposeractions.cpp:145
 #, kde-format
 msgctxt "@label left-to-right"
 msgid "Left-to-Right"
 msgstr "从左到右"
 
-#: composer-ng/richtextcomposeractions.cpp:162
+#: composer-ng/richtextcomposeractions.cpp:153
 #, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
 msgstr "从右到左"
 
-#: composer-ng/richtextcomposeractions.cpp:163
+#: composer-ng/richtextcomposeractions.cpp:154
 #, kde-format
 msgctxt "@label right-to-left"
 msgid "Right-to-Left"
 msgstr "从右到左"
 
-#: composer-ng/richtextcomposeractions.cpp:176
+#: composer-ng/richtextcomposeractions.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Subscript"
 msgstr "下标"
 
-#: composer-ng/richtextcomposeractions.cpp:184
+#: composer-ng/richtextcomposeractions.cpp:175
 #, kde-format
 msgctxt "@action"
 msgid "Superscript"
 msgstr "上标"
 
-#: composer-ng/richtextcomposeractions.cpp:192
+#: composer-ng/richtextcomposeractions.cpp:183
 #, kde-format
 msgctxt "@action boldify selected text"
 msgid "&Bold"
 msgstr "粗体(&B)"
 
-#: composer-ng/richtextcomposeractions.cpp:205
+#: composer-ng/richtextcomposeractions.cpp:196
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
 msgstr "斜体(&I)"
 
-#: composer-ng/richtextcomposeractions.cpp:218
+#: composer-ng/richtextcomposeractions.cpp:209
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
 msgstr "下划线(&U)"
 
-#: composer-ng/richtextcomposeractions.cpp:230
+#: composer-ng/richtextcomposeractions.cpp:221
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
 msgstr "删除线(&S)"
 
-#: composer-ng/richtextcomposeractions.cpp:245
+#: composer-ng/richtextcomposeractions.cpp:236
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
 msgstr "字体(&F)"
 
-#: composer-ng/richtextcomposeractions.cpp:254
+#: composer-ng/richtextcomposeractions.cpp:245
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
 msgstr "字体大小(&S)"
 
-#: composer-ng/richtextcomposeractions.cpp:262
+#: composer-ng/richtextcomposeractions.cpp:253
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
 msgstr "插入水平线"
 
-#: composer-ng/richtextcomposeractions.cpp:271
+#: composer-ng/richtextcomposeractions.cpp:262
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color..."
 msgstr "文本颜色(&C)..."
 
-#: composer-ng/richtextcomposeractions.cpp:272
+#: composer-ng/richtextcomposeractions.cpp:263
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
 msgstr "颜色"
 
-#: composer-ng/richtextcomposeractions.cpp:280
+#: composer-ng/richtextcomposeractions.cpp:271
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight..."
 msgstr "文本加亮(&H)..."
 
-#: composer-ng/richtextcomposeractions.cpp:288
+#: composer-ng/richtextcomposeractions.cpp:279
 #, kde-format
 msgctxt "@action"
 msgid "Link"
 msgstr "链接"
 
-#: composer-ng/richtextcomposeractions.cpp:296
+#: composer-ng/richtextcomposeractions.cpp:287
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
 msgstr "提升列表级别"
 
-#: composer-ng/richtextcomposeractions.cpp:304
+#: composer-ng/richtextcomposeractions.cpp:295
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
 msgstr "降低列表级别"
 
-#: composer-ng/richtextcomposeractions.cpp:313
+#: composer-ng/richtextcomposeractions.cpp:304
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
 msgstr "列表样式"
 
-#: composer-ng/richtextcomposeractions.cpp:315
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
 msgstr "无"
 
-#: composer-ng/richtextcomposeractions.cpp:315
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
 msgstr "碟形"
 
-#: composer-ng/richtextcomposeractions.cpp:316
+#: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
 msgstr "圆形"
 
-#: composer-ng/richtextcomposeractions.cpp:316
+#: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
 msgstr "方形"
 
-#: composer-ng/richtextcomposeractions.cpp:317
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
 msgstr "123"
 
-#: composer-ng/richtextcomposeractions.cpp:317
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
 msgstr "abc"
 
-#: composer-ng/richtextcomposeractions.cpp:318
+#: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
 msgstr "ABC"
 
-#: composer-ng/richtextcomposeractions.cpp:318
+#: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
 msgstr "i ii iii"
 
-#: composer-ng/richtextcomposeractions.cpp:319
+#: composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
 msgstr "I II III"
 
-#: composer-ng/richtextcomposeractions.cpp:330
+#: composer-ng/richtextcomposeractions.cpp:321
 #, kde-format
 msgid "Pa&ste as Quotation"
 msgstr "粘贴为引用(&S)"
 
-#: composer-ng/richtextcomposeractions.cpp:338
+#: composer-ng/richtextcomposeractions.cpp:329
 #, kde-format
 msgid "Add &Quote Characters"
 msgstr "添加引用字符(&Q)"
 
-#: composer-ng/richtextcomposeractions.cpp:345
+#: composer-ng/richtextcomposeractions.cpp:336
 #, kde-format
 msgid "Re&move Quote Characters"
 msgstr "移除引用字符(&M)"
 
-#: composer-ng/richtextcomposeractions.cpp:352
+#: composer-ng/richtextcomposeractions.cpp:343
 #, kde-format
 msgid "Paste Without Formatting"
 msgstr "无格式粘贴"
 
-#: composer-ng/richtextcomposeractions.cpp:360
+#: composer-ng/richtextcomposeractions.cpp:351
 #, kde-format
 msgid "Add Image"
 msgstr "添加图片"
 
-#: composer-ng/richtextcomposeractions.cpp:388
+#: composer-ng/richtextcomposeractions.cpp:370
 #, kde-format
 msgid "Insert HTML"
 msgstr "插入 HTML"
 
-#: composer-ng/richtextcomposeractions.cpp:398
+#: composer-ng/richtextcomposeractions.cpp:380
 #, kde-format
 msgid "Table"
 msgstr "表格"
 
-#: composer-ng/richtextcomposeractions.cpp:407
-#, kde-format
-msgid "Delete Line"
-msgstr "删除行"
-
-#: composer-ng/richtextcomposeractions.cpp:418
+#: composer-ng/richtextcomposeractions.cpp:389
 #, kde-format
 msgid "Reset Font Settings"
 msgstr "重置字体设置"
 
-#: composer-ng/richtextcomposeractions.cpp:419
+#: composer-ng/richtextcomposeractions.cpp:390
 #, kde-format
 msgid "Reset Font"
 msgstr "重置字体"
 
-#: composer-ng/richtextcomposeractions.cpp:427
+#: composer-ng/richtextcomposeractions.cpp:398
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
 msgstr "格式刷"
 
-#: composer-ng/richtextcomposeractions.cpp:435
+#: composer-ng/richtextcomposeractions.cpp:406
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
 msgstr "标题级别"
 
-#: composer-ng/richtextcomposeractions.cpp:436
+#: composer-ng/richtextcomposeractions.cpp:407
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
 msgstr "基本文本"
 
-#: composer-ng/richtextcomposeractions.cpp:437
+#: composer-ng/richtextcomposeractions.cpp:408
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
 msgstr "标题"
 
-#: composer-ng/richtextcomposeractions.cpp:438
+#: composer-ng/richtextcomposeractions.cpp:409
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
 msgstr "副标题"
 
-#: composer-ng/richtextcomposeractions.cpp:439
+#: composer-ng/richtextcomposeractions.cpp:410
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
 msgstr "章节"
 
-#: composer-ng/richtextcomposeractions.cpp:440
+#: composer-ng/richtextcomposeractions.cpp:411
 #, kde-format
 msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
 msgstr "小节"
 
-#: composer-ng/richtextcomposeractions.cpp:441
+#: composer-ng/richtextcomposeractions.cpp:412
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
 msgstr "段落"
 
-#: composer-ng/richtextcomposeractions.cpp:442
+#: composer-ng/richtextcomposeractions.cpp:413
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
 msgstr "子段落"
 
-#: composer-ng/richtextcomposeractions.cpp:453
+#: composer-ng/richtextcomposeractions.cpp:424
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
 msgstr "勾选框"
 
-#: composer-ng/richtextcomposercontroler.cpp:737
+#: composer-ng/richtextcomposercontroler.cpp:730
 #, kde-format
 msgid "Only local files are supported."
 msgstr "仅支持本地文件"
@@ -436,76 +431,6 @@ msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr "保持编辑器运行"
 
-#: emoticon/emoticonrecentlistview.cpp:25
-#, kde-format
-msgid "Clear Recents"
-msgstr "清除最近表情"
-
-#: emoticon/emoticontexteditaction.cpp:41
-#, kde-format
-msgid "Add Smiley"
-msgstr "添加表情"
-
-#: emoticon/emoticontexteditselector.cpp:30
-#, kde-format
-msgid "Search Emoticon..."
-msgstr "搜索表情..."
-
-#: emoticon/emoticonunicodetab.cpp:53
-#, kde-format
-msgid "Result"
-msgstr "结果"
-
-#: emoticon/emoticonunicodetab.cpp:64
-#, kde-format
-msgid "Recents"
-msgstr "最近"
-
-#: emoticon/unicodeemoticonmanager.cpp:58
-#, kde-format
-msgid "Symbols"
-msgstr "符号"
-
-#: emoticon/unicodeemoticonmanager.cpp:60
-#, kde-format
-msgid "Activity"
-msgstr "活动"
-
-#: emoticon/unicodeemoticonmanager.cpp:62
-#, kde-format
-msgid "Objects"
-msgstr "物品"
-
-#: emoticon/unicodeemoticonmanager.cpp:64
-#, kde-format
-msgid "Nature"
-msgstr "自然"
-
-#: emoticon/unicodeemoticonmanager.cpp:66
-#, kde-format
-msgid "Food"
-msgstr "食物"
-
-#: emoticon/unicodeemoticonmanager.cpp:68
-#, kde-format
-msgid "People"
-msgstr "人物"
-
-#: emoticon/unicodeemoticonmanager.cpp:70
-#, kde-format
-msgid "Travel"
-msgstr "旅游"
-
-#: emoticon/unicodeemoticonmanager.cpp:72
-#, kde-format
-msgid "Regional"
-msgstr "地区"
-
-#: emoticon/unicodeemoticonmanager.cpp:74
-#, kde-format
-msgid "Flags"
-msgstr "旗标"
-
 #: inserthtmldialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
@@ -534,8 +459,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "插入图片"
 
-#: insertimagedialog.cpp:36 inserttabledialog.cpp:37
-#: selectspecialchardialog.cpp:40 tableactionmenu.cpp:405
+#: insertimagedialog.cpp:36 inserttabledialog.cpp:37 tableactionmenu.cpp:405
 #, kde-format
 msgid "Insert"
 msgstr "插入"
@@ -611,17 +535,6 @@ msgstr "窗口的百分比"
 #, kde-format
 msgid "pixels"
 msgstr "像素"
-
-#: selectspecialchardialog.cpp:30
-#, kde-format
-msgctxt "@title:window"
-msgid "Select Special Characters"
-msgstr "选择特殊字符"
-
-#: selectspecialchardialog.cpp:53
-#, kde-format
-msgid "Select"
-msgstr "选择"
 
 #: tableactionmenu.cpp:408
 #, kde-format
@@ -765,182 +678,159 @@ msgstr "两端对齐"
 msgid "Table Alignment:"
 msgstr "表格对齐："
 
-#: texteditor/commonwidget/texteditfindbarbase.cpp:34
-#: texteditor/commonwidget/texteditfindbarbase.cpp:37
-#: texteditor/commonwidget/textgotolinewidget.cpp:39
-#: texteditor/commonwidget/textgotolinewidget.cpp:42
-#, kde-format
-msgid "Close"
-msgstr "关闭"
+#~ msgid "Delete Line"
+#~ msgstr "删除行"
 
-#: texteditor/commonwidget/texteditfindbarbase.cpp:140
-#, kde-format
-msgid ""
-"End of message reached.\n"
-"Phrase '%1' could not be found."
-msgstr ""
-"已到达信件尾。\n"
-"无法找到“%1”。"
+#~ msgid "Clear Recents"
+#~ msgstr "清除最近表情"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:25
-#, kde-format
-msgid "Replace"
-msgstr "替换"
+#~ msgid "Add Smiley"
+#~ msgstr "添加表情"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:26
-#, kde-format
-msgid "Replace All"
-msgstr "全部替换"
+#~ msgid "Search Emoticon..."
+#~ msgstr "搜索表情..."
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:29
-#, kde-format
-msgctxt "Replace text"
-msgid "Replace:"
-msgstr "替换："
+#~ msgid "Result"
+#~ msgstr "结果"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:65
-#, kde-format
-msgctxt "Find and go to the previous search match"
-msgid "Previous"
-msgstr "上一个"
+#~ msgid "Recents"
+#~ msgstr "最近"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:66
-#, kde-format
-msgctxt "Find and go to the next search match"
-msgid "Next"
-msgstr "下一个"
+#~ msgid "Symbols"
+#~ msgstr "符号"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:72
-#, kde-format
-msgctxt "Find text"
-msgid "F&ind:"
-msgstr "查找(&I)："
+#~ msgid "Activity"
+#~ msgstr "活动"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:75
-#, kde-format
-msgid "Text to search for"
-msgstr "要搜索的文本"
+#~ msgid "Objects"
+#~ msgstr "物品"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:81
-#, kde-format
-msgid "Jump to next match"
-msgstr "跳转到下一个匹配"
+#~ msgid "Nature"
+#~ msgstr "自然"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:86
-#, kde-format
-msgid "Jump to previous match"
-msgstr "跳转到上一个匹配"
+#~ msgid "Food"
+#~ msgstr "食物"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:92
-#, kde-format
-msgid "Options"
-msgstr "选项"
+#~ msgid "People"
+#~ msgstr "人物"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:93
-#, kde-format
-msgid "Modify search behavior"
-msgstr "修改搜索行为"
+#~ msgid "Travel"
+#~ msgstr "旅游"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:96
-#, kde-format
-msgid "Case sensitive"
-msgstr "区分大小写"
+#~ msgid "Regional"
+#~ msgstr "地区"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:99
-#, kde-format
-msgid "Whole word"
-msgstr "完整单词"
+#~ msgid "Flags"
+#~ msgstr "旗标"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:102
-#, kde-format
-msgid "Regular Expression"
-msgstr "正则表达式"
+#~ msgctxt "@title:window"
+#~ msgid "Select Special Characters"
+#~ msgstr "选择特殊字符"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:105
-#, kde-format
-msgid "Respect Diacritic and Accents"
-msgstr "遵守变音和重音"
+#~ msgid "Select"
+#~ msgstr "选择"
 
-#: texteditor/commonwidget/textgotolinewidget.cpp:49
-#, kde-format
-msgid "Go to Line:"
-msgstr "转到行："
+#~ msgid "Close"
+#~ msgstr "关闭"
 
-#: texteditor/commonwidget/textgotolinewidget.cpp:56
-#, kde-format
-msgid "Go"
-msgstr "转到"
+#~ msgid ""
+#~ "End of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "已到达信件尾。\n"
+#~ "无法找到“%1”。"
 
-#: texteditor/plaintexteditor/plaintexteditfindbar.cpp:119
-#: texteditor/richtexteditor/richtexteditfindbar.cpp:119
-#, kde-format
-msgid "%1 replacement made"
-msgid_plural "%1 replacements made"
-msgstr[0] "完成 %1 处替换"
+#~ msgid "Replace"
+#~ msgstr "替换"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:153
-#: texteditor/plaintexteditor/plaintexteditor.cpp:155
-#: texteditor/richtexteditor/richtexteditor.cpp:212
-#: texteditor/richtexteditor/richtexteditor.cpp:214
-#, kde-format
-msgid "Replace..."
-msgstr "替换..."
+#~ msgid "Replace All"
+#~ msgstr "全部替换"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:171
-#: texteditor/richtexteditor/richtexteditor.cpp:231
-#, kde-format
-msgid "Check Spelling..."
-msgstr "检查拼写..."
+#~ msgctxt "Replace text"
+#~ msgid "Replace:"
+#~ msgstr "替换："
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:176
-#: texteditor/richtexteditor/richtexteditor.cpp:238
-#, kde-format
-msgid "Auto Spell Check"
-msgstr "自动拼写检查"
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "上一个"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:182
-#: texteditor/richtexteditor/richtexteditor.cpp:244
-#, kde-format
-msgid "Spell Checking Language"
-msgstr "拼写检查语言"
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "下一个"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:210
-#: texteditor/richtexteditor/richtexteditor.cpp:277
-#, kde-format
-msgid "Speak Text"
-msgstr "朗读文本"
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "查找(&I)："
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:380
-#: texteditor/richtexteditor/richtexteditor.cpp:487
-#, kde-format
-msgid "Nothing to spell check."
-msgstr "没有可供检查拼写的内容。"
+#~ msgid "Text to search for"
+#~ msgstr "要搜索的文本"
 
-#: texteditor/plaintexteditor/plaintexteditor.cpp:385
-#: texteditor/richtexteditor/richtexteditor.cpp:505
-#, kde-format
-msgid "No backend available for spell checking."
-msgstr "没有可用的拼写检查后端。"
+#~ msgid "Jump to next match"
+#~ msgstr "跳转到下一个匹配"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:270
-#, kde-format
-msgid "Allow Tabulations"
-msgstr "允许制表符"
+#~ msgid "Jump to previous match"
+#~ msgstr "跳转到上一个匹配"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:497
-#, kde-format
-msgid ""
-"No backend available for spell checking. Do you want to send the email "
-"anyways?"
-msgstr "没有可用的拼写检查后端。请问您是否仍然想要发送电子邮件？"
+#~ msgid "Options"
+#~ msgstr "选项"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:499
-#, kde-format
-msgctxt "@action:button"
-msgid "Send"
-msgstr "发送"
+#~ msgid "Modify search behavior"
+#~ msgstr "修改搜索行为"
 
-#: texteditor/richtexteditor/richtexteditor.cpp:521
-#, kde-format
-msgid "Skip"
-msgstr "跳过"
+#~ msgid "Case sensitive"
+#~ msgstr "区分大小写"
+
+#~ msgid "Whole word"
+#~ msgstr "完整单词"
+
+#~ msgid "Regular Expression"
+#~ msgstr "正则表达式"
+
+#~ msgid "Respect Diacritic and Accents"
+#~ msgstr "遵守变音和重音"
+
+#~ msgid "Go to Line:"
+#~ msgstr "转到行："
+
+#~ msgid "Go"
+#~ msgstr "转到"
+
+#~ msgid "%1 replacement made"
+#~ msgid_plural "%1 replacements made"
+#~ msgstr[0] "完成 %1 处替换"
+
+#~ msgid "Replace..."
+#~ msgstr "替换..."
+
+#~ msgid "Check Spelling..."
+#~ msgstr "检查拼写..."
+
+#~ msgid "Auto Spell Check"
+#~ msgstr "自动拼写检查"
+
+#~ msgid "Spell Checking Language"
+#~ msgstr "拼写检查语言"
+
+#~ msgid "Speak Text"
+#~ msgstr "朗读文本"
+
+#~ msgid "Nothing to spell check."
+#~ msgstr "没有可供检查拼写的内容。"
+
+#~ msgid "No backend available for spell checking."
+#~ msgstr "没有可用的拼写检查后端。"
+
+#~ msgid "Allow Tabulations"
+#~ msgstr "允许制表符"
+
+#~ msgid ""
+#~ "No backend available for spell checking. Do you want to send the email "
+#~ "anyways?"
+#~ msgstr "没有可用的拼写检查后端。请问您是否仍然想要发送电子邮件？"
+
+#~ msgctxt "@action:button"
+#~ msgid "Send"
+#~ msgstr "发送"
+
+#~ msgid "Skip"
+#~ msgstr "跳过"
