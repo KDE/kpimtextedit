@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-06-09 02:13+0200\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2017-12-24 21:47+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -18,337 +18,332 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
+#: composer-ng/klinkdialog.cpp:24
+#, kde-format
+msgid "Link Text:"
+msgstr "Текст везе:"
+
+#: composer-ng/klinkdialog.cpp:26
+#, kde-format
+msgid "Link URL:"
+msgstr "УРЛ везе:"
+
 # >> @title:window
-#: composer-ng/klinkdialog.cpp:38
+#: composer-ng/klinkdialog.cpp:30
 #, fuzzy, kde-format
 #| msgid "Manage Link"
 msgctxt "@title:window"
 msgid "Manage Link"
 msgstr "Управљање везом"
 
-#: composer-ng/klinkdialog.cpp:45
-#, kde-format
-msgid "Link Text:"
-msgstr "Текст везе:"
-
-#: composer-ng/klinkdialog.cpp:48
-#, kde-format
-msgid "Link URL:"
-msgstr "УРЛ везе:"
-
-#: composer-ng/richtextcomposeractions.cpp:119
+#: composer-ng/richtextcomposeractions.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
 msgstr "Поравнај &лево"
 
-#: composer-ng/richtextcomposeractions.cpp:120
+#: composer-ng/richtextcomposeractions.cpp:102
 #, kde-format
 msgctxt "@label left justify"
 msgid "Left"
 msgstr "Лево"
 
-#: composer-ng/richtextcomposeractions.cpp:130
+#: composer-ng/richtextcomposeractions.cpp:110
 #, kde-format
 msgctxt "@action"
 msgid "Align &Center"
 msgstr "Равнај по &средини"
 
-#: composer-ng/richtextcomposeractions.cpp:131
+#: composer-ng/richtextcomposeractions.cpp:111
 #, kde-format
 msgctxt "@label center justify"
 msgid "Center"
 msgstr "Средина"
 
-#: composer-ng/richtextcomposeractions.cpp:141
+#: composer-ng/richtextcomposeractions.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
 msgstr "Поравнај &десно"
 
-#: composer-ng/richtextcomposeractions.cpp:142
+#: composer-ng/richtextcomposeractions.cpp:120
 #, kde-format
 msgctxt "@label right justify"
 msgid "Right"
 msgstr "Десно"
 
-#: composer-ng/richtextcomposeractions.cpp:152
+#: composer-ng/richtextcomposeractions.cpp:128
 #, kde-format
 msgctxt "@action"
 msgid "&Justify"
 msgstr "&Развуци"
 
-#: composer-ng/richtextcomposeractions.cpp:153
+#: composer-ng/richtextcomposeractions.cpp:129
 #, kde-format
 msgctxt "@label justify fill"
 msgid "Justify"
 msgstr "Развучено"
 
-#: composer-ng/richtextcomposeractions.cpp:170
+#: composer-ng/richtextcomposeractions.cpp:144
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
 msgstr "Слева удесно"
 
-#: composer-ng/richtextcomposeractions.cpp:171
+#: composer-ng/richtextcomposeractions.cpp:145
 #, kde-format
 msgctxt "@label left-to-right"
 msgid "Left-to-Right"
 msgstr "Слева удесно"
 
-#: composer-ng/richtextcomposeractions.cpp:181
+#: composer-ng/richtextcomposeractions.cpp:153
 #, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
 msgstr "Здесна улево"
 
-#: composer-ng/richtextcomposeractions.cpp:182
+#: composer-ng/richtextcomposeractions.cpp:154
 #, kde-format
 msgctxt "@label right-to-left"
 msgid "Right-to-Left"
 msgstr "Здесна улево"
 
-#: composer-ng/richtextcomposeractions.cpp:197
+#: composer-ng/richtextcomposeractions.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Subscript"
 msgstr "Индекс"
 
-#: composer-ng/richtextcomposeractions.cpp:207
+#: composer-ng/richtextcomposeractions.cpp:175
 #, kde-format
 msgctxt "@action"
 msgid "Superscript"
 msgstr "Изложилац"
 
-#: composer-ng/richtextcomposeractions.cpp:217
+#: composer-ng/richtextcomposeractions.cpp:183
 #, kde-format
 msgctxt "@action boldify selected text"
 msgid "&Bold"
 msgstr "Поде&бљај"
 
-#: composer-ng/richtextcomposeractions.cpp:230
+#: composer-ng/richtextcomposeractions.cpp:196
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
 msgstr "&Курзив"
 
-#: composer-ng/richtextcomposeractions.cpp:243
+#: composer-ng/richtextcomposeractions.cpp:209
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
 msgstr "Под&вуци"
 
-#: composer-ng/richtextcomposeractions.cpp:256
+#: composer-ng/richtextcomposeractions.cpp:221
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
 msgstr "Пре&цртај"
 
-#: composer-ng/richtextcomposeractions.cpp:271
+#: composer-ng/richtextcomposeractions.cpp:236
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
 msgstr "&Фонт"
 
-#: composer-ng/richtextcomposeractions.cpp:281
+#: composer-ng/richtextcomposeractions.cpp:245
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
 msgstr "&Величина фонта"
 
 # skip-rule: t-line
-#: composer-ng/richtextcomposeractions.cpp:290
+#: composer-ng/richtextcomposeractions.cpp:253
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
 msgstr "Уметни линију равнања"
 
-#: composer-ng/richtextcomposeractions.cpp:301
+#: composer-ng/richtextcomposeractions.cpp:262
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color..."
 msgstr "&Боја текста..."
 
-#: composer-ng/richtextcomposeractions.cpp:302
+#: composer-ng/richtextcomposeractions.cpp:263
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
 msgstr "Боја"
 
-#: composer-ng/richtextcomposeractions.cpp:311
+#: composer-ng/richtextcomposeractions.cpp:271
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight..."
 msgstr "&Истицање текста..."
 
-#: composer-ng/richtextcomposeractions.cpp:320
+#: composer-ng/richtextcomposeractions.cpp:279
 #, kde-format
 msgctxt "@action"
 msgid "Link"
 msgstr "Веза"
 
-#: composer-ng/richtextcomposeractions.cpp:330
+#: composer-ng/richtextcomposeractions.cpp:287
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:341
+#: composer-ng/richtextcomposeractions.cpp:295
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:353
+#: composer-ng/richtextcomposeractions.cpp:304
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
 msgstr "Стил списка"
 
-#: composer-ng/richtextcomposeractions.cpp:355
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
 msgstr "(неозначено)"
 
-#: composer-ng/richtextcomposeractions.cpp:356
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
 msgstr "дискови"
 
-#: composer-ng/richtextcomposeractions.cpp:357
+#: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
 msgstr "кружићи"
 
-#: composer-ng/richtextcomposeractions.cpp:358
+#: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
 msgstr "квадратићи"
 
-#: composer-ng/richtextcomposeractions.cpp:359
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
 msgstr "бројеви"
 
-#: composer-ng/richtextcomposeractions.cpp:360
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
 msgstr "мала слова"
 
-#: composer-ng/richtextcomposeractions.cpp:361
+#: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
 msgstr "велика слова"
 
-#: composer-ng/richtextcomposeractions.cpp:362
+#: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
 msgstr "i ii iii"
 
-#: composer-ng/richtextcomposeractions.cpp:363
+#: composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
 msgstr "I II III"
 
-#: composer-ng/richtextcomposeractions.cpp:376
+#: composer-ng/richtextcomposeractions.cpp:321
 #, kde-format
 msgid "Pa&ste as Quotation"
 msgstr "Налепи као &цитат"
 
-#: composer-ng/richtextcomposeractions.cpp:384
+#: composer-ng/richtextcomposeractions.cpp:329
 #, kde-format
 msgid "Add &Quote Characters"
 msgstr "Додај знакове &цитирања"
 
-#: composer-ng/richtextcomposeractions.cpp:391
+#: composer-ng/richtextcomposeractions.cpp:336
 #, kde-format
 msgid "Re&move Quote Characters"
 msgstr "Уклони знакове цити&рања"
 
-#: composer-ng/richtextcomposeractions.cpp:398
+#: composer-ng/richtextcomposeractions.cpp:343
 #, kde-format
 msgid "Paste Without Formatting"
 msgstr "Налепи без форматирања"
 
 # >! @action
 # >! @title:window
-#: composer-ng/richtextcomposeractions.cpp:407
+#: composer-ng/richtextcomposeractions.cpp:351
 #, kde-format
 msgid "Add Image"
 msgstr "Додај слику"
 
 # >> @title:window
-#: composer-ng/richtextcomposeractions.cpp:423
+#: composer-ng/richtextcomposeractions.cpp:370
 #, kde-format
 msgid "Insert HTML"
 msgstr "Уметање ХТМЛ‑а"
 
-#: composer-ng/richtextcomposeractions.cpp:433
+#: composer-ng/richtextcomposeractions.cpp:380
 #, kde-format
 msgid "Table"
 msgstr "Табела"
 
-#: composer-ng/richtextcomposeractions.cpp:441
-#, kde-format
-msgid "Delete Line"
-msgstr "Обриши ред"
-
-#: composer-ng/richtextcomposeractions.cpp:453
+#: composer-ng/richtextcomposeractions.cpp:389
 #, kde-format
 msgid "Reset Font Settings"
 msgstr "Ресетуј поставке фонта"
 
-#: composer-ng/richtextcomposeractions.cpp:454
+#: composer-ng/richtextcomposeractions.cpp:390
 #, kde-format
 msgid "Reset Font"
 msgstr "Ресетуј фонт"
 
-#: composer-ng/richtextcomposeractions.cpp:463
+#: composer-ng/richtextcomposeractions.cpp:398
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
 msgstr "Пресликавач формата"
 
-#: composer-ng/richtextcomposeractions.cpp:472
+#: composer-ng/richtextcomposeractions.cpp:406
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:473
+#: composer-ng/richtextcomposeractions.cpp:407
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:474
+#: composer-ng/richtextcomposeractions.cpp:408
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:475
+#: composer-ng/richtextcomposeractions.cpp:409
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:476
+#: composer-ng/richtextcomposeractions.cpp:410
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:477
+#: composer-ng/richtextcomposeractions.cpp:411
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Subscript"
@@ -356,67 +351,67 @@ msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
 msgstr "Индекс"
 
-#: composer-ng/richtextcomposeractions.cpp:478
+#: composer-ng/richtextcomposeractions.cpp:412
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:479
+#: composer-ng/richtextcomposeractions.cpp:413
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:493
+#: composer-ng/richtextcomposeractions.cpp:424
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
 msgstr ""
 
-#: composer-ng/richtextcomposercontroler.cpp:759
+#: composer-ng/richtextcomposercontroler.cpp:730
 #, kde-format
 msgid "Only local files are supported."
 msgstr "Подржани су само локални фајлови."
 
-#: composer-ng/richtextcomposerimages.cpp:76
+#: composer-ng/richtextcomposerimages.cpp:55
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "Не могу да учитам слику <filename>%1</filename>."
 
-#: composer-ng/richtextcomposerimages.cpp:243
+#: composer-ng/richtextcomposerimages.cpp:214
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"
 msgstr "слика"
 
-#: composer-ng/richtextexternalcomposer.cpp:85
+#: composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
 msgid "Command line is empty. Please verify settings."
 msgstr "Празна командна линија. Проверите поставке."
 
-#: composer-ng/richtextexternalcomposer.cpp:85
+#: composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
 msgid "Empty command line"
 msgstr "Празна командна линија"
 
-#: composer-ng/richtextexternalcomposer.cpp:138
+#: composer-ng/richtextexternalcomposer.cpp:122
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr "Спољашњи уређивач не може да се покрене. Проверите наредбу „%1“."
 
-#: composer-ng/richtextexternalcomposer.cpp:156
+#: composer-ng/richtextexternalcomposer.cpp:140
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "Грешка при покретању спољашњег уређивача."
 
-#: composer-ng/richtextexternalcomposer.cpp:156
+#: composer-ng/richtextexternalcomposer.cpp:140
 #, kde-format
 msgid "External Editor Closed"
 msgstr "Спољашњи уређивач затворен"
 
-#: composer-ng/richtextexternalcomposer.cpp:174
+#: composer-ng/richtextexternalcomposer.cpp:157
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -428,708 +423,447 @@ msgstr ""
 "ради?<nl/><warning>Заустављањем уређивача све несачуване измене биће "
 "изгубљене.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:178
+#: composer-ng/richtextexternalcomposer.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "Спољашњи уређивач ради"
 
-#: composer-ng/richtextexternalcomposer.cpp:179
+#: composer-ng/richtextexternalcomposer.cpp:162
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "Заустави уређивач"
 
-#: composer-ng/richtextexternalcomposer.cpp:180
+#: composer-ng/richtextexternalcomposer.cpp:163
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr "Остави уређивач да ради"
 
-#: emoticon/emoticontexteditaction.cpp:54
-#, kde-format
-msgid "Add Smiley"
-msgstr "Додај смешак"
-
-#: emoticon/emoticonunicodetab.cpp:44
-#, kde-format
-msgid "Faces"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:45
-#, kde-format
-msgid "Animals"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:46
-#, fuzzy, kde-format
-#| msgid "Options"
-msgid "Emotions"
-msgstr "Опције"
-
-#: emoticon/emoticonunicodetab.cpp:47
-#, kde-format
-msgid "Body"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:48
-#, kde-format
-msgid "Transports"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:49
-#, kde-format
-msgid "Events"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:50
-#, kde-format
-msgid "Flags"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:51
-#, kde-format
-msgid "Weather"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:52
-#, kde-format
-msgid "Foods"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:53
-#, kde-format
-msgid "Sports"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:54
-#, kde-format
-msgid "Time"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:55
-#, kde-format
-msgid "Game"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:56
-#, kde-format
-msgid "Clothing"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:57
-#, kde-format
-msgid "Music"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:58
-#, kde-format
-msgid "Computer"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:59
-#, kde-format
-msgid "Symbols"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:60
-#, kde-format
-msgid "Plant"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:61
-#, kde-format
-msgid "Book"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:62
-#, kde-format
-msgid "Science"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:63
-#, kde-format
-msgid "Person"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:64
-#, fuzzy, kde-format
-#| msgid "Replace"
-msgid "Place"
-msgstr "Замијени"
-
-#: emoticon/emoticonunicodetab.cpp:65
-#, kde-format
-msgid "Money"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:66
-#, kde-format
-msgid "Mail"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:67
-#, kde-format
-msgid "Office"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:68
-#, kde-format
-msgid "Tools"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:69
-#, kde-format
-msgid "Phone"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:70
-#, kde-format
-msgid "Lock"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:71
-#, kde-format
-msgid "Drink"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:72
-#, kde-format
-msgid "Video"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:73
-#, kde-format
-msgid "House"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:74
-#, kde-format
-msgid "Dishware"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:75
-#, kde-format
-msgid "Hotel"
-msgstr ""
-
-#: emoticon/emoticonunicodetab.cpp:76
-#, kde-format
-msgid "Award-Medal"
-msgstr ""
-
-#: inserthtmldialog.cpp:39
+#: inserthtmldialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Уметање ХТМЛ‑а"
 
-#: inserthtmldialog.cpp:41
+#: inserthtmldialog.cpp:36
 #, kde-format
 msgid "Insert HTML tags and texts:"
 msgstr "Уметни ХТМЛ ознаке и текст:"
 
-#: inserthtmldialog.cpp:47
+#: inserthtmldialog.cpp:42
 #, kde-format
 msgid "Example: <i> Hello word </i>"
 msgstr "Пример: <i> Здраво, свете </i>"
 
-#: inserthtmldialog.cpp:56
+#: inserthtmldialog.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Уметни"
 
 # >> @title:window
-#: insertimagedialog.cpp:39
+#: insertimagedialog.cpp:27
 #, fuzzy, kde-format
 #| msgid "Insert Image"
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Уметање слике"
 
-#: insertimagedialog.cpp:48 inserttabledialog.cpp:50
-#: selectspecialchardialog.cpp:47 tableactionmenu.cpp:423
+#: insertimagedialog.cpp:36 inserttabledialog.cpp:37 tableactionmenu.cpp:405
 #, kde-format
 msgid "Insert"
 msgstr "Уметни"
 
-#: insertimagewidget.cpp:52
+#: insertimagewidget.cpp:40
 #, kde-format
 msgid "Image Location:"
 msgstr "Локација слике:"
 
 # >! @action
 # >! @title:window
-#: insertimagewidget.cpp:65
+#: insertimagewidget.cpp:53
 #, fuzzy, kde-format
 #| msgid "Add Image"
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "Додај слику"
 
-#: insertimagewidget.cpp:77
+#: insertimagewidget.cpp:64
 #, kde-format
 msgid "Keep Original Size"
 msgstr "Задржи изворну величину"
 
-#: insertimagewidget.cpp:85
+#: insertimagewidget.cpp:71
 #, kde-format
 msgid "Keep Image Ratio"
 msgstr "Задржи пропорцију слике"
 
-#: insertimagewidget.cpp:91 inserttablewidget.cpp:72
+#: insertimagewidget.cpp:77 inserttablewidget.cpp:59
 #, kde-format
 msgid "Width:"
 msgstr "Ширина"
 
 # well-spelled: пикс
-#: insertimagewidget.cpp:96 insertimagewidget.cpp:112 inserttablewidget.cpp:49
+#: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
 msgstr " пикс"
 
-#: insertimagewidget.cpp:107
+#: insertimagewidget.cpp:92
 #, kde-format
 msgid "Height:"
 msgstr "Висина"
 
-#: insertimagewidget.cpp:126
+#: insertimagewidget.cpp:110
 #, kde-format
 msgid "Image Preview:"
 msgstr "Преглед слике:"
 
 # >> @title:window
-#: inserttabledialog.cpp:39
+#: inserttabledialog.cpp:26
 #, fuzzy, kde-format
 #| msgid "Insert Table"
 msgctxt "@title:window"
 msgid "Insert Table"
 msgstr "Уметање табеле"
 
-#: inserttablewidget.cpp:53
+#: inserttablewidget.cpp:40
 #, kde-format
 msgid "Rows:"
 msgstr "Врсте:"
 
-#: inserttablewidget.cpp:56
+#: inserttablewidget.cpp:43
 #, kde-format
 msgid "Columns:"
 msgstr "Колоне:"
 
-#: inserttablewidget.cpp:59
+#: inserttablewidget.cpp:46
 #, kde-format
 msgid "Border:"
 msgstr "Ивица:"
 
-#: inserttablewidget.cpp:65
+#: inserttablewidget.cpp:52
 #, no-c-format, kde-format
 msgid "% of windows"
 msgstr "% прозора"
 
-#: inserttablewidget.cpp:66
+#: inserttablewidget.cpp:53
 #, kde-format
 msgid "pixels"
 msgstr "пиксела"
 
-# >> @title:window
-#: selectspecialchardialog.cpp:36
-#, fuzzy, kde-format
-#| msgid "Select Special Characters"
-msgctxt "@title:window"
-msgid "Select Special Characters"
-msgstr "Избор посебних знакова"
-
-#: selectspecialchardialog.cpp:60
-#, kde-format
-msgid "Select"
-msgstr "Изабери"
-
-#: tableactionmenu.cpp:426
+#: tableactionmenu.cpp:408
 #, kde-format
 msgid "Table..."
 msgstr "Табела..."
 
-#: tableactionmenu.cpp:436 tableactionmenu.cpp:475
+#: tableactionmenu.cpp:416 tableactionmenu.cpp:449
 #, kde-format
 msgid "Row Below"
 msgstr "Врста испод"
 
-#: tableactionmenu.cpp:445 tableactionmenu.cpp:482
+#: tableactionmenu.cpp:423 tableactionmenu.cpp:456
 #, kde-format
 msgid "Row Above"
 msgstr "Врста изнад"
 
-#: tableactionmenu.cpp:455 tableactionmenu.cpp:490
+#: tableactionmenu.cpp:431 tableactionmenu.cpp:464
 #, kde-format
 msgid "Column Before"
 msgstr "Колона пре"
 
-#: tableactionmenu.cpp:465 tableactionmenu.cpp:498
+#: tableactionmenu.cpp:439 tableactionmenu.cpp:472
 #, kde-format
 msgid "Column After"
 msgstr "Колона после"
 
-#: tableactionmenu.cpp:472
+#: tableactionmenu.cpp:446
 #, kde-format
 msgid "Delete"
 msgstr "Обриши"
 
-#: tableactionmenu.cpp:506
+#: tableactionmenu.cpp:480
 #, kde-format
 msgid "Cell Contents"
 msgstr "Садржај ћелије"
 
-#: tableactionmenu.cpp:517
+#: tableactionmenu.cpp:489
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "Споји са ћелијом десно"
 
-#: tableactionmenu.cpp:524
+#: tableactionmenu.cpp:496
 #, kde-format
 msgid "Join Selected Cells"
 msgstr "Споји изабране ћелије"
 
-#: tableactionmenu.cpp:533
+#: tableactionmenu.cpp:503
 #, kde-format
 msgid "Split cells"
 msgstr "Подели ћелије"
 
-#: tableactionmenu.cpp:542
+#: tableactionmenu.cpp:512
 #, kde-format
 msgid "Table Format..."
 msgstr "Формат табеле..."
 
 # rewrite-msgid: /Table//
-#: tableactionmenu.cpp:549
+#: tableactionmenu.cpp:519
 #, kde-format
 msgid "Table Cell Format..."
 msgstr "Формат ћелије..."
 
-#: tablecellformatdialog.cpp:41
+#: tablecellformatdialog.cpp:28
 #, fuzzy, kde-format
 #| msgid "Cell Format"
 msgctxt "@title:window"
 msgid "Cell Format"
 msgstr "Формат ћелије"
 
-#: tablecellformatdialog.cpp:46
+#: tablecellformatdialog.cpp:33
 #, kde-format
 msgid "Vertical Alignment:"
 msgstr "Усправно поравнање:"
 
-#: tablecellformatdialog.cpp:49
+#: tablecellformatdialog.cpp:36
 #, kde-format
 msgid "Top"
 msgstr "врх"
 
-#: tablecellformatdialog.cpp:50
+#: tablecellformatdialog.cpp:37
 #, kde-format
 msgid "Middle"
 msgstr "средина"
 
-#: tablecellformatdialog.cpp:51
+#: tablecellformatdialog.cpp:38
 #, kde-format
 msgid "Bottom"
 msgstr "дно"
 
-#: tablecellformatdialog.cpp:60 tableformatdialog.cpp:96
+#: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
 #, kde-format
 msgid "Background Color:"
 msgstr "Боја позадине:"
 
-#: tableformatdialog.cpp:44
+#: tableformatdialog.cpp:31
 #, fuzzy, kde-format
 #| msgid "Table Format"
 msgctxt "@title:window"
 msgid "Table Format"
 msgstr "Формат табеле"
 
-#: tableformatdialog.cpp:57
+#: tableformatdialog.cpp:44
 #, kde-format
 msgid "Spacing:"
 msgstr "Размак:"
 
-#: tableformatdialog.cpp:62
+#: tableformatdialog.cpp:49
 #, kde-format
 msgid "pixels between cells"
 msgstr "пиксела између ћелија"
 
-#: tableformatdialog.cpp:67
+#: tableformatdialog.cpp:54
 #, kde-format
 msgid "Padding:"
 msgstr "Одступ:"
 
-#: tableformatdialog.cpp:72
+#: tableformatdialog.cpp:59
 #, kde-format
 msgid "pixels between cell border and content"
 msgstr "пиксела између ивице и садржаја ћелије"
 
 # >> @item:inlistbox alignment
-#: tableformatdialog.cpp:80
+#: tableformatdialog.cpp:67
 #, kde-format
 msgid "Left"
 msgstr "лево"
 
 # >> @item:inlistbox alignment
-#: tableformatdialog.cpp:81
+#: tableformatdialog.cpp:68
 #, kde-format
 msgid "Right"
 msgstr "десно"
 
 # >> @item:inlistbox alignment
-#: tableformatdialog.cpp:82
+#: tableformatdialog.cpp:69
 #, kde-format
 msgid "Center"
 msgstr "средина"
 
 # >> @item:inlistbox alignment
-#: tableformatdialog.cpp:83
+#: tableformatdialog.cpp:70
 #, kde-format
 msgid "Justify"
 msgstr "развучено"
 
-#: tableformatdialog.cpp:86
+#: tableformatdialog.cpp:73
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Поравнање табеле:"
 
-#: texteditor/commonwidget/texteditfindbarbase.cpp:46
-#: texteditor/commonwidget/texteditfindbarbase.cpp:49
-#: texteditor/commonwidget/textgotolinewidget.cpp:54
-#: texteditor/commonwidget/textgotolinewidget.cpp:57
-#: texttospeech/texttospeechwidget.cpp:62
-#, kde-format
-msgid "Close"
-msgstr "Затвори"
+#~ msgid "Delete Line"
+#~ msgstr "Обриши ред"
 
-#: texteditor/commonwidget/texteditfindbarbase.cpp:156
-#, kde-format
-msgid ""
-"End of message reached.\n"
-"Phrase '%1' could not be found."
-msgstr ""
-"Досегнут крај поруке.\n"
-"Фраза „%1“ није нађена."
+#~ msgid "Add Smiley"
+#~ msgstr "Додај смешак"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:38
-#, kde-format
-msgctxt "Replace text"
-msgid "Replace:"
-msgstr "Замијени:"
+#, fuzzy
+#~| msgid "Options"
+#~ msgid "Emotions"
+#~ msgstr "Опције"
 
-#: texteditor/commonwidget/textfindreplacewidget.cpp:48
-#, kde-format
-msgid "Replace"
-msgstr "Замијени"
-
-#: texteditor/commonwidget/textfindreplacewidget.cpp:52
-#, kde-format
-msgid "Replace All"
-msgstr "Замијени све"
-
-#: texteditor/commonwidget/textfindreplacewidget.cpp:79
-#, kde-format
-msgctxt "Find text"
-msgid "F&ind:"
-msgstr "&Нађи:"
-
-#: texteditor/commonwidget/textfindreplacewidget.cpp:83
-#, kde-format
-msgid "Text to search for"
-msgstr "Текст који се тражи"
-
-#: texteditor/commonwidget/textfindreplacewidget.cpp:88
-#, kde-format
-msgctxt "Find and go to the next search match"
-msgid "Next"
-msgstr "Сљедеће"
-
-#: texteditor/commonwidget/textfindreplacewidget.cpp:89
-#, kde-format
-msgid "Jump to next match"
-msgstr "Скочи на сљедеће поклапање"
-
-#: texteditor/commonwidget/textfindreplacewidget.cpp:93
-#, kde-format
-msgctxt "Find and go to the previous search match"
-msgid "Previous"
-msgstr "Претходно"
-
-#: texteditor/commonwidget/textfindreplacewidget.cpp:94
-#, kde-format
-msgid "Jump to previous match"
-msgstr "Скочи на претходно поклапање"
-
-#: texteditor/commonwidget/textfindreplacewidget.cpp:99
-#, kde-format
-msgid "Options"
-msgstr "Опције"
-
-# >> @info:tooltip
-#: texteditor/commonwidget/textfindreplacewidget.cpp:100
-#, kde-format
-msgid "Modify search behavior"
-msgstr "Измените понашање претраге."
-
-#: texteditor/commonwidget/textfindreplacewidget.cpp:102
-#, kde-format
-msgid "Case sensitive"
-msgstr "Разликуј величину слова"
-
-#: texteditor/commonwidget/textfindreplacewidget.cpp:105
-#, kde-format
-msgid "Whole word"
-msgstr "Цела реч"
-
-#: texteditor/commonwidget/textfindreplacewidget.cpp:108
-#, kde-format
-msgid "Regular Expression"
-msgstr "Регуларни израз"
-
-#: texteditor/commonwidget/textgotolinewidget.cpp:64
-#, kde-format
-msgid "Go to Line:"
-msgstr "Иди на ред:"
-
-#: texteditor/commonwidget/textgotolinewidget.cpp:71
-#, kde-format
-msgid "Go"
-msgstr "Иди"
-
-#: texteditor/plaintexteditor/plaintexteditfindbar.cpp:116
-#: texteditor/richtexteditor/richtexteditfindbar.cpp:116
-#, kde-format
-msgid "%1 replacement made"
-msgid_plural "%1 replacements made"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-
-#: texteditor/plaintexteditor/plaintexteditor.cpp:149
-#: texteditor/richtexteditor/richtexteditor.cpp:182
-#, kde-format
-msgid "Replace..."
-msgstr "Замијени..."
-
-#: texteditor/plaintexteditor/plaintexteditor.cpp:163
-#: texteditor/richtexteditor/richtexteditor.cpp:197
-#, kde-format
-msgid "Check Spelling..."
-msgstr "Провјери правопис..."
-
-#: texteditor/plaintexteditor/plaintexteditor.cpp:166
-#: texteditor/richtexteditor/richtexteditor.cpp:202
-#, kde-format
-msgid "Auto Spell Check"
-msgstr "Аутоматска провјера правописа"
-
-#: texteditor/plaintexteditor/plaintexteditor.cpp:172
-#: texteditor/richtexteditor/richtexteditor.cpp:208
-#, kde-format
-msgid "Spell Checking Language"
-msgstr "Језик провјере правописа"
-
-#: texteditor/plaintexteditor/plaintexteditor.cpp:200
-#: texteditor/richtexteditor/richtexteditor.cpp:242
-#, kde-format
-msgid "Speak Text"
-msgstr "Изговори текст"
-
-#: texteditor/plaintexteditor/plaintexteditor.cpp:341
-#: texteditor/richtexteditor/richtexteditor.cpp:420
-#, kde-format
-msgid "Nothing to spell check."
-msgstr "Нема ничег за провјеру правописа."
-
-#: texteditor/plaintexteditor/plaintexteditor.cpp:346
-#: texteditor/richtexteditor/richtexteditor.cpp:433
-#, kde-format
-msgid "No backend available for spell checking."
-msgstr "Нема позадине за провјеру правописа."
-
-#: texteditor/richtexteditor/richtexteditor.cpp:234
-#, kde-format
-msgid "Allow Tabulations"
-msgstr "Дозволи табулације"
-
-#: texteditor/richtexteditor/richtexteditor.cpp:429
-#, fuzzy, kde-format
-#| msgid "No backend available for spell checking."
-msgid ""
-"No backend available for spell checking. Do you want to send the email "
-"anyways?"
-msgstr "Нема позадине за провјеру правописа."
-
-#: texteditor/richtexteditor/richtexteditor.cpp:449
-#, kde-format
-msgid "Skip"
-msgstr "Прескочи"
-
-#: texttospeech/texttospeechactions.cpp:43
-#: texttospeech/texttospeechactions.cpp:46
-#, kde-format
-msgid "Stop"
-msgstr "Заустави"
-
-#: texttospeech/texttospeechactions.cpp:89
-#, kde-format
-msgid "Pause"
-msgstr "Паузирај"
-
-#: texttospeech/texttospeechactions.cpp:89
-#, kde-format
-msgid "Play"
-msgstr "Пусти"
+#, fuzzy
+#~| msgid "Replace"
+#~ msgid "Place"
+#~ msgstr "Замијени"
 
 # >> @title:window
-#: texttospeech/texttospeechconfigdialog.cpp:35
-#, fuzzy, kde-format
-#| msgid "Configure Text-To-Speech"
-msgctxt "@title:window"
-msgid "Configure Text-To-Speech"
-msgstr "Подешавање текста‑у‑говор"
+#, fuzzy
+#~| msgid "Select Special Characters"
+#~ msgctxt "@title:window"
+#~ msgid "Select Special Characters"
+#~ msgstr "Избор посебних знакова"
 
-#: texttospeech/texttospeechconfigwidget.cpp:46
-#: texttospeech/texttospeechwidget.cpp:67
-#, kde-format
-msgid "Volume:"
-msgstr "Јачина:"
+#~ msgid "Select"
+#~ msgstr "Изабери"
 
-#: texttospeech/texttospeechconfigwidget.cpp:53
-#, kde-format
-msgid "Rate:"
-msgstr "Проток:"
+#~ msgid "Close"
+#~ msgstr "Затвори"
 
-#: texttospeech/texttospeechconfigwidget.cpp:62
-#, kde-format
-msgid "Pitch:"
-msgstr "Висина:"
+#~ msgid ""
+#~ "End of message reached.\n"
+#~ "Phrase '%1' could not be found."
+#~ msgstr ""
+#~ "Досегнут крај поруке.\n"
+#~ "Фраза „%1“ није нађена."
 
-#: texttospeech/texttospeechconfigwidget.cpp:66
-#, kde-format
-msgid "Engine:"
-msgstr "Мотор:"
+#~ msgctxt "Replace text"
+#~ msgid "Replace:"
+#~ msgstr "Замијени:"
 
-#: texttospeech/texttospeechconfigwidget.cpp:72
-#, kde-format
-msgid "Language:"
-msgstr "Језик:"
+#~ msgid "Replace"
+#~ msgstr "Замијени"
 
-#: texttospeech/texttospeechconfigwidget.cpp:78
-#, kde-format
-msgid "Voice:"
-msgstr "Глас:"
+#~ msgid "Replace All"
+#~ msgstr "Замијени све"
+
+#~ msgctxt "Find text"
+#~ msgid "F&ind:"
+#~ msgstr "&Нађи:"
+
+#~ msgid "Text to search for"
+#~ msgstr "Текст који се тражи"
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "Сљедеће"
+
+#~ msgid "Jump to next match"
+#~ msgstr "Скочи на сљедеће поклапање"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "Претходно"
+
+#~ msgid "Jump to previous match"
+#~ msgstr "Скочи на претходно поклапање"
+
+#~ msgid "Options"
+#~ msgstr "Опције"
+
+# >> @info:tooltip
+#~ msgid "Modify search behavior"
+#~ msgstr "Измените понашање претраге."
+
+#~ msgid "Case sensitive"
+#~ msgstr "Разликуј величину слова"
+
+#~ msgid "Whole word"
+#~ msgstr "Цела реч"
+
+#~ msgid "Regular Expression"
+#~ msgstr "Регуларни израз"
+
+#~ msgid "Go to Line:"
+#~ msgstr "Иди на ред:"
+
+#~ msgid "Go"
+#~ msgstr "Иди"
+
+#~ msgid "Replace..."
+#~ msgstr "Замијени..."
+
+#~ msgid "Check Spelling..."
+#~ msgstr "Провјери правопис..."
+
+#~ msgid "Auto Spell Check"
+#~ msgstr "Аутоматска провјера правописа"
+
+#~ msgid "Spell Checking Language"
+#~ msgstr "Језик провјере правописа"
+
+#~ msgid "Speak Text"
+#~ msgstr "Изговори текст"
+
+#~ msgid "Nothing to spell check."
+#~ msgstr "Нема ничег за провјеру правописа."
+
+#~ msgid "No backend available for spell checking."
+#~ msgstr "Нема позадине за провјеру правописа."
+
+#~ msgid "Allow Tabulations"
+#~ msgstr "Дозволи табулације"
+
+#, fuzzy
+#~| msgid "No backend available for spell checking."
+#~ msgid ""
+#~ "No backend available for spell checking. Do you want to send the email "
+#~ "anyways?"
+#~ msgstr "Нема позадине за провјеру правописа."
+
+#~ msgid "Skip"
+#~ msgstr "Прескочи"
+
+#~ msgid "Stop"
+#~ msgstr "Заустави"
+
+#~ msgid "Pause"
+#~ msgstr "Паузирај"
+
+#~ msgid "Play"
+#~ msgstr "Пусти"
+
+# >> @title:window
+#, fuzzy
+#~| msgid "Configure Text-To-Speech"
+#~ msgctxt "@title:window"
+#~ msgid "Configure Text-To-Speech"
+#~ msgstr "Подешавање текста‑у‑говор"
+
+#~ msgid "Volume:"
+#~ msgstr "Јачина:"
+
+#~ msgid "Rate:"
+#~ msgstr "Проток:"
+
+#~ msgid "Pitch:"
+#~ msgstr "Висина:"
+
+#~ msgid "Engine:"
+#~ msgstr "Мотор:"
+
+#~ msgid "Language:"
+#~ msgstr "Језик:"
+
+#~ msgid "Voice:"
+#~ msgstr "Глас:"
 
 # >> @item:inlistbox Voice:
-#: texttospeech/texttospeechconfigwidget.cpp:152
-#, kde-format
-msgctxt "Default tts engine"
-msgid "Default"
-msgstr "подразумевани"
+#~ msgctxt "Default tts engine"
+#~ msgid "Default"
+#~ msgstr "подразумевани"
 
-#: texttospeech/texttospeechwidget.cpp:90
-#, kde-format
-msgid "Configure..."
-msgstr "Подеси..."
+#~ msgid "Configure..."
+#~ msgstr "Подеси..."
