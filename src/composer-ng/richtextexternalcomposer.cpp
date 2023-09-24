@@ -66,7 +66,7 @@ void RichTextExternalComposer::startExternalEditor()
         const QString commandLine = d->extEditorPath.trimmed();
         if (d->extEditorPath.isEmpty()) {
             setUseExternalEditor(false);
-            KMessageBox::error(d->richTextComposer, i18n("Command line is empty. Please verify settings."), i18n("Empty command line"));
+            KMessageBox::error(d->richTextComposer, i18n("Command line is empty. Please verify settings."), i18nc("@title:window", "Empty command line"));
             return;
         }
 
