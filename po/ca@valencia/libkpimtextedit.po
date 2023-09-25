@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2023-09-22 11:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -388,7 +388,9 @@ msgid "Command line is empty. Please verify settings."
 msgstr "La línia d'ordres està buida. Verifiqueu els paràmetres."
 
 #: composer-ng/richtextexternalcomposer.cpp:69
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Empty command line"
+msgctxt "@title:window"
 msgid "Empty command line"
 msgstr "Línia d'ordres buida"
 

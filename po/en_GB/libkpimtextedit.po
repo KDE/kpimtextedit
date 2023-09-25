@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2023-04-08 11:10+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -384,7 +384,9 @@ msgid "Command line is empty. Please verify settings."
 msgstr "Command line is empty. Please verify settings."
 
 #: composer-ng/richtextexternalcomposer.cpp:69
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Empty command line"
+msgctxt "@title:window"
 msgid "Empty command line"
 msgstr "Empty command line"
 

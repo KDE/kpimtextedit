@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepimlibs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2015-02-04 15:38+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -395,6 +395,7 @@ msgstr ""
 
 #: composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
+msgctxt "@title:window"
 msgid "Empty command line"
 msgstr ""
 
