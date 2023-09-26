@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:40+0000\n"
-"PO-Revision-Date: 2023-09-22 11:30+0200\n"
+"PO-Revision-Date: 2023-09-25 09:31+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -388,8 +388,7 @@ msgid "Command line is empty. Please verify settings."
 msgstr "La línia d'ordres està buida. Si us plau, verifiqueu els paràmetres."
 
 #: composer-ng/richtextexternalcomposer.cpp:69
-#, fuzzy, kde-format
-#| msgid "Empty command line"
+#, kde-format
 msgctxt "@title:window"
 msgid "Empty command line"
 msgstr "Línia d'ordres buida"
@@ -685,163 +684,3 @@ msgstr "Justificat"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Alineació de la taula:"
-
-#~ msgid "Delete Line"
-#~ msgstr "Suprimeix la línia"
-
-#~ msgid "Clear Recents"
-#~ msgstr "Neteja els recents"
-
-#~ msgid "Add Smiley"
-#~ msgstr "Afegeix una emoticona"
-
-#~ msgid "Search Emoticon..."
-#~ msgstr "Cerca una emoticona..."
-
-#~ msgid "Result"
-#~ msgstr "Resultat"
-
-#~ msgid "Recents"
-#~ msgstr "Recents"
-
-#~ msgid "Symbols"
-#~ msgstr "Símbols"
-
-#~ msgid "Activity"
-#~ msgstr "Activitat"
-
-#~ msgid "Objects"
-#~ msgstr "Objectes"
-
-#~ msgid "Nature"
-#~ msgstr "Natura"
-
-#~ msgid "Food"
-#~ msgstr "Menjar"
-
-#~ msgid "People"
-#~ msgstr "Persones"
-
-#~ msgid "Travel"
-#~ msgstr "Viatges"
-
-#~ msgid "Regional"
-#~ msgstr "Regional"
-
-#~ msgid "Flags"
-#~ msgstr "Banderes"
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Special Characters"
-#~ msgstr "Selecció de caràcters especials"
-
-#~ msgid "Select"
-#~ msgstr "Selecciona"
-
-#~ msgid "Close"
-#~ msgstr "Tanca"
-
-#~ msgid ""
-#~ "End of message reached.\n"
-#~ "Phrase '%1' could not be found."
-#~ msgstr ""
-#~ "S'ha arribat al final del missatge.\n"
-#~ "No s'ha pogut trobar la frase «%1»."
-
-#~ msgid "Replace"
-#~ msgstr "Substitueix"
-
-#~ msgid "Replace All"
-#~ msgstr "Substitueix-ho tot"
-
-#~ msgctxt "Replace text"
-#~ msgid "Replace:"
-#~ msgstr "Substitueix:"
-
-#~ msgctxt "Find and go to the previous search match"
-#~ msgid "Previous"
-#~ msgstr "Anterior"
-
-#~ msgctxt "Find and go to the next search match"
-#~ msgid "Next"
-#~ msgstr "Següent"
-
-#~ msgctxt "Find text"
-#~ msgid "F&ind:"
-#~ msgstr "C&erca:"
-
-#~ msgid "Text to search for"
-#~ msgstr "Text a cercar"
-
-#~ msgid "Jump to next match"
-#~ msgstr "Salta a la coincidència següent"
-
-#~ msgid "Jump to previous match"
-#~ msgstr "Salta a la coincidència anterior"
-
-#~ msgid "Options"
-#~ msgstr "Opcions"
-
-#~ msgid "Modify search behavior"
-#~ msgstr "Modifica el comportament de la cerca"
-
-#~ msgid "Case sensitive"
-#~ msgstr "Distingeix majúscules i minúscules"
-
-#~ msgid "Whole word"
-#~ msgstr "Paraula sencera"
-
-#~ msgid "Regular Expression"
-#~ msgstr "Expressió regular"
-
-#~ msgid "Respect Diacritic and Accents"
-#~ msgstr "Respecta els diacrítics i els accents"
-
-#~ msgid "Go to Line:"
-#~ msgstr "Ves a la línia:"
-
-#~ msgid "Go"
-#~ msgstr "Ves"
-
-#~ msgid "%1 replacement made"
-#~ msgid_plural "%1 replacements made"
-#~ msgstr[0] "S'ha fet %1 substitució"
-#~ msgstr[1] "S'han fet %1 substitucions"
-
-#~ msgid "Replace..."
-#~ msgstr "Substitueix..."
-
-#~ msgid "Check Spelling..."
-#~ msgstr "Verifica l'ortografia..."
-
-#~ msgid "Auto Spell Check"
-#~ msgstr "Verifica automàticament l'ortogràfica"
-
-#~ msgid "Spell Checking Language"
-#~ msgstr "Idioma de la verificació ortogràfica"
-
-#~ msgid "Speak Text"
-#~ msgstr "Pronuncia el text"
-
-#~ msgid "Nothing to spell check."
-#~ msgstr "No hi ha res a verificar ortogràficament."
-
-#~ msgid "No backend available for spell checking."
-#~ msgstr "No hi ha disponible cap dorsal per a la verificació ortogràfica."
-
-#~ msgid "Allow Tabulations"
-#~ msgstr "Permet tabulacions"
-
-#~ msgid ""
-#~ "No backend available for spell checking. Do you want to send the email "
-#~ "anyways?"
-#~ msgstr ""
-#~ "No hi ha disponible cap dorsal per a la verificació ortogràfica. Voleu "
-#~ "enviar el correu igualment?"
-
-#~ msgctxt "@action:button"
-#~ msgid "Send"
-#~ msgstr "Envia"
-
-#~ msgid "Skip"
-#~ msgstr "Omet"

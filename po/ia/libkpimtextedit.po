@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:40+0000\n"
-"PO-Revision-Date: 2023-04-09 22:30+0200\n"
+"PO-Revision-Date: 2023-09-25 10:16+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.03.90\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: composer-ng/klinkdialog.cpp:24
@@ -383,8 +383,7 @@ msgid "Command line is empty. Please verify settings."
 msgstr "Linea de commando es vacue. Pro favor tu verifica le preferentias."
 
 #: composer-ng/richtextexternalcomposer.cpp:69
-#, fuzzy, kde-format
-#| msgid "Empty command line"
+#, kde-format
 msgctxt "@title:window"
 msgid "Empty command line"
 msgstr "Linea de commando vacue"
