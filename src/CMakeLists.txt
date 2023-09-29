@@ -182,9 +182,6 @@ install(FILES
     COMPONENT Devel
     )
 
-ecm_generate_pri_file(BASE_NAME KPIMTextEdit LIB_NAME KPim6TextEdit DEPS "KPIMTextEditTextToSpeech" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit/)
-install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
-
 if (BUILD_TESTING)
     add_subdirectory(composer-ng/autotests)
     add_subdirectory(composer-ng/tests)
