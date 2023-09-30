@@ -12,8 +12,7 @@ portingAid: false
 deprecated: false
 release: false
 libraries:
- - qmake: KPIMTextEdit
-   cmake: "KPim6::PIMTextEdit"
+ - cmake: "KPim6::PIMTextEdit"
 
 cmakename: KPim6PIMTextEdit 
 
