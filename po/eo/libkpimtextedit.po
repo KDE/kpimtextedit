@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:40+0000\n"
-"PO-Revision-Date: 2023-09-25 23:06+0100\n"
+"PO-Revision-Date: 2023-10-01 05:27+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: pology\n"
+"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: composer-ng/klinkdialog.cpp:24
@@ -141,7 +141,7 @@ msgstr "S&ubstrekita"
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
-msgstr ""
+msgstr "For&streki"
 
 #: composer-ng/richtextcomposeractions.cpp:236
 #, kde-format
@@ -260,22 +260,22 @@ msgstr "I II III"
 #: composer-ng/richtextcomposeractions.cpp:321
 #, kde-format
 msgid "Pa&ste as Quotation"
-msgstr ""
+msgstr "Alglui kiel &Citaĵo"
 
 #: composer-ng/richtextcomposeractions.cpp:329
 #, kde-format
 msgid "Add &Quote Characters"
-msgstr ""
+msgstr "Aldo&ni Citilojn"
 
 #: composer-ng/richtextcomposeractions.cpp:336
 #, kde-format
 msgid "Re&move Quote Characters"
-msgstr ""
+msgstr "Fo&rigi Citilojn"
 
 #: composer-ng/richtextcomposeractions.cpp:343
 #, kde-format
 msgid "Paste Without Formatting"
-msgstr ""
+msgstr "Alglui Sen Formatado"
 
 #: composer-ng/richtextcomposeractions.cpp:351
 #, kde-format
@@ -365,7 +365,7 @@ msgstr "Elektobutono"
 #: composer-ng/richtextcomposercontroler.cpp:730
 #, kde-format
 msgid "Only local files are supported."
-msgstr ""
+msgstr "Nur lokaj dosieroj estas subtenataj."
 
 #: composer-ng/richtextcomposerimages.cpp:55
 #, kde-kuit-format
@@ -382,7 +382,7 @@ msgstr "bildo"
 #: composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
 msgid "Command line is empty. Please verify settings."
-msgstr ""
+msgstr "Komandlinio estas malplena. Bonvolu kontroli agordojn."
 
 #: composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
@@ -394,16 +394,17 @@ msgstr "Malplena komandolinio"
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr ""
+"Ekstera redaktilo ne povas esti komencita. Bonvolu kontroli komandon \"%1\""
 
 #: composer-ng/richtextexternalcomposer.cpp:140
 #, kde-format
 msgid "Error was found when we started external editor."
-msgstr ""
+msgstr "Eraro estis trovita kiam ni komencis eksteran redaktilon."
 
 #: composer-ng/richtextexternalcomposer.cpp:140
 #, kde-format
 msgid "External Editor Closed"
-msgstr ""
+msgstr "Ekstera Redaktoro Fermita"
 
 #: composer-ng/richtextexternalcomposer.cpp:157
 #, kde-kuit-format
@@ -413,154 +414,157 @@ msgid ""
 "keep it running?<nl/><warning>Stopping the editor will cause all your "
 "unsaved changes to be lost.</warning>"
 msgstr ""
+"La ekstera redaktilo ankoraŭ funkcias.<nl/>Ĉu vi volas haltigi la redaktilon "
+"aŭ plufunkcii?<nl/><warning>Ĉesigi la redaktilon kaŭzos perdon de ĉiuj viaj "
+"nekonservitaj ŝanĝoj.</warning>"
 
 #: composer-ng/richtextexternalcomposer.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
-msgstr ""
+msgstr "Ekstera Redaktoro Rulanta"
 
 #: composer-ng/richtextexternalcomposer.cpp:162
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
-msgstr ""
+msgstr "Haltigi Redaktilon"
 
 #: composer-ng/richtextexternalcomposer.cpp:163
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
-msgstr ""
+msgstr "Konservi Redaktilon Rulanta"
 
 #: inserthtmldialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
-msgstr ""
+msgstr "Enigi HTML"
 
 #: inserthtmldialog.cpp:36
 #, kde-format
 msgid "Insert HTML tags and texts:"
-msgstr ""
+msgstr "Enmeti HTML-etikedojn kaj tekstojn:"
 
 #: inserthtmldialog.cpp:42
 #, kde-format
 msgid "Example: <i> Hello word </i>"
-msgstr ""
+msgstr "Ekzemplo: <i> Saluton vorto </i>"
 
 #: inserthtmldialog.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
-msgstr ""
+msgstr "Enmeti"
 
 #: insertimagedialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
-msgstr ""
+msgstr "Enmeti Bildon"
 
 #: insertimagedialog.cpp:36 inserttabledialog.cpp:37 tableactionmenu.cpp:405
 #, kde-format
 msgid "Insert"
-msgstr ""
+msgstr "Enmeti"
 
 #: insertimagewidget.cpp:40
 #, kde-format
 msgid "Image Location:"
-msgstr ""
+msgstr "Bilda Loko:"
 
 #: insertimagewidget.cpp:53
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
-msgstr ""
+msgstr "Aldoni Bildon"
 
 #: insertimagewidget.cpp:64
 #, kde-format
 msgid "Keep Original Size"
-msgstr ""
+msgstr "Konservi Originalan Grandecon"
 
 #: insertimagewidget.cpp:71
 #, kde-format
 msgid "Keep Image Ratio"
-msgstr ""
+msgstr "Konservi Bildproporcion"
 
 #: insertimagewidget.cpp:77 inserttablewidget.cpp:59
 #, kde-format
 msgid "Width:"
-msgstr ""
+msgstr "Larĝo:"
 
 #: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
-msgstr ""
+msgstr " px"
 
 #: insertimagewidget.cpp:92
 #, kde-format
 msgid "Height:"
-msgstr ""
+msgstr "Alteco:"
 
 #: insertimagewidget.cpp:110
 #, kde-format
 msgid "Image Preview:"
-msgstr ""
+msgstr "Bilda Antaŭrigardo:"
 
 #: inserttabledialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Table"
-msgstr ""
+msgstr "Enmeti Tabelon"
 
 #: inserttablewidget.cpp:40
 #, kde-format
 msgid "Rows:"
-msgstr ""
+msgstr "Vicoj:"
 
 #: inserttablewidget.cpp:43
 #, kde-format
 msgid "Columns:"
-msgstr ""
+msgstr "Kolumnoj:"
 
 #: inserttablewidget.cpp:46
 #, kde-format
 msgid "Border:"
-msgstr ""
+msgstr "Limo:"
 
 #: inserttablewidget.cpp:52
 #, no-c-format, kde-format
 msgid "% of windows"
-msgstr ""
+msgstr "% de fenestroj"
 
 #: inserttablewidget.cpp:53
 #, kde-format
 msgid "pixels"
-msgstr ""
+msgstr "pikseloj"
 
 #: tableactionmenu.cpp:408
 #, kde-format
 msgid "Table..."
-msgstr ""
+msgstr "Tabelo..."
 
 #: tableactionmenu.cpp:416 tableactionmenu.cpp:449
 #, kde-format
 msgid "Row Below"
-msgstr ""
+msgstr "Vico Malsupre"
 
 #: tableactionmenu.cpp:423 tableactionmenu.cpp:456
 #, kde-format
 msgid "Row Above"
-msgstr ""
+msgstr "Vico Supre"
 
 #: tableactionmenu.cpp:431 tableactionmenu.cpp:464
 #, kde-format
 msgid "Column Before"
-msgstr ""
+msgstr "Kolumno Antaŭ"
 
 #: tableactionmenu.cpp:439 tableactionmenu.cpp:472
 #, kde-format
 msgid "Column After"
-msgstr ""
+msgstr "Kolumno Post"
 
 #: tableactionmenu.cpp:446
 #, kde-format
@@ -570,111 +574,111 @@ msgstr "Forigi"
 #: tableactionmenu.cpp:480
 #, kde-format
 msgid "Cell Contents"
-msgstr ""
+msgstr "Ĉela Enhavo"
 
 #: tableactionmenu.cpp:489
 #, kde-format
 msgid "Join With Cell to the Right"
-msgstr ""
+msgstr "Kunigi Kun Ĉelo Dekstre"
 
 #: tableactionmenu.cpp:496
 #, kde-format
 msgid "Join Selected Cells"
-msgstr ""
+msgstr "Kunigi Elektitajn Ĉelojn"
 
 #: tableactionmenu.cpp:503
 #, kde-format
 msgid "Split cells"
-msgstr ""
+msgstr "Dividi ĉelojn"
 
 #: tableactionmenu.cpp:512
 #, kde-format
 msgid "Table Format..."
-msgstr ""
+msgstr "Tabelformato..."
 
 #: tableactionmenu.cpp:519
 #, kde-format
 msgid "Table Cell Format..."
-msgstr ""
+msgstr "Tabelĉela Formato..."
 
 #: tablecellformatdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Cell Format"
-msgstr ""
+msgstr "Ĉela Formato"
 
 #: tablecellformatdialog.cpp:33
 #, kde-format
 msgid "Vertical Alignment:"
-msgstr ""
+msgstr "Vertikala Vicigo:"
 
 #: tablecellformatdialog.cpp:36
 #, kde-format
 msgid "Top"
-msgstr ""
+msgstr "Supre"
 
 #: tablecellformatdialog.cpp:37
 #, kde-format
 msgid "Middle"
-msgstr ""
+msgstr "Meze"
 
 #: tablecellformatdialog.cpp:38
 #, kde-format
 msgid "Bottom"
-msgstr ""
+msgstr "Funde"
 
 #: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
 #, kde-format
 msgid "Background Color:"
-msgstr ""
+msgstr "Fona Koloro:"
 
 #: tableformatdialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Table Format"
-msgstr ""
+msgstr "Tabelformato"
 
 #: tableformatdialog.cpp:44
 #, kde-format
 msgid "Spacing:"
-msgstr ""
+msgstr "Interspaco:"
 
 #: tableformatdialog.cpp:49
 #, kde-format
 msgid "pixels between cells"
-msgstr ""
+msgstr "pikseloj inter ĉeloj"
 
 #: tableformatdialog.cpp:54
 #, kde-format
 msgid "Padding:"
-msgstr ""
+msgstr "Remburaĵo:"
 
 #: tableformatdialog.cpp:59
 #, kde-format
 msgid "pixels between cell border and content"
-msgstr ""
+msgstr "pikseloj inter ĉela limo kaj enhavo"
 
 #: tableformatdialog.cpp:67
 #, kde-format
 msgid "Left"
-msgstr ""
+msgstr "Maldekstre"
 
 #: tableformatdialog.cpp:68
 #, kde-format
 msgid "Right"
-msgstr ""
+msgstr "Dekstre"
 
 #: tableformatdialog.cpp:69
 #, kde-format
 msgid "Center"
-msgstr ""
+msgstr "Centre"
 
 #: tableformatdialog.cpp:70
 #, kde-format
 msgid "Justify"
-msgstr ""
+msgstr "Ĝisrandigi"
 
 #: tableformatdialog.cpp:73
 #, kde-format
 msgid "Table Alignment:"
-msgstr ""
+msgstr "Tabela ĝisrandigo:"
