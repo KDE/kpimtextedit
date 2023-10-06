@@ -243,7 +243,7 @@ public:
 
     @return The fully marked up text.
   */
-    Q_REQUIRED_RESULT virtual QString getResult() = 0;
+    [[nodiscard]] virtual QString getResult() = 0;
 
     virtual void addSingleBreakLine() = 0;
 };

@@ -60,13 +60,13 @@ public:
      * Returns the link text entered by the user.
      * @return The link text
      */
-    Q_REQUIRED_RESULT QString linkText() const;
+    [[nodiscard]] QString linkText() const;
 
     /**
      * Returns the target link url entered by the user.
      * @return The link url
      */
-    Q_REQUIRED_RESULT QString linkUrl() const;
+    [[nodiscard]] QString linkUrl() const;
 
 private:
     void slotTextChanged(const QString &);

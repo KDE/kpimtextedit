@@ -48,7 +48,7 @@ public:
      * @param event The event to be handled
      * @return Whether the event was completely handled by this method.
      */
-    Q_REQUIRED_RESULT bool handleBeforeKeyPressEvent(QKeyEvent *event);
+    [[nodiscard]] bool handleBeforeKeyPressEvent(QKeyEvent *event);
 
     /**
      *
@@ -93,7 +93,7 @@ public:
      *
      * @return Whether the item can be indented.
      */
-    Q_REQUIRED_RESULT bool canIndent() const;
+    [[nodiscard]] bool canIndent() const;
 
     /**
      * \brief Check whether the current item in the list may be dedented.
@@ -104,11 +104,11 @@ public:
      *
      * @return Whether the item can be dedented.
      */
-    Q_REQUIRED_RESULT bool canDedent() const;
+    [[nodiscard]] bool canDedent() const;
 
 private:
-    Q_REQUIRED_RESULT QTextCursor topOfSelection();
-    Q_REQUIRED_RESULT QTextCursor bottomOfSelection();
+    [[nodiscard]] QTextCursor topOfSelection();
+    [[nodiscard]] QTextCursor bottomOfSelection();
     void processList(QTextList *list);
     void reformatList(QTextBlock block);
     void reformatList();

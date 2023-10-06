@@ -27,9 +27,9 @@ public:
     ~RichTextComposerActions() override;
 
     void createActions(KActionCollection *ac);
-    Q_REQUIRED_RESULT int numberOfActions() const;
+    [[nodiscard]] int numberOfActions() const;
 
-    Q_REQUIRED_RESULT QList<QAction *> richTextActionList() const;
+    [[nodiscard]] QList<QAction *> richTextActionList() const;
 
     void uncheckActionFormatPainter();
     void updateActionStates();

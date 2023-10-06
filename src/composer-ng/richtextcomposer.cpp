@@ -50,7 +50,7 @@ public:
     struct UndoHtmlVersion {
         QString originalHtml;
         QString plainText;
-        Q_REQUIRED_RESULT bool isValid() const
+        [[nodiscard]] bool isValid() const
         {
             return !originalHtml.isEmpty() && !plainText.isEmpty();
         }

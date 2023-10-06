@@ -36,7 +36,7 @@ public:
     /**
      * @return The current text mode
      */
-    Q_REQUIRED_RESULT Mode textMode() const;
+    [[nodiscard]] Mode textMode() const;
 
     /**
      * Enables word wrap. Words will be wrapped at the specified column.
@@ -56,12 +56,12 @@ public:
      * @return the line number where the cursor is. This takes word-wrapping
      *         into account. Line numbers start at 0.
      */
-    Q_REQUIRED_RESULT int linePosition() const;
+    [[nodiscard]] int linePosition() const;
 
     /**
      * @return the column number where the cursor is.
      */
-    Q_REQUIRED_RESULT int columnNumber() const;
+    [[nodiscard]] int columnNumber() const;
 
     void forcePlainTextMarkup(bool force);
 
@@ -69,35 +69,35 @@ public:
     void switchToPlainText();
 
     void setTextOrHtml(const QString &text);
-    Q_REQUIRED_RESULT QString textOrHtml() const;
+    [[nodiscard]] QString textOrHtml() const;
 
     virtual void setHighlighterColors(KPIMTextEdit::RichTextComposerEmailQuoteHighlighter *highlighter);
 
     void setUseExternalEditor(bool use);
     void setExternalEditorPath(const QString &path);
-    Q_REQUIRED_RESULT bool checkExternalEditorFinished();
+    [[nodiscard]] bool checkExternalEditorFinished();
     void killExternalEditor();
 
     // Redefine it for each apps
     virtual QString smartQuote(const QString &msg); // need by kmail
 
     void setQuotePrefixName(const QString &quotePrefix);
-    Q_REQUIRED_RESULT QString quotePrefixName() const;
+    [[nodiscard]] QString quotePrefixName() const;
 
     void setCursorPositionFromStart(unsigned int pos);
-    Q_REQUIRED_RESULT int quoteLength(const QString &line, bool oneQuote = false) const;
-    Q_REQUIRED_RESULT bool isLineQuoted(const QString &line) const;
+    [[nodiscard]] int quoteLength(const QString &line, bool oneQuote = false) const;
+    [[nodiscard]] bool isLineQuoted(const QString &line) const;
     const QString defaultQuoteSign() const;
     void createActions(KActionCollection *ac);
 
-    Q_REQUIRED_RESULT QList<QAction *> richTextActionList() const;
+    [[nodiscard]] QList<QAction *> richTextActionList() const;
     void setEnableActions(bool state);
 
     KPIMTextEdit::RichTextComposerControler *composerControler() const;
     KPIMTextEdit::RichTextExternalComposer *externalComposer() const;
     KPIMTextEdit::RichTextComposerActions *composerActions() const;
     void createHighlighter() override;
-    Q_REQUIRED_RESULT virtual bool processModifyText(QKeyEvent *event);
+    [[nodiscard]] virtual bool processModifyText(QKeyEvent *event);
 
 public Q_SLOTS:
     void insertPlainTextImplementation();

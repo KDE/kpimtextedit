@@ -81,14 +81,14 @@ public:
     Adds a reference to @p reference to the internal list of references in the
     document.
   */
-    Q_REQUIRED_RESULT int addReference(const QString &reference);
+    [[nodiscard]] int addReference(const QString &reference);
 
     /**
     Returns the finalised plain text markup, including references at the end.
   */
-    Q_REQUIRED_RESULT QString getResult() override;
+    [[nodiscard]] QString getResult() override;
 
-    Q_REQUIRED_RESULT bool isQuoteBlock(qreal top, qreal bottom, qreal left, qreal right) const;
+    [[nodiscard]] bool isQuoteBlock(qreal top, qreal bottom, qreal left, qreal right) const;
 
     void beginForeground(const QBrush &brush) override;
     void endForeground() override;

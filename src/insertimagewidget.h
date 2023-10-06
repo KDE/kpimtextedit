@@ -22,15 +22,15 @@ public:
     ~InsertImageWidget() override;
 
     void setImageWidth(int value);
-    Q_REQUIRED_RESULT int imageWidth() const;
+    [[nodiscard]] int imageWidth() const;
 
     void setImageHeight(int value);
-    Q_REQUIRED_RESULT int imageHeight() const;
+    [[nodiscard]] int imageHeight() const;
 
-    Q_REQUIRED_RESULT QUrl imageUrl() const;
+    [[nodiscard]] QUrl imageUrl() const;
     void setImageUrl(const QUrl &url);
 
-    Q_REQUIRED_RESULT bool keepOriginalSize() const;
+    [[nodiscard]] bool keepOriginalSize() const;
 
 Q_SIGNALS:
     void enableButtonOk(bool enabled);

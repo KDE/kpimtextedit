@@ -19,17 +19,17 @@ class InsertTableDialog : public QDialog
 public:
     explicit InsertTableDialog(QWidget *parent);
     ~InsertTableDialog() override;
-    Q_REQUIRED_RESULT int columns() const;
-    Q_REQUIRED_RESULT int rows() const;
-    Q_REQUIRED_RESULT int border() const;
+    [[nodiscard]] int columns() const;
+    [[nodiscard]] int rows() const;
+    [[nodiscard]] int border() const;
 
     void setColumns(int col);
     void setRows(int rows);
     void setBorder(int border);
 
-    Q_REQUIRED_RESULT QTextLength::Type typeOfLength() const;
+    [[nodiscard]] QTextLength::Type typeOfLength() const;
     void setTypeOfLength(QTextLength::Type type);
-    Q_REQUIRED_RESULT int length() const;
+    [[nodiscard]] int length() const;
     void setLength(int);
 
 private:

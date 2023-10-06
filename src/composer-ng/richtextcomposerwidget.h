@@ -24,7 +24,7 @@ public:
     explicit RichTextComposerWidget(QWidget *parent = nullptr);
     ~RichTextComposerWidget() override;
 
-    Q_REQUIRED_RESULT KPIMTextEdit::RichTextComposer *richTextComposer() const;
+    [[nodiscard]] KPIMTextEdit::RichTextComposer *richTextComposer() const;
 
 private:
     std::unique_ptr<RichTextComposerWidgetPrivate> const d;

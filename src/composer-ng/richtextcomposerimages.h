@@ -73,9 +73,9 @@ public:
     void loadImage(const QImage &image, const QString &matchName, const QString &resourceName);
 
     void addImageHelper(const QString &imageName, const QImage &image, int width = -1, int height = -1);
-    Q_REQUIRED_RESULT ImageWithNameList imagesWithName() const;
-    Q_REQUIRED_RESULT QList<QSharedPointer<EmbeddedImage>> embeddedImages() const;
-    Q_REQUIRED_RESULT QList<QTextImageFormat> embeddedImageFormats() const;
+    [[nodiscard]] ImageWithNameList imagesWithName() const;
+    [[nodiscard]] QList<QSharedPointer<EmbeddedImage>> embeddedImages() const;
+    [[nodiscard]] QList<QTextImageFormat> embeddedImageFormats() const;
     void addImageHelper(const QUrl &url, int width = -1, int height = -1);
     void insertImage(const QImage &image, const QFileInfo &fileInfo);
 
@@ -96,9 +96,9 @@ public:
      *
      * @return a modified HTML code, where the \<img\> tags got replaced
      */
-    Q_REQUIRED_RESULT static QByteArray imageNamesToContentIds(const QByteArray &htmlBody, const ImageList &imageList);
+    [[nodiscard]] static QByteArray imageNamesToContentIds(const QByteArray &htmlBody, const ImageList &imageList);
 
-    Q_REQUIRED_RESULT QSharedPointer<EmbeddedImage> createEmbeddedImage(const QImage &img, const QString &imageName) const;
+    [[nodiscard]] QSharedPointer<EmbeddedImage> createEmbeddedImage(const QImage &img, const QString &imageName) const;
 
 private:
     class RichTextComposerImagesPrivate;

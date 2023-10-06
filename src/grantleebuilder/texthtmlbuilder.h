@@ -205,7 +205,7 @@ public:
   */
     void appendRawText(const QString &text) override;
 
-    Q_REQUIRED_RESULT QString getResult() override;
+    [[nodiscard]] QString getResult() override;
 
     void addSingleBreakLine() override;
 

@@ -24,7 +24,7 @@ public:
     ~RichTextComposerEmailQuoteDecorator() override;
 
 protected:
-    Q_REQUIRED_RESULT bool isSpellCheckingEnabledForBlock(const QString &blockText) const override;
+    [[nodiscard]] bool isSpellCheckingEnabledForBlock(const QString &blockText) const override;
 
 private:
     class RichTextComposerEmailQuoteDecoratorPrivate;

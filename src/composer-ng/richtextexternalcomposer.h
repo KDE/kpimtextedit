@@ -25,17 +25,17 @@ public:
     explicit RichTextExternalComposer(RichTextComposer *composer, QObject *parent = nullptr);
     ~RichTextExternalComposer() override;
 
-    Q_REQUIRED_RESULT bool useExternalEditor() const;
+    [[nodiscard]] bool useExternalEditor() const;
     void setUseExternalEditor(bool value);
 
     void startExternalEditor();
 
     void setExternalEditorPath(const QString &path);
-    Q_REQUIRED_RESULT QString externalEditorPath() const;
-    Q_REQUIRED_RESULT bool checkExternalEditorFinished();
+    [[nodiscard]] QString externalEditorPath() const;
+    [[nodiscard]] bool checkExternalEditorFinished();
     void killExternalEditor();
 
-    Q_REQUIRED_RESULT bool isInProgress() const;
+    [[nodiscard]] bool isInProgress() const;
 
 Q_SIGNALS:
     void externalEditorClosed();

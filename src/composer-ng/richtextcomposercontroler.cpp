@@ -66,7 +66,7 @@ public:
     void selectLinkText(QTextCursor *cursor) const;
     void fixupTextEditString(QString &text) const;
     void mergeFormatOnWordOrSelection(const QTextCharFormat &format);
-    Q_REQUIRED_RESULT QString addQuotesToText(const QString &inputText, const QString &defaultQuoteSign);
+    [[nodiscard]] QString addQuotesToText(const QString &inputText, const QString &defaultQuoteSign);
     void updateLink(const QString &linkUrl, const QString &linkText);
     QFont saveFont;
     QColor mLinkColor;

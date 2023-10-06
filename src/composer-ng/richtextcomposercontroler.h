@@ -26,33 +26,33 @@ public:
     explicit RichTextComposerControler(RichTextComposer *richtextComposer, QObject *parent = nullptr);
     ~RichTextComposerControler() override;
 
-    Q_REQUIRED_RESULT RichTextComposer *richTextComposer() const;
+    [[nodiscard]] RichTextComposer *richTextComposer() const;
 
-    Q_REQUIRED_RESULT QString currentLinkUrl() const;
+    [[nodiscard]] QString currentLinkUrl() const;
 
-    Q_REQUIRED_RESULT QString currentLinkText() const;
+    [[nodiscard]] QString currentLinkText() const;
     void selectLinkText() const;
-    Q_REQUIRED_RESULT QString toCleanHtml() const;
+    [[nodiscard]] QString toCleanHtml() const;
 
-    Q_REQUIRED_RESULT bool canIndentList() const;
-    Q_REQUIRED_RESULT bool canDedentList() const;
+    [[nodiscard]] bool canIndentList() const;
+    [[nodiscard]] bool canDedentList() const;
 
-    Q_REQUIRED_RESULT NestedListHelper *nestedListHelper() const;
+    [[nodiscard]] NestedListHelper *nestedListHelper() const;
     void insertLink(const QString &url);
     void setCursorPositionFromStart(unsigned int pos);
     void ensureCursorVisible();
 
     RichTextComposerImages *composerImages() const;
-    Q_REQUIRED_RESULT bool painterActive() const;
+    [[nodiscard]] bool painterActive() const;
     void disablePainter();
-    Q_REQUIRED_RESULT bool isFormattingUsed() const;
+    [[nodiscard]] bool isFormattingUsed() const;
 
     void setFontForWholeText(const QFont &font);
     void textModeChanged(KPIMTextEdit::RichTextComposer::Mode mode);
     void updateLink(const QString &linkUrl, const QString &linkText);
-    Q_REQUIRED_RESULT QString toWrappedPlainText(QTextDocument *doc) const;
-    Q_REQUIRED_RESULT QString toWrappedPlainText() const;
-    Q_REQUIRED_RESULT QString toCleanPlainText(const QString &plainText = QString()) const;
+    [[nodiscard]] QString toWrappedPlainText(QTextDocument *doc) const;
+    [[nodiscard]] QString toWrappedPlainText() const;
+    [[nodiscard]] QString toCleanPlainText(const QString &plainText = QString()) const;
     void addQuotes(const QString &defaultQuote);
 public Q_SLOTS:
     void addCheckbox(bool add = true);

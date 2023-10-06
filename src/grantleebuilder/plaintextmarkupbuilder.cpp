@@ -27,15 +27,15 @@ public:
     @param The number to convert
     @return The letter string representation of the number.
   */
-    Q_REQUIRED_RESULT QString getLetterString(int itemNumber);
+    [[nodiscard]] QString getLetterString(int itemNumber);
 
-    Q_REQUIRED_RESULT QString getRomanString(int itemNumber);
+    [[nodiscard]] QString getRomanString(int itemNumber);
 
     /**
     Gets a block of references in the body of the text.
     This is an ordered list of links and images in the text.
   */
-    Q_REQUIRED_RESULT QString getReferences();
+    [[nodiscard]] QString getReferences();
 
     QStringList mUrls;
     QList<QTextListFormat::Style> currentListItemStyles;
