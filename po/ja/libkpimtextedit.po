@@ -677,11 +677,3 @@ msgstr ""
 #, kde-format
 msgid "Table Alignment:"
 msgstr ""
-
-#~ msgid "Delete Line"
-#~ msgstr "行を削除"
-
-#, fuzzy
-#~| msgid "Add Image"
-#~ msgid "Add Smiley"
-#~ msgstr "画像を追加"
