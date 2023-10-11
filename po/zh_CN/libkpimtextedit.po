@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:40+0000\n"
-"PO-Revision-Date: 2023-09-16 10:08\n"
+"PO-Revision-Date: 2023-10-10 14:25\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/kpimtextedit/libkpimtextedit.pot\n"
-"X-Crowdin-File-ID: 3757\n"
+"X-Crowdin-File: /kf6-trunk/messages/kpimtextedit/libkpimtextedit.pot\n"
+"X-Crowdin-File-ID: 45329\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -383,8 +383,7 @@ msgid "Command line is empty. Please verify settings."
 msgstr "命令行为空。请检查设置。"
 
 #: composer-ng/richtextexternalcomposer.cpp:69
-#, fuzzy, kde-format
-#| msgid "Empty command line"
+#, kde-format
 msgctxt "@title:window"
 msgid "Empty command line"
 msgstr "空命令行"
@@ -679,160 +678,3 @@ msgstr "两端对齐"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "表格对齐："
-
-#~ msgid "Delete Line"
-#~ msgstr "删除行"
-
-#~ msgid "Clear Recents"
-#~ msgstr "清除最近表情"
-
-#~ msgid "Add Smiley"
-#~ msgstr "添加表情"
-
-#~ msgid "Search Emoticon..."
-#~ msgstr "搜索表情..."
-
-#~ msgid "Result"
-#~ msgstr "结果"
-
-#~ msgid "Recents"
-#~ msgstr "最近"
-
-#~ msgid "Symbols"
-#~ msgstr "符号"
-
-#~ msgid "Activity"
-#~ msgstr "活动"
-
-#~ msgid "Objects"
-#~ msgstr "物品"
-
-#~ msgid "Nature"
-#~ msgstr "自然"
-
-#~ msgid "Food"
-#~ msgstr "食物"
-
-#~ msgid "People"
-#~ msgstr "人物"
-
-#~ msgid "Travel"
-#~ msgstr "旅游"
-
-#~ msgid "Regional"
-#~ msgstr "地区"
-
-#~ msgid "Flags"
-#~ msgstr "旗标"
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Special Characters"
-#~ msgstr "选择特殊字符"
-
-#~ msgid "Select"
-#~ msgstr "选择"
-
-#~ msgid "Close"
-#~ msgstr "关闭"
-
-#~ msgid ""
-#~ "End of message reached.\n"
-#~ "Phrase '%1' could not be found."
-#~ msgstr ""
-#~ "已到达信件尾。\n"
-#~ "无法找到“%1”。"
-
-#~ msgid "Replace"
-#~ msgstr "替换"
-
-#~ msgid "Replace All"
-#~ msgstr "全部替换"
-
-#~ msgctxt "Replace text"
-#~ msgid "Replace:"
-#~ msgstr "替换："
-
-#~ msgctxt "Find and go to the previous search match"
-#~ msgid "Previous"
-#~ msgstr "上一个"
-
-#~ msgctxt "Find and go to the next search match"
-#~ msgid "Next"
-#~ msgstr "下一个"
-
-#~ msgctxt "Find text"
-#~ msgid "F&ind:"
-#~ msgstr "查找(&I)："
-
-#~ msgid "Text to search for"
-#~ msgstr "要搜索的文本"
-
-#~ msgid "Jump to next match"
-#~ msgstr "跳转到下一个匹配"
-
-#~ msgid "Jump to previous match"
-#~ msgstr "跳转到上一个匹配"
-
-#~ msgid "Options"
-#~ msgstr "选项"
-
-#~ msgid "Modify search behavior"
-#~ msgstr "修改搜索行为"
-
-#~ msgid "Case sensitive"
-#~ msgstr "区分大小写"
-
-#~ msgid "Whole word"
-#~ msgstr "完整单词"
-
-#~ msgid "Regular Expression"
-#~ msgstr "正则表达式"
-
-#~ msgid "Respect Diacritic and Accents"
-#~ msgstr "遵守变音和重音"
-
-#~ msgid "Go to Line:"
-#~ msgstr "转到行："
-
-#~ msgid "Go"
-#~ msgstr "转到"
-
-#~ msgid "%1 replacement made"
-#~ msgid_plural "%1 replacements made"
-#~ msgstr[0] "完成 %1 处替换"
-
-#~ msgid "Replace..."
-#~ msgstr "替换..."
-
-#~ msgid "Check Spelling..."
-#~ msgstr "检查拼写..."
-
-#~ msgid "Auto Spell Check"
-#~ msgstr "自动拼写检查"
-
-#~ msgid "Spell Checking Language"
-#~ msgstr "拼写检查语言"
-
-#~ msgid "Speak Text"
-#~ msgstr "朗读文本"
-
-#~ msgid "Nothing to spell check."
-#~ msgstr "没有可供检查拼写的内容。"
-
-#~ msgid "No backend available for spell checking."
-#~ msgstr "没有可用的拼写检查后端。"
-
-#~ msgid "Allow Tabulations"
-#~ msgstr "允许制表符"
-
-#~ msgid ""
-#~ "No backend available for spell checking. Do you want to send the email "
-#~ "anyways?"
-#~ msgstr "没有可用的拼写检查后端。请问您是否仍然想要发送电子邮件？"
-
-#~ msgctxt "@action:button"
-#~ msgid "Send"
-#~ msgstr "发送"
-
-#~ msgid "Skip"
-#~ msgstr "跳过"
