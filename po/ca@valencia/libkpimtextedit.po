@@ -870,7 +870,7 @@ msgstr "Respecta els diacrítics i els accents"
 #: texteditor/commonwidget/textgotolinewidget.cpp:49
 #, kde-format
 msgid "Go to Line:"
-msgstr "Ves a la línia:"
+msgstr "Ves fins a la línia:"
 
 #: texteditor/commonwidget/textgotolinewidget.cpp:56
 #, kde-format
