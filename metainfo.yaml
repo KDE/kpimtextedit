@@ -12,9 +12,9 @@ portingAid: false
 deprecated: false
 release: false
 libraries:
- - cmake: "KPim6::PIMTextEdit"
+ - cmake: "KPim6::PimTextEdit"
 
-cmakename: KPim6PIMTextEdit 
+cmakename: KPim6TextEdit
 
 public_lib: true
 group: kdepim
