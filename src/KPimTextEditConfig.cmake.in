@@ -3,7 +3,6 @@
 
 @PACKAGE_INIT@
 include(CMakeFindDependencyMacro)
-find_dependency(KF6TextWidgets "@KF_MIN_VERSION@")
 if (@HAVE_TEXTTOSPEECH@)
 	find_dependency(KF6TextEditTextToSpeech "@KTEXTADDONS_MIN_VERSION@")
 endif()

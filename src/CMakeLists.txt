@@ -11,7 +11,6 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KPIMTEXTEDIT
 
 
 if(BUILD_TESTING)
-    find_package(KF6TextWidgets ${KF_MIN_VERSION} CONFIG REQUIRED)
     add_subdirectory(autotests)
     add_subdirectory(tests)
 endif()

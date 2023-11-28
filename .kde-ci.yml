@@ -14,7 +14,6 @@ Dependencies:
     'frameworks/syntax-highlighting': '@latest-kf6'
     'frameworks/kwidgetsaddons': '@latest-kf6'
     'frameworks/kxmlgui': '@latest-kf6'
-    'frameworks/ktextwidgets': '@latest-kf6'
     'frameworks/kcodecs': '@latest-kf6'
     'libraries/ktextaddons': '@latest-kf6'
     'frameworks/ktexttemplate': '@latest-kf6'
