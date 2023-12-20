@@ -3,42 +3,43 @@
 #
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2009.
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2012, 2013.
+# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:40+0000\n"
-"PO-Revision-Date: 2013-05-20 17:22+0800\n"
-"Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
-"Language-Team: Chinese Traditional <kde-tw@googlegroups.com>\n"
+"PO-Revision-Date: 2023-12-19 18:42+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
 msgid "Link Text:"
-msgstr ""
+msgstr "連結文字："
 
 #: composer-ng/klinkdialog.cpp:26
 #, kde-format
 msgid "Link URL:"
-msgstr ""
+msgstr "連結網址："
 
 #: composer-ng/klinkdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Link"
-msgstr ""
+msgstr "管理連結"
 
 #: composer-ng/richtextcomposeractions.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
-msgstr ""
+msgstr "向左對齊(&L)"
 
 #: composer-ng/richtextcomposeractions.cpp:102
 #, kde-format
@@ -47,11 +48,10 @@ msgid "Left"
 msgstr "置左"
 
 #: composer-ng/richtextcomposeractions.cpp:110
-#, fuzzy, kde-format
-#| msgid "Center"
+#, kde-format
 msgctxt "@action"
 msgid "Align &Center"
-msgstr "置中"
+msgstr "居中對齊(&C)"
 
 #: composer-ng/richtextcomposeractions.cpp:111
 #, kde-format
@@ -63,7 +63,7 @@ msgstr "置中"
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
-msgstr ""
+msgstr "向右對齊(&R)"
 
 #: composer-ng/richtextcomposeractions.cpp:120
 #, kde-format
@@ -72,11 +72,10 @@ msgid "Right"
 msgstr "置右"
 
 #: composer-ng/richtextcomposeractions.cpp:128
-#, fuzzy, kde-format
-#| msgid "Justify"
+#, kde-format
 msgctxt "@action"
 msgid "&Justify"
-msgstr "兩邊對齊"
+msgstr "兩邊對齊(&J)"
 
 #: composer-ng/richtextcomposeractions.cpp:129
 #, kde-format
@@ -88,197 +87,195 @@ msgstr "兩邊對齊"
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
-msgstr ""
+msgstr "左到右"
 
 #: composer-ng/richtextcomposeractions.cpp:145
 #, kde-format
 msgctxt "@label left-to-right"
 msgid "Left-to-Right"
-msgstr ""
+msgstr "左到右"
 
 #: composer-ng/richtextcomposeractions.cpp:153
 #, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
-msgstr ""
+msgstr "右到左"
 
 #: composer-ng/richtextcomposeractions.cpp:154
 #, kde-format
 msgctxt "@label right-to-left"
 msgid "Right-to-Left"
-msgstr ""
+msgstr "右到左"
 
 #: composer-ng/richtextcomposeractions.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Subscript"
-msgstr ""
+msgstr "下標"
 
 #: composer-ng/richtextcomposeractions.cpp:175
 #, kde-format
 msgctxt "@action"
 msgid "Superscript"
-msgstr ""
+msgstr "上標"
 
 #: composer-ng/richtextcomposeractions.cpp:183
 #, kde-format
 msgctxt "@action boldify selected text"
 msgid "&Bold"
-msgstr ""
+msgstr "粗體(&B)"
 
 #: composer-ng/richtextcomposeractions.cpp:196
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
-msgstr ""
+msgstr "斜體(&I)"
 
 #: composer-ng/richtextcomposeractions.cpp:209
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
-msgstr ""
+msgstr "底線(&U)"
 
 #: composer-ng/richtextcomposeractions.cpp:221
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
-msgstr ""
+msgstr "刪除線(&S)"
 
 #: composer-ng/richtextcomposeractions.cpp:236
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
-msgstr ""
+msgstr "字型(&F)"
 
 #: composer-ng/richtextcomposeractions.cpp:245
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
-msgstr ""
+msgstr "字型大小(&S)"
 
 #: composer-ng/richtextcomposeractions.cpp:253
-#, fuzzy, kde-format
-#| msgid "Insert Table"
+#, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
-msgstr "插入表格"
+msgstr "插入橫線"
 
 #: composer-ng/richtextcomposeractions.cpp:262
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color..."
-msgstr ""
+msgstr "文字顏色(&C)..."
 
 #: composer-ng/richtextcomposeractions.cpp:263
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
-msgstr ""
+msgstr "顏色"
 
 #: composer-ng/richtextcomposeractions.cpp:271
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight..."
-msgstr ""
+msgstr "文字突顯(&H)..."
 
 #: composer-ng/richtextcomposeractions.cpp:279
 #, kde-format
 msgctxt "@action"
 msgid "Link"
-msgstr ""
+msgstr "連結"
 
 #: composer-ng/richtextcomposeractions.cpp:287
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
-msgstr ""
+msgstr "提高列表等級"
 
 #: composer-ng/richtextcomposeractions.cpp:295
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
-msgstr ""
+msgstr "降低列表等級"
 
 #: composer-ng/richtextcomposeractions.cpp:304
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
-msgstr ""
+msgstr "列表風格"
 
 #: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
-msgstr ""
+msgstr "無"
 
 #: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
-msgstr ""
+msgstr "實心黑點"
 
 #: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
-msgstr ""
+msgstr "空心白點"
 
 #: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
-msgstr ""
+msgstr "方形"
 
 #: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
-msgstr ""
+msgstr "123"
 
 #: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
-msgstr ""
+msgstr "abc"
 
 #: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
-msgstr ""
+msgstr "ABC"
 
 #: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
-msgstr ""
+msgstr "i ii iii"
 
 #: composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
-msgstr ""
+msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:321
 #, kde-format
 msgid "Pa&ste as Quotation"
-msgstr ""
+msgstr "作為引用貼上(&S)"
 
 #: composer-ng/richtextcomposeractions.cpp:329
 #, kde-format
 msgid "Add &Quote Characters"
-msgstr ""
+msgstr "新增引號字元(&Q)"
 
 #: composer-ng/richtextcomposeractions.cpp:336
-#, fuzzy, kde-format
-#| msgid "Select Special Characters"
+#, kde-format
 msgid "Re&move Quote Characters"
-msgstr "選擇特殊字元"
+msgstr "移除引號字元(&M)"
 
 #: composer-ng/richtextcomposeractions.cpp:343
 #, kde-format
 msgid "Paste Without Formatting"
-msgstr ""
+msgstr "無格式貼上"
 
 #: composer-ng/richtextcomposeractions.cpp:351
 #, kde-format
@@ -298,12 +295,12 @@ msgstr "表格"
 #: composer-ng/richtextcomposeractions.cpp:389
 #, kde-format
 msgid "Reset Font Settings"
-msgstr "重置字型設定"
+msgstr "重設字型設定"
 
 #: composer-ng/richtextcomposeractions.cpp:390
 #, kde-format
 msgid "Reset Font"
-msgstr "重置字型"
+msgstr "重設字型"
 
 #: composer-ng/richtextcomposeractions.cpp:398
 #, kde-format
@@ -315,60 +312,60 @@ msgstr ""
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
-msgstr ""
+msgstr "標題等級"
 
 #: composer-ng/richtextcomposeractions.cpp:407
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
-msgstr ""
+msgstr "基本文字"
 
 #: composer-ng/richtextcomposeractions.cpp:408
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
-msgstr ""
+msgstr "標題"
 
 #: composer-ng/richtextcomposeractions.cpp:409
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
-msgstr ""
+msgstr "副標題"
 
 #: composer-ng/richtextcomposeractions.cpp:410
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
-msgstr ""
+msgstr "區段"
 
 #: composer-ng/richtextcomposeractions.cpp:411
 #, kde-format
 msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
-msgstr ""
+msgstr "子區段"
 
 #: composer-ng/richtextcomposeractions.cpp:412
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
-msgstr ""
+msgstr "段落"
 
 #: composer-ng/richtextcomposeractions.cpp:413
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
-msgstr ""
+msgstr "子段落"
 
 #: composer-ng/richtextcomposeractions.cpp:424
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
-msgstr ""
+msgstr "核取方塊"
 
 #: composer-ng/richtextcomposercontroler.cpp:730
 #, kde-format
 msgid "Only local files are supported."
-msgstr ""
+msgstr "只支援本機檔案。"
 
 #: composer-ng/richtextcomposerimages.cpp:55
 #, kde-kuit-format
@@ -385,28 +382,28 @@ msgstr "image"
 #: composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
 msgid "Command line is empty. Please verify settings."
-msgstr ""
+msgstr "命令列是空的。請檢查設定。"
 
 #: composer-ng/richtextexternalcomposer.cpp:69
 #, kde-format
 msgctxt "@title:window"
 msgid "Empty command line"
-msgstr ""
+msgstr "空命令列"
 
 #: composer-ng/richtextexternalcomposer.cpp:122
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
-msgstr ""
+msgstr "外部編輯器無法開啟。請檢查命令 \"%1\""
 
 #: composer-ng/richtextexternalcomposer.cpp:140
 #, kde-format
 msgid "Error was found when we started external editor."
-msgstr ""
+msgstr "開啟外部編輯器時發現錯誤。"
 
 #: composer-ng/richtextexternalcomposer.cpp:140
 #, kde-format
 msgid "External Editor Closed"
-msgstr ""
+msgstr "外部編輯器已關閉"
 
 #: composer-ng/richtextexternalcomposer.cpp:157
 #, kde-kuit-format
@@ -416,24 +413,26 @@ msgid ""
 "keep it running?<nl/><warning>Stopping the editor will cause all your "
 "unsaved changes to be lost.</warning>"
 msgstr ""
+"外部編輯器尚在執行中。<nl/>您要關閉它還是讓它繼續執行？<nl/><warning>關閉編輯"
+"器將會使您未儲存的變更全部遺失。</warning>"
 
 #: composer-ng/richtextexternalcomposer.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
-msgstr ""
+msgstr "外部編輯器執行中"
 
 #: composer-ng/richtextexternalcomposer.cpp:162
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
-msgstr ""
+msgstr "關閉編輯器"
 
 #: composer-ng/richtextexternalcomposer.cpp:163
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
-msgstr ""
+msgstr "讓編輯器繼續執行"
 
 #: inserthtmldialog.cpp:34
 #, kde-format
@@ -458,8 +457,7 @@ msgid "Insert"
 msgstr "插入"
 
 #: insertimagedialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Insert Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "插入影像"
@@ -475,8 +473,7 @@ msgid "Image Location:"
 msgstr "影像位置："
 
 #: insertimagewidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "Add Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "新增影像"
@@ -512,8 +509,7 @@ msgid "Image Preview:"
 msgstr "影像預覽："
 
 #: inserttabledialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Insert Table"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Table"
 msgstr "插入表格"
@@ -604,8 +600,7 @@ msgid "Table Cell Format..."
 msgstr "表格儲存格格式..."
 
 #: tablecellformatdialog.cpp:28
-#, fuzzy, kde-format
-#| msgid "Cell Format"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cell Format"
 msgstr "儲存格格式"
@@ -636,8 +631,7 @@ msgid "Background Color:"
 msgstr "背景顏色："
 
 #: tableformatdialog.cpp:31
-#, fuzzy, kde-format
-#| msgid "Table Format"
+#, kde-format
 msgctxt "@title:window"
 msgid "Table Format"
 msgstr "表格格式"
