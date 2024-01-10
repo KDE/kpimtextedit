@@ -63,7 +63,7 @@ endif()
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit6\")
 
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
-ecm_set_disabled_deprecation_versions(QT 6.6.0  KF 5.247.0)
+ecm_set_disabled_deprecation_versions(QT 6.6.0  KF 5.248.0)
 
 
 find_package(KF6TextEditTextToSpeech ${KTEXTADDONS_MIN_VERSION} CONFIG)
