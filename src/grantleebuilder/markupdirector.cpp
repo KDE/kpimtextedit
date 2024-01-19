@@ -818,7 +818,7 @@ QList<int> MarkupDirector::getElementsToOpen(const QTextBlock::iterator &it)
     //   eg, <b>some <i>mixed</i> format</b> should be as is, rather than
     //   <b>some </b><b><i>mixed</i></b><b> format</b>
 
-    if (fontWeight == QFont::Bold && !(d->m_openElements.contains(Strong))) {
+    if (fontWeight >= QFont::DemiBold && !(d->m_openElements.contains(Strong))) {
         d->m_elementsToOpen.insert(Strong);
     }
 
