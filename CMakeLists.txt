@@ -29,6 +29,7 @@ kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 include(ECMAddTests)
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
+include(ECMFeatureSummary)
 
 include(ECMAddQch)
 
@@ -87,4 +88,4 @@ add_subdirectory(src)
 
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 ki18n_install(po)
-feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+ecm_feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
