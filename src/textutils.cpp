@@ -82,7 +82,7 @@ bool TextUtils::containsFormatting(const QTextDocument *document)
         block = block.next();
     }
 
-    if (document->toHtml().contains(QLatin1String("<hr />"))) {
+    if (document->toHtml().contains(QLatin1StringView("<hr />"))) {
         return true;
     }
 

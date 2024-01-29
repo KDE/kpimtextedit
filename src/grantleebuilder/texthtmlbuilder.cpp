@@ -472,5 +472,5 @@ QString TextHTMLBuilder::getResult()
 void KPIMTextEdit::TextHTMLBuilder::addSingleBreakLine()
 {
     Q_D(TextHTMLBuilder);
-    d->mText.append(QLatin1String("<br />"));
+    d->mText.append(QLatin1StringView("<br />"));
 }

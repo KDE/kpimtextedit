@@ -56,7 +56,7 @@ void RichTextComposerImages::addImageHelper(const QUrl &url, int width, int heig
         return;
     }
     const QFileInfo fi(url.path());
-    const QString imageName = fi.baseName().isEmpty() ? QStringLiteral("image.png") : QString(fi.baseName() + QLatin1String(".png"));
+    const QString imageName = fi.baseName().isEmpty() ? QStringLiteral("image.png") : QString(fi.baseName() + QLatin1StringView(".png"));
     if (width != -1 && height != -1 && (image.width() > width && image.height() > height)) {
         image = image.scaled(width, height);
     }
@@ -198,7 +198,7 @@ QList<QTextImageFormat> RichTextComposerImages::embeddedImageFormats() const
                 if (imageFormat.isValid()) {
                     // TODO: Replace with a way to see if an image is an embedded image or a remote
                     const QUrl url(imageFormat.name());
-                    if (!url.isValid() || !url.scheme().startsWith(QLatin1String("http"))) {
+                    if (!url.isValid() || !url.scheme().startsWith(QLatin1StringView("http"))) {
                         retList.append(imageFormat);
                     }
                 }
@@ -219,7 +219,7 @@ QByteArray RichTextComposerImages::imageNamesToContentIds(const QByteArray &html
 {
     QByteArray result = htmlBody;
     for (const QSharedPointer<EmbeddedImage> &image : imageList) {
-        const QString newImageName = QLatin1String("cid:") + image->contentID;
+        const QString newImageName = QLatin1StringView("cid:") + image->contentID;
         QByteArray quote("\"");
         result.replace(QByteArray(quote + image->imageName.toLocal8Bit() + quote), QByteArray(quote + newImageName.toLocal8Bit() + quote));
     }

@@ -706,10 +706,10 @@ void PlainTextMarkupBuilderTest::testLongDocument()
     auto md = new KPIMTextEdit::MarkupDirector(hb);
     md->processDocument(&doc);
     auto result = hb->getResult();
-    QVERIFY2(result.startsWith(QLatin1String("Hello,\nThis is some text\nIt shows how "
-                                             "grantlee is used from kmail\n")),
+    QVERIFY2(result.startsWith(QLatin1StringView("Hello,\nThis is some text\nIt shows how "
+                                                 "grantlee is used from kmail\n")),
              qPrintable(result));
-    QVERIFY2(result.endsWith(QLatin1String("This is the end of the signature\n")), qPrintable(result));
+    QVERIFY2(result.endsWith(QLatin1StringView("This is the end of the signature\n")), qPrintable(result));
     // qDebug() << result;
     delete md;
     delete hb;

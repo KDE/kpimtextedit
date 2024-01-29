@@ -552,12 +552,12 @@ void RichTextComposer::insertFromMimeData(const QMimeData *source)
     if (textMode() == RichTextComposer::Rich) {
         if (source->hasText()) {
             const QString sourceText = source->text();
-            if (sourceText.startsWith(QLatin1String("http://")) || sourceText.startsWith(QLatin1String("https://"))
-                || sourceText.startsWith(QLatin1String("ftps://")) || sourceText.startsWith(QLatin1String("ftp://"))
-                || sourceText.startsWith(QLatin1String("mailto:")) || sourceText.startsWith(QLatin1String("smb://"))
-                || sourceText.startsWith(QLatin1String("file://")) || sourceText.startsWith(QLatin1String("webdavs://"))
-                || sourceText.startsWith(QLatin1String("imaps://")) || sourceText.startsWith(QLatin1String("sftp://"))
-                || sourceText.startsWith(QLatin1String("fish://")) || sourceText.startsWith(QLatin1String("tel:"))) {
+            if (sourceText.startsWith(QLatin1StringView("http://")) || sourceText.startsWith(QLatin1String("https://"))
+                || sourceText.startsWith(QLatin1StringView("ftps://")) || sourceText.startsWith(QLatin1String("ftp://"))
+                || sourceText.startsWith(QLatin1StringView("mailto:")) || sourceText.startsWith(QLatin1String("smb://"))
+                || sourceText.startsWith(QLatin1StringView("file://")) || sourceText.startsWith(QLatin1String("webdavs://"))
+                || sourceText.startsWith(QLatin1StringView("imaps://")) || sourceText.startsWith(QLatin1String("sftp://"))
+                || sourceText.startsWith(QLatin1StringView("fish://")) || sourceText.startsWith(QLatin1String("tel:"))) {
                 insertHtml(QStringLiteral("<a href=\"%1\">%1</a>").arg(sourceText));
                 return;
             }
