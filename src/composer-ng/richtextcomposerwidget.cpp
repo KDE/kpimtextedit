@@ -5,9 +5,9 @@
 */
 
 #include "richtextcomposerwidget.h"
+#include "kpimtextedit/richtextcomposer.h"
 #include <QHBoxLayout>
 #include <TextCustomEditor/RichTextEditorWidget>
-#include <kpimtextedit/richtextcomposer.h>
 
 using namespace KPIMTextEdit;
 

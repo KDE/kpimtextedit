@@ -14,13 +14,13 @@
 #include <KIconLoader>
 #include <QAction>
 
+#include "kpimtextedit/richtextcomposer.h"
+#include "kpimtextedit/richtextcomposercontroler.h"
+#include "kpimtextedit/richtextcomposerimages.h"
 #include <QBuffer>
 #include <QStandardPaths>
 #include <QTextBlock>
 #include <QTextCursor>
-#include <kpimtextedit/richtextcomposer.h>
-#include <kpimtextedit/richtextcomposercontroler.h>
-#include <kpimtextedit/richtextcomposerimages.h>
 
 using namespace KPIMTextEdit;
 

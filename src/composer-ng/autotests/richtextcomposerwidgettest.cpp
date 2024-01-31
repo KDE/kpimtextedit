@@ -6,8 +6,8 @@
 
 #include "richtextcomposerwidgettest.h"
 #include "../richtextcomposerwidget.h"
+#include "kpimtextedit/richtextcomposer.h"
 #include <QTest>
-#include <kpimtextedit/richtextcomposer.h>
 
 RichTextComposerWidgetTest::RichTextComposerWidgetTest(QObject *parent)
     : QObject(parent)

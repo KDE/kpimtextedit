@@ -10,7 +10,7 @@
 #include <QStandardPaths>
 #include <QToolBar>
 
-#include <../richtextcomposer.h>
+#include "../richtextcomposer.h"
 
 #include <TextCustomEditor/RichTextEditorWidget>
 
