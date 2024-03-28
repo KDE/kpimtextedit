@@ -38,7 +38,7 @@ add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt 
 
 set(KPIMTEXTEDIT_LIB_VERSION ${PIM_VERSION})
 
-set(KTEXTADDONS_MIN_VERSION "1.5.3")
+set(KTEXTADDONS_MIN_VERSION "1.5.4")
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
 
