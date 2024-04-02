@@ -6,6 +6,7 @@
 */
 
 #include "texthtmlbuilder.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QDebug>
 #include <QList>
@@ -472,5 +473,5 @@ QString TextHTMLBuilder::getResult()
 void KPIMTextEdit::TextHTMLBuilder::addSingleBreakLine()
 {
     Q_D(TextHTMLBuilder);
-    d->mText.append(QLatin1StringView("<br />"));
+    d->mText.append("<br />"_L1);
 }

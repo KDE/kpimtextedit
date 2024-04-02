@@ -5,6 +5,8 @@
 */
 
 #include "richtextexternalcomposer.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "richtextcomposer.h"
 
 #include <KLocalizedString>
@@ -90,7 +92,7 @@ void RichTextExternalComposer::startExternalEditor()
         const QString cmd = KMacroExpander::expandMacrosShellQuote(commandLine, map);
         const QStringList arg = KShell::splitArgs(cmd);
         bool filenameAdded = false;
-        if (commandLine.contains(QLatin1StringView("%f"))) {
+        if (commandLine.contains("%f"_L1)) {
             filenameAdded = true;
         }
         QStringList command;

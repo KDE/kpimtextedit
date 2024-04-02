@@ -8,11 +8,13 @@
 */
 
 #include "textutils.h"
+
 #include "kpimtextedit_debug.h"
 #include <QTextBlock>
 #include <QTextCharFormat>
 #include <QTextDocument>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KPIMTextEdit;
 
 static bool isCharFormatFormatted(const QTextCharFormat &format, const QFont &defaultFont, const QTextCharFormat &defaultBlockFormat)
@@ -82,7 +84,7 @@ bool TextUtils::containsFormatting(const QTextDocument *document)
         block = block.next();
     }
 
-    if (document->toHtml().contains(QLatin1StringView("<hr />"))) {
+    if (document->toHtml().contains("<hr />"_L1)) {
         return true;
     }
 

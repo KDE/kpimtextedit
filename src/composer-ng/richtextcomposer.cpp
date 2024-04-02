@@ -25,6 +25,7 @@
 #include <QMimeData>
 
 using namespace KPIMTextEdit;
+using namespace Qt::Literals::StringLiterals;
 
 class Q_DECL_HIDDEN RichTextComposer::RichTextComposerPrivate
 {
@@ -552,12 +553,10 @@ void RichTextComposer::insertFromMimeData(const QMimeData *source)
     if (textMode() == RichTextComposer::Rich) {
         if (source->hasText()) {
             const QString sourceText = source->text();
-            if (sourceText.startsWith(QLatin1StringView("http://")) || sourceText.startsWith(QLatin1StringView("https://"))
-                || sourceText.startsWith(QLatin1StringView("ftps://")) || sourceText.startsWith(QLatin1StringView("ftp://"))
-                || sourceText.startsWith(QLatin1StringView("mailto:")) || sourceText.startsWith(QLatin1StringView("smb://"))
-                || sourceText.startsWith(QLatin1StringView("file://")) || sourceText.startsWith(QLatin1StringView("webdavs://"))
-                || sourceText.startsWith(QLatin1StringView("imaps://")) || sourceText.startsWith(QLatin1StringView("sftp://"))
-                || sourceText.startsWith(QLatin1StringView("fish://")) || sourceText.startsWith(QLatin1StringView("tel:"))) {
+            if (sourceText.startsWith("http://"_L1) || sourceText.startsWith("https://"_L1) || sourceText.startsWith("ftps://"_L1)
+                || sourceText.startsWith("ftp://"_L1) || sourceText.startsWith("mailto:"_L1) || sourceText.startsWith("smb://"_L1)
+                || sourceText.startsWith("file://"_L1) || sourceText.startsWith("webdavs://"_L1) || sourceText.startsWith("imaps://"_L1)
+                || sourceText.startsWith("sftp://"_L1) || sourceText.startsWith("fish://"_L1) || sourceText.startsWith("tel:"_L1)) {
                 insertHtml(QStringLiteral("<a href=\"%1\">%1</a>").arg(sourceText));
                 return;
             }

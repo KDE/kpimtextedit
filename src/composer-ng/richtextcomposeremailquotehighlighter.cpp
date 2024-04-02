@@ -5,6 +5,8 @@
 */
 
 #include "richtextcomposeremailquotehighlighter.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "richtextcomposer.h"
 #include <QRegularExpression>
 using namespace KPIMTextEdit;
@@ -72,15 +74,15 @@ void RichTextComposerEmailQuoteHighlighter::highlightBlock(const QString &text)
     QString simplified = text;
     simplified.remove(QRegularExpression(QStringLiteral("\\s"))).replace(QLatin1Char('|'), QLatin1Char('>'));
 
-    while (simplified.startsWith(QLatin1StringView(">>>>"))) {
+    while (simplified.startsWith(">>>>"_L1)) {
         simplified.remove(0, 3);
     }
 
-    if (simplified.startsWith(QLatin1StringView(">>>"))) {
+    if (simplified.startsWith(">>>"_L1)) {
         setFormat(0, text.length(), d->col3);
-    } else if (simplified.startsWith(QLatin1StringView(">>"))) {
+    } else if (simplified.startsWith(">>"_L1)) {
         setFormat(0, text.length(), d->col2);
-    } else if (simplified.startsWith(QLatin1StringView(">"))) {
+    } else if (simplified.startsWith(">"_L1)) {
         setFormat(0, text.length(), d->col1);
     } else if (d->parent->isLineQuoted(text)) {
         setFormat(0, text.length(), d->col1); // FIXME: custom quote prefix

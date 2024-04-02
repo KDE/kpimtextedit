@@ -5,6 +5,8 @@
 */
 
 #include "plaintextmarkupbuildertest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KPIMTextEdit/MarkupDirector>
 #include <KPIMTextEdit/PlainTextMarkupBuilder>
 #include <QRegularExpression>
@@ -709,7 +711,7 @@ void PlainTextMarkupBuilderTest::testLongDocument()
     QVERIFY2(result.startsWith(QLatin1StringView("Hello,\nThis is some text\nIt shows how "
                                                  "grantlee is used from kmail\n")),
              qPrintable(result));
-    QVERIFY2(result.endsWith(QLatin1StringView("This is the end of the signature\n")), qPrintable(result));
+    QVERIFY2(result.endsWith("This is the end of the signature\n"_L1), qPrintable(result));
     // qDebug() << result;
     delete md;
     delete hb;
