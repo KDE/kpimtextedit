@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:40+0000\n"
+"POT-Creation-Date: 2024-04-03 00:38+0000\n"
 "PO-Revision-Date: 2023-10-08 23:33+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -33,328 +33,328 @@ msgctxt "@title:window"
 msgid "Manage Link"
 msgstr "링크 관리"
 
-#: composer-ng/richtextcomposeractions.cpp:101
+#: composer-ng/richtextcomposeractions.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
 msgstr "왼쪽 정렬(&L)"
 
-#: composer-ng/richtextcomposeractions.cpp:102
+#: composer-ng/richtextcomposeractions.cpp:104
 #, kde-format
 msgctxt "@label left justify"
 msgid "Left"
 msgstr "왼쪽"
 
-#: composer-ng/richtextcomposeractions.cpp:110
+#: composer-ng/richtextcomposeractions.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Align &Center"
 msgstr "가운데 정렬(&C)"
 
-#: composer-ng/richtextcomposeractions.cpp:111
+#: composer-ng/richtextcomposeractions.cpp:113
 #, kde-format
 msgctxt "@label center justify"
 msgid "Center"
 msgstr "가운데"
 
-#: composer-ng/richtextcomposeractions.cpp:119
+#: composer-ng/richtextcomposeractions.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
 msgstr "오른쪽 정렬(&R)"
 
-#: composer-ng/richtextcomposeractions.cpp:120
+#: composer-ng/richtextcomposeractions.cpp:122
 #, kde-format
 msgctxt "@label right justify"
 msgid "Right"
 msgstr "오른쪽"
 
-#: composer-ng/richtextcomposeractions.cpp:128
+#: composer-ng/richtextcomposeractions.cpp:130
 #, kde-format
 msgctxt "@action"
 msgid "&Justify"
 msgstr "맞춤(&J)"
 
-#: composer-ng/richtextcomposeractions.cpp:129
+#: composer-ng/richtextcomposeractions.cpp:131
 #, kde-format
 msgctxt "@label justify fill"
 msgid "Justify"
 msgstr "맞춤"
 
-#: composer-ng/richtextcomposeractions.cpp:144
+#: composer-ng/richtextcomposeractions.cpp:146
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
 msgstr "왼쪽에서 오른쪽으로"
 
-#: composer-ng/richtextcomposeractions.cpp:145
+#: composer-ng/richtextcomposeractions.cpp:147
 #, kde-format
 msgctxt "@label left-to-right"
 msgid "Left-to-Right"
 msgstr "왼쪽에서 오른쪽"
 
-#: composer-ng/richtextcomposeractions.cpp:153
+#: composer-ng/richtextcomposeractions.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
 msgstr "오른쪽에서 왼쪽으로"
 
-#: composer-ng/richtextcomposeractions.cpp:154
+#: composer-ng/richtextcomposeractions.cpp:156
 #, kde-format
 msgctxt "@label right-to-left"
 msgid "Right-to-Left"
 msgstr "오른쪽에서 왼쪽"
 
-#: composer-ng/richtextcomposeractions.cpp:167
+#: composer-ng/richtextcomposeractions.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Subscript"
 msgstr "아래 첨자"
 
-#: composer-ng/richtextcomposeractions.cpp:175
+#: composer-ng/richtextcomposeractions.cpp:177
 #, kde-format
 msgctxt "@action"
 msgid "Superscript"
 msgstr "위 첨자"
 
-#: composer-ng/richtextcomposeractions.cpp:183
+#: composer-ng/richtextcomposeractions.cpp:185
 #, kde-format
 msgctxt "@action boldify selected text"
 msgid "&Bold"
 msgstr "굵게(&B)"
 
-#: composer-ng/richtextcomposeractions.cpp:196
+#: composer-ng/richtextcomposeractions.cpp:198
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
 msgstr "이탤릭(&I)"
 
-#: composer-ng/richtextcomposeractions.cpp:209
+#: composer-ng/richtextcomposeractions.cpp:211
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
 msgstr "밑줄(&U)"
 
-#: composer-ng/richtextcomposeractions.cpp:221
+#: composer-ng/richtextcomposeractions.cpp:223
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
 msgstr "취소선(&S)"
 
-#: composer-ng/richtextcomposeractions.cpp:236
+#: composer-ng/richtextcomposeractions.cpp:238
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
 msgstr "글꼴(&F)"
 
-#: composer-ng/richtextcomposeractions.cpp:245
+#: composer-ng/richtextcomposeractions.cpp:247
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
 msgstr "글꼴 크기(&S)"
 
-#: composer-ng/richtextcomposeractions.cpp:253
+#: composer-ng/richtextcomposeractions.cpp:255
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
 msgstr "규칙 줄 삽입"
 
-#: composer-ng/richtextcomposeractions.cpp:262
+#: composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color..."
 msgstr "텍스트 색(&C)..."
 
-#: composer-ng/richtextcomposeractions.cpp:263
+#: composer-ng/richtextcomposeractions.cpp:265
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
 msgstr "색"
 
-#: composer-ng/richtextcomposeractions.cpp:271
+#: composer-ng/richtextcomposeractions.cpp:273
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight..."
 msgstr "텍스트 강조(&H)..."
 
-#: composer-ng/richtextcomposeractions.cpp:279
+#: composer-ng/richtextcomposeractions.cpp:281
 #, kde-format
 msgctxt "@action"
 msgid "Link"
 msgstr "링크"
 
-#: composer-ng/richtextcomposeractions.cpp:287
+#: composer-ng/richtextcomposeractions.cpp:289
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
 msgstr "목록 단계 증가"
 
-#: composer-ng/richtextcomposeractions.cpp:295
+#: composer-ng/richtextcomposeractions.cpp:297
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
 msgstr "목록 단계 감소"
 
-#: composer-ng/richtextcomposeractions.cpp:304
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
 msgstr "목록 스타일"
 
-#: composer-ng/richtextcomposeractions.cpp:306
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
 msgstr "없음"
 
-#: composer-ng/richtextcomposeractions.cpp:306
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
 msgstr "원형"
 
-#: composer-ng/richtextcomposeractions.cpp:307
+#: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
 msgstr "빈 원형"
 
-#: composer-ng/richtextcomposeractions.cpp:307
+#: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
 msgstr "사각형"
 
-#: composer-ng/richtextcomposeractions.cpp:308
+#: composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
 msgstr "123"
 
-#: composer-ng/richtextcomposeractions.cpp:308
+#: composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
 msgstr "abc"
 
-#: composer-ng/richtextcomposeractions.cpp:309
+#: composer-ng/richtextcomposeractions.cpp:311
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
 msgstr "ABC"
 
-#: composer-ng/richtextcomposeractions.cpp:309
+#: composer-ng/richtextcomposeractions.cpp:311
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
 msgstr "i ii iii"
 
-#: composer-ng/richtextcomposeractions.cpp:310
+#: composer-ng/richtextcomposeractions.cpp:312
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
 msgstr "I II III"
 
-#: composer-ng/richtextcomposeractions.cpp:321
+#: composer-ng/richtextcomposeractions.cpp:323
 #, kde-format
 msgid "Pa&ste as Quotation"
 msgstr "인용문으로 붙여넣기(&S)"
 
-#: composer-ng/richtextcomposeractions.cpp:329
+#: composer-ng/richtextcomposeractions.cpp:331
 #, kde-format
 msgid "Add &Quote Characters"
 msgstr "인용 부호 추가하기(&Q)"
 
-#: composer-ng/richtextcomposeractions.cpp:336
+#: composer-ng/richtextcomposeractions.cpp:338
 #, kde-format
 msgid "Re&move Quote Characters"
 msgstr "인용 부호 지우기(&M)"
 
-#: composer-ng/richtextcomposeractions.cpp:343
+#: composer-ng/richtextcomposeractions.cpp:345
 #, kde-format
 msgid "Paste Without Formatting"
 msgstr "서식 없이 붙여넣기"
 
-#: composer-ng/richtextcomposeractions.cpp:351
+#: composer-ng/richtextcomposeractions.cpp:353
 #, kde-format
 msgid "Add Image"
 msgstr "그림 추가"
 
-#: composer-ng/richtextcomposeractions.cpp:370
+#: composer-ng/richtextcomposeractions.cpp:372
 #, kde-format
 msgid "Insert HTML"
 msgstr "HTML 삽입"
 
-#: composer-ng/richtextcomposeractions.cpp:380
+#: composer-ng/richtextcomposeractions.cpp:382
 #, kde-format
 msgid "Table"
 msgstr "표"
 
-#: composer-ng/richtextcomposeractions.cpp:389
+#: composer-ng/richtextcomposeractions.cpp:391
 #, kde-format
 msgid "Reset Font Settings"
 msgstr "글꼴 설정 초기화"
 
-#: composer-ng/richtextcomposeractions.cpp:390
+#: composer-ng/richtextcomposeractions.cpp:392
 #, kde-format
 msgid "Reset Font"
 msgstr "글꼴 초기화"
 
-#: composer-ng/richtextcomposeractions.cpp:398
+#: composer-ng/richtextcomposeractions.cpp:400
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
 msgstr "서식 복사기"
 
-#: composer-ng/richtextcomposeractions.cpp:406
+#: composer-ng/richtextcomposeractions.cpp:408
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
 msgstr "머리글 단계"
 
-#: composer-ng/richtextcomposeractions.cpp:407
+#: composer-ng/richtextcomposeractions.cpp:409
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
 msgstr "일반 텍스트"
 
-#: composer-ng/richtextcomposeractions.cpp:408
+#: composer-ng/richtextcomposeractions.cpp:410
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
 msgstr "제목"
 
-#: composer-ng/richtextcomposeractions.cpp:409
+#: composer-ng/richtextcomposeractions.cpp:411
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
 msgstr "부제목"
 
-#: composer-ng/richtextcomposeractions.cpp:410
+#: composer-ng/richtextcomposeractions.cpp:412
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
 msgstr "장"
 
-#: composer-ng/richtextcomposeractions.cpp:411
+#: composer-ng/richtextcomposeractions.cpp:413
 #, kde-format
 msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
 msgstr "절"
 
-#: composer-ng/richtextcomposeractions.cpp:412
+#: composer-ng/richtextcomposeractions.cpp:414
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
 msgstr "문단"
 
-#: composer-ng/richtextcomposeractions.cpp:413
+#: composer-ng/richtextcomposeractions.cpp:415
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
 msgstr "하위 문단"
 
-#: composer-ng/richtextcomposeractions.cpp:424
+#: composer-ng/richtextcomposeractions.cpp:426
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
@@ -365,46 +365,46 @@ msgstr "체크 상자"
 msgid "Only local files are supported."
 msgstr "로컬 파일만 지원합니다."
 
-#: composer-ng/richtextcomposerimages.cpp:55
+#: composer-ng/richtextcomposerimages.cpp:57
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "그림 <filename>%1</filename>을(를) 불러올 수 없습니다."
 
-#: composer-ng/richtextcomposerimages.cpp:214
+#: composer-ng/richtextcomposerimages.cpp:216
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"
 msgstr "그림"
 
-#: composer-ng/richtextexternalcomposer.cpp:69
+#: composer-ng/richtextexternalcomposer.cpp:71
 #, kde-format
 msgid "Command line is empty. Please verify settings."
 msgstr "명령행이 비어 있습니다. 설정을 확인하십시오."
 
-#: composer-ng/richtextexternalcomposer.cpp:69
+#: composer-ng/richtextexternalcomposer.cpp:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Empty command line"
 msgstr "빈 명령행"
 
-#: composer-ng/richtextexternalcomposer.cpp:122
+#: composer-ng/richtextexternalcomposer.cpp:124
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr ""
 "외부 편집기를 시작할 수 없습니다. \"%1\" 명령이 존재하는 지 확인하십시오"
 
-#: composer-ng/richtextexternalcomposer.cpp:140
+#: composer-ng/richtextexternalcomposer.cpp:142
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "외부 편집기를 시작하는 중 오류가 발생했습니다."
 
-#: composer-ng/richtextexternalcomposer.cpp:140
+#: composer-ng/richtextexternalcomposer.cpp:142
 #, kde-format
 msgid "External Editor Closed"
 msgstr "외부 편집기 종료됨"
 
-#: composer-ng/richtextexternalcomposer.cpp:157
+#: composer-ng/richtextexternalcomposer.cpp:159
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -416,19 +416,19 @@ msgstr ""
 "시겠습니까?<nl/><warning>편집기를 종료하면 저장하지 않은 모든 변경 사항이 손"
 "실됩니다.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:161
+#: composer-ng/richtextexternalcomposer.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "외부 편집기 실행 중"
 
-#: composer-ng/richtextexternalcomposer.cpp:162
+#: composer-ng/richtextexternalcomposer.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "편집기 종료"
 
-#: composer-ng/richtextexternalcomposer.cpp:163
+#: composer-ng/richtextexternalcomposer.cpp:165
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -462,7 +462,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "그림 삽입"
 
-#: insertimagedialog.cpp:36 inserttabledialog.cpp:37 tableactionmenu.cpp:405
+#: insertimagedialog.cpp:36 inserttabledialog.cpp:37 tableactionmenu.cpp:407
 #, kde-format
 msgid "Insert"
 msgstr "삽입"
@@ -539,62 +539,62 @@ msgstr "창의 %"
 msgid "pixels"
 msgstr "픽셀"
 
-#: tableactionmenu.cpp:408
+#: tableactionmenu.cpp:410
 #, kde-format
 msgid "Table..."
 msgstr "표..."
 
-#: tableactionmenu.cpp:416 tableactionmenu.cpp:449
+#: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
 msgid "Row Below"
 msgstr "아래쪽 행"
 
-#: tableactionmenu.cpp:423 tableactionmenu.cpp:456
+#: tableactionmenu.cpp:425 tableactionmenu.cpp:458
 #, kde-format
 msgid "Row Above"
 msgstr "위쪽 행"
 
-#: tableactionmenu.cpp:431 tableactionmenu.cpp:464
+#: tableactionmenu.cpp:433 tableactionmenu.cpp:466
 #, kde-format
 msgid "Column Before"
 msgstr "이전 열"
 
-#: tableactionmenu.cpp:439 tableactionmenu.cpp:472
+#: tableactionmenu.cpp:441 tableactionmenu.cpp:474
 #, kde-format
 msgid "Column After"
 msgstr "다음 열"
 
-#: tableactionmenu.cpp:446
+#: tableactionmenu.cpp:448
 #, kde-format
 msgid "Delete"
 msgstr "삭제"
 
-#: tableactionmenu.cpp:480
+#: tableactionmenu.cpp:482
 #, kde-format
 msgid "Cell Contents"
 msgstr "셀 내용"
 
-#: tableactionmenu.cpp:489
+#: tableactionmenu.cpp:491
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "오른쪽 셀과 병합"
 
-#: tableactionmenu.cpp:496
+#: tableactionmenu.cpp:498
 #, kde-format
 msgid "Join Selected Cells"
 msgstr "선택한 셀 병합"
 
-#: tableactionmenu.cpp:503
+#: tableactionmenu.cpp:505
 #, kde-format
 msgid "Split cells"
 msgstr "셀 분할"
 
-#: tableactionmenu.cpp:512
+#: tableactionmenu.cpp:514
 #, kde-format
 msgid "Table Format..."
 msgstr "표 서식..."
 
-#: tableactionmenu.cpp:519
+#: tableactionmenu.cpp:521
 #, kde-format
 msgid "Table Cell Format..."
 msgstr "표 셀 서식..."

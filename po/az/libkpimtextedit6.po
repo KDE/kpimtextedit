@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:40+0000\n"
+"POT-Creation-Date: 2024-04-03 00:38+0000\n"
 "PO-Revision-Date: 2023-04-22 12:21+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -33,328 +33,328 @@ msgctxt "@title:window"
 msgid "Manage Link"
 msgstr "Keçidləri idarə edin"
 
-#: composer-ng/richtextcomposeractions.cpp:101
+#: composer-ng/richtextcomposeractions.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
 msgstr "So&l kənara görə düzləndirmək"
 
-#: composer-ng/richtextcomposeractions.cpp:102
+#: composer-ng/richtextcomposeractions.cpp:104
 #, kde-format
 msgctxt "@label left justify"
 msgid "Left"
 msgstr "Sol"
 
-#: composer-ng/richtextcomposeractions.cpp:110
+#: composer-ng/richtextcomposeractions.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Align &Center"
 msgstr "&Mərkəzə görə düzləndirmək"
 
-#: composer-ng/richtextcomposeractions.cpp:111
+#: composer-ng/richtextcomposeractions.cpp:113
 #, kde-format
 msgctxt "@label center justify"
 msgid "Center"
 msgstr "Mərkəz"
 
-#: composer-ng/richtextcomposeractions.cpp:119
+#: composer-ng/richtextcomposeractions.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
 msgstr "Sağ kənara gö&rə düzənləmək"
 
-#: composer-ng/richtextcomposeractions.cpp:120
+#: composer-ng/richtextcomposeractions.cpp:122
 #, kde-format
 msgctxt "@label right justify"
 msgid "Right"
 msgstr "Sağ"
 
-#: composer-ng/richtextcomposeractions.cpp:128
+#: composer-ng/richtextcomposeractions.cpp:130
 #, kde-format
 msgctxt "@action"
 msgid "&Justify"
 msgstr "&Eninə"
 
-#: composer-ng/richtextcomposeractions.cpp:129
+#: composer-ng/richtextcomposeractions.cpp:131
 #, kde-format
 msgctxt "@label justify fill"
 msgid "Justify"
 msgstr "Eninə"
 
-#: composer-ng/richtextcomposeractions.cpp:144
+#: composer-ng/richtextcomposeractions.cpp:146
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
 msgstr "Soldan sağa"
 
-#: composer-ng/richtextcomposeractions.cpp:145
+#: composer-ng/richtextcomposeractions.cpp:147
 #, kde-format
 msgctxt "@label left-to-right"
 msgid "Left-to-Right"
 msgstr "Soldan sağa"
 
-#: composer-ng/richtextcomposeractions.cpp:153
+#: composer-ng/richtextcomposeractions.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
 msgstr "Sağdan sola"
 
-#: composer-ng/richtextcomposeractions.cpp:154
+#: composer-ng/richtextcomposeractions.cpp:156
 #, kde-format
 msgctxt "@label right-to-left"
 msgid "Right-to-Left"
 msgstr "Sağdan sola"
 
-#: composer-ng/richtextcomposeractions.cpp:167
+#: composer-ng/richtextcomposeractions.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Subscript"
 msgstr "Kiçik həriflərlə"
 
-#: composer-ng/richtextcomposeractions.cpp:175
+#: composer-ng/richtextcomposeractions.cpp:177
 #, kde-format
 msgctxt "@action"
 msgid "Superscript"
 msgstr "Böyük həriflərlə"
 
-#: composer-ng/richtextcomposeractions.cpp:183
+#: composer-ng/richtextcomposeractions.cpp:185
 #, kde-format
 msgctxt "@action boldify selected text"
 msgid "&Bold"
 msgstr "Qa&lın"
 
-#: composer-ng/richtextcomposeractions.cpp:196
+#: composer-ng/richtextcomposeractions.cpp:198
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
 msgstr "&Kursiv"
 
-#: composer-ng/richtextcomposeractions.cpp:209
+#: composer-ng/richtextcomposeractions.cpp:211
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
 msgstr "&Alt cizgi"
 
-#: composer-ng/richtextcomposeractions.cpp:221
+#: composer-ng/richtextcomposeractions.cpp:223
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
 msgstr "&Üzərində cizgi"
 
-#: composer-ng/richtextcomposeractions.cpp:236
+#: composer-ng/richtextcomposeractions.cpp:238
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
 msgstr "&Şrift"
 
-#: composer-ng/richtextcomposeractions.cpp:245
+#: composer-ng/richtextcomposeractions.cpp:247
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
 msgstr "Şrift ölçü&sü"
 
-#: composer-ng/richtextcomposeractions.cpp:253
+#: composer-ng/richtextcomposeractions.cpp:255
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
 msgstr "Üfüqi xətt qoymaq"
 
-#: composer-ng/richtextcomposeractions.cpp:262
+#: composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color..."
 msgstr "Mətnin &rəngi..."
 
-#: composer-ng/richtextcomposeractions.cpp:263
+#: composer-ng/richtextcomposeractions.cpp:265
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
 msgstr "Rəng"
 
-#: composer-ng/richtextcomposeractions.cpp:271
+#: composer-ng/richtextcomposeractions.cpp:273
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight..."
 msgstr "Mətn &işıqlanması..."
 
-#: composer-ng/richtextcomposeractions.cpp:279
+#: composer-ng/richtextcomposeractions.cpp:281
 #, kde-format
 msgctxt "@action"
 msgid "Link"
 msgstr "Keçid"
 
-#: composer-ng/richtextcomposeractions.cpp:287
+#: composer-ng/richtextcomposeractions.cpp:289
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
 msgstr "Səviyyəni artıqrmaq"
 
-#: composer-ng/richtextcomposeractions.cpp:295
+#: composer-ng/richtextcomposeractions.cpp:297
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
 msgstr "Səviyyəni azaldın"
 
-#: composer-ng/richtextcomposeractions.cpp:304
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
 msgstr "Siyahı üslubu"
 
-#: composer-ng/richtextcomposeractions.cpp:306
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
 msgstr "Heç biri"
 
-#: composer-ng/richtextcomposeractions.cpp:306
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
 msgstr "Disk"
 
-#: composer-ng/richtextcomposeractions.cpp:307
+#: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
 msgstr "Dairə"
 
-#: composer-ng/richtextcomposeractions.cpp:307
+#: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
 msgstr "Düzbucaqlı"
 
-#: composer-ng/richtextcomposeractions.cpp:308
+#: composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
 msgstr "123"
 
-#: composer-ng/richtextcomposeractions.cpp:308
+#: composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
 msgstr "abc"
 
-#: composer-ng/richtextcomposeractions.cpp:309
+#: composer-ng/richtextcomposeractions.cpp:311
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
 msgstr "ABC"
 
-#: composer-ng/richtextcomposeractions.cpp:309
+#: composer-ng/richtextcomposeractions.cpp:311
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
 msgstr "i ii iii"
 
-#: composer-ng/richtextcomposeractions.cpp:310
+#: composer-ng/richtextcomposeractions.cpp:312
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
 msgstr "I II III"
 
-#: composer-ng/richtextcomposeractions.cpp:321
+#: composer-ng/richtextcomposeractions.cpp:323
 #, kde-format
 msgid "Pa&ste as Quotation"
 msgstr "&Sitat kimi yerləşdirin"
 
-#: composer-ng/richtextcomposeractions.cpp:329
+#: composer-ng/richtextcomposeractions.cpp:331
 #, kde-format
 msgid "Add &Quote Characters"
 msgstr "Sitat si&mvolları əlavə edin"
 
-#: composer-ng/richtextcomposeractions.cpp:336
+#: composer-ng/richtextcomposeractions.cpp:338
 #, kde-format
 msgid "Re&move Quote Characters"
 msgstr "Sitat simvollarını sili&n"
 
-#: composer-ng/richtextcomposeractions.cpp:343
+#: composer-ng/richtextcomposeractions.cpp:345
 #, kde-format
 msgid "Paste Without Formatting"
 msgstr "Formatlama olmadan yerləşdirin"
 
-#: composer-ng/richtextcomposeractions.cpp:351
+#: composer-ng/richtextcomposeractions.cpp:353
 #, kde-format
 msgid "Add Image"
 msgstr "Şəkil əlavə edin"
 
-#: composer-ng/richtextcomposeractions.cpp:370
+#: composer-ng/richtextcomposeractions.cpp:372
 #, kde-format
 msgid "Insert HTML"
 msgstr "HTML-kod daxil edin"
 
-#: composer-ng/richtextcomposeractions.cpp:380
+#: composer-ng/richtextcomposeractions.cpp:382
 #, kde-format
 msgid "Table"
 msgstr "Cədvəl"
 
-#: composer-ng/richtextcomposeractions.cpp:389
+#: composer-ng/richtextcomposeractions.cpp:391
 #, kde-format
 msgid "Reset Font Settings"
 msgstr "Şrift ayarlarını sıfırlayın"
 
-#: composer-ng/richtextcomposeractions.cpp:390
+#: composer-ng/richtextcomposeractions.cpp:392
 #, kde-format
 msgid "Reset Font"
 msgstr "Şrifti sıfırlayın"
 
-#: composer-ng/richtextcomposeractions.cpp:398
+#: composer-ng/richtextcomposeractions.cpp:400
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
 msgstr "Mətn sahəsinin formatılanmasının əvəzlənməsi"
 
-#: composer-ng/richtextcomposeractions.cpp:406
+#: composer-ng/richtextcomposeractions.cpp:408
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
 msgstr "Başlıq səviyyəsi"
 
-#: composer-ng/richtextcomposeractions.cpp:407
+#: composer-ng/richtextcomposeractions.cpp:409
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
 msgstr "Əsas mətn"
 
-#: composer-ng/richtextcomposeractions.cpp:408
+#: composer-ng/richtextcomposeractions.cpp:410
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
 msgstr "Başlıq"
 
-#: composer-ng/richtextcomposeractions.cpp:409
+#: composer-ng/richtextcomposeractions.cpp:411
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
 msgstr "Alt yazı"
 
-#: composer-ng/richtextcomposeractions.cpp:410
+#: composer-ng/richtextcomposeractions.cpp:412
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
 msgstr "Bölmə"
 
-#: composer-ng/richtextcomposeractions.cpp:411
+#: composer-ng/richtextcomposeractions.cpp:413
 #, kde-format
 msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
 msgstr "Alt bölmə"
 
-#: composer-ng/richtextcomposeractions.cpp:412
+#: composer-ng/richtextcomposeractions.cpp:414
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
 msgstr "Paraqraf"
 
-#: composer-ng/richtextcomposeractions.cpp:413
+#: composer-ng/richtextcomposeractions.cpp:415
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
 msgstr "Alt paraqraf"
 
-#: composer-ng/richtextcomposeractions.cpp:424
+#: composer-ng/richtextcomposeractions.cpp:426
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
@@ -365,47 +365,47 @@ msgstr "İşarələmə qutusu"
 msgid "Only local files are supported."
 msgstr "Yalnız yerli fayllar dəstəklənir."
 
-#: composer-ng/richtextcomposerimages.cpp:55
+#: composer-ng/richtextcomposerimages.cpp:57
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "<filename>%1</filename> şəklinin yüklənməsi alınmadı."
 
-#: composer-ng/richtextcomposerimages.cpp:214
+#: composer-ng/richtextcomposerimages.cpp:216
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"
 msgstr "Şəkil"
 
-#: composer-ng/richtextexternalcomposer.cpp:69
+#: composer-ng/richtextexternalcomposer.cpp:71
 #, kde-format
 msgid "Command line is empty. Please verify settings."
 msgstr "Əmr sətri boşdur. Lütfən ayarları yoxlayın."
 
-#: composer-ng/richtextexternalcomposer.cpp:69
+#: composer-ng/richtextexternalcomposer.cpp:71
 #, fuzzy, kde-format
 #| msgid "Empty command line"
 msgctxt "@title:window"
 msgid "Empty command line"
 msgstr "Əmr sətri boşdur"
 
-#: composer-ng/richtextexternalcomposer.cpp:122
+#: composer-ng/richtextexternalcomposer.cpp:124
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr ""
 "Xarici redaktor başladıla bilmədi. \"%1\" əmrinin düzgünlüyünü yoxlayın"
 
-#: composer-ng/richtextexternalcomposer.cpp:140
+#: composer-ng/richtextexternalcomposer.cpp:142
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "Xarici redaktor işə salınarkən xəta aşkarlandı."
 
-#: composer-ng/richtextexternalcomposer.cpp:140
+#: composer-ng/richtextexternalcomposer.cpp:142
 #, kde-format
 msgid "External Editor Closed"
 msgstr "Xarici redaktor bağlandı"
 
-#: composer-ng/richtextexternalcomposer.cpp:157
+#: composer-ng/richtextexternalcomposer.cpp:159
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -417,19 +417,19 @@ msgstr ""
 "işlək tutmaq istəyirsiniz?<nl/><warning>Redaktorun dayandırılması bütün "
 "saxlanılmamış dəyişikliklərin itirilməsinə gətirib çıxaracaq.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:161
+#: composer-ng/richtextexternalcomposer.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "Xarici redaktor işləyir"
 
-#: composer-ng/richtextexternalcomposer.cpp:162
+#: composer-ng/richtextexternalcomposer.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "Redaktoru dayandırın"
 
-#: composer-ng/richtextexternalcomposer.cpp:163
+#: composer-ng/richtextexternalcomposer.cpp:165
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -463,7 +463,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Şəkil daxil edin"
 
-#: insertimagedialog.cpp:36 inserttabledialog.cpp:37 tableactionmenu.cpp:405
+#: insertimagedialog.cpp:36 inserttabledialog.cpp:37 tableactionmenu.cpp:407
 #, kde-format
 msgid "Insert"
 msgstr "Daxil edin"
@@ -540,62 +540,62 @@ msgstr "Pəncərələrin %-i"
 msgid "pixels"
 msgstr "piksellər"
 
-#: tableactionmenu.cpp:408
+#: tableactionmenu.cpp:410
 #, kde-format
 msgid "Table..."
 msgstr "Cədvəl..."
 
-#: tableactionmenu.cpp:416 tableactionmenu.cpp:449
+#: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
 msgid "Row Below"
 msgstr "Sətir aşağı"
 
-#: tableactionmenu.cpp:423 tableactionmenu.cpp:456
+#: tableactionmenu.cpp:425 tableactionmenu.cpp:458
 #, kde-format
 msgid "Row Above"
 msgstr "Sətir yuxarı"
 
-#: tableactionmenu.cpp:431 tableactionmenu.cpp:464
+#: tableactionmenu.cpp:433 tableactionmenu.cpp:466
 #, kde-format
 msgid "Column Before"
 msgstr "Sütun əvvəlinə"
 
-#: tableactionmenu.cpp:439 tableactionmenu.cpp:472
+#: tableactionmenu.cpp:441 tableactionmenu.cpp:474
 #, kde-format
 msgid "Column After"
 msgstr "Sütun sonrasına"
 
-#: tableactionmenu.cpp:446
+#: tableactionmenu.cpp:448
 #, kde-format
 msgid "Delete"
 msgstr "Silin"
 
-#: tableactionmenu.cpp:480
+#: tableactionmenu.cpp:482
 #, kde-format
 msgid "Cell Contents"
 msgstr "Xanaların tərkibi"
 
-#: tableactionmenu.cpp:489
+#: tableactionmenu.cpp:491
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "Sağdakı xanalar ilə birləşdirin"
 
-#: tableactionmenu.cpp:496
+#: tableactionmenu.cpp:498
 #, kde-format
 msgid "Join Selected Cells"
 msgstr "Seçilmiş xanaları birləşdirin"
 
-#: tableactionmenu.cpp:503
+#: tableactionmenu.cpp:505
 #, kde-format
 msgid "Split cells"
 msgstr "Xanaları ayırın"
 
-#: tableactionmenu.cpp:512
+#: tableactionmenu.cpp:514
 #, kde-format
 msgid "Table Format..."
 msgstr "Cədvəl formatı..."
 
-#: tableactionmenu.cpp:519
+#: tableactionmenu.cpp:521
 #, kde-format
 msgid "Table Cell Format..."
 msgstr "Cədvəl xanalarının formatı..."
