@@ -136,7 +136,10 @@ void RichTextComposerImages::addImageHelper(const QString &imageName, const QIma
         format.setHeight(height);
         d->composer->textCursor().insertImage(format);
     } else {
-        d->composer->textCursor().insertImage(imageNameToAdd);
+        QTextImageFormat format;
+        format.setName(imageNameToAdd);
+        format.setMaxWidth(QTextLength(QTextLength::PercentageLength, 100));
+        d->composer->textCursor().insertImage(format);
     }
     d->composer->activateRichText();
 }
