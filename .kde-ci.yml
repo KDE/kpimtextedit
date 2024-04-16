@@ -16,4 +16,3 @@ Dependencies:
     'frameworks/kxmlgui': '@latest-kf6'
     'frameworks/kcodecs': '@latest-kf6'
     'libraries/ktextaddons': '@latest-kf6'
-    'frameworks/ktexttemplate': '@latest-kf6'
