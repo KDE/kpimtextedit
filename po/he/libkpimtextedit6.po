@@ -1,0 +1,680 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kpimtextedit package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kpimtextedit\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"PO-Revision-Date: 2024-04-15 16:11+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#: composer-ng/klinkdialog.cpp:24
+#, kde-format
+msgid "Link Text:"
+msgstr "טקסט הקישור:"
+
+#: composer-ng/klinkdialog.cpp:26
+#, kde-format
+msgid "Link URL:"
+msgstr "כתובת הקישור:"
+
+#: composer-ng/klinkdialog.cpp:30
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Link"
+msgstr "ניהול קישור"
+
+#: composer-ng/richtextcomposeractions.cpp:103
+#, kde-format
+msgctxt "@action"
+msgid "Align &Left"
+msgstr "יישור &שמאלה"
+
+#: composer-ng/richtextcomposeractions.cpp:104
+#, kde-format
+msgctxt "@label left justify"
+msgid "Left"
+msgstr "שמאל"
+
+#: composer-ng/richtextcomposeractions.cpp:112
+#, kde-format
+msgctxt "@action"
+msgid "Align &Center"
+msgstr "מי&רכוז"
+
+#: composer-ng/richtextcomposeractions.cpp:113
+#, kde-format
+msgctxt "@label center justify"
+msgid "Center"
+msgstr "מרכז"
+
+#: composer-ng/richtextcomposeractions.cpp:121
+#, kde-format
+msgctxt "@action"
+msgid "Align &Right"
+msgstr "יישור ימי&נה"
+
+#: composer-ng/richtextcomposeractions.cpp:122
+#, kde-format
+msgctxt "@label right justify"
+msgid "Right"
+msgstr "ימין"
+
+#: composer-ng/richtextcomposeractions.cpp:130
+#, kde-format
+msgctxt "@action"
+msgid "&Justify"
+msgstr "יי&שור"
+
+#: composer-ng/richtextcomposeractions.cpp:131
+#, kde-format
+msgctxt "@label justify fill"
+msgid "Justify"
+msgstr "יישור"
+
+#: composer-ng/richtextcomposeractions.cpp:146
+#, kde-format
+msgctxt "@action"
+msgid "Left-to-Right"
+msgstr "שמאל־לימין"
+
+#: composer-ng/richtextcomposeractions.cpp:147
+#, kde-format
+msgctxt "@label left-to-right"
+msgid "Left-to-Right"
+msgstr "שמאל־לימין"
+
+#: composer-ng/richtextcomposeractions.cpp:155
+#, kde-format
+msgctxt "@action"
+msgid "Right-to-Left"
+msgstr "ימין־לשמאל"
+
+#: composer-ng/richtextcomposeractions.cpp:156
+#, kde-format
+msgctxt "@label right-to-left"
+msgid "Right-to-Left"
+msgstr "ימין־לשמאל"
+
+#: composer-ng/richtextcomposeractions.cpp:169
+#, kde-format
+msgctxt "@action"
+msgid "Subscript"
+msgstr "כתב תחתי"
+
+#: composer-ng/richtextcomposeractions.cpp:177
+#, kde-format
+msgctxt "@action"
+msgid "Superscript"
+msgstr "כתב עילי"
+
+#: composer-ng/richtextcomposeractions.cpp:185
+#, kde-format
+msgctxt "@action boldify selected text"
+msgid "&Bold"
+msgstr "מו&דגש"
+
+#: composer-ng/richtextcomposeractions.cpp:198
+#, kde-format
+msgctxt "@action italicize selected text"
+msgid "&Italic"
+msgstr "&נטוי"
+
+#: composer-ng/richtextcomposeractions.cpp:211
+#, kde-format
+msgctxt "@action underline selected text"
+msgid "&Underline"
+msgstr "&קו תחתי"
+
+#: composer-ng/richtextcomposeractions.cpp:223
+#, kde-format
+msgctxt "@action"
+msgid "&Strike Out"
+msgstr "קו &חוצה"
+
+#: composer-ng/richtextcomposeractions.cpp:238
+#, kde-format
+msgctxt "@action"
+msgid "&Font"
+msgstr "&גופן"
+
+#: composer-ng/richtextcomposeractions.cpp:247
+#, kde-format
+msgctxt "@action"
+msgid "Font &Size"
+msgstr "גודל ה&כתב"
+
+#: composer-ng/richtextcomposeractions.cpp:255
+#, kde-format
+msgctxt "@action"
+msgid "Insert Rule Line"
+msgstr "הוספת קו מפריד"
+
+#: composer-ng/richtextcomposeractions.cpp:264
+#, kde-format
+msgctxt "@action"
+msgid "Text &Color..."
+msgstr "צבע &טקסט…"
+
+#: composer-ng/richtextcomposeractions.cpp:265
+#, kde-format
+msgctxt "@label stroke color"
+msgid "Color"
+msgstr "צבע"
+
+#: composer-ng/richtextcomposeractions.cpp:273
+#, kde-format
+msgctxt "@action"
+msgid "Text &Highlight..."
+msgstr "הדגשת &טקסט…"
+
+#: composer-ng/richtextcomposeractions.cpp:281
+#, kde-format
+msgctxt "@action"
+msgid "Link"
+msgstr "קישור"
+
+#: composer-ng/richtextcomposeractions.cpp:289
+#, kde-format
+msgctxt "@action"
+msgid "Increase List Level"
+msgstr "הגדלת רמת הרשימה"
+
+#: composer-ng/richtextcomposeractions.cpp:297
+#, kde-format
+msgctxt "@action"
+msgid "Decrease List Level"
+msgstr "הקטנת רמת הרשימה"
+
+#: composer-ng/richtextcomposeractions.cpp:306
+#, kde-format
+msgctxt "@title:menu"
+msgid "List Style"
+msgstr "סגנון רשימה"
+
+#: composer-ng/richtextcomposeractions.cpp:308
+#, kde-format
+msgctxt "@item:inmenu no list style"
+msgid "None"
+msgstr "ללא"
+
+#: composer-ng/richtextcomposeractions.cpp:308
+#, kde-format
+msgctxt "@item:inmenu disc list style"
+msgid "Disc"
+msgstr "טבעת"
+
+#: composer-ng/richtextcomposeractions.cpp:309
+#, kde-format
+msgctxt "@item:inmenu circle list style"
+msgid "Circle"
+msgstr "עיגול"
+
+#: composer-ng/richtextcomposeractions.cpp:309
+#, kde-format
+msgctxt "@item:inmenu square list style"
+msgid "Square"
+msgstr "ריבוע"
+
+#: composer-ng/richtextcomposeractions.cpp:310
+#, kde-format
+msgctxt "@item:inmenu numbered lists"
+msgid "123"
+msgstr "123"
+
+#: composer-ng/richtextcomposeractions.cpp:310
+#, kde-format
+msgctxt "@item:inmenu lowercase abc lists"
+msgid "abc"
+msgstr "abc"
+
+#: composer-ng/richtextcomposeractions.cpp:311
+#, kde-format
+msgctxt "@item:inmenu uppercase abc lists"
+msgid "ABC"
+msgstr "ABC"
+
+#: composer-ng/richtextcomposeractions.cpp:311
+#, kde-format
+msgctxt "@item:inmenu lower case roman numerals"
+msgid "i ii iii"
+msgstr "i ii iii"
+
+#: composer-ng/richtextcomposeractions.cpp:312
+#, kde-format
+msgctxt "@item:inmenu upper case roman numerals"
+msgid "I II III"
+msgstr "I II III"
+
+#: composer-ng/richtextcomposeractions.cpp:323
+#, kde-format
+msgid "Pa&ste as Quotation"
+msgstr "הדבקה כ&ציטוט"
+
+#: composer-ng/richtextcomposeractions.cpp:331
+#, kde-format
+msgid "Add &Quote Characters"
+msgstr "הוספת &תווי ציטוט"
+
+#: composer-ng/richtextcomposeractions.cpp:338
+#, kde-format
+msgid "Re&move Quote Characters"
+msgstr "הסרת תווי צי&טוט"
+
+#: composer-ng/richtextcomposeractions.cpp:345
+#, kde-format
+msgid "Paste Without Formatting"
+msgstr "להדביק בלי עיצוב"
+
+#: composer-ng/richtextcomposeractions.cpp:353
+#, kde-format
+msgid "Add Image"
+msgstr "הוספת תמונה"
+
+#: composer-ng/richtextcomposeractions.cpp:372
+#, kde-format
+msgid "Insert HTML"
+msgstr "הוספת HTML"
+
+#: composer-ng/richtextcomposeractions.cpp:382
+#, kde-format
+msgid "Table"
+msgstr "טבלה"
+
+#: composer-ng/richtextcomposeractions.cpp:391
+#, kde-format
+msgid "Reset Font Settings"
+msgstr "איפוס הגדרות גופנים"
+
+#: composer-ng/richtextcomposeractions.cpp:392
+#, kde-format
+msgid "Reset Font"
+msgstr "איפוס גופן"
+
+#: composer-ng/richtextcomposeractions.cpp:400
+#, kde-format
+msgctxt "@action"
+msgid "Format Painter"
+msgstr "צובע עיצוב"
+
+#: composer-ng/richtextcomposeractions.cpp:408
+#, kde-format
+msgctxt "@title:menu"
+msgid "Heading Level"
+msgstr "רמת כותרת"
+
+#: composer-ng/richtextcomposeractions.cpp:409
+#, kde-format
+msgctxt "@item:inmenu no heading"
+msgid "Basic text"
+msgstr "טקסט בסיסי"
+
+#: composer-ng/richtextcomposeractions.cpp:410
+#, kde-format
+msgctxt "@item:inmenu heading level 1 (largest)"
+msgid "Title"
+msgstr "כותרת"
+
+#: composer-ng/richtextcomposeractions.cpp:411
+#, kde-format
+msgctxt "@item:inmenu heading level 2"
+msgid "Subtitle"
+msgstr "כותרת תחתית"
+
+#: composer-ng/richtextcomposeractions.cpp:412
+#, kde-format
+msgctxt "@item:inmenu heading level 3"
+msgid "Section"
+msgstr "סעיף"
+
+#: composer-ng/richtextcomposeractions.cpp:413
+#, kde-format
+msgctxt "@item:inmenu heading level 4"
+msgid "Subsection"
+msgstr "תת־סעיף"
+
+#: composer-ng/richtextcomposeractions.cpp:414
+#, kde-format
+msgctxt "@item:inmenu heading level 5"
+msgid "Paragraph"
+msgstr "פסקה"
+
+#: composer-ng/richtextcomposeractions.cpp:415
+#, kde-format
+msgctxt "@item:inmenu heading level 6 (smallest)"
+msgid "Subparagraph"
+msgstr "תת־פסקה"
+
+#: composer-ng/richtextcomposeractions.cpp:426
+#, kde-format
+msgctxt "@action"
+msgid "Checkbox"
+msgstr "תיבת סימון"
+
+#: composer-ng/richtextcomposercontroler.cpp:730
+#, kde-format
+msgid "Only local files are supported."
+msgstr "רק קבצים מקומיים נתמכים."
+
+#: composer-ng/richtextcomposerimages.cpp:57
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Unable to load image <filename>%1</filename>."
+msgstr "לא ניתן לטעון את התמונה <filename>%1</filename>."
+
+#: composer-ng/richtextcomposerimages.cpp:216
+#, kde-format
+msgctxt "Start of the filename for an image"
+msgid "image"
+msgstr "תמונה"
+
+#: composer-ng/richtextexternalcomposer.cpp:71
+#, kde-format
+msgid "Command line is empty. Please verify settings."
+msgstr "שורת הפקודה ריקה. נא לוודא שההגדרות תקינות."
+
+#: composer-ng/richtextexternalcomposer.cpp:71
+#, kde-format
+msgctxt "@title:window"
+msgid "Empty command line"
+msgstr "שורת הפקודה ריקה"
+
+#: composer-ng/richtextexternalcomposer.cpp:124
+#, kde-format
+msgid "External editor cannot be started. Please verify command \"%1\""
+msgstr "אי אפשר להפעיל את העורך החיצוני. נא לוודא שהפקודה „%1” נכונה"
+
+#: composer-ng/richtextexternalcomposer.cpp:142
+#, kde-format
+msgid "Error was found when we started external editor."
+msgstr "התגלתה שגיאה בעת פתיחת העורך החיצוני."
+
+#: composer-ng/richtextexternalcomposer.cpp:142
+#, kde-format
+msgid "External Editor Closed"
+msgstr "העורך החיצוני נסגר"
+
+#: composer-ng/richtextexternalcomposer.cpp:159
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The external editor is still running.<nl/>Do you want to stop the editor or "
+"keep it running?<nl/><warning>Stopping the editor will cause all your "
+"unsaved changes to be lost.</warning>"
+msgstr ""
+"העורך החיצוני עדיין פעיל.<nl/>לעצור את העורך או להשאיר אותו פעיל?<nl/"
+"><warning>עצירת העורך תוביל לאובדן כל השינויים שלא שמרת.</warning>"
+
+#: composer-ng/richtextexternalcomposer.cpp:163
+#, kde-format
+msgctxt "@title:window"
+msgid "External Editor Running"
+msgstr "העורך החיצוני פעיל"
+
+#: composer-ng/richtextexternalcomposer.cpp:164
+#, kde-format
+msgctxt "@action:button"
+msgid "Stop Editor"
+msgstr "עצירת העורך"
+
+#: composer-ng/richtextexternalcomposer.cpp:165
+#, kde-format
+msgctxt "@action:button"
+msgid "Keep Editor Running"
+msgstr "להשאיר את העורך פעיל"
+
+#: inserthtmldialog.cpp:34
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert HTML"
+msgstr "הוספת HTML"
+
+#: inserthtmldialog.cpp:36
+#, kde-format
+msgid "Insert HTML tags and texts:"
+msgstr "הוספת תגיות HTML וטקסטים:"
+
+#: inserthtmldialog.cpp:42
+#, kde-format
+msgid "Example: <i> Hello word </i>"
+msgstr "דוגמה: <i> שלום מילה </i>"
+
+#: inserthtmldialog.cpp:51
+#, kde-format
+msgctxt "@action:button"
+msgid "Insert"
+msgstr "הוספה"
+
+#: insertimagedialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert Image"
+msgstr "הוספת תמונה"
+
+#: insertimagedialog.cpp:36 inserttabledialog.cpp:37 tableactionmenu.cpp:407
+#, kde-format
+msgid "Insert"
+msgstr "הוספה"
+
+#: insertimagewidget.cpp:40
+#, kde-format
+msgid "Image Location:"
+msgstr "מקום התמונה:"
+
+#: insertimagewidget.cpp:53
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Image"
+msgstr "הוספת תמונה"
+
+#: insertimagewidget.cpp:64
+#, kde-format
+msgid "Keep Original Size"
+msgstr "שמירה על הגודל המקורי"
+
+#: insertimagewidget.cpp:71
+#, kde-format
+msgid "Keep Image Ratio"
+msgstr "שימור יחס גובה־רוחב של התמונה"
+
+#: insertimagewidget.cpp:77 inserttablewidget.cpp:59
+#, kde-format
+msgid "Width:"
+msgstr "רוחב:"
+
+#: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
+#, kde-format
+msgid " px"
+msgstr " פיקסלים"
+
+#: insertimagewidget.cpp:92
+#, kde-format
+msgid "Height:"
+msgstr "גובה:"
+
+#: insertimagewidget.cpp:110
+#, kde-format
+msgid "Image Preview:"
+msgstr "תצוגה מקדימה של תמונה:"
+
+#: inserttabledialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert Table"
+msgstr "הוספת טבלה"
+
+#: inserttablewidget.cpp:40
+#, kde-format
+msgid "Rows:"
+msgstr "שורות:"
+
+#: inserttablewidget.cpp:43
+#, kde-format
+msgid "Columns:"
+msgstr "עמודות:"
+
+#: inserttablewidget.cpp:46
+#, kde-format
+msgid "Border:"
+msgstr "מסגרת:"
+
+#: inserttablewidget.cpp:52
+#, no-c-format, kde-format
+msgid "% of windows"
+msgstr "% מהחלונות"
+
+#: inserttablewidget.cpp:53
+#, kde-format
+msgid "pixels"
+msgstr "פיקסלים"
+
+#: tableactionmenu.cpp:410
+#, kde-format
+msgid "Table..."
+msgstr "טבלה..."
+
+#: tableactionmenu.cpp:418 tableactionmenu.cpp:451
+#, kde-format
+msgid "Row Below"
+msgstr "שורה מתחת"
+
+#: tableactionmenu.cpp:425 tableactionmenu.cpp:458
+#, kde-format
+msgid "Row Above"
+msgstr "שורה מעל"
+
+#: tableactionmenu.cpp:433 tableactionmenu.cpp:466
+#, kde-format
+msgid "Column Before"
+msgstr "עמודה לפני"
+
+#: tableactionmenu.cpp:441 tableactionmenu.cpp:474
+#, kde-format
+msgid "Column After"
+msgstr "עמודה אחרי"
+
+#: tableactionmenu.cpp:448
+#, kde-format
+msgid "Delete"
+msgstr "מחיקה"
+
+#: tableactionmenu.cpp:482
+#, kde-format
+msgid "Cell Contents"
+msgstr "תוכן התא"
+
+#: tableactionmenu.cpp:491
+#, kde-format
+msgid "Join With Cell to the Right"
+msgstr "מיזוג עם התא מימין"
+
+#: tableactionmenu.cpp:498
+#, kde-format
+msgid "Join Selected Cells"
+msgstr "מיזוג התאים הנבחרים"
+
+#: tableactionmenu.cpp:505
+#, kde-format
+msgid "Split cells"
+msgstr "פיצול תאים"
+
+#: tableactionmenu.cpp:514
+#, kde-format
+msgid "Table Format..."
+msgstr "עיצוב טבלה…"
+
+#: tableactionmenu.cpp:521
+#, kde-format
+msgid "Table Cell Format..."
+msgstr "עיצוב תא בטבלה…"
+
+#: tablecellformatdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Cell Format"
+msgstr "עיצוב תא"
+
+#: tablecellformatdialog.cpp:33
+#, kde-format
+msgid "Vertical Alignment:"
+msgstr "יישור אנכי:"
+
+#: tablecellformatdialog.cpp:36
+#, kde-format
+msgid "Top"
+msgstr "למעלה"
+
+#: tablecellformatdialog.cpp:37
+#, kde-format
+msgid "Middle"
+msgstr "אמצע"
+
+#: tablecellformatdialog.cpp:38
+#, kde-format
+msgid "Bottom"
+msgstr "למטה"
+
+#: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
+#, kde-format
+msgid "Background Color:"
+msgstr "צבע הרקע:"
+
+#: tableformatdialog.cpp:31
+#, kde-format
+msgctxt "@title:window"
+msgid "Table Format"
+msgstr "עיצוב טבלה"
+
+#: tableformatdialog.cpp:44
+#, kde-format
+msgid "Spacing:"
+msgstr "ריווח:"
+
+#: tableformatdialog.cpp:49
+#, kde-format
+msgid "pixels between cells"
+msgstr "פיקסלים בין תאים"
+
+#: tableformatdialog.cpp:54
+#, kde-format
+msgid "Padding:"
+msgstr "ריפוד:"
+
+#: tableformatdialog.cpp:59
+#, kde-format
+msgid "pixels between cell border and content"
+msgstr "פיקסלים בין מסגרת התא לתוכן"
+
+#: tableformatdialog.cpp:67
+#, kde-format
+msgid "Left"
+msgstr "שמאל"
+
+#: tableformatdialog.cpp:68
+#, kde-format
+msgid "Right"
+msgstr "ימין"
+
+#: tableformatdialog.cpp:69
+#, kde-format
+msgid "Center"
+msgstr "מרכז"
+
+#: tableformatdialog.cpp:70
+#, kde-format
+msgid "Justify"
+msgstr "יישור"
+
+#: tableformatdialog.cpp:73
+#, kde-format
+msgid "Table Alignment:"
+msgstr "יישור טבלה:"
