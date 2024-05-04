@@ -43,7 +43,7 @@ TestGeneratePlainTextBuilderGui::TestGeneratePlainTextBuilderGui(QWidget *parent
     generatedPlainTextFromGrantleeToTextEdit->setReadOnly(true);
     mainLayout->addWidget(generatedPlainTextFromGrantleeToTextEdit);
 
-    connect(generateHtmlFromQTextEditButton, &QPushButton::clicked, this, [=] {
+    connect(generateHtmlFromQTextEditButton, &QPushButton::clicked, this, [generatedHtml, htmlEdit, generatedPlainTextFromGrantleeToTextEdit] {
         generatedHtml->setHtml(htmlEdit->toPlainText());
 
         auto hb = new KPIMTextEdit::PlainTextMarkupBuilder();

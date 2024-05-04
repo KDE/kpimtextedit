@@ -59,19 +59,22 @@ TestGenerateHTMLBuilderGui::TestGenerateHTMLBuilderGui(QWidget *parent)
     generatedHtmlFromGrantleeToTextEdit->setReadOnly(true);
     mainLayout->addWidget(generatedHtmlFromGrantleeToTextEdit);
 
-    connect(generateHtmlFromQTextEditButton, &QPushButton::clicked, this, [=] {
-        generatedHtml->setHtml(htmlEdit->toPlainText());
-        generatedHtmlFromTextEdit->setPlainText(generatedHtml->document()->toHtml());
+    connect(generateHtmlFromQTextEditButton,
+            &QPushButton::clicked,
+            this,
+            [generatedHtml, htmlEdit, generatedHtmlFromTextEdit, generatedHtmlFromGrantlee, generatedHtmlFromGrantleeToTextEdit] {
+                generatedHtml->setHtml(htmlEdit->toPlainText());
+                generatedHtmlFromTextEdit->setPlainText(generatedHtml->document()->toHtml());
 
-        auto hb = new KPIMTextEdit::TextHTMLBuilder();
-        auto md = new KPIMTextEdit::MarkupDirector(hb);
-        md->processDocument(generatedHtml->document());
-        auto result = hb->getResult();
-        delete md;
-        delete hb;
-        generatedHtmlFromGrantlee->setPlainText(result);
-        generatedHtmlFromGrantleeToTextEdit->setHtml(result);
-    });
+                auto hb = new KPIMTextEdit::TextHTMLBuilder();
+                auto md = new KPIMTextEdit::MarkupDirector(hb);
+                md->processDocument(generatedHtml->document());
+                auto result = hb->getResult();
+                delete md;
+                delete hb;
+                generatedHtmlFromGrantlee->setPlainText(result);
+                generatedHtmlFromGrantleeToTextEdit->setHtml(result);
+            });
 }
 
 TestGenerateHTMLBuilderGui::~TestGenerateHTMLBuilderGui() = default;
