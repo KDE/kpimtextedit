@@ -1,9 +1,9 @@
 # Translation of libkpimtextedit6.po to Catalan (Valencian)
-# Copyright (C) 2009-2023 This_file_is_part_of_KDE
+# Copyright (C) 2009-2024 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2009, 2012, 2013, 2014, 2017, 2019, 2020, 2021, 2022, 2023.
+# Josep M. Ferrer <txemaq@gmail.com>, 2009, 2012, 2013, 2014, 2017, 2019, 2020, 2021, 2022, 2023, 2024.
 # Manuel Tortosa Moreno <manutortosa@gmail.com>, 2009.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
 msgid ""
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-03 00:38+0000\n"
-"PO-Revision-Date: 2023-09-25 09:31+0200\n"
+"PO-Revision-Date: 2024-05-05 11:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -168,7 +168,7 @@ msgstr "Inserix una línia de regla"
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color..."
-msgstr "&Color del text..."
+msgstr "&Color del text…"
 
 #: composer-ng/richtextcomposeractions.cpp:265
 #, kde-format
@@ -180,7 +180,7 @@ msgstr "Color"
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight..."
-msgstr "&Ressalta el text..."
+msgstr "&Ressalta el text…"
 
 #: composer-ng/richtextcomposeractions.cpp:281
 #, kde-format
@@ -546,12 +546,12 @@ msgstr "píxels"
 #: tableactionmenu.cpp:410
 #, kde-format
 msgid "Table..."
-msgstr "Taula..."
+msgstr "Taula…"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
 msgid "Row Below"
-msgstr "Fila davall"
+msgstr "Fila a baix"
 
 #: tableactionmenu.cpp:425 tableactionmenu.cpp:458
 #, kde-format
@@ -596,12 +596,12 @@ msgstr "Dividix les cel·les"
 #: tableactionmenu.cpp:514
 #, kde-format
 msgid "Table Format..."
-msgstr "Format de la taula..."
+msgstr "Format de la taula…"
 
 #: tableactionmenu.cpp:521
 #, kde-format
 msgid "Table Cell Format..."
-msgstr "Format de cel·la de la taula..."
+msgstr "Format de cel·la de la taula…"
 
 #: tablecellformatdialog.cpp:28
 #, kde-format
