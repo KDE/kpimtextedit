@@ -407,7 +407,7 @@ TableActionMenu::TableActionMenu(QTextEdit *textEdit)
     auto insertMenu = new KActionMenu(i18n("Insert"), this);
     addAction(insertMenu);
 
-    d->actionInsertTable = new QAction(QIcon::fromTheme(QStringLiteral("insert-table")), i18n("Table..."), this);
+    d->actionInsertTable = new QAction(QIcon::fromTheme(QStringLiteral("insert-table")), i18n("Table…"), this);
     d->actionInsertTable->setObjectName("insert_new_table"_L1);
     insertMenu->addAction(d->actionInsertTable);
     connect(d->actionInsertTable, &QAction::triggered, this, [this]() {
@@ -511,14 +511,14 @@ TableActionMenu::TableActionMenu(QTextEdit *textEdit)
 
     addSeparator();
 
-    d->actionTableFormat = new QAction(i18n("Table Format..."), this);
+    d->actionTableFormat = new QAction(i18n("Table Format…"), this);
     d->actionTableFormat->setObjectName("table_format"_L1);
     connect(d->actionTableFormat, &QAction::triggered, this, [this]() {
         d->_k_slotTableFormat();
     });
     addAction(d->actionTableFormat);
 
-    d->actionTableCellFormat = new QAction(i18n("Table Cell Format..."), this);
+    d->actionTableCellFormat = new QAction(i18n("Table Cell Format…"), this);
     d->actionTableCellFormat->setObjectName("table_cell_format"_L1);
     connect(d->actionTableCellFormat, &QAction::triggered, this, [this]() {
         d->_k_slotTableCellFormat();

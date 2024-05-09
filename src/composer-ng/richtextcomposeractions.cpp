@@ -261,7 +261,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     connect(d->action_insert_horizontal_rule, &QAction::triggered, d->composerControler, &RichTextComposerControler::insertHorizontalRule);
 
     // Foreground Color
-    d->action_text_foreground_color = new QAction(QIcon::fromTheme(QStringLiteral("format-stroke-color")), i18nc("@action", "Text &Color..."), this);
+    d->action_text_foreground_color = new QAction(QIcon::fromTheme(QStringLiteral("format-stroke-color")), i18nc("@action", "Text &Color…"), this);
     d->action_text_foreground_color->setIconText(i18nc("@label stroke color", "Color"));
     d->richTextActionList.append((d->action_text_foreground_color));
     d->action_text_foreground_color->setObjectName("format_text_foreground_color"_L1);
@@ -270,7 +270,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     }
     connect(d->action_text_foreground_color, &QAction::triggered, d->composerControler, &RichTextComposerControler::setChangeTextForegroundColor);
     // Background Color
-    d->action_text_background_color = new QAction(QIcon::fromTheme(QStringLiteral("format-fill-color")), i18nc("@action", "Text &Highlight..."), this);
+    d->action_text_background_color = new QAction(QIcon::fromTheme(QStringLiteral("format-fill-color")), i18nc("@action", "Text &Highlight…"), this);
     d->richTextActionList.append((d->action_text_background_color));
     if (ac) {
         ac->addAction(QStringLiteral("format_text_background_color"), d->action_text_background_color);
