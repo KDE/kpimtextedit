@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2013-07-12 05:09+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -169,7 +169,7 @@ msgstr "Кестені ендіру"
 #: composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -181,7 +181,7 @@ msgstr ""
 #: composer-ng/richtextcomposeractions.cpp:273
 #, kde-format
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -549,9 +549,10 @@ msgid "pixels"
 msgstr "пиксел"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Кесте..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Кесте"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -599,13 +600,15 @@ msgid "Split cells"
 msgstr "Ұяшықтарды бөлу"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Кесте пішімі..."
+#, fuzzy, kde-format
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Кесте пішімі"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Кесте ұяшығының пішімі..."
 
 #: tablecellformatdialog.cpp:28
@@ -691,6 +694,12 @@ msgstr "Ені бойынша"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Кесте туралауы:"
+
+#~ msgid "Table..."
+#~ msgstr "Кесте..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Кесте пішімі..."
 
 #~ msgid "Delete Line"
 #~ msgstr "Жолды өшіру"

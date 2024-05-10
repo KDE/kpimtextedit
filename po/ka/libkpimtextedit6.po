@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2023-09-26 05:32+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -161,9 +161,11 @@ msgid "Insert Rule Line"
 msgstr "ჰორიზონტალური ხაზის ჩასმა"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "ტექსტის &ფერი..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -173,9 +175,11 @@ msgid "Color"
 msgstr "ფერი"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr "ტექსტის &გამოკვეთა..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -540,9 +544,10 @@ msgid "pixels"
 msgstr "პიქსელი"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "ცხრილი..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "ცხრილი"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -590,13 +595,16 @@ msgid "Split cells"
 msgstr "უჯრედების დაყოფა"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "ცხრილის ფორმატი..."
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "ცხრილის ფორმატი"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "ცხრილის უჯრედის ფორმატი..."
 
 #: tablecellformatdialog.cpp:28
@@ -680,6 +688,12 @@ msgstr "გადამრთეველი"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "ცხრილის სწორება:"
+
+#~ msgid "Table..."
+#~ msgstr "ცხრილი..."
+
+#~ msgid "Table Format..."
+#~ msgstr "ცხრილის ფორმატი..."
 
 #~ msgid "Delete Line"
 #~ msgstr "ხაზის წაშლა"

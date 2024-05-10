@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2023-09-26 17:53+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -164,9 +164,11 @@ msgid "Insert Rule Line"
 msgstr "Lisää vaakasuora viiva"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "Tekstin &väri…"
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -176,9 +178,11 @@ msgid "Color"
 msgstr "Väri"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr "Tekstin &korostus…"
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -543,9 +547,10 @@ msgid "pixels"
 msgstr "kuvapistettä"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Taulukko…"
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Taulukko"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -593,13 +598,16 @@ msgid "Split cells"
 msgstr "Jaa solut"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Taulukon muotoilu…"
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Taulukon muotoilu"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Taulukkosolun muotoilu…"
 
 #: tablecellformatdialog.cpp:28
@@ -683,6 +691,12 @@ msgstr "Tasaa"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Taulukon tasaus:"
+
+#~ msgid "Table..."
+#~ msgstr "Taulukko…"
+
+#~ msgid "Table Format..."
+#~ msgstr "Taulukon muotoilu…"
 
 #~ msgid "Delete Line"
 #~ msgstr "Rivin poisto"

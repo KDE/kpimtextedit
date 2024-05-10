@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2023-07-29 12:25+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -163,9 +163,11 @@ msgid "Insert Rule Line"
 msgstr "Sett inn bord"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "Tekst&farge …"
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -175,9 +177,11 @@ msgid "Color"
 msgstr "Farge"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr "&Framhevingsfarge …"
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -543,9 +547,10 @@ msgid "pixels"
 msgstr "pikslar"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Tabell …"
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Tabell"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -593,13 +598,16 @@ msgid "Split cells"
 msgstr "Del celler"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Tabellformat …"
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Tabellformat"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Tabellcelle-format …"
 
 #: tablecellformatdialog.cpp:28
@@ -683,3 +691,9 @@ msgstr "Juster"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Tabelljustering:"
+
+#~ msgid "Table..."
+#~ msgstr "Tabell …"
+
+#~ msgid "Table Format..."
+#~ msgstr "Tabellformat …"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2013-03-29 11:59+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -171,7 +171,7 @@ msgstr "Táblázat beszúrása"
 #: composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -183,7 +183,7 @@ msgstr ""
 #: composer-ng/richtextcomposeractions.cpp:273
 #, kde-format
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -551,9 +551,10 @@ msgid "pixels"
 msgstr "képpont"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Táblázat…"
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Táblázat"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -601,13 +602,15 @@ msgid "Split cells"
 msgstr "Cellák felosztása"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Táblázat formátum…"
+#, fuzzy, kde-format
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Táblázat formátum"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Táblázat cellaformátum…"
 
 #: tablecellformatdialog.cpp:28
@@ -693,6 +696,12 @@ msgstr "Sorkizárt"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Táblázat igazítása:"
+
+#~ msgid "Table..."
+#~ msgstr "Táblázat…"
+
+#~ msgid "Table Format..."
+#~ msgstr "Táblázat formátum…"
 
 #~ msgid "Delete Line"
 #~ msgstr "Sor törlése"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2023-09-25 23:19+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -163,9 +163,11 @@ msgid "Insert Rule Line"
 msgstr "Sartu erregela-lerroa"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "Testuaren &kolorea..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -175,9 +177,11 @@ msgid "Color"
 msgstr "Kolorea"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr "Testua &nabarmentzea..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -542,9 +546,10 @@ msgid "pixels"
 msgstr "pixel"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Taula..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Taula"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -592,13 +597,16 @@ msgid "Split cells"
 msgstr "Zatitu gelaxkak"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Taularen formatua..."
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Taularen formatua"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Taulako gelaxken formatua..."
 
 #: tablecellformatdialog.cpp:28
@@ -682,6 +690,12 @@ msgstr "Justifikatuta"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Taularen lerrokadura:"
+
+#~ msgid "Table..."
+#~ msgstr "Taula..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Taularen formatua..."
 
 #~ msgid "Delete Line"
 #~ msgstr "Ezabatu lerroa"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepimlibs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2015-02-04 15:38+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -172,7 +172,7 @@ msgstr "Umetni tabelu"
 #: composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -184,7 +184,7 @@ msgstr ""
 #: composer-ng/richtextcomposeractions.cpp:273
 #, kde-format
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -552,9 +552,10 @@ msgid "pixels"
 msgstr "pikseli"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Tabela..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Tabela"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -602,13 +603,15 @@ msgid "Split cells"
 msgstr "Razdvoji ćelije"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Format tabele..."
+#, fuzzy, kde-format
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Format tabele"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Format ćelija tabele..."
 
 #: tablecellformatdialog.cpp:28
@@ -694,6 +697,12 @@ msgstr "Poravnaj obostrano"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Poravnanje tabele:"
+
+#~ msgid "Table..."
+#~ msgstr "Tabela..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Format tabele..."
 
 #~ msgid "Delete Line"
 #~ msgstr "Obriši liniju"

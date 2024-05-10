@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2024-05-05 11:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -165,9 +165,11 @@ msgid "Insert Rule Line"
 msgstr "Insereix una línia de regla"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "&Color del text..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -177,9 +179,11 @@ msgid "Color"
 msgstr "Color"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr "&Ressalta el text..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -544,9 +548,10 @@ msgid "pixels"
 msgstr "píxels"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Taula..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Taula"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -594,13 +599,16 @@ msgid "Split cells"
 msgstr "Divideix les cel·les"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Format de la taula..."
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Format de la taula"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Format de cel·la de la taula..."
 
 #: tablecellformatdialog.cpp:28
@@ -684,3 +692,9 @@ msgstr "Justificat"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Alineació de la taula:"
+
+#~ msgid "Table..."
+#~ msgstr "Taula..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Format de la taula..."

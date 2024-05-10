@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2014-03-05 00:31+0100\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -171,7 +171,7 @@ msgstr "Tabell infögen"
 #: composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -183,7 +183,7 @@ msgstr ""
 #: composer-ng/richtextcomposeractions.cpp:273
 #, kde-format
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -551,9 +551,10 @@ msgid "pixels"
 msgstr "Pixels"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Tabell..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Tabell"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -601,13 +602,15 @@ msgid "Split cells"
 msgstr "Zellen delen"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Tabellformaat..."
+#, fuzzy, kde-format
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Tabellformaat"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Tabellzellformaat..."
 
 #: tablecellformatdialog.cpp:28
@@ -693,6 +696,12 @@ msgstr "Blocksatz"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Tabellutrichten:"
+
+#~ msgid "Table..."
+#~ msgstr "Tabell..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Tabellformaat..."
 
 #~ msgid "Delete Line"
 #~ msgstr "Reeg wegdoon"

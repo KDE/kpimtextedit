@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2023-04-22 12:21+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -160,9 +160,11 @@ msgid "Insert Rule Line"
 msgstr "Üfüqi xətt qoymaq"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "Mətnin &rəngi..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -172,9 +174,11 @@ msgid "Color"
 msgstr "Rəng"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr "Mətn &işıqlanması..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -541,9 +545,10 @@ msgid "pixels"
 msgstr "piksellər"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Cədvəl..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Cədvəl"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -591,13 +596,16 @@ msgid "Split cells"
 msgstr "Xanaları ayırın"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Cədvəl formatı..."
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Cədvəl formatı"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Cədvəl xanalarının formatı..."
 
 #: tablecellformatdialog.cpp:28
@@ -681,6 +689,12 @@ msgstr "Eninə"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Cədvəlin düzülüşü:"
+
+#~ msgid "Table..."
+#~ msgstr "Cədvəl..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Cədvəl formatı..."
 
 #~ msgid "Delete Line"
 #~ msgstr "Sətiri silin"

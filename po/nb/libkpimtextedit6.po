@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2013-04-03 18:03+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -162,9 +162,11 @@ msgid "Insert Rule Line"
 msgstr "Sett inn streklinje"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "Tekst&farge …"
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -176,7 +178,7 @@ msgstr "Farge"
 #: composer-ng/richtextcomposeractions.cpp:273
 #, kde-format
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -542,9 +544,10 @@ msgid "pixels"
 msgstr "piksler"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Tabell …"
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Tabell"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -592,13 +595,15 @@ msgid "Split cells"
 msgstr "Del celler"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
+#, fuzzy, kde-format
+#| msgid "Table Format..."
+msgid "Table Format…"
 msgstr "Tabellformat …"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Tabellcelleformat …"
 
 #: tablecellformatdialog.cpp:28
@@ -682,3 +687,6 @@ msgstr "Innrett"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Tabellinnretting:"
+
+#~ msgid "Table..."
+#~ msgstr "Tabell …"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -169,7 +169,7 @@ msgstr "جەدۋەل قىستۇر"
 #: composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -181,7 +181,7 @@ msgstr ""
 #: composer-ng/richtextcomposeractions.cpp:273
 #, kde-format
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -548,9 +548,10 @@ msgid "pixels"
 msgstr "چېكىت"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "جەدۋەل…"
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "جەدۋەل"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -599,12 +600,12 @@ msgstr ""
 
 #: tableactionmenu.cpp:514
 #, kde-format
-msgid "Table Format..."
+msgid "Table Format…"
 msgstr ""
 
 #: tableactionmenu.cpp:521
 #, kde-format
-msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr ""
 
 #: tablecellformatdialog.cpp:28
@@ -688,6 +689,9 @@ msgstr "ئوڭ-سول تەرىپى تەكشى"
 #, kde-format
 msgid "Table Alignment:"
 msgstr ""
+
+#~ msgid "Table..."
+#~ msgstr "جەدۋەل…"
 
 #~ msgid "Delete Line"
 #~ msgstr "قۇر ئۆچۈر"

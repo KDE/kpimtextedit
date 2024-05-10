@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2023-12-21 16:54+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -161,9 +161,11 @@ msgid "Insert Rule Line"
 msgstr "Linie einfügen"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "Text&farbe ..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -173,9 +175,11 @@ msgid "Color"
 msgstr "Farbe"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr "Text&hervorhebung ..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -542,9 +546,10 @@ msgid "pixels"
 msgstr "Pixel"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Tabelle ..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Tabelle"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -592,13 +597,16 @@ msgid "Split cells"
 msgstr "Zellen teilen"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Tabellenformat ..."
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Tabellenformat"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Tabellenzellformat ..."
 
 #: tablecellformatdialog.cpp:28
@@ -682,6 +690,12 @@ msgstr "Bündig"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Tabellenausrichtung"
+
+#~ msgid "Table..."
+#~ msgstr "Tabelle ..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Tabellenformat ..."
 
 #~ msgid "Delete Line"
 #~ msgstr "Zeile löschen"

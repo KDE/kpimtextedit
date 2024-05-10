@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2023-09-25 09:19+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -162,9 +162,11 @@ msgid "Insert Rule Line"
 msgstr "Lineaallijn invoegen"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "Tekst&kleur..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -174,9 +176,11 @@ msgid "Color"
 msgstr "Kleur"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr "Tekst&accentuering..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -542,9 +546,10 @@ msgid "pixels"
 msgstr "pixels"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Tabel..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Tabel"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -592,13 +597,16 @@ msgid "Split cells"
 msgstr "Cellen splitsen"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Tabelindeling..."
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Tabelindeling"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Celindeling van tabel..."
 
 #: tablecellformatdialog.cpp:28
@@ -682,6 +690,12 @@ msgstr "Uitvullen"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Tabeluitlijning:"
+
+#~ msgid "Table..."
+#~ msgstr "Tabel..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Tabelindeling..."
 
 #~ msgid "Delete Line"
 #~ msgstr "Regel verwijderen"

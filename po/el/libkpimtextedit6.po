@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2014-03-09 19:45+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -171,7 +171,7 @@ msgstr "Εισαγωγή πίνακα"
 #: composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -183,7 +183,7 @@ msgstr ""
 #: composer-ng/richtextcomposeractions.cpp:273
 #, kde-format
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -551,9 +551,10 @@ msgid "pixels"
 msgstr "εικονοστοιχεία"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Πίνακας..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Πίνακας"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -601,13 +602,15 @@ msgid "Split cells"
 msgstr "Διαίρεση κελιών"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Τύπος πίνακα..."
+#, fuzzy, kde-format
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Τύπος πίνακα"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Μορφή πίνακα κελιών..."
 
 #: tablecellformatdialog.cpp:28
@@ -693,6 +696,12 @@ msgstr "Πλήρης στοίχιση"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Στοίχιση πίνακα:"
+
+#~ msgid "Table..."
+#~ msgstr "Πίνακας..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Τύπος πίνακα..."
 
 #~ msgid "Delete Line"
 #~ msgstr "Διαγραφή γραμμής"

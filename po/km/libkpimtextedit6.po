@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2012-06-13 09:17+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer\n"
@@ -164,7 +164,7 @@ msgstr ""
 #: composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -176,7 +176,7 @@ msgstr ""
 #: composer-ng/richtextcomposeractions.cpp:273
 #, kde-format
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -540,7 +540,7 @@ msgstr ""
 
 #: tableactionmenu.cpp:410
 #, kde-format
-msgid "Table..."
+msgid "Table…"
 msgstr ""
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
@@ -591,12 +591,12 @@ msgstr ""
 
 #: tableactionmenu.cpp:514
 #, kde-format
-msgid "Table Format..."
+msgid "Table Format…"
 msgstr ""
 
 #: tableactionmenu.cpp:521
 #, kde-format
-msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr ""
 
 #: tablecellformatdialog.cpp:28

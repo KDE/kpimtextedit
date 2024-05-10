@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2023-04-08 11:10+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -161,9 +161,11 @@ msgid "Insert Rule Line"
 msgstr "Insert Rule Line"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "Text &Colour..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -173,9 +175,11 @@ msgid "Color"
 msgstr "Colour"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr "Text &Highlight..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -541,9 +545,10 @@ msgid "pixels"
 msgstr "pixels"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Table..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Table"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -591,13 +596,16 @@ msgid "Split cells"
 msgstr "Split cells"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Table Format..."
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Table Format"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Table Cell Format..."
 
 #: tablecellformatdialog.cpp:28
@@ -681,6 +689,12 @@ msgstr "Justify"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Table Alignment:"
+
+#~ msgid "Table..."
+#~ msgstr "Table..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Table Format..."
 
 #~ msgid "Delete Line"
 #~ msgstr "Delete Line"

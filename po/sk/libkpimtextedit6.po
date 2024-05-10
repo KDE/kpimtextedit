@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2019-11-11 15:17+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -161,9 +161,11 @@ msgid "Insert Rule Line"
 msgstr "Vložiť vodorovnú čiaru"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "Farba &textu..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -173,9 +175,11 @@ msgid "Color"
 msgstr "Farba"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr "Zvýraznenie &textu..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -547,9 +551,10 @@ msgid "pixels"
 msgstr "bodov"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Tabuľka..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Tabuľka"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -597,13 +602,15 @@ msgid "Split cells"
 msgstr "Rozdeliť bunky"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Formát tabuľky..."
+#, fuzzy, kde-format
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Formát tabuľky"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Formát bunky tabuľky..."
 
 #: tablecellformatdialog.cpp:28
@@ -689,6 +696,12 @@ msgstr "Zarovnať"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Zarovnanie tabuľky:"
+
+#~ msgid "Table..."
+#~ msgstr "Tabuľka..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Formát tabuľky..."
 
 #~ msgid "Delete Line"
 #~ msgstr "Odstrániť riadok"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -160,9 +160,11 @@ msgid "Insert Rule Line"
 msgstr "插入水平线"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "文本颜色(&C)..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -172,10 +174,12 @@ msgid "Color"
 msgstr "颜色"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
-msgstr "文本加亮(&H)..."
+msgid "Text &Highlight…"
+msgstr "文本高亮(&H)..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
 #, kde-format
@@ -538,9 +542,10 @@ msgid "pixels"
 msgstr "像素"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "表格..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "表格"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -588,13 +593,16 @@ msgid "Split cells"
 msgstr "分割单元格"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "表格格式..."
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "表格格式"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "表格单元格格式..."
 
 #: tablecellformatdialog.cpp:28
@@ -678,3 +686,9 @@ msgstr "两端对齐"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "表格对齐："
+
+#~ msgid "Table..."
+#~ msgstr "表格..."
+
+#~ msgid "Table Format..."
+#~ msgstr "表格格式..."

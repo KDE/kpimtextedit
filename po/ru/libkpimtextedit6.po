@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2023-12-27 10:01+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -168,9 +168,11 @@ msgid "Insert Rule Line"
 msgstr "Вставить горизонтальную линию"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "&Цвет текста..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -180,9 +182,11 @@ msgid "Color"
 msgstr "Цвет"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr "Цвет &фона..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -548,9 +552,10 @@ msgid "pixels"
 msgstr "пикселов"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Таблица..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Таблица"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -598,13 +603,16 @@ msgid "Split cells"
 msgstr "Разделить ячейки"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Формат таблицы..."
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Формат таблицы"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Формат ячейки таблицы..."
 
 #: tablecellformatdialog.cpp:28
@@ -688,6 +696,12 @@ msgstr "По ширине"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Выравнивание таблицы"
+
+#~ msgid "Table..."
+#~ msgstr "Таблица..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Формат таблицы..."
 
 #~ msgid "Delete Line"
 #~ msgstr "Удалить строку"

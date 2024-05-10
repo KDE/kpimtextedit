@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2017-12-24 21:47+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -164,9 +164,11 @@ msgid "Insert Rule Line"
 msgstr "Уметни линију равнања"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "&Боја текста..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -176,9 +178,11 @@ msgid "Color"
 msgstr "Боја"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr "&Истицање текста..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -557,9 +561,10 @@ msgid "pixels"
 msgstr "пиксела"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Табела..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Табела"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -607,14 +612,16 @@ msgid "Split cells"
 msgstr "Подели ћелије"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Формат табеле..."
+#, fuzzy, kde-format
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Формат табеле"
 
 # rewrite-msgid: /Table//
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Формат ћелије..."
 
 #: tablecellformatdialog.cpp:28
@@ -704,6 +711,12 @@ msgstr "развучено"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Поравнање табеле:"
+
+#~ msgid "Table..."
+#~ msgstr "Табела..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Формат табеле..."
 
 #~ msgid "Delete Line"
 #~ msgstr "Обриши ред"

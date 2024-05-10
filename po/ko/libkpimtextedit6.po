@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2023-10-08 23:33+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -160,9 +160,11 @@ msgid "Insert Rule Line"
 msgstr "규칙 줄 삽입"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "텍스트 색(&C)..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -172,9 +174,11 @@ msgid "Color"
 msgstr "색"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr "텍스트 강조(&H)..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -540,9 +544,10 @@ msgid "pixels"
 msgstr "픽셀"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "표..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "표"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -590,13 +595,16 @@ msgid "Split cells"
 msgstr "셀 분할"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "표 서식..."
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "표 서식"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "표 셀 서식..."
 
 #: tablecellformatdialog.cpp:28
@@ -680,6 +688,12 @@ msgstr "맞춤"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "표 정렬:"
+
+#~ msgid "Table..."
+#~ msgstr "표..."
+
+#~ msgid "Table Format..."
+#~ msgstr "표 서식..."
 
 #~ msgid "Delete Line"
 #~ msgstr "줄 삭제"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2015-08-30 16:02+0200\n"
 "Last-Translator: Liudas Ališauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -171,7 +171,7 @@ msgstr "Įterpti lentelę"
 #: composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -183,7 +183,7 @@ msgstr ""
 #: composer-ng/richtextcomposeractions.cpp:273
 #, kde-format
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -551,9 +551,10 @@ msgid "pixels"
 msgstr "pikseliai"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Lentelė..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Lentelė"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -601,13 +602,15 @@ msgid "Split cells"
 msgstr "Skaidyti langelius"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Lentelės formatas..."
+#, fuzzy, kde-format
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Lentelės formatas"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Lentelės langelio formatas..."
 
 #: tablecellformatdialog.cpp:28
@@ -693,6 +696,12 @@ msgstr "Abipusė lygiuotė"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Lentelės lygiuotė:"
+
+#~ msgid "Table..."
+#~ msgstr "Lentelė..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Lentelės formatas..."
 
 #~ msgid "Delete Line"
 #~ msgstr "Trinti eilutę"

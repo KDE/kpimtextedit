@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepimlibs-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2024-03-01 14:41+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -164,9 +164,11 @@ msgid "Insert Rule Line"
 msgstr "Cetvel Satırı Ekle"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "Metin &Rengi..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -176,9 +178,11 @@ msgid "Color"
 msgstr "Renk"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr "Metin &Vurgula..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -543,9 +547,10 @@ msgid "pixels"
 msgstr "piksel"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Tablo..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Tablo"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -593,13 +598,16 @@ msgid "Split cells"
 msgstr "Hücreleri böl"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Tablo Biçimi..."
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Tablo Biçimi"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Tablo Hücre Biçimi..."
 
 #: tablecellformatdialog.cpp:28
@@ -683,6 +691,12 @@ msgstr "İki Yana Hizala"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Tablo hizalaması:"
+
+#~ msgid "Table..."
+#~ msgstr "Tablo..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Tablo Biçimi..."
 
 #~ msgid "Delete Line"
 #~ msgstr "Satırı Sil"

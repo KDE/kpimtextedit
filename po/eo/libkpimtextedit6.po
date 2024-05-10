@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-05-10 00:39+0000\n"
 "PO-Revision-Date: 2024-04-13 10:04+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -162,9 +162,11 @@ msgid "Insert Rule Line"
 msgstr "Enmeti Streklinion"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Color..."
 msgctxt "@action"
-msgid "Text &Color..."
+msgid "Text &Color…"
 msgstr "Tekst&koloro..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
@@ -174,9 +176,11 @@ msgid "Color"
 msgstr "Koloro"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Text &Highlight..."
 msgctxt "@action"
-msgid "Text &Highlight..."
+msgid "Text &Highlight…"
 msgstr "Tekst&emfazo..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
@@ -542,9 +546,10 @@ msgid "pixels"
 msgstr "pikseloj"
 
 #: tableactionmenu.cpp:410
-#, kde-format
-msgid "Table..."
-msgstr "Tabelo..."
+#, fuzzy, kde-format
+#| msgid "Table"
+msgid "Table…"
+msgstr "Tabelo"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -592,13 +597,16 @@ msgid "Split cells"
 msgstr "Dividi ĉelojn"
 
 #: tableactionmenu.cpp:514
-#, kde-format
-msgid "Table Format..."
-msgstr "Tabelformato..."
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Table Format"
+msgid "Table Format…"
+msgstr "Tabelformato"
 
 #: tableactionmenu.cpp:521
-#, kde-format
-msgid "Table Cell Format..."
+#, fuzzy, kde-format
+#| msgid "Table Cell Format..."
+msgid "Table Cell Format…"
 msgstr "Tabelĉela Formato..."
 
 #: tablecellformatdialog.cpp:28
@@ -682,3 +690,9 @@ msgstr "Ĝisrandigi"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Tabela ĝisrandigo:"
+
+#~ msgid "Table..."
+#~ msgstr "Tabelo..."
+
+#~ msgid "Table Format..."
+#~ msgstr "Tabelformato..."
