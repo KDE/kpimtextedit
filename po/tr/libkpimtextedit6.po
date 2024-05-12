@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kdepimlibs-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-03 00:38+0000\n"
-"PO-Revision-Date: 2024-03-01 14:41+0300\n"
+"PO-Revision-Date: 2024-05-10 13:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -29,7 +29,7 @@ msgstr "Bağlantı metni:"
 #: composer-ng/klinkdialog.cpp:26
 #, kde-format
 msgid "Link URL:"
-msgstr "Bağlantı URL'si:"
+msgstr "Bağlantı URL’si:"
 
 #: composer-ng/klinkdialog.cpp:30
 #, kde-format
@@ -395,7 +395,7 @@ msgstr "Boş Komut Satırı"
 #: composer-ng/richtextexternalcomposer.cpp:124
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
-msgstr "Dış düzenleyici başlatılamıyor. Lütfen \"%1\" komutunu doğrulayın"
+msgstr "Dış düzenleyici başlatılamıyor. Lütfen “%1” komutunu doğrulayın"
 
 #: composer-ng/richtextexternalcomposer.cpp:142
 #, kde-format
