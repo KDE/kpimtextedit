@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2024-05-05 11:59+0200\n"
+"PO-Revision-Date: 2024-05-10 12:00+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -165,9 +165,7 @@ msgid "Insert Rule Line"
 msgstr "Inserix una línia de regla"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Color..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Color…"
 msgstr "&Color del text…"
@@ -179,9 +177,7 @@ msgid "Color"
 msgstr "Color"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Highlight..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Highlight…"
 msgstr "&Ressalta el text…"
@@ -548,10 +544,9 @@ msgid "pixels"
 msgstr "píxels"
 
 #: tableactionmenu.cpp:410
-#, fuzzy, kde-format
-#| msgid "Table"
+#, kde-format
 msgid "Table…"
-msgstr "Taula"
+msgstr "Taula…"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -599,15 +594,12 @@ msgid "Split cells"
 msgstr "Dividix les cel·les"
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Table Format"
+#, kde-format
 msgid "Table Format…"
-msgstr "Format de la taula"
+msgstr "Format de la taula…"
 
 #: tableactionmenu.cpp:521
-#, fuzzy, kde-format
-#| msgid "Table Cell Format..."
+#, kde-format
 msgid "Table Cell Format…"
 msgstr "Format de cel·la de la taula…"
 
@@ -692,9 +684,3 @@ msgstr "Justifica"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Alineació de la taula:"
-
-#~ msgid "Table..."
-#~ msgstr "Taula…"
-
-#~ msgid "Table Format..."
-#~ msgstr "Format de la taula…"

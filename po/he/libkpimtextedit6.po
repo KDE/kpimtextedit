@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2024-04-15 16:11+0300\n"
+"PO-Revision-Date: 2024-05-10 20:14+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -161,9 +161,7 @@ msgid "Insert Rule Line"
 msgstr "הוספת קו מפריד"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Color..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Color…"
 msgstr "צבע &טקסט…"
@@ -175,9 +173,7 @@ msgid "Color"
 msgstr "צבע"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Highlight..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Highlight…"
 msgstr "הדגשת &טקסט…"
@@ -543,10 +539,9 @@ msgid "pixels"
 msgstr "פיקסלים"
 
 #: tableactionmenu.cpp:410
-#, fuzzy, kde-format
-#| msgid "Table"
+#, kde-format
 msgid "Table…"
-msgstr "טבלה"
+msgstr "טבלה…"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -594,15 +589,12 @@ msgid "Split cells"
 msgstr "פיצול תאים"
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Table Format"
+#, kde-format
 msgid "Table Format…"
-msgstr "עיצוב טבלה"
+msgstr "עיצוב טבלה…"
 
 #: tableactionmenu.cpp:521
-#, fuzzy, kde-format
-#| msgid "Table Cell Format..."
+#, kde-format
 msgid "Table Cell Format…"
 msgstr "עיצוב תא בטבלה…"
 

@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2023-09-25 11:24+0200\n"
+"PO-Revision-Date: 2024-05-10 06:14+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -168,12 +168,10 @@ msgid "Insert Rule Line"
 msgstr "Vstavi črto"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Color..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Color…"
-msgstr "Barva besedila..."
+msgstr "Barva besedila…"
 
 #: composer-ng/richtextcomposeractions.cpp:265
 #, kde-format
@@ -182,12 +180,10 @@ msgid "Color"
 msgstr "Barva"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Highlight..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Highlight…"
-msgstr "Pou&darjanje besedila ..."
+msgstr "Poudarjanje besedila…"
 
 #: composer-ng/richtextcomposeractions.cpp:281
 #, kde-format
@@ -270,17 +266,17 @@ msgstr "I II III"
 #: composer-ng/richtextcomposeractions.cpp:323
 #, kde-format
 msgid "Pa&ste as Quotation"
-msgstr "Pri&lepi kot navedek"
+msgstr "Prilepi kot navedek"
 
 #: composer-ng/richtextcomposeractions.cpp:331
 #, kde-format
 msgid "Add &Quote Characters"
-msgstr "Dodaj &znake za navajanje"
+msgstr "Dodaj znake za navajanje"
 
 #: composer-ng/richtextcomposeractions.cpp:338
 #, kde-format
 msgid "Re&move Quote Characters"
-msgstr "Odst&rani znake za navajanje"
+msgstr "Odstrani znake za navajanje"
 
 #: composer-ng/richtextcomposeractions.cpp:345
 #, kde-format
@@ -551,10 +547,9 @@ msgid "pixels"
 msgstr "sl. točk"
 
 #: tableactionmenu.cpp:410
-#, fuzzy, kde-format
-#| msgid "Table"
+#, kde-format
 msgid "Table…"
-msgstr "Razpredelnica"
+msgstr "Razpredelnica…"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -602,17 +597,14 @@ msgid "Split cells"
 msgstr "Razdeli celice"
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Table Format"
+#, kde-format
 msgid "Table Format…"
-msgstr "Oblika razpredelnice"
+msgstr "Oblika razpredelnice…"
 
 #: tableactionmenu.cpp:521
-#, fuzzy, kde-format
-#| msgid "Table Cell Format..."
+#, kde-format
 msgid "Table Cell Format…"
-msgstr "Oblika celice v razpredelnici ..."
+msgstr "Oblika celice v razpredelnici…"
 
 #: tablecellformatdialog.cpp:28
 #, kde-format

@@ -5,13 +5,13 @@
 # Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>, 2009.
 # Javier Vinal <fjvinalgmail.com>, 2011, 2012.
 # Javier Viñal <fjvinal@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019.
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2023-09-25 12:46+0200\n"
+"PO-Revision-Date: 2024-05-11 00:50+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "com>\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: composer-ng/klinkdialog.cpp:24
@@ -165,12 +165,10 @@ msgid "Insert Rule Line"
 msgstr "Insertar línea de la regla"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Color..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Color…"
-msgstr "&Color de texto..."
+msgstr "&Color del texto..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
 #, kde-format
@@ -179,12 +177,10 @@ msgid "Color"
 msgstr "Color"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Highlight..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Highlight…"
-msgstr "&Resaltado de texto..."
+msgstr "Texto &resaltado..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
 #, kde-format
@@ -549,10 +545,9 @@ msgid "pixels"
 msgstr "píxeles"
 
 #: tableactionmenu.cpp:410
-#, fuzzy, kde-format
-#| msgid "Table"
+#, kde-format
 msgid "Table…"
-msgstr "Tabla"
+msgstr "Tabla..."
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -600,15 +595,12 @@ msgid "Split cells"
 msgstr "Dividir celdas"
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Table Format"
+#, kde-format
 msgid "Table Format…"
-msgstr "Formato de tabla"
+msgstr "Formato de tabla..."
 
 #: tableactionmenu.cpp:521
-#, fuzzy, kde-format
-#| msgid "Table Cell Format..."
+#, kde-format
 msgid "Table Cell Format…"
 msgstr "Formato de celda de tabla..."
 

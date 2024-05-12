@@ -160,12 +160,10 @@ msgid "Insert Rule Line"
 msgstr "插入水平线"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Color..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Color…"
-msgstr "文本颜色(&C)..."
+msgstr "文字颜色(&C)…"
 
 #: composer-ng/richtextcomposeractions.cpp:265
 #, kde-format
@@ -174,12 +172,10 @@ msgid "Color"
 msgstr "颜色"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Highlight..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Highlight…"
-msgstr "文本高亮(&H)..."
+msgstr "文字高亮(&H)…"
 
 #: composer-ng/richtextcomposeractions.cpp:281
 #, kde-format
@@ -542,10 +538,9 @@ msgid "pixels"
 msgstr "像素"
 
 #: tableactionmenu.cpp:410
-#, fuzzy, kde-format
-#| msgid "Table"
+#, kde-format
 msgid "Table…"
-msgstr "表格"
+msgstr "表格…"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -593,17 +588,14 @@ msgid "Split cells"
 msgstr "分割单元格"
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Table Format"
+#, kde-format
 msgid "Table Format…"
-msgstr "表格格式"
+msgstr "表格格式…"
 
 #: tableactionmenu.cpp:521
-#, fuzzy, kde-format
-#| msgid "Table Cell Format..."
+#, kde-format
 msgid "Table Cell Format…"
-msgstr "表格单元格格式..."
+msgstr "表格单元格格式…"
 
 #: tablecellformatdialog.cpp:28
 #, kde-format
@@ -686,9 +678,3 @@ msgstr "两端对齐"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "表格对齐："
-
-#~ msgid "Table..."
-#~ msgstr "表格..."
-
-#~ msgid "Table Format..."
-#~ msgstr "表格格式..."

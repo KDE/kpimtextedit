@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2023-09-26 05:32+0200\n"
+"PO-Revision-Date: 2024-05-10 07:29+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -161,12 +161,10 @@ msgid "Insert Rule Line"
 msgstr "ჰორიზონტალური ხაზის ჩასმა"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Color..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Color…"
-msgstr "ტექსტის &ფერი..."
+msgstr "ტექსტის &ფერი…"
 
 #: composer-ng/richtextcomposeractions.cpp:265
 #, kde-format
@@ -175,12 +173,10 @@ msgid "Color"
 msgstr "ფერი"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Highlight..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Highlight…"
-msgstr "ტექსტის &გამოკვეთა..."
+msgstr "ტექსტის &გამოკვეთა…"
 
 #: composer-ng/richtextcomposeractions.cpp:281
 #, kde-format
@@ -544,10 +540,9 @@ msgid "pixels"
 msgstr "პიქსელი"
 
 #: tableactionmenu.cpp:410
-#, fuzzy, kde-format
-#| msgid "Table"
+#, kde-format
 msgid "Table…"
-msgstr "ცხრილი"
+msgstr "ცხრილი…"
 
 #: tableactionmenu.cpp:418 tableactionmenu.cpp:451
 #, kde-format
@@ -595,17 +590,14 @@ msgid "Split cells"
 msgstr "უჯრედების დაყოფა"
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Table Format"
+#, kde-format
 msgid "Table Format…"
-msgstr "ცხრილის ფორმატი"
+msgstr "ცხრილის ფორმატი…"
 
 #: tableactionmenu.cpp:521
-#, fuzzy, kde-format
-#| msgid "Table Cell Format..."
+#, kde-format
 msgid "Table Cell Format…"
-msgstr "ცხრილის უჯრედის ფორმატი..."
+msgstr "ცხრილის უჯრედის ფორმატი…"
 
 #: tablecellformatdialog.cpp:28
 #, kde-format
