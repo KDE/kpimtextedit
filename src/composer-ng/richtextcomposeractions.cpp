@@ -320,7 +320,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     }
     connect(d->action_list_style, &KSelectAction::indexTriggered, this, &RichTextComposerActions::setListStyle);
     connect(d->action_list_style, &QAction::triggered, this, &RichTextComposerActions::slotUpdateMiscActions);
-    d->action_paste_quotation = new QAction(i18n("Pa&ste as Quotation"), this);
+    d->action_paste_quotation = new QAction(i18nc("@action", "Pa&ste as Quotation"), this);
     d->action_paste_quotation->setObjectName("paste_quoted"_L1);
     if (ac) {
         ac->addAction(QStringLiteral("paste_quoted"), d->action_paste_quotation);
@@ -328,21 +328,21 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     }
     connect(d->action_paste_quotation, &QAction::triggered, d->composerControler, &RichTextComposerControler::slotPasteAsQuotation);
 
-    d->action_add_quote_chars = new QAction(i18n("Add &Quote Characters"), this);
+    d->action_add_quote_chars = new QAction(i18nc("@action", "Add &Quote Characters"), this);
     d->action_add_quote_chars->setObjectName("tools_quote"_L1);
     if (ac) {
         ac->addAction(QStringLiteral("tools_quote"), d->action_add_quote_chars);
     }
     connect(d->action_add_quote_chars, &QAction::triggered, d->composerControler, &RichTextComposerControler::slotAddQuotes);
 
-    d->action_remove_quote_chars = new QAction(i18n("Re&move Quote Characters"), this);
+    d->action_remove_quote_chars = new QAction(i18nc("@action", "Re&move Quote Characters"), this);
     d->action_remove_quote_chars->setObjectName("tools_unquote"_L1);
     connect(d->action_remove_quote_chars, &QAction::triggered, d->composerControler, &RichTextComposerControler::slotRemoveQuotes);
     if (ac) {
         ac->addAction(QStringLiteral("tools_unquote"), d->action_remove_quote_chars);
     }
 
-    d->action_paste_without_formatting = new QAction(i18n("Paste Without Formatting"), this);
+    d->action_paste_without_formatting = new QAction(i18nc("@action", "Paste Without Formatting"), this);
     d->action_paste_without_formatting->setObjectName("paste_without_formatting"_L1);
     if (ac) {
         ac->addAction(QStringLiteral("paste_without_formatting"), d->action_paste_without_formatting);
@@ -369,7 +369,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
             d->composerControler->richTextComposer(),
             &RichTextComposer::insertEmoticon);
 
-    d->action_insert_html = new QAction(i18n("Insert HTML"), this);
+    d->action_insert_html = new QAction(i18nc("@action", "Insert HTML"), this);
     d->action_insert_html->setObjectName("insert_html"_L1);
     if (ac) {
         ac->addAction(QStringLiteral("insert_html"), d->action_insert_html);
