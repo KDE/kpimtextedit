@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2013-07-12 05:09+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -264,22 +264,27 @@ msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:323
 #, kde-format
+msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:331
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Special Characters"
+msgctxt "@action"
 msgid "Add &Quote Characters"
-msgstr ""
+msgstr "Арнаулы таңбаларды таңдау"
 
 #: composer-ng/richtextcomposeractions.cpp:338
 #, fuzzy, kde-format
 #| msgid "Select Special Characters"
+msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "Арнаулы таңбаларды таңдау"
 
 #: composer-ng/richtextcomposeractions.cpp:345
 #, kde-format
+msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr ""
 
@@ -289,7 +294,9 @@ msgid "Add Image"
 msgstr "Кескінді қосу"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert HTML"
+msgctxt "@action"
 msgid "Insert HTML"
 msgstr "HTML-ді ендіру"
 
@@ -554,22 +561,22 @@ msgstr "пиксел"
 msgid "Table…"
 msgstr "Кесте"
 
-#: tableactionmenu.cpp:418 tableactionmenu.cpp:451
+#: tableactionmenu.cpp:418
 #, kde-format
 msgid "Row Below"
 msgstr "Жолды төменінде"
 
-#: tableactionmenu.cpp:425 tableactionmenu.cpp:458
+#: tableactionmenu.cpp:425
 #, kde-format
 msgid "Row Above"
 msgstr "Жолды жоғарында"
 
-#: tableactionmenu.cpp:433 tableactionmenu.cpp:466
+#: tableactionmenu.cpp:433
 #, kde-format
 msgid "Column Before"
 msgstr "Алдында баған"
 
-#: tableactionmenu.cpp:441 tableactionmenu.cpp:474
+#: tableactionmenu.cpp:441
 #, kde-format
 msgid "Column After"
 msgstr "Кейін баған"
@@ -579,8 +586,38 @@ msgstr "Кейін баған"
 msgid "Delete"
 msgstr "Өшіру"
 
+#: tableactionmenu.cpp:451
+#, fuzzy, kde-format
+#| msgid "Row Below"
+msgctxt "@action"
+msgid "Row Below"
+msgstr "Жолды төменінде"
+
+#: tableactionmenu.cpp:458
+#, fuzzy, kde-format
+#| msgid "Row Above"
+msgctxt "@action"
+msgid "Row Above"
+msgstr "Жолды жоғарында"
+
+#: tableactionmenu.cpp:466
+#, fuzzy, kde-format
+#| msgid "Column Before"
+msgctxt "@action"
+msgid "Column Before"
+msgstr "Алдында баған"
+
+#: tableactionmenu.cpp:474
+#, fuzzy, kde-format
+#| msgid "Column After"
+msgctxt "@action"
+msgid "Column After"
+msgstr "Кейін баған"
+
 #: tableactionmenu.cpp:482
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cell Contents"
+msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Ұяшықтың мазмұны"
 
@@ -590,7 +627,9 @@ msgid "Join With Cell to the Right"
 msgstr "Оң жақ ұяшығымен біріктіру"
 
 #: tableactionmenu.cpp:498
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join Selected Cells"
+msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Таңдалған ұяшықтарын біріктіру"
 
@@ -602,12 +641,14 @@ msgstr "Ұяшықтарды бөлу"
 #: tableactionmenu.cpp:514
 #, fuzzy, kde-format
 #| msgid "Table Format"
+msgctxt "@action"
 msgid "Table Format…"
 msgstr "Кесте пішімі"
 
 #: tableactionmenu.cpp:521
 #, fuzzy, kde-format
 #| msgid "Table Cell Format..."
+msgctxt "@action"
 msgid "Table Cell Format…"
 msgstr "Кесте ұяшығының пішімі..."
 

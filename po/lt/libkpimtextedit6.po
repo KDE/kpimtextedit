@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2015-08-30 16:02+0200\n"
 "Last-Translator: Liudas Ališauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -266,22 +266,27 @@ msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:323
 #, kde-format
+msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:331
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Special Characters"
+msgctxt "@action"
 msgid "Add &Quote Characters"
-msgstr ""
+msgstr "Pažymėti specialius simbolius"
 
 #: composer-ng/richtextcomposeractions.cpp:338
 #, fuzzy, kde-format
 #| msgid "Select Special Characters"
+msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "Pažymėti specialius simbolius"
 
 #: composer-ng/richtextcomposeractions.cpp:345
 #, kde-format
+msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr ""
 
@@ -291,7 +296,9 @@ msgid "Add Image"
 msgstr "Pridėti paveikslėlį"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert HTML"
+msgctxt "@action"
 msgid "Insert HTML"
 msgstr "Įterpti HTML"
 
@@ -556,22 +563,22 @@ msgstr "pikseliai"
 msgid "Table…"
 msgstr "Lentelė"
 
-#: tableactionmenu.cpp:418 tableactionmenu.cpp:451
+#: tableactionmenu.cpp:418
 #, kde-format
 msgid "Row Below"
 msgstr "Eilutę apačioje"
 
-#: tableactionmenu.cpp:425 tableactionmenu.cpp:458
+#: tableactionmenu.cpp:425
 #, kde-format
 msgid "Row Above"
 msgstr "Eilutę virš"
 
-#: tableactionmenu.cpp:433 tableactionmenu.cpp:466
+#: tableactionmenu.cpp:433
 #, kde-format
 msgid "Column Before"
 msgstr "Stulpelis anksčiau"
 
-#: tableactionmenu.cpp:441 tableactionmenu.cpp:474
+#: tableactionmenu.cpp:441
 #, kde-format
 msgid "Column After"
 msgstr "Stulpelis po"
@@ -581,8 +588,38 @@ msgstr "Stulpelis po"
 msgid "Delete"
 msgstr "Trinti"
 
+#: tableactionmenu.cpp:451
+#, fuzzy, kde-format
+#| msgid "Row Below"
+msgctxt "@action"
+msgid "Row Below"
+msgstr "Eilutę apačioje"
+
+#: tableactionmenu.cpp:458
+#, fuzzy, kde-format
+#| msgid "Row Above"
+msgctxt "@action"
+msgid "Row Above"
+msgstr "Eilutę virš"
+
+#: tableactionmenu.cpp:466
+#, fuzzy, kde-format
+#| msgid "Column Before"
+msgctxt "@action"
+msgid "Column Before"
+msgstr "Stulpelis anksčiau"
+
+#: tableactionmenu.cpp:474
+#, fuzzy, kde-format
+#| msgid "Column After"
+msgctxt "@action"
+msgid "Column After"
+msgstr "Stulpelis po"
+
 #: tableactionmenu.cpp:482
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cell Contents"
+msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Langelio turinys"
 
@@ -592,7 +629,9 @@ msgid "Join With Cell to the Right"
 msgstr "Sujungti su laukeliu į dešinę"
 
 #: tableactionmenu.cpp:498
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join Selected Cells"
+msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Sujungti pažymėtus langelius"
 
@@ -604,12 +643,14 @@ msgstr "Skaidyti langelius"
 #: tableactionmenu.cpp:514
 #, fuzzy, kde-format
 #| msgid "Table Format"
+msgctxt "@action"
 msgid "Table Format…"
 msgstr "Lentelės formatas"
 
 #: tableactionmenu.cpp:521
 #, fuzzy, kde-format
 #| msgid "Table Cell Format..."
+msgctxt "@action"
 msgid "Table Cell Format…"
 msgstr "Lentelės langelio formatas..."
 

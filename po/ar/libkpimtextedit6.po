@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-01-17 19:17+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -262,22 +262,30 @@ msgid "I II III"
 msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Pa&ste as Quotation"
+msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr "أل&صِق كاقتباس"
 
 #: composer-ng/richtextcomposeractions.cpp:331
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add &Quote Characters"
+msgctxt "@action"
 msgid "Add &Quote Characters"
 msgstr "أضف محارف الا&قتباس"
 
 #: composer-ng/richtextcomposeractions.cpp:338
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Re&move Quote Characters"
+msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "أ&زِل محارف الاقتباس"
 
 #: composer-ng/richtextcomposeractions.cpp:345
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Paste Without Formatting"
+msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr "ألصِق دون تنسيق"
 
@@ -287,7 +295,9 @@ msgid "Add Image"
 msgstr "أضف صورة"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert HTML"
+msgctxt "@action"
 msgid "Insert HTML"
 msgstr "أدرج HTML"
 
@@ -549,22 +559,22 @@ msgstr "بكسل"
 msgid "Table…"
 msgstr "جدول"
 
-#: tableactionmenu.cpp:418 tableactionmenu.cpp:451
+#: tableactionmenu.cpp:418
 #, kde-format
 msgid "Row Below"
 msgstr "صفًّا بعده"
 
-#: tableactionmenu.cpp:425 tableactionmenu.cpp:458
+#: tableactionmenu.cpp:425
 #, kde-format
 msgid "Row Above"
 msgstr "صفًّا قبله"
 
-#: tableactionmenu.cpp:433 tableactionmenu.cpp:466
+#: tableactionmenu.cpp:433
 #, kde-format
 msgid "Column Before"
 msgstr "عمودًا قبله"
 
-#: tableactionmenu.cpp:441 tableactionmenu.cpp:474
+#: tableactionmenu.cpp:441
 #, kde-format
 msgid "Column After"
 msgstr "عمودًا بعده"
@@ -574,8 +584,38 @@ msgstr "عمودًا بعده"
 msgid "Delete"
 msgstr "احذف"
 
+#: tableactionmenu.cpp:451
+#, fuzzy, kde-format
+#| msgid "Row Below"
+msgctxt "@action"
+msgid "Row Below"
+msgstr "صفًّا بعده"
+
+#: tableactionmenu.cpp:458
+#, fuzzy, kde-format
+#| msgid "Row Above"
+msgctxt "@action"
+msgid "Row Above"
+msgstr "صفًّا قبله"
+
+#: tableactionmenu.cpp:466
+#, fuzzy, kde-format
+#| msgid "Column Before"
+msgctxt "@action"
+msgid "Column Before"
+msgstr "عمودًا قبله"
+
+#: tableactionmenu.cpp:474
+#, fuzzy, kde-format
+#| msgid "Column After"
+msgctxt "@action"
+msgid "Column After"
+msgstr "عمودًا بعده"
+
 #: tableactionmenu.cpp:482
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cell Contents"
+msgctxt "@action"
 msgid "Cell Contents"
 msgstr "محتويات الخليّة"
 
@@ -586,7 +626,9 @@ msgid "Join With Cell to the Right"
 msgstr "ادمجها بالخليّة التّالية"
 
 #: tableactionmenu.cpp:498
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join Selected Cells"
+msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "ادمج الخلايا المحدّدة"
 
@@ -599,12 +641,14 @@ msgstr "اقسم الخلايا"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Table Format"
+msgctxt "@action"
 msgid "Table Format…"
 msgstr "نسق الجدول"
 
 #: tableactionmenu.cpp:521
 #, fuzzy, kde-format
 #| msgid "Table Cell Format..."
+msgctxt "@action"
 msgid "Table Cell Format…"
 msgstr "تنسيق خليّة الجدول..."
 

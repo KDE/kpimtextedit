@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2013-03-29 11:59+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -266,22 +266,27 @@ msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:323
 #, kde-format
+msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:331
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Special Characters"
+msgctxt "@action"
 msgid "Add &Quote Characters"
-msgstr ""
+msgstr "Speciális karakterek kijelölése"
 
 #: composer-ng/richtextcomposeractions.cpp:338
 #, fuzzy, kde-format
 #| msgid "Select Special Characters"
+msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "Speciális karakterek kijelölése"
 
 #: composer-ng/richtextcomposeractions.cpp:345
 #, kde-format
+msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr ""
 
@@ -291,7 +296,9 @@ msgid "Add Image"
 msgstr "Új kép"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert HTML"
+msgctxt "@action"
 msgid "Insert HTML"
 msgstr "HTML beszúrása"
 
@@ -556,22 +563,22 @@ msgstr "képpont"
 msgid "Table…"
 msgstr "Táblázat"
 
-#: tableactionmenu.cpp:418 tableactionmenu.cpp:451
+#: tableactionmenu.cpp:418
 #, kde-format
 msgid "Row Below"
 msgstr "Sor alá"
 
-#: tableactionmenu.cpp:425 tableactionmenu.cpp:458
+#: tableactionmenu.cpp:425
 #, kde-format
 msgid "Row Above"
 msgstr "Sor fölé"
 
-#: tableactionmenu.cpp:433 tableactionmenu.cpp:466
+#: tableactionmenu.cpp:433
 #, kde-format
 msgid "Column Before"
 msgstr "Oszlop elé"
 
-#: tableactionmenu.cpp:441 tableactionmenu.cpp:474
+#: tableactionmenu.cpp:441
 #, kde-format
 msgid "Column After"
 msgstr "Oszlop mögé"
@@ -581,8 +588,38 @@ msgstr "Oszlop mögé"
 msgid "Delete"
 msgstr "Törlés"
 
+#: tableactionmenu.cpp:451
+#, fuzzy, kde-format
+#| msgid "Row Below"
+msgctxt "@action"
+msgid "Row Below"
+msgstr "Sor alá"
+
+#: tableactionmenu.cpp:458
+#, fuzzy, kde-format
+#| msgid "Row Above"
+msgctxt "@action"
+msgid "Row Above"
+msgstr "Sor fölé"
+
+#: tableactionmenu.cpp:466
+#, fuzzy, kde-format
+#| msgid "Column Before"
+msgctxt "@action"
+msgid "Column Before"
+msgstr "Oszlop elé"
+
+#: tableactionmenu.cpp:474
+#, fuzzy, kde-format
+#| msgid "Column After"
+msgctxt "@action"
+msgid "Column After"
+msgstr "Oszlop mögé"
+
 #: tableactionmenu.cpp:482
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cell Contents"
+msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Cellatartalmak"
 
@@ -592,7 +629,9 @@ msgid "Join With Cell to the Right"
 msgstr "Csatlakoztatás a jobb oldali cellához"
 
 #: tableactionmenu.cpp:498
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join Selected Cells"
+msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Kijelölt cellák egyesítése"
 
@@ -604,12 +643,14 @@ msgstr "Cellák felosztása"
 #: tableactionmenu.cpp:514
 #, fuzzy, kde-format
 #| msgid "Table Format"
+msgctxt "@action"
 msgid "Table Format…"
 msgstr "Táblázat formátum"
 
 #: tableactionmenu.cpp:521
 #, fuzzy, kde-format
 #| msgid "Table Cell Format..."
+msgctxt "@action"
 msgid "Table Cell Format…"
 msgstr "Táblázat cellaformátum…"
 

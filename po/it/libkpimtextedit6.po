@@ -2,14 +2,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Nicola Ruggero <nicola@nxnt.org>, 2009, 2010, 2012, 2013.
-# SPDX-FileCopyrightText: 2017, 2018, 2019, 2020, 2021, 2022, 2023 Vincenzo Reale <smart2128vr@gmail.com>
+# SPDX-FileCopyrightText: 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
-"PO-Revision-Date: 2023-09-25 10:57+0200\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"PO-Revision-Date: 2024-05-10 16:22+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -162,12 +162,10 @@ msgid "Insert Rule Line"
 msgstr "Inserisci riga divisoria"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Color..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Color…"
-msgstr "&Colore del testo..."
+msgstr "&Colore del testo…"
 
 #: composer-ng/richtextcomposeractions.cpp:265
 #, kde-format
@@ -176,12 +174,10 @@ msgid "Color"
 msgstr "Colore"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Highlight..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Highlight…"
-msgstr "Eviden&ziazione del testo..."
+msgstr "Eviden&ziazione del testo…"
 
 #: composer-ng/richtextcomposeractions.cpp:281
 #, kde-format
@@ -262,22 +258,30 @@ msgid "I II III"
 msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Pa&ste as Quotation"
+msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr "Incolla come cita&zione"
 
 #: composer-ng/richtextcomposeractions.cpp:331
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add &Quote Characters"
+msgctxt "@action"
 msgid "Add &Quote Characters"
 msgstr "Aggiungi &caratteri di citazione"
 
 #: composer-ng/richtextcomposeractions.cpp:338
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Re&move Quote Characters"
+msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "Ri&muovi caratteri di citazione"
 
 #: composer-ng/richtextcomposeractions.cpp:345
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Paste Without Formatting"
+msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr "Incolla senza formattazione"
 
@@ -287,7 +291,9 @@ msgid "Add Image"
 msgstr "Aggiungi immagine"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert HTML"
+msgctxt "@action"
 msgid "Insert HTML"
 msgstr "Inserisci HTML"
 
@@ -545,27 +551,26 @@ msgid "pixels"
 msgstr "pixel"
 
 #: tableactionmenu.cpp:410
-#, fuzzy, kde-format
-#| msgid "Table"
+#, kde-format
 msgid "Table…"
-msgstr "Tabella"
+msgstr "Tabella…"
 
-#: tableactionmenu.cpp:418 tableactionmenu.cpp:451
+#: tableactionmenu.cpp:418
 #, kde-format
 msgid "Row Below"
 msgstr "Riga sotto"
 
-#: tableactionmenu.cpp:425 tableactionmenu.cpp:458
+#: tableactionmenu.cpp:425
 #, kde-format
 msgid "Row Above"
 msgstr "Riga sopra"
 
-#: tableactionmenu.cpp:433 tableactionmenu.cpp:466
+#: tableactionmenu.cpp:433
 #, kde-format
 msgid "Column Before"
 msgstr "Colonna prima"
 
-#: tableactionmenu.cpp:441 tableactionmenu.cpp:474
+#: tableactionmenu.cpp:441
 #, kde-format
 msgid "Column After"
 msgstr "Colonna dopo"
@@ -575,8 +580,38 @@ msgstr "Colonna dopo"
 msgid "Delete"
 msgstr "Elimina"
 
+#: tableactionmenu.cpp:451
+#, fuzzy, kde-format
+#| msgid "Row Below"
+msgctxt "@action"
+msgid "Row Below"
+msgstr "Riga sotto"
+
+#: tableactionmenu.cpp:458
+#, fuzzy, kde-format
+#| msgid "Row Above"
+msgctxt "@action"
+msgid "Row Above"
+msgstr "Riga sopra"
+
+#: tableactionmenu.cpp:466
+#, fuzzy, kde-format
+#| msgid "Column Before"
+msgctxt "@action"
+msgid "Column Before"
+msgstr "Colonna prima"
+
+#: tableactionmenu.cpp:474
+#, fuzzy, kde-format
+#| msgid "Column After"
+msgctxt "@action"
+msgid "Column After"
+msgstr "Colonna dopo"
+
 #: tableactionmenu.cpp:482
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cell Contents"
+msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Contenuti celle"
 
@@ -586,7 +621,9 @@ msgid "Join With Cell to the Right"
 msgstr "Unisci alle celle di destra"
 
 #: tableactionmenu.cpp:498
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join Selected Cells"
+msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Unisci celle selezionate"
 
@@ -597,16 +634,17 @@ msgstr "Dividi celle"
 
 #: tableactionmenu.cpp:514
 #, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Table Format"
+#| msgid "Table Format…"
+msgctxt "@action"
 msgid "Table Format…"
-msgstr "Formato tabella"
+msgstr "Formato tabella…"
 
 #: tableactionmenu.cpp:521
 #, fuzzy, kde-format
-#| msgid "Table Cell Format..."
+#| msgid "Table Cell Format…"
+msgctxt "@action"
 msgid "Table Cell Format…"
-msgstr "Formato cella..."
+msgstr "Formato cella…"
 
 #: tablecellformatdialog.cpp:28
 #, kde-format

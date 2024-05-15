@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepimlibs-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-05-10 13:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -260,22 +260,30 @@ msgid "I II III"
 msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Pa&ste as Quotation"
+msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr "Alıntı Olarak &Yapıştır"
 
 #: composer-ng/richtextcomposeractions.cpp:331
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add &Quote Characters"
+msgctxt "@action"
 msgid "Add &Quote Characters"
 msgstr "&Alıntı Karakterleri Ekle"
 
 #: composer-ng/richtextcomposeractions.cpp:338
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Re&move Quote Characters"
+msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "Alıntı Karakterlerini Kal&dır"
 
 #: composer-ng/richtextcomposeractions.cpp:345
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Paste Without Formatting"
+msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr "Biçimlendirmesiz Yapıştır"
 
@@ -285,7 +293,9 @@ msgid "Add Image"
 msgstr "Görsel Ekle"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert HTML"
+msgctxt "@action"
 msgid "Insert HTML"
 msgstr "HTML Ekle"
 
@@ -547,22 +557,22 @@ msgstr "piksel"
 msgid "Table…"
 msgstr "Tablo…"
 
-#: tableactionmenu.cpp:418 tableactionmenu.cpp:451
+#: tableactionmenu.cpp:418
 #, kde-format
 msgid "Row Below"
 msgstr "Alt Satır"
 
-#: tableactionmenu.cpp:425 tableactionmenu.cpp:458
+#: tableactionmenu.cpp:425
 #, kde-format
 msgid "Row Above"
 msgstr "Üst Satır"
 
-#: tableactionmenu.cpp:433 tableactionmenu.cpp:466
+#: tableactionmenu.cpp:433
 #, kde-format
 msgid "Column Before"
 msgstr "Önceki Sütun"
 
-#: tableactionmenu.cpp:441 tableactionmenu.cpp:474
+#: tableactionmenu.cpp:441
 #, kde-format
 msgid "Column After"
 msgstr "Sonraki Sütun"
@@ -572,8 +582,38 @@ msgstr "Sonraki Sütun"
 msgid "Delete"
 msgstr "Sil"
 
+#: tableactionmenu.cpp:451
+#, fuzzy, kde-format
+#| msgid "Row Below"
+msgctxt "@action"
+msgid "Row Below"
+msgstr "Alt Satır"
+
+#: tableactionmenu.cpp:458
+#, fuzzy, kde-format
+#| msgid "Row Above"
+msgctxt "@action"
+msgid "Row Above"
+msgstr "Üst Satır"
+
+#: tableactionmenu.cpp:466
+#, fuzzy, kde-format
+#| msgid "Column Before"
+msgctxt "@action"
+msgid "Column Before"
+msgstr "Önceki Sütun"
+
+#: tableactionmenu.cpp:474
+#, fuzzy, kde-format
+#| msgid "Column After"
+msgctxt "@action"
+msgid "Column After"
+msgstr "Sonraki Sütun"
+
 #: tableactionmenu.cpp:482
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cell Contents"
+msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Hücre İçeriği"
 
@@ -583,7 +623,9 @@ msgid "Join With Cell to the Right"
 msgstr "Sağdaki Hücreyle Birleştir"
 
 #: tableactionmenu.cpp:498
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join Selected Cells"
+msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Seçili Hücreleri Birleştir"
 
@@ -593,12 +635,16 @@ msgid "Split cells"
 msgstr "Hücreleri böl"
 
 #: tableactionmenu.cpp:514
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Table Format…"
+msgctxt "@action"
 msgid "Table Format…"
 msgstr "Tablo Biçimi…"
 
 #: tableactionmenu.cpp:521
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Table Cell Format…"
+msgctxt "@action"
 msgid "Table Cell Format…"
 msgstr "Tablo Hücre Biçimi…"
 

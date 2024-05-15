@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2010-01-16 08:30+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: ਪੰਜਾਬੀ <punjabi-users@lists.sf.net>\n"
@@ -257,21 +257,25 @@ msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:323
 #, kde-format
+msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:331
 #, kde-format
+msgctxt "@action"
 msgid "Add &Quote Characters"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:338
 #, kde-format
+msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:345
 #, kde-format
+msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr ""
 
@@ -282,6 +286,7 @@ msgstr "ਚਿੱਤਰ ਸ਼ਾਮਲ"
 
 #: composer-ng/richtextcomposeractions.cpp:372
 #, kde-format
+msgctxt "@action"
 msgid "Insert HTML"
 msgstr ""
 
@@ -541,22 +546,22 @@ msgstr ""
 msgid "Table…"
 msgstr ""
 
-#: tableactionmenu.cpp:418 tableactionmenu.cpp:451
+#: tableactionmenu.cpp:418
 #, kde-format
 msgid "Row Below"
 msgstr ""
 
-#: tableactionmenu.cpp:425 tableactionmenu.cpp:458
+#: tableactionmenu.cpp:425
 #, kde-format
 msgid "Row Above"
 msgstr ""
 
-#: tableactionmenu.cpp:433 tableactionmenu.cpp:466
+#: tableactionmenu.cpp:433
 #, kde-format
 msgid "Column Before"
 msgstr ""
 
-#: tableactionmenu.cpp:441 tableactionmenu.cpp:474
+#: tableactionmenu.cpp:441
 #, kde-format
 msgid "Column After"
 msgstr ""
@@ -567,8 +572,33 @@ msgstr ""
 msgid "Delete"
 msgstr "ਲਾਈਨ ਹਟਾਓ"
 
+#: tableactionmenu.cpp:451
+#, kde-format
+msgctxt "@action"
+msgid "Row Below"
+msgstr ""
+
+#: tableactionmenu.cpp:458
+#, kde-format
+msgctxt "@action"
+msgid "Row Above"
+msgstr ""
+
+#: tableactionmenu.cpp:466
+#, kde-format
+msgctxt "@action"
+msgid "Column Before"
+msgstr ""
+
+#: tableactionmenu.cpp:474
+#, kde-format
+msgctxt "@action"
+msgid "Column After"
+msgstr ""
+
 #: tableactionmenu.cpp:482
 #, kde-format
+msgctxt "@action"
 msgid "Cell Contents"
 msgstr ""
 
@@ -579,6 +609,7 @@ msgstr ""
 
 #: tableactionmenu.cpp:498
 #, kde-format
+msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr ""
 
@@ -589,11 +620,13 @@ msgstr ""
 
 #: tableactionmenu.cpp:514
 #, kde-format
+msgctxt "@action"
 msgid "Table Format…"
 msgstr ""
 
 #: tableactionmenu.cpp:521
 #, kde-format
+msgctxt "@action"
 msgid "Table Cell Format…"
 msgstr ""
 

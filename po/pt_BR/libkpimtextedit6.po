@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2023-10-05 18:23-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -263,22 +263,30 @@ msgid "I II III"
 msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Pa&ste as Quotation"
+msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr "Colar como &citação"
 
 #: composer-ng/richtextcomposeractions.cpp:331
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add &Quote Characters"
+msgctxt "@action"
 msgid "Add &Quote Characters"
 msgstr "A&dicionar caracteres de citação"
 
 #: composer-ng/richtextcomposeractions.cpp:338
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Re&move Quote Characters"
+msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "Re&mover caracteres de citação"
 
 #: composer-ng/richtextcomposeractions.cpp:345
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Paste Without Formatting"
+msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr "Colar sem formatação"
 
@@ -288,7 +296,9 @@ msgid "Add Image"
 msgstr "Adicionar imagem"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert HTML"
+msgctxt "@action"
 msgid "Insert HTML"
 msgstr "Inserir HTML"
 
@@ -552,22 +562,22 @@ msgstr "pixels"
 msgid "Table…"
 msgstr "Tabela"
 
-#: tableactionmenu.cpp:418 tableactionmenu.cpp:451
+#: tableactionmenu.cpp:418
 #, kde-format
 msgid "Row Below"
 msgstr "Linha abaixo"
 
-#: tableactionmenu.cpp:425 tableactionmenu.cpp:458
+#: tableactionmenu.cpp:425
 #, kde-format
 msgid "Row Above"
 msgstr "Linha acima"
 
-#: tableactionmenu.cpp:433 tableactionmenu.cpp:466
+#: tableactionmenu.cpp:433
 #, kde-format
 msgid "Column Before"
 msgstr "Antes da coluna"
 
-#: tableactionmenu.cpp:441 tableactionmenu.cpp:474
+#: tableactionmenu.cpp:441
 #, kde-format
 msgid "Column After"
 msgstr "Após a coluna"
@@ -577,8 +587,38 @@ msgstr "Após a coluna"
 msgid "Delete"
 msgstr "Excluir"
 
+#: tableactionmenu.cpp:451
+#, fuzzy, kde-format
+#| msgid "Row Below"
+msgctxt "@action"
+msgid "Row Below"
+msgstr "Linha abaixo"
+
+#: tableactionmenu.cpp:458
+#, fuzzy, kde-format
+#| msgid "Row Above"
+msgctxt "@action"
+msgid "Row Above"
+msgstr "Linha acima"
+
+#: tableactionmenu.cpp:466
+#, fuzzy, kde-format
+#| msgid "Column Before"
+msgctxt "@action"
+msgid "Column Before"
+msgstr "Antes da coluna"
+
+#: tableactionmenu.cpp:474
+#, fuzzy, kde-format
+#| msgid "Column After"
+msgctxt "@action"
+msgid "Column After"
+msgstr "Após a coluna"
+
 #: tableactionmenu.cpp:482
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cell Contents"
+msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Conteúdo da célula"
 
@@ -588,7 +628,9 @@ msgid "Join With Cell to the Right"
 msgstr "Inserir célula à direita"
 
 #: tableactionmenu.cpp:498
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join Selected Cells"
+msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Juntar as células selecionadas"
 
@@ -601,12 +643,14 @@ msgstr "Dividir células"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Table Format"
+msgctxt "@action"
 msgid "Table Format…"
 msgstr "Formato da tabela"
 
 #: tableactionmenu.cpp:521
 #, fuzzy, kde-format
 #| msgid "Table Cell Format..."
+msgctxt "@action"
 msgid "Table Cell Format…"
 msgstr "Formato da célula da tabela..."
 

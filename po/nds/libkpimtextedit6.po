@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2014-03-05 00:31+0100\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -266,22 +266,27 @@ msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:323
 #, kde-format
+msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:331
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Special Characters"
+msgctxt "@action"
 msgid "Add &Quote Characters"
-msgstr ""
+msgstr "Sünnertekens utsöken"
 
 #: composer-ng/richtextcomposeractions.cpp:338
 #, fuzzy, kde-format
 #| msgid "Select Special Characters"
+msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "Sünnertekens utsöken"
 
 #: composer-ng/richtextcomposeractions.cpp:345
 #, kde-format
+msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr ""
 
@@ -291,7 +296,9 @@ msgid "Add Image"
 msgstr "Bild tofögen"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert HTML"
+msgctxt "@action"
 msgid "Insert HTML"
 msgstr "HTML infögen"
 
@@ -556,22 +563,22 @@ msgstr "Pixels"
 msgid "Table…"
 msgstr "Tabell"
 
-#: tableactionmenu.cpp:418 tableactionmenu.cpp:451
+#: tableactionmenu.cpp:418
 #, kde-format
 msgid "Row Below"
 msgstr "Reeg nerrn"
 
-#: tableactionmenu.cpp:425 tableactionmenu.cpp:458
+#: tableactionmenu.cpp:425
 #, kde-format
 msgid "Row Above"
 msgstr "Reeg baven"
 
-#: tableactionmenu.cpp:433 tableactionmenu.cpp:466
+#: tableactionmenu.cpp:433
 #, kde-format
 msgid "Column Before"
 msgstr "Striep dor vör"
 
-#: tableactionmenu.cpp:441 tableactionmenu.cpp:474
+#: tableactionmenu.cpp:441
 #, kde-format
 msgid "Column After"
 msgstr "Striep dor achter"
@@ -581,8 +588,38 @@ msgstr "Striep dor achter"
 msgid "Delete"
 msgstr "Wegdoon"
 
+#: tableactionmenu.cpp:451
+#, fuzzy, kde-format
+#| msgid "Row Below"
+msgctxt "@action"
+msgid "Row Below"
+msgstr "Reeg nerrn"
+
+#: tableactionmenu.cpp:458
+#, fuzzy, kde-format
+#| msgid "Row Above"
+msgctxt "@action"
+msgid "Row Above"
+msgstr "Reeg baven"
+
+#: tableactionmenu.cpp:466
+#, fuzzy, kde-format
+#| msgid "Column Before"
+msgctxt "@action"
+msgid "Column Before"
+msgstr "Striep dor vör"
+
+#: tableactionmenu.cpp:474
+#, fuzzy, kde-format
+#| msgid "Column After"
+msgctxt "@action"
+msgid "Column After"
+msgstr "Striep dor achter"
+
 #: tableactionmenu.cpp:482
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cell Contents"
+msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Zellinholden"
 
@@ -592,7 +629,9 @@ msgid "Join With Cell to the Right"
 msgstr "Mit Zell rechterhand tosamenfögen"
 
 #: tableactionmenu.cpp:498
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join Selected Cells"
+msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Utsöcht Zellen tosamenfögen"
 
@@ -604,12 +643,14 @@ msgstr "Zellen delen"
 #: tableactionmenu.cpp:514
 #, fuzzy, kde-format
 #| msgid "Table Format"
+msgctxt "@action"
 msgid "Table Format…"
 msgstr "Tabellformaat"
 
 #: tableactionmenu.cpp:521
 #, fuzzy, kde-format
 #| msgid "Table Cell Format..."
+msgctxt "@action"
 msgid "Table Cell Format…"
 msgstr "Tabellzellformaat..."
 
