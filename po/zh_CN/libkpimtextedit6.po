@@ -258,22 +258,22 @@ msgstr "I II III"
 #: composer-ng/richtextcomposeractions.cpp:323
 #, kde-format
 msgid "Pa&ste as Quotation"
-msgstr "粘贴为引用(&S)"
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:331
 #, kde-format
 msgid "Add &Quote Characters"
-msgstr "添加引用字符(&Q)"
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:338
 #, kde-format
 msgid "Re&move Quote Characters"
-msgstr "移除引用字符(&M)"
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:345
 #, kde-format
 msgid "Paste Without Formatting"
-msgstr "无格式粘贴"
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:353
 #, kde-format
@@ -570,7 +570,7 @@ msgstr "删除"
 #: tableactionmenu.cpp:482
 #, kde-format
 msgid "Cell Contents"
-msgstr "单元格内容"
+msgstr ""
 
 #: tableactionmenu.cpp:491
 #, kde-format
@@ -580,7 +580,7 @@ msgstr "向右合并单元格"
 #: tableactionmenu.cpp:498
 #, kde-format
 msgid "Join Selected Cells"
-msgstr "合并选中单元格"
+msgstr ""
 
 #: tableactionmenu.cpp:505
 #, kde-format
