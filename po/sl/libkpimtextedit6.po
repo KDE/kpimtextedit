@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2024-05-10 06:14+0200\n"
+"PO-Revision-Date: 2024-05-15 10:38+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -264,29 +264,25 @@ msgid "I II III"
 msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
-#, fuzzy, kde-format
-#| msgid "Pa&ste as Quotation"
+#, kde-format
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr "Prilepi kot navedek"
 
 #: composer-ng/richtextcomposeractions.cpp:331
-#, fuzzy, kde-format
-#| msgid "Add &Quote Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Add &Quote Characters"
 msgstr "Dodaj znake za navajanje"
 
 #: composer-ng/richtextcomposeractions.cpp:338
-#, fuzzy, kde-format
-#| msgid "Re&move Quote Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "Odstrani znake za navajanje"
 
 #: composer-ng/richtextcomposeractions.cpp:345
-#, fuzzy, kde-format
-#| msgid "Paste Without Formatting"
+#, kde-format
 msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr "Prilepi brez oblikovanja"
@@ -297,8 +293,7 @@ msgid "Add Image"
 msgstr "Dodaj sliko"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, fuzzy, kde-format
-#| msgid "Insert HTML"
+#, kde-format
 msgctxt "@action"
 msgid "Insert HTML"
 msgstr "Vstavi HTML"
@@ -587,36 +582,31 @@ msgid "Delete"
 msgstr "Izbriši"
 
 #: tableactionmenu.cpp:451
-#, fuzzy, kde-format
-#| msgid "Row Below"
+#, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Vrstica spodaj"
 
 #: tableactionmenu.cpp:458
-#, fuzzy, kde-format
-#| msgid "Row Above"
+#, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Vrstica zgoraj"
 
 #: tableactionmenu.cpp:466
-#, fuzzy, kde-format
-#| msgid "Column Before"
+#, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Stolpec pred"
 
 #: tableactionmenu.cpp:474
-#, fuzzy, kde-format
-#| msgid "Column After"
+#, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "Stolpec za"
 
 #: tableactionmenu.cpp:482
-#, fuzzy, kde-format
-#| msgid "Cell Contents"
+#, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Vsebina celic"
@@ -627,8 +617,7 @@ msgid "Join With Cell to the Right"
 msgstr "Združi s celico na desni"
 
 #: tableactionmenu.cpp:498
-#, fuzzy, kde-format
-#| msgid "Join Selected Cells"
+#, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Združi izbrane celice"
@@ -639,15 +628,13 @@ msgid "Split cells"
 msgstr "Razdeli celice"
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgid "Table Format…"
+#, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "Oblika razpredelnice…"
 
 #: tableactionmenu.cpp:521
-#, fuzzy, kde-format
-#| msgid "Table Cell Format…"
+#, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"
 msgstr "Oblika celice v razpredelnici…"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2024-05-10 20:14+0300\n"
+"PO-Revision-Date: 2024-05-15 06:57+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -257,29 +257,25 @@ msgid "I II III"
 msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
-#, fuzzy, kde-format
-#| msgid "Pa&ste as Quotation"
+#, kde-format
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr "הדבקה כ&ציטוט"
 
 #: composer-ng/richtextcomposeractions.cpp:331
-#, fuzzy, kde-format
-#| msgid "Add &Quote Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Add &Quote Characters"
 msgstr "הוספת &תווי ציטוט"
 
 #: composer-ng/richtextcomposeractions.cpp:338
-#, fuzzy, kde-format
-#| msgid "Re&move Quote Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "הסרת תווי צי&טוט"
 
 #: composer-ng/richtextcomposeractions.cpp:345
-#, fuzzy, kde-format
-#| msgid "Paste Without Formatting"
+#, kde-format
 msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr "להדביק בלי עיצוב"
@@ -290,8 +286,7 @@ msgid "Add Image"
 msgstr "הוספת תמונה"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, fuzzy, kde-format
-#| msgid "Insert HTML"
+#, kde-format
 msgctxt "@action"
 msgid "Insert HTML"
 msgstr "הוספת HTML"
@@ -579,36 +574,31 @@ msgid "Delete"
 msgstr "מחיקה"
 
 #: tableactionmenu.cpp:451
-#, fuzzy, kde-format
-#| msgid "Row Below"
+#, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "שורה מתחת"
 
 #: tableactionmenu.cpp:458
-#, fuzzy, kde-format
-#| msgid "Row Above"
+#, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "שורה מעל"
 
 #: tableactionmenu.cpp:466
-#, fuzzy, kde-format
-#| msgid "Column Before"
+#, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "עמודה לפני"
 
 #: tableactionmenu.cpp:474
-#, fuzzy, kde-format
-#| msgid "Column After"
+#, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "עמודה אחרי"
 
 #: tableactionmenu.cpp:482
-#, fuzzy, kde-format
-#| msgid "Cell Contents"
+#, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "תוכן התא"
@@ -619,8 +609,7 @@ msgid "Join With Cell to the Right"
 msgstr "מיזוג עם התא מימין"
 
 #: tableactionmenu.cpp:498
-#, fuzzy, kde-format
-#| msgid "Join Selected Cells"
+#, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "מיזוג התאים הנבחרים"
@@ -631,15 +620,13 @@ msgid "Split cells"
 msgstr "פיצול תאים"
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgid "Table Format…"
+#, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "עיצוב טבלה…"
 
 #: tableactionmenu.cpp:521
-#, fuzzy, kde-format
-#| msgid "Table Cell Format…"
+#, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"
 msgstr "עיצוב תא בטבלה…"

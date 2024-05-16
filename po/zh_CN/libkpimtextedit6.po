@@ -256,32 +256,28 @@ msgid "I II III"
 msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
-#, fuzzy, kde-format
-#| msgid "Pa&ste as Quotation"
+#, kde-format
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
-msgstr "粘贴为引用(&S)"
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:331
-#, fuzzy, kde-format
-#| msgid "Add &Quote Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Add &Quote Characters"
-msgstr "添加引用字符(&Q)"
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:338
-#, fuzzy, kde-format
-#| msgid "Re&move Quote Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Re&move Quote Characters"
-msgstr "移除引用字符(&M)"
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:345
-#, fuzzy, kde-format
-#| msgid "Paste Without Formatting"
+#, kde-format
 msgctxt "@action"
 msgid "Paste Without Formatting"
-msgstr "无格式粘贴"
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:353
 #, kde-format
@@ -289,11 +285,10 @@ msgid "Add Image"
 msgstr "添加图片"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, fuzzy, kde-format
-#| msgid "Insert HTML"
+#, kde-format
 msgctxt "@action"
 msgid "Insert HTML"
-msgstr "插入 HTML"
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:382
 #, kde-format
@@ -578,39 +573,34 @@ msgid "Delete"
 msgstr "删除"
 
 #: tableactionmenu.cpp:451
-#, fuzzy, kde-format
-#| msgid "Row Below"
+#, kde-format
 msgctxt "@action"
 msgid "Row Below"
-msgstr "向下插入行"
+msgstr ""
 
 #: tableactionmenu.cpp:458
-#, fuzzy, kde-format
-#| msgid "Row Above"
+#, kde-format
 msgctxt "@action"
 msgid "Row Above"
-msgstr "向上插入行"
+msgstr ""
 
 #: tableactionmenu.cpp:466
-#, fuzzy, kde-format
-#| msgid "Column Before"
+#, kde-format
 msgctxt "@action"
 msgid "Column Before"
-msgstr "向左插入列"
+msgstr ""
 
 #: tableactionmenu.cpp:474
-#, fuzzy, kde-format
-#| msgid "Column After"
+#, kde-format
 msgctxt "@action"
 msgid "Column After"
-msgstr "向右插入列"
+msgstr ""
 
 #: tableactionmenu.cpp:482
-#, fuzzy, kde-format
-#| msgid "Cell Contents"
+#, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
-msgstr "单元格内容"
+msgstr ""
 
 #: tableactionmenu.cpp:491
 #, kde-format
@@ -618,11 +608,10 @@ msgid "Join With Cell to the Right"
 msgstr "向右合并单元格"
 
 #: tableactionmenu.cpp:498
-#, fuzzy, kde-format
-#| msgid "Join Selected Cells"
+#, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
-msgstr "合并选中单元格"
+msgstr ""
 
 #: tableactionmenu.cpp:505
 #, kde-format
@@ -630,18 +619,16 @@ msgid "Split cells"
 msgstr "分割单元格"
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgid "Table Format…"
+#, kde-format
 msgctxt "@action"
 msgid "Table Format…"
-msgstr "表格格式…"
+msgstr ""
 
 #: tableactionmenu.cpp:521
-#, fuzzy, kde-format
-#| msgid "Table Cell Format…"
+#, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"
-msgstr "表格单元格格式…"
+msgstr ""
 
 #: tablecellformatdialog.cpp:28
 #, kde-format

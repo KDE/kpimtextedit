@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2024-05-10 11:17+0200\n"
+"PO-Revision-Date: 2024-05-15 10:53+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -258,29 +258,25 @@ msgid "I II III"
 msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
-#, fuzzy, kde-format
-#| msgid "Pa&ste as Quotation"
+#, kde-format
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr "Plakken al&s aanhaling"
 
 #: composer-ng/richtextcomposeractions.cpp:331
-#, fuzzy, kde-format
-#| msgid "Add &Quote Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Add &Quote Characters"
 msgstr "Aan&halingstekens toevoegen"
 
 #: composer-ng/richtextcomposeractions.cpp:338
-#, fuzzy, kde-format
-#| msgid "Re&move Quote Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "Aanhalingstekens verwijdere&n"
 
 #: composer-ng/richtextcomposeractions.cpp:345
-#, fuzzy, kde-format
-#| msgid "Paste Without Formatting"
+#, kde-format
 msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr "Plakken zonder opmaak"
@@ -291,8 +287,7 @@ msgid "Add Image"
 msgstr "Afbeelding toevoegen"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, fuzzy, kde-format
-#| msgid "Insert HTML"
+#, kde-format
 msgctxt "@action"
 msgid "Insert HTML"
 msgstr "HTML invoegen"
@@ -582,36 +577,31 @@ msgid "Delete"
 msgstr "Verwijderen"
 
 #: tableactionmenu.cpp:451
-#, fuzzy, kde-format
-#| msgid "Row Below"
+#, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Rij eronder"
 
 #: tableactionmenu.cpp:458
-#, fuzzy, kde-format
-#| msgid "Row Above"
+#, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Rij erboven"
 
 #: tableactionmenu.cpp:466
-#, fuzzy, kde-format
-#| msgid "Column Before"
+#, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Kolom vóór"
 
 #: tableactionmenu.cpp:474
-#, fuzzy, kde-format
-#| msgid "Column After"
+#, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "Kolom na"
 
 #: tableactionmenu.cpp:482
-#, fuzzy, kde-format
-#| msgid "Cell Contents"
+#, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Celinhoud"
@@ -622,8 +612,7 @@ msgid "Join With Cell to the Right"
 msgstr "Met de cel rechts samenvoegen"
 
 #: tableactionmenu.cpp:498
-#, fuzzy, kde-format
-#| msgid "Join Selected Cells"
+#, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Voeg geselecteerde cellen samen"
@@ -634,15 +623,13 @@ msgid "Split cells"
 msgstr "Cellen splitsen"
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgid "Table Format…"
+#, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "Tabelindeling…"
 
 #: tableactionmenu.cpp:521
-#, fuzzy, kde-format
-#| msgid "Table Cell Format…"
+#, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"
 msgstr "Celindeling van tabel…"

@@ -735,9 +735,3 @@ msgstr "Juster"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Tabelljustering:"
-
-#~ msgid "Table..."
-#~ msgstr "Tabell …"
-
-#~ msgid "Table Format..."
-#~ msgstr "Tabellformat …"

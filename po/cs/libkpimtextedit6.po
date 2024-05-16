@@ -161,12 +161,10 @@ msgid "Insert Rule Line"
 msgstr "Vložit vodicí čáru"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Color..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Color…"
-msgstr "Barva te&xtu..."
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:265
 #, kde-format
@@ -175,12 +173,10 @@ msgid "Color"
 msgstr "Barva"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Highlight..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Highlight…"
-msgstr "Zvý&raznění textu..."
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:281
 #, kde-format
@@ -261,32 +257,28 @@ msgid "I II III"
 msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
-#, fuzzy, kde-format
-#| msgid "Pa&ste as Quotation"
+#, kde-format
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
-msgstr "Vložit &jako citaci"
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:331
-#, fuzzy, kde-format
-#| msgid "Add &Quote Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Add &Quote Characters"
-msgstr "Přidat znak&y pro citaci"
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:338
-#, fuzzy, kde-format
-#| msgid "Re&move Quote Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Re&move Quote Characters"
-msgstr "Odst&ranit znaky citace"
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:345
-#, fuzzy, kde-format
-#| msgid "Paste Without Formatting"
+#, kde-format
 msgctxt "@action"
 msgid "Paste Without Formatting"
-msgstr "Vložit bez formátování"
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:353
 #, kde-format
@@ -294,11 +286,10 @@ msgid "Add Image"
 msgstr "Přidat obrázek"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, fuzzy, kde-format
-#| msgid "Insert HTML"
+#, kde-format
 msgctxt "@action"
 msgid "Insert HTML"
-msgstr "Vložit HTML"
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:382
 #, kde-format
@@ -551,10 +542,9 @@ msgid "pixels"
 msgstr "pixelů"
 
 #: tableactionmenu.cpp:410
-#, fuzzy, kde-format
-#| msgid "Table"
+#, kde-format
 msgid "Table…"
-msgstr "Tabulka"
+msgstr ""
 
 #: tableactionmenu.cpp:418
 #, kde-format
@@ -582,39 +572,34 @@ msgid "Delete"
 msgstr "Smazat"
 
 #: tableactionmenu.cpp:451
-#, fuzzy, kde-format
-#| msgid "Row Below"
+#, kde-format
 msgctxt "@action"
 msgid "Row Below"
-msgstr "Řádek pod"
+msgstr ""
 
 #: tableactionmenu.cpp:458
-#, fuzzy, kde-format
-#| msgid "Row Above"
+#, kde-format
 msgctxt "@action"
 msgid "Row Above"
-msgstr "Řádek výše"
+msgstr ""
 
 #: tableactionmenu.cpp:466
-#, fuzzy, kde-format
-#| msgid "Column Before"
+#, kde-format
 msgctxt "@action"
 msgid "Column Before"
-msgstr "Sloupec před"
+msgstr ""
 
 #: tableactionmenu.cpp:474
-#, fuzzy, kde-format
-#| msgid "Column After"
+#, kde-format
 msgctxt "@action"
 msgid "Column After"
-msgstr "Sloupec po"
+msgstr ""
 
 #: tableactionmenu.cpp:482
-#, fuzzy, kde-format
-#| msgid "Cell Contents"
+#, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
-msgstr "Obsah buňky"
+msgstr ""
 
 #: tableactionmenu.cpp:491
 #, kde-format
@@ -622,11 +607,10 @@ msgid "Join With Cell to the Right"
 msgstr "Sloučit s buňkou vpravo"
 
 #: tableactionmenu.cpp:498
-#, fuzzy, kde-format
-#| msgid "Join Selected Cells"
+#, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
-msgstr "Sloučit vybrané buňky"
+msgstr ""
 
 #: tableactionmenu.cpp:505
 #, kde-format
@@ -634,19 +618,16 @@ msgid "Split cells"
 msgstr "Rozdělit buňky"
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Table Format"
+#, kde-format
 msgctxt "@action"
 msgid "Table Format…"
-msgstr "Formát tabulky"
+msgstr ""
 
 #: tableactionmenu.cpp:521
-#, fuzzy, kde-format
-#| msgid "Table Cell Format..."
+#, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"
-msgstr "Formát buňky tabulky..."
+msgstr ""
 
 #: tablecellformatdialog.cpp:28
 #, kde-format
@@ -729,9 +710,3 @@ msgstr "Do bloku"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Zarovnání tabulky:"
-
-#~ msgid "Table..."
-#~ msgstr "Tabulka..."
-
-#~ msgid "Table Format..."
-#~ msgstr "Formát tabulky..."

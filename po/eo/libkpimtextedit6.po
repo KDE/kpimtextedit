@@ -2,15 +2,15 @@
 # Esperantaj mesaĝoj por "kpimtextedit"
 # Copyright (C) 2009 Free Software Foundation, Inc.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2024-05-10 09:14+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"PO-Revision-Date: 2024-05-15 09:56+0100\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -258,29 +258,25 @@ msgid "I II III"
 msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
-#, fuzzy, kde-format
-#| msgid "Pa&ste as Quotation"
+#, kde-format
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr "Alglui kiel &Citaĵo"
 
 #: composer-ng/richtextcomposeractions.cpp:331
-#, fuzzy, kde-format
-#| msgid "Add &Quote Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Add &Quote Characters"
 msgstr "Aldo&ni Citilojn"
 
 #: composer-ng/richtextcomposeractions.cpp:338
-#, fuzzy, kde-format
-#| msgid "Re&move Quote Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "Fo&rigi Citilojn"
 
 #: composer-ng/richtextcomposeractions.cpp:345
-#, fuzzy, kde-format
-#| msgid "Paste Without Formatting"
+#, kde-format
 msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr "Alglui Sen Formatado"
@@ -291,8 +287,7 @@ msgid "Add Image"
 msgstr "Aldoni Bildon"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, fuzzy, kde-format
-#| msgid "Insert HTML"
+#, kde-format
 msgctxt "@action"
 msgid "Insert HTML"
 msgstr "Enmeti HTML"
@@ -582,36 +577,31 @@ msgid "Delete"
 msgstr "Forigi"
 
 #: tableactionmenu.cpp:451
-#, fuzzy, kde-format
-#| msgid "Row Below"
+#, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Vico Malsupre"
 
 #: tableactionmenu.cpp:458
-#, fuzzy, kde-format
-#| msgid "Row Above"
+#, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Vico Supre"
 
 #: tableactionmenu.cpp:466
-#, fuzzy, kde-format
-#| msgid "Column Before"
+#, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Kolumno Antaŭ"
 
 #: tableactionmenu.cpp:474
-#, fuzzy, kde-format
-#| msgid "Column After"
+#, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "Kolumno Post"
 
 #: tableactionmenu.cpp:482
-#, fuzzy, kde-format
-#| msgid "Cell Contents"
+#, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Ĉela Enhavo"
@@ -622,8 +612,7 @@ msgid "Join With Cell to the Right"
 msgstr "Kunigi Kun Ĉelo Dekstre"
 
 #: tableactionmenu.cpp:498
-#, fuzzy, kde-format
-#| msgid "Join Selected Cells"
+#, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Kunigi Elektitajn Ĉelojn"
@@ -634,15 +623,13 @@ msgid "Split cells"
 msgstr "Dividi ĉelojn"
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgid "Table Format…"
+#, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "Tabelformato…"
 
 #: tableactionmenu.cpp:521
-#, fuzzy, kde-format
-#| msgid "Table Cell Format…"
+#, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"
 msgstr "Tabelĉela Formato…"

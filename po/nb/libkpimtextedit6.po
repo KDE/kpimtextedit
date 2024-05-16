@@ -730,6 +730,3 @@ msgstr "Innrett"
 #, kde-format
 msgid "Table Alignment:"
 msgstr "Tabellinnretting:"
-
-#~ msgid "Table..."
-#~ msgstr "Tabell …"
