@@ -259,25 +259,25 @@ msgstr "I II III"
 #, kde-format
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
-msgstr ""
+msgstr "粘贴为引用(&S)"
 
 #: composer-ng/richtextcomposeractions.cpp:331
 #, kde-format
 msgctxt "@action"
 msgid "Add &Quote Characters"
-msgstr ""
+msgstr "添加引用字符(&Q)"
 
 #: composer-ng/richtextcomposeractions.cpp:338
 #, kde-format
 msgctxt "@action"
 msgid "Re&move Quote Characters"
-msgstr ""
+msgstr "移除引用字符(&M)"
 
 #: composer-ng/richtextcomposeractions.cpp:345
 #, kde-format
 msgctxt "@action"
 msgid "Paste Without Formatting"
-msgstr ""
+msgstr "粘贴为无格式文本"
 
 #: composer-ng/richtextcomposeractions.cpp:353
 #, kde-format
@@ -288,7 +288,7 @@ msgstr "添加图片"
 #, kde-format
 msgctxt "@action"
 msgid "Insert HTML"
-msgstr ""
+msgstr "插入 HTML"
 
 #: composer-ng/richtextcomposeractions.cpp:382
 #, kde-format
@@ -576,31 +576,31 @@ msgstr "删除"
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
-msgstr ""
+msgstr "下一行"
 
 #: tableactionmenu.cpp:458
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
-msgstr ""
+msgstr "上一行"
 
 #: tableactionmenu.cpp:466
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
-msgstr ""
+msgstr "前一列"
 
 #: tableactionmenu.cpp:474
 #, kde-format
 msgctxt "@action"
 msgid "Column After"
-msgstr ""
+msgstr "后一列"
 
 #: tableactionmenu.cpp:482
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
-msgstr ""
+msgstr "单元格内容"
 
 #: tableactionmenu.cpp:491
 #, kde-format
@@ -611,7 +611,7 @@ msgstr "向右合并单元格"
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
-msgstr ""
+msgstr "合并选中的单元格"
 
 #: tableactionmenu.cpp:505
 #, kde-format
@@ -622,13 +622,13 @@ msgstr "分割单元格"
 #, kde-format
 msgctxt "@action"
 msgid "Table Format…"
-msgstr ""
+msgstr "表格格式…"
 
 #: tableactionmenu.cpp:521
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"
-msgstr ""
+msgstr "表格单元格格式…"
 
 #: tablecellformatdialog.cpp:28
 #, kde-format
