@@ -37,7 +37,7 @@ public:
         auto lay = new QVBoxLayout(q);
         lay->setContentsMargins({});
         auto hbox = new QHBoxLayout;
-        auto lab = new QLabel(i18n("Image Location:"));
+        auto lab = new QLabel(i18nc("@label:textbox", "Image Location:"));
         imageUrlRequester = new KUrlRequester;
 
         QStringList lstMimeTypes;
@@ -74,7 +74,7 @@ public:
         lay->addWidget(keepImageRatio);
 
         hbox = new QHBoxLayout;
-        lab = new QLabel(i18n("Width:"));
+        lab = new QLabel(i18nc("@label:textbox", "Width:"));
         width = new QSpinBox;
         width->setMinimum(1);
         width->setMaximum(99999);
@@ -89,7 +89,7 @@ public:
         lay->addLayout(hbox);
 
         hbox = new QHBoxLayout;
-        lab = new QLabel(i18n("Height:"));
+        lab = new QLabel(i18nc("@label:textbox", "Height:"));
         height = new QSpinBox;
         height->setMinimum(1);
         height->setMaximum(99999);
@@ -107,7 +107,7 @@ public:
         lay->addWidget(sep);
 
         hbox = new QHBoxLayout;
-        lab = new QLabel(i18n("Image Preview:"));
+        lab = new QLabel(i18nc("@label:textbox", "Image Preview:"));
         hbox->addWidget(lab);
         preview = new QLabel;
         preview->setFrameStyle(QFrame::Box);

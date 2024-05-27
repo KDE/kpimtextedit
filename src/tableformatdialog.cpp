@@ -41,22 +41,22 @@ public:
         lay->addWidget(sep);
 
         auto hbox = new QHBoxLayout;
-        auto lab = new QLabel(i18n("Spacing:"));
+        auto lab = new QLabel(i18nc("@label:textbox", "Spacing:"));
         hbox->addWidget(lab);
         spacing = new QSpinBox;
         spacing->setMinimum(0);
         hbox->addWidget(spacing);
-        lab = new QLabel(i18n("pixels between cells"));
+        lab = new QLabel(i18nc("@label:textbox", "pixels between cells"));
         hbox->addWidget(lab);
         lay->addLayout(hbox);
 
         hbox = new QHBoxLayout;
-        lab = new QLabel(i18n("Padding:"));
+        lab = new QLabel(i18nc("@label:textbox", "Padding:"));
         hbox->addWidget(lab);
         padding = new QSpinBox;
         padding->setMinimum(0);
         hbox->addWidget(padding);
-        lab = new QLabel(i18n("pixels between cell border and content"));
+        lab = new QLabel(i18nc("@label:textbox", "pixels between cell border and content"));
         hbox->addWidget(lab);
         lay->addLayout(hbox);
 
@@ -70,7 +70,7 @@ public:
         alignment->addItem(i18n("Justify"), Qt::AlignJustify);
 
         hbox = new QHBoxLayout;
-        lab = new QLabel(i18n("Table Alignment:"));
+        lab = new QLabel(i18nc("@label:textbox", "Table Alignment:"));
         hbox->addWidget(lab);
         hbox->addWidget(alignment);
 

@@ -21,9 +21,9 @@ using namespace KPIMTextEdit;
 
 KLinkDialog::KLinkDialog(QWidget *parent)
     : QDialog(parent)
-    , textLabel(new QLabel(i18n("Link Text:"), this))
+    , textLabel(new QLabel(i18nc("@label:textbox", "Link Text:"), this))
     , textLineEdit(new QLineEdit(this))
-    , linkUrlLabel(new QLabel(i18n("Link URL:"), this))
+    , linkUrlLabel(new QLabel(i18nc("@label:textbox", "Link URL:"), this))
     , linkUrlLineEdit(new QLineEdit(this))
     , buttonBox(new QDialogButtonBox(this))
 {

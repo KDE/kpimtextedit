@@ -30,7 +30,7 @@ public:
         q->setLayout(mainLayout);
 
         auto hbox = new QHBoxLayout;
-        auto lab = new QLabel(i18n("Vertical Alignment:"));
+        auto lab = new QLabel(i18nc("@label:textbox", "Vertical Alignment:"));
         hbox->addWidget(lab);
         verticalAlignment = new QComboBox;
         verticalAlignment->addItem(i18n("Top"), QTextCharFormat::AlignTop);

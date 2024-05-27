@@ -37,13 +37,13 @@ public:
 
         auto gridLayout = new QGridLayout;
         gridLayout->setContentsMargins({});
-        gridLayout->addWidget(new QLabel(i18n("Rows:")), 0, 0);
+        gridLayout->addWidget(new QLabel(i18nc("@label:textbox", "Rows:")), 0, 0);
         gridLayout->addWidget(mRows, 0, 1);
 
-        gridLayout->addWidget(new QLabel(i18n("Columns:")), 1, 0);
+        gridLayout->addWidget(new QLabel(i18nc("@label:textbox", "Columns:")), 1, 0);
         gridLayout->addWidget(mColumns, 1, 1);
 
-        gridLayout->addWidget(new QLabel(i18n("Border:")), 2, 0);
+        gridLayout->addWidget(new QLabel(i18nc("@label:textbox", "Border:")), 2, 0);
         gridLayout->addWidget(mBorder, 2, 1);
 
         mTypeOfLength = new QComboBox;
@@ -56,7 +56,7 @@ public:
         mLength->setMaximum(100);
         mLength->setValue(100);
 
-        gridLayout->addWidget(new QLabel(i18n("Width:")), 3, 0);
+        gridLayout->addWidget(new QLabel(i18nc("@label:textbox", "Width:")), 3, 0);
         gridLayout->addWidget(mLength, 3, 1);
         gridLayout->addWidget(mTypeOfLength, 3, 2);
         q->setLayout(gridLayout);
