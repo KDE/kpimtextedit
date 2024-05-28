@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2009-12-24 06:59-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -19,11 +19,13 @@ msgstr ""
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Link Text:"
 msgstr ""
 
 #: composer-ng/klinkdialog.cpp:26
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Link URL:"
 msgstr ""
 
@@ -448,12 +450,16 @@ msgid "Insert HTML"
 msgstr "Ionsáigh HTML"
 
 #: inserthtmldialog.cpp:36
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert HTML tags and texts:"
+msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Ionsáigh clibeanna HTML agus téacs:"
 
 #: inserthtmldialog.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Example: <i> Hello word </i>"
+msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Mar shampla: <i> Dia dhaoibh! </i>"
 
@@ -477,7 +483,9 @@ msgid "Insert"
 msgstr "Ionsáigh"
 
 #: insertimagewidget.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Image Location:"
+msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "Suíomh na hÍomhá:"
 
@@ -499,7 +507,9 @@ msgid "Keep Image Ratio"
 msgstr ""
 
 #: insertimagewidget.cpp:77 inserttablewidget.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Width:"
+msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Leithead:"
 
@@ -509,12 +519,15 @@ msgid " px"
 msgstr " pct"
 
 #: insertimagewidget.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Height:"
+msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Airde:"
 
 #: insertimagewidget.cpp:110
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Image Preview:"
 msgstr ""
 
@@ -526,17 +539,23 @@ msgid "Insert Table"
 msgstr "Ionsáigh Tábla"
 
 #: inserttablewidget.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Rows:"
+msgctxt "@label:textbox"
 msgid "Rows:"
 msgstr "Rónna:"
 
 #: inserttablewidget.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Columns:"
+msgctxt "@label:textbox"
 msgid "Columns:"
 msgstr "Colúin:"
 
 #: inserttablewidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Border:"
+msgctxt "@label:textbox"
 msgid "Border:"
 msgstr "Teorainn:"
 
@@ -649,6 +668,7 @@ msgstr ""
 
 #: tablecellformatdialog.cpp:33
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Vertical Alignment:"
 msgstr ""
 
@@ -679,22 +699,28 @@ msgid "Table Format"
 msgstr ""
 
 #: tableformatdialog.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Spacing:"
+msgctxt "@label:textbox"
 msgid "Spacing:"
 msgstr "Spásáil:"
 
 #: tableformatdialog.cpp:49
 #, kde-format
+msgctxt "@label:textbox"
 msgid "pixels between cells"
 msgstr ""
 
 #: tableformatdialog.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Spacing:"
+msgctxt "@label:textbox"
 msgid "Padding:"
-msgstr ""
+msgstr "Spásáil:"
 
 #: tableformatdialog.cpp:59
 #, kde-format
+msgctxt "@label:textbox"
 msgid "pixels between cell border and content"
 msgstr ""
 
@@ -720,6 +746,7 @@ msgstr "Comhfhadaigh"
 
 #: tableformatdialog.cpp:73
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Table Alignment:"
 msgstr ""
 

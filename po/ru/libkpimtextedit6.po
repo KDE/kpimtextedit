@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2023-12-27 10:01+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -26,12 +26,16 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 
 #: composer-ng/klinkdialog.cpp:24
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Link Text:"
+msgctxt "@label:textbox"
 msgid "Link Text:"
 msgstr "Текст ссылки:"
 
 #: composer-ng/klinkdialog.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Link URL:"
+msgctxt "@label:textbox"
 msgid "Link URL:"
 msgstr "Адрес ссылки:"
 
@@ -463,12 +467,16 @@ msgid "Insert HTML"
 msgstr "Вставка кода HTML"
 
 #: inserthtmldialog.cpp:36
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert HTML tags and texts:"
+msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Введите текст с тегами HTML для вставки:"
 
 #: inserthtmldialog.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Example: <i> Hello word </i>"
+msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Пример: <i>Здравствуй, мир!</i>"
 
@@ -490,7 +498,9 @@ msgid "Insert"
 msgstr "Вставить"
 
 #: insertimagewidget.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Image Location:"
+msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "Адрес изображения:"
 
@@ -511,7 +521,9 @@ msgid "Keep Image Ratio"
 msgstr "Сохранять соотношение сторон"
 
 #: insertimagewidget.cpp:77 inserttablewidget.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Width:"
+msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Ширина:"
 
@@ -521,12 +533,16 @@ msgid " px"
 msgstr " пикс."
 
 #: insertimagewidget.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Height:"
+msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Высота:"
 
 #: insertimagewidget.cpp:110
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Image Preview:"
+msgctxt "@label:textbox"
 msgid "Image Preview:"
 msgstr "Просмотр изображения:"
 
@@ -537,17 +553,23 @@ msgid "Insert Table"
 msgstr "Добавление таблицы"
 
 #: inserttablewidget.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Rows:"
+msgctxt "@label:textbox"
 msgid "Rows:"
 msgstr "Строк:"
 
 #: inserttablewidget.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Columns:"
+msgctxt "@label:textbox"
 msgid "Columns:"
 msgstr "Столбцов:"
 
 #: inserttablewidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Border:"
+msgctxt "@label:textbox"
 msgid "Border:"
 msgstr "Граница:"
 
@@ -666,7 +688,9 @@ msgid "Cell Format"
 msgstr "Формат ячейки"
 
 #: tablecellformatdialog.cpp:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Vertical Alignment:"
+msgctxt "@label:textbox"
 msgid "Vertical Alignment:"
 msgstr "Вертикальное выравнивание:"
 
@@ -697,22 +721,30 @@ msgid "Table Format"
 msgstr "Формат таблицы"
 
 #: tableformatdialog.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Spacing:"
+msgctxt "@label:textbox"
 msgid "Spacing:"
 msgstr "Промежуток:"
 
 #: tableformatdialog.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "pixels between cells"
+msgctxt "@label:textbox"
 msgid "pixels between cells"
 msgstr "пикселов между ячейками"
 
 #: tableformatdialog.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Padding:"
+msgctxt "@label:textbox"
 msgid "Padding:"
 msgstr "Дополнение:"
 
 #: tableformatdialog.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "pixels between cell border and content"
+msgctxt "@label:textbox"
 msgid "pixels between cell border and content"
 msgstr "пикселов между границами и содержимым ячейки"
 
@@ -737,7 +769,9 @@ msgid "Justify"
 msgstr "По ширине"
 
 #: tableformatdialog.cpp:73
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Table Alignment:"
+msgctxt "@label:textbox"
 msgid "Table Alignment:"
 msgstr "Выравнивание таблицы"
 
