@@ -20,12 +20,12 @@ msgstr ""
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
 msgid "Link Text:"
-msgstr "链接文字："
+msgstr ""
 
 #: composer-ng/klinkdialog.cpp:26
 #, kde-format
 msgid "Link URL:"
-msgstr "链接地址："
+msgstr ""
 
 #: composer-ng/klinkdialog.cpp:30
 #, kde-format
@@ -441,12 +441,12 @@ msgstr "插入 HTML"
 #: inserthtmldialog.cpp:36
 #, kde-format
 msgid "Insert HTML tags and texts:"
-msgstr "插入 HTML 标签和文本："
+msgstr ""
 
 #: inserthtmldialog.cpp:42
 #, kde-format
 msgid "Example: <i> Hello word </i>"
-msgstr "示例：<i> 你好世界 </i>"
+msgstr ""
 
 #: inserthtmldialog.cpp:51
 #, kde-format
@@ -468,7 +468,7 @@ msgstr "插入"
 #: insertimagewidget.cpp:40
 #, kde-format
 msgid "Image Location:"
-msgstr "图片位置："
+msgstr ""
 
 #: insertimagewidget.cpp:53
 #, kde-format
@@ -489,7 +489,7 @@ msgstr "保持图片纵横比"
 #: insertimagewidget.cpp:77 inserttablewidget.cpp:59
 #, kde-format
 msgid "Width:"
-msgstr "宽度："
+msgstr ""
 
 #: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
 #, kde-format
@@ -499,12 +499,12 @@ msgstr " 像素"
 #: insertimagewidget.cpp:92
 #, kde-format
 msgid "Height:"
-msgstr "高度："
+msgstr ""
 
 #: insertimagewidget.cpp:110
 #, kde-format
 msgid "Image Preview:"
-msgstr "图片预览："
+msgstr ""
 
 #: inserttabledialog.cpp:26
 #, kde-format
@@ -515,17 +515,17 @@ msgstr "插入表格"
 #: inserttablewidget.cpp:40
 #, kde-format
 msgid "Rows:"
-msgstr "行："
+msgstr ""
 
 #: inserttablewidget.cpp:43
 #, kde-format
 msgid "Columns:"
-msgstr "列："
+msgstr ""
 
 #: inserttablewidget.cpp:46
 #, kde-format
 msgid "Border:"
-msgstr "边框："
+msgstr ""
 
 #: inserttablewidget.cpp:52
 #, no-c-format, kde-format
@@ -606,7 +606,7 @@ msgstr "单元格格式"
 #: tablecellformatdialog.cpp:33
 #, kde-format
 msgid "Vertical Alignment:"
-msgstr "垂直对齐："
+msgstr ""
 
 #: tablecellformatdialog.cpp:36
 #, kde-format
@@ -637,22 +637,22 @@ msgstr "表格格式"
 #: tableformatdialog.cpp:44
 #, kde-format
 msgid "Spacing:"
-msgstr "间距："
+msgstr ""
 
 #: tableformatdialog.cpp:49
 #, kde-format
 msgid "pixels between cells"
-msgstr "单元格间隔像素"
+msgstr ""
 
 #: tableformatdialog.cpp:54
 #, kde-format
 msgid "Padding:"
-msgstr "空白："
+msgstr ""
 
 #: tableformatdialog.cpp:59
 #, kde-format
 msgid "pixels between cell border and content"
-msgstr "单元格边框和内容间间隔像素"
+msgstr ""
 
 #: tableformatdialog.cpp:67
 #, kde-format
@@ -677,4 +677,4 @@ msgstr "两端对齐"
 #: tableformatdialog.cpp:73
 #, kde-format
 msgid "Table Alignment:"
-msgstr "表格对齐："
+msgstr ""

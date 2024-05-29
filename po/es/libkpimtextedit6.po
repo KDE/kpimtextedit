@@ -5,13 +5,13 @@
 # Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>, 2009.
 # Javier Vinal <fjvinalgmail.com>, 2011, 2012.
 # Javier Viñal <fjvinal@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019.
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-03 00:38+0000\n"
-"PO-Revision-Date: 2023-09-25 12:46+0200\n"
+"PO-Revision-Date: 2024-05-28 16:28+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "com>\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: composer-ng/klinkdialog.cpp:24
@@ -36,7 +36,7 @@ msgstr "Enlazar URL:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Link"
-msgstr "Gestionar enlace"
+msgstr "Gestión del enlace"
 
 #: composer-ng/richtextcomposeractions.cpp:103
 #, kde-format
@@ -90,25 +90,25 @@ msgstr "Alinear"
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
-msgstr "Izquierda-a-derecha"
+msgstr "De izquierda a derecha"
 
 #: composer-ng/richtextcomposeractions.cpp:147
 #, kde-format
 msgctxt "@label left-to-right"
 msgid "Left-to-Right"
-msgstr "Izquierda-a-derecha"
+msgstr "De izquierda a derecha"
 
 #: composer-ng/richtextcomposeractions.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
-msgstr "Derecha-a-izquierda"
+msgstr "De derecha a izquierda"
 
 #: composer-ng/richtextcomposeractions.cpp:156
 #, kde-format
 msgctxt "@label right-to-left"
 msgid "Right-to-Left"
-msgstr "Derecha-a-izquierda"
+msgstr "De derecha a izquierda"
 
 #: composer-ng/richtextcomposeractions.cpp:169
 #, kde-format
@@ -496,7 +496,7 @@ msgstr "Mantener proporción de la imagen"
 #: insertimagewidget.cpp:77 inserttablewidget.cpp:59
 #, kde-format
 msgid "Width:"
-msgstr "Ancho:"
+msgstr "Anchura:"
 
 #: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
 #, kde-format
@@ -511,7 +511,7 @@ msgstr "Altura:"
 #: insertimagewidget.cpp:110
 #, kde-format
 msgid "Image Preview:"
-msgstr "Vista previa de imagen:"
+msgstr "Vista previa de la imagen:"
 
 #: inserttabledialog.cpp:26
 #, kde-format
