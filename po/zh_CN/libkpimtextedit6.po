@@ -18,18 +18,16 @@ msgstr ""
 "X-Crowdin-File-ID: 49102\n"
 
 #: composer-ng/klinkdialog.cpp:24
-#, fuzzy, kde-format
-#| msgid "Link Text:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Link Text:"
-msgstr "链接文字："
+msgstr ""
 
 #: composer-ng/klinkdialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Link URL:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Link URL:"
-msgstr "链接地址："
+msgstr ""
 
 #: composer-ng/klinkdialog.cpp:30
 #, kde-format
@@ -448,18 +446,16 @@ msgid "Insert HTML"
 msgstr "插入 HTML"
 
 #: inserthtmldialog.cpp:36
-#, fuzzy, kde-format
-#| msgid "Insert HTML tags and texts:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
-msgstr "插入 HTML 标签和文本："
+msgstr ""
 
 #: inserthtmldialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Example: <i> Hello word </i>"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
-msgstr "示例：<i> 你好世界 </i>"
+msgstr ""
 
 #: inserthtmldialog.cpp:51
 #, kde-format
@@ -479,11 +475,10 @@ msgid "Insert"
 msgstr "插入"
 
 #: insertimagewidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Image Location:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
-msgstr "图片位置："
+msgstr ""
 
 #: insertimagewidget.cpp:53
 #, kde-format
@@ -502,11 +497,10 @@ msgid "Keep Image Ratio"
 msgstr "保持图片纵横比"
 
 #: insertimagewidget.cpp:77 inserttablewidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Width:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
-msgstr "宽度："
+msgstr ""
 
 #: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
 #, kde-format
@@ -514,18 +508,16 @@ msgid " px"
 msgstr " 像素"
 
 #: insertimagewidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Height:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
-msgstr "高度："
+msgstr ""
 
 #: insertimagewidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Image Preview:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"
-msgstr "图片预览："
+msgstr ""
 
 #: inserttabledialog.cpp:26
 #, kde-format
@@ -534,25 +526,22 @@ msgid "Insert Table"
 msgstr "插入表格"
 
 #: inserttablewidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Rows:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Rows:"
-msgstr "行："
+msgstr ""
 
 #: inserttablewidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "Columns:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Columns:"
-msgstr "列："
+msgstr ""
 
 #: inserttablewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Border:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Border:"
-msgstr "边框："
+msgstr ""
 
 #: inserttablewidget.cpp:52
 #, no-c-format, kde-format
@@ -659,11 +648,10 @@ msgid "Cell Format"
 msgstr "单元格格式"
 
 #: tablecellformatdialog.cpp:33
-#, fuzzy, kde-format
-#| msgid "Vertical Alignment:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Vertical Alignment:"
-msgstr "垂直对齐："
+msgstr ""
 
 #: tablecellformatdialog.cpp:36
 #, kde-format
@@ -692,32 +680,28 @@ msgid "Table Format"
 msgstr "表格格式"
 
 #: tableformatdialog.cpp:44
-#, fuzzy, kde-format
-#| msgid "Spacing:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Spacing:"
-msgstr "间距："
+msgstr ""
 
 #: tableformatdialog.cpp:49
-#, fuzzy, kde-format
-#| msgid "pixels between cells"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cells"
-msgstr "单元格间隔像素"
+msgstr ""
 
 #: tableformatdialog.cpp:54
-#, fuzzy, kde-format
-#| msgid "Padding:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Padding:"
-msgstr "空白："
+msgstr ""
 
 #: tableformatdialog.cpp:59
-#, fuzzy, kde-format
-#| msgid "pixels between cell border and content"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cell border and content"
-msgstr "单元格边框和内容间间隔像素"
+msgstr ""
 
 #: tableformatdialog.cpp:67
 #, kde-format
@@ -740,8 +724,7 @@ msgid "Justify"
 msgstr "两端对齐"
 
 #: tableformatdialog.cpp:73
-#, fuzzy, kde-format
-#| msgid "Table Alignment:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Table Alignment:"
-msgstr "表格对齐："
+msgstr ""
