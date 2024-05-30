@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-28 00:39+0000\n"
-"PO-Revision-Date: 2024-05-17 21:24+0200\n"
+"PO-Revision-Date: 2024-05-29 09:03+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -21,18 +21,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #: composer-ng/klinkdialog.cpp:24
-#, fuzzy, kde-format
-#| msgid "Link Text:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Link Text:"
 msgstr "Texto da ligazón:"
 
 #: composer-ng/klinkdialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Link URL:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Link URL:"
 msgstr "URL co cal ligar:"
@@ -457,15 +455,13 @@ msgid "Insert HTML"
 msgstr "Inserir HTML"
 
 #: inserthtmldialog.cpp:36
-#, fuzzy, kde-format
-#| msgid "Insert HTML tags and texts:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Inserir etiquetas e textos HTML:"
 
 #: inserthtmldialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Example: <i> Hello word </i>"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Exemplo: <i> Ola, mundo! </i>"
@@ -488,8 +484,7 @@ msgid "Insert"
 msgstr "Inserir"
 
 #: insertimagewidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Image Location:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "Lugar da imaxe:"
@@ -511,8 +506,7 @@ msgid "Keep Image Ratio"
 msgstr "Manter as proporcións da imaxe"
 
 #: insertimagewidget.cpp:77 inserttablewidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Width:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Anchura:"
@@ -523,15 +517,13 @@ msgid " px"
 msgstr " px"
 
 #: insertimagewidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Height:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Altura:"
 
 #: insertimagewidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Image Preview:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"
 msgstr "Vista previa da imaxe:"
@@ -543,22 +535,19 @@ msgid "Insert Table"
 msgstr "Inserir unha táboa"
 
 #: inserttablewidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Rows:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Rows:"
 msgstr "Filas:"
 
 #: inserttablewidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "Columns:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Columns:"
 msgstr "Columnas:"
 
 #: inserttablewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Border:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Border:"
 msgstr "Bordo:"
@@ -668,8 +657,7 @@ msgid "Cell Format"
 msgstr "Formato da cela"
 
 #: tablecellformatdialog.cpp:33
-#, fuzzy, kde-format
-#| msgid "Vertical Alignment:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Vertical Alignment:"
 msgstr "Aliñamento vertical:"
@@ -701,29 +689,25 @@ msgid "Table Format"
 msgstr "Formato da táboa"
 
 #: tableformatdialog.cpp:44
-#, fuzzy, kde-format
-#| msgid "Spacing:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Spacing:"
 msgstr "Espazamento:"
 
 #: tableformatdialog.cpp:49
-#, fuzzy, kde-format
-#| msgid "pixels between cells"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cells"
 msgstr "Píxeles entre as celas."
 
 #: tableformatdialog.cpp:54
-#, fuzzy, kde-format
-#| msgid "Padding:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Padding:"
 msgstr "Recheo:"
 
 #: tableformatdialog.cpp:59
-#, fuzzy, kde-format
-#| msgid "pixels between cell border and content"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cell border and content"
 msgstr "Píxeles entre o bordo das celas e o contido."
@@ -749,8 +733,7 @@ msgid "Justify"
 msgstr "Xustificar"
 
 #: tableformatdialog.cpp:73
-#, fuzzy, kde-format
-#| msgid "Table Alignment:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Table Alignment:"
 msgstr "Aliñamento da táboa:"

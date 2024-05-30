@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-28 00:39+0000\n"
-"PO-Revision-Date: 2024-05-15 09:56+0100\n"
+"PO-Revision-Date: 2024-05-29 22:04+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -20,15 +20,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: composer-ng/klinkdialog.cpp:24
-#, fuzzy, kde-format
-#| msgid "Link Text:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Link Text:"
 msgstr "Ligilteksto:"
 
 #: composer-ng/klinkdialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Link URL:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Link URL:"
 msgstr "Ligila URLo:"
@@ -452,15 +450,13 @@ msgid "Insert HTML"
 msgstr "Enigi HTML"
 
 #: inserthtmldialog.cpp:36
-#, fuzzy, kde-format
-#| msgid "Insert HTML tags and texts:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Enmeti HTML-etikedojn kaj tekstojn:"
 
 #: inserthtmldialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Example: <i> Hello word </i>"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Ekzemplo: <i> Saluton vorto </i>"
@@ -483,8 +479,7 @@ msgid "Insert"
 msgstr "Enmeti"
 
 #: insertimagewidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Image Location:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "Bilda Loko:"
@@ -506,8 +501,7 @@ msgid "Keep Image Ratio"
 msgstr "Konservi Bildproporcion"
 
 #: insertimagewidget.cpp:77 inserttablewidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Width:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Larĝo:"
@@ -518,15 +512,13 @@ msgid " px"
 msgstr " px"
 
 #: insertimagewidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Height:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Alteco:"
 
 #: insertimagewidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Image Preview:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"
 msgstr "Bilda Antaŭrigardo:"
@@ -538,22 +530,19 @@ msgid "Insert Table"
 msgstr "Enmeti Tabelon"
 
 #: inserttablewidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Rows:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Rows:"
 msgstr "Vicoj:"
 
 #: inserttablewidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "Columns:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Columns:"
 msgstr "Kolumnoj:"
 
 #: inserttablewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Border:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Border:"
 msgstr "Limo:"
@@ -663,8 +652,7 @@ msgid "Cell Format"
 msgstr "Ĉela Formato"
 
 #: tablecellformatdialog.cpp:33
-#, fuzzy, kde-format
-#| msgid "Vertical Alignment:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Vertical Alignment:"
 msgstr "Vertikala Vicigo:"
@@ -696,29 +684,25 @@ msgid "Table Format"
 msgstr "Tabelformato"
 
 #: tableformatdialog.cpp:44
-#, fuzzy, kde-format
-#| msgid "Spacing:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Spacing:"
 msgstr "Interspaco:"
 
 #: tableformatdialog.cpp:49
-#, fuzzy, kde-format
-#| msgid "pixels between cells"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cells"
 msgstr "rastrumeroj inter ĉeloj"
 
 #: tableformatdialog.cpp:54
-#, fuzzy, kde-format
-#| msgid "Padding:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Padding:"
 msgstr "Remburaĵo:"
 
 #: tableformatdialog.cpp:59
-#, fuzzy, kde-format
-#| msgid "pixels between cell border and content"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cell border and content"
 msgstr "rastrumeroj inter ĉela limo kaj enhavo"
@@ -744,8 +728,7 @@ msgid "Justify"
 msgstr "Ĝisrandigi"
 
 #: tableformatdialog.cpp:73
-#, fuzzy, kde-format
-#| msgid "Table Alignment:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Table Alignment:"
 msgstr "Tabela ĝisrandigo:"
