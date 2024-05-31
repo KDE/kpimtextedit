@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2012, 2013, 2015, 2019, 2020, 2021, 2023 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2012, 2013, 2015, 2019, 2020, 2021, 2023, 2024 Vit Pelcak <vit@pelcak.org>
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012.
 #
 msgid ""
@@ -8,27 +8,27 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-28 00:39+0000\n"
-"PO-Revision-Date: 2023-10-12 16:39+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2024-05-30 16:34+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Link Text:"
-msgstr ""
+msgstr "Text odkazu:"
 
 #: composer-ng/klinkdialog.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Link URL:"
-msgstr ""
+msgstr "URL odkazu:"
 
 #: composer-ng/klinkdialog.cpp:30
 #, kde-format
@@ -166,7 +166,7 @@ msgstr "Vložit vodicí čáru"
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color…"
-msgstr ""
+msgstr "Barva te&xtu…"
 
 #: composer-ng/richtextcomposeractions.cpp:265
 #, kde-format
@@ -178,7 +178,7 @@ msgstr "Barva"
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight…"
-msgstr ""
+msgstr "Zvý&raznění textu…"
 
 #: composer-ng/richtextcomposeractions.cpp:281
 #, kde-format
@@ -262,25 +262,25 @@ msgstr "I II III"
 #, kde-format
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
-msgstr ""
+msgstr "Vložit &jako citaci"
 
 #: composer-ng/richtextcomposeractions.cpp:331
 #, kde-format
 msgctxt "@action"
 msgid "Add &Quote Characters"
-msgstr ""
+msgstr "Přidat znak&y pro citaci"
 
 #: composer-ng/richtextcomposeractions.cpp:338
 #, kde-format
 msgctxt "@action"
 msgid "Re&move Quote Characters"
-msgstr ""
+msgstr "Odst&ranit znaky citace"
 
 #: composer-ng/richtextcomposeractions.cpp:345
 #, kde-format
 msgctxt "@action"
 msgid "Paste Without Formatting"
-msgstr ""
+msgstr "Vložit bez formátování"
 
 #: composer-ng/richtextcomposeractions.cpp:353
 #, kde-format
@@ -291,7 +291,7 @@ msgstr "Přidat obrázek"
 #, kde-format
 msgctxt "@action"
 msgid "Insert HTML"
-msgstr ""
+msgstr "Vložit HTML"
 
 #: composer-ng/richtextcomposeractions.cpp:382
 #, kde-format
@@ -448,13 +448,13 @@ msgstr "Vložit HTML"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
-msgstr ""
+msgstr "Vložit HTML značky a text:"
 
 #: inserthtmldialog.cpp:42
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
-msgstr ""
+msgstr "Příklad: <i> Ahoj světe </i>"
 
 #: inserthtmldialog.cpp:51
 #, kde-format
@@ -477,7 +477,7 @@ msgstr "Vložit"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
-msgstr ""
+msgstr "Umístění obrázku:"
 
 #: insertimagewidget.cpp:53
 #, kde-format
@@ -499,7 +499,7 @@ msgstr "Zachovat poměr stran obrázku"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
-msgstr ""
+msgstr "Šířka:"
 
 #: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
 #, kde-format
@@ -510,13 +510,13 @@ msgstr " px"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
-msgstr ""
+msgstr "Výška:"
 
 #: insertimagewidget.cpp:110
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"
-msgstr ""
+msgstr "Náhled obrázku:"
 
 #: inserttabledialog.cpp:26
 #, kde-format
@@ -528,19 +528,19 @@ msgstr "Vložit tabulku"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Rows:"
-msgstr ""
+msgstr "Řádky:"
 
 #: inserttablewidget.cpp:43
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Columns:"
-msgstr ""
+msgstr "Sloupce:"
 
 #: inserttablewidget.cpp:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Border:"
-msgstr ""
+msgstr "Okraj:"
 
 #: inserttablewidget.cpp:52
 #, no-c-format, kde-format
@@ -555,7 +555,7 @@ msgstr "pixelů"
 #: tableactionmenu.cpp:410
 #, kde-format
 msgid "Table…"
-msgstr ""
+msgstr "Tabulka…"
 
 #: tableactionmenu.cpp:418
 #, kde-format
@@ -586,31 +586,31 @@ msgstr "Smazat"
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
-msgstr ""
+msgstr "Řádek pod"
 
 #: tableactionmenu.cpp:458
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
-msgstr ""
+msgstr "Řádek výše"
 
 #: tableactionmenu.cpp:466
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
-msgstr ""
+msgstr "Sloupec před"
 
 #: tableactionmenu.cpp:474
 #, kde-format
 msgctxt "@action"
 msgid "Column After"
-msgstr ""
+msgstr "Sloupec po"
 
 #: tableactionmenu.cpp:482
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
-msgstr ""
+msgstr "Obsah buňky"
 
 #: tableactionmenu.cpp:491
 #, kde-format
@@ -621,7 +621,7 @@ msgstr "Sloučit s buňkou vpravo"
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
-msgstr ""
+msgstr "Sloučit vybrané buňky"
 
 #: tableactionmenu.cpp:505
 #, kde-format
@@ -632,13 +632,13 @@ msgstr "Rozdělit buňky"
 #, kde-format
 msgctxt "@action"
 msgid "Table Format…"
-msgstr ""
+msgstr "Formát tabulky…"
 
 #: tableactionmenu.cpp:521
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"
-msgstr ""
+msgstr "Formát buňky tabulky…"
 
 #: tablecellformatdialog.cpp:28
 #, kde-format
@@ -650,7 +650,7 @@ msgstr "Formát buňky"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Vertical Alignment:"
-msgstr ""
+msgstr "Svislé zarovnání:"
 
 #: tablecellformatdialog.cpp:36
 #, kde-format
@@ -682,25 +682,25 @@ msgstr "Formát tabulky"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Spacing:"
-msgstr ""
+msgstr "Mezery:"
 
 #: tableformatdialog.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cells"
-msgstr ""
+msgstr "pixely mezi buňkami"
 
 #: tableformatdialog.cpp:54
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Padding:"
-msgstr ""
+msgstr "Odstup:"
 
 #: tableformatdialog.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cell border and content"
-msgstr ""
+msgstr "pixely mezi hranou buňky a obsahem"
 
 #: tableformatdialog.cpp:67
 #, kde-format
@@ -726,4 +726,4 @@ msgstr "Do bloku"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Table Alignment:"
-msgstr ""
+msgstr "Zarovnání tabulky:"
