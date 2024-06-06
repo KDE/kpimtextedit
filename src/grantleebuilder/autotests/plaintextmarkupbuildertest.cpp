@@ -735,4 +735,45 @@ void PlainTextMarkupBuilderTest::testBrInsideAnchor()
     delete doc;
 }
 
+void PlainTextMarkupBuilderTest::testNestedList()
+{
+    QTextDocument doc;
+    doc.setHtml(
+        QStringLiteral("<ol>\n"
+                       "  <li>Elem1</li>\n"
+                       "  <li>Elem2\n"
+                       "    <ul>\n"
+                       "      <li>Subelem1</li>\n"
+                       "      <li>Subelem2</li>\n"
+                       "    </ul>\n"
+                       "  </li>\n"
+                       "  <li>Elem3</li>\n"
+                       "  <li>Elem4\n"
+                       "    <ul>\n"
+                       "      <li>Subelem3</li>\n"
+                       "      <li>Subelem4</li>\n"
+                       "    </ul>\n"
+                       "  </li>\n"
+                       "</ol>"
+                       "<ul type=\"circle\">\n"
+                       "  <li>Elem5</li>\n"
+                       "</ul>"));
+    auto hb = std::make_unique<KPIMTextEdit::PlainTextMarkupBuilder>();
+    auto md = std::make_unique<KPIMTextEdit::MarkupDirector>(hb.get());
+    md->processDocument(&doc);
+    auto result = hb->getResult();
+
+    const QString expected = QStringLiteral(
+        "     1. Elem1 \n"
+        "     2. Elem2 \n"
+        "         *  Subelem1 \n"
+        "         *  Subelem2 \n"
+        "     3. Elem3 \n"
+        "     4. Elem4 \n"
+        "         *  Subelem3 \n"
+        "         *  Subelem4 \n"
+        "     o  Elem5\n");
+    QCOMPARE(result, expected);
+}
+
 #include "moc_plaintextmarkupbuildertest.cpp"

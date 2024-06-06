@@ -44,4 +44,5 @@ private Q_SLOTS:
     void testBrInsideParagraph();
     void testLongDocument();
     void testBrInsideAnchor();
+    void testNestedList();
 };

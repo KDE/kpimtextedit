@@ -378,7 +378,8 @@ QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::processList(QTextFrame::
     const auto style = list->format().style();
     m_builder->beginList(style);
     auto block = _block;
-    while (block.isValid() && block.textList()) {
+    auto curList = list;
+    while (block.isValid() && block.textList() && curList == list) {
         m_builder->beginListItem();
         processBlockContents(it, block);
         m_builder->endListItem();
@@ -387,7 +388,8 @@ QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::processList(QTextFrame::
             ++it;
         }
         block = block.next();
-        if (block.isValid()) {
+        // Processing nested list
+        if (block.isValid() && block.textList() && block.textList()->format().indent() > list->format().indent()) {
             auto obj = block.document()->objectForFormat(block.blockFormat());
             auto group = qobject_cast<QTextBlockGroup *>(obj);
             if (group && group != list) {
@@ -396,6 +398,7 @@ QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::processList(QTextFrame::
                 block = pair.second;
             }
         }
+        curList = qobject_cast<QTextList *>(block.document()->objectForFormat(block.blockFormat()));
     }
     m_builder->endList();
     return qMakePair(it, block);
