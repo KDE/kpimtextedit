@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-03 00:38+0000\n"
-"PO-Revision-Date: 2024-05-19 16:42+0530\n"
+"PO-Revision-Date: 2024-06-16 18:45+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -37,7 +37,7 @@ msgstr "இணைப்பை அமைப்பது"
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
-msgstr ""
+msgstr "&இடதுபுறமாக சீரமை"
 
 #: composer-ng/richtextcomposeractions.cpp:104
 #, kde-format
@@ -49,7 +49,7 @@ msgstr "இடதில்"
 #, kde-format
 msgctxt "@action"
 msgid "Align &Center"
-msgstr ""
+msgstr "&நடுவில் சீரமை"
 
 #: composer-ng/richtextcomposeractions.cpp:113
 #, kde-format
@@ -61,7 +61,7 @@ msgstr "நடுவில்"
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
-msgstr ""
+msgstr "&வலதுபுறமாக சீரமை"
 
 #: composer-ng/richtextcomposeractions.cpp:122
 #, kde-format
@@ -73,7 +73,7 @@ msgstr "வலதில்"
 #, kde-format
 msgctxt "@action"
 msgid "&Justify"
-msgstr ""
+msgstr "&சீராக்கு"
 
 #: composer-ng/richtextcomposeractions.cpp:131
 #, kde-format
@@ -157,7 +157,7 @@ msgstr "எழுத்துருவின் &அளவு"
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
-msgstr ""
+msgstr "கோட்டை நுழை"
 
 #: composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
@@ -247,13 +247,13 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
-msgstr ""
+msgstr "i ii iii"
 
 #: composer-ng/richtextcomposeractions.cpp:312
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
-msgstr ""
+msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
 #, kde-format
