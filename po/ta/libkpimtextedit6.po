@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-28 00:39+0000\n"
-"PO-Revision-Date: 2024-05-19 16:42+0530\n"
+"PO-Revision-Date: 2024-06-16 18:46+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,18 +15,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: composer-ng/klinkdialog.cpp:24
-#, fuzzy, kde-format
-#| msgid "Link Text:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Link Text:"
 msgstr "இணைப்பிற்கான உரை:"
 
 #: composer-ng/klinkdialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Link URL:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Link URL:"
 msgstr "இணைப்பிற்கான முகவரி:"
@@ -41,7 +39,7 @@ msgstr "இணைப்பை அமைப்பது"
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
-msgstr ""
+msgstr "&இடதுபுறமாக சீரமை"
 
 #: composer-ng/richtextcomposeractions.cpp:104
 #, kde-format
@@ -53,7 +51,7 @@ msgstr "இடதில்"
 #, kde-format
 msgctxt "@action"
 msgid "Align &Center"
-msgstr ""
+msgstr "&நடுவில் சீரமை"
 
 #: composer-ng/richtextcomposeractions.cpp:113
 #, kde-format
@@ -65,7 +63,7 @@ msgstr "நடுவில்"
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
-msgstr ""
+msgstr "&வலதுபுறமாக சீரமை"
 
 #: composer-ng/richtextcomposeractions.cpp:122
 #, kde-format
@@ -77,7 +75,7 @@ msgstr "வலதில்"
 #, kde-format
 msgctxt "@action"
 msgid "&Justify"
-msgstr ""
+msgstr "&சீராக்கு"
 
 #: composer-ng/richtextcomposeractions.cpp:131
 #, kde-format
@@ -161,7 +159,7 @@ msgstr "எழுத்துருவின் &அளவு"
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
-msgstr ""
+msgstr "கோட்டை நுழை"
 
 #: composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
@@ -251,13 +249,13 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
-msgstr ""
+msgstr "i ii iii"
 
 #: composer-ng/richtextcomposeractions.cpp:312
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
-msgstr ""
+msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
 #, kde-format
@@ -449,15 +447,13 @@ msgid "Insert HTML"
 msgstr "HTML-ஐ நுழைப்பது"
 
 #: inserthtmldialog.cpp:36
-#, fuzzy, kde-format
-#| msgid "Insert HTML tags and texts:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "உள்ளிட வேண்டிய HTML குறிச்சொற்களும் உரையும்:"
 
 #: inserthtmldialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Example: <i> Hello word </i>"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "எடுத்துக்காட்டு: <i> வணக்கம் மக்களே </i>"
@@ -480,8 +476,7 @@ msgid "Insert"
 msgstr "நுழை"
 
 #: insertimagewidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Image Location:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "படத்தின் இருப்பிடம்"
@@ -503,8 +498,7 @@ msgid "Keep Image Ratio"
 msgstr "உருவ விகித‍த்தை மாற்றாதே"
 
 #: insertimagewidget.cpp:77 inserttablewidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Width:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "அகலம்:"
@@ -515,15 +509,13 @@ msgid " px"
 msgstr ""
 
 #: insertimagewidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Height:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "உயரம்:"
 
 #: insertimagewidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Image Preview:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"
 msgstr "படத்தின் முன்தோற்றம்:"
@@ -535,22 +527,19 @@ msgid "Insert Table"
 msgstr "அட்டவணையை நுழைப்பது"
 
 #: inserttablewidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Rows:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Rows:"
 msgstr "வரிசைகள்:"
 
 #: inserttablewidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "Columns:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Columns:"
 msgstr "நெடுவரிசைகள்:"
 
 #: inserttablewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Border:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Border:"
 msgstr "விளிம்பு:"
@@ -660,8 +649,7 @@ msgid "Cell Format"
 msgstr "கட்டத்திற்கான படிவம்"
 
 #: tablecellformatdialog.cpp:33
-#, fuzzy, kde-format
-#| msgid "Vertical Alignment:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Vertical Alignment:"
 msgstr "நெடுக்கான சீரமைப்பு:"
@@ -693,29 +681,25 @@ msgid "Table Format"
 msgstr "அட்டவணையின் படிவம்"
 
 #: tableformatdialog.cpp:44
-#, fuzzy, kde-format
-#| msgid "Spacing:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Spacing:"
 msgstr "இடைவெளி:"
 
 #: tableformatdialog.cpp:49
-#, fuzzy, kde-format
-#| msgid "pixels between cells"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cells"
 msgstr "பிக்செல்கள் கட்டங்களுக்கிடையே"
 
 #: tableformatdialog.cpp:54
-#, fuzzy, kde-format
-#| msgid "Padding:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Padding:"
 msgstr "சுற்றியுள்ள இடைவெளி:"
 
 #: tableformatdialog.cpp:59
-#, fuzzy, kde-format
-#| msgid "pixels between cell border and content"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cell border and content"
 msgstr "பிக்செல்கள் கட்ட விளிம்புக்கும் உள்ளடத்திற்கும்"
@@ -741,8 +725,7 @@ msgid "Justify"
 msgstr "சீராக்கு"
 
 #: tableformatdialog.cpp:73
-#, fuzzy, kde-format
-#| msgid "Table Alignment:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Table Alignment:"
 msgstr "அட்டவணையின் சீரமைப்பு:"
