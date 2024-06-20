@@ -40,7 +40,7 @@ target_sources(KPim6TextEdit PRIVATE
     composer-ng/richtextcomposeremailquotedecorator.h
     composer-ng/richtextcomposeremailquotehighlighter.h
     composer-ng/richtextcomposerwidget.h
-    )
+)
 
 target_sources(KPim6TextEdit PRIVATE
     grantleebuilder/plaintextmarkupbuilder.cpp
@@ -49,7 +49,7 @@ target_sources(KPim6TextEdit PRIVATE
     grantleebuilder/plaintextmarkupbuilder.h
     grantleebuilder/markupdirector.h
     grantleebuilder/texthtmlbuilder.h
-    )
+)
 
 target_sources(KPim6TextEdit PRIVATE
     inserthtmldialog.cpp
@@ -73,13 +73,13 @@ target_sources(KPim6TextEdit PRIVATE
     textutils.h
     inserttablewidget.h
     inserthtmleditor.h
-    )
+)
 
 ecm_qt_declare_logging_category(KPim6TextEdit HEADER kpimtextedit_debug.h IDENTIFIER KPIMTEXTEDIT_LOG CATEGORY_NAME org.kde.pim.kpimtextedit
         DESCRIPTION "kpimtextedit (kpimtextedit)" EXPORT KPIMTEXTEDIT)
 
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6TextEdit PROPERTIES UNITY_BUILD ON)
 endif()
 ecm_generate_export_header(KPim6TextEdit
@@ -105,13 +105,13 @@ target_link_libraries(KPim6TextEdit
     KF6::I18n
     KF6::SyntaxHighlighting
     KF6::Codecs
-    )
+)
 
-if (TARGET KF6::TextEditTextToSpeech)
+if(TARGET KF6::TextEditTextToSpeech)
     target_link_libraries(KPim6TextEdit
         PRIVATE
         KF6::TextEditTextToSpeech
-    )
+)
 endif()
 
 target_link_libraries(KPim6TextEdit
@@ -123,7 +123,7 @@ set_target_properties(KPim6TextEdit PROPERTIES
     VERSION ${KPIMTEXTEDIT_VERSION}
     SOVERSION ${KPIMTEXTEDIT_SOVERSION}
     EXPORT_NAME PimTextEdit
-    )
+)
 
 install(TARGETS KPim6TextEdit EXPORT KPim6TextEditTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
@@ -134,7 +134,7 @@ ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
 
     PREFIX KPIMTextEdit
     REQUIRED_HEADERS kpimtextedit_HEADERS
-    )
+)
 
 ecm_generate_headers(KPimTextEdit_CamelCasegrantlee_HEADERS
     HEADER_NAMES
@@ -145,7 +145,7 @@ ecm_generate_headers(KPimTextEdit_CamelCasegrantlee_HEADERS
     PREFIX KPIMTextEdit
     REQUIRED_HEADERS kpimtextedit_HEADERS
     RELATIVE grantleebuilder
-    )
+)
 
 ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
     HEADER_NAMES
@@ -159,7 +159,7 @@ ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
     REQUIRED_HEADERS KPimTextEdit_composerng_HEADERS
     PREFIX KPIMTextEdit
     RELATIVE composer-ng
-    )
+)
 
 
 ########### install files ###############
@@ -171,7 +171,7 @@ install(FILES
     ${KPimTextEdit_grantlee_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit/kpimtextedit
     COMPONENT Devel
-    )
+)
 
 install(FILES
     ${KPimTextEdit_CamelCase_HEADERS}
@@ -179,9 +179,9 @@ install(FILES
     ${KPimTextEdit_CamelCasegrantlee_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit/KPIMTextEdit/
     COMPONENT Devel
-    )
+)
 
-if (BUILD_TESTING)
+if(BUILD_TESTING)
     add_subdirectory(composer-ng/autotests)
     add_subdirectory(composer-ng/tests)
     add_subdirectory(grantleebuilder/autotests)
@@ -189,7 +189,7 @@ endif()
 
 ecm_qt_install_logging_categories(EXPORT KPIMTEXTEDIT FILE kpimtextedit.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KPim6TextEdit_QCH
         NAME KPimTextEdit
@@ -211,13 +211,13 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+)
     ecm_install_qch_export(
         TARGETS KPim6PimTextEdit_QCH
         FILE KPim6TextEditQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
-    )
+)
     set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6TextEditQchTargets.cmake\")")
 endif()
 
@@ -226,24 +226,24 @@ configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimTextEditConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6TextEditConfig.cmake"
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
-    )
+)
 
 install(FILES
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6TextEditConfig.cmake"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6TextEditConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
-    )
+)
 
 install(EXPORT KPim6TextEditTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     FILE KPim6TextEditTargets.cmake
     NAMESPACE KPim6::
-    )
+)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit
     COMPONENT Devel
-    )
+)
 
