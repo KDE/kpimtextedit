@@ -4,62 +4,60 @@
 # Tamas Szanto <tszanto@interware.hu>, 2009.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2012.
 # Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-28 00:39+0000\n"
-"PO-Revision-Date: 2013-03-29 11:59+0100\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"PO-Revision-Date: 2024-07-01 11:55+0200\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Link Text:"
-msgstr ""
+msgstr "Hivatkozás szövege:"
 
 #: composer-ng/klinkdialog.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Link URL:"
-msgstr ""
+msgstr "Hivatkozás URL-je:"
 
 #: composer-ng/klinkdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Link"
-msgstr ""
+msgstr "Hivatkozás kezelése"
 
 #: composer-ng/richtextcomposeractions.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
-msgstr ""
+msgstr "Igazítás &balra"
 
 #: composer-ng/richtextcomposeractions.cpp:104
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@label left justify"
 msgid "Left"
 msgstr "Balra"
 
 #: composer-ng/richtextcomposeractions.cpp:112
-#, fuzzy, kde-format
-#| msgid "Center"
+#, kde-format
 msgctxt "@action"
 msgid "Align &Center"
-msgstr "Középre"
+msgstr "Igazítás &középre"
 
 #: composer-ng/richtextcomposeractions.cpp:113
-#, fuzzy, kde-format
-#| msgid "Center"
+#, kde-format
 msgctxt "@label center justify"
 msgid "Center"
 msgstr "Középre"
@@ -68,25 +66,22 @@ msgstr "Középre"
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
-msgstr ""
+msgstr "Igazítás &jobbra"
 
 #: composer-ng/richtextcomposeractions.cpp:122
-#, fuzzy, kde-format
-#| msgid "Right"
+#, kde-format
 msgctxt "@label right justify"
 msgid "Right"
 msgstr "Jobbra"
 
 #: composer-ng/richtextcomposeractions.cpp:130
-#, fuzzy, kde-format
-#| msgid "Justify"
+#, kde-format
 msgctxt "@action"
 msgid "&Justify"
-msgstr "Sorkizárt"
+msgstr "&Sorkizárás"
 
 #: composer-ng/richtextcomposeractions.cpp:131
-#, fuzzy, kde-format
-#| msgid "Justify"
+#, kde-format
 msgctxt "@label justify fill"
 msgid "Justify"
 msgstr "Sorkizárt"
@@ -95,80 +90,79 @@ msgstr "Sorkizárt"
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
-msgstr ""
+msgstr "Balról jobbra"
 
 #: composer-ng/richtextcomposeractions.cpp:147
 #, kde-format
 msgctxt "@label left-to-right"
 msgid "Left-to-Right"
-msgstr ""
+msgstr "Balról jobbra"
 
 #: composer-ng/richtextcomposeractions.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
-msgstr ""
+msgstr "Jobbról balra"
 
 #: composer-ng/richtextcomposeractions.cpp:156
 #, kde-format
 msgctxt "@label right-to-left"
 msgid "Right-to-Left"
-msgstr ""
+msgstr "Jobbról balra"
 
 #: composer-ng/richtextcomposeractions.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Subscript"
-msgstr ""
+msgstr "Alsó index"
 
 #: composer-ng/richtextcomposeractions.cpp:177
 #, kde-format
 msgctxt "@action"
 msgid "Superscript"
-msgstr ""
+msgstr "Felső index"
 
 #: composer-ng/richtextcomposeractions.cpp:185
 #, kde-format
 msgctxt "@action boldify selected text"
 msgid "&Bold"
-msgstr ""
+msgstr "&Félkövér"
 
 #: composer-ng/richtextcomposeractions.cpp:198
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
-msgstr ""
+msgstr "&Dőlt"
 
 #: composer-ng/richtextcomposeractions.cpp:211
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
-msgstr ""
+msgstr "&Aláhúzás"
 
 #: composer-ng/richtextcomposeractions.cpp:223
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
-msgstr ""
+msgstr "Á&thúzás"
 
 #: composer-ng/richtextcomposeractions.cpp:238
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
-msgstr ""
+msgstr "B&etűtípus"
 
 #: composer-ng/richtextcomposeractions.cpp:247
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
-msgstr ""
+msgstr "Be&tűméret"
 
 #: composer-ng/richtextcomposeractions.cpp:255
-#, fuzzy, kde-format
-#| msgid "Insert Table"
+#, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
-msgstr "Táblázat beszúrása"
+msgstr "Választóvonal beszúrása"
 
 #: composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
@@ -180,7 +174,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
-msgstr ""
+msgstr "Szín"
 
 #: composer-ng/richtextcomposeractions.cpp:273
 #, kde-format
@@ -192,85 +186,85 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Link"
-msgstr ""
+msgstr "Hivatkozás"
 
 #: composer-ng/richtextcomposeractions.cpp:289
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
-msgstr ""
+msgstr "Behúzás növelése"
 
 #: composer-ng/richtextcomposeractions.cpp:297
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
-msgstr ""
+msgstr "Behúzás csökkentése"
 
 #: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
-msgstr ""
+msgstr "Listastílus"
 
 #: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
-msgstr ""
+msgstr "Nincs"
 
 #: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
-msgstr ""
+msgstr "Lemez"
 
 #: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
-msgstr ""
+msgstr "Kör"
 
 #: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
-msgstr ""
+msgstr "Négyzet"
 
 #: composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
-msgstr ""
+msgstr "123"
 
 #: composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
-msgstr ""
+msgstr "abc"
 
 #: composer-ng/richtextcomposeractions.cpp:311
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
-msgstr ""
+msgstr "ABC"
 
 #: composer-ng/richtextcomposeractions.cpp:311
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
-msgstr ""
+msgstr "i ii iii"
 
 #: composer-ng/richtextcomposeractions.cpp:312
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
-msgstr ""
+msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
 #, kde-format
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
-msgstr ""
+msgstr "Beille&sztés idézetként"
 
 #: composer-ng/richtextcomposeractions.cpp:331
 #, fuzzy, kde-format
@@ -280,22 +274,21 @@ msgid "Add &Quote Characters"
 msgstr "Speciális karakterek kijelölése"
 
 #: composer-ng/richtextcomposeractions.cpp:338
-#, fuzzy, kde-format
-#| msgid "Select Special Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Re&move Quote Characters"
-msgstr "Speciális karakterek kijelölése"
+msgstr "Idézőjel-karakterek eltá&volítása"
 
 #: composer-ng/richtextcomposeractions.cpp:345
 #, kde-format
 msgctxt "@action"
 msgid "Paste Without Formatting"
-msgstr ""
+msgstr "Beillesztés formázés nélkül"
 
 #: composer-ng/richtextcomposeractions.cpp:353
 #, kde-format
 msgid "Add Image"
-msgstr "Új kép"
+msgstr "Kép hozzáadása"
 
 #: composer-ng/richtextcomposeractions.cpp:372
 #, fuzzy, kde-format
@@ -312,7 +305,7 @@ msgstr "Táblázat"
 #: composer-ng/richtextcomposeractions.cpp:391
 #, kde-format
 msgid "Reset Font Settings"
-msgstr "Betűtípus beállítások visszaállítása"
+msgstr "Betűtípus-beállítások visszaállítása"
 
 #: composer-ng/richtextcomposeractions.cpp:392
 #, kde-format
@@ -323,66 +316,66 @@ msgstr "Betűtípus visszaállítása"
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
-msgstr ""
+msgstr "Formátum másolása"
 
 #: composer-ng/richtextcomposeractions.cpp:408
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
-msgstr ""
+msgstr "Címsor"
 
 #: composer-ng/richtextcomposeractions.cpp:409
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
-msgstr ""
+msgstr "Egyszerű szöveg"
 
 #: composer-ng/richtextcomposeractions.cpp:410
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
-msgstr ""
+msgstr "Cím"
 
 #: composer-ng/richtextcomposeractions.cpp:411
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
-msgstr ""
+msgstr "Alcím"
 
 #: composer-ng/richtextcomposeractions.cpp:412
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
-msgstr ""
+msgstr "Szakasz"
 
 #: composer-ng/richtextcomposeractions.cpp:413
 #, kde-format
 msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
-msgstr ""
+msgstr "Alszakasz"
 
 #: composer-ng/richtextcomposeractions.cpp:414
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
-msgstr ""
+msgstr "Bekezdés"
 
 #: composer-ng/richtextcomposeractions.cpp:415
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
-msgstr ""
+msgstr "Albekezdés"
 
 #: composer-ng/richtextcomposeractions.cpp:426
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
-msgstr ""
+msgstr "Jelölőnégyzet"
 
 #: composer-ng/richtextcomposercontroler.cpp:730
 #, kde-format
 msgid "Only local files are supported."
-msgstr ""
+msgstr "Csak helyi fájlok támogatottak."
 
 #: composer-ng/richtextcomposerimages.cpp:57
 #, kde-kuit-format
@@ -399,28 +392,29 @@ msgstr "kép"
 #: composer-ng/richtextexternalcomposer.cpp:71
 #, kde-format
 msgid "Command line is empty. Please verify settings."
-msgstr ""
+msgstr "A parancssor üres. Ellenőrizze a beállításokat."
 
 #: composer-ng/richtextexternalcomposer.cpp:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Empty command line"
-msgstr ""
+msgstr "Üres parancssor"
 
 #: composer-ng/richtextexternalcomposer.cpp:124
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr ""
+"A külső szerkesztőt nem lehet elindítani. Ellenőrizze a(z) „%1” parancsot."
 
 #: composer-ng/richtextexternalcomposer.cpp:142
 #, kde-format
 msgid "Error was found when we started external editor."
-msgstr ""
+msgstr "Hiba történt a külső szerkesztő indításakor."
 
 #: composer-ng/richtextexternalcomposer.cpp:142
 #, kde-format
 msgid "External Editor Closed"
-msgstr ""
+msgstr "Külső szerkesztő bezárva"
 
 #: composer-ng/richtextexternalcomposer.cpp:159
 #, kde-kuit-format
@@ -430,28 +424,30 @@ msgid ""
 "keep it running?<nl/><warning>Stopping the editor will cause all your "
 "unsaved changes to be lost.</warning>"
 msgstr ""
+"A külső szerkesztő még fut.<nl/>Szeretné leállítani a szerkesztőt, vagy "
+"hagyja futni?<nl/><warning>A szerkesztő leállításával minden nem mentett "
+"változtatása elveszik.</warning>"
 
 #: composer-ng/richtextexternalcomposer.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
-msgstr ""
+msgstr "Külső szerkesztő fut"
 
 #: composer-ng/richtextexternalcomposer.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
-msgstr ""
+msgstr "Szerkesztő leállítása"
 
 #: composer-ng/richtextexternalcomposer.cpp:165
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
-msgstr ""
+msgstr "Fusson tovább"
 
 #: inserthtmldialog.cpp:34
-#, fuzzy, kde-format
-#| msgid "Insert HTML"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "HTML beszúrása"
@@ -471,15 +467,13 @@ msgid "Example: <i> Hello word </i>"
 msgstr "Példa: <i> Helló világ </i>"
 
 #: inserthtmldialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Insert"
+#, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Beszúrás"
 
 #: insertimagedialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Insert Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Kép beszúrása"
@@ -497,21 +491,20 @@ msgid "Image Location:"
 msgstr "Kép helye:"
 
 #: insertimagewidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "Add Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
-msgstr "Új kép"
+msgstr "Kép hozzáadása"
 
 #: insertimagewidget.cpp:64
 #, kde-format
 msgid "Keep Original Size"
-msgstr "Az eredeti képméret megőrzése"
+msgstr "Eredeti képméret megőrzése"
 
 #: insertimagewidget.cpp:71
 #, kde-format
 msgid "Keep Image Ratio"
-msgstr "A képarány megőrzése"
+msgstr "Képarány megőrzése"
 
 #: insertimagewidget.cpp:77 inserttablewidget.cpp:59
 #, fuzzy, kde-format
@@ -523,7 +516,7 @@ msgstr "Szélesség:"
 #: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
-msgstr " px"
+msgstr " képpont"
 
 #: insertimagewidget.cpp:92
 #, fuzzy, kde-format
@@ -540,8 +533,7 @@ msgid "Image Preview:"
 msgstr "Kép előnézete:"
 
 #: inserttabledialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Insert Table"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Table"
 msgstr "Táblázat beszúrása"
@@ -646,7 +638,7 @@ msgstr "Cellatartalmak"
 #: tableactionmenu.cpp:491
 #, kde-format
 msgid "Join With Cell to the Right"
-msgstr "Csatlakoztatás a jobb oldali cellához"
+msgstr "Egyesítés a jobb oldali cellával"
 
 #: tableactionmenu.cpp:498
 #, fuzzy, kde-format
@@ -658,7 +650,7 @@ msgstr "Kijelölt cellák egyesítése"
 #: tableactionmenu.cpp:505
 #, kde-format
 msgid "Split cells"
-msgstr "Cellák felosztása"
+msgstr "Cellák szétválasztása"
 
 #: tableactionmenu.cpp:514
 #, fuzzy, kde-format
@@ -675,8 +667,7 @@ msgid "Table Cell Format…"
 msgstr "Táblázat cellaformátum…"
 
 #: tablecellformatdialog.cpp:28
-#, fuzzy, kde-format
-#| msgid "Cell Format"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cell Format"
 msgstr "Cellaformátum"
@@ -709,11 +700,10 @@ msgid "Background Color:"
 msgstr "Háttérszín:"
 
 #: tableformatdialog.cpp:31
-#, fuzzy, kde-format
-#| msgid "Table Format"
+#, kde-format
 msgctxt "@title:window"
 msgid "Table Format"
-msgstr "Táblázat formátum"
+msgstr "Táblázatformátum"
 
 #: tableformatdialog.cpp:44
 #, fuzzy, kde-format
