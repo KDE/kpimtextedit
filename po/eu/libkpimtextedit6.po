@@ -1,16 +1,16 @@
 # Translation for libkpimtexedit.po to Euskara/Basque (eu).
-# Copyright (C) 2022-2023 This file is copyright:
+# Copyright (C) 2022-2024 This file is copyright:
 # This file is distributed under the same license as the kpimtextedit package.
-# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022, 2023.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-28 00:39+0000\n"
-"PO-Revision-Date: 2023-09-25 23:19+0200\n"
+"PO-Revision-Date: 2024-07-11 13:05+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,18 +18,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: composer-ng/klinkdialog.cpp:24
-#, fuzzy, kde-format
-#| msgid "Link Text:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Link Text:"
 msgstr "Estekaren testua:"
 
 #: composer-ng/klinkdialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Link URL:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Link URL:"
 msgstr "Estekaren URLa:"
@@ -167,9 +165,7 @@ msgid "Insert Rule Line"
 msgstr "Sartu erregela-lerroa"
 
 #: composer-ng/richtextcomposeractions.cpp:264
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Color..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Color…"
 msgstr "Testuaren &kolorea..."
@@ -181,9 +177,7 @@ msgid "Color"
 msgstr "Kolorea"
 
 #: composer-ng/richtextcomposeractions.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Highlight..."
+#, kde-format
 msgctxt "@action"
 msgid "Text &Highlight…"
 msgstr "Testua &nabarmentzea..."
@@ -267,29 +261,25 @@ msgid "I II III"
 msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
-#, fuzzy, kde-format
-#| msgid "Pa&ste as Quotation"
+#, kde-format
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr "It&satsi aipu gisa"
 
 #: composer-ng/richtextcomposeractions.cpp:331
-#, fuzzy, kde-format
-#| msgid "Add &Quote Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Add &Quote Characters"
 msgstr "Gehitu &kakotxak"
 
 #: composer-ng/richtextcomposeractions.cpp:338
-#, fuzzy, kde-format
-#| msgid "Re&move Quote Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "Ke&ndu kakotxak"
 
 #: composer-ng/richtextcomposeractions.cpp:345
-#, fuzzy, kde-format
-#| msgid "Paste Without Formatting"
+#, kde-format
 msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr "Itsatsi formaturik gabe"
@@ -300,8 +290,7 @@ msgid "Add Image"
 msgstr "Gehitu irudia"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, fuzzy, kde-format
-#| msgid "Insert HTML"
+#, kde-format
 msgctxt "@action"
 msgid "Insert HTML"
 msgstr "Txertatu HTML"
@@ -461,15 +450,13 @@ msgid "Insert HTML"
 msgstr "Txertatu HTML"
 
 #: inserthtmldialog.cpp:36
-#, fuzzy, kde-format
-#| msgid "Insert HTML tags and texts:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Txertatu HTML etiketak eta testuak:"
 
 #: inserthtmldialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Example: <i> Hello word </i>"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Adibidez: <i> Kaixo mundua </i>"
@@ -492,8 +479,7 @@ msgid "Insert"
 msgstr "Txertatu"
 
 #: insertimagewidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Image Location:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "Irudiaren kokalekua:"
@@ -515,8 +501,7 @@ msgid "Keep Image Ratio"
 msgstr "Mantendu irudiaren proportzioa"
 
 #: insertimagewidget.cpp:77 inserttablewidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Width:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Zabalera:"
@@ -527,15 +512,13 @@ msgid " px"
 msgstr " px"
 
 #: insertimagewidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Height:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Altuera:"
 
 #: insertimagewidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Image Preview:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"
 msgstr "Irudiaren aurreikuspegia:"
@@ -547,22 +530,19 @@ msgid "Insert Table"
 msgstr "Txertatu taula"
 
 #: inserttablewidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Rows:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Rows:"
 msgstr "Errenkadak:"
 
 #: inserttablewidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "Columns:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Columns:"
 msgstr "Zutabeak:"
 
 #: inserttablewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Border:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Border:"
 msgstr "Ertza:"
@@ -578,10 +558,9 @@ msgid "pixels"
 msgstr "pixel"
 
 #: tableactionmenu.cpp:410
-#, fuzzy, kde-format
-#| msgid "Table"
+#, kde-format
 msgid "Table…"
-msgstr "Taula"
+msgstr "Taula..."
 
 #: tableactionmenu.cpp:418
 #, kde-format
@@ -609,36 +588,31 @@ msgid "Delete"
 msgstr "Ezabatu"
 
 #: tableactionmenu.cpp:451
-#, fuzzy, kde-format
-#| msgid "Row Below"
+#, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Errenkada azpian"
 
 #: tableactionmenu.cpp:458
-#, fuzzy, kde-format
-#| msgid "Row Above"
+#, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Errenkada gainean"
 
 #: tableactionmenu.cpp:466
-#, fuzzy, kde-format
-#| msgid "Column Before"
+#, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Zutabea aurretik"
 
 #: tableactionmenu.cpp:474
-#, fuzzy, kde-format
-#| msgid "Column After"
+#, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "Zutabea ondoren"
 
 #: tableactionmenu.cpp:482
-#, fuzzy, kde-format
-#| msgid "Cell Contents"
+#, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Gelaxkaren edukia"
@@ -649,8 +623,7 @@ msgid "Join With Cell to the Right"
 msgstr "Elkartu eskuineko gelaxkarekin"
 
 #: tableactionmenu.cpp:498
-#, fuzzy, kde-format
-#| msgid "Join Selected Cells"
+#, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Elkartu hautatutako gelaxkak"
@@ -661,19 +634,16 @@ msgid "Split cells"
 msgstr "Zatitu gelaxkak"
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Table Format"
+#, kde-format
 msgctxt "@action"
 msgid "Table Format…"
-msgstr "Taularen formatua"
+msgstr "Taularen formatua..."
 
 #: tableactionmenu.cpp:521
-#, fuzzy, kde-format
-#| msgid "Table Cell Format..."
+#, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"
-msgstr "Taulako gelaxken formatua..."
+msgstr "Taulako gelaxkaren formatua..."
 
 #: tablecellformatdialog.cpp:28
 #, kde-format
@@ -682,8 +652,7 @@ msgid "Cell Format"
 msgstr "Gelaxkaren formatua"
 
 #: tablecellformatdialog.cpp:33
-#, fuzzy, kde-format
-#| msgid "Vertical Alignment:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Vertical Alignment:"
 msgstr "Lerrokatze bertikala:"
@@ -715,29 +684,25 @@ msgid "Table Format"
 msgstr "Taularen formatua"
 
 #: tableformatdialog.cpp:44
-#, fuzzy, kde-format
-#| msgid "Spacing:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Spacing:"
 msgstr "Tartea:"
 
 #: tableformatdialog.cpp:49
-#, fuzzy, kde-format
-#| msgid "pixels between cells"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cells"
 msgstr "pixel gelaxken artean"
 
 #: tableformatdialog.cpp:54
-#, fuzzy, kde-format
-#| msgid "Padding:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Padding:"
 msgstr "Betegarria:"
 
 #: tableformatdialog.cpp:59
-#, fuzzy, kde-format
-#| msgid "pixels between cell border and content"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cell border and content"
 msgstr "pixel gelaxkaren ertza eta edukiaren artean"
@@ -763,8 +728,7 @@ msgid "Justify"
 msgstr "Justifikatuta"
 
 #: tableformatdialog.cpp:73
-#, fuzzy, kde-format
-#| msgid "Table Alignment:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Table Alignment:"
 msgstr "Taularen lerrokadura:"
