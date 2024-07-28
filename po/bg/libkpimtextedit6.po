@@ -1,0 +1,732 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kpimtextedit package.
+#
+# SPDX-FileCopyrightText: 2024 Mincho Kondarev <mkondarev@yahoo.de>
+msgid ""
+msgstr ""
+"Project-Id-Version: kpimtextedit\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
+"PO-Revision-Date: 2024-07-27 22:10+0200\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.07.70\n"
+
+#: composer-ng/klinkdialog.cpp:24
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Link Text:"
+msgstr "Текст на връзката:"
+
+#: composer-ng/klinkdialog.cpp:26
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Link URL:"
+msgstr "Адрес на препратката:"
+
+#: composer-ng/klinkdialog.cpp:30
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Link"
+msgstr "Управление на препратка"
+
+#: composer-ng/richtextcomposeractions.cpp:103
+#, kde-format
+msgctxt "@action"
+msgid "Align &Left"
+msgstr "&Ляво подравняване"
+
+#: composer-ng/richtextcomposeractions.cpp:104
+#, kde-format
+msgctxt "@label left justify"
+msgid "Left"
+msgstr "Ляво"
+
+#: composer-ng/richtextcomposeractions.cpp:112
+#, kde-format
+msgctxt "@action"
+msgid "Align &Center"
+msgstr "&Центрирано"
+
+#: composer-ng/richtextcomposeractions.cpp:113
+#, kde-format
+msgctxt "@label center justify"
+msgid "Center"
+msgstr "Център"
+
+#: composer-ng/richtextcomposeractions.cpp:121
+#, kde-format
+msgctxt "@action"
+msgid "Align &Right"
+msgstr "&Дясно подравняване"
+
+#: composer-ng/richtextcomposeractions.cpp:122
+#, kde-format
+msgctxt "@label right justify"
+msgid "Right"
+msgstr "Дясно"
+
+#: composer-ng/richtextcomposeractions.cpp:130
+#, kde-format
+msgctxt "@action"
+msgid "&Justify"
+msgstr "&Двустранно подравняване"
+
+#: composer-ng/richtextcomposeractions.cpp:131
+#, kde-format
+msgctxt "@label justify fill"
+msgid "Justify"
+msgstr "Двустранно"
+
+#: composer-ng/richtextcomposeractions.cpp:146
+#, kde-format
+msgctxt "@action"
+msgid "Left-to-Right"
+msgstr "Отляво надясно"
+
+#: composer-ng/richtextcomposeractions.cpp:147
+#, kde-format
+msgctxt "@label left-to-right"
+msgid "Left-to-Right"
+msgstr "Отляво надясно"
+
+#: composer-ng/richtextcomposeractions.cpp:155
+#, kde-format
+msgctxt "@action"
+msgid "Right-to-Left"
+msgstr "Отдясно наляво"
+
+#: composer-ng/richtextcomposeractions.cpp:156
+#, kde-format
+msgctxt "@label right-to-left"
+msgid "Right-to-Left"
+msgstr "Отдясно наляво"
+
+#: composer-ng/richtextcomposeractions.cpp:169
+#, kde-format
+msgctxt "@action"
+msgid "Subscript"
+msgstr "Доен индекс"
+
+#: composer-ng/richtextcomposeractions.cpp:177
+#, kde-format
+msgctxt "@action"
+msgid "Superscript"
+msgstr "Горен индекс"
+
+#: composer-ng/richtextcomposeractions.cpp:185
+#, kde-format
+msgctxt "@action boldify selected text"
+msgid "&Bold"
+msgstr "&Получер"
+
+#: composer-ng/richtextcomposeractions.cpp:198
+#, kde-format
+msgctxt "@action italicize selected text"
+msgid "&Italic"
+msgstr "&Курсив"
+
+#: composer-ng/richtextcomposeractions.cpp:211
+#, kde-format
+msgctxt "@action underline selected text"
+msgid "&Underline"
+msgstr "&Подчертаване"
+
+#: composer-ng/richtextcomposeractions.cpp:223
+#, kde-format
+msgctxt "@action"
+msgid "&Strike Out"
+msgstr "&Зачертан"
+
+#: composer-ng/richtextcomposeractions.cpp:238
+#, kde-format
+msgctxt "@action"
+msgid "&Font"
+msgstr "&Шрифт"
+
+#: composer-ng/richtextcomposeractions.cpp:247
+#, kde-format
+msgctxt "@action"
+msgid "Font &Size"
+msgstr "&Размер на шрифта"
+
+#: composer-ng/richtextcomposeractions.cpp:255
+#, kde-format
+msgctxt "@action"
+msgid "Insert Rule Line"
+msgstr "Вмъкване на водеща линия"
+
+#: composer-ng/richtextcomposeractions.cpp:264
+#, kde-format
+msgctxt "@action"
+msgid "Text &Color…"
+msgstr "Цвят на &текст…"
+
+#: composer-ng/richtextcomposeractions.cpp:265
+#, kde-format
+msgctxt "@label stroke color"
+msgid "Color"
+msgstr "Цвят"
+
+#: composer-ng/richtextcomposeractions.cpp:273
+#, kde-format
+msgctxt "@action"
+msgid "Text &Highlight…"
+msgstr "&Открояване на текст…"
+
+#: composer-ng/richtextcomposeractions.cpp:281
+#, kde-format
+msgctxt "@action"
+msgid "Link"
+msgstr "Създаване на връзка"
+
+#: composer-ng/richtextcomposeractions.cpp:289
+#, kde-format
+msgctxt "@action"
+msgid "Increase List Level"
+msgstr "Увеличаване на нивото"
+
+#: composer-ng/richtextcomposeractions.cpp:297
+#, kde-format
+msgctxt "@action"
+msgid "Decrease List Level"
+msgstr "Намаляване на нивото"
+
+#: composer-ng/richtextcomposeractions.cpp:306
+#, kde-format
+msgctxt "@title:menu"
+msgid "List Style"
+msgstr "Стил на списък"
+
+#: composer-ng/richtextcomposeractions.cpp:308
+#, kde-format
+msgctxt "@item:inmenu no list style"
+msgid "None"
+msgstr "Без"
+
+#: composer-ng/richtextcomposeractions.cpp:308
+#, kde-format
+msgctxt "@item:inmenu disc list style"
+msgid "Disc"
+msgstr "Точки"
+
+#: composer-ng/richtextcomposeractions.cpp:309
+#, kde-format
+msgctxt "@item:inmenu circle list style"
+msgid "Circle"
+msgstr "Кръгове"
+
+#: composer-ng/richtextcomposeractions.cpp:309
+#, kde-format
+msgctxt "@item:inmenu square list style"
+msgid "Square"
+msgstr "Квадрати"
+
+#: composer-ng/richtextcomposeractions.cpp:310
+#, kde-format
+msgctxt "@item:inmenu numbered lists"
+msgid "123"
+msgstr "123"
+
+#: composer-ng/richtextcomposeractions.cpp:310
+#, kde-format
+msgctxt "@item:inmenu lowercase abc lists"
+msgid "abc"
+msgstr "абв"
+
+#: composer-ng/richtextcomposeractions.cpp:311
+#, kde-format
+msgctxt "@item:inmenu uppercase abc lists"
+msgid "ABC"
+msgstr "АБВ"
+
+#: composer-ng/richtextcomposeractions.cpp:311
+#, kde-format
+msgctxt "@item:inmenu lower case roman numerals"
+msgid "i ii iii"
+msgstr "i ii iii"
+
+#: composer-ng/richtextcomposeractions.cpp:312
+#, kde-format
+msgctxt "@item:inmenu upper case roman numerals"
+msgid "I II III"
+msgstr "I II III"
+
+#: composer-ng/richtextcomposeractions.cpp:323
+#, kde-format
+msgctxt "@action"
+msgid "Pa&ste as Quotation"
+msgstr "&Вмъкване като цитат"
+
+#: composer-ng/richtextcomposeractions.cpp:331
+#, kde-format
+msgctxt "@action"
+msgid "Add &Quote Characters"
+msgstr "Добавяне на кавички"
+
+#: composer-ng/richtextcomposeractions.cpp:338
+#, kde-format
+msgctxt "@action"
+msgid "Re&move Quote Characters"
+msgstr "Премахване на кавички"
+
+#: composer-ng/richtextcomposeractions.cpp:345
+#, kde-format
+msgctxt "@action"
+msgid "Paste Without Formatting"
+msgstr "Поставяне без форматиране"
+
+#: composer-ng/richtextcomposeractions.cpp:353
+#, kde-format
+msgid "Add Image"
+msgstr "Добавяне на изображение"
+
+#: composer-ng/richtextcomposeractions.cpp:372
+#, kde-format
+msgctxt "@action"
+msgid "Insert HTML"
+msgstr "Вмъкване на HTML"
+
+#: composer-ng/richtextcomposeractions.cpp:382
+#, kde-format
+msgid "Table"
+msgstr "Таблица"
+
+#: composer-ng/richtextcomposeractions.cpp:391
+#, kde-format
+msgid "Reset Font Settings"
+msgstr "Нулиране на настройките за шрифт"
+
+#: composer-ng/richtextcomposeractions.cpp:392
+#, kde-format
+msgid "Reset Font"
+msgstr "Нулиране на шрифта"
+
+#: composer-ng/richtextcomposeractions.cpp:400
+#, kde-format
+msgctxt "@action"
+msgid "Format Painter"
+msgstr "Форматиране"
+
+#: composer-ng/richtextcomposeractions.cpp:408
+#, kde-format
+msgctxt "@title:menu"
+msgid "Heading Level"
+msgstr "Заглавно ниво"
+
+#: composer-ng/richtextcomposeractions.cpp:409
+#, kde-format
+msgctxt "@item:inmenu no heading"
+msgid "Basic text"
+msgstr "Основен текст"
+
+#: composer-ng/richtextcomposeractions.cpp:410
+#, kde-format
+msgctxt "@item:inmenu heading level 1 (largest)"
+msgid "Title"
+msgstr "Заглавие"
+
+#: composer-ng/richtextcomposeractions.cpp:411
+#, kde-format
+msgctxt "@item:inmenu heading level 2"
+msgid "Subtitle"
+msgstr "Подзаглавие"
+
+#: composer-ng/richtextcomposeractions.cpp:412
+#, kde-format
+msgctxt "@item:inmenu heading level 3"
+msgid "Section"
+msgstr "Раздел"
+
+#: composer-ng/richtextcomposeractions.cpp:413
+#, kde-format
+msgctxt "@item:inmenu heading level 4"
+msgid "Subsection"
+msgstr "Подраздел"
+
+#: composer-ng/richtextcomposeractions.cpp:414
+#, kde-format
+msgctxt "@item:inmenu heading level 5"
+msgid "Paragraph"
+msgstr "Параграф"
+
+#: composer-ng/richtextcomposeractions.cpp:415
+#, kde-format
+msgctxt "@item:inmenu heading level 6 (smallest)"
+msgid "Subparagraph"
+msgstr "Подпараграф"
+
+#: composer-ng/richtextcomposeractions.cpp:426
+#, kde-format
+msgctxt "@action"
+msgid "Checkbox"
+msgstr "Кутийка"
+
+#: composer-ng/richtextcomposercontroler.cpp:730
+#, kde-format
+msgid "Only local files are supported."
+msgstr "Поддържат се само локални файлове."
+
+#: composer-ng/richtextcomposerimages.cpp:57
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Unable to load image <filename>%1</filename>."
+msgstr "Невъзможно зареждане на изображение <filename>%1</filename>."
+
+#: composer-ng/richtextcomposerimages.cpp:216
+#, kde-format
+msgctxt "Start of the filename for an image"
+msgid "image"
+msgstr "изображение"
+
+#: composer-ng/richtextexternalcomposer.cpp:71
+#, kde-format
+msgid "Command line is empty. Please verify settings."
+msgstr "Командният ред е празен. Моля, проверете настройките."
+
+#: composer-ng/richtextexternalcomposer.cpp:71
+#, kde-format
+msgctxt "@title:window"
+msgid "Empty command line"
+msgstr "Празен команден ред"
+
+#: composer-ng/richtextexternalcomposer.cpp:124
+#, kde-format
+msgid "External editor cannot be started. Please verify command \"%1\""
+msgstr ""
+"Външният редактор не може да бъде стартиран. Моля, проверете командата \"%1\""
+
+#: composer-ng/richtextexternalcomposer.cpp:142
+#, kde-format
+msgid "Error was found when we started external editor."
+msgstr "Беше открита грешка, когато стартирахме външен редактор."
+
+#: composer-ng/richtextexternalcomposer.cpp:142
+#, kde-format
+msgid "External Editor Closed"
+msgstr "Външният редактор е затворен"
+
+#: composer-ng/richtextexternalcomposer.cpp:159
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The external editor is still running.<nl/>Do you want to stop the editor or "
+"keep it running?<nl/><warning>Stopping the editor will cause all your "
+"unsaved changes to be lost.</warning>"
+msgstr ""
+"Външният редактор все още работи.<nl/>Искате ли да спрете редактора или да "
+"продължите да работи?<nl/><warning>Спирането на редактора ще доведе до "
+"загуба на всички ваши незапазени промени.</warning>"
+
+#: composer-ng/richtextexternalcomposer.cpp:163
+#, kde-format
+msgctxt "@title:window"
+msgid "External Editor Running"
+msgstr "Отворен е външен редактор"
+
+#: composer-ng/richtextexternalcomposer.cpp:164
+#, kde-format
+msgctxt "@action:button"
+msgid "Stop Editor"
+msgstr "Спиране на редактора"
+
+#: composer-ng/richtextexternalcomposer.cpp:165
+#, kde-format
+msgctxt "@action:button"
+msgid "Keep Editor Running"
+msgstr "Оставяне на редактора отворен"
+
+#: inserthtmldialog.cpp:34
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert HTML"
+msgstr "Вмъкнете HTML"
+
+#: inserthtmldialog.cpp:36
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Insert HTML tags and texts:"
+msgstr "Вмъкване на HTML тагове и текстове:"
+
+#: inserthtmldialog.cpp:42
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Example: <i> Hello word </i>"
+msgstr "Пример: <i> Здравей </i>"
+
+#: inserthtmldialog.cpp:51
+#, kde-format
+msgctxt "@action:button"
+msgid "Insert"
+msgstr "Вмъкване"
+
+#: insertimagedialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert Image"
+msgstr "Вмъкване на изображение"
+
+#: insertimagedialog.cpp:36 inserttabledialog.cpp:37 tableactionmenu.cpp:407
+#, kde-format
+msgid "Insert"
+msgstr "Вмъкване"
+
+#: insertimagewidget.cpp:40
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Image Location:"
+msgstr "Местоположение на изображението:"
+
+#: insertimagewidget.cpp:53
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Image"
+msgstr "Добавяне на изображение"
+
+#: insertimagewidget.cpp:64
+#, kde-format
+msgid "Keep Original Size"
+msgstr "Запазване на оригиналния размер"
+
+#: insertimagewidget.cpp:71
+#, kde-format
+msgid "Keep Image Ratio"
+msgstr "Запазване на съотношението на изображението"
+
+#: insertimagewidget.cpp:77 inserttablewidget.cpp:59
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Width:"
+msgstr "Широчина:"
+
+#: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
+#, kde-format
+msgid " px"
+msgstr " px"
+
+#: insertimagewidget.cpp:92
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Height:"
+msgstr "Височина:"
+
+#: insertimagewidget.cpp:110
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Image Preview:"
+msgstr "Визуализация на изображението:"
+
+#: inserttabledialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Insert Table"
+msgstr "Вмъкване на таблица"
+
+#: inserttablewidget.cpp:40
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Rows:"
+msgstr "Редове:"
+
+#: inserttablewidget.cpp:43
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Columns:"
+msgstr "Колони:"
+
+#: inserttablewidget.cpp:46
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Border:"
+msgstr "Рамка:"
+
+#: inserttablewidget.cpp:52
+#, no-c-format, kde-format
+msgid "% of windows"
+msgstr "% прозорци"
+
+#: inserttablewidget.cpp:53
+#, kde-format
+msgid "pixels"
+msgstr "пиксели"
+
+#: tableactionmenu.cpp:410
+#, kde-format
+msgid "Table…"
+msgstr "Таблица…"
+
+#: tableactionmenu.cpp:418
+#, kde-format
+msgid "Row Below"
+msgstr "Ред отдолу"
+
+#: tableactionmenu.cpp:425
+#, kde-format
+msgid "Row Above"
+msgstr "Ред отгоре"
+
+#: tableactionmenu.cpp:433
+#, kde-format
+msgid "Column Before"
+msgstr "Колона отпред"
+
+#: tableactionmenu.cpp:441
+#, kde-format
+msgid "Column After"
+msgstr "Колона отзад"
+
+#: tableactionmenu.cpp:448
+#, kde-format
+msgid "Delete"
+msgstr "Изтриване"
+
+#: tableactionmenu.cpp:451
+#, kde-format
+msgctxt "@action"
+msgid "Row Below"
+msgstr "Ред отдолу"
+
+#: tableactionmenu.cpp:458
+#, kde-format
+msgctxt "@action"
+msgid "Row Above"
+msgstr "Ред отгоре"
+
+#: tableactionmenu.cpp:466
+#, kde-format
+msgctxt "@action"
+msgid "Column Before"
+msgstr "Колона отпред"
+
+#: tableactionmenu.cpp:474
+#, kde-format
+msgctxt "@action"
+msgid "Column After"
+msgstr "Колона отзад"
+
+#: tableactionmenu.cpp:482
+#, kde-format
+msgctxt "@action"
+msgid "Cell Contents"
+msgstr "Съдържание на клетката"
+
+#: tableactionmenu.cpp:491
+#, kde-format
+msgid "Join With Cell to the Right"
+msgstr "Обединяване с клетките вдясно"
+
+#: tableactionmenu.cpp:498
+#, kde-format
+msgctxt "@action"
+msgid "Join Selected Cells"
+msgstr "Обединяване на избраните клетки"
+
+#: tableactionmenu.cpp:505
+#, kde-format
+msgid "Split cells"
+msgstr "Разделяне на клетки"
+
+#: tableactionmenu.cpp:514
+#, kde-format
+msgctxt "@action"
+msgid "Table Format…"
+msgstr "Форматиране на таблица..."
+
+#: tableactionmenu.cpp:521
+#, kde-format
+msgctxt "@action"
+msgid "Table Cell Format…"
+msgstr "Форматиране на клетка:"
+
+#: tablecellformatdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Cell Format"
+msgstr "Форматиране на клетка"
+
+#: tablecellformatdialog.cpp:33
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Vertical Alignment:"
+msgstr "Вертикално подравняване:"
+
+#: tablecellformatdialog.cpp:36
+#, kde-format
+msgid "Top"
+msgstr "Горе"
+
+#: tablecellformatdialog.cpp:37
+#, kde-format
+msgid "Middle"
+msgstr "В средата"
+
+#: tablecellformatdialog.cpp:38
+#, kde-format
+msgid "Bottom"
+msgstr "Долу"
+
+#: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
+#, kde-format
+msgid "Background Color:"
+msgstr "Цвят на фон:"
+
+#: tableformatdialog.cpp:31
+#, kde-format
+msgctxt "@title:window"
+msgid "Table Format"
+msgstr "Форматиране на таблица"
+
+#: tableformatdialog.cpp:44
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Spacing:"
+msgstr "Разстояние:"
+
+#: tableformatdialog.cpp:49
+#, kde-format
+msgctxt "@label:textbox"
+msgid "pixels between cells"
+msgstr "пиксели между клетките"
+
+#: tableformatdialog.cpp:54
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Padding:"
+msgstr "Отстъп:"
+
+#: tableformatdialog.cpp:59
+#, kde-format
+msgctxt "@label:textbox"
+msgid "pixels between cell border and content"
+msgstr "пиксели между рамката на клетката и съдържанието"
+
+#: tableformatdialog.cpp:67
+#, kde-format
+msgid "Left"
+msgstr "Вляво"
+
+#: tableformatdialog.cpp:68
+#, kde-format
+msgid "Right"
+msgstr "Вдясно"
+
+#: tableformatdialog.cpp:69
+#, kde-format
+msgid "Center"
+msgstr "В средата"
+
+#: tableformatdialog.cpp:70
+#, kde-format
+msgid "Justify"
+msgstr "Двустранно"
+
+#: tableformatdialog.cpp:73
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Table Alignment:"
+msgstr "Подравняване на таблица:"
