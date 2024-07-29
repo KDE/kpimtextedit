@@ -61,14 +61,14 @@ public:
         lab->setBuddy(imageUrlRequester);
         lay->addLayout(hbox);
 
-        keepOriginalSize = new QCheckBox(i18n("Keep Original Size"));
+        keepOriginalSize = new QCheckBox(i18nc("@option:check", "Keep Original Size"));
         q->connect(keepOriginalSize, &QCheckBox::clicked, q, [this](bool b) {
             _k_slotKeepOriginalSizeClicked(b);
         });
         keepOriginalSize->setChecked(true);
         lay->addWidget(keepOriginalSize);
 
-        keepImageRatio = new QCheckBox(i18n("Keep Image Ratio"));
+        keepImageRatio = new QCheckBox(i18nc("@option:check", "Keep Image Ratio"));
         keepImageRatio->setChecked(true);
         keepImageRatio->setEnabled(false);
         lay->addWidget(keepImageRatio);

@@ -44,7 +44,7 @@ public:
         mainLayout->addWidget(sep);
 
         hbox = new QHBoxLayout;
-        useBackgroundColor = new QCheckBox(i18n("Background Color:"));
+        useBackgroundColor = new QCheckBox(i18nc("@option:check", "Background Color:"));
         hbox->addWidget(useBackgroundColor);
         backgroundColor = new KColorButton;
         backgroundColor->setDefaultColor(Qt::white);
