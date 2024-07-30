@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-05-28 06:03+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -489,12 +489,16 @@ msgid "Add Image"
 msgstr "გამოსახულების დამატება"
 
 #: insertimagewidget.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Original Size"
+msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "გამოსახულების საწყისი ზომის შენარჩუნება"
 
 #: insertimagewidget.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Image Ratio"
+msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "გამოსახულების ფარდობის შენარჩუნება"
 
@@ -671,7 +675,9 @@ msgid "Bottom"
 msgstr "ქვემოთ"
 
 #: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Background Color:"
+msgctxt "@option:check"
 msgid "Background Color:"
 msgstr "ფონის ფერი:"
 

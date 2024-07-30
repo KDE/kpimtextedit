@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-05-15 11:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -493,12 +493,16 @@ msgid "Add Image"
 msgstr "Afegeix una imatge"
 
 #: insertimagewidget.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Original Size"
+msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "Mantén la mida original"
 
 #: insertimagewidget.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Image Ratio"
+msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "Mantén la proporció de la imatge"
 
@@ -675,7 +679,9 @@ msgid "Bottom"
 msgstr "Inferior"
 
 #: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Background Color:"
+msgctxt "@option:check"
 msgid "Background Color:"
 msgstr "Color de fons:"
 

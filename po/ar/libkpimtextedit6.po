@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-05-30 07:13+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -488,12 +488,16 @@ msgid "Add Image"
 msgstr "أضف صورة"
 
 #: insertimagewidget.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Original Size"
+msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "أبقِ الحجم الأصليّ"
 
 #: insertimagewidget.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Image Ratio"
+msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "أبقِ نسبة الصّورة"
 
@@ -671,7 +675,9 @@ msgid "Bottom"
 msgstr "الأسفل"
 
 #: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Background Color:"
+msgctxt "@option:check"
 msgid "Background Color:"
 msgstr "لون الخلفيّة:"
 

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2023-12-27 10:01+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -511,12 +511,16 @@ msgid "Add Image"
 msgstr "Добавление изображения"
 
 #: insertimagewidget.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Original Size"
+msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "Сохранять оригинальный размер"
 
 #: insertimagewidget.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Image Ratio"
+msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "Сохранять соотношение сторон"
 
@@ -710,7 +714,9 @@ msgid "Bottom"
 msgstr "Внизу"
 
 #: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Background Color:"
+msgctxt "@option:check"
 msgid "Background Color:"
 msgstr "Цвет фона:"
 

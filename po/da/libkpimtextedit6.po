@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2022-08-08 17:22+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -503,12 +503,16 @@ msgid "Add Image"
 msgstr "Tilføj billede"
 
 #: insertimagewidget.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Original Size"
+msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "Behold oprindelig størrelse"
 
 #: insertimagewidget.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep Image Ratio"
+msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "Bevar aspektforhold"
 
@@ -702,7 +706,9 @@ msgid "Bottom"
 msgstr "Nederst"
 
 #: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Background Color:"
+msgctxt "@option:check"
 msgid "Background Color:"
 msgstr "Baggrundsfarve:"
 
