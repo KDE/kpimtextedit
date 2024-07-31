@@ -139,7 +139,7 @@ void RichTextExternalComposer::slotEditorFinished(int codeError, QProcess::ExitS
             localFile.close();
         }
         if (codeError > 0) {
-            KMessageBox::error(d->richTextComposer, i18n("Error was found when we started external editor."), i18n("External Editor Closed"));
+            KMessageBox::error(d->richTextComposer, i18n("Error was found when we started external editor."), i18nc("@title:window", "External Editor Closed"));
             setUseExternalEditor(false);
         }
         Q_EMIT externalEditorClosed();
