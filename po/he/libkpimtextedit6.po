@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-07-30 09:59+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -407,7 +407,9 @@ msgid "Error was found when we started external editor."
 msgstr "התגלתה שגיאה בעת פתיחת העורך החיצוני."
 
 #: composer-ng/richtextexternalcomposer.cpp:142
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "External Editor Closed"
+msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "העורך החיצוני נסגר"
 

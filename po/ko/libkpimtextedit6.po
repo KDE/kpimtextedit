@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2023-10-08 23:33+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -418,7 +418,9 @@ msgid "Error was found when we started external editor."
 msgstr "외부 편집기를 시작하는 중 오류가 발생했습니다."
 
 #: composer-ng/richtextexternalcomposer.cpp:142
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "External Editor Closed"
+msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "외부 편집기 종료됨"
 

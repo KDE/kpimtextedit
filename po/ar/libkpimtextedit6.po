@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-05-30 07:13+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -407,7 +407,9 @@ msgid "Error was found when we started external editor."
 msgstr "عُثر على خطأ عندما بُدأ المحرّر الخارجيّ."
 
 #: composer-ng/richtextexternalcomposer.cpp:142
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "External Editor Closed"
+msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "أُغلق المحرّر الخارجيّ"
 
