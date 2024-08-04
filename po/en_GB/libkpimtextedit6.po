@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-05-30 16:22+0100\n"
+"PO-Revision-Date: 2024-08-03 13:05+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -407,8 +407,7 @@ msgid "Error was found when we started external editor."
 msgstr "Error was found when we started external editor."
 
 #: composer-ng/richtextexternalcomposer.cpp:142
-#, fuzzy, kde-format
-#| msgid "External Editor Closed"
+#, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "External Editor Closed"
@@ -491,15 +490,13 @@ msgid "Add Image"
 msgstr "Add Image"
 
 #: insertimagewidget.cpp:64
-#, fuzzy, kde-format
-#| msgid "Keep Original Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "Keep Original Size"
 
 #: insertimagewidget.cpp:71
-#, fuzzy, kde-format
-#| msgid "Keep Image Ratio"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "Keep Image Ratio"
@@ -677,8 +674,7 @@ msgid "Bottom"
 msgstr "Bottom"
 
 #: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
-#, fuzzy, kde-format
-#| msgid "Background Color:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Background Color:"
 msgstr "Background Colour:"

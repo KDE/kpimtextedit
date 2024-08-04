@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-06-22 08:31+0200\n"
+"PO-Revision-Date: 2024-08-03 11:31+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -409,8 +409,7 @@ msgid "Error was found when we started external editor."
 msgstr "Natrafiono na błąd, gdy uruchomiono zewnętrzny edytor."
 
 #: composer-ng/richtextexternalcomposer.cpp:142
-#, fuzzy, kde-format
-#| msgid "External Editor Closed"
+#, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "Zamknięto zewnętrzny edytor"
@@ -493,15 +492,13 @@ msgid "Add Image"
 msgstr "Dodaj obraz"
 
 #: insertimagewidget.cpp:64
-#, fuzzy, kde-format
-#| msgid "Keep Original Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "Zachowaj pierwotny rozmiar"
 
 #: insertimagewidget.cpp:71
-#, fuzzy, kde-format
-#| msgid "Keep Image Ratio"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "Zachowaj kształt obrazu"
@@ -679,8 +676,7 @@ msgid "Bottom"
 msgstr "Do dołu"
 
 #: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
-#, fuzzy, kde-format
-#| msgid "Background Color:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Background Color:"
 msgstr "Kolor tła:"
