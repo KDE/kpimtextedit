@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-05-30 02:34+0900\n"
+"PO-Revision-Date: 2024-08-06 05:50+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -408,8 +408,7 @@ msgid "Error was found when we started external editor."
 msgstr "開啟外部編輯器時發現錯誤。"
 
 #: composer-ng/richtextexternalcomposer.cpp:142
-#, fuzzy, kde-format
-#| msgid "External Editor Closed"
+#, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "外部編輯器已關閉"
@@ -491,15 +490,13 @@ msgid "Add Image"
 msgstr "新增影像"
 
 #: insertimagewidget.cpp:64
-#, fuzzy, kde-format
-#| msgid "Keep Original Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "保持原始大小"
 
 #: insertimagewidget.cpp:71
-#, fuzzy, kde-format
-#| msgid "Keep Image Ratio"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "保持影像比例"
@@ -677,8 +674,7 @@ msgid "Bottom"
 msgstr "底端"
 
 #: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
-#, fuzzy, kde-format
-#| msgid "Background Color:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Background Color:"
 msgstr "背景顏色："

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-11 13:05+0200\n"
+"PO-Revision-Date: 2024-08-05 23:29+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -409,11 +409,10 @@ msgid "Error was found when we started external editor."
 msgstr "Errore bat aurkitu da kanpoko editorea abiatu dugunean."
 
 #: composer-ng/richtextexternalcomposer.cpp:142
-#, fuzzy, kde-format
-#| msgid "External Editor Closed"
+#, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
-msgstr "Kanpoko editorea itxi egin da"
+msgstr "Kanpoko editorea itxita"
 
 #: composer-ng/richtextexternalcomposer.cpp:159
 #, kde-kuit-format
@@ -493,15 +492,13 @@ msgid "Add Image"
 msgstr "Gehitu irudia"
 
 #: insertimagewidget.cpp:64
-#, fuzzy, kde-format
-#| msgid "Keep Original Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "Mantendu jatorrizko neurria"
 
 #: insertimagewidget.cpp:71
-#, fuzzy, kde-format
-#| msgid "Keep Image Ratio"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "Mantendu irudiaren proportzioa"
@@ -679,8 +676,7 @@ msgid "Bottom"
 msgstr "Behean"
 
 #: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
-#, fuzzy, kde-format
-#| msgid "Background Color:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Background Color:"
 msgstr "Atzeko planoaren kolorea:"

@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 10:17+0200\n"
+"PO-Revision-Date: 2024-08-01 10:49+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -411,11 +411,10 @@ msgid "Error was found when we started external editor."
 msgstr "S'ha trobat un error en iniciar l'editor extern."
 
 #: composer-ng/richtextexternalcomposer.cpp:142
-#, fuzzy, kde-format
-#| msgid "External Editor Closed"
+#, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
-msgstr "S'ha tancat l'editor extern"
+msgstr "Tancament d'editor extern"
 
 #: composer-ng/richtextexternalcomposer.cpp:159
 #, kde-kuit-format
