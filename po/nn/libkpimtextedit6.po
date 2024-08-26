@@ -22,14 +22,12 @@ msgstr ""
 
 #: composer-ng/klinkdialog.cpp:24
 #, fuzzy, kde-format
-#| msgid "Link Text:"
 msgctxt "@label:textbox"
 msgid "Link Text:"
 msgstr "Lenkjetekst:"
 
 #: composer-ng/klinkdialog.cpp:26
 #, fuzzy, kde-format
-#| msgid "Link URL:"
 msgctxt "@label:textbox"
 msgid "Link URL:"
 msgstr "Lenkjeadresse:"
@@ -168,8 +166,6 @@ msgstr "Sett inn bord"
 
 #: composer-ng/richtextcomposeractions.cpp:264
 #, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Color..."
 msgctxt "@action"
 msgid "Text &Color…"
 msgstr "Tekst&farge …"
@@ -182,8 +178,6 @@ msgstr "Farge"
 
 #: composer-ng/richtextcomposeractions.cpp:273
 #, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Text &Highlight..."
 msgctxt "@action"
 msgid "Text &Highlight…"
 msgstr "&Framhevingsfarge …"
@@ -268,28 +262,24 @@ msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
 #, fuzzy, kde-format
-#| msgid "Pa&ste as Quotation"
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr "&Lim inn som sitering"
 
 #: composer-ng/richtextcomposeractions.cpp:331
 #, fuzzy, kde-format
-#| msgid "Add &Quote Characters"
 msgctxt "@action"
 msgid "Add &Quote Characters"
 msgstr "Legg til &sitatteikn"
 
 #: composer-ng/richtextcomposeractions.cpp:338
 #, fuzzy, kde-format
-#| msgid "Re&move Quote Characters"
 msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "&Fjern sitatteikn"
 
 #: composer-ng/richtextcomposeractions.cpp:345
 #, fuzzy, kde-format
-#| msgid "Paste Without Formatting"
 msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr "Lim inn utan formatering"
@@ -301,7 +291,6 @@ msgstr "Legg til bilete"
 
 #: composer-ng/richtextcomposeractions.cpp:372
 #, fuzzy, kde-format
-#| msgid "Insert HTML"
 msgctxt "@action"
 msgid "Insert HTML"
 msgstr "Set inn HTML"
@@ -405,7 +394,6 @@ msgstr "Kommandolinja er tom. Kontroller innstillingane."
 
 #: composer-ng/richtextexternalcomposer.cpp:71
 #, fuzzy, kde-format
-#| msgid "Empty command line"
 msgctxt "@title:window"
 msgid "Empty command line"
 msgstr "Tom kommandolinje"
@@ -463,14 +451,12 @@ msgstr "Set inn HTML"
 
 #: inserthtmldialog.cpp:36
 #, fuzzy, kde-format
-#| msgid "Insert HTML tags and texts:"
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Set inn HTML-taggar og tekst:"
 
 #: inserthtmldialog.cpp:42
 #, fuzzy, kde-format
-#| msgid "Example: <i> Hello word </i>"
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Eksempel: <i>Hei, alle saman!</i>"
@@ -494,7 +480,6 @@ msgstr "Set inn"
 
 #: insertimagewidget.cpp:40
 #, fuzzy, kde-format
-#| msgid "Image Location:"
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "Biletadresse:"
@@ -517,7 +502,6 @@ msgstr "Bruk høgd/breidd-forholdet"
 
 #: insertimagewidget.cpp:77 inserttablewidget.cpp:59
 #, fuzzy, kde-format
-#| msgid "Width:"
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Breidd:"
@@ -529,14 +513,12 @@ msgstr " pikslar"
 
 #: insertimagewidget.cpp:92
 #, fuzzy, kde-format
-#| msgid "Height:"
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Høgd:"
 
 #: insertimagewidget.cpp:110
 #, fuzzy, kde-format
-#| msgid "Image Preview:"
 msgctxt "@label:textbox"
 msgid "Image Preview:"
 msgstr "Førehandsvising av bilete:"
@@ -549,21 +531,18 @@ msgstr "Set inn tabell"
 
 #: inserttablewidget.cpp:40
 #, fuzzy, kde-format
-#| msgid "Rows:"
 msgctxt "@label:textbox"
 msgid "Rows:"
 msgstr "Rader:"
 
 #: inserttablewidget.cpp:43
 #, fuzzy, kde-format
-#| msgid "Columns:"
 msgctxt "@label:textbox"
 msgid "Columns:"
 msgstr "Kolonnar:"
 
 #: inserttablewidget.cpp:46
 #, fuzzy, kde-format
-#| msgid "Border:"
 msgctxt "@label:textbox"
 msgid "Border:"
 msgstr "Kantlinje:"
@@ -580,7 +559,6 @@ msgstr "pikslar"
 
 #: tableactionmenu.cpp:410
 #, fuzzy, kde-format
-#| msgid "Table"
 msgid "Table…"
 msgstr "Tabell"
 
@@ -611,35 +589,30 @@ msgstr "Slett"
 
 #: tableactionmenu.cpp:451
 #, fuzzy, kde-format
-#| msgid "Row Below"
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Rader under"
 
 #: tableactionmenu.cpp:458
 #, fuzzy, kde-format
-#| msgid "Row Above"
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Rader over"
 
 #: tableactionmenu.cpp:466
 #, fuzzy, kde-format
-#| msgid "Column Before"
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Kolonnar før"
 
 #: tableactionmenu.cpp:474
 #, fuzzy, kde-format
-#| msgid "Column After"
 msgctxt "@action"
 msgid "Column After"
 msgstr "Kolonnar etter"
 
 #: tableactionmenu.cpp:482
 #, fuzzy, kde-format
-#| msgid "Cell Contents"
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Celleinnhald"
@@ -651,7 +624,6 @@ msgstr "Slå saman med cella til høgre"
 
 #: tableactionmenu.cpp:498
 #, fuzzy, kde-format
-#| msgid "Join Selected Cells"
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Slå saman merkte celler"
@@ -663,15 +635,12 @@ msgstr "Del celler"
 
 #: tableactionmenu.cpp:514
 #, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Table Format"
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "Tabellformat"
 
 #: tableactionmenu.cpp:521
 #, fuzzy, kde-format
-#| msgid "Table Cell Format..."
 msgctxt "@action"
 msgid "Table Cell Format…"
 msgstr "Tabellcelle-format …"
@@ -684,7 +653,6 @@ msgstr "Celleformat"
 
 #: tablecellformatdialog.cpp:33
 #, fuzzy, kde-format
-#| msgid "Vertical Alignment:"
 msgctxt "@label:textbox"
 msgid "Vertical Alignment:"
 msgstr "Loddrett justering:"
@@ -717,28 +685,24 @@ msgstr "Tabellformat"
 
 #: tableformatdialog.cpp:44
 #, fuzzy, kde-format
-#| msgid "Spacing:"
 msgctxt "@label:textbox"
 msgid "Spacing:"
 msgstr "Mellomrom:"
 
 #: tableformatdialog.cpp:49
 #, fuzzy, kde-format
-#| msgid "pixels between cells"
 msgctxt "@label:textbox"
 msgid "pixels between cells"
 msgstr "pikslar mellom cellene"
 
 #: tableformatdialog.cpp:54
 #, fuzzy, kde-format
-#| msgid "Padding:"
 msgctxt "@label:textbox"
 msgid "Padding:"
 msgstr "Luft:"
 
 #: tableformatdialog.cpp:59
 #, fuzzy, kde-format
-#| msgid "pixels between cell border and content"
 msgctxt "@label:textbox"
 msgid "pixels between cell border and content"
 msgstr "pikslar mellom kantlinje og celleinnhald"
@@ -765,7 +729,6 @@ msgstr "Juster"
 
 #: tableformatdialog.cpp:73
 #, fuzzy, kde-format
-#| msgid "Table Alignment:"
 msgctxt "@label:textbox"
 msgid "Table Alignment:"
 msgstr "Tabelljustering:"
