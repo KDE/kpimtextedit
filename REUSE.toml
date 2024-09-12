@@ -1,0 +1,10 @@
+version = 1
+SPDX-PackageName = "kpimtextedit"
+SPDX-PackageSupplier = "Montel Laurent <montel@kde.org>"
+SPDX-PackageDownloadLocation = "https://invent.kde.org/pim/kpimtextedit"
+
+[[annotations]]
+path = ["Mainpage.dox", "src/grantleebuilder/autotests/data/object-fill.svg", "src/grantleebuilder/autotests/sourcehtml", "src/emoticon/data/emoji.json", ".gitattributes", "readme-build-ftime.txt"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "CC0-1.0"
