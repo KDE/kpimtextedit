@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -44,8 +44,7 @@ msgid "Align &Left"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:104
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@label left justify"
 msgid "Left"
 msgstr "Αριστερά"
@@ -58,8 +57,7 @@ msgid "Align &Center"
 msgstr "Κέντρο"
 
 #: composer-ng/richtextcomposeractions.cpp:113
-#, fuzzy, kde-format
-#| msgid "Center"
+#, kde-format
 msgctxt "@label center justify"
 msgid "Center"
 msgstr "Κέντρο"
@@ -71,22 +69,19 @@ msgid "Align &Right"
 msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:122
-#, fuzzy, kde-format
-#| msgid "Right"
+#, kde-format
 msgctxt "@label right justify"
 msgid "Right"
 msgstr "Δεξιά"
 
 #: composer-ng/richtextcomposeractions.cpp:130
-#, fuzzy, kde-format
-#| msgid "Justify"
+#, kde-format
 msgctxt "@action"
 msgid "&Justify"
-msgstr "Πλήρης στοίχιση"
+msgstr "Πλήρ&ης στοίχιση"
 
 #: composer-ng/richtextcomposeractions.cpp:131
-#, fuzzy, kde-format
-#| msgid "Justify"
+#, kde-format
 msgctxt "@label justify fill"
 msgid "Justify"
 msgstr "Πλήρης στοίχιση"
@@ -298,8 +293,7 @@ msgid "Add Image"
 msgstr "Προσθήκη εικόνας"
 
 #: composer-ng/richtextcomposeractions.cpp:372
-#, fuzzy, kde-format
-#| msgid "Insert HTML"
+#, kde-format
 msgctxt "@action"
 msgid "Insert HTML"
 msgstr "Εισαγωγή HTML"
@@ -451,36 +445,31 @@ msgid "Keep Editor Running"
 msgstr ""
 
 #: inserthtmldialog.cpp:34
-#, fuzzy, kde-format
-#| msgid "Insert HTML"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Εισαγωγή HTML"
 
 #: inserthtmldialog.cpp:36
-#, fuzzy, kde-format
-#| msgid "Insert HTML tags and texts:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Εισαγωγή HTML ετικετών και κειμένων:"
 
 #: inserthtmldialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Example: <i> Hello word </i>"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Παράδειγμα: <i> Hello word </i>"
 
 #: inserthtmldialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Insert"
+#, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Εισαγωγή"
 
 #: insertimagedialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Insert Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Εισαγωγή εικόνας"
@@ -491,36 +480,31 @@ msgid "Insert"
 msgstr "Εισαγωγή"
 
 #: insertimagewidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Image Location:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "Θέση εικόνας:"
 
 #: insertimagewidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "Add Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "Προσθήκη εικόνας"
 
 #: insertimagewidget.cpp:64
-#, fuzzy, kde-format
-#| msgid "Keep Original Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "Διατήρηση αρχικού μεγέθους"
 
 #: insertimagewidget.cpp:71
-#, fuzzy, kde-format
-#| msgid "Keep Image Ratio"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "Διατήρηση αναλογίας εικόνας"
 
 #: insertimagewidget.cpp:77 inserttablewidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Width:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Πλάτος:"
@@ -531,43 +515,37 @@ msgid " px"
 msgstr " px"
 
 #: insertimagewidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Height:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Ύψος:"
 
 #: insertimagewidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Image Preview:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"
 msgstr "Προεπισκόπηση εικόνας:"
 
 #: inserttabledialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Insert Table"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Table"
 msgstr "Εισαγωγή πίνακα"
 
 #: inserttablewidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Rows:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Rows:"
 msgstr "Γραμμές:"
 
 #: inserttablewidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "Columns:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Columns:"
 msgstr "Στήλες:"
 
 #: inserttablewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Border:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Border:"
 msgstr "Άκρο:"
@@ -583,10 +561,9 @@ msgid "pixels"
 msgstr "εικονοστοιχεία"
 
 #: tableactionmenu.cpp:410
-#, fuzzy, kde-format
-#| msgid "Table"
+#, kde-format
 msgid "Table…"
-msgstr "Πίνακας"
+msgstr "Πίνακας…"
 
 #: tableactionmenu.cpp:418
 #, kde-format
@@ -614,36 +591,31 @@ msgid "Delete"
 msgstr "Διαγραφή"
 
 #: tableactionmenu.cpp:451
-#, fuzzy, kde-format
-#| msgid "Row Below"
+#, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Γραμμή κάτω από"
 
 #: tableactionmenu.cpp:458
-#, fuzzy, kde-format
-#| msgid "Row Above"
+#, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Γραμμή πάνω από"
 
 #: tableactionmenu.cpp:466
-#, fuzzy, kde-format
-#| msgid "Column Before"
+#, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Στήλη προ"
 
 #: tableactionmenu.cpp:474
-#, fuzzy, kde-format
-#| msgid "Column After"
+#, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "Στήλη μετά"
 
 #: tableactionmenu.cpp:482
-#, fuzzy, kde-format
-#| msgid "Cell Contents"
+#, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Περιεχόμενα κελιού"
@@ -654,8 +626,7 @@ msgid "Join With Cell to the Right"
 msgstr "Ένωση με το κελί στα δεξιά"
 
 #: tableactionmenu.cpp:498
-#, fuzzy, kde-format
-#| msgid "Join Selected Cells"
+#, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Ένωση επιλεγμένων κελιών"
@@ -666,29 +637,25 @@ msgid "Split cells"
 msgstr "Διαίρεση κελιών"
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgid "Table Format"
+#, kde-format
 msgctxt "@action"
 msgid "Table Format…"
-msgstr "Τύπος πίνακα"
+msgstr "Τύπος πίνακα…"
 
 #: tableactionmenu.cpp:521
-#, fuzzy, kde-format
-#| msgid "Table Cell Format..."
+#, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"
-msgstr "Μορφή πίνακα κελιών..."
+msgstr "Μορφή πίνακα κελιών…"
 
 #: tablecellformatdialog.cpp:28
-#, fuzzy, kde-format
-#| msgid "Cell Format"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cell Format"
 msgstr "Μορφή κελιού"
 
 #: tablecellformatdialog.cpp:33
-#, fuzzy, kde-format
-#| msgid "Vertical Alignment:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Vertical Alignment:"
 msgstr "Κατακόρυφη στοίχιση:"
@@ -709,43 +676,37 @@ msgid "Bottom"
 msgstr "Κάτω"
 
 #: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
-#, fuzzy, kde-format
-#| msgid "Background Color:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Background Color:"
 msgstr "Χρώμα φόντου:"
 
 #: tableformatdialog.cpp:31
-#, fuzzy, kde-format
-#| msgid "Table Format"
+#, kde-format
 msgctxt "@title:window"
 msgid "Table Format"
 msgstr "Τύπος πίνακα"
 
 #: tableformatdialog.cpp:44
-#, fuzzy, kde-format
-#| msgid "Spacing:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Spacing:"
 msgstr "Κενά διαστήματα:"
 
 #: tableformatdialog.cpp:49
-#, fuzzy, kde-format
-#| msgid "pixels between cells"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cells"
 msgstr "εικονοστοιχεία ανάμεσα σε κελιά"
 
 #: tableformatdialog.cpp:54
-#, fuzzy, kde-format
-#| msgid "Padding:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Padding:"
 msgstr "Απόσταση:"
 
 #: tableformatdialog.cpp:59
-#, fuzzy, kde-format
-#| msgid "pixels between cell border and content"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cell border and content"
 msgstr "εικονοστοιχεία ανάμεσα στο άκρο του κελιού και στο περιεχόμενο"
@@ -771,8 +732,7 @@ msgid "Justify"
 msgstr "Πλήρης στοίχιση"
 
 #: tableformatdialog.cpp:73
-#, fuzzy, kde-format
-#| msgid "Table Alignment:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Table Alignment:"
 msgstr "Στοίχιση πίνακα:"
