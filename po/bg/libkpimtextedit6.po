@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-08-07 11:32+0200\n"
+"PO-Revision-Date: 2024-11-09 20:04+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -399,7 +399,7 @@ msgstr "Празен команден ред"
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr ""
-"Външният редактор не може да бъде стартиран. Моля, проверете командата \"%1\""
+"Външният редактор не може да бъде стартиран. Моля, проверете командата „%1“"
 
 #: composer-ng/richtextexternalcomposer.cpp:142
 #, kde-format
