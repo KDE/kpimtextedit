@@ -20,25 +20,25 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Link Text:"
-msgstr ""
+msgstr "लिङ्क पाठः १."
 
 #: composer-ng/klinkdialog.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Link URL:"
-msgstr ""
+msgstr "लिङ्क URL:"
 
 #: composer-ng/klinkdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Link"
-msgstr ""
+msgstr "लिङ्कं प्रबन्धयन्तु"
 
 #: composer-ng/richtextcomposeractions.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
-msgstr ""
+msgstr "संरेखणं &वाम"
 
 #: composer-ng/richtextcomposeractions.cpp:104
 #, kde-format
@@ -50,7 +50,7 @@ msgstr "वामः"
 #, kde-format
 msgctxt "@action"
 msgid "Align &Center"
-msgstr ""
+msgstr "संरेखित & केन्द्र"
 
 #: composer-ng/richtextcomposeractions.cpp:113
 #, kde-format
@@ -62,7 +62,7 @@ msgstr "केंद्र"
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
-msgstr ""
+msgstr "Align &Right"
 
 #: composer-ng/richtextcomposeractions.cpp:122
 #, kde-format
@@ -74,7 +74,7 @@ msgstr "दक्षिणः"
 #, kde-format
 msgctxt "@action"
 msgid "&Justify"
-msgstr ""
+msgstr "&प्रमाणय्"
 
 #: composer-ng/richtextcomposeractions.cpp:131
 #, kde-format
@@ -86,199 +86,199 @@ msgstr "प्रमाणय्"
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
-msgstr ""
+msgstr "वाम-दक्षिणम्"
 
 #: composer-ng/richtextcomposeractions.cpp:147
 #, kde-format
 msgctxt "@label left-to-right"
 msgid "Left-to-Right"
-msgstr ""
+msgstr "वाम-दक्षिणम्"
 
 #: composer-ng/richtextcomposeractions.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
-msgstr ""
+msgstr "दक्षिणतः वामतः"
 
 #: composer-ng/richtextcomposeractions.cpp:156
 #, kde-format
 msgctxt "@label right-to-left"
 msgid "Right-to-Left"
-msgstr ""
+msgstr "दक्षिणतः वामतः"
 
 #: composer-ng/richtextcomposeractions.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Subscript"
-msgstr ""
+msgstr "उपलिपिः"
 
 #: composer-ng/richtextcomposeractions.cpp:177
 #, kde-format
 msgctxt "@action"
 msgid "Superscript"
-msgstr ""
+msgstr "अधिलिपि"
 
 #: composer-ng/richtextcomposeractions.cpp:185
 #, kde-format
 msgctxt "@action boldify selected text"
 msgid "&Bold"
-msgstr ""
+msgstr "&विक्रान्तः"
 
 #: composer-ng/richtextcomposeractions.cpp:198
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
-msgstr ""
+msgstr "&इटालिक"
 
 #: composer-ng/richtextcomposeractions.cpp:211
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
-msgstr ""
+msgstr "&अधोरेखा"
 
 #: composer-ng/richtextcomposeractions.cpp:223
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
-msgstr ""
+msgstr "&स्ट्राइक आउट"
 
 #: composer-ng/richtextcomposeractions.cpp:238
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
-msgstr ""
+msgstr "&फॉन्ट्"
 
 #: composer-ng/richtextcomposeractions.cpp:247
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
-msgstr ""
+msgstr "फ़ॉन्ट & आकार"
 
 #: composer-ng/richtextcomposeractions.cpp:255
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
-msgstr ""
+msgstr "नियम रेखा सम्मिलित करें"
 
 #: composer-ng/richtextcomposeractions.cpp:264
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color…"
-msgstr ""
+msgstr "पाठ &रंग..."
 
 #: composer-ng/richtextcomposeractions.cpp:265
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
-msgstr ""
+msgstr "वर्ण"
 
 #: composer-ng/richtextcomposeractions.cpp:273
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight…"
-msgstr ""
+msgstr "पाठ &Highlight..."
 
 #: composer-ng/richtextcomposeractions.cpp:281
 #, kde-format
 msgctxt "@action"
 msgid "Link"
-msgstr ""
+msgstr "सम्बन्ध"
 
 #: composer-ng/richtextcomposeractions.cpp:289
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
-msgstr ""
+msgstr "सूचीस्तरं वर्धयन्तु"
 
 #: composer-ng/richtextcomposeractions.cpp:297
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
-msgstr ""
+msgstr "सूचीस्तरं न्यूनीकरोतु"
 
 #: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
-msgstr ""
+msgstr "सूचीशैली"
 
 #: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
-msgstr ""
+msgstr "न कश्चित्"
 
 #: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
-msgstr ""
+msgstr "डिस्क"
 
 #: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
-msgstr ""
+msgstr "वृत्त"
 
 #: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
-msgstr ""
+msgstr "चतुरश्रः"
 
 #: composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
-msgstr ""
+msgstr "१२३ इति"
 
 #: composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
-msgstr ""
+msgstr "abc"
 
 #: composer-ng/richtextcomposeractions.cpp:311
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
-msgstr ""
+msgstr "एबीसी"
 
 #: composer-ng/richtextcomposeractions.cpp:311
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
-msgstr ""
+msgstr "i ii iii"
 
 #: composer-ng/richtextcomposeractions.cpp:312
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
-msgstr ""
+msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:323
 #, kde-format
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
-msgstr ""
+msgstr "Pa&ste as Quotation इति"
 
 #: composer-ng/richtextcomposeractions.cpp:331
 #, kde-format
 msgctxt "@action"
 msgid "Add &Quote Characters"
-msgstr ""
+msgstr "वर्णाः योजयन्तु &उद्धरणं कुर्वन्तु"
 
 #: composer-ng/richtextcomposeractions.cpp:338
 #, kde-format
 msgctxt "@action"
 msgid "Re&move Quote Characters"
-msgstr ""
+msgstr "Re&move उद्धरण वर्ण"
 
 #: composer-ng/richtextcomposeractions.cpp:345
 #, kde-format
 msgctxt "@action"
 msgid "Paste Without Formatting"
-msgstr ""
+msgstr "स्वरूपणं विना पेस्ट कुर्वन्तु"
 
 #: composer-ng/richtextcomposeractions.cpp:353
 #, kde-format
@@ -289,7 +289,7 @@ msgstr "चित्रं योजयतु"
 #, kde-format
 msgctxt "@action"
 msgid "Insert HTML"
-msgstr ""
+msgstr "HTML सम्मिलितं कुर्वन्तु"
 
 #: composer-ng/richtextcomposeractions.cpp:382
 #, kde-format
@@ -310,61 +310,61 @@ msgstr "Font पुनः सेट् करें"
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
-msgstr ""
+msgstr "प्रारूप चित्रकार"
 
 #: composer-ng/richtextcomposeractions.cpp:408
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
-msgstr ""
+msgstr "शीर्षकस्तरः"
 
 #: composer-ng/richtextcomposeractions.cpp:409
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
-msgstr ""
+msgstr "मूलग्रन्थः"
 
 #: composer-ng/richtextcomposeractions.cpp:410
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
-msgstr ""
+msgstr "शीर्षक"
 
 #: composer-ng/richtextcomposeractions.cpp:411
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
-msgstr ""
+msgstr "उपशीर्षकम्"
 
 #: composer-ng/richtextcomposeractions.cpp:412
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
-msgstr ""
+msgstr "खंड"
 
 #: composer-ng/richtextcomposeractions.cpp:413
 #, kde-format
 msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
-msgstr ""
+msgstr "उपखण्ड"
 
 #: composer-ng/richtextcomposeractions.cpp:414
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
-msgstr ""
+msgstr "अनुच्छेदः"
 
 #: composer-ng/richtextcomposeractions.cpp:415
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
-msgstr ""
+msgstr "उपपरिच्छेदः"
 
 #: composer-ng/richtextcomposeractions.cpp:426
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
-msgstr ""
+msgstr "चेकबॉक्स"
 
 #: composer-ng/richtextcomposercontroler.cpp:730
 #, kde-format
@@ -375,13 +375,13 @@ msgstr "केवलं स्थानीयसञ्चिकाः समर�
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
-msgstr ""
+msgstr "<filename>%1</filename> प्रतिबिम्बं लोड् कर्तुं असमर्थम् ।"
 
 #: composer-ng/richtextcomposerimages.cpp:216
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"
-msgstr ""
+msgstr "छवि"
 
 #: composer-ng/richtextexternalcomposer.cpp:71
 #, kde-format
@@ -392,7 +392,7 @@ msgstr "आदेशपङ्क्तिः रिक्तः अस्ति 
 #, kde-format
 msgctxt "@title:window"
 msgid "Empty command line"
-msgstr ""
+msgstr "रिक्तं आदेशपङ्क्तिः"
 
 #: composer-ng/richtextexternalcomposer.cpp:124
 #, kde-format
@@ -408,7 +408,7 @@ msgstr "यदा वयं बाह्यसम्पादकं आरब्
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
-msgstr ""
+msgstr "बाह्य सम्पादकः बन्दः"
 
 #: composer-ng/richtextexternalcomposer.cpp:159
 #, kde-kuit-format
@@ -418,42 +418,45 @@ msgid ""
 "keep it running?<nl/><warning>Stopping the editor will cause all your "
 "unsaved changes to be lost.</warning>"
 msgstr ""
+"बाह्यसम्पादकः अद्यापि चालितः अस्ति।<nl/>किं भवान् सम्पादकं स्थगयितुम् इच्छति वा चालितं "
+"स्थापयितुम् इच्छति वा?<nl/><warning>सम्पादकं स्थगयित्वा भवतः सर्वे असरक्षिताः परिवर्तनाः "
+"नष्टाः भविष्यन्ति।</warning>"
 
 #: composer-ng/richtextexternalcomposer.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
-msgstr ""
+msgstr "बाह्य सम्पादकः चलति"
 
 #: composer-ng/richtextexternalcomposer.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
-msgstr ""
+msgstr "सम्पादकं स्थगयतु"
 
 #: composer-ng/richtextexternalcomposer.cpp:165
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
-msgstr ""
+msgstr "सम्पादकं चालितं कुर्वन्तु"
 
 #: inserthtmldialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
-msgstr ""
+msgstr "HTML सम्मिलितं कुर्वन्तु"
 
 #: inserthtmldialog.cpp:36
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
-msgstr ""
+msgstr "HTML टैग्स् तथा पाठाः सम्मिलिताः कुर्वन्तु:"
 
 #: inserthtmldialog.cpp:42
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
-msgstr ""
+msgstr "उदाहरणम् : <i>नमस्कार शब्द</i>"
 
 #: inserthtmldialog.cpp:51
 #, kde-format
@@ -465,7 +468,7 @@ msgstr "युज्"
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
-msgstr ""
+msgstr "चित्रं सम्मिलितं कुर्वन्तु"
 
 #: insertimagedialog.cpp:36 inserttabledialog.cpp:37 tableactionmenu.cpp:407
 #, kde-format
@@ -476,7 +479,7 @@ msgstr "युज्"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
-msgstr ""
+msgstr "चित्रस्य स्थानम् : १."
 
 #: insertimagewidget.cpp:53
 #, kde-format
@@ -488,19 +491,19 @@ msgstr "चित्रं योजयतु"
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep Original Size"
-msgstr ""
+msgstr "मूल आकार रखें"
 
 #: insertimagewidget.cpp:71
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
-msgstr ""
+msgstr "इमेज रेशियो रखें"
 
 #: insertimagewidget.cpp:77 inserttablewidget.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
-msgstr ""
+msgstr "विस्तार:"
 
 #: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
 #, kde-format
@@ -511,37 +514,37 @@ msgstr " px"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
-msgstr ""
+msgstr "औनत्यम्‌:"
 
 #: insertimagewidget.cpp:110
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"
-msgstr ""
+msgstr "चित्रपूर्वावलोकनम् : १."
 
 #: inserttabledialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Table"
-msgstr ""
+msgstr "सारणी सम्मिलित करें"
 
 #: inserttablewidget.cpp:40
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Rows:"
-msgstr ""
+msgstr "पङ्क्तयः : १."
 
 #: inserttablewidget.cpp:43
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Columns:"
-msgstr ""
+msgstr "स्तम्भाः : १."
 
 #: inserttablewidget.cpp:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Border:"
-msgstr ""
+msgstr "सीमा:"
 
 #: inserttablewidget.cpp:52
 #, no-c-format, kde-format
@@ -611,7 +614,7 @@ msgstr "स्तम्भः पश्चात्"
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
-msgstr ""
+msgstr "कोष्ठक सामग्री"
 
 #: tableactionmenu.cpp:491
 #, kde-format
@@ -622,7 +625,7 @@ msgstr "Join With Cell to the Right इति"
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
-msgstr ""
+msgstr "चयनितकोशिकासु सम्मिलितं कुर्वन्तु"
 
 #: tableactionmenu.cpp:505
 #, kde-format
@@ -633,25 +636,25 @@ msgstr "कोष्ठकाः विभक्ताः"
 #, kde-format
 msgctxt "@action"
 msgid "Table Format…"
-msgstr ""
+msgstr "सारणी प्रारूप..."
 
 #: tableactionmenu.cpp:521
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"
-msgstr ""
+msgstr "सारणी कोष्ठक प्रारूप..."
 
 #: tablecellformatdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Cell Format"
-msgstr ""
+msgstr "कोष्ठक प्रारूप"
 
 #: tablecellformatdialog.cpp:33
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Vertical Alignment:"
-msgstr ""
+msgstr "ऊर्ध्वाधर संरेखणः : १."
 
 #: tablecellformatdialog.cpp:36
 #, kde-format
@@ -672,37 +675,37 @@ msgstr "अधः"
 #, kde-format
 msgctxt "@option:check"
 msgid "Background Color:"
-msgstr ""
+msgstr "पृष्ठभूमि रंगः : १."
 
 #: tableformatdialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Table Format"
-msgstr ""
+msgstr "सारणी प्रारूप"
 
 #: tableformatdialog.cpp:44
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Spacing:"
-msgstr ""
+msgstr "अन्तरालः : १."
 
 #: tableformatdialog.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cells"
-msgstr ""
+msgstr "कोष्ठकानां मध्ये पिक्सेलाः"
 
 #: tableformatdialog.cpp:54
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Padding:"
-msgstr ""
+msgstr "गद्दी : गद्दी : १."
 
 #: tableformatdialog.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cell border and content"
-msgstr ""
+msgstr "कोष्ठसीमायाः सामग्रीयाश्च मध्ये पिक्सेलाः"
 
 #: tableformatdialog.cpp:67
 #, kde-format
@@ -728,4 +731,4 @@ msgstr "प्रमाणय्"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Table Alignment:"
-msgstr ""
+msgstr "सारणी संरेखणः : १."
