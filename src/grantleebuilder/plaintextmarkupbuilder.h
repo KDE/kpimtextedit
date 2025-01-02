@@ -1,5 +1,5 @@
 /*
-  SPDX-FileCopyrightText: 2019-2021 Montel Laurent <montel@kde.org>
+  SPDX-FileCopyrightText: 2019-2025 Laurent Montel <montel@kde.org>
   based on grantlee PlainTextMarkupBuilder
 
   SPDX-License-Identifier: LGPL-2.0-or-later
