@@ -79,6 +79,7 @@ public:
         width->setMinimum(1);
         width->setMaximum(99999);
         width->setEnabled(false);
+        width->setValue(80);
         width->setSuffix(i18n(" px"));
         lab->setBuddy(width);
         q->connect(width, &QSpinBox::valueChanged, q, [this](int val) {
@@ -92,6 +93,7 @@ public:
         lab = new QLabel(i18nc("@label:textbox", "Height:"));
         height = new QSpinBox;
         height->setMinimum(1);
+        height->setValue(80);
         height->setMaximum(99999);
         height->setEnabled(false);
         height->setSuffix(i18n(" px"));
