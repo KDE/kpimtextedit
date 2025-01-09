@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2025-01-09 00:41+0000\n"
 "PO-Revision-Date: 2024-08-01 10:49+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -511,18 +511,18 @@ msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Amplària:"
 
-#: insertimagewidget.cpp:82 insertimagewidget.cpp:97 inserttablewidget.cpp:36
+#: insertimagewidget.cpp:83 insertimagewidget.cpp:99 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
 msgstr " px"
 
-#: insertimagewidget.cpp:92
+#: insertimagewidget.cpp:93
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Alçària:"
 
-#: insertimagewidget.cpp:110
+#: insertimagewidget.cpp:112
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"
