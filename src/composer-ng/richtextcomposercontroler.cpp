@@ -14,7 +14,6 @@
 
 #include "insertimagedialog.h"
 #include "textutils.h"
-#include <KColorScheme>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QClipboard>
@@ -411,7 +410,7 @@ void RichTextComposerControler::setHeadingLevel(int level)
 void RichTextComposerControler::setChangeTextForegroundColor()
 {
     const QColor currentColor = richTextComposer()->textColor();
-    const QColor defaultColor = KColorScheme(QPalette::Active, KColorScheme::View).foreground().color();
+    const QColor defaultColor = richTextComposer()->palette().text().color();
 
     const QColor selectedColor = QColorDialog::getColor(currentColor.isValid() ? currentColor : defaultColor, richTextComposer());
 
@@ -426,7 +425,7 @@ void RichTextComposerControler::setChangeTextBackgroundColor()
 {
     QTextCharFormat fmt = richTextComposer()->textCursor().charFormat();
     const QColor currentColor = fmt.background().color();
-    const QColor defaultColor = KColorScheme(QPalette::Active, KColorScheme::View).foreground().color();
+    const QColor defaultColor = richTextComposer()->palette().base().color();
 
     const QColor selectedColor = QColorDialog::getColor(currentColor.isValid() ? currentColor : defaultColor, richTextComposer());
 
