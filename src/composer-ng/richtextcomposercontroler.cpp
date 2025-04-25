@@ -48,19 +48,9 @@ public:
         delete nestedListHelper;
     }
 
-    void regenerateColorScheme()
-    {
-        mLinkColor = KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::LinkText).color();
-        // TODO update existing link
-    }
-
     QColor linkColor()
     {
-        if (mLinkColor.isValid()) {
-            return mLinkColor;
-        }
-        regenerateColorScheme();
-        return mLinkColor;
+        return richtextComposer->palette().link().color();
     }
 
     void selectLinkText(QTextCursor *cursor) const;
@@ -145,11 +135,6 @@ RichTextComposerControler::RichTextComposerControler(RichTextComposer *richtextC
 }
 
 RichTextComposerControler::~RichTextComposerControler() = default;
-
-void RichTextComposerControler::regenerateColorScheme()
-{
-    d->regenerateColorScheme();
-}
 
 bool RichTextComposerControler::painterActive() const
 {
@@ -892,15 +877,6 @@ QString RichTextComposerControler::toWrappedPlainText(QTextDocument *doc) const
     }
     d->fixupTextEditString(temp);
     return temp;
-}
-
-bool RichTextComposerControler::event(QEvent *ev)
-{
-    if (ev->type() == QEvent::ApplicationPaletteChange) {
-        regenerateColorScheme();
-    }
-
-    return QObject::event(ev);
 }
 
 #include "moc_richtextcomposercontroler.cpp"

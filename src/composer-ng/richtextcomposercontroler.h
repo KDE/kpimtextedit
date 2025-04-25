@@ -92,11 +92,7 @@ public Q_SLOTS:
     void slotFormatPainter(bool active);
     void ensureCursorVisibleDelayed();
 
-protected:
-    bool event(QEvent *ev) override;
-
 private:
-    KPIMTEXTEDIT_NO_EXPORT void regenerateColorScheme();
     class RichTextComposerControllerPrivate;
     std::unique_ptr<RichTextComposerControllerPrivate> const d;
 };
