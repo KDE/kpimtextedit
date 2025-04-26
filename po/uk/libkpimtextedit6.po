@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-09 00:41+0000\n"
+"POT-Creation-Date: 2025-04-26 00:43+0000\n"
 "PO-Revision-Date: 2024-08-01 20:29+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -370,7 +370,7 @@ msgctxt "@action"
 msgid "Checkbox"
 msgstr "Поле для позначки"
 
-#: composer-ng/richtextcomposercontroler.cpp:730
+#: composer-ng/richtextcomposercontroler.cpp:714
 #, kde-format
 msgid "Only local files are supported."
 msgstr "Передбачено підтримку лише локальних файлів."

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-09 00:41+0000\n"
+"POT-Creation-Date: 2025-04-26 00:43+0000\n"
 "PO-Revision-Date: 2024-08-01 04:55+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -372,7 +372,7 @@ msgctxt "@action"
 msgid "Checkbox"
 msgstr "Casilla de verificación"
 
-#: composer-ng/richtextcomposercontroler.cpp:730
+#: composer-ng/richtextcomposercontroler.cpp:714
 #, kde-format
 msgid "Only local files are supported."
 msgstr "Solo se admiten archivos locales."
