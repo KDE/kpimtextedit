@@ -300,6 +300,28 @@ void TextHTMLBuilderTest::testDoubleStartDifferentFinish()
     delete doc;
 }
 
+void TextHTMLBuilderTest::testBug504090()
+{
+    auto doc = new QTextDocument();
+    doc->setHtml(QStringLiteral("You should see a <u>_<foo>_</u> on this line."));
+
+    auto hb = new KPIMTextEdit::TextHTMLBuilder();
+    auto md = new KPIMTextEdit::MarkupDirector(hb);
+    md->processDocument(doc);
+    auto result = hb->getResult();
+
+    qDebug() << " result" << result;
+    auto regex =
+        QRegularExpression(QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Paragraph <strong><em>with</em>&nbsp;some "
+                                          "formatted</strong>&nbsp;text.</p>\\n$"));
+
+    QEXPECT_FAIL("", "Problem with <u>_<foo>_</u>", Continue);
+    QVERIFY(regex.match(result).hasMatch());
+    delete md;
+    delete hb;
+    delete doc;
+}
+
 void TextHTMLBuilderTest::testDoubleStartDifferentFinishReverseOrder()
 {
     auto doc = new QTextDocument();
