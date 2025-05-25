@@ -425,7 +425,7 @@ msgid ""
 "unsaved changes to be lost.</warning>"
 msgstr ""
 "L'editor extern encara es troba en execució.<nl/>Voleu parar l'editor o "
-"mantindre-lo en execució?<nl/><warning>Parar l'editor causarà que es perden "
+"mantindre'l en execució?<nl/><warning>Parar l'editor causarà que es perden "
 "tots els canvis sense guardar.</warning>"
 
 #: composer-ng/richtextexternalcomposer.cpp:163
