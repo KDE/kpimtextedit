@@ -6,6 +6,8 @@
 */
 
 #include "markupdirector.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "markupdirector_p.h"
 
 #include "abstractmarkupbuilder.h"
@@ -291,10 +293,10 @@ QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it, QText
     QString sWidth;
 
     if (tableWidth.type() == QTextLength::PercentageLength) {
-        sWidth = QStringLiteral("%1%");
+        sWidth = u"%1%"_s;
         sWidth = sWidth.arg(tableWidth.rawValue());
     } else if (tableWidth.type() == QTextLength::FixedLength) {
-        sWidth = QStringLiteral("%1");
+        sWidth = u"%1"_s;
         sWidth = sWidth.arg(tableWidth.rawValue());
     }
 
@@ -337,9 +339,9 @@ QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it, QText
             QString sCellWidth;
 
             if (cellWidth.type() == QTextLength::PercentageLength) {
-                sCellWidth = QStringLiteral("%1%").arg(cellWidth.rawValue());
+                sCellWidth = u"%1%"_s.arg(cellWidth.rawValue());
             } else if (cellWidth.type() == QTextLength::FixedLength) {
-                sCellWidth = QStringLiteral("%1").arg(cellWidth.rawValue());
+                sCellWidth = u"%1"_s.arg(cellWidth.rawValue());
             }
 
             // TODO: Use THEAD instead

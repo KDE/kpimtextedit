@@ -5,6 +5,8 @@
 */
 
 #include "testgenerateplaintextbuildergui.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KPIMTextEdit/MarkupDirector>
 #include <KPIMTextEdit/PlainTextMarkupBuilder>
 #include <QApplication>
@@ -17,17 +19,17 @@ TestGeneratePlainTextBuilderGui::TestGeneratePlainTextBuilderGui(QWidget *parent
     : QWidget(parent)
 {
     auto mainLayout = new QVBoxLayout(this);
-    auto lab = new QLabel(QStringLiteral("html text"), this);
+    auto lab = new QLabel(u"html text"_s, this);
     mainLayout->addWidget(lab);
 
     auto htmlEdit = new QTextEdit(this);
     htmlEdit->setAcceptRichText(false);
     mainLayout->addWidget(htmlEdit);
 
-    auto generateHtmlFromQTextEditButton = new QPushButton(QStringLiteral("Generate HTML"), this);
+    auto generateHtmlFromQTextEditButton = new QPushButton(u"Generate HTML"_s, this);
     mainLayout->addWidget(generateHtmlFromQTextEditButton);
 
-    lab = new QLabel(QStringLiteral("Generate Html"), this);
+    lab = new QLabel(u"Generate Html"_s, this);
     mainLayout->addWidget(lab);
 
     auto generatedHtml = new QTextEdit(this);
@@ -35,7 +37,7 @@ TestGeneratePlainTextBuilderGui::TestGeneratePlainTextBuilderGui(QWidget *parent
     generatedHtml->setReadOnly(true);
     mainLayout->addWidget(generatedHtml);
 
-    lab = new QLabel(QStringLiteral("Plaintext from Grantlee to TextEdit"), this);
+    lab = new QLabel(u"Plaintext from Grantlee to TextEdit"_s, this);
     mainLayout->addWidget(lab);
 
     auto generatedPlainTextFromGrantleeToTextEdit = new QTextEdit(this);

@@ -473,7 +473,7 @@ QString RichTextComposer::quotePrefixName() const
     if (!d->quotePrefix.simplified().isEmpty()) {
         return d->quotePrefix;
     } else {
-        return QStringLiteral(">");
+        return u">"_s;
     }
 }
 
@@ -490,12 +490,12 @@ int RichTextComposer::quoteLength(const QString &line, bool oneQuote) const
         int startOfText = -1;
         const int lineLength(line.length());
         for (int i = 0; i < lineLength; ++i) {
-            if (line[i] == QLatin1Char('>') || line[i] == QLatin1Char('|')) {
+            if (line[i] == u'>' || line[i] == u'|') {
                 if (quoteFound && oneQuote) {
                     break;
                 }
                 quoteFound = true;
-            } else if (line[i] != QLatin1Char(' ')) {
+            } else if (line[i] != u' ') {
                 startOfText = i;
                 break;
             }
@@ -527,7 +527,7 @@ const QString RichTextComposer::defaultQuoteSign() const
     if (!d->quotePrefix.simplified().isEmpty()) {
         return d->quotePrefix;
     } else {
-        return QStringLiteral("> ");
+        return u"> "_s;
     }
 }
 
@@ -557,7 +557,7 @@ void RichTextComposer::insertFromMimeData(const QMimeData *source)
                 || sourceText.startsWith("ftp://"_L1) || sourceText.startsWith("mailto:"_L1) || sourceText.startsWith("smb://"_L1)
                 || sourceText.startsWith("file://"_L1) || sourceText.startsWith("webdavs://"_L1) || sourceText.startsWith("imaps://"_L1)
                 || sourceText.startsWith("sftp://"_L1) || sourceText.startsWith("fish://"_L1) || sourceText.startsWith("tel:"_L1)) {
-                insertHtml(QStringLiteral("<a href=\"%1\">%1</a>").arg(sourceText));
+                insertHtml(u"<a href=\"%1\">%1</a>"_s.arg(sourceText));
                 return;
             }
         }

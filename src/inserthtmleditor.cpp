@@ -6,6 +6,8 @@
 */
 
 #include "inserthtmleditor.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "kpimtextedit_debug.h"
 #include <TextCustomEditor/TextEditorCompleter>
 
@@ -23,7 +25,7 @@ InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
     : TextCustomEditor::PlainTextEditor(parent)
     , mTextEditorCompleter(new TextCustomEditor::TextEditorCompleter(this, this))
 {
-    const KSyntaxHighlighting::Definition def = mRepo.definitionForName(QStringLiteral("HTML"));
+    const KSyntaxHighlighting::Definition def = mRepo.definitionForName(u"HTML"_s);
     if (!def.isValid()) {
         qCWarning(KPIMTEXTEDIT_LOG) << "Invalid definition name";
     }
@@ -33,10 +35,10 @@ InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)
                                                                      : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     hl->setDefinition(def);
     setFocus();
-    const QStringList completerList = {QStringLiteral("<b></b>"), QStringLiteral("<i></i>"), QStringLiteral("<u></u>")};
+    const QStringList completerList = {u"<b></b>"_s, u"<i></i>"_s, u"<u></u>"_s};
     // Add more
     mTextEditorCompleter->setCompleterStringList(completerList);
-    mTextEditorCompleter->setExcludeOfCharacters(QStringLiteral("~!@#$%^&*()+{}|,./;'[]\\-= "));
+    mTextEditorCompleter->setExcludeOfCharacters(u"~!@#$%^&*()+{}|,./;'[]\\-= "_s);
 }
 
 InsertHtmlEditor::~InsertHtmlEditor() = default;

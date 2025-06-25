@@ -5,6 +5,8 @@
 */
 
 #include "richtextcomposercontroler.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "inserthtmldialog.h"
 #include "klinkdialog_p.h"
 #include "nestedlisthelper_p.h"
@@ -209,7 +211,7 @@ void RichTextComposerControler::insertHorizontalRule()
     QTextCharFormat cf = cursor.charFormat();
 
     cursor.beginEditBlock();
-    cursor.insertHtml(QStringLiteral("<hr>"));
+    cursor.insertHtml(u"<hr>"_s);
     cursor.insertBlock(bf, cf);
     cursor.endEditBlock();
     richTextComposer()->setTextCursor(cursor);
@@ -536,15 +538,15 @@ QString RichTextComposerControler::toCleanHtml() const
 
     // Qt inserts various style properties based on the current mode of the editor (underline,
     // bold, etc), but only empty paragraphs *also* have qt-paragraph-type set to 'empty'.
-    static const QRegularExpression EMPTYLINEREGEX(QStringLiteral("<p style=\"-qt-paragraph-type:empty;(.*?)</p>"));
+    static const QRegularExpression EMPTYLINEREGEX(u"<p style=\"-qt-paragraph-type:empty;(.*?)</p>"_s);
 
-    static const QString OLLISTPATTERNQT = QStringLiteral("<ol style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
+    static const QString OLLISTPATTERNQT = u"<ol style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;"_s;
 
-    static const QString ULLISTPATTERNQT = QStringLiteral("<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
+    static const QString ULLISTPATTERNQT = u"<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;"_s;
 
-    static const QString ORDEREDLISTHTML = QStringLiteral("<ol style=\"margin-top: 0px; margin-bottom: 0px;");
+    static const QString ORDEREDLISTHTML = u"<ol style=\"margin-top: 0px; margin-bottom: 0px;"_s;
 
-    static const QString UNORDEREDLISTHTML = QStringLiteral("<ul style=\"margin-top: 0px; margin-bottom: 0px;");
+    static const QString UNORDEREDLISTHTML = u"<ul style=\"margin-top: 0px; margin-bottom: 0px;"_s;
 
     // fix 1 - empty lines should show as empty lines - MS Outlook treats margin-top:0px; as
     // a non-existing line.
@@ -620,10 +622,10 @@ void RichTextComposerControler::insertLink(const QString &url)
 
         cursor.setPosition(cursor.selectionEnd());
         cursor.setCharFormat(originalFormat);
-        cursor.insertText(QStringLiteral(" \n"));
+        cursor.insertText(u" \n"_s);
         cursor.endEditBlock();
     } else {
-        richTextComposer()->textCursor().insertText(url + QLatin1Char('\n'));
+        richTextComposer()->textCursor().insertText(url + u'\n');
     }
 }
 
@@ -805,11 +807,11 @@ void RichTextComposerControler::addQuotes(const QString &defaultQuote)
 QString RichTextComposerControler::RichTextComposerControllerPrivate::addQuotesToText(const QString &inputText, const QString &defaultQuoteSign)
 {
     QString answer = inputText;
-    answer.replace(QLatin1Char('\n'), QLatin1Char('\n') + defaultQuoteSign);
+    answer.replace(u'\n', u'\n' + defaultQuoteSign);
     // cursor.selectText() as QChar::ParagraphSeparator as paragraph separator.
-    answer.replace(QChar::ParagraphSeparator, QLatin1Char('\n') + defaultQuoteSign);
+    answer.replace(QChar::ParagraphSeparator, u'\n' + defaultQuoteSign);
     answer.prepend(defaultQuoteSign);
-    answer += QLatin1Char('\n');
+    answer += u'\n';
     return richtextComposer->smartQuote(answer);
 }
 
@@ -818,7 +820,7 @@ void RichTextComposerControler::slotFormatPainter(bool active)
     if (active) {
         d->painterFormat = richTextComposer()->currentCharFormat();
         d->painterActive = true;
-        richTextComposer()->viewport()->setCursor(QCursor(QIcon::fromTheme(QStringLiteral("draw-brush")).pixmap(32, 32), 0, 32));
+        richTextComposer()->viewport()->setCursor(QCursor(QIcon::fromTheme(u"draw-brush"_s).pixmap(32, 32), 0, 32));
     } else {
         d->painterFormat = QTextCharFormat();
         d->painterActive = false;
@@ -849,7 +851,7 @@ QString RichTextComposerControler::toWrappedPlainText() const
 QString RichTextComposerControler::toWrappedPlainText(QTextDocument *doc) const
 {
     QString temp;
-    static const QRegularExpression rx(QStringLiteral("(http|ftp|ldap)s?\\S+-$"));
+    static const QRegularExpression rx(u"(http|ftp|ldap)s?\\S+-$"_s);
     QTextBlock block = doc->begin();
     while (block.isValid()) {
         QTextLayout *layout = block.layout();
@@ -859,19 +861,19 @@ QString RichTextComposerControler::toWrappedPlainText(QTextDocument *doc) const
             const QTextLine line = layout->lineAt(i);
             const QString lineText = block.text().mid(line.textStart(), line.textLength());
 
-            if (lineText.contains(rx) || (urlStart && !lineText.contains(QLatin1Char(' ')) && lineText.endsWith(QLatin1Char('-')))) {
+            if (lineText.contains(rx) || (urlStart && !lineText.contains(u' ') && lineText.endsWith(u'-'))) {
                 // don't insert line break in URL
                 temp += lineText;
                 urlStart = true;
             } else {
-                temp += lineText + QLatin1Char('\n');
+                temp += lineText + u'\n';
             }
         }
         block = block.next();
     }
 
     // Remove the last superfluous newline added above
-    if (temp.endsWith(QLatin1Char('\n'))) {
+    if (temp.endsWith(u'\n')) {
         temp.chop(1);
     }
     d->fixupTextEditString(temp);

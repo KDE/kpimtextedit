@@ -5,6 +5,8 @@
 */
 
 #include "richtextcomposeractionstest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../richtextcomposer.h"
 #include "../richtextcomposeractions.h"
 #include "../richtextcomposercontroler.h"
@@ -46,20 +48,15 @@ void RichTextComposerActionsTest::shouldHaveActions()
     composerActions.createActions(actionCollection);
 
     QStringList lst;
-    lst << QStringLiteral("format_align_left") << QStringLiteral("format_align_center") << QStringLiteral("format_align_right")
-        << QStringLiteral("format_align_justify") << QStringLiteral("direction_ltr") << QStringLiteral("direction_rtl")
-        << QStringLiteral("format_text_subscript") << QStringLiteral("format_text_superscript") << QStringLiteral("format_text_bold")
-        << QStringLiteral("format_text_italic") << QStringLiteral("format_text_underline") << QStringLiteral("format_text_strikeout")
-        << QStringLiteral("format_font_family") << QStringLiteral("format_font_size") << QStringLiteral("insert_horizontal_rule")
-        << QStringLiteral("format_text_foreground_color") << QStringLiteral("format_text_background_color") << QStringLiteral("manage_link")
-        << QStringLiteral("format_list_indent_less") << QStringLiteral("format_list_indent_more") << QStringLiteral("format_list_style")
-        << QStringLiteral("add_image") << QStringLiteral("insert_html") << QStringLiteral("insert_table") << QStringLiteral("delete_line")
-        << QStringLiteral("format_reset") << QStringLiteral("format_painter") << QStringLiteral("format_heading_level")
-        << QStringLiteral("format_list_checkbox");
+    lst << u"format_align_left"_s << u"format_align_center"_s << u"format_align_right"_s << u"format_align_justify"_s << u"direction_ltr"_s
+        << u"direction_rtl"_s << u"format_text_subscript"_s << u"format_text_superscript"_s << u"format_text_bold"_s << u"format_text_italic"_s
+        << u"format_text_underline"_s << u"format_text_strikeout"_s << u"format_font_family"_s << u"format_font_size"_s << u"insert_horizontal_rule"_s
+        << u"format_text_foreground_color"_s << u"format_text_background_color"_s << u"manage_link"_s << u"format_list_indent_less"_s
+        << u"format_list_indent_more"_s << u"format_list_style"_s << u"add_image"_s << u"insert_html"_s << u"insert_table"_s << u"delete_line"_s
+        << u"format_reset"_s << u"format_painter"_s << u"format_heading_level"_s << u"format_list_checkbox"_s;
 
     QStringList actionNoRichText;
-    actionNoRichText << QStringLiteral("paste_quoted") << QStringLiteral("tools_quote") << QStringLiteral("tools_unquote") << QStringLiteral("add_emoticon")
-                     << QStringLiteral("paste_without_formatting");
+    actionNoRichText << u"paste_quoted"_s << u"tools_quote"_s << u"tools_unquote"_s << u"add_emoticon"_s << u"paste_without_formatting"_s;
 
     // QCOMPARE(lst.count(), composerActions.numberOfActions());
     for (QAction *act : actionCollection->actions()) {
@@ -84,8 +81,7 @@ void RichTextComposerActionsTest::shouldChangeEnableState()
     composerActions.createActions(actionCollection);
 
     QStringList actionNoRichText;
-    actionNoRichText << QStringLiteral("paste_quoted") << QStringLiteral("tools_quote") << QStringLiteral("tools_unquote") << QStringLiteral("add_emoticon")
-                     << QStringLiteral("paste_without_formatting");
+    actionNoRichText << u"paste_quoted"_s << u"tools_quote"_s << u"tools_unquote"_s << u"add_emoticon"_s << u"paste_without_formatting"_s;
 
     composerActions.setActionsEnabled(false);
     for (QAction *act : actionCollection->actions()) {

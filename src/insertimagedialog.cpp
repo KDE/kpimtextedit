@@ -6,6 +6,8 @@
 */
 
 #include "insertimagedialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "insertimagewidget.h"
 
 #include <KLocalizedString>

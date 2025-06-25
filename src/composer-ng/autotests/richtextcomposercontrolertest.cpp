@@ -5,6 +5,8 @@
 */
 
 #include "richtextcomposercontrolertest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../richtextcomposer.h"
 #include "../richtextcomposercontroler.h"
 #include <KActionCollection>
@@ -208,20 +210,20 @@ void RichTextComposerControlerTest::shouldRemoveQuote_data()
 {
     QTest::addColumn<QString>("input");
     QTest::addColumn<QString>("output");
-    QTest::newRow("removequote1") << QStringLiteral(">foo\n>bla\n>blo\n") << QStringLiteral("foo\nbla\nblo\n");
-    QTest::newRow("withoutquote") << QStringLiteral("bli\nblo\bla\n") << QStringLiteral("bli\nblo\bla\n");
-    QTest::newRow("removequote2") << QStringLiteral(">foo\n>bla\n>blo") << QStringLiteral("foo\nbla\nblo");
+    QTest::newRow("removequote1") << u">foo\n>bla\n>blo\n"_s << u"foo\nbla\nblo\n"_s;
+    QTest::newRow("withoutquote") << u"bli\nblo\bla\n"_s << u"bli\nblo\bla\n"_s;
+    QTest::newRow("removequote2") << u">foo\n>bla\n>blo"_s << u"foo\nbla\nblo"_s;
     QTest::newRow("empty") << QString() << QString();
     // Bug David, new line with quote
-    QTest::newRow("removequotewithnewline") << QStringLiteral(">foo\n>\n>bla\n>blo\n") << QStringLiteral("foo\n\nbla\nblo\n");
+    QTest::newRow("removequotewithnewline") << u">foo\n>\n>bla\n>blo\n"_s << u"foo\n\nbla\nblo\n"_s;
 
-    QTest::newRow("removequote2") << QStringLiteral(">foo\n\nbla\n>blo\nbli") << QStringLiteral("foo\n\nbla\nblo\nbli");
-    QTest::newRow("removequote2withspace") << QStringLiteral("> foo\n\nbla\n> blo\nbli") << QStringLiteral("foo\n\nbla\nblo\nbli");
+    QTest::newRow("removequote2") << u">foo\n\nbla\n>blo\nbli"_s << u"foo\n\nbla\nblo\nbli"_s;
+    QTest::newRow("removequote2withspace") << u"> foo\n\nbla\n> blo\nbli"_s << u"foo\n\nbla\nblo\nbli"_s;
 
-    QTest::newRow("twoquotes") << QStringLiteral(">>foo\n\nbla\n>blo\nbli") << QStringLiteral(">foo\n\nbla\nblo\nbli");
+    QTest::newRow("twoquotes") << u">>foo\n\nbla\n>blo\nbli"_s << u">foo\n\nbla\nblo\nbli"_s;
 
-    QTest::newRow("quoteintext") << QStringLiteral("foo>>\n\nbla\n>blo\nbli") << QStringLiteral("foo>>\n\nbla\nblo\nbli");
-    QTest::newRow("emptyline") << QStringLiteral("foo>>\n\n\nbla\n>blo\nbli") << QStringLiteral("foo>>\n\n\nbla\nblo\nbli");
+    QTest::newRow("quoteintext") << u"foo>>\n\nbla\n>blo\nbli"_s << u"foo>>\n\nbla\nblo\nbli"_s;
+    QTest::newRow("emptyline") << u"foo>>\n\n\nbla\n>blo\nbli"_s << u"foo>>\n\n\nbla\nblo\nbli"_s;
 }
 
 void RichTextComposerControlerTest::shouldRemoveQuote()
@@ -246,10 +248,10 @@ void RichTextComposerControlerTest::shouldRemoveQuoteWithSpecificQuote_data()
     QTest::addColumn<QString>("output");
     QTest::addColumn<QString>("quote");
     QTest::newRow("empty") << QString() << QString() << QString();
-    QTest::newRow("empty1") << QString() << QString() << QStringLiteral("QT");
-    QTest::newRow("removequote1") << QStringLiteral(">foo\n>bla\n>blo\n") << QStringLiteral(">foo\n>bla\n>blo\n") << QStringLiteral("QT");
-    QTest::newRow("removequote2") << QStringLiteral("QTfoo\nQTbla\n>blo\n") << QStringLiteral("foo\nbla\n>blo\n") << QStringLiteral("QT");
-    QTest::newRow("removequote3") << QStringLiteral("|foo\n|bla\n>blo\n") << QStringLiteral("foo\nbla\n>blo\n") << QStringLiteral("|");
+    QTest::newRow("empty1") << QString() << QString() << u"QT"_s;
+    QTest::newRow("removequote1") << u">foo\n>bla\n>blo\n"_s << u">foo\n>bla\n>blo\n"_s << u"QT"_s;
+    QTest::newRow("removequote2") << u"QTfoo\nQTbla\n>blo\n"_s << u"foo\nbla\n>blo\n"_s << u"QT"_s;
+    QTest::newRow("removequote3") << u"|foo\n|bla\n>blo\n"_s << u"foo\nbla\n>blo\n"_s << u"|"_s;
 }
 
 void RichTextComposerControlerTest::shouldRemoveQuoteWithSpecificQuote()
@@ -276,10 +278,10 @@ void RichTextComposerControlerTest::shouldAddQuote_data()
     //    QTest::addColumn<QString>("output");
     //    QTest::addColumn<QString>("quote");
     //    QTest::newRow("empty") << QString() << QString() << QString();
-    //    QTest::newRow("empty1") << QString() << QString() << QStringLiteral("QT");
-    //    QTest::newRow("removequote1") << QStringLiteral(">foo\n>bla\n>blo\n") << QStringLiteral("QT>foo\nQT>bla\nQT>blo\n") << QStringLiteral("QT");
-    //    QTest::newRow("removequote2") << QStringLiteral("QTfoo\nQTbla\n>blo\n") << QStringLiteral("QTQTfoo\nQTQTbla\n>QTblo\n") << QStringLiteral("QT");
-    //    QTest::newRow("removequote3") << QStringLiteral("|foo\n|bla\n>blo\n") << QStringLiteral("||foo\n||bla\n|>blo\n") << QStringLiteral("|");
+    //    QTest::newRow("empty1") << QString() << QString() << u"QT"_s;
+    //    QTest::newRow("removequote1") << u">foo\n>bla\n>blo\n"_s << u"QT>foo\nQT>bla\nQT>blo\n"_s << u"QT"_s;
+    //    QTest::newRow("removequote2") << u"QTfoo\nQTbla\n>blo\n"_s << u"QTQTfoo\nQTQTbla\n>QTblo\n"_s << u"QT"_s;
+    //    QTest::newRow("removequote3") << u"|foo\n|bla\n>blo\n"_s << u"||foo\n||bla\n|>blo\n"_s << u"|"_s;
 }
 
 void RichTextComposerControlerTest::shouldAddQuote()

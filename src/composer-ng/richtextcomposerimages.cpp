@@ -58,7 +58,7 @@ void RichTextComposerImages::addImageHelper(const QUrl &url, int width, int heig
         return;
     }
     const QFileInfo fi(url.path());
-    const QString imageName = fi.baseName().isEmpty() ? QStringLiteral("image.png") : QString(fi.baseName() + ".png"_L1);
+    const QString imageName = fi.baseName().isEmpty() ? u"image.png"_s : QString(fi.baseName() + ".png"_L1);
     if (width != -1 && height != -1 && (image.width() > width && image.height() > height)) {
         image = image.scaled(width, height);
     }
@@ -117,7 +117,7 @@ void RichTextComposerImages::addImageHelper(const QString &imageName, const QIma
             // use the same name
             break;
         }
-        const int firstDot = imageName.indexOf(QLatin1Char('.'));
+        const int firstDot = imageName.indexOf(u'.');
         if (firstDot == -1) {
             imageNameToAdd = imageName + QString::number(imageNumber++);
         } else {
@@ -182,7 +182,7 @@ QSharedPointer<EmbeddedImage> RichTextComposerImages::createEmbeddedImage(const 
     QSharedPointer<EmbeddedImage> embeddedImage(new EmbeddedImage());
     embeddedImage->image = KCodecs::Codec::codecForName("base64")->encode(buffer.buffer());
     embeddedImage->imageName = imageName;
-    embeddedImage->contentID = QStringLiteral("%1@KDE").arg(QRandomGenerator::global()->generate64());
+    embeddedImage->contentID = u"%1@KDE"_s.arg(QRandomGenerator::global()->generate64());
     return embeddedImage;
 }
 

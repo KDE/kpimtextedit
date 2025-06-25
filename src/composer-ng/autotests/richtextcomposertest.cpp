@@ -5,6 +5,8 @@
 */
 
 #include "richtextcomposertest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../richtextcomposer.h"
 #include <KCodecs>
 #include <QSignalSpy>
@@ -29,7 +31,7 @@ RichTextComposerTest::RichTextComposerTest(QObject *parent)
     : QObject(parent)
 {
     qRegisterMetaType<KPIMTextEdit::RichTextComposer::Mode>();
-    QIcon::setThemeName(QStringLiteral("breeze"));
+    QIcon::setThemeName(u"breeze"_s);
     QStandardPaths::setTestModeEnabled(true);
 }
 
@@ -48,7 +50,7 @@ void RichTextComposerTest::testFormattingUsed()
 
     // Insert some text.
     QTextCursor cursor(textEdit.document());
-    cursor.insertText(QStringLiteral("Hello World!!"));
+    cursor.insertText(u"Hello World!!"_s);
     QVERIFY(!textEdit.composerControler()->isFormattingUsed());
     cursor.setPosition(1);
     textEdit.setTextCursor(cursor);
@@ -56,14 +58,14 @@ void RichTextComposerTest::testFormattingUsed()
     //
     // Test link
     //
-    QString someUrl = QStringLiteral("http://www.test.de");
-    QString altText = QStringLiteral("Hello");
+    QString someUrl = u"http://www.test.de"_s;
+    QString altText = u"Hello"_s;
     textEdit.composerControler()->updateLink(someUrl, altText);
     QVERIFY(textEdit.composerControler()->isFormattingUsed());
     QCOMPARE(textEdit.composerControler()->currentLinkText(), altText);
     cursor.setPosition(1);
     textEdit.setTextCursor(cursor);
-    textEdit.composerControler()->updateLink(QString(), QStringLiteral("Hello"));
+    textEdit.composerControler()->updateLink(QString(), u"Hello"_s);
     QVERIFY(textEdit.composerControler()->currentLinkUrl().isEmpty());
     QVERIFY(!textEdit.composerControler()->currentLinkText().isEmpty());
     QVERIFY(!textEdit.composerControler()->isFormattingUsed());
@@ -111,7 +113,7 @@ void RichTextComposerTest::testFormattingUsed()
     //
     // Test font attributes
     //
-    textEdit.setFontFamily(QStringLiteral("Times"));
+    textEdit.setFontFamily(u"Times"_s);
     QVERIFY(textEdit.composerControler()->isFormattingUsed());
     textEdit.setFontFamily(textEdit.document()->defaultFont().family());
     QVERIFY(textEdit.composerControler()->isFormattingUsed());
@@ -167,7 +169,7 @@ void RichTextComposerTest::testFormattingUsed()
     QVERIFY(textEdit.composerControler()->isFormattingUsed());
     // No way to easily remove the horizontal line, so clear the text edit and start over
     textEdit.clear();
-    cursor.insertText(QStringLiteral("Hello World!!"));
+    cursor.insertText(u"Hello World!!"_s);
     QVERIFY(!textEdit.composerControler()->isFormattingUsed());
     cursor.setPosition(1);
     textEdit.setTextCursor(cursor);
@@ -187,7 +189,7 @@ void RichTextComposerTest::testFormattingUsed()
     //
     // Image
     //
-    const QString imagePath = KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false);
+    const QString imagePath = KIconLoader::global()->iconPath(u"folder-new"_s, KIconLoader::Small, false);
     textEdit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(imagePath));
     QVERIFY(textEdit.composerControler()->isFormattingUsed());
     cursor = textEdit.textCursor();
@@ -200,27 +202,26 @@ void RichTextComposerTest::testQuoting()
 {
     KPIMTextEdit::RichTextComposer edit;
     edit.createActions(new KActionCollection(this));
-    QVERIFY(edit.isLineQuoted(QStringLiteral("> Hello")));
-    QVERIFY(edit.isLineQuoted(QStringLiteral(">Hello")));
-    QVERIFY(!edit.isLineQuoted(QStringLiteral("Hello")));
-    QCOMPARE(edit.quoteLength(QStringLiteral("Hello")), 0);
-    QCOMPARE(edit.quoteLength(QStringLiteral(">Hello")), 1);
-    QCOMPARE(edit.quoteLength(QStringLiteral("> Hello")), 2);
-    QCOMPARE(edit.quoteLength(QStringLiteral(">>>Hello")), 3);
-    QCOMPARE(edit.quoteLength(QStringLiteral("> > > Hello")), 6);
-    QCOMPARE(edit.quoteLength(QStringLiteral("|Hello")), 1);
-    QCOMPARE(edit.quoteLength(QStringLiteral("| |Hello")), 3);
+    QVERIFY(edit.isLineQuoted(u"> Hello"_s));
+    QVERIFY(edit.isLineQuoted(u">Hello"_s));
+    QVERIFY(!edit.isLineQuoted(u"Hello"_s));
+    QCOMPARE(edit.quoteLength(u"Hello"_s), 0);
+    QCOMPARE(edit.quoteLength(u">Hello"_s), 1);
+    QCOMPARE(edit.quoteLength(u"> Hello"_s), 2);
+    QCOMPARE(edit.quoteLength(u">>>Hello"_s), 3);
+    QCOMPARE(edit.quoteLength(u"> > > Hello"_s), 6);
+    QCOMPARE(edit.quoteLength(u"|Hello"_s), 1);
+    QCOMPARE(edit.quoteLength(u"| |Hello"_s), 3);
 }
 
 void RichTextComposerTest::testCleanText()
 {
     KPIMTextEdit::RichTextComposer edit;
     edit.createActions(new KActionCollection(this));
-    QString html(QStringLiteral("<html><head></head><body>Heelllo&nbsp;World<br>Bye!</body></html>"));
-    QString plain(QStringLiteral("Heelllo World\nBye!"));
+    QString html(u"<html><head></head><body>Heelllo&nbsp;World<br>Bye!</body></html>"_s);
+    QString plain(u"Heelllo World\nBye!"_s);
     edit.setTextOrHtml(html);
-    edit.composerControler()->composerImages()->addImage(
-        QUrl::fromLocalFile(KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false)));
+    edit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(KIconLoader::global()->iconPath(u"folder-new"_s, KIconLoader::Small, false)));
     QVERIFY(edit.textMode() == KPIMTextEdit::RichTextComposer::Rich);
     QCOMPARE(edit.composerControler()->toCleanPlainText(), plain);
 
@@ -234,12 +235,12 @@ void RichTextComposerTest::testEnter_data()
     QTest::addColumn<QString>("expectedText");
     QTest::addColumn<int>("cursorPos");
 
-    QTest::newRow("") << QStringLiteral("> Hello World") << QStringLiteral("> Hello \n> World") << 8;
-    QTest::newRow("") << QStringLiteral("Hello World") << QStringLiteral("Hello \nWorld") << 6;
-    QTest::newRow("") << QStringLiteral("> Hello World") << QStringLiteral("> Hello World\n") << 13;
-    QTest::newRow("") << QStringLiteral(">Hello World") << QStringLiteral(">Hello \n>World") << 7;
-    QTest::newRow("") << QStringLiteral("> > Hello World") << QStringLiteral("> > Hello \n> > World") << 10;
-    QTest::newRow("") << QStringLiteral("| | Hello World") << QStringLiteral("| | Hello \n| | World") << 10;
+    QTest::newRow("") << u"> Hello World"_s << u"> Hello \n> World"_s << 8;
+    QTest::newRow("") << u"Hello World"_s << u"Hello \nWorld"_s << 6;
+    QTest::newRow("") << u"> Hello World"_s << u"> Hello World\n"_s << 13;
+    QTest::newRow("") << u">Hello World"_s << u">Hello \n>World"_s << 7;
+    QTest::newRow("") << u"> > Hello World"_s << u"> > Hello \n> > World"_s << 10;
+    QTest::newRow("") << u"| | Hello World"_s << u"| | Hello \n| | World"_s << 10;
 }
 
 void RichTextComposerTest::testEnter()
@@ -263,8 +264,8 @@ void RichTextComposerTest::testImages()
 {
     KPIMTextEdit::RichTextComposer edit;
     edit.createActions(new KActionCollection(this));
-    QString image1Path = KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false);
-    QString image2Path = KIconLoader::global()->iconPath(QStringLiteral("arrow-up"), KIconLoader::Small, false);
+    QString image1Path = KIconLoader::global()->iconPath(u"folder-new"_s, KIconLoader::Small, false);
+    QString image2Path = KIconLoader::global()->iconPath(u"arrow-up"_s, KIconLoader::Small, false);
 
     // Add one image, check that embeddedImages() returns the right stuff
     edit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1Path));
@@ -335,16 +336,16 @@ void RichTextComposerTest::testImageHtmlCode()
 {
     KPIMTextEdit::RichTextComposer edit;
     edit.createActions(new KActionCollection(this));
-    QString image1Path = KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false);
-    QString image2Path = KIconLoader::global()->iconPath(QStringLiteral("arrow-up"), KIconLoader::Small, false);
+    QString image1Path = KIconLoader::global()->iconPath(u"folder-new"_s, KIconLoader::Small, false);
+    QString image2Path = KIconLoader::global()->iconPath(u"arrow-up"_s, KIconLoader::Small, false);
     edit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1Path));
     edit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image2Path));
     KPIMTextEdit::ImageList images = edit.composerControler()->composerImages()->embeddedImages();
     QCOMPARE(images.size(), 2);
     KPIMTextEdit::EmbeddedImage *image1 = images.first().data();
     KPIMTextEdit::EmbeddedImage *image2 = images.last().data();
-    QString startHtml = QStringLiteral("<img src=\"arrow-up.png\"><img src=\"folder-new.png\">Bla<b>Blub</b>");
-    QString endHtml = QStringLiteral("<img src=\"cid:%1\"><img src=\"cid:%2\">Bla<b>Blub</b>").arg(image2->contentID, image1->contentID);
+    QString startHtml = u"<img src=\"arrow-up.png\"><img src=\"folder-new.png\">Bla<b>Blub</b>"_s;
+    QString endHtml = u"<img src=\"cid:%1\"><img src=\"cid:%2\">Bla<b>Blub</b>"_s.arg(image2->contentID, image1->contentID);
     QCOMPARE(KPIMTextEdit::RichTextComposerImages::imageNamesToContentIds(startHtml.toLatin1(), images), endHtml.toLatin1());
 }
 
@@ -354,19 +355,19 @@ void RichTextComposerTest::testDeleteLine_data()
     QTest::addColumn<QString>("expectedText");
     QTest::addColumn<int>("cursorPos");
 
-    QTest::newRow("delete1") << QStringLiteral("line1\nline2\nline3") << QStringLiteral("line1\nline3") << 6;
-    QTest::newRow("delete2") << QStringLiteral("line1\nline2\nline3") << QStringLiteral("line2\nline3") << 5;
-    QTest::newRow("delete3") << QStringLiteral("line1\nline2\nline3") << QStringLiteral("line1\nline3") << 11;
-    QTest::newRow("delete4") << QStringLiteral("line1\nline2\nline3") << QStringLiteral("line2\nline3") << 0;
-    QTest::newRow("delete5") << QStringLiteral("line1\nline2\nline3") << QStringLiteral("line1\nline2") << 17;
-    QTest::newRow("delete6") << QStringLiteral("line1") << QString() << 0;
-    QTest::newRow("delete7") << QStringLiteral("line1") << QString() << 5;
+    QTest::newRow("delete1") << u"line1\nline2\nline3"_s << u"line1\nline3"_s << 6;
+    QTest::newRow("delete2") << u"line1\nline2\nline3"_s << u"line2\nline3"_s << 5;
+    QTest::newRow("delete3") << u"line1\nline2\nline3"_s << u"line1\nline3"_s << 11;
+    QTest::newRow("delete4") << u"line1\nline2\nline3"_s << u"line2\nline3"_s << 0;
+    QTest::newRow("delete5") << u"line1\nline2\nline3"_s << u"line1\nline2"_s << 17;
+    QTest::newRow("delete6") << u"line1"_s << QString() << 0;
+    QTest::newRow("delete7") << u"line1"_s << QString() << 5;
 
     // Now, test deletion with word wrapping. The line with the Ms is so long that it will get wrapped
-    QTest::newRow("delete8") << QStringLiteral("line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
-                             << QStringLiteral("line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3") << 6;
-    QTest::newRow("delete9") << QStringLiteral("line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3")
-                             << QStringLiteral("line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3") << 13;
+    QTest::newRow("delete8") << u"line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3"_s
+                             << u"line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3"_s << 6;
+    QTest::newRow("delete9") << u"line1\nMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3"_s
+                             << u"line1\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nline3"_s << 13;
 }
 
 void RichTextComposerTest::testDeleteLine()
@@ -394,30 +395,30 @@ void RichTextComposerTest::testLoadImage()
 {
     KPIMTextEdit::RichTextComposer edit;
     edit.createActions(new KActionCollection(this));
-    QString image1Path = KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false);
-    QString image2Path = KIconLoader::global()->iconPath(QStringLiteral("arrow-up"), KIconLoader::Small, false);
+    QString image1Path = KIconLoader::global()->iconPath(u"folder-new"_s, KIconLoader::Small, false);
+    QString image2Path = KIconLoader::global()->iconPath(u"arrow-up"_s, KIconLoader::Small, false);
     QImage image1;
     QImage image2;
     QVERIFY(image1.load(image1Path));
     QVERIFY(image2.load(image2Path));
 
-    edit.setHtml(QStringLiteral("Bla<img src=\"folder-new.png\">Bla"));
+    edit.setHtml(u"Bla<img src=\"folder-new.png\">Bla"_s);
 
     // First try to load an image with a name that doesn't match, it should fail
-    edit.composerControler()->composerImages()->loadImage(image1, QStringLiteral("doesntmatch"), QStringLiteral("folder-new"));
-    QVERIFY(!edit.document()->resource(QTextDocument::ImageResource, QUrl(QStringLiteral("folder-new"))).isValid());
+    edit.composerControler()->composerImages()->loadImage(image1, u"doesntmatch"_s, u"folder-new"_s);
+    QVERIFY(!edit.document()->resource(QTextDocument::ImageResource, QUrl(u"folder-new"_s)).isValid());
 
     // Now, load the image for real
-    edit.composerControler()->composerImages()->loadImage(image1, QStringLiteral("folder-new.png"), QStringLiteral("folder-new"));
-    QVERIFY(edit.document()->resource(QTextDocument::ImageResource, QUrl(QStringLiteral("folder-new"))).isValid());
+    edit.composerControler()->composerImages()->loadImage(image1, u"folder-new.png"_s, u"folder-new"_s);
+    QVERIFY(edit.document()->resource(QTextDocument::ImageResource, QUrl(u"folder-new"_s)).isValid());
 
     // New test with a new textedit (so that we don't use the cached resources
     // This example has two images in the same text block, make sure that doesn't crash (bug 204214)
     KPIMTextEdit::RichTextComposer edit2;
     edit2.createActions(new KActionCollection(this));
-    edit2.setHtml(QStringLiteral("<img src=\"folder-new.png\"><img src=\"folder-new.png\">"));
-    edit2.composerControler()->composerImages()->loadImage(image1, QStringLiteral("folder-new.png"), QStringLiteral("folder-new"));
-    QVERIFY(edit.document()->resource(QTextDocument::ImageResource, QUrl(QStringLiteral("folder-new"))).isValid());
+    edit2.setHtml(u"<img src=\"folder-new.png\"><img src=\"folder-new.png\">"_s);
+    edit2.composerControler()->composerImages()->loadImage(image1, u"folder-new.png"_s, u"folder-new"_s);
+    QVERIFY(edit.document()->resource(QTextDocument::ImageResource, QUrl(u"folder-new"_s)).isValid());
     QCOMPARE(edit.composerControler()->composerImages()->embeddedImages().size(), 1);
 }
 
@@ -434,12 +435,12 @@ void RichTextComposerTest::testWrappedPlainText_data()
         "ldap://example.org/test-test-test-test-test-test-test-test-test-test-test-test-test");
     QTest::newRow("default") << defaultStr << defaultStr;
     QTest::newRow("empty") << QString() << QString();
-    QTest::newRow("wrap") << QStringLiteral("foosdfsdf sdsf sdfsdfsfs fsf sdfs df sfsdf dsf sdfsdf sf sf sfsdf sdsdf")
-                          << QStringLiteral("foosdfsdf sdsf sdfsdfsfs fsf sdfs df sfsdf \ndsf sdfsdf sf sf sfsdf sdsdf");
-    QTest::newRow("wrap-2") << QStringLiteral("test-test-test-test-test-test-test-test-test-test-test-test-test")
-                            << QStringLiteral("test-test-test-test-test-test-test-test-\ntest-test-test-test-test");
-    QTest::newRow("wrap-3") << QStringLiteral("test-test-test-test-test-test-test-test-test-test-test-test-test\n\n")
-                            << QStringLiteral("test-test-test-test-test-test-test-test-\ntest-test-test-test-test\n\n");
+    QTest::newRow("wrap") << u"foosdfsdf sdsf sdfsdfsfs fsf sdfs df sfsdf dsf sdfsdf sf sf sfsdf sdsdf"_s
+                          << u"foosdfsdf sdsf sdfsdfsfs fsf sdfs df sfsdf \ndsf sdfsdf sf sf sfsdf sdsdf"_s;
+    QTest::newRow("wrap-2") << u"test-test-test-test-test-test-test-test-test-test-test-test-test"_s
+                            << u"test-test-test-test-test-test-test-test-\ntest-test-test-test-test"_s;
+    QTest::newRow("wrap-3") << u"test-test-test-test-test-test-test-test-test-test-test-test-test\n\n"_s
+                            << u"test-test-test-test-test-test-test-test-\ntest-test-test-test-test\n\n"_s;
 }
 
 void RichTextComposerTest::testWrappedPlainText()

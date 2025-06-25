@@ -107,7 +107,7 @@ QString TextUtils::flowText(QString &wrappedText, const QString &indent, int max
     QString result;
     while (!wrappedText.isEmpty()) {
         // first check for the next newline. if it's before maxLength, break there, and continue
-        int newLine = wrappedText.indexOf(QLatin1Char('\n'));
+        int newLine = wrappedText.indexOf(u'\n');
         if (newLine > 0 && newLine <= maxLength) {
             result += indent + wrappedText.left(newLine + 1);
             wrappedText = wrappedText.mid(newLine + 1);
@@ -119,7 +119,7 @@ QString TextUtils::flowText(QString &wrappedText, const QString &indent, int max
         int breakPosition;
         if (wrappedText.length() > maxLength) {
             breakPosition = maxLength;
-            while ((breakPosition >= 0) && (wrappedText[breakPosition] != QLatin1Char(' '))) {
+            while ((breakPosition >= 0) && (wrappedText[breakPosition] != u' ')) {
                 breakPosition--;
             }
             if (breakPosition <= 0) {
@@ -138,11 +138,11 @@ QString TextUtils::flowText(QString &wrappedText, const QString &indent, int max
         }
 
         // Strip leading whitespace of new lines, since that looks strange
-        if (!result.isEmpty() && line.startsWith(QLatin1Char(' '))) {
+        if (!result.isEmpty() && line.startsWith(u' ')) {
             line.remove(0, 1);
         }
 
-        result += indent + line + QLatin1Char('\n');
+        result += indent + line + u'\n';
     }
 
     return result.left(result.length() - 1);

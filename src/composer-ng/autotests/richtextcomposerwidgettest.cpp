@@ -5,6 +5,8 @@
 */
 
 #include "richtextcomposerwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../richtextcomposerwidget.h"
 #include "kpimtextedit/richtextcomposer.h"
 #include <QTest>
@@ -19,7 +21,7 @@ RichTextComposerWidgetTest::~RichTextComposerWidgetTest() = default;
 void RichTextComposerWidgetTest::shouldHaveDefaultValue()
 {
     KPIMTextEdit::RichTextComposerWidget w;
-    auto composer = w.findChild<KPIMTextEdit::RichTextComposer *>(QStringLiteral("richtextcomposer"));
+    auto composer = w.findChild<KPIMTextEdit::RichTextComposer *>(u"richtextcomposer"_s);
     QVERIFY(composer);
     QVERIFY(w.richTextComposer());
 }

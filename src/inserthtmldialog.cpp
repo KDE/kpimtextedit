@@ -6,6 +6,8 @@
 */
 
 #include "inserthtmldialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "inserthtmleditor.h"
 #include <KLocalizedString>
 

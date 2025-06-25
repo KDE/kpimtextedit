@@ -5,6 +5,7 @@
 
 */
 #include "insertimagewidget.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KLineEdit>
 #include <KLocalizedString>
