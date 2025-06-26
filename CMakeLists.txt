@@ -87,7 +87,7 @@ endif()
 add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit6\")
 
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
-ecm_set_disabled_deprecation_versions(QT 6.9.0  KF 6.15.0)
+ecm_set_disabled_deprecation_versions(QT 6.10.0  KF 6.15.0)
 
 find_package(KF6TextEditTextToSpeech ${KTEXTADDONS_MIN_VERSION} CONFIG)
 if(TARGET KF6::TextEditTextToSpeech)
