@@ -22,7 +22,7 @@ namespace KPIMTextEdit
 */
 class MarkupDirectorPrivate
 {
-    MarkupDirectorPrivate(MarkupDirector *md)
+    explicit MarkupDirectorPrivate(MarkupDirector *md)
         : q_ptr(md)
     {
     }

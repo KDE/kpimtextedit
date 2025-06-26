@@ -478,7 +478,7 @@ QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::processBlockGroup(const 
 
 void MarkupDirector::processDocument(QTextDocument *doc)
 {
-    processFrame(QTextFrame::iterator(), doc->rootFrame());
+    std::ignore = processFrame(QTextFrame::iterator(), doc->rootFrame());
 }
 
 QTextBlock::iterator MarkupDirector::processCharTextObject(QTextBlock::iterator it, const QTextFragment &fragment, QTextObject *textObject)
@@ -520,7 +520,6 @@ void MarkupDirector::processClosingElements(const QTextBlock::iterator &it)
 
     auto elementsToClose = getElementsToClose(it);
 
-    int previousSize;
     auto remainingSize = elementsToClose.size();
     while (!elementsToClose.isEmpty()) {
         auto tag = d->m_openElements.last();
@@ -570,7 +569,7 @@ void MarkupDirector::processClosingElements(const QTextBlock::iterator &it)
             d->m_openElements.removeLast();
             elementsToClose.remove(tag);
         }
-        previousSize = remainingSize;
+        int previousSize = remainingSize;
         remainingSize = elementsToClose.size();
 
         if (previousSize == remainingSize) {
@@ -858,7 +857,7 @@ QList<int> MarkupDirector::sortOpeningOrder(QSet<int> openingOrder, QTextBlock::
     // sort, or the end is reached.
     while (!openingOrder.isEmpty()) {
         if (!it.atEnd()) {
-            it++;
+            ++it;
 
             if (!it.atEnd()) {
                 // Because I've iterated, this returns the elements that will
