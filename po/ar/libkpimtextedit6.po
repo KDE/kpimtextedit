@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-26 00:43+0000\n"
+"POT-Creation-Date: 2025-06-26 00:43+0000\n"
 "PO-Revision-Date: 2024-08-15 11:52+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -127,249 +127,249 @@ msgctxt "@action boldify selected text"
 msgid "&Bold"
 msgstr "&ثخين"
 
-#: composer-ng/richtextcomposeractions.cpp:198
+#: composer-ng/richtextcomposeractions.cpp:197
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
 msgstr "م&ائل"
 
-#: composer-ng/richtextcomposeractions.cpp:211
+#: composer-ng/richtextcomposeractions.cpp:209
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
 msgstr "م&سطّر"
 
-#: composer-ng/richtextcomposeractions.cpp:223
+#: composer-ng/richtextcomposeractions.cpp:221
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
 msgstr "م&شطوب"
 
-#: composer-ng/richtextcomposeractions.cpp:238
+#: composer-ng/richtextcomposeractions.cpp:236
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
 msgstr "ال&خطّ"
 
-#: composer-ng/richtextcomposeractions.cpp:247
+#: composer-ng/richtextcomposeractions.cpp:245
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
 msgstr "&حجم الخطّ"
 
-#: composer-ng/richtextcomposeractions.cpp:255
+#: composer-ng/richtextcomposeractions.cpp:253
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
 msgstr "أدرج سطر مسطرة"
 
-#: composer-ng/richtextcomposeractions.cpp:264
+#: composer-ng/richtextcomposeractions.cpp:262
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color…"
 msgstr "&لون النّصّ…"
 
-#: composer-ng/richtextcomposeractions.cpp:265
+#: composer-ng/richtextcomposeractions.cpp:263
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
 msgstr "اللون"
 
-#: composer-ng/richtextcomposeractions.cpp:273
+#: composer-ng/richtextcomposeractions.cpp:271
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight…"
 msgstr "إ&براز النص…"
 
-#: composer-ng/richtextcomposeractions.cpp:281
+#: composer-ng/richtextcomposeractions.cpp:279
 #, kde-format
 msgctxt "@action"
 msgid "Link"
 msgstr "رابط"
 
-#: composer-ng/richtextcomposeractions.cpp:289
+#: composer-ng/richtextcomposeractions.cpp:287
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
 msgstr "زد مستوى القائمة"
 
-#: composer-ng/richtextcomposeractions.cpp:297
+#: composer-ng/richtextcomposeractions.cpp:295
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
 msgstr "أنقص مستوى القائمة"
 
-#: composer-ng/richtextcomposeractions.cpp:306
+#: composer-ng/richtextcomposeractions.cpp:304
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
 msgstr "نمط القائمة"
 
-#: composer-ng/richtextcomposeractions.cpp:308
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
 msgstr "بلا"
 
-#: composer-ng/richtextcomposeractions.cpp:308
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
 msgstr "أسطوانة"
 
-#: composer-ng/richtextcomposeractions.cpp:309
+#: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
 msgstr "دائرة"
 
-#: composer-ng/richtextcomposeractions.cpp:309
+#: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
 msgstr "مربّع"
 
-#: composer-ng/richtextcomposeractions.cpp:310
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
 msgstr "123"
 
-#: composer-ng/richtextcomposeractions.cpp:310
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
 msgstr "abc"
 
-#: composer-ng/richtextcomposeractions.cpp:311
+#: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
 msgstr "ABC"
 
-#: composer-ng/richtextcomposeractions.cpp:311
+#: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
 msgstr "i ii iii"
 
-#: composer-ng/richtextcomposeractions.cpp:312
+#: composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
 msgstr "I II III"
 
-#: composer-ng/richtextcomposeractions.cpp:323
+#: composer-ng/richtextcomposeractions.cpp:321
 #, kde-format
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr "أل&صِق كاقتباس"
 
-#: composer-ng/richtextcomposeractions.cpp:331
+#: composer-ng/richtextcomposeractions.cpp:329
 #, kde-format
 msgctxt "@action"
 msgid "Add &Quote Characters"
 msgstr "أضف محارف الا&قتباس"
 
-#: composer-ng/richtextcomposeractions.cpp:338
+#: composer-ng/richtextcomposeractions.cpp:336
 #, kde-format
 msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "أ&زِل محارف الاقتباس"
 
-#: composer-ng/richtextcomposeractions.cpp:345
+#: composer-ng/richtextcomposeractions.cpp:343
 #, kde-format
 msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr "ألصِق دون تنسيق"
 
-#: composer-ng/richtextcomposeractions.cpp:353
+#: composer-ng/richtextcomposeractions.cpp:351
 #, kde-format
 msgid "Add Image"
 msgstr "أضف صورة"
 
-#: composer-ng/richtextcomposeractions.cpp:372
+#: composer-ng/richtextcomposeractions.cpp:370
 #, kde-format
 msgctxt "@action"
 msgid "Insert HTML"
 msgstr "أدرج HTML"
 
-#: composer-ng/richtextcomposeractions.cpp:382
+#: composer-ng/richtextcomposeractions.cpp:380
 #, kde-format
 msgid "Table"
 msgstr "جدول"
 
-#: composer-ng/richtextcomposeractions.cpp:391
+#: composer-ng/richtextcomposeractions.cpp:389
 #, kde-format
 msgid "Reset Font Settings"
 msgstr "صفّر إعدادات الخطّ"
 
-#: composer-ng/richtextcomposeractions.cpp:392
+#: composer-ng/richtextcomposeractions.cpp:390
 #, kde-format
 msgid "Reset Font"
 msgstr "صفّر الخطّ"
 
-#: composer-ng/richtextcomposeractions.cpp:400
+#: composer-ng/richtextcomposeractions.cpp:398
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
 msgstr "فرشاة التّنسيق"
 
-#: composer-ng/richtextcomposeractions.cpp:408
+#: composer-ng/richtextcomposeractions.cpp:406
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
 msgstr "مستوى الترويسة"
 
-#: composer-ng/richtextcomposeractions.cpp:409
+#: composer-ng/richtextcomposeractions.cpp:407
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
 msgstr "نص بسيط"
 
-#: composer-ng/richtextcomposeractions.cpp:410
+#: composer-ng/richtextcomposeractions.cpp:408
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
 msgstr "العنوان"
 
-#: composer-ng/richtextcomposeractions.cpp:411
+#: composer-ng/richtextcomposeractions.cpp:409
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
 msgstr "عنوان فرعيّ"
 
-#: composer-ng/richtextcomposeractions.cpp:412
+#: composer-ng/richtextcomposeractions.cpp:410
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
 msgstr "القسم"
 
-#: composer-ng/richtextcomposeractions.cpp:413
+#: composer-ng/richtextcomposeractions.cpp:411
 #, kde-format
 msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
 msgstr "القسم الفرعي"
 
-#: composer-ng/richtextcomposeractions.cpp:414
+#: composer-ng/richtextcomposeractions.cpp:412
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
 msgstr "الفقرة"
 
-#: composer-ng/richtextcomposeractions.cpp:415
+#: composer-ng/richtextcomposeractions.cpp:413
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
 msgstr "الفقرة الفرعية"
 
-#: composer-ng/richtextcomposeractions.cpp:426
+#: composer-ng/richtextcomposeractions.cpp:424
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
 msgstr "خانة تأشير"
 
-#: composer-ng/richtextcomposercontroler.cpp:714
+#: composer-ng/richtextcomposercontroler.cpp:716
 #, kde-format
 msgid "Only local files are supported."
 msgstr "الملفّات المحليّة مدعومة فقط."
@@ -442,83 +442,83 @@ msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr "أبقِ المحرّر يعمل"
 
-#: inserthtmldialog.cpp:34
+#: inserthtmldialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "أدرج HTML"
 
-#: inserthtmldialog.cpp:36
+#: inserthtmldialog.cpp:38
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "أدرج وسوم HTML ونصوص:"
 
-#: inserthtmldialog.cpp:42
+#: inserthtmldialog.cpp:44
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "مثال: <i> أهلًا يا عالم </i>"
 
-#: inserthtmldialog.cpp:51
+#: inserthtmldialog.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "أدرج"
 
-#: insertimagedialog.cpp:27
+#: insertimagedialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "أدرج صورة"
 
-#: insertimagedialog.cpp:36 inserttabledialog.cpp:37 tableactionmenu.cpp:407
+#: insertimagedialog.cpp:38 inserttabledialog.cpp:37 tableactionmenu.cpp:407
 #, kde-format
 msgid "Insert"
 msgstr "أدرج"
 
-#: insertimagewidget.cpp:40
+#: insertimagewidget.cpp:41
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "مكان الصّورة:"
 
-#: insertimagewidget.cpp:53
+#: insertimagewidget.cpp:54
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "أضف صورة"
 
-#: insertimagewidget.cpp:64
+#: insertimagewidget.cpp:65
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "أبقِ الحجم الأصليّ"
 
-#: insertimagewidget.cpp:71
+#: insertimagewidget.cpp:72
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "أبقِ نسبة الصّورة"
 
-#: insertimagewidget.cpp:77 inserttablewidget.cpp:59
+#: insertimagewidget.cpp:78 inserttablewidget.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "العرض:"
 
-#: insertimagewidget.cpp:83 insertimagewidget.cpp:99 inserttablewidget.cpp:36
+#: insertimagewidget.cpp:84 insertimagewidget.cpp:100 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
 msgstr " بكسل"
 
-#: insertimagewidget.cpp:93
+#: insertimagewidget.cpp:94
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "الارتفاع:"
 
-#: insertimagewidget.cpp:112
+#: insertimagewidget.cpp:113
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"

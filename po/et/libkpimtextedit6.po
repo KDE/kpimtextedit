@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-26 00:43+0000\n"
+"POT-Creation-Date: 2025-06-26 00:43+0000\n"
 "PO-Revision-Date: 2020-06-05 19:58+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -128,43 +128,43 @@ msgctxt "@action boldify selected text"
 msgid "&Bold"
 msgstr "&Rasvane"
 
-#: composer-ng/richtextcomposeractions.cpp:198
+#: composer-ng/richtextcomposeractions.cpp:197
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
 msgstr "Kaldk&iri"
 
-#: composer-ng/richtextcomposeractions.cpp:211
+#: composer-ng/richtextcomposeractions.cpp:209
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
 msgstr "Alla&joonitud"
 
-#: composer-ng/richtextcomposeractions.cpp:223
+#: composer-ng/richtextcomposeractions.cpp:221
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
 msgstr "Lä&bikriipsutatud"
 
-#: composer-ng/richtextcomposeractions.cpp:238
+#: composer-ng/richtextcomposeractions.cpp:236
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
 msgstr "&Font"
 
-#: composer-ng/richtextcomposeractions.cpp:247
+#: composer-ng/richtextcomposeractions.cpp:245
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
 msgstr "Fondi &suurus"
 
-#: composer-ng/richtextcomposeractions.cpp:255
+#: composer-ng/richtextcomposeractions.cpp:253
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
 msgstr "Lisa kontrolljoon"
 
-#: composer-ng/richtextcomposeractions.cpp:264
+#: composer-ng/richtextcomposeractions.cpp:262
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Text &Color..."
@@ -172,13 +172,13 @@ msgctxt "@action"
 msgid "Text &Color…"
 msgstr "Teksti &värv..."
 
-#: composer-ng/richtextcomposeractions.cpp:265
+#: composer-ng/richtextcomposeractions.cpp:263
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
 msgstr "Värv"
 
-#: composer-ng/richtextcomposeractions.cpp:273
+#: composer-ng/richtextcomposeractions.cpp:271
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Text &Highlight..."
@@ -186,200 +186,200 @@ msgctxt "@action"
 msgid "Text &Highlight…"
 msgstr "Teksti &esiletõstmine..."
 
-#: composer-ng/richtextcomposeractions.cpp:281
+#: composer-ng/richtextcomposeractions.cpp:279
 #, kde-format
 msgctxt "@action"
 msgid "Link"
 msgstr "Lingi"
 
-#: composer-ng/richtextcomposeractions.cpp:289
+#: composer-ng/richtextcomposeractions.cpp:287
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
 msgstr "Suurenda loendi taset"
 
-#: composer-ng/richtextcomposeractions.cpp:297
+#: composer-ng/richtextcomposeractions.cpp:295
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
 msgstr "Vähenda loendi taset"
 
-#: composer-ng/richtextcomposeractions.cpp:306
+#: composer-ng/richtextcomposeractions.cpp:304
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
 msgstr "Loendi stiil"
 
-#: composer-ng/richtextcomposeractions.cpp:308
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
 msgstr "Puudub"
 
-#: composer-ng/richtextcomposeractions.cpp:308
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
 msgstr "Ketas"
 
-#: composer-ng/richtextcomposeractions.cpp:309
+#: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
 msgstr "Ring"
 
-#: composer-ng/richtextcomposeractions.cpp:309
+#: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
 msgstr "Ruut"
 
-#: composer-ng/richtextcomposeractions.cpp:310
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
 msgstr "123"
 
-#: composer-ng/richtextcomposeractions.cpp:310
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
 msgstr "abc"
 
-#: composer-ng/richtextcomposeractions.cpp:311
+#: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
 msgstr "ABC"
 
-#: composer-ng/richtextcomposeractions.cpp:311
+#: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
 msgstr "i ii iii"
 
-#: composer-ng/richtextcomposeractions.cpp:312
+#: composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
 msgstr "I II III"
 
-#: composer-ng/richtextcomposeractions.cpp:323
+#: composer-ng/richtextcomposeractions.cpp:321
 #, fuzzy, kde-format
 #| msgid "Pa&ste as Quotation"
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr "Aseta &tsitaadina"
 
-#: composer-ng/richtextcomposeractions.cpp:331
+#: composer-ng/richtextcomposeractions.cpp:329
 #, fuzzy, kde-format
 #| msgid "Add &Quote Characters"
 msgctxt "@action"
 msgid "Add &Quote Characters"
 msgstr "Lisa ts&itaadimärgid"
 
-#: composer-ng/richtextcomposeractions.cpp:338
+#: composer-ng/richtextcomposeractions.cpp:336
 #, fuzzy, kde-format
 #| msgid "Re&move Quote Characters"
 msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "&Eemalda tsitaadimärgid"
 
-#: composer-ng/richtextcomposeractions.cpp:345
+#: composer-ng/richtextcomposeractions.cpp:343
 #, fuzzy, kde-format
 #| msgid "Paste Without Formatting"
 msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr "Aseta vorminduseta"
 
-#: composer-ng/richtextcomposeractions.cpp:353
+#: composer-ng/richtextcomposeractions.cpp:351
 #, kde-format
 msgid "Add Image"
 msgstr "Pildi lisamine"
 
-#: composer-ng/richtextcomposeractions.cpp:372
+#: composer-ng/richtextcomposeractions.cpp:370
 #, fuzzy, kde-format
 #| msgid "Insert HTML"
 msgctxt "@action"
 msgid "Insert HTML"
 msgstr "Lisa HTML"
 
-#: composer-ng/richtextcomposeractions.cpp:382
+#: composer-ng/richtextcomposeractions.cpp:380
 #, kde-format
 msgid "Table"
 msgstr "Tabel"
 
-#: composer-ng/richtextcomposeractions.cpp:391
+#: composer-ng/richtextcomposeractions.cpp:389
 #, kde-format
 msgid "Reset Font Settings"
 msgstr "Fondiseadistuste lähtestamine"
 
-#: composer-ng/richtextcomposeractions.cpp:392
+#: composer-ng/richtextcomposeractions.cpp:390
 #, kde-format
 msgid "Reset Font"
 msgstr "Lähtesta font"
 
-#: composer-ng/richtextcomposeractions.cpp:400
+#: composer-ng/richtextcomposeractions.cpp:398
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
 msgstr "Vormingupintsel"
 
-#: composer-ng/richtextcomposeractions.cpp:408
+#: composer-ng/richtextcomposeractions.cpp:406
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
 msgstr "Pealkirja tase"
 
-#: composer-ng/richtextcomposeractions.cpp:409
+#: composer-ng/richtextcomposeractions.cpp:407
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
 msgstr "Põhitekst"
 
-#: composer-ng/richtextcomposeractions.cpp:410
+#: composer-ng/richtextcomposeractions.cpp:408
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
 msgstr "Pealkiri"
 
-#: composer-ng/richtextcomposeractions.cpp:411
+#: composer-ng/richtextcomposeractions.cpp:409
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
 msgstr "Alapealkiri"
 
-#: composer-ng/richtextcomposeractions.cpp:412
+#: composer-ng/richtextcomposeractions.cpp:410
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
 msgstr "Sektsioon"
 
-#: composer-ng/richtextcomposeractions.cpp:413
+#: composer-ng/richtextcomposeractions.cpp:411
 #, kde-format
 msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
 msgstr "Alasektsioon"
 
-#: composer-ng/richtextcomposeractions.cpp:414
+#: composer-ng/richtextcomposeractions.cpp:412
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
 msgstr "Lõik"
 
-#: composer-ng/richtextcomposeractions.cpp:415
+#: composer-ng/richtextcomposeractions.cpp:413
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
 msgstr "Alalõik"
 
-#: composer-ng/richtextcomposeractions.cpp:426
+#: composer-ng/richtextcomposeractions.cpp:424
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
 msgstr "Märkeruut"
 
-#: composer-ng/richtextcomposercontroler.cpp:714
+#: composer-ng/richtextcomposercontroler.cpp:716
 #, kde-format
 msgid "Only local files are supported."
 msgstr "Toetatud on ainult kohalikud failid."
@@ -455,90 +455,90 @@ msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr "Jäta redaktor tööle"
 
-#: inserthtmldialog.cpp:34
+#: inserthtmldialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "HTML-i lisamine"
 
-#: inserthtmldialog.cpp:36
+#: inserthtmldialog.cpp:38
 #, fuzzy, kde-format
 #| msgid "Insert HTML tags and texts:"
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "HTML siltide ja tekstide lisamine:"
 
-#: inserthtmldialog.cpp:42
+#: inserthtmldialog.cpp:44
 #, fuzzy, kde-format
 #| msgid "Example: <i> Hello word </i>"
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Näide: <i> Tere, maailm </i>"
 
-#: inserthtmldialog.cpp:51
+#: inserthtmldialog.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Lisa"
 
-#: insertimagedialog.cpp:27
+#: insertimagedialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Pildi lisamine"
 
-#: insertimagedialog.cpp:36 inserttabledialog.cpp:37 tableactionmenu.cpp:407
+#: insertimagedialog.cpp:38 inserttabledialog.cpp:37 tableactionmenu.cpp:407
 #, kde-format
 msgid "Insert"
 msgstr "Lisa"
 
-#: insertimagewidget.cpp:40
+#: insertimagewidget.cpp:41
 #, fuzzy, kde-format
 #| msgid "Image Location:"
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "Pildi asukoht:"
 
-#: insertimagewidget.cpp:53
+#: insertimagewidget.cpp:54
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "Pildi lisamine"
 
-#: insertimagewidget.cpp:64
+#: insertimagewidget.cpp:65
 #, fuzzy, kde-format
 #| msgid "Keep Original Size"
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "Säilitatakse algsuurus"
 
-#: insertimagewidget.cpp:71
+#: insertimagewidget.cpp:72
 #, fuzzy, kde-format
 #| msgid "Keep Image Ratio"
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "Säilitatakse pildi proportsioonid"
 
-#: insertimagewidget.cpp:77 inserttablewidget.cpp:59
+#: insertimagewidget.cpp:78 inserttablewidget.cpp:59
 #, fuzzy, kde-format
 #| msgid "Width:"
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Laius:"
 
-#: insertimagewidget.cpp:83 insertimagewidget.cpp:99 inserttablewidget.cpp:36
+#: insertimagewidget.cpp:84 insertimagewidget.cpp:100 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
 msgstr " px"
 
-#: insertimagewidget.cpp:93
+#: insertimagewidget.cpp:94
 #, fuzzy, kde-format
 #| msgid "Height:"
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Kõrgus:"
 
-#: insertimagewidget.cpp:112
+#: insertimagewidget.cpp:113
 #, fuzzy, kde-format
 #| msgid "Image Preview:"
 msgctxt "@label:textbox"
