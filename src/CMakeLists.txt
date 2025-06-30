@@ -83,7 +83,12 @@ ecm_qt_declare_logging_category(KPim6TextEdit HEADER kpimtextedit_debug.h IDENTI
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim6TextEdit PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KPim6TextEdit
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 ecm_generate_export_header(KPim6TextEdit
     BASE_NAME kpimtextedit
@@ -92,11 +97,7 @@ ecm_generate_export_header(KPim6TextEdit
     USE_VERSION_HEADER
 )
 
-target_include_directories(
-    KPim6TextEdit
-    INTERFACE
-        "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit;>"
-)
+target_include_directories(KPim6TextEdit INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit;>")
 target_include_directories(
     KPim6TextEdit
     PUBLIC
@@ -105,7 +106,8 @@ target_include_directories(
 
 target_link_libraries(
     KPim6TextEdit
-    PUBLIC KF6::TextCustomEditor
+    PUBLIC
+        KF6::TextCustomEditor
     PRIVATE
         KF6::SonnetUi
         KF6::SonnetCore
@@ -126,16 +128,15 @@ target_link_libraries(KPim6TextEdit PRIVATE KF6::TextEmoticonsWidgets)
 set_target_properties(
     KPim6TextEdit
     PROPERTIES
-        VERSION ${KPIMTEXTEDIT_VERSION}
-        SOVERSION ${KPIMTEXTEDIT_SOVERSION}
-        EXPORT_NAME PimTextEdit
+        VERSION
+            ${KPIMTEXTEDIT_VERSION}
+        SOVERSION
+            ${KPIMTEXTEDIT_SOVERSION}
+        EXPORT_NAME
+            PimTextEdit
 )
 
-install(
-    TARGETS KPim6TextEdit
-    EXPORT KPim6TextEditTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KPim6TextEdit EXPORT KPim6TextEditTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### Generate Headers ###############
 ecm_generate_headers(KPimTextEdit_CamelCase_HEADERS
@@ -229,9 +230,7 @@ if(BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6TextEditQchTargets.cmake\")"
-    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6TextEditQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
@@ -256,7 +255,8 @@ install(
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit
     COMPONENT Devel
 )

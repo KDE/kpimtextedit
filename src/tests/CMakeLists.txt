@@ -15,11 +15,11 @@ add_executable(
     testgeneratehtmlbuildergui.cpp
     testgeneratehtmlbuildergui.h
 )
-set(testgeneratehtmlbuildergui_gui_LIBS KPim6::TextEdit Qt::Widgets)
-target_link_libraries(
-    testgeneratehtmlbuildergui_gui
-    ${testgeneratehtmlbuildergui_gui_LIBS}
+set(testgeneratehtmlbuildergui_gui_LIBS
+    KPim6::TextEdit
+    Qt::Widgets
 )
+target_link_libraries(testgeneratehtmlbuildergui_gui ${testgeneratehtmlbuildergui_gui_LIBS})
 
 #####
 add_executable(
@@ -27,8 +27,8 @@ add_executable(
     testgenerateplaintextbuildergui.cpp
     testgenerateplaintextbuildergui.h
 )
-set(testgenerateplaintextbuilder_gui_LIBS KPim6::TextEdit Qt::Widgets)
-target_link_libraries(
-    testgenerateplaintextbuilder_gui
-    ${testgenerateplaintextbuilder_gui_LIBS}
+set(testgenerateplaintextbuilder_gui_LIBS
+    KPim6::TextEdit
+    Qt::Widgets
 )
+target_link_libraries(testgenerateplaintextbuilder_gui ${testgenerateplaintextbuilder_gui_LIBS})
