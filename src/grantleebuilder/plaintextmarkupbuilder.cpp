@@ -14,7 +14,7 @@ namespace KPIMTextEdit
 class PlainTextMarkupBuilderPrivate
 {
 public:
-    PlainTextMarkupBuilderPrivate(PlainTextMarkupBuilder *b)
+    explicit PlainTextMarkupBuilderPrivate(PlainTextMarkupBuilder *b)
         : q_ptr(b)
     {
     }

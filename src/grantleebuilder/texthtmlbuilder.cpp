@@ -17,7 +17,7 @@ namespace KPIMTextEdit
 class TextHTMLBuilderPrivate
 {
 public:
-    TextHTMLBuilderPrivate(TextHTMLBuilder *b)
+    explicit TextHTMLBuilderPrivate(TextHTMLBuilder *b)
         : q_ptr(b)
     {
     }
