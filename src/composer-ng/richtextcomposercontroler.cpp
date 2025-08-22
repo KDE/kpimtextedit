@@ -49,7 +49,7 @@ public:
         delete nestedListHelper;
     }
 
-    QColor linkColor()
+    [[nodiscard]] QColor linkColor() const
     {
         return richtextComposer->palette().link().color();
     }
