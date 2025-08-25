@@ -208,7 +208,7 @@ int RichTextComposer::linePosition() const
             const int cursorBasePosition = cursor.position() - block.position();
             const int numberOfLine(layout->lineCount());
             for (int i = 0; i < numberOfLine; ++i) {
-                QTextLine line = layout->lineAt(i);
+                const QTextLine line = layout->lineAt(i);
                 if (cursorBasePosition >= line.textStart() && cursorBasePosition < line.textStart() + line.textLength()) {
                     break;
                 }
