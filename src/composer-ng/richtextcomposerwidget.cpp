@@ -16,18 +16,20 @@ using namespace KPIMTextEdit;
 class Q_DECL_HIDDEN KPIMTextEdit::RichTextComposerWidgetPrivate
 {
 public:
-    RichTextComposerWidgetPrivate() = default;
+    RichTextComposerWidgetPrivate(RichTextComposerWidget *q)
+        : richTextComposer(new KPIMTextEdit::RichTextComposer(q))
+    {
+    }
 
-    KPIMTextEdit::RichTextComposer *richTextComposer = nullptr;
+    KPIMTextEdit::RichTextComposer *const richTextComposer;
 };
 
 RichTextComposerWidget::RichTextComposerWidget(QWidget *parent)
     : QWidget(parent)
-    , d(new KPIMTextEdit::RichTextComposerWidgetPrivate)
+    , d(new KPIMTextEdit::RichTextComposerWidgetPrivate(this))
 {
     auto layout = new QHBoxLayout(this);
     layout->setContentsMargins({});
-    d->richTextComposer = new KPIMTextEdit::RichTextComposer(this);
     d->richTextComposer->setObjectName("richtextcomposer"_L1);
     auto editorWidget = new TextCustomEditor::RichTextEditorWidget(d->richTextComposer, this);
     layout->addWidget(editorWidget);
