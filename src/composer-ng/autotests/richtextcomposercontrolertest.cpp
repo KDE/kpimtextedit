@@ -17,9 +17,6 @@ RichTextComposerControlerTest::RichTextComposerControlerTest(QObject *parent)
     : QObject(parent)
 {
     QStandardPaths::setTestModeEnabled(true);
-    if (qEnvironmentVariableIntValue("KDECI_CANNOT_CREATE_WINDOWS")) {
-        QSKIP("KDE CI can't create a window on this platform, skipping some gui tests");
-    }
 }
 
 RichTextComposerControlerTest::~RichTextComposerControlerTest() = default;
