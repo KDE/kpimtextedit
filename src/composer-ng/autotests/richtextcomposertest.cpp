@@ -222,7 +222,7 @@ void RichTextComposerTest::testCleanText()
     QString plain(u"Heelllo World\nBye!"_s);
     edit.setTextOrHtml(html);
     edit.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(KIconLoader::global()->iconPath(u"folder-new"_s, KIconLoader::Small, false)));
-    QVERIFY(edit.textMode() == KPIMTextEdit::RichTextComposer::Rich);
+    QCOMPARE(edit.textMode(), KPIMTextEdit::RichTextComposer::Rich);
     QCOMPARE(edit.composerControler()->toCleanPlainText(), plain);
 
     edit.show(); // < otherwise toWrappedPlainText can't work, it needs a layout
