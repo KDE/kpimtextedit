@@ -173,13 +173,16 @@ ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
 )
 
 ########### install files ###############
+set(KPimTextEdit_includes
+    ${kpimtextedit_HEADERS}
+    ${KPimTextEdit_composerng_HEADERS}
+    ${KPimTextEdit_grantlee_HEADERS}
+)
 
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/kpimtextedit_export.h
-        ${kpimtextedit_HEADERS}
-        ${KPimTextEdit_composerng_HEADERS}
-        ${KPimTextEdit_grantlee_HEADERS}
+        ${KPimTextEdit_includes}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit/kpimtextedit
     COMPONENT Devel
 )
@@ -209,9 +212,7 @@ if(BUILD_QCH)
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-            ${kpimtextedit_HEADERS}
-            ${KPimTextEdit_composerng_HEADERS}
-            ${KPimTextEdit_grantlee_HEADERS}
+        ${KPimTextEdit_includes}
         LINK_QCHS
             Qt6Core_QCH
             Qt6Gui_QCH
