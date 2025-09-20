@@ -13,7 +13,6 @@
 class QTextEdit;
 
 class QKeyEvent;
-class QDropEvent;
 class QTextCursor;
 class QTextList;
 class QTextBlock;
