@@ -70,7 +70,7 @@ QString PlainTextMarkupBuilderPrivate::getRomanString(int item)
 
         // works for up to 4999 items
         auto romanSymbols = u"iiivixxxlxcccdcmmmm"_s;
-        int c[] = {1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000};
+        const int c[] = {1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000};
         auto n = item;
         for (auto i = 12; i >= 0; n %= c[i], i--) {
             auto q = n / c[i];
