@@ -86,12 +86,6 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libkpimtextedit6\")
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 ecm_set_disabled_deprecation_versions(QT 6.10.0  KF 6.19.0)
 
-find_package(KF6TextEditTextToSpeech ${KTEXTADDONS_MIN_VERSION} CONFIG)
-if(TARGET KF6::TextEditTextToSpeech)
-    add_definitions(-DHAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
-    set(HAVE_TEXTTOSPEECH TRUE)
-endif()
-
 find_package(KF6TextEmoticonsWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 
 find_package(KF6TextCustomEditor ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)

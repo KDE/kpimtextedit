@@ -119,10 +119,6 @@ target_link_libraries(
         KF6::Codecs
 )
 
-if(TARGET KF6::TextEditTextToSpeech)
-    target_link_libraries(KPim6TextEdit PRIVATE KF6::TextEditTextToSpeech)
-endif()
-
 target_link_libraries(KPim6TextEdit PRIVATE KF6::TextEmoticonsWidgets)
 
 set_target_properties(
