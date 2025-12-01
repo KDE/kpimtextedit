@@ -280,9 +280,9 @@ void PlainTextMarkupBuilder::beginListItem()
         d->mText.append(u"    "_s);
     }
 
-    auto itemNumber = d->currentListItemNumbers.last();
+    auto itemNumber = d->currentListItemNumbers.constLast();
 
-    switch (d->currentListItemStyles.last()) {
+    switch (d->currentListItemStyles.constLast()) {
     case QTextListFormat::ListDisc:
         d->mText.append(u" *  "_s);
         break;

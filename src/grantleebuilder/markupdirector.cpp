@@ -522,7 +522,7 @@ void MarkupDirector::processClosingElements(const QTextBlock::iterator &it)
 
     auto remainingSize = elementsToClose.size();
     while (!elementsToClose.isEmpty()) {
-        auto tag = d->m_openElements.last();
+        auto tag = d->m_openElements.constLast();
         if (elementsToClose.contains(tag)) {
             switch (tag) {
             case Strong:
@@ -580,7 +580,7 @@ void MarkupDirector::processClosingElements(const QTextBlock::iterator &it)
             // The top element in openElements must be a blocker, so close it on
             // next
             // iteration.
-            elementsToClose.insert(d->m_openElements.last());
+            elementsToClose.insert(d->m_openElements.constLast());
         }
     }
 }

@@ -31,7 +31,8 @@ int main(int argc, char **argv)
     editor->show();
 
     QToolBar bar;
-    for (QAction *action : richtextcomposerwidget->richTextActionList()) {
+    const auto richTextActionList = richtextcomposerwidget->richTextActionList();
+    for (QAction *action : richTextActionList) {
         bar.addAction(action);
     }
     bar.show();
