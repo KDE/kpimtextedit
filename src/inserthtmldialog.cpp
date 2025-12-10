@@ -99,7 +99,7 @@ void InsertHtmlDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(640, 480));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myInsertHtmlDialogConfigGroupName));
+    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myInsertHtmlDialogConfigGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
