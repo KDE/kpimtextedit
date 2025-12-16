@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-16 13:25+0000\n"
 "PO-Revision-Date: 2024-08-02 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -369,7 +369,7 @@ msgctxt "@action"
 msgid "Checkbox"
 msgstr "Elektokesto"
 
-#: composer-ng/richtextcomposercontroler.cpp:716
+#: composer-ng/richtextcomposercontroler.cpp:715
 #, kde-format
 msgid "Only local files are supported."
 msgstr "Nur lokaj dosieroj estas subtenataj."
