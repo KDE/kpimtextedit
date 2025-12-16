@@ -12,7 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 #include "nestedlisthelper_p.h"
 #include "richtextcomposerimages.h"
 #include <QApplication>
-#include <QRegularExpression>
 
 #include "insertimagedialog.h"
 #include "textutils.h"
