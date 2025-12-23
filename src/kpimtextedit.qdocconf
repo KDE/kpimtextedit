@@ -1,0 +1,32 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = KPIMTextedit
+description = KPIMTextedit provides a textedit with PIM-specific features.
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "KPIMTextedit"
+
+qhp.projects            = KPIMTextedit
+
+qhp.KPIMTextedit.file                = kpimtextedit.qhp
+qhp.KPIMTextedit.namespace           = org.kde.kpimtextedit.$QT_VERSION_TAG
+qhp.KPIMTextedit.virtualFolder       = kpimtextedit
+qhp.KPIMTextedit.indexTitle          = KPIMTextedit
+qhp.KPIMTextedit.indexRoot           =
+
+qhp.KPIMTextedit.subprojects         = classes
+qhp.KPIMTextedit.subprojects.classes.title = C++ Classes
+qhp.KPIMTextedit.subprojects.classes.indexTitle = KPIMTextedit C++ Classes
+qhp.KPIMTextedit.subprojects.classes.selectors = class fake:headerfile
+qhp.KPIMTextedit.subprojects.classes.sortPages = true
+
+tagfile = kpimtextedit.tags

@@ -1,0 +1,9 @@
+/*!
+    \module KPIMTextedit
+    \title KPIMTextedit C++ Classes
+    \ingroup modules
+    \cmakepackage KPim6
+    \cmakecomponent TextEdit
+
+    \brief KPIMTextedit provides a textedit with PIM-specific features.
+*/

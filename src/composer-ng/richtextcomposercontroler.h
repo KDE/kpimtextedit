@@ -15,8 +15,8 @@ namespace KPIMTextEdit
 class RichTextComposer;
 class NestedListHelper;
 class RichTextComposerImages;
-/**
- * @brief The RichTextComposerControler class
+/*!
+ * \brief The RichTextComposerControler class
  * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposerControler : public QObject

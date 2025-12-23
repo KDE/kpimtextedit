@@ -70,14 +70,7 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(ECMFeatureSummary)
 include(ECMCheckOutboundLicense)
-include(ECMAddQch)
-
-option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
-add_feature_info(
-    QCH
-    ${BUILD_QCH}
-    "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
-)
+include(ECMGenerateQDoc)
 
 set(KPIMTEXTEDIT_LIB_VERSION ${PIM_VERSION})
 

@@ -200,36 +200,6 @@ endif()
 
 ecm_qt_install_logging_categories(EXPORT KPIMTEXTEDIT FILE kpimtextedit.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 
-if(BUILD_QCH)
-    ecm_add_qch(
-        KPim6TextEdit_QCH
-        NAME KPimTextEdit
-        BASE_NAME KPim6TextEdit
-        VERSION ${PIM_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${KPimTextEdit_includes}
-        LINK_QCHS
-            Qt6Core_QCH
-            Qt6Gui_QCH
-            Qt6Widgets_QCH
-        INCLUDE_DIRS
-            ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-            KPIMTEXTEDIT_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-    ecm_install_qch_export(
-        TARGETS KPim6PimTextEdit_QCH
-        FILE KPim6TextEditQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6TextEditQchTargets.cmake\")")
-endif()
-
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimTextEditConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6TextEditConfig.cmake"
@@ -257,3 +227,4 @@ install(
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KPIMTextEdit
     COMPONENT Devel
 )
+ecm_generate_qdoc(KPim6TextEdit kpimtextedit.qdocconf)

@@ -1,0 +1,20 @@
+/*!
+    \page kpimtextedit-index.html
+    \title KPIMTextedit
+
+    KPIMTextedit provides a textedit with PIM-specific features.
+
+    \section1 Using the Module
+
+    \include {module-use.qdocinc} {using the c++ api}
+
+    \section2 Building with CMake
+
+    \include {module-use.qdocinc} {building with cmake} {KPim6} {TextEdit} {KPim6::TextEdit}
+
+    \section1 API Reference
+
+    \list
+        \li \l{KPIMTextedit C++ Classes}
+    \endlist
+*/

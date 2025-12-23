@@ -19,7 +19,7 @@ class PlainTextMarkupBuilderPrivate;
 class KPIMTEXTEDIT_EXPORT PlainTextMarkupBuilder : virtual public KPIMTextEdit::AbstractMarkupBuilder
 {
 public:
-    /** Construct a new PlainTextHTMLMarkupBuilder. */
+    /*! Construct a new PlainTextHTMLMarkupBuilder. */
     PlainTextMarkupBuilder();
 
     ~PlainTextMarkupBuilder() override;
@@ -77,13 +77,13 @@ public:
 
     void appendRawText(const QString &text) override;
 
-    /**
-    Adds a reference to @p reference to the internal list of references in the
+    /*!
+    Adds a reference to \ reference to the internal list of references in the
     document.
   */
     [[nodiscard]] int addReference(const QString &reference);
 
-    /**
+    /*!
     Returns the finalised plain text markup, including references at the end.
   */
     [[nodiscard]] QString getResult() override;

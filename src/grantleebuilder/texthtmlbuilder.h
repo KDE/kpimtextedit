@@ -14,8 +14,8 @@ class TextHTMLBuilderPrivate;
 
 /// @headerfile texthtmlbuilder.h grantlee/texthtmlbuilder.h
 
-/**
-  @brief The TextHTMLBuilder creates a clean html markup output.
+/*!
+  \brief The TextHTMLBuilder creates a clean html markup output.
 
   This class creates html output which is as minimal as possible and restricted
   to the rich text features supported in %Qt.
@@ -26,15 +26,15 @@ class TextHTMLBuilderPrivate;
 
   eg:
 
-  @code
+  \de
     <p>
       This is some <strong>formatted content</strong> in a paragraph.
     </p>
-  @endcode
+  \endcode
 
   instead of the content produced by %Qt:
 
-  @code
+  \de
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
   "http://www.w3.org/TR/REC-html40/strict.dtd">
     <html><head><meta name="qrichtext" content="1" /><meta
@@ -47,11 +47,11 @@ class TextHTMLBuilderPrivate;
   margin-right:0px; -qt-block-indent:0; text-indent:0px;">This is some <span
   style=" font-weight:600;">formatted content</span> in a paragraph.
   </p></body></html>
-  @endcode
+  \endcode
 
   Such tags should be created separately. For example:
 
-  @code
+  \de
     auto b = new TextHTMLBuilder();
     auto md = new MarkupDirector(b);
     md->constructContent();
@@ -60,27 +60,27 @@ class TextHTMLBuilderPrivate;
                       .arg(document.metaInformation(QTextDocument::DocumentTitle))
                       .arg(b->getOutput());
     file.write(cleanHtml);
-  @endcode
+  \endcode
 
   Font formatting information on elements is represented by individual span
   elements.
 
   eg:
-  @code
+  \de
     <span style"color:blue;">
       <span style="background-color:red;">
         Blue text on red background
       </span>
     </span>
-  @endcode
+  \endcode
 
   instead of
 
-  @code
+  \de
     <span style="color:blue;background-color:red;">
       Blue text on red background
     </span>
-  @endcode
+  \endcode
 
   It my be possible to change this if necessary.
 
@@ -113,20 +113,20 @@ public:
     void beginFontFamily(const QString &family) override;
     void endFontFamily() override;
 
-    /**
+    /*!
     Begin a new font point size
-    @param size The new size to begin.
+    \ size The new size to begin.
   */
     void beginFontPointSize(int size) override;
     void endFontPointSize() override;
 
-    /**
+    /*!
     Begin a new paragraph
-    @param al The new paragraph alignment
-    @param topMargin The new paragraph topMargin
-    @param bottomMargin The new paragraph bottomMargin
-    @param leftMargin The new paragraph leftMargin
-    @param rightMargin The new paragraph rightMargin
+    \ al The new paragraph alignment
+    \ topMargin The new paragraph topMargin
+    \ bottomMargin The new paragraph bottomMargin
+    \ leftMargin The new paragraph leftMargin
+    \ rightMargin The new paragraph rightMargin
   */
     void beginParagraph(Qt::Alignment al = Qt::AlignLeft,
                         qreal topMargin = 0.0,
@@ -135,15 +135,15 @@ public:
                         qreal rightMargin = 0.0,
                         bool leftToRightText = false) override;
 
-    /**
+    /*!
     Begin a new header element.
-    @param level The new level to begin.
+    \ level The new level to begin.
   */
     void beginHeader(int level) override;
 
-    /**
+    /*!
     End a header element.
-    @param level The new level to end.
+    \ level The new level to end.
   */
     void endHeader(int level) override;
 
@@ -181,25 +181,25 @@ public:
     void endTableHeaderCell() override;
     void endTableCell() override;
 
-    /**
+    /*!
     Reimplemented from AbstractMarkupBuilder.
 
     This implementation escapes the text before appending so that
 
-    @verbatim
+    \badcode
       A sample <b>bold</b> word.
-    @endverbatim
+    \endcode
 
     becomes
 
-    @verbatim
+    \badcode
       A sample &lt;b&gt;bold&lt;/b&gt; word.
-    @endverbatim
+    \endcode
   */
     void appendLiteralText(const QString &text) override;
 
-    /**
-    Append @p text without escaping.
+    /*!
+    Append \ text without escaping.
 
     This is useful if extending MarkupDirector
   */

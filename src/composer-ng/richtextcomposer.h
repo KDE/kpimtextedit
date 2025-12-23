@@ -17,8 +17,8 @@ class RichTextComposerControler;
 class RichTextComposerActions;
 class RichTextExternalComposer;
 class RichTextComposerEmailQuoteHighlighter;
-/**
- * @brief The RichTextComposer class
+/*!
+ * \brief The RichTextComposer class
  * @author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposer : public TextCustomEditor::RichTextEditor
@@ -33,33 +33,33 @@ public:
         Rich ///< Rich text mode
     };
 
-    /**
-     * @return The current text mode
+    /*!
+     * Returns The current text mode
      */
     [[nodiscard]] Mode textMode() const;
 
-    /**
+    /*!
      * Enables word wrap. Words will be wrapped at the specified column.
      *
-     * @param wrapColumn the column where words will be wrapped
+     * \ wrapColumn the column where words will be wrapped
      */
     void enableWordWrap(int wrapColumn);
 
-    /**
+    /*!
      * Disables word wrap.
      * Note that words are still wrapped at the end of the editor; no scrollbar
      * will appear.
      */
     void disableWordWrap();
 
-    /**
-     * @return the line number where the cursor is. This takes word-wrapping
+    /*!
+     * Returns the line number where the cursor is. This takes word-wrapping
      *         into account. Line numbers start at 0.
      */
     [[nodiscard]] int linePosition() const;
 
-    /**
-     * @return the column number where the cursor is.
+    /*!
+     * Returns the column number where the cursor is.
      */
     [[nodiscard]] int columnNumber() const;
 
@@ -105,13 +105,13 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void insertModeChanged();
-    /**
+    /*!
      * Emitted whenever the text mode is changed.
      *
-     * @param mode The new text mode
+     * \ mode The new text mode
      */
     void textModeChanged(KPIMTextEdit::RichTextComposer::Mode mode);
-    /**
+    /*!
      * Emitted when the user uses the up arrow in the first line. The application
      * should then put the focus on the widget above the text edit.
      */
