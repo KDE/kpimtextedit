@@ -19,7 +19,7 @@ namespace KPIMTextEdit
 {
 /**
     @short Dialog to allow user to configure a hyperlink.
-    @author Stephen Kelly
+    \author Stephen Kelly
     @since 4.1
     @internal
 

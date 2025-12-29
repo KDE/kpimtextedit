@@ -16,26 +16,47 @@ namespace KPIMTextEdit
 {
 class RichTextComposerControler;
 /*!
+ * \class KPIMTextEdit::RichTextComposerActions
+ * \inheaderfile KPIMTextEdit/RichTextComposerActions
+ *
  * \brief The RichTextComposerActions class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposerActions : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit RichTextComposerActions(KPIMTextEdit::RichTextComposerControler *controller, QObject *parent = nullptr);
+    /*!
+     */
     ~RichTextComposerActions() override;
 
+    /*!
+     */
     void createActions(KActionCollection *ac);
+    /*!
+     */
     [[nodiscard]] int numberOfActions() const;
 
+    /*!
+     */
     [[nodiscard]] QList<QAction *> richTextActionList() const;
 
+    /*!
+     */
     void uncheckActionFormatPainter();
+    /*!
+     */
     void updateActionStates();
+    /*!
+     */
     void textModeChanged(KPIMTextEdit::RichTextComposer::Mode mode);
 
 public Q_SLOTS:
+    /*!
+     */
     void setActionsEnabled(bool enabled);
 
 private:

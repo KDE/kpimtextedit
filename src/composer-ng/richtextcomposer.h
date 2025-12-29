@@ -18,8 +18,11 @@ class RichTextComposerActions;
 class RichTextExternalComposer;
 class RichTextComposerEmailQuoteHighlighter;
 /*!
+ * \class KPIMTextEdit::RichTextComposer
+ * \inheaderfile KPIMTextEdit/RichTextComposer
+ *
  * \brief The RichTextComposer class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposer : public TextCustomEditor::RichTextEditor
 {
@@ -41,7 +44,7 @@ public:
     /*!
      * Enables word wrap. Words will be wrapped at the specified column.
      *
-     * \ wrapColumn the column where words will be wrapped
+     * \a wrapColumn the column where words will be wrapped
      */
     void enableWordWrap(int wrapColumn);
 
@@ -108,7 +111,7 @@ Q_SIGNALS:
     /*!
      * Emitted whenever the text mode is changed.
      *
-     * \ mode The new text mode
+     * \a mode The new text mode
      */
     void textModeChanged(KPIMTextEdit::RichTextComposer::Mode mode);
     /*!

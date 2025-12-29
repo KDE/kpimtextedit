@@ -26,7 +26,7 @@ class TextHTMLBuilderPrivate;
 
   eg:
 
-  \de
+  \code
     <p>
       This is some <strong>formatted content</strong> in a paragraph.
     </p>
@@ -34,7 +34,7 @@ class TextHTMLBuilderPrivate;
 
   instead of the content produced by %Qt:
 
-  \de
+  \code
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
   "http://www.w3.org/TR/REC-html40/strict.dtd">
     <html><head><meta name="qrichtext" content="1" /><meta
@@ -51,7 +51,7 @@ class TextHTMLBuilderPrivate;
 
   Such tags should be created separately. For example:
 
-  \de
+  \code
     auto b = new TextHTMLBuilder();
     auto md = new MarkupDirector(b);
     md->constructContent();
@@ -66,7 +66,7 @@ class TextHTMLBuilderPrivate;
   elements.
 
   eg:
-  \de
+  \code
     <span style"color:blue;">
       <span style="background-color:red;">
         Blue text on red background
@@ -76,7 +76,7 @@ class TextHTMLBuilderPrivate;
 
   instead of
 
-  \de
+  \code
     <span style="color:blue;background-color:red;">
       Blue text on red background
     </span>
@@ -84,7 +84,7 @@ class TextHTMLBuilderPrivate;
 
   It my be possible to change this if necessary.
 
-  @author Stephen Kelly <steveire@gmail.com>
+  \author Stephen Kelly <steveire@gmail.com>
 */
 class KPIMTEXTEDIT_EXPORT TextHTMLBuilder : virtual public KPIMTextEdit::AbstractMarkupBuilder
 {
@@ -115,18 +115,18 @@ public:
 
     /*!
     Begin a new font point size
-    \ size The new size to begin.
+    \a size The new size to begin.
   */
     void beginFontPointSize(int size) override;
     void endFontPointSize() override;
 
     /*!
     Begin a new paragraph
-    \ al The new paragraph alignment
-    \ topMargin The new paragraph topMargin
-    \ bottomMargin The new paragraph bottomMargin
-    \ leftMargin The new paragraph leftMargin
-    \ rightMargin The new paragraph rightMargin
+    \a al The new paragraph alignment
+    \a topMargin The new paragraph topMargin
+    \a bottomMargin The new paragraph bottomMargin
+    \a leftMargin The new paragraph leftMargin
+    \a rightMargin The new paragraph rightMargin
   */
     void beginParagraph(Qt::Alignment al = Qt::AlignLeft,
                         qreal topMargin = 0.0,
@@ -137,13 +137,13 @@ public:
 
     /*!
     Begin a new header element.
-    \ level The new level to begin.
+    \a level The new level to begin.
   */
     void beginHeader(int level) override;
 
     /*!
     End a header element.
-    \ level The new level to end.
+    \a level The new level to end.
   */
     void endHeader(int level) override;
 
@@ -199,7 +199,7 @@ public:
     void appendLiteralText(const QString &text) override;
 
     /*!
-    Append \ text without escaping.
+    Append \a text without escaping.
 
     This is useful if extending MarkupDirector
   */

@@ -23,7 +23,7 @@ namespace KPIMTextEdit
 namespace TextUtils
 {
 /*!
- * Returns whether the QTextDocument \ document contains rich text formatting.
+ * Returns whether the QTextDocument \a document contains rich text formatting.
  */
 [[nodiscard]] KPIMTEXTEDIT_EXPORT bool containsFormatting(const QTextDocument *document);
 
@@ -31,9 +31,9 @@ namespace TextUtils
  *  Changes the given text so that each line of it fits into the given maximal length.
  *  At each line, the "indent" string is prepended, which is usually the quote prefix.
  *  The text parameter will be empty afterwards.
- *  \ text the text to indent
- *  \ indent the indentation prefix string
- *  \ maxLength the maximal length the string of text will fit into
+ *  \a text the text to indent
+ *  \a indent the indentation prefix string
+ *  \a maxLength the maximal length the string of text will fit into
  *  Example:
  *    text = "Hello World, this is a test."
  *    indent = "> "

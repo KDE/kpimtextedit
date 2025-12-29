@@ -23,7 +23,7 @@ namespace KPIMTextEdit
  * @short Helper class for automatic handling of nested lists in a text edit
  *
  *
- * @author Stephen Kelly
+ * \author Stephen Kelly
  * @since 4.1
  * @internal
  */

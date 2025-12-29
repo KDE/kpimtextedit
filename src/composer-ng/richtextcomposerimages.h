@@ -49,11 +49,11 @@ public:
 
     /*!
      * Adds an image. The image is loaded from file and then pasted to the current
-     * cursor position with the given \ width and \ height.
+     * cursor position with the given \a width and \a height.
      *
-     * \ url The URL of the file which contains the image
-     * \ width The width the inserted image will have.
-     * \ height The height the inserted image will have.
+     * \a url The URL of the file which contains the image
+     * \a width The width the inserted image will have.
+     * \a height The height the inserted image will have.
      *
      */
     void addImage(const QUrl &url, int width = -1, int height = -1);
@@ -62,12 +62,12 @@ public:
      * Loads an image into the textedit. The difference to addImage() is that this
      * function expects that the image tag is already present in the HTML source.
      *
-     * \ image the image to load
-     * \ matchName the name of tags to match image
-     * \ resourceName the resource name of image
+     * \a image the image to load
+     * \a matchName the name of tags to match image
+     * \a resourceName the resource name of image
      * So what this message does is that it scans the HTML source for the image
-     * tag that matches the \ matchName, and then inserts the \ image as a
-     * resource, giving that resource the name \ resourceName.
+     * tag that matches the \a matchName, and then inserts the \a image as a
+     * resource, giving that resource the name \a resourceName.
      *
      */
     void loadImage(const QImage &image, const QString &matchName, const QString &resourceName);
@@ -88,10 +88,10 @@ public:
      *
      * Note that this function works on encoded content already.
      *
-     * \ htmlBody the HTML code in which the \<img\> tag will be modified.
+     * \a htmlBody the HTML code in which the \<img\> tag will be modified.
      *                 The HTML code here could come from toHtml(), for example.
      *
-     * \ imageList the list of images of which the \<img\> tag will be modified.
+     * \a imageList the list of images of which the \<img\> tag will be modified.
      *                  You can get such a list from the embeddedImages() function.
      *
      * Returns a modified HTML code, where the \<img\> tags got replaced

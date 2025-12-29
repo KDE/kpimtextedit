@@ -13,9 +13,12 @@ namespace KPIMTextEdit
 {
 class RichTextComposer;
 /*!
+ * \class KPIMTextEdit::RichTextComposerEmailQuoteHighlighter
+ * \inheaderfile KPIMTextEdit/RichTextComposerEmailQuoteHighlighter
+ *
  * \brief A highlighter for email quoting.
  *
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class RichTextComposer;
 class KPIMTEXTEDIT_EXPORT RichTextComposerEmailQuoteHighlighter : public Sonnet::Highlighter
@@ -38,11 +41,11 @@ public:
     /*!
      * Sets the colors used for highlighting quoted text and spelling mistakes.
      *
-     * \ quoteDepth1 color for text quoted 1 level deep
-     * \ quoteDepth2 color for text quoted 2 level deep
-     * \ quoteDepth3 color for text quoted 3 level deep
-     * \ misspelledColor color in which misspelled words will be underlined
-     * \ normalColor will be ignored, only provided for KNode
+     * \a quoteDepth1 color for text quoted 1 level deep
+     * \a quoteDepth2 color for text quoted 2 level deep
+     * \a quoteDepth3 color for text quoted 3 level deep
+     * \a misspelledColor color in which misspelled words will be underlined
+     * \a normalColor will be ignored, only provided for KNode
      *                    compatibility.
      */
     void setQuoteColor(const QColor &normalColor,
@@ -54,7 +57,7 @@ public:
     /*!
      * Turns spellcheck highlighting on or off.
      *
-     * \ on if true, spelling mistakes will be highlighted
+     * \a on if true, spelling mistakes will be highlighted
      */
     void toggleSpellHighlighting(bool on);
 
@@ -68,8 +71,8 @@ protected:
      * Reimplemented, the base version sets the text color to black, which
      * is not what we want. We do nothing, the format is already reset by
      * Qt.
-     * \ start the beginning of text
-     * \ count the amount of characters to set
+     * \a start the beginning of text
+     * \a count the amount of characters to set
      */
     void unsetMisspelled(int start, int count) override;
 

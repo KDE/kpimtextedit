@@ -13,17 +13,26 @@ namespace KPIMTextEdit
 {
 class RichTextComposer;
 /*!
+ * \class KPIMTextEdit::RichTextComposerEmailQuoteDecorator
+ * \inheaderfile KPIMTextEdit/RichTextComposerEmailQuoteDecorator
+ *
  * \brief The RichTextComposerEmailQuoteDecorator class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposerEmailQuoteDecorator : public Sonnet::SpellCheckDecorator
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit RichTextComposerEmailQuoteDecorator(RichTextComposer *textEdit);
+    /*!
+     */
     ~RichTextComposerEmailQuoteDecorator() override;
 
 protected:
+    /*!
+     */
     [[nodiscard]] bool isSpellCheckingEnabledForBlock(const QString &blockText) const override;
 
 private:
