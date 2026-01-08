@@ -15,6 +15,10 @@ namespace KPIMTextEdit
 {
 class RichTextComposer;
 /*!
+ * \class KPIMTextEdit::RichTextExternalComposer
+ * \inmodule KPIMTextEdit
+ * \inheaderfile KPIMTextEdit/RichTextExternalComposer
+ *
  * \brief The RichTextExternalComposer class
  * \author Laurent Montel <montel@kde.org>
  */

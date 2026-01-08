@@ -17,6 +17,7 @@ namespace KPIMTextEdit
 class RichTextComposerControler;
 /*!
  * \class KPIMTextEdit::RichTextComposerActions
+ * \inmodule KPIMTextEdit
  * \inheaderfile KPIMTextEdit/RichTextComposerActions
  *
  * \brief The RichTextComposerActions class

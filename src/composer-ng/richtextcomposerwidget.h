@@ -19,6 +19,7 @@ class RichTextComposerWidgetPrivate;
 class RichTextComposer;
 /*!
  * \class KPIMTextEdit::RichTextComposerWidget
+ * \inmodule KPIMTextEdit
  * \inheaderfile KPIMTextEdit/RichTextComposerWidget
  *
  * \brief The RichTextComposerWidget class

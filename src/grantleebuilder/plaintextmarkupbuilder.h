@@ -20,6 +20,7 @@ class PlainTextMarkupBuilderPrivate;
  * \class KPIMTextEdit::PlainTextMarkupBuilder
  * \inmodule KPIMTextEdit
  * \inheaderfile KPIMTextEdit/PlainTextMarkupBuilder
+ *
  * \brief The PlainTextMarkupBuilder class
  */
 class KPIMTEXTEDIT_EXPORT PlainTextMarkupBuilder : virtual public KPIMTextEdit::AbstractMarkupBuilder
