@@ -408,7 +408,7 @@ msgstr "No s'ha pogut iniciar l'editor extern. Verifiqueu l'ordre «%1»"
 #: composer-ng/richtextexternalcomposer.cpp:142
 #, kde-format
 msgid "Error was found when we started external editor."
-msgstr "S'ha trobat un error en iniciar l'editor extern."
+msgstr "S'ha trobat un error mentre s'iniciava l'editor extern."
 
 #: composer-ng/richtextexternalcomposer.cpp:142
 #, kde-format
