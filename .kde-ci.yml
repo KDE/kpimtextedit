@@ -16,3 +16,6 @@ Dependencies:
     'frameworks/kxmlgui': '@latest-kf6'
     'frameworks/kcodecs': '@latest-kf6'
     'libraries/ktextaddons': '@latest-kf6'
+
+Options:
+   cmake-options: '-DWARNINGS_AS_ERRORS=ON'
