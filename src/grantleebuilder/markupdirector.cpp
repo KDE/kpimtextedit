@@ -320,7 +320,7 @@ QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it, QText
         // rows.
         // http://www.webdesignfromscratch.com/html-tables.cfm
 
-        for (int column = 0, total = table->columns(); column < total; ++column) {
+        for (int column = 0, totalColumn = table->columns(); column < totalColumn; ++column) {
             auto tableCell = table->cellAt(row, column);
 
             auto columnSpan = tableCell.columnSpan();
