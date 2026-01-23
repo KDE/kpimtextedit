@@ -14,7 +14,7 @@ namespace KPIMTextEdit
 class RichTextComposer;
 /*!
  * \class KPIMTextEdit::RichTextComposerEmailQuoteHighlighter
- * \inmodule KPIMTextEdit
+ * \inmodule KPIMTextedit
  * \inheaderfile KPIMTextEdit/RichTextComposerEmailQuoteHighlighter
  *
  * \brief A highlighter for email quoting.

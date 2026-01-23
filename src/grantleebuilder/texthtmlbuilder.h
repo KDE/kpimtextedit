@@ -84,6 +84,9 @@ class TextHTMLBuilderPrivate;
 
   It my be possible to change this if necessary.
 
+  \class KPIMTextEdit::TextHTMLBuilder
+  \inmodule KPIMTextedit
+  \inheaderfile KPIMTextEdit/TextHTMLBuilder
   \author Stephen Kelly <steveire@gmail.com>
 */
 class KPIMTEXTEDIT_EXPORT TextHTMLBuilder : virtual public KPIMTextEdit::AbstractMarkupBuilder

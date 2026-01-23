@@ -19,6 +19,7 @@ class RichTextExternalComposer;
 class RichTextComposerEmailQuoteHighlighter;
 /*!
  * \class KPIMTextEdit::RichTextComposer
+ * \inmodule KPIMTextedit
  * \inheaderfile KPIMTextEdit/RichTextComposer
  *
  * \brief The RichTextComposer class

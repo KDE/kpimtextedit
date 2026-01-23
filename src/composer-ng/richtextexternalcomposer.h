@@ -16,7 +16,7 @@ namespace KPIMTextEdit
 class RichTextComposer;
 /*!
  * \class KPIMTextEdit::RichTextExternalComposer
- * \inmodule KPIMTextEdit
+ * \inmodule KPIMTextedit
  * \inheaderfile KPIMTextEdit/RichTextExternalComposer
  *
  * \brief The RichTextExternalComposer class

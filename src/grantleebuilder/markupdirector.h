@@ -74,6 +74,9 @@ class AbstractMarkupBuilder;
 
   \sa \ custom_qtextobject
 
+  \class KPIMTextEdit::MarkupDirector
+  \inmodule KPIMTextedit
+  \inheaderfile KPIMTextEdit/MarkupDirector
   \author Stephen Kelly <steveire@gmail.com>
 */
 class KPIMTEXTEDIT_EXPORT MarkupDirector

@@ -17,7 +17,7 @@ class NestedListHelper;
 class RichTextComposerImages;
 /*!
  * \class KPIMTextEdit::RichTextComposerControler
- * \inmodule KPIMTextEdit
+ * \inmodule KPIMTextedit
  * \inheaderfile KPIMTextEdit/RichTextComposerControler
  *
  * \brief The RichTextComposerControler class

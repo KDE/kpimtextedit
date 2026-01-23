@@ -21,6 +21,9 @@ class AbstractMarkupBuilderPrivate;
 /// @headerfile abstractmarkupbuilder.h grantlee/abstractmarkupbuilder.h
 
 /*!
+  \class KPIMTextEdit::AbstractMarkupBuilder
+  \inmodule KPIMTextedit
+  \inheaderfile KPIMTextEdit/AbstractMarkupBuilder
   \brief Interface for creating marked-up text output.
 
   The **%AbstractMarkupBuilder** is used by a MarkupDirector to create marked-up

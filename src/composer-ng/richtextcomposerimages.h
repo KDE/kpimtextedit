@@ -40,6 +40,13 @@ using ImageWithNamePtr = QSharedPointer<ImageWithName>;
 using ImageWithNameList = QList<ImageWithNamePtr>;
 using ImageList = QList<QSharedPointer<EmbeddedImage>>;
 
+/*!
+ * \class KPIMTextEdit::RichTextComposerImages
+ * \inmodule KPIMTextedit
+ * \inheaderfile KPIMTextEdit/RichTextComposerImages
+ *
+ * \brief The RichTextComposerImages class
+ */
 class KPIMTEXTEDIT_EXPORT RichTextComposerImages : public QObject
 {
     Q_OBJECT

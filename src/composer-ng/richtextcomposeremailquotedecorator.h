@@ -14,7 +14,7 @@ namespace KPIMTextEdit
 class RichTextComposer;
 /*!
  * \class KPIMTextEdit::RichTextComposerEmailQuoteDecorator
- * \inmodule KPIMTextEdit
+ * \inmodule KPIMTextedit
  * \inheaderfile KPIMTextEdit/RichTextComposerEmailQuoteDecorator
  *
  * \brief The RichTextComposerEmailQuoteDecorator class

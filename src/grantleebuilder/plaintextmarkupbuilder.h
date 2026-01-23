@@ -18,7 +18,7 @@ namespace KPIMTextEdit
 class PlainTextMarkupBuilderPrivate;
 /*!
  * \class KPIMTextEdit::PlainTextMarkupBuilder
- * \inmodule KPIMTextEdit
+ * \inmodule KPIMTextedit
  * \inheaderfile KPIMTextEdit/PlainTextMarkupBuilder
  *
  * \brief The PlainTextMarkupBuilder class
