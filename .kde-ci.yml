@@ -19,3 +19,4 @@ Dependencies:
 
 Options:
    cmake-options: '-DWARNINGS_AS_ERRORS=ON'
+   enable-lsan: True
