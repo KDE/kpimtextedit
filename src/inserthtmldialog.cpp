@@ -23,7 +23,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWindow>
 namespace
 {
-static const char myInsertHtmlDialogConfigGroupName[] = "InsertHtmlDialog";
+static char myInsertHtmlDialogConfigGroupName[] = "InsertHtmlDialog";
 }
 namespace KPIMTextEdit
 {

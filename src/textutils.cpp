@@ -52,7 +52,7 @@ bool TextUtils::containsFormatting(const QTextDocument *document)
         return false;
     }
 
-    QTextDocument defaultTextDocument;
+    const QTextDocument defaultTextDocument;
     const QTextCharFormat defaultCharFormat = defaultTextDocument.begin().charFormat();
     const QTextBlockFormat defaultBlockFormat = defaultTextDocument.begin().blockFormat();
     const QFont defaultFont = defaultTextDocument.defaultFont();
@@ -107,7 +107,7 @@ QString TextUtils::flowText(QString &wrappedText, const QString &indent, int max
     QString result;
     while (!wrappedText.isEmpty()) {
         // first check for the next newline. if it's before maxLength, break there, and continue
-        int newLine = wrappedText.indexOf(u'\n');
+        const int newLine = wrappedText.indexOf(u'\n');
         if (newLine > 0 && newLine <= maxLength) {
             result += indent + wrappedText.left(newLine + 1);
             wrappedText = wrappedText.mid(newLine + 1);

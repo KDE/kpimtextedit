@@ -24,7 +24,7 @@ NestedListHelper::NestedListHelper(QTextEdit *te)
 
 bool NestedListHelper::handleBeforeKeyPressEvent(QKeyEvent *event)
 {
-    QTextCursor cursor = textEdit->textCursor();
+    const QTextCursor cursor = textEdit->textCursor();
 
     // Only attempt to handle Backspace while on a list
     if ((event->key() != Qt::Key_Backspace) || (!cursor.currentList())) {
@@ -61,8 +61,8 @@ bool NestedListHelper::canIndent() const
 
 bool NestedListHelper::canDedent() const
 {
-    QTextBlock thisBlock = textEdit->textCursor().block();
-    QTextBlock nextBlock = thisBlock.next();
+    const QTextBlock thisBlock = textEdit->textCursor().block();
+    const QTextBlock nextBlock = thisBlock.next();
     if (thisBlock.isValid()) {
         int nextBlockIndent = 0;
         if (nextBlock.isValid() && nextBlock.textList()) {
@@ -85,13 +85,13 @@ bool NestedListHelper::handleAfterKeyPressEvent(QKeyEvent *event)
         return false;
     }
 
-    QTextCursor cursor = textEdit->textCursor();
+    const QTextCursor cursor = textEdit->textCursor();
     bool handled = false;
 
     if (!cursor.hasSelection() && cursor.currentList()) {
         // Check if we're on the last list item.
         // itemNumber is zero indexed
-        QTextBlock currentBlock = cursor.block();
+        const QTextBlock currentBlock = cursor.block();
         if (cursor.currentList()->count() == cursor.currentList()->itemNumber(currentBlock) + 1) {
             // Last block in this list, but may have just gained another list below.
             if (currentBlock.next().textList()) {
@@ -216,7 +216,7 @@ void NestedListHelper::handleOnIndentMore()
 void NestedListHelper::handleOnIndentLess()
 {
     QTextCursor cursor = textEdit->textCursor();
-    QTextList *currentList = cursor.currentList();
+    const QTextList *currentList = cursor.currentList();
     if (!currentList) {
         return;
     }

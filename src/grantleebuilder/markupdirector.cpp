@@ -569,7 +569,7 @@ void MarkupDirector::processClosingElements(const QTextBlock::iterator &it)
             d->m_openElements.removeLast();
             elementsToClose.remove(tag);
         }
-        int previousSize = remainingSize;
+        const int previousSize = remainingSize;
         remainingSize = elementsToClose.size();
 
         if (previousSize == remainingSize) {
@@ -597,7 +597,7 @@ void MarkupDirector::processOpeningElements(const QTextBlock::iterator &it)
     const auto fragmentFormat = fragment.charFormat();
     const auto elementsToOpenList = getElementsToOpen(it);
 
-    for (int tag : elementsToOpenList) {
+    for (const int tag : elementsToOpenList) {
         switch (tag) {
         case Strong:
             m_builder->beginStrong();
@@ -868,7 +868,7 @@ QList<int> MarkupDirector::sortOpeningOrder(QSet<int> openingOrder, QTextBlock::
                 // will be
                 // closed on the same block.
                 // See testDoubleFormat.
-                for (int tag : elementsToClose) {
+                for (const int tag : elementsToClose) {
                     if (openingOrder.remove(tag)) {
                         sortedOpenedElements.prepend(tag);
                     }
@@ -877,7 +877,7 @@ QList<int> MarkupDirector::sortOpeningOrder(QSet<int> openingOrder, QTextBlock::
         } else {
             // End of block. Need to close all open elements.
             // Order irrelevant in this case.
-            for (int tag : std::as_const(openingOrder)) {
+            for (const int tag : std::as_const(openingOrder)) {
                 sortedOpenedElements.prepend(tag);
             }
             break;

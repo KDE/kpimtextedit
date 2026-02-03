@@ -466,7 +466,7 @@ void RichTextComposerActions::setActionsEnabled(bool enabled)
 
 void RichTextComposerActions::slotUpdateCharFormatActions(const QTextCharFormat &format)
 {
-    QFont f = format.font();
+    const QFont f = format.font();
 
     d->action_font_family->setFont(f.family());
     if (f.pointSize() > 0) {

@@ -206,8 +206,8 @@ RichTextComposer *RichTextComposerControler::richTextComposer() const
 void RichTextComposerControler::insertHorizontalRule()
 {
     QTextCursor cursor = richTextComposer()->textCursor();
-    QTextBlockFormat bf = cursor.blockFormat();
-    QTextCharFormat cf = cursor.charFormat();
+    const QTextBlockFormat bf = cursor.blockFormat();
+    const QTextCharFormat cf = cursor.charFormat();
 
     cursor.beginEditBlock();
     cursor.insertHtml(u"<hr>"_s);
@@ -424,7 +424,7 @@ void RichTextComposerControler::setChangeTextForegroundColor()
 
 void RichTextComposerControler::setChangeTextBackgroundColor()
 {
-    QTextCharFormat fmt = richTextComposer()->textCursor().charFormat();
+    const QTextCharFormat fmt = richTextComposer()->textCursor().charFormat();
     const QColor currentColor = fmt.background().color();
     const QColor defaultColor = richTextComposer()->palette().base().color();
 
@@ -459,7 +459,7 @@ void RichTextComposerControler::selectLinkText() const
 void RichTextComposerControler::manageLink()
 {
     selectLinkText();
-    QPointer<KLinkDialog> linkDialog = new KLinkDialog(richTextComposer());
+    const QPointer<KLinkDialog> linkDialog = new KLinkDialog(richTextComposer());
     linkDialog->setLinkText(currentLinkText());
     linkDialog->setLinkUrl(currentLinkUrl());
 
@@ -507,8 +507,8 @@ void RichTextComposerControler::RichTextComposerControllerPrivate::updateLink(co
         // Workaround for QTBUG-1814:
         // Link formatting does not get removed immediately when setAnchor(false)
         // is called. So the formatting needs to be applied manually.
-        QTextDocument defaultTextDocument;
-        QTextCharFormat defaultCharFormat = defaultTextDocument.begin().charFormat();
+        const QTextDocument defaultTextDocument;
+        const QTextCharFormat defaultCharFormat = defaultTextDocument.begin().charFormat();
 
         format.setUnderlineStyle(defaultCharFormat.underlineStyle());
         format.setUnderlineColor(defaultCharFormat.underlineColor());

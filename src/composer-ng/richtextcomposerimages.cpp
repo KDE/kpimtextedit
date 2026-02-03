@@ -72,11 +72,11 @@ void RichTextComposerImages::loadImage(const QImage &image, const QString &match
     QTextBlock::iterator it;
     while (currentBlock.isValid()) {
         for (it = currentBlock.begin(); !it.atEnd(); ++it) {
-            QTextFragment fragment = it.fragment();
+            const QTextFragment fragment = it.fragment();
             if (fragment.isValid()) {
-                QTextImageFormat imageFormat = fragment.charFormat().toImageFormat();
+                const QTextImageFormat imageFormat = fragment.charFormat().toImageFormat();
                 if (imageFormat.isValid() && imageFormat.name() == matchName) {
-                    int pos = fragment.position();
+                    const int pos = fragment.position();
                     if (!cursorPositionsToSkip.contains(pos)) {
                         QTextCursor cursor(d->composer->document());
                         cursor.setPosition(pos);
@@ -112,7 +112,7 @@ void RichTextComposerImages::addImageHelper(const QString &imageName, const QIma
     // determine the imageNameToAdd
     int imageNumber = 1;
     while (d->mImageNames.contains(imageNameToAdd)) {
-        QVariant qv = document->resource(QTextDocument::ImageResource, QUrl(imageNameToAdd));
+        const QVariant qv = document->resource(QTextDocument::ImageResource, QUrl(imageNameToAdd));
         if (qv == image) {
             // use the same name
             break;
@@ -149,10 +149,10 @@ ImageWithNameList RichTextComposerImages::imagesWithName() const
     for (const QTextImageFormat &imageFormat : imageFormats) {
         const QString name = imageFormat.name();
         if (!seenImageNames.contains(name)) {
-            QVariant resourceData = d->composer->document()->resource(QTextDocument::ImageResource, QUrl(name));
+            const QVariant resourceData = d->composer->document()->resource(QTextDocument::ImageResource, QUrl(name));
             auto image = qvariant_cast<QImage>(resourceData);
 
-            ImageWithNamePtr newImage(new ImageWithName);
+            const ImageWithNamePtr newImage(new ImageWithName);
             newImage->image = image;
             newImage->name = name;
             retImages.append(newImage);
@@ -188,15 +188,15 @@ QSharedPointer<EmbeddedImage> RichTextComposerImages::createEmbeddedImage(const 
 
 QList<QTextImageFormat> RichTextComposerImages::embeddedImageFormats() const
 {
-    QTextDocument *doc = d->composer->document();
+    const QTextDocument *doc = d->composer->document();
     QList<QTextImageFormat> retList;
 
     QTextBlock currentBlock = doc->begin();
     while (currentBlock.isValid()) {
         for (QTextBlock::iterator it = currentBlock.begin(); !it.atEnd(); ++it) {
-            QTextFragment fragment = it.fragment();
+            const QTextFragment fragment = it.fragment();
             if (fragment.isValid()) {
-                QTextImageFormat imageFormat = fragment.charFormat().toImageFormat();
+                const QTextImageFormat imageFormat = fragment.charFormat().toImageFormat();
                 if (imageFormat.isValid()) {
                     // TODO: Replace with a way to see if an image is an embedded image or a remote
                     const QUrl url(imageFormat.name());

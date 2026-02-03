@@ -536,7 +536,7 @@ void RichTextComposer::insertFromMimeData(const QMimeData *source)
     // Add an image if that is on the clipboard
     if (textMode() == RichTextComposer::Rich && source->hasImage()) {
         const auto image = qvariant_cast<QImage>(source->imageData());
-        QFileInfo fi;
+        const QFileInfo fi;
         d->composerControler->composerImages()->insertImage(image, fi);
         return;
     }

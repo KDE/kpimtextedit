@@ -24,7 +24,7 @@ namespace KPIMTextEdit
 {
 static inline QString resolveAlias(const QString &name)
 {
-    QMimeDatabase db;
+    const QMimeDatabase db;
     const QString str = db.mimeTypeForName(name).name();
     return str;
 }
@@ -145,7 +145,7 @@ void InsertImageWidgetPrivate::_k_slotKeepOriginalSizeClicked(bool checked)
 
 void InsertImageWidgetPrivate::_k_slotUrlChanged(const QString &text)
 {
-    QImage image(text);
+    const QImage image(text);
     if (!image.isNull()) {
         height->setValue(image.height());
         width->setValue(image.width());
