@@ -4,6 +4,9 @@
 @PACKAGE_INIT@
 include(CMakeFindDependencyMacro)
 
-find_dependency(KF6TextCustomEditor "@KTEXTADDONS_MIN_VERSION@")
+find_dependency(
+    KF6TextCustomEditor
+    "@KTEXTADDONS_MIN_VERSION@"
+)
 
 include("${CMAKE_CURRENT_LIST_DIR}/KPim6TextEditTargets.cmake")
