@@ -51,7 +51,16 @@ class KPIMTEXTEDIT_EXPORT RichTextComposerImages : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     * Constructs a RichTextComposerImages object.
+     *
+     * \param composer The RichTextComposer instance
+     * \param parent The parent QObject
+     */
     explicit RichTextComposerImages(RichTextComposer *composer, QObject *parent = nullptr);
+    /*!
+     * Destroys the RichTextComposerImages object.
+     */
     ~RichTextComposerImages() override;
 
     /*!
@@ -79,11 +88,47 @@ public:
      */
     void loadImage(const QImage &image, const QString &matchName, const QString &resourceName);
 
+    /*!
+     * Helper function to add an image with the given name.
+     *
+     * \param imageName The name of the image
+     * \param image The image to add
+     * \param width The width of the image, or -1 for default
+     * \param height The height of the image, or -1 for default
+     */
     void addImageHelper(const QString &imageName, const QImage &image, int width = -1, int height = -1);
+    /*!
+     * Returns a list of all images with their names.
+     *
+     * \return A list of ImageWithNamePtr objects
+     */
     [[nodiscard]] ImageWithNameList imagesWithName() const;
+    /*!
+     * Returns a list of all embedded images.
+     *
+     * \return A list of embedded image pointers
+     */
     [[nodiscard]] QList<QSharedPointer<EmbeddedImage>> embeddedImages() const;
+    /*!
+     * Returns a list of all embedded image formats.
+     *
+     * \return A list of QTextImageFormat objects
+     */
     [[nodiscard]] QList<QTextImageFormat> embeddedImageFormats() const;
+    /*!
+     * Helper function to add an image from a URL.
+     *
+     * \param url The URL of the image file
+     * \param width The width of the image, or -1 for default
+     * \param height The height of the image, or -1 for default
+     */
     void addImageHelper(const QUrl &url, int width = -1, int height = -1);
+    /*!
+     * Inserts an image from file information.
+     *
+     * \param image The image to insert
+     * \param fileInfo The file information for the image
+     */
     void insertImage(const QImage &image, const QFileInfo &fileInfo);
 
     /*!
@@ -105,6 +150,13 @@ public:
      */
     [[nodiscard]] static QByteArray imageNamesToContentIds(const QByteArray &htmlBody, const ImageList &imageList);
 
+    /*!
+     * Creates an embedded image from a QImage.
+     *
+     * \param img The image to embed
+     * \param imageName The name of the image
+     * \return A shared pointer to the created EmbeddedImage
+     */
     [[nodiscard]] QSharedPointer<EmbeddedImage> createEmbeddedImage(const QImage &img, const QString &imageName) const;
 
 private:

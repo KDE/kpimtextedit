@@ -11,7 +11,7 @@
 
 /*!
  * \namespace KPIMTextEdit
- * \inmodule KPIMTextEdit
+ * \inmodule KPIMTextedit
  */
 namespace KPIMTextEdit
 {

@@ -24,7 +24,7 @@ class AbstractMarkupBuilder;
 
 /*!
  * \class KPIMTextEdit::MarkupDirector
- * \inmodule KPIMTextEdit
+ * \inmodule KPIMTextedit
  * \inheaderfile KPIMTextEdit/MarkupDirector
  *
   \brief Instructs a builder object to create markup output
@@ -73,11 +73,6 @@ class AbstractMarkupBuilder;
   processCustomFragment method.
 
   \sa \ custom_qtextobject
-
-  \class KPIMTextEdit::MarkupDirector
-  \inmodule KPIMTextedit
-  \inheaderfile KPIMTextEdit/MarkupDirector
-  \author Stephen Kelly <steveire@gmail.com>
 */
 class KPIMTEXTEDIT_EXPORT MarkupDirector
 {
