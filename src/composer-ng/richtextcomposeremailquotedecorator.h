@@ -25,14 +25,19 @@ class KPIMTEXTEDIT_EXPORT RichTextComposerEmailQuoteDecorator : public Sonnet::S
     Q_OBJECT
 public:
     /*!
+     * Constructs a RichTextComposerEmailQuoteDecorator with the given \a textEdit.
      */
     explicit RichTextComposerEmailQuoteDecorator(RichTextComposer *textEdit);
     /*!
+     * Destroys the RichTextComposerEmailQuoteDecorator.
      */
     ~RichTextComposerEmailQuoteDecorator() override;
 
 protected:
     /*!
+     * Returns whether spell checking should be enabled for the given \a blockText.
+     * Quoted text blocks will return false, while normal text will return true.
+     * Reimplemented from Sonnet::SpellCheckDecorator.
      */
     [[nodiscard]] bool isSpellCheckingEnabledForBlock(const QString &blockText) const override;
 
