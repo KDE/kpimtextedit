@@ -24,7 +24,7 @@ class AbstractMarkupBuilder;
 
 /*!
  * \class KPIMTextEdit::MarkupDirector
- * \inmodule KPIMTextedit
+ * \inmodule KPIMTextEdit
  * \inheaderfile KPIMTextEdit/MarkupDirector
  *
   \brief Instructs a builder object to create markup output
@@ -73,106 +73,107 @@ class AbstractMarkupBuilder;
   processCustomFragment method.
 
   \sa \ custom_qtextobject
+
+  \author Stephen Kelly <steveire@gmail.com>
 */
 class KPIMTEXTEDIT_EXPORT MarkupDirector
 {
 public:
     /*!
-    Constructor
-  */
+     * Constructs a MarkupDirector with the given \a builder.
+     */
     explicit MarkupDirector(KPIMTextEdit::AbstractMarkupBuilder *builder);
 
     /*!
-    Destructor
-  */
+     * Destroys the MarkupDirector.
+     */
     virtual ~MarkupDirector();
 
     /*!
-    Constructs the output by directing the builder to create the markup.
-  */
+     * Processes the entire \a doc and constructs the output by directing the builder to create the markup.
+     */
     virtual void processDocument(QTextDocument *doc);
 
     /*!
-    Directs the builder to create output for the single \a frame. If calling
-    this method directly, an invalid QTextFrame::iterator may be used.
-  */
+     * Directs the builder to create output for the single \a frame. If calling
+     * this method directly, an invalid QTextFrame::iterator may be used.
+     * Returns the iterator position after processing the frame.
+     */
     [[nodiscard]] virtual QTextFrame::iterator processFrame(QTextFrame::iterator it, QTextFrame *frame);
 
     /*!
-    Directs the builder to create output for the single \a block. If calling
-    this method directly, an invalid QTextFrame::iterator may be used.
-
-    This method does not process the contents of the \a block, but uses the
-    \ processBlockContents method to do so.
-  */
+     * Directs the builder to create output for the single \a block. If calling
+     * this method directly, an invalid QTextFrame::iterator may be used.
+     * This method does not process the contents of the \a block, but uses the
+     * processBlockContents method to do so.
+     * Returns the iterator position after processing the block.
+     */
     [[nodiscard]] virtual QTextFrame::iterator processBlock(QTextFrame::iterator it, const QTextBlock &block);
 
     /*!
-    Directs the builder to create output for the single \a textObject. If
-    calling this method directly, an invalid QTextFrame::iterator may be used.
-
-    The block \a block is the container of the \a textObject.
-  */
+     * Directs the builder to create output for the single \a textObject. If
+     * calling this method directly, an invalid QTextFrame::iterator may be used.
+     * The block \a block is the container of the \a textObject.
+     * Returns the iterator position after processing the object.
+     */
     [[nodiscard]] virtual QTextFrame::iterator processObject(QTextFrame::iterator it, const QTextBlock &block, QTextObject *textObject);
 
     /*!
-    Directs the builder to create output for the single \a textBlockGroup. If
-    calling this method directly, an invalid QTextFrame::iterator may be used.
-
-    The block \a block is the first block in the \a textBlockGroup.
-  */
+     * Directs the builder to create output for the single \a textBlockGroup. If
+     * calling this method directly, an invalid QTextFrame::iterator may be used.
+     * The block \a block is the first block in the \a textBlockGroup.
+     * Returns a pair containing the iterator and block after processing.
+     */
     [[nodiscard]] virtual QPair<QTextFrame::iterator, QTextBlock>
     processBlockGroup(const QTextFrame::iterator &it, const QTextBlock &block, QTextBlockGroup *textBlockGroup);
 
     /*!
-    Directs the builder to create output for the single \a textList. If
-    calling this method directly, an invalid QTextFrame::iterator may be used.
-
-    The block \a block is the first block in the \a textList.
-  */
+     * Directs the builder to create output for the single \a textList. If
+     * calling this method directly, an invalid QTextFrame::iterator may be used.
+     * The block \a block is the first block in the \a textList.
+     * Returns a pair containing the iterator and block after processing.
+     */
     [[nodiscard]] virtual QPair<QTextFrame::iterator, QTextBlock> processList(QTextFrame::iterator it, const QTextBlock &block, QTextList *textList);
 
     /*!
-    Directs the builder to create output for the contents of the single @p
-    block. If calling this method directly, an invalid QTextFrame::iterator
-    may be used.
-  */
+     * Directs the builder to create output for the contents of the single block.
+     * If calling this method directly, an invalid QTextFrame::iterator may be used.
+     * Returns the iterator position after processing the block contents.
+     */
     virtual QTextFrame::iterator processBlockContents(QTextFrame::iterator it, const QTextBlock &block);
 
     /*!
-    Hook for instructing the builder to create output for the \a fragemnt with
-    a custom type. \a doc is the document the fragment is in.
-  */
+     * Hook for instructing the builder to create output for the \a fragment with
+     * a custom type. \a doc is the document the fragment is in.
+     */
     virtual void processCustomFragment(const QTextFragment &fragment, QTextDocument const *doc);
 
     /*!
-    Directs the builder to create output for the contents of the single @p
-    fragment. If calling this method directly, an invalid QTextBlock::iterator
-    may be used. \a doc is the document the fragment is in.
-  */
+     * Directs the builder to create output for the contents of the single \a fragment.
+     * If calling this method directly, an invalid QTextBlock::iterator may be used.
+     * \a doc is the document the fragment is in.
+     * Returns the iterator position after processing the fragment.
+     */
     [[nodiscard]] virtual QTextBlock::iterator processFragment(QTextBlock::iterator it, const QTextFragment &fragment, QTextDocument const *doc);
 
     /*!
-    Directs the builder to create output for the contents of the single @p
-    textObject. The \a textObject is represented in the QTextDocument with the
-    QTextFragment \a fragment.
-
-    If calling this method directly, an invalid QTextBlock::iterator may be
-    used.
-  */
+     * Directs the builder to create output for the contents of the single \a textObject.
+     * The \a textObject is represented in the QTextDocument with the QTextFragment \a fragment.
+     * If calling this method directly, an invalid QTextBlock::iterator may be used.
+     * Returns the iterator position after processing the character text object.
+     */
     [[nodiscard]] virtual QTextBlock::iterator processCharTextObject(QTextBlock::iterator it, const QTextFragment &fragment, QTextObject *textObject);
 
     /*!
-    Directs the builder to create output for the image represented by the @p
-    imageFormat.
-
-    If calling this method directly, an invalid QTextBlock::iterator may be
-    used. \a doc is the document the fragment is in.
-  */
+     * Directs the builder to create output for the image represented by the \a imageFormat.
+     * If calling this method directly, an invalid QTextBlock::iterator may be used.
+     * \a doc is the document the fragment is in.
+     * Returns the iterator position after processing the image.
+     */
     [[nodiscard]] virtual QTextBlock::iterator processImage(QTextBlock::iterator it, const QTextImageFormat &imageFormat, QTextDocument const *doc);
 
     /*!
-    Directs the builder to create output for the contents of the single @p
+     * Directs the builder to create output for the contents of the single
     table.
 
     If calling this method directly, an invalid QTextFrame::iterator may be

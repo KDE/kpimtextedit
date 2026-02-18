@@ -22,7 +22,7 @@ class RichTextComposer;
  * \inmodule KPIMTextedit
  * \inheaderfile KPIMTextEdit/RichTextComposerWidget
  *
- * \brief The RichTextComposerWidget class
+ * \brief The RichTextComposerWidget class provides a widget wrapping RichTextComposer with additional UI.
  * \author Laurent Montel <montel@kde.org>
  * \since 5.2
  */
@@ -31,13 +31,16 @@ class KPIMTEXTEDIT_EXPORT RichTextComposerWidget : public QWidget
     Q_OBJECT
 public:
     /*!
+     * Constructs a RichTextComposerWidget with the given \a parent.
      */
     explicit RichTextComposerWidget(QWidget *parent = nullptr);
     /*!
+     * Destroys the RichTextComposerWidget.
      */
     ~RichTextComposerWidget() override;
 
     /*!
+     * Returns the RichTextComposer instance managed by this widget.
      */
     [[nodiscard]] KPIMTextEdit::RichTextComposer *richTextComposer() const;
 

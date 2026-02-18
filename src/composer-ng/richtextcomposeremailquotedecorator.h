@@ -17,7 +17,7 @@ class RichTextComposer;
  * \inmodule KPIMTextedit
  * \inheaderfile KPIMTextEdit/RichTextComposerEmailQuoteDecorator
  *
- * \brief The RichTextComposerEmailQuoteDecorator class
+ * \brief The RichTextComposerEmailQuoteDecorator class adds spell-check decoration to quoted text.
  * \author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposerEmailQuoteDecorator : public Sonnet::SpellCheckDecorator

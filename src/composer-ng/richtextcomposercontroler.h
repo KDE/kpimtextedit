@@ -20,7 +20,7 @@ class RichTextComposerImages;
  * \inmodule KPIMTextedit
  * \inheaderfile KPIMTextEdit/RichTextComposerControler
  *
- * \brief The RichTextComposerControler class
+ * \brief The RichTextComposerControler class provides control and logic for rich text composition operations.
  * \author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposerControler : public QObject

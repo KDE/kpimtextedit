@@ -92,45 +92,99 @@ class TextHTMLBuilderPrivate;
 class KPIMTEXTEDIT_EXPORT TextHTMLBuilder : virtual public KPIMTextEdit::AbstractMarkupBuilder
 {
 public:
+    /*!
+     * Constructs a TextHTMLBuilder.
+     */
     TextHTMLBuilder();
+    /*!
+     * Destroys the TextHTMLBuilder.
+     */
     ~TextHTMLBuilder() override;
 
+    /*!
+     * Begins a bold (strong) HTML element.
+     */
     void beginStrong() override;
+    /*!
+     * Ends the bold HTML element.
+     */
     void endStrong() override;
+    /*!
+     * Begins an emphasized HTML element.
+     */
     void beginEmph() override;
+    /*!
+     * Ends the emphasized HTML element.
+     */
     void endEmph() override;
+    /*!
+     * Begins an underlined HTML element.
+     */
     void beginUnderline() override;
+    /*!
+     * Ends the underlined HTML element.
+     */
     void endUnderline() override;
+    /*!
+     * Begins a strikeout HTML element.
+     */
     void beginStrikeout() override;
+    /*!
+     * Ends the strikeout HTML element.
+     */
     void endStrikeout() override;
+    /*!
+     * Begins a foreground color element with the given \a brush.
+     */
     void beginForeground(const QBrush &brush) override;
+    /*!
+     * Ends the foreground color element.
+     */
     void endForeground() override;
+    /*!
+     * Begins a background color element with the given \a brush.
+     */
     void beginBackground(const QBrush &brush) override;
+    /*!
+     * Ends the background color element.
+     */
     void endBackground() override;
+    /*!
+     * Begins an anchor (link) HTML element with the given \a href and \a name.
+     */
     void beginAnchor(const QString &href = {}, const QString &name = {}) override;
+    /*!
+     * Ends the anchor HTML element.
+     */
     void endAnchor() override;
 
-    // Maybe this stuff should just be added to a list, and then when I add
-    // literal text,
-    // add some kind of style attribute in one span instead of many.
+    /*!
+     * Begins a font family element with the given \a family.
+     */
     void beginFontFamily(const QString &family) override;
+    /*!
+     * Ends the font family element.
+     */
     void endFontFamily() override;
 
     /*!
-    Begin a new font point size
-    \a size The new size to begin.
-  */
+     * Begin a new font point size with the given \a size.
+     */
     void beginFontPointSize(int size) override;
+    /*!
+     * Ends the font point size element.
+     */
     void endFontPointSize() override;
 
     /*!
-    Begin a new paragraph
-    \a al The new paragraph alignment
-    \a topMargin The new paragraph topMargin
-    \a bottomMargin The new paragraph bottomMargin
-    \a leftMargin The new paragraph leftMargin
-    \a rightMargin The new paragraph rightMargin
-  */
+     * Begins a paragraph with the given alignment and margins.
+     * \a al The alignment of the paragraph
+     * \a topMargin The top margin
+     * \a bottomMargin The bottom margin
+     * \a leftMargin The left margin
+     * \a rightMargin The right margin
+     * \a leftToRightText Whether the text direction is left-to-right
+     */
     void beginParagraph(Qt::Alignment al = Qt::AlignLeft,
                         qreal topMargin = 0.0,
                         qreal bottomMargin = 0.0,
@@ -139,49 +193,107 @@ public:
                         bool leftToRightText = false) override;
 
     /*!
-    Begin a new header element.
-    \a level The new level to begin.
-  */
+     * Begins a header element with the given \a level.
+     */
     void beginHeader(int level) override;
 
     /*!
-    End a header element.
-    \a level The new level to end.
-  */
+     * Ends a header element with the given \a level.
+     */
     void endHeader(int level) override;
 
+    /*!
+     * Ends the paragraph element.
+     */
     void endParagraph() override;
+    /*!
+     * Adds a newline to the HTML output.
+     */
     void addNewline() override;
 
+    /*!
+     * Inserts a horizontal rule with the given \a width (-1 for full width).
+     */
     void insertHorizontalRule(int width = -1) override;
 
+    /*!
+     * Inserts an image with the given \a src, \a width, and \a height.
+     */
     void insertImage(const QString &src, qreal width, qreal height) override;
 
+    /*!
+     * Begins a list with the given \a type style.
+     */
     void beginList(QTextListFormat::Style type) override;
 
+    /*!
+     * Ends the list element.
+     */
     void endList() override;
 
+    /*!
+     * Begins a list item element.
+     */
     void beginListItem() override;
+    /*!
+     * Ends the list item element.
+     */
     void endListItem() override;
 
+    /*!
+     * Begins a superscript element.
+     */
     void beginSuperscript() override;
 
+    /*!
+     * Ends the superscript element.
+     */
     void endSuperscript() override;
 
+    /*!
+     * Begins a subscript element.
+     */
     void beginSubscript() override;
 
+    /*!
+     * Ends the subscript element.
+     */
     void endSubscript() override;
 
+    /*!
+     * Begins a table with the given \a cellpadding, \a cellspacing, and \a width.
+     */
     void beginTable(qreal cellpadding, qreal cellspacing, const QString &width) override;
 
+    /*!
+     * Begins a table row.
+     */
     void beginTableRow() override;
+    /*!
+     * Begins a table header cell with the given \a width, \a colspan, and \a rowspan.
+     */
     void beginTableHeaderCell(const QString &width, int colspan, int rowspan) override;
 
+    /*!
+     * Begins a table cell with the given \a width, \a colspan, and \a rowspan.
+     */
     void beginTableCell(const QString &width, int colspan, int rowspan) override;
 
+    /*!
+     * Ends the table element.
+     */
     void endTable() override;
+    /*!
+     * Ends the table row element.
+     */
     void endTableRow() override;
+    /*!
+     * Ends the table header cell element.
+     */
     void endTableHeaderCell() override;
+    /*!
+     * Ends the table cell element.
+     */
     void endTableCell() override;
 
     /*!

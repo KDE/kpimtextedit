@@ -45,7 +45,7 @@ using ImageList = QList<QSharedPointer<EmbeddedImage>>;
  * \inmodule KPIMTextedit
  * \inheaderfile KPIMTextEdit/RichTextComposerImages
  *
- * \brief The RichTextComposerImages class
+ * \brief The RichTextComposerImages class manages embedded images in rich text documents.
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposerImages : public QObject
 {

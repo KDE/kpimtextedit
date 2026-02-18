@@ -19,7 +19,7 @@ class RichTextComposer;
  * \inmodule KPIMTextedit
  * \inheaderfile KPIMTextEdit/RichTextExternalComposer
  *
- * \brief The RichTextExternalComposer class
+ * \brief The RichTextExternalComposer class manages integration with external text editors.
  * \author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextExternalComposer : public QObject
