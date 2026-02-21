@@ -279,7 +279,7 @@ msgstr "Re&move Characteres de Citar"
 #, kde-format
 msgctxt "@action"
 msgid "Paste Without Formatting"
-msgstr "Colla sin formattar"
+msgstr "Colla sin fnormatar"
 
 #: composer-ng/richtextcomposeractions.cpp:351
 #, kde-format
