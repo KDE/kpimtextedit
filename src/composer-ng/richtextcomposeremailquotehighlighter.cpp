@@ -48,13 +48,12 @@ RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighter(Ric
 
 RichTextComposerEmailQuoteHighlighter::~RichTextComposerEmailQuoteHighlighter() = default;
 
-void RichTextComposerEmailQuoteHighlighter::setQuoteColor(const QColor &normalColor,
+void RichTextComposerEmailQuoteHighlighter::setQuoteColor([[maybe_unused]] const QColor &normalColor,
                                                           const QColor &quoteDepth1,
                                                           const QColor &quoteDepth2,
                                                           const QColor &quoteDepth3,
                                                           const QColor &misspelledColor)
 {
-    Q_UNUSED(normalColor)
     d->col1 = quoteDepth1;
     d->col2 = quoteDepth2;
     d->col3 = quoteDepth3;
@@ -94,10 +93,8 @@ void RichTextComposerEmailQuoteHighlighter::highlightBlock(const QString &text)
     setCurrentBlockState(0);
 }
 
-void RichTextComposerEmailQuoteHighlighter::unsetMisspelled(int start, int count)
+void RichTextComposerEmailQuoteHighlighter::unsetMisspelled([[maybe_unused]] int start, [[maybe_unused]] int count)
 {
-    Q_UNUSED(start)
-    Q_UNUSED(count)
 }
 
 void RichTextComposerEmailQuoteHighlighter::setMisspelled(int start, int count)

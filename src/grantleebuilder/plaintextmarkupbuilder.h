@@ -77,7 +77,7 @@ public:
     /*!
      * Begins an anchor (link) element with the given \a href and \a name.
      */
-    void beginAnchor(const QString &href = QString(), const QString &name = QString()) override;
+    void beginAnchor(const QString &href = QString(), [[maybe_unused]] const QString &name = QString()) override;
 
     /*!
      * Ends the anchor element.
@@ -87,8 +87,12 @@ public:
     /*!
      * Begins a paragraph with the given alignment and margins.
      */
-    void beginParagraph(Qt::Alignment a = Qt::AlignLeft, qreal top = 0.0, qreal bottom = 0.0, qreal left = 0.0, qreal right = 0.0, bool leftToRightText = false)
-        override;
+    void beginParagraph([[maybe_unused]] Qt::Alignment a = Qt::AlignLeft,
+                        qreal top = 0.0,
+                        qreal bottom = 0.0,
+                        qreal left = 0.0,
+                        qreal right = 0.0,
+                        [[maybe_unused]] bool leftToRightText = false) override;
 
     /*!
      * Ends the paragraph element.
@@ -102,12 +106,12 @@ public:
     /*!
      * Inserts a horizontal rule with the given \a width (-1 for full width).
      */
-    void insertHorizontalRule(int width = -1) override;
+    void insertHorizontalRule([[maybe_unused]] int width = -1) override;
 
     /*!
      * Inserts an image with the given \a src, \a width, and \a height.
      */
-    void insertImage(const QString &src, qreal width, qreal height) override;
+    void insertImage(const QString &src, [[maybe_unused]] qreal width, [[maybe_unused]] qreal height) override;
 
     /*!
      * Begins a list with the given \a style.
@@ -152,7 +156,7 @@ public:
     /*!
      * Begins a table with the given \a cellpadding, \a cellspacing, and \a width.
      */
-    void beginTable(qreal cellpadding, qreal cellspacing, const QString &width) override;
+    void beginTable([[maybe_unused]] qreal cellpadding, [[maybe_unused]] qreal cellspacing, [[maybe_unused]] const QString &width) override;
 
     /*!
      * Begins a table row.
@@ -162,12 +166,12 @@ public:
     /*!
      * Begins a table header cell with the given \a width, \a colSpan, and \a rowSpan.
      */
-    void beginTableHeaderCell(const QString &width, int colSpan, int rowSpan) override;
+    void beginTableHeaderCell([[maybe_unused]] const QString &width, [[maybe_unused]] int colSpan, [[maybe_unused]] int rowSpan) override;
 
     /*!
      * Begins a table cell with the given \a width, \a colSpan, and \a rowSpan.
      */
-    void beginTableCell(const QString &width, int colSpan, int rowSpan) override;
+    void beginTableCell([[maybe_unused]] const QString &width, [[maybe_unused]] int colSpan, [[maybe_unused]] int rowSpan) override;
 
     /*!
      * Appends literal text to the output.
@@ -192,12 +196,12 @@ public:
     /*!
      * Returns true if the given dimensions indicate a quoted block.
      */
-    [[nodiscard]] bool isQuoteBlock(qreal top, qreal bottom, qreal left, qreal right) const;
+    [[nodiscard]] bool isQuoteBlock([[maybe_unused]] qreal top, [[maybe_unused]] qreal bottom, qreal left, qreal right) const;
 
     /*!
      * Begins a foreground color element with the given \a brush.
      */
-    void beginForeground(const QBrush &brush) override;
+    void beginForeground([[maybe_unused]] const QBrush &brush) override;
     /*!
      * Ends the foreground color element.
      */
@@ -205,7 +209,7 @@ public:
     /*!
      * Begins a background color element with the given \a brush.
      */
-    void beginBackground(const QBrush &brush) override;
+    void beginBackground([[maybe_unused]] const QBrush &brush) override;
     /*!
      * Ends the background color element.
      */
@@ -213,7 +217,7 @@ public:
     /*!
      * Begins a font family element with the given \a family.
      */
-    void beginFontFamily(const QString &family) override;
+    void beginFontFamily([[maybe_unused]] const QString &family) override;
     /*!
      * Ends the font family element.
      */
@@ -221,7 +225,7 @@ public:
     /*!
      * Begins a font point size element with the given \a size.
      */
-    void beginFontPointSize(int size) override;
+    void beginFontPointSize([[maybe_unused]] int size) override;
     /*!
      * Ends the font point size element.
      */

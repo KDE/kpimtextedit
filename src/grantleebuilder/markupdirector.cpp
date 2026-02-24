@@ -369,9 +369,8 @@ QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it, QText
     return it;
 }
 
-void MarkupDirector::processTableCell(const QTextTableCell &tableCell, QTextTable *table)
+void MarkupDirector::processTableCell(const QTextTableCell &tableCell, [[maybe_unused]] QTextTable *table)
 {
-    Q_UNUSED(table)
     processDocumentContents(tableCell.begin(), tableCell.end());
 }
 
@@ -406,10 +405,8 @@ QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::processList(QTextFrame::
     return qMakePair(it, block);
 }
 
-void MarkupDirector::processCustomFragment(const QTextFragment &fragment, const QTextDocument *doc)
+void MarkupDirector::processCustomFragment([[maybe_unused]] const QTextFragment &fragment, [[maybe_unused]] const QTextDocument *doc)
 {
-    Q_UNUSED(fragment)
-    Q_UNUSED(doc)
 }
 
 QTextFrame::iterator MarkupDirector::processObject(QTextFrame::iterator it, const QTextBlock &block, QTextObject *object)
@@ -494,9 +491,8 @@ QTextBlock::iterator MarkupDirector::processCharTextObject(QTextBlock::iterator 
     return it;
 }
 
-QTextBlock::iterator MarkupDirector::processImage(QTextBlock::iterator it, const QTextImageFormat &imageFormat, const QTextDocument *doc)
+QTextBlock::iterator MarkupDirector::processImage(QTextBlock::iterator it, const QTextImageFormat &imageFormat, [[maybe_unused]] const QTextDocument *doc)
 {
-    Q_UNUSED(doc)
     // TODO: Close any open format elements?
     m_builder->insertImage(imageFormat.name(), imageFormat.width(), imageFormat.height());
     if (!it.atEnd()) {

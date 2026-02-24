@@ -200,10 +200,9 @@ void PlainTextMarkupBuilder::endStrikeout()
     d->mText.append(u'-');
 }
 
-void PlainTextMarkupBuilder::beginAnchor(const QString &href, const QString &name)
+void PlainTextMarkupBuilder::beginAnchor(const QString &href, [[maybe_unused]] const QString &name)
 {
     Q_D(PlainTextMarkupBuilder);
-    Q_UNUSED(name)
     if (!d->mUrls.contains(href)) {
         d->mUrls.append(href);
     }
@@ -228,9 +227,8 @@ void PlainTextMarkupBuilder::addNewline()
     d->mText.append(u'\n');
 }
 
-void PlainTextMarkupBuilder::insertHorizontalRule(int width)
+void PlainTextMarkupBuilder::insertHorizontalRule([[maybe_unused]] int width)
 {
-    Q_UNUSED(width)
     Q_D(PlainTextMarkupBuilder);
 
     d->mText.append(u"--------------------\n"_s);
@@ -246,11 +244,9 @@ int PlainTextMarkupBuilder::addReference(const QString &reference)
     return d->mUrls.indexOf(reference) + 1;
 }
 
-void PlainTextMarkupBuilder::insertImage(const QString &src, qreal width, qreal height)
+void PlainTextMarkupBuilder::insertImage(const QString &src, [[maybe_unused]] qreal width, [[maybe_unused]] qreal height)
 {
     Q_D(PlainTextMarkupBuilder);
-    Q_UNUSED(width)
-    Q_UNUSED(height)
 
     const auto ref = addReference(src);
 
@@ -364,41 +360,38 @@ QString PlainTextMarkupBuilder::getResult()
     return ret;
 }
 
-void PlainTextMarkupBuilder::beginParagraph(Qt::Alignment a, qreal top, qreal bottom, qreal left, qreal right, bool leftToRightText)
+void PlainTextMarkupBuilder::beginParagraph([[maybe_unused]] Qt::Alignment a,
+                                            qreal top,
+                                            qreal bottom,
+                                            qreal left,
+                                            qreal right,
+                                            [[maybe_unused]] bool leftToRightText)
 {
-    Q_UNUSED(a)
-    Q_UNUSED(leftToRightText)
     Q_D(PlainTextMarkupBuilder);
     if (isQuoteBlock(top, bottom, left, right)) {
         d->mText.append(d->mQuoteprefix);
     }
 }
 
-bool PlainTextMarkupBuilder::isQuoteBlock(qreal top, qreal bottom, qreal left, qreal right) const
+bool PlainTextMarkupBuilder::isQuoteBlock([[maybe_unused]] qreal top, [[maybe_unused]] qreal bottom, qreal left, qreal right) const
 {
-    Q_UNUSED(top)
-    Q_UNUSED(bottom)
     return /*(top == 12) && (bottom == 12) &&*/ (left == 40) && (right == 40);
 }
 
-void PlainTextMarkupBuilder::beginBackground(const QBrush &brush)
+void PlainTextMarkupBuilder::beginBackground([[maybe_unused]] const QBrush &brush)
 {
-    Q_UNUSED(brush)
 }
 
-void PlainTextMarkupBuilder::beginFontFamily(const QString &family)
+void PlainTextMarkupBuilder::beginFontFamily([[maybe_unused]] const QString &family)
 {
-    Q_UNUSED(family)
 }
 
-void PlainTextMarkupBuilder::beginFontPointSize(int size)
+void PlainTextMarkupBuilder::beginFontPointSize([[maybe_unused]] int size)
 {
-    Q_UNUSED(size)
 }
 
-void PlainTextMarkupBuilder::beginForeground(const QBrush &brush)
+void PlainTextMarkupBuilder::beginForeground([[maybe_unused]] const QBrush &brush)
 {
-    Q_UNUSED(brush)
 }
 
 void PlainTextMarkupBuilder::beginHeader(int level)
@@ -428,25 +421,16 @@ void PlainTextMarkupBuilder::beginHeader(int level)
     }
 }
 
-void PlainTextMarkupBuilder::beginTable(qreal cellpadding, qreal cellspacing, const QString &width)
+void PlainTextMarkupBuilder::beginTable([[maybe_unused]] qreal cellpadding, [[maybe_unused]] qreal cellspacing, [[maybe_unused]] const QString &width)
 {
-    Q_UNUSED(cellpadding)
-    Q_UNUSED(cellspacing)
-    Q_UNUSED(width)
 }
 
-void PlainTextMarkupBuilder::beginTableCell(const QString &width, int colSpan, int rowSpan)
+void PlainTextMarkupBuilder::beginTableCell([[maybe_unused]] const QString &width, [[maybe_unused]] int colSpan, [[maybe_unused]] int rowSpan)
 {
-    Q_UNUSED(width)
-    Q_UNUSED(colSpan)
-    Q_UNUSED(rowSpan)
 }
 
-void PlainTextMarkupBuilder::beginTableHeaderCell(const QString &width, int colSpan, int rowSpan)
+void PlainTextMarkupBuilder::beginTableHeaderCell([[maybe_unused]] const QString &width, [[maybe_unused]] int colSpan, [[maybe_unused]] int rowSpan)
 {
-    Q_UNUSED(width)
-    Q_UNUSED(colSpan)
-    Q_UNUSED(rowSpan)
 }
 
 void PlainTextMarkupBuilder::beginTableRow()
