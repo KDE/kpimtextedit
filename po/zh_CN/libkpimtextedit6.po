@@ -21,7 +21,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Link Text:"
-msgstr "链接文字："
+msgstr "链接文本："
 
 #: composer-ng/klinkdialog.cpp:26
 #, kde-format
@@ -165,7 +165,7 @@ msgstr "插入水平线"
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color…"
-msgstr "文字颜色(&C)…"
+msgstr "文本颜色(&C)…"
 
 #: composer-ng/richtextcomposeractions.cpp:263
 #, kde-format
@@ -177,7 +177,7 @@ msgstr "颜色"
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight…"
-msgstr "文字高亮(&H)…"
+msgstr "文本高亮(&H)…"
 
 #: composer-ng/richtextcomposeractions.cpp:279
 #, kde-format
@@ -450,7 +450,7 @@ msgstr "插入 HTML"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
-msgstr "插入 HTML 标签和文字："
+msgstr "插入 HTML 标签和文本："
 
 #: inserthtmldialog.cpp:44
 #, kde-format
