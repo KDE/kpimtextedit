@@ -738,9 +738,3 @@ msgstr "Justificat"
 msgctxt "@label:textbox"
 msgid "Table Alignment:"
 msgstr "Alineació de la taula:"
-
-#~ msgid "Table..."
-#~ msgstr "Taula..."
-
-#~ msgid "Table Format..."
-#~ msgstr "Format de la taula..."
