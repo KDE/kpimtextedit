@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-16 13:25+0000\n"
-"PO-Revision-Date: 2015-08-30 16:02+0200\n"
+"PO-Revision-Date: 2026-03-11 13:59+0200\n"
 "Last-Translator: Liudas Ališauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -17,49 +17,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Poedit 3.8\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Link Text:"
-msgstr ""
+msgstr "Nuorodos tekstas:"
 
 #: composer-ng/klinkdialog.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Link URL:"
-msgstr ""
+msgstr "Nuorodos URL:"
 
 #: composer-ng/klinkdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Link"
-msgstr ""
+msgstr "Tvarkyti nuorodą"
 
 #: composer-ng/richtextcomposeractions.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
-msgstr ""
+msgstr "Lygiuoti &kairėje"
 
 #: composer-ng/richtextcomposeractions.cpp:104
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@label left justify"
 msgid "Left"
 msgstr "Kairėje"
 
 #: composer-ng/richtextcomposeractions.cpp:112
-#, fuzzy, kde-format
-#| msgid "Center"
+#, kde-format
 msgctxt "@action"
 msgid "Align &Center"
-msgstr "Centre"
+msgstr "Lygiuoti &centre"
 
 #: composer-ng/richtextcomposeractions.cpp:113
-#, fuzzy, kde-format
-#| msgid "Center"
+#, kde-format
 msgctxt "@label center justify"
 msgid "Center"
 msgstr "Centre"
@@ -68,25 +65,22 @@ msgstr "Centre"
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
-msgstr ""
+msgstr "Lygiuoti &dešinėje"
 
 #: composer-ng/richtextcomposeractions.cpp:122
-#, fuzzy, kde-format
-#| msgid "Right"
+#, kde-format
 msgctxt "@label right justify"
 msgid "Right"
 msgstr "Dešinėje"
 
 #: composer-ng/richtextcomposeractions.cpp:130
-#, fuzzy, kde-format
-#| msgid "Justify"
+#, kde-format
 msgctxt "@action"
 msgid "&Justify"
-msgstr "Abipusė lygiuotė"
+msgstr "&Abipusė lygiuotė"
 
 #: composer-ng/richtextcomposeractions.cpp:131
-#, fuzzy, kde-format
-#| msgid "Justify"
+#, kde-format
 msgctxt "@label justify fill"
 msgid "Justify"
 msgstr "Abipusė lygiuotė"
@@ -95,211 +89,207 @@ msgstr "Abipusė lygiuotė"
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
-msgstr ""
+msgstr "Iš kairės į dešinę"
 
 #: composer-ng/richtextcomposeractions.cpp:147
 #, kde-format
 msgctxt "@label left-to-right"
 msgid "Left-to-Right"
-msgstr ""
+msgstr "Iš kairės į dešinę"
 
 #: composer-ng/richtextcomposeractions.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
-msgstr ""
+msgstr "Iš dešinės į kairę"
 
 #: composer-ng/richtextcomposeractions.cpp:156
 #, kde-format
 msgctxt "@label right-to-left"
 msgid "Right-to-Left"
-msgstr ""
+msgstr "Iš dešinės į kairę"
 
 #: composer-ng/richtextcomposeractions.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Subscript"
-msgstr ""
+msgstr "Apatinis indeksas"
 
 #: composer-ng/richtextcomposeractions.cpp:177
 #, kde-format
 msgctxt "@action"
 msgid "Superscript"
-msgstr ""
+msgstr "Viršutinis indeksas"
 
 #: composer-ng/richtextcomposeractions.cpp:185
 #, kde-format
 msgctxt "@action boldify selected text"
 msgid "&Bold"
-msgstr ""
+msgstr "&Pusjuodis"
 
 #: composer-ng/richtextcomposeractions.cpp:197
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
-msgstr ""
+msgstr "&Kursyvinis"
 
 #: composer-ng/richtextcomposeractions.cpp:209
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
-msgstr ""
+msgstr "Pa&brauktas"
 
 #: composer-ng/richtextcomposeractions.cpp:221
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
-msgstr ""
+msgstr "Pe&rbrauktas"
 
 #: composer-ng/richtextcomposeractions.cpp:236
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
-msgstr ""
+msgstr "Šri&ftas"
 
 #: composer-ng/richtextcomposeractions.cpp:245
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
-msgstr ""
+msgstr "Šrifto &dydis"
 
 #: composer-ng/richtextcomposeractions.cpp:253
-#, fuzzy, kde-format
-#| msgid "Insert Table"
+#, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
-msgstr "Įterpti lentelę"
+msgstr "Įterpti liniją"
 
 #: composer-ng/richtextcomposeractions.cpp:262
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color…"
-msgstr ""
+msgstr "Teksto s&palva…"
 
 #: composer-ng/richtextcomposeractions.cpp:263
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
-msgstr ""
+msgstr "Spalva"
 
 #: composer-ng/richtextcomposeractions.cpp:271
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight…"
-msgstr ""
+msgstr "Teksto par&yškinimas…"
 
 #: composer-ng/richtextcomposeractions.cpp:279
 #, kde-format
 msgctxt "@action"
 msgid "Link"
-msgstr ""
+msgstr "Nuoroda"
 
 #: composer-ng/richtextcomposeractions.cpp:287
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
-msgstr ""
+msgstr "Padidinti sąrašo lygį"
 
 #: composer-ng/richtextcomposeractions.cpp:295
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
-msgstr ""
+msgstr "Sumažinti sąrašo lygį"
 
 #: composer-ng/richtextcomposeractions.cpp:304
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
-msgstr ""
+msgstr "Sąrašo stilius"
 
 #: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
-msgstr ""
+msgstr "Nėra"
 
 #: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
-msgstr ""
+msgstr "Diskas"
 
 #: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
-msgstr ""
+msgstr "Apskritimas"
 
 #: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
-msgstr ""
+msgstr "Kvadratas"
 
 #: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
-msgstr ""
+msgstr "123"
 
 #: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
-msgstr ""
+msgstr "abc"
 
 #: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
-msgstr ""
+msgstr "ABC"
 
 #: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
-msgstr ""
+msgstr "i ii iii"
 
 #: composer-ng/richtextcomposeractions.cpp:310
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
-msgstr ""
+msgstr "I II III"
 
 #: composer-ng/richtextcomposeractions.cpp:321
 #, kde-format
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
-msgstr ""
+msgstr "Įdėti kaip &citavimą"
 
 #: composer-ng/richtextcomposeractions.cpp:329
-#, fuzzy, kde-format
-#| msgid "Select Special Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Add &Quote Characters"
-msgstr "Pažymėti specialius simbolius"
+msgstr "Pridėti &kabutes"
 
 #: composer-ng/richtextcomposeractions.cpp:336
-#, fuzzy, kde-format
-#| msgid "Select Special Characters"
+#, kde-format
 msgctxt "@action"
 msgid "Re&move Quote Characters"
-msgstr "Pažymėti specialius simbolius"
+msgstr "Ša&linti kabutes"
 
 #: composer-ng/richtextcomposeractions.cpp:343
 #, kde-format
 msgctxt "@action"
 msgid "Paste Without Formatting"
-msgstr ""
+msgstr "Įdėti be formatavimo"
 
 #: composer-ng/richtextcomposeractions.cpp:351
 #, kde-format
 msgid "Add Image"
-msgstr "Pridėti paveikslėlį"
+msgstr "Pridėti paveikslą"
 
 #: composer-ng/richtextcomposeractions.cpp:370
-#, fuzzy, kde-format
-#| msgid "Insert HTML"
+#, kde-format
 msgctxt "@action"
 msgid "Insert HTML"
 msgstr "Įterpti HTML"
@@ -312,116 +302,116 @@ msgstr "Lentelė"
 #: composer-ng/richtextcomposeractions.cpp:389
 #, kde-format
 msgid "Reset Font Settings"
-msgstr "Atstatyti šrifto nustatymus"
+msgstr "Atstatyti šrifto nuostatas"
 
 #: composer-ng/richtextcomposeractions.cpp:390
 #, kde-format
 msgid "Reset Font"
-msgstr "Atkurti šriftą"
+msgstr "Atstatyti šriftą"
 
 #: composer-ng/richtextcomposeractions.cpp:398
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
-msgstr ""
+msgstr "Formatų kopijuoklis"
 
 #: composer-ng/richtextcomposeractions.cpp:406
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
-msgstr ""
+msgstr "Antraštės lygis"
 
 #: composer-ng/richtextcomposeractions.cpp:407
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
-msgstr ""
+msgstr "Paprastas tekstas"
 
 #: composer-ng/richtextcomposeractions.cpp:408
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
-msgstr ""
+msgstr "Antraštė"
 
 #: composer-ng/richtextcomposeractions.cpp:409
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
-msgstr ""
+msgstr "Paantraštė"
 
 #: composer-ng/richtextcomposeractions.cpp:410
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
-msgstr ""
+msgstr "Skyrius"
 
 #: composer-ng/richtextcomposeractions.cpp:411
 #, kde-format
 msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
-msgstr ""
+msgstr "Poskyris"
 
 #: composer-ng/richtextcomposeractions.cpp:412
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
-msgstr ""
+msgstr "Pastraipa"
 
 #: composer-ng/richtextcomposeractions.cpp:413
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
-msgstr ""
+msgstr "Antrinė pastraipa"
 
 #: composer-ng/richtextcomposeractions.cpp:424
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
-msgstr ""
+msgstr "Žymimasis langelis"
 
 #: composer-ng/richtextcomposercontroler.cpp:715
 #, kde-format
 msgid "Only local files are supported."
-msgstr ""
+msgstr "Palaikomi tik vietiniai failai."
 
 #: composer-ng/richtextcomposerimages.cpp:57
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
-msgstr "Nepavyksta įkelti paveikslėlio <filename>%1</filename>."
+msgstr "Nepavyko įkelti paveikslo <filename>%1</filename>."
 
 #: composer-ng/richtextcomposerimages.cpp:216
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"
-msgstr "paveikslėlis"
+msgstr "paveikslas"
 
 #: composer-ng/richtextexternalcomposer.cpp:71
 #, kde-format
 msgid "Command line is empty. Please verify settings."
-msgstr ""
+msgstr "Komandų eilutė tuščia. Patikrinkite nuostatas."
 
 #: composer-ng/richtextexternalcomposer.cpp:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Empty command line"
-msgstr ""
+msgstr "Tuščia komandų eilutė"
 
 #: composer-ng/richtextexternalcomposer.cpp:124
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
-msgstr ""
+msgstr "Išorinis redaktorius negali būti paleistas. Patikrinkite komandą „%1“"
 
 #: composer-ng/richtextexternalcomposer.cpp:142
 #, kde-format
 msgid "Error was found when we started external editor."
-msgstr ""
+msgstr "Klaida paleidžiant išorinį redaktorių."
 
 #: composer-ng/richtextexternalcomposer.cpp:142
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
-msgstr ""
+msgstr "Išorinis redaktorius užvertas"
 
 #: composer-ng/richtextexternalcomposer.cpp:159
 #, kde-kuit-format
@@ -431,56 +421,54 @@ msgid ""
 "keep it running?<nl/><warning>Stopping the editor will cause all your "
 "unsaved changes to be lost.</warning>"
 msgstr ""
+"Išorinis redaktorius vis dar veikia.<nl/>Ar norite redaktorių sustabdyti ar "
+"palikti jį veikiantį?<nl/><warning>Sustabdžius redaktorių, visi jūsų "
+"neįrašyti pakeitimai bus prarasti.</warning>"
 
 #: composer-ng/richtextexternalcomposer.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
-msgstr ""
+msgstr "Veikia išorinis redaktorius"
 
 #: composer-ng/richtextexternalcomposer.cpp:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
-msgstr ""
+msgstr "Stabdyti redaktorių"
 
 #: composer-ng/richtextexternalcomposer.cpp:165
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
-msgstr ""
+msgstr "Palikti redaktorių veikiantį"
 
 #: inserthtmldialog.cpp:36
-#, fuzzy, kde-format
-#| msgid "Insert HTML"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Įterpti HTML"
 
 #: inserthtmldialog.cpp:38
-#, fuzzy, kde-format
-#| msgid "Insert HTML tags and texts:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
-msgstr "Įterpti HTML žymes ir tekstą:"
+msgstr "Įterpkite HTML žymes ir tekstą:"
 
 #: inserthtmldialog.cpp:44
-#, fuzzy, kde-format
-#| msgid "Example: <i> Hello word </i>"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
-msgstr "Pavyzdys: <i> Sveikas pasauli</i>"
+msgstr "Pavyzdys: <i> Sveikas, pasauli</i>"
 
 #: inserthtmldialog.cpp:53
-#, fuzzy, kde-format
-#| msgid "Insert"
+#, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Įterpti"
 
 #: insertimagedialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Insert Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Įterpti paveikslą"
@@ -491,36 +479,31 @@ msgid "Insert"
 msgstr "Įterpti"
 
 #: insertimagewidget.cpp:41
-#, fuzzy, kde-format
-#| msgid "Image Location:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
-msgstr "Paveikslėlio vieta:"
+msgstr "Paveikslo vieta:"
 
 #: insertimagewidget.cpp:54
-#, fuzzy, kde-format
-#| msgid "Add Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
-msgstr "Pridėti paveikslėlį"
+msgstr "Pridėti paveikslą"
 
 #: insertimagewidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Keep Original Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep Original Size"
-msgstr "Išlaikyti originalų dydį"
+msgstr "Išlaikyti pradinį dydį"
 
 #: insertimagewidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Keep Image Ratio"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
-msgstr "Išlaikyti paveikslėlio santykį"
+msgstr "Išlaikyti paveikslo proporcijas"
 
 #: insertimagewidget.cpp:78 inserttablewidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Width:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Plotis:"
@@ -531,43 +514,37 @@ msgid " px"
 msgstr " piks."
 
 #: insertimagewidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Height:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Aukštis:"
 
 #: insertimagewidget.cpp:113
-#, fuzzy, kde-format
-#| msgid "Image Preview:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"
-msgstr "Paveikslėlio peržiūra:"
+msgstr "Paveikslo peržiūra:"
 
 #: inserttabledialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Insert Table"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Table"
 msgstr "Įterpti lentelę"
 
 #: inserttablewidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Rows:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Rows:"
 msgstr "Eilutės:"
 
 #: inserttablewidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "Columns:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Columns:"
 msgstr "Stulpeliai:"
 
 #: inserttablewidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "Border:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Border:"
 msgstr "Kraštas:"
@@ -575,7 +552,7 @@ msgstr "Kraštas:"
 #: inserttablewidget.cpp:52
 #, no-c-format, kde-format
 msgid "% of windows"
-msgstr "% langų"
+msgstr "% lango"
 
 #: inserttablewidget.cpp:53
 #, kde-format
@@ -583,67 +560,61 @@ msgid "pixels"
 msgstr "pikseliai"
 
 #: tableactionmenu.cpp:410
-#, fuzzy, kde-format
-#| msgid "Table"
+#, kde-format
 msgid "Table…"
-msgstr "Lentelė"
+msgstr "Lentelė…"
 
 #: tableactionmenu.cpp:418
 #, kde-format
 msgid "Row Below"
-msgstr "Eilutę apačioje"
+msgstr "Eilutė žemiau"
 
 #: tableactionmenu.cpp:425
 #, kde-format
 msgid "Row Above"
-msgstr "Eilutę virš"
+msgstr "Eilutė aukščiau"
 
 #: tableactionmenu.cpp:433
 #, kde-format
 msgid "Column Before"
-msgstr "Stulpelis anksčiau"
+msgstr "Stulpelis kairėje"
 
 #: tableactionmenu.cpp:441
 #, kde-format
 msgid "Column After"
-msgstr "Stulpelis po"
+msgstr "Stulpelis dešinėje"
 
 #: tableactionmenu.cpp:448
 #, kde-format
 msgid "Delete"
-msgstr "Trinti"
+msgstr "Ištrinti"
 
 #: tableactionmenu.cpp:451
-#, fuzzy, kde-format
-#| msgid "Row Below"
+#, kde-format
 msgctxt "@action"
 msgid "Row Below"
-msgstr "Eilutę apačioje"
+msgstr "Eilutė žemiau"
 
 #: tableactionmenu.cpp:458
-#, fuzzy, kde-format
-#| msgid "Row Above"
+#, kde-format
 msgctxt "@action"
 msgid "Row Above"
-msgstr "Eilutę virš"
+msgstr "Eilutė aukščiau"
 
 #: tableactionmenu.cpp:466
-#, fuzzy, kde-format
-#| msgid "Column Before"
+#, kde-format
 msgctxt "@action"
 msgid "Column Before"
-msgstr "Stulpelis anksčiau"
+msgstr "Stulpelis kairėje"
 
 #: tableactionmenu.cpp:474
-#, fuzzy, kde-format
-#| msgid "Column After"
+#, kde-format
 msgctxt "@action"
 msgid "Column After"
-msgstr "Stulpelis po"
+msgstr "Stulpelis dešinėje"
 
 #: tableactionmenu.cpp:482
-#, fuzzy, kde-format
-#| msgid "Cell Contents"
+#, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Langelio turinys"
@@ -651,11 +622,10 @@ msgstr "Langelio turinys"
 #: tableactionmenu.cpp:491
 #, kde-format
 msgid "Join With Cell to the Right"
-msgstr "Sujungti su laukeliu į dešinę"
+msgstr "Sujungti su langeliu dešinėje"
 
 #: tableactionmenu.cpp:498
-#, fuzzy, kde-format
-#| msgid "Join Selected Cells"
+#, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Sujungti pažymėtus langelius"
@@ -666,29 +636,25 @@ msgid "Split cells"
 msgstr "Skaidyti langelius"
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgid "Table Format"
+#, kde-format
 msgctxt "@action"
 msgid "Table Format…"
-msgstr "Lentelės formatas"
+msgstr "Lentelės formatas…"
 
 #: tableactionmenu.cpp:521
-#, fuzzy, kde-format
-#| msgid "Table Cell Format..."
+#, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"
-msgstr "Lentelės langelio formatas..."
+msgstr "Lentelės langelio formatas…"
 
 #: tablecellformatdialog.cpp:28
-#, fuzzy, kde-format
-#| msgid "Cell Format"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cell Format"
 msgstr "Langelio formatas"
 
 #: tablecellformatdialog.cpp:33
-#, fuzzy, kde-format
-#| msgid "Vertical Alignment:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Vertical Alignment:"
 msgstr "Vertikalus lygiavimas:"
@@ -709,46 +675,40 @@ msgid "Bottom"
 msgstr "Apačioje"
 
 #: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
-#, fuzzy, kde-format
-#| msgid "Background Color:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Background Color:"
 msgstr "Fono spalva:"
 
 #: tableformatdialog.cpp:31
-#, fuzzy, kde-format
-#| msgid "Table Format"
+#, kde-format
 msgctxt "@title:window"
 msgid "Table Format"
 msgstr "Lentelės formatas"
 
 #: tableformatdialog.cpp:44
-#, fuzzy, kde-format
-#| msgid "Spacing:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Spacing:"
 msgstr "Tarpai:"
 
 #: tableformatdialog.cpp:49
-#, fuzzy, kde-format
-#| msgid "pixels between cells"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cells"
-msgstr "Pikseliai tarp langelių"
+msgstr "pikseliai tarp langelių"
 
 #: tableformatdialog.cpp:54
-#, fuzzy, kde-format
-#| msgid "Padding:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Padding:"
 msgstr "Užpildymas:"
 
 #: tableformatdialog.cpp:59
-#, fuzzy, kde-format
-#| msgid "pixels between cell border and content"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "pixels between cell border and content"
-msgstr "Pikseliai tarp langelio krašto ir turinio"
+msgstr "pikseliai tarp langelio krašto ir turinio"
 
 #: tableformatdialog.cpp:67
 #, kde-format
@@ -771,11 +731,10 @@ msgid "Justify"
 msgstr "Abipusė lygiuotė"
 
 #: tableformatdialog.cpp:73
-#, fuzzy, kde-format
-#| msgid "Table Alignment:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Table Alignment:"
-msgstr "Lentelės lygiuotė:"
+msgstr "Lentelės lygiavimas:"
 
 #~ msgid "Table..."
 #~ msgstr "Lentelė..."
