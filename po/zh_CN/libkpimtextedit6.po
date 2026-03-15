@@ -87,7 +87,7 @@ msgstr "两端对齐"
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
-msgstr "从左到右"
+msgstr "左到右"
 
 #: composer-ng/richtextcomposeractions.cpp:147
 #, kde-format
