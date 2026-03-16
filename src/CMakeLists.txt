@@ -172,7 +172,6 @@ ecm_generate_headers(KPimTextEdit_Camelcasecomposerng_HEADERS
 set(KPimTextEdit_includes
     ${kpimtextedit_HEADERS}
     ${KPimTextEdit_composerng_HEADERS}
-    ${KPimTextEdit_grantlee_HEADERS}
 )
 
 install(
