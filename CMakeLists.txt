@@ -93,8 +93,6 @@ include(ECMFeatureSummary)
 include(ECMCheckOutboundLicense)
 include(ECMGenerateQDoc)
 
-set(KPIMTEXTEDIT_LIB_VERSION ${PIM_VERSION})
-
 set(KTEXTADDONS_MIN_VERSION "2.0.0")
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
