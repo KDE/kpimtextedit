@@ -120,13 +120,13 @@ void TextHTMLBuilder::beginAnchor(const QString &href, const QString &name)
     Q_D(TextHTMLBuilder);
     if (!href.isEmpty()) {
         if (!name.isEmpty()) {
-            d->mText.append(u"<a href=\"%1\" name=\"%2\">"_s.arg(href, name));
+            d->mText.append(u"<a href=\"%1\" name=\"%2\">"_s.arg(href.toHtmlEscaped(), name.toHtmlEscaped()));
         } else {
-            d->mText.append(u"<a href=\"%1\">"_s.arg(href));
+            d->mText.append(u"<a href=\"%1\">"_s.arg(href.toHtmlEscaped()));
         }
     } else {
         if (!name.isEmpty()) {
-            d->mText.append(u"<a name=\"%1\">"_s.arg(name));
+            d->mText.append(u"<a name=\"%1\">"_s.arg(name.toHtmlEscaped()));
         }
     }
 }
