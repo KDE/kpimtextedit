@@ -104,7 +104,7 @@ void TableActionMenuPrivate::_k_slotRemoveRowBelow()
         if (table) {
             const QTextTableCell cell = table->cellAt(textEdit->textCursor());
             if (cell.row() < table->rows() - 1) {
-                table->removeRows(cell.row(), 1);
+                table->removeRows(cell.row() + 1, 1);
             }
         }
     }
@@ -143,7 +143,7 @@ void TableActionMenuPrivate::_k_slotRemoveColumnAfter()
         if (table) {
             const QTextTableCell cell = table->cellAt(textEdit->textCursor());
             if (cell.column() < table->columns() - 1) {
-                table->removeColumns(cell.column(), 1);
+                table->removeColumns(cell.column() + 1, 1);
             }
         }
     }
