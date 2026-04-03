@@ -456,7 +456,6 @@ void PlainTextMarkupBuilder::endForeground()
 void PlainTextMarkupBuilder::endHeader(int level)
 {
     Q_D(PlainTextMarkupBuilder);
-    qDebug() << " void PlainTextMarkupBuilder::endHeader(int level)" << level;
     switch (level) {
     case 1:
         d->mText.append(u" #\n"_s);
