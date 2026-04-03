@@ -449,7 +449,7 @@ QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::skipBlockGroup(QTextFram
         }
 
         obj = block.document()->objectForFormat(block.blockFormat());
-        if (obj) {
+        if (!obj) {
             continue;
         }
 
