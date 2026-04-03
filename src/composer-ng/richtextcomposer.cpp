@@ -555,7 +555,7 @@ void RichTextComposer::insertFromMimeData(const QMimeData *source)
                 || sourceText.startsWith("ftp://"_L1) || sourceText.startsWith("mailto:"_L1) || sourceText.startsWith("smb://"_L1)
                 || sourceText.startsWith("file://"_L1) || sourceText.startsWith("webdavs://"_L1) || sourceText.startsWith("imaps://"_L1)
                 || sourceText.startsWith("sftp://"_L1) || sourceText.startsWith("fish://"_L1) || sourceText.startsWith("tel:"_L1)) {
-                insertHtml(u"<a href=\"%1\">%1</a>"_s.arg(sourceText));
+                insertHtml(u"<a href=\"%1\">%2</a>"_s.arg(sourceText.toHtmlEscaped(), sourceText.toHtmlEscaped()));
                 return;
             }
         }
