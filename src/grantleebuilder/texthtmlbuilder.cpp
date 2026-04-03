@@ -268,14 +268,15 @@ void TextHTMLBuilder::insertHorizontalRule(int width)
     Q_D(TextHTMLBuilder);
     if (width != -1) {
         d->mText.append(u"<hr width=\"%1\" />\n"_s.arg(width));
+    } else {
+        d->mText.append(u"<hr />\n"_s);
     }
-    d->mText.append(u"<hr />\n"_s);
 }
 
 void TextHTMLBuilder::insertImage(const QString &src, qreal width, qreal height)
 {
     Q_D(TextHTMLBuilder);
-    d->mText.append(u"<img src=\"%1\" "_s.arg(src));
+    d->mText.append(u"<img src=\"%1\" "_s.arg(src.toHtmlEscaped()));
     if (width != 0) {
         d->mText.append(u"width=\"%2\" "_s.arg(width));
     }
