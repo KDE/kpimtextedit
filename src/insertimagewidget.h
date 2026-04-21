@@ -6,10 +6,8 @@
 */
 #pragma once
 
-#include <QUrl>
-
 #include <QWidget>
-
+class QUrl;
 namespace KPIMTextEdit
 {
 class InsertImageWidgetPrivate;

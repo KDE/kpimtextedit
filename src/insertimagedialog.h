@@ -8,8 +8,7 @@
 #pragma once
 
 #include <QDialog>
-#include <QUrl>
-
+class QUrl;
 namespace KPIMTextEdit
 {
 class InsertImageDialogPrivate;

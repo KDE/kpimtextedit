@@ -6,7 +6,6 @@
 */
 
 #include "insertimagedialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "insertimagewidget.h"
 
@@ -15,8 +14,10 @@ using namespace Qt::Literals::StringLiterals;
 #include <QCheckBox>
 #include <QDialogButtonBox>
 #include <QPushButton>
+#include <QUrl>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 namespace KPIMTextEdit
 {
 class InsertImageDialogPrivate

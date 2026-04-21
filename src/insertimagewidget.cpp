@@ -5,7 +5,6 @@
 
 */
 #include "insertimagewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLineEdit>
 #include <KLocalizedString>
@@ -18,8 +17,10 @@ using namespace Qt::Literals::StringLiterals;
 #include <QLabel>
 #include <QMimeDatabase>
 #include <QSpinBox>
+#include <QUrl>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 namespace KPIMTextEdit
 {
 static inline QString resolveAlias(const QString &name)
