@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:25+0000\n"
+"POT-Creation-Date: 2026-04-22 00:46+0000\n"
 "PO-Revision-Date: 2023-04-22 12:21+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -481,64 +481,64 @@ msgctxt "@action:button"
 msgid "Insert"
 msgstr "Daxil edin"
 
-#: insertimagedialog.cpp:29
+#: insertimagedialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Şəkil daxil edin"
 
-#: insertimagedialog.cpp:38 inserttabledialog.cpp:37 tableactionmenu.cpp:407
+#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:407
 #, kde-format
 msgid "Insert"
 msgstr "Daxil edin"
 
-#: insertimagewidget.cpp:41
+#: insertimagewidget.cpp:42
 #, fuzzy, kde-format
 #| msgid "Image Location:"
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "Şəkilin yeri:"
 
-#: insertimagewidget.cpp:54
+#: insertimagewidget.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "Şəkil əlavə edin"
 
-#: insertimagewidget.cpp:65
+#: insertimagewidget.cpp:66
 #, fuzzy, kde-format
 #| msgid "Keep Original Size"
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "İlkin ölçüsünü saxlayın"
 
-#: insertimagewidget.cpp:72
+#: insertimagewidget.cpp:73
 #, fuzzy, kde-format
 #| msgid "Keep Image Ratio"
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "Tərəflərin nisbətini saxlayın"
 
-#: insertimagewidget.cpp:78 inserttablewidget.cpp:59
+#: insertimagewidget.cpp:79 inserttablewidget.cpp:59
 #, fuzzy, kde-format
 #| msgid "Width:"
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Eni:"
 
-#: insertimagewidget.cpp:84 insertimagewidget.cpp:100 inserttablewidget.cpp:36
+#: insertimagewidget.cpp:85 insertimagewidget.cpp:101 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
 msgstr " piksel"
 
-#: insertimagewidget.cpp:94
+#: insertimagewidget.cpp:95
 #, fuzzy, kde-format
 #| msgid "Height:"
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Hündürlük:"
 
-#: insertimagewidget.cpp:113
+#: insertimagewidget.cpp:114
 #, fuzzy, kde-format
 #| msgid "Image Preview:"
 msgctxt "@label:textbox"

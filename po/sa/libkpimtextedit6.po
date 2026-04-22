@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:25+0000\n"
+"POT-Creation-Date: 2026-04-22 00:46+0000\n"
 "PO-Revision-Date: 2024-12-20 21:52+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -467,59 +467,59 @@ msgctxt "@action:button"
 msgid "Insert"
 msgstr "युज्"
 
-#: insertimagedialog.cpp:29
+#: insertimagedialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "चित्रं सम्मिलितं कुर्वन्तु"
 
-#: insertimagedialog.cpp:38 inserttabledialog.cpp:37 tableactionmenu.cpp:407
+#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:407
 #, kde-format
 msgid "Insert"
 msgstr "युज्"
 
-#: insertimagewidget.cpp:41
+#: insertimagewidget.cpp:42
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "चित्रस्य स्थानम् :"
 
-#: insertimagewidget.cpp:54
+#: insertimagewidget.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "चित्रं योजयतु"
 
-#: insertimagewidget.cpp:65
+#: insertimagewidget.cpp:66
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "मूल आकार रखें"
 
-#: insertimagewidget.cpp:72
+#: insertimagewidget.cpp:73
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "इमेज रेशियो रखें"
 
-#: insertimagewidget.cpp:78 inserttablewidget.cpp:59
+#: insertimagewidget.cpp:79 inserttablewidget.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "विस्तार:"
 
-#: insertimagewidget.cpp:84 insertimagewidget.cpp:100 inserttablewidget.cpp:36
+#: insertimagewidget.cpp:85 insertimagewidget.cpp:101 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
 msgstr " px"
 
-#: insertimagewidget.cpp:94
+#: insertimagewidget.cpp:95
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "औनत्यम्‌:"
 
-#: insertimagewidget.cpp:113
+#: insertimagewidget.cpp:114
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"

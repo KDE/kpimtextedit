@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:25+0000\n"
+"POT-Creation-Date: 2026-04-22 00:46+0000\n"
 "PO-Revision-Date: 2023-07-29 12:25+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -468,59 +468,59 @@ msgctxt "@action:button"
 msgid "Insert"
 msgstr "Set inn"
 
-#: insertimagedialog.cpp:29
+#: insertimagedialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Set inn bilete"
 
-#: insertimagedialog.cpp:38 inserttabledialog.cpp:37 tableactionmenu.cpp:407
+#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:407
 #, kde-format
 msgid "Insert"
 msgstr "Set inn"
 
-#: insertimagewidget.cpp:41
+#: insertimagewidget.cpp:42
 #, fuzzy, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "Biletadresse:"
 
-#: insertimagewidget.cpp:54
+#: insertimagewidget.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "Legg til bilete"
 
-#: insertimagewidget.cpp:65
+#: insertimagewidget.cpp:66
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "Bruk opphavleg storleik"
 
-#: insertimagewidget.cpp:72
+#: insertimagewidget.cpp:73
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "Bruk høgd/breidd-forholdet"
 
-#: insertimagewidget.cpp:78 inserttablewidget.cpp:59
+#: insertimagewidget.cpp:79 inserttablewidget.cpp:59
 #, fuzzy, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Breidd:"
 
-#: insertimagewidget.cpp:84 insertimagewidget.cpp:100 inserttablewidget.cpp:36
+#: insertimagewidget.cpp:85 insertimagewidget.cpp:101 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
 msgstr " pikslar"
 
-#: insertimagewidget.cpp:94
+#: insertimagewidget.cpp:95
 #, fuzzy, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Høgd:"
 
-#: insertimagewidget.cpp:113
+#: insertimagewidget.cpp:114
 #, fuzzy, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 13:25+0000\n"
+"POT-Creation-Date: 2026-04-22 00:46+0000\n"
 "PO-Revision-Date: 2024-10-18 18:30+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -468,59 +468,59 @@ msgctxt "@action:button"
 msgid "Insert"
 msgstr "Lisää"
 
-#: insertimagedialog.cpp:29
+#: insertimagedialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Lisää kuva"
 
-#: insertimagedialog.cpp:38 inserttabledialog.cpp:37 tableactionmenu.cpp:407
+#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:407
 #, kde-format
 msgid "Insert"
 msgstr "Lisää"
 
-#: insertimagewidget.cpp:41
+#: insertimagewidget.cpp:42
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "Kuvan sijainti:"
 
-#: insertimagewidget.cpp:54
+#: insertimagewidget.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "Lisää kuva"
 
-#: insertimagewidget.cpp:65
+#: insertimagewidget.cpp:66
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "Säilytä alkuperäinen koko"
 
-#: insertimagewidget.cpp:72
+#: insertimagewidget.cpp:73
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "Säilytä kuvasuhde"
 
-#: insertimagewidget.cpp:78 inserttablewidget.cpp:59
+#: insertimagewidget.cpp:79 inserttablewidget.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Leveys:"
 
-#: insertimagewidget.cpp:84 insertimagewidget.cpp:100 inserttablewidget.cpp:36
+#: insertimagewidget.cpp:85 insertimagewidget.cpp:101 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
 msgstr " px"
 
-#: insertimagewidget.cpp:94
+#: insertimagewidget.cpp:95
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Korkeus:"
 
-#: insertimagewidget.cpp:113
+#: insertimagewidget.cpp:114
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"
