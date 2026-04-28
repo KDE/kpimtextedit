@@ -808,7 +808,7 @@ msgstr "Zarovnanie tabuľky:"
 #~ msgstr "Text na hľadanie"
 
 #~ msgid "Jump to next match"
-#~ msgstr "Prejsť na ďaľšiu zhodu"
+#~ msgstr "Prejsť na ďalšiu zhodu"
 
 #~ msgid "Jump to previous match"
 #~ msgstr "Prejsť na predchádzajúcu zhodu"
