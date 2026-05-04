@@ -400,8 +400,8 @@ void TableActionMenuPrivate::_k_updateActions(bool forceUpdate)
     }
 }
 
-TableActionMenu::TableActionMenu(QTextEdit *textEdit)
-    : KActionMenu(textEdit)
+TableActionMenu::TableActionMenu(QTextEdit *textEdit, QObject *parent)
+    : KActionMenu(parent)
     , d(new TableActionMenuPrivate(textEdit, this))
 {
     auto insertMenu = new KActionMenu(i18n("Insert"), this);

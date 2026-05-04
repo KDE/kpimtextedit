@@ -373,7 +373,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     connect(d->action_insert_html, &QAction::triggered, d->composerControler, &RichTextComposerControler::slotInsertHtml);
     d->richTextActionList.append(d->action_insert_html);
 
-    d->action_add_table = new KPIMTextEdit::TableActionMenu(d->composerControler->richTextComposer());
+    d->action_add_table = new KPIMTextEdit::TableActionMenu(d->composerControler->richTextComposer(), this);
     d->action_add_table->setIcon(QIcon::fromTheme(u"insert-table"_s));
     d->action_add_table->setText(i18n("Table"));
     d->action_add_table->setPopupMode(QToolButton::InstantPopup);
