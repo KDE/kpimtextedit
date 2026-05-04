@@ -225,11 +225,9 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     d->richTextActionList.append((d->action_text_strikeout));
     if (ac) {
         ac->addAction(u"format_text_strikeout"_s, d->action_text_strikeout);
-    }
-    d->action_text_strikeout->setObjectName("format_text_strikeout"_L1);
-    if (ac) {
         ac->setDefaultShortcut(d->action_text_strikeout, Qt::CTRL | Qt::Key_L);
     }
+    d->action_text_strikeout->setObjectName("format_text_strikeout"_L1);
     connect(d->action_text_strikeout, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::setTextStrikeOut);
 
     // Font Family
