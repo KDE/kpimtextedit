@@ -101,6 +101,8 @@ void RichTextExternalComposer::startExternalEditor()
         }
         if (command.isEmpty()) {
             d->cannotStartProcess(commandLine);
+            delete d->externalEditorProcess;
+            d->externalEditorProcess = nullptr;
             return;
         }
 
