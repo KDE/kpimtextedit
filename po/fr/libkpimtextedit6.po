@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-22 00:46+0000\n"
+"POT-Creation-Date: 2026-05-05 00:45+0000\n"
 "PO-Revision-Date: 2024-08-02 09:40+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -154,225 +154,225 @@ msgctxt "@action"
 msgid "&Strike Out"
 msgstr "&Barré"
 
-#: composer-ng/richtextcomposeractions.cpp:236
+#: composer-ng/richtextcomposeractions.cpp:234
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
 msgstr "&Police"
 
-#: composer-ng/richtextcomposeractions.cpp:245
+#: composer-ng/richtextcomposeractions.cpp:243
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
 msgstr "&Taille de police"
 
-#: composer-ng/richtextcomposeractions.cpp:253
+#: composer-ng/richtextcomposeractions.cpp:251
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
 msgstr "Insérer une ligne de règle"
 
-#: composer-ng/richtextcomposeractions.cpp:262
+#: composer-ng/richtextcomposeractions.cpp:260
 #, kde-format
 msgctxt "@action"
 msgid "Text &Color…"
 msgstr "&Couleur du texte..."
 
-#: composer-ng/richtextcomposeractions.cpp:263
+#: composer-ng/richtextcomposeractions.cpp:261
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
 msgstr "Couleur"
 
-#: composer-ng/richtextcomposeractions.cpp:271
+#: composer-ng/richtextcomposeractions.cpp:269
 #, kde-format
 msgctxt "@action"
 msgid "Text &Highlight…"
 msgstr "&Surlignage du texte..."
 
-#: composer-ng/richtextcomposeractions.cpp:279
+#: composer-ng/richtextcomposeractions.cpp:277
 #, kde-format
 msgctxt "@action"
 msgid "Link"
 msgstr "Lien"
 
-#: composer-ng/richtextcomposeractions.cpp:287
+#: composer-ng/richtextcomposeractions.cpp:285
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
 msgstr "Augmenter l'indentation de la liste"
 
-#: composer-ng/richtextcomposeractions.cpp:295
+#: composer-ng/richtextcomposeractions.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
 msgstr "Diminuer l'indentation de la liste"
 
-#: composer-ng/richtextcomposeractions.cpp:304
+#: composer-ng/richtextcomposeractions.cpp:302
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
 msgstr "Style de liste"
 
-#: composer-ng/richtextcomposeractions.cpp:306
+#: composer-ng/richtextcomposeractions.cpp:304
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
 msgstr "Aucun"
 
-#: composer-ng/richtextcomposeractions.cpp:306
+#: composer-ng/richtextcomposeractions.cpp:304
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
 msgstr "Disque"
 
-#: composer-ng/richtextcomposeractions.cpp:307
+#: composer-ng/richtextcomposeractions.cpp:305
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
 msgstr "Cercle"
 
-#: composer-ng/richtextcomposeractions.cpp:307
+#: composer-ng/richtextcomposeractions.cpp:305
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
 msgstr "Carré"
 
-#: composer-ng/richtextcomposeractions.cpp:308
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
 msgstr "123"
 
-#: composer-ng/richtextcomposeractions.cpp:308
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
 msgstr "abc"
 
-#: composer-ng/richtextcomposeractions.cpp:309
+#: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
 msgstr "ABC"
 
-#: composer-ng/richtextcomposeractions.cpp:309
+#: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
 msgstr "i ii iii"
 
-#: composer-ng/richtextcomposeractions.cpp:310
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
 msgstr "I II III"
 
-#: composer-ng/richtextcomposeractions.cpp:321
+#: composer-ng/richtextcomposeractions.cpp:319
 #, kde-format
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr "Coller comme &citation"
 
-#: composer-ng/richtextcomposeractions.cpp:329
+#: composer-ng/richtextcomposeractions.cpp:327
 #, kde-format
 msgctxt "@action"
 msgid "Add &Quote Characters"
 msgstr "A&jouter des marques de citation"
 
-#: composer-ng/richtextcomposeractions.cpp:336
+#: composer-ng/richtextcomposeractions.cpp:334
 #, kde-format
 msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "Supprimer des &marques de citation"
 
-#: composer-ng/richtextcomposeractions.cpp:343
+#: composer-ng/richtextcomposeractions.cpp:341
 #, kde-format
 msgctxt "@action"
 msgid "Paste Without Formatting"
 msgstr "Coller sans mise en forme"
 
-#: composer-ng/richtextcomposeractions.cpp:351
+#: composer-ng/richtextcomposeractions.cpp:349
 #, kde-format
 msgid "Add Image"
 msgstr "Ajouter une image"
 
-#: composer-ng/richtextcomposeractions.cpp:370
+#: composer-ng/richtextcomposeractions.cpp:368
 #, kde-format
 msgctxt "@action"
 msgid "Insert HTML"
 msgstr "Insérer des éléments « HTML »"
 
-#: composer-ng/richtextcomposeractions.cpp:380
+#: composer-ng/richtextcomposeractions.cpp:378
 #, kde-format
 msgid "Table"
 msgstr "Tableau"
 
-#: composer-ng/richtextcomposeractions.cpp:389
+#: composer-ng/richtextcomposeractions.cpp:387
 #, kde-format
 msgid "Reset Font Settings"
 msgstr "Réinitialiser les paramètres des polices"
 
-#: composer-ng/richtextcomposeractions.cpp:390
+#: composer-ng/richtextcomposeractions.cpp:388
 #, kde-format
 msgid "Reset Font"
 msgstr "Ré-initialiser une police"
 
-#: composer-ng/richtextcomposeractions.cpp:398
+#: composer-ng/richtextcomposeractions.cpp:396
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
 msgstr "Pipette de format"
 
-#: composer-ng/richtextcomposeractions.cpp:406
+#: composer-ng/richtextcomposeractions.cpp:404
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
 msgstr "Niveau d'en-tête"
 
-#: composer-ng/richtextcomposeractions.cpp:407
+#: composer-ng/richtextcomposeractions.cpp:405
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
 msgstr "Texte standard"
 
-#: composer-ng/richtextcomposeractions.cpp:408
+#: composer-ng/richtextcomposeractions.cpp:406
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
 msgstr "Titre"
 
-#: composer-ng/richtextcomposeractions.cpp:409
+#: composer-ng/richtextcomposeractions.cpp:407
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
 msgstr "Sous-titre"
 
-#: composer-ng/richtextcomposeractions.cpp:410
+#: composer-ng/richtextcomposeractions.cpp:408
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
 msgstr "Section"
 
-#: composer-ng/richtextcomposeractions.cpp:411
+#: composer-ng/richtextcomposeractions.cpp:409
 #, kde-format
 msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
 msgstr "Sous-section"
 
-#: composer-ng/richtextcomposeractions.cpp:412
+#: composer-ng/richtextcomposeractions.cpp:410
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
 msgstr "Paragraphe"
 
-#: composer-ng/richtextcomposeractions.cpp:413
+#: composer-ng/richtextcomposeractions.cpp:411
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
 msgstr "Sous-paragraphe"
 
-#: composer-ng/richtextcomposeractions.cpp:424
+#: composer-ng/richtextcomposeractions.cpp:422
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
@@ -406,25 +406,25 @@ msgctxt "@title:window"
 msgid "Empty command line"
 msgstr "Ligne de commande vide"
 
-#: composer-ng/richtextexternalcomposer.cpp:124
+#: composer-ng/richtextexternalcomposer.cpp:126
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr ""
 "Impossible de démarrer l'éditeur externe. Veuillez vérifier la commande "
 "« %1 »"
 
-#: composer-ng/richtextexternalcomposer.cpp:142
+#: composer-ng/richtextexternalcomposer.cpp:144
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "Une erreur est survenue lors du démarrage de l'éditeur externe."
 
-#: composer-ng/richtextexternalcomposer.cpp:142
+#: composer-ng/richtextexternalcomposer.cpp:144
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "Éditeur externe fermé"
 
-#: composer-ng/richtextexternalcomposer.cpp:159
+#: composer-ng/richtextexternalcomposer.cpp:161
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -436,19 +436,19 @@ msgstr ""
 "conserver actif ?<nl/><warning>L'arrêt de l'éditeur causera la perte de tous "
 "vos changements non enregistrés.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:163
+#: composer-ng/richtextexternalcomposer.cpp:165
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "Éditeur externe en fonctionnement"
 
-#: composer-ng/richtextexternalcomposer.cpp:164
+#: composer-ng/richtextexternalcomposer.cpp:166
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "Arrêter l'éditeur"
 
-#: composer-ng/richtextexternalcomposer.cpp:165
+#: composer-ng/richtextexternalcomposer.cpp:167
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
