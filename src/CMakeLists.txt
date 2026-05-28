@@ -108,8 +108,11 @@ target_link_libraries(
     KPim6TextEdit
     PUBLIC
         KF6::TextCustomEditor
-    PRIVATE
+        Qt::Core
+        Qt::Gui
+        Qt::Widgets
         KF6::SonnetUi
+    PRIVATE
         KF6::SonnetCore
         KF6::WidgetsAddons
         KF6::KIOWidgets

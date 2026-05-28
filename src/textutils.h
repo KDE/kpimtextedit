@@ -10,7 +10,7 @@
 #pragma once
 
 #include "kpimtextedit_export.h"
-#include <qglobal.h>
+#include <QString>
 class QTextDocument;
 
 namespace KPIMTextEdit

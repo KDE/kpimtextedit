@@ -5,8 +5,28 @@
 include(CMakeFindDependencyMacro)
 
 find_dependency(
+    Qt6Core
+    "@QT_REQUIRED_VERSION@"
+)
+
+find_dependency(
+    Qt6Gui
+    "@QT_REQUIRED_VERSION@"
+)
+
+find_dependency(
+    Qt6Widgets
+    "@QT_REQUIRED_VERSION@"
+)
+
+find_dependency(
     KF6TextCustomEditor
     "@KTEXTADDONS_MIN_VERSION@"
+)
+
+find_dependency(
+    KF6Sonnet
+    "@KF_MIN_VERSION@"
 )
 
 include("${CMAKE_CURRENT_LIST_DIR}/KPim6TextEditTargets.cmake")
