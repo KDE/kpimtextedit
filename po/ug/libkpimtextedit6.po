@@ -8,83 +8,78 @@ msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-05 00:45+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-05-31 19:29-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Link Text:"
-msgstr ""
+msgstr "ئۇلانما تېكىستى:"
 
 #: composer-ng/klinkdialog.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Link URL:"
-msgstr ""
+msgstr "ئۇلانما URL:"
 
 #: composer-ng/klinkdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Link"
-msgstr ""
+msgstr "ئۇلانما باشقۇرۇش"
 
 #: composer-ng/richtextcomposeractions.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
-msgstr ""
+msgstr "سولغا توغرىلا(&L)"
 
 #: composer-ng/richtextcomposeractions.cpp:104
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@label left justify"
 msgid "Left"
 msgstr "سول"
 
 #: composer-ng/richtextcomposeractions.cpp:112
-#, fuzzy, kde-format
-#| msgid "Center"
+#, kde-format
 msgctxt "@action"
 msgid "Align &Center"
-msgstr "مەركەز"
+msgstr "ئوتتۇرىغا توغرىلا(&C)"
 
 #: composer-ng/richtextcomposeractions.cpp:113
-#, fuzzy, kde-format
-#| msgid "Center"
+#, kde-format
 msgctxt "@label center justify"
 msgid "Center"
-msgstr "مەركەز"
+msgstr "ئوتتۇرا"
 
 #: composer-ng/richtextcomposeractions.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
-msgstr ""
+msgstr "ئوڭغا توغرىلا(&R)"
 
 #: composer-ng/richtextcomposeractions.cpp:122
-#, fuzzy, kde-format
-#| msgid "Right"
+#, kde-format
 msgctxt "@label right justify"
 msgid "Right"
 msgstr "ئوڭ"
 
 #: composer-ng/richtextcomposeractions.cpp:130
-#, fuzzy, kde-format
-#| msgid "Justify"
+#, kde-format
 msgctxt "@action"
 msgid "&Justify"
-msgstr "ئوڭ-سول تەرىپى تەكشى"
+msgstr "ئوڭ-سول تەرىپى تەكشى(&J)"
 
 #: composer-ng/richtextcomposeractions.cpp:131
-#, fuzzy, kde-format
-#| msgid "Justify"
+#, kde-format
 msgctxt "@label justify fill"
 msgid "Justify"
 msgstr "ئوڭ-سول تەرىپى تەكشى"
@@ -93,80 +88,79 @@ msgstr "ئوڭ-سول تەرىپى تەكشى"
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
-msgstr ""
+msgstr "سولدىن ئوڭغا"
 
 #: composer-ng/richtextcomposeractions.cpp:147
 #, kde-format
 msgctxt "@label left-to-right"
 msgid "Left-to-Right"
-msgstr ""
+msgstr "سولدىن ئوڭغا"
 
 #: composer-ng/richtextcomposeractions.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
-msgstr ""
+msgstr "ئوڭدىن سولغا"
 
 #: composer-ng/richtextcomposeractions.cpp:156
 #, kde-format
 msgctxt "@label right-to-left"
 msgid "Right-to-Left"
-msgstr ""
+msgstr "ئوڭدىن سولغا"
 
 #: composer-ng/richtextcomposeractions.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Subscript"
-msgstr ""
+msgstr "تۆۋەنكى ئىندېكس"
 
 #: composer-ng/richtextcomposeractions.cpp:177
 #, kde-format
 msgctxt "@action"
 msgid "Superscript"
-msgstr ""
+msgstr "يۇقىرى ئىندېكس"
 
 #: composer-ng/richtextcomposeractions.cpp:185
 #, kde-format
 msgctxt "@action boldify selected text"
 msgid "&Bold"
-msgstr ""
+msgstr "توم(&B)"
 
 #: composer-ng/richtextcomposeractions.cpp:197
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
-msgstr ""
+msgstr "يانتۇ(&I)"
 
 #: composer-ng/richtextcomposeractions.cpp:209
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
-msgstr ""
+msgstr "ئاستى سىزىق(&U)"
 
 #: composer-ng/richtextcomposeractions.cpp:221
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
-msgstr ""
+msgstr "ئۆچۈرۈش سىزىقى(&S)"
 
 #: composer-ng/richtextcomposeractions.cpp:234
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
-msgstr ""
+msgstr "خەت نۇسخا(&F)"
 
 #: composer-ng/richtextcomposeractions.cpp:243
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
-msgstr ""
+msgstr "خەت نۇسخا چوڭلۇقى(&S)"
 
 #: composer-ng/richtextcomposeractions.cpp:251
-#, fuzzy, kde-format
-#| msgid "Insert Table"
+#, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
-msgstr "جەدۋەل قىستۇر"
+msgstr "سىزغۇچ قىستۇر"
 
 #: composer-ng/richtextcomposeractions.cpp:260
 #, kde-format
@@ -178,7 +172,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
-msgstr ""
+msgstr "رەڭ"
 
 #: composer-ng/richtextcomposeractions.cpp:269
 #, kde-format
@@ -190,7 +184,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Link"
-msgstr ""
+msgstr "ئۇلانما"
 
 #: composer-ng/richtextcomposeractions.cpp:285
 #, kde-format
@@ -208,31 +202,31 @@ msgstr ""
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
-msgstr ""
+msgstr "تىزىملىك ئۇسلۇبى"
 
 #: composer-ng/richtextcomposeractions.cpp:304
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
-msgstr ""
+msgstr "يوق"
 
 #: composer-ng/richtextcomposeractions.cpp:304
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
-msgstr ""
+msgstr "دىسكا"
 
 #: composer-ng/richtextcomposeractions.cpp:305
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
-msgstr ""
+msgstr "چەمبەر"
 
 #: composer-ng/richtextcomposeractions.cpp:305
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
-msgstr ""
+msgstr "تۆت چاسا"
 
 #: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
@@ -294,11 +288,10 @@ msgid "Add Image"
 msgstr "سۈرەت قوش"
 
 #: composer-ng/richtextcomposeractions.cpp:368
-#, fuzzy, kde-format
-#| msgid "Insert"
+#, kde-format
 msgctxt "@action"
 msgid "Insert HTML"
-msgstr "قىستۇر"
+msgstr ""
 
 #: composer-ng/richtextcomposeractions.cpp:378
 #, kde-format
@@ -319,7 +312,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
-msgstr ""
+msgstr "فورمات چوتكا"
 
 #: composer-ng/richtextcomposeractions.cpp:404
 #, kde-format
@@ -337,13 +330,13 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
-msgstr ""
+msgstr "ماۋزۇ"
 
 #: composer-ng/richtextcomposeractions.cpp:407
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
-msgstr ""
+msgstr "قوشۇمچە ماۋزۇ"
 
 #: composer-ng/richtextcomposeractions.cpp:408
 #, kde-format
@@ -361,7 +354,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
-msgstr ""
+msgstr "ئابزاس"
 
 #: composer-ng/richtextcomposeractions.cpp:411
 #, kde-format
@@ -373,12 +366,12 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
-msgstr ""
+msgstr "كۆپ تاللاش"
 
 #: composer-ng/richtextcomposercontroler.cpp:715
 #, kde-format
 msgid "Only local files are supported."
-msgstr ""
+msgstr "يەرلىك ھۆججەتنىلا قوللايدۇ."
 
 #: composer-ng/richtextcomposerimages.cpp:57
 #, kde-kuit-format
@@ -447,11 +440,10 @@ msgid "Keep Editor Running"
 msgstr ""
 
 #: inserthtmldialog.cpp:36
-#, fuzzy, kde-format
-#| msgid "Insert"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
-msgstr "قىستۇر"
+msgstr ""
 
 #: inserthtmldialog.cpp:38
 #, kde-format
@@ -466,15 +458,13 @@ msgid "Example: <i> Hello word </i>"
 msgstr ""
 
 #: inserthtmldialog.cpp:53
-#, fuzzy, kde-format
-#| msgid "Insert"
+#, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "قىستۇر"
 
 #: insertimagedialog.cpp:30
-#, fuzzy, kde-format
-#| msgid "Insert Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "سۈرەت قىستۇر"
@@ -491,8 +481,7 @@ msgid "Image Location:"
 msgstr ""
 
 #: insertimagewidget.cpp:55
-#, fuzzy, kde-format
-#| msgid "Add Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "سۈرەت قوش"
@@ -510,8 +499,7 @@ msgid "Keep Image Ratio"
 msgstr ""
 
 #: insertimagewidget.cpp:79 inserttablewidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Width:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "كەڭلىك:"
@@ -522,8 +510,7 @@ msgid " px"
 msgstr " px"
 
 #: insertimagewidget.cpp:95
-#, fuzzy, kde-format
-#| msgid "Height:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "ئېگىزلىك:"
@@ -535,25 +522,22 @@ msgid "Image Preview:"
 msgstr ""
 
 #: inserttabledialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Insert Table"
+#, kde-format
 msgctxt "@title:window"
 msgid "Insert Table"
 msgstr "جەدۋەل قىستۇر"
 
 #: inserttablewidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Rows:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Rows:"
 msgstr "قۇر:"
 
 #: inserttablewidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "Columns:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Columns:"
-msgstr "ئىستون:"
+msgstr "رەت:"
 
 #: inserttablewidget.cpp:46
 #, kde-format
@@ -569,13 +553,12 @@ msgstr ""
 #: inserttablewidget.cpp:53
 #, kde-format
 msgid "pixels"
-msgstr "چېكىت"
+msgstr "پىكسېل"
 
 #: tableactionmenu.cpp:410
-#, fuzzy, kde-format
-#| msgid "Table"
+#, kde-format
 msgid "Table…"
-msgstr "جەدۋەل"
+msgstr ""
 
 #: tableactionmenu.cpp:418
 #, kde-format
@@ -590,12 +573,12 @@ msgstr "قۇر ئۈستى"
 #: tableactionmenu.cpp:433
 #, kde-format
 msgid "Column Before"
-msgstr "ئىستوندىن ئىلگىرى"
+msgstr "رەتتىن ئىلگىرى"
 
 #: tableactionmenu.cpp:441
 #, kde-format
 msgid "Column After"
-msgstr "ئىستوندىن كېيىن"
+msgstr "رەتتىن كېيىن"
 
 #: tableactionmenu.cpp:448
 #, kde-format
@@ -603,39 +586,34 @@ msgid "Delete"
 msgstr "ئۆچۈر"
 
 #: tableactionmenu.cpp:451
-#, fuzzy, kde-format
-#| msgid "Row Below"
+#, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "قۇر ئاستى"
 
 #: tableactionmenu.cpp:458
-#, fuzzy, kde-format
-#| msgid "Row Above"
+#, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "قۇر ئۈستى"
 
 #: tableactionmenu.cpp:466
-#, fuzzy, kde-format
-#| msgid "Column Before"
+#, kde-format
 msgctxt "@action"
 msgid "Column Before"
-msgstr "ئىستوندىن ئىلگىرى"
+msgstr "رەتتىن ئىلگىرى"
 
 #: tableactionmenu.cpp:474
-#, fuzzy, kde-format
-#| msgid "Column After"
+#, kde-format
 msgctxt "@action"
 msgid "Column After"
-msgstr "ئىستوندىن كېيىن"
+msgstr "رەتتىن كېيىن"
 
 #: tableactionmenu.cpp:482
-#, fuzzy, kde-format
-#| msgid "Cell Contents"
+#, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
-msgstr "كاتەكچە مەزمۇنلىرى"
+msgstr ""
 
 #: tableactionmenu.cpp:491
 #, kde-format
@@ -654,11 +632,10 @@ msgid "Split cells"
 msgstr ""
 
 #: tableactionmenu.cpp:514
-#, fuzzy, kde-format
-#| msgid "Table"
+#, kde-format
 msgctxt "@action"
 msgid "Table Format…"
-msgstr "جەدۋەل"
+msgstr ""
 
 #: tableactionmenu.cpp:521
 #, kde-format
@@ -694,11 +671,10 @@ msgid "Bottom"
 msgstr "ئاستى"
 
 #: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
-#, fuzzy, kde-format
-#| msgid "Background Color:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Background Color:"
-msgstr "تەگلىك رەڭگى"
+msgstr ""
 
 #: tableformatdialog.cpp:31
 #, kde-format
@@ -707,11 +683,10 @@ msgid "Table Format"
 msgstr ""
 
 #: tableformatdialog.cpp:44
-#, fuzzy, kde-format
-#| msgid "Spacing:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Spacing:"
-msgstr "ئارىلىق"
+msgstr "ئارىلىق:"
 
 #: tableformatdialog.cpp:49
 #, kde-format
@@ -720,11 +695,10 @@ msgid "pixels between cells"
 msgstr ""
 
 #: tableformatdialog.cpp:54
-#, fuzzy, kde-format
-#| msgid "Spacing:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Padding:"
-msgstr "ئارىلىق"
+msgstr "يان ئارىلىقى:"
 
 #: tableformatdialog.cpp:59
 #, kde-format
@@ -745,7 +719,7 @@ msgstr "ئوڭ"
 #: tableformatdialog.cpp:69
 #, kde-format
 msgid "Center"
-msgstr "مەركەز"
+msgstr "ئوتتۇرا"
 
 #: tableformatdialog.cpp:70
 #, kde-format
@@ -770,7 +744,6 @@ msgstr ""
 #~ msgid "Select"
 #~ msgstr "تاللا"
 
-#, fuzzy
 #~| msgid "Columns:"
 #~ msgid "Volume:"
 #~ msgstr "ئىستون:"
