@@ -230,3 +230,22 @@ install(
     COMPONENT Devel
 )
 ecm_generate_qdoc(KPim6TextEdit kpimtextedit.qdocconf)
+
+ecm_add_installed_library_check(KPim6TextEdit
+    PACKAGE_NAME "KPim6TextEdit"
+    PACKAGE_VERSION ${KPIMTEXTEDIT_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KPim6::"
+)
+
+ecm_installed_library_check_include_strings(KPim6TextEdit
+    HEADERS ${KPimTextEdit_includes}
+    PREFIX kpimtextedit
+)
+
+ecm_installed_library_check_include_strings(KPim6TextEdit
+    HEADERS
+            ${KPimTextEdit_CamelCase_HEADERS}
+        ${KPimTextEdit_Camelcasecomposerng_HEADERS}
+        ${KPimTextEdit_CamelCasegrantlee_HEADERS}
+    PREFIX KPIMTextEdit
+)
