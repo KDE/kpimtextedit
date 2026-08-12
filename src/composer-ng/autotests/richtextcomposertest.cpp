@@ -349,6 +349,27 @@ void RichTextComposerTest::testImageHtmlCode()
     QCOMPARE(KPIMTextEdit::RichTextComposerImages::imageNamesToContentIds(startHtml.toLatin1(), images), endHtml.toLatin1());
 }
 
+void RichTextComposerTest::testImageHtmlCodeNonAsciiName()
+{
+    KPIMTextEdit::ImageList images;
+    const QSharedPointer<KPIMTextEdit::EmbeddedImage> image(new KPIMTextEdit::EmbeddedImage);
+    image->imageName = u"imagé.png"_s;
+    image->contentID = u"1234@KDE"_s;
+    images.append(image);
+
+    const QString startHtml = u"<img src=\"imagé.png\">Bla"_s;
+    const QString endHtml = u"<img src=\"cid:1234@KDE\">Bla"_s;
+
+    // The html body is encoded with the charset of the message, the image name has to be encoded the same way
+    QCOMPARE(KPIMTextEdit::RichTextComposerImages::imageNamesToContentIds(startHtml.toUtf8(), images, "utf-8"), endHtml.toUtf8());
+    QCOMPARE(KPIMTextEdit::RichTextComposerImages::imageNamesToContentIds(startHtml.toLatin1(), images, "iso-8859-1"), endHtml.toLatin1());
+    // An unknown charset must not break the replacement
+    QCOMPARE(KPIMTextEdit::RichTextComposerImages::imageNamesToContentIds(startHtml.toUtf8(), images, "unknown-charset"), endHtml.toUtf8());
+    // Without a charset the usual encodings are tried
+    QCOMPARE(KPIMTextEdit::RichTextComposerImages::imageNamesToContentIds(startHtml.toUtf8(), images), endHtml.toUtf8());
+    QCOMPARE(KPIMTextEdit::RichTextComposerImages::imageNamesToContentIds(startHtml.toLatin1(), images), endHtml.toLatin1());
+}
+
 void RichTextComposerTest::testDeleteLine_data()
 {
     QTest::addColumn<QString>("initalText");

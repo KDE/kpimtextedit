@@ -14,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KMessageBox>
 #include <QBuffer>
 #include <QRandomGenerator>
+#include <QStringConverter>
 #include <QTextBlock>
 #include <QTextDocument>
 
@@ -217,13 +218,54 @@ void RichTextComposerImages::insertImage(const QImage &image, const QFileInfo &f
     addImageHelper(imageName, image);
 }
 
+namespace
+{
+// htmlBody was encoded by the caller with the charset of the message, so the image name has to be
+// encoded the same way, otherwise a name with non-ascii characters is never found and the <img> tag
+// keeps pointing to the resource name instead of the content id.
+// The charset is not always known by the caller, and it can be a charset which Qt doesn't support,
+// so the encodings which the html body is likely to use are tried too. A name encoded with the wrong
+// charset simply doesn't match anything.
+QList<QByteArray> encodedImageNames(const QString &imageName, const QByteArray &charset)
+{
+    QList<QByteArray> names;
+    const auto addName = [&names, &imageName](QStringEncoder encoder) {
+        if (!encoder.isValid()) {
+            return;
+        }
+        const QByteArray name = encoder.encode(imageName);
+        // An unencodable character is replaced by a placeholder, such a name would match the wrong <img> tag.
+        if (encoder.hasError() || name.isEmpty() || names.contains(name)) {
+            return;
+        }
+        names.append(name);
+    };
+    if (!charset.isEmpty()) {
+        addName(QStringEncoder(charset.constData()));
+    }
+    addName(QStringEncoder(QStringEncoder::Utf8));
+    addName(QStringEncoder(QStringEncoder::System));
+    addName(QStringEncoder(QStringEncoder::Latin1));
+    return names;
+}
+}
+
 QByteArray RichTextComposerImages::imageNamesToContentIds(const QByteArray &htmlBody, const KPIMTextEdit::ImageList &imageList)
 {
+    return imageNamesToContentIds(htmlBody, imageList, {});
+}
+
+QByteArray RichTextComposerImages::imageNamesToContentIds(const QByteArray &htmlBody, const KPIMTextEdit::ImageList &imageList, const QByteArray &charset)
+{
     QByteArray result = htmlBody;
+    const QByteArray quote("\"");
     for (const QSharedPointer<EmbeddedImage> &image : imageList) {
-        const QString newImageName = "cid:"_L1 + image->contentID;
-        QByteArray quote("\"");
-        result.replace(QByteArray(quote + image->imageName.toLocal8Bit() + quote), QByteArray(quote + newImageName.toLocal8Bit() + quote));
+        // The name is quoted so that a name which is a substring of another one is not replaced.
+        const QByteArray newImageName = quote + "cid:" + image->contentID.toLatin1() + quote;
+        const QList<QByteArray> oldImageNames = encodedImageNames(image->imageName, charset);
+        for (const QByteArray &oldImageName : oldImageNames) {
+            result.replace(QByteArray(quote + oldImageName + quote), newImageName);
+        }
     }
     return result;
 }

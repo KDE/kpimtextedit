@@ -151,6 +151,17 @@ public:
     [[nodiscard]] static QByteArray imageNamesToContentIds(const QByteArray &htmlBody, const ImageList &imageList);
 
     /*!
+     * \overload
+     *
+     * \a charset the charset which was used to encode \a htmlBody, so that the image names
+     *               are encoded the same way. Image names with non-ascii characters are not
+     *               found otherwise.
+     *
+     * \since 6.9
+     */
+    [[nodiscard]] static QByteArray imageNamesToContentIds(const QByteArray &htmlBody, const ImageList &imageList, const QByteArray &charset);
+
+    /*!
      * Creates an embedded image from a QImage.
      *
      * \param img The image to embed

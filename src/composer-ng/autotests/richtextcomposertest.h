@@ -25,6 +25,7 @@ private Q_SLOTS:
     void testEnter_data();
     void testImages();
     void testImageHtmlCode();
+    void testImageHtmlCodeNonAsciiName();
     void testDeleteLine();
     void testDeleteLine_data();
     void testLoadImage();
