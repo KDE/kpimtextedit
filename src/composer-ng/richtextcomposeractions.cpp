@@ -422,7 +422,7 @@ void RichTextComposerActions::createActions(KActionCollection *ac)
     d->action_list_checkbox = new KToggleAction(QIcon::fromTheme(u"checkbox"_s), i18nc("@action", "Checkbox"), this);
     d->richTextActionList.append(d->action_list_checkbox);
     d->action_list_checkbox->setObjectName("format_list_checkbox"_L1);
-    connect(d->action_list_checkbox, &KToggleAction::toggled, d->composerControler, &RichTextComposerControler::addCheckbox);
+    connect(d->action_list_checkbox, &KToggleAction::triggered, d->composerControler, &RichTextComposerControler::addCheckbox);
     if (ac) {
         ac->addAction(u"format_list_checkbox"_s, d->action_list_checkbox);
     }
