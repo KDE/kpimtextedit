@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:45+0000\n"
+"POT-Creation-Date: 2026-08-13 00:51+0000\n"
 "PO-Revision-Date: 2026-07-29 00:25+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -374,13 +374,13 @@ msgstr "Zaškrtávací tlačítko"
 msgid "Only local files are supported."
 msgstr "Jsou podporovány pouze lokální soubory."
 
-#: composer-ng/richtextcomposerimages.cpp:57
+#: composer-ng/richtextcomposerimages.cpp:58
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "Nelze načíst obrázek <filename>%1</filename>."
 
-#: composer-ng/richtextcomposerimages.cpp:216
+#: composer-ng/richtextcomposerimages.cpp:217
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"

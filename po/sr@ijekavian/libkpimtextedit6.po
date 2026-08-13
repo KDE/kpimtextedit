@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:45+0000\n"
+"POT-Creation-Date: 2026-08-13 00:51+0000\n"
 "PO-Revision-Date: 2017-12-24 21:47+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -392,13 +392,13 @@ msgstr ""
 msgid "Only local files are supported."
 msgstr "Подржани су само локални фајлови."
 
-#: composer-ng/richtextcomposerimages.cpp:57
+#: composer-ng/richtextcomposerimages.cpp:58
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "Не могу да учитам слику <filename>%1</filename>."
 
-#: composer-ng/richtextcomposerimages.cpp:216
+#: composer-ng/richtextcomposerimages.cpp:217
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:45+0000\n"
+"POT-Creation-Date: 2026-08-13 00:51+0000\n"
 "PO-Revision-Date: 2024-08-15 11:52+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -374,13 +374,13 @@ msgstr "خانة تأشير"
 msgid "Only local files are supported."
 msgstr "الملفّات المحليّة مدعومة فقط."
 
-#: composer-ng/richtextcomposerimages.cpp:57
+#: composer-ng/richtextcomposerimages.cpp:58
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "تعذّر تحميل الصّورة <filename>%1</filename>."
 
-#: composer-ng/richtextcomposerimages.cpp:216
+#: composer-ng/richtextcomposerimages.cpp:217
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"

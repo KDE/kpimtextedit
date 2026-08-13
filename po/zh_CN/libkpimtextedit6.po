@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:45+0000\n"
+"POT-Creation-Date: 2026-08-13 00:51+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -372,13 +372,13 @@ msgstr "勾选框"
 msgid "Only local files are supported."
 msgstr "仅支持本地文件"
 
-#: composer-ng/richtextcomposerimages.cpp:57
+#: composer-ng/richtextcomposerimages.cpp:58
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "无法加载图像 <filename>%1</filename>。"
 
-#: composer-ng/richtextcomposerimages.cpp:216
+#: composer-ng/richtextcomposerimages.cpp:217
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"
