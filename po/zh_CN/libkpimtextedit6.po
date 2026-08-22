@@ -409,7 +409,7 @@ msgstr "启动外部编辑器时发现错误"
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
-msgstr ""
+msgstr "外部编辑器已关闭"
 
 #: composer-ng/richtextexternalcomposer.cpp:161
 #, kde-kuit-format
