@@ -148,16 +148,16 @@ ImageWithNameList RichTextComposerImages::imagesWithName() const
     QStringList seenImageNames;
     const QList<QTextImageFormat> imageFormats = embeddedImageFormats();
     for (const QTextImageFormat &imageFormat : imageFormats) {
-        const QString name = imageFormat.name();
+        QString name = imageFormat.name();
         if (!seenImageNames.contains(name)) {
             const QVariant resourceData = d->composer->document()->resource(QTextDocument::ImageResource, QUrl(name));
             auto image = qvariant_cast<QImage>(resourceData);
 
-            const ImageWithNamePtr newImage(new ImageWithName);
-            newImage->image = image;
+            ImageWithNamePtr newImage(new ImageWithName);
+            newImage->image = std::move(image);
             newImage->name = name;
-            retImages.append(newImage);
-            seenImageNames.append(name);
+            retImages.append(std::move(newImage));
+            seenImageNames.append(std::move(name));
         }
     }
     return retImages;
@@ -233,12 +233,12 @@ QList<QByteArray> encodedImageNames(const QString &imageName, const QByteArray &
         if (!encoder.isValid()) {
             return;
         }
-        const QByteArray name = encoder.encode(imageName);
+        QByteArray name = encoder.encode(imageName);
         // An unencodable character is replaced by a placeholder, such a name would match the wrong <img> tag.
         if (encoder.hasError() || name.isEmpty() || names.contains(name)) {
             return;
         }
-        names.append(name);
+        names.append(std::move(name));
     };
     if (!charset.isEmpty()) {
         addName(QStringEncoder(charset.constData()));

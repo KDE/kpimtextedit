@@ -672,7 +672,8 @@ QSet<int> MarkupDirector::getElementsToClose(const QTextBlock::iterator &it) con
 
         const QList<int> openElement = d->m_openElements;
         auto elementsToClose = QSet<int>(openElement.begin(), openElement.end());
-        return elementsToClose.unite(d->m_elementsToOpen);
+        elementsToClose.unite(d->m_elementsToOpen);
+        return elementsToClose;
     }
 
     auto fragment = it.fragment();

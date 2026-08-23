@@ -96,7 +96,7 @@ QString PlainTextMarkupBuilderPrivate::getRomanString(int item)
                 romanNumeral.append(QStringView(romanSymbols).mid(startDigit, numDigits).toString());
             }
         }
-        result = romanNumeral;
+        result = std::move(romanNumeral);
     } else {
         result = u"?"_s;
     }
@@ -354,7 +354,7 @@ void PlainTextMarkupBuilder::appendRawText(const QString &text)
 QString PlainTextMarkupBuilder::getResult()
 {
     Q_D(PlainTextMarkupBuilder);
-    auto ret = d->mText;
+    auto ret = std::move(d->mText);
     ret.append(d->getReferences());
     d->mText.clear();
     return ret;

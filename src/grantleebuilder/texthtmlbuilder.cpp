@@ -464,7 +464,7 @@ void TextHTMLBuilder::appendRawText(const QString &text)
 QString TextHTMLBuilder::getResult()
 {
     Q_D(TextHTMLBuilder);
-    auto ret = d->mText;
+    auto ret = std::move(d->mText);
     d->mText.clear();
     return ret;
 }

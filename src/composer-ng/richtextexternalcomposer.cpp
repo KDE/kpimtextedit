@@ -90,14 +90,14 @@ void RichTextExternalComposer::startExternalEditor()
         map.insert(u'w', QString::number(static_cast<qulonglong>(d->richTextComposer->winId())));
         map.insert(u'f', d->extEditorTempFile->fileName());
         const QString cmd = KMacroExpander::expandMacrosShellQuote(commandLine, map);
-        const QStringList arg = KShell::splitArgs(cmd);
+        QStringList arg = KShell::splitArgs(cmd);
         bool filenameAdded = false;
         if (commandLine.contains("%f"_L1)) {
             filenameAdded = true;
         }
         QStringList command;
         if (!arg.isEmpty()) {
-            command << arg;
+            command << std::move(arg);
         }
         if (command.isEmpty()) {
             d->cannotStartProcess(commandLine);

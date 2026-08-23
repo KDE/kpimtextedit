@@ -46,9 +46,9 @@ public:
         const QList<QByteArray> mimetypes = QImageReader::supportedMimeTypes();
         lstMimeTypes.reserve(mimetypes.count());
         for (const QByteArray &ba : mimetypes) {
-            const QString resolvedAlias = resolveAlias(QString::fromUtf8(ba));
+            QString resolvedAlias = resolveAlias(QString::fromUtf8(ba));
             if (!resolvedAlias.isEmpty()) {
-                lstMimeTypes << resolvedAlias;
+                lstMimeTypes << std::move(resolvedAlias);
             }
         }
         imageUrlRequester->setMimeTypeFilters(lstMimeTypes);
