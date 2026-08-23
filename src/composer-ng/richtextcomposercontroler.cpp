@@ -790,7 +790,7 @@ void RichTextComposerControler::addQuotes(const QString &defaultQuote)
         cursor.removeSelectedText();
     } else {
         selectedText = cursor.selectedText();
-        if (selectedText[selectedText.length() - 1] == QChar::ParagraphSeparator) {
+        if (selectedText.endsWith(QChar::ParagraphSeparator)) {
             lastCharacterIsAParagraphChar = true;
         }
     }
