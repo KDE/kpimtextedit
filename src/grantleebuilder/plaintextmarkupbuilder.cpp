@@ -276,6 +276,9 @@ void PlainTextMarkupBuilder::beginListItem()
         d->mText.append(u"    "_s);
     }
 
+    if (d->currentListItemNumbers.isEmpty()) {
+        return;
+    }
     auto itemNumber = d->currentListItemNumbers.constLast();
 
     switch (d->currentListItemStyles.constLast()) {
@@ -311,6 +314,9 @@ void PlainTextMarkupBuilder::beginListItem()
 void PlainTextMarkupBuilder::endListItem()
 {
     Q_D(PlainTextMarkupBuilder);
+    if (d->currentListItemNumbers.isEmpty()) {
+        return;
+    }
     d->currentListItemNumbers.last() = d->currentListItemNumbers.last() + 1;
     d->mText.append(u'\n');
 }
