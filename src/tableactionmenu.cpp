@@ -538,6 +538,7 @@ TableActionMenu::~TableActionMenu() = default;
 void TableActionMenu::setRichTextMode(bool richTextMode)
 {
     d->richTextMode = richTextMode;
+    d->_k_updateActions(true);
 }
 }
 
