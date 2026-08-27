@@ -83,16 +83,18 @@ void TableActionMenuPrivate::_k_slotRemoveCellContents()
 {
     if (richTextMode) {
         QTextTable *table = textEdit->textCursor().currentTable();
-        const QTextTableCell cell = table->cellAt(textEdit->textCursor());
-        if (cell.isValid()) {
-            const QTextCursor firstCursor = cell.firstCursorPosition();
-            const QTextCursor endCursor = cell.lastCursorPosition();
-            QTextCursor cursor = textEdit->textCursor();
-            cursor.beginEditBlock();
-            cursor.setPosition(firstCursor.position());
-            cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, endCursor.position() - firstCursor.position());
-            cursor.removeSelectedText();
-            cursor.endEditBlock();
+        if (table) {
+            const QTextTableCell cell = table->cellAt(textEdit->textCursor());
+            if (cell.isValid()) {
+                const QTextCursor firstCursor = cell.firstCursorPosition();
+                const QTextCursor endCursor = cell.lastCursorPosition();
+                QTextCursor cursor = textEdit->textCursor();
+                cursor.beginEditBlock();
+                cursor.setPosition(firstCursor.position());
+                cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, endCursor.position() - firstCursor.position());
+                cursor.removeSelectedText();
+                cursor.endEditBlock();
+            }
         }
     }
 }
