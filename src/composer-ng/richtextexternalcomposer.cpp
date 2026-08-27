@@ -133,12 +133,14 @@ void RichTextExternalComposer::slotEditorFinished(int codeError, QProcess::ExitS
     if (exitStatus == QProcess::NormalExit) {
         // the external editor could have renamed the original file and recreated a new file
         // with the given filename, so we need to reopen the file after the editor exited
-        QFile localFile(d->extEditorTempFile->fileName());
-        if (localFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            const QByteArray f = localFile.readAll();
-            d->richTextComposer->setTextOrHtml(QString::fromUtf8(f.data(), f.size()));
-            d->richTextComposer->document()->setModified(true);
-            localFile.close();
+        if (d->extEditorTempFile) {
+            QFile localFile(d->extEditorTempFile->fileName());
+            if (localFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                const QByteArray f = localFile.readAll();
+                d->richTextComposer->setTextOrHtml(QString::fromUtf8(f.data(), f.size()));
+                d->richTextComposer->document()->setModified(true);
+                localFile.close();
+            }
         }
         if (codeError > 0) {
             KMessageBox::error(d->richTextComposer, i18n("Error was found when we started external editor."), i18nc("@title:window", "External Editor Closed"));
