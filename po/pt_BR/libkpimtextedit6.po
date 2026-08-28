@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:51+0000\n"
+"POT-Creation-Date: 2026-08-28 00:46+0000\n"
 "PO-Revision-Date: 2025-11-08 21:10-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -404,18 +404,18 @@ msgstr "Linha de comando vazia"
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr "O editor externo não pôde ser iniciado. Verifique o comando \"%1\""
 
-#: composer-ng/richtextexternalcomposer.cpp:144
+#: composer-ng/richtextexternalcomposer.cpp:146
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "Foi encontrado um erro ao iniciar o editor externo."
 
-#: composer-ng/richtextexternalcomposer.cpp:144
+#: composer-ng/richtextexternalcomposer.cpp:146
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "Editor externo fechado"
 
-#: composer-ng/richtextexternalcomposer.cpp:161
+#: composer-ng/richtextexternalcomposer.cpp:163
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -427,19 +427,19 @@ msgstr ""
 "lo em execução?<nl/><warning>Parar o editor fará com que todas as alterações "
 "não salvas sejam perdidas.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:165
+#: composer-ng/richtextexternalcomposer.cpp:167
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "Editor externo em execução"
 
-#: composer-ng/richtextexternalcomposer.cpp:166
+#: composer-ng/richtextexternalcomposer.cpp:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "Parar o editor"
 
-#: composer-ng/richtextexternalcomposer.cpp:167
+#: composer-ng/richtextexternalcomposer.cpp:169
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -475,7 +475,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Inserir imagem"
 
-#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:407
+#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:409
 #, kde-format
 msgid "Insert"
 msgstr "Inserir"
@@ -562,89 +562,89 @@ msgstr "% da janela"
 msgid "pixels"
 msgstr "pixels"
 
-#: tableactionmenu.cpp:410
+#: tableactionmenu.cpp:412
 #, kde-format
 msgid "Table…"
 msgstr "Tabela…"
 
-#: tableactionmenu.cpp:418
+#: tableactionmenu.cpp:420
 #, kde-format
 msgid "Row Below"
 msgstr "Linha abaixo"
 
-#: tableactionmenu.cpp:425
+#: tableactionmenu.cpp:427
 #, kde-format
 msgid "Row Above"
 msgstr "Linha acima"
 
-#: tableactionmenu.cpp:433
+#: tableactionmenu.cpp:435
 #, kde-format
 msgid "Column Before"
 msgstr "Antes da coluna"
 
-#: tableactionmenu.cpp:441
+#: tableactionmenu.cpp:443
 #, kde-format
 msgid "Column After"
 msgstr "Após a coluna"
 
-#: tableactionmenu.cpp:448
+#: tableactionmenu.cpp:450
 #, kde-format
 msgid "Delete"
 msgstr "Excluir"
 
-#: tableactionmenu.cpp:451
+#: tableactionmenu.cpp:453
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Linha abaixo"
 
-#: tableactionmenu.cpp:458
+#: tableactionmenu.cpp:460
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Linha acima"
 
-#: tableactionmenu.cpp:466
+#: tableactionmenu.cpp:468
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Antes da coluna"
 
-#: tableactionmenu.cpp:474
+#: tableactionmenu.cpp:476
 #, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "Após a coluna"
 
-#: tableactionmenu.cpp:482
+#: tableactionmenu.cpp:484
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Conteúdo da célula"
 
-#: tableactionmenu.cpp:491
+#: tableactionmenu.cpp:493
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "Inserir célula à direita"
 
-#: tableactionmenu.cpp:498
+#: tableactionmenu.cpp:500
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Mesclar células selecionadas"
 
-#: tableactionmenu.cpp:505
+#: tableactionmenu.cpp:507
 #, kde-format
 msgid "Split cells"
 msgstr "Dividir células"
 
-#: tableactionmenu.cpp:514
+#: tableactionmenu.cpp:516
 #, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "Formato da tabela…"
 
-#: tableactionmenu.cpp:521
+#: tableactionmenu.cpp:523
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"

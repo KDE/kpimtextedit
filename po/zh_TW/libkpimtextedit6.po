@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:51+0000\n"
+"POT-Creation-Date: 2026-08-28 00:46+0000\n"
 "PO-Revision-Date: 2024-08-06 05:50+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -402,18 +402,18 @@ msgstr "空命令列"
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr "外部編輯器無法開啟。請檢查命令 \"%1\""
 
-#: composer-ng/richtextexternalcomposer.cpp:144
+#: composer-ng/richtextexternalcomposer.cpp:146
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "開啟外部編輯器時發現錯誤。"
 
-#: composer-ng/richtextexternalcomposer.cpp:144
+#: composer-ng/richtextexternalcomposer.cpp:146
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "外部編輯器已關閉"
 
-#: composer-ng/richtextexternalcomposer.cpp:161
+#: composer-ng/richtextexternalcomposer.cpp:163
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -424,19 +424,19 @@ msgstr ""
 "外部編輯器尚在執行中。<nl/>您要關閉它還是讓它繼續執行？<nl/><warning>關閉編輯"
 "器將會使您未儲存的變更全部遺失。</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:165
+#: composer-ng/richtextexternalcomposer.cpp:167
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "外部編輯器執行中"
 
-#: composer-ng/richtextexternalcomposer.cpp:166
+#: composer-ng/richtextexternalcomposer.cpp:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "關閉編輯器"
 
-#: composer-ng/richtextexternalcomposer.cpp:167
+#: composer-ng/richtextexternalcomposer.cpp:169
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -472,7 +472,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "插入影像"
 
-#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:407
+#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:409
 #, kde-format
 msgid "Insert"
 msgstr "插入"
@@ -558,89 +558,89 @@ msgstr "視窗的百分比"
 msgid "pixels"
 msgstr "像素"
 
-#: tableactionmenu.cpp:410
+#: tableactionmenu.cpp:412
 #, kde-format
 msgid "Table…"
 msgstr "表格…"
 
-#: tableactionmenu.cpp:418
+#: tableactionmenu.cpp:420
 #, kde-format
 msgid "Row Below"
 msgstr "列下方"
 
-#: tableactionmenu.cpp:425
+#: tableactionmenu.cpp:427
 #, kde-format
 msgid "Row Above"
 msgstr "列上方"
 
-#: tableactionmenu.cpp:433
+#: tableactionmenu.cpp:435
 #, kde-format
 msgid "Column Before"
 msgstr "欄之前"
 
-#: tableactionmenu.cpp:441
+#: tableactionmenu.cpp:443
 #, kde-format
 msgid "Column After"
 msgstr "欄之後"
 
-#: tableactionmenu.cpp:448
+#: tableactionmenu.cpp:450
 #, kde-format
 msgid "Delete"
 msgstr "刪除"
 
-#: tableactionmenu.cpp:451
+#: tableactionmenu.cpp:453
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "下方列"
 
-#: tableactionmenu.cpp:458
+#: tableactionmenu.cpp:460
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "上方列"
 
-#: tableactionmenu.cpp:466
+#: tableactionmenu.cpp:468
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "前方欄"
 
-#: tableactionmenu.cpp:474
+#: tableactionmenu.cpp:476
 #, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "後方欄"
 
-#: tableactionmenu.cpp:482
+#: tableactionmenu.cpp:484
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "儲存格內容"
 
-#: tableactionmenu.cpp:491
+#: tableactionmenu.cpp:493
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "與右方儲存格合併"
 
-#: tableactionmenu.cpp:498
+#: tableactionmenu.cpp:500
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "合併選取的儲存格"
 
-#: tableactionmenu.cpp:505
+#: tableactionmenu.cpp:507
 #, kde-format
 msgid "Split cells"
 msgstr "分割儲存格"
 
-#: tableactionmenu.cpp:514
+#: tableactionmenu.cpp:516
 #, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "表格格式…"
 
-#: tableactionmenu.cpp:521
+#: tableactionmenu.cpp:523
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"

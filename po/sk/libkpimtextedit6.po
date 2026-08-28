@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:51+0000\n"
+"POT-Creation-Date: 2026-08-28 00:46+0000\n"
 "PO-Revision-Date: 2019-11-11 15:17+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -401,18 +401,18 @@ msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr ""
 "Externý editor sa nepodarilo spustiť. Prosím skontrolujte príkaz \"%1\""
 
-#: composer-ng/richtextexternalcomposer.cpp:144
+#: composer-ng/richtextexternalcomposer.cpp:146
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "Našla sa chyba počas spúšťania externého editora."
 
-#: composer-ng/richtextexternalcomposer.cpp:144
+#: composer-ng/richtextexternalcomposer.cpp:146
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "Externý editor zatvorený"
 
-#: composer-ng/richtextexternalcomposer.cpp:161
+#: composer-ng/richtextexternalcomposer.cpp:163
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -424,19 +424,19 @@ msgstr ""
 "prevádzke? <nl/><warning>Ukončenie editora spôsobí stratu všetkých vašich "
 "neuložených zmien.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:165
+#: composer-ng/richtextexternalcomposer.cpp:167
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "Externý editor beží"
 
-#: composer-ng/richtextexternalcomposer.cpp:166
+#: composer-ng/richtextexternalcomposer.cpp:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "Ukončiť editor"
 
-#: composer-ng/richtextexternalcomposer.cpp:167
+#: composer-ng/richtextexternalcomposer.cpp:169
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -472,7 +472,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Vložiť obrázok"
 
-#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:407
+#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:409
 #, kde-format
 msgid "Insert"
 msgstr "Vložiť"
@@ -558,89 +558,89 @@ msgstr "% okien"
 msgid "pixels"
 msgstr "bodov"
 
-#: tableactionmenu.cpp:410
+#: tableactionmenu.cpp:412
 #, kde-format
 msgid "Table…"
 msgstr "Tabuľka"
 
-#: tableactionmenu.cpp:418
+#: tableactionmenu.cpp:420
 #, kde-format
 msgid "Row Below"
 msgstr "Riadok pod"
 
-#: tableactionmenu.cpp:425
+#: tableactionmenu.cpp:427
 #, kde-format
 msgid "Row Above"
 msgstr "Riadok nad"
 
-#: tableactionmenu.cpp:433
+#: tableactionmenu.cpp:435
 #, kde-format
 msgid "Column Before"
 msgstr "Stĺpec pred"
 
-#: tableactionmenu.cpp:441
+#: tableactionmenu.cpp:443
 #, kde-format
 msgid "Column After"
 msgstr "Stĺpec za"
 
-#: tableactionmenu.cpp:448
+#: tableactionmenu.cpp:450
 #, kde-format
 msgid "Delete"
 msgstr "Odstrániť"
 
-#: tableactionmenu.cpp:451
+#: tableactionmenu.cpp:453
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Riadok pod"
 
-#: tableactionmenu.cpp:458
+#: tableactionmenu.cpp:460
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Riadok nad"
 
-#: tableactionmenu.cpp:466
+#: tableactionmenu.cpp:468
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Stĺpec pred"
 
-#: tableactionmenu.cpp:474
+#: tableactionmenu.cpp:476
 #, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "Stĺpec za"
 
-#: tableactionmenu.cpp:482
+#: tableactionmenu.cpp:484
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Obsah bunky"
 
-#: tableactionmenu.cpp:491
+#: tableactionmenu.cpp:493
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "Prepojiť s bunkou napravo"
 
-#: tableactionmenu.cpp:498
+#: tableactionmenu.cpp:500
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Spojiť vybrané bunky"
 
-#: tableactionmenu.cpp:505
+#: tableactionmenu.cpp:507
 #, kde-format
 msgid "Split cells"
 msgstr "Rozdeliť bunky"
 
-#: tableactionmenu.cpp:514
+#: tableactionmenu.cpp:516
 #, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "Formát tabuľky"
 
-#: tableactionmenu.cpp:521
+#: tableactionmenu.cpp:523
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"

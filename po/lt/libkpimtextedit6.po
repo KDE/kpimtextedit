@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:51+0000\n"
+"POT-Creation-Date: 2026-08-28 00:46+0000\n"
 "PO-Revision-Date: 2026-03-11 13:59+0200\n"
 "Last-Translator: Liudas Ališauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -402,18 +402,18 @@ msgstr "Tuščia komandų eilutė"
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr "Išorinis redaktorius negali būti paleistas. Patikrinkite komandą „%1“"
 
-#: composer-ng/richtextexternalcomposer.cpp:144
+#: composer-ng/richtextexternalcomposer.cpp:146
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "Klaida paleidžiant išorinį redaktorių."
 
-#: composer-ng/richtextexternalcomposer.cpp:144
+#: composer-ng/richtextexternalcomposer.cpp:146
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "Išorinis redaktorius užvertas"
 
-#: composer-ng/richtextexternalcomposer.cpp:161
+#: composer-ng/richtextexternalcomposer.cpp:163
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -425,19 +425,19 @@ msgstr ""
 "palikti jį veikiantį?<nl/><warning>Sustabdžius redaktorių, visi jūsų "
 "neįrašyti pakeitimai bus prarasti.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:165
+#: composer-ng/richtextexternalcomposer.cpp:167
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "Veikia išorinis redaktorius"
 
-#: composer-ng/richtextexternalcomposer.cpp:166
+#: composer-ng/richtextexternalcomposer.cpp:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "Stabdyti redaktorių"
 
-#: composer-ng/richtextexternalcomposer.cpp:167
+#: composer-ng/richtextexternalcomposer.cpp:169
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -473,7 +473,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Įterpti paveikslą"
 
-#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:407
+#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:409
 #, kde-format
 msgid "Insert"
 msgstr "Įterpti"
@@ -559,89 +559,89 @@ msgstr "% lango"
 msgid "pixels"
 msgstr "pikseliai"
 
-#: tableactionmenu.cpp:410
+#: tableactionmenu.cpp:412
 #, kde-format
 msgid "Table…"
 msgstr "Lentelė…"
 
-#: tableactionmenu.cpp:418
+#: tableactionmenu.cpp:420
 #, kde-format
 msgid "Row Below"
 msgstr "Eilutė žemiau"
 
-#: tableactionmenu.cpp:425
+#: tableactionmenu.cpp:427
 #, kde-format
 msgid "Row Above"
 msgstr "Eilutė aukščiau"
 
-#: tableactionmenu.cpp:433
+#: tableactionmenu.cpp:435
 #, kde-format
 msgid "Column Before"
 msgstr "Stulpelis kairėje"
 
-#: tableactionmenu.cpp:441
+#: tableactionmenu.cpp:443
 #, kde-format
 msgid "Column After"
 msgstr "Stulpelis dešinėje"
 
-#: tableactionmenu.cpp:448
+#: tableactionmenu.cpp:450
 #, kde-format
 msgid "Delete"
 msgstr "Ištrinti"
 
-#: tableactionmenu.cpp:451
+#: tableactionmenu.cpp:453
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Eilutė žemiau"
 
-#: tableactionmenu.cpp:458
+#: tableactionmenu.cpp:460
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Eilutė aukščiau"
 
-#: tableactionmenu.cpp:466
+#: tableactionmenu.cpp:468
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Stulpelis kairėje"
 
-#: tableactionmenu.cpp:474
+#: tableactionmenu.cpp:476
 #, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "Stulpelis dešinėje"
 
-#: tableactionmenu.cpp:482
+#: tableactionmenu.cpp:484
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Langelio turinys"
 
-#: tableactionmenu.cpp:491
+#: tableactionmenu.cpp:493
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "Sujungti su langeliu dešinėje"
 
-#: tableactionmenu.cpp:498
+#: tableactionmenu.cpp:500
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Sujungti pažymėtus langelius"
 
-#: tableactionmenu.cpp:505
+#: tableactionmenu.cpp:507
 #, kde-format
 msgid "Split cells"
 msgstr "Skaidyti langelius"
 
-#: tableactionmenu.cpp:514
+#: tableactionmenu.cpp:516
 #, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "Lentelės formatas…"
 
-#: tableactionmenu.cpp:521
+#: tableactionmenu.cpp:523
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"

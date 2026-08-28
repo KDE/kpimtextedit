@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:51+0000\n"
+"POT-Creation-Date: 2026-08-28 00:46+0000\n"
 "PO-Revision-Date: 2024-06-16 18:46+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -400,19 +400,19 @@ msgstr "காலியான கட்டளை"
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr "வெளி உரைத்திருத்தியைத் திறக்க முடியவில்லை. \"%1\" எனும் கட்டளையை சரிபார்க்கவும்"
 
-#: composer-ng/richtextexternalcomposer.cpp:144
+#: composer-ng/richtextexternalcomposer.cpp:146
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "வெளி உரைத்திருத்தியைத் துவக்கும்போது சிக்கல் நேர்ந்தது."
 
-#: composer-ng/richtextexternalcomposer.cpp:144
+#: composer-ng/richtextexternalcomposer.cpp:146
 #, fuzzy, kde-format
 #| msgid "External Editor Closed"
 msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "வெளி உரைத்திருத்தி மூடப்பட்டது"
 
-#: composer-ng/richtextexternalcomposer.cpp:161
+#: composer-ng/richtextexternalcomposer.cpp:163
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -424,19 +424,19 @@ msgstr ""
 "அல்லது அது ஓடிக்கொண்டிருக்கலாமா?<nl/><warning>உரைத்திருத்தியைக் கட்டாயமாக மூடுவது, "
 "சேமிக்கப்படா மாற்றங்களை இழக்க செய்யலாம்.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:165
+#: composer-ng/richtextexternalcomposer.cpp:167
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "வெளி உரைத்திருத்தி ஓடிக்கொண்டிருக்கிறது"
 
-#: composer-ng/richtextexternalcomposer.cpp:166
+#: composer-ng/richtextexternalcomposer.cpp:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "உரைத்திருத்தியை நிறுத்து"
 
-#: composer-ng/richtextexternalcomposer.cpp:167
+#: composer-ng/richtextexternalcomposer.cpp:169
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -472,7 +472,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "படத்தை நுழை"
 
-#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:407
+#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:409
 #, kde-format
 msgid "Insert"
 msgstr "நுழை"
@@ -560,89 +560,89 @@ msgstr "% சாளரத்தின் அளவில்"
 msgid "pixels"
 msgstr ""
 
-#: tableactionmenu.cpp:410
+#: tableactionmenu.cpp:412
 #, kde-format
 msgid "Table…"
 msgstr "அட்டவணை…"
 
-#: tableactionmenu.cpp:418
+#: tableactionmenu.cpp:420
 #, kde-format
 msgid "Row Below"
 msgstr "கீழே வரி"
 
-#: tableactionmenu.cpp:425
+#: tableactionmenu.cpp:427
 #, kde-format
 msgid "Row Above"
 msgstr "மேலே வரி"
 
-#: tableactionmenu.cpp:433
+#: tableactionmenu.cpp:435
 #, kde-format
 msgid "Column Before"
 msgstr "முன்னே நெடுவரிசை"
 
-#: tableactionmenu.cpp:441
+#: tableactionmenu.cpp:443
 #, kde-format
 msgid "Column After"
 msgstr "பின்னே நெடுவரிசை"
 
-#: tableactionmenu.cpp:448
+#: tableactionmenu.cpp:450
 #, kde-format
 msgid "Delete"
 msgstr "நீக்கு"
 
-#: tableactionmenu.cpp:451
+#: tableactionmenu.cpp:453
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "கீழே வரி"
 
-#: tableactionmenu.cpp:458
+#: tableactionmenu.cpp:460
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "மேலே வரி"
 
-#: tableactionmenu.cpp:466
+#: tableactionmenu.cpp:468
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "முன்னே நெடுவரிசை"
 
-#: tableactionmenu.cpp:474
+#: tableactionmenu.cpp:476
 #, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "பின்னே நெடுவரிசை"
 
-#: tableactionmenu.cpp:482
+#: tableactionmenu.cpp:484
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "கட்டத்தின் உள்ளடக்கம்"
 
-#: tableactionmenu.cpp:491
+#: tableactionmenu.cpp:493
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "வலதிலுள்ள கட்டத்துடன் ஒன்றிணை"
 
-#: tableactionmenu.cpp:498
+#: tableactionmenu.cpp:500
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "தேரந்தேடுத்துள்ள கட்டங்கள் ஒன்றிணை"
 
-#: tableactionmenu.cpp:505
+#: tableactionmenu.cpp:507
 #, kde-format
 msgid "Split cells"
 msgstr "கட்டங்களைப் பிரி"
 
-#: tableactionmenu.cpp:514
+#: tableactionmenu.cpp:516
 #, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "அட்டவணையின் படிவம்…"
 
-#: tableactionmenu.cpp:521
+#: tableactionmenu.cpp:523
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"
