@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-28 00:46+0000\n"
-"PO-Revision-Date: 2024-08-01 05:58+0200\n"
+"PO-Revision-Date: 2026-08-28 07:19+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.9\n"
 
 #: composer-ng/klinkdialog.cpp:24
 #, kde-format
@@ -510,7 +510,7 @@ msgstr "სიგანე:"
 #: insertimagewidget.cpp:85 insertimagewidget.cpp:101 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
-msgstr " px"
+msgstr " პქს"
 
 #: insertimagewidget.cpp:95
 #, kde-format
