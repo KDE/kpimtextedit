@@ -856,16 +856,16 @@ QString RichTextComposerControler::toWrappedPlainText(QTextDocument *doc) const
         QTextLayout *layout = block.layout();
         const int numberOfLine(layout->lineCount());
         bool urlStart = false;
+        const QString blockText = block.text();
         for (int i = 0; i < numberOfLine; ++i) {
             const QTextLine line = layout->lineAt(i);
-            const QString lineText = block.text().mid(line.textStart(), line.textLength());
-
-            if (lineText.contains(rx) || (urlStart && !lineText.contains(u' ') && lineText.endsWith(u'-'))) {
+            const QStringView lineText = QStringView(blockText).sliced(line.textStart(), line.textLength());
+            temp.append(lineText);
+            if (rx.matchView(lineText).hasMatch() || (urlStart && !lineText.contains(u' ') && lineText.endsWith(u'-'))) {
                 // don't insert line break in URL
-                temp += lineText;
                 urlStart = true;
             } else {
-                temp += lineText + u'\n';
+                temp += u'\n';
             }
         }
         block = block.next();
