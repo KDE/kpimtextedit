@@ -147,6 +147,7 @@ ImageWithNameList RichTextComposerImages::imagesWithName() const
     ImageWithNameList retImages;
     QStringList seenImageNames;
     const QList<QTextImageFormat> imageFormats = embeddedImageFormats();
+    retImages.reserve(imageFormats.count());
     for (const QTextImageFormat &imageFormat : imageFormats) {
         QString name = imageFormat.name();
         if (!seenImageNames.contains(name)) {
