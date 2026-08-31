@@ -141,14 +141,14 @@ QTextBlock::iterator MarkupDirector::processFragment(QTextBlock::iterator it, co
         m_builder->addSingleBreakLine();
         QString t;
         for (int i = 1; i < textStr.length(); ++i) {
-            if (fragment.text().at(i).category() == QChar::Separator_Line) {
+            if (textStr.at(i).category() == QChar::Separator_Line) {
                 m_builder->appendLiteralText(t);
                 if (i < textStr.length() - 1) { // Don't add \n when we have the last char
                     m_builder->addSingleBreakLine();
                 }
                 t.clear();
             } else {
-                t += fragment.text().at(i);
+                t += textStr.at(i);
             }
         }
         if (!t.isEmpty()) {
@@ -205,7 +205,7 @@ QTextBlock::iterator MarkupDirector::processFragment(QTextBlock::iterator it, co
     // If a sequence such as '<br /><br />' is imported into a document with
     // setHtml, LineSeparator
     // characters are inserted. Here I make sure to put them back.
-    auto sl = fragment.text().split(QChar(QChar::LineSeparator));
+    auto sl = textStr.split(QChar(QChar::LineSeparator));
     QStringListIterator i(sl);
     auto paraClosed = false;
     while (i.hasNext()) {
