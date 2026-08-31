@@ -468,7 +468,7 @@ void RichTextComposer::setQuotePrefixName(const QString &quotePrefix)
 
 QString RichTextComposer::quotePrefixName() const
 {
-    if (!d->quotePrefix.simplified().isEmpty()) {
+    if (!QStringView(d->quotePrefix).trimmed().isEmpty()) {
         return d->quotePrefix;
     } else {
         return u">"_s;
@@ -477,7 +477,7 @@ QString RichTextComposer::quotePrefixName() const
 
 int RichTextComposer::quoteLength(const QString &line, bool oneQuote) const
 {
-    if (!d->quotePrefix.simplified().isEmpty()) {
+    if (!QStringView(d->quotePrefix).trimmed().isEmpty()) {
         if (line.startsWith(d->quotePrefix)) {
             return d->quotePrefix.length();
         } else {
@@ -522,7 +522,7 @@ bool RichTextComposer::isLineQuoted(const QString &line) const
 
 const QString RichTextComposer::defaultQuoteSign() const
 {
-    if (!d->quotePrefix.simplified().isEmpty()) {
+    if (!QStringView(d->quotePrefix).trimmed().isEmpty()) {
         return d->quotePrefix;
     } else {
         return u"> "_s;

@@ -167,11 +167,7 @@ void TextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin, qreal bo
     // Don't put paragraph tags inside li tags. Qt bug reported.
     //     if (currentListItemStyles.size() != 0)
     //     {
-    QString styleString;
-    styleString.append(u"margin-top:%1;"_s.arg(topMargin));
-    styleString.append(u"margin-bottom:%1;"_s.arg(bottomMargin));
-    styleString.append(u"margin-left:%1;"_s.arg(leftMargin));
-    styleString.append(u"margin-right:%1;"_s.arg(rightMargin));
+    const QString styleString = u"margin-top:%1;margin-bottom:%2;margin-left:%3;margin-right:%4;"_s.arg(topMargin, bottomMargin, leftMargin, rightMargin);
 
     // Using == doesn't work here.
     // Using bitwise comparison because an alignment can contain a vertical and
