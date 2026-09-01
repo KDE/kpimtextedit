@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:46+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2024-12-20 21:52+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -380,7 +380,7 @@ msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "<filename>%1</filename> प्रतिबिम्बं लोड् कर्तुं असमर्थम् ।"
 
-#: composer-ng/richtextcomposerimages.cpp:217
+#: composer-ng/richtextcomposerimages.cpp:218
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"
