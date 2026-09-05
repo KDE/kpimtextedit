@@ -21,7 +21,6 @@ class RichTextComposer;
  *
  * \author Laurent Montel <montel@kde.org>
  */
-class RichTextComposer;
 class KPIMTEXTEDIT_EXPORT RichTextComposerEmailQuoteHighlighter : public Sonnet::Highlighter
 {
     Q_OBJECT

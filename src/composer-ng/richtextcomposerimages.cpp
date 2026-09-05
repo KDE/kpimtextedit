@@ -13,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QBuffer>
+#include <QFileInfo>
 #include <QRandomGenerator>
 #include <QStringConverter>
 #include <QTextBlock>

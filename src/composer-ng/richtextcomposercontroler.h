@@ -12,7 +12,6 @@
 #include <memory>
 namespace KPIMTextEdit
 {
-class RichTextComposer;
 class NestedListHelper;
 class RichTextComposerImages;
 /*!

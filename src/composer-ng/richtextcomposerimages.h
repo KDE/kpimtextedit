@@ -7,11 +7,11 @@
 #pragma once
 
 #include "kpimtextedit_export.h"
-#include <QFileInfo>
 #include <QImage>
 #include <QObject>
 #include <QSharedPointer>
 #include <QTextImageFormat>
+class QFileInfo;
 namespace KPIMTextEdit
 {
 class RichTextComposer;

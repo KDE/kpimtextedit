@@ -13,7 +13,6 @@
 class QTextTable;
 class QTextTableCell;
 class QTextList;
-class QTextCharFormat;
 
 namespace KPIMTextEdit
 {
