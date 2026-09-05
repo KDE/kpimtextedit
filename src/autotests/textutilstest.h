@@ -15,4 +15,8 @@ public:
 private Q_SLOTS:
     void test_flowText_data();
     void test_flowText();
+
+    void test_containsFormatting_data();
+    void test_containsFormatting();
+    void test_containsFormattingWithNullDocument();
 };
