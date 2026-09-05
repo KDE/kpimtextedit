@@ -71,8 +71,11 @@ void RichTextComposerEmailQuoteHighlighter::toggleSpellHighlighting(bool on)
 void RichTextComposerEmailQuoteHighlighter::highlightBlock(const QString &text)
 {
     QString simplified = text;
-    const static QRegularExpression re(u"\\s"_s);
-    simplified.remove(re).replace(u'|', u'>');
+    simplified
+        .removeIf([](QChar c) {
+            return c.isSpace();
+        })
+        .replace(u'|', u'>');
 
     while (simplified.startsWith(">>>>"_L1)) {
         simplified.remove(0, 3);
