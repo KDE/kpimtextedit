@@ -63,7 +63,7 @@ bool TextUtils::containsFormatting(const QTextDocument *document)
             return true;
         }
 
-        if (isSpecial(blockFormat) || isSpecial(blockFormat) || block.textList()) {
+        if (isSpecial(block.charFormat()) || isSpecial(blockFormat) || block.textList()) {
             return true;
         }
 
