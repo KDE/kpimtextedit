@@ -93,7 +93,7 @@ QString PlainTextMarkupBuilderPrivate::getRomanString(int item)
                     numDigits = q;
                 }
 
-                romanNumeral.append(QStringView(romanSymbols).mid(startDigit, numDigits).toString());
+                romanNumeral.append(QStringView(romanSymbols).mid(startDigit, numDigits));
             }
         }
         result = std::move(romanNumeral);
