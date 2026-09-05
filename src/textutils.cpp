@@ -14,7 +14,6 @@
 #include <QTextCharFormat>
 #include <QTextDocument>
 
-using namespace Qt::Literals::StringLiterals;
 using namespace KPIMTextEdit;
 
 static bool isCharFormatFormatted(const QTextCharFormat &format, const QFont &defaultFont, const QTextCharFormat &defaultBlockFormat)
@@ -59,11 +58,16 @@ bool TextUtils::containsFormatting(const QTextDocument *document)
 
     QTextBlock block = document->firstBlock();
     while (block.isValid()) {
-        if (isBlockFormatFormatted(block.blockFormat(), defaultBlockFormat)) {
+        const auto blockFormat = block.blockFormat();
+        if (isBlockFormatFormatted(blockFormat, defaultBlockFormat)) {
             return true;
         }
 
-        if (isSpecial(block.charFormat()) || isSpecial(block.blockFormat()) || block.textList()) {
+        if (isSpecial(blockFormat) || isSpecial(blockFormat) || block.textList()) {
+            return true;
+        }
+
+        if (blockFormat.hasProperty(QTextFormat::BlockTrailingHorizontalRulerWidth)) {
             return true;
         }
 
@@ -82,10 +86,6 @@ bool TextUtils::containsFormatting(const QTextDocument *document)
         }
 
         block = block.next();
-    }
-
-    if (document->toHtml().contains("<hr />"_L1)) {
-        return true;
     }
 
     return false;
