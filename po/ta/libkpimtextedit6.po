@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-06 00:46+0000\n"
 "PO-Revision-Date: 2024-06-16 18:46+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -372,13 +372,13 @@ msgstr "தேர்வுப்பெட்டி"
 msgid "Only local files are supported."
 msgstr "உள்ளக கோப்புகளே ஆதரிக்கப்படும்."
 
-#: composer-ng/richtextcomposerimages.cpp:58
+#: composer-ng/richtextcomposerimages.cpp:59
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "<filename>%1</filename> எனும் படத்தை ஏற்ற முடியவில்லை."
 
-#: composer-ng/richtextcomposerimages.cpp:218
+#: composer-ng/richtextcomposerimages.cpp:219
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"

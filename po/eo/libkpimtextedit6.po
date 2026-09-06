@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-06 00:46+0000\n"
 "PO-Revision-Date: 2024-08-02 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -374,13 +374,13 @@ msgstr "Elektokesto"
 msgid "Only local files are supported."
 msgstr "Nur lokaj dosieroj estas subtenataj."
 
-#: composer-ng/richtextcomposerimages.cpp:58
+#: composer-ng/richtextcomposerimages.cpp:59
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "Ne eblas ŝargi bildon <filename>%1</filename>."
 
-#: composer-ng/richtextcomposerimages.cpp:218
+#: composer-ng/richtextcomposerimages.cpp:219
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"
