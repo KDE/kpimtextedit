@@ -17,6 +17,37 @@ endif()
 add_library(KPim6TextEdit)
 add_library(KPim6::TextEdit ALIAS KPim6TextEdit)
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KPim6TextEdit
+        PRIVATE
+            <QObject>
+            <QString>
+            <QStringList>
+            <QList>
+            <QUrl>
+            <QDebug>
+            <QTextDocument>
+            <QTextCursor>
+            <QTextBlock>
+            <QTextCharFormat>
+            <QTextList>
+            <QWidget>
+            <QDialog>
+            <QDialogButtonBox>
+            <QVBoxLayout>
+            <QHBoxLayout>
+            <QLabel>
+            <QPushButton>
+            <QCheckBox>
+            <QComboBox>
+            <QAction>
+            <KLocalizedString>
+            <memory>
+    )
+endif()
+
 target_sources(
     KPim6TextEdit
     PRIVATE
