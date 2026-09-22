@@ -8,6 +8,7 @@
 #include "texthtmlbuilder.h"
 using namespace Qt::Literals::StringLiterals;
 
+#include <QBrush>
 #include <QDebug>
 #include <QList>
 #include <QTextDocument>
@@ -390,10 +391,17 @@ void TextHTMLBuilder::beginTable(const QTextTableFormat &format)
     // A table whose border style is BorderStyle_None has no visible border, whatever the border width says.
     // The html border attribute is an integer, so round a fractional width up: a hairline border is still a border.
     const int border = (format.borderStyle() == QTextFrameFormat::BorderStyle_None) ? 0 : qCeil(format.border());
-    d->mText.append(u"<table cellpadding=\"%1\" cellspacing=\"%2\" width=\"%3\" border=\"%4\">"_s.arg(format.cellPadding())
+    d->mText.append(u"<table cellpadding=\"%1\" cellspacing=\"%2\" width=\"%3\" border=\"%4\""_s.arg(format.cellPadding())
                         .arg(format.cellSpacing())
                         .arg(sWidth)
                         .arg(border));
+    // A default-constructed QBrush has a valid (black) color, so the brush style is what tells
+    // whether the table really has a background to serialize.
+    const QBrush background = format.background();
+    if (background.style() != Qt::NoBrush && background.color().isValid()) {
+        d->mText.append(u" bgcolor=\"%1\""_s.arg(background.color().name()));
+    }
+    d->mText.append(u">"_s);
 }
 
 void TextHTMLBuilder::beginTableRow()
