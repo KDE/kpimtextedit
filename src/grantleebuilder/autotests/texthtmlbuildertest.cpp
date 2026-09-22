@@ -12,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QRegularExpression>
 #include <QTest>
 #include <QTextDocument>
+#include <QTextTable>
 QTEST_MAIN(TextHTMLBuilderTest)
 TextHTMLBuilderTest::TextHTMLBuilderTest(QObject *parent)
     : QObject(parent)
@@ -1038,6 +1039,91 @@ void TextHTMLBuilderTest::testBugIndent443534()
     delete md;
     delete hb;
     delete doc;
+}
+
+// Serializing a document back to html must not invent a table border that the
+// document does not have, nor drop one that it has.
+void TextHTMLBuilderTest::testTableBorder_data()
+{
+    QTest::addColumn<QString>("html");
+    QTest::addColumn<QString>("expectedBorder");
+
+    QTest::newRow("border-0") << u"<table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\"><tr><td>LEFT</td><td>RIGHT</td></tr></table>"_s
+                              << u"0"_s;
+    QTest::newRow("border-1") << u"<table border=\"1\" width=\"100%\" cellspacing=\"2\" cellpadding=\"2\"><tr><td>LEFT</td><td>RIGHT</td></tr></table>"_s
+                              << u"1"_s;
+    QTest::newRow("no-border-attribute") << u"<table width=\"100%\"><tr><td>LEFT</td><td>RIGHT</td></tr></table>"_s << u"0"_s;
+    QTest::newRow("css-border-none") << u"<table style=\"border:0px none transparent; border-collapse:collapse;\"><tr><td>L</td><td>R</td></tr></table>"_s
+                                     << u"0"_s;
+    QTest::newRow("css-border-style-none-with-width") << u"<table border=\"1\" style=\"border-style:none;\"><tr><td>L</td><td>R</td></tr></table>"_s << u"0"_s;
+    QTest::newRow("css-border-3px") << u"<table style=\"border:3px solid black;\"><tr><td>L</td><td>R</td></tr></table>"_s << u"3"_s;
+    // The html border attribute is an integer, a fractional border width must not leak into it.
+    QTest::newRow("fractional-border") << u"<table border=\"0.5\"><tr><td>L</td></tr></table>"_s << u"1"_s;
+}
+
+void TextHTMLBuilderTest::testTableBorder()
+{
+    QFETCH(QString, html);
+    QFETCH(QString, expectedBorder);
+
+    QTextDocument doc;
+    doc.setHtml(html);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QVERIFY2(result.contains(u"border=\"%1\">"_s.arg(expectedBorder)), qPrintable(result));
+}
+
+void TextHTMLBuilderTest::testTableBorderFromFormat_data()
+{
+    QTest::addColumn<qreal>("border");
+    QTest::addColumn<QTextFrameFormat::BorderStyle>("borderStyle");
+    QTest::addColumn<QString>("expectedBorder");
+
+    QTest::newRow("no-border") << qreal(0) << QTextFrameFormat::BorderStyle_None << u"0"_s;
+    QTest::newRow("visible-border") << qreal(1) << QTextFrameFormat::BorderStyle_Solid << u"1"_s;
+    QTest::newRow("thick-border") << qreal(3) << QTextFrameFormat::BorderStyle_Solid << u"3"_s;
+    // A width without a style paints nothing, so it must not be serialized as a visible border.
+    QTest::newRow("width-but-style-none") << qreal(2) << QTextFrameFormat::BorderStyle_None << u"0"_s;
+}
+
+void TextHTMLBuilderTest::testTableBorderFromFormat()
+{
+    QFETCH(qreal, border);
+    QFETCH(QTextFrameFormat::BorderStyle, borderStyle);
+    QFETCH(QString, expectedBorder);
+
+    QTextDocument doc;
+    QTextCursor cursor(&doc);
+    QTextTableFormat format;
+    format.setBorder(border);
+    format.setBorderStyle(borderStyle);
+    cursor.insertTable(1, 2, format);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QVERIFY2(result.contains(u"border=\"%1\">"_s.arg(expectedBorder)), qPrintable(result));
+}
+
+void TextHTMLBuilderTest::testTableCellsUnaffectedByBorder()
+{
+    QTextDocument doc;
+    doc.setHtml(u"<table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\"><tr><td>LEFT</td><td colspan=\"2\">RIGHT</td></tr></table>"_s);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QVERIFY2(result.contains(u"<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" border=\"0\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td width=\"\" colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td width=\"\" colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
 }
 
 #include "moc_texthtmlbuildertest.cpp"

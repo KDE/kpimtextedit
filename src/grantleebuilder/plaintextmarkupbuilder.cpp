@@ -427,7 +427,7 @@ void PlainTextMarkupBuilder::beginHeader(int level)
     }
 }
 
-void PlainTextMarkupBuilder::beginTable([[maybe_unused]] qreal cellpadding, [[maybe_unused]] qreal cellspacing, [[maybe_unused]] const QString &width)
+void PlainTextMarkupBuilder::beginTable([[maybe_unused]] const QTextTableFormat &format)
 {
 }
 

@@ -289,18 +289,7 @@ QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it, QText
 
     const auto colLengths = format.columnWidthConstraints();
 
-    const auto tableWidth = format.width();
-    QString sWidth;
-
-    if (tableWidth.type() == QTextLength::PercentageLength) {
-        sWidth = u"%1%"_s;
-        sWidth = sWidth.arg(tableWidth.rawValue());
-    } else if (tableWidth.type() == QTextLength::FixedLength) {
-        sWidth = u"%1"_s;
-        sWidth = sWidth.arg(tableWidth.rawValue());
-    }
-
-    m_builder->beginTable(format.cellPadding(), format.cellSpacing(), sWidth);
+    m_builder->beginTable(format);
 
     const auto headerRowCount = format.headerRowCount();
 
@@ -334,7 +323,8 @@ QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it, QText
                 }
             }
 
-            auto cellWidth = colLengths.at(column);
+            // columnWidthConstraints() is empty when no constraint was ever set on the table.
+            const auto cellWidth = (column < colLengths.count()) ? colLengths.at(column) : QTextLength();
 
             QString sCellWidth;
 

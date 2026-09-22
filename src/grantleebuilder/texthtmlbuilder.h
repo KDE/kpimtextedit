@@ -261,9 +261,9 @@ public:
     void endSubscript() override;
 
     /*!
-     * Begins a table with the given \a cellpadding, \a cellspacing, and \a width.
+     * Begins a table with the given \a format.
      */
-    void beginTable(qreal cellpadding, qreal cellspacing, const QString &width) override;
+    void beginTable(const QTextTableFormat &format) override;
 
     /*!
      * Begins a table row.

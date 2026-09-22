@@ -11,6 +11,7 @@
 
 #include <QString>
 #include <QTextListFormat>
+#include <QTextTableFormat>
 
 class QBrush;
 
@@ -175,12 +176,10 @@ public:
     /*!
     Begin a table element.
 
-    \ cellpadding The padding attribute for the table.
-    \ cellspacing The spacing attribute for the table.
-    \ width The width of the table. May be either an integer, or a
-    percentage value.
+    \a format The format of the table, holding the cell padding, the cell
+    spacing, the width and the border of the table.
   */
-    virtual void beginTable(qreal cellpadding, qreal cellspacing, const QString &width) = 0;
+    virtual void beginTable(const QTextTableFormat &format) = 0;
 
     /*!
     Begin a new table row

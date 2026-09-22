@@ -11,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QDebug>
 #include <QList>
 #include <QTextDocument>
+#include <QtMath>
 
 namespace KPIMTextEdit
 {
@@ -373,14 +374,26 @@ void TextHTMLBuilder::endSubscript()
     d->mText.append(u"</sub>"_s);
 }
 
-void TextHTMLBuilder::beginTable(qreal cellpadding, qreal cellspacing, const QString &width)
+void TextHTMLBuilder::beginTable(const QTextTableFormat &format)
 {
     Q_D(TextHTMLBuilder);
-    d->mText.append(QStringLiteral("<table cellpadding=\"%1\" cellspacing=\"%2\" "
-                                   "width=\"%3\" border=\"1\">")
-                        .arg(cellpadding)
-                        .arg(cellspacing)
-                        .arg(width));
+    const auto tableWidth = format.width();
+    QString sWidth;
+
+    if (tableWidth.type() == QTextLength::PercentageLength) {
+        sWidth = u"%1%"_s;
+        sWidth = sWidth.arg(tableWidth.rawValue());
+    } else if (tableWidth.type() == QTextLength::FixedLength) {
+        sWidth = u"%1"_s;
+        sWidth = sWidth.arg(tableWidth.rawValue());
+    }
+    // A table whose border style is BorderStyle_None has no visible border, whatever the border width says.
+    // The html border attribute is an integer, so round a fractional width up: a hairline border is still a border.
+    const int border = (format.borderStyle() == QTextFrameFormat::BorderStyle_None) ? 0 : qCeil(format.border());
+    d->mText.append(u"<table cellpadding=\"%1\" cellspacing=\"%2\" width=\"%3\" border=\"%4\">"_s.arg(format.cellPadding())
+                        .arg(format.cellSpacing())
+                        .arg(sWidth)
+                        .arg(border));
 }
 
 void TextHTMLBuilder::beginTableRow()

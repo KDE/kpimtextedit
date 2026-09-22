@@ -51,4 +51,9 @@ private Q_SLOTS:
     void testBugTextColor();
     void testBugIndent443534();
     void testBug504090();
+    void testTableBorder_data();
+    void testTableBorder();
+    void testTableBorderFromFormat_data();
+    void testTableBorderFromFormat();
+    void testTableCellsUnaffectedByBorder();
 };
