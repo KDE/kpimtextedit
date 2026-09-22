@@ -48,7 +48,7 @@ QTextFrame::iterator MarkupDirector::processBlockContents(QTextFrame::iterator f
 
     const auto blockFormat = block.blockFormat();
     const auto blockAlignment = blockFormat.alignment();
-    const bool leftToRightText = block.textDirection() == Qt::RightToLeft;
+    const bool rightToLeftText = block.textDirection() == Qt::RightToLeft;
 
     // TODO: decide when to use <h1> etc.
 #ifdef ADD_HEADER_SUPPORT
@@ -94,7 +94,7 @@ QTextFrame::iterator MarkupDirector::processBlockContents(QTextFrame::iterator f
                                   blockFormat.bottomMargin(),
                                   blockFormat.leftMargin(),
                                   blockFormat.rightMargin(),
-                                  leftToRightText);
+                                  rightToLeftText);
     }
 
     while (!it.atEnd()) {
