@@ -175,11 +175,11 @@ void TextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin, qreal bo
     // a
     // horizontal part.
     if (al & Qt::AlignRight) {
-        d->mText.append(u"<p align=\"right\" "_s);
+        d->mText.append(u"<p align=\"right\""_s);
     } else if (al & Qt::AlignHCenter) {
-        d->mText.append(u"<p align=\"center\" "_s);
+        d->mText.append(u"<p align=\"center\""_s);
     } else if (al & Qt::AlignJustify) {
-        d->mText.append(u"<p align=\"justify\" "_s);
+        d->mText.append(u"<p align=\"justify\""_s);
     } else if (al & Qt::AlignLeft) {
         d->mText.append(u"<p"_s);
     } else {
