@@ -121,9 +121,10 @@ public:
     \a bottom The bottom margin of the new paragraph.
     \a left The left margin of the new paragraph.
     \a right The right margin of the new paragraph.
+    \a rightToLeftText Whether the text direction of the paragraph is right-to-left.
   */
     virtual void
-    beginParagraph(Qt::Alignment a = Qt::AlignLeft, qreal top = 0.0, qreal bottom = 0.0, qreal left = 0.0, qreal right = 0.0, bool leftToRightText = false) = 0;
+    beginParagraph(Qt::Alignment a = Qt::AlignLeft, qreal top = 0.0, qreal bottom = 0.0, qreal left = 0.0, qreal right = 0.0, bool rightToLeftText = false) = 0;
 
     /*! Close the paragraph in the markup. */
     virtual void endParagraph() = 0;

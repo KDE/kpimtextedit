@@ -373,7 +373,7 @@ void PlainTextMarkupBuilder::beginParagraph([[maybe_unused]] Qt::Alignment a,
                                             qreal bottom,
                                             qreal left,
                                             qreal right,
-                                            [[maybe_unused]] bool leftToRightText)
+                                            [[maybe_unused]] bool rightToLeftText)
 {
     Q_D(PlainTextMarkupBuilder);
     if (isQuoteBlock(top, bottom, left, right)) {

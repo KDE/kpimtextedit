@@ -92,7 +92,7 @@ public:
                         qreal bottom = 0.0,
                         qreal left = 0.0,
                         qreal right = 0.0,
-                        [[maybe_unused]] bool leftToRightText = false) override;
+                        [[maybe_unused]] bool rightToLeftText = false) override;
 
     /*!
      * Ends the paragraph element.

@@ -183,14 +183,14 @@ public:
      * \a bottomMargin The bottom margin
      * \a leftMargin The left margin
      * \a rightMargin The right margin
-     * \a leftToRightText Whether the text direction is left-to-right
+     * \a rightToLeftText Whether the text direction of the paragraph is right-to-left
      */
     void beginParagraph(Qt::Alignment al = Qt::AlignLeft,
                         qreal topMargin = 0.0,
                         qreal bottomMargin = 0.0,
                         qreal leftMargin = 0.0,
                         qreal rightMargin = 0.0,
-                        bool leftToRightText = false) override;
+                        bool rightToLeftText = false) override;
 
     /*!
      * Begins a header element with the given \a level.
