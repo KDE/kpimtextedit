@@ -655,7 +655,9 @@ void TextHTMLBuilder::appendLiteralText(const QString &text)
     Q_D(TextHTMLBuilder);
     const QString textEscaped = text.toHtmlEscaped();
     QString textEscapedResult;
-    for (int i = 0, total = textEscaped.length(); i < total; ++i) {
+    const int total = textEscaped.length();
+    textEscapedResult.reserve(total);
+    for (int i = 0; i < total; ++i) {
         const QChar c = textEscaped.at(i);
 
         if (c == u' ') {
