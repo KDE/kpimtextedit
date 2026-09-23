@@ -63,6 +63,16 @@ QString htmlBackground(const QTextFormat &format)
     return u" bgcolor=\"%1\""_s.arg(background.color().name());
 }
 
+// A css length other than zero is only honoured when it carries a unit, so "margin-top:12"
+// is dropped by the renderer while "margin-top:12px" is not. Qt stores those margins in pixels.
+QString cssPixels(qreal value)
+{
+    if (qFuzzyIsNull(value)) {
+        return u"0"_s;
+    }
+    return u"%1px"_s.arg(value);
+}
+
 QString vAlignment(const QTextTableCellFormat &format)
 {
     switch (format.verticalAlignment()) {
@@ -214,8 +224,10 @@ void TextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin, qreal bo
     // Don't put paragraph tags inside li tags. Qt bug reported.
     //     if (currentListItemStyles.size() != 0)
     //     {
-    const QString styleString =
-        u"margin-top:%1;margin-bottom:%2;margin-left:%3;margin-right:%4;"_s.arg(topMargin).arg(bottomMargin).arg(leftMargin).arg(rightMargin);
+    const QString styleString = u"margin-top:%1;margin-bottom:%2;margin-left:%3;margin-right:%4;"_s.arg(cssPixels(topMargin),
+                                                                                                        cssPixels(bottomMargin),
+                                                                                                        cssPixels(leftMargin),
+                                                                                                        cssPixels(rightMargin));
 
     // Using == doesn't work here.
     // Using bitwise comparison because an alignment can contain a vertical and

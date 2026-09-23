@@ -700,9 +700,9 @@ void TextHTMLBuilderTest::testNewlines()
     md->processDocument(doc);
     auto result = hb->getResult();
 
-    auto regex =
-        QRegularExpression(QStringLiteral("^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\">Foo</p>\\n<p>&nbsp;<p>&nbsp;</p>\\n<p "
-                                          "style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\">Bar</p>\\n$"));
+    auto regex = QRegularExpression(
+        QStringLiteral("^<p style=\"margin-top:12px;margin-bottom:12px;margin-left:0;margin-right:0;\">Foo</p>\\n<p>&nbsp;<p>&nbsp;</p>\\n<p "
+                       "style=\"margin-top:12px;margin-bottom:12px;margin-left:0;margin-right:0;\">Bar</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
@@ -860,7 +860,7 @@ void TextHTMLBuilderTest::testBug421908()
     auto result = hb->getResult();
 
     auto regex =
-        QRegularExpression(QStringLiteral("^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\"><span style=\"color:#aaaaff;\">some "
+        QRegularExpression(QStringLiteral("^<p style=\"margin-top:12px;margin-bottom:12px;margin-left:0;margin-right:0;\"><span style=\"color:#aaaaff;\">some "
                                           "colored text<br />some colored text</span></p>\n$"));
     QVERIFY(regex.match(result).hasMatch());
     delete md;
@@ -939,7 +939,7 @@ void TextHTMLBuilderTest::testBug436880()
     auto result = hb->getResult();
 
     // qDebug() << " result " << result;
-    auto regex = QRegularExpression(u"^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\" dir=\"rtl\">test</p>\n"_s);
+    auto regex = QRegularExpression(u"^<p style=\"margin-top:12px;margin-bottom:12px;margin-left:0;margin-right:0;\" dir=\"rtl\">test</p>\n"_s);
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;
@@ -1006,8 +1006,8 @@ void TextHTMLBuilderTest::testBugTextColor()
 
     // qDebug() << " result " << result;
     auto regex = QRegularExpression(
-        QStringLiteral("^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\"><span style=\"color:#ffff00;\">BBBB</span></p>\n<p "
-                       "style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\"><span style=\"color:#ffff00;\">AAA</span></p>\n"));
+        QStringLiteral("^<p style=\"margin-top:12px;margin-bottom:12px;margin-left:0;margin-right:0;\"><span style=\"color:#ffff00;\">BBBB</span></p>\n<p "
+                       "style=\"margin-top:12px;margin-bottom:12px;margin-left:0;margin-right:0;\"><span style=\"color:#ffff00;\">AAA</span></p>\n"));
     QVERIFY(regex.match(result).hasMatch());
     delete md;
     delete hb;
@@ -1032,8 +1032,8 @@ void TextHTMLBuilderTest::testBugIndent443534()
 
     qDebug() << " result " << result;
     auto regex = QRegularExpression(
-        QStringLiteral("^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\"><span style=\"color:#ffff00;\">BBBB</span></p>\n<p "
-                       "style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\"><span style=\"color:#ffff00;\">AAA</span></p>\n"));
+        QStringLiteral("^<p style=\"margin-top:12px;margin-bottom:12px;margin-left:0;margin-right:0;\"><span style=\"color:#ffff00;\">BBBB</span></p>\n<p "
+                       "style=\"margin-top:12px;margin-bottom:12px;margin-left:0;margin-right:0;\"><span style=\"color:#ffff00;\">AAA</span></p>\n"));
     QEXPECT_FAIL("", "Problem with list bug 443534", Continue);
     QVERIFY(regex.match(result).hasMatch());
     delete md;
@@ -1239,6 +1239,41 @@ void TextHTMLBuilderTest::testTableCellvAlignment()
     QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\" bgcolor=\"#ff00ff\" valign=\"bottom\">"_s), qPrintable(result));
     QVERIFY2(result.contains(u"<td colspan=\"2\" rowspan=\"1\" bgcolor=\"#1100ff\" valign=\"middle\">"_s), qPrintable(result));
     QVERIFY2(result.contains(u"<td colspan=\"2\" rowspan=\"1\" bgcolor=\"#1100ff\" valign=\"top\">"_s), qPrintable(result));
+}
+
+// A css length is only honoured when it carries a unit, so a bare "margin-top:12" is
+// dropped by the renderer and the paragraph spacing is lost in the generated mail.
+void TextHTMLBuilderTest::testParagraphMarginsCarryCssUnit()
+{
+    QTextDocument doc;
+    doc.setHtml(u"<p>Foo</p>"_s);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QVERIFY2(result.contains(u"margin-top:12px;"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"margin-bottom:12px;"_s), qPrintable(result));
+    // Zero needs no unit, and keeping it bare avoids churn in the generated markup.
+    QVERIFY2(result.contains(u"margin-left:0;"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"margin-right:0;"_s), qPrintable(result));
+    QVERIFY2(!result.contains(u"margin-top:12;"_s), qPrintable(result));
+}
+
+void TextHTMLBuilderTest::testBlockQuoteMarginsCarryCssUnit()
+{
+    QTextDocument doc;
+    doc.setHtml(u"<blockquote>quoted</blockquote>"_s);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    // Without the unit the quote is not indented at all on the receiving side.
+    QVERIFY2(result.contains(u"margin-left:40px;"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"margin-right:40px;"_s), qPrintable(result));
 }
 
 #include "moc_texthtmlbuildertest.cpp"

@@ -61,4 +61,6 @@ private Q_SLOTS:
     void testTableCellSpans();
     void testTableCellBackgroundColor();
     void testTableCellvAlignment();
+    void testParagraphMarginsCarryCssUnit();
+    void testBlockQuoteMarginsCarryCssUnit();
 };
