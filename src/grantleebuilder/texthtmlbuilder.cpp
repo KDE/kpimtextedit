@@ -73,6 +73,18 @@ QString cssPixels(qreal value)
     return u"%1px"_s.arg(value);
 }
 
+// A font family is a css string, so it has to be quoted: a name can hold spaces, a comma, or
+// start with a digit, none of which is a valid unquoted css identifier. The style attribute is
+// delimited by double quotes, so the css string is delimited by single quotes, and a backslash
+// or a single quote inside the name is escaped for css before the declaration is escaped for html.
+QString cssFontFamily(const QString &family)
+{
+    QString escaped = family;
+    escaped.replace(u'\\', u"\\\\"_s);
+    escaped.replace(u'\'', u"\\'"_s);
+    return u"'%1'"_s.arg(escaped);
+}
+
 QString vAlignment(const QTextTableCellFormat &format)
 {
     switch (format.verticalAlignment()) {
@@ -320,7 +332,7 @@ void TextHTMLBuilder::endAnchor()
 void TextHTMLBuilder::beginFontFamily(const QString &family)
 {
     Q_D(TextHTMLBuilder);
-    d->mText.append(u"<span style=\"font-family:%1;\">"_s.arg(family.toHtmlEscaped()));
+    d->mText.append(u"<span style=\"font-family:%1;\">"_s.arg(cssFontFamily(family).toHtmlEscaped()));
 }
 
 void TextHTMLBuilder::endFontFamily()

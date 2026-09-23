@@ -645,7 +645,7 @@ void TextHTMLBuilderTest::testEachFormatTagSingly()
     result = hb->getResult();
 
     regex = QRegularExpression(QStringLiteral(
-        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <span style=\"font-family:courier;\">formatted</span>&nbsp;"
+        "^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Some <span style=\"font-family:'courier';\">formatted</span>&nbsp;"
         "text.</p>\\n$"));
     QVERIFY(regex.match(result).hasMatch());
 
@@ -1558,6 +1558,48 @@ void TextHTMLBuilderTest::testOrderedListStart()
     const QString result = hb.getResult();
 
     QVERIFY2(result.contains(expectedTag), qPrintable(result));
+}
+
+void TextHTMLBuilderTest::testFontFamilyQuoting_data()
+{
+    QTest::addColumn<QString>("family");
+    QTest::addColumn<QString>("expectedDeclaration");
+
+    // A plain identifier is quoted too, which is what QTextDocument::toHtml() does as well.
+    QTest::newRow("plain") << u"Arial"_s << u"font-family:'Arial';"_s;
+    // A name holding a space is not a valid unquoted css identifier.
+    QTest::newRow("spaces") << u"Courier New"_s << u"font-family:'Courier New';"_s;
+    // A double quote is escaped for html only: inside a single quoted css string it is literal.
+    QTest::newRow("double-quotes-and-comma") << u"My \"Odd\", Font"_s << u"font-family:'My &quot;Odd&quot;, Font';"_s;
+    // A single quote would close the css string, so it is escaped for css.
+    QTest::newRow("apostrophe") << u"O'Reilly Sans"_s << u"font-family:'O\\'Reilly Sans';"_s;
+}
+
+void TextHTMLBuilderTest::testFontFamilyQuoting()
+{
+    QFETCH(QString, family);
+    QFETCH(QString, expectedDeclaration);
+
+    QTextDocument doc;
+    QTextCursor cursor(&doc);
+    QTextCharFormat format;
+    format.setFontFamilies({family});
+    cursor.insertText(u"text"_s, format);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QVERIFY2(result.contains(expectedDeclaration), qPrintable(result));
+
+    // The declaration must survive a round trip: a stray quote would close the style attribute
+    // and the whole font family would be dropped instead.
+    QTextDocument roundTrip;
+    roundTrip.setHtml(result);
+    QTextCursor back(&roundTrip);
+    back.movePosition(QTextCursor::Right);
+    QCOMPARE(back.charFormat().fontFamilies().toStringList().value(0), family);
 }
 
 #include "moc_texthtmlbuildertest.cpp"

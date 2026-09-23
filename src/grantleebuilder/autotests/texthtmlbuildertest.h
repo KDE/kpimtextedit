@@ -78,4 +78,6 @@ private Q_SLOTS:
     void testTableHeaderCellBorder();
     void testOrderedListStart_data();
     void testOrderedListStart();
+    void testFontFamilyQuoting_data();
+    void testFontFamilyQuoting();
 };
