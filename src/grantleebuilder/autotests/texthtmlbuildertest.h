@@ -80,4 +80,6 @@ private Q_SLOTS:
     void testOrderedListStart();
     void testFontFamilyQuoting_data();
     void testFontFamilyQuoting();
+    void testFontSpanReopenedAfterInterruption_data();
+    void testFontSpanReopenedAfterInterruption();
 };

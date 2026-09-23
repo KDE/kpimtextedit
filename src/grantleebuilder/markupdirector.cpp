@@ -524,9 +524,15 @@ void MarkupDirector::processClosingElements(const QTextBlock::iterator &it)
                 break;
             case SpanFontPointSize:
                 m_builder->endFontPointSize();
+                // Clear the size otherwise a later fragment using the same size again would not
+                // reopen the span. Same problem as bug #442416, for the point size.
+                d->m_openFontPointSize = -1;
                 break;
             case SpanFontFamily:
                 m_builder->endFontFamily();
+                // Clear the family otherwise a later fragment using the same family again would
+                // not reopen the span. Same problem as bug #442416, for the font family.
+                d->m_openFontFamily.clear();
                 break;
             case SpanBackground:
                 m_builder->endBackground();

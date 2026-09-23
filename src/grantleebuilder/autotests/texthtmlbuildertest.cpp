@@ -1602,4 +1602,33 @@ void TextHTMLBuilderTest::testFontFamilyQuoting()
     QCOMPARE(back.charFormat().fontFamilies().toStringList().value(0), family);
 }
 
+void TextHTMLBuilderTest::testFontSpanReopenedAfterInterruption_data()
+{
+    QTest::addColumn<QString>("html");
+    QTest::addColumn<QString>("expectedDeclaration");
+
+    // Same problem as bug #442416, which was fixed for the colors only: the span state was kept
+    // after the span was closed, so a third fragment asking for the size or the family it already
+    // had lost it.
+    QTest::newRow("point-size") << u"<p><span style=\"font-size:20pt;\">a</span>b<span style=\"font-size:20pt;\">c</span></p>"_s
+                                << u"<span style=\"font-size:20pt;\">c</span>"_s;
+    QTest::newRow("font-family") << u"<p><span style=\"font-family:Courier;\">a</span>b<span style=\"font-family:Courier;\">c</span></p>"_s
+                                 << u"<span style=\"font-family:'Courier';\">c</span>"_s;
+}
+
+void TextHTMLBuilderTest::testFontSpanReopenedAfterInterruption()
+{
+    QFETCH(QString, html);
+    QFETCH(QString, expectedDeclaration);
+
+    QTextDocument doc;
+    doc.setHtml(html);
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QVERIFY2(result.contains(expectedDeclaration), qPrintable(result));
+}
+
 #include "moc_texthtmlbuildertest.cpp"
