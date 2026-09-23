@@ -462,6 +462,9 @@ void TextHTMLBuilder::beginTable(const QTextTableFormat &format)
     default:
         break;
     }
+    if (format.borderCollapse()) {
+        d->mText.append(u" style=\"border-collapse:collapse;\""_s);
+    }
     d->mText.append(u">"_s);
 }
 

@@ -55,6 +55,10 @@ private Q_SLOTS:
     void testTableBorder();
     void testTableBorderFromFormat_data();
     void testTableBorderFromFormat();
+    void testTableBorderCollapse_data();
+    void testTableBorderCollapse();
+    void testTableBorderCollapseFromFormat_data();
+    void testTableBorderCollapseFromFormat();
     void testTableCellsUnaffectedByBorder();
     void testTableBackgroundColor();
     void testTableAlignment();

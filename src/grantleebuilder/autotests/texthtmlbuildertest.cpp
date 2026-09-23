@@ -1074,7 +1074,7 @@ void TextHTMLBuilderTest::testTableBorder()
     md.processDocument(&doc);
     const QString result = hb.getResult();
 
-    QVERIFY2(result.contains(u"border=\"%1\">"_s.arg(expectedBorder)), qPrintable(result));
+    QVERIFY2(result.contains(u" border=\"%1\""_s.arg(expectedBorder)), qPrintable(result));
 }
 
 void TextHTMLBuilderTest::testTableBorderFromFormat_data()
@@ -1108,7 +1108,65 @@ void TextHTMLBuilderTest::testTableBorderFromFormat()
     md.processDocument(&doc);
     const QString result = hb.getResult();
 
-    QVERIFY2(result.contains(u"border=\"%1\">"_s.arg(expectedBorder)), qPrintable(result));
+    QVERIFY2(result.contains(u" border=\"%1\""_s.arg(expectedBorder)), qPrintable(result));
+}
+
+// border-collapse has no html attribute, it only survives a round trip as a css declaration on
+// the table tag. Dropping it turns a collapsed grid back into doubled, spaced out cell borders.
+void TextHTMLBuilderTest::testTableBorderCollapse_data()
+{
+    QTest::addColumn<QString>("html");
+    QTest::addColumn<bool>("expectedCollapse");
+
+    QTest::newRow("collapse") << u"<table border=\"1\" style=\"border-collapse:collapse;\"><tr><td>L</td><td>R</td></tr></table>"_s << true;
+    QTest::newRow("separate") << u"<table border=\"1\" style=\"border-collapse:separate;\"><tr><td>L</td><td>R</td></tr></table>"_s << false;
+    // Without the css declaration the html parser leaves the property off, no style must be invented.
+    QTest::newRow("unspecified") << u"<table border=\"1\"><tr><td>L</td><td>R</td></tr></table>"_s << false;
+    // A collapsed grid whose border is not painted is still collapsed.
+    QTest::newRow("collapse-without-border")
+        << u"<table style=\"border:0px none transparent; border-collapse:collapse;\"><tr><td>L</td><td>R</td></tr></table>"_s << true;
+}
+
+void TextHTMLBuilderTest::testTableBorderCollapse()
+{
+    QFETCH(QString, html);
+    QFETCH(bool, expectedCollapse);
+
+    QTextDocument doc;
+    doc.setHtml(html);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QCOMPARE(result.contains(u" style=\"border-collapse:collapse;\">"_s), expectedCollapse);
+}
+
+void TextHTMLBuilderTest::testTableBorderCollapseFromFormat_data()
+{
+    QTest::addColumn<bool>("borderCollapse");
+
+    QTest::newRow("collapse") << true;
+    QTest::newRow("separate") << false;
+}
+
+void TextHTMLBuilderTest::testTableBorderCollapseFromFormat()
+{
+    QFETCH(bool, borderCollapse);
+
+    QTextDocument doc;
+    QTextCursor cursor(&doc);
+    QTextTableFormat format;
+    format.setBorderCollapse(borderCollapse);
+    cursor.insertTable(1, 2, format);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QCOMPARE(result.contains(u" style=\"border-collapse:collapse;\">"_s), borderCollapse);
 }
 
 void TextHTMLBuilderTest::testTableCellsUnaffectedByBorder()
