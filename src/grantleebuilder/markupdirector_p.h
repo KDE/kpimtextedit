@@ -38,8 +38,8 @@ class MarkupDirectorPrivate
     QBrush m_foregroundToOpen;
     QBrush m_openBackground;
     QBrush m_backgroundToOpen;
-    int m_openFontPointSize;
-    int m_fontPointSizeToOpen;
+    int m_openFontPointSize = -1;
+    int m_fontPointSizeToOpen = -1;
     QString m_openFontFamily;
     QString m_fontFamilyToOpen;
 
