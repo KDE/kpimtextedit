@@ -1402,4 +1402,39 @@ void TextHTMLBuilderTest::testTableHeaderCellPadding()
     QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\"><p"_s), qPrintable(result));
 }
 
+void TextHTMLBuilderTest::testOrderedListStart_data()
+{
+    QTest::addColumn<QString>("html");
+    QTest::addColumn<QString>("expectedTag");
+
+    // A list numbered from its first item is the default, so no start attribute is written.
+    QTest::newRow("decimal-default") << u"<ol><li>a</li></ol>"_s << u"<ol type=\"1\">"_s;
+    QTest::newRow("lower-alpha-default") << u"<ol type=\"a\"><li>a</li></ol>"_s << u"<ol type=\"a\">"_s;
+    QTest::newRow("lower-roman-default") << u"<ol type=\"i\"><li>a</li></ol>"_s << u"<ol type=\"i\">"_s;
+
+    QTest::newRow("decimal-start") << u"<ol start=\"5\"><li>a</li></ol>"_s << u"<ol type=\"1\" start=\"5\">"_s;
+    QTest::newRow("lower-alpha-start") << u"<ol type=\"a\" start=\"3\"><li>a</li></ol>"_s << u"<ol type=\"a\" start=\"3\">"_s;
+    QTest::newRow("upper-alpha-start") << u"<ol type=\"A\" start=\"3\"><li>a</li></ol>"_s << u"<ol type=\"A\" start=\"3\">"_s;
+    QTest::newRow("lower-roman-start") << u"<ol type=\"i\" start=\"4\"><li>a</li></ol>"_s << u"<ol type=\"i\" start=\"4\">"_s;
+    QTest::newRow("upper-roman-start") << u"<ol type=\"I\" start=\"4\"><li>a</li></ol>"_s << u"<ol type=\"I\" start=\"4\">"_s;
+
+    // start has no meaning on an unordered list.
+    QTest::newRow("unordered-ignores-start") << u"<ul start=\"5\"><li>a</li></ul>"_s << u"<ul type=\"disc\">"_s;
+}
+
+void TextHTMLBuilderTest::testOrderedListStart()
+{
+    QFETCH(QString, html);
+    QFETCH(QString, expectedTag);
+
+    QTextDocument doc;
+    doc.setHtml(html);
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QVERIFY2(result.contains(expectedTag), qPrintable(result));
+}
+
 #include "moc_texthtmlbuildertest.cpp"

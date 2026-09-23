@@ -253,11 +253,13 @@ void PlainTextMarkupBuilder::insertImage(const QString &src, [[maybe_unused]] qr
     d->mText.append(u"[%1]"_s.arg(ref));
 }
 
-void PlainTextMarkupBuilder::beginList(QTextListFormat::Style style)
+void PlainTextMarkupBuilder::beginList(QTextListFormat::Style style, int start)
 {
     Q_D(PlainTextMarkupBuilder);
     d->currentListItemStyles.append(style);
-    d->currentListItemNumbers.append(0);
+    // The counter is zero based: beginListItem() renders it as itemNumber + 1 for decimal and
+    // roman lists, and getLetterString() is zero based too. QTextListFormat::start() is one based.
+    d->currentListItemNumbers.append(start - 1);
 }
 
 void PlainTextMarkupBuilder::endList()

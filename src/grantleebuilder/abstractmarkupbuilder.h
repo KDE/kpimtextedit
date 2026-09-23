@@ -147,9 +147,12 @@ public:
     /*!
     Begin a new list element in the markup.
     A list element contains list items, and may contain other lists.
-    \ style The style of list to create.
+
+    \a style The style of list to create.
+    \a start The number of the first item of an ordered list. It is one based, and 1 for
+    a list which is not renumbered.
   */
-    virtual void beginList(QTextListFormat::Style style) = 0;
+    virtual void beginList(QTextListFormat::Style style, int start) = 0;
 
     /*!
     Close the list.

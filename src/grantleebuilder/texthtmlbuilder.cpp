@@ -364,9 +364,12 @@ void TextHTMLBuilder::insertImage(const QString &src, qreal width, qreal height)
     d->mText.append(u"/>"_s);
 }
 
-void TextHTMLBuilder::beginList(QTextListFormat::Style type)
+void TextHTMLBuilder::beginList(QTextListFormat::Style type, int start)
 {
     Q_D(TextHTMLBuilder);
+    // A list starting on its first item is the default, so the attribute is only written when it
+    // actually moves the numbering. QTextListFormat always carries the property, defaulting to 1.
+    const QString startAttribute = (start == 1) ? QString() : u" start=\"%1\""_s.arg(start);
     d->currentListItemStyles.append(type);
     switch (type) {
     case QTextListFormat::ListDisc:
@@ -379,19 +382,19 @@ void TextHTMLBuilder::beginList(QTextListFormat::Style type)
         d->mText.append(u"\n<ul type=\"square\">\n"_s);
         break;
     case QTextListFormat::ListDecimal:
-        d->mText.append(u"\n<ol type=\"1\">\n"_s);
+        d->mText.append(u"\n<ol type=\"%1\"%2>\n"_s.arg(u"1"_s, startAttribute));
         break;
     case QTextListFormat::ListLowerAlpha:
-        d->mText.append(u"\n<ol type=\"a\">\n"_s);
+        d->mText.append(u"\n<ol type=\"%1\"%2>\n"_s.arg(u"a"_s, startAttribute));
         break;
     case QTextListFormat::ListUpperAlpha:
-        d->mText.append(u"\n<ol type=\"A\">\n"_s);
+        d->mText.append(u"\n<ol type=\"%1\"%2>\n"_s.arg(u"A"_s, startAttribute));
         break;
     case QTextListFormat::ListLowerRoman:
-        d->mText.append(u"\n<ol type=\"i\">\n"_s);
+        d->mText.append(u"\n<ol type=\"%1\"%2>\n"_s.arg(u"i"_s, startAttribute));
         break;
     case QTextListFormat::ListUpperRoman:
-        d->mText.append(u"\n<ol type=\"I\">\n"_s);
+        d->mText.append(u"\n<ol type=\"%1\"%2>\n"_s.arg(u"I"_s, startAttribute));
         break;
     default:
         break;

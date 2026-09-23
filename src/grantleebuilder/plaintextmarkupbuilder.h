@@ -114,9 +114,9 @@ public:
     void insertImage(const QString &src, [[maybe_unused]] qreal width, [[maybe_unused]] qreal height) override;
 
     /*!
-     * Begins a list with the given \a style.
+     * Begins a list with the given \a style, numbered from \a start.
      */
-    void beginList(QTextListFormat::Style style) override;
+    void beginList(QTextListFormat::Style style, int start) override;
 
     /*!
      * Ends the list element.

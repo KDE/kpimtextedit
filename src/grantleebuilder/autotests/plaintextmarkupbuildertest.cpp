@@ -776,4 +776,35 @@ void PlainTextMarkupBuilderTest::testNestedList()
     QCOMPARE(result, expected);
 }
 
+void PlainTextMarkupBuilderTest::testOrderedListStart_data()
+{
+    QTest::addColumn<QString>("html");
+    QTest::addColumn<QString>("expected");
+
+    // A list which was never renumbered starts on its first item, whatever the list style.
+    QTest::newRow("decimal-default") << u"<ol><li>a</li><li>b</li></ol>"_s << u"     1. a\n     2. b\n"_s;
+    QTest::newRow("lower-alpha-default") << u"<ol type=\"a\"><li>a</li><li>b</li></ol>"_s << u"     a. a\n     b. b\n"_s;
+    QTest::newRow("lower-roman-default") << u"<ol type=\"i\"><li>a</li><li>b</li></ol>"_s << u"     i. a\n     ii. b\n"_s;
+
+    // QTextListFormat::start() is one based, while the item counter of the builder is zero based.
+    QTest::newRow("decimal-start") << u"<ol start=\"5\"><li>a</li><li>b</li></ol>"_s << u"     5. a\n     6. b\n"_s;
+    QTest::newRow("lower-alpha-start") << u"<ol type=\"a\" start=\"3\"><li>a</li><li>b</li></ol>"_s << u"     c. a\n     d. b\n"_s;
+    QTest::newRow("upper-alpha-start") << u"<ol type=\"A\" start=\"3\"><li>a</li><li>b</li></ol>"_s << u"     C. a\n     D. b\n"_s;
+    QTest::newRow("lower-roman-start") << u"<ol type=\"i\" start=\"4\"><li>a</li><li>b</li></ol>"_s << u"     iv. a\n     v. b\n"_s;
+    QTest::newRow("upper-roman-start") << u"<ol type=\"I\" start=\"4\"><li>a</li><li>b</li></ol>"_s << u"     IV. a\n     V. b\n"_s;
+}
+
+void PlainTextMarkupBuilderTest::testOrderedListStart()
+{
+    QFETCH(QString, html);
+    QFETCH(QString, expected);
+
+    QTextDocument doc;
+    doc.setHtml(html);
+    auto hb = std::make_unique<KPIMTextEdit::PlainTextMarkupBuilder>();
+    auto md = std::make_unique<KPIMTextEdit::MarkupDirector>(hb.get());
+    md->processDocument(&doc);
+    QCOMPARE(hb->getResult(), expected);
+}
+
 #include "moc_plaintextmarkupbuildertest.cpp"

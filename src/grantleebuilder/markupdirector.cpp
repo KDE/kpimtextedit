@@ -366,7 +366,8 @@ void MarkupDirector::processTableCell(const QTextTableCell &tableCell, [[maybe_u
 QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::processList(QTextFrame::iterator it, const QTextBlock &_block, QTextList *list)
 {
     const auto style = list->format().style();
-    m_builder->beginList(style);
+    const int start = list->format().start();
+    m_builder->beginList(style, start);
     auto block = _block;
     auto curList = list;
     while (block.isValid() && block.textList() && curList == list) {

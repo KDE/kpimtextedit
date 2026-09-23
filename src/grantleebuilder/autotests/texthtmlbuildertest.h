@@ -70,4 +70,6 @@ private Q_SLOTS:
     void testTableCellPadding();
     void testTableCellPaddingExplicitZero();
     void testTableHeaderCellPadding();
+    void testOrderedListStart_data();
+    void testOrderedListStart();
 };
