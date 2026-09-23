@@ -1724,6 +1724,11 @@ void TextHTMLBuilderTest::testOrderedListStart_data()
 
     // start has no meaning on an unordered list.
     QTest::newRow("unordered-ignores-start") << u"<ul start=\"5\"><li>a</li></ul>"_s << u"<ul type=\"disc\">"_s;
+
+    QTest::newRow("undefined") << u"<ul style=\"list-style-type: none;\"><li>a</li></ul>"_s << u"<ul style=\"list-style-type: none;\">\n<li>a</li>\n</ul>\n"_s;
+
+    QTest::newRow("undefined-nested") << u"<ul style=\"list-style-type: none;\"><li>a<ul style=\"list-style-type: none;\"><li>b</li></ul></li></ul>"_s
+                                      << u"</ul>\n</ul>\n"_s;
 }
 
 void TextHTMLBuilderTest::testOrderedListStart()

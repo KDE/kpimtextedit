@@ -13,6 +13,7 @@
 #include <QList>
 #include <QTextDocument>
 #include <QtMath>
+#include <qtextformat.h>
 
 using namespace Qt::Literals::StringLiterals;
 namespace KPIMTextEdit
@@ -598,7 +599,10 @@ void TextHTMLBuilder::beginList(QTextListFormat::Style type, int start)
     case QTextListFormat::ListUpperRoman:
         d->mText.append(u"\n<ol type=\"%1\"%2>\n"_s.arg(u"I"_s, startAttribute));
         break;
+    case QTextListFormat::ListStyleUndefined:
     default:
+        // We need to keep <ul ... otherwise it breaks <li>
+        d->mText.append(u"\n<ul style=\"list-style-type: none;\">\n"_s);
         break;
     }
 }
@@ -618,7 +622,9 @@ void TextHTMLBuilder::endList()
     case QTextListFormat::ListUpperRoman:
         d->mText.append(u"</ol>\n"_s);
         break;
+    case QTextListFormat::ListStyleUndefined:
     default:
+        d->mText.append(u"</ul>\n"_s);
         break;
     }
     d->currentListItemStyles.removeLast();
