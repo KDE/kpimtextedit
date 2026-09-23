@@ -71,7 +71,7 @@ class AbstractMarkupBuilder;
   Support for custom types can also be added by implementing the \
   processCustomFragment method.
 
-  \sa \ custom_qtextobject
+  \sa custom_qtextobject
 
   \author Stephen Kelly <steveire@gmail.com>
 */

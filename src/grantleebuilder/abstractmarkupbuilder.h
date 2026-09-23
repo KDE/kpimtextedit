@@ -34,7 +34,7 @@ class AbstractMarkupBuilderPrivate;
   See PlainTextMarkupBuilder and TextHTMLBuilder for example implementations.
 
   This interface can be extended to handle custom format types in a
-  QTextDocument. \sa \ custom_qtextobject
+  QTextDocument. \sa custom_qtextobject
 
   @author Stephen Kelly <steveire@gmail.com>
 */
@@ -70,7 +70,7 @@ public:
 
     /*!
     Begin a decorarated foreground element in the markup (A text color)
-    using \ brush
+    using \a brush
   */
     virtual void beginForeground(const QBrush &brush) = 0;
 
@@ -79,7 +79,7 @@ public:
 
     /*!
     Begin a decorarated background element in the markup (A text background
-    color) using \ brush
+    color) using \a brush
    */
     virtual void beginBackground(const QBrush &brush) = 0;
 
@@ -88,8 +88,8 @@ public:
 
     /*!
     Begin a url anchor element in the markup
-    \ href The href of the anchor.
-    \ name The name of the anchor.
+    \a href The href of the anchor.
+    \a name The name of the anchor.
   */
     virtual void beginAnchor(const QString &href = {}, const QString &name = {}) = 0;
 
@@ -98,7 +98,7 @@ public:
 
     /*!
     Begin a new font family element in the markup
-    \ family The name of the font family to begin.
+    \a family The name of the font family to begin.
   */
     virtual void beginFontFamily(const QString &family) = 0;
 
@@ -107,7 +107,7 @@ public:
 
     /*!
     Begin a new font point size element in the markup
-    \ size The point size to begin.
+    \a size The point size to begin.
   */
     virtual void beginFontPointSize(int size) = 0;
 
@@ -116,11 +116,11 @@ public:
 
     /*!
     Begin a new paragraph in the markup
-    \ a The alignment of the new paragraph.
-    \ top The top margin of the new paragraph.
-    \ bottom The bottom margin of the new paragraph.
-    \ left The left margin of the new paragraph.
-    \ right The right margin of the new paragraph.
+    \a a The alignment of the new paragraph.
+    \a top The top margin of the new paragraph.
+    \a bottom The bottom margin of the new paragraph.
+    \a left The left margin of the new paragraph.
+    \a right The right margin of the new paragraph.
   */
     virtual void
     beginParagraph(Qt::Alignment a = Qt::AlignLeft, qreal top = 0.0, qreal bottom = 0.0, qreal left = 0.0, qreal right = 0.0, bool leftToRightText = false) = 0;
@@ -132,15 +132,15 @@ public:
 
     /*!
     Insert a horizontal rule into the markup.
-    \ width The width of the rule. Default is full width.
+    \a width The width of the rule. Default is full width.
   */
     virtual void insertHorizontalRule(int width = -1) = 0;
 
     /*!
     Insert a new image element into the markup.
-    \ url The url of the image
-    \ width The width of the image
-    \ height The height of the image.
+    \a url The url of the image
+    \a width The width of the image
+    \a height The height of the image.
   */
     virtual void insertImage(const QString &url, qreal width, qreal height) = 0;
 
@@ -223,26 +223,26 @@ public:
     virtual void endTableCell() = 0;
 
     /*!
-    Begin a level \ level header
-    \ level An integer between 1 and 6
+    Begin a level \a level header
+    \a level An integer between 1 and 6
   */
     virtual void beginHeader(int level) = 0;
 
     /*!
-    End a level \ level header
-    \ level An integer between 1 and 6
+    End a level \a level header
+    \a level An integer between 1 and 6
   */
     virtual void endHeader(int level) = 0;
 
     /*!
-    Append the plain text \ text to the markup
+    Append the plain text \a text to the markup
 
-    \ text The text to append.
+    \a text The text to append.
   */
     virtual void appendLiteralText(const QString &text) = 0;
 
     /*!
-    Append the raw text \ text to the markup. \ text is added unescaped
+    Append the raw text \a text to the markup. \a text is added unescaped
   */
     virtual void appendRawText(const QString &text) = 0;
 
