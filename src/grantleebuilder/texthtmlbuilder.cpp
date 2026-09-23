@@ -486,7 +486,7 @@ void TextHTMLBuilder::beginList(QTextListFormat::Style type, int start)
     d->currentListItemStyles.append(type);
     switch (type) {
     case QTextListFormat::ListDisc:
-        d->mText.append(u"<ul type=\"disc\">\n"_s);
+        d->mText.append(u"\n<ul type=\"disc\">\n"_s);
         break;
     case QTextListFormat::ListCircle:
         d->mText.append(u"\n<ul type=\"circle\">\n"_s);
