@@ -417,7 +417,6 @@ QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::skipBlockGroup(QTextFram
     auto lastBlock = _block;
     auto lastIt = it;
     auto obj = block.document()->objectForFormat(block.blockFormat());
-    QTextBlockGroup *nextGroup;
 
     if (!obj) {
         return qMakePair(lastIt, lastBlock);
@@ -443,7 +442,7 @@ QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::skipBlockGroup(QTextFram
             continue;
         }
 
-        nextGroup = qobject_cast<QTextBlockGroup *>(obj);
+        QTextBlockGroup *nextGroup = qobject_cast<QTextBlockGroup *>(obj);
 
         if (group == blockGroup || !nextGroup) {
             lastBlock = block;
