@@ -939,7 +939,7 @@ void TextHTMLBuilderTest::testBug436880()
     auto result = hb->getResult();
 
     // qDebug() << " result " << result;
-    auto regex = QRegularExpression(u"^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\" dir='rtl'>test</p>\n"_s);
+    auto regex = QRegularExpression(u"^<p style=\"margin-top:12;margin-bottom:12;margin-left:0;margin-right:0;\" dir=\"rtl\">test</p>\n"_s);
 
     QVERIFY(regex.match(result).hasMatch());
     delete md;

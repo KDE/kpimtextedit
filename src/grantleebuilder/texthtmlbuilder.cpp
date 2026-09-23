@@ -235,7 +235,7 @@ void TextHTMLBuilder::beginParagraph(Qt::Alignment al, qreal topMargin, qreal bo
     // Bug in grantlee => style is not defined
     d->mText.append(u" style=\""_s + styleString + u'"');
     if (leftToRightText) {
-        d->mText.append(u" dir='rtl'"_s);
+        d->mText.append(u" dir=\"rtl\""_s);
     }
     d->mText.append(u'>');
     //     }
