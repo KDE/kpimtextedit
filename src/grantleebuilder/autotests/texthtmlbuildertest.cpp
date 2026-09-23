@@ -1172,6 +1172,187 @@ void TextHTMLBuilderTest::testTableBorderCollapseFromFormat()
     QCOMPARE(result.contains(u" style=\"border-collapse:collapse;\">"_s), borderCollapse);
 }
 
+namespace
+{
+// The opening table tag, attributes included, so that a test can state the whole of what the
+// builder wrote for the table and not only a fragment of it.
+QString tableTag(const QString &html)
+{
+    const qsizetype start = html.indexOf(u"<table"_s);
+    if (start < 0) {
+        return {};
+    }
+    return html.mid(start, html.indexOf(u'>', start) - start + 1);
+}
+
+QString buildHtml(QTextDocument *doc)
+{
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(doc);
+    return hb.getResult();
+}
+}
+
+// The html border attribute only carries a width, it always paints a plain line: a dotted or a
+// coloured table border survives a round trip as css or not at all.
+void TextHTMLBuilderTest::testTableBorderStyleAndColor_data()
+{
+    QTest::addColumn<QString>("html");
+    QTest::addColumn<QString>("expectedStyle");
+
+    // A bare border attribute is the outset dark gray border the html parser gives every table,
+    // css has nothing to add to it.
+    QTest::newRow("border-attribute-only") << u"<table border=\"1\"><tr><td>L</td></tr></table>"_s << QString();
+    QTest::newRow("dashed-red") << u"<table style=\"border:2px dashed red;\"><tr><td>L</td></tr></table>"_s
+                                << u" style=\"border-style: dashed; border-color: #ff0000;\""_s;
+    QTest::newRow("solid-black") << u"<table style=\"border:1px solid black;\"><tr><td>L</td></tr></table>"_s
+                                 << u" style=\"border-style: solid; border-color: #000000;\""_s;
+    QTest::newRow("double") << u"<table style=\"border:3px double #0000ff;\"><tr><td>L</td></tr></table>"_s
+                            << u" style=\"border-style: double; border-color: #0000ff;\""_s;
+    QTest::newRow("color-only") << u"<table border=\"1\" bordercolor=\"#00ff00\"><tr><td>L</td></tr></table>"_s << u" style=\"border-color: #00ff00;\""_s;
+    // A table which paints no border has no border style and no border color to serialize.
+    QTest::newRow("no-border") << u"<table style=\"border:0px none transparent;\"><tr><td>L</td></tr></table>"_s << QString();
+}
+
+void TextHTMLBuilderTest::testTableBorderStyleAndColor()
+{
+    QFETCH(QString, html);
+    QFETCH(QString, expectedStyle);
+
+    QTextDocument doc;
+    doc.setHtml(html);
+
+    const QString tag = tableTag(buildHtml(&doc));
+    if (expectedStyle.isEmpty()) {
+        QVERIFY2(!tag.contains(u" style=\""_s), qPrintable(tag));
+    } else {
+        QVERIFY2(tag.contains(expectedStyle), qPrintable(tag));
+    }
+}
+
+// The space a table keeps from the text around it has no html attribute, only css.
+void TextHTMLBuilderTest::testTableMargins()
+{
+    QTextDocument doc;
+    QTextCursor cursor(&doc);
+    QTextTableFormat format;
+    format.setTopMargin(10);
+    format.setBottomMargin(0);
+    format.setLeftMargin(20.5);
+    format.setRightMargin(5);
+    cursor.insertTable(1, 1, format);
+
+    const QString tag = tableTag(buildHtml(&doc));
+    // A css length needs its unit, and a margin of zero is what the renderer does anyway.
+    QVERIFY2(tag.contains(u"margin-top: 10px"_s), qPrintable(tag));
+    QVERIFY2(tag.contains(u"margin-left: 20.5px"_s), qPrintable(tag));
+    QVERIFY2(tag.contains(u"margin-right: 5px"_s), qPrintable(tag));
+    QVERIFY2(!tag.contains(u"margin-bottom"_s), qPrintable(tag));
+}
+
+// The padding of the table itself, which cellpadding does not describe: cellpadding is the space
+// inside the cells.
+void TextHTMLBuilderTest::testTablePadding()
+{
+    QTextDocument doc;
+    QTextCursor cursor(&doc);
+    QTextTableFormat format;
+    format.setPadding(6);
+    cursor.insertTable(1, 1, format);
+
+    const QString tag = tableTag(buildHtml(&doc));
+    QVERIFY2(tag.contains(u"padding: 6px"_s), qPrintable(tag));
+
+    QTextDocument plainDoc;
+    QTextCursor plainCursor(&plainDoc);
+    plainCursor.insertTable(1, 1, QTextTableFormat());
+    // A table which asked for no padding must not be given one. The cellpadding attribute is a
+    // different thing, it stays.
+    const QString plainTag = tableTag(buildHtml(&plainDoc));
+    QVERIFY2(!plainTag.contains(u"padding: "_s), qPrintable(plainTag));
+}
+
+// A floating table has the text flow around it. This is not the align attribute, which only moves
+// the table inside the flow.
+void TextHTMLBuilderTest::testTableFloat_data()
+{
+    QTest::addColumn<QTextFrameFormat::Position>("position");
+    QTest::addColumn<QString>("expectedFloat");
+
+    QTest::newRow("in-flow") << QTextFrameFormat::InFlow << QString();
+    QTest::newRow("float-left") << QTextFrameFormat::FloatLeft << u"float: left"_s;
+    QTest::newRow("float-right") << QTextFrameFormat::FloatRight << u"float: right"_s;
+}
+
+void TextHTMLBuilderTest::testTableFloat()
+{
+    QFETCH(QTextFrameFormat::Position, position);
+    QFETCH(QString, expectedFloat);
+
+    QTextDocument doc;
+    QTextCursor cursor(&doc);
+    QTextTableFormat format;
+    format.setPosition(position);
+    cursor.insertTable(1, 1, format);
+
+    const QString tag = tableTag(buildHtml(&doc));
+    if (expectedFloat.isEmpty()) {
+        QVERIFY2(!tag.contains(u"float"_s), qPrintable(tag));
+    } else {
+        QVERIFY2(tag.contains(expectedFloat), qPrintable(tag));
+    }
+}
+
+// The height of a table is read back from the document like its width, a variable height is the
+// one html has no attribute for.
+void TextHTMLBuilderTest::testTableHeight_data()
+{
+    QTest::addColumn<QString>("html");
+    QTest::addColumn<QString>("expectedHeight");
+
+    QTest::newRow("fixed") << u"<table height=\"200\"><tr><td>L</td></tr></table>"_s << u" height=\"200\""_s;
+    QTest::newRow("percentage") << u"<table height=\"30%\"><tr><td>L</td></tr></table>"_s << u" height=\"30%\""_s;
+    QTest::newRow("unspecified") << u"<table><tr><td>L</td></tr></table>"_s << QString();
+}
+
+void TextHTMLBuilderTest::testTableHeight()
+{
+    QFETCH(QString, html);
+    QFETCH(QString, expectedHeight);
+
+    QTextDocument doc;
+    doc.setHtml(html);
+
+    const QString tag = tableTag(buildHtml(&doc));
+    if (expectedHeight.isEmpty()) {
+        QVERIFY2(!tag.contains(u" height=\""_s), qPrintable(tag));
+    } else {
+        QVERIFY2(tag.contains(expectedHeight), qPrintable(tag));
+    }
+}
+
+// A tag can only carry one style attribute, so everything the table has to say in css goes into
+// the same one.
+void TextHTMLBuilderTest::testTableStyleDeclarationsShareOneAttribute()
+{
+    QTextDocument doc;
+    QTextCursor cursor(&doc);
+    QTextTableFormat format;
+    format.setBorder(1);
+    format.setBorderStyle(QTextFrameFormat::BorderStyle_Dotted);
+    format.setBorderBrush(Qt::red);
+    format.setTopMargin(4);
+    format.setPadding(2);
+    format.setBorderCollapse(true);
+    cursor.insertTable(1, 1, format);
+
+    const QString tag = tableTag(buildHtml(&doc));
+    QCOMPARE(tag.count(u"style=\""_s), 1);
+    QVERIFY2(tag.contains(u" style=\"border-style: dotted; border-color: #ff0000; margin-top: 4px; padding: 2px; border-collapse:collapse;\""_s),
+             qPrintable(tag));
+}
+
 void TextHTMLBuilderTest::testTableCellsUnaffectedByBorder()
 {
     QTextDocument doc;

@@ -8,6 +8,7 @@
 #include "texthtmlbuilder.h"
 
 #include <QBrush>
+#include <QColor>
 #include <QDebug>
 #include <QList>
 #include <QTextDocument>
@@ -37,9 +38,9 @@ using namespace KPIMTextEdit;
 
 namespace
 {
-// Value of an html width attribute: a percentage or a bare number of pixels.
+// Value of an html width or height attribute: a percentage or a bare number of pixels.
 // A variable length has no html equivalent, it maps to an empty attribute.
-QString htmlWidth(const QTextLength &length)
+QString htmlLength(const QTextLength &length)
 {
     switch (length.type()) {
     case QTextLength::PercentageLength:
@@ -71,6 +72,16 @@ QString cssPixels(qreal value)
         return u"0"_s;
     }
     return u"%1px"_s.arg(value);
+}
+
+// Css has no notation for the #aarrggbb colors Qt stores, so a translucent color is written as
+// an rgba() function and an opaque one keeps the shorter hexadecimal form.
+QString cssColor(const QColor &color)
+{
+    if (color.alpha() == 255) {
+        return color.name();
+    }
+    return u"rgba(%1, %2, %3, %4)"_s.arg(color.red()).arg(color.green()).arg(color.blue()).arg(color.alphaF());
 }
 
 // A font family is a css string, so it has to be quoted: a name can hold spaces, a comma, or
@@ -166,7 +177,7 @@ QStringList cellBorder(const QTextTableCellFormat &format)
         // when only a style is given, which would paint a border the document does not have.
         QString declaration = u"border-%1: %2 %3"_s.arg(side, cssPixels(width), cssBorderStyle(style));
         if (brush.style() != Qt::NoBrush && brush.color().isValid()) {
-            declaration += u' ' + brush.color().name();
+            declaration += u' ' + cssColor(brush.color());
         }
         borderStyle.append(declaration);
     };
@@ -209,10 +220,88 @@ QString cellStyle(const QTextTableCellFormat &format)
     return u" style=\"%1;\""_s.arg(declarations.join(u"; "_s));
 }
 
+// The html border attribute only carries a width, it always paints a plain line. A table which
+// asked for a dotted or a double border keeps it through css only. The html parser gives every
+// table an outset border, which is exactly what the border attribute already means, so only a
+// style the document really chose is worth a declaration. A table without a border has none.
+QStringList tableBorder(const QTextTableFormat &format)
+{
+    const QTextFrameFormat::BorderStyle style = format.borderStyle();
+    if (style == QTextFrameFormat::BorderStyle_None) {
+        return {};
+    }
+    QStringList borderStyle;
+    if (style != QTextFrameFormat::BorderStyle_Outset) {
+        borderStyle.append(u"border-style: %1"_s.arg(cssBorderStyle(style)));
+    }
+    // Dark gray is the color the html parser invents for a bare border attribute, it says nothing
+    // about the document.
+    if (const QBrush brush = format.borderBrush(); brush.style() != Qt::NoBrush && brush.color().isValid() && brush.color() != QColor(Qt::darkGray)) {
+        borderStyle.append(u"border-color: %1"_s.arg(cssColor(brush.color())));
+    }
+    return borderStyle;
+}
+
+// Qt writes all four margins on every table it imports, most of them zero, and a zero margin is
+// what the renderer does anyway: only a margin which really moves the table is serialized.
+QStringList tableMargins(const QTextTableFormat &format)
+{
+    QStringList marginStyle;
+    const auto appendMargin = [&](QLatin1StringView side, qreal value) {
+        if (!qFuzzyIsNull(value)) {
+            marginStyle.append(u"margin-%1: %2"_s.arg(side, cssPixels(value)));
+        }
+    };
+    appendMargin("top"_L1, format.topMargin());
+    appendMargin("bottom"_L1, format.bottomMargin());
+    appendMargin("left"_L1, format.leftMargin());
+    appendMargin("right"_L1, format.rightMargin());
+    return marginStyle;
+}
+
+// The space a table keeps between its border and its cells. It has no html attribute of its own,
+// cellpadding is the padding of the cells, not of the table.
+QStringList tablePadding(const QTextTableFormat &format)
+{
+    if (!format.hasProperty(QTextFormat::FramePadding) || qFuzzyIsNull(format.padding())) {
+        return {};
+    }
+    return {u"padding: %1"_s.arg(cssPixels(format.padding()))};
+}
+
+// A floating table has the text flow around it. This is not the align attribute, which only moves
+// the table inside the flow.
+QStringList tableFloat(const QTextTableFormat &format)
+{
+    switch (format.position()) {
+    case QTextFrameFormat::FloatLeft:
+        return {u"float: left"_s};
+    case QTextFrameFormat::FloatRight:
+        return {u"float: right"_s};
+    case QTextFrameFormat::InFlow:
+        break;
+    }
+    return {};
+}
+
+// A tag can only carry one style attribute, so everything the table contributes to it has to be
+// gathered here.
+QString tableStyle(const QTextTableFormat &format)
+{
+    QStringList declarations = tableFloat(format) + tableBorder(format) + tableMargins(format) + tablePadding(format);
+    if (format.borderCollapse()) {
+        declarations.append(u"border-collapse:collapse"_s);
+    }
+    if (declarations.isEmpty()) {
+        return {};
+    }
+    return u" style=\"%1;\""_s.arg(declarations.join(u"; "_s));
+}
+
 // <th> and <td> carry exactly the same attributes.
 void appendCellAttributes(QString &text, const QTextTableCellFormat &format, const QTextLength &width)
 {
-    if (const QString sWidth = htmlWidth(width); !sWidth.isEmpty()) {
+    if (const QString sWidth = htmlLength(width); !sWidth.isEmpty()) {
         text.append(u" width=\"%1\""_s.arg(sWidth));
     }
     text.append(u" colspan=\"%1\" rowspan=\"%2\""_s.arg(format.tableCellColumnSpan()).arg(format.tableCellRowSpan()));
@@ -573,13 +662,16 @@ void TextHTMLBuilder::endSubscript()
 void TextHTMLBuilder::beginTable(const QTextTableFormat &format)
 {
     Q_D(TextHTMLBuilder);
-    const QString sWidth = htmlWidth(format.width());
+    const QString sWidth = htmlLength(format.width());
     // A table whose border style is BorderStyle_None has no visible border, whatever the border width says.
     // The html border attribute is an integer, so round a fractional width up: a hairline border is still a border.
     const int border = (format.borderStyle() == QTextFrameFormat::BorderStyle_None) ? 0 : qCeil(format.border());
     d->mText.append(u"<table cellpadding=\"%1\" cellspacing=\"%2\""_s.arg(format.cellPadding()).arg(format.cellSpacing()));
     if (!sWidth.isEmpty()) {
         d->mText.append(u" width=\"%1\""_s.arg(sWidth));
+    }
+    if (const QString sHeight = htmlLength(format.height()); !sHeight.isEmpty()) {
+        d->mText.append(u" height=\"%1\""_s.arg(sHeight));
     }
     d->mText.append(u" border=\"%1\""_s.arg(border));
     d->mText.append(htmlBackground(format));
@@ -600,9 +692,7 @@ void TextHTMLBuilder::beginTable(const QTextTableFormat &format)
     default:
         break;
     }
-    if (format.borderCollapse()) {
-        d->mText.append(u" style=\"border-collapse:collapse;\""_s);
-    }
+    d->mText.append(tableStyle(format));
     d->mText.append(u">"_s);
 }
 

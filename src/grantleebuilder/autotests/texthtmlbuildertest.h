@@ -59,6 +59,15 @@ private Q_SLOTS:
     void testTableBorderCollapse();
     void testTableBorderCollapseFromFormat_data();
     void testTableBorderCollapseFromFormat();
+    void testTableBorderStyleAndColor_data();
+    void testTableBorderStyleAndColor();
+    void testTableMargins();
+    void testTablePadding();
+    void testTableFloat_data();
+    void testTableFloat();
+    void testTableHeight_data();
+    void testTableHeight();
+    void testTableStyleDeclarationsShareOneAttribute();
     void testTableCellsUnaffectedByBorder();
     void testTableBackgroundColor();
     void testTableAlignment();
