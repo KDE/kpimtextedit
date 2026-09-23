@@ -1402,6 +1402,129 @@ void TextHTMLBuilderTest::testTableHeaderCellPadding()
     QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\"><p"_s), qPrintable(result));
 }
 
+// A cell border lives in the cell format, not in the table border attribute, so it only
+// survives a round trip as css on the cell tag.
+void TextHTMLBuilderTest::testTableCellBorder_data()
+{
+    QTest::addColumn<QString>("html");
+    QTest::addColumn<QString>("expectedStyle");
+
+    QTest::newRow("all-sides") << u"<table border=\"0\"><tr><td style=\"border:1px solid blue;\">L</td></tr></table>"_s
+                               << u" style=\"border-bottom: 1px solid #0000ff; border-top: 1px solid #0000ff; "
+                                  "border-left: 1px solid #0000ff; border-right: 1px solid #0000ff;\""_s;
+    QTest::newRow("single-side") << u"<table border=\"0\"><tr><td style=\"border-left:3px dashed red;\">L</td></tr></table>"_s
+                                 << u" style=\"border-left: 3px dashed #ff0000;\""_s;
+    QTest::newRow("mixed-sides") << u"<table border=\"0\"><tr><td style=\"border-top:4px double green;border-bottom:2px groove;\">L</td></tr></table>"_s
+                                 << u" style=\"border-bottom: 2px groove; border-top: 4px double #008000;\""_s;
+    // Css falls back to currentColor when the colour is left out, which is what the document says.
+    QTest::newRow("no-colour") << u"<table border=\"0\"><tr><td style=\"border:2px solid;\">L</td></tr></table>"_s
+                               << u" style=\"border-bottom: 2px solid; border-top: 2px solid; "
+                                  "border-left: 2px solid; border-right: 2px solid;\""_s;
+    // A width with no style paints nothing in the document, and none keeps it that way.
+    QTest::newRow("width-without-style") << u"<table border=\"0\"><tr><td style=\"border-width:2px;\">L</td></tr></table>"_s
+                                         << u" style=\"border-bottom: 2px none; border-top: 2px none; "
+                                            "border-left: 2px none; border-right: 2px none;\""_s;
+    // Conversely a style with no width: css would paint a medium border, the explicit zero must not let it.
+    QTest::newRow("style-without-width") << u"<table border=\"0\"><tr><td style=\"border-style:dotted;\">L</td></tr></table>"_s
+                                         << u" style=\"border-bottom: 0 dotted; border-top: 0 dotted; "
+                                            "border-left: 0 dotted; border-right: 0 dotted;\""_s;
+}
+
+void TextHTMLBuilderTest::testTableCellBorder()
+{
+    QFETCH(QString, html);
+    QFETCH(QString, expectedStyle);
+
+    QTextDocument doc;
+    doc.setHtml(html);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QVERIFY2(result.contains(expectedStyle), qPrintable(result));
+}
+
+void TextHTMLBuilderTest::testTableCellBorderStyleKeyword_data()
+{
+    QTest::addColumn<QTextFrameFormat::BorderStyle>("borderStyle");
+    QTest::addColumn<QString>("expectedKeyword");
+
+    QTest::newRow("none") << QTextFrameFormat::BorderStyle_None << u"none"_s;
+    QTest::newRow("dotted") << QTextFrameFormat::BorderStyle_Dotted << u"dotted"_s;
+    QTest::newRow("dashed") << QTextFrameFormat::BorderStyle_Dashed << u"dashed"_s;
+    QTest::newRow("solid") << QTextFrameFormat::BorderStyle_Solid << u"solid"_s;
+    QTest::newRow("double") << QTextFrameFormat::BorderStyle_Double << u"double"_s;
+    QTest::newRow("groove") << QTextFrameFormat::BorderStyle_Groove << u"groove"_s;
+    QTest::newRow("ridge") << QTextFrameFormat::BorderStyle_Ridge << u"ridge"_s;
+    QTest::newRow("inset") << QTextFrameFormat::BorderStyle_Inset << u"inset"_s;
+    QTest::newRow("outset") << QTextFrameFormat::BorderStyle_Outset << u"outset"_s;
+    // Css has no equivalent for these two, a dashed line keeps the side visible.
+    QTest::newRow("dot-dash") << QTextFrameFormat::BorderStyle_DotDash << u"dashed"_s;
+    QTest::newRow("dot-dot-dash") << QTextFrameFormat::BorderStyle_DotDotDash << u"dashed"_s;
+}
+
+void TextHTMLBuilderTest::testTableCellBorderStyleKeyword()
+{
+    QFETCH(QTextFrameFormat::BorderStyle, borderStyle);
+    QFETCH(QString, expectedKeyword);
+
+    QTextDocument doc;
+    QTextCursor cursor(&doc);
+    QTextTableFormat tableFormat;
+    tableFormat.setColumnWidthConstraints({QTextLength()});
+    QTextTable *table = cursor.insertTable(1, 1, tableFormat);
+    QTextTableCellFormat cellFormat = table->cellAt(0, 0).format().toTableCellFormat();
+    cellFormat.setTopBorder(2);
+    cellFormat.setTopBorderStyle(borderStyle);
+    table->cellAt(0, 0).setFormat(cellFormat);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QVERIFY2(result.contains(u"border-top: 2px %1"_s.arg(expectedKeyword)), qPrintable(result));
+}
+
+// A tag can only carry one style attribute: a second one is ignored, so a cell with both a
+// padding and a border would silently lose the border.
+void TextHTMLBuilderTest::testTableCellBorderAndPaddingShareOneStyleAttribute()
+{
+    QTextDocument doc;
+    doc.setHtml(u"<table border=\"0\"><tr><td style=\"padding:5px;border:1px solid #abcdef;\">L</td></tr></table>"_s);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    const int cellStart = result.indexOf(u"<td"_s);
+    const int cellEnd = result.indexOf(u'>', cellStart);
+    const QString cellTag = result.mid(cellStart, cellEnd - cellStart);
+    QCOMPARE(cellTag.count(u" style=\""_s), 1);
+    QVERIFY2(cellTag.contains(u"padding-top: 5px;"_s), qPrintable(cellTag));
+    QVERIFY2(cellTag.contains(u"border-top: 1px solid #abcdef;"_s), qPrintable(cellTag));
+}
+
+void TextHTMLBuilderTest::testTableHeaderCellBorder()
+{
+    QTextDocument doc;
+    doc.setHtml(
+        u"<table border=\"0\"><thead><tr><th style=\"border-top:2px solid red;\">H</th></tr></thead>"
+        "<tbody><tr><td>L</td></tr></tbody></table>"_s);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QVERIFY2(result.contains(u"<th colspan=\"1\" rowspan=\"1\" style=\"border-top: 2px solid #ff0000;\">"_s), qPrintable(result));
+    // The body cell asked for nothing, so it must keep inheriting the table border attribute.
+    QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
+}
+
 void TextHTMLBuilderTest::testOrderedListStart_data()
 {
     QTest::addColumn<QString>("html");

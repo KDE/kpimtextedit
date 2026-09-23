@@ -88,7 +88,7 @@ QString vAlignment(const QTextTableCellFormat &format)
     return {};
 }
 
-QString cellPadding(const QTextTableCellFormat &format)
+QStringList cellPadding(const QTextTableCellFormat &format)
 {
     QStringList paddingStyle;
     if (format.hasProperty(QTextFormat::TableCellBottomPadding)) {
@@ -103,10 +103,111 @@ QString cellPadding(const QTextTableCellFormat &format)
     if (format.hasProperty(QTextFormat::TableCellRightPadding)) {
         paddingStyle.append(u"padding-right: %1"_s.arg(cssPixels(format.rightPadding())));
     }
-    if (paddingStyle.isEmpty()) {
+    return paddingStyle;
+}
+
+// Qt has two dash patterns css does not. They degrade to a plain dashed line, which keeps the
+// side visible, rather than to none, which would make it disappear.
+QLatin1StringView cssBorderStyle(QTextFrameFormat::BorderStyle style)
+{
+    switch (style) {
+    case QTextFrameFormat::BorderStyle_None:
+        return "none"_L1;
+    case QTextFrameFormat::BorderStyle_Dotted:
+        return "dotted"_L1;
+    case QTextFrameFormat::BorderStyle_Dashed:
+    case QTextFrameFormat::BorderStyle_DotDash:
+    case QTextFrameFormat::BorderStyle_DotDotDash:
+        return "dashed"_L1;
+    case QTextFrameFormat::BorderStyle_Solid:
+        return "solid"_L1;
+    case QTextFrameFormat::BorderStyle_Double:
+        return "double"_L1;
+    case QTextFrameFormat::BorderStyle_Groove:
+        return "groove"_L1;
+    case QTextFrameFormat::BorderStyle_Ridge:
+        return "ridge"_L1;
+    case QTextFrameFormat::BorderStyle_Inset:
+        return "inset"_L1;
+    case QTextFrameFormat::BorderStyle_Outset:
+        return "outset"_L1;
+    }
+    return "none"_L1;
+}
+
+// Each side of a cell border is three independent properties: a width, a style and a brush.
+// A side is serialized as soon as the document set any of them, so that a cell which asked
+// for nothing keeps inheriting the border attribute of the table.
+QStringList cellBorder(const QTextTableCellFormat &format)
+{
+    QStringList borderStyle;
+    const auto appendSide = [&](QLatin1StringView side,
+                                QTextFormat::Property widthProperty,
+                                QTextFormat::Property styleProperty,
+                                qreal width,
+                                QTextFrameFormat::BorderStyle style,
+                                const QBrush &brush) {
+        if (!format.hasProperty(widthProperty) && !format.hasProperty(styleProperty)) {
+            return;
+        }
+        // The width is always written, even when it is zero. Css falls back to a medium width
+        // when only a style is given, which would paint a border the document does not have.
+        QString declaration = u"border-%1: %2 %3"_s.arg(side, cssPixels(width), cssBorderStyle(style));
+        if (brush.style() != Qt::NoBrush && brush.color().isValid()) {
+            declaration += u' ' + brush.color().name();
+        }
+        borderStyle.append(declaration);
+    };
+
+    appendSide("bottom"_L1,
+               QTextFormat::TableCellBottomBorder,
+               QTextFormat::TableCellBottomBorderStyle,
+               format.bottomBorder(),
+               format.bottomBorderStyle(),
+               format.bottomBorderBrush());
+    appendSide("top"_L1,
+               QTextFormat::TableCellTopBorder,
+               QTextFormat::TableCellTopBorderStyle,
+               format.topBorder(),
+               format.topBorderStyle(),
+               format.topBorderBrush());
+    appendSide("left"_L1,
+               QTextFormat::TableCellLeftBorder,
+               QTextFormat::TableCellLeftBorderStyle,
+               format.leftBorder(),
+               format.leftBorderStyle(),
+               format.leftBorderBrush());
+    appendSide("right"_L1,
+               QTextFormat::TableCellRightBorder,
+               QTextFormat::TableCellRightBorderStyle,
+               format.rightBorder(),
+               format.rightBorderStyle(),
+               format.rightBorderBrush());
+    return borderStyle;
+}
+
+// A tag can only carry one style attribute, so everything a cell contributes to it has to be
+// gathered here.
+QString cellStyle(const QTextTableCellFormat &format)
+{
+    const QStringList declarations = cellPadding(format) + cellBorder(format);
+    if (declarations.isEmpty()) {
         return {};
     }
-    return paddingStyle.join(u"; "_s).append(u';');
+    return u" style=\"%1;\""_s.arg(declarations.join(u"; "_s));
+}
+
+// <th> and <td> carry exactly the same attributes.
+void appendCellAttributes(QString &text, const QTextTableCellFormat &format, const QTextLength &width)
+{
+    if (const QString sWidth = htmlWidth(width); !sWidth.isEmpty()) {
+        text.append(u" width=\"%1\""_s.arg(sWidth));
+    }
+    text.append(u" colspan=\"%1\" rowspan=\"%2\""_s.arg(format.tableCellColumnSpan()).arg(format.tableCellRowSpan()));
+    text.append(htmlBackground(format));
+    text.append(vAlignment(format));
+    text.append(cellStyle(format));
+    text.append(u">"_s);
 }
 
 }
@@ -503,35 +604,14 @@ void TextHTMLBuilder::beginTableHeaderCell(const QTextTableCellFormat &format, c
 {
     Q_D(TextHTMLBuilder);
     d->mText.append(u"<th"_s);
-    const QString sWidth = htmlWidth(width);
-    if (!sWidth.isEmpty()) {
-        d->mText.append(u" width=\"%1\""_s.arg(sWidth));
-    }
-    d->mText.append(u" colspan=\"%1\" rowspan=\"%2\""_s.arg(format.tableCellColumnSpan()).arg(format.tableCellRowSpan()));
-    d->mText.append(htmlBackground(format));
-    d->mText.append(vAlignment(format));
-    if (const QString sCellPadding = cellPadding(format); !sCellPadding.isEmpty()) {
-        d->mText.append(u" style=\"%1\""_s.arg(sCellPadding));
-    }
-
-    d->mText.append(u">"_s);
+    appendCellAttributes(d->mText, format, width);
 }
 
 void TextHTMLBuilder::beginTableCell(const QTextTableCellFormat &format, const QTextLength &width)
 {
     Q_D(TextHTMLBuilder);
     d->mText.append(u"<td"_s);
-    const QString sWidth = htmlWidth(width);
-    if (!sWidth.isEmpty()) {
-        d->mText.append(u" width=\"%1\""_s.arg(sWidth));
-    }
-    d->mText.append(u" colspan=\"%1\" rowspan=\"%2\""_s.arg(format.tableCellColumnSpan()).arg(format.tableCellRowSpan()));
-    d->mText.append(htmlBackground(format));
-    d->mText.append(vAlignment(format));
-    if (const QString sCellPadding = cellPadding(format); !sCellPadding.isEmpty()) {
-        d->mText.append(u" style=\"%1\""_s.arg(sCellPadding));
-    }
-    d->mText.append(u">"_s);
+    appendCellAttributes(d->mText, format, width);
 }
 
 void TextHTMLBuilder::endTable()

@@ -70,6 +70,12 @@ private Q_SLOTS:
     void testTableCellPadding();
     void testTableCellPaddingExplicitZero();
     void testTableHeaderCellPadding();
+    void testTableCellBorder_data();
+    void testTableCellBorder();
+    void testTableCellBorderStyleKeyword_data();
+    void testTableCellBorderStyleKeyword();
+    void testTableCellBorderAndPaddingShareOneStyleAttribute();
+    void testTableHeaderCellBorder();
     void testOrderedListStart_data();
     void testOrderedListStart();
 };
