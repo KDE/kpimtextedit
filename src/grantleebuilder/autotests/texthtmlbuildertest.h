@@ -60,4 +60,5 @@ private Q_SLOTS:
     void testTableAlignment();
     void testTableCellSpans();
     void testTableCellBackgroundColor();
+    void testTableCellvAlignment();
 };

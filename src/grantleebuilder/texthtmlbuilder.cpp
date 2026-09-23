@@ -62,6 +62,21 @@ QString htmlBackground(const QTextFormat &format)
     }
     return u" bgcolor=\"%1\""_s.arg(background.color().name());
 }
+
+QString vAlignment(const QTextTableCellFormat &format)
+{
+    switch (format.verticalAlignment()) {
+    case QTextCharFormat::VerticalAlignment::AlignMiddle:
+        return u" valign=\"middle\""_s;
+    case QTextCharFormat::VerticalAlignment::AlignTop:
+        return u" valign=\"top\""_s;
+    case QTextCharFormat::VerticalAlignment::AlignBottom:
+        return u" valign=\"bottom\""_s;
+    default:
+        break;
+    }
+    return {};
+}
 }
 
 TextHTMLBuilder::TextHTMLBuilder()
@@ -448,6 +463,7 @@ void TextHTMLBuilder::beginTableHeaderCell(const QTextTableCellFormat &format, c
     Q_D(TextHTMLBuilder);
     d->mText.append(u"<th width=\"%1\" colspan=\"%2\" rowspan=\"%3\""_s.arg(htmlWidth(width)).arg(format.tableCellColumnSpan()).arg(format.tableCellRowSpan()));
     d->mText.append(htmlBackground(format));
+    d->mText.append(vAlignment(format));
     d->mText.append(u">"_s);
 }
 
@@ -456,6 +472,7 @@ void TextHTMLBuilder::beginTableCell(const QTextTableCellFormat &format, const Q
     Q_D(TextHTMLBuilder);
     d->mText.append(u"<td width=\"%1\" colspan=\"%2\" rowspan=\"%3\""_s.arg(htmlWidth(width)).arg(format.tableCellColumnSpan()).arg(format.tableCellRowSpan()));
     d->mText.append(htmlBackground(format));
+    d->mText.append(vAlignment(format));
     d->mText.append(u">"_s);
 }
 
