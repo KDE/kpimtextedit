@@ -47,6 +47,7 @@ QTextFrame::iterator MarkupDirector::processBlockContents(QTextFrame::iterator f
 {
     // Same code as grantlee  but interpret margin
 
+    Q_D(MarkupDirector);
     const auto blockFormat = block.blockFormat();
     const auto blockAlignment = blockFormat.alignment();
     const bool rightToLeftText = block.textDirection() == Qt::RightToLeft;
@@ -98,11 +99,13 @@ QTextFrame::iterator MarkupDirector::processBlockContents(QTextFrame::iterator f
                                   rightToLeftText);
     }
 
+    d->m_paragraphClosed = false;
     while (!it.atEnd()) {
         it = processFragment(it, it.fragment(), block.document());
     }
-    // Don't have p tags inside li tags.
-    if (!block.textList()) {
+    // Don't have p tags inside li tags, and don't close a paragraph a run of empty lines already
+    // closed, which would leave a stray closing tag behind.
+    if (!block.textList() && !d->m_paragraphClosed) {
         m_builder->endParagraph();
     }
 
@@ -116,7 +119,7 @@ QTextBlock::iterator MarkupDirector::processFragment(QTextBlock::iterator it, co
 {
     // Same code as Grantlee + a fix !
 
-    //   Q_D( MarkupDirector );
+    Q_D(MarkupDirector);
     const auto charFormat = fragment.charFormat();
     // Need to check if it's a image format.
     if (charFormat.isImageFormat()) {
@@ -208,19 +211,18 @@ QTextBlock::iterator MarkupDirector::processFragment(QTextBlock::iterator it, co
     // characters are inserted. Here I make sure to put them back.
     auto sl = textStr.split(QChar(QChar::LineSeparator));
     QStringListIterator i(sl);
-    auto paraClosed = false;
     while (i.hasNext()) {
         m_builder->appendLiteralText(i.next());
         if (i.hasNext()) {
             if (i.peekNext().isEmpty()) {
-                if (!paraClosed) {
+                if (!d->m_paragraphClosed) {
                     m_builder->endParagraph();
-                    paraClosed = true;
+                    d->m_paragraphClosed = true;
                 }
                 m_builder->addNewline();
-            } else if (paraClosed) {
+            } else if (d->m_paragraphClosed) {
                 m_builder->beginParagraph(/* blockAlignment */);
-                paraClosed = false;
+                d->m_paragraphClosed = false;
             } else {
                 // Bug fixing : add missing single break line
                 m_builder->addSingleBreakLine();

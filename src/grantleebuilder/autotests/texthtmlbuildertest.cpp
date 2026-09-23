@@ -700,10 +700,13 @@ void TextHTMLBuilderTest::testNewlines()
     md->processDocument(doc);
     auto result = hb->getResult();
 
+    // Every paragraph opened by a run of empty lines is closed by the same builder call, and the
+    // end of the block does not add a stray closing tag on top.
     auto regex = QRegularExpression(
-        QStringLiteral("^<p style=\"margin-top:12px;margin-bottom:12px;margin-left:0;margin-right:0;\">Foo</p>\\n<p>&nbsp;<p>&nbsp;</p>\\n<p "
+        QStringLiteral("^<p style=\"margin-top:12px;margin-bottom:12px;margin-left:0;margin-right:0;\">Foo</p>\\n<p>&nbsp;</p><p>&nbsp;</p><p "
                        "style=\"margin-top:12px;margin-bottom:12px;margin-left:0;margin-right:0;\">Bar</p>\\n$"));
-    QVERIFY(regex.match(result).hasMatch());
+    QVERIFY2(regex.match(result).hasMatch(), qPrintable(result));
+    QCOMPARE(result.count(u"<p"_s), result.count(u"</p>"_s));
     delete md;
     delete hb;
     delete doc;

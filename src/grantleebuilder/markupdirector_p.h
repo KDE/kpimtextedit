@@ -43,6 +43,10 @@ class MarkupDirectorPrivate
     QString m_openFontFamily;
     QString m_fontFamilyToOpen;
 
+    // Set while the paragraph of the current block was closed early, by a run of empty lines,
+    // so that the end of the block does not close it a second time.
+    bool m_paragraphClosed = false;
+
     // An ordered list containing the order elements were opened in.
     QList<int> m_openElements;
 

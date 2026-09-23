@@ -338,7 +338,7 @@ void TextHTMLBuilder::endParagraph()
 void TextHTMLBuilder::addNewline()
 {
     Q_D(TextHTMLBuilder);
-    d->mText.append(u"<p>&nbsp;"_s);
+    d->mText.append(u"<p>&nbsp;</p>"_s);
 }
 
 void TextHTMLBuilder::insertHorizontalRule(int width)
