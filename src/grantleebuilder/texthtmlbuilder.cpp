@@ -469,10 +469,10 @@ void TextHTMLBuilder::insertImage(const QString &src, qreal width, qreal height)
     Q_D(TextHTMLBuilder);
     d->mText.append(u"<img src=\"%1\" "_s.arg(src.toHtmlEscaped()));
     if (width != 0) {
-        d->mText.append(u"width=\"%2\" "_s.arg(width));
+        d->mText.append(u"width=\"%1\" "_s.arg(width));
     }
     if (height != 0) {
-        d->mText.append(u"height=\"%2\" "_s.arg(height));
+        d->mText.append(u"height=\"%1\" "_s.arg(height));
     }
     d->mText.append(u"/>"_s);
 }
