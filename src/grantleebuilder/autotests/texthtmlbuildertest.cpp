@@ -1122,8 +1122,8 @@ void TextHTMLBuilderTest::testTableCellsUnaffectedByBorder()
     const QString result = hb.getResult();
 
     QVERIFY2(result.contains(u"<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" border=\"0\">"_s), qPrintable(result));
-    QVERIFY2(result.contains(u"<td width=\"\" colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
-    QVERIFY2(result.contains(u"<td width=\"\" colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
 }
 
 void TextHTMLBuilderTest::testTableBackgroundColor()
@@ -1138,8 +1138,8 @@ void TextHTMLBuilderTest::testTableBackgroundColor()
     const QString result = hb.getResult();
 
     QVERIFY2(result.contains(u"<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" border=\"0\" bgcolor=\"#ff0000\">"_s), qPrintable(result));
-    QVERIFY2(result.contains(u"<td width=\"\" colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
-    QVERIFY2(result.contains(u"<td width=\"\" colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
 }
 
 void TextHTMLBuilderTest::testTableAlignment()
@@ -1155,8 +1155,8 @@ void TextHTMLBuilderTest::testTableAlignment()
         const QString result = hb.getResult();
 
         QVERIFY2(result.contains(u"<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" border=\"0\" align=\"center\">"_s), qPrintable(result));
-        QVERIFY2(result.contains(u"<td width=\"\" colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
-        QVERIFY2(result.contains(u"<td width=\"\" colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
+        QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
+        QVERIFY2(result.contains(u"<td colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
     }
 
     {
@@ -1170,8 +1170,8 @@ void TextHTMLBuilderTest::testTableAlignment()
         const QString result = hb.getResult();
 
         QVERIFY2(result.contains(u"<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" border=\"0\" align=\"right\">"_s), qPrintable(result));
-        QVERIFY2(result.contains(u"<td width=\"\" colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
-        QVERIFY2(result.contains(u"<td width=\"\" colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
+        QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
+        QVERIFY2(result.contains(u"<td colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
     }
     {
         QTextDocument doc;
@@ -1184,8 +1184,8 @@ void TextHTMLBuilderTest::testTableAlignment()
         const QString result = hb.getResult();
 
         QVERIFY2(result.contains(u"<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" border=\"0\" align=\"left\">"_s), qPrintable(result));
-        QVERIFY2(result.contains(u"<td width=\"\" colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
-        QVERIFY2(result.contains(u"<td width=\"\" colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
+        QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
+        QVERIFY2(result.contains(u"<td colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
     }
 }
 
@@ -1203,7 +1203,7 @@ void TextHTMLBuilderTest::testTableCellSpans()
     const QString result = hb.getResult();
 
     // Spans and column widths are read from the cell format and from the table column constraints.
-    QVERIFY2(result.contains(u"<td width=\"\" colspan=\"1\" rowspan=\"2\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"2\">"_s), qPrintable(result));
     QVERIFY2(result.contains(u"<td width=\"30%\" colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
     QVERIFY2(result.contains(u"<td width=\"30%\" colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
 }
@@ -1220,8 +1220,8 @@ void TextHTMLBuilderTest::testTableCellBackgroundColor()
     const QString result = hb.getResult();
 
     QVERIFY2(result.contains(u"<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" border=\"0\" bgcolor=\"#ff0000\">"_s), qPrintable(result));
-    QVERIFY2(result.contains(u"<td width=\"\" colspan=\"1\" rowspan=\"1\" bgcolor=\"#ff00ff\">"_s), qPrintable(result));
-    QVERIFY2(result.contains(u"<td width=\"\" colspan=\"2\" rowspan=\"1\" bgcolor=\"#1100ff\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\" bgcolor=\"#ff00ff\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td colspan=\"2\" rowspan=\"1\" bgcolor=\"#1100ff\">"_s), qPrintable(result));
 }
 
 void TextHTMLBuilderTest::testTableCellvAlignment()
@@ -1236,9 +1236,9 @@ void TextHTMLBuilderTest::testTableCellvAlignment()
     const QString result = hb.getResult();
 
     QVERIFY2(result.contains(u"<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" border=\"0\" bgcolor=\"#ff0000\">"_s), qPrintable(result));
-    QVERIFY2(result.contains(u"<td width=\"\" colspan=\"1\" rowspan=\"1\" bgcolor=\"#ff00ff\" valign=\"bottom\">"_s), qPrintable(result));
-    QVERIFY2(result.contains(u"<td width=\"\" colspan=\"2\" rowspan=\"1\" bgcolor=\"#1100ff\" valign=\"middle\">"_s), qPrintable(result));
-    QVERIFY2(result.contains(u"<td width=\"\" colspan=\"2\" rowspan=\"1\" bgcolor=\"#1100ff\" valign=\"top\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\" bgcolor=\"#ff00ff\" valign=\"bottom\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td colspan=\"2\" rowspan=\"1\" bgcolor=\"#1100ff\" valign=\"middle\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td colspan=\"2\" rowspan=\"1\" bgcolor=\"#1100ff\" valign=\"top\">"_s), qPrintable(result));
 }
 
 #include "moc_texthtmlbuildertest.cpp"
