@@ -187,7 +187,7 @@ void TextHTMLBuilder::endAnchor()
 void TextHTMLBuilder::beginFontFamily(const QString &family)
 {
     Q_D(TextHTMLBuilder);
-    d->mText.append(u"<span style=\"font-family:%1;\">"_s.arg(family));
+    d->mText.append(u"<span style=\"font-family:%1;\">"_s.arg(family.toHtmlEscaped()));
 }
 
 void TextHTMLBuilder::endFontFamily()
