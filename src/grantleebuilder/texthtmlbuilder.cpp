@@ -401,6 +401,23 @@ void TextHTMLBuilder::beginTable(const QTextTableFormat &format)
     if (background.style() != Qt::NoBrush && background.color().isValid()) {
         d->mText.append(u" bgcolor=\"%1\""_s.arg(background.color().name()));
     }
+    // Qt adds Qt::AlignAbsolute to left/right
+    switch (static_cast<int>(format.alignment() & (Qt::AlignLeft | Qt::AlignRight | Qt::AlignHCenter | Qt::AlignJustify))) {
+    case Qt::AlignLeft:
+        d->mText.append(u" align=\"left\""_s);
+        break;
+    case Qt::AlignRight:
+        d->mText.append(u" align=\"right\""_s);
+        break;
+    case Qt::AlignHCenter:
+        d->mText.append(u" align=\"center\""_s);
+        break;
+    case Qt::AlignJustify:
+        d->mText.append(u" align=\"justify\""_s);
+        break;
+    default:
+        break;
+    }
     d->mText.append(u">"_s);
 }
 

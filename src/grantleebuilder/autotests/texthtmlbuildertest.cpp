@@ -1142,4 +1142,51 @@ void TextHTMLBuilderTest::testTableBackgroundColor()
     QVERIFY2(result.contains(u"<td width=\"\" colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
 }
 
+void TextHTMLBuilderTest::testTableAlignment()
+{
+    {
+        QTextDocument doc;
+        doc.setHtml(
+            u"<table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr><td>LEFT</td><td colspan=\"2\">RIGHT</td></tr></table>"_s);
+
+        KPIMTextEdit::TextHTMLBuilder hb;
+        KPIMTextEdit::MarkupDirector md(&hb);
+        md.processDocument(&doc);
+        const QString result = hb.getResult();
+
+        QVERIFY2(result.contains(u"<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" border=\"0\" align=\"center\">"_s), qPrintable(result));
+        QVERIFY2(result.contains(u"<td width=\"\" colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
+        QVERIFY2(result.contains(u"<td width=\"\" colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
+    }
+
+    {
+        QTextDocument doc;
+        doc.setHtml(
+            u"<table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" align=\"right\"><tr><td>LEFT</td><td colspan=\"2\">RIGHT</td></tr></table>"_s);
+
+        KPIMTextEdit::TextHTMLBuilder hb;
+        KPIMTextEdit::MarkupDirector md(&hb);
+        md.processDocument(&doc);
+        const QString result = hb.getResult();
+
+        QVERIFY2(result.contains(u"<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" border=\"0\" align=\"right\">"_s), qPrintable(result));
+        QVERIFY2(result.contains(u"<td width=\"\" colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
+        QVERIFY2(result.contains(u"<td width=\"\" colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
+    }
+    {
+        QTextDocument doc;
+        doc.setHtml(
+            u"<table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" align=\"left\"><tr><td>LEFT</td><td colspan=\"2\">RIGHT</td></tr></table>"_s);
+
+        KPIMTextEdit::TextHTMLBuilder hb;
+        KPIMTextEdit::MarkupDirector md(&hb);
+        md.processDocument(&doc);
+        const QString result = hb.getResult();
+
+        QVERIFY2(result.contains(u"<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" border=\"0\" align=\"left\">"_s), qPrintable(result));
+        QVERIFY2(result.contains(u"<td width=\"\" colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
+        QVERIFY2(result.contains(u"<td width=\"\" colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
+    }
+}
+
 #include "moc_texthtmlbuildertest.cpp"
