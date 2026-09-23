@@ -141,7 +141,7 @@ QTextBlock::iterator MarkupDirector::processFragment(QTextBlock::iterator it, co
     }
 
     const auto textStr = fragment.text();
-    if (textStr.at(0).category() == QChar::Separator_Line) {
+    if (!textStr.isEmpty() && textStr.at(0).category() == QChar::Separator_Line) {
         m_builder->addSingleBreakLine();
         QString t;
         for (int i = 1; i < textStr.length(); ++i) {
