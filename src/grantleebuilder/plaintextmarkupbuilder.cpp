@@ -431,11 +431,11 @@ void PlainTextMarkupBuilder::beginTable([[maybe_unused]] const QTextTableFormat 
 {
 }
 
-void PlainTextMarkupBuilder::beginTableCell([[maybe_unused]] const QString &width, [[maybe_unused]] int colSpan, [[maybe_unused]] int rowSpan)
+void PlainTextMarkupBuilder::beginTableCell([[maybe_unused]] const QTextTableCellFormat &format, [[maybe_unused]] const QTextLength &width)
 {
 }
 
-void PlainTextMarkupBuilder::beginTableHeaderCell([[maybe_unused]] const QString &width, [[maybe_unused]] int colSpan, [[maybe_unused]] int rowSpan)
+void PlainTextMarkupBuilder::beginTableHeaderCell([[maybe_unused]] const QTextTableCellFormat &format, [[maybe_unused]] const QTextLength &width)
 {
 }
 

@@ -25,6 +25,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTextFrame>
 #include <QTextList>
 #include <QTextTable>
+#include <QTextTableCellFormat>
 
 #include <QDebug>
 using namespace KPIMTextEdit;
@@ -326,19 +327,15 @@ QTextFrame::iterator MarkupDirector::processTable(QTextFrame::iterator it, QText
             // columnWidthConstraints() is empty when no constraint was ever set on the table.
             const auto cellWidth = (column < colLengths.count()) ? colLengths.at(column) : QTextLength();
 
-            QString sCellWidth;
-
-            if (cellWidth.type() == QTextLength::PercentageLength) {
-                sCellWidth = u"%1%"_s.arg(cellWidth.rawValue());
-            } else if (cellWidth.type() == QTextLength::FixedLength) {
-                sCellWidth = u"%1"_s.arg(cellWidth.rawValue());
-            }
+            // The cell format carries the spans, the paddings, the borders and the background:
+            // hand it over untouched so that the builders decide what they can express.
+            const QTextTableCellFormat cellFormat = tableCell.format().toTableCellFormat();
 
             // TODO: Use THEAD instead
             if (row < headerRowCount) {
-                m_builder->beginTableHeaderCell(sCellWidth, columnSpan, rowSpan);
+                m_builder->beginTableHeaderCell(cellFormat, cellWidth);
             } else {
-                m_builder->beginTableCell(sCellWidth, columnSpan, rowSpan);
+                m_builder->beginTableCell(cellFormat, cellWidth);
             }
 
             processTableCell(tableCell, table);

@@ -164,14 +164,14 @@ public:
     void beginTableRow() override;
 
     /*!
-     * Begins a table header cell with the given \a width, \a colSpan, and \a rowSpan.
+     * Begins a table header cell with the given \a format and column \a width.
      */
-    void beginTableHeaderCell([[maybe_unused]] const QString &width, [[maybe_unused]] int colSpan, [[maybe_unused]] int rowSpan) override;
+    void beginTableHeaderCell([[maybe_unused]] const QTextTableCellFormat &format, [[maybe_unused]] const QTextLength &width) override;
 
     /*!
-     * Begins a table cell with the given \a width, \a colSpan, and \a rowSpan.
+     * Begins a table cell with the given \a format and column \a width.
      */
-    void beginTableCell([[maybe_unused]] const QString &width, [[maybe_unused]] int colSpan, [[maybe_unused]] int rowSpan) override;
+    void beginTableCell([[maybe_unused]] const QTextTableCellFormat &format, [[maybe_unused]] const QTextLength &width) override;
 
     /*!
      * Appends literal text to the output.

@@ -34,6 +34,25 @@ public:
 }
 
 using namespace KPIMTextEdit;
+
+namespace
+{
+// Value of an html width attribute: a percentage or a bare number of pixels.
+// A variable length has no html equivalent, it maps to an empty attribute.
+QString htmlWidth(const QTextLength &length)
+{
+    switch (length.type()) {
+    case QTextLength::PercentageLength:
+        return u"%1%"_s.arg(length.rawValue());
+    case QTextLength::FixedLength:
+        return u"%1"_s.arg(length.rawValue());
+    case QTextLength::VariableLength:
+        break;
+    }
+    return {};
+}
+}
+
 TextHTMLBuilder::TextHTMLBuilder()
     : AbstractMarkupBuilder()
     , d_ptr(new TextHTMLBuilderPrivate(this))
@@ -378,16 +397,7 @@ void TextHTMLBuilder::endSubscript()
 void TextHTMLBuilder::beginTable(const QTextTableFormat &format)
 {
     Q_D(TextHTMLBuilder);
-    const auto tableWidth = format.width();
-    QString sWidth;
-
-    if (tableWidth.type() == QTextLength::PercentageLength) {
-        sWidth = u"%1%"_s;
-        sWidth = sWidth.arg(tableWidth.rawValue());
-    } else if (tableWidth.type() == QTextLength::FixedLength) {
-        sWidth = u"%1"_s;
-        sWidth = sWidth.arg(tableWidth.rawValue());
-    }
+    const QString sWidth = htmlWidth(format.width());
     // A table whose border style is BorderStyle_None has no visible border, whatever the border width says.
     // The html border attribute is an integer, so round a fractional width up: a hairline border is still a border.
     const int border = (format.borderStyle() == QTextFrameFormat::BorderStyle_None) ? 0 : qCeil(format.border());
@@ -427,16 +437,18 @@ void TextHTMLBuilder::beginTableRow()
     d->mText.append(u"<tr>"_s);
 }
 
-void TextHTMLBuilder::beginTableHeaderCell(const QString &width, int colspan, int rowspan)
+void TextHTMLBuilder::beginTableHeaderCell(const QTextTableCellFormat &format, const QTextLength &width)
 {
     Q_D(TextHTMLBuilder);
-    d->mText.append(u"<th width=\"%1\" colspan=\"%2\" rowspan=\"%3\">"_s.arg(width).arg(colspan).arg(rowspan));
+    d->mText.append(
+        u"<th width=\"%1\" colspan=\"%2\" rowspan=\"%3\">"_s.arg(htmlWidth(width)).arg(format.tableCellColumnSpan()).arg(format.tableCellRowSpan()));
 }
 
-void TextHTMLBuilder::beginTableCell(const QString &width, int colspan, int rowspan)
+void TextHTMLBuilder::beginTableCell(const QTextTableCellFormat &format, const QTextLength &width)
 {
     Q_D(TextHTMLBuilder);
-    d->mText.append(u"<td width=\"%1\" colspan=\"%2\" rowspan=\"%3\">"_s.arg(width).arg(colspan).arg(rowspan));
+    d->mText.append(
+        u"<td width=\"%1\" colspan=\"%2\" rowspan=\"%3\">"_s.arg(htmlWidth(width)).arg(format.tableCellColumnSpan()).arg(format.tableCellRowSpan()));
 }
 
 void TextHTMLBuilder::endTable()

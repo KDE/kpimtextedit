@@ -270,14 +270,14 @@ public:
      */
     void beginTableRow() override;
     /*!
-     * Begins a table header cell with the given \a width, \a colspan, and \a rowspan.
+     * Begins a table header cell with the given \a format and column \a width.
      */
-    void beginTableHeaderCell(const QString &width, int colspan, int rowspan) override;
+    void beginTableHeaderCell(const QTextTableCellFormat &format, const QTextLength &width) override;
 
     /*!
-     * Begins a table cell with the given \a width, \a colspan, and \a rowspan.
+     * Begins a table cell with the given \a format and column \a width.
      */
-    void beginTableCell(const QString &width, int colspan, int rowspan) override;
+    void beginTableCell(const QTextTableCellFormat &format, const QTextLength &width) override;
 
     /*!
      * Ends the table element.

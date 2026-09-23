@@ -11,6 +11,7 @@
 
 #include <QString>
 #include <QTextListFormat>
+#include <QTextTableCellFormat>
 #include <QTextTableFormat>
 
 class QBrush;
@@ -188,19 +189,23 @@ public:
 
     /*!
     Begin a new table header cell.
-    \ width The width of the cell.
-    \ colSpan The column span of the cell.
-    \ rowSpan The row span of the cell.
+
+    \a format The format of the cell, holding the column and row spans, the
+    padding, the borders and the background of the cell.
+    \a width The width of the column the cell belongs to. The width is a
+    constraint of the table, not of the cell, hence it is passed separately.
   */
-    virtual void beginTableHeaderCell(const QString &width, int colSpan, int rowSpan) = 0;
+    virtual void beginTableHeaderCell(const QTextTableCellFormat &format, const QTextLength &width) = 0;
 
     /*!
     Begin a new table cell.
-    \ width The width of the cell.
-    \ colSpan The column span of the cell.
-    \ rowSpan The row span of the cell.
+
+    \a format The format of the cell, holding the column and row spans, the
+    padding, the borders and the background of the cell.
+    \a width The width of the column the cell belongs to. The width is a
+    constraint of the table, not of the cell, hence it is passed separately.
   */
-    virtual void beginTableCell(const QString &width, int colSpan, int rowSpan) = 0;
+    virtual void beginTableCell(const QTextTableCellFormat &format, const QTextLength &width) = 0;
 
     /*! End a table element */
     virtual void endTable() = 0;

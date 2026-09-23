@@ -1189,4 +1189,23 @@ void TextHTMLBuilderTest::testTableAlignment()
     }
 }
 
+void TextHTMLBuilderTest::testTableCellSpans()
+{
+    QTextDocument doc;
+    doc.setHtml(
+        u"<table border=\"1\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\">"
+        "<tr><td rowspan=\"2\">A</td><td width=\"30%\">B</td><td>C</td></tr>"
+        "<tr><td colspan=\"2\">D</td></tr></table>"_s);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    // Spans and column widths are read from the cell format and from the table column constraints.
+    QVERIFY2(result.contains(u"<td width=\"\" colspan=\"1\" rowspan=\"2\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td width=\"30%\" colspan=\"1\" rowspan=\"1\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td width=\"30%\" colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
+}
+
 #include "moc_texthtmlbuildertest.cpp"
