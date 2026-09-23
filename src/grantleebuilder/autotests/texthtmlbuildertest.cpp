@@ -1208,4 +1208,20 @@ void TextHTMLBuilderTest::testTableCellSpans()
     QVERIFY2(result.contains(u"<td width=\"30%\" colspan=\"2\" rowspan=\"1\">"_s), qPrintable(result));
 }
 
+void TextHTMLBuilderTest::testTableCellBackgroundColor()
+{
+    QTextDocument doc;
+    doc.setHtml(
+        u"<table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" bgcolor=\"#FF0000\"><tr><td bgcolor=\"#ff00ff\">LEFT</td><td colspan=\"2\" bgcolor=\"#1100FF\">RIGHT</td></tr></table>"_s);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QVERIFY2(result.contains(u"<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" border=\"0\" bgcolor=\"#ff0000\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td width=\"\" colspan=\"1\" rowspan=\"1\" bgcolor=\"#ff00ff\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td width=\"\" colspan=\"2\" rowspan=\"1\" bgcolor=\"#1100ff\">"_s), qPrintable(result));
+}
+
 #include "moc_texthtmlbuildertest.cpp"

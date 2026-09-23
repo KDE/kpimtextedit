@@ -51,6 +51,17 @@ QString htmlWidth(const QTextLength &length)
     }
     return {};
 }
+
+QString htmlBackground(const QTextFormat &format)
+{
+    // A default-constructed QBrush has a valid (black) color, so the brush style is what tells
+    // whether the format really has a background to serialize.
+    const QBrush background = format.background();
+    if (background.style() == Qt::NoBrush || !background.color().isValid()) {
+        return {};
+    }
+    return u" bgcolor=\"%1\""_s.arg(background.color().name());
+}
 }
 
 TextHTMLBuilder::TextHTMLBuilder()
@@ -405,12 +416,7 @@ void TextHTMLBuilder::beginTable(const QTextTableFormat &format)
                         .arg(format.cellSpacing())
                         .arg(sWidth)
                         .arg(border));
-    // A default-constructed QBrush has a valid (black) color, so the brush style is what tells
-    // whether the table really has a background to serialize.
-    const QBrush background = format.background();
-    if (background.style() != Qt::NoBrush && background.color().isValid()) {
-        d->mText.append(u" bgcolor=\"%1\""_s.arg(background.color().name()));
-    }
+    d->mText.append(htmlBackground(format));
     // Qt adds Qt::AlignAbsolute to left/right
     switch (static_cast<int>(format.alignment() & (Qt::AlignLeft | Qt::AlignRight | Qt::AlignHCenter | Qt::AlignJustify))) {
     case Qt::AlignLeft:
@@ -440,15 +446,17 @@ void TextHTMLBuilder::beginTableRow()
 void TextHTMLBuilder::beginTableHeaderCell(const QTextTableCellFormat &format, const QTextLength &width)
 {
     Q_D(TextHTMLBuilder);
-    d->mText.append(
-        u"<th width=\"%1\" colspan=\"%2\" rowspan=\"%3\">"_s.arg(htmlWidth(width)).arg(format.tableCellColumnSpan()).arg(format.tableCellRowSpan()));
+    d->mText.append(u"<th width=\"%1\" colspan=\"%2\" rowspan=\"%3\""_s.arg(htmlWidth(width)).arg(format.tableCellColumnSpan()).arg(format.tableCellRowSpan()));
+    d->mText.append(htmlBackground(format));
+    d->mText.append(u">"_s);
 }
 
 void TextHTMLBuilder::beginTableCell(const QTextTableCellFormat &format, const QTextLength &width)
 {
     Q_D(TextHTMLBuilder);
-    d->mText.append(
-        u"<td width=\"%1\" colspan=\"%2\" rowspan=\"%3\">"_s.arg(htmlWidth(width)).arg(format.tableCellColumnSpan()).arg(format.tableCellRowSpan()));
+    d->mText.append(u"<td width=\"%1\" colspan=\"%2\" rowspan=\"%3\""_s.arg(htmlWidth(width)).arg(format.tableCellColumnSpan()).arg(format.tableCellRowSpan()));
+    d->mText.append(htmlBackground(format));
+    d->mText.append(u">"_s);
 }
 
 void TextHTMLBuilder::endTable()
