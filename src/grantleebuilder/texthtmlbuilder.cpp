@@ -6,7 +6,6 @@
 */
 
 #include "texthtmlbuilder.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QBrush>
 #include <QDebug>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTextDocument>
 #include <QtMath>
 
+using namespace Qt::Literals::StringLiterals;
 namespace KPIMTextEdit
 {
 class TextHTMLBuilderPrivate
@@ -87,6 +87,28 @@ QString vAlignment(const QTextTableCellFormat &format)
     }
     return {};
 }
+
+QString cellPadding(const QTextTableCellFormat &format)
+{
+    QStringList paddingStyle;
+    if (format.hasProperty(QTextFormat::TableCellBottomPadding)) {
+        paddingStyle.append(u"padding-bottom: %1"_s.arg(cssPixels(format.bottomPadding())));
+    }
+    if (format.hasProperty(QTextFormat::TableCellTopPadding)) {
+        paddingStyle.append(u"padding-top: %1"_s.arg(cssPixels(format.topPadding())));
+    }
+    if (format.hasProperty(QTextFormat::TableCellLeftPadding)) {
+        paddingStyle.append(u"padding-left: %1"_s.arg(cssPixels(format.leftPadding())));
+    }
+    if (format.hasProperty(QTextFormat::TableCellRightPadding)) {
+        paddingStyle.append(u"padding-right: %1"_s.arg(cssPixels(format.rightPadding())));
+    }
+    if (paddingStyle.isEmpty()) {
+        return {};
+    }
+    return paddingStyle.join(u"; "_s).append(u';');
+}
+
 }
 
 TextHTMLBuilder::TextHTMLBuilder()
@@ -485,6 +507,10 @@ void TextHTMLBuilder::beginTableHeaderCell(const QTextTableCellFormat &format, c
     d->mText.append(u" colspan=\"%1\" rowspan=\"%2\""_s.arg(format.tableCellColumnSpan()).arg(format.tableCellRowSpan()));
     d->mText.append(htmlBackground(format));
     d->mText.append(vAlignment(format));
+    if (const QString sCellPadding = cellPadding(format); !sCellPadding.isEmpty()) {
+        d->mText.append(u" style=\"%1\""_s.arg(sCellPadding));
+    }
+
     d->mText.append(u">"_s);
 }
 
@@ -499,6 +525,9 @@ void TextHTMLBuilder::beginTableCell(const QTextTableCellFormat &format, const Q
     d->mText.append(u" colspan=\"%1\" rowspan=\"%2\""_s.arg(format.tableCellColumnSpan()).arg(format.tableCellRowSpan()));
     d->mText.append(htmlBackground(format));
     d->mText.append(vAlignment(format));
+    if (const QString sCellPadding = cellPadding(format); !sCellPadding.isEmpty()) {
+        d->mText.append(u" style=\"%1\""_s.arg(sCellPadding));
+    }
     d->mText.append(u">"_s);
 }
 

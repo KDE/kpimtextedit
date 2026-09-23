@@ -1334,4 +1334,69 @@ void TextHTMLBuilderTest::testBlockQuoteMarginsCarryCssUnit()
     QVERIFY2(result.contains(u"margin-right:40px;"_s), qPrintable(result));
 }
 
+void TextHTMLBuilderTest::testTableCellPadding()
+{
+    QTextDocument doc;
+    doc.setHtml(
+        u"<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td style=\"padding:5px\">ALL</td><td "
+        "style=\"padding-top:3px;padding-left:7px\">SOME</td><td>NONE</td></tr></table>"_s);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\" style=\"padding-bottom: 5px; padding-top: 5px; padding-left: 5px; padding-right: 5px;\">"_s),
+             qPrintable(result));
+    // Only the sides the cell actually carries are serialized.
+    QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\" style=\"padding-top: 3px; padding-left: 7px;\">"_s), qPrintable(result));
+    // A cell without any padding gets no style attribute at all.
+    QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\"><p"_s), qPrintable(result));
+}
+
+void TextHTMLBuilderTest::testTableCellPaddingExplicitZero()
+{
+    QTextDocument doc;
+    // A cell that explicitly sets a zero padding must keep it: dropping it would let the table
+    // cellpadding attribute apply, so the cell would be rendered with 4px instead of none.
+    doc.setHtml(u"<table border=\"0\" cellspacing=\"0\" cellpadding=\"4\"><tr><td style=\"padding:0\">ZERO</td><td>UNSET</td></tr></table>"_s);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\" style=\"padding-bottom: 0; padding-top: 0; padding-left: 0; padding-right: 0;\">"_s),
+             qPrintable(result));
+    // Conversely the cell that never set a padding carries no style, so it keeps inheriting cellpadding.
+    QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\"><p"_s), qPrintable(result));
+}
+
+void TextHTMLBuilderTest::testTableHeaderCellPadding()
+{
+    QTextDocument doc;
+    QTextCursor cursor(&doc);
+    QTextTableFormat tableFormat;
+    // Header cells are only reachable through headerRowCount, the html parser maps th to td.
+    tableFormat.setHeaderRowCount(1);
+    tableFormat.setCellPadding(0);
+    tableFormat.setBorder(0);
+    QTextTable *table = cursor.insertTable(2, 1, tableFormat);
+
+    QTextTableCellFormat cellFormat = table->cellAt(0, 0).format().toTableCellFormat();
+    cellFormat.setTopPadding(6);
+    cellFormat.setRightPadding(9);
+    table->cellAt(0, 0).setFormat(cellFormat);
+    table->cellAt(0, 0).firstCursorPosition().insertText(u"HEAD"_s);
+    table->cellAt(1, 0).firstCursorPosition().insertText(u"BODY"_s);
+
+    KPIMTextEdit::TextHTMLBuilder hb;
+    KPIMTextEdit::MarkupDirector md(&hb);
+    md.processDocument(&doc);
+    const QString result = hb.getResult();
+
+    QVERIFY2(result.contains(u"<th colspan=\"1\" rowspan=\"1\" style=\"padding-top: 6px; padding-right: 9px;\">"_s), qPrintable(result));
+    QVERIFY2(result.contains(u"<td colspan=\"1\" rowspan=\"1\"><p"_s), qPrintable(result));
+}
+
 #include "moc_texthtmlbuildertest.cpp"
