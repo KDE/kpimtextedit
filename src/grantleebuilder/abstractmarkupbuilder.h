@@ -135,7 +135,7 @@ public:
     Insert a horizontal rule into the markup.
     \a width The width of the rule. Default is full width.
   */
-    virtual void insertHorizontalRule(int width = -1) = 0;
+    virtual void insertHorizontalRule(const QTextLength &width = {}) = 0;
 
     /*!
     Insert a new image element into the markup.

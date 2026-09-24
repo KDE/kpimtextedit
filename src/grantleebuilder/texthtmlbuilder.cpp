@@ -544,11 +544,12 @@ void TextHTMLBuilder::addNewline()
     d->mText.append(u"<p>&nbsp;</p>"_s);
 }
 
-void TextHTMLBuilder::insertHorizontalRule(int width)
+void TextHTMLBuilder::insertHorizontalRule(const QTextLength &width)
 {
     Q_D(TextHTMLBuilder);
-    if (width != -1) {
-        d->mText.append(u"<hr width=\"%1\" />\n"_s.arg(width));
+    const QString str = htmlLength(width);
+    if (!str.isEmpty()) {
+        d->mText.append(u"<hr width=\"%1\" />\n"_s.arg(str));
     } else {
         d->mText.append(u"<hr />\n"_s);
     }

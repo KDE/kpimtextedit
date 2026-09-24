@@ -227,7 +227,7 @@ void PlainTextMarkupBuilder::addNewline()
     d->mText.append(u'\n');
 }
 
-void PlainTextMarkupBuilder::insertHorizontalRule([[maybe_unused]] int width)
+void PlainTextMarkupBuilder::insertHorizontalRule([[maybe_unused]] const QTextLength &width)
 {
     Q_D(PlainTextMarkupBuilder);
 

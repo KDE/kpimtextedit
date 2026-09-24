@@ -61,7 +61,7 @@ QTextFrame::iterator MarkupDirector::processBlockContents(QTextFrame::iterator f
     }
 #endif
     if (blockFormat.hasProperty(QTextFormat::BlockTrailingHorizontalRulerWidth)) {
-        m_builder->insertHorizontalRule();
+        m_builder->insertHorizontalRule(blockFormat.property(QTextFormat::BlockTrailingHorizontalRulerWidth).value<QTextLength>());
         if (!frameIt.atEnd()) {
             return ++frameIt;
         }

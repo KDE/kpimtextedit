@@ -100,9 +100,9 @@ public:
     void addNewline() override;
 
     /*!
-     * Inserts a horizontal rule with the given \a width (-1 for full width).
+     * Inserts a horizontal rule with the given \a width.
      */
-    void insertHorizontalRule(int width = -1) override;
+    void insertHorizontalRule(const QTextLength &width = {}) override;
 
     /*!
      * Inserts an image with the given \a src, \a width, and \a height.

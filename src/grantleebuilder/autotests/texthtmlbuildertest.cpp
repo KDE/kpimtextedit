@@ -670,24 +670,65 @@ void TextHTMLBuilderTest::testEachFormatTagSingly()
 
 void TextHTMLBuilderTest::testHorizontalRule()
 {
-    auto doc = new QTextDocument();
-    doc->setHtml(
-        QStringLiteral("<p style=\"margin-top:0;margin-bottom:0;\">Foo</p><hr "
-                       "/><p style=\"margin-top:0;margin-bottom:0;\">Bar</p>"));
+    {
+        auto doc = new QTextDocument();
+        doc->setHtml(
+            QStringLiteral("<p style=\"margin-top:0;margin-bottom:0;\">Foo</p><hr "
+                           "/><p style=\"margin-top:0;margin-bottom:0;\">Bar</p>"));
 
-    auto hb = new KPIMTextEdit::TextHTMLBuilder();
-    auto md = new KPIMTextEdit::MarkupDirector(hb);
-    md->processDocument(doc);
-    auto result = hb->getResult();
+        auto hb = new KPIMTextEdit::TextHTMLBuilder();
+        auto md = new KPIMTextEdit::MarkupDirector(hb);
+        md->processDocument(doc);
+        auto result = hb->getResult();
 
-    auto regex =
-        QRegularExpression(QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<hr />\\n<p "
-                                          "style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar</p>\\n$"));
+        auto regex =
+            QRegularExpression(QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<hr />\\n<p "
+                                              "style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar</p>\\n$"));
+        QVERIFY(regex.match(result).hasMatch());
+        delete md;
+        delete hb;
+        delete doc;
+    }
 
-    QVERIFY(regex.match(result).hasMatch());
-    delete md;
-    delete hb;
-    delete doc;
+    {
+        auto doc = new QTextDocument();
+        doc->setHtml(
+            QStringLiteral("<p style=\"margin-top:0;margin-bottom:0;\">Foo</p><hr width=\"30%\""
+                           "/><p style=\"margin-top:0;margin-bottom:0;\">Bar</p>"));
+
+        auto hb = new KPIMTextEdit::TextHTMLBuilder();
+        auto md = new KPIMTextEdit::MarkupDirector(hb);
+        md->processDocument(doc);
+        auto result = hb->getResult();
+
+        auto regex =
+            QRegularExpression(QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<hr width=\"30%\" />\\n<p "
+                                              "style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar</p>\\n$"));
+        QVERIFY(regex.match(result).hasMatch());
+        delete md;
+        delete hb;
+        delete doc;
+    }
+
+    {
+        auto doc = new QTextDocument();
+        doc->setHtml(
+            QStringLiteral("<p style=\"margin-top:0;margin-bottom:0;\">Foo</p><hr width=\"30\""
+                           "/><p style=\"margin-top:0;margin-bottom:0;\">Bar</p>"));
+
+        auto hb = new KPIMTextEdit::TextHTMLBuilder();
+        auto md = new KPIMTextEdit::MarkupDirector(hb);
+        md->processDocument(doc);
+        auto result = hb->getResult();
+
+        auto regex =
+            QRegularExpression(QStringLiteral("^<p style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Foo</p>\\n<hr width=\"30\" />\\n<p "
+                                              "style=\"margin-top:0;margin-bottom:0;margin-left:0;margin-right:0;\">Bar</p>\\n$"));
+        QVERIFY(regex.match(result).hasMatch());
+        delete md;
+        delete hb;
+        delete doc;
+    }
 }
 
 void TextHTMLBuilderTest::testNewlines()
