@@ -31,7 +31,7 @@ public:
      * FIXME: Default colors don't obey color scheme
      */
     explicit RichTextComposerEmailQuoteHighlighter(RichTextComposer *textEdit,
-                                                   [[maybe_unused]] const QColor &normalColor = Qt::black,
+                                                   const QColor &normalColor = Qt::black,
                                                    const QColor &quoteDepth1 = QColor(0x00, 0x80, 0x00),
                                                    const QColor &quoteDepth2 = QColor(0x00, 0x80, 0x00),
                                                    const QColor &quoteDepth3 = QColor(0x00, 0x80, 0x00),
@@ -51,7 +51,7 @@ public:
      * \a quoteDepth3 color for text quoted 3 level deep
      * \a misspelledColor color in which misspelled words will be underlined
      */
-    void setQuoteColor([[maybe_unused]] const QColor &normalColor,
+    void setQuoteColor(const QColor &normalColor,
                        const QColor &quoteDepth1,
                        const QColor &quoteDepth2,
                        const QColor &quoteDepth3,
@@ -78,7 +78,7 @@ protected:
      * \a start the beginning of text
      * \a count the amount of characters to set
      */
-    void unsetMisspelled([[maybe_unused]] int start, [[maybe_unused]] int count) override;
+    void unsetMisspelled(int start, int count) override;
 
     /*!
      * Reimplemented to set the color of the misspelled word to a color
