@@ -122,7 +122,7 @@ public:
     /*!
      * Begins a list item.
      */
-    void beginListItem() override;
+    void beginListItem(QTextBlockFormat::MarkerType type) override;
 
     /*!
      * Ends the list item.

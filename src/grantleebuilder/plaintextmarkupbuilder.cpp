@@ -271,9 +271,21 @@ void PlainTextMarkupBuilder::endList()
     }
 }
 
-void PlainTextMarkupBuilder::beginListItem()
+void PlainTextMarkupBuilder::beginListItem(QTextBlockFormat::MarkerType type)
 {
     Q_D(PlainTextMarkupBuilder);
+    QString markerStr;
+    switch (type) {
+    case QTextBlockFormat::MarkerType::NoMarker:
+        break;
+    case QTextBlockFormat::MarkerType::Unchecked:
+        markerStr = u"[ ] "_s;
+        break;
+    case QTextBlockFormat::MarkerType::Checked:
+        markerStr = u"[X] "_s;
+        break;
+    }
+
     for (int i = 0, total = d->currentListItemNumbers.size(); i < total; ++i) {
         d->mText.append(u"    "_s);
     }
@@ -311,6 +323,7 @@ void PlainTextMarkupBuilder::beginListItem()
     default:
         break;
     }
+    d->mText.append(markerStr);
 }
 
 void PlainTextMarkupBuilder::endListItem()

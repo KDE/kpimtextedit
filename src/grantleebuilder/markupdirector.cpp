@@ -379,7 +379,7 @@ QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::processList(QTextFrame::
     auto block = _block;
     auto curList = list;
     while (block.isValid() && block.textList() && curList == list) {
-        m_builder->beginListItem();
+        m_builder->beginListItem(block.blockFormat().marker());
         processBlockContents(it, block);
         m_builder->endListItem();
 

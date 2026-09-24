@@ -161,7 +161,7 @@ public:
     virtual void endList() = 0;
 
     /*! Begin a new list item in the markup */
-    virtual void beginListItem() = 0;
+    virtual void beginListItem(QTextBlockFormat::MarkerType type) = 0;
 
     /*! End the list item */
     virtual void endListItem() = 0;

@@ -630,10 +630,21 @@ void TextHTMLBuilder::endList()
     }
     d->currentListItemStyles.removeLast();
 }
-void TextHTMLBuilder::beginListItem()
+void TextHTMLBuilder::beginListItem(QTextBlockFormat::MarkerType type)
 {
     Q_D(TextHTMLBuilder);
-    d->mText.append(u"<li>"_s);
+    QString markerStr;
+    switch (type) {
+    case QTextBlockFormat::MarkerType::NoMarker:
+        break;
+    case QTextBlockFormat::MarkerType::Unchecked:
+        markerStr = u" class=\"unchecked\""_s;
+        break;
+    case QTextBlockFormat::MarkerType::Checked:
+        markerStr = u" class=\"checked\""_s;
+        break;
+    }
+    d->mText.append(u"<li%1>"_s.arg(markerStr));
 }
 
 void TextHTMLBuilder::endListItem()
