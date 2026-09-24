@@ -30,6 +30,14 @@ using namespace Qt::Literals::StringLiterals;
 #include <QDebug>
 using namespace KPIMTextEdit;
 
+namespace
+{
+bool isUnderlined(const QTextCharFormat &format)
+{
+    return format.underlineStyle() != QTextCharFormat::NoUnderline || format.fontUnderline();
+}
+}
+
 MarkupDirector::MarkupDirector(KPIMTextEdit::AbstractMarkupBuilder *builder)
     : d_ptr(new MarkupDirectorPrivate(this))
     , m_builder(builder)
@@ -680,7 +688,8 @@ QSet<int> MarkupDirector::getElementsToClose(const QTextBlock::iterator &it) con
     const auto fragmentFormat = fragment.charFormat();
     const auto fontWeight = fragmentFormat.fontWeight();
     const auto fontItalic = fragmentFormat.fontItalic();
-    const auto fontUnderline = fragmentFormat.fontUnderline();
+    const auto fontUnderline = isUnderlined(fragmentFormat);
+
     const auto fontStrikeout = fragmentFormat.fontStrikeOut();
 
     const auto fontForeground = fragmentFormat.foreground();
@@ -755,7 +764,7 @@ QList<int> MarkupDirector::getElementsToOpen(const QTextBlock::iterator &it)
 
     const auto fontWeight = fragmentFormat.fontWeight();
     const auto fontItalic = fragmentFormat.fontItalic();
-    const auto fontUnderline = fragmentFormat.fontUnderline();
+    const auto fontUnderline = isUnderlined(fragmentFormat);
     const auto fontStrikeout = fragmentFormat.fontStrikeOut();
 
     const auto fontForeground = fragmentFormat.foreground();
