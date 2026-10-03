@@ -100,7 +100,7 @@ include(ECMFeatureSummary)
 include(ECMCheckOutboundLicense)
 include(ECMGenerateQDoc)
 
-set(KTEXTADDONS_MIN_VERSION "2.1.2")
+set(KTEXTADDONS_MIN_VERSION "2.2.0")
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Widgets)
 
