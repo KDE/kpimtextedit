@@ -95,7 +95,7 @@ msgstr "По ширине"
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
-msgstr "Письмо слева направо"
+msgstr "Текст слева направо"
 
 #: composer-ng/richtextcomposeractions.cpp:147
 #, kde-format
@@ -107,7 +107,7 @@ msgstr "Слева направо"
 #, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
-msgstr "Письмо справа налево"
+msgstr "Текст справа налево"
 
 #: composer-ng/richtextcomposeractions.cpp:156
 #, kde-format
@@ -313,13 +313,13 @@ msgstr "Сбросить параметры шрифта"
 #: composer-ng/richtextcomposeractions.cpp:388
 #, kde-format
 msgid "Reset Font"
-msgstr "Сбросить форматирование"
+msgstr "Сбросить шрифт"
 
 #: composer-ng/richtextcomposeractions.cpp:396
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
-msgstr "Смена форматирования участка текста"
+msgstr "Копировать форматирование"
 
 #: composer-ng/richtextcomposeractions.cpp:404
 #, kde-format
@@ -412,7 +412,7 @@ msgstr ""
 #: composer-ng/richtextexternalcomposer.cpp:146
 #, kde-format
 msgid "Error was found when we started external editor."
-msgstr "Во внешнем редакторе произошла ошибка."
+msgstr "При запуске внешнего редактора произошла ошибка."
 
 #: composer-ng/richtextexternalcomposer.cpp:146
 #, kde-format
@@ -436,7 +436,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
-msgstr "Запущенный внешний редактор"
+msgstr "Внешний редактор запущен"
 
 #: composer-ng/richtextexternalcomposer.cpp:168
 #, kde-format
@@ -478,7 +478,7 @@ msgstr "Вставить"
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
-msgstr "Вставить изображение"
+msgstr "Вставка изображения"
 
 #: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:409
 #, kde-format
@@ -709,7 +709,7 @@ msgstr "пикселов между ячейками"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Padding:"
-msgstr "Дополнение:"
+msgstr "Отступ:"
 
 #: tableformatdialog.cpp:59
 #, kde-format
