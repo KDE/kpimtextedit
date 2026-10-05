@@ -5,7 +5,6 @@
 */
 
 #include "richtextcomposeractions.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "richtextcomposercontroler.h"
 #include "tableactionmenu.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTextList>
 #include <TextEmoticonsWidgets/EmoticonTextEditAction>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KPIMTextEdit;
 
 class Q_DECL_HIDDEN RichTextComposerActions::RichTextComposerActionsPrivate

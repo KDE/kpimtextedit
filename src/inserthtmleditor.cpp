@@ -6,7 +6,6 @@
 */
 
 #include "inserthtmleditor.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "kpimtextedit_debug.h"
 #include <TextCustomEditor/TextEditorCompleter>
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QCompleter>
 #include <QStringList>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KPIMTextEdit;
 
 InsertHtmlEditor::InsertHtmlEditor(QWidget *parent)

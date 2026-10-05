@@ -6,7 +6,6 @@
 */
 
 #include "markupdirector.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "markupdirector_p.h"
 
@@ -28,6 +27,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTextTableCellFormat>
 
 #include <QDebug>
+using namespace Qt::Literals::StringLiterals;
 using namespace KPIMTextEdit;
 
 namespace

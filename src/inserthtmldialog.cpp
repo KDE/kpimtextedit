@@ -6,7 +6,6 @@
 */
 
 #include "inserthtmldialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "inserthtmleditor.h"
 #include <KLocalizedString>
@@ -21,6 +20,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QWindow>
+
+using namespace Qt::Literals::StringLiterals;
+
 namespace
 {
 static char myInsertHtmlDialogConfigGroupName[] = "InsertHtmlDialog";

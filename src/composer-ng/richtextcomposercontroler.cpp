@@ -5,7 +5,6 @@
 */
 
 #include "richtextcomposercontroler.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "inserthtmldialog.h"
 #include "klinkdialog_p.h"
@@ -28,6 +27,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTimer>
 #include <chrono>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace std::chrono_literals;
 
 using namespace KPIMTextEdit;

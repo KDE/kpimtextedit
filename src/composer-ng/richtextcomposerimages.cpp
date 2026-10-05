@@ -5,7 +5,6 @@
 */
 
 #include "richtextcomposerimages.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "richtextcomposer.h"
 
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTextBlock>
 #include <QTextDocument>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KPIMTextEdit;
 
 class Q_DECL_HIDDEN RichTextComposerImages::RichTextComposerImagesPrivate

@@ -5,13 +5,15 @@
 */
 
 #include "plaintextmarkupbuildertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KPIMTextEdit/MarkupDirector>
 #include <KPIMTextEdit/PlainTextMarkupBuilder>
 #include <QRegularExpression>
 #include <QTest>
 #include <QTextDocument>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(PlainTextMarkupBuilderTest)
 
 PlainTextMarkupBuilderTest::PlainTextMarkupBuilderTest(QObject *parent)

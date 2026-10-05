@@ -6,7 +6,6 @@
 */
 
 #include "tableactionmenu.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "inserttabledialog.h"
 #include "tablecellformatdialog.h"
@@ -19,6 +18,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPointer>
 #include <QTextEdit>
 #include <QTextTable>
+
+using namespace Qt::Literals::StringLiterals;
 
 namespace KPIMTextEdit
 {

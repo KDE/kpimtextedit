@@ -5,10 +5,10 @@
 */
 
 #include "richtextcomposeremailquotehighlighter.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "richtextcomposer.h"
 #include <QRegularExpression>
+using namespace Qt::Literals::StringLiterals;
 using namespace KPIMTextEdit;
 
 class Q_DECL_HIDDEN KPIMTextEdit::RichTextComposerEmailQuoteHighlighter::RichTextComposerEmailQuoteHighlighterPrivate

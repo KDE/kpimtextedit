@@ -5,11 +5,12 @@
 */
 
 #include "richtextcomposerwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../richtextcomposerwidget.h"
 #include "kpimtextedit/richtextcomposer.h"
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 RichTextComposerWidgetTest::RichTextComposerWidgetTest(QObject *parent)
     : QObject(parent)

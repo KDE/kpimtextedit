@@ -5,12 +5,12 @@
 */
 
 #include "richtextcomposerwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "kpimtextedit/richtextcomposer.h"
 #include <QHBoxLayout>
 #include <TextCustomEditor/RichTextEditorWidget>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KPIMTextEdit;
 
 class Q_DECL_HIDDEN KPIMTextEdit::RichTextComposerWidgetPrivate

@@ -5,13 +5,14 @@
 */
 
 #include "richtextcomposercontrolertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../richtextcomposer.h"
 #include "../richtextcomposercontroler.h"
 #include <KActionCollection>
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 RichTextComposerControlerTest::RichTextComposerControlerTest(QObject *parent)
     : QObject(parent)

@@ -5,7 +5,6 @@
 */
 
 #include "testgeneratehtmlbuildergui.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KPIMTextEdit/MarkupDirector>
 #include <KPIMTextEdit/TextHTMLBuilder>
@@ -14,6 +13,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPushButton>
 #include <QTextEdit>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
 
 TestGenerateHTMLBuilderGui::TestGenerateHTMLBuilderGui(QWidget *parent)
     : QWidget(parent)

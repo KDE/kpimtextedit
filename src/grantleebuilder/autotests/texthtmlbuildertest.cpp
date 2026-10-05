@@ -5,7 +5,6 @@
 */
 
 #include "texthtmlbuildertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "grantleebuilder/markupdirector.h"
 #include "grantleebuilder/texthtmlbuilder.h"
@@ -13,6 +12,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QTextDocument>
 #include <QTextTable>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(TextHTMLBuilderTest)
 TextHTMLBuilderTest::TextHTMLBuilderTest(QObject *parent)
     : QObject(parent)

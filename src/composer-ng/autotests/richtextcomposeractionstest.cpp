@@ -5,7 +5,6 @@
 */
 
 #include "richtextcomposeractionstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../richtextcomposer.h"
 #include "../richtextcomposeractions.h"
@@ -14,6 +13,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QAction>
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 RichTextComposerActionsTest::RichTextComposerActionsTest(QObject *parent)
     : QObject(parent)

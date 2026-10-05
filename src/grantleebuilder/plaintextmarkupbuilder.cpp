@@ -6,9 +6,11 @@
 */
 
 #include "plaintextmarkupbuilder.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QDebug>
+
+using namespace Qt::Literals::StringLiterals;
+
 namespace KPIMTextEdit
 {
 class PlainTextMarkupBuilderPrivate

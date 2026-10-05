@@ -5,7 +5,6 @@
 */
 
 #include "richtextcomposertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../richtextcomposer.h"
 #include <KCodecs>
@@ -24,6 +23,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTextBlock>
 #include <QTextCursor>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KPIMTextEdit;
 
 Q_DECLARE_METATYPE(KPIMTextEdit::RichTextComposer::Mode)

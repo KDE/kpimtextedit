@@ -5,7 +5,6 @@
 */
 
 #include "richtextexternalcomposer.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "richtextcomposer.h"
 
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KShell>
 #include <QTemporaryFile>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KPIMTextEdit;
 
 class Q_DECL_HIDDEN RichTextExternalComposer::RichTextExternalComposerPrivate
