@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-06 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -440,25 +440,25 @@ msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr "保持编辑器运行"
 
-#: inserthtmldialog.cpp:36
+#: inserthtmldialog.cpp:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "插入 HTML"
 
-#: inserthtmldialog.cpp:38
+#: inserthtmldialog.cpp:40
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "插入 HTML 标签和文本："
 
-#: inserthtmldialog.cpp:44
+#: inserthtmldialog.cpp:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "示例：<i> 你好世界 </i>"
 
-#: inserthtmldialog.cpp:53
+#: inserthtmldialog.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
@@ -470,7 +470,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "插入图片"
 
-#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:409
+#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:410
 #, kde-format
 msgid "Insert"
 msgstr "插入"
@@ -556,89 +556,89 @@ msgstr "窗口的百分比"
 msgid "pixels"
 msgstr "像素"
 
-#: tableactionmenu.cpp:412
+#: tableactionmenu.cpp:413
 #, kde-format
 msgid "Table…"
 msgstr "表格…"
 
-#: tableactionmenu.cpp:420
+#: tableactionmenu.cpp:421
 #, kde-format
 msgid "Row Below"
 msgstr "向下插入行"
 
-#: tableactionmenu.cpp:427
+#: tableactionmenu.cpp:428
 #, kde-format
 msgid "Row Above"
 msgstr "向上插入行"
 
-#: tableactionmenu.cpp:435
+#: tableactionmenu.cpp:436
 #, kde-format
 msgid "Column Before"
 msgstr "向左插入列"
 
-#: tableactionmenu.cpp:443
+#: tableactionmenu.cpp:444
 #, kde-format
 msgid "Column After"
 msgstr "向右插入列"
 
-#: tableactionmenu.cpp:450
+#: tableactionmenu.cpp:451
 #, kde-format
 msgid "Delete"
 msgstr "删除"
 
-#: tableactionmenu.cpp:453
+#: tableactionmenu.cpp:454
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "下一行"
 
-#: tableactionmenu.cpp:460
+#: tableactionmenu.cpp:461
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "上一行"
 
-#: tableactionmenu.cpp:468
+#: tableactionmenu.cpp:469
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "前一列"
 
-#: tableactionmenu.cpp:476
+#: tableactionmenu.cpp:477
 #, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "后一列"
 
-#: tableactionmenu.cpp:484
+#: tableactionmenu.cpp:485
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "单元格内容"
 
-#: tableactionmenu.cpp:493
+#: tableactionmenu.cpp:494
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "向右合并单元格"
 
-#: tableactionmenu.cpp:500
+#: tableactionmenu.cpp:501
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "合并选中的单元格"
 
-#: tableactionmenu.cpp:507
+#: tableactionmenu.cpp:508
 #, kde-format
 msgid "Split cells"
 msgstr "分割单元格"
 
-#: tableactionmenu.cpp:516
+#: tableactionmenu.cpp:517
 #, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "表格格式…"
 
-#: tableactionmenu.cpp:523
+#: tableactionmenu.cpp:524
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"

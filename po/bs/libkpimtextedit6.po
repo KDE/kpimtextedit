@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepimlibs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-06 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2015-02-04 15:38+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -451,28 +451,28 @@ msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr ""
 
-#: inserthtmldialog.cpp:36
+#: inserthtmldialog.cpp:38
 #, fuzzy, kde-format
 #| msgid "Insert HTML"
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Umetni HTML"
 
-#: inserthtmldialog.cpp:38
+#: inserthtmldialog.cpp:40
 #, fuzzy, kde-format
 #| msgid "Insert HTML tags and texts:"
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Umetni HTML oznake i tekstove:"
 
-#: inserthtmldialog.cpp:44
+#: inserthtmldialog.cpp:46
 #, fuzzy, kde-format
 #| msgid "Example: <i> Hello word </i>"
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Primjer: <i> Zdravo svijete </i>"
 
-#: inserthtmldialog.cpp:53
+#: inserthtmldialog.cpp:55
 #, fuzzy, kde-format
 #| msgid "Insert"
 msgctxt "@action:button"
@@ -486,7 +486,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Dodaj Sliku"
 
-#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:409
+#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:410
 #, kde-format
 msgid "Insert"
 msgstr "Umetni"
@@ -583,97 +583,97 @@ msgstr "% prozora"
 msgid "pixels"
 msgstr "pikseli"
 
-#: tableactionmenu.cpp:412
+#: tableactionmenu.cpp:413
 #, fuzzy, kde-format
 #| msgid "Table"
 msgid "Table…"
 msgstr "Tabela"
 
-#: tableactionmenu.cpp:420
+#: tableactionmenu.cpp:421
 #, kde-format
 msgid "Row Below"
 msgstr "Red ispod"
 
-#: tableactionmenu.cpp:427
+#: tableactionmenu.cpp:428
 #, kde-format
 msgid "Row Above"
 msgstr "Red iznad"
 
-#: tableactionmenu.cpp:435
+#: tableactionmenu.cpp:436
 #, kde-format
 msgid "Column Before"
 msgstr "Kolona prije"
 
-#: tableactionmenu.cpp:443
+#: tableactionmenu.cpp:444
 #, kde-format
 msgid "Column After"
 msgstr "Kolona iza"
 
-#: tableactionmenu.cpp:450
+#: tableactionmenu.cpp:451
 #, kde-format
 msgid "Delete"
 msgstr "Obriši"
 
-#: tableactionmenu.cpp:453
+#: tableactionmenu.cpp:454
 #, fuzzy, kde-format
 #| msgid "Row Below"
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Red ispod"
 
-#: tableactionmenu.cpp:460
+#: tableactionmenu.cpp:461
 #, fuzzy, kde-format
 #| msgid "Row Above"
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Red iznad"
 
-#: tableactionmenu.cpp:468
+#: tableactionmenu.cpp:469
 #, fuzzy, kde-format
 #| msgid "Column Before"
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Kolona prije"
 
-#: tableactionmenu.cpp:476
+#: tableactionmenu.cpp:477
 #, fuzzy, kde-format
 #| msgid "Column After"
 msgctxt "@action"
 msgid "Column After"
 msgstr "Kolona iza"
 
-#: tableactionmenu.cpp:484
+#: tableactionmenu.cpp:485
 #, fuzzy, kde-format
 #| msgid "Cell Contents"
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Sadržaj ćelije"
 
-#: tableactionmenu.cpp:493
+#: tableactionmenu.cpp:494
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "Spoji s ćelijom desno"
 
-#: tableactionmenu.cpp:500
+#: tableactionmenu.cpp:501
 #, fuzzy, kde-format
 #| msgid "Join Selected Cells"
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Spoji odabrane ćelije"
 
-#: tableactionmenu.cpp:507
+#: tableactionmenu.cpp:508
 #, kde-format
 msgid "Split cells"
 msgstr "Razdvoji ćelije"
 
-#: tableactionmenu.cpp:516
+#: tableactionmenu.cpp:517
 #, fuzzy, kde-format
 #| msgid "Table Format"
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "Format tabele"
 
-#: tableactionmenu.cpp:523
+#: tableactionmenu.cpp:524
 #, fuzzy, kde-format
 #| msgid "Table Cell Format..."
 msgctxt "@action"

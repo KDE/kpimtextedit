@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-06 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2013-01-12 05:10+0200\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -446,28 +446,28 @@ msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr ""
 
-#: inserthtmldialog.cpp:36
+#: inserthtmldialog.cpp:38
 #, fuzzy, kde-format
 #| msgid "Insert HTML"
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Inserează HTML"
 
-#: inserthtmldialog.cpp:38
+#: inserthtmldialog.cpp:40
 #, fuzzy, kde-format
 #| msgid "Insert HTML tags and texts:"
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Inserează marcaje HTML și texte:"
 
-#: inserthtmldialog.cpp:44
+#: inserthtmldialog.cpp:46
 #, fuzzy, kde-format
 #| msgid "Example: <i> Hello word </i>"
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Exemplu: <i> Salut tuturor </i>"
 
-#: inserthtmldialog.cpp:53
+#: inserthtmldialog.cpp:55
 #, fuzzy, kde-format
 #| msgid "Insert"
 msgctxt "@action:button"
@@ -481,7 +481,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Inserează imagine"
 
-#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:409
+#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:410
 #, kde-format
 msgid "Insert"
 msgstr "Inserează"
@@ -577,97 +577,97 @@ msgstr "% din ferestre"
 msgid "pixels"
 msgstr "pixeli"
 
-#: tableactionmenu.cpp:412
+#: tableactionmenu.cpp:413
 #, fuzzy, kde-format
 #| msgid "Table"
 msgid "Table…"
 msgstr "Tabel"
 
-#: tableactionmenu.cpp:420
+#: tableactionmenu.cpp:421
 #, kde-format
 msgid "Row Below"
 msgstr "Rânduri dedesubt"
 
-#: tableactionmenu.cpp:427
+#: tableactionmenu.cpp:428
 #, kde-format
 msgid "Row Above"
 msgstr "Rânduri deasupra"
 
-#: tableactionmenu.cpp:435
+#: tableactionmenu.cpp:436
 #, kde-format
 msgid "Column Before"
 msgstr "Coloană anterior"
 
-#: tableactionmenu.cpp:443
+#: tableactionmenu.cpp:444
 #, kde-format
 msgid "Column After"
 msgstr "Coloană posterior"
 
-#: tableactionmenu.cpp:450
+#: tableactionmenu.cpp:451
 #, kde-format
 msgid "Delete"
 msgstr "Șterge"
 
-#: tableactionmenu.cpp:453
+#: tableactionmenu.cpp:454
 #, fuzzy, kde-format
 #| msgid "Row Below"
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Rânduri dedesubt"
 
-#: tableactionmenu.cpp:460
+#: tableactionmenu.cpp:461
 #, fuzzy, kde-format
 #| msgid "Row Above"
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Rânduri deasupra"
 
-#: tableactionmenu.cpp:468
+#: tableactionmenu.cpp:469
 #, fuzzy, kde-format
 #| msgid "Column Before"
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Coloană anterior"
 
-#: tableactionmenu.cpp:476
+#: tableactionmenu.cpp:477
 #, fuzzy, kde-format
 #| msgid "Column After"
 msgctxt "@action"
 msgid "Column After"
 msgstr "Coloană posterior"
 
-#: tableactionmenu.cpp:484
+#: tableactionmenu.cpp:485
 #, fuzzy, kde-format
 #| msgid "Cell Contents"
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Conținut celulă"
 
-#: tableactionmenu.cpp:493
+#: tableactionmenu.cpp:494
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "Unește cu celula din dreapta"
 
-#: tableactionmenu.cpp:500
+#: tableactionmenu.cpp:501
 #, fuzzy, kde-format
 #| msgid "Join Selected Cells"
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Unește celulele alese"
 
-#: tableactionmenu.cpp:507
+#: tableactionmenu.cpp:508
 #, kde-format
 msgid "Split cells"
 msgstr "Desparte celulele"
 
-#: tableactionmenu.cpp:516
+#: tableactionmenu.cpp:517
 #, fuzzy, kde-format
 #| msgid "Table Format"
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "Format tabel"
 
-#: tableactionmenu.cpp:523
+#: tableactionmenu.cpp:524
 #, fuzzy, kde-format
 #| msgid "Table Cell Format..."
 msgctxt "@action"

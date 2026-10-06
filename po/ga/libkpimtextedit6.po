@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-06 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2009-12-24 06:59-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -443,28 +443,28 @@ msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr ""
 
-#: inserthtmldialog.cpp:36
+#: inserthtmldialog.cpp:38
 #, fuzzy, kde-format
 #| msgid "Insert HTML"
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Ionsáigh HTML"
 
-#: inserthtmldialog.cpp:38
+#: inserthtmldialog.cpp:40
 #, fuzzy, kde-format
 #| msgid "Insert HTML tags and texts:"
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Ionsáigh clibeanna HTML agus téacs:"
 
-#: inserthtmldialog.cpp:44
+#: inserthtmldialog.cpp:46
 #, fuzzy, kde-format
 #| msgid "Example: <i> Hello word </i>"
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Mar shampla: <i> Dia dhaoibh! </i>"
 
-#: inserthtmldialog.cpp:53
+#: inserthtmldialog.cpp:55
 #, fuzzy, kde-format
 #| msgid "Insert"
 msgctxt "@action:button"
@@ -478,7 +478,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Ionsáigh Íomhá"
 
-#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:409
+#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:410
 #, kde-format
 msgid "Insert"
 msgstr "Ionsáigh"
@@ -573,92 +573,92 @@ msgstr ""
 msgid "pixels"
 msgstr "picteilín"
 
-#: tableactionmenu.cpp:412
+#: tableactionmenu.cpp:413
 #, fuzzy, kde-format
 #| msgid "Table"
 msgid "Table…"
 msgstr "Tábla"
 
-#: tableactionmenu.cpp:420
+#: tableactionmenu.cpp:421
 #, kde-format
 msgid "Row Below"
 msgstr ""
 
-#: tableactionmenu.cpp:427
+#: tableactionmenu.cpp:428
 #, kde-format
 msgid "Row Above"
 msgstr ""
 
-#: tableactionmenu.cpp:435
+#: tableactionmenu.cpp:436
 #, kde-format
 msgid "Column Before"
 msgstr ""
 
-#: tableactionmenu.cpp:443
+#: tableactionmenu.cpp:444
 #, kde-format
 msgid "Column After"
 msgstr ""
 
-#: tableactionmenu.cpp:450
+#: tableactionmenu.cpp:451
 #, kde-format
 msgid "Delete"
 msgstr "Scrios"
 
-#: tableactionmenu.cpp:453
+#: tableactionmenu.cpp:454
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr ""
 
-#: tableactionmenu.cpp:460
+#: tableactionmenu.cpp:461
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr ""
 
-#: tableactionmenu.cpp:468
+#: tableactionmenu.cpp:469
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr ""
 
-#: tableactionmenu.cpp:476
+#: tableactionmenu.cpp:477
 #, fuzzy, kde-format
 #| msgid "Columns:"
 msgctxt "@action"
 msgid "Column After"
 msgstr "Colúin:"
 
-#: tableactionmenu.cpp:484
+#: tableactionmenu.cpp:485
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr ""
 
-#: tableactionmenu.cpp:493
+#: tableactionmenu.cpp:494
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr ""
 
-#: tableactionmenu.cpp:500
+#: tableactionmenu.cpp:501
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr ""
 
-#: tableactionmenu.cpp:507
+#: tableactionmenu.cpp:508
 #, kde-format
 msgid "Split cells"
 msgstr "Roinn cealla"
 
-#: tableactionmenu.cpp:516
+#: tableactionmenu.cpp:517
 #, fuzzy, kde-format
 #| msgid "Table"
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "Tábla"
 
-#: tableactionmenu.cpp:523
+#: tableactionmenu.cpp:524
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"

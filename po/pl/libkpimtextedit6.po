@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-06 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2024-08-03 11:31+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -443,25 +443,25 @@ msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr "Pozostaw włączony"
 
-#: inserthtmldialog.cpp:36
+#: inserthtmldialog.cpp:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Wstaw HTML"
 
-#: inserthtmldialog.cpp:38
+#: inserthtmldialog.cpp:40
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Wstaw znaczniki i tekst HTML:"
 
-#: inserthtmldialog.cpp:44
+#: inserthtmldialog.cpp:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Przykład: <i> Witaj świecie </i>"
 
-#: inserthtmldialog.cpp:53
+#: inserthtmldialog.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
@@ -473,7 +473,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Wstaw obraz"
 
-#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:409
+#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:410
 #, kde-format
 msgid "Insert"
 msgstr "Wstaw"
@@ -559,89 +559,89 @@ msgstr "% okien"
 msgid "pixels"
 msgstr "pikseli"
 
-#: tableactionmenu.cpp:412
+#: tableactionmenu.cpp:413
 #, kde-format
 msgid "Table…"
 msgstr "Tabela…"
 
-#: tableactionmenu.cpp:420
+#: tableactionmenu.cpp:421
 #, kde-format
 msgid "Row Below"
 msgstr "Wiersz poniżej"
 
-#: tableactionmenu.cpp:427
+#: tableactionmenu.cpp:428
 #, kde-format
 msgid "Row Above"
 msgstr "Wiersz powyżej"
 
-#: tableactionmenu.cpp:435
+#: tableactionmenu.cpp:436
 #, kde-format
 msgid "Column Before"
 msgstr "Kolumna przed"
 
-#: tableactionmenu.cpp:443
+#: tableactionmenu.cpp:444
 #, kde-format
 msgid "Column After"
 msgstr "Kolumna za"
 
-#: tableactionmenu.cpp:450
+#: tableactionmenu.cpp:451
 #, kde-format
 msgid "Delete"
 msgstr "Usuń"
 
-#: tableactionmenu.cpp:453
+#: tableactionmenu.cpp:454
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Wiersz poniżej"
 
-#: tableactionmenu.cpp:460
+#: tableactionmenu.cpp:461
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Wiersz powyżej"
 
-#: tableactionmenu.cpp:468
+#: tableactionmenu.cpp:469
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Kolumna przed"
 
-#: tableactionmenu.cpp:476
+#: tableactionmenu.cpp:477
 #, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "Kolumna za"
 
-#: tableactionmenu.cpp:484
+#: tableactionmenu.cpp:485
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Zawartość komórki"
 
-#: tableactionmenu.cpp:493
+#: tableactionmenu.cpp:494
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "Połącz z komórką po prawo"
 
-#: tableactionmenu.cpp:500
+#: tableactionmenu.cpp:501
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Scal wybrane komórki"
 
-#: tableactionmenu.cpp:507
+#: tableactionmenu.cpp:508
 #, kde-format
 msgid "Split cells"
 msgstr "Rozdziel komórki"
 
-#: tableactionmenu.cpp:516
+#: tableactionmenu.cpp:517
 #, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "Format tabeli…"
 
-#: tableactionmenu.cpp:523
+#: tableactionmenu.cpp:524
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"

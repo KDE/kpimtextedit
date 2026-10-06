@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-06 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2024-11-09 20:04+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -442,25 +442,25 @@ msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr "Оставяне на редактора отворен"
 
-#: inserthtmldialog.cpp:36
+#: inserthtmldialog.cpp:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Вмъкнете HTML"
 
-#: inserthtmldialog.cpp:38
+#: inserthtmldialog.cpp:40
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Вмъкване на HTML тагове и текстове:"
 
-#: inserthtmldialog.cpp:44
+#: inserthtmldialog.cpp:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Пример: <i> Здравей </i>"
 
-#: inserthtmldialog.cpp:53
+#: inserthtmldialog.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
@@ -472,7 +472,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Вмъкване на изображение"
 
-#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:409
+#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:410
 #, kde-format
 msgid "Insert"
 msgstr "Вмъкване"
@@ -558,89 +558,89 @@ msgstr "% прозорци"
 msgid "pixels"
 msgstr "пиксели"
 
-#: tableactionmenu.cpp:412
+#: tableactionmenu.cpp:413
 #, kde-format
 msgid "Table…"
 msgstr "Таблица…"
 
-#: tableactionmenu.cpp:420
+#: tableactionmenu.cpp:421
 #, kde-format
 msgid "Row Below"
 msgstr "Ред отдолу"
 
-#: tableactionmenu.cpp:427
+#: tableactionmenu.cpp:428
 #, kde-format
 msgid "Row Above"
 msgstr "Ред отгоре"
 
-#: tableactionmenu.cpp:435
+#: tableactionmenu.cpp:436
 #, kde-format
 msgid "Column Before"
 msgstr "Колона отпред"
 
-#: tableactionmenu.cpp:443
+#: tableactionmenu.cpp:444
 #, kde-format
 msgid "Column After"
 msgstr "Колона отзад"
 
-#: tableactionmenu.cpp:450
+#: tableactionmenu.cpp:451
 #, kde-format
 msgid "Delete"
 msgstr "Изтриване"
 
-#: tableactionmenu.cpp:453
+#: tableactionmenu.cpp:454
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Ред отдолу"
 
-#: tableactionmenu.cpp:460
+#: tableactionmenu.cpp:461
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Ред отгоре"
 
-#: tableactionmenu.cpp:468
+#: tableactionmenu.cpp:469
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Колона отпред"
 
-#: tableactionmenu.cpp:476
+#: tableactionmenu.cpp:477
 #, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "Колона отзад"
 
-#: tableactionmenu.cpp:484
+#: tableactionmenu.cpp:485
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Съдържание на клетката"
 
-#: tableactionmenu.cpp:493
+#: tableactionmenu.cpp:494
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "Обединяване с клетките вдясно"
 
-#: tableactionmenu.cpp:500
+#: tableactionmenu.cpp:501
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Обединяване на избраните клетки"
 
-#: tableactionmenu.cpp:507
+#: tableactionmenu.cpp:508
 #, kde-format
 msgid "Split cells"
 msgstr "Разделяне на клетки"
 
-#: tableactionmenu.cpp:516
+#: tableactionmenu.cpp:517
 #, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "Форматиране на таблица..."
 
-#: tableactionmenu.cpp:523
+#: tableactionmenu.cpp:524
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"
