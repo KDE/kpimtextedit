@@ -16,7 +16,6 @@
 #include <QUrl>
 #include <QVBoxLayout>
 
-using namespace Qt::Literals::StringLiterals;
 namespace KPIMTextEdit
 {
 class InsertImageDialogPrivate

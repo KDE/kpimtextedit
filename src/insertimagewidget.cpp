@@ -20,7 +20,6 @@
 #include <QUrl>
 #include <QVBoxLayout>
 
-using namespace Qt::Literals::StringLiterals;
 namespace KPIMTextEdit
 {
 static inline QString resolveAlias(const QString &name)

@@ -21,7 +21,6 @@
 #include <QTextTableCellFormat>
 
 #include <QDebug>
-using namespace Qt::Literals::StringLiterals;
 using namespace KPIMTextEdit;
 
 namespace

@@ -21,8 +21,6 @@
 #include <QVBoxLayout>
 #include <QWindow>
 
-using namespace Qt::Literals::StringLiterals;
-
 namespace
 {
 static char myInsertHtmlDialogConfigGroupName[] = "InsertHtmlDialog";
