@@ -15,4 +15,4 @@ Dependencies:
     'frameworks/kwidgetsaddons': 'Frameworks/6.24'
     'frameworks/kxmlgui': 'Frameworks/6.24'
     'frameworks/kcodecs': 'Frameworks/6.24'
-    'libraries/ktextaddons': '@latest-kf6'
+    'libraries/ktextaddons': '1.9'
