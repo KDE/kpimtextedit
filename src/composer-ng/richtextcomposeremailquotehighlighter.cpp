@@ -7,7 +7,6 @@
 #include "richtextcomposeremailquotehighlighter.h"
 
 #include "richtextcomposer.h"
-#include <QRegularExpression>
 using namespace Qt::Literals::StringLiterals;
 using namespace KPIMTextEdit;
 

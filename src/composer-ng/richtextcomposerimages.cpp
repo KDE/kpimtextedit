@@ -14,7 +14,6 @@
 #include <QBuffer>
 #include <QFileInfo>
 #include <QRandomGenerator>
-#include <QStringConverter>
 #include <QTextBlock>
 #include <QTextDocument>
 

@@ -11,7 +11,6 @@
 
 #include <KLocalizedString>
 
-#include <QCheckBox>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QUrl>

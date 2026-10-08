@@ -12,15 +12,9 @@
 #include "abstractmarkupbuilder.h"
 
 #include <QBrush>
-#include <QColor>
-#include <QFlags>
-#include <QMap>
-#include <QStack>
 #include <QString>
 #include <QTextCharFormat>
-#include <QTextCursor>
 #include <QTextDocument>
-#include <QTextDocumentFragment>
 #include <QTextFrame>
 #include <QTextList>
 #include <QTextTable>

@@ -9,9 +9,7 @@
 
 #include <QBrush>
 #include <QColor>
-#include <QDebug>
 #include <QList>
-#include <QTextDocument>
 #include <QtMath>
 #include <qtextformat.h>
 

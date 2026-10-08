@@ -7,8 +7,6 @@
 
 #include "plaintextmarkupbuilder.h"
 
-#include <QDebug>
-
 using namespace Qt::Literals::StringLiterals;
 
 namespace KPIMTextEdit

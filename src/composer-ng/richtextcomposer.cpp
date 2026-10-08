@@ -13,7 +13,6 @@
 #include "richtextcomposeremailquotehighlighter.h"
 #include "richtextcomposerimages.h"
 #include "richtextexternalcomposer.h"
-#include <QClipboard>
 #include <QTextBlock>
 #include <QTextLayout>
 
