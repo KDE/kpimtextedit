@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-09 00:48+0000\n"
 "PO-Revision-Date: 2022-08-08 17:22+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -383,13 +383,13 @@ msgstr "Afkrydsningsfelt"
 msgid "Only local files are supported."
 msgstr "Kun lokale filer er understøttet."
 
-#: composer-ng/richtextcomposerimages.cpp:59
+#: composer-ng/richtextcomposerimages.cpp:58
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "Kan ikke indlæse billede <filename>%1</filename>."
 
-#: composer-ng/richtextcomposerimages.cpp:219
+#: composer-ng/richtextcomposerimages.cpp:218
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"
@@ -454,90 +454,90 @@ msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr "Behold editor kørende"
 
-#: inserthtmldialog.cpp:38
+#: inserthtmldialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Indsæt HTML"
 
-#: inserthtmldialog.cpp:40
+#: inserthtmldialog.cpp:38
 #, fuzzy, kde-format
 #| msgid "Insert HTML tags and texts:"
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Indsæt HTML-mærker og -tekst:"
 
-#: inserthtmldialog.cpp:46
+#: inserthtmldialog.cpp:44
 #, fuzzy, kde-format
 #| msgid "Example: <i> Hello word </i>"
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Eksempel: <i> Hej verden </i>"
 
-#: inserthtmldialog.cpp:55
+#: inserthtmldialog.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Indsæt"
 
-#: insertimagedialog.cpp:30
+#: insertimagedialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Indsæt billede"
 
-#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:410
+#: insertimagedialog.cpp:37 inserttabledialog.cpp:37 tableactionmenu.cpp:410
 #, kde-format
 msgid "Insert"
 msgstr "Indsæt"
 
-#: insertimagewidget.cpp:42
+#: insertimagewidget.cpp:41
 #, fuzzy, kde-format
 #| msgid "Image Location:"
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "Billedplacering:"
 
-#: insertimagewidget.cpp:55
+#: insertimagewidget.cpp:54
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "Tilføj billede"
 
-#: insertimagewidget.cpp:66
+#: insertimagewidget.cpp:65
 #, fuzzy, kde-format
 #| msgid "Keep Original Size"
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "Behold oprindelig størrelse"
 
-#: insertimagewidget.cpp:73
+#: insertimagewidget.cpp:72
 #, fuzzy, kde-format
 #| msgid "Keep Image Ratio"
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "Bevar aspektforhold"
 
-#: insertimagewidget.cpp:79 inserttablewidget.cpp:59
+#: insertimagewidget.cpp:78 inserttablewidget.cpp:59
 #, fuzzy, kde-format
 #| msgid "Width:"
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Bredde:"
 
-#: insertimagewidget.cpp:85 insertimagewidget.cpp:101 inserttablewidget.cpp:36
+#: insertimagewidget.cpp:84 insertimagewidget.cpp:100 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
 msgstr " px"
 
-#: insertimagewidget.cpp:95
+#: insertimagewidget.cpp:94
 #, fuzzy, kde-format
 #| msgid "Height:"
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Højde:"
 
-#: insertimagewidget.cpp:114
+#: insertimagewidget.cpp:113
 #, fuzzy, kde-format
 #| msgid "Image Preview:"
 msgctxt "@label:textbox"

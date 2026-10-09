@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-09 00:48+0000\n"
 "PO-Revision-Date: 2024-08-05 23:29+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -375,13 +375,13 @@ msgstr "Kontrol-laukia"
 msgid "Only local files are supported."
 msgstr "Fitxategi lokalak baino ez dira onartzen."
 
-#: composer-ng/richtextcomposerimages.cpp:59
+#: composer-ng/richtextcomposerimages.cpp:58
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "Ez da <filename>%1</filename> irudia zamatzeko gai."
 
-#: composer-ng/richtextcomposerimages.cpp:219
+#: composer-ng/richtextcomposerimages.cpp:218
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"
@@ -444,83 +444,83 @@ msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr "Mantendu editorea martxan"
 
-#: inserthtmldialog.cpp:38
+#: inserthtmldialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Txertatu HTML"
 
-#: inserthtmldialog.cpp:40
+#: inserthtmldialog.cpp:38
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Txertatu HTML etiketak eta testuak:"
 
-#: inserthtmldialog.cpp:46
+#: inserthtmldialog.cpp:44
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Adibidez: <i> Kaixo mundua </i>"
 
-#: inserthtmldialog.cpp:55
+#: inserthtmldialog.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Txertatu"
 
-#: insertimagedialog.cpp:30
+#: insertimagedialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Txertatu irudia"
 
-#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:410
+#: insertimagedialog.cpp:37 inserttabledialog.cpp:37 tableactionmenu.cpp:410
 #, kde-format
 msgid "Insert"
 msgstr "Txertatu"
 
-#: insertimagewidget.cpp:42
+#: insertimagewidget.cpp:41
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "Irudiaren kokalekua:"
 
-#: insertimagewidget.cpp:55
+#: insertimagewidget.cpp:54
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "Gehitu irudia"
 
-#: insertimagewidget.cpp:66
+#: insertimagewidget.cpp:65
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "Mantendu jatorrizko neurria"
 
-#: insertimagewidget.cpp:73
+#: insertimagewidget.cpp:72
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "Mantendu irudiaren proportzioa"
 
-#: insertimagewidget.cpp:79 inserttablewidget.cpp:59
+#: insertimagewidget.cpp:78 inserttablewidget.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Zabalera:"
 
-#: insertimagewidget.cpp:85 insertimagewidget.cpp:101 inserttablewidget.cpp:36
+#: insertimagewidget.cpp:84 insertimagewidget.cpp:100 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
 msgstr " px"
 
-#: insertimagewidget.cpp:95
+#: insertimagewidget.cpp:94
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Altuera:"
 
-#: insertimagewidget.cpp:114
+#: insertimagewidget.cpp:113
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"

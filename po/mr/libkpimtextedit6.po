@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-09 00:48+0000\n"
 "PO-Revision-Date: 2013-03-07 18:25+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -379,13 +379,13 @@ msgstr ""
 msgid "Only local files are supported."
 msgstr ""
 
-#: composer-ng/richtextcomposerimages.cpp:59
+#: composer-ng/richtextcomposerimages.cpp:58
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "प्रतिमा दाखल करू शकत नाही - <filename>%1</filename>."
 
-#: composer-ng/richtextcomposerimages.cpp:219
+#: composer-ng/richtextcomposerimages.cpp:218
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"
@@ -445,89 +445,89 @@ msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr ""
 
-#: inserthtmldialog.cpp:38
+#: inserthtmldialog.cpp:36
 #, fuzzy, kde-format
 #| msgid "Insert"
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "अंतर्भूत करा"
 
-#: inserthtmldialog.cpp:40
+#: inserthtmldialog.cpp:38
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr ""
 
-#: inserthtmldialog.cpp:46
+#: inserthtmldialog.cpp:44
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr ""
 
-#: inserthtmldialog.cpp:55
+#: inserthtmldialog.cpp:53
 #, fuzzy, kde-format
 #| msgid "Insert"
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "अंतर्भूत करा"
 
-#: insertimagedialog.cpp:30
+#: insertimagedialog.cpp:28
 #, fuzzy, kde-format
 #| msgid "Insert"
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "अंतर्भूत करा"
 
-#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:410
+#: insertimagedialog.cpp:37 inserttabledialog.cpp:37 tableactionmenu.cpp:410
 #, kde-format
 msgid "Insert"
 msgstr "अंतर्भूत करा"
 
-#: insertimagewidget.cpp:42
+#: insertimagewidget.cpp:41
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr ""
 
-#: insertimagewidget.cpp:55
+#: insertimagewidget.cpp:54
 #, fuzzy, kde-format
 #| msgid "Add Image"
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "प्रतिमा जोडा"
 
-#: insertimagewidget.cpp:66
+#: insertimagewidget.cpp:65
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr ""
 
-#: insertimagewidget.cpp:73
+#: insertimagewidget.cpp:72
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr ""
 
-#: insertimagewidget.cpp:79 inserttablewidget.cpp:59
+#: insertimagewidget.cpp:78 inserttablewidget.cpp:59
 #, fuzzy, kde-format
 #| msgid "Width:"
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "रुंदी :"
 
-#: insertimagewidget.cpp:85 insertimagewidget.cpp:101 inserttablewidget.cpp:36
+#: insertimagewidget.cpp:84 insertimagewidget.cpp:100 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
 msgstr " px"
 
-#: insertimagewidget.cpp:95
+#: insertimagewidget.cpp:94
 #, fuzzy, kde-format
 #| msgid "Height:"
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "उंची :"
 
-#: insertimagewidget.cpp:114
+#: insertimagewidget.cpp:113
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"

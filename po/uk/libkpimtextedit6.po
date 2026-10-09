@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-09 00:48+0000\n"
 "PO-Revision-Date: 2024-08-01 20:29+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -375,13 +375,13 @@ msgstr "Поле для позначки"
 msgid "Only local files are supported."
 msgstr "Передбачено підтримку лише локальних файлів."
 
-#: composer-ng/richtextcomposerimages.cpp:59
+#: composer-ng/richtextcomposerimages.cpp:58
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "Не вдалося завантажити зображення <filename>%1</filename>."
 
-#: composer-ng/richtextcomposerimages.cpp:219
+#: composer-ng/richtextcomposerimages.cpp:218
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"
@@ -446,83 +446,83 @@ msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr "Продовжити роботу"
 
-#: inserthtmldialog.cpp:38
+#: inserthtmldialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Вставлення HTML"
 
-#: inserthtmldialog.cpp:40
+#: inserthtmldialog.cpp:38
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Вставити теґи HTML і текст:"
 
-#: inserthtmldialog.cpp:46
+#: inserthtmldialog.cpp:44
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Приклад: <i> Привіт, світе </i>"
 
-#: inserthtmldialog.cpp:55
+#: inserthtmldialog.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Вставити"
 
-#: insertimagedialog.cpp:30
+#: insertimagedialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Вставлення зображення"
 
-#: insertimagedialog.cpp:39 inserttabledialog.cpp:37 tableactionmenu.cpp:410
+#: insertimagedialog.cpp:37 inserttabledialog.cpp:37 tableactionmenu.cpp:410
 #, kde-format
 msgid "Insert"
 msgstr "Вставити"
 
-#: insertimagewidget.cpp:42
+#: insertimagewidget.cpp:41
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Location:"
 msgstr "Розташування зображення:"
 
-#: insertimagewidget.cpp:55
+#: insertimagewidget.cpp:54
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "Додавання зображення"
 
-#: insertimagewidget.cpp:66
+#: insertimagewidget.cpp:65
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "Зберігати початкові розміри"
 
-#: insertimagewidget.cpp:73
+#: insertimagewidget.cpp:72
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "Зберігати співвідношення розмірів"
 
-#: insertimagewidget.cpp:79 inserttablewidget.cpp:59
+#: insertimagewidget.cpp:78 inserttablewidget.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Width:"
 msgstr "Ширина:"
 
-#: insertimagewidget.cpp:85 insertimagewidget.cpp:101 inserttablewidget.cpp:36
+#: insertimagewidget.cpp:84 insertimagewidget.cpp:100 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
 msgstr " пк"
 
-#: insertimagewidget.cpp:95
+#: insertimagewidget.cpp:94
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Висота:"
 
-#: insertimagewidget.cpp:114
+#: insertimagewidget.cpp:113
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Image Preview:"
