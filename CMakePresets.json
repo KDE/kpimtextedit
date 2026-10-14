@@ -21,13 +21,10 @@
             ]
         },
         {
-            "name": "dev-mold",
-            "displayName": "Build as debug + using mold linker",
-            "cacheVariables": {
-                "CMAKE_LINKER_TYPE": "MOLD"
-            },
+            "name": "all_installed_library_check",
+            "displayName": "Build as debug + using mold linker + build for testing check libs",
             "inherits": [
-                "dev"
+                "dev-mold"
             ]
         },
         {
@@ -42,6 +39,16 @@
             "warnings": {
                 "uninitialized": true
             }
+        },
+        {
+            "name": "dev-mold",
+            "displayName": "Build as debug + using mold linker",
+            "cacheVariables": {
+                "CMAKE_LINKER_TYPE": "MOLD"
+            },
+            "inherits": [
+                "dev"
+            ]
         },
         {
             "name": "dev",
@@ -157,6 +164,13 @@
             "targets": [
                 "prepare_docs",
                 "generate_docs"
+            ]
+        },
+        {
+            "name": "all_installed_library_check",
+            "configurePreset": "all_installed_library_check",
+            "targets": [
+                "all_installed_library_check"
             ]
         },
         {
