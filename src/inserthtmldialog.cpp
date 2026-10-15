@@ -25,7 +25,7 @@
 
 namespace
 {
-static char myInsertHtmlDialogConfigGroupName[] = "InsertHtmlDialog";
+char myInsertHtmlDialogConfigGroupName[] = "InsertHtmlDialog";
 }
 namespace KPIMTextEdit
 {
