@@ -108,7 +108,7 @@ QString TextUtils::flowText(QString &wrappedText, const QString &indent, int max
     while (!wrappedText.isEmpty()) {
         // first check for the next newline. if it's before maxLength, break there, and continue
         const int newLine = wrappedText.indexOf(u'\n');
-        if (newLine > 0 && newLine <= maxLength) {
+        if (newLine >= 0 && newLine <= maxLength) {
             result += indent + wrappedText.left(newLine + 1);
             wrappedText = wrappedText.mid(newLine + 1);
             continue;

@@ -65,6 +65,16 @@ void TextUtilsTest::test_flowText_data()
                                         << "A long line that is right over the\n"
                                            "border"
                                         << "";
+
+    QTest::newRow("empty line") << "Hello\n\nWorld"
+                                << "> Hello\n> \n> World"
+                                << "> ";
+    QTest::newRow("several empty lines") << "a\n\n\nb"
+                                         << "> a\n> \n> \n> b"
+                                         << "> ";
+    QTest::newRow("leading empty line") << "\nHello"
+                                        << "> \n> Hello"
+                                        << "> ";
 }
 
 void TextUtilsTest::test_containsFormatting_data()
