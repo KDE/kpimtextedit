@@ -16,8 +16,10 @@
 #include <KSharedConfig>
 #include <KWindowConfig>
 #include <QDialogButtonBox>
+#include <QFont>
 #include <QLabel>
 #include <QPushButton>
+#include <QTextDocument>
 #include <QVBoxLayout>
 #include <QWindow>
 

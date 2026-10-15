@@ -10,7 +10,7 @@
 #include "klinkdialog_p.h"
 #include "nestedlisthelper_p.h"
 #include "richtextcomposerimages.h"
-#include <QApplication>
+#include <QGuiApplication>
 
 #include "insertimagedialog.h"
 #include "textutils.h"
@@ -729,7 +729,7 @@ void RichTextComposerControler::slotPasteAsQuotation()
 {
 #ifndef QT_NO_CLIPBOARD
     if (richTextComposer()->hasFocus()) {
-        const QString s = QApplication::clipboard()->text();
+        const QString s = QGuiApplication::clipboard()->text();
         if (!s.isEmpty()) {
             richTextComposer()->insertPlainText(d->addQuotesToText(s, d->richtextComposer->defaultQuoteSign()));
         }
@@ -741,7 +741,7 @@ void RichTextComposerControler::slotPasteWithoutFormatting()
 {
 #ifndef QT_NO_CLIPBOARD
     if (richTextComposer()->hasFocus()) {
-        const QString s = QApplication::clipboard()->text();
+        const QString s = QGuiApplication::clipboard()->text();
         if (!s.isEmpty()) {
             richTextComposer()->insertPlainText(s);
         }

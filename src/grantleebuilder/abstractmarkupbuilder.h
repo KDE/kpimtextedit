@@ -18,7 +18,6 @@ class QBrush;
 
 namespace KPIMTextEdit
 {
-class AbstractMarkupBuilderPrivate;
 
 /// @headerfile abstractmarkupbuilder.h grantlee/abstractmarkupbuilder.h
 

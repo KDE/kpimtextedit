@@ -16,6 +16,7 @@
 
 #include <QAbstractItemView>
 #include <QCompleter>
+#include <QKeyEvent>
 #include <QStringList>
 
 using namespace Qt::Literals::StringLiterals;

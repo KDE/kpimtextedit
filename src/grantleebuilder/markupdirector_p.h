@@ -10,7 +10,10 @@
 #pragma once
 #include "markupdirector.h"
 
+#include <QBrush>
+#include <QList>
 #include <QSet>
+#include <QString>
 
 //@cond PRIVATE
 

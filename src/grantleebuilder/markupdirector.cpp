@@ -19,8 +19,11 @@
 #include <QTextList>
 #include <QTextTable>
 #include <QTextTableCellFormat>
+#include <tuple>
 
+#ifdef ADD_HEADER_SUPPORT
 #include <QDebug>
+#endif
 using namespace KPIMTextEdit;
 
 namespace

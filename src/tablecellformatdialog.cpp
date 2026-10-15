@@ -14,7 +14,9 @@
 
 #include <QCheckBox>
 #include <QDialogButtonBox>
+#include <QHBoxLayout>
 #include <QLabel>
+#include <QPushButton>
 #include <QVBoxLayout>
 
 using namespace KPIMTextEdit;

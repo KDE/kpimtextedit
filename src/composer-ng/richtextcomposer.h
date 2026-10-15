@@ -9,6 +9,7 @@
 #include "kpimtextedit_export.h"
 
 #include <TextCustomEditor/RichTextEditor>
+#include <memory>
 class KActionCollection;
 
 namespace KPIMTextEdit

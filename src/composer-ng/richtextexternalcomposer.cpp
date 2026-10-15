@@ -8,12 +8,16 @@
 
 #include "richtextcomposer.h"
 
+#include <KGuiItem>
 #include <KLocalizedString>
 #include <KMacroExpander>
 #include <KMessageBox>
 #include <KProcess>
 #include <KShell>
+#include <QFile>
+#include <QHash>
 #include <QTemporaryFile>
+#include <QTextDocument>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace KPIMTextEdit;

@@ -12,6 +12,7 @@
 #include <KFontAction>
 #include <KFontSizeAction>
 #include <KLocalizedString>
+#include <KSelectAction>
 #include <KToggleAction>
 #include <QActionGroup>
 #include <QTextCharFormat>

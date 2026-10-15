@@ -18,9 +18,8 @@
 
 #include "richtextcomposeremailquotedecorator.h"
 
-#include <KActionCollection>
-#include <QAction>
 #include <QFileInfo>
+#include <QKeyEvent>
 #include <QMimeData>
 
 using namespace KPIMTextEdit;

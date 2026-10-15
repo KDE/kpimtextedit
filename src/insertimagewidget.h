@@ -7,6 +7,7 @@
 #pragma once
 
 #include <QWidget>
+#include <memory>
 class QUrl;
 namespace KPIMTextEdit
 {

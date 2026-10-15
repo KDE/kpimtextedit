@@ -7,8 +7,6 @@
 
 #pragma once
 
-#include <QWidget>
-
 #include <KSyntaxHighlighting/Repository>
 #include <TextCustomEditor/PlainTextEditor>
 

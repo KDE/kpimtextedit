@@ -17,7 +17,6 @@ class QTextList;
 namespace KPIMTextEdit
 {
 class MarkupDirectorPrivate;
-class AbstractMarkupBuilder;
 
 /// @headerfile markupdirector.h grantlee/markupdirector.h
 

@@ -9,6 +9,7 @@
 #include "kpimtextedit_export.h"
 #include "richtextcomposer.h"
 #include <QObject>
+#include <memory>
 class KActionCollection;
 class QTextCharFormat;
 class QAction;

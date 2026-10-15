@@ -8,6 +8,7 @@
 #pragma once
 
 #include <KActionMenu>
+#include <memory>
 class QTextEdit;
 namespace KPIMTextEdit
 {

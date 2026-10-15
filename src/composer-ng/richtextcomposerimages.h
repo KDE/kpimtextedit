@@ -11,7 +11,9 @@
 #include <QObject>
 #include <QSharedPointer>
 #include <QTextImageFormat>
+#include <memory>
 class QFileInfo;
+class QUrl;
 namespace KPIMTextEdit
 {
 class RichTextComposer;

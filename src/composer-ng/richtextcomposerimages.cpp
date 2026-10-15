@@ -14,8 +14,12 @@
 #include <QBuffer>
 #include <QFileInfo>
 #include <QRandomGenerator>
+#include <QSet>
+#include <QStringEncoder>
 #include <QTextBlock>
+#include <QTextCursor>
 #include <QTextDocument>
+#include <QUrl>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace KPIMTextEdit;

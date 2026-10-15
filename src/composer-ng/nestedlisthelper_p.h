@@ -9,7 +9,6 @@
 #pragma once
 
 //@cond PRIVATE
-#include <QObject>
 class QTextEdit;
 
 class QKeyEvent;

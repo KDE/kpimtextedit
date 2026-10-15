@@ -10,6 +10,7 @@
 #include <QWidget>
 
 #include <QTextLength>
+#include <memory>
 
 namespace KPIMTextEdit
 {

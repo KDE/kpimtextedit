@@ -11,7 +11,6 @@
 #include <QColor>
 #include <QList>
 #include <QtMath>
-#include <qtextformat.h>
 
 using namespace Qt::Literals::StringLiterals;
 namespace KPIMTextEdit

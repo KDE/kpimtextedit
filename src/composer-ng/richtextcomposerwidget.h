@@ -8,6 +8,7 @@
 
 #include "kpimtextedit_export.h"
 #include <QWidget>
+#include <memory>
 
 /*!
  * \namespace KPIMTextEdit

@@ -13,9 +13,11 @@
 
 #include <QCheckBox>
 #include <QHBoxLayout>
+#include <QImage>
 #include <QImageReader>
 #include <QLabel>
 #include <QMimeDatabase>
+#include <QPixmap>
 #include <QSpinBox>
 #include <QUrl>
 #include <QVBoxLayout>

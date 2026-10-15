@@ -9,6 +9,7 @@
 
 #include "kpimtextedit_private_export.h"
 #include <QDialog>
+#include <memory>
 
 namespace KPIMTextEdit
 {
