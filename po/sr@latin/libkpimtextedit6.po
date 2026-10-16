@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:48+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2017-12-24 21:47+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -40,134 +40,134 @@ msgctxt "@title:window"
 msgid "Manage Link"
 msgstr "Upravljanje vezom"
 
-#: composer-ng/richtextcomposeractions.cpp:103
+#: composer-ng/richtextcomposeractions.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Align &Left"
 msgstr "Poravnaj &levo"
 
-#: composer-ng/richtextcomposeractions.cpp:104
+#: composer-ng/richtextcomposeractions.cpp:105
 #, kde-format
 msgctxt "@label left justify"
 msgid "Left"
 msgstr "Levo"
 
-#: composer-ng/richtextcomposeractions.cpp:112
+#: composer-ng/richtextcomposeractions.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Align &Center"
 msgstr "Ravnaj po &sredini"
 
-#: composer-ng/richtextcomposeractions.cpp:113
+#: composer-ng/richtextcomposeractions.cpp:114
 #, kde-format
 msgctxt "@label center justify"
 msgid "Center"
 msgstr "Sredina"
 
-#: composer-ng/richtextcomposeractions.cpp:121
+#: composer-ng/richtextcomposeractions.cpp:122
 #, kde-format
 msgctxt "@action"
 msgid "Align &Right"
 msgstr "Poravnaj &desno"
 
-#: composer-ng/richtextcomposeractions.cpp:122
+#: composer-ng/richtextcomposeractions.cpp:123
 #, kde-format
 msgctxt "@label right justify"
 msgid "Right"
 msgstr "Desno"
 
-#: composer-ng/richtextcomposeractions.cpp:130
+#: composer-ng/richtextcomposeractions.cpp:131
 #, kde-format
 msgctxt "@action"
 msgid "&Justify"
 msgstr "&Razvuci"
 
-#: composer-ng/richtextcomposeractions.cpp:131
+#: composer-ng/richtextcomposeractions.cpp:132
 #, kde-format
 msgctxt "@label justify fill"
 msgid "Justify"
 msgstr "Razvučeno"
 
-#: composer-ng/richtextcomposeractions.cpp:146
+#: composer-ng/richtextcomposeractions.cpp:147
 #, kde-format
 msgctxt "@action"
 msgid "Left-to-Right"
 msgstr "Sleva udesno"
 
-#: composer-ng/richtextcomposeractions.cpp:147
+#: composer-ng/richtextcomposeractions.cpp:148
 #, kde-format
 msgctxt "@label left-to-right"
 msgid "Left-to-Right"
 msgstr "Sleva udesno"
 
-#: composer-ng/richtextcomposeractions.cpp:155
+#: composer-ng/richtextcomposeractions.cpp:156
 #, kde-format
 msgctxt "@action"
 msgid "Right-to-Left"
 msgstr "Zdesna ulevo"
 
-#: composer-ng/richtextcomposeractions.cpp:156
+#: composer-ng/richtextcomposeractions.cpp:157
 #, kde-format
 msgctxt "@label right-to-left"
 msgid "Right-to-Left"
 msgstr "Zdesna ulevo"
 
-#: composer-ng/richtextcomposeractions.cpp:169
+#: composer-ng/richtextcomposeractions.cpp:170
 #, kde-format
 msgctxt "@action"
 msgid "Subscript"
 msgstr "Indeks"
 
-#: composer-ng/richtextcomposeractions.cpp:177
+#: composer-ng/richtextcomposeractions.cpp:178
 #, kde-format
 msgctxt "@action"
 msgid "Superscript"
 msgstr "Izložilac"
 
-#: composer-ng/richtextcomposeractions.cpp:185
+#: composer-ng/richtextcomposeractions.cpp:186
 #, kde-format
 msgctxt "@action boldify selected text"
 msgid "&Bold"
 msgstr "Pode&bljaj"
 
-#: composer-ng/richtextcomposeractions.cpp:197
+#: composer-ng/richtextcomposeractions.cpp:198
 #, kde-format
 msgctxt "@action italicize selected text"
 msgid "&Italic"
 msgstr "&Kurziv"
 
-#: composer-ng/richtextcomposeractions.cpp:209
+#: composer-ng/richtextcomposeractions.cpp:210
 #, kde-format
 msgctxt "@action underline selected text"
 msgid "&Underline"
 msgstr "Pod&vuci"
 
-#: composer-ng/richtextcomposeractions.cpp:221
+#: composer-ng/richtextcomposeractions.cpp:222
 #, kde-format
 msgctxt "@action"
 msgid "&Strike Out"
 msgstr "Pre&crtaj"
 
-#: composer-ng/richtextcomposeractions.cpp:234
+#: composer-ng/richtextcomposeractions.cpp:235
 #, kde-format
 msgctxt "@action"
 msgid "&Font"
 msgstr "&Font"
 
-#: composer-ng/richtextcomposeractions.cpp:243
+#: composer-ng/richtextcomposeractions.cpp:244
 #, kde-format
 msgctxt "@action"
 msgid "Font &Size"
 msgstr "&Veličina fonta"
 
 # skip-rule: t-line
-#: composer-ng/richtextcomposeractions.cpp:251
+#: composer-ng/richtextcomposeractions.cpp:252
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule Line"
 msgstr "Umetni liniju ravnanja"
 
-#: composer-ng/richtextcomposeractions.cpp:260
+#: composer-ng/richtextcomposeractions.cpp:261
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Text &Color..."
@@ -175,13 +175,13 @@ msgctxt "@action"
 msgid "Text &Color…"
 msgstr "&Boja teksta..."
 
-#: composer-ng/richtextcomposeractions.cpp:261
+#: composer-ng/richtextcomposeractions.cpp:262
 #, kde-format
 msgctxt "@label stroke color"
 msgid "Color"
 msgstr "Boja"
 
-#: composer-ng/richtextcomposeractions.cpp:269
+#: composer-ng/richtextcomposeractions.cpp:270
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Text &Highlight..."
@@ -189,106 +189,106 @@ msgctxt "@action"
 msgid "Text &Highlight…"
 msgstr "&Isticanje teksta..."
 
-#: composer-ng/richtextcomposeractions.cpp:277
+#: composer-ng/richtextcomposeractions.cpp:278
 #, kde-format
 msgctxt "@action"
 msgid "Link"
 msgstr "Veza"
 
-#: composer-ng/richtextcomposeractions.cpp:285
+#: composer-ng/richtextcomposeractions.cpp:286
 #, kde-format
 msgctxt "@action"
 msgid "Increase List Level"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:293
+#: composer-ng/richtextcomposeractions.cpp:294
 #, kde-format
 msgctxt "@action"
 msgid "Decrease List Level"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:302
+#: composer-ng/richtextcomposeractions.cpp:303
 #, kde-format
 msgctxt "@title:menu"
 msgid "List Style"
 msgstr "Stil spiska"
 
-#: composer-ng/richtextcomposeractions.cpp:304
+#: composer-ng/richtextcomposeractions.cpp:305
 #, kde-format
 msgctxt "@item:inmenu no list style"
 msgid "None"
 msgstr "(neoznačeno)"
 
-#: composer-ng/richtextcomposeractions.cpp:304
+#: composer-ng/richtextcomposeractions.cpp:305
 #, kde-format
 msgctxt "@item:inmenu disc list style"
 msgid "Disc"
 msgstr "diskovi"
 
-#: composer-ng/richtextcomposeractions.cpp:305
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu circle list style"
 msgid "Circle"
 msgstr "kružići"
 
-#: composer-ng/richtextcomposeractions.cpp:305
+#: composer-ng/richtextcomposeractions.cpp:306
 #, kde-format
 msgctxt "@item:inmenu square list style"
 msgid "Square"
 msgstr "kvadratići"
 
-#: composer-ng/richtextcomposeractions.cpp:306
+#: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu numbered lists"
 msgid "123"
 msgstr "brojevi"
 
-#: composer-ng/richtextcomposeractions.cpp:306
+#: composer-ng/richtextcomposeractions.cpp:307
 #, kde-format
 msgctxt "@item:inmenu lowercase abc lists"
 msgid "abc"
 msgstr "mala slova"
 
-#: composer-ng/richtextcomposeractions.cpp:307
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu uppercase abc lists"
 msgid "ABC"
 msgstr "velika slova"
 
-#: composer-ng/richtextcomposeractions.cpp:307
+#: composer-ng/richtextcomposeractions.cpp:308
 #, kde-format
 msgctxt "@item:inmenu lower case roman numerals"
 msgid "i ii iii"
 msgstr "i ii iii"
 
-#: composer-ng/richtextcomposeractions.cpp:308
+#: composer-ng/richtextcomposeractions.cpp:309
 #, kde-format
 msgctxt "@item:inmenu upper case roman numerals"
 msgid "I II III"
 msgstr "I II III"
 
-#: composer-ng/richtextcomposeractions.cpp:319
+#: composer-ng/richtextcomposeractions.cpp:320
 #, fuzzy, kde-format
 #| msgid "Pa&ste as Quotation"
 msgctxt "@action"
 msgid "Pa&ste as Quotation"
 msgstr "Nalepi kao &citat"
 
-#: composer-ng/richtextcomposeractions.cpp:327
+#: composer-ng/richtextcomposeractions.cpp:328
 #, fuzzy, kde-format
 #| msgid "Add &Quote Characters"
 msgctxt "@action"
 msgid "Add &Quote Characters"
 msgstr "Dodaj znakove &citiranja"
 
-#: composer-ng/richtextcomposeractions.cpp:334
+#: composer-ng/richtextcomposeractions.cpp:335
 #, fuzzy, kde-format
 #| msgid "Re&move Quote Characters"
 msgctxt "@action"
 msgid "Re&move Quote Characters"
 msgstr "Ukloni znakove citi&ranja"
 
-#: composer-ng/richtextcomposeractions.cpp:341
+#: composer-ng/richtextcomposeractions.cpp:342
 #, fuzzy, kde-format
 #| msgid "Paste Without Formatting"
 msgctxt "@action"
@@ -297,71 +297,71 @@ msgstr "Nalepi bez formatiranja"
 
 # >! @action
 # >! @title:window
-#: composer-ng/richtextcomposeractions.cpp:349
+#: composer-ng/richtextcomposeractions.cpp:350
 #, kde-format
 msgid "Add Image"
 msgstr "Dodaj sliku"
 
 # >> @title:window
-#: composer-ng/richtextcomposeractions.cpp:368
+#: composer-ng/richtextcomposeractions.cpp:369
 #, fuzzy, kde-format
 #| msgid "Insert HTML"
 msgctxt "@action"
 msgid "Insert HTML"
 msgstr "Umetanje HTML‑a"
 
-#: composer-ng/richtextcomposeractions.cpp:378
+#: composer-ng/richtextcomposeractions.cpp:379
 #, kde-format
 msgid "Table"
 msgstr "Tabela"
 
-#: composer-ng/richtextcomposeractions.cpp:387
+#: composer-ng/richtextcomposeractions.cpp:388
 #, kde-format
 msgid "Reset Font Settings"
 msgstr "Resetuj postavke fonta"
 
-#: composer-ng/richtextcomposeractions.cpp:388
+#: composer-ng/richtextcomposeractions.cpp:389
 #, kde-format
 msgid "Reset Font"
 msgstr "Resetuj font"
 
-#: composer-ng/richtextcomposeractions.cpp:396
+#: composer-ng/richtextcomposeractions.cpp:397
 #, kde-format
 msgctxt "@action"
 msgid "Format Painter"
 msgstr "Preslikavač formata"
 
-#: composer-ng/richtextcomposeractions.cpp:404
+#: composer-ng/richtextcomposeractions.cpp:405
 #, kde-format
 msgctxt "@title:menu"
 msgid "Heading Level"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:405
+#: composer-ng/richtextcomposeractions.cpp:406
 #, kde-format
 msgctxt "@item:inmenu no heading"
 msgid "Basic text"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:406
+#: composer-ng/richtextcomposeractions.cpp:407
 #, kde-format
 msgctxt "@item:inmenu heading level 1 (largest)"
 msgid "Title"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:407
+#: composer-ng/richtextcomposeractions.cpp:408
 #, kde-format
 msgctxt "@item:inmenu heading level 2"
 msgid "Subtitle"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:408
+#: composer-ng/richtextcomposeractions.cpp:409
 #, kde-format
 msgctxt "@item:inmenu heading level 3"
 msgid "Section"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:409
+#: composer-ng/richtextcomposeractions.cpp:410
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Subscript"
@@ -369,19 +369,19 @@ msgctxt "@item:inmenu heading level 4"
 msgid "Subsection"
 msgstr "Indeks"
 
-#: composer-ng/richtextcomposeractions.cpp:410
+#: composer-ng/richtextcomposeractions.cpp:411
 #, kde-format
 msgctxt "@item:inmenu heading level 5"
 msgid "Paragraph"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:411
+#: composer-ng/richtextcomposeractions.cpp:412
 #, kde-format
 msgctxt "@item:inmenu heading level 6 (smallest)"
 msgid "Subparagraph"
 msgstr ""
 
-#: composer-ng/richtextcomposeractions.cpp:422
+#: composer-ng/richtextcomposeractions.cpp:423
 #, kde-format
 msgctxt "@action"
 msgid "Checkbox"
@@ -392,48 +392,48 @@ msgstr ""
 msgid "Only local files are supported."
 msgstr "Podržani su samo lokalni fajlovi."
 
-#: composer-ng/richtextcomposerimages.cpp:58
+#: composer-ng/richtextcomposerimages.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Unable to load image <filename>%1</filename>."
 msgstr "Ne mogu da učitam sliku <filename>%1</filename>."
 
-#: composer-ng/richtextcomposerimages.cpp:218
+#: composer-ng/richtextcomposerimages.cpp:222
 #, kde-format
 msgctxt "Start of the filename for an image"
 msgid "image"
 msgstr "slika"
 
-#: composer-ng/richtextexternalcomposer.cpp:71
+#: composer-ng/richtextexternalcomposer.cpp:75
 #, kde-format
 msgid "Command line is empty. Please verify settings."
 msgstr "Prazna komandna linija. Proverite postavke."
 
-#: composer-ng/richtextexternalcomposer.cpp:71
+#: composer-ng/richtextexternalcomposer.cpp:75
 #, fuzzy, kde-format
 #| msgid "Empty command line"
 msgctxt "@title:window"
 msgid "Empty command line"
 msgstr "Prazna komandna linija"
 
-#: composer-ng/richtextexternalcomposer.cpp:126
+#: composer-ng/richtextexternalcomposer.cpp:130
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr "Spoljašnji uređivač ne može da se pokrene. Proverite naredbu „%1“."
 
-#: composer-ng/richtextexternalcomposer.cpp:146
+#: composer-ng/richtextexternalcomposer.cpp:150
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "Greška pri pokretanju spoljašnjeg uređivača."
 
-#: composer-ng/richtextexternalcomposer.cpp:146
+#: composer-ng/richtextexternalcomposer.cpp:150
 #, fuzzy, kde-format
 #| msgid "External Editor Closed"
 msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "Spoljašnji uređivač zatvoren"
 
-#: composer-ng/richtextexternalcomposer.cpp:163
+#: composer-ng/richtextexternalcomposer.cpp:167
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -445,45 +445,45 @@ msgstr ""
 "radi?<nl/><warning>Zaustavljanjem uređivača sve nesačuvane izmene biće "
 "izgubljene.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:167
+#: composer-ng/richtextexternalcomposer.cpp:171
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "Spoljašnji uređivač radi"
 
-#: composer-ng/richtextexternalcomposer.cpp:168
+#: composer-ng/richtextexternalcomposer.cpp:172
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "Zaustavi uređivač"
 
-#: composer-ng/richtextexternalcomposer.cpp:169
+#: composer-ng/richtextexternalcomposer.cpp:173
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
 msgstr "Ostavi uređivač da radi"
 
-#: inserthtmldialog.cpp:36
+#: inserthtmldialog.cpp:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Insert HTML"
 msgstr "Umetanje HTML‑a"
 
-#: inserthtmldialog.cpp:38
+#: inserthtmldialog.cpp:40
 #, fuzzy, kde-format
 #| msgid "Insert HTML tags and texts:"
 msgctxt "@label:textbox"
 msgid "Insert HTML tags and texts:"
 msgstr "Umetni HTML oznake i tekst:"
 
-#: inserthtmldialog.cpp:44
+#: inserthtmldialog.cpp:46
 #, fuzzy, kde-format
 #| msgid "Example: <i> Hello word </i>"
 msgctxt "@label:textbox"
 msgid "Example: <i> Hello word </i>"
 msgstr "Primer: <i> Zdravo, svete </i>"
 
-#: inserthtmldialog.cpp:53
+#: inserthtmldialog.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
@@ -502,7 +502,7 @@ msgstr "Umetanje slike"
 msgid "Insert"
 msgstr "Umetni"
 
-#: insertimagewidget.cpp:41
+#: insertimagewidget.cpp:43
 #, fuzzy, kde-format
 #| msgid "Image Location:"
 msgctxt "@label:textbox"
@@ -511,28 +511,28 @@ msgstr "Lokacija slike:"
 
 # >! @action
 # >! @title:window
-#: insertimagewidget.cpp:54
+#: insertimagewidget.cpp:56
 #, fuzzy, kde-format
 #| msgid "Add Image"
 msgctxt "@title:window"
 msgid "Add Image"
 msgstr "Dodaj sliku"
 
-#: insertimagewidget.cpp:65
+#: insertimagewidget.cpp:67
 #, fuzzy, kde-format
 #| msgid "Keep Original Size"
 msgctxt "@option:check"
 msgid "Keep Original Size"
 msgstr "Zadrži izvornu veličinu"
 
-#: insertimagewidget.cpp:72
+#: insertimagewidget.cpp:74
 #, fuzzy, kde-format
 #| msgid "Keep Image Ratio"
 msgctxt "@option:check"
 msgid "Keep Image Ratio"
 msgstr "Zadrži proporciju slike"
 
-#: insertimagewidget.cpp:78 inserttablewidget.cpp:59
+#: insertimagewidget.cpp:80 inserttablewidget.cpp:59
 #, fuzzy, kde-format
 #| msgid "Width:"
 msgctxt "@label:textbox"
@@ -540,19 +540,19 @@ msgid "Width:"
 msgstr "Širina"
 
 # well-spelled: пикс
-#: insertimagewidget.cpp:84 insertimagewidget.cpp:100 inserttablewidget.cpp:36
+#: insertimagewidget.cpp:86 insertimagewidget.cpp:102 inserttablewidget.cpp:36
 #, kde-format
 msgid " px"
 msgstr " piks"
 
-#: insertimagewidget.cpp:94
+#: insertimagewidget.cpp:96
 #, fuzzy, kde-format
 #| msgid "Height:"
 msgctxt "@label:textbox"
 msgid "Height:"
 msgstr "Visina"
 
-#: insertimagewidget.cpp:113
+#: insertimagewidget.cpp:115
 #, fuzzy, kde-format
 #| msgid "Image Preview:"
 msgctxt "@label:textbox"
@@ -696,36 +696,36 @@ msgctxt "@action"
 msgid "Table Cell Format…"
 msgstr "Format ćelije..."
 
-#: tablecellformatdialog.cpp:28
+#: tablecellformatdialog.cpp:30
 #, fuzzy, kde-format
 #| msgid "Cell Format"
 msgctxt "@title:window"
 msgid "Cell Format"
 msgstr "Format ćelije"
 
-#: tablecellformatdialog.cpp:33
+#: tablecellformatdialog.cpp:35
 #, fuzzy, kde-format
 #| msgid "Vertical Alignment:"
 msgctxt "@label:textbox"
 msgid "Vertical Alignment:"
 msgstr "Uspravno poravnanje:"
 
-#: tablecellformatdialog.cpp:36
+#: tablecellformatdialog.cpp:38
 #, kde-format
 msgid "Top"
 msgstr "vrh"
 
-#: tablecellformatdialog.cpp:37
+#: tablecellformatdialog.cpp:39
 #, kde-format
 msgid "Middle"
 msgstr "sredina"
 
-#: tablecellformatdialog.cpp:38
+#: tablecellformatdialog.cpp:40
 #, kde-format
 msgid "Bottom"
 msgstr "dno"
 
-#: tablecellformatdialog.cpp:47 tableformatdialog.cpp:83
+#: tablecellformatdialog.cpp:49 tableformatdialog.cpp:83
 #, fuzzy, kde-format
 #| msgid "Background Color:"
 msgctxt "@option:check"
