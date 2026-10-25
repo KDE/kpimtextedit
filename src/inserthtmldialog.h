@@ -26,7 +26,7 @@ public:
 private:
     friend class InsertHtmlDialogPrivate;
     std::unique_ptr<InsertHtmlDialogPrivate> const d;
-    void readConfig();
-    void writeConfig();
+    KPIMTEXTEDIT_NO_EXPORT void readConfig();
+    KPIMTEXTEDIT_NO_EXPORT void writeConfig();
 };
 }
