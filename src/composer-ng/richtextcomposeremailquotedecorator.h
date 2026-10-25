@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "kpimtextedit_export.h"
 #include <memory>
 #include <sonnet/spellcheckdecorator.h>
 namespace KPIMTextEdit
@@ -20,7 +19,7 @@ class RichTextComposer;
  * \brief The RichTextComposerEmailQuoteDecorator class adds spell-check decoration to quoted text.
  * \author Laurent Montel <montel@kde.org>
  */
-class KPIMTEXTEDIT_EXPORT RichTextComposerEmailQuoteDecorator : public Sonnet::SpellCheckDecorator
+class RichTextComposerEmailQuoteDecorator : public Sonnet::SpellCheckDecorator
 {
     Q_OBJECT
 public:
