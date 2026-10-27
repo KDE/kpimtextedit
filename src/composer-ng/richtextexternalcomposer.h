@@ -20,6 +20,7 @@ class RichTextComposer;
  * \inheaderfile KPIMTextEdit/RichTextExternalComposer
  *
  * \brief The RichTextExternalComposer class manages integration with external text editors.
+ *
  * \author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextExternalComposer : public QObject
@@ -50,7 +51,7 @@ public:
     void startExternalEditor();
 
     /*!
-     * Sets the path to the external editor executable.
+     * Sets the path to the external editor executable to \a path.
      */
     void setExternalEditorPath(const QString &path);
     /*!

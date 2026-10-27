@@ -24,6 +24,7 @@ class RichTextComposer;
  * \inheaderfile KPIMTextEdit/RichTextComposerWidget
  *
  * \brief The RichTextComposerWidget class provides a widget wrapping RichTextComposer with additional UI.
+ *
  * \author Laurent Montel <montel@kde.org>
  * \since 5.2
  */

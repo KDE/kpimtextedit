@@ -232,7 +232,7 @@ public:
     void endList() override;
 
     /*!
-     * Begins a list item element.
+     * Begins a list item element of type \a type.
      */
     void beginListItem(QTextBlockFormat::MarkerType type) override;
     /*!
@@ -299,7 +299,7 @@ public:
     /*!
     Reimplemented from AbstractMarkupBuilder.
 
-    This implementation escapes the text before appending so that
+    This implementation escapes the \a text before appending so that
 
     \badcode
       A sample <b>bold</b> word.

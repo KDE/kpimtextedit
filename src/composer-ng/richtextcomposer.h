@@ -23,7 +23,8 @@ class RichTextComposerEmailQuoteHighlighter;
  * \inmodule KPIMTextedit
  * \inheaderfile KPIMTextEdit/RichTextComposer
  *
- * \brief The RichTextComposer class
+ * \brief The RichTextComposer class.
+ *
  * \author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposer : public TextCustomEditor::RichTextEditor
@@ -108,7 +109,7 @@ public:
      */
     void setUseExternalEditor(bool use);
     /*!
-     * Sets the path to the external editor executable.
+     * Sets the path to the external editor executable to \a path.
      */
     void setExternalEditorPath(const QString &path);
     /*!
@@ -128,7 +129,7 @@ public:
     virtual QString smartQuote(const QString &msg);
 
     /*!
-     * Sets the quote prefix name used for identifying quoted text.
+     * Sets the quote prefix name used for identifying quoted text to \a quotePrefix.
      */
     void setQuotePrefixName(const QString &quotePrefix);
     /*!
@@ -184,7 +185,7 @@ public:
      */
     void createHighlighter() override;
     /*!
-     * Processes a modify text key event. This is a virtual method that can be overridden by subclasses.
+     * Processes the modify text key \a event. This is a virtual method that can be overridden by subclasses.
      * Returns true if the event was processed, false otherwise.
      */
     [[nodiscard]] virtual bool processModifyText(QKeyEvent *event);
@@ -225,7 +226,7 @@ Q_SIGNALS:
      */
     void externalEditorClosed();
     /*!
-     * Emitted when an emoticon is inserted.
+     * Emitted when the emoticon \a str is inserted.
      */
     void insertEmoticon(const QString &str);
 

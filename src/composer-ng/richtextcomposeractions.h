@@ -22,6 +22,7 @@ class RichTextComposerControler;
  * \inheaderfile KPIMTextEdit/RichTextComposerActions
  *
  * \brief The RichTextComposerActions class manages formatting actions for rich text composition.
+ *
  * \author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposerActions : public QObject

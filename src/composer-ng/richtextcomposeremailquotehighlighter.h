@@ -27,7 +27,9 @@ class KPIMTEXTEDIT_EXPORT RichTextComposerEmailQuoteHighlighter : public Sonnet:
 public:
     /*!
      * Constructor with color customization. See setQuoteColor() for the parameters.
-     * Creates a highlighter with the given \a textEdit and optional custom colors.
+     * Creates a highlighter with the given \a textEdit and optional custom colors:
+     * \a normalColor for normal text, \a quoteDepth1, \a quoteDepth2 and \a quoteDepth3
+     * for the quote levels and \a misspelledColor for misspelled words.
      * FIXME: Default colors don't obey color scheme
      */
     explicit RichTextComposerEmailQuoteHighlighter(RichTextComposer *textEdit,
@@ -65,7 +67,7 @@ public:
     void toggleSpellHighlighting(bool on);
 
     /*!
-     * Highlights a single text block with quote and spelling highlighting.
+     * Highlights the text block \a text with quote and spelling highlighting.
      * Reimplemented from Sonnet::Highlighter to highlight quote blocks.
      */
     void highlightBlock(const QString &text) override;
@@ -81,8 +83,8 @@ protected:
     void unsetMisspelled(int start, int count) override;
 
     /*!
-     * Reimplemented to set the color of the misspelled word to a color
-     * defined by setQuoteColor().
+     * Reimplemented to set the color of the misspelled word of \a count characters
+     * starting at \a start to a color defined by setQuoteColor().
      */
     void setMisspelled(int start, int count) override;
 

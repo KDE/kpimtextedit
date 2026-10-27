@@ -18,24 +18,39 @@ namespace KPIMTextEdit
 {
 class RichTextComposer;
 /*!
- * Holds information about an embedded HTML image that will be useful for mail clients.
- * A list with all images can be retrieved with TextEdit::embeddedImages().
+ * \struct KPIMTextEdit::EmbeddedImage
+ * \inmodule KPIMTextedit
+ * \inheaderfile KPIMTextEdit/RichTextComposerImages
+ *
+ * \brief Holds information about an embedded HTML image that will be useful for mail clients.
+ *
+ * A list with all images can be retrieved with RichTextComposerImages::embeddedImages().
  */
 struct EmbeddedImage {
-    QByteArray image; ///< The image, encoded as PNG with base64 encoding
-    QString contentID; ///< The content id of the embedded image
-    QString imageName; ///< Name of the image as it is available as a resource in the editor
+    /*! The image, encoded as PNG with base64 encoding */
+    QByteArray image;
+    /*! The content id of the embedded image */
+    QString contentID;
+    /*! Name of the image as it is available as a resource in the editor */
+    QString imageName;
 };
 
 /*!
- * Holds information about an embedded HTML image that will be generally useful.
- * A list with all images can be retrieved with TextEdit::imagesWithName().
+ * \struct KPIMTextEdit::ImageWithName
+ * \inmodule KPIMTextedit
+ * \inheaderfile KPIMTextEdit/RichTextComposerImages
+ *
+ * \brief Holds information about an embedded HTML image that will be generally useful.
+ *
+ * A list with all images can be retrieved with RichTextComposerImages::imagesWithName().
  *
  * \since 4.4
  */
 struct ImageWithName {
-    QImage image; ///< The image
-    QString name; ///< The name of the image as it is available as a resource in the editor
+    /*! The image */
+    QImage image;
+    /*! The name of the image as it is available as a resource in the editor */
+    QString name;
 };
 
 using ImageWithNamePtr = QSharedPointer<ImageWithName>;
@@ -56,8 +71,8 @@ public:
     /*!
      * Constructs a RichTextComposerImages object.
      *
-     * \param composer The RichTextComposer instance
-     * \param parent The parent QObject
+     * \a composer The RichTextComposer instance
+     * \a parent The parent QObject
      */
     explicit RichTextComposerImages(RichTextComposer *composer, QObject *parent = nullptr);
     /*!
@@ -93,10 +108,10 @@ public:
     /*!
      * Helper function to add an image with the given name.
      *
-     * \param imageName The name of the image
-     * \param image The image to add
-     * \param width The width of the image, or -1 for default
-     * \param height The height of the image, or -1 for default
+     * \a imageName The name of the image
+     * \a image The image to add
+     * \a width The width of the image, or -1 for default
+     * \a height The height of the image, or -1 for default
      */
     void addImageHelper(const QString &imageName, const QImage &image, int width = -1, int height = -1);
     /*!
@@ -120,16 +135,16 @@ public:
     /*!
      * Helper function to add an image from a URL.
      *
-     * \param url The URL of the image file
-     * \param width The width of the image, or -1 for default
-     * \param height The height of the image, or -1 for default
+     * \a url The URL of the image file
+     * \a width The width of the image, or -1 for default
+     * \a height The height of the image, or -1 for default
      */
     void addImageHelper(const QUrl &url, int width = -1, int height = -1);
     /*!
      * Inserts an image from file information.
      *
-     * \param image The image to insert
-     * \param fileInfo The file information for the image
+     * \a image The image to insert
+     * \a fileInfo The file information for the image
      */
     void insertImage(const QImage &image, const QFileInfo &fileInfo);
 
@@ -166,8 +181,8 @@ public:
     /*!
      * Creates an embedded image from a QImage.
      *
-     * \param img The image to embed
-     * \param imageName The name of the image
+     * \a img The image to embed
+     * \a imageName The name of the image
      * \return A shared pointer to the created EmbeddedImage
      */
     [[nodiscard]] QSharedPointer<EmbeddedImage> createEmbeddedImage(const QImage &img, const QString &imageName) const;

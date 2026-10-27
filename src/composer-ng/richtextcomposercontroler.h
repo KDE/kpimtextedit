@@ -19,6 +19,7 @@ class RichTextComposerImages;
  * \inheaderfile KPIMTextEdit/RichTextComposerControler
  *
  * \brief The RichTextComposerControler class provides control and logic for rich text composition operations.
+ *
  * \author Laurent Montel <montel@kde.org>
  */
 class KPIMTEXTEDIT_EXPORT RichTextComposerControler : public QObject
@@ -101,11 +102,11 @@ public:
     [[nodiscard]] bool isFormattingUsed() const;
 
     /*!
-     * Sets the font for the entire text content.
+     * Sets the font for the entire text content to \a font.
      */
     void setFontForWholeText(const QFont &font);
     /*!
-     * This signal is emitted when the text mode changes.
+     * This signal is emitted when the text mode changes to \a mode.
      */
     void textModeChanged(KPIMTextEdit::RichTextComposer::Mode mode);
     /*!

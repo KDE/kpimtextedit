@@ -37,7 +37,7 @@ public:
     ~PlainTextMarkupBuilder() override;
 
     /*!
-     * Sets the prefix to use for quoted text lines.
+     * Sets the \a prefix to use for quoted text lines.
      */
     void setQuotePrefix(const QString &prefix);
 
@@ -85,7 +85,8 @@ public:
     void endAnchor() override;
 
     /*!
-     * Begins a paragraph with the given alignment and margins.
+     * Begins a paragraph with the alignment \a a, the margins \a top, \a bottom,
+     * \a left and \a right, and the text direction \a rightToLeftText.
      */
     void beginParagraph(Qt::Alignment a = Qt::AlignLeft, qreal top = 0.0, qreal bottom = 0.0, qreal left = 0.0, qreal right = 0.0, bool rightToLeftText = false)
         override;
@@ -120,7 +121,7 @@ public:
     void endList() override;
 
     /*!
-     * Begins a list item.
+     * Begins a list item of type \a type.
      */
     void beginListItem(QTextBlockFormat::MarkerType type) override;
 
@@ -170,17 +171,17 @@ public:
     void beginTableCell(const QTextTableCellFormat &format, const QTextLength &width) override;
 
     /*!
-     * Appends literal text to the output.
+     * Appends the literal \a text to the output.
      */
     void appendLiteralText(const QString &text) override;
 
     /*!
-     * Appends raw text to the output without escaping.
+     * Appends the raw \a text to the output without escaping.
      */
     void appendRawText(const QString &text) override;
 
     /*!
-     * Adds a reference to the internal list of references and returns its index.
+     * Adds \a reference to the internal list of references and returns its index.
      */
     [[nodiscard]] int addReference(const QString &reference);
 
@@ -190,7 +191,7 @@ public:
     [[nodiscard]] QString getResult() override;
 
     /*!
-     * Returns true if the given dimensions indicate a quoted block.
+     * Returns true if the margins \a top, \a bottom, \a left and \a right indicate a quoted block.
      */
     [[nodiscard]] bool isQuoteBlock(qreal top, qreal bottom, qreal left, qreal right) const;
 

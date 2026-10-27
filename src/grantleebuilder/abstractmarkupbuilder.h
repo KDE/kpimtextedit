@@ -27,15 +27,15 @@ namespace KPIMTextEdit
   \inheaderfile KPIMTextEdit/AbstractMarkupBuilder
   \brief Interface for creating marked-up text output.
 
-  The **%AbstractMarkupBuilder** is used by a MarkupDirector to create marked-up
+  The \b AbstractMarkupBuilder is used by a MarkupDirector to create marked-up
   output such as html or markdown.
 
   See PlainTextMarkupBuilder and TextHTMLBuilder for example implementations.
 
   This interface can be extended to handle custom format types in a
-  QTextDocument. \sa custom_qtextobject
+  QTextDocument.
 
-  @author Stephen Kelly <steveire@gmail.com>
+  \author Stephen Kelly <steveire@gmail.com>
 */
 class KPIMTEXTEDIT_EXPORT AbstractMarkupBuilder
 {
@@ -159,7 +159,7 @@ public:
   */
     virtual void endList() = 0;
 
-    /*! Begin a new list item in the markup */
+    /*! Begin a new list item of type \a type in the markup */
     virtual void beginListItem(QTextBlockFormat::MarkerType type) = 0;
 
     /*! End the list item */

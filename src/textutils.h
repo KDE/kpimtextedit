@@ -16,7 +16,9 @@ class QTextDocument;
 namespace KPIMTextEdit
 {
 /*!
-  Utility class for methods working with rich text.
+  \namespace KPIMTextEdit::TextUtils
+  \inmodule KPIMTextedit
+  \brief Utility methods for working with rich text.
 
   \since 4.5
 */

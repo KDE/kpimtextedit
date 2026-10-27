@@ -22,12 +22,12 @@ class MarkupDirectorPrivate;
 
 /*!
  * \class KPIMTextEdit::MarkupDirector
- * \inmodule KPIMTextEdit
+ * \inmodule KPIMTextedit
  * \inheaderfile KPIMTextEdit/MarkupDirector
  *
-  \brief Instructs a builder object to create markup output
+  \brief Instructs a builder object to create markup output.
 
-  The **%MarkupDirector** is used with an implementation of
+  The \b MarkupDirector is used with an implementation of
   AbstractMarkupBuilder to create a marked up document output.
 
   Usage can be quite simple.
@@ -50,7 +50,7 @@ class MarkupDirectorPrivate;
     browser->setPlainText(builder->getResult());
   \endcode
 
-  The **%MarkupDirector** also provides API for processing just part of a
+  The \b MarkupDirector also provides API for processing just part of a
   QTextDocument, such as a QTextFrame or a QTextBlock. The appropriate method
   may then be called with an invalid iterator as appropriate.
 
@@ -66,11 +66,9 @@ class MarkupDirectorPrivate;
     browser->setPlainText(builder->getResult());
   \endcode
 
-  The behaviour of the **%MarkupDirector** can be customized by subclassing.
+  The behaviour of the \b MarkupDirector can be customized by subclassing.
   Support for custom types can also be added by implementing the \
   processCustomFragment method.
-
-  \sa custom_qtextobject
 
   \author Stephen Kelly <steveire@gmail.com>
 */
@@ -93,14 +91,14 @@ public:
     virtual void processDocument(QTextDocument *doc);
 
     /*!
-     * Directs the builder to create output for the single \a frame. If calling
+     * Directs the builder to create output for the single \a frame at the position \a it. If calling
      * this method directly, an invalid QTextFrame::iterator may be used.
      * Returns the iterator position after processing the frame.
      */
     [[nodiscard]] virtual QTextFrame::iterator processFrame(QTextFrame::iterator it, QTextFrame *frame);
 
     /*!
-     * Directs the builder to create output for the single \a block. If calling
+     * Directs the builder to create output for the single \a block at the position \a it. If calling
      * this method directly, an invalid QTextFrame::iterator may be used.
      * This method does not process the contents of the \a block, but uses the
      * processBlockContents method to do so.
@@ -109,7 +107,7 @@ public:
     [[nodiscard]] virtual QTextFrame::iterator processBlock(QTextFrame::iterator it, const QTextBlock &block);
 
     /*!
-     * Directs the builder to create output for the single \a textObject. If
+     * Directs the builder to create output for the single \a textObject at the position \a it. If
      * calling this method directly, an invalid QTextFrame::iterator may be used.
      * The block \a block is the container of the \a textObject.
      * Returns the iterator position after processing the object.
@@ -117,7 +115,7 @@ public:
     [[nodiscard]] virtual QTextFrame::iterator processObject(QTextFrame::iterator it, const QTextBlock &block, QTextObject *textObject);
 
     /*!
-     * Directs the builder to create output for the single \a textBlockGroup. If
+     * Directs the builder to create output for the single \a textBlockGroup at the position \a it. If
      * calling this method directly, an invalid QTextFrame::iterator may be used.
      * The block \a block is the first block in the \a textBlockGroup.
      * Returns a pair containing the iterator and block after processing.
@@ -126,7 +124,7 @@ public:
     processBlockGroup(const QTextFrame::iterator &it, const QTextBlock &block, QTextBlockGroup *textBlockGroup);
 
     /*!
-     * Directs the builder to create output for the single \a textList. If
+     * Directs the builder to create output for the single \a textList at the position \a it. If
      * calling this method directly, an invalid QTextFrame::iterator may be used.
      * The block \a block is the first block in the \a textList.
      * Returns a pair containing the iterator and block after processing.
@@ -134,7 +132,7 @@ public:
     [[nodiscard]] virtual QPair<QTextFrame::iterator, QTextBlock> processList(QTextFrame::iterator it, const QTextBlock &block, QTextList *textList);
 
     /*!
-     * Directs the builder to create output for the contents of the single block.
+     * Directs the builder to create output for the contents of the single \a block at the position \a it.
      * If calling this method directly, an invalid QTextFrame::iterator may be used.
      * Returns the iterator position after processing the block contents.
      */
@@ -147,7 +145,7 @@ public:
     virtual void processCustomFragment(const QTextFragment &fragment, QTextDocument const *doc);
 
     /*!
-     * Directs the builder to create output for the contents of the single \a fragment.
+     * Directs the builder to create output for the contents of the single \a fragment at the position \a it.
      * If calling this method directly, an invalid QTextBlock::iterator may be used.
      * \a doc is the document the fragment is in.
      * Returns the iterator position after processing the fragment.
@@ -156,14 +154,14 @@ public:
 
     /*!
      * Directs the builder to create output for the contents of the single \a textObject.
-     * The \a textObject is represented in the QTextDocument with the QTextFragment \a fragment.
+     * The \a textObject is represented in the QTextDocument with the QTextFragment \a fragment at the position \a it.
      * If calling this method directly, an invalid QTextBlock::iterator may be used.
      * Returns the iterator position after processing the character text object.
      */
     [[nodiscard]] virtual QTextBlock::iterator processCharTextObject(QTextBlock::iterator it, const QTextFragment &fragment, QTextObject *textObject);
 
     /*!
-     * Directs the builder to create output for the image represented by the \a imageFormat.
+     * Directs the builder to create output for the image represented by the \a imageFormat at the position \a it.
      * If calling this method directly, an invalid QTextBlock::iterator may be used.
      * \a doc is the document the fragment is in.
      * Returns the iterator position after processing the image.
@@ -172,7 +170,7 @@ public:
 
     /*!
      * Directs the builder to create output for the contents of the single
-    table.
+    \a table at the position \a it.
 
     If calling this method directly, an invalid QTextFrame::iterator may be
     used.
@@ -180,7 +178,7 @@ public:
     [[nodiscard]] virtual QTextFrame::iterator processTable(QTextFrame::iterator it, QTextTable *table);
 
     /*!
-    Directs the builder to create output for the contents of the single @p
+    Directs the builder to create output for the contents of the single \a
     tableCell. The tableCell is in the \a table.
   */
     virtual void processTableCell(const QTextTableCell &tableCell, QTextTable *table);
@@ -192,7 +190,7 @@ protected:
     void processDocumentContents(QTextFrame::iterator begin, const QTextFrame::iterator &end);
 
     /*!
-    Iterates the iterator \a it to the first block after \a blockGroup. @p
+    Iterates the iterator \a it to the first block after \a blockGroup. \a
     _block is any block in the \a blockGroup.
 
     The return pair is the iterator pointing after the end of \a blockGroup
@@ -210,7 +208,7 @@ protected:
     [[nodiscard]] QList<int> sortOpeningOrder(QSet<int> openingTags, QTextBlock::iterator it) const;
 
     /*!
-    Directs the builder to close the appropriate tags at the position of @p
+    Directs the builder to close the appropriate tags at the position of \a
     it.
   */
     virtual void processClosingElements(const QTextBlock::iterator &it);
@@ -232,20 +230,33 @@ protected:
 
     /*!
     Flags for the tags that may be open.
+
+    \value None No tags are open
+    \value SuperScript A superscript tag is open
+    \value SubScript A subscript tag is open
+    \value Anchor An anchor tag is open
+    \value SpanForeground A foreground altering span tag is open.
+    \value SpanBackground A background altering span tag is open.
+    \value SpanFontFamily A font family altering span tag is open.
+    \value SpanFontPointSize A font size altering span tag is open.
+    \value Strong A strong tag is open.
+    \value Emph A emphasis tag is open.
+    \value Underline An underline tag is open.
+    \value StrikeOut A strikeout tag is open.
   */
     enum OpenElementValues {
-        None = 0x0, /// No tags are open
-        SuperScript = 0x01, /// A superscript tag is open
-        SubScript = 0x02, /// A subscript tag is open
-        Anchor = 0x04, /// An anchor tag is open
-        SpanForeground = 0x08, /// A foreground altering span tag is open.
-        SpanBackground = 0x10, /// A background altering span tag is open.
-        SpanFontFamily = 0x20, /// A font family altering span tag is open.
-        SpanFontPointSize = 0x40, /// A font size altering span tag is open.
-        Strong = 0x80, /// A strong tag is open.
-        Emph = 0x100, /// A emphasis tag is open.
-        Underline = 0x200, /// An underline tag is open.
-        StrikeOut = 0x400 /// A strikeout tag is open.
+        None = 0x0,
+        SuperScript = 0x01,
+        SubScript = 0x02,
+        Anchor = 0x04,
+        SpanForeground = 0x08,
+        SpanBackground = 0x10,
+        SpanFontFamily = 0x20,
+        SpanFontPointSize = 0x40,
+        Strong = 0x80,
+        Emph = 0x100,
+        Underline = 0x200,
+        StrikeOut = 0x400
     };
 
 protected:
