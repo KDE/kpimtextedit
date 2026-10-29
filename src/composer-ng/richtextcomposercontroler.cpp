@@ -850,6 +850,7 @@ QString RichTextComposerControler::toWrappedPlainText() const
 QString RichTextComposerControler::toWrappedPlainText(QTextDocument *doc) const
 {
     QString temp;
+    temp.reserve(doc->characterCount());
     static const QRegularExpression rx(u"(http|ftp|ldap)s?\\S+-$"_s);
     QTextBlock block = doc->begin();
     while (block.isValid()) {
