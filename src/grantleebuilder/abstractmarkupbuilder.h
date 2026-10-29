@@ -255,6 +255,9 @@ public:
   */
     [[nodiscard]] virtual QString getResult() = 0;
 
+    /*!
+    Add a single line break to the markup.
+  */
     virtual void addSingleBreakLine() = 0;
 };
 }

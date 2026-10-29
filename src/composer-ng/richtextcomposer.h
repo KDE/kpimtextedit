@@ -40,9 +40,17 @@ public:
      */
     ~RichTextComposer() override;
 
+    /*!
+     * \enum KPIMTextEdit::RichTextComposer::Mode
+     *
+     * The text mode of the composer.
+     *
+     * \value Plain Plain text mode
+     * \value Rich Rich text mode
+     */
     enum Mode {
-        Plain, ///< Plain text mode
-        Rich ///< Rich text mode
+        Plain,
+        Rich,
     };
 
     /*!
@@ -231,13 +239,38 @@ Q_SIGNALS:
     void insertEmoticon(const QString &str);
 
 protected:
+    /*!
+     * Handles the key press \a event.
+     */
     void keyPressEvent(QKeyEvent *event) override;
+    /*!
+     * Creates and returns the spell check decorator used for email quotes.
+     */
     Sonnet::SpellCheckDecorator *createSpellCheckDecorator() override;
+    /*!
+     * Inserts the contents of the mime data \a source, handling images and HTML depending on the text mode.
+     */
     void insertFromMimeData(const QMimeData *source) override;
+    /*!
+     * Returns true if the contents of the mime data \a source can be inserted.
+     */
     bool canInsertFromMimeData(const QMimeData *source) const override;
+    /*!
+     * Handles the mouse release \a event. Disables the format painter if it is active.
+     */
     void mouseReleaseEvent(QMouseEvent *event) override;
+    /*!
+     * Clears the spell check decorator. This implementation does nothing.
+     */
     void clearDecorator() override;
+    /*!
+     * Updates the highlighter according to the spell checking state.
+     */
     void updateHighLighter() override;
+    /*!
+     * Processes the key event \a e. Starts the external editor if it is enabled.
+     * Returns true if the event was handled.
+     */
     bool processKeyEvent(QKeyEvent *e);
 
 private:

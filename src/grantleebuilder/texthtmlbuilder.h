@@ -320,8 +320,14 @@ public:
   */
     void appendRawText(const QString &text) override;
 
+    /*!
+    Returns the fully marked up HTML result.
+  */
     [[nodiscard]] QString getResult() override;
 
+    /*!
+    Add a single line break (a br element) to the markup.
+  */
     void addSingleBreakLine() override;
 
 private:
