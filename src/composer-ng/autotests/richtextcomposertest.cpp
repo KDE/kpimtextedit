@@ -441,6 +441,21 @@ void RichTextComposerTest::testLoadImage()
     edit2.composerControler()->composerImages()->loadImage(image1, u"folder-new.png"_s, u"folder-new"_s);
     QVERIFY(edit.document()->resource(QTextDocument::ImageResource, QUrl(u"folder-new"_s)).isValid());
     QCOMPARE(edit.composerControler()->composerImages()->embeddedImages().size(), 1);
+
+    // Bug 527959: link around an image must be kept
+    KPIMTextEdit::RichTextComposer edit3;
+    edit3.createActions(new KActionCollection(this));
+    edit3.setHtml(u"<a href=\"https://example.org/\"><img src=\"folder-new.png\" width=\"600\" height=\"200\"></a>"_s);
+    edit3.composerControler()->composerImages()->loadImage(image1, u"folder-new.png"_s, u"folder-new"_s);
+    QTextCursor cursor(edit3.document());
+    cursor.setPosition(1);
+    const QTextImageFormat imageFormat = cursor.charFormat().toImageFormat();
+    QVERIFY(imageFormat.isValid());
+    QCOMPARE(imageFormat.name(), u"folder-new"_s);
+    QVERIFY(imageFormat.isAnchor());
+    QCOMPARE(imageFormat.anchorHref(), u"https://example.org/"_s);
+    QCOMPARE(imageFormat.width(), 600.0);
+    QCOMPARE(imageFormat.height(), 200.0);
 }
 
 void RichTextComposerTest::testWrappedPlainText_data()

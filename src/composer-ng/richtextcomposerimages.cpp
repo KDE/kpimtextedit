@@ -88,12 +88,9 @@ void RichTextComposerImages::loadImage(const QImage &image, const QString &match
                         cursor.setPosition(pos + 1, QTextCursor::KeepAnchor);
                         cursor.removeSelectedText();
                         d->composer->document()->addResource(QTextDocument::ImageResource, QUrl(resourceName), QVariant(image));
-                        QTextImageFormat format;
+                        // Keep the original format so that anchor (href), title, size, ... are preserved
+                        QTextImageFormat format = imageFormat;
                         format.setName(resourceName);
-                        if ((imageFormat.width() != 0.0) && (imageFormat.height() != 0.0)) {
-                            format.setWidth(imageFormat.width());
-                            format.setHeight(imageFormat.height());
-                        }
                         cursor.insertImage(format);
 
                         // The textfragment iterator is now invalid, restart from the beginning
