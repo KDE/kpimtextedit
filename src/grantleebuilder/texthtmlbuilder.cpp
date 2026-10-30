@@ -767,16 +767,16 @@ void TextHTMLBuilder::appendLiteralText(const QString &text)
 
         if (c == u' ') {
             if (i == 0) {
-                textEscapedResult += u"&nbsp;"_s;
+                textEscapedResult += u"&nbsp;";
             } else {
                 if (i + 1 < textEscaped.length() && (textEscaped.at(i + 1) == u' ')) {
-                    textEscapedResult += u"&nbsp;"_s;
+                    textEscapedResult += u"&nbsp;";
                 } else {
                     textEscapedResult += c;
                 }
             }
         } else if (c == u'\t') {
-            textEscapedResult += u"&nbsp;&nbsp;&nbsp; "_s;
+            textEscapedResult += u"&nbsp;&nbsp;&nbsp; ";
         } else {
             textEscapedResult += c;
         }
