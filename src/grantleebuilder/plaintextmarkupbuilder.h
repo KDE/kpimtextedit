@@ -10,9 +10,6 @@
 #include "abstractmarkupbuilder.h"
 #include "kpimtextedit_export.h"
 
-#define LETTERSINALPHABET 26
-#define DIGITSOFFSET 10
-
 namespace KPIMTextEdit
 {
 class PlainTextMarkupBuilderPrivate;

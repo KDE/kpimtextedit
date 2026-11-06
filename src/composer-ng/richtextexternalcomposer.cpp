@@ -17,6 +17,7 @@
 #include <QFile>
 #include <QHash>
 #include <QTemporaryFile>
+#include <QTextCursor>
 #include <QTextDocument>
 
 using namespace Qt::Literals::StringLiterals;
@@ -115,7 +116,9 @@ void RichTextExternalComposer::startExternalEditor()
             (*d->externalEditorProcess) << d->extEditorTempFile->fileName();
         }
 
-        connect(d->externalEditorProcess, &KProcess::finished, this, &RichTextExternalComposer::slotEditorFinished);
+        connect(d->externalEditorProcess, &KProcess::finished, this, [this](int exitCode, QProcess::ExitStatus exitStatus) {
+            slotEditorFinished(exitCode, exitStatus == QProcess::NormalExit);
+        });
         d->externalEditorProcess->start();
         if (!d->externalEditorProcess->waitForStarted()) {
             d->cannotStartProcess(commandLine);
@@ -132,9 +135,9 @@ void RichTextExternalComposer::RichTextExternalComposerPrivate::cannotStartProce
     richTextComposer->setUseExternalEditor(false);
 }
 
-void RichTextExternalComposer::slotEditorFinished(int codeError, QProcess::ExitStatus exitStatus)
+void RichTextExternalComposer::slotEditorFinished(int codeError, bool normalExit)
 {
-    if (exitStatus == QProcess::NormalExit) {
+    if (normalExit) {
         // the external editor could have renamed the original file and recreated a new file
         // with the given filename, so we need to reopen the file after the editor exited
         if (d->extEditorTempFile) {

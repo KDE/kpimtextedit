@@ -10,6 +10,7 @@
 #include <QBrush>
 #include <QColor>
 #include <QList>
+#include <QStringList>
 #include <QtMath>
 
 using namespace Qt::Literals::StringLiterals;

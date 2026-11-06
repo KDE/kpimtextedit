@@ -18,6 +18,7 @@
 #include <KMessageBox>
 #include <QClipboard>
 #include <QColorDialog>
+#include <QCursor>
 #include <QIcon>
 #include <QPointer>
 #include <QRegularExpression>

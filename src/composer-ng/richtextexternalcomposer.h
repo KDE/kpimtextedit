@@ -8,7 +8,6 @@
 
 #include "kpimtextedit_export.h"
 #include <QObject>
-#include <QProcess>
 #include <memory>
 
 namespace KPIMTextEdit
@@ -84,7 +83,7 @@ Q_SIGNALS:
     void externalEditorStarted();
 
 private:
-    KPIMTEXTEDIT_NO_EXPORT void slotEditorFinished(int codeError, QProcess::ExitStatus exitStatus);
+    KPIMTEXTEDIT_NO_EXPORT void slotEditorFinished(int codeError, bool normalExit);
     class RichTextExternalComposerPrivate;
     std::unique_ptr<RichTextExternalComposerPrivate> const d;
 };

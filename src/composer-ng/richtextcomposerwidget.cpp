@@ -6,7 +6,7 @@
 
 #include "richtextcomposerwidget.h"
 
-#include "kpimtextedit/richtextcomposer.h"
+#include "richtextcomposer.h"
 #include <QHBoxLayout>
 #include <TextCustomEditor/RichTextEditorWidget>
 

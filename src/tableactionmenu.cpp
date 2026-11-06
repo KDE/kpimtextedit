@@ -13,6 +13,7 @@
 
 #include <KLocalizedString>
 #include <QAction>
+#include <QColor>
 #include <QIcon>
 
 #include <QPointer>

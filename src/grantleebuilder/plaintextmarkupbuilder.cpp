@@ -7,7 +7,15 @@
 
 #include "plaintextmarkupbuilder.h"
 
+#include <QStringList>
+
 using namespace Qt::Literals::StringLiterals;
+
+namespace
+{
+constexpr int lettersInAlphabet = 26;
+constexpr int digitsOffset = 10;
+}
 
 namespace KPIMTextEdit
 {
@@ -114,11 +122,11 @@ QString PlainTextMarkupBuilderPrivate::getLetterString(int itemNumber)
         // alphabet plus 10) after being increased by 10 (to pass out the digits
         // 0
         // to 9).
-        letterString.prepend(u"%1"_s.arg((itemNumber % LETTERSINALPHABET) + DIGITSOFFSET,
+        letterString.prepend(u"%1"_s.arg((itemNumber % lettersInAlphabet) + digitsOffset,
                                          0, // no padding while building this string.
-                                         LETTERSINALPHABET + DIGITSOFFSET));
-        if ((itemNumber >= LETTERSINALPHABET)) {
-            itemNumber = itemNumber / LETTERSINALPHABET;
+                                         lettersInAlphabet + digitsOffset));
+        if ((itemNumber >= lettersInAlphabet)) {
+            itemNumber = itemNumber / lettersInAlphabet;
             itemNumber--;
         } else {
             break;

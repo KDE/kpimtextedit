@@ -8,6 +8,7 @@
 #pragma once
 
 #include <QDialog>
+#include <memory>
 class QUrl;
 namespace KPIMTextEdit
 {

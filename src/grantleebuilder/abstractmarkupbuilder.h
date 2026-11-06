@@ -10,9 +10,7 @@
 #include "kpimtextedit_export.h"
 
 #include <QString>
-#include <QTextListFormat>
-#include <QTextTableCellFormat>
-#include <QTextTableFormat>
+#include <QTextFormat>
 
 class QBrush;
 

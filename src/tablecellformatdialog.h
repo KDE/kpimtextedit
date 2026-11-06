@@ -10,6 +10,7 @@
 #include <QDialog>
 
 #include <QTextCharFormat>
+#include <memory>
 
 namespace KPIMTextEdit
 {

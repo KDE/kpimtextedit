@@ -6,8 +6,8 @@
 
 #pragma once
 
+#include <Sonnet/SpellCheckDecorator>
 #include <memory>
-#include <sonnet/spellcheckdecorator.h>
 namespace KPIMTextEdit
 {
 class RichTextComposer;

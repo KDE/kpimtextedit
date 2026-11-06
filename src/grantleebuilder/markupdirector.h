@@ -6,16 +6,17 @@
 */
 #pragma once
 
-#include "abstractmarkupbuilder.h"
 #include "kpimtextedit_export.h"
-#include <QTextDocument>
 #include <QTextFrame>
+
+class QTextDocument;
 class QTextTable;
 class QTextTableCell;
 class QTextList;
 
 namespace KPIMTextEdit
 {
+class AbstractMarkupBuilder;
 class MarkupDirectorPrivate;
 
 /// @headerfile markupdirector.h grantlee/markupdirector.h
