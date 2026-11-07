@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-30 00:55+0000\n"
+"POT-Creation-Date: 2026-11-07 00:58+0000\n"
 "PO-Revision-Date: 2026-08-03 20:00+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -370,7 +370,7 @@ msgctxt "@action"
 msgid "Checkbox"
 msgstr "Avkryssingsboks"
 
-#: composer-ng/richtextcomposercontroler.cpp:715
+#: composer-ng/richtextcomposercontroler.cpp:716
 #, kde-format
 msgid "Only local files are supported."
 msgstr "Berre lokale filer er støtta."
@@ -387,34 +387,34 @@ msgctxt "Start of the filename for an image"
 msgid "image"
 msgstr "Bilete"
 
-#: composer-ng/richtextexternalcomposer.cpp:75
+#: composer-ng/richtextexternalcomposer.cpp:76
 #, kde-format
 msgid "Command line is empty. Please verify settings."
 msgstr "Kommandolinja er tom. Kontroller innstillingane."
 
-#: composer-ng/richtextexternalcomposer.cpp:75
+#: composer-ng/richtextexternalcomposer.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Empty command line"
 msgstr "Tom kommandolinje"
 
-#: composer-ng/richtextexternalcomposer.cpp:130
+#: composer-ng/richtextexternalcomposer.cpp:133
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr "Kan ikkje starta eksternt skriveprogram. Kontroller kommandoen «%1»."
 
-#: composer-ng/richtextexternalcomposer.cpp:150
+#: composer-ng/richtextexternalcomposer.cpp:153
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "Det oppstod ein feil ved start av eksternt skriveprogram."
 
-#: composer-ng/richtextexternalcomposer.cpp:150
+#: composer-ng/richtextexternalcomposer.cpp:153
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "Eksternt skriveprogram vart lukka"
 
-#: composer-ng/richtextexternalcomposer.cpp:167
+#: composer-ng/richtextexternalcomposer.cpp:170
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -426,19 +426,19 @@ msgstr ""
 "eller la det køyra?<nl/><warning>Viss du stoppar skriveprogrammet, vil alle "
 "dei ulagra endringane dine gå tapt.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:171
+#: composer-ng/richtextexternalcomposer.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "Eksternt skriveprogram køyrer"
 
-#: composer-ng/richtextexternalcomposer.cpp:172
+#: composer-ng/richtextexternalcomposer.cpp:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "Stopp skriveprogram"
 
-#: composer-ng/richtextexternalcomposer.cpp:173
+#: composer-ng/richtextexternalcomposer.cpp:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -474,7 +474,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Set inn bilete"
 
-#: insertimagedialog.cpp:37 inserttabledialog.cpp:37 tableactionmenu.cpp:410
+#: insertimagedialog.cpp:37 inserttabledialog.cpp:37 tableactionmenu.cpp:411
 #, kde-format
 msgid "Insert"
 msgstr "Set inn"
@@ -560,89 +560,89 @@ msgstr "% av vindauget"
 msgid "pixels"
 msgstr "pikslar"
 
-#: tableactionmenu.cpp:413
+#: tableactionmenu.cpp:414
 #, kde-format
 msgid "Table…"
 msgstr "Tabell …"
 
-#: tableactionmenu.cpp:421
+#: tableactionmenu.cpp:422
 #, kde-format
 msgid "Row Below"
 msgstr "Rader under"
 
-#: tableactionmenu.cpp:428
+#: tableactionmenu.cpp:429
 #, kde-format
 msgid "Row Above"
 msgstr "Rader over"
 
-#: tableactionmenu.cpp:436
+#: tableactionmenu.cpp:437
 #, kde-format
 msgid "Column Before"
 msgstr "Kolonnar før"
 
-#: tableactionmenu.cpp:444
+#: tableactionmenu.cpp:445
 #, kde-format
 msgid "Column After"
 msgstr "Kolonnar etter"
 
-#: tableactionmenu.cpp:451
+#: tableactionmenu.cpp:452
 #, kde-format
 msgid "Delete"
 msgstr "Slett"
 
-#: tableactionmenu.cpp:454
+#: tableactionmenu.cpp:455
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Rader under"
 
-#: tableactionmenu.cpp:461
+#: tableactionmenu.cpp:462
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Rader over"
 
-#: tableactionmenu.cpp:469
+#: tableactionmenu.cpp:470
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Kolonnar før"
 
-#: tableactionmenu.cpp:477
+#: tableactionmenu.cpp:478
 #, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "Kolonnar etter"
 
-#: tableactionmenu.cpp:485
+#: tableactionmenu.cpp:486
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Celleinnhald"
 
-#: tableactionmenu.cpp:494
+#: tableactionmenu.cpp:495
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "Slå saman med cella til høgre"
 
-#: tableactionmenu.cpp:501
+#: tableactionmenu.cpp:502
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Slå saman merkte celler"
 
-#: tableactionmenu.cpp:508
+#: tableactionmenu.cpp:509
 #, kde-format
 msgid "Split cells"
 msgstr "Del celler"
 
-#: tableactionmenu.cpp:517
+#: tableactionmenu.cpp:518
 #, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "Tabellformat …"
 
-#: tableactionmenu.cpp:524
+#: tableactionmenu.cpp:525
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"

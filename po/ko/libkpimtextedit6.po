@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-30 00:55+0000\n"
+"POT-Creation-Date: 2026-11-07 00:58+0000\n"
 "PO-Revision-Date: 2024-08-19 23:54+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -367,7 +367,7 @@ msgctxt "@action"
 msgid "Checkbox"
 msgstr "체크 상자"
 
-#: composer-ng/richtextcomposercontroler.cpp:715
+#: composer-ng/richtextcomposercontroler.cpp:716
 #, kde-format
 msgid "Only local files are supported."
 msgstr "로컬 파일만 지원합니다."
@@ -384,35 +384,35 @@ msgctxt "Start of the filename for an image"
 msgid "image"
 msgstr "그림"
 
-#: composer-ng/richtextexternalcomposer.cpp:75
+#: composer-ng/richtextexternalcomposer.cpp:76
 #, kde-format
 msgid "Command line is empty. Please verify settings."
 msgstr "명령행이 비어 있습니다. 설정을 확인하십시오."
 
-#: composer-ng/richtextexternalcomposer.cpp:75
+#: composer-ng/richtextexternalcomposer.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Empty command line"
 msgstr "빈 명령행"
 
-#: composer-ng/richtextexternalcomposer.cpp:130
+#: composer-ng/richtextexternalcomposer.cpp:133
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr ""
 "외부 편집기를 시작할 수 없습니다. \"%1\" 명령이 존재하는 지 확인하십시오"
 
-#: composer-ng/richtextexternalcomposer.cpp:150
+#: composer-ng/richtextexternalcomposer.cpp:153
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "외부 편집기를 시작하는 중 오류가 발생했습니다."
 
-#: composer-ng/richtextexternalcomposer.cpp:150
+#: composer-ng/richtextexternalcomposer.cpp:153
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "외부 편집기 종료됨"
 
-#: composer-ng/richtextexternalcomposer.cpp:167
+#: composer-ng/richtextexternalcomposer.cpp:170
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -424,19 +424,19 @@ msgstr ""
 "시겠습니까?<nl/><warning>편집기를 종료하면 저장하지 않은 모든 변경 사항이 손"
 "실됩니다.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:171
+#: composer-ng/richtextexternalcomposer.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "외부 편집기 실행 중"
 
-#: composer-ng/richtextexternalcomposer.cpp:172
+#: composer-ng/richtextexternalcomposer.cpp:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "편집기 종료"
 
-#: composer-ng/richtextexternalcomposer.cpp:173
+#: composer-ng/richtextexternalcomposer.cpp:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -472,7 +472,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "그림 삽입"
 
-#: insertimagedialog.cpp:37 inserttabledialog.cpp:37 tableactionmenu.cpp:410
+#: insertimagedialog.cpp:37 inserttabledialog.cpp:37 tableactionmenu.cpp:411
 #, kde-format
 msgid "Insert"
 msgstr "삽입"
@@ -558,89 +558,89 @@ msgstr "창의 %"
 msgid "pixels"
 msgstr "픽셀"
 
-#: tableactionmenu.cpp:413
+#: tableactionmenu.cpp:414
 #, kde-format
 msgid "Table…"
 msgstr "표…"
 
-#: tableactionmenu.cpp:421
+#: tableactionmenu.cpp:422
 #, kde-format
 msgid "Row Below"
 msgstr "아래쪽 행"
 
-#: tableactionmenu.cpp:428
+#: tableactionmenu.cpp:429
 #, kde-format
 msgid "Row Above"
 msgstr "위쪽 행"
 
-#: tableactionmenu.cpp:436
+#: tableactionmenu.cpp:437
 #, kde-format
 msgid "Column Before"
 msgstr "이전 열"
 
-#: tableactionmenu.cpp:444
+#: tableactionmenu.cpp:445
 #, kde-format
 msgid "Column After"
 msgstr "다음 열"
 
-#: tableactionmenu.cpp:451
+#: tableactionmenu.cpp:452
 #, kde-format
 msgid "Delete"
 msgstr "삭제"
 
-#: tableactionmenu.cpp:454
+#: tableactionmenu.cpp:455
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "아래쪽 행"
 
-#: tableactionmenu.cpp:461
+#: tableactionmenu.cpp:462
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "위쪽 행"
 
-#: tableactionmenu.cpp:469
+#: tableactionmenu.cpp:470
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "이전 열"
 
-#: tableactionmenu.cpp:477
+#: tableactionmenu.cpp:478
 #, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "다음 열"
 
-#: tableactionmenu.cpp:485
+#: tableactionmenu.cpp:486
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "셀 내용"
 
-#: tableactionmenu.cpp:494
+#: tableactionmenu.cpp:495
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "오른쪽 셀과 병합"
 
-#: tableactionmenu.cpp:501
+#: tableactionmenu.cpp:502
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "선택한 셀 병합"
 
-#: tableactionmenu.cpp:508
+#: tableactionmenu.cpp:509
 #, kde-format
 msgid "Split cells"
 msgstr "셀 분할"
 
-#: tableactionmenu.cpp:517
+#: tableactionmenu.cpp:518
 #, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "표 서식…"
 
-#: tableactionmenu.cpp:524
+#: tableactionmenu.cpp:525
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"

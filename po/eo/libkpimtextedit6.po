@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkpimtextedit\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-30 00:55+0000\n"
+"POT-Creation-Date: 2026-11-07 00:58+0000\n"
 "PO-Revision-Date: 2024-08-02 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -369,7 +369,7 @@ msgctxt "@action"
 msgid "Checkbox"
 msgstr "Elektokesto"
 
-#: composer-ng/richtextcomposercontroler.cpp:715
+#: composer-ng/richtextcomposercontroler.cpp:716
 #, kde-format
 msgid "Only local files are supported."
 msgstr "Nur lokaj dosieroj estas subtenataj."
@@ -386,35 +386,35 @@ msgctxt "Start of the filename for an image"
 msgid "image"
 msgstr "bildo"
 
-#: composer-ng/richtextexternalcomposer.cpp:75
+#: composer-ng/richtextexternalcomposer.cpp:76
 #, kde-format
 msgid "Command line is empty. Please verify settings."
 msgstr "Komandlinio estas malplena. Bonvolu kontroli agordojn."
 
-#: composer-ng/richtextexternalcomposer.cpp:75
+#: composer-ng/richtextexternalcomposer.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Empty command line"
 msgstr "Malplena komandolinio"
 
-#: composer-ng/richtextexternalcomposer.cpp:130
+#: composer-ng/richtextexternalcomposer.cpp:133
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr ""
 "Ekstera redaktilo ne povas esti komencita. Bonvolu kontroli komandon \"%1\""
 
-#: composer-ng/richtextexternalcomposer.cpp:150
+#: composer-ng/richtextexternalcomposer.cpp:153
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "Eraro estis trovita kiam ni komencis eksteran redaktilon."
 
-#: composer-ng/richtextexternalcomposer.cpp:150
+#: composer-ng/richtextexternalcomposer.cpp:153
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "Ekstera Redaktilo Fermita"
 
-#: composer-ng/richtextexternalcomposer.cpp:167
+#: composer-ng/richtextexternalcomposer.cpp:170
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -426,19 +426,19 @@ msgstr ""
 "aŭ plufunkcii?<nl/><warning>Ĉesigi la redaktilon kaŭzos perdon de ĉiuj viaj "
 "nekonservitaj ŝanĝoj.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:171
+#: composer-ng/richtextexternalcomposer.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "Ekstera Redaktoro Rulanta"
 
-#: composer-ng/richtextexternalcomposer.cpp:172
+#: composer-ng/richtextexternalcomposer.cpp:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "Haltigi Redaktilon"
 
-#: composer-ng/richtextexternalcomposer.cpp:173
+#: composer-ng/richtextexternalcomposer.cpp:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -474,7 +474,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Enmeti Bildon"
 
-#: insertimagedialog.cpp:37 inserttabledialog.cpp:37 tableactionmenu.cpp:410
+#: insertimagedialog.cpp:37 inserttabledialog.cpp:37 tableactionmenu.cpp:411
 #, kde-format
 msgid "Insert"
 msgstr "Enmeti"
@@ -560,89 +560,89 @@ msgstr "% de fenestroj"
 msgid "pixels"
 msgstr "rastrumeroj"
 
-#: tableactionmenu.cpp:413
+#: tableactionmenu.cpp:414
 #, kde-format
 msgid "Table…"
 msgstr "Tabelo…"
 
-#: tableactionmenu.cpp:421
+#: tableactionmenu.cpp:422
 #, kde-format
 msgid "Row Below"
 msgstr "Vico Malsupre"
 
-#: tableactionmenu.cpp:428
+#: tableactionmenu.cpp:429
 #, kde-format
 msgid "Row Above"
 msgstr "Vico Supre"
 
-#: tableactionmenu.cpp:436
+#: tableactionmenu.cpp:437
 #, kde-format
 msgid "Column Before"
 msgstr "Kolumno Antaŭ"
 
-#: tableactionmenu.cpp:444
+#: tableactionmenu.cpp:445
 #, kde-format
 msgid "Column After"
 msgstr "Kolumno Post"
 
-#: tableactionmenu.cpp:451
+#: tableactionmenu.cpp:452
 #, kde-format
 msgid "Delete"
 msgstr "Forigi"
 
-#: tableactionmenu.cpp:454
+#: tableactionmenu.cpp:455
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Vico Malsupre"
 
-#: tableactionmenu.cpp:461
+#: tableactionmenu.cpp:462
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Vico Supre"
 
-#: tableactionmenu.cpp:469
+#: tableactionmenu.cpp:470
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Kolumno Antaŭ"
 
-#: tableactionmenu.cpp:477
+#: tableactionmenu.cpp:478
 #, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "Kolumno Post"
 
-#: tableactionmenu.cpp:485
+#: tableactionmenu.cpp:486
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Ĉela Enhavo"
 
-#: tableactionmenu.cpp:494
+#: tableactionmenu.cpp:495
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "Kunigi Kun Ĉelo Dekstre"
 
-#: tableactionmenu.cpp:501
+#: tableactionmenu.cpp:502
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Kunigi Elektitajn Ĉelojn"
 
-#: tableactionmenu.cpp:508
+#: tableactionmenu.cpp:509
 #, kde-format
 msgid "Split cells"
 msgstr "Dividi ĉelojn"
 
-#: tableactionmenu.cpp:517
+#: tableactionmenu.cpp:518
 #, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "Tabelformato…"
 
-#: tableactionmenu.cpp:524
+#: tableactionmenu.cpp:525
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"

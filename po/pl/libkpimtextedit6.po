@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-30 00:55+0000\n"
+"POT-Creation-Date: 2026-11-07 00:58+0000\n"
 "PO-Revision-Date: 2024-08-03 11:31+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -368,7 +368,7 @@ msgctxt "@action"
 msgid "Checkbox"
 msgstr "Pole zaznaczane"
 
-#: composer-ng/richtextcomposercontroler.cpp:715
+#: composer-ng/richtextcomposercontroler.cpp:716
 #, kde-format
 msgid "Only local files are supported."
 msgstr "Obsługiwane są tylko pliki lokalne."
@@ -385,35 +385,35 @@ msgctxt "Start of the filename for an image"
 msgid "image"
 msgstr "obraz"
 
-#: composer-ng/richtextexternalcomposer.cpp:75
+#: composer-ng/richtextexternalcomposer.cpp:76
 #, kde-format
 msgid "Command line is empty. Please verify settings."
 msgstr "Wiersz poleceń jest pusty. Sprawdź ustawienia."
 
-#: composer-ng/richtextexternalcomposer.cpp:75
+#: composer-ng/richtextexternalcomposer.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Empty command line"
 msgstr "Pusty wiersz poleceń"
 
-#: composer-ng/richtextexternalcomposer.cpp:130
+#: composer-ng/richtextexternalcomposer.cpp:133
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr ""
 "Nie można uruchomić zewnętrznego edytora. Proszę sprawdzić polecenie \"%1\""
 
-#: composer-ng/richtextexternalcomposer.cpp:150
+#: composer-ng/richtextexternalcomposer.cpp:153
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr "Natrafiono na błąd, gdy uruchomiono zewnętrzny edytor."
 
-#: composer-ng/richtextexternalcomposer.cpp:150
+#: composer-ng/richtextexternalcomposer.cpp:153
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr "Zamknięto zewnętrzny edytor"
 
-#: composer-ng/richtextexternalcomposer.cpp:167
+#: composer-ng/richtextexternalcomposer.cpp:170
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -425,19 +425,19 @@ msgstr ""
 "pozostawić uruchomiony?<nl/><warning>Zatrzymanie edytora spowoduje utratę "
 "wszystkich niezapisanych w nim danych.</warning>"
 
-#: composer-ng/richtextexternalcomposer.cpp:171
+#: composer-ng/richtextexternalcomposer.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr "Uruchomiony zewnętrzny edytor"
 
-#: composer-ng/richtextexternalcomposer.cpp:172
+#: composer-ng/richtextexternalcomposer.cpp:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr "Zatrzymaj edytor"
 
-#: composer-ng/richtextexternalcomposer.cpp:173
+#: composer-ng/richtextexternalcomposer.cpp:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -473,7 +473,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "Wstaw obraz"
 
-#: insertimagedialog.cpp:37 inserttabledialog.cpp:37 tableactionmenu.cpp:410
+#: insertimagedialog.cpp:37 inserttabledialog.cpp:37 tableactionmenu.cpp:411
 #, kde-format
 msgid "Insert"
 msgstr "Wstaw"
@@ -559,89 +559,89 @@ msgstr "% okien"
 msgid "pixels"
 msgstr "pikseli"
 
-#: tableactionmenu.cpp:413
+#: tableactionmenu.cpp:414
 #, kde-format
 msgid "Table…"
 msgstr "Tabela…"
 
-#: tableactionmenu.cpp:421
+#: tableactionmenu.cpp:422
 #, kde-format
 msgid "Row Below"
 msgstr "Wiersz poniżej"
 
-#: tableactionmenu.cpp:428
+#: tableactionmenu.cpp:429
 #, kde-format
 msgid "Row Above"
 msgstr "Wiersz powyżej"
 
-#: tableactionmenu.cpp:436
+#: tableactionmenu.cpp:437
 #, kde-format
 msgid "Column Before"
 msgstr "Kolumna przed"
 
-#: tableactionmenu.cpp:444
+#: tableactionmenu.cpp:445
 #, kde-format
 msgid "Column After"
 msgstr "Kolumna za"
 
-#: tableactionmenu.cpp:451
+#: tableactionmenu.cpp:452
 #, kde-format
 msgid "Delete"
 msgstr "Usuń"
 
-#: tableactionmenu.cpp:454
+#: tableactionmenu.cpp:455
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr "Wiersz poniżej"
 
-#: tableactionmenu.cpp:461
+#: tableactionmenu.cpp:462
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr "Wiersz powyżej"
 
-#: tableactionmenu.cpp:469
+#: tableactionmenu.cpp:470
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr "Kolumna przed"
 
-#: tableactionmenu.cpp:477
+#: tableactionmenu.cpp:478
 #, kde-format
 msgctxt "@action"
 msgid "Column After"
 msgstr "Kolumna za"
 
-#: tableactionmenu.cpp:485
+#: tableactionmenu.cpp:486
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr "Zawartość komórki"
 
-#: tableactionmenu.cpp:494
+#: tableactionmenu.cpp:495
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr "Połącz z komórką po prawo"
 
-#: tableactionmenu.cpp:501
+#: tableactionmenu.cpp:502
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr "Scal wybrane komórki"
 
-#: tableactionmenu.cpp:508
+#: tableactionmenu.cpp:509
 #, kde-format
 msgid "Split cells"
 msgstr "Rozdziel komórki"
 
-#: tableactionmenu.cpp:517
+#: tableactionmenu.cpp:518
 #, kde-format
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "Format tabeli…"
 
-#: tableactionmenu.cpp:524
+#: tableactionmenu.cpp:525
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"

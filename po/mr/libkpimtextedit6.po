@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-30 00:55+0000\n"
+"POT-Creation-Date: 2026-11-07 00:58+0000\n"
 "PO-Revision-Date: 2013-03-07 18:25+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -374,7 +374,7 @@ msgctxt "@action"
 msgid "Checkbox"
 msgstr ""
 
-#: composer-ng/richtextcomposercontroler.cpp:715
+#: composer-ng/richtextcomposercontroler.cpp:716
 #, kde-format
 msgid "Only local files are supported."
 msgstr ""
@@ -391,34 +391,34 @@ msgctxt "Start of the filename for an image"
 msgid "image"
 msgstr "प्रतिमा"
 
-#: composer-ng/richtextexternalcomposer.cpp:75
+#: composer-ng/richtextexternalcomposer.cpp:76
 #, kde-format
 msgid "Command line is empty. Please verify settings."
 msgstr ""
 
-#: composer-ng/richtextexternalcomposer.cpp:75
+#: composer-ng/richtextexternalcomposer.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Empty command line"
 msgstr ""
 
-#: composer-ng/richtextexternalcomposer.cpp:130
+#: composer-ng/richtextexternalcomposer.cpp:133
 #, kde-format
 msgid "External editor cannot be started. Please verify command \"%1\""
 msgstr ""
 
-#: composer-ng/richtextexternalcomposer.cpp:150
+#: composer-ng/richtextexternalcomposer.cpp:153
 #, kde-format
 msgid "Error was found when we started external editor."
 msgstr ""
 
-#: composer-ng/richtextexternalcomposer.cpp:150
+#: composer-ng/richtextexternalcomposer.cpp:153
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Closed"
 msgstr ""
 
-#: composer-ng/richtextexternalcomposer.cpp:167
+#: composer-ng/richtextexternalcomposer.cpp:170
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -427,19 +427,19 @@ msgid ""
 "unsaved changes to be lost.</warning>"
 msgstr ""
 
-#: composer-ng/richtextexternalcomposer.cpp:171
+#: composer-ng/richtextexternalcomposer.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "External Editor Running"
 msgstr ""
 
-#: composer-ng/richtextexternalcomposer.cpp:172
+#: composer-ng/richtextexternalcomposer.cpp:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Stop Editor"
 msgstr ""
 
-#: composer-ng/richtextexternalcomposer.cpp:173
+#: composer-ng/richtextexternalcomposer.cpp:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Editor Running"
@@ -478,7 +478,7 @@ msgctxt "@title:window"
 msgid "Insert Image"
 msgstr "अंतर्भूत करा"
 
-#: insertimagedialog.cpp:37 inserttabledialog.cpp:37 tableactionmenu.cpp:410
+#: insertimagedialog.cpp:37 inserttabledialog.cpp:37 tableactionmenu.cpp:411
 #, kde-format
 msgid "Insert"
 msgstr "अंतर्भूत करा"
@@ -571,92 +571,92 @@ msgstr ""
 msgid "pixels"
 msgstr "पिक्सेल्स"
 
-#: tableactionmenu.cpp:413
+#: tableactionmenu.cpp:414
 #, fuzzy, kde-format
 #| msgid "Table"
 msgid "Table…"
 msgstr "कोष्टक"
 
-#: tableactionmenu.cpp:421
+#: tableactionmenu.cpp:422
 #, kde-format
 msgid "Row Below"
 msgstr ""
 
-#: tableactionmenu.cpp:428
+#: tableactionmenu.cpp:429
 #, kde-format
 msgid "Row Above"
 msgstr ""
 
-#: tableactionmenu.cpp:436
+#: tableactionmenu.cpp:437
 #, kde-format
 msgid "Column Before"
 msgstr ""
 
-#: tableactionmenu.cpp:444
+#: tableactionmenu.cpp:445
 #, kde-format
 msgid "Column After"
 msgstr ""
 
-#: tableactionmenu.cpp:451
+#: tableactionmenu.cpp:452
 #, kde-format
 msgid "Delete"
 msgstr "काढून टाका"
 
-#: tableactionmenu.cpp:454
+#: tableactionmenu.cpp:455
 #, kde-format
 msgctxt "@action"
 msgid "Row Below"
 msgstr ""
 
-#: tableactionmenu.cpp:461
+#: tableactionmenu.cpp:462
 #, kde-format
 msgctxt "@action"
 msgid "Row Above"
 msgstr ""
 
-#: tableactionmenu.cpp:469
+#: tableactionmenu.cpp:470
 #, kde-format
 msgctxt "@action"
 msgid "Column Before"
 msgstr ""
 
-#: tableactionmenu.cpp:477
+#: tableactionmenu.cpp:478
 #, fuzzy, kde-format
 #| msgid "Columns:"
 msgctxt "@action"
 msgid "Column After"
 msgstr "स्तंभ:"
 
-#: tableactionmenu.cpp:485
+#: tableactionmenu.cpp:486
 #, kde-format
 msgctxt "@action"
 msgid "Cell Contents"
 msgstr ""
 
-#: tableactionmenu.cpp:494
+#: tableactionmenu.cpp:495
 #, kde-format
 msgid "Join With Cell to the Right"
 msgstr ""
 
-#: tableactionmenu.cpp:501
+#: tableactionmenu.cpp:502
 #, kde-format
 msgctxt "@action"
 msgid "Join Selected Cells"
 msgstr ""
 
-#: tableactionmenu.cpp:508
+#: tableactionmenu.cpp:509
 #, kde-format
 msgid "Split cells"
 msgstr ""
 
-#: tableactionmenu.cpp:517
+#: tableactionmenu.cpp:518
 #, fuzzy, kde-format
 #| msgid "Table"
 msgctxt "@action"
 msgid "Table Format…"
 msgstr "कोष्टक"
 
-#: tableactionmenu.cpp:524
+#: tableactionmenu.cpp:525
 #, kde-format
 msgctxt "@action"
 msgid "Table Cell Format…"
