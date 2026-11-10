@@ -121,7 +121,7 @@ public:
      * The block \a block is the first block in the \a textBlockGroup.
      * Returns a pair containing the iterator and block after processing.
      */
-    [[nodiscard]] virtual QPair<QTextFrame::iterator, QTextBlock>
+    [[nodiscard]] virtual std::pair<QTextFrame::iterator, QTextBlock>
     processBlockGroup(const QTextFrame::iterator &it, const QTextBlock &block, QTextBlockGroup *textBlockGroup);
 
     /*!
@@ -130,7 +130,7 @@ public:
      * The block \a block is the first block in the \a textList.
      * Returns a pair containing the iterator and block after processing.
      */
-    [[nodiscard]] virtual QPair<QTextFrame::iterator, QTextBlock> processList(QTextFrame::iterator it, const QTextBlock &block, QTextList *textList);
+    [[nodiscard]] virtual std::pair<QTextFrame::iterator, QTextBlock> processList(QTextFrame::iterator it, const QTextBlock &block, QTextList *textList);
 
     /*!
      * Directs the builder to create output for the contents of the single \a block at the position \a it.
@@ -197,7 +197,7 @@ protected:
     The return pair is the iterator pointing after the end of \a blockGroup
     and the first block after \a blockGroup.
   */
-    [[nodiscard]] QPair<QTextFrame::iterator, QTextBlock> skipBlockGroup(QTextFrame::iterator it, const QTextBlock &_block, QTextBlockGroup *blockGroup);
+    [[nodiscard]] std::pair<QTextFrame::iterator, QTextBlock> skipBlockGroup(QTextFrame::iterator it, const QTextBlock &_block, QTextBlockGroup *blockGroup);
 
     /*!
     Returns a list of tags contained in \a openingTags sorted so they can be

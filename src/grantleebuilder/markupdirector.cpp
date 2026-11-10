@@ -367,7 +367,7 @@ void MarkupDirector::processTableCell(const QTextTableCell &tableCell, [[maybe_u
     processDocumentContents(tableCell.begin(), tableCell.end());
 }
 
-QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::processList(QTextFrame::iterator it, const QTextBlock &_block, QTextList *list)
+std::pair<QTextFrame::iterator, QTextBlock> MarkupDirector::processList(QTextFrame::iterator it, const QTextBlock &_block, QTextList *list)
 {
     const auto style = list->format().style();
     const int start = list->format().start();
@@ -396,7 +396,7 @@ QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::processList(QTextFrame::
         curList = qobject_cast<QTextList *>(block.document()->objectForFormat(block.blockFormat()));
     }
     m_builder->endList();
-    return qMakePair(it, block);
+    return std::make_pair(it, block);
 }
 
 void MarkupDirector::processCustomFragment([[maybe_unused]] const QTextFragment &fragment, [[maybe_unused]] const QTextDocument *doc)
@@ -415,7 +415,7 @@ QTextFrame::iterator MarkupDirector::processObject(QTextFrame::iterator it, cons
     return it;
 }
 
-QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::skipBlockGroup(QTextFrame::iterator it, const QTextBlock &_block, QTextBlockGroup *blockGroup)
+std::pair<QTextFrame::iterator, QTextBlock> MarkupDirector::skipBlockGroup(QTextFrame::iterator it, const QTextBlock &_block, QTextBlockGroup *blockGroup)
 {
     auto block = _block;
     auto lastBlock = _block;
@@ -423,12 +423,12 @@ QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::skipBlockGroup(QTextFram
     auto obj = block.document()->objectForFormat(block.blockFormat());
 
     if (!obj) {
-        return qMakePair(lastIt, lastBlock);
+        return std::make_pair(lastIt, lastBlock);
     }
 
     auto group = qobject_cast<QTextBlockGroup *>(obj);
     if (!group) {
-        return qMakePair(lastIt, lastBlock);
+        return std::make_pair(lastIt, lastBlock);
     }
 
     while (block.isValid()) {
@@ -454,10 +454,11 @@ QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::skipBlockGroup(QTextFram
         }
         group = nextGroup;
     }
-    return qMakePair(lastIt, lastBlock);
+    return std::make_pair(lastIt, lastBlock);
 }
 
-QPair<QTextFrame::iterator, QTextBlock> MarkupDirector::processBlockGroup(const QTextFrame::iterator &it, const QTextBlock &block, QTextBlockGroup *blockGroup)
+std::pair<QTextFrame::iterator, QTextBlock>
+MarkupDirector::processBlockGroup(const QTextFrame::iterator &it, const QTextBlock &block, QTextBlockGroup *blockGroup)
 {
     const auto list = qobject_cast<QTextList *>(blockGroup);
     if (list) {
