@@ -8,6 +8,13 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+excludedirs += \
+    autotests \
+    composer-ng/autotests \
+    composer-ng/tests \
+    grantleebuilder/autotests \
+    tests
+
 outputformats = HTML
 
 depends += \
