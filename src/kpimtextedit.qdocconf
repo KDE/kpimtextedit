@@ -6,7 +6,20 @@ description = KPIMTextedit provides a textedit with PIM-specific features.
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    composer-ng/richtextcomposer.h \
+    composer-ng/richtextcomposeractions.h \
+    composer-ng/richtextcomposercontroler.h \
+    composer-ng/richtextcomposeremailquotehighlighter.h \
+    composer-ng/richtextcomposerimages.h \
+    composer-ng/richtextcomposerwidget.h \
+    composer-ng/richtextexternalcomposer.h \
+    grantleebuilder/abstractmarkupbuilder.h \
+    grantleebuilder/markupdirector.h \
+    grantleebuilder/plaintextmarkupbuilder.h \
+    grantleebuilder/texthtmlbuilder.h \
+    kpimtextedit_qdocmoduleheader.h \
+    textutils.h
 sourcedirs += .
 
 excludedirs += \
