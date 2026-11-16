@@ -10,7 +10,7 @@
 
     \section2 Building with CMake
 
-    \include {module-use.qdocinc} {building with cmake} {KPim6} {TextEdit} {KPim6::TextEdit}
+    \include {module-use.qdocinc} {building with cmake nomodule} {KPim6TextEdit} {KPim6::TextEdit}
 
     \section1 API Reference
 
