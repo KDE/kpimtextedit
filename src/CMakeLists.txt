@@ -151,9 +151,8 @@ target_link_libraries(
         KF6::I18n
         KF6::SyntaxHighlighting
         KF6::Codecs
+        KF6::TextEmoticonsWidgets
 )
-
-target_link_libraries(KPim6TextEdit PRIVATE KF6::TextEmoticonsWidgets)
 
 set_target_properties(
     KPim6TextEdit
