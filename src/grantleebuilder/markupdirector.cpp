@@ -213,12 +213,12 @@ QTextBlock::iterator MarkupDirector::processFragment(QTextBlock::iterator it, co
     // If a sequence such as '<br /><br />' is imported into a document with
     // setHtml, LineSeparator
     // characters are inserted. Here I make sure to put them back.
-    auto sl = textStr.split(QChar(QChar::LineSeparator));
-    QStringListIterator i(sl);
-    while (i.hasNext()) {
-        m_builder->appendLiteralText(i.next());
-        if (i.hasNext()) {
-            if (i.peekNext().isEmpty()) {
+    const QStringList sl = textStr.split(QChar(QChar::LineSeparator));
+    const qsizetype count = sl.size();
+    for (qsizetype i = 0; i < count; ++i) {
+        m_builder->appendLiteralText(sl.at(i));
+        if (i + 1 < count) {
+            if (sl.at(i + 1).isEmpty()) {
                 if (!d->m_paragraphClosed) {
                     m_builder->endParagraph();
                     d->m_paragraphClosed = true;
