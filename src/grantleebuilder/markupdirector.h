@@ -262,6 +262,8 @@ protected:
 
 protected:
 #ifndef Q_QDOC
+    /*!
+     */
     MarkupDirectorPrivate *const d_ptr;
 #endif
 
